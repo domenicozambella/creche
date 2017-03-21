@@ -1,0 +1,106 @@
+\documentclass[creche.tex]{subfiles}
+\begin{document}
+\chapter{Stable theories (a scribbling block)}
+\label{stability}
+ 
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The ladder property}
+
+The \emph{ladder order\/} of a parted formula $\phi({\mr x}\,;{\gr z})$ is the largest ordinal $n$ such that for some ${\mr a_i}\in\U^{|{\mr x}|}$ and ${\gr b_i}\in\U^{|{\gr z}|}$ 
+
+
+\section{}
+
+We say that $\D\subseteq\U^{|{\gr z}|}$ is \emph{$k\jj$approximable\/} by $\phi({\mr x}\,;{\gr z})$ if for every $B\subseteq_k\U^{|{\gr z}|}$ there is a ${\mr a}\in\U^{|{\mr x}|}$ such that $\phi({\mr a}\,;B)=\D\cap B$. For $A\subseteq\U$, we say approximable \emph{from $A$\/} if we can further require that ${\mr a}\in A^{|{\mr x}|}$. We say \emph{almost from $A$\/} if  ${\mr a}\in M^{|{\mr x}|}$ for every model $M$ containing $A$.
+
+\begin{proposition}
+If\/ $\D$ is\/ $2\jj$approximable from $A$, then it is invariant over $A$. If it is\/ $2\jj$ap\-prox\-i\-ma\-ble almost from $A$, then it is Lascar invariant over $A$.
+\end{proposition}
+
+\begin{proof}
+Suppose for a contradiction that $f[\D]\neq\D$ for some $f\in\Aut(\U/A)$. Pick some ${\gr b}$ such that ${\gr b}\in\D\niff f{\gr b}\in\D$. Clearly $\big\{{\gr b},f{\gr b}\big\}\cap\D$ cannot be the trace on $\big\{{\gr b},f{\gr b}\big\}$ of a set definable over $A$. The same argument apply to prove Lascar invariance.
+\end{proof}
+
+Tentativo
+
+Let $D\subseteq A$ be the trace on $A$ of a definable set, then it is the trace of some set $\Aa$ definable over $\acl^\eq A$, and such a set $\Aa$ is unique.
+
+We write, $\phi({\mr x}\,;{\gr z})^*$ for $\phi({\gr z}\,;{\mr x})$. Clearly, these are the same formula, but they are different as parted formula. We say that they are dual of each other.
+
+{
+\def\B{{\gr{\EuScript B}}}
+\def\Aa{{\mr{\EuScript A}}}
+The following is a version of Harrinton's mysterious 
+Lemma (cfr.~\cite[Lemma 8.3.4]{zt}).
+\begin{lemma}\label{lem_harrington}
+Let $\phi({\mr x}\,;{\gr z})\in L$ be a stable formula and suppose $\B\subseteq\U^{|{\gr z}|}$ and $\Aa\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\gr z}\,;{\mr x})$, respectively. Then the following are equivalent
+\begin{itemize}
+\item[1.] $\phi({\mr x}\,;{\gr z})\wedge{\gr z}\in{\B}$ approximates $\Aa$ 
+\item[2.] $\phi({\gr z}\,;{\mr x})\wedge{\mr x}\in{\Aa}$ approximates $\B$
+\end{itemize}
+\end{lemma}
+\begin{proof}
+It suffices to prove \ssf{2}$\IMP$\ssf{1} because the converse implication is equivalent. Assume \ssf{2} and $\neg$\ssf{1}. By the latter,  $\phi({\mr x}\,;{\gr z})\wedge{\gr z}\notin{\B}$ approximates $\Aa$. For $i<\omega$, find recursively ${\mr a_i}\in\Aa$ and  ${\gr b_i}\notin\B$ and such that
+
+
+{\def\medrel#1{\parbox[t]{12ex}{$\displaystyle\kern2ex #1$}}
+
+\ceq{\hfill\phi(\U\,;{\gr b_i})}{ =_{{\mr a_0},\dots,{\mr a_{i-1}}}}{\Aa} 
+
+
+\ceq{\hfill\phi({\mr a_i}\,;\U)}{ =_{{\gr b_0},\dots,{\gr b_i}}}{\B}
+}
+
+Then
+
+{\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\kern2ex #1$}}
+
+\ceq{\hfill i< j}{\IMP}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}
+
+\ceq{\hfill j\le i}{\IMP}{\neg\phi({\mr a_i}\,;{\gr b_j})}
+
+}
+
+Which contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
+\end{proof}
+
+\begin{corollary}
+Under the same assumptions of Lemma~\ref{lem_harrington} the following are mutually exclusive\nobreak
+\begin{itemize}
+\item[1.] $\phi({\mr x}\,;{\gr z})\wedge{\gr z}\notin{\B}$ approximates $\Aa$;
+\item[2.] $\phi({\mr x}\,;{\gr z})\wedge{\gr z}\in{\B}$ approximates $\Aa$.\QED
+\end{itemize}
+\end{corollary}
+
+}
+
+\begin{proposition}
+Let $A\subseteq\U$ and $\D\subseteq\U^{|{\gr z}|}$. Suppose that some stable formula $\phi({\mr x}\,;{\gr z})\in L$ approximates $\D\subseteq\U^{|{\gr z}|}$. Then the following are equivalent:
+\begin{itemize}
+\item[1.] $\D$ is invariant over $\acl^\eq A$;
+\item[2.] $\D$ is definable over $\acl^\eq A$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+Only \ssf{1}$\IMP$\ssf{2} requires a proof. Assume \ssf{1}. By stability, $\D$ is definable. By invariance, $\D\in M^\eq$ for every model $M$ containing $A$ and \ssf{2} follows.
+\end{proof}
+
+
+\begin{proposition}
+For every $M$ and every externally definable set $\D$ is some $\B\equiv_M\D$ that is approximable in $M$. 
+\end{proposition}
+
+\begin{proof}
+
+\end{proof}
+
+\end{document}
+
+

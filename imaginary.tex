@@ -1,0 +1,519 @@
+\documentclass[creche.tex]{subfiles}
+\begin{document}
+\chapter{Definability and automorphisms}
+\label{imaginary}
+
+\def\ceq#1#2#3{\parbox{15ex}{$\displaystyle #1$}\parbox{6ex}{\hfil$\displaystyle #2$}$\displaystyle  #3$}
+
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{25ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+
+
+%\setcounter{page}{1}
+\def\b{b\llap{\raisebox{-.8ex}{-\hskip.2ex}}}
+\def\a{a\llap{\raisebox{-.8ex}{-\hskip.2ex}}}
+\def\d{{\rm def}}
+
+The description of first-order definability is simplified if we allow definable sets to be used as (second-order) parameters in formulas.
+
+In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$. Notation and implicit assumptions are as presented in Section~\ref{saturation}.\ref{monster}.
+
+\section{Many-sorted structures}
+\label{many-sorted}
+\def\Ar{{\rm Ar}}
+
+A many-sorted language consists of three disjoint sets. Besides the usual $L_{\rm fun}$ and $L_{\rm rel}$, we have a set $L_{\rm srt}$ of \emph{sorts}. The language comprises also a \emph{(many-sorted) arity function} that assigns to relations and function symbols a tuple of sorts of finite positive length
+
+\ceq{\hfill\emph{Ar}}{:}{L_{\rm fun}\cup L_{\rm rel}\quad \to\quad L_{\rm srt}^{<\omega}\sm\{\0\}.}
+
+A many sorted structure $M$ consists of
+\begin{itemize}
+\item[1.] For every $s\in L_{\rm srt}$ a set $M_s$.
+\item[2.] For every $f\in L_{\rm fun}$ a function $f^M:M_{s_1}\times\dots\times M_{s_n}\to M_{s_0}$, where $\Ar(f)=\<s_0,\dots,s_n\>$.
+\item[3.] For every $r\in L_{\rm rel}$ a relation $r^M\subseteq M_{s_0}\times\dots\times M_{s_n}$, where $\Ar(r)=\<s_0,\dots,s_n\>$.
+\end{itemize}
+
+For every sort $s$ we fix a sufficiently large a set of variables $V_s$. Now we define terms by induction. Along the way we assign a sort to each term. 
+
+All variables are terms of the respective sort. If $t_1,\dots,t_n$ are terms of sorts $s_1,\dots,s_n$ and $f\in L_{\rm fun}$ is such that $\Ar(f)=\<s_0,\dots,s_n\>$ then $ft_1,\dots,t_n$ is a term of sort $s_0$. 
+
+If $r\in L_{\rm rel}$ then $\Ar(r)=\<s_0,\dots,s_n\>$ then $rt_0,\dots,t_n$ is a formula. Also, $t_1=t_2$ is formula for every pair of terms. All other formulas are constructed by induction using the propositional connectives $\neg$ and $\vee$ and the quantifier $\E x$ (or any other reasonable choice of logical connectives).
+
+Truth of formulas is defined as for one-sorted languages up to one difference: we require that the witness of the quantifier $\E x$ belongs to $M_s$, where $s$ is the sort of the variable $x$.
+
+Second order logic is arguably the most widely used example of many sorted structure. It may be formalized using a language with a sort $n$ for every $n\in\omega$. The sort $0$ is used for the first order elements; the sorts $n>0$ is used for relations of arity $n$. For every $n>0$ the language has a relation symbol $\in_n$ of arity $\<0^n,n\>$, where $0^n$ stands for a string of $0$'s of length $n$. There are also arbitrary many functions and relation symbols of sort $\<0^n,0\>$ for every $n$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The eq-expansion}\label{immaginari}
+
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Warning: the structure $\U^\eq$ and the theory $T^\eq$ defined below does not coincide with the standard one. As the difference is merely cosmetic, introducing a new notation would be an overkill and we prefer to abuse the existing terminology. In Section~\ref{imaginaries_long} below we compare our definition with the standard one. This will also explain the symbol used.
+
+We recall the definition of parted formulas. A \emph{parted formula\/} is a triple that consists of a formula and two tuples of variables. We use a semicolon, as in $\sigma({\mr x}\,;{\gr z})$, to separate the two tuples of variables. Below, ${\gr z}$ is always a placeholder for parameters and ${\mr x}$ is used for the definition of a set.
+
+Given a language $L$ we define a many-sorted language \emph{$L^{\rm\textbf{eq}}$\/} which has a sort for each (parted) formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort\/} or the \emph{first-order sort}. All other sorts are called \emph{second-order sorts}. First of all, $L^\eq$ contains all relations and functions of $L$. The many-sorted arity of a relation $r$ is $\<0,\dots,0\>$, a string of $0$'s of length the arity of $r$ in $L$.  Similarly, the many-sorted arity of a function $f$ is $\<0,\dots,0\>$, a string of $0$'s of length the arity of $f$ in $L$ plus $1$. Moreover $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$. These have arity $\big\<0,\dots,0,\sigma({\mr x}\,;{\gr z})\big\>$ with $|{\mr x}|$ many $0$'s. As there is no risk of ambiguity, we write $\in$ without subscript.
+
+The model \emph{$\U^{\rm\textbf{eq}}$\/} has $\U$ as domain for the home sort. The domain for the sort $\sigma({\mr x}\,;{\gr z})$ contains the definable sets ${\vl a}=\sigma(\U;{\gr b})$ for some ${\gr b}\in\U^{|{\gr z}|}$. The symbols in $L$ have the same interpretation as in the one-sorted case, and $\in$ is interpreted as set membership. We write \emph{$T^{\rm\textbf{eq}}$\/} for $\Th(\U^\eq)$.
+
+As usual \emph{$L^\eq$\/} also denotes the set of formulas constructed in this language and, if $A\subseteq\U^\eq$, we write  \emph{$L^\eq(A)$\/} for the language and the set of formulas that use elements of $A$ as parameters. We write \emph{$L(A)$\/} for the set of formulas in $L^\eq(A)$ that contain no second-order variables (neither free nor quantified).  
+
+% the others are called \emph{imaginary elements}. So, imaginary elements are just definable sets (which below we denote by lower case letters $a,b,c,\dots$).
+
+
+It is important to note right away that this expansion is a mild one: the definable subsets of the home sort of $\U^\eq$ are the same as those of $\U$. In particular, iteration of the expansion would not yield anything new. 
+
+
+
+\begin{proposition}\label{prop_eqmild}
+Let $\phi({\mr u}\,\,;{\vl v})\in L^\eq$ where ${\mr u}\,$ is a tuple of first-order variables and  ${\vl v}$ a tuple of variables of sort $\sigma_i({\mr x_i}\,;{\gr z_i})$, with tuples of variables. Then there is a formula $\phi'({\mr u}\,\,;{\gr z})\in L$ such that 
+
+\hfil$\displaystyle\A {\vl v},{\gr z}\ \bigg[\bigwedge^n_{i=1}{\vl v_i}=\big\{{\mr x_i}:\sigma_i({\mr x_i}\,;{\gr z_i})\big\}\imp\A {\mr u}\ \big[\phi({\mr u}\,;{\vl v})\ \iff\ \phi'({\mr u}\,;{\gr z})\big]\bigg]$
+
+where ${\vl v}$ stand for the tuple ${\vl v_1},\dots,{\vl v_n}$ and ${\gr z}$ for the concatenation of ${\gr z_1},\dots,{\gr z_n}$. For simplicity we are assuming that the tuples ${\gr z_i}$ do not have variables in common.
+\end{proposition}
+
+When $n=0$ the proposition asserts that $L_{{\mr u}}^\eq$ and $L_{{\mr u}}$ have the same expressive power.
+
+\begin{proof}
+By induction on syntax. When $\phi$ is atomic $\phi'=\phi$ unless it is of the form ${\mr t}\in {\vl v}$ for some tuple of terms ${\mr t}$ or it has the form ${\vl v_1}={\vl v_2}$. In the first case $\phi'$ is the formula $\sigma({\mr t}\,;{\gr z})$. In the second case it is the formula $\A {\mr x}\,\big[\sigma_1({\mr x}\,;{\gr z_1}) \iff\sigma_2({\mr x}\,;{\gr z_2})\big]$. In the latter case we assume that the variables ${\mr x_1}$,${\mr x_2}$ in the sorts of  ${\vl v_1}$,${\vl v_2}$ have equal length otherwise we may replace ${\vl v_1}={\vl v_2}$ by $\bot$.
+
+As for connectives they stay unchanged but for the quantifiers $\E {\vl v}$ where ${\vl v}$ is a second-order variable, say of sort $\sigma({\mr x}\,;{\gr z})$. These quantifiers are replaced with $\E{\gr z}$.
+\end{proof}
+
+Proposition~\ref{prop_eqmild} implies in particular that we can always eliminate second-order quantifiers. This is an obvious fact that may be obscured by the notation: we can replace $\E {\vl v}$ by $\E {\gr z}$ if we substitute  $\sigma({\mr t}\,;{\gr z})$ for ${\mr t}\in {\vl v}$ in the quantified formula.
+
+Proposition~\ref{prop_eqmild} should convince the reader that the move from $\U$ to $\U^\eq$ is almost a trivial one. Exercise~\ref{ex_feqthm_senza_eq} below should convince the reader that some trivial moves may be highly convenient.
+
+
+\begin{remark}\label{rem_eqmild}
+From Proposition~\ref{prop_eqmild} it follows that for every $A\subseteq\U^\eq$, there is a $B\subseteq\U$ such that $L(B)$ is at least as expressive as $L(A)$. The point of $\U^\eq$ is that there might not be any $B\subseteq\U$ such that $L(B)$ is exactly as expressive as $L^\eq(A)$. For instance, suppose $L$ contains only an equivalence relation with infinitely many classes, all with infinite elements. Let ${\vl a}$ be an equivalence class. Then ${\vl a}$ is is definable in $L(B)$ if and only if $B\cap {\vl a}\neq\0$. But no element of ${\vl a}$ is definable in $L^\eq(\{{\vl a}\})$.\QED
+\end{remark}
+
+If $\V\preceq\U$ we write \emph{$\V^{\textbf{eq}}$\/} for the substructure of $\U^\eq$ that has $\V$ as domain of the home sort and  the set of definable sets of the form $\sigma(\U;{\gr b})$ for some ${\gr b}\in \V^{|{\gr z}|}$ as domain of the sort $\sigma({\mr x}\,;{\gr z})$. 
+The following proposition claims that elementary substructures of $\U^\eq$ are exactly those of the form $\V^\eq$ for some $\V\preceq\U$. 
+
+\begin{proposition}
+The following are equivalent for every structure $\V^\dag$ of signature $L^\eq$
+\begin{itemize}
+\item[1.] $\V^\dag\preceq\U^\eq$;
+\item[2.] $\V^\dag=\V^\eq$ for some $\V\preceq\U$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+Implication \ssf{2}$\IMP$\ssf{1} is a direct consequence of Proposition~\ref{prop_eqmild}. We prove \ssf{1}$\IMP$\ssf{2}. Let $\V$ be the domain of the home sort of $\V^\dag$. It is clear that $\V\preceq\U$. Let ${\vl a}\in\V^\eq$  have sort $\sigma({\mr x}\,;{\gr z})$, say ${\vl a}=\sigma(\U;{\gr b})$ for some ${\gr b}\in\V^{|{\gr z}|}$. As $\E^{=1}{\vl v}\, \A{\mr x}\,\big[{\mr x}\in{\vl v}\iff\sigma({\mr x}\,;{\gr b})\big]$ holds in $\U^\eq$, by elementarity it holds in $\V^\dag$ and therefore ${\vl a}\in\V^\dag$. This proves $\V^\eq\subseteq\V^\dag$. A similar argument proves the converse inclusion.
+\end{proof}
+
+\begin{proposition}\label{prop_Ueq_saturated}
+Let $A\subseteq\U^\eq$. Then every type $p({\mr u}\,;{\vl v})\subseteq L^\eq(A)$ finitely consistent in $\U^\eq$ is realized in $\U^\eq$. That is, $\U^\eq$ is saturated.
+\end{proposition}
+\begin{proof}
+By Remark~\ref{rem_eqmild}, there is some $B\subseteq\U$ and some $q({\mr u}\,;{\vl v})\subseteq L^\eq(B)$ equivalent to $p({\mr u}\,;{\vl v})$. This already proves the proposition when ${\vl v}$ is the empty tuple. Otherwise, let $q'({\mr u}\,;{\gr z})$ be obtained replacing every formula $\phi({\mr u}\,;{\vl v})$ in $q({\mr u}\,;{\vl v})$ with with the formula $\phi'({\mr u}\,;{\gr z})$ given by Proposition~\ref{prop_eqmild}. Then $q'({\mr u}\,;{\gr z})$ is finitely consistent in $\U$. Assume for clarity of notation that ${\vl v}$ is a single variable of sort  $\sigma({\mr x}\,;{\gr z})$. If ${\mr c}\,;{\gr b}\models q'({\mr u}\,;{\gr z})$ then  ${\mr c}\,;\sigma(\U;{\gr b})\models q({\mr u}\,;{\vl v})$.
+\end{proof}
+
+
+Automorphisms of a many-sorted structure are defined in the obvious way: sorts are preserved as well as functions and relations. Every automorphisms $f:\U\imp\U$ extends to an automorphism $f:\U^\eq\imp\U^\eq$ as follows.  If ${\vl a}=\sigma(\U;{\gr b})$ we define $f{\vl a}=\sigma(\U;f{\gr b})$, which clearly preserves the sort. It is easy to check that $f{\vl a}=\big\{f{\mr x}\;:\;{\mr x}\in {\vl a}\big\}$, so $f$ preserves the relation $\in$. Clearly, this extension is unique.
+
+The homogeneity of $\U^\eq$ follows by back-and-forth as in the one-sorted case.
+
+\begin{proposition}\label{prop_Ueq_homogeneous}
+Every elementary map $k:\U^\eq\to\U^\eq$ of cardinality $<\kappa$ extends to an automorphism of $\U^\eq$.\QED
+\end{proposition} 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The definable closure in the eq-expansion}
+We may safely confuse automorphism of $\U$ with automorphisms of $\U^\eq$. Let $A\subseteq\U^\eq$ and let $a$ be a tuple of elements of $\U^{\eq}$. We denote by \emph{$\Aut(\U/A)$\/} the set of automorphisms (of $\U^\eq$) that fix all elements of $A$. The symbol \emph{$\orbit(a/A)$\/} denotes the \emph{orbit of $a$ over $A$}. This has been defined in Section~\ref{homogeneous} and now we apply it to $\U^\eq$
+
+\ceq{\hfill\emph{$\orbit(a/A)$}}{\deq}{\big\{fa\;:\; f\in\Aut(\U/A)\big\}.}
+
+By homogeneity, $\O(a/A)=p(\U^\eq)$ where $p(v)=\tp(a/A)$. When $\O(a/A)=\{a\}$ we say that $a$ is \emph{invariant over $A$\/}
+ or \emph{$A$-invariant}, for short.
+
+
+\begin{definition}\label{def_def}
+Let $A\subseteq\U^\eq$ and $a\in\U^\eq$. We say that \emph{$a$ is definable over $A$\/} if $\phi(a)\wedge\E^{=1}v\,\phi(v)$ holds for some formula $\phi(v)\in L^\eq(A)$. We write \emph{dcl$^\textrm{eq}(A)$\/} for the set of those $a\in\U^\eq$ that are definable over $A$. We write \emph{dcl$(A)$\/} for $\dcl^\eq(A)\cap\U$. This is the natural generalization of the notion introduced in Section~\ref{acl}.
+\end{definition}
+
+Saturation and homogeneity of $\U^\eq$ allow us to prove the following proposition with virtually the same proof of Theorem~\ref{thm_dgalois}
+
+\begin{theorem}\label{thm_Galois_def=def}
+For any $A\subseteq\U^\eq$ and $a\in\U^\eq$ the following are equivalent
+\begin{itemize}
+\item[1.] $a$ is invariant over $A$;
+\item[2.] $a\in\dcl^\eq(A)$.\QED
+\end{itemize}
+\end{theorem}
+
+Note that a tuple is invariant if and only it all its component are definable. Then in Theorem~\ref{thm_Galois_def=def} we may replace $a$ and/or $A$ by a tuple.
+
+Definition~\ref{def_def} treats first- and second-order elements of $\U^\eq$ uniformly. However, for sets it can be rephrased in a more natural way.
+
+\begin{proposition}\label{prop_def_def_set}
+Let $A\subseteq\U^\eq$ and let ${\vl a}\in\U^\eq$ have sort $\sigma({\mr x}\,;{\gr z})$ then the following are equivalent
+\begin{itemize}
+\item[1.] ${\vl a}$ is definable over $A$
+\item[2.] ${\vl a}=\psi(\U)$ for some $\psi({\mr x})\in L(A)$
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+Implication \ssf{2}$\IMP$\ssf{1} is clear because extensionality is implicit in the definition of $\U^\eq$. We prove \ssf{1}$\IMP$\ssf{2}. Let $\phi({\vl v})\in L^\eq(A)$ be a formula ${\vl a}$ is the unique solution of. Then the required formula $\psi({\mr x})$ is $\E {\vl v}\,\big[{\mr x}\in {\vl v}\wedge\phi({\vl v})\big]$.
+\end{proof}
+
+By the characterization above, Theorem~\ref{thm_Galois_def=def} when applied to a definable set ${\vl a}$ gives an alternative proof of Proposition~\ref{prop_inv_def}.
+
+The formula $\psi({\mr x})$ in Proposition~\ref{prop_def_def_set} need not be related to the sort $\sigma({\mr x}\,;{\gr z})$. For example, consider the theory of a binary equivalence relation $e({\mr x}\,;{\gr z})$ with two infinite classes, let ${\vl a}$ be one of these classes and let $A\neq\0$ be such that $A\cap {\vl a}=\0$. Then ${\vl a}$ is definable over $A$ though not by some formula of the form $e({\mr x}\,;{\gr b})$ for some ${\gr b}\in A$. Things change radically if we replace $A$ with a model.  
+
+
+\begin{proposition}\label{prop_standard_def_set}
+Let $M$ be a model and let ${\vl a}$ be an element of sort $\sigma({\mr x}\,;{\gr z})$. Then the following are equivalent
+\begin{itemize}
+\item[1.]  ${\vl a}\in\dcl^\eq(M)$; 
+\item[2.]  ${\vl a}=\sigma(\U,{\gr b})$ for some ${\gr b}\in M^{|{\gr z}|}$.
+\end{itemize}
+In particular $M^\eq=\dcl^\eq(M)$.
+\end{proposition}
+
+\begin{proof}
+Assume \ssf{1} and let $\psi({\mr x})\in L(M)$ be such that ${\vl a}=\psi(\U)$. Such a formula exists by Proposition~\ref{prop_def_def_set}. Then $\E{\gr z}\,\A{\mr x}\,\big[\psi({\mr x})\iff\sigma({\mr x}\,;{\gr z})\big]$ holds in $\U^\eq$. By elementarity it holds in $M^\eq$, therefore $\E{\gr z}$ has a witness in $M$. This proves \ssf{1}$\IMP$\ssf{2}, the converse implication is obvious.
+\end{proof}
+
+\section{The algebraic closure in the eq-expansion}
+
+
+Let $A\subseteq\U^\eq$ and $a\in\U^\eq$. We say that \emph{$a$ is algebraic over $A$\/} if $\phi(a)\wedge\E^{=k}v\,\phi(v)$ holds for some formula $\phi(v)\in L^\eq(A)$ and some positive integer $k$. We write \emph{acl$^\textrm{eq}(A)$\/} for the set of those $a\in\U^\eq$ that are algebraic over $A$. We write \emph{acl$(A)$\/} for $\acl^\eq(A)\cap\U$. This is the natural generalization of the notion introduced in Section~\ref{geometria}.\ref{acl}.
+
+% \begin{proposition}\label{acl123} For every $A\subseteq\U^\eq$ and every $a\in\U^{\eq}$
+% \begin{itemize}
+% \item[1.]  if $a\in\acl^\eq A$ then $a\in\acl^\eq B$ for some finite $B\subseteq A$;
+% \item[2.]  if $B\subseteq A$ then $\acl^\eq B\subseteq \acl^\eq A$;
+% \item[3.]  $A\subseteq \acl^\eq A$;
+% \item[4.]  $\acl^\eq A=\acl^\eq\big(\acl^\eq A\big)$.\QED
+% \end{itemize} 
+% \end{proposition}
+
+The following proposition is proved with virtually the same proof of Theorem~\ref{thm_fmgalois}
+
+\begin{theorem}\label{thm_Galois_alg=alg}
+For every $A\subseteq\U^\eq$ and every $a\in\U^\eq$ the following are equivalent
+\begin{itemize}
+\item[1.] $\O(a/A)$ is finite;
+\item[2.] $a\in\acl^\eq(A)$;
+\item[3.] $a\in M^\eq$ for every model such that $A\subseteq M^\eq$.\QED
+\end{itemize}
+\end{theorem}
+
+
+
+
+
+We say \emph{finite equivalence relation\/} for an equivalence relation with finitely many classes. A \emph{finite equivalence formula\/} or \emph{type\/} is a formula, respectively a type, that defines a finite equivalence relation. Theorem~\ref{thm_set_alg=feq} belows proves that sets algebraic over $A$ are union of classes of a finite equivalence relations definable over $A$.
+
+
+\begin{theorem}\label{thm_set_alg=feq}
+Let $A\subseteq\U^\eq$ and let ${\vl a}\in\U^\eq$ be an element of sort $\sigma({\mr x}\,;{\gr z})$.  Then the following are equivalent
+\begin{itemize}
+\item[1.] ${\vl a}\in\acl^\eq(A)$
+\item[2.] for some finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$ and some ${\mr c_1},\dots,{\mr c_n}\in\U^{|{\mr y}|}$
+\end{itemize}
+
+\ceq{\hfill {\mr x}\in{\vl a}}{\iff}{\bigvee^n_{i=1} \epsilon({\mr x}\,;{\mr c_i}).}
+
+\end{theorem}
+\begin{proof}
+Let $\phi({\vl v})\in L^\eq(A)$ be an algebraic formula that has ${\vl a}$ among its solutions and define
+
+\ceq{\hfill\epsilon({\mr x}\,;{\mr y})}{=}{\A {\vl v}\,\bigg[\phi({\vl v})\ \imp\ \big[{\mr x}\in{\vl v}\iff{\mr y}\in{\vl v}\,\big]\bigg]}
+
+If $\phi({\vl v})$ has $n$, solutions, then $\epsilon({\mr x}\,;{\mr y})$ has at most $2^n$ equivalence classes. Clearly, ${\vl a}$ is union of some these classes.
+\end{proof}
+
+We write \emph{$a\stackrel{\smash{\scalebox{.5}{\rm\bf Sh}}}{\equiv}_Ab$} for ${\mr a}\,\equiv_{\acl^\eq\! A}{\mr b}$. In words we say that ${\mr a}$ and ${\mr b}$ have the same \emph{Shelah strong-type over $A$}.
+
+\begin{proposition}
+Let $A\subseteq\U^\eq$ and let ${\mr a},{\mr b}\in\U^{|{\mr x}|}$. Then the following are equivalent
+\begin{itemize}
+\item[1.]  ${\mr a}\ \equivSh_A\, {\mr b}$;
+\item[2.]  $\epsilon({\mr a}\,;{\mr b})$ for every finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$.
+\end{itemize} 
+\end{proposition}
+\begin{proof}
+Assume $\neg$\ssf{2} and let $\epsilon({\mr x}\,;{\mr y})$ witness this. Let ${\vl d}=\epsilon(\U\,;{\mr b})$, then  ${\mr b}\in{\vl d}$ and ${\mr a}\notin{\vl d}$. As $\epsilon({\mr x}\,;{\mr y})$ is an $A$-invariant finite equivalence formula, ${\vl d}\in\acl^\eq(A)$, and $\neg$\ssf{1} follows. Vice versa, assume $\neg$\ssf{1} and let $\phi({\mr x})\in L\big(\acl^\eq(A)\big)$ be  such that $\phi({\mr a})\niff\phi({\mr b})$. Let ${\vl d}=\phi(\U)$, then ${\vl d}\in\acl^\eq(A)$. Therefore, by Proposition~\ref{thm_set_alg=feq}, the set ${\vl d}$ is union of equivalence classes of some finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$. Then $\neg\epsilon({\mr a}\,;{\mr b})$ and $\neg$\ssf{2} follows.
+\end{proof}
+
+\begin{exercise}
+Let $p({\mr x})\subseteq L(A)$ and let $\phi({\mr x}\,;{\mr y})\in L(A)$ be a formula that defines, when restricted to $p(\U)$, an equivalence relation with finitely many classes. Prove that there is a finite equivalence relation definable over $A$ that coincides with $\phi({\mr x}\,;{\mr y})$ on $p(\U)$.\QED
+\end{exercise}
+
+\begin{exercise}\label{ex_feqthm_senza_eq}
+Let $A\subseteq\U$, let ${\vl a}$ be a definable set with finite orbit over $A$. Without using $\U^\eq$ prove that ${\vl a}$ is union of classes of a finite equivalence relation definable over $A$.\QED
+\end{exercise}
+
+\begin{exercise}
+Let $T$ be strongly minimal and let $\phi({\mr x}\,;{\mr y})\in L(A)$ with $|{\mr z}|=1$. For arbitrary $c\in\U$, prove that if the orbit of $\phi(\U\,; {\mr c})$ over $A$ is finite, then $\phi(\U\,; {\mr c})$ is definable over $\acl A$. 
+
+Hint: you can use Theorem~\ref{thm_set_alg=feq}.\QED
+\end{exercise}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Elimination of imaginaries}\label{elimination_imaginaries}
+
+\def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{30ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+
+For the time being, we agree that \textit{imaginary\/} is just another word for definable set. Though this is not formally correct (cfr.\@ Section~\ref{imaginaries_long}), it is morally true and helps to understand the terminology. The concept of elimination of imaginaries has been introduced by Poizat who also proved Theorem~\ref{elimimacf} below. A theory has elimination of imaginaries if for every $A\subseteq\U^\eq$, there is a $B\subseteq\U$ such that $L(B)$ and $L(A)$ have the same expressive power (i.e.\@ they are the same up to to equivalence).  
+
+\begin{definition}\label{defelimanazioneimmaginari}
+We say that \emph{$T$ has elimination of imaginaries\/} if for every definable set ${\vl a}$ there is a formula $\phi({\mr x}\,;{\gr z})\in L$ such that\smallskip
+
+\ceq{\ssf{ei}\hfill\E^{=1} {\gr z}\;\A {\mr x}\ \bigg[{\mr x}\in{\vl a}}{\iff}{\phi({\mr x}\,;{\gr z})\bigg]}
+
+We say that the witness of $\E^{=1}{\gr z}$ in the formula above is a \emph{canonical parameter\/} of ${\vl a}$. It is also called a a \emph{canonical name\/} for ${\vl a}$. A set may have different canonical parameters for different formulas $\phi({\mr x}\,;{\gr z})$.
+
+We say that $T$ has \emph{weak\/} elimination of imaginaries if\smallskip
+
+\ceq{\ssf{wei}\hfill\E^{=k} {\gr z}\;\A {\mr x}\ \bigg[{\mr x}\in{\vl a}}{\iff}{\phi({\mr x}\,;{\gr z})\bigg]}
+
+for some positive integer $k$.\QED
+\end{definition}
+
+In the formulas above we allow ${\gr z}$ to be the empty string. In this case we read \ssf{ei} and \ssf{wei} omitting the quantifiers $\E^{=1}{\gr z}$, respectively $\E^{=k}{\gr z}$. Therefore $\0$-definabile sets have all (at least) the empty string as a canonical parameter.
+
+To show that the notions above are well-defined properties of a theory one needs to check that they are independent of our choice of monster model. We leave this to the reader as an exercise.
+
+\begin{exercise}
+Let $M$ be an arbitrary model. Prove that \ssf{ei} and \ssf{wei} hold (in $\U^\eq$) if and only if they hold in $M^\eq$.\QED
+\end{exercise}
+
+We say that two tuples $a$ and $b$ of elements of $\U^\eq$ are \emph{interdefinable\/} if $\dcl^\eq(a)=\dcl^\eq(b)$. By Theorem~\ref{thm_Galois_def=def} this is equivalent to saying that $\Aut(\U/a)=\Aut(\U/b)$, that is, the automorphisms that fix $a$ fix also $b$, and vice versa.
+
+\begin{theorem}\label{elimimd}
+The following are equivalent
+\begin{itemize}
+\item[1.] $T$ has weak elimination of imaginaries;
+\item[2.] every definable set is interdefinable with a finite set;
+\item[3.] every definable set ${\vl a}$ is definable over $\acl\{{\vl a}\}$.
+\end{itemize}
+\end{theorem}
+
+
+
+\begin{proof}\ssf{1}$\IMP$\ssf{2} Assume \ssf{1} and let ${\vl b}$ be the set of solutions of the formula
+
+\ceq{\hfill\A{\mr x}\ \bigg[{\mr x}\in{\vl a}}{\iff}{\sigma({\mr x}\,;{\gr z})\bigg].}
+
+Hence ${\vl b}$ is finite and ${\vl b}\in\dcl^\eq\{{\vl a}\}$. We also have ${\vl a}\in\dcl^\eq\{{\vl b}\}$ because ${\vl a}$ is definibile by the formula $\E{\gr z}\,\big[{\gr z}\in {\vl b}\wedge \sigma({\mr x}\,;{\gr z})\big]$. Therefore $\dcl^\eq\{{\vl a}\}=\dcl^\eq\{{\vl b}\}$. 
+
+
+\ssf{2}$\IMP$\ssf{3} Assume $\dcl^\eq\{{\vl a}\}=\dcl^\eq\{{\vl b}\}$ for some finite set ${\vl b}$. The elements of ${\vl b}$, say ${\gr b_1},\dots,{\gr b_n}$, are the (finitely many) solutions of the formula ${\gr z}\in{\vl b}$. Therefore ${\gr b_1},\dots,{\gr b_n}\in\acl({\vl b})=\acl({\vl a})$. Let $\phi({\vl v}\,;{\vl b})$ be a formula that has ${\vl a}$ as unique solution. Then $\E{\vl u} \big[{\vl u}=\big\{{\gr b_1},\dots,{\gr b_n}\big\}\wedge \phi({\vl v}\,;{\vl u})\big]$ is the formula that proves \ssf{3}.
+
+\ssf{3}$\IMP$\ssf{1} Assume \ssf{3}. As \ssf{wei} holds trivially for all $\0$-definable sets, we may assume ${\vl a}\neq\0$. Let $\sigma({\mr x}\,;{\gr z})$ be such that
+
+\ceq{\hfill\A{\mr x}\ \bigg[{\mr x}\in{\vl a}}{\iff}{\sigma({\mr x}\,;{\gr b})\bigg].}
+
+for some tuple ${\gr b}$ of elements of $\acl\{{\vl a}\}$.  Fix some algebraic formula $\delta({\gr z}\,;{\vl a})$ satisfied by  ${\gr b}$ and write $\psi({\gr z}\,;{\vl v})$ for the formula
+
+\ceq{\hfill \A{\mr x}\ \bigg[{\mr x}\in{\vl v}}{\iff}{\sigma({\mr x}\,;{\gr z})\bigg]\ \wedge\ \delta({\gr z}\,;{\vl v}).}
+
+The following formula is clearly satisfied by ${\gr b}$ therefore, if we can prove that it has finitely many solutions, \ssf{wei} follows from Proposition~\ref{prop_eqmild}
+
+\ceq{\sharp\hfill\A{\mr x}\ \bigg[{\mr x}\in{\vl a}}{\iff}{\sigma({\mr x}\,;{\gr z})\;\wedge\; \E{\vl v}\,\psi({\gr z}\,;{\vl v})\bigg].}
+
+We check that any ${\gr c}$ that satisfies $\,\sharp\,$ also satisfies $\delta({\gr z}\,;{\vl a})$. As ${\vl a}$ is non empty, $\psi({\gr c}\,;{\vl a'})$ holds for some ${\vl a'}$. By $\,\sharp\,$ and the definition of $\psi({\gr z}\,;{\vl v})$ we obtain ${\vl a'}={\vl a}$ and  $\delta({\gr c}\,;{\vl a})$.
+\end{proof}
+
+
+\begin{theorem}\label{elimimf} 
+The following are equivalent
+\begin{itemize}
+\item[1.] $T$ has elimination of imaginaries;
+\item[2.] every definable set is interdefinable with a tuple of real elements;
+\item[3.] every definable set ${\vl a}$ is definable over $\dcl\{{\vl a}\}$.
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+Implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3} are immediate. Implication \ssf{3}$\IMP$\ssf{1}is identical to the homologous implication in Theorem~\ref{elimimd}, just substitute algebraic with definable.
+\end{proof}
+
+We now consider elimination of imaginaries in two concrete structures: algebraically closed fields and real closed fields. The following lemma is required in the proof of Theorem~\ref{elimimsm} below.
+
+\begin{lemma}\label{tvtestimmaginari} 
+The following is a sufficient condition for weak elimination of imaginaries
+
+$\sharp$\qquad for every $A\subseteq\U^\eq$, every consistent $\phi({\gr z})\in L(A)$ has a solution in $\acl A$.
+\end{lemma}
+
+\begin{proof}
+Let ${\vl a}\in\U^\eq$ be a definable set and let $\sigma({\mr x}\,;{\gr z})$ be its sort. Then $\A{\mr x}\ \big[{\mr x}\in{\vl a}\iff\sigma({\mr x}\,;{\gr z})\big]$ is consistent and, by $\,\sharp\,$ it  it has a solution in $\acl\{{\vl a}\}$. Hence weak elimination follows from Theorem~\ref{elimimd}.
+\end{proof}
+
+\begin{theorem}\label{elimimsm} 
+Let $T$ be a complete, strongly minimal theory. Then, if $\acl\0$ is infinite, $T$ has weak elimination of imaginaries.
+\end{theorem}
+
+\begin{proof}
+%We prove condition $\,\sharp\,$ of lemma~\ref{tvtestimmaginari}. Let $A\subseteq\U^\eq$ and let $\phi({\gr z})\in L(A)$ be some consistent formula. Proceed by induction on the length of ${\gr z}$. If ${\gr z}$ is the empty tuple $\,\sharp\,$ holds trivially. Now, consider the formula $\phi({\gr z}\,;{\mr x})$  where $|{\mr x}|=1$. By induction hypothesis $\E{\mr x}\,\phi({\gr z}\,;{\mr x})$ has a solution ${\gr c}$ in $\acl(A)$. Now, $\phi({\gr c}\,;{\mr x})$ is either an algebraic formula, then it has a solution in $\acl\big(\acl(A)\big)=\acl(A)$ or it is co-algebraic, then it has a solution in $\acl(A)$ which is infinite by hypothesis.
+If $\acl\0$ is infinite, $\acl A$ is a model for every $A$ (cfr.\@ Exercise~\ref{ex_infinite_acl}) so condition $\,\sharp\,$ of lemma~\ref{tvtestimmaginari} holds by elementarity and the theorem follows.
+\end{proof}
+
+
+\begin{theorem}\label{elimimacf} 
+The theories $T^p_{\rm acf}$ have elimination of imaginaries.
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{elimimsm} we know that $T^p_{\rm acf}$ has weak elimination of imaginaries. Therefore, by Theorem~\ref{elimimd} it suffices to prove that every finite set ${\vl a}$ is interdefinable with a tuple. Let ${\vl a}=\big\{{\gr a_1},\dots,{\gr a_n}\big\}$ where each ${\gr a_i}$ is a tuple ${\mr a_{i,1}},\dots,{\mr a_{i,m}}$ of elements of $\U$. Given ${\vl a}$ we define the term
+
+\ceq{\hfill t_{\vl a}({\mr x}\,;{\gr y})}{=}{\displaystyle\prod^n_{i=1}\bigg({\mr x}-\sum^m_{k=1}{\mr a_{i,k}}\; {\mr y_k}\bigg).}\hfill where ${\gr y}={\mr y_1},\dots,{\mr y_m}$.
+
+
+Note that (the interpretation of) the term $t_{\vl a}({\mr x}\,;{\gr y})$ is independent on particular indexing of the set ${\vl a}$. So, any automorphism that fixes ${\vl a}$, fixes the  $t_{\vl a}({\mr x}\,;{\gr y})$. Now rewrite $t_{\vl a}({\mr x}\,;{\gr y})$ as a sum of monomials and let $c$ be the tuple of coefficients of these monomials. The tuple $c$ uniquely determines $t_{\vl a}({\mr x}\,;{\gr y})$ and vice versa. Therefore every automorphism that fixes  ${\vl a}$ fixes  $c$ and vice versa. Hence  ${\vl a}$ and  $c$ are interdefinable.
+\end{proof}
+
+\begin{exercise}
+Let $T$ have elimination of imaginaries and $\phi({\mr x}\,;{\gr z})\in L(A)$. For arbitrary $c\in\U^{|{\gr z}|}$, prove that if the orbit of $\phi(\U\,; {\mr c})$ over $A$ is finite, then $\phi(\U\,; {\mr c})$ is definable over $\acl A$.\QED
+\end{exercise}
+
+% \begin{exercise}
+% prove that a theory has weak elimination of imaginaries if for every $A\subseteq\U^\eq$, there is a $B\subseteq\U$ such that $L\big(\acl(B)\big)$ and $L\big(acl(A)\big)$ have the same expressive power.\QED
+% \end{exercise}
+
+\section{Imaginaries, the true story}\label{imaginaries_long}
+
+The point of the expansion to $\U^\eq$ is to add a canonical parameter for each definable set. In fact, in $\U^\eq$ every definable subset of $\U^{|{\gr z}|}$ is the canonical parameter if itself. This allows to deal with theories without elimination of imaginaries in the most straightforward way.
+
+The expansion to $\U^\eq$ that was originally introduced by Shelah (and still used everywhere else) is slightly different from the one introduced here. For a given set ${\vl a}=\sigma(\U\,;{\gr b})$ Shelah considers the equivalence relation defined by the formula
+
+\ceq{\hfill \epsilon({\gr z}\,;{\gr z'})}{\deq}{\A{\mr x}\,\bigg[\sigma({\mr x}\,;{\gr z})\medrel{\iff}\sigma({\mr x}\,;{\gr z'})\bigg].}
+
+The equivalence class of ${\gr b}$ in the relation $\epsilon({\gr z}\,;{\gr z'})$ is what Shelah uses as canonical parameter of the set ${\vl a}$. 
+
+Shelah's $\U^\eq$ has a sort for each $\0$-definable equivalence relation $\epsilon({\gr z}\,;{\gr z'})$. The domain of the sort $\epsilon({\gr z}\,;{\gr z'})$ contains the classes of the equivalence relation defined by $\epsilon({\gr z}\,;{\gr z'})$. These equivalence classes are called \emph{imaginaries}. Shelah's $L^\eq$ contains functions that map tuples in the home sort to their equivalence class.
+
+Tortuous routes are somewhat typical of Shelah. This did not hinder him from becoming one of the most productive mathematician of his century. Lesser minds may find it useful to take a simplified route.
+
+
+\section{Uniform elimination of imaginaries}
+
+\def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{35ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+
+
+Let us rephrase the definition of elimination of imaginaries: for every formula $\phi({\mr x}\,;u)\in L$ and every tuple $c\in\U^{|u|}$ there is a formula $\sigma({\mr x}\,;{\gr z})\in L$ such that
+
+\ceq{\hfill\E^{=1} {\gr z}\;\A {\mr x}\ \bigg[\phi({\mr x}\,;c)}{\iff}{\sigma({\mr x}\,;{\gr z})\bigg].}
+
+A priori, the formula $\sigma({\mr x}\,;{\gr z})$ may depend on $c$ in a very wild manner. We say that \emph{$T$ has uniform elimination of imaginaries\/} if for every $\phi({\mr x}\,;u)$ there are a formula $\sigma({\mr x}\,;{\gr z})$ and a formula $\rho({\gr z})$ such that 
+
+\ceq{\ssf{uei}\hfill\A u\;\E^{=1} {\gr z}\;\bigg[\rho({\gr z})\ \wedge\ \A{\mr x}\ \big[\phi({\mr x}\,;u)}{\iff}{\sigma({\mr x}\,;{\gr z})\big]\bigg].}
+
+The role of the formula $\rho({\gr z})$ above is may seem mysterious. It is clarified by the following propositions. In fact, uniform elimination of imaginaries is equivalent to a very natural property which in words says: every definable function is the kernel of a definable function. Recall that the kernel of the function $f$ is the relation $fa=fb$.
+
+Uniform elimination of imaginaries is convenient when dealing with interpretations of structure inside other structures. Let us consider a simple concrete example. Suppose $\U$ is a group and let $\H$ be a definable normal subgroup of $\U$. The elements of the quotient structure $\U/\H$ are equivalent classes of a definable equivalence relation. If there is uniform elimination of imaginaries we can identify $\U/\H$ with an actual definable subset of $\G$ (the range of the function $f$ above). Moreover, the group operation of $\G$ are definable functions. As working in $\U/\H$ may be notationally cumbersome, $\G$ may offer a convenient alternative.
+
+\begin{proposition}\label{prop_uei_standard}
+The following are equivalent
+\begin{itemize}
+\item[1.] $T$ has uniform elimination of imaginaries;
+\end{itemize}
+\begin{itemize}
+\item[2.] for every $\phi({\mr x}\,;u)$ such that  $\A u\;\E{\mr x}\;\phi({\mr x}\,;u)$ there is a formula $\sigma({\mr x}\,;{\gr z})$ such that 
+\end{itemize}
+
+\ceq{\hfill\A u\;\E^{=1} {\gr z}\;\A{\mr x}\ \bigg[\phi({\mr x}\,;u)}{\iff}{\sigma({\mr x}\,;{\gr z})\bigg];}
+
+\begin{itemize}
+\item[3.] for every equivalence formula $\epsilon({\mr x}\,;{\mr u})\in L$ there is given by $\sigma({\mr x}\,;{\gr z})\in L$ such that
+\end{itemize}
+
+
+\ceq{\hfill\A{\mr u}\;\E^{=1} {\gr z}\;\A {\mr x}\ \bigg[\epsilon({\mr x}\,;{\mr u})}{\iff}{\sigma({\mr x}\,;{\gr z})\bigg].}
+
+\end{proposition}
+
+Note that the definable function $f{\mr u}={\gr z}$ mentioned above is defined by the formula 
+
+\ceq{\hfill\theta({\mr u}\,;{\gr z})\medrel{=}\A {\mr x}\ \bigg[\,\epsilon({\mr x}\,;{\mr u})}{\iff}{\sigma({\mr x}\,;{\gr z})\bigg].}
+
+\begin{proof}
+\ssf{1}$\IMP$\ssf{2}. If $\A u\;\E{\mr x}\;\phi({\mr x}\,;u)$ we can rewrite \ssf{uei} as 
+
+\ceq{\hfill\A u\;\E^{=1} {\gr z}\;\A{\mr x}\ \bigg[\phi({\mr x}\,;u)}{\iff}{\rho({\gr z})\wedge\sigma({\mr x}\,;{\gr z})\bigg].}
+
+\ssf{2}$\IMP$\ssf{3}. Clear.
+
+\ssf{3}$\IMP$\ssf{1}. Apply \ssf{3} to the equivalence formula
+
+\ceq{\hfill\epsilon(u\,;v)\medrel{=}\A{\mr x}\ \bigg[\phi({\mr x}\,;u)}{\iff}{\phi({\mr x}\,;v)\bigg]}
+
+Let $\theta(u\,;{\gr z})$ be defined as above. The reader may check that \ssf{uei} holds substituting for $\delta({\gr z})$ the formula $\E u\;\theta(u\,;{\gr z})$ and and for $\sigma({\mr x}\,;{\gr z})$ the formula $\E u\;\big[\phi({\mr x}\,;u)\wedge\theta(u\,;{\gr z})\big]$.
+\end{proof}
+
+By the following theorem, uniformity comes almost for free.
+
+%%%%%%%%%%%%%%
+\begin{theorem}\label{thm_ei_unif} The following are equivalent
+\begin{itemize}
+\item[1.] $T$ has uniform elimination of imaginaries;
+\item[2.] $\dcl\0$ contains at least two elements and $T$ has elimination of imaginaries.
+\end{itemize}
+\end{theorem}
+
+%\def\ceq#1#2#3{\parbox[t]{35ex}{$\displaystyle #1$}\parbox[t]{5ex}{$\displaystyle\hfil #2$}{$\displaystyle #3$}}
+
+\begin{proof}\ssf{1}$\IMP$\ssf{2}. Let $\phi({\mr x},u)$ be the formula $u_1=u_2$. From \ssf{1} we obtain a formula $\sigma({\mr x}\,;{\gr z})\in L$ such that 
+
+\ceq{\hfill\A u_1,u_2\;\E^{=1} {\gr z}\;\bigg[\rho({\gr z})\ \wedge\ \A x\ \big[u_1=u_2}{\iff}{\sigma({\mr x}\,;{\gr z})\big]\bigg].}
+
+Therefore the formulas $\E^{=1} {\gr z}\,\big[\rho({\gr z})\wedge\A {\mr x}\,\sigma({\mr x}\,;{\gr z})\big]$ and $\E^{=1} {\gr z}\,\big[\rho({\gr z})\wedge\A {\mr x}\neg\sigma({\mr x}\,;{\gr z})\big]$ are both true. The witnesses of $\E^{=1} {\gr z}$ in these two formulas are two distinct elements of $\dcl\0$.
+
+\ssf{2}$\IMP$\ssf{1}. Assume \ssf{2} and fix a formula formula $\phi({\mr x}\,;u)$ such that $\phi({\mr x},a)$ is consistent for every $a\in\U^{|u|}$. We prove \ssf{2} of Proposition~\ref{prop_uei_standard}.
+
+Let $p(u)$ be the type that contains the formulas
+
+\ceq{\hfill\neg\,\E^{=1}{\gr z}\,\A {\mr x}\ \bigg[\phi({\mr x}\,;u)}{\iff}{\sigma({\mr x};{\gr z})\bigg],}
+
+where $\sigma({\mr x};{\gr z})$ ranges over all formulas in $L$. By elimination of imaginaries $p(u)$ is not consistent. Therefore, by compactness, there are some formulas $\sigma_i({\mr x},{\gr z})$ such that
+
+\ceq{\sharp\hfill\A u\;\bigvee^n_{i=0}\E^{=1}{\gr z}\;\A {\mr x}\;\bigg[\phi({\mr x}\,;u)}{\iff}{\sigma_i({\mr x}\,;{\gr z})\bigg].}
+
+To prove the theorem we need to move the disjunction in front of the $\sigma_i({\mr x}\,;{\gr z})$. 
+
+We can assume that if  $\sigma_i({\mr x}\,;{\gr b})\iff\sigma_i'({\mr x}\,;{\gr b'})$ for some $\<{\gr b},i\>\neq\<{\gr b'},i'\>$ then $\sigma_i({\mr x}\,;{\gr b})$ is inconsistent. Otherwise we can substitute the formula $\sigma_i({\mr x}\,;{\gr z})$ with  
+
+
+\hfil$\displaystyle\sigma_i({\mr x}\,;{\gr z}) \;\wedge\; \bigwedge_{j\le i}\neg\E{\gr y}\neq{\gr b}\,\A {\mr x}\,\bigg[\sigma_j({\mr x}\,;{\gr y})\iff\sigma_i({\mr x}\,;{\gr z})\bigg]$.
+
+
+As $\phi({\mr x},a)$ is consistent for every $a$, the substitution does not break the validity of $\,\sharp$.
+
+Fix some distinct $\0$-definable tuples $d_0,\dots, d_n$ of the same length (these are easy to obtain from two $\0$-definable elements). We claim that from $\,\sharp\,$ it follows that
+
+\ceq{\hfill\A u\;\E^{=1}{\gr z},y\;\A {\mr x}\;\Bigg[\vphantom{\bigvee^n_{i=0}}\phi({\mr x}\,;u)}{\iff}{\bigvee^n_{i=1}\bigg[\sigma_i({\mr x}\,;{\gr z})\;\wedge\; y=d_i\bigg]\Bigg].}
+
+(The tuple ${\gr z},y$ plays the role of ${\gr z}$.)  We fix some $a$ and check that the formula below has a unique solution
+
+\ceq{\flat\hfill\A {\mr x}\;\Bigg[\vphantom{\bigvee^n_{i=0}}\phi({\mr x}\,;a)}{\iff}{\bigvee^n_{i=1}\bigg[\sigma_i({\mr x}\,;{\gr z})\;\wedge\; y=d_i\bigg]\Bigg].}
+
+Existence follows immediately from $\,\sharp$. As for uniqueness, note that if ${\gr b},d_i$ and ${\gr b'},d_{i'}$ are two distinct solution of $\,\flat\,$ then $\sigma_i({\mr x}\,;{\gr b})\iff\sigma_{i'}({\mr x}\,;{\gr b'})$ for some $\<{\gr b},i\>\neq\<{\gr b'},i'\>$. By what assumed on $\sigma_i({\mr x}\,;{\gr z})$, we obtain that $\phi({\mr x}\,;a)$ is inconsistent. A contradiction which proves the theorem.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,547 @@
+\documentclass[creche.tex]{subfiles}
+\begin{document}
+\chapter{Saturation and homogeneity}
+\label{saturation}
+ 
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
+The first two section introduce saturation and homogeneity and Section~\ref{monster} presents the notation we shall use in the following chapters when working inside a monster model.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Saturated structures}
+
+Recall that a type $p(x)\subseteq L(M)$ is \emph{finitely consistent in $M$\/} if every $\phi(x)$, conjunction of formulas in $p(x)$, has a solution in $M$. When $A\subseteq M$ we write $S_x(A)$ for the set of types that are complete and finitely consistent in $M$. We never display $M$ in the notation as it will always be clear from the context. When $A$ is empty it usual to write $S_x(T)$ for $S_x(A)$ where $T=\Th(M)$. We write $S(A)$ for the union of $S_x(A)$ as $x$ ranges over all tuples of variables. Similarly for $S(T)$.
+
+The following remark will be used in the sequel without explicit reference.
+
+\begin{remark}
+Let $p(x,z)\subseteq L$, let $k:M\imp N$ be an elementary map, and let $a\in(\dom h)^{|z|}$. If $p(x,a)$ is finitely consistent in $M$, then $p(x,ka)$ is finitely consistent in $N$.\QED
+\end{remark}
+
+\begin{definition}
+Let $x$ be a single variable and let $\lambda$ be an infinite cardinal. We say that a structure $N$ is \emph{$\lambda$-saturated} if it realizes every type $p(x)$ such that
+\begin{itemize}
+\item[1.]  $p(x)\subseteq L(A)$ for some $A\subseteq N$ of cardinality $<\lambda$;
+\item[2.] $p(x)$ is finitely consistent in $N$.
+\end{itemize}
+We say that $N$ is \emph{saturated\/} tout court if it is $\lambda$-saturated and $|N|=\lambda$.
+\end{definition}
+
+\begin{exercise}
+Suppose $|L|\le\omega$ and let $M$ be an infinite structure. Then for every non-principal ultrafilter $F$ on $\omega$ the structure $M^\omega/F$ is a $\omega_1$-saturated elementary superstructure of $M$.
+
+Hint: the notation is as in Chapter~\ref{ultraprodotti}. Let $\hat c$ be a tuple of length $\omega$ of elements of $M^\omega$ and let $p(x\,;z)=\big\{\phi_i(x\,;z):i<\omega\big\}\subseteq L$ be such that $p(x\,;\hat c)$ be a type finitely consistent in $M^\omega/F$. Without loss of generality we can assume that $\phi_{i+1}(x\,;z)\imp\phi_i(x\,;z)$. Let $\<X_i:i<\omega\>$ be a strictly decreasing chain of elements of $F$ such that  $X_{i+1}\subseteq\big\{j\;:\;M\models\E x\;\phi_i(x,\hat cj)\big\}$. Let $\hat a\in M^\omega$ be such that  $\phi_i(\hat aj,\hat cj)$ holds for every $j\in X_i\sm X_{i+1}$. Then $\hat a$ realizes $p(x)$.\QED
+\end{exercise}
+
+
+\begin{theorem}\label{thm_esistenza_staturo_card_inacc}
+Assume $|L|<\lambda$ where $\lambda$ is be such that $\lambda^{<\lambda}=\lambda$. Then every structure $M$ of cardinality $\lambda$ has a saturated elementary extension of cardinality $\lambda$.
+\end{theorem}
+
+\begin{proof}
+We construct an elementary chain $\<M_i : i<\lambda\>$ of models of cardinality $\lambda$. The chain starts with $M$ and is the union at limit stages. Given $M_i$ we choose as $M_{i+1}$ any model of cardinality $\lambda$ that realizes all types in $S_x(A)$ for all $A\subseteq M_i$ of cardinality $<\lambda$. The required $M_{i+1}$ exists because there are $2^{|L(A)|}\le\lambda$ types in $S_x(A)$ and there are $\lambda^{<\lambda}=\lambda$ sets $A$.
+
+Let $N$ be the union of the chain. We check that $N$ is the required extension. Let $p(x)\in S(A)$ for some $A\subseteq N$ of cardinality $<\lambda$. As $\lambda$ is a regular cardinal,  $A\subseteq M_i$ for some $i<\lambda$. Then $M_{i+1}$ realizes $p(x)$, and so does $N$, by elementarity.
+\end{proof}
+
+
+\begin{theorem}\label{saturo->ricco}
+Assume $|L|\le\lambda$ and let $N$ be an infinite structure. Let $\M$ be the category (see Section~\ref{fraisse}.\ref{rich}) that consists of models of a compete theory $T$ and elementary maps between these. Then the following are equivalent
+\begin{itemize}
+\item[1] $N$ is a $\lambda$-saturated structure;
+\item[2] $N$ is a $\lambda$-rich model;
+\item[3] $N$ realizes every type $p(x)\subseteq L(A)$, with $|x|\le\lambda$ and $|A|<\lambda$, finitely consistent in $N$.
+\end{itemize}
+\end{theorem}
+
+Note that it is the completeness of $T$ which makes the category $\M$ connected.
+
+\begin{proof}
+\ssf{1}$\IMP$\ssf{2}. Let $k:M\imp N$ be an elementary map of cardinality $<\lambda$. It suffices to show that for every $b\in M$ there is a $c\in N$ such that $k\cup\big\{\<b,c\>\big\}:M\to N$ is an elementary map. Let $a$ be an enumeration of $\dom k$ and define $p(x\,;z)=\tp_M(b\,;a)$. The required $c$ is any element of $N$ such that $N\models p(c\,;ka)$. As $p(x\,;a)$ is finitely consistent in $M$ then $p(x\,;ka)$ is finitely consistent in $N$. As $|a|<\lambda$, saturation yields the required $c$.
+
+\ssf{2}$\IMP$\ssf{3}. Let $p(x)$ be as in \ssf{3}. By the compactness theorem $N\preceq K\models p(b)$ for some model $K$ and $b\in K^{|x|}$. By the downward  L\"owenheim-Skolem theorem there is a model $A,b\subseteq M\preceq K$ of cardinality $\le\lambda$. (Here we use $|L|,|A|,|x|\le\lambda$.) By \ssf{2}, there is an elementary embedding $h:M\to N$ that extends $\id_A$. Finally, as $M\models p(b)$,  elementarity yields $N\models p(hb)$.
+
+\ssf{3}$\IMP$\ssf{1}.  Trivial. 
+\end{proof}
+
+Two saturated structures of the same cardinality are isomorphic as soon as they are elementarily equivalent (i.e.\@ as soon as $\0:M\to N$ is an elementary map.) In fact, from Theorem~\ref{saturo->ricco} and~\ref{thm_riccozigzag} we obtain the following.
+
+\begin{corollary}
+Every elementary map $k:M\to N$ of cardinality $<\lambda$ between saturated models of the same cardinality $\lambda$ extends to an isomorphism.\QED
+\end{corollary}
+
+As it turns out, we already have many examples of saturated structures.
+
+\begin{corollary}
+The following models are $\omega\jj$saturated
+\begin{itemize}
+\item[1] models of $T_{\rm dlo}$;
+\item[2] models of $T_{\rm rg}$;
+\item[3] models of $T_{\rm dag}$ with infinite rank;
+\item[4] models of $T_{\rm acf}$ with infinite degree of transcendence.
+\end{itemize}
+Countable models of $T_{\rm dlo}$ and $T_{\rm rg}$ and uncountable models of $T_{\rm dag}$ or $T_{\rm acf}$ are saturated. 
+\end{corollary}
+\begin{proof}
+By quantifier elimination embeddings coincide with elementary embeddings. Then saturation is proved applying Theorem~\ref{saturo->ricco} and the extension lemmas proved in Section~\ref{relational} and~\ref{algebraic}.
+\end{proof}
+
+\begin{exercise}\label{ricchezza_saturazione_EQ}
+Let $T$ be a consistent theory that decides the characteristic of its models. Consider the category that consists of models of $T$ and partial isomorphism. Assume $|L|\le\lambda$ and prove that the following are equivalent
+\begin{itemize}
+\item[1.] Every $\lambda\jj$saturated model of $T$ is $\lambda\jj$rich;
+\item[2.] $T$ has elimination of quantifiers.\QED
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}\label{ex_QQxZZ_saturo}
+Let $L$ be the language of strict order. Let $T$ be the theory discrete linear orders without endpoints. (An order is discrete if every point has an immediate predecessor and an immediate successor.) Show that the structure $\QQ\times\ZZ$ ordered with the lexicographic order 
+
+\ceq{\hfill (a_1,a_2)<(b_1,b_2)}{\dIFF}{a_1<b_1\ \ \textrm{or}\ \ a_1=b_1\ \textrm{e}\ a_2<b_2}
+
+is a saturated model of $T$. For every $n\in\omega$ add to the language a relation symbol $d(x,y)=n$ and add to $T$ the axiom $d(x,y)=n\iff\E^{=n} z\,(x<z\le y)$.   Let $T'$ be the resulting theory. Prove that $T'$ has quantifier elimination. 
+
+Hint: answer the second question first using exercise~\ref{ricchezza_saturazione_EQ}.\QED 
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Homogeneous structures}\label{homogeneous}
+Definition~\ref{def_omogenea_universale} introduces the notion of universal and homogeneous structures a the general context. When the morphisms of the underlying category are the elementary maps we refer to these notion as elementary homogeneity and elementary universality. Though one often omits to specify ``elementary''. We repeat the definition in this particular case. 
+
+\begin{definition}
+A structure $N$ is \emph{(elementarily) $\lambda$-universal\/} if every $M\equiv N$ of cardinality $\le\lambda$ there is a elementary embedding $h:M\imp N$. We say  \emph{universal\/} tout court if it is $\lambda$-universal and of cardinality $\lambda$.
+
+We say that $N$ is \emph{(elementarily) $\lambda$-homogeneous\/} if every elementary map $k:N\to N$ of cardinality $<\lambda$ extends to an automorphism. We say that $N$ is \emph{homogeneous\/} tout court if it is $\lambda$-homogeneous and of cardinality $\lambda$.\QED
+\end{definition}
+
+As saturated structure are rich, the following theorem is an instance of Theorem~\ref{ricco<->universaleomogeneo}.
+
+\begin{theorem}\label{thm_saturo_omogeneouniversale}
+For every structure $N$ of cardinality $\ge|L|$ the following are equivalent\nobreak
+\begin{itemize}
+\item[1.] $N$ is saturated;
+\item[2.] $N$ is elementarily universal and homogeneous.\QED
+\end{itemize}
+\end{theorem}
+
+Given $A\subseteq N$ we denote by \emph{$\Aut(N/A)$\/} the group of \emph{$A\jj$automorphisms\/} of $N$. That is the group of automorphisms that fix $A$ point-wise. Let $a$ be a tuple of elements of $N$. The \emph{orbit of $a$ over $A$ in $N$} is the set
+
+\ceq{\hfill\emph{$O_N(a/A)$}}{=}{\Big\{fa\;:\; f\in\Aut(N/A)\Big\}}
+
+When the model $N$ is clear from the context we omit the subscript.
+
+Orbits are particularly interesting if taken in a homogeneous structure. The following proposition is immediate but its importance cannot be overrated.
+
+\begin{proposition}\label{omogeneitaorbitetipi}
+Let $N$ be a $\lambda\jj$homogeneous structure. Let $A\subseteq N$ have cardinality $<\lambda$ and $a\in N^{<\lambda}$. Then $O_N(a/A)=p(N)$, where $p(x)=\tp_N(a/A)$.\QED
+\end{proposition}
+
+
+Finally, we want to extend the equivalence in Theorem~\ref{thm_saturo_omogeneouniversale} to $\lambda\jj$saturated structures. For this we only need to apply Theorem~\ref{ricco=universaledebolmenteomogeneo}. 
+
+When the morphisms of the underlying category are the elementary maps, we say \emph{weakly $\lambda\jj$saturated} for weakly $\lambda\jj$universal (cfr.\@ Definition~\ref{def_weakly_universal}). This is not the standard definition (i.e.\@ \ssf{2} of the proposition below) but the reader can easily verify that it is equivalent by reasoning as in the proof of theorem~\ref{saturo->ricco}.
+
+\begin{proposition}\label{prop_w_saturation}
+The following are equivalent
+\begin{itemize}
+\item[1.] $N$ weakly $\lambda\jj$saturated;
+\item[2.] $N$ realizes every type $p(x)\subseteq L$, where $|x|<\lambda$, that is finitely consistent in $N$.\QED
+\end{itemize}
+\end{proposition}
+
+The following is an instance of Theorem~\ref{ricco=universaledebolmenteomogeneo}.
+
+\begin{corollary}\label{saturo=universaledebolmenteomogeneo}
+Let $|L|\le\lambda$. For every structure $N$ of cardinality the following are equivalent\nobreak
+\begin{itemize}
+\item[1.] $N$ is $\lambda\jj$saturated;
+\item[2.] $N$ is weakly $\lambda\jj$saturated and weakly $\lambda\jj$homogeneous.\QED
+\end{itemize}
+\end{corollary}
+
+
+\begin{exercise}\label{ex_omega_homogeneous_same_card}
+Let $M$ be an arbitrary structure. Prove that $M$ has an $\omega\jj$homogeneous elementary extension of the same cardinality. (There is no assumption on the cardinality of the language.)\QED 
+\end{exercise}
+
+\begin{exercise}
+Let $M$ and $N$ be elementarily homogeneous structures of the same cardinality $\lambda$. Suppose that $M\models\E x\, p(x)\,\IFF\,N\models\E x\, p(x)$ for every $p(x)\subseteq L$ such that $|x|<\lambda$. Prove that the two structures are isomorphic.\QED 
+\end{exercise}
+
+\begin{exercise}\label{vaughtesempio}
+Let $L$ be a language that extends that of strict linear orders with the constants $\{c_i: i\in\omega\}$. Let $T$ be the theory that extends $T_{\rm dlo}$ with the axioms $c_i<c_{i+1}$ for every  $i\in\omega$. Prove that $T$ has elimination of quantifiers and is complete (it can be deduced from what is known of $T_{\rm dlo}$). Exhibit a countable saturated model and a countable model that is not homogeneous.\QED 
+\end{exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The monster model}\label{monster}
+
+\label{compattezzasaturazione}
+
+
+In this section we present some notation and terminology frequently adopted when dealing with a complete theory $T$. We fix a saturated structure $\U$ of cardinality larger than $|L|$. We assume $\U$ to be large enough that among its elementary substructures we can find any model of $T$ we might be interested in. For this reason $\U$ is nicknamed the \emph{monster model}. We denote by $\kappa$ the cardinality of $\U$ when necessary we assume $\kappa$ to be inaccessible. 
+
+Some terms acquire a slightly different meaning when working inside a monster model.
+
+
+\newcommand{\labellalunga}[1]{#1\hfill}
+\newenvironment{litemize}[1]
+   {\begin{list}{}{
+   \setlength{\parskip}{0mm}
+   \setlength{\topsep}{5mm}
+   \setlength{\partopsep}{0mm}
+   \setlength{\rightmargin}{0mm}
+   \setlength{\listparindent}{0mm}
+   \setlength{\itemindent}{0mm}
+   \setlength{\itemsep}{3mm}
+   \settowidth{\labelwidth}{#1}
+   \setlength{\parsep}{0mm}
+   \setlength{\partopsep}{0mm}
+   \setlength{\labelsep}{3mm}
+   \setlength{\leftmargin}{\labelwidth+\labelsep}
+   \let\makelabel\labellalunga}}{
+   \end{list}}
+
+
+\begin{litemize}{{\bf type-definable sets}}
+\item[\emph{small/large}] cardinalities smaller than $\kappa$ are called small; 
+\item[\emph{models}] are elementary substructure of $\U$ of small cardinality, they are denoted by the letters $M$ and $N$, and derived symbols;
+\item[\emph{parameters}] are always in $\U$; the symbols $A$, $B$, $C$, etc.\@ denote sets of parameters of small cardinality; calligraphic letters as $\Aa$, $\B$, $\C$, etc.\@ are used for sets of arbitrary cardinality;
+\item[\emph{tuples}]  have length $<\kappa$ unless otherwise specified;
+\item[\emph{global types}] are complete types over $\U$; the set of global types is denoted by $S(\U)$;
+\item[\emph{formulas}] have parameters in $\U$ unless otherwise specified;
+\item[\emph{definable sets}] are sets of the form $\phi(\U)$ for some formula $\phi(x)\in L(\U)$; we may say $A$-definable if $\phi(x)\in L(A)$;
+\item[\emph{type-definable sets}] are sets of the form $p(\U)$ for some $p(x)\subseteq L(A)$ where, as the symbol suggests, $A$ has small cardinality;
+\item[\emph{types of tuples}] are always evaluated in $\U$, we write $\tp(a/A)$ for $\tp_\U(a/A)$ and $a\equiv_A b$ for $\U,a \equiv_A \U,b$; 
+\item[\emph{orbits}] of tuples under the action of $\Aut(\U/A)$ are denoted by $\orbit(a/A)$.
+\end{litemize}
+
+
+Let $x$ be a tuple of variables. For any fixed $A\subseteq \U$ we introduce a topology on $\U^{|x|}$ that we call the \emph{topology induced by $A$} or, for short, \emph{$A\jj$topology}. (This is non standard terminology, not to be confused with the \textit{logic\/} $A\jj$topology in Section~\ref{invariant}.\ref{KPtypes}.) The closed sets of the $A\jj$topology are those of the form $p(\U)$ where $p(x)\subseteq L(A)$ is any type over $A$.
+
+For $\phi(x)\in L(A)$ the sets of the form $\phi(\U)$ are clopen in this topology (and vice versa by Exercise~\ref{ex_clopen_definibili}). They form both a base of closed sets and base of open sets, which makes these topologies \textit{zero-dimensional}. By saturation, the topology induced by $A$ is compact. Actually, saturation is equivalent to the compactness of all these topologies as $A$ ranges over the sets of small cardinality.
+
+These topologies are never T$_0$ as any pair of tuples $a\equiv_A b$ have exactly the same neighborhoods. Such pairs always exist by cardinality reasons. However it is immediate that the topology induced on the quotient $\U^{|x|}/\!\equiv_A$ is Hausdorff (this is the so-called \textit{Kolmogorov quotient}). Indeed, this quotient corresponds to $S_x(A)$ with the topology introduced in Section~\ref{frammenti}.
+
+The following proposition is an immediate consequence of compactness. When $A=B$ it says that the topology induced by $A$ is \textit{normal}: any two closed sets are separated by open sets. It could be called \emph{mutual normality\/} (not a standard name) because the two closed sets belong to different topologies and the separating sets are each found in the corresponding topology.
+
+\begin{proposition}\label{prop_normality}
+If $p(x)\subseteq L(A)$ and $q(x)\subseteq L(B)$ are such that $p(x)\imp \neg q(x)$ then there are some formulas $\phi(x)$ and $\psi(x)$, conjunctions of formulas in $p(x)$, respectively $q(x)$, such that $\phi(x)\imp\neg\psi(x)$.
+\end{proposition}
+
+\begin{proof}
+The assumptions say that $p(x)\wedge q(x)$ is inconsistent. Then the formulas $\phi(x)$ and $\psi(x)$ exist by compactness (i.e.\@ saturation).
+\end{proof}
+
+A type-definable set $p(\U)$ is invariant over $A$ if $f[p(\U)]=p(\U)$ for every $f\in\Aut(\U/A)$. Equivalently, if $\orbit(a/A)\subseteq p(\U)$ for every $a\models p(x)$. By homogeneity this is equivalent to requiring that $q(x)\imp p(x)$ for every $a\models p(x)$ and $q(x)=\tp(a/A)$. Proposition~\ref{prop_inv_types} below an important fact about invariant type-definable sets. It may clarify the proof to consider first the particular case of definable sets.
+
+\begin{proposition}\label{prop_inv_def}
+Let $\phi(x)\in L(\U)$ then the following are equivalent
+\begin{itemize}
+ \item[1.] $\phi(x)$ is equivalent to some formula $\psi(x)\in L(A)$;
+ \item[2.] $\phi(\U)$ is invariant over $A$.
+\end{itemize}
+\end{proposition}
+
+We give two proofs of this theorem as we think they are both instructive. 
+
+\begin{proof}
+ Implication \ssf{1}$\IMP$\ssf{2} is obvious, we prove \ssf{2}$\IMP$\ssf{1}. From \ssf{2} and homogeneity we obtain
+
+\ceq{\hfill\phi(x)}{\iff}{\bigvee_{q(x)\imp\phi(x)} q(x)}
+
+where $q(x)$ above range over all types in $S_x(A)$. By compactness, we can rewrite this equivalence 
+
+\ceq{\hfill\phi(x)}{\iff}{\bigvee_{\theta(x)\imp\phi(x)} \theta(x)}
+
+where $\theta(x)$ ranges over all formulas in $L(A)$.  This latter equivalence says that $\neg\phi(x)$ is equivalent to a type over $A$. Again by compactness we obtain 
+
+\ceq{\hfill\phi(x)}{\iff}{\bigvee^n_{i=1} \theta_i(x)}
+
+for some formula $\theta_i(x)\in L(A)$.
+\end{proof}
+
+
+\begin{proof}[Second proof of Proposition~\ref{prop_inv_def}] We prove the non obvious implication. Let $\phi(\U\,;b)$, where $\phi(x\,;z)\in L$ be invariant over $A$. Let $p(z)=\tp(b/A)$. As $f[\phi(\U\,;b)]=\phi(\U\,;fb)$  for every $f\in\Aut(\U/A)$, homogeneity and invariance yield
+
+\ceq{\hfill p(z)\wedge p(z')}{\imp}{\A x\ \big[\phi(x\,;z)\iff\phi(x\,;z')\big]}
+
+By compactness there is a formula $\theta(z)\in L(A)$ such that 
+
+\ceq{\hfill \theta(z)\wedge \theta(z')}{\imp}{\A x\ \big[\phi(x\,;z)\iff\phi(x\,;z')\big]}
+
+Hence  $\phi(\U\,;b)$ is defined by the formula $\E z\,\big[\theta(z)\wedge\phi(x\,;z)\big]$, which is a formula in $L(A)$ as required.
+\end{proof}
+
+\begin{exercise}
+Let $\phi(x)\in L$. Prove that the following are equivalent
+\begin{itemize}
+ \item[1.] $\phi(x)$ is equivalent to a quantifier-free formula $\psi(x)\in L$;
+ \item[2.] $a\in\phi(\U)\iff fa\in\phi(\U)$ for every partial isomorphism $f:\U\to\U$ defined in $a$.\QED
+\end{itemize}
+\end{exercise}
+
+
+\begin{proposition}\label{prop_inv_types}
+Let $p(x)\subseteq L(\U)$ then the following are equivalent
+\begin{itemize}
+ \item[1.] $p(x)$ is equivalent to some type $q(x)\subseteq L(A)$;
+ \item[2.] $p(\U)$ is invariant over $A$.
+\end{itemize}
+\end{proposition}
+
+We give two proofs of this theorem as we think they are both instructive.  The second proof requires Proposition~\ref{prop_E_type} below.
+
+\begin{proof}
+Implication \ssf{1}$\IMP$\ssf{2} is obvious. As for \ssf{2}$\IMP$\ssf{1} it suffices to show that for every formula $\psi(x)\in p(x)$ there is a formula $\phi(x)\in L(A)$ such that $p(x)\imp\phi(x)\imp\psi(x)$. Fix $\psi(x)\in p(x)$. By invariance, any $q(x)\in S(A)$ consistent with $p(x)$ implies $p(x)$, hence
+
+\ceq{\hfill p(x)}{\imp}{\bigvee_{q(x)\imp \psi(x)} q(x)}\medrel{\imp}$\psi(x)$
+
+where $q(x)$ above range over all types in $S_x(A)$. By compactness we can rewrite this equivalence as follows
+
+\ceq{\hfill p(x)}{\imp}{\bigvee_{\theta(x)\imp \psi(x)} \theta(x)}\medrel{\imp}$\psi(x)$
+
+where $\theta(x)$ ranges over all formulas in $L(A)$. Applying Proposition~\ref{prop_normality} to the first implication we obtain a finite number of formulas $\theta_i(x)$ such that 
+
+\ceq{\hfill p(x)}{\imp}{\bigvee^n_{i=1} \theta_i(x)}\medrel{\imp}$\psi(x)$
+
+This completes the proof.
+\end{proof}
+
+The following easy proposition is very useful. Its proof is left to the reader. Note that it would not hold without saturation saturation: for instance, consider $\RR$ as a structure in the language of strict orders and let $q(x,y)=\tp(-1, 0\,/\,\QQ^+)$. By quantifier elimination, $-1\equiv_{\QQ^+}0$. But $0\notmodels\E y\;q(x,y)$.
+
+
+\begin{proposition}\label{prop_E_type}
+Let $p(x,y)\subseteq L(A)$. Then $\E y\,p(x,y)$ is equivalent to a type over $A$, namely to the type $\big\{ \E y\,\phi(x,y)\ :\ \phi(x,y) \textrm{ conjunction of formulas in }  p(x,y)\big\}$.\QED 
+\end{proposition}
+
+
+As an application we give a second proof of Proposition~\ref{prop_inv_types}.
+
+\begin{proof}[Second proof of Proposition~\ref{prop_inv_types}] We prove the non obvious implication. Let $q(x\,;z)\subseteq L$ be such that $q(x\,;a)= p(x)$ for some $a\in\U^{|z|}$ and let $s(z)=\tp(a/A)$. By invariance and homogeneity the types $p(x\,;fa)$ for $f\in\Aut(\U/A)$ are all equivalent. Therefore
+
+\ceq{\hfill p(x)}{\iff}{\bigvee_{f\in\Aut(\U/A)}q(x\,;fa)}\smallskip
+
+\ceq{\hfill}{\iff}{ \E z\,\big[s(z)\wedge q(x\,;z)\big]}
+
+Hence, by Proposition~\ref{prop_E_type}, $p(x)$ is equivalent to a type over $A$.
+\end{proof}
+
+
+\begin{exercise}\label{ex_clopen_definibili}
+Let $p(x)\subseteq L(A)$ be such that $\neg p(x)\iff q(x)$ for some $q(x)\subseteq L(B)$. prove that $p(x)$ is equivalent to some conjunction of formulas in $p(x)$. Cfr.\@ Theorem~\ref{Stone_aperti_chiusi}.\QED 
+\end{exercise}
+
+
+\begin{exercise}\label{cadinalitafinitasaturazione}
+Let $p(x)\subseteq L(A)$, with $|x|<\omega$. Prove that if $p(\U)$ is infinite then it has cardinality $\kappa$. Show that this may not be true if $x$ is an infinite tuple.\QED 
+\end{exercise}
+
+\begin{exercise}\label{cadinalitafinitasaturazioneinsiemi}
+Let $\phi(x,y)\in L(\U)$ be such that $\big\{\phi(a,\U)\ :\ a\in\U^{|x|}\big\}$ is infinite. Prove that it has cardinality $\kappa$. Does the same hold if $\phi(x,y)$ is replaced by a type $p(x,y)\subseteq L(A)$?\QED 
+\end{exercise}
+
+\begin{exercise} 
+Let $\phi(x,y)\in L(\U)$. Prove that the following are equivalent
+\begin{itemize}
+\item[1.] there is a sequence $\<a_i\,:\,i\in\omega\>$ such that $\phi(\U,a_i)\subset\phi(\U,a_{i+1})$ for every $i<\omega$;
+\item[2.] there is a sequence $\<a_i\,:\,i\in\omega\>$ such that $\phi(\U,a_{i+1})\subset\phi(\U,a_i)$ for every $i<\omega$.\QED  
+\end{itemize}
+\end{exercise}
+
+\begin{comment}
+\begin{exercise}
+Prove that the claim in Exercise~\ref{cadinalitafinitasaturazione} does not hold for an infinite tuple $x$. Hint. Let $x=\<x_i:i<\omega\>$. Given a formula $\phi(x_0)$ with exactly $2$ solutions define a type $p(x)$ with $2^\omega$ solution.\QED 
+\end{exercise}
+
+Il seguente esercizio \`e risolto. \`E un caso particolare del lemma~\ref{qfdefinability} di cui ricalca anche la dimostrazione che qui, grazie al modello mostro, \`e pi\`u facile da visualizzare.  Scriviamo \emph{$a\equiv_{\rm qf}b$\/} se le tuple $a$ e $b$ soddisfano le stesse formule libere.
+
+\begin{exercise}\label{qfdefinabilitysemplice}
+Sia $\phi(x)$ una formula pura. Si dimostri che le seguenti affermazioni sono equivalenti:
+\begin{itemize}
+\item[1] $\phi(x)$ \`e equivalente ad una formula senza quantificatori;
+\item[2] $\phi(a)\iff\phi(b)$, per ogni coppia di tuple $a\equiv_{\rm qf} b$.
+\end{itemize}
+Soluzione. L'implicazione \ssf{1}$\IMP$\ssf{2} \`e ovvia. Dimostriamo \ssf{2}$\IMP$\ssf{1}. Da \ssf{2} abbiamo la seguente equivalenza:
+
+\hfil$\displaystyle\phi(x)\ \ \iff\ \ \bigvee_{p(x)\imp\phi(x)} p(x)$
+
+dove $p(x)$ corre su tutti i tipi puri senza quantificatori completi. Per compattezza possiamo riscrivere questa equivalenza come 
+
+\hfil$\displaystyle\phi(x)\ \ \iff\ \ \bigvee_{\psi(x)\imp\phi(x)} \psi(x)$
+
+dove $\psi(x)$ corre su tutte le formule pure e libere. Questa dice che $\neg\phi(x)$ \`e equivalente ad un tipo libero. Quindi, dall'esercizio~\ref{definibilitasaturazione}, otteniamo che $\phi(x)\iff\psi(x)$ per una qualche formula libera.\QED
+\end{exercise}
+
+
+
+\begin{exercise}
+Sia $\U$ un modello saturo, $A\subseteq\U$ un sottoinsieme di cardinalit\`a piccola,  e sia $\psi(x)\in L(\U)$. Si dimostri che se $\psi(\U)$ \`e invariante per automorfismi che fissano $A$, allora $\psi(x)$ \`e equivalente ad una formula in $L(A)$.
+\end{exercise}
+
+
+
+\begin{exercise} 
+Fissiamo un insieme di parametri $A$. Sia $p(x)\subseteq L(A)$ un tipo e sia $x$ una tupla finita. Si dimostri che se $p(\U)$ \`e definibile allora \`e definibile da una congiunzione di formule in $p(x)$.\QED 
+\end{exercise}
+
+\begin{exercise}\label{cadinalitafinitasaturazioneinsiemi}
+Data $\phi(x,y)\in L(\U)$ supponiamo che $\big\{\phi(a,\U)\ :\ a\in\U^{|x|}\big\}$ sia un insieme infinito. Si dimostri che allora ha la cardinalit\`a di $\U$. Vale lo stesso se al posto della formula $\phi(x,y)$ prendiamo un tipo $p(x,y)\subseteq L(A)$, dove $A$ \`e un qualche insieme di parametri? \QED 
+\end{exercise}
+
+\begin{exercise}\label{exgrptor}
+Data $\phi(x,y)\in L(\U)$ si dimostri che se l'insieme delle tuple $a\in\U^{|x|}$ tali che $\big|\phi(a,\U)\big|<\omega$ \`e definibile allora esiste un $n$ tale che $\big|\phi(a,\U)\big|<\omega$ implica $\big|\phi(a,\U)\big|<n$.\QED 
+\end{exercise}
+
+\begin{exercise} 
+Si dimostri che per ogni formula $\phi(x,y)\in L(\U)$ le seguenti affermazioni sono equivalenti:
+\begin{itemize}
+\item[1.] esiste una sequenza $\<a_i\,:\,i\in\omega\>$ tale che $\phi(\U,a_i)\subseteq\phi(\U,a_{i+1})$ per ogni $i\in\omega$. 
+\item[2.] esiste una sequenza $\<a_i\,:\,i\in\omega\>$ tale che $\phi(\U,a_{i+1})\subseteq\phi(\U,a_i)$ per ogni $i\in\omega$.\QED  
+\end{itemize}
+%Suggerimento: si ricordi che una struttura $\omega$-satura realizza tutti i tipi finitamente consistenti con $<\omega$ parametri e con $\le\omega$ variabili.
+\end{exercise}
+
+
+\begin{exercise}
+Fissiamo una teoria $T$ completa e senza modelli finiti. Fissiamo un insieme di parametri $A$ ed una formula $\phi(x)\in L(\U)$ (quindi con parametri non necessariamente in $A$). Si dimostri che le seguenti affermazioni sono equivalenti:
+\begin{itemize}
+\item[1.] esiste un modello $M$ che contiene $A$ tale che $M\cap\phi(\U)=\0$;
+\item[2.] non esiste alcuna $\psi(z_1,\dots,z_n)\in L(A)$, dove $|z_i|=|x|$, tale che \smash{$\displaystyle\psi(z_1,\dots,z_n)\imp\bigwedge^n_{i=1}\phi(z_i)$}.
+\end{itemize}
+Suggerimento: sia $M$ un modello che contiene $A$ e sia $c=\<c_i:i<\lambda\>$ l'enumerazione di $M^{|x|}$. Sia $p(z)=\tp(c/A)$ dove  $z=\<z_i:i<\lambda\>$ una tupla di tuple di variabili. Si dimostri che \ssf{2} implica la consistenza del tipo $p(z)\cup \{\neg\phi(z_i)\ :\ i<\lambda\}$ e si deduca \ssf{1}.\QED 
+\end{exercise}
+
+
+\begin{exercise} 
+Sia $L$ il linguaggio che estende quello degli ordini stretti. Sia $\Z$ un modello con gli interi come dominio. Sia $\U$ un'estensione satura di $\Z$. 
+\begin{itemize}
+\item Sia $\psi(x,y)$ una formula tale che per ogni $n\in\Z$ esiste un $b\in\U$ tale che $\A y<n\,\psi(b,y)$. Segue che esiste un $b\in\U$ tale che $\U\models\A y<n\,\psi(b,y)$ per ogni $n\in\Z$? Segue anche che $\U\models\A y\,\psi(b,y)$?
+\item Sia $\phi(x,y)$ una formula tale che per ogni $a\in\U$ esiste un $n\in\Z$ tale che $\E y<n\,\phi(a,y)$. Dimostrare che esiste un $n\in\Z$ tale che $\U\models\A x\,\E y<n\,\phi(x,y)$. (La dimostrazione del teorema~\ref{fmequivalenzadefinizioni} pu\`o fornire ispirazione.)
+\end{itemize}
+\end{exercise}
+
+Una modello si dice \emph{minimale\/} se tutti i suoi sottoinsiemi di ariet\`a uno, definibili con parametri in $M$, sono finiti o cofiniti (cio\`e complemento di un insieme finito).
+
+\begin{lemma}
+Le seguenti affermazioni sono equivalenti:
+\begin{itemize}
+\item[1.] $M$ \`e minimale;
+\item[2.] se $a,b\in \U\sm M$ sono due elementi allora $a\equiv_M b$.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+Dimostriamo $\ssf{1}\IMP\ssf{2}$. Sia $\phi(x)$ una qualsiasi $M$-formula. Se $\phi(M)$ \`e finito allora $\phi(M)=\phi(\U)$ e quindi $\neg\phi(a)\wedge\neg\phi(b)$. Altrimenti $\neg\phi(M)$ \`e finito e quindi $\phi(a)\wedge\phi(b)$. Dimostriamo $\neg\ssf{1}\IMP\neg\ssf{2}$. Supponiamo che $M$ non sia minimale.  Fissiamo una $M$-formula $\phi(x)$.  Se $\phi(M)$ e $\neg\phi(M)$ sono entrambi infiniti il tipo 
+
+\hfil$p(x,y)\ \ =\ \ \{\phi(x),\,\neg\phi(y)\}\ \cup\ \{x\neq a\ :\ a\in M\}\ \cup\ \{y\neq a\ :\ a\in M\}$
+
+\`e finitamente consistente in $M$. Sar\`a quindi realizzato da una coppia di elementi $a,b$. Quindi $a\not\equiv_M b$.
+\end{proof}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Definibilit\`a nei modelli saturi}
+
+Per tutto questo paragrafo fissiamo una teoria completa $T$ ed un modello saturo $\U$ di cardinalit\`a $>\max\{|L|,\omega\}$. Assumiamo le convenzioni del paragrafo~\ref{mostro}
+
+\begin{lemma}\label{definibilitasaturazione}
+Per ogni tipo $p(x,y)$ la formula infinitaria $\E y\,p(x,y)$ \`e equivalente ad un tipo, precisamente $q(x)\ =\ \{ \E y\,\phi(x,y)\ :\ \phi(x,y) \textrm{ congiunzione di formule in }  p(x,y)\}$.
+
+\end{lemma}
+\begin{proof}
+La direzione $\E y\,p(x,y)\imp q(x)$ \`e ovvia, quindi mostriamo l'implicazione opposta. Sia $c$ una realizzazione di $q(x)$ verifichiamo che $\E y\,p(c,y)$. Il tipo $p(c,y)$ \`e finitamente consistente: $q(c)$ dice esattamente questo. Una qualsiasi realizzazione di $p(c,y)$ \`e un testimone per $\E y\,p(c,y)$. 
+\end{proof}
+
+Il seguente lemma \`e uno degli strumenti pi\`u semplici per ricavare propriet\`a di definibilit\`a. Dice: un insieme semidefinibile con complemento semidefinibile \`e definibile. \`E essenzialmente la stessa osservazione vista nel lemma~\ref{bisemidefinibile0}, ora modulo una teoria completa $T$.
+
+\begin{lemma}\label{definibilitasaturazione}
+Per ogni tipo $p(x)$, se $\neg p(x)$ \`e equivalente ad un tipo, allora $p(x)$ \`e equivalente ad una congiunzione di formule in $p(x)$.
+\end{lemma}
+
+\begin{proof}
+Sia $q(x)$ un tipo equivalente a $\neg p(x)$. Allora $p(x)\wedge q(x)$ \`e inconsistente e per saturazione esiste una congiunzione di formule in $p(x)$ tale che $\phi(x)\wedge q(x)$ \`e inconsistente. Quindi $\phi(x)\imp \neg q(x)$ ovvero $\phi(x)\imp p(x)$. L'implicazione inversa \`e ovvia.
+\end{proof}
+
+Si noti che dal lemma~\ref{definibilitasaturazione} non otteniamo solo la definibilit\`a di $p(x)$ ma abbiamo anche informazioni sulla formula che lo definisce: questa \`e una congiunzione delle formule in $p(x)$. L'utilit\`a di questa osservazione \`e dimostrata nel lemma~\ref{qfdefinabilitysemplice}. 
+
+Allo stssso modo otteniamo anche il seguente:
+
+% Osserviamo anche che la saturazione \`e un'ipotesi necessaria consideriamo $\Q$ nel linguaggio $L_{\rm os}$ quindi i tipi
+% 
+% \hfil $\displaystyle p(x)\ =\ \{x< r\ :\ \sqrt2<r\in\Q\}$
+% \hfil e\hfil 
+% $\displaystyle q(x)\ =\ \{s<x\ :\ s<\sqrt2,\ s\in\Q\}$.
+
+
+\begin{lemma}\label{definibilitasaturazione2}
+Sia $p(x)$ un tipo e $\psi(x)$ una formula se vale $p(x)\imp\psi(x)$ allora esiste una congiunzione di formule in $p(x)$ tale che vale $\phi(x)\imp\psi(x)$.\QED
+\end{lemma}
+
+Come esempio vediamo un caso particolare di un lemma che verr\`a dimostrato nel capitolo~\ref{eliminazione}. Scriviamo \emph{$a\equiv_{\rm qf}b$\/} se le tuple $a$ e $b$ soddisfano le stesse formule libere.
+
+\begin{lemma}\label{qfdefinabilitysemplice}
+Sia $\phi(x)$ una formula pura. Le seguenti affermazioni sono equivalenti:
+\begin{itemize}
+\item[1] $\phi(x)$ \`e equivalente ad una formula senza quantificatori;
+\item[2] $\phi(a)\iff\phi(b)$, per ogni coppia di tuple $a\equiv_{\rm qf} b$.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+Dimostriamo solo l'implicazione \ssf{2}$\IMP$\ssf{1}; l'implicazione \ssf{1}$\IMP$\ssf{2} \`e ovvia. Da \ssf{2} abbiamo la seguente equivalenza:
+
+\hfil$\displaystyle\phi(x)\ \ \iff\ \ \bigvee_{p(x)\imp\phi(x)} p(x)$
+
+dove $p(x)$ corre su tutti i tipi puri liberi completi. Per il lemma~\ref{definibilitasaturazione2} possiamo riscrivere questa equivalenza come 
+
+\hfil$\displaystyle\phi(x)\ \ \iff\ \ \bigvee_{\psi(x)\imp\phi(x)} \psi(x)$
+
+dove $\psi(x)$ corre su tutte le formule pure e libere. Questa dice che $\neg\phi(x)$ \`e equivalente ad un tipo libero. Quindi, per il lemma~\ref{definibilitasaturazione}, otteniamo che $\phi(x)\iff\psi(x)$ per una qualche formula libera.
+\end{proof}
+
+
+Mostriamo che la saturazione non concede agli insiemi semidefinibili infiniti di essere piccoli. Questo teorema non vale se la tupla di variabili $x$ \`	e infinita.
+
+\begin{theorem}\label{cadinalitafinitasaturazione}
+Sia $p(x)$ un tipo e sia $x$ una tupla finita. Allora le seguenti due alternative sono esaustive
+\begin{itemize}
+\item[1.] $p(\U)$ ha un numero finito di elementi; 
+\item[2.] $p(\U)$ ha la stessa cardinalit\`a di $\U$.
+\end{itemize} 
+\end{theorem}
+\begin{proof}
+Se $p(\U)$ ha meno di $|\U|$ elementi, l'insieme $p(x)\cup\{x\neq a\ :\ p(a)\}$ \`e un tipo. Poich\'e non pu\`o essere realizzato in $\U$, esiste un insieme finito $A\subseteq p(\U)$ tale che $\{x\neq a\ :\ a\in A\}$ non \`e consistente con $p(x)$. Ma questo vuol dire che $A$ contiene tutte le realizzazioni di $p(x)$.
+\end{proof}
+
+Si osservi che l'argomento usato nella dimostrazione del lemma~\ref{cadinalitafinitasaturazione} non sarebbe corretto se non avessimo richiesto che $x$ fosse una tupla finita. Infatti quando la lunghezza di $x$ \`e infinita, $x\neq a$ non \`e esprimibile con una formula del prim'ordine. 
+
+La seguente proposizione \`e un tipico esempio di come la saturazione produce risultati di uniformit\`a. 
+
+\begin{lemma}
+Supponiamo che per ogni $a$ l'insieme $\phi(a,\U)$ sia finito. Allora esiste un $n\in\omega$ tale che $\A x\,\E^{\le n}y\,\phi(x,y)$.
+\end{lemma}
+\begin{proof}
+Si consideri il tipo $p(x)=\{\E^{> n}y\,\phi(x,y)\ :\ n\in\omega\}$. Se non esiste un limite finito alla cardinalit\`a degli insiemi $\phi(a,\U)$ allora $p(x)$ \`e finitamente consistente. Se $b$ \`e una realizzazione di $p(x)$ allora  $\phi(b,\U)$ non pu\`o che avere cardinalit\`a infinita. 
+\end{proof}
+\end{comment}
+
+\end{document}
+
+

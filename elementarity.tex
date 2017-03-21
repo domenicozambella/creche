@@ -1,0 +1,957 @@
+\documentclass[creche.tex]{subfiles}
+\begin{document}
+\chapter{Theories and elementarity}
+\label{teorie}
+
+
+\section{Logical consequences}\label{conseguenzelogiche}
+% 
+% Let $p\subseteq L_{x}$ a set of formulas with free variables among $x$. Let $a\in M^{|x|}$ for some model $M$. We write \emph{$M,a\models p$ if $M\models\phi(a)$ for every $\phi(x)\in p$. If $q\subseteq L_{x}$ we write \emph{$p\proves q$\/}
+% 
+% \begin{itemize}
+% \item[] $M,a\models p\ \ \IMP\ \ M,a\models q$\hfill for every $M$ and every $a\in M^{|x|}$.
+% \end{itemize}
+% 
+% In words, we say that $q$ is a \emph{logical consequence\/}  of $p$ or that $q$ \emph{follows from\/} $p$. The same notation and terminology is applied to formulas by identifying $\phi$ with $\{\phi\}$.
+% 
+% The \emph{closure of $p$ by logical consequence\/} is the set $\ccl(p)$ whis is defined as follows: 
+% 
+% \begin{itemize}
+% \item[] \emph{$\ccl(p)$}$\ \ =\ \ \Big\{\phi\in L_{x}\ :\ \textrm{ sentence such that } p\proves\phi\Big\}$
+% \end{itemize}
+% 
+% If $p$ is a finite set, say $p=\{\phi_1,\dots,\phi_n\}$ we write $\ccl(\phi_1,\dots,\phi_n)$ for $\ccl(p)$. If $p=\ccl(p)$ we say that $p$ is \emph{closed under logical consequences}.
+
+
+A \emph{theory\/} is a set $T\subseteq L$ of sentences. We write \emph{$M\models T$\/} if $M\models\phi$ for every $\phi\in T$. If $\phi\in L$ is a sentence we write \emph{$T\proves\phi$\/} when
+
+\begin{itemize}
+\item[] $M\models T\ \ \IMP\ \ M\models\phi$\qquad for every $M$.
+\end{itemize}
+
+In words, we say that $\phi$ is a \emph{logical consequence\/} of $T$ or that $\phi$ \emph{follows from\/} $T$. If $S$ is a theory \emph{$T\proves S$\/} has a similar meaning. When $T\subseteq S$ and $T\proves S$ we say that $T$ \emph{axiomatises\/} $S$. If $T\proves S$ and $S\proves T$ we say that $T$ and $S$ are \emph{logically equivalent}.
+
+The \emph{closure of $T$ by logical consequence\/} is the set $\ccl(T)$ which is defined as follows:  
+
+\begin{itemize}
+\item[] \emph{$\textrm{ccl}(T)$}$\ \ =\ \ \Big\{\phi\in L\ :\ \textrm{ sentence such that } T\proves\phi\Big\}$
+\end{itemize}
+
+If $T$ is a finite set, say $T=\big\{\phi_1,\dots,\phi_n\big\}$ we write $\ccl(\phi_1,\dots,\phi_n)$ for $\ccl(T)$. If $T=\ccl(T)$ we say that $T$ is \emph{closed under logical consequences}.
+
+\begin{example}\label{Tg}
+Let $L$ be the language multiplicative groups. Let $T_{\rm g}$ be the set containing the universal closure of following three formulas
+\begin{itemize}
+\item[ass.]\ \  $(x\cdot y)\cdot z\ =\ x\cdot(y\cdot z)$;
+\item[inv.]\ \  $ x\cdot x^{-1}\ =\ x^{-1}\cdot x\ =\ 1$;
+\item[neu.]\ \  $x\cdot 1\ =\ 1\cdot x\ =x$.
+\end{itemize}
+Every model of $T_{\rm g}$ is a group and, vice versa, every group is a structure that models $T_{\rm g}$. Let $\phi$ be the universal closure of the following formula
+\begin{itemize}
+\item[can.]\ \  $\ z\cdot x\ =\  z\cdot y\ \imp\ x\ =\ y$. 
+\end{itemize}
+As $\psi$ formalizes the cancellation property then $T_{\rm g} \proves\phi$, that is, $\phi$ is a logical consequence of $T_{\rm g}$. Now consider the sentence $\psi$ which is the universal closure of
+\begin{itemize}
+\item[com.]\ \  $x\cdot y\ =\ y\cdot x$. 
+\end{itemize}
+So, commutative groups model $\psi$ and non commutative groups model $\neg\psi$. Hence neither $T_{\rm g}\proves\psi$ nor $T_{\rm g}\proves\neg\psi$. We say that $T_{\rm g}$ \emph{does not decide\/} $\psi$.\QED
+\end{example}
+
+Note that even when $T$ is a very concrete set, $\ccl(T)$ may be more difficult to grasp. In the example above $T_{\rm g}$ contains three sentences but $\ccl(T_{\rm g})$ is an infinite set containing sentences that code theorems of group theory yet to be proved.
+
+We say that a theory is \emph{consistent\/} if it has a model. With the notation above, $T$ is consistent if and only if \emph{$T\notproves\bot$}.
+
+\begin{remark}
+The following properties say that $\ccl$ is a finitary closure operator.
+\begin{itemize}
+\item[1.] $T\subseteq\ccl(T)$\hfill (extensive)
+\item[2.] $\ccl(T)\;=\;\ccl\big(\ccl(T)\big)$\hfill (increasing)
+\item[3.] $T\subseteq S\ \ \IMP\ \ \ccl(T)\subseteq\ccl(S)$\hfill (idempotent)
+\item[4.] $\ccl(T)\ \ =\ \ \bigcup\big\{\ccl(S)\ :\ S \textrm{ finite subset of } T\big\}$.\hfill (finitary)
+\end{itemize}
+Properties \ssf{1}-\ssf{3} are easy to verify while \ssf{4} requires the compactness theorem.\QED
+\end{remark}
+
+In the next example we list a few algebraic theories with straightforward axiomatization.
+
+\begin{example}
+We write $T_{\rm ag}$ for the theory of abelian groups which contains the universal closure of following
+\begin{itemize}
+\item[a1.] $(x+y) +z\ =\ y+(x+z)$;
+\item[a2.] $x+(-x)\ =\ 0$;
+\item[a3.] $x+0\ = \ x$;
+\item[a4.] $x+y\ =\ y+x$.
+\end{itemize}
+The theory $T_{\rm r}$ of (unitary) rings extends $T_{\rm ag}$ with
+\begin{itemize}
+\item[a5.] $(x\cdot  y)\cdot  z\  =\ x\cdot (y\cdot  z)$;
+\item[a6.] $1\cdot  x\ =\ x\cdot  1\ =\ x$;
+\item[a7.] $(x+y)\cdot  z\ =\ x\cdot  z + y\cdot  z$;
+\item[a8.] $z\cdot  (x+y)\ =\ z\cdot  x + z\cdot  y$.
+\end{itemize}
+The theory of commutative rings $T_{\rm cg}$ contains also \ssf{com} of examples~\ref{Tg}. The theory of ordered rings $T_{\rm or}$ extends $T_{\rm cr}$ with
+\begin{itemize}
+\item[o1.] $x<z\ \imp\ x+y<z+y$;
+\item[o2.] $0<x \wedge 0<z\ \imp\ 0<x\cdot z$.\QED
+\end{itemize}
+\end{example}
+
+The axiomatization of vector spaces is less straightforward.
+
+\begin{example}
+Fix a field $K$. The language $L_K$ extends the language of additive groups with a unary function for every element of $K$. The theory of vector fields over $K$ extends $T_{\rm ag}$ with the following axioms (for all $h,k,l\in K$)
+\begin{itemize}
+\item[m1.] $h\,(x+y)\ =\ h\,x+h\,y$
+\item[m2.] \parbox{25ex}{$l\,x\ =\ h\,x+k\,x$,} where $l\ =\ h+_Kk$
+\item[m3.] \parbox{25ex}{$l\,x\ =\ h\,(k\,x)$,} where $l\ =\ h\cdot_Kk$
+\item[m4.] $0_K\,x\ =\ 0$
+\item[m5.] $1_K\,x\ =\ x$
+\end{itemize}
+The symbols $0_K$ and $1_K$ denote the zero and the unit of $K$. The symbols $+_K$ and $\cdot_K$ denote the sum and the product in $K$. These are not part of $L_K$, they are symbols we use in the metalanguage.\QED
+\end{example}
+
+ation of vector spaces is less straightforward.
+
+\begin{example}\label{expl_Tgraphs}
+Recall from Example~\ref{expl_graph1} that we represent a graph with a symmetric irreflexive relation. Therefore \emph{theory of graphs\/} contains the following two axioms
+
+\begin{itemize}
+\item[1.] $\neg r(x,x)$;
+\item[2.] $r(x,y)\imp r(y,x)$.\QED
+\end{itemize}
+\end{example}
+
+Our last example is a trivial one.
+
+\begin{example}
+Let $L$ be the empty language The \emph{theory of infinite sets\/} is axiomatised by the sentences $\E^{\ge n} x\ (x=x)$ for all positive integer $n$.\QED
+\end{example}
+
+The \emph{theory of $M$\/} is the set of sentences that hold in $M$ and is denoted by \emph{$\Th(M)$}. More generally, if $\K$ is a class of structures, \emph{$\Th(\K)$} is the set of sentences that hold in every model in $\K$. For instance if $\K$ is the class of all groups,  $\Th(\K)$ is the theory $\ccl(T_{\rm g})$. The class of all models of $T$ is denoted by \emph{$\textrm{Mod}(T)$}. We say that $\K$ is \emph{axiomatizable\/} if $\Mod(T)=\K$ for some theory $T$. If we can also require that $T$ is finite we say that $\K$ is \emph{finitely axiomatizable}. To sum up
+
+\hspace*{14ex}\llap{$\Th(M)$}\ \ =\ \ $\Big\{\phi\ :\ M\models\phi\Big\}$
+
+\hspace*{14ex}\llap{$\Th(\K)$}\ \ =\ \ $\Big\{\phi\ :\ M\models\phi \textrm{ for all }M\in\K\Big\}$
+
+\hspace*{14ex}\llap{$\Mod(T)$}\ \ =\ \ $\Big\{M\ :\ M\models T\Big\}$
+
+
+\begin{exercise}
+Prove that $\ccl(\phi\vee \psi)=\ccl(\phi)\cap\ccl(\psi)$.\QED
+\end{exercise}
+
+\begin{exercise}\label{modus ponens}
+Prove that $T\cup\{\phi\}\proves\psi$ then $T\proves\phi\imp\psi$.\QED
+\end{exercise}
+
+
+\begin{exercise}
+Prove that $\Th(\Mod(T))=\ccl(T)$.\QED
+\end{exercise}
+
+
+
+\end{document}
+
+\begin{comment}
+
+% 
+% \begin{example}
+% Il linguaggio $L_{\rm gi}$ della geometria piana cosiste di due relazioni unarie $p$ and $r$, rispettivamente per punti e rette, and una relazione binaria $i$. Gli assiomi della $T_{\rm gp}$
+% \begin{itemize}
+% \item[gp1.] $p(x)\niff r(x)$;
+% \item[gp2.] $i(x,y)\imp p(x)\wedge r(x)$;
+% \item[gp3.] $p(x)\wedge p(y)\imp \E^{=1} z\,[i(x,z)\wedge i(y,z)]$.
+% \item[gp4.] $p(x)\wedge r(z)\imp \E y\,\neg i(x,z)\wedge i(y,z)]$.
+% \end{itemize}
+% degli spazi vettoriali su un campo $K$ fissato is stato introdotto nell'esempio~\ref{linguaggio_spazi_vettoriali}. La \emph{theory degli spazi vettoriali su $K$\/} contiene gli enunciati di $T_{\rm ga}$ e inoltre, for every $k,h\in K$ la chiusura universale delle seguenti formule:
+% Abbiamo denotato con $0_K$ and $1_K$ lo zero e l'unit\`a di $K$ e con $+_K$ e $\cdot_K$ le operazioni di somma e prodotto in $K$. Queste operazioni si intendono eseguite nel metalinguaggio: in $L_K$ non ci sono simboli di funzione per le operazioni del campo. Se il campo $K$ is infinito $T_K$ contiene infiniti enunciati.\QED
+% \end{example}
+
+
+% \begin{exercise}
+% Siano $T$ e $S$ teorie di linguaggio $L$. Qual'is la relazione tra le seguenti affermazioni? (Si noti che qualcuna is sempre vera, qualcuna sempre falsa.)\smallskip
+% 
+% \begin{minipage}[t]{.3\textwidth}
+% \begin{itemize}
+%  \item $T\proves S\proves T$
+%  \item $\top\proves T$
+%  \item $\ccl(T)\subseteq\ccl(S)$
+%  \item $\ccl(S)\subseteq\ccl(T)$
+%  \item $\ccl(T)=\ccl(S)$
+%  \item $\ccl(T)=\0$
+%  \item $\ccl(T)=L$
+%  \item $T=\0$
+%  \item $T=L$
+% \end{itemize}
+% \end{minipage}
+% \hfill
+% \begin{minipage}[t]{.3\textwidth}
+% \begin{itemize}
+%  \item $T\proves S$
+%  \item $S\proves T$
+%  \item $\bot\in\ccl(T)$
+%  \item $\top\in\ccl(T)$
+%  \item $T\subseteq\ccl(\0)$
+%  \item $T\subseteq\ccl(\bot)$
+% \item $\top\proves\bot$
+%  \item $\bot\proves T$
+%  \item $\top\proves T$
+% \end{itemize}
+% \end{minipage}
+% \hfill
+% \begin{minipage}[t]{.3\textwidth}
+% \begin{itemize}
+%  \item $T\proves\top$
+%  \item $T\proves\bot$
+%  \item $T=S$
+%  \item $T\subseteq S$
+%  \item $S\subseteq T$
+%  \item $\Mod(T)=\Mod(S)$
+%  \item $\Mod(T)\subseteq\Mod(S)$
+%  \item $\Mod(S)\subseteq\Mod(T)$
+%  \item $\Mod(T)=\0$
+% \QED
+% \end{itemize}
+% \end{minipage}
+% \end{exercise}
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Elementary equivalence}\label{eqel}
+The following is one of the most fundamental notions in model theory.
+
+\begin{definition}\label{def_el_eq}
+We say that $M$ and $N$ are \emph{elementarily equivalent} if
+\begin{itemize}
+\item[ee.] $N\models\phi\ \ \IFF\ \ M\models \phi$,\hspace{4ex} for every $\phi\in L$.
+\end{itemize}
+In this case we write \emph{$M\equiv N$}. More generally, we write \emph{$M\equiv_A N$\/} and say that $M$ and $N$ are elementarily equivalent \emph{over $A$} if the following hold
+\begin{itemize}
+\item[a.] $A\subseteq M\cap N$
+\item[ee'.] equivalence \ssf{ee} above holds for every sentence $\phi\in L(A)$.\QED
+\end{itemize} 
+\end{definition}
+
+
+The case when $A$ is the whole domain of $M$ is particularly important.
+
+\begin{definition}\label{def_el_sub}
+When $M\equiv_M N$ we write \emph{$M\preceq N$\/} and say that $M$ is an \emph{elementary substructure\/} of $N$.\QED
+\end{definition}
+
+In the definition above the use of the term \textit{substructure\/} is appropriate by the following lemma.
+
+\begin{lemma}\label{eqelsubstructure}
+If $M$ and $N$ are such that $M\equiv_AN$ and $A$ is the domain of a substructure of $M$ then $A$ is also the domain a substructure of $N$ and the two substructures coincide.
+\end{lemma}
+\begin{proof}
+Let $f$ be a function symbol and ler $r$ be a relation symbol. It suffices to prove that  
+$f^M(a)=f^N(a)$ for every $a\in A^{n_f}$ and that $r^M\cap A^{n_r}=r^N\cap A^{n_r}$.
+
+If $b\in A$ is such that $b=f^Ma$ then $M\models fa=b$. So, from $M\equiv_AN$, we obtain $N\models fa=b$, hence $f^Na=b$. This proves $f^M(a)=f^N(a)$.
+
+Now let $a\in A^{n_r}$ and suppose $a\in r^M$. Then $M\models ra$ and, by elementarity, $N\models ra$, hence $a\in r^N$. By symmetry $r^M\cap A^{n_r}=r^N\cap A^{n_r}$ follows.
+\end{proof}
+
+It is not easy to prove that two structures are elementary equivalent. A direct verification is unfeasible even for the most simple structures. It will take a few chapters before we are able to discuss concrete examples.  
+
+We generalize the definition of $\Th(M)$ to include parameters 
+
+\hfil \emph{$\Th(M/A)$}\ \ =\ \ $\Big\{\phi\ :\ \textrm{ sentence in }L(A)\textrm{  such that }\  M\models\phi\Big\}$.
+
+The following proposition is immediate
+
+\begin{proposition}\label{equivalentielementareequivaleza}
+For every pair of structures $M$ and $N$ and every $A\subseteq N\cap N$ the following are equivalent
+\begin{itemize}
+\item[a.] $M\equiv_A N$;
+\item[b.] $\Th(M/A)=\Th(N/A)$;
+\item[c.] \parbox{26ex}{$N\models\phi(a)\ \ \IFF\ \ M\models \phi(a)$}  for every $\phi(x)\in L$ and every $a\in A^{|x|}$.
+\item[d.]  \parbox{26ex}{$\phi(M) \cap A^{|x|}\ =\ \phi(N) \cap A^{|x|}$} for every $\phi(x)\in L$.\QED
+\end{itemize}
+\end{proposition}
+
+If we restate \ssf{a} and \ssf{c} of the proposition above when $A=M$ we obtain that the following are equivalent
+\begin{itemize}
+\item[a'.] $M\preceq N$;
+\item[c'.] \parbox{26ex}{$\phi(M)\ =\ \phi(N) \cap M^{|x|}$} for every $\phi(x)\in L$.
+\end{itemize}
+Note that \ssf{c'} extends to all definable sets what Definition~\ref{substructuredef} requires for a few basic definable sets.
+
+\begin{example}
+Let $G$ be a group which we consider as a structure in the multiplicative language of groups. We show that if $G$ is simple and $H\preceq G$ then also $H$ is simple. Recall that $G$ is simple if all its normal subgroups are trivial, equivalently, if for every $a\in G\sm \{1\}$ the set $\big\{gag^{-1}\,:\,g\in G\big\}$ generates the whole group $G$. 
+
+Assume $H$ is not simple then there $a,b\in H$ be such that $b$ is not product of elements of $\big\{hah^{-1}\,:\,h\in H\big\}$. hence for every $n$ 
+
+\hfil$H\ \models\ \neg\E x_1,\dots,x_n\ \ \big(b\ \ =\ \ x_1ax_1^{-1}\cdot\cdot\cdot\ x_nax_n^{-1}\big)$
+
+
+By elementarity the same hold in $G$. Hence $G$ is not simple.\QED 
+\end{example}
+
+\begin{exercise}\label{finitanaturaeqel}
+Let $A\subseteq M\cap N$. Prove that $M\equiv_A N$ if and only if $M\equiv_B N$ for every finite $B\subseteq A$.\QED
+\end{exercise}
+
+\begin{exercise}
+Let $M\preceq N$ and let $\phi(x)\in L(M)$. Prove that if $\phi(N)$ is finite then $\phi(N)=\phi(M)$.\QED
+\end{exercise}
+
+\begin{exercise}
+Let $M\preceq N$ and let $\phi(x,y)\in L$. Suppose there are finitely many sets of the form $\phi(a,N)$ for some $a\in N^{|x|}$. Prove that all these sets are definable over $M$.\QED
+\end{exercise}
+
+\begin{exercise}
+Consider $\ZZ^n$ as a structure in the additive language of groups with the natural interpretation. Prove that $\ZZ^n\not\equiv\ZZ^m$ for every positive integers $n\neq m$. Hint: in $\ZZ^n$ there are at most $2^n-1$ elements that are not congruent modulo $2$.\QED
+\end{exercise}
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Embeddings and isomorphisms}\label{Embeddings and isomorphisms}
+
+
+\def\ceq#1#2#3{\hspace*{8ex}\llap{#1}\parbox{5ex}{\hfil#2}\rlap{#3}\hspace{11ex}}
+
+
+Here we prove that isomorphic structures are elementary equivalent and a few related results.
+
+\begin{definition}\label{isomorfismodef}
+An \emph{embedding\/} of $M$ into $N$ is an injective map $h:M\imp N$ such that
+\begin{itemize}
+\item[1.]\ceq{$a\in r^M$}{$\IFF$}{$ha\in r^N$} for every $r\in L_{\rm rel}$ and $a\in M^{n_r}$
+\item[2.]\ceq{$h\,f^M(a)$}{$=$}{$f^N(h\,a)$} for every $f\in L_{\rm fun}$ and $a\in M^{n_f}$.
+\end{itemize}
+Note that when $c\in L_{\rm fun}$ is a constant then \ssf{2} reads $hc^M=c^N$. Therefore that $M\subseteq N$  if and only if $\id_M:M\imp N$ is an embedding.
+
+An surjective embedding is an \emph{isomorphism} or, when domain and codomain coincide, an \emph{automorphism}.\QED
+\end{definition}
+
+Condition \ssf{1} above and the assumption that $h$ is injective can be summarized in the following
+\begin{itemize}
+\item[1'.]\ceq{$M\models r(a)$}{$\IFF$}{$N\models r(ha)$} for every $r\in L_{\rm rel}\cup\{=\}$ and every $a\in M^{n_r}$.
+\end{itemize}
+
+Note also that, by straightforward induction on syntax, from \ssf{2} we obtain
+
+\begin{itemize}
+\item[2']\ceq{$h\,t^M(a)$}{$=$}{$t^N(h\,a)$} for every term $t(x)$ and every  $a\in M^{|x|}$.
+\end{itemize}
+
+Combining these two properties, and by straightforward induction on the syntax, we obtain 
+\begin{itemize}
+\item[3.]\ceq{$M\models\phi(a)$}{$\IFF$}{$N\models\phi(ha)$} for every $\phi(x)\in L_{\rm qf}$ and every $a\in M^{|x|}$.
+\end{itemize}
+
+Recall that $L_{\rm qf}$ for the set of quantifier-free formulas. It is worth noting that when $M\subseteq N$ and $h=\id_M$ then \ssf{3} becomes  
+\begin{itemize}
+\item[3']\ceq{$M\models \phi(a)$}{$\IFF$}{$N\models \phi(a)$} for every $\phi(x)\in L_{\rm qf}$ and for every $a\in M^{|x|}$.
+\end{itemize}
+
+\bigskip Finally we prove that first order truth is preserved under isomorphism. We say that a map $h:M\to N$ \emph{fixes\/} $A\subseteq M$ (pointwise) if $\id_A\subseteq h$. An isomorphism that fixes $A$ is also called an \emph{$A$-isomorphism}.
+
+\begin{theorem}\label{isomorfoeleq}
+If $h:M\imp N$ is an isomorphism then for every $\phi(x)\in L$
+\begin{itemize}
+\item[\#]\ceq{$M\models \phi(a)$}{$\IFF$}{$N\models \phi(ha)$} for every $a\in M^{|x|}$
+\end{itemize}
+In particular, if $h$ is an $A$-isomorphism then $M\equiv_A N$.
+\end{theorem}
+
+\begin{proof}We proceed by induction of the syntax of $\phi(x)$. When $\phi(x)$ is atomic \# holds by \ssf{3} above. Induction for the Boolean connectives is straightforward so we only need to consider the existential quantifier. Assume as induction hypothesis that
+
+
+\hspace*{18ex}\llap{$M\models \phi(a,b)$}\parbox{7ex}{\hfil$\IFF$}\parbox{15ex}{$N\models \phi(ha,hb)$} for every tupla $a\in M^{|x|}$ and $b\in M$.
+
+We prove that \# holds for the formula $\E y\,\phi(x,y)$. 
+
+
+\hspace*{18ex}\llap{$M\ \models\ \E y\;\phi(a,y)$}\parbox{7ex}{\hfil$\IFF$}\parbox{14ex}{$M\models\phi(a,b)$} for some $b\in M$
+
+\hspace*{18ex}\parbox{7ex}{\hfil$\IFF$}\parbox{14ex}{$N\models\phi(ha,hb)$} for some $b\in M$\hfill by induction hypothesis
+
+\hspace*{18ex}\parbox{7ex}{\hfil$\IFF$}\parbox{14ex}{$N\models\phi(ha,c)$} for some $c\in N$\hfill $\PMI$ requires surjectivity
+
+\hspace*{18ex}\parbox{7ex}{\hfil$\IFF$}$N\models\E y\,\phi(ha,y)$.
+\end{proof}
+
+
+\begin{corollary}
+If $h:M\imp N$ is an $A$-isomorphism then $h\big[\phi(M)\big]=\phi(N)$ for every $\phi(x)\in L(A)$.\QED
+\end{corollary}
+
+We can now give a few very simple examples of elementarily equivalent structures.
+
+\begin{example}\label{expl_ordini_elem}
+Let $L$ be the language of strict orders. The intervals $[0,1]$ and $[0,2]$ are isomorphic, hence $[0,1]\equiv[0,2]$ follows from Theorem~\ref{isomorfoeleq}. Clearly, $[0,1]$ is a substructure of $[0,2]$. However $[0,1]\npreceq [0,2]$, in fact the formula $\A  x\,(x\mathord\le1)$ holds in $[0,1]$ and is false in $[0,2]$. 
+
+The example above shows that $M\subseteq N$ and $M\equiv N$ does not imply $M\preceq M$.
+
+Now we prove that $(0,1)\preceq (0,2)$. By Exercise~\ref{finitanaturaeqel}, it suffices to verify that $(0,1)\equiv_B  (0,2)$ for every finite $B\subseteq(0,1)$. This follows again by Theorem~\ref{isomorfoeleq} as $(0,1)$ and $(0,2)$ are $B$-isomorphic for every finite $B\subseteq(0,1)$.\QED
+\end{example}
+
+% \begin{exercise}\label{eximmersioni}
+% Si dimostri che se $h:M\imp N$ is un'immersione allora $h[M]$ is a substructure of $N$ e $h:M\imp h[M]$ is un isomorfismo.\QED
+% \end{exercise}
+
+\begin{exercise}
+Prove that if $h:N\imp N$ is an automorphism and $M\preceq N$ then $h[M]\preceq N$.\QED
+\end{exercise}
+
+\begin{exercise}
+Let $L$ be the empty language. Let $A,D\subseteq M$. Prove that the following are equivalent
+\begin{itemize}
+ \item[1.] $D$ is definable over $M$;
+ \item[2.] either $D$ is finite and $A\subseteq A$ or $\neg D$ is finite and $\neg D\subseteq A$.
+\end{itemize}
+Hint: as $L$-structures are plain sets, every bijection $f:M\to M$ is an automorphism.\QED
+\end{exercise}
+
+\begin{exercise}\label{dlorlkurb}
+Prove that if $\phi(x)$ is an existential formula and $h:M\to M$ is an embedding
+\begin{itemize}
+\item[]\ceq{$M\models \phi(a)$}{$\IMP$}{$N\models \phi(ha)$} for every $a\in M^{|x|}$.
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}
+Assume that the language $L$ contains only the symbol $+$. Consider $\ZZ$ as a structure of signature $L$ with the usual interpretation of $+$. Prove that there is no existential formula that defines the set of even integers. Hint: use exercise~\ref{dlorlkurb}.\QED
+\end{exercise}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%
+\section{Completeness}
+
+A theory $T$ is \emph{maximal consistent\/} if it is consistent and there is no consistent theory $S\supset T$. Equivalently, if $T$ contains every sentence $\phi$ \emph{consistent with\/} $T$, that is such that $T\cup\{\phi\}$ is consistent. Clearly a maximal consistent theory is closed under logical consequences.
+
+A theory $T$ is \emph{complete\/} if $\ccl T$ is maximal consistent. It is not easy to prove that a theory is complete. Explicit examples will be given in the next chapters.
+
+\begin{proposition}\label{fattoconsistenzasen4sostretto}
+The following are equivalent
+\begin{itemize}
+\item[a.] $T$ is maximal consistent;
+\item[b.] $T=\Th(M)$ for some structure $M$;
+\item[c.] $T$ is consistent and $\phi\in T$ or $\neg\phi\in T$ for every sentence $\phi$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+To prove \ssf{a}$\IMP$\ssf{b}, assume \ssf{a}. As $T$ is consistent, there is $M\models T$. Then $T\subseteq\Th (M)$. As $T$ is maximal consistent $T=\Th(M)$. Implication \ssf{b}$\IMP$\ssf{c} is immediate.  As for \ssf{c}$\IMP$\ssf{a} note that if $T\cup\{\phi\}$ is consistent then $\neg\phi\not\in T$ therefore $\phi\in T$ follows from \ssf{c}.
+\end{proof}
+
+The proof of the proposition below is is left as an exercise for the reader
+
+\begin{proposition}\label{fattoconsistenzasensolato}
+The following are equivalent
+\begin{itemize}
+\item[a.] $T$ is complete;
+\item[b.] there is a unique maximal consistent theory $S$ such that $T\subseteq S$;
+\item[c.] $T$ is consistent and $T\proves\Th(M)$ for every $M\models T$;
+\item[d.] $T$ is consistent and $T\proves\phi$ o $T\proves\neg\phi$ for every sentence $\phi$;
+\item[e.] $T$ is consistent and $M\equiv N$ for every pair of models of $T$.\QED
+\end{itemize}
+\end{proposition}
+% \begin{proof}
+% \ssf{a}$\,\IMP\,$\ssf{b}. Assume \ssf{a}, then $\ccl(T)$ is maximal consistent. If $T\subseteq S$ then $\ccl(T)\subseteq\ccl(S)=S$. If $S$ is maximal consistent then $\ccl(T)=S$. 
+% 
+% \ssf{b}$\IMP$\ssf{c}. Assume \ssf{b}. The consistency of $T$ follows from the existence of $S$. So, let $M\models T$ and $M\models\phi$. be such that MIf for a contradiction $M\models T$ and $T\notproves\Th(M)$ esisterebbe $N\models T$ such that $N\notmodels\Th(M)$ quindi $\Th(N)\neq\Th(M)$. Ma $\Th(M)$ e $\Th(N)$ sono coerenti massimali. Questo contraddice l'unicit\`a.  Dimostriamo \ssf{c}$\IMP$\ssf{d}. Assumiamo \ssf{c} e sia $\phi$ un sentence such that $T\notproves\phi$. Quindi esiste un modello $M$ such that $M\models T$ e $M\notmodels\phi$. Quindi $\neg\phi\in\Th(M)$ e \ssf{d} segue da $T\proves\Th(M)$. Dimostriamo la contronominale di \ssf{d}$\IMP$\ssf{e}. Siano $M\nequiv N$ due modelli di $T$ e fissiamo un sentence $\phi$ such that $M\models\phi$ e $N\models\neg\phi$. Quindi non is vero n\'e $T\proves\phi$ n\'e $T\proves\neg\phi$.  Dimostriamo \ssf{e}$\IMP$\ssf{a}. Assumiamo \ssf{e} e dimostriamo che $\ccl(T)$ is maximal consistent. La coerenza is ovvia. Sia $\phi$ un sentence arbitrario e supponiamo che $\phi\notin\ccl(T)$. Allora esiste un modello di $T$ such that $M\models\neg\phi$. Quindi per \ssf{e},  $M\proves\neg\phi$ in tutti i modelli di $T$. Allora $\neg\phi\in\ccl(T)$.
+% \end{proof}
+
+%\begin{proof}
+%Dimostriamo \ssf{a}$\,\IMP\,$\ssf{b}. Se $T$ is complete in senso lato allora  $\ccl(T)$ is, per definizione, una theory complete che contiene $T$. Ogni altra theory $S$, complete in senso stretto, che contiene $T$ dovr\`a necessariamente contenere anche $\ccl(T)$. Ma $\ccl(T)$ is maximal quindi $S=\ccl(T)$. Dimostriamo ora l'implicazione \ssf{b}$\,\IMP\,$\ssf{c}. Se $M\proves T$ allora $T\subseteq\Th(M)$ e, essendo $\ccl(T)$, l'unica theory complete contenente $T$, deve necessariamente coincidere con $\Th(M)$. Questo equivale ad affermare $T\proves\Th(M)$. Per chiudere il cerchio, dimostriamo l'implicazione \ssf{c}$\,\IMP\,$\ssf{b}. Se $T\proves\Th(M)$ allora $\Th(M)\subseteq\ccl(T)$. Ma $\Th(M)$ is complete, quindi dal fatto~\ref{fattoconsistenzasensostretto} otteniamo $\Th(M)=\ccl(T)$. Allora anche $\ccl(T)$ is complete.
+%\end{proof}
+
+
+
+
+%\begin{remark} \ \ $T+\phi \textrm{ is inconsistent}$ se e solo se $T\vdash \neg\phi$. In particolare $T$ is contradditoria se $T\vdash\bot$. \QED\end{remark}
+
+%A volte diremo che $T$ is un \emph{insieme di assiomi completo}
+
+%esiste un'unica theory complete in senso stretto contenente $T$. Ovvero se $M\equiv N$, for every $M,N\proves T$. 
+
+
+%Suggerimento: il controesempio si ottiene scegliendo come $M$ i numeri naturali con la relazione di successore e come $N$ un'estensione $\omega$-satura di $M$.
+%\end{exercise}
+
+
+%\begin{example}
+%Il linguaggio degli ordini (stretti) $L_{os}$ contiene un unico simbolo di relazione binaria: $<$, che useremo come usuale con notazione infissa. La classe degli ordini lineari is elementare, infatti is assiomatizzata dalla theory che contiene i seguenti tre enunciati.
+%\end{example}
+
+%\begin{exercise}
+%Quali implicazioni tra le clausole del fatto~\ref{fattoconsistenzasensolato} sopravvivono se omettiamo l'ipotesi `$T$ consistent'?
+%\end{exercise}
+
+\begin{exercise}
+Prove that the following are equivalent
+\begin{itemize}
+\item[a.] $T$ is complete;
+\item[b.] for every sentence $\phi$, o $T\proves\phi$ o  $T\proves\neg\phi$ but not both.
+\end{itemize}
+By contrast prove that the following are \textit{not\/} equivalent
+\begin{itemize}
+\item[a.] $T$ is maximal consistent;
+\item[b.] for every sentence $\phi$, o $\phi\in T$ o  $\neg\phi\in T$ but not both.
+\end{itemize}
+Hint: consider the theory containing all sentences where the symbol $\neg$ occours an even number of times. This theory is not consistent as it contains $\bot$.\QED
+\end{exercise}
+
+\begin{exercise}
+Prove that if $T$ has exacly $2$ maximal consistent extension $T_1$ and $T_2$ then there is a sentence $\phi$ such that $T,\phi\proves T_1$ and $T,\neg\phi\proves T_2$.\QED
+\end{exercise} 
+
+
+
+
+\begin{comment}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Un esempio: l'analisi nonstandard}
+\label{nonstandard}
+
+Questo paragrafo is dedicato ad un esempio che analizzeremo un po' in dettaglio perch\'e is utile per impratichirsi con la relazione di elementary substructure. Questo esempio is comunque culturalmente interessante. Infatti d\`a rigore matematico al formalismo usato ai tempi di Leibniz e Newton per fare analisi matematica. Allora l'analisi matematica era fondata sui concetti di infinito e di infinitesimo, nozioni che al tempo erano mal definite se non contraddittore. Solo dalla met\`a dell'ottocento i matematici della generazione di Weistra\ss{} rimediarono a questi vizi di forma fondando l'analisi matematica sul concetto di limite. L'analisi non standard invece recupera la dignit\`a matematica degli infiniti and infinitesimi usando il concetto di estensione elementare. Fu scoperta verso la met\`a del novecento da Abraham Robinson.
+
+Fissiamo un po' di notazione valida per tutto il paragrafo. Il linguaggio che useremo contiene
+\begin{itemize}
+\item[1.] un simbolo di relazione $n$-aria for every $X\subseteq \RR^n$;
+\item[2.] un simbolo di funzione $n$-aria for every $f:\RR^n\imp\RR$;
+\end{itemize}
+Chiameremo $\RR$, con la naturale interpretazione dei simboli, il \emph{modello standard dell'analisi reale}. 
+Quindi lo stesso simbolo denota elementi del linguaggio e l'interpretazione in $\RR$. Non si tratta di un abuso di linguaggio, sono proprio la stessa cosa~! 
+
+Assumiamo che esista una estensione elementare propria di $\RR$ e fissiamone una che indicheremo con \emph{$\nsR$}. L'esistenza di questa estensione verr\`a dimostrata pi\`u avanti. 
+
+L'interpretazione dei simboli $f$ and $X$ in $\nsR$ verr\`a indicata con \emph{$\ns f$} e \emph{$\ns X$}. Gli elementi di $\nsR$ verranno chiamati \emph{iperreali}, gli elementi di $\RR$ li chiameremo \emph{(iper)reali standard}, quelli in $\nsR\sm\RR$ li chiameremo \emph{(iper)reali nonstandard}.
+
+\`E immediato verificare che $\nsR$ is un campo ordinato. Infatti, le operazioni di somma e prodotto appartengono al linguaggio, come pure la relazione d'ordine. La propriet\`a di essere un campo ordinato is traducibile in un insieme di enunciati che, essendo veri in $\RR$, saranno veri anche in $\nsR$. 
+
+Un iperreale $c$ si dice \emph{infinitesimo} se $|c|<\epsilon$ for every $\epsilon$ standard positivo.  Un iperreale $c$ si dice \emph{infinito} se $k<|c|$ for every $k$ standard, altrimenti si dice \emph{finito}. Quindi se $c$ is infinito $c^{-1}$ is infinitesimale. Ovviamente, tutti i reali standard sono finiti e $0$ is l'unico reale standard infinitesimo.
+
+\begin{lemma}\label{esistenzainfinitesimi}
+Esistono iperreali nonstandard infiniti and infinitesimi non nulli.
+\end{lemma}
+\begin{proof}
+Sia $c\in\nsR\sm\RR$ e supponiamo che $c$ non sia infinito, altrimenti $c$ e $c^{-1}$ dimostrano il lemma. Quindi l'insieme $\big\{ a\in\RR: c<a\big\}$ is un insieme non vuoto e limitato di reali. Sia $b\in\RR$ l'estremo inferiore di questo insieme. Mostriamo che $b-c$ is infinitesimo non nullo. Non is nullo perchis $c\in\nsR\sm\RR$ e $b\in\RR$. Inoltre, se per assurdo che $\epsilon < |b-c|$ for some $\epsilon$ standard positivo, allora $c<b-\epsilon$, oppure $b+\epsilon< c$, (a seconda se $c<b$ o $b<c$). Entrambe queste possibilit\`a contraddiocono le propriet\`a dell'estremo inferiore.
+\end{proof}
+
+L'esistenza di iperreali nonstandard infiniti prova che $\nsR$ non is un campo archimedeo: gli interi standard non sono cofinali in $\nsR$. Si osservi che per\`o, per elementarit\`a, gli interi nonstandard $\ns\ZZ$ sono cofinali in $\nsR$: nella prospettiva di chi vive in $\nsR$, si tratta di un normalissimo campo archimedeo. 
+
+La dimostrazione del seguente lemma is lasciata al lettore.
+
+\begin{lemma}\label{prodottosommainfinitesimi}
+Gli infinitesimi sono chiusi per somma prodotto e sono anche chiusi rispetto alla moltiplicazione per reali standard.
+\end{lemma}
+
+La completezza di Dedekind is un'altra propriet\`a fondamentale di $\RR$ che non vale in $\nsR$. Questa dice che ogni sottoinsieme limitato superiormente ha un estremo superiore. In $\nsR$ non vale: infatti l'insieme degli infinitesimi is ovviamente limitato ma, per il lemma~\ref{prodottosommainfinitesimi}, non ha estremo superiore. Quindi la completezza di Dedekind \textit{non\/} is una propriet\`a del prim'ordine. Comunque in casi particolari is preservata nel passaggio dai reali standard agli iperreali. Come succede spesso, propriet\`a che nel modello standard valgono per tutti gli insiemi valgono in $\nsR$ solo per gli insiemi definibili.
+ 
+\begin{lemma}\label{dedekindcomplete}
+Ogni sottoinsieme di $\nsR$ di ariet\`a 1, definibile (anche con parametri), e limitato superiormente (in $\nsR$) ha un estremo superiore.
+\end{lemma}
+
+Si noti che il lemma si riferisce a insiemi i definibili con parametri in $\nsR$, altrimenti la dimostrazione sarebbe immediata.
+
+\begin{proof}  Sia $x$ una singola variabile, $a$ una tupla di parametri in $\nsR$ e sia $\phi(z,x)$ una formula pura. Dobbiamo mostrare che se $\phi(a,\nsR)$ is limitato allora ha un estremo superiore. La seguente formula $\psi(z,y)$ dice che $y$ is un maggiorante dell'insieme definito da $\phi(z,x)$ con $z$ una tupla di parametri:
+
+\hfil $\psi(z,y)\ \ =\ \  \A x\ \big[\phi(z,x)\imp x\le y\big]$.
+
+La seguente formula $\xi(z,w)$ dice che $w$ is l'estremo superiore (il minimo dei maggioranti) dell'insieme definito da $\phi(z,x)$. 
+
+\hfil $\xi(z,w)\ \ =\ \  \psi(z,y)\ \wedge\ \A y\ \big[\psi(z,y)\imp w\le y\big]$.
+
+Quindi dobbiamo mostrare che in $\nsR$ vale $\E y\,\psi(z,y)\ \imp\ \E w\,\xi(z,w)$. Questa is una formula del prim'ordine che vale in $\RR$ is quindi vale anche in ogni sua estensione elementare.
+\end{proof}
+
+Definiamo su $\nsR$ una relazione di equivalenza: scriveremo $a\approx b$ se $a-b$ is infinitesimo. Che sia effettivamente una relazione di equivalenza, segue facilmente dal lemma~\ref{prodottosommainfinitesimi}. La classe di equivalenza di $c$ si chiama \emph{monade\/} di $c$, in onore di Leibniz.
+
+\begin{lemma}
+Se $c$ is un iperreale finito, nella monade di $c$ esiste un'unico reale.
+\end{lemma}
+\begin{proof}
+Per l'esistenza is sufficiente scorrere la dimostrazione del lemma~\ref{esistenzainfinitesimi} e osservare che il reale standard $b$ is tale che $b\approx c$. Per l'unicit\`a osserviamo che se $b_1\approx b_2$ sono entrambi standard, allora $b_1-b_2$ is un infinitesimo standard, quindi $0$.  
+\end{proof}
+
+Gli iperreali che non sono infiniti si dicono \emph{finiti}. Se $c$ is finito, quell'unico reale standard nella monade di $c$ si chiama \emph{parte standard\/} di $c$ e si denota con \emph{$\st(c)$}.
+
+Si noti che nel seguente lemma le espressioni alla sinistra si formalizzano direttamente in enunciati del prim'ordine quindi valgono in $\RR$ se e solo se valgono in $\nsR$.
+
+\begin{proposition}\label{fattolimitinonstandard}
+Per ogni $f:\RR\to\RR$, for every $a, l\in\RR$ valgono le seguenti equivalenze.
+\begin{itemize}
+\item[a.]\ \parbox{6ex}{$\displaystyle\lim_{x\imp+\infty}$}\parbox{8ex}{$fx\;=+\infty$}\parbox{12ex}{\hfil$\IFF$}$\ns f(c)$ is infinito positivo for every $c>0$ infinito.
+
+\item[b.]\ \parbox{6ex}{$\displaystyle\lim_{x\imp+\infty}$}\parbox{8ex}{$fx\;=\;l$}\parbox{12ex}{\hfil$\IFF$}$\ns f(c)\approx l$ for every $c>0$ infinito.
+
+\item[c.]\ \parbox{6ex}{$\displaystyle\lim_{x\imp a}$}\parbox{8ex}{$fx\;=+\infty$}\parbox{12ex}{\hfil$\IFF$}$\ns f(c)$ is infinito positivo for every $c\approx a\neq c$.
+
+\item[d.]\ \parbox{6ex}{$\displaystyle\lim_{x\imp a}$}\parbox{8ex}{$fx\;=\;l$}\parbox{12ex}{\hfil$\IFF$}$\ns f(c)\approx l$ for every for every $c\approx a\neq c$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+Dimostriamo \ssf{d} e lasciamo le altre per esercizio.  Per dimostrare la direzione $\IMP$ assumiamo la parte sinistra dell'equivalenza \ssf{d} e la riscriviamo come formula del prim'ordine:
+
+\begin{itemize}
+\item[1.]\hspace*{9ex}$\A\,\epsilon>0\ \E\,\delta>0\ \A x\ \Big[0<|x-a|<\delta\ \ \imp\ \ |fx-l|<\epsilon\Big]$.
+\end{itemize}
+
+La nostra ipotesi dice che formula \ssf{1} is vera in $\RR$, o equivalentemente in $\nsR$. Abbiamo usato alcune abbreviazioni che supponiamo il lettore sappia tradurre in formule e per avvicinarci alla notazione usata in analisi useremo le lettere $\epsilon$ e $\delta$ come variabili. I simboli $\dot\epsilon$ e $\dot\delta$ denoteranno parametri. 
+
+Verifichiamo ora che $\ns f(c)\approx l$ vale for every $c\approx a\neq c$, ovvero che $|\ns fc-l|<\dot\epsilon$ for every $\dot\epsilon$ standard positivo. Fissiamo $\dot\epsilon$ standard positivo, sia $\dot\delta$ un reale standard ottenuto dalla verit\`a di \ssf{1} in $\RR$. Ora per elementarit\`a otteniamo
+
+
+\begin{itemize}
+\item[]\hspace*{9ex}$\phantom{\A\,\epsilon>0\ \E\,\delta>0}\llap{$\nsR\;\models$}\ \A x\ \Big[0<|x-a|<\dot\delta\ \ \imp\ \ |fx-l|<\dot\epsilon\Big]$,
+\end{itemize}
+
+dove $\dot\epsilon$ e $\dot\delta$ ora stanno per parametri. Se  $a\approx c\neq a$, allora $0<|c-a|<\dot\delta$ is sicuramente soddisfatta (perch\'e $\dot\delta$ is standard). Quindi da \ssf{1}, otteniamo $|\ns fc-l|<\dot\epsilon$. 
+
+Per dimostrare la direzione $\PMI$ supponiamo \ssf{1} sia falsa. Ovvero, in $\RR$ vale
+
+\begin{itemize}
+\item[2.]\hspace*{9ex}$\E\,\epsilon>0\ \A\,\delta>0\ \E x\ \Big[0<|x-a|<\delta\ \ \wedge\ \ \epsilon\le |fx-l|\Big]$,
+\end{itemize}
+
+vogliamo dimostrare che $\ns f(c)\not\approx l$ for some $c\neq a$ infinitamente vicino ad $a$. Fissiamo un $\dot\epsilon$ che testimonia la verit\`a di questa formula in $\RR$, un reale standard dunque. Ora, per elementarit\`a osserviamo che
+
+\begin{itemize}
+\item[]\hspace*{9ex}$\phantom{\E\,\epsilon>0}\llap{$\nsR\;\models$}\ \A\,\delta>0\ \E x\ \Big[0<|x-a|<\delta\ \ \wedge\ \ \dot\epsilon\le |fx-l|\Big]$.
+\end{itemize}
+
+Quindi fissiamo un arbitraio $\dot\delta$ infinitesimo. Otteniamo 
+
+\begin{itemize}
+\item[]\hspace*{9ex}$\phantom{\E\,\epsilon>0\ \A\,\delta>0}\llap{$\nsR\;\models$}\ \E x\ \Big[0<|x-a|<\dot\delta\ \ \wedge\ \ \dot\epsilon\le |fx-l|\Big]$.
+\end{itemize}
+
+Un qualsiasi $c$ che testimonia la verit\`a di questa formula in $\nsR$ is tale che $c\approx a\neq c$ e contemporaneamente $\epsilon\le |\ns fc-l|$, ma $\dot\epsilon$ is stato scelto standard, quindi  $\ns fc\not\approx l$.
+\end{proof}
+
+Il seguente corollario is immediato.
+
+\begin{corollary} Per ogni $f:\RR\to\RR$ the following are equivalent:
+\begin{itemize}
+\item[a.] $f$ is continua
+\item[b.] $\ns f(a)\approx \ns f(c)$ for every for every $a$ standard e ogni iperreale $c\approx a$;
+\item[c.] $\ns f(b)\approx \ns f(c)$ for every $b\approx c$ iperreali finiti.\QED
+\end{itemize}
+\end{corollary}
+
+\`E importante nel corollario qui sopra restringere \ssf{c} a iperreali \textit{finiti\/} altrimenti otteniamo una propriet\`a pi\`u forte:
+
+\begin{proposition} Per ogni $f:\RR\to\RR$ the following are equivalent:
+\begin{itemize}
+\item[a.] $f$ is uniformemente continua;
+\item[b.] $\ns f(a)\approx\ns  f(b)$ for every coppia di iperreali $a\approx b$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+Dimostriamo \ssf{a}\,$\IMP$\,\ssf{b}. Ricordiamo che $f$ is uniformemente continua se 
+
+\begin{itemize}
+\item[1.]\hspace*{9ex}$\RR\ \models\ \A\,\epsilon>0\ \E\,\delta>0\ \A x, y\ \Big[|x-y|<\delta\ \ \imp\ \ |fx-fy|<\epsilon\Big]$.
+\end{itemize}
+
+Assumiamo \ssf{a} e fissiamo $a\approx b$. Vogliamo mostrare che $|\ns f(a)-\ns f(b)|<\dot\epsilon$ for every $\dot\epsilon$ standard positivo. Fissato $\dot\epsilon$ standard positivo, sia $\dot\delta$ un reale standard ottenuto dalla validit\`a di \ssf{1} in $\RR$. Ora per elementarit\`a otteniamo
+
+\begin{itemize}
+\item[2.]\hspace*{9ex}$\phantom{\RR\ \models\ \A\,\epsilon>0\ \E\,\delta>0}\llap{$\nsR\;\models$}\ \A x, y\ \Big[|x-y|<\dot\delta\ \ \imp\ \ |fx-fy|<\dot\epsilon\Big]$.
+\end{itemize}
+
+In particolare 
+
+\begin{itemize}
+\item[]\hspace*{9ex}$\phantom{\RR\ \models\ \A\,\epsilon>0\ \E\,\delta>0\ \A x, y}\llap{$\nsR\;\models$}\ \phantom{\Big[}|a-b|<\dot\delta\ \ \imp\ \ |fa-fb|<\dot\epsilon$.
+\end{itemize}
+
+Poich\'e $a\approx b$ allora $|a-b|<\dot\delta$ per qualunque $\dot\delta$ standard. Quindi $|\ns f(a)-\ns f(b)|<\dot\epsilon$.
+
+Per dimostrare \ssf{b}\,$\IMP$\,\ssf{a} neghiamo \ssf{a}
+
+\begin{itemize}
+\item[3.]\hspace*{9ex}$\RR\ \models\ \E\,\epsilon>0\ \A\,\delta>0\ \E x, y\ \Big[|x-y|<\delta\ \ \wedge\ \ \epsilon\le|fx-fy|\Big]$.
+\end{itemize}
+
+Vogliamo trovare $a\approx b$ such that $\dot\epsilon\le|\ns f(a)-\ns f(b)|$ for some $\dot\epsilon$ standard positivo. Sia $\dot\epsilon$ un reale standard che testimonia la verit\`a di \ssf{3} in $\RR$. Per elementarit\`a otteniamo 
+
+\begin{itemize}
+\item[]\hspace*{9ex}$\phantom{\RR\ \models\ \E\,\epsilon>0}\llap{$\nsR\ \models$}\ \A\,\delta>0\ \E x, y\ \Big[|x-y|<\delta\ \ \wedge\ \ \dot\epsilon\le|fx-fy|\Big]$.
+\end{itemize}
+
+Quindi possiamo fissare un arbitrario infinitesimo $\dot\delta>0$ and ottenere $a,b\in\nsR$ such that 
+
+
+\begin{itemize}
+\item[]\hspace*{9ex}$\phantom{\RR\ \models\ \E\,\epsilon>0\ \A\,\delta>0\ \E x, y\ \Big[}\llap{$\nsR\ \models\ $}|a-b|<\dot\delta\ \ \wedge\ \ \dot\epsilon\le|fa-fb|$.
+\end{itemize}
+
+Poich\'e $\dot\delta$ is infinitesimo, $a\approx b$ come richiesto per negare \ssf{b}.
+\end{proof}
+
+\begin{c}
+La seguente proposizione is immediata conseguenza della proposizione~\ref{fattolimitinonstandard}
+
+\begin{proposition}
+Per ogni funzione unaria $f$ e for every $a$ standard, the following are equivalent.
+\begin{itemize}
+\item[a.] $f$ is differenziabile in $a$. Si noti questo vale in $\RR$ se e solo se valge in $\nsR$.
+\item[b.] for every $h$ infinitesimo il rapporto
+
+\hfil$\displaystyle\frac{f(a)-f(a+h)}{h}$
+
+is finito e la sua parte standard is indipendente da $h$.
+\end{itemize}
+\end{proposition}
+\end{c}
+
+%Nel passato si sono sperimentati approcci didattici alternativi al calcolo classico basati sull'analisi non standard. Il testo di  H. Jerome Keisler, \textit{Foundations of infinitesimal calculus}, disponibile in rete con licenza \cc is un elegante tentativo di insegnare l'analisi reale a studenti del prim'anno usando l'analisi nonstandard ma senza assumere prerequisiti di logica. 
+
+\begin{exercise}
+Si dimostri che se $f:\RR\to\RR$ is una funzione iniettiva allora  $\ns f a\in\nsR\sm\RR$ for every $a\in\nsR\sm\RR$.\QED
+\end{exercise}
+
+\begin{exercise}
+Si dimostri che the following are equivalent for every insieme $X\subseteq\RR$:\nobreak
+\begin{itemize}
+\item[1.]  $X$ is un insieme finito;
+\item[2.]  $\ns X=X$.\QED
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}
+Si dimostri che the following are equivalent for every insieme $X\subseteq\RR$:\nobreak
+\begin{itemize}
+\item[1.]  $X$ is un aperto nell'usuale topologia di $\RR$;
+\item[2.]  $b\approx a\in\ns X \ \ \IMP\ \ b\in\ns X$ for every $a$ standard e $b$ arbitrario.\QED
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}
+Si dimostri che the following are equivalent for every insieme $X\subseteq\RR$:\nobreak
+\begin{itemize}
+\item[1.]  $X$ is un chiuso nell'usuale topologia di $\RR$;
+\item[2.]  $a\in\ns X \ \ \IMP\ \ \st a\in\ns X$ for every finito $a$.\QED
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}
+Si dimostri che $\RR$ and $\0$ sono gli unici due sottoinsiemi $X\subseteq\RR$ such that:
+\begin{itemize}
+\item[]  $b\approx a\in\ns X \ \ \IMP\ \ b\in\ns X$ for every coppia di iperreali $a, b$.\QED
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}
+Si dimostri che $|\RR|\;\le\;|\nsQ|$ ovvero che $\nsQ$ ha almeno la cardinalit\`a del continuo. (Suggerimento: si definisca una funzione iniettiva $f:\RR\to\nsQ$ scegliendo nella monade di ogni reale standard un razionale nonstandard.)\QED
+\end{exercise}
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Tarski-Vaught test}
+
+There is no natural notion of \textit{smallest\/} elementary substructure containing a set of parameters $A$. The downward L\"owenheim-Skolem, which we prove in the next section, is the best result that holds in full generality. Given an arbitrary $A\subseteq N$ we shall construct a model $M\preceq N$ containing $A$ that is small in the sense of cardinality. The construction selects one by one the elements of $M$ that are required to realise the condition $M\preceq N$. Unfortunately, Definition~\ref{def_el_sub} supposes full knowledge of the truth in $M$ and it may not be applied during the construction. The following lemma comes to our rescue with a property equivalent to $M\preceq N$ that only mention the truth in $N$.
+
+\begin{lemma}[(Tarski-Vaught test)]\label{TarskiVaught}%
+For every $A\subseteq N$ the following are equivalent
+\begin{itemize}
+\item[1.] $A$ is the domain of a structure $M\preceq N$;
+\item[2.] for every formula $\phi(x)\in L(A)$, with $|x|=1$,\smallskip
+
+$N\models\E x\,\phi(x)\ \ \IMP\ \ N\models\phi(b)$ for some $b\in A$.
+\end{itemize}
+\end{lemma}
+
+\def\ceq#1#2#3{%
+\parbox{20ex}{$\displaystyle #1$}%
+\parbox{5ex}{\hfil$#2$}%
+\parbox{15ex}{$\displaystyle #3$}}
+
+\begin{proof}
+\ssf{1}$\IMP$\ssf{2}
+
+\ceq{\hfill N\models\E x\,\phi(x)}%
+{\IMP}%
+{M\models\E x\,\phi(x)}
+
+\ceq{}%
+{\IMP}%
+{M\models\phi(b)} for some $b\in M$
+
+\ceq{}%
+{\IMP}%
+{N\models\phi(b)} for some $b\in M$
+
+\ssf{2}$\IMP$\ssf{1} we first check that $A$ is the domain of a substructure of $N$, that is, $f^Na\in A$ for every function symbol $f$ and every $a \in A^{n_f}$. This follows from \ssf{2} with $fa=x$ for $\phi(x)$.
+
+Write $M$ for the substructure of $N$ with domain $A$. By induction on the syntax we prove
+
+\ceq{\hfill M\models\phi(a)}%
+{\IFF}%
+{N\models\phi(a)} for every $a\in M^{|x|}$.
+
+If $\phi(x)$ is atomic the claim follows from $M\subseteq N$ and Lemma~\ref{immersioniqfeq}. The case of Boolean connectives is straightforward, so only the existential quantifier requires a proof
+
+\ceq{\hfill M\models\E x\,\phi(a,x)}%
+{\IFF}%
+{M\models\phi(a,b)} for some $b\in M$
+
+\ceq{}%
+{\IFF}%
+{N\models\phi(a,b)} for some $b\in M$\hfill by induction hypothesis
+
+\ceq{}%
+{\IFF}%
+{N\models\E x\,\phi(a,x)}\hfill $\PMI$ uses \ssf{2}.
+
+\end{proof}
+
+\begin{exercise} 
+Consider $\RR$ in the language of strict orders. Prove that $\RR\sm\{0\}\preceq \RR$.\QED
+\end{exercise}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The downward L\"owenheim-Skolem theorem}
+\label{LoewenheimSkolem}
+
+The following theorem was proved by L\"owenheim at the beginning of last century. Skolem gave a simpler proof immediately after. At that time the result was perceived as paradoxical. Qualche anno prima i lavori di Zermelo e di Fraenkel avevano convinto la comunit\`a scientifica che l'intera theory degli insiemi potesse essere formalizzata con un linguaggio del prim'ordine. Il teorema  L\"owenheim-Skolem all'ingi\`u implica l'esistenza di un modello numerabile della theory degli insiemi: questo is chiamato il \emph{paradosso di Skolem}. \`E paradossale perch\'e $M$ rende vero, tra l'altro, l'sentence che formalizza l'assioma delle parti, quindi $M$ contiene un elemento $b$ che, dal punto di vista di $M$, is l'insieme dei sottoinsiemi dei numeri naturali. Ma l'insieme degli elementi di $b$ is un sottoinsieme di $M$ and is quindi numerabile. Non is una contraddizione, semplicemente l'espressione: \textit{tutti\/} i sottoinsiemi dei naturali, non ha in $M$ lo stesso significato che ha nel mondo reale. Anche la nozione di cardinali\`a assume un significato diverso. Nel linguaggio della theory degli insiemi is possibile formalizzare al prim'ordine: $b$ non is numerabile. Basta dire che non esiste nessuna biiezione tra $b$ e i numeri naturali. Quindi la biiezione tra gli elementi di $b$ and i numeri naturali (che esiste nel mondo reale) non appartiene ad $M$. Il concetto di equipotente in $M$ ha un altro significato che nella realt\`a~--~anche se chi vive dentro $M$ non se ne pu\`o rendere conto.
+
+\begin{theorem}[downward L\"owenheim-Skolem.]\label{lowenheimskolemallingiu}
+Let $N$ be an infinite structure of signature $L$ and let $A\subseteq N$. Then there is a structure $M$ of cardinality $\le|L(A)|$ such that $A\subseteq M\preceq N$. 
+\end{theorem}
+
+\begin{proof}
+Set $\lambda=|L(A)|$. Below we construct a chain $\<A_i:i<\lambda\>$ of subsets of $N$. The chain begins at $A_0=A$ and is continuous at limit ordinals. Finally we set $M=\bigcup_{i<\lambda}A_i$. All $A_i$ will have cardinality $\le\lambda$ so  $|M|\le\lambda$ follows. 
+
+Now we construct $A_{i+1}$ given $A_i$. Assume as induction hypothesis that $|A_i|\le\lambda$. Then $|L(A_i)|\le\lambda$. For some fixed variable $x$ let $\<\phi_k(x)\;:\;k<\lambda\>$ be an enumeration of the formulas in $L(A_i)$ that are consistent in $N$. For every $k$ pick $a_k\in N$ such that $N\models\phi_k(a_k)$.  Define $A_{i+1}=A_i\cup\{a_k\;:\;k<\lambda\}$. Then $|A_{i+1}|\le\lambda$ is clear.
+
+Now use Tarski-Vaught test to prove $M\preceq N$. Suppose $\phi(x)\in L(M)$ is consistent in $N$. As finitely many parameters occur in formulas, $\phi(x)\in L(A_i)$ for some $i$. Then $\phi(x)$ is among the formulas enumerated above and $A_{i+1}\subseteq M$ contains a solution of $\phi(x)$.
+\end{proof}
+
+We will need to adapt the construction above to meet more requirements on the model $M$. To better control the elements that enters $M$ it is convenient to add one element at the time (above we add $\lambda$ elements at each stage). We need to enumerate formulas with some care if we want to complete the construction by stage $\lambda$.
+
+\begin{void}[Second proof of Theorem~\ref{lowenheimskolemallingiu}.]\label{diym_II_lowenheimskolemallingiu}
+From set theory we know there is a bijection $\pi:\lambda\to\lambda^2$ such that $\pi_1(i)$ and $\pi_2(i)$, the two components of $\pi(i)$, are both $\le i$. Suppose we have defined the set $A_j$ for very $j\le i$. Let $\<\phi_k(x)\;:\;k<\lambda\>$ be an enumeration of the formulas in $L(A_{\pi_1(i)})$. Let $b$ be a solution of the $\phi_k(x)$ for $k=\pi_2(i)$ and define $A_{i+1}=A_i\cup\{b\}$.
+
+We use Tarski-Vaught test to prove $M\preceq N$. Let $\phi(x)\in L(M)$ be consistent in $N$. As $\pi$ is a bijection, there is an $i$ such that $\phi(x)$ is the $\pi_2(i)$-th formula enumerated in $L(A_{\pi_1(i)})$. Hence a witness of $\phi(x)$ is enumerated in $M$ at stage $i$.
+\end{void}
+
+
+% \begin{exercise}\label{LSenumerazione}
+% Con la notazione usata nella dimostrazione del teorema di L\"owenheim-Skolem, si dimostri che $A_i\subseteq\{a_k\;:\;k<\lambda\}$. (Quindi nella definizione data: $A_{i+1}=A_i\cup\{a_k\;:\;k<\lambda\}$, il ruolo di $A_i$ is pleonastico.)\QED
+% \end{exercise}
+
+\begin{exercise}\label{ex_LS}
+Assume $L$ is countable and let $M\subseteq N$ and $A\subseteq N$ be both countable. Prove that there is a countable model $K$ such that $A\subseteq K\preceq N$ and $K\cap M\preceq N$ (in particular, $K\cap M$ is a model).  Hint: adapt the construction used to prove the downward L\"owenheim-Skolem.\QED
+\end{exercise}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Elementary chains}
+
+\def\ceq#1#2#3{%
+\parbox{19ex}{\hfill$\displaystyle #1$}%
+\parbox{5ex}{\hfil$#2$}%
+\parbox[t]{15ex}{$\displaystyle #3$}}
+
+
+
+An \emph{elementary chain\/} is a chain $\<M_i:i<\lambda\>$ of structures such that $M_i\preceq M_j$ for every $i<j<\lambda$. The \emph{union\/} (or \emph{limit\/}) of the chain is the structure with as domain the set $\bigcup_{i<\lambda}M_i$ and as relations and functions the union of the relations and functions of $M_i$. It is plain that all structures in the chain are substructures of the limit.
+
+
+\begin{lemma}\label{cateneelementarim}
+Let $\<M_i:i\in\lambda\>$ be an elementary chain of structures. Let $N$ be the union of the chain. Then $M_i\preceq N$ for every $i$.
+\end{lemma}
+
+\def\ceq#1#2#3{%
+\parbox{19ex}{\hfill$\displaystyle #1$}%
+\parbox{5ex}{\hfil$#2$}%
+\parbox{15ex}{$\displaystyle #3$}}
+
+\begin{proof}
+By induction on the syntax of $\phi(x)\in L$ we prove
+
+\ceq{M_i\models\phi(a)}{\IFF}{N\models\phi(a)} for every $i<\lambda$ and every $a\in M_i^{|x|}$
+
+As remarked in \ssf{3'} of Section~\ref{Embeddings and isomorphisms}, the claim holds for quantifier-free formulas. Induction for Boolean connectives is straightforward so we only need to consider the existential quantifier
+
+\ceq{M_i\models\E y\,\phi(a,y)}{\IMP}{M_i\models\phi(a,b)} for some $b\in M_i$.
+
+\ceq{}{\IMP}{N\models\phi(a,b)} for some $b\in M_i\subseteq N$
+
+where the second implication follows from the induction hypothesis. Vice versa
+
+\ceq{N\models\E y\,\phi(a,y)}{\IMP}{N\models\phi(a,b)} for some $b\in N$
+
+As $a$ is a finite tuple, $a\in M_j^{|x|}$ for some $j$. We can also assume that $b\in M_j$. Then we can apply the induction hypothesis to $\phi(x,y)$ 
+
+\ceq{}{\IMP}{M_j\models\phi(a,b)} for some $b\in M_j$
+
+\ceq{}{\IMP}{M_j\models\E y\,\phi(a,y)}
+
+\ceq{}{\IMP}{M_i\models\E y\,\phi(a,y)}
+
+The last implication holds because $M_i\preceq M_j$ or, in case $j<i$, because $M_j\preceq M_i$.
+\end{proof}
+
+\begin{exercise}
+Let $\<M_i:i\in\lambda\>$ be an elementary chain of substructures of $N$. Let $M$ be the union of the chain. Prove that $M\preceq N$.\QED
+\end{exercise}
+
+
+\begin{exercise}
+Give an alternative answer to Exercise~\ref{ex_LS} using the L\"owenheim-Skolem Theorem (instead of its proof). Hint: construct two countable chains $\<K_i:i<\omega\>$ and  $\<M_i:i<\omega\>$ of countable models such that $K_i\cap M\subseteq M_i\preceq M$ and $A\cup M_i\subseteq K_{i+1}\preceq M$. The required model is $K=\bigcup_{i\in\omega}K_i$ as $K\cap M=\bigcup_{i\in\omega}M_i$.\QED
+\end{exercise}

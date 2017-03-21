@@ -1,0 +1,502 @@
+\documentclass[creche.tex]{subfiles}
+\begin{document}
+
+\chapter{Invariant sets}
+\label{invariant}
+
+
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{18ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+
+\definecolor{brown}{RGB}{150, 50, 10}
+\definecolor{green}{RGB}{10,120, 20}
+\def\mr{\color{brown}}
+\def\gr{\color{green}}
+
+
+In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$. Notation and implicit assumptions are as presented in Section~\ref{saturation}.\ref{monster}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Invariant sets and types}\label{invariant_sets}
+
+Let $\D\subseteq\U^{|{\gr z}|}$, where ${\gr z}$ is a tuple of length $<\kappa$. We say that $\D$ is a \emph{set invariant over $A$}, or \emph{$A\jj$invariant\/} if it is fixed (set-wise) by $A$-automorphisms. That is, $f[\D]=\D$ for every $f\in\Aut(\U/A)$ or, yet in other words,
+
+\ceq{\ssf{is1.}\hfill {\gr a}\in\D}{\iff}{f\!{\gr a}\in\D}\hfill for every ${\gr a}\in\U^{|{\gr z}|}$ and every $f\in\Aut(\U/A)$,
+
+which, by homogeneity is equivalent to,
+
+\ceq{\ssf{is2.}\hfill {\gr a}\in\D}{\iff}{{\gr b}\in\D}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$ such that ${\gr a}\equiv_A{\gr b}$.
+
+which yield the following bound on the number of invariant sets
+
+\begin{proposition}\label{prop_numberIS}
+  Let $\lambda=|L_{\gr z}(A)|$. There are at most $2^{2^{\lambda}}$ sets $\D\subseteq\U^{|{\gr z}|}$ that are invariant over $A$.
+\end{proposition}
+\begin{proof}
+By \ssf{is2}, sets that are invariant over $A$ are union of equivalence classes of the relation $\equiv_A$, that is, union of sets of the form $p(\U)$ where $p({\gr z})\in S(A)$. Then the number of $A\jj$invariant sets is $2^{|S_{\gr z}(A)|}$. Clearly $|S_{\gr z}(A)|\le 2^\lambda$.
+\end{proof} 
+
+We say that $\D$ is \emph{invariant\/} tout court if it is invariant over some $A$. As we require $\kappa$ to be inaccessible, there are exactly $\kappa$ invariant sets.
+
+% \begin{proposition}
+% Suppose $M$ realizes every consistent type $p({\gr z})\subseteq L(A)$. Let $D\subseteq M^{|{\gr z}|}$ be such that \ssf{is2} holds for $D$ when restricted to ${\gr a},{\gr b}\in M^{|{\gr z}|}$. Then $D$ is the trace on $M$ of some unique $A\jj$invariant set $\D$.
+% \end{proposition}
+% 
+% \begin{proof}
+% The set $\D$ is the union, for $p({\gr z})\in S(A)$, of the sets $p(\U)$ that intersect $D$.
+% \end{proof}
+
+
+
+Let $p({\mr x})\subseteq L(\U)$ be a consistent type. For every formula $\phi({\mr x}\,;{\gr z})\in L$ we define
+
+\ceq{\hfill\emph{$\D_{p,\phi}$}}{\deq}{\Big\{{\gr a}\in\U^{|{\gr z}|}\ :\ \phi({\mr x}\,;{\gr a})\in p\Big\}}
+
+We can read the notation in two ways. Either the tuple ${\gr z}$ has infinite length and is the same for all formulas, or it is finite and depends on $\phi$. In most cases we opt for the first reading, then $\D_{p,\phi}$ is a cylinder set (independent from all but finitely many coordinates).
+
+Let $p({\mr x})\subseteq L(\U)$ be a consistent type. We say that \emph{$p(x)$ is invariant over $A$}, or \emph{$A\jj$invariant}, if for every formula $\phi({\mr x}\,;{\gr z})\in L$, 
+
+\ceq{\ssf{it1.}\hfill \phi({\mr x}\,;{\gr a})\in p}{\IFF}{\phi({\mr x}\,;f\!{\gr a})\in p}\hfill for every ${\gr a}\in\U^{|{\gr z}|}$ and every $f\in\Aut(\U/A)$.
+
+In other words, $p({\mr x})$ is invariant over $A$ if the sets $\D_{p,\phi}$ are all invariant over $A$. 
+
+One should not confuse the notions of \textit{invariant type\/} with that of \textit{invariant type-definable set}. The first is mostly applied to global types and refers to the invariance of a family of subsets of $\U^{|{\gr z}|}$. The latter refers to sets of the form $p({\mr\U})\subseteq\U^{|{\mr x}|}$ where $p({\mr x})$ some type of small size.
+
+We say that \emph{$p(x)$ does not split over $A$\/} if
+
+\ceq{\ssf{it2.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\Big(\phi({\mr x}\,;{\gr a})\in p\,\IFF\,\phi({\mr x}\,;{\gr b})\in p\Big)}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$
+
+for every formula $\phi({\mr x}\,;{\gr z})\in L$. When $p({\mr x})\in S(\U)$ is a global type, \ssf{it2} is equivalent to
+
+\ceq{\ssf{it2'.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})\,\in\, p}
+
+By homogeneity, non splitting is equivalent to invariance. Yet another important equivalent of invariance over $A$ is:
+
+\ceq{\ssf{it3.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\equiv_{A,{\mr c}}{\gr b}}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$. 
+
+
+
+The easiest way to obtain invariant types is via types that are finitely satisfiable in some small set. We say that a type \emph{$p(x)$ is finitely satisfiable in $A$\/} if $\phi(\U)\cap A^{|{\mr x}|}\neq\0$ for every $\phi({\mr x})$ conjunction of formulas in $p$. 
+
+Note that by elementarity every type over a model is finitely satisfiable in the model, that is, if $p({\mr x})\subseteq L(M)$ for some model $M$, then $p({\mr x})$ is finitely satisfiable in $M$.
+
+
+\begin{proposition}\label{prop_coeredi_invarienti}
+Let $p({\mr x})\in S(\U)$ be a global type finitely satisfiable in $A$. Then $p({\mr x})$ is $A\jj$in\-vari\-ant.
+\end{proposition}
+
+\begin{proof}
+Recall that the invariance of $p({\mr x})$ is equivalent to \ssf{it2'}. So, suppose ${\gr a}\equiv_A{\gr b}$. If for a contradiction $p({\mr x})$ does not contain the formula $\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})$, by completeness, it contains  $\phi({\mr x}\,;{\gr a})\niff\phi({\mr x}\,;{\gr b})$. But $p({\mr x})$ finitely satisfiable in $A$, so $\phi({\mr c},{\gr a})\niff\phi({\mr c},{\gr b})$ holds for some ${\mr c}\in A^{|{\mr x}|}$ contradicting ${\gr a}\equiv_A{\gr b}$.
+\end{proof}
+
+
+\begin{proposition}\label{prop_exisntence_coheirs}
+Every type $q({\mr x})\subseteq L(\U)$ finitely satisfiable in $A$ has an extension to a global type finitely satisfiable in $A$.
+\end{proposition}
+
+\begin{proof} 
+Let $p({\mr x})\subseteq L(\U)$ be maximal among the types containing $q({\mr x})$ and finitely satisfiable in $A$. We check that $p({\mr x})$ is complete. Suppose for a contradiction that $p({\mr x})$ contains neither $\psi({\mr x})$ nor $\neg\psi({\mr x})$. Then  neither $p({\mr x})\cup\big\{\psi({\mr x})\big\}$ nor $p({\mr x})\cup\big\{\neg\psi({\mr x})\big\}$ is finitely satisfiable in $A$. This contradicts the finite satisfiability of $p({\mr x})$.
+\end{proof}
+
+When $q({\mr x})$ finitely satisfiable in $A$, any type that extends $q({\mr x})$ and is also finitely satisfiable in $A$ is called a \emph{coheir} of $q({\mr x})$  (a somewhat confusing terminology).
+% \begin{exercise}
+% Prove that every invariant type $q({\mr x})\subseteq L(\U)$ can be extended to a global invariant type $p({\mr x})\in S(\U)$.(?)\QED
+% \end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Morley sequences and indiscernibles}
+
+
+In the following $\alpha$ is some infinite ordinal $\le\kappa$ and ${\mr x}$ is a tuple of variables of length $<\kappa$. Let \mbox{$p({\mr x})\in S(\U)$} be a global type invariant over $A$.   We say that $c=\<{\mr c_i}:i<\alpha\>$ is a \emph{Morley sequence of $p(x)$ over $A$\/} if for every $i<\alpha$
+
+\ceq{\ssf{Ms.}\hfill {\mr c_i}}{\models}{p_{\restriction A,c_{\restriction i}}({\mr x})}
+
+In particular when $p({\mr x})$ is finitely satisfiable in $A$ we will say that $c$ is a \emph{coheirs sequence}. We may say that $c$ is a Morley (or coheir) sequence without specifying a global type. Then we mean that $c$ is a Morley (respectively coheir) sequence of some invariant global type.
+
+The following is a convenient characterization of coheir sequences
+
+\begin{lemma}\label{lem_coheir_property}
+The following are equivalent
+\begin{itemize}
+\item[1.] $c=\<{\mr c_n}:n<\alpha\>$ is a coheir sequence over $A$;
+\item[2.] ${\mr c_{n+1}}\equiv_{A,c_{\restriction n}}{\mr c_n}$ and $\phi(\U)\cap A^{|{\mr x}|}\neq\0$ whenever $\phi({\mr x})\in L(A,c_{\restriction n})$ and  $\phi({\mr c_n})$.
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+\ssf{1}$\IMP$\ssf{2}. Assume \ssf{1} and let $p({\mr x})\in S(\U)$ be a global type finitely satisfiable in $A$ and such that ${\mr c_i}\models p_{\restriction A,c_{\restriction i}}({\mr x})$. The requirement ${\mr c_{n+1}}\equiv_{A,c_{\restriction n}} {\mr c_n}$ is clear. Now, suppose $\phi({\mr c_n})$ for some $\phi({\mr x})\in L(A,c_{\restriction n})$. Then $\phi({\mr x})$ belongs to $p({\mr x})$ hence $\phi(\U)\cap A^{|{\mr x}|}\neq\0$ because $p({\mr x})$ is finitely satisfiable in $A$.
+
+\ssf{2}$\IMP$\ssf{1}. Assume \ssf{2} and define
+
+\ceq{\hfill q({\mr x})}{=}{\big\{\phi({\mr x}) \ \ :\ \ {\mr c_n}\models\phi({\mr x})\in L(A,c_{\restriction n})\ \textrm{ for some }\ n<\alpha\big\}.}
+
+Clearly $c$ is a Morley sequence of any global type finitely satisfiable in $A$ that extends $q({\mr x})$. Hence it suffices to show that such type exists. So, we prove that $q({\mr x})$ is finitely satisfiable in $A$ and apply Proposition~\ref{prop_exisntence_coheirs}. 
+
+As \ssf{2} requires that every single formula in $q(x)$ is finitely satisfiable in $A$ it suffices to show that $q(x)$ is closed under conjunctions. Let $\phi_i({\mr x})\in L(A,c_{\restriction n_i})$, for $i=1,2$, be two formulas in $q({\mr x})$ satisfied by  ${\mr c_{n_i}}$. By the first requirement in \ssf{2}, both formulas are satisfied by ${\mr c_m}$ where $m=\max\{n_1,n_2\}$. Hence their conjuction is in  $q({\mr x})$.
+\end{proof}
+
+
+Let $I,<_I$ be a linear order. We call a function $a:I\to\U^{|{\mr x}|}$ an \emph{$I$-sequence}, or simply a \emph{sequence\/} when $I$ is clear. Often we introduce an $I\jj$sequence by writing $a=\<{\mr a_i}: i\in I\>$. 
+
+If $I_0\subseteq I$ we call $a_{\restriction I_0}$ a \emph{subsequence of $a$}. Most relevant are the subsets $I_0\subseteq I$ that are well-ordered by $<_I$ and, in particular, the finite ones. When $I_0$ has order-type $\alpha$, an ordinal, we identify $a_{\restriction I_0}$ with a tuple of length $\alpha$.  
+
+\begin{definition}
+Let $I,<_I$ be an infinite linear order and let $a$ be an $I\jj$sequence. We say that \emph{$a$ is a sequence of indiscernibles over $A$\/} or, a sequence of \emph{$A\jj$indiscernibles}, if $a_{\restriction I_0}\equiv_A a_{\restriction I_1}$ for every $I_0,I_1\in[I]^n$ and $n<\omega$. As usual, \emph{$[I]^n$\/} is the set of subsets of $I$ of cardinality $n$.\QED
+\end{definition}
+
+The condition above can be formulated in a number of clearly equivalent ways. We can require that that $\phi(a_{i_0},\dots,a_{i_n})\iff\phi(a_{j_0},\dots,a_{j_n})$ for every formula $\phi(x_1,\dots,x_n)\in L(A)$ and every pairs of tuples in $I^n$ such that $i_0<\dots<i_n$ and $j_0<\dots<j_n$. Or we can simply say that for every $i_0,\dots,i_n\in I$ the type $\tp(a_{i_0},\dots,a_{i_n}/A)$ only depends on the order type of $i_0,\dots,i_n$.
+
+
+
+
+\begin{proposition}
+Let $p({\mr x})\in S(\U)$ be a global $A\jj$invariant type and let $c=\<{\mr c_i}:i<\alpha\>$ be a Morley sequence of $p({\mr x})$ over $A$. Then $c$ is a sequence of indiscernibles over $A$.
+\end{proposition}
+
+\begin{proof}
+
+%\def\ceq#1#2#3{\parbox[t]{20ex}{$\displaystyle #1$}{\hspace*{1ex}$\displaystyle #2$\hspace*{1ex}}{$\displaystyle #3$}}
+
+We prove by induction on $n<\omega$ that
+
+\ceq{\sharp\hfill c_{\restriction n}}{\ \equiv_A}{c_{\restriction I_0}}\ \ \ for every $I_0\subseteq\alpha$ of cardinality $n$.
+
+For $n=0$ the claim is trivial, then we assume $\,\sharp\,$ above is true and prove that
+
+\ceq{\hfill c_{\restriction n},{\mr c_n}}{\equiv_A}{c_{\restriction I_0},{\mr c_i}}\ \ \ for every $I_0<i<\alpha$.
+
+As $c$ is  Morley sequence, $c_n\equiv_{A,c_{\restriction n}} {\mr c_i}$ whenever $n<i$. Hence we can equivalently prove that
+
+\ceq{\hfill c_{\restriction n},{\mr c_i}}{\equiv_A}{c_{\restriction I_0},{\mr c_i},}
+
+which is equivalent to
+
+\ceq{\hfill c_{\restriction n}}{\equiv_{A,\,{\mr c_i}}}{c_{\restriction I_0}.}
+
+The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({\mr x})$ as formulated in \ssf{it3} of Section~\ref{invariant}.
+\end{proof}
+
+%Let $I,<_I$ and $J,<_J$ be two infinite linear orders and let $a$ and $b$ be an $I\jj$sequence, respectively a $J\jj$sequence. Note that the expression $a\equiv_A b$ is meaningless unless there is a unique isomorphism between $I,<_I$ and $J,<_J$. However it always make sense, even for non isomorphic orders, when $a$ and $b$ are indiscernibles over $A$. In fact, we agree that \emph{$a\equiv_A b$\/} means $a_{\restriction I_0}\equiv_A b_{\restriction J_0}$ for every finite $I_0\subseteq I$ and $J_0\subseteq J$ of equal cardinality.% That being said, the following proposition is immediate.
+
+
+% \begin{proposition}\label{prop_embedding_indsc_seq}
+% Let $J,<_J$ be an infinite linear orders of cardinality $<\kappa$ and let $a$ be an $A\jj$in\-dis\-cern\-i\-ble $J\jj$sequence. 
+% Let $I,<_I$ be another infinite linear order, and $b$ and  $A\jj$in\-dis\-cern\-i\-ble $I\jj$sequence such that $a\equiv_Ab$. Let $f:J\to I$ be an embedding of linear orders. Then $h(a_i)=b_{f(i)}$ for some $h\in\Aut(\U/A)$.\QED
+% \end{proposition}
+
+
+% 
+% \begin{exercise}
+% Let $c=\<{\mr c_i}:i<\alpha \>$ be a constant sequence, i.e.\@ ${\mr c_0}={\mr c_i}$ for all $i$. Prove that $c$ is a Morley sequence over $A$ if and only if ${\mr c_0}\in(\dcl A)^{|{\mr x}|}$ and that $c$ is a coheir sequence over $A$ if and only if  ${\mr c_0}\in A^{|{\mr x}|}$.\QED 
+% \end{exercise}
+
+
+
+% \begin{exercise}
+% The following are equivalent
+% \begin{itemize}
+%  \item[1.] $\D$ is invariant over $M$;
+%  \item[2.] $c_0\in\D\iff c_1\in\D$ for every $M$-indiscernible sequence $\<c_i:i<\omega\>$ 
+% \end{itemize}
+% 
+% \end{exercise}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{From coheirs to Ramsey to indiscernibles}
+
+
+Let $X$ be an infinite set an $n,k<\omega$. A total function $f:[X]^n\to k$ is also called a \emph{coloring\/} of $[X]^n$ and is identified with a partition of $[X]^n$ into finitely $k$ classes. A set $H\subseteq X$ such that $f$ is constant on $[H]^n$ is called \emph{monochromatic set}. In the literature it may be called a \emph{homogeneous set}, but we already use this word with a different meaning. The following is a most famous theorem which here we prove it in unusual way.
+
+
+\begin{proposition}[(Ramsey Theorem)]
+For every infinite set $X$, every $n,k<\omega$ and every coloring $f:[X]^n\to k$ there is an infinite monochromatic set.
+\end{proposition}
+
+\begin{proof}
+Let $L$ be a language that contains $k$ relation symbols $r_0,\dots,r_{k-1}$ of arity $n$. Given $f:[X]^n\to k$ as above we define now a structure with domain $X$. The interpretation the relation symbols is
+
+%\ceq{\hfill r_i^X}{=}{\Big\{ ({\mr a_0},\dots,a_{n-1})\ :\ |\{{\mr a_0},\dots,a_{n-1}\}|=n \ \textrm { e \ }f\big(\{{\mr a_0},\dots,a_{n-1}\}\big)= i\Big\}}
+
+%\ceq{\hfill r_i^X}{=}{\Big\{ \<{\mr a_0},\dots,{\mr a_{n-1}}\>\ :\  \big|\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big|=n \ \textrm { and \ }f\big(\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big)= i\Big\}} 
+
+\ceq{\hfill r_i^X}{=}{\Big\{ {\mr a_0},\dots,{\mr a_{n-1}}\ :\  \big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\in[X]^n \ \textrm { and \ }f\big(\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big)= i\Big\}} 
+
+Then
+
+\ceq{\ssf{\#}\hfill X}{\models}{\A {\mr x_0},\dots,{\mr x_{n-1}}\ \left[\bigwedge_{0\le i<j<n} {\mr x_i}\neq {\mr x_j}\quad\imp\quad\bigvee_{i<k}r_i({\mr x_0},\dots,{\mr x_{n-1}})\right]}
+
+
+We may assume that $X$ is an elementary substructure of some large saturated model $\U$. Pick any $p({\mr x})\in S(\U)$ finitely satisfied in $X$, not realized in $X$ and let $c=\<{\mr c_i}:i<\omega\>$ be a coheir sequence of $p({\mr x})$. By \ssf{\#} and indiscernibility, all tuples of $n$ distinct elements of $c$ satisfy the same relation, which we assume to be $r_0$. The theorem is proved if we can find in $X$ a sequence $a=\<{\mr a_i}:i<\omega\>$ with the same property. (Note parenthetically that no element of $c$ is in $X$.) We construct $a_{\restriction i}$ by induction on $i$ as follows. 
+
+Assume as induction hypothesis that all subsequences of $a_{\restriction i},c_{\restriction n}$ of length $n$  
+satisfy $r_0$. Our goal is to find ${\mr{a_i}}$ such as the same property holds for $a_{\restriction i},{\mr{a_i}},c_{\restriction n}$. By the indiscernibility of $c$, the property holds for  $a_{\restriction i},c_{\restriction n},{\mr{c_n}}$.  And this can be written by a formula $\phi(a_{\restriction i},c_{\restriction n},{\mr{c_n}})$. As $c$ is a coheir sequence, by Lemma~\ref{lem_coheir_property} we can find  ${\mr{a_i}}\in X$ such that  $\phi(a_{\restriction i},c_{\restriction n},{\mr{a_i}})$. So, as the order is irrelevant,  $a_{\restriction i},{\mr{a_i}},c_{\restriction n}$ satisfies the induction hypothesis.
+\end{proof}
+
+Let $I,<_I$ be an infinite linear order and let $a$ be an $I\jj$sequence. Fix a sequence of distinct variables $x=\<{\mr x_i}: i<\omega\>$. We write \emph{$p(x)\;=\;\textrm{{\small EM}-tp}(a/A)$} and say that  \emph{$p(x)$ is the Ehren\-feucht-Mostowski type of $a$ over $A$\/} if $p(x)$ is the set of formulas $\phi(x_{\restriction n})\in L(A)$ such that $\phi(a_{\restriction I_0})$ holds for every $I_0\in[I]^{n}$. Note that if $a$ is $A\jj$indiscernible then $\EMtp(a/A)$ is a complete type, and vice versa. Moreover, if $a$ and $b$ are two $A\jj$indiscernible $I\jj$sequences with the same Ehren\-feucht-Mostowski type of $a$ over $A$, then $a\equiv_A b$.
+ 
+% \begin{theorem}\label{thm_EM}
+%   Let $I,<_I$ be infinite linear order, then for every sequence $a=\<{\mr a_i}:i\in I\>$ there is sequence of $A\jj$in\-dis\-cern\-i\-bles $c=\<{\mr c_i}: i<\omega\>$ such that $c\equivEM_Aa$.
+% \end{theorem}
+% 
+% \begin{proof}
+%   Let $q(x)=\EMtp(a/A)$. It suffices to prove that the following type is consistent
+% 
+%   \ceq{\hfill q(x)}{\cup}{\Big\{\phi(x_{\restriction n})\iff\phi(x_{\restriction J_0})\ :\ \phi(x_{\restriction n})\in L(A),\ \ J_0\in[\omega]^n,\ \ n<\omega\Big\}.}
+% 
+%   It suffices to prove that the following type is consistent. We will prove that any finite subset of it is realized by a subsequence of $a$. First note that any infinite subsequence of $a$ realizes any finite subset of $q(x)$. So we only need to pay attention to the set on the right. We will prove that for every $\phi_0,\dots,\phi_{m-1}\in L_x(A)$ and every $n<k<\omega$ there is an infinite $H\subseteq I$ 
+% 
+%   \ceq{\ssf{\#}}{~}{\Big\{\phi_i(x_{\restriction n})\iff\phi_i(x_{\restriction I_0})\ :\  I_0\in[\omega]^n\textrm{ and } i<m\Big\}.}
+% 
+%   Let $f:[I]^n\to\P(m)$ map $I_0\in[I]^n$ to the set $\big\{i<m\ :\ \phi_i(a_{\restriction I_0})\big\}$. By Ramsey theorem with $2^m$ colors there is some infinite monochromatic set $H\subseteq I$. If $H$ has order type $\omega$, then it is immediate that $a_{\restriction H}$ realizes \ssf{\#}, as required. Otherwise observe for every large $k<\omega$ there is a any subset of $H$ of size $k$ realizes the restriction of \ssf{\#} to $n<k$ and $I_0<k$. This suffices to prove the theorem
+% \end{proof}
+% 
+% 
+% 
+% \begin{proposition}\label{prop_EM}
+%   Let $I,<_I$ and $J,<_J$ be a linear orders such that $|J|\le \kappa$. Let $a$ be an $I\jj$se\-quence of $A\jj$indiscernibles. Then there is an $J\jj$sequence of $A$-indiscernibles $c$ such that $c\equivEM_Aa$. Moreover, if  $I\subseteq J$ and $|I|<\kappa$, then we can require that $c_{\restriction I}=a$.
+% \end{proposition}
+% 
+% \begin{proof}
+%   Let $z=\<{\mr z_i}:i\in J\>$ be an $J\jj$sequence of variables. Define
+% 
+%   \ceq{\hfill q(z)}{=}{\Big\{\phi(z_{\restriction J_0})\in L(A)\ :\ \phi(a_{\restriction I_0})\ \textrm{ for some }J_0\subseteq J,\ I_0\subseteq I,\ |J_0|=|I_0|<\omega\Big\}}
+% 
+%   By compactness, and because $a$ is a $J$-sequence of indiscernibles, $q(z)$ consistent. Every $I\jj$sequence $c$ that realizes $q(z)$ is as required by the proposition. Assume $|J|<\kappa$ and $J\subseteq I$ then there is an $h\in\Aut(\U/A)$ such that $h(c_{\restriction J})=a$. Hence $h(c)$ that extends $a$.
+% \end{proof}
+% 
+
+
+
+\begin{theorem}[(Ehrenfeucht-Mostowski)]\label{thm_EM}
+  Let $I,<_I$ and $J,<_J$ be two infinite linear orders such that $|J|\le \kappa$. Then for every sequence $a=\<{\mr a_i}:i\in I\>$ there is an $J\jj$sequence of $A$-indiscernibles $c$ such that $\EMtp(a/A)\subseteq\EMtp(c/A)$.
+\end{theorem}
+
+
+\begin{proof}
+  To begin with, we prove the theorem assuming that both $I$ and $J$ have order type $\omega$. Then any realization of the following type yields a $J$-sequence of $A$-indiscernibles. 
+
+  \ceq{\hfill q(x)}{\cup}{\Big\{\phi(x_{\restriction n})\iff\phi(x_{\restriction J_0})\ :\ \phi(x_{\restriction n})\in L(A),\ \ J_0\in[\omega]^n,\ \ n<\omega\Big\}.}
+
+  We will prove that any finite subset of the type above is realized by a subsequence of $a$. First note that any infinite subsequence of $a$ realizes $q(x)$, so we only need to pay attention to the set on the right. We prove that for every $\phi_0,\dots,\phi_{m-1}\in L_x(A)$ and every $n<\omega$ there is an infinite $H\subseteq I$ such that $a_{\restriction H}$
+
+  \ceq{\ssf{\#}}{~}{\Big\{\phi_i(x_{\restriction n})\iff\phi_i(x_{\restriction I_0})\ :\  I_0\in[\omega]^n\textrm{ and } i<m\Big\}.}
+
+  Let $f:[I]^n\to\P(m)$ map $I_0\in[I]^n$ to the set $\big\{i<m\ :\ \phi_i(a_{\restriction I_0})\big\}$. By Ramsey theorem with $2^m$ colors there is some infinite monochromatic set $H\subseteq I$. As $I$ has order type $\omega$, so does $H$, and it is immediate that $a_{\restriction H}$ realizes \ssf{\#}, as required to prove the theorem with $I$ and $J$ of order type $\omega$.
+
+  Now we note that the argument above easily generalizes to arbitrary linear order $I$. Only, in this case we cannot guarantee that $H$ has order type $\omega$. However, as $H$ is infinite, for every $k<\omega$ there is a any subset of $H$ of size $k$ that realizes the restriction of \ssf{\#} to $n<k$ and $I_0<k$. This suffices to prove the theorem with $I$ arbitrary and $J$ of order type $\omega$.
+  
+  Now we extend the result to arbitrary $J$ of cardinality $\le\kappa$. From the argument above, there is a sequence of indiscerbibles $\<b_i:i<\omega\>$ such that $\EMtp(a/A)\subseteq\EMtp(b/A)$. Fix a $J\jj$sequence of variables $z=\<{\mr z_i}:i\in J\>$ and define
+
+  \ceq{\hfill p(z)}{=}{\Big\{\phi(z_{\restriction J_0})\in L(A)\ :\ \phi(b_{\restriction n})\ \textrm{ for some }J_0\subseteq [J]^n,\ n<\omega\Big\}}
+  
+  This type is clearly finitely consistent. Every $c$ that realizes $q(z)$ is a $J\jj$sequence as required by the theorem. 
+  \end{proof}
+
+
+\begin{proposition}\label{prop_indiscernibles_set_model}
+  Let $c=\<{\mr c_i}:i\in I\>$ be a sequence of $A$-indiscernibles. Then $c$ is indiscernible over some model $M$ containing $A$.
+\end{proposition}
+
+\begin{proof}
+  Fix an arbitrary model $M$ containing $A$. By Theorem~\ref{thm_EM} there is an $I\jj$sequence of $M\jj$indiscernibles $b$ such that $\EMtp(c/M)\subseteq\EMtp(b/M)$. As $c$ is an $A\jj$indiscernible sequence $a\equiv_Ab$, so some $h\in\Aut(\U/A)$ takes $b$ to $c$ coordinatewise. Therefore $hb=c$ is indiscernible over $h[M]$.
+\end{proof}
+
+\begin{exercise}
+Let $a=\<{\mr a_i}:i\in I\>$ be an $A\jj$indiscernible sequence and let $I\subseteq J$ with $|J|\le \kappa$. Then there is an $A\jj$indiscernible sequence $c=\<{\mr c_i}:i\in J\>$ such that $c_{\restriction I}=a$.\QED
+\end{exercise}
+
+\begin{exercise}
+  Let ${\mr a}\equiv_A{\mr b}$ and define $q({\mr x})=\tp({\mr a}/A)=\tp({\mr b}/A)$. Prove that if $q({\mr x})$ extends to a global $A\jj$invariant type $p({\mr x})\in S(\U)$ then there is a sequence $c=\<{\mr c_i}:i<\omega\>$ such that ${\mr a},c$ and ${\mr b},c$ are both sequences of $A\jj$indiscernibles.\QED
+\end{exercise}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Product of types}\label{tipi_prodotto}
+
+
+\begin{lemma}\label{lem_tensor}
+Let $p({\mr x})\in S(\U)$ be a global type invariant over $A$. Let ${\gr a}\equiv_A{\gr a'}$. Then  ${\gr a},{\mr b}\equiv_A{\gr a'},{\mr b'}$ for all ${\mr b}\models p_{\restriction A,{\gr a}}({\mr x})$ and  ${\mr b'}\models p_{\restriction A,{\gr a'}}({\mr x})$.
+
+\end{lemma}
+
+\begin{proof}
+Let $\phi({\mr x\,};{\gr z})\in L(A)$. If $\phi({\mr b\,};{\gr a})$ then $\phi({\mr x\,};{\gr a})\in p$ and, by invariance, $\phi({\mr x\,};{\gr a'})\in p$. As  ${\mr b'}\models p_{\restriction A,{\gr a'}}({\mr x})$, we obtain $\phi({\mr b'\,};{\gr a'})$. 
+\end{proof}
+
+Lemma~\ref{lem_tensor} ensures that the definition below is well-defined, i.e.\@ that it does not depend on ${\gr a},{\mr b}$. 
+
+
+\begin{definition}\label{def_prodotto_tipi}
+Let $p({\mr x})\in S(\U)$ be an $A$-invariant type. For $q({\gr z})\in S(A)$ we define
+
+\ceq{\hfill\mbox{\emph{$q(z)\otimes_A p(x)$}}}{\deq}{\tp({\gr a\,};{\mr b}/A)}\quad for some ${\gr a}\models q({\gr z})$ and ${\mr b}\models p_{\restriction A,{\gr a}}({\mr x})$.
+
+When $q({\gr z})\in S(\U)$, we define
+
+\ceq{\hfill\mbox{\emph{$q(z)\otimes p(x)$}}}{\deq}{\bigcup_{A\subseteq B}\ q_{\restriction B}(z)\otimes_B p(x)}.\QED
+\end{definition}
+
+Note that $q({\gr z})\otimes p({\mr x})$ is consistent, and therefore a complete global type. In fact, it is immediate to verify that if $A\subseteq B'\subseteq B''$ then $q_{\restriction B'}({\gr z})\otimes p({\mr x})\ \subseteq\ q_{\restriction B''}({\gr z})\otimes p({\mr x})$.
+
+
+\begin{proposition}
+Let $q({\gr z}), p({\mr x})\in S(\U)$ be $A$-invariant types. Then $q(z)\otimes p(x)$ is also $A$-invariant. And if they are finitely satisfiable in $A$ then so is $q(z)\otimes p(x)$.
+\end{proposition}
+
+\begin{proof}
+Let $\phi(z,x,u)\in L(A)$. Let $\phi(z,x,c)\in q(z)\otimes p(x)$ and let $c'\equiv_Ac$. Fix $a\models q_{\restriction A,c,c'}$ and $b\models p_{\restriction A,c,c',a}$. From the invariance of $q$ we obtain $c\equiv_{A,a}c'$. From the invariance of $p$ we obtain  $c\equiv_{A,a,b}c'$. As $\phi(a,b,c)$ hold by the choice of $a$ and $b$, also $\phi(a,b,c')$ holds. It follows that $\phi(z,x,c')\in q({\gr z})\otimes p({\mr x})$ which proves the invariance of $q({\gr z})\otimes p({\mr x})$.
+
+Let $\phi(z,x)\in L(B)$ be a formula in $q(z)\otimes p(x)$. Let $a\models q_{\restriction B}(z)$. Then $\phi(a,x)\in p$ and, by finite satisfiability, there is a $b'\in A^{|x|}$ such that $\phi(a,b')$. Then $\phi(z,b')\in q$ and, by finite satisfiability $\phi(a',b')$ holds for some $a'\in A^{|z|}$.
+\end{proof}
+
+
+
+
+
+La seguente proposizione mostra che possiamo ragionevolmente parlare di tipo delle di Morley di $p$. Questo paragrafo \`e dedicato alla descrizione sintattica di questo tipo.
+
+\begin{proposition}\label{prop_tiposequenzaMorley}
+Sia $p\in S_x(\U)$ un tipo globale $A\jj$invariante e supponiamo che $a$ e $b$ siano due sequenze di Morley di $p$ su $A$. Allora $a\equiv_A c$. 
+\end{proposition}
+\begin{proof}
+%Possiamo assumere che $a=\<a_i:i<\omega\>$ e $\bar c=\<c_i:i<\omega\>$ abbiano lunghezza $\omega$. 
+Per indiscernibilit\`a, \`e sufficiente mostrare che $a_{\restriction i}\equiv_Ac_{\restriction i}$ per ogni $i<\omega$. Ragioniamo per induzione, assumiamo l'equivalenza come ipotesi induttiva, fissiamo una formula $\phi(\bar x_{\restriction i},{\mr x})\in L(A)$ e dimostriamo che 
+
+\ceq{\hfill \phi(a_{\restriction i},{\mr a_i})}{\iff}{\phi(c_{\restriction i},{\mr c_i})} 
+
+Se $\phi(a_{\restriction i},{\mr a_i})$ allora $\phi(a_{\restriction i},{\mr x})\in p$. Per l'ipotesi induttiva e per l'invarianza di $p$ otteniamo che anche  $\phi(c_{\restriction i},{\mr x})\in p$ e di qui $\phi(c_{\restriction i},{\mr c_i})$. L'equivalenza segue per simmetria.
+\end{proof}
+
+Per poter semplificare la definizione~\ref{def_prodotto_tipi} abbiamo bisogno del seguente lemma tecnico:
+
+\begin{lemma}\label{lemma_prodotto}
+Dati $p(x), q(y)\in S(\U)$, e due insiemi $A_i$, per $i=0,1$ su cui $q(y)$ \`e invariante, fissiamo $\phi(x,y)\in L(A_0\cap A_1)$ e delle tuple $a_i,b_i$ tali che $a_i\models p_{\restriction A_i}$ e $b_i\models q_{\restriction A_i,a_i}$. Allora $\phi(a_0,b_0)\iff\phi(a_1,b_1)$.
+\end{lemma}
+\begin{proof}
+Supponiamo per cominciare che $A_0=A_1$ e denotiamo questo insieme con $A$. Assumiamo $\phi(a_0,b_0)$ e quindi, per la completezza di $q$, che $\phi(a_0,y)\in q$. Per la completezza di $p$  abbiamo che $a_0\equiv_Aa_1$. Quindi, per l'invarianza di $q$ otteniamo $\phi(a_1,y)\in q$ e da questo segue $\phi(a_1,b_1)$.
+
+Per concludere, consideriamo il caso $A_0\neq A_1$. Sia $A=A_0\cup A_1$ e fissiamo $a_2\models  p_{\restriction A}$ e $b_2\models q_{\restriction A,a_2}(y)$. Per quanto sopra dimostrato otteniamo $\phi(a_0,b_0)\iff\phi(a_2,b_2)$ ed anche $\phi(a_2,b_2)\iff\phi(a_1,b_1)$.
+\end{proof}
+
+Conviene immaginarsi questa operazione di prodotto come il passo induttivo per la costruzione di una sequenza di Morley.
+
+\begin{definition}\label{def_prodotto_tipi}
+Dati $p(x),q(y)\in S(\U)$ dove $q(y)$ \`e un tipo invariante, definiamo il prodotto di $p$ e $q$ come il tipo:
+
+%\ceq{\hfill p(x)\otimes q(y)}{=}{\Big\{\phi(x,y)\ :\ \phi(b,c) \textrm{ per qualche } a\models p_{\restriction A},\ b\models q_{\restriction A,a}(y) ed $A$ t\Big\}}
+
+\ceq{\hfill\mbox{\emph{$p(x)\otimes q(y)$}}}{=}{\Big\{\phi(x,y)\ :\ \textrm{esistono } a,b\ \models\ \phi(x,y)\ \wedge\ p_{\restriction A}(x)\ \wedge\ q_{\restriction A,a}(y)\Big\}}
+
+L'insieme $A$ nella definizione \`e uno qualsiasi che contiene i parametri di $\phi(x,y)$ e su cui $q(y)$ \`e invariante. Il lemma~\ref{lemma_prodotto} assicura che la definizione non dipende dal particolare insieme scelto.\QED
+\end{definition}
+
+Il lemma~\ref{lemma_prodotto} ha anche la seguente importante conseguenza:
+
+\begin{corollary}\label{cor_otimes_completo}
+Se $p(x),q(y)\in S(\U)$ e $q(y)$ \`e invariante, allora $p(x)\otimes q(y)$ \`e un tipo completo.
+\end{corollary}
+
+\begin{proof}
+Sia $\phi(x,y)\in L(\U)$. Fissiamo un insieme $A$ contenente i parametri di $\phi(x,y)$ e su cui $q(y)$ sia invariante. Fissiamo $a,b$ arbitrari tali che $a\models p_{\restriction A}(x)$ e $b\models q_{\restriction A,a}(y)$. Dal lemma~\ref{lemma_prodotto} otteniamo che $\phi(x,y)\in p(x)\otimes q(y)$ se e solo se $\phi(a,b)$.
+\end{proof}
+
+
+\begin{corollary}
+Se $p(x),q(y)\in S(\U)$ sono tipi globali $A\jj$invarianti, allora anche $p(x)\otimes q(y)$ \`e $A\jj$invariante.
+\end{corollary}
+
+\begin{proof}
+Sia $\phi(x,y,z)\in L$, sia $c$ arbitrario tale che  $\phi(x,y,c)\in p(x)\otimes q(y)$, e sia $c'\equiv_Ac$. Fissiamo $a\models p_{\restriction A,c,c'}$. Poich\'e $p$ \`e invariante su $A$, otteniamo $a,c\equiv_Aa,c'$. Ora fissiamo un $b$ arbitrario tale che $b\models q_{\restriction A,c,c',a}$. Per l'invarianza di $q$ su $A$ otteniamo  $a,b,c\equiv_Aa,b,c'$ e quindi $\phi(a,b,c')$. Seque che $\phi(x,y,c)\in p(x)\otimes q(y)$.
+\end{proof}
+
+\begin{proposition}
+Se $p(x),q(y)\in S(\U)$ sono finitamente soddisfacibili su $A$, allora $p(x)\otimes q(y)$ \`e finitamente soddisfacibile su $A$.
+\end{proposition}
+
+\begin{proof}
+Sia $\phi(x,y)\in p(x)\otimes q(y)$ arbitraria e fissiamo un $B$ contenente $A$ ed i parametri di $\phi(x,y)$. Quindi esistono $a,b\models\phi(x,y)\,\wedge\,p_{\restriction B}(x)\,\wedge\,q_{\restriction B,a}(y)$. Allora $\phi(a,y)\in q$, e quindi $\phi(a,b')$ per un qualche $b'\in A$. Allora $\phi(x,b')\in p$, e quindi $\phi(a',b')$ per qualche $a'\in A$.
+\end{proof}
+
+
+Dato $p(x)\in S(\U)$ un tipo globale invariante. Sia $\<x_i:i<\omega\>$ una sequenza di tuple di variabili con $|x|=|x_i|$. Definiamo induttivamente
+
+\ceq{\hfill p^{(1)}(x_0)}{=}{p(x_0)}; 
+
+\ceq{\hfill p^{(n+1)}(x_0,\dots,x_n)}{=}{p^{(n)}(x_0,\dots,x_{n-1})\otimes p(x_n)};
+
+\ceq{\hfill p^{(\omega)}(x_i:i<\omega)}{=}{\bigcup_{n<\omega}p^{(n+1)}(x_0,\dots, x_n)}.
+
+La seguente proposizione giustifica la definizione di $p^{(\omega)}$, la dimostrazione \`e immediata.
+
+\begin{proposition}\label{prop_p^omega_Morley}
+Sia $p(x)\in S(\U)$ un tipo globale $A\jj$invariante. Allora le seguenti affermazioni sono equivalenti
+\begin{itemize}
+\item[1.]$\<c_i:i<\omega\>$ \`e una sequenze di Morley di $p$ su $A$;
+\item[2.] $\<c_i:i<\omega\>\models p^{(\omega)}|_A$
+\end{itemize}
+\end{proposition}
+
+La seguente proposizione torner\`a utile nei prossimi paragrafi, si osservi che  non \`e una conseguenza della proposizione~\ref{prop_p^omega_Morley} perch\'e qui l'invarianza su $A$ non \`e tra le ipotesi.
+
+\begin{proposition}
+Sia $p(x)\in S(\U)$ un tipo globale invariante ed $A$ un insieme arbitrario. Allora ogni $\<c_i:i<\omega\>\models p^{(\omega)}|_A$ \`e una sequenza di indiscernibili su $A$.
+\end{proposition}
+
+
+\begin{proof}
+\`E sufficiente verificare che se $\<c_i:i<\omega\>\models p^{(\omega)}|_A$ allora $c_{i_0},\dots,c_{i_n}\models p^{(n+1)}|_A$ per ogni $i_0<\dots<i_n<\omega$. 
+\end{proof}
+
+
+
+
+
+\section{Expansions}
+
+Given $\D\subseteq\U^{|{\gr z}|}$, we will occasionally find it convenient to expand the language with a predicate for ${\gr z}\in\D$. When ${\gr z}$ finite tuple, it is straightforward how to define such an expansion. When ${\gr z}$ is an infinite tuple, though the intuition stays essentially the same, a more involved definition is required because first-order logic does not allow infinitary predicates.
+ 
+We write \emph{$L(\D)$\/} for a two sorted language. We call the two sorts the home sort and the ${\gr z}\jj$sort. The canonical expansion of $\U$ to an $L(\D)\jj$structure is denoted by $\<\U,\D\>$, The domain of the home sort is $\U$, the domain of the ${\gr z}\jj$sort is $\U^{|{\gr z}|}$. Besides the symbols of $L$, there is a function symbol $\pi_i$ for every $i<|{\gr z}|$. These functions have many-sorted arity $\<{\gr z},0\>$  (see Section~\ref{imaginary}.\ref{many-sorted} for the notation) which are interpreted as the projection to the $i\jj$coordinate. There is also a predicate of many-sorted arity $\<{\gr z}\>$ interpreted as $\D$.
+
+The definition above is generalized in the obvious way if for $\D$ we take a tuple $\<\D_i:i<\lambda\>$ of subsets of $\U^{|{\gr z}|}$.
+
+As usual, $L(\D)$ denotes also the set of formulas in that language, and we write  $L(A\,;\D)$ for the set of formulas with parameters from $A$.
+
+% \begin{proposition}
+% If $\D\subseteq\U^{|{\gr z}|}$ is invariant over $A$ than every $L(A\,;\D)\jj$definable set is invariant over $A$. 
+% \end{proposition}
+
+\begin{proposition}\label{prop_indiscernible_L(A,D)}
+If $\D\subseteq\U^{|{\gr z}|}$ is invariant over $A$ then every $A\jj$indiscernible sequence is indiscernible in the language $L(A\,;\D)$.
+\end{proposition}
+
+\begin{proof}
+Let $c=\<c_i:i\in I\>$ be an $A\jj$indiscernible sequence. For every $I_0,I_1\in I^{[n]}$ there is an $f\in\Aut(\U/A)$ such that $fc_{\restriction I_0}=c_{\restriction I_1}$, Hence $\phi\big(c_{\restriction I_0}\,;\D\big)\iff \phi\big(fc_{\restriction I_0}\,;f[\D]\big)\iff\phi\big(c_{\restriction I_1}\,;\D\big)$.
+\end{proof}
+
+% \begin{exercise}WRONG!!
+% Let $p({\mr x})\in S(\U)$ be a global type and let $M$ be a model. Assume that $\<\U\,;\D_{p,\phi}\>\;\preceq\;\<M\,;M\cap\D_{p,\phi}\>$ for every $\phi({\mr x}\,;{\gr z})\in L$ and prove that $p({\mr x})$ is finitely satisfiable in $M$.
+% \end{exercise}
+
+
+\begin{exercise}
+Prove that if $\C\subseteq\U^{|{\gr z}|}$ is type-definable over $B$ then $\equiv_{A,B}$ implies $\equiv_{A\,;\C}$.\QED
+\end{exercise}
+
+
+\end{document}

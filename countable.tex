@@ -1,0 +1,471 @@
+\documentclass[creche.tex]{subfiles}
+\begin{document}
+\chapter{Countable models}
+\label{countable}
+
+\def\ceq#1#2#3{\parbox[b]{30ex}{$\displaystyle #1$}\parbox[b]{6ex}{\hfil$#2$}$\displaystyle #3$}
+
+
+
+
+In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ larger than $|L|$. (Expect that most relevant theorems are proved under the assumption that $L$ is countable.) Notation and implicit assumptions are as presented in Section~\ref{saturation}.\ref{monster}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The omitting types theorem}\label{omttingtype}
+
+We say that a formula \emph{$\phi(x)$ isolates $p(x)$}, a type, if it is consistent and $\phi({\mr x})\imp p({\mr x})$. When $\Delta$ is a set of formulas, we say that \emph{$\Delta$ isolates $p(x)$\/} if some formula in $\Delta$ does. In this chapter $\Delta$ is always a set of the form $L_{{\mr x}}(A)$ and we say  \emph{$A$ isolates $p(x)$\/} or every simply \emph{$p(x)$ is isolated\/} when $A$ is clear. We say that a model \emph{$M$ omits $p(x)$\/} if it does not realized it. 
+
+Observe that if $p({\mr x})\subseteq L(M)$ then $M$ realizes $p({\mr x})$ if and only if $M$ isolates  $p({\mr x})$. Therefore if $A$ isolates $p({\mr x})$, then every model containing $A$ realizes $p({\mr x})$. Below we prove that the converse also holds when $L$ and $A$ are countable. This a famous classical theorem  which is called the \textit{omitting types theorem}. 
+
+The construction of a model $M$ omitting $p({\mr x})$ proceeds by stages. Along the construction we preserve the property of being {\em isolated\/}  since that of being {\em realized\/} is not well behaved in sets which are not models. In the limit, when a model is obtained, these two properties coincide. 
+
+The omitting types theorem require the following lemma which is an analogue of the Kura\-towski-Ulam theorem.
+
+\begin{lemma}\label{lem_kuratowskiUlam}
+Assume $L(A)$ is countable. Let $p({\mr x})\subseteq L(A)$ and suppose that $A$ does not isolate $p({\mr x})$. Then every consistent formula $\psi({\gr z})\in L(A)$ has a solution ${\gr a}$ such that $A,{\gr a}$ does not isolate $p({\mr x})$.
+\end{lemma}
+\begin{proof}
+We construct sequence of formulas $\<\psi_i({\gr z}):i<\omega\>$ such that any realization ${\gr a}$ of the type  $q({\gr z})=\big\{\psi_i({\gr z}):i<\omega\big\}$ is as required by the lemma.
+
+To begin with, we fix an enumeration $\<\xi_i({\mr x}\,;{\gr z}):i<\omega\>$ of all formulas in $L_{{\mr x}\,;{\gr z}}(A)$ and set $\psi_0({\gr z})= \psi({\gr z})$. At stage $i+1$, if $\xi_i({\mr x}\,;{\gr z})\wedge\psi_i({\gr z})$ in inconsistent, let $\psi_{i+1}({\gr z})=\psi_i({\gr z})$, otherwise let
+
+\ceq{\hfill\psi_{i+1}({\gr z})}{=}{\psi_i({\gr z})\ \ \wedge\ \ \E{\mr x}\,\big[\xi_i({\mr x}\,;{\gr z})\wedge\neg\phi({\mr x})\big]}
+ 
+for some formula $\phi({\mr x})\in p$ such that the resulting $\psi_{i+1}({\gr z})$ is consistent. If possible, this guarantees that $\xi_i({\mr x}\,;{\gr a})$ for any ${\gr a}\models q({\gr z})$ does not isolate $p({\mr x})$. The proof is complete if we can show that it is always possible to find a formula $\phi({\mr x})$ as required. 
+
+Suppose by way of contradiction that no formula makes $\psi_{i+1}({\gr z})$ consistent, that is, 
+
+\ceq{\hfill\xi_i({\mr x}\,;{\gr z})\wedge\psi_i({\gr z})}{\imp}{\phi({\mr x})} 
+
+for every $\phi({\mr x})\in p$. This immediately imply that 
+
+\ceq{\hfill\E {\gr z}\;\big[\xi_i({\mr x}\,;{\gr z})\wedge\psi_i({\gr z})\big]}{\imp}{p({\mr x}),} 
+
+
+that is, $p({\mr x})$ is isolated by a formula in $L_{{\mr x}}(A)$, which contradicts our assumptions.
+\end{proof}
+
+\begin{theorem}[(Omitting types theorem)] Assume $L(A)$ is countable. Then for every consistent $p({\mr x})\subseteq L(A)$ the following are equivalent
+\begin{itemize}   
+\item[1.] all models containing $A$ realize $p({\mr x})$;
+\item[2.] $p({\mr x})$ is isolated.
+\end{itemize}
+\end{theorem}
+
+The theorem owes its name to the contrapositive of implication \ssf{1}$\IMP$\ssf{2}.
+
+\begin{proof}
+Implication \ssf{2}$\IMP$\ssf{1} is clear, we prove \ssf{1}$\IMP$\ssf{2}. Assume $A$ does not isolate $p({\mr x})$. The model $M$ is the union of a chain $\<A_i:i<\omega\>$ of countable subsets of $\U$ that starts with $A_0=A$. Along the construction we require as inductive hypothesis that $A_i$ does not isolate $p({\mr x})$. At the end, $M$ will not isolate $p({\mr x})$ which for a model is equivalent to omitting. 
+
+We proceed as in the proof of the downward L\"owenheim-Skolem theorem (precisely, we use the second proof~\ref{}). Lemma~\ref{lem_kuratowskiUlam} ensure that we can satisfy any consistent formula in $A_i$ and preserve the inductive hypothesis.
+\end{proof}
+
+Gerald Sacks once famously remarked: \textit{Any fool can realize a type but it take a model theorist to omit one}. (Though, the proof reminds me more of set theory than model theory.)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Prime and atomic models}
+
+
+
+We say that \emph{$M$ is prime over $A$\/} if $A\subseteq M$ and for every $N$ containing $A$ there is an elementary embedding $h:M\to N$ that fixes $A$. When $A$ is empty we simply say that $M$ is \emph{prime}. 
+
+There is no syntactic analogue of primeness; the notion that comes most close (and works pretty well when everything is countable) is atomicity. For ${\mr a}\in\U^{|{\mr x}|}$ we say that \emph{$a$ is isolated over $A$\/} if the type $p({\mr x})=\tp({\mr a}/A)$ is isolated. Note that this equivalent to claiming that ${\mr a}$ is an isolated point in $\U^{|{\mr x}|}$ w.r.t.\@ the $A\jj$topology defined in Section~\ref{saturation}.\ref{monster}. We say that \emph{$M$ is atomic over $A$\/} if $A\subseteq M$ every ${\mr a}\in M^{<\omega}$ is isolated over $A$.
+
+% \begin{proposition}
+% Let ${\mr b}$ and ${\gr a}$ be finite tuples. Let $p({\mr x},{\gr z})=\tp ({\mr b},{\gr a}/A)$ then the following are equivalent
+% \begin{itemize}
+% \item[1.] $A$ isolates $p({\mr x},{\gr z})$;
+% \item[2.] $A,{\gr a}$ isolates $p({\mr x},{\gr a})$ and $A$ isolates $\E {\mr x}\, p({\mr x},{\gr z})$.
+% \end{itemize}
+% \end{proposition}
+
+\begin{proposition}
+Let ${\mr b}$ and ${\gr a}$ be finite tuples. Then the following are equivalent
+\begin{itemize}
+\item[1.] $A$ isolates  ${\mr b},{\gr a}$;
+\item[2.] $A,{\gr a}$ isolates ${\mr b}$ and $A$ isolates ${\gr a}$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+Let $p({\mr x},{\gr z})=\tp ({\mr b},{\gr a}/A)$ and note that  $p({\mr x},{\gr a})=\tp({\mr x}/A,{\gr a})$ and $\E{\mr x}\,p({\mr x},{\gr z})=\tp({\gr a}/A)$. 
+
+\ssf{1}$\IMP$\ssf{2}\quad Let $\phi({\mr x},{\gr z})\in L(A)$ be such that $\phi({\mr x},{\gr z})\imp p({\mr x},{\gr z})$. It follows that $\phi({\mr x},{\gr a})\imp p({\mr x},{\gr a})$ and $\E{\mr x}\, \phi({\mr x},{\gr z})\imp \E{\mr x}\,p({\mr x},{\gr z})$. Therefore \ssf{2} holds.
+
+\ssf{2}$\IMP$\ssf{1}\quad Fix $\phi({\mr x}\,;{\gr z}), \psi({\gr z})\in L(A)$ such that $\phi({\mr x}\,;{\gr a})$ isolates $p({\mr x}\,;{\gr a})$ and $\psi({\gr z})$ isolates $\E {\mr x}\, p({\mr x}\,;{\gr z})$. Let $\xi({\mr x}\,;{\gr z})\in p$ be arbitrary. As $\phi({\mr x}\,;{\gr a})\imp\xi({\mr x}\,;{\gr a})$, the formula $\A{\mr x}\,\big[\phi({\mr x}\,;{\gr z})\imp\xi({\mr x}\,;{\gr z})\big]$ belongs to $\E {\mr x}\, p({\mr x},{\gr z})$. Hence $\psi({\gr z})\imp\A{\mr x}\,\big[\phi({\mr x}\,;{\gr z})\imp\xi({\mr x}\,;{\gr z})\big]$. As this holds for all $\xi({\mr x}\,;{\gr z})\in p$, we conclude that $\psi({\gr z})\wedge\phi({\mr x}\,;{\gr z})$ isolates  $p({\mr x},{\gr z})$.
+\end{proof}
+
+The straightforward direction of the proposition above yields the following useful proposition.
+
+\begin{proposition}\label{prop_atomic_over_Aa}
+If $M$ is atomic over $A$ then $M$ is also atomic over $A,{\gr a}$ for every finite ${\gr a}\in M^{<\omega}$.
+\end{proposition}
+\begin{proof}
+Let ${\mr b}\in M^{|{\mr x}|}$ be a finite tuple. Then $A$ isolates ${\mr b},{\gr a}$  hence $A,{\gr a}$ isolates ${\mr b}$.
+\end{proof}
+
+\begin{proposition}\label{prop_atomic_extension}
+Let $k:M\to N$ be an elementary map and suppose that $M$ is atomic over $\dom k$. Then for every ${\mr b}\in M$ there is a ${\mr c}\in N$ such that $k\cup\big\{\<{\mr b},{\mr c}\>\big\}:M\to N$ is elementary.
+\end{proposition}
+
+\begin{proof}
+Let $p({\mr x}\,;{\gr z})=\tp({\mr b}\,;{\gr a})$ where ${\gr a}$ is an enumeration of $\dom k$. And let $\phi({\mr x}\,;{\gr z})\in L$ be such that $\phi({\mr x}\,;{\gr a})\imp p({\mr x}\,;{\gr a})$. Note that, by elementarity, $\phi({\mr x}\,;k{\gr a})\imp p({\mr x}\,;k{\gr a})$. Hence the required ${\mr c}$ is any solution of $\phi({\mr x}\,;k{\gr a})$ in $N$. 
+\end{proof}
+
+A limiting assumption in Proposition~\ref{prop_atomic_over_Aa} is that ${\gr a}$ need to be finite. Therefore the following proposition is restricted to countable models.
+
+
+\begin{proposition}\label{prop_atomic_unique}
+Any two is countable models atomic over $A$ are isomorphic.
+\end{proposition}
+
+\begin{proof}
+Easy, using Propositions~\ref{prop_atomic_over_Aa} and~\ref{prop_atomic_extension} and back-and-forth.
+\end{proof}
+
+\begin{proposition} 
+Assume $L(A)$ is countable. Then for every model $M$ the following are equivalent
+\begin{itemize}
+\item[1.] $M$ is countable and atomic over $A$;
+\item[2.] $M$ is prime over $A$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+\ssf{1}$\IMP$\ssf{2}\quad By Propositions~\ref{prop_atomic_over_Aa} and~\ref{prop_atomic_extension}.
+
+
+\ssf{2}$\IMP$\ssf{1}\quad Some countable model containing $A$ exists, as $M$ embeds in it, $M$ has also to be countable . Now we prove that $M$ is atomic over $A$. Suppose for a contradiction that there is some ${\mr b}\in M^{<\omega}$ such that $p({\mr x})=\tp({\mr b}/A)$ is not isolated. By the omitting types theorem there is a model $N$ containing $A$ that omits $p({\mr x})$. Then there cannot be any $A\jj$elementary embedding of $M$ into $N$.
+\end{proof}
+
+\begin{proposition}\label{prop_idolated_type_dense}
+Assume $L(A)$ is countable. Then the following are equivalent
+\begin{itemize}
+\item[1.] there are models atomic over $A$;
+\item[2.] for every $|{\gr z}|<\omega$, every consistent $\phi({\gr z})\in L(A)$ has a solution that is isolated over $A$.
+\end{itemize}
+\end{proposition} 
+Note that \ssf{2} says that in $\U^{|{\gr z}|}$ isolated points are dense w.r.t.\@ the topology defined in Section~\ref{saturation}.\ref{monster}.
+\begin{proof}
+Implication \ssf{1}$\IMP$\ssf{2} hold by elementarity. To prove \ssf{2}$\IMP$\ssf{1} we construct by induction a sequence $\<{\mr a_i}:i<\omega\>$. Reasoning as in (the second proof of) the downword L\"overheim-Skolem theorem ensures that $A\cup\big\{{\mr a_i}:i<\omega\big\}$ is a model. To obtain an atomic model we require that ${\gr a_{\restriction i}}$ is isolated over $A$. 
+
+Suppose ${\gr a_{\restriction i}}$ has been defined and let $\phi({\gr z})\in L(A)$ be the formula that isolates $\tp({\gr a_{\restriction i}}/A)$. Let $\psi({\mr x}\,;{\gr z})\in L(A)$ be such that $\psi({\mr x}\,;{\gr a_{\restriction i}})$ is consistent (we leave to the reader the details of the enumeration of such formulas). Then $\psi({\mr x}\,;{\gr z})\wedge\phi({\gr z})$ is also consistent and by assumption it has a solution ${\mr b}\,;{\gr c}$ that is isolated over $A$. As ${\gr a_{\restriction i}}\equiv_A{\gr c}$, there is an $A$-automorphism such that $f{\gr c}={\gr a_{\restriction i}}$. Therefore $f{\mr b}\,;{\gr a_{\restriction i}}$ is a solution $\psi({\mr x}\,;{\gr z})$ that is also isolated over $A$. Then we can set ${\mr a_i}=f{\mr b}$. 
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Countable categoricity}
+
+Here we present some important characterizations of $\omega\jj$categoricity. The second property below can be stated in different equivalent ways; for convenience, these equivalents are considered in a separate proposition. For convenience we consider the following generalization: we say hat $T$ is \emph{$\omega$-categorical over $A$\/} if any two countable models containing $A$ are isomorphic.
+
+\begin{theorem}[(Engeler, Ryll-Nardzewsky, and Svenonius Theorem)] Assume $L(A)$ is countable. The following are equivalent:
+\begin{itemize}   
+\item[1.] $T$ is $\omega$-categorical over $A$;
+\item[2.] every type $p({\mr x})\subseteq L(A)$ with $|{\mr x}|<\omega$ is isolated. 
+\end{itemize}
+\end{theorem}
+By \ssf{3} of Proposition~\ref{prop_ERNS_equivalents} below, no theory is $\omega$-categorical over an infinite set. The reader can easily prove that that categoricity over some finite $A$ is equivalent to categoricity over $\0$ (see Exercise~\ref{ex_omega_cat_overA}).
+
+\begin{proof} The implication \ssf{1}$\IMP$\ssf{2} is an immediate consequence of the omitting types theorem. In fact, if $p({\mr x})$ is a non-isolated $A\jj$type, then there are two countable models $M$ and $N$ containing $A$ such that $M$ realizes $p({\mr x})\subseteq L(A)$ while $N$ omits it. Then $M$ and $N$ cannot be isomorphic over $A$. As for implication \ssf{2}$\IMP$\ssf{1}, observe that \ssf{2} implies that every countable model containing $A$ is atomic over $A$. But, by Proposition~\ref{prop_atomic_unique}, countable atomic models are unique up to isomorphism.
+\end{proof}
+
+
+
+\begin{proposition}\label{prop_ERNS_equivalents}
+Fix a set $A$ and a finite tuple of variables ${\mr x}$. The following are equivalent\nobreak
+\begin{itemize}   
+\item[1.] every $A$-type $p({\mr x})$ is isolated;
+\item[2.] $S_{\mr x}(A)$ is finite;
+\item[3.] $L_{\mr x}(A)$ is finite up to equivalence;
+\item[4.] in $\U^{|{\mr x}|}$ there is a finite number of orbits under $\Aut(\U/A)$.
+\end{itemize}
+\end{proposition}
+\begin{proof}To prove the implication \ssf{1}$\IMP$\ssf{2} observe that $\U^{|{\mr x}|}$ is the union of sets of the form $p(\U)$ where $p\in S_{\mr x}(A)$. If these types are isolated then $\U^{|{\mr x}|}$ is the union of $A\jj$definable sets. By compactness this union has to be finite. To prove \ssf{2}$\IMP$\ssf{1} let $p\in S_{\mr x}(A)$. If $S_{\mr x}(A)$ is finite, $\neg p(\U)$ is the union of finitely many type definable sets. A finite union of type definable sets is type definable. So $\neg p(\U)$ is type definable. Hence $p(\U)$ is isolated. We prove implication \ssf{2}$\IMP$\ssf{3} observe that each formula in $L_{\mr x}(A)$ is equivalent to the disjunction of the types in $S_{\mr x}(A)$ that contain this formula. If $S_{\mr x}(A)$ is finite, $L_{\mr x}(A)$ is finite up to equivalence. Implication \ssf{3}$\IMP$\ssf{2} is clear and equivalence \ssf{2}$\IFF$\ssf{4} follows from the characterization of orbits as type-definable sets.
+\end{proof}
+
+
+
+\begin{exercise}\label{ex_omega_cat_overA}
+Prove that the following are equivalent for every finite set $A$
+\begin{itemize}   
+\item[1.] $T$ is $\omega$-categorical;
+\item[2.] $T$ is $\omega$-categorical over $A$.\QED
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}\label{ex_omega_cat_sat=atomic}
+Prove that the following are equivalent
+\begin{itemize}   
+\item[1.] $T$ is $\omega$-categorical;
+\item[2.] there is countable model that is both saturated and atomic.\QED 
+\end{itemize}
+\end{exercise}
+
+
+\begin{exercise} 
+Assume $L$ is countable and that $T$ is complete. Suppose that for every finite tuple  ${\mr x}$ there is a model $M$ that realizes only finitely many types in $S_{\mr x}(T)$. Prove that $T$ is $\omega$-categorical.
+\end{exercise}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Small theories}
+
+\def\ceq#1#2#3{\parbox[b]{15ex}{$\displaystyle #1$}\parbox[b]{6ex}{\hfil$#2$}$\displaystyle #3$}
+
+
+Let $T$ be, as always in this chapter, a complete theory without finite models. Fix a tuple of variable ${\mr x}$ of length $\omega$. We say that $T$ is \emph{small over $A$\/} if $S_{\mr x}(A)$ is countable. The most and (in a sense) the only, interesting case is when $A$ is empty, then we say that  $T$ is \emph{small}.
+
+\begin{proposition}
+If the theory $T$ is small then it is small over any countable $A$.
+\end{proposition}
+
+\begin{proof}
+Let ${\gr a}$ be an enumeration of $A$. As $S_{\mr x}(A)=\big\{p({\mr x}\,;{\gr a})\ :\ p\in S_{{\mr x}\,;{\gr z}}(T)\big\}$ the proposition is immediate.
+\end{proof}
+
+Below we identify $S_{\mr x}(A)$ with $\U^{|{\mr x}|}/\mathord\equiv_A$
+
+Let $\Delta$ be a set of formulas (we mainly use $\Delta=L_{\mr x}(A)$ in this section). A \emph{binary tree of formulas in $\Delta$\/} is a sequence $\<\phi_s\ :\ s\in2^{<\omega}\>$ of parameter-free formulas such that\nobreak
+\begin{itemize}
+\item[1.] for each $s\in 2^\omega$ the type $p_s\ \deq\ \big\{\phi_{s\restriction n}\ :\ n<\omega\big\}$ is consistent;
+\item[2.] $p_s\cup p_r$ is inconsistent for any two distinct $s,r\in 2^\omega$.
+\end{itemize}
+We may depict a binary tree of formulas as follows
+
+
+% Set the overall layout of the tree
+\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=2cm]
+\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=1cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=.5cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=6ex, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+\def\leaf{. . .}
+
+\qquad
+\begin{tikzpicture}[grow=right]
+\node[bag] {$\phi_\0$}
+    child {
+        node[bag] {$\phi_0$}        
+            child {
+                node[bag] {$\phi_{00}$}
+                    child {
+                       node[label=right: {\leaf}] {}
+                       edge from parent
+                    }    
+                    child {
+                       node[label=right: {\leaf}] {}
+                       edge from parent
+                    }  
+                 edge from parent
+            }
+            child {
+                node[bag] {$\phi_{01}$}
+                edge from parent
+                    child {
+                       node[label=right: {\leaf}] {}
+                       edge from parent
+                    }    
+                    child {
+                       node[label=right: {\leaf}] {}
+                       edge from parent
+                    }  
+                 edge from parent
+            }
+       edge from parent 
+    }
+    child {
+        node[bag] {$\phi_1$}         
+            child {
+                node[bag] {$\phi_{10}$}
+                    child {
+                       node[label=right: {\leaf}] {}
+                       edge from parent
+                    }    
+                    child {
+                       node[label=right: {\leaf}] {}
+                       edge from parent
+                    }  
+                 edge from parent
+            }
+            child {
+                node[bag] {$\phi_{11}$}
+                edge from parent
+                    child {
+                       node[label=right: {\leaf}] {}
+                       edge from parent
+                    }    
+                    child {
+                       node[label=right: {\leaf}] {}
+                       edge from parent
+                    }  
+                 edge from parent
+            } 
+        edge from parent
+    };
+\end{tikzpicture}
+
+Where branches are consistent types and distinct branches are inconsistent.
+
+
+
+\begin{proposition}\label{prop_small_equivalents}
+Auppose $L(A)$ is countable. The following are equivalent\nobreak
+\begin{itemize}   
+\item[1.] $T$ is small over $A$;
+\item[2.] $S_{{\mr x}\restriction n}(A)$ is countable for every $n<\omega$;
+\item[3.] there exists a countable saturated model containing $A$;
+\item[4.] there is no binary tree of formulas in $L_{\mr x}(A)$.
+\end{itemize}
+\end{proposition}
+\begin{proof} \ssf{1}$\IMP$\ssf{2}\quad Trivial.
+
+
+\ssf{2}$\IMP$\ssf{3}\quad There is a countable model $M$ containing $A$ that is weakly saturated (see Proposition~\ref{prop_w_saturation}). There is a countable homogeneous model $N$ containing $M$ (see Exercise~\ref{saturo=universaledebolmenteomogeneo}). Clearly $N$ is also weakly saturated. Then it is saturated by Corollary~\ref{saturo=universaledebolmenteomogeneo} .
+
+
+\ssf{3}$\IMP$\ssf{4}\quad Clear.
+
+\ssf{4}$\IMP$\ssf{1}\quad Suppose $\U^{|{\mr x}|}/\mathord\equiv_A$ is uncountable. We define a tree of formulas in $L_{\mr x}(A)$ by induction. Let $\phi_\0({\mr x})=\top$ and assume as induction hypothesis that $\phi_s(\U)/\mathord\equiv_A$ is uncountable and that $\phi_s({\mr x})\imp\phi_{s\restriction n}({\mr x})$ for every $n<|s|$. This will guarantee the consistency of the branches.
+
+
+We claim that there is a formula $\psi({\mr x})\in L(A)$ such that both sets $\phi_s(\U)\cap\psi(\U)\,/\equiv_A$ and $\phi_s(\U)\cap\neg\psi(\U)\,/\equiv_A$ are uncountable. If $\psi({\mr x})$ is such a formula, we can define $\phi_{s0}({\mr x})=\phi_s({\mr x})\wedge\psi({\mr x})$ and $\phi_{s1}({\mr x})=\phi_s({\mr x})\wedge\neg\psi({\mr x})$ as this preserves the induction hypothesis.
+
+
+First we prove that the following type is consistent
+
+\ceq{\hfill p({\mr x})}{=}{\Big\{\psi({\mr x})\in L(A)\ :\ \phi_s(\U)\cap\neg\psi(\U)\,/\equiv_A \textrm{ is countable }\Big\}.}
+
+Suppose not, then $\neg\psi_1({\mr x})\vee\dots\vee\neg\psi_n({\mr x})$ holds for some $\psi_i({\mr x})\in p$. Hence, as $\phi_s(\U)/\mathord\equiv_A$ is uncountable, at least one of the sets $\phi_s(\U)\cap\neg\psi_i(\U)\,/\equiv_A$ is uncountable, contradicting the definition of $p({\mr x})$.
+
+Finally note that, if the formula $\psi({\mr x})$ required above does not exist, $p({\mr x})$ is complete and, by the definition of $p({\mr x})$ there are countably many types distinct from $p({\mr x})$. This is a contradiction because we assumed $S_{\mr x}(A)$ to be uncountable.
+\end{proof}
+
+
+\begin{proposition} 
+A small theory has countable atomic models over every countable set $A$.
+\end{proposition}
+\begin{proof}
+We prove that every formula in $L_{\mr x}(A)$, where $|{\mr x}|<\omega$, has a solution isolated over $A$. Then it suffices to apply Proposition~\ref{prop_idolated_type_dense}. 
+
+Suppose for a contradiction that $\phi({\mr x})\in L(A)$ is consistent but has no solution isolated over $A$. Then there is a formula $\psi({\mr x})\in L(A)$ such that both $\phi({\mr x})\wedge\psi({\mr x})$ and $\phi({\mr x})\wedge\neg\psi({\mr x})$ are consistent, otherwise $\phi({\mr x})$ would imply a complete type and every solution of $\phi({\mr x})$ would be isolated. Fix such a $\psi({\mr x})$. Clearly neither $\phi({\mr x})\wedge\psi({\mr x})$ nor $\phi({\mr x})\wedge\neg\psi({\mr x})$ have a solution isolated over $A$. This allows to construct a tree of formulas in $L_{\mr x}(A)$ and prove that $T$ is not small over $A$.
+\end{proof}
+
+\begin{exercise}
+Ler $|{\mr x}|=\omega$. Prove that if for all $n<\omega$ there is no binary tree of formulas in $L_{{\mr x}\restriction n}$ then there is no tree of formulas in $L_{\mr x}$.\QED
+\end{exercise}
+
+
+\begin{exercise}[(Vaught)]
+Prove that no complete theory has exactly 2 countable models (assume $L$ is countable~--~though it is not really necessary).
+
+Hint: suppose $T$ has exactly two countable models. Then $T$ is small and there are a countable saturated model $N$ and an atomic model $M\subseteq N$. As $T$ is not $\omega\jj$categorical, $M\not\simeq N$ and there is finite tuple $a$ that is not isolated over $\0$. Let $K$ be an atomic model over $a$. Clearly $K\not\simeq M$ and, by Exercises~\ref{ex_omega_cat_overA} and~\ref{ex_omega_cat_sat=atomic}, also $K\not\simeq N$.\QED
+\end{exercise}
+
+%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+\section{A toy version of a theorem of Zil'ber}
+
+As an application we prove that if $T$ is $\omega\jj$categorical and strongly minimal then it is not finitely axiomatizable.
+
+We say that $T$ has the \emph{finite model property\/} if for every sentence $\phi\in L$ there is a finite substructure $A\subseteq\U$ such that 
+
+\ceq{\ssf{fmp}\hfill\U\models\phi}{\IFF}{A\models\phi}
+
+The property is interesting because of the following proposition.
+
+\begin{proposition}\label{prop_fmp_fa}
+If $T$ has the finite model property then it is not finitely axiomatizable.
+\end{proposition}
+\begin{proof}
+Assume \ssf{fmp} and suppose for a contadiction that there is a sentence $\phi\in L$ such that $T\proves\phi\proves T$. Then $A\models T$ for some finite structure $A$. But $T\proves \E^{>k}\!x\,(x=x)$ for every $k$. A contradiction.
+\end{proof}
+We need the following definition. We say that $C\subseteq\U$ is an \emph{homogeneous set\/} if for every pair of tuples  ${\gr a},{\gr c}\in C^{<\omega}$ such that ${\gr a}\equiv{\gr c}$ and for every ${\mr b}\in C$ there is a ${\mr d}\in C$ such that ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$.
+
+\begin{lemma}\label{lem_zilbergiocattolo} Suppose $L$ is countable. If $T$ is $\omega\jj$categorical and every finite set is contained in a finite homogeneous set, then $T$ has the finite model property.
+\end{lemma}
+\begin{proof}
+Assume for the moment that $L$ is a relational language. We prove \ssf{fmp} also for formulas with parameters. We prove that for all $n$ there is a finite structure $A\subseteq\U$ where \ssf{fmp} holds for all sentences $\phi\in L(A)$ such that
+
+$\#$\hfil number of parameters in $\phi$\ \  $+$\ \  number of quantifiers in $\phi$\ \ $\le n$.
+
+Fix $n$ and pick some finite set $A$ that is homogeneous and such that all types $p(z)\subseteq L$ with $|z|\le n$ have a realization in $A^{|z|}$. Now we prove \ssf{fmp} by induction on the syntax of $\phi$.
+
+The claim is evident for atomic formulas and the induction step is immediate for boolean connectives. As for induction step for the existential quantifier, consider the formula $\E {\mr x}\,\phi({\mr x}\,;{\gr c})$, where ${\gr c}\in A^{<n}$ and $|{\mr x}|=1$. Implication $\PMI$ of \ssf{fmp} follows immediately from the induction hypothesis and from the fact that, if $\E {\mr x}\,\phi({\mr x}\,;{\gr c})$ satisfy $\#$, also $\phi({\mr d}\,;{\gr c})$ satisfies it. As for $\IMP$, assume $\U\models\E {\mr x}\, \phi({\mr x}\,;{\gr c})$. Let ${\gr a},{\mr b}\in A^{<\omega}$ be a solution of $\phi({\mr x}\,;{\gr z})$ such that ${\gr a}\equiv{\gr c}$. Such a solution exists because all types with $\le n$ variables are realized in $A$. By homogeneity there is a ${\mr d}\in A$ such that ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$ and therefore $A\models\phi({\mr d}\,;{\gr c})$.
+
+Finally consider the case when $L$ contains functions symbols. Note that in \ssf{fmp} we may only require $A$ to be a substructures w.r.t.\@ symbols of $L$ that actually occur in $\phi$. Moreover, in $\#$ we can add the requirement that all functions symbols in $\phi$ have arity $< n$. Now note that if all types $p(z)\subseteq L$ with $|z|\le n$ have a realization in $A^{|z|}$, then $A$ is a substructure w.r.t.\@ a fragment which only contains functions of arity $< n$.
+\end{proof}
+
+\begin{proposition}\label{prop_zilbergiocattolo} If $T$ is strongly minimal, then every algebraically closed set is homogeneous.
+\end{proposition}
+\begin{proof}
+Let $A$ be argebraically closed and fix some ${\gr a},{\gr c}\in A^{<\omega}$ such that ${\gr a}\equiv{\gr c}$. Let ${\mr b}$ be an element of $A$. Suppose first the case ${\mr b}\in\acl{\gr a}$. Fix an $f\in\Aut(\U)$ such that $f({\gr a})={\gr c}$. Then ${\mr d}=f{\mr b}$ is the required element, in fact ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$ and ${\mr d}\in\acl{\gr c}\subseteq  A$. Now, suppose instead that ${\mr b}\notin\acl{\gr a}$. Then any ${\mr d}\notin\acl{\gr c}$ satisfies ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$. Such a ${\mr d}$ exists in $A$ otherwise $A=\acl{\gr c}\neq\acl{\gr a}$ which contradicts ${\gr a}\equiv {\gr c}$.
+\end{proof}
+
+From the propositions above we finally obtain the following.
+
+\begin{theorem}\label{thm_zilbergiocattolo}
+A theory which is $\omega\jj$categorical and strongly minimal is not finitely axiomatizable.
+\end{theorem}
+
+\begin{proof}
+If $T$ is $\omega\jj$categorical the algebraic closure of a finite set is finite. Therefore from Proposition~\ref{prop_zilbergiocattolo} we infer that $T$ satisfies the assumptions of Lemma~\ref{lem_zilbergiocattolo}. Hence $T$ has the finite model property, so, by Proposition~\ref{prop_fmp_fa} it is not finitely axiomatizable.
+\end{proof}
+
+
+\begin{exercise} 
+Assume $L$ is countable and let $T$ be strongly minimal. Prove that the following are equivalent
+\begin{itemize}
+\item[1.] $T$ is $\omega\jj$categorical;
+\item[2.] the algebraic closure of a finite set is finite.\qed
+\end{itemize}
+\end{exercise}
+
+
+
+
+\section{Notes}
+A famous theorem of Boris Zil'ber claims that Teorema~\ref{thm_zilbergiocattolo} holds for any totally categorical theory. The same theorem has been proved independently by  Cherlin, Harrington and Lachlan with a proof that uses the classification of finite simple groups. This theorem signs the birth of a subject known as \textit{geometric stability theory\/} which studies in depth the geometric properties of model theories which we breafly hinted to in Chapter~\ref{geometria}. The interested reader may consult Pillay's monograph on the subject.
+
+\begin{biblist}[]\normalsize
+
+\bib{Pillay}{book}{
+   author={Pillay, Anand},
+   title={Geometric stability theory},
+   series={Oxford Logic Guides},
+   volume={32},
+   %note={Oxford Science Publications},
+   %publisher={The Clarendon Press, Oxford University Press, New York},
+   date={1996},
+   pages={x+361},
+}
+
+\end{biblist}
+
+
+\end{document}
+
+

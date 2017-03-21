@@ -1,0 +1,286 @@
+\documentclass[10pt,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[dvips,a4paper,hmargin={4cm,4cm},vmargin={3.5cm,3.5cm}]{geometry}
+\usepackage[a4paper,colorlinks=true,bookmarksopen=false,linkcolor=black,citecolor=red]{hyperref}
+\usepackage{subfiles}
+\usepackage{calc}
+\usepackage{comment}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsrefs}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{dsfont}
+\usepackage{euscript}
+\usepackage{fourier-orns}
+%\usepackage{pxfonts}
+%\usepackage{newpxtext}
+%\usepackage{tgpagella}
+\usepackage{palatino}
+\usepackage[sc]{mathpazo} % add possibly `sc` and `osf` options
+%\usepackage{eulervm}
+%\usepackage[adobe-utopia]{mathdesign}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\tikzcdset{
+arrow style=tikz,
+diagrams={>=latex}
+}
+
+
+\linespread{1.1}
+\setlength{\parindent}{0ex}
+\setlength{\parskip}{.4\baselineskip}
+\definecolor{blue}{rgb}{0, 0.1, 0.6}
+
+\DeclareFontFamily{OT1}{pzc}{}
+\DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [1.10] pzcmi7t}{}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it} 
+
+
+\newcommand{\mylabel}[1]{{\ssf{#1}}\hfill}
+\renewenvironment{itemize}
+  {\begin{list}{$\triangleright$}{%
+   \setlength{\parskip}{0mm}
+   \setlength{\topsep}{.4\baselineskip}
+   \setlength{\rightmargin}{0mm}
+   \setlength{\listparindent}{0mm}
+   \setlength{\itemindent}{0mm}
+   \setlength{\labelwidth}{3ex}
+   \setlength{\itemsep}{.4\baselineskip}
+   \setlength{\parsep}{0mm}
+   \setlength{\partopsep}{0mm}
+   \setlength{\labelsep}{1ex}
+   \setlength{\leftmargin}{\labelwidth+\labelsep}
+   \let\makelabel\mylabel}}{%
+   \end{list}\vspace*{-1.3mm}}
+   
+%\def\emph#1{\textcolor{blue}{\boldmath\textbf{#1}}}
+
+% \setlength{\fboxsep}{0.3mm}
+% \def\emph#1{\fcolorbox{white}{gray!50}{\vphantom{Iq}#1}}
+\def\emph#1{\textcolor{blue}{\textbf{\boldmath #1}}}
+
+\def\jj{\mbox{-}}
+\def\E{\exists}
+\def\A{\forall}
+\def\mdot{\mathord\cdot}
+\def\models{\vDash}
+\def\pmodels{\mathrel{\models\kern-1.5ex\raisebox{.5ex}{*}}}
+\def\notmodels{\nvDash}
+\def\proves{\vdash}
+\def\notproves{\nvdash}
+\def\proves{\vdash}
+\def\provesT{\mathrel{\mathord{\vdash}\hskip-1.13ex\raisebox{-.5ex}{\tiny$T$}}}
+\def\ZZ{\mathds Z}
+\def\NN{\mathds N}
+\def\QQ{\mathds Q}
+\def\RR{\mathds R}
+\def\BB{\mathds B}
+\def\CC{\mathds C}
+\def\PP{\mathds P}
+\def\Ar{{\rm Ar}}
+\def\dom{\mathop{\rm dom}}
+\def\range{\mathop{\rm img}}
+\def\rank{\mathop{\rm rank}}
+\def\dcl{\mathop{\rm dcl}}
+\def\acl{\mathop{\rm acl}}
+\def\rad{\mathop{\rm rad}}
+\def\eq{{{\rm eq}}}
+\def\ccl{{\rm ccl}}
+\def\Th{\textrm{Th}}
+\def\Diag{{\rm Diag}}
+\def\atpmTh{\textrm{Th}_\atpm}
+\def\Mod{\mathop{\rm Mod}}
+\def\Rmod{{\mbox{\scriptsize $R$-mod}}}
+\def\Aut{\textrm{Aut\kern.15ex}}
+\def\Autf{\mathord{\rm Aut\kern.15ex{f}\kern.15ex}}
+\def\orbit{\O}
+\def\oorbit{\mathpzc{o}}
+\def\oorbitf{\mathpzc{of\!}}
+\def\id{\textrm{id}}
+\def\tp{{\rm tp}}
+\def\atpm{{\tiny\rm at^\pm}}
+\def\qftp{\textrm{qf\mbox{-}tp}}
+\def\attp{\textrm{at\mbox{-}tp}}
+\def\atpmtp{\atpm\mbox{-}\textrm{tp}}
+\def\Deltatp{\Delta\mbox{-}\textrm{tp}}
+\def\pmDelta{\Delta\hskip-.3ex\raisebox{1ex}{\tiny$\pm$}}
+\def\pmDeltatp{\noindent\pmDelta\hskip-.3ex\textrm{-tp}}
+\def\EMtp{\textrm{{\small EM}\mbox{-}tp}}
+
+
+\def\sm{\smallsetminus}
+\def\atpmL{L_{\atpm}\hskip-.3ex}
+\def\qfL{L_{\rm qf}}
+\def\atL{L_{\tiny\rm at}\hskip-.3ex}
+\def\simdiff{\triangle}
+\def\IMP{\Rightarrow}
+\def\PMI{\Leftarrow}
+\def\IFF{\Leftrightarrow}
+\def\NIFF{\nLeftrightarrow}
+\def\imp{\rightarrow}
+\def\pmi{\leftarrow}
+\def\iff{\leftrightarrow}
+\def\niff{\mathrel{{\leftrightarrow}\llap{\raisebox{-0.1ex}{{\small$/$}}\hskip1.0ex}}}
+\def\nequiv{\mathrel{\mbox{$\equiv$\llap{{\small$/$}\hskip.3ex}}}}
+\def\equivEM{\stackrel{\smash{\scalebox{.5}{\rm EM}}}{\equiv}}
+\def\equivL{\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}}
+\def\equivKP{\stackrel{\smash{\scalebox{.5}{\rm KP}}}{\equiv}}
+\def\equivSh{\stackrel{\smash{\scalebox{.5}{\rm Sh}}}{\equiv}}
+\def\dIFF{\IFF\hskip-2.2ex\smash{\raisebox{1.3ex}{\tiny def}}}
+\def\deq{\mathrel{=\hskip-1.9ex\smash{\raisebox{1.2ex}{\tiny def}}}}
+\def\swedge{\mathbin{\raisebox{.2ex}{\tiny$\mathbin\wedge$}}}
+\def\svee{\mathbin{\raisebox{.2ex}{\tiny$\mathbin\vee$}}}
+
+\def\bigsum{\mathop{\mbox{\large$\displaystyle\sum$}}}
+\def\bigint{\mathop{\mbox{\large$\displaystyle\int$}}}
+
+
+
+\def\P{\EuScript P}
+\def\D{\EuScript D}
+\def\Aa{\EuScript A}
+\def\Ee{\EuScript E}
+\def\X{\EuScript X}
+\def\Y{\EuScript Y}
+\def\Z{\EuScript Z}
+\def\C{\EuScript C}
+\def\U{\EuScript U}
+\def\H{\EuScript H}
+\def\V{\EuScript V}
+\def\R{\EuScript R}
+\def\F{\EuScript F}
+\def\G{\EuScript G}
+\def\B{\EuScript B}
+\def\M{\EuScript M}
+\def\Ll{\EuScript L}
+\def\K{\EuScript K}
+\def\O{\EuScript O}
+\def\J{\EuScript J}
+\def\S{\EuScript S}
+\def\<{\langle}
+\def\>{\rangle}
+\def\0{\varnothing}
+\def\theta{\vartheta}
+\def\phi{\varphi}
+\def\epsilon{\varepsilon}
+\def\ssf#1{\textsf{\small #1}}
+
+\titlecontents{section}
+[3.8em] % ie, 1.5em (chapter) + 2.3em
+{\vskip-1ex}
+{\contentslabel{1.5em}}
+{\hspace*{-2.3em}}
+{\titlerule*[1pc]{}\contentspage}
+
+
+\titleformat
+{\chapter} % command
+[display] % shape
+{\bfseries\LARGE} % format
+{Chapter \ \thechapter} % label
+{0.5ex} % sep
+{} % before-code
+[] % after-code
+\titleformat{\section}[block]{\Large\bfseries}{\makebox[5ex][r]{\textbf{\thesection}}}{1.5ex}{}
+\titlespacing*{\chapter}{0em}{.5ex plus .2ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{\section}{-9.7ex}{3ex plus .5ex minus .5ex}{1ex plus .2ex minus .2ex}
+
+\renewcommand*\thesection{\arabic{section}}
+
+\newtheoremstyle{mio}% name
+     {2\parskip}%      Space above
+     {\parskip}%      Space below
+     {\sl}%         Body font
+     {}%         Indent amount (empty = no indent, \parindent = para indent)
+     {\bfseries}% Thm head font
+     {}%        Punctuation after thm head
+     {1.5ex}%     Space after thm head: " " = normal interword space;
+           %   \newline = linebreak
+     {\llap{\thmnumber{#2}\hskip2mm}\thmname{#1}\thmnote{\bfseries{}#3}}% Thm head spec (can be left empty, meaning `normal')
+
+\newtheoremstyle{liscio}% name
+     {2\parskip}%      Space above
+     {0mm}%      Space below
+     {}%         Body font
+     {}%         Indent amount (empty = no indent, \parindent = para indent)
+     {\bfseries}% Thm head font
+     {}%        Punctuation after thm head
+     {1.5ex}%     Space after thm head: " " = normal interword space;
+           %   \newline = linebreak
+     {\llap{\thmnumber{#2}\hskip2mm}\thmname{#1}\thmnote{\bfseries{} #3}}% Thm head spec (can be left empty, meaning `normal')
+     
+
+
+\newcounter{thm}[chapter]
+
+\renewcommand{\thethm}{\thechapter.\arabic{thm}}
+
+\theoremstyle{mio}
+\newtheorem{theorem}[thm]{Theorem}
+\newtheorem{corollary}[thm]{Corollary}
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{fact}[thm]{Fact}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{void_thm}[thm]{}
+\theoremstyle{liscio}
+\newtheorem{void_def}[thm]{}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{notation}[thm]{Notation}
+\newtheorem{note}[thm]{Note}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{example}[thm]{Example}
+\setlength{\partopsep}{0mm}
+\setlength{\topsep}{0mm}
+
+\def\QED{\noindent\nolinebreak[4]\hfill\rlap{\ \ $\Box$}\medskip}
+\renewenvironment{proof}[1][Proof]%
+{\begin{trivlist}\item[\hskip\labelsep {\bf #1}]}
+{\QED\end{trivlist}}
+
+\newenvironment{void}[1][]%
+{\begin{trivlist}\item[\hskip\labelsep {\bf #1}]}
+{\QED\end{trivlist}}
+
+
+
+\pagestyle{plain}
+
+\definecolor{violet}{RGB}{115, 0, 205}
+\definecolor{brown}{RGB}{150, 50, 10}
+\definecolor{green}{RGB}{10,120, 20}
+\def\mr{\color{brown}}
+\def\gr{\color{green}}
+\def\vl{\color{violet}}
+
+
+
+\begin{document}
+\raggedbottom
+\renewcommand{\contentsname}{A Cr\`eche Course in Model Theory}
+\tableofcontents
+\subfile{preliminaries}
+\subfile{elementarity}
+\subfile{types}
+\subfile{ultraproducts}
+\subfile{relational}
+\subfile{rich}
+\subfile{algebraic}
+\subfile{saturation}
+\subfile{order}
+%\subfile{elimination}
+% \subfile{eliminazione}
+\subfile{geometry}
+\subfile{countable}
+\subfile{imaginary}
+\subfile{invariant}
+\subfile{invariantL}
+%\subfile{dynamics}
+% \subfile{combinatorics}
+%\subfile{stability}
+
+\end{document}
