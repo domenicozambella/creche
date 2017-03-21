@@ -1,0 +1,131 @@
+\documentclass[creche.tex]{subfiles}
+\begin{document}
+
+
+\chapter{Exercise}
+\label{elimination}
+\def\GammaA{\Gamma_{\hskip-.3ex\scriptscriptstyle\sf e}}
+\def\GammaB{\Gamma_{\hskip-.3ex\scriptscriptstyle\sf c}}
+\def\GammaAn{\Gamma_{\hskip-.3ex\scriptscriptstyle\sf i}}
+\def\GammaAAn{\Gamma_{\hskip-.3ex\scriptscriptstyle\sf ei}}
+\def\GammaC{\Gamma_{\hskip-.3ex\scriptscriptstyle\sf eic}}
+
+In this section the language $L$ is that of additive groups with extra constant $1$. 
+
+For $n\in\ZZ$ we write \emph{$x\equiv_ny$\/} as an abbreviation of $\E z\ nz=x-y$. We say that \emph{$x$ is congruent to $y$ modulo $n$}. In this section we denote by \emph{$Q$\/} the set of \emph{prime powers}, i.e.\@ positive integer powers of a single prime number. It is convenient, though not essential, to work only with congruences modulo powers of primes. The usual proof in $\ZZ$ generalizes to the following.
+
+\begin{proposition}
+If $k,h\in\ZZ$ are coprime then $T_{\rm ag}\ \proves\ x\equiv_{kh}y\;\iff\;x\equiv_ky\wedge x\equiv_hy$.\QED
+\end{proposition}
+
+Below we axiomatize the theory of $\ZZ$, with the natural interpretation of the symbols. We begin with a weaker theory. The theory \emph{$T_{0}$\/} contains $T_{\rm ag}$ and the following axioms for every $q\in Q$ and every positive integer $r<q$.
+
+% \def\ceq#1#2{\parbox[b]{10ex}{$\displaystyle #1$}\hskip1ex$\displaystyle #2$}
+
+\def\ceq#1#2#3{\parbox[b]{20ex}{$\displaystyle #1$}\parbox[b]{4ex}{\hfil$#2$}$\displaystyle #3$}
+
+\ceq{\ssf{1$_{q,r}$.}\hfill 0\nequiv_qr}{~}{~}
+
+Note that this axiom scheme entails that every model of $T_{0}$ is torsion-free. The theory \emph{$T_{\rm zg}$\/} contains $T_{0}$ and the following axioms for every $q\in Q$
+
+\ceq{\ssf{2$_q$.}\hfill\bigvee_{0\le r<q} x\equiv_qr}{~}{~}
+
+We call $T_{\rm zg}$ the theory of \emph{$\ZZ$-groups\/} after Marker. 
+
+In this section \emph{$\Delta$\/} we denote the set containing all formulas of the form $t=s$, $t\neq s$ and $t\equiv_q s$ for some terms $t$ and $s$. We write $\Delta(A)$ for the set obtained substituting some of the variables in $\Delta$ with parameters in $A$.
+
+Note that all models $T_{\rm 0}$ have the same $\Delta\jj$characteristic.
+
+In this section, whenever we fix some $A\subseteq M\models T_{\rm zg}$, we imply that all logical notions are relative to $T_{\rm zg}\cup\Th_\Delta(M/\<A\>_M)$. In particular, \textit{models\/} are superstructures of $\Diag\<A\>_M$ that model $T_{\rm zg}$ and all sentences in $\Delta(\<A\>_M)$ that holds in $M$. Logical consequence and all derived notions (\textit{consistent}, \textit{complete}, \textit{equivalent}, etc.) are to be understood relative to the theory $T_{\rm zg}\cup\Th_\Delta(M/\<A\>_M)$.
+
+The following proposition explains why we are allowed  not include in $\Delta$ negations of congruences.
+
+\begin{proposition}\label{prop_congr_comp}
+Let $A\subseteq M\models T_{\rm zg}$. Then every prime $\Delta(A)\jj$type is complete. In particular, the inverse of a $\Delta\jj$morphism is a $\Delta\jj$morphism.
+\end{proposition}
+
+\begin{proof}
+It saves notation to prove the claim for types in one variable and then extend. So, let $x$ be a single variable. It suffices to show that every formula of the form $nx\equiv_qa$, for some $a\in\<A\>_M$, either $p(x)\imp kx\equiv_qa$ or $p(x)\imp kx\nequiv_qa$. By the axioms above $r\equiv_qa$ for some integer $0\le r<q$. Hence it suffices to show that either $p(x)\imp kx\equiv_qr$ or $p(x)\imp kx\nequiv_qr$. The axioms above also entail that 
+
+\ceq{\hfill kx\nequiv_qr}{\iff}{\bigvee_{r\neq s<q}nx\equiv_qs}
+
+By Proposition~\ref{lemmatipiprimiconsistenti} there is a model $N$ and some $c\in N$ such that $p(x)\imp\Deltatp(c/A)$. There are two possibilities, either $N\models c\equiv_qr$ and $p(x)\imp kx\equiv_qr$. Otherwise, by the equivalence above $N\models c\equiv_qs$ for some integer $s\neq r$, so $p(x)\imp kx\nequiv_qr$.
+
+What proved above suffices to prove the second claim. This is easily proved by induction of the cardinality of the morphism, which we may assume to be finite. As all models of $T_{\rm zg}$ have the same $\Delta\jj$characteristic, the claim is trivial for the empty map (so inductions starts). Finally note that the second claim imply the first.
+\end{proof}
+
+Fix a single variable $x$ and an infinite tuple of variables $z$. It is convenient to name some subsets of $\Delta_{\restriction x,z}$. Hopefully the following naming are suggestive enough.
+
+\ceq{\ssf{e.}\hfill\GammaA}{=}{\big\{nx=t(z)\ :\ n\in\ZZ,\ t(z) \textrm{ a term}\big\}}
+
+\ceq{\ssf{c.}\hfill\GammaB}{=}{\big\{nx\equiv_qt(z)\ :\ n\in\ZZ,\ q\in Q,\ t(z) \textrm{ a term}\big\}}
+
+\ceq{\ssf{i.}\hfill\GammaAn}{=}{\neg\GammaA}
+
+\ceq{\ssf{ei.}\hfill\GammaAAn}{=}{\GammaA \cup\,\GammaAn}
+
+\def\ceq#1#2#3{\parbox[b]{20ex}{$\displaystyle #1$}\parbox[b]{4ex}{\hfil$#2$}$\displaystyle #3$}
+
+When $\Gamma$ is one of those above, $\Gamma(A)$ denotes the set obtained substituting for $z$ a tuple $a\in A^{|z|}$. We say that $p(x)$ is a \emph{trivial type\/} if it is satisfied by any element of any model.
+
+\begin{proposition}
+Let $A\subseteq M\models T_{\rm 0}$. For any $b\in M$ one of the following obtains\nobreak
+\begin{itemize}
+\item[1.] the type $\GammaA\jj\tp(b/A)$ is trivial;
+\item[2.] the type $q(x)=\Delta\jj\tp(b/A)$ is isolated by some formula in $\GammaA(A)$, that is, $b$ satisfies some $\phi(x)\in\GammaA(A)$ such that $\phi(x)\imp q(x)$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+If not \ssf{1}, then $b$ satisfies a non trivial formula of the form $nx=a$ for some $a\in\<A\>_M$ and some $n\in\ZZ$. The proof Proposition~\ref{prop_mst_tipi princ_comp} shows that $nx=a$ decides all formulas in $\GammaA(A)$. Now we show that $nx=a$ decides also all formulas of the form $kx\equiv_qc$
+
+Let $d\in\<A\>_M$ be such that $kc=d$. By the first part of the proof $nx=a\imp kx=d$. Then 
+
+\ceq{\hfill nx=a}{\imp}{kx\equiv_qc}\hskip5ex if $M\models c\equiv_q d$;
+
+\ceq{\hfill nx=a}{\imp}{kx\nequiv_qc}\hskip5ex if $M\models c\nequiv_q d$.
+
+This completes the proof.
+\end{proof}
+
+\begin{proposition}\label{prop_poiuhfr}
+Let $A\subseteq M\models T_{\rm zg}$. Let $q(x)\subseteq\GammaAn(A)$ and $p(x)\subseteq\GammaB(A)$ be finite consistent types. Then $q(x)\cup p(x)$ is consistent.
+\end{proposition}
+
+\begin{proof}
+A finite number of congruences, if consistent, has infinitely many solutions. Hence it is consistent with any finite number of inequalities.
+\end{proof}
+
+
+\begin{proposition}\label{prop_oenebd}
+Let $A\subseteq M\models T_{\rm zg}$. Every $\GammaB(A)\jj$type is equivalent to a $\GammaB\jj$type.
+\end{proposition}
+
+\begin{proof}
+Note that  $nx\equiv_qa$ is equivalent to $nx\equiv_qr$ for some integer $r\equiv_qa$.
+\end{proof}
+
+
+\begin{proposition}\label{prop_jfdbjh}
+A finite $\GammaB\jj$type realized in some model of $T_{\rm zg}$ is realized in $\ZZ$, hence in every  model of $T_{\rm zg}$.
+\end{proposition}
+
+\begin{proof}
+Let $p(x)$ be a consistent finite $\GammaB\jj$type. We can assume the formulas in $p(x)$ are $n_ix\equiv_{q_i}r_i$ where $0\le r_i<q_i$. By consistency, $r_i$ is unique given $q_i$. Then, by the Chinese reminder theorem $p(x)$ has a solution in $\ZZ$ which is substructure of every model of $T_{\rm zg}$.
+\end{proof}
+
+
+\begin{proposition}
+The theory $T_{\rm zg}$ has $\Delta\jj$elimination of quantifiers.
+\end{proposition}
+\begin{proof}
+Let $M$ and $N$ be two $\omega\jj$saturated models of  $T_{\rm zg}$, let $k:M\to N$ be a finite $\Delta\jj$morphism and let $b\in M$. We need to find a $c\in N$ such that $k\cup\{\<b,c\>\}:M\to N$ is a $\Delta\jj$morphism.
+
+Let $a$ be an enumeration of $\dom k$ and let $p(x,z)=\Deltatp(b,a)$. We to find a $c\in N$ that realizes $p(x,ka)$. Define also $p_*(x,z)=\Gamma\!_{*}\jj\tp(b,a)$.
+
+If $p_{\sf\scriptscriptstyle e}(x,a)$ is non trivial, then  $p(x,a)$ is isolated by some formula of the form $nx=t(a)$. As $nx=t(a)$ is consistent in $M$ then $M\models t(a)\equiv_n0$ hence $N\models t(ka)\equiv_n0$. Then in $N$ there is a $c$ such that $nx=t(ka)$, which therefore realizes $p(x,ka)$.
+
+Suppose instead that $p_{\sf\scriptscriptstyle e}(x,a)$ is trivial. By Proposition~\ref{prop_congr_comp} it suffices to realize $p_{\sf\scriptscriptstyle i}(x,ka)$ and $p_{\sf\scriptscriptstyle c}(x,ka)$. By Proposition~\ref{prop_poiuhfr} and $\omega\jj$saturation a realization exist if $p_{\sf\scriptscriptstyle c}(x,ka)$ is finitely consistent. By Proposition~\ref{prop_oenebd}, $p_{\sf\scriptscriptstyle c}(x,a)$ is equivalent its parameters-free part $p(x)$ and the same holds for $p_{\sf\scriptscriptstyle c}(x,ka)$. As $p(x)$ is finitely consistent in $M$, by Proposition~\ref{prop_jfdbjh} it is finitely consistent $\ZZ$ and a fortiori in $N$.
+\end{proof}
+
+\end{document}
