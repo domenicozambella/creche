@@ -1,2 +1,3 @@
-# creche
-Lecture notes for an introductory (under)graduate couse in model theory
+# A Creche Course in Model Theory
+
+Lecture notes for an introductory (under)graduate course
