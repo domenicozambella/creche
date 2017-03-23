@@ -28,7 +28,7 @@ Observe that if $p({\mr x})\subseteq L(M)$ then $M$ realizes $p({\mr x})$ if and
 
 The construction of a model $M$ omitting $p({\mr x})$ proceeds by stages. Along the construction we preserve the property of being {\em isolated\/}  since that of being {\em realized\/} is not well behaved in sets which are not models. In the limit, when a model is obtained, these two properties coincide. 
 
-The omitting types theorem require the following lemma which is an analogue of the Kura\-towski-Ulam theorem.
+The omitting types theorem require the following lemma which is an analogue of the Kura\-towski-Ulam theorem (i.e., the so-called Fubini theorem for Baire category).
 
 \begin{lemma}\label{lem_kuratowskiUlam}
 Assume $L(A)$ is countable. Let $p({\mr x})\subseteq L(A)$ and suppose that $A$ does not isolate $p({\mr x})$. Then every consistent formula $\psi({\gr z})\in L(A)$ has a solution ${\gr a}$ such that $A,{\gr a}$ does not isolate $p({\mr x})$.
@@ -66,7 +66,7 @@ The theorem owes its name to the contrapositive of implication \ssf{1}$\IMP$\ssf
 \begin{proof}
 Implication \ssf{2}$\IMP$\ssf{1} is clear, we prove \ssf{1}$\IMP$\ssf{2}. Assume $A$ does not isolate $p({\mr x})$. The model $M$ is the union of a chain $\<A_i:i<\omega\>$ of countable subsets of $\U$ that starts with $A_0=A$. Along the construction we require as inductive hypothesis that $A_i$ does not isolate $p({\mr x})$. At the end, $M$ will not isolate $p({\mr x})$ which for a model is equivalent to omitting. 
 
-We proceed as in the proof of the downward L\"owenheim-Skolem theorem (precisely, we use the second proof~\ref{}). Lemma~\ref{lem_kuratowskiUlam} ensure that we can satisfy any consistent formula in $A_i$ and preserve the inductive hypothesis.
+We proceed as in the proof of the downward L\"owenheim-Skolem theorem (precisely, we use the second proof~\ref{diym_II_lowenheimskolemallingiu}). Lemma~\ref{lem_kuratowskiUlam} ensure that we can satisfy any consistent formula in $A_i$ and preserve the inductive hypothesis.
 \end{proof}
 
 Gerald Sacks once famously remarked: \textit{Any fool can realize a type but it take a model theorist to omit one}. (Though, the proof reminds me more of set theory than model theory.)

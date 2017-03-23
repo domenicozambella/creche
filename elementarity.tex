@@ -3,6 +3,8 @@
 \chapter{Theories and elementarity}
 \label{teorie}
 
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox{15ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 \section{Logical consequences}\label{conseguenzelogiche}
 % 
@@ -25,28 +27,40 @@
 
 A \emph{theory\/} is a set $T\subseteq L$ of sentences. We write \emph{$M\models T$\/} if $M\models\phi$ for every $\phi\in T$. If $\phi\in L$ is a sentence we write \emph{$T\proves\phi$\/} when
 
-\begin{itemize}
-\item[] $M\models T\ \ \IMP\ \ M\models\phi$\qquad for every $M$.
-\end{itemize}
+\ceq{\hfill M\models T}{\IMP}{M\models\phi}\qquad for every $M$.
 
-In words, we say that $\phi$ is a \emph{logical consequence\/} of $T$ or that $\phi$ \emph{follows from\/} $T$. If $S$ is a theory \emph{$T\proves S$\/} has a similar meaning. When $T\subseteq S$ and $T\proves S$ we say that $T$ \emph{axiomatises\/} $S$. If $T\proves S$ and $S\proves T$ we say that $T$ and $S$ are \emph{logically equivalent}.
+In words, we say that $\phi$ is a \emph{logical consequence\/} of $T$ or that $\phi$ \emph{follows from\/} $T$. If $S$ is a theory \emph{$T\proves S$\/} has a similar meaning. If $T\proves S$ and $S\proves T$ we say that $T$ and $S$ are \emph{logically equivalent}.  We may say that $T$ \emph{axiomatises\/} $S$ (or vice versa).
+
+We say that a theory is \emph{consistent\/} if it has a model. With the notation above, $T$ is consistent if and only if \emph{$T\notproves\bot$}.
+
 
 The \emph{closure of $T$ by logical consequence\/} is the set $\ccl(T)$ which is defined as follows:  
 
-\begin{itemize}
-\item[] \emph{$\textrm{ccl}(T)$}$\ \ =\ \ \Big\{\phi\in L\ :\ \textrm{ sentence such that } T\proves\phi\Big\}$
-\end{itemize}
+\ceq{\hfill\emph{$\textrm{ccl}(T)$}}{=}{\Big\{\phi\in L\ :\ \textrm{ sentence such that } T\proves\phi\Big\}}
 
 If $T$ is a finite set, say $T=\big\{\phi_1,\dots,\phi_n\big\}$ we write $\ccl(\phi_1,\dots,\phi_n)$ for $\ccl(T)$. If $T=\ccl(T)$ we say that $T$ is \emph{closed under logical consequences}.
 
+The \emph{theory of $M$\/} is the set of sentences that hold in $M$ and is denoted by \emph{$\Th(M)$}. More generally, if $\K$ is a class of structures, \emph{$\Th(\K)$} is the set of sentences that hold in every model in $\K$. That is
+
+\ceq{\hfill\Th(\K)}{=}{\bigcap_{M\in\K}\Th(M)}
+
+The class of all models of $T$ is denoted by \emph{$\textrm{Mod}(T)$}. We say that $\K$ is \emph{axiomatizable\/} if $\Mod(T)=\K$ for some theory $T$. If we can also require that $T$ is finite we say that $\K$ is \emph{finitely axiomatizable}. To sum up
+
+\ceq{\hfill\Th(M)}{=}{\Big\{\phi\ :\ M\models\phi\Big\}}
+
+\ceq{\hfill\Th(\K)}{=}{\Big\{\phi\ :\ M\models\phi \textrm{ for all }M\in\K\Big\}}
+
+\ceq{\hfill\Mod(T)}{=}{\Big\{M\ :\ M\models T\Big\}}
+
+
 \begin{example}\label{Tg}
-Let $L$ be the language multiplicative groups. Let $T_{\rm g}$ be the set containing the universal closure of following three formulas
+Let $L$ be the language of multiplicative groups. Let $T_{\rm g}$ be the set containing the universal closure of following three formulas
 \begin{itemize}
 \item[ass.]\ \  $(x\cdot y)\cdot z\ =\ x\cdot(y\cdot z)$;
 \item[inv.]\ \  $ x\cdot x^{-1}\ =\ x^{-1}\cdot x\ =\ 1$;
 \item[neu.]\ \  $x\cdot 1\ =\ 1\cdot x\ =x$.
 \end{itemize}
-Every model of $T_{\rm g}$ is a group and, vice versa, every group is a structure that models $T_{\rm g}$. Let $\phi$ be the universal closure of the following formula
+Then $T_{\rm g}$ axiomatizes the theory of groups, i.e.\@ $\Th(\K)$ for $\K$ the class of all groups. Let $\phi$ be the universal closure of the following formula
 \begin{itemize}
 \item[can.]\ \  $\ z\cdot x\ =\  z\cdot y\ \imp\ x\ =\ y$. 
 \end{itemize}
@@ -58,8 +72,6 @@ So, commutative groups model $\psi$ and non commutative groups model $\neg\psi$.
 \end{example}
 
 Note that even when $T$ is a very concrete set, $\ccl(T)$ may be more difficult to grasp. In the example above $T_{\rm g}$ contains three sentences but $\ccl(T_{\rm g})$ is an infinite set containing sentences that code theorems of group theory yet to be proved.
-
-We say that a theory is \emph{consistent\/} if it has a model. With the notation above, $T$ is consistent if and only if \emph{$T\notproves\bot$}.
 
 \begin{remark}
 The following properties say that $\ccl$ is a finitary closure operator.
@@ -110,8 +122,6 @@ Fix a field $K$. The language $L_K$ extends the language of additive groups with
 The symbols $0_K$ and $1_K$ denote the zero and the unit of $K$. The symbols $+_K$ and $\cdot_K$ denote the sum and the product in $K$. These are not part of $L_K$, they are symbols we use in the metalanguage.\QED
 \end{example}
 
-ation of vector spaces is less straightforward.
-
 \begin{example}\label{expl_Tgraphs}
 Recall from Example~\ref{expl_graph1} that we represent a graph with a symmetric irreflexive relation. Therefore \emph{theory of graphs\/} contains the following two axioms
 
@@ -126,14 +136,6 @@ Our last example is a trivial one.
 \begin{example}
 Let $L$ be the empty language The \emph{theory of infinite sets\/} is axiomatised by the sentences $\E^{\ge n} x\ (x=x)$ for all positive integer $n$.\QED
 \end{example}
-
-The \emph{theory of $M$\/} is the set of sentences that hold in $M$ and is denoted by \emph{$\Th(M)$}. More generally, if $\K$ is a class of structures, \emph{$\Th(\K)$} is the set of sentences that hold in every model in $\K$. For instance if $\K$ is the class of all groups,  $\Th(\K)$ is the theory $\ccl(T_{\rm g})$. The class of all models of $T$ is denoted by \emph{$\textrm{Mod}(T)$}. We say that $\K$ is \emph{axiomatizable\/} if $\Mod(T)=\K$ for some theory $T$. If we can also require that $T$ is finite we say that $\K$ is \emph{finitely axiomatizable}. To sum up
-
-\hspace*{14ex}\llap{$\Th(M)$}\ \ =\ \ $\Big\{\phi\ :\ M\models\phi\Big\}$
-
-\hspace*{14ex}\llap{$\Th(\K)$}\ \ =\ \ $\Big\{\phi\ :\ M\models\phi \textrm{ for all }M\in\K\Big\}$
-
-\hspace*{14ex}\llap{$\Mod(T)$}\ \ =\ \ $\Big\{M\ :\ M\models T\Big\}$
 
 
 \begin{exercise}
@@ -300,7 +302,7 @@ Let $A\subseteq M\cap N$. Prove that $M\equiv_A N$ if and only if $M\equiv_B N$ 
 \end{exercise}
 
 \begin{exercise}
-Let $M\preceq N$ and let $\phi(x)\in L(M)$. Prove that if $\phi(N)$ is finite then $\phi(N)=\phi(M)$.\QED
+Let $M\preceq N$ and let $\phi(x)\in L(M)$. Prove that $\phi(M)$ is finite if and only if  $\phi(N)$ is finite and in this case $\phi(N)=\phi(M)$.\QED
 \end{exercise}
 
 \begin{exercise}
@@ -401,7 +403,7 @@ We prove that \# holds for the formula $\E y\,\phi(x,y)$.
 
 
 \begin{corollary}
-If $h:M\imp N$ is an $A$-isomorphism then $h\big[\phi(M)\big]=\phi(N)$ for every $\phi(x)\in L(A)$.\QED
+If $h:M\imp N$ is an isomorphism then $h\big[\phi(M)\big]=\phi(N)$ for every $\phi(x)\in L$.\QED
 \end{corollary}
 
 We can now give a few very simple examples of elementarily equivalent structures.
@@ -862,9 +864,9 @@ Consider $\RR$ in the language of strict orders. Prove that $\RR\sm\{0\}\preceq 
 
 The following theorem was proved by L\"owenheim at the beginning of last century. Skolem gave a simpler proof immediately after. At that time the result was perceived as paradoxical. Qualche anno prima i lavori di Zermelo e di Fraenkel avevano convinto la comunit\`a scientifica che l'intera theory degli insiemi potesse essere formalizzata con un linguaggio del prim'ordine. Il teorema  L\"owenheim-Skolem all'ingi\`u implica l'esistenza di un modello numerabile della theory degli insiemi: questo is chiamato il \emph{paradosso di Skolem}. \`E paradossale perch\'e $M$ rende vero, tra l'altro, l'sentence che formalizza l'assioma delle parti, quindi $M$ contiene un elemento $b$ che, dal punto di vista di $M$, is l'insieme dei sottoinsiemi dei numeri naturali. Ma l'insieme degli elementi di $b$ is un sottoinsieme di $M$ and is quindi numerabile. Non is una contraddizione, semplicemente l'espressione: \textit{tutti\/} i sottoinsiemi dei naturali, non ha in $M$ lo stesso significato che ha nel mondo reale. Anche la nozione di cardinali\`a assume un significato diverso. Nel linguaggio della theory degli insiemi is possibile formalizzare al prim'ordine: $b$ non is numerabile. Basta dire che non esiste nessuna biiezione tra $b$ e i numeri naturali. Quindi la biiezione tra gli elementi di $b$ and i numeri naturali (che esiste nel mondo reale) non appartiene ad $M$. Il concetto di equipotente in $M$ ha un altro significato che nella realt\`a~--~anche se chi vive dentro $M$ non se ne pu\`o rendere conto.
 
-\begin{theorem}[downward L\"owenheim-Skolem.]\label{lowenheimskolemallingiu}
+\begin{void_thm}[Downward L\"owenheim-Skolem Theorem]\label{lowenheimskolemallingiu}
 Let $N$ be an infinite structure of signature $L$ and let $A\subseteq N$. Then there is a structure $M$ of cardinality $\le|L(A)|$ such that $A\subseteq M\preceq N$. 
-\end{theorem}
+\end{void_thm}
 
 \begin{proof}
 Set $\lambda=|L(A)|$. Below we construct a chain $\<A_i:i<\lambda\>$ of subsets of $N$. The chain begins at $A_0=A$ and is continuous at limit ordinals. Finally we set $M=\bigcup_{i<\lambda}A_i$. All $A_i$ will have cardinality $\le\lambda$ so  $|M|\le\lambda$ follows. 
@@ -874,13 +876,13 @@ Now we construct $A_{i+1}$ given $A_i$. Assume as induction hypothesis that $|A_
 Now use Tarski-Vaught test to prove $M\preceq N$. Suppose $\phi(x)\in L(M)$ is consistent in $N$. As finitely many parameters occur in formulas, $\phi(x)\in L(A_i)$ for some $i$. Then $\phi(x)$ is among the formulas enumerated above and $A_{i+1}\subseteq M$ contains a solution of $\phi(x)$.
 \end{proof}
 
-We will need to adapt the construction above to meet more requirements on the model $M$. To better control the elements that enters $M$ it is convenient to add one element at the time (above we add $\lambda$ elements at each stage). We need to enumerate formulas with some care if we want to complete the construction by stage $\lambda$.
+We will need to adapt the construction above to meet more requirements on the model $M$. To better control the elements that enters $M$ it is convenient to add one element at the time (above we add $\lambda$ elements at each stage). We need to enumerate formulas with care if we want to complete the construction by stage $\lambda$.
 
-\begin{void}[Second proof of Theorem~\ref{lowenheimskolemallingiu}.]\label{diym_II_lowenheimskolemallingiu}
+\begin{void_thm}[Second proof of the downward L\"owenheim-Skolem Theorem]\label{diym_II_lowenheimskolemallingiu}\rm
 From set theory we know there is a bijection $\pi:\lambda\to\lambda^2$ such that $\pi_1(i)$ and $\pi_2(i)$, the two components of $\pi(i)$, are both $\le i$. Suppose we have defined the set $A_j$ for very $j\le i$. Let $\<\phi_k(x)\;:\;k<\lambda\>$ be an enumeration of the formulas in $L(A_{\pi_1(i)})$. Let $b$ be a solution of the $\phi_k(x)$ for $k=\pi_2(i)$ and define $A_{i+1}=A_i\cup\{b\}$.
 
-We use Tarski-Vaught test to prove $M\preceq N$. Let $\phi(x)\in L(M)$ be consistent in $N$. As $\pi$ is a bijection, there is an $i$ such that $\phi(x)$ is the $\pi_2(i)$-th formula enumerated in $L(A_{\pi_1(i)})$. Hence a witness of $\phi(x)$ is enumerated in $M$ at stage $i$.
-\end{void}
+We use Tarski-Vaught test to prove $M\preceq N$. Let $\phi(x)\in L(M)$ be consistent in $N$. As $\pi$ is a bijection, there is an $i$ such that $\phi(x)$ is the $\pi_2(i)$-th formula enumerated in $L(A_{\pi_1(i)})$. Hence a witness of $\phi(x)$ is enumerated in $M$ at stage $i$.\QED
+\end{void_thm}
 
 
 % \begin{exercise}\label{LSenumerazione}
