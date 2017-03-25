@@ -44,7 +44,7 @@ The \emph{theory of $M$\/} is the set of sentences that hold in $M$ and is denot
 
 \ceq{\hfill\Th(\K)}{=}{\bigcap_{M\in\K}\Th(M)}
 
-The class of all models of $T$ is denoted by \emph{$\textrm{Mod}(T)$}. We say that $\K$ is \emph{axiomatizable\/} if $\Mod(T)=\K$ for some theory $T$. If we can also require that $T$ is finite we say that $\K$ is \emph{finitely axiomatizable}. To sum up
+The class of all models of $T$ is denoted by \emph{$\textrm{Mod}(T)$}. We say that $\K$ is \emph{axiomatizable\/} if $\Mod(T)=\K$ for some theory $T$. If $T$ is finite we say that $\K$ is \emph{finitely axiomatizable}. To sum up
 
 \ceq{\hfill\Th(M)}{=}{\Big\{\phi\ :\ M\models\phi\Big\}}
 
@@ -64,7 +64,7 @@ Then $T_{\rm g}$ axiomatizes the theory of groups, i.e.\@ $\Th(\K)$ for $\K$ the
 \begin{itemize}
 \item[can.]\ \  $\ z\cdot x\ =\  z\cdot y\ \imp\ x\ =\ y$. 
 \end{itemize}
-As $\psi$ formalizes the cancellation property then $T_{\rm g} \proves\phi$, that is, $\phi$ is a logical consequence of $T_{\rm g}$. Now consider the sentence $\psi$ which is the universal closure of
+As $\phi$ formalizes the cancellation property then $T_{\rm g} \proves\phi$, that is, $\phi$ is a logical consequence of $T_{\rm g}$. Now consider the sentence $\psi$ which is the universal closure of
 \begin{itemize}
 \item[com.]\ \  $x\cdot y\ =\ y\cdot x$. 
 \end{itemize}
@@ -284,7 +284,7 @@ If we restate \ssf{a} and \ssf{c} of the proposition above when $A=M$ we obtain 
 \item[a'.] $M\preceq N$;
 \item[c'.] \parbox{26ex}{$\phi(M)\ =\ \phi(N) \cap M^{|x|}$} for every $\phi(x)\in L$.
 \end{itemize}
-Note that \ssf{c'} extends to all definable sets what Definition~\ref{substructuredef} requires for a few basic definable sets.
+Note that \ssf{c'} extends to all definable sets what Definition~\ref{sottostrutturadef} requires for a few basic definable sets.
 
 \begin{example}
 Let $G$ be a group which we consider as a structure in the multiplicative language of groups. We show that if $G$ is simple and $H\preceq G$ then also $H$ is simple. Recall that $G$ is simple if all its normal subgroups are trivial, equivalently, if for every $a\in G\sm \{1\}$ the set $\big\{gag^{-1}\,:\,g\in G\big\}$ generates the whole group $G$. 
@@ -409,11 +409,11 @@ If $h:M\imp N$ is an isomorphism then $h\big[\phi(M)\big]=\phi(N)$ for every $\p
 We can now give a few very simple examples of elementarily equivalent structures.
 
 \begin{example}\label{expl_ordini_elem}
-Let $L$ be the language of strict orders. The intervals $[0,1]$ and $[0,2]$ are isomorphic, hence $[0,1]\equiv[0,2]$ follows from Theorem~\ref{isomorfoeleq}. Clearly, $[0,1]$ is a substructure of $[0,2]$. However $[0,1]\npreceq [0,2]$, in fact the formula $\A  x\,(x\mathord\le1)$ holds in $[0,1]$ and is false in $[0,2]$. 
+Let $L$ be the language of strict orders. Consider intervals of $\RR$ (or in $\QQ$) as structures in the natural way. The intervals $[0,1]$ and $[0,2]$ are isomorphic, hence $[0,1]\equiv[0,2]$ follows from Theorem~\ref{isomorfoeleq}. Clearly, $[0,1]$ is a substructure of $[0,2]$. However $[0,1]\npreceq [0,2]$, in fact the formula $\A  x\,(x\mathord\le1)$ holds in $[0,1]$ but is false in $[0,2]$. 
 
 The example above shows that $M\subseteq N$ and $M\equiv N$ does not imply $M\preceq M$.
 
-Now we prove that $(0,1)\preceq (0,2)$. By Exercise~\ref{finitanaturaeqel}, it suffices to verify that $(0,1)\equiv_B  (0,2)$ for every finite $B\subseteq(0,1)$. This follows again by Theorem~\ref{isomorfoeleq} as $(0,1)$ and $(0,2)$ are $B$-isomorphic for every finite $B\subseteq(0,1)$.\QED
+Now we prove that $(0,1)\preceq (0,2)$. By Exercise~\ref{finitanaturaeqel} above, it suffices to verify that $(0,1)\equiv_B  (0,2)$ for every finite $B\subseteq(0,1)$. This follows again by Theorem~\ref{isomorfoeleq} as $(0,1)$ and $(0,2)$ are $B$-isomorphic for every finite $B\subseteq(0,1)$.\QED
 \end{example}
 
 % \begin{exercise}\label{eximmersioni}
@@ -434,9 +434,9 @@ Hint: as $L$-structures are plain sets, every bijection $f:M\to M$ is an automor
 \end{exercise}
 
 \begin{exercise}\label{dlorlkurb}
-Prove that if $\phi(x)$ is an existential formula and $h:M\to M$ is an embedding
+Prove that if $\phi(x)$ is an existential formula (i.e.\@ of the form $\E y\,\psi(x,y)$ for $\psi(x,y)\in L_{\rm qf}$) and $h:M\to M$ is an embedding then
 \begin{itemize}
-\item[]\ceq{$M\models \phi(a)$}{$\IMP$}{$N\models \phi(ha)$} for every $a\in M^{|x|}$.
+\item[]\ceq{$M\models \phi(a)$}{$\IMP$}{$N\models \phi(ha)$} for every $a\in M^{|x|}$.\QED
 \end{itemize}
 \end{exercise}
 
@@ -455,7 +455,7 @@ Assume that the language $L$ contains only the symbol $+$. Consider $\ZZ$ as a s
 % %%%%%%%%%%%%%%%%%%%%%
 \section{Completeness}
 
-A theory $T$ is \emph{maximal consistent\/} if it is consistent and there is no consistent theory $S\supset T$. Equivalently, if $T$ contains every sentence $\phi$ \emph{consistent with\/} $T$, that is such that $T\cup\{\phi\}$ is consistent. Clearly a maximal consistent theory is closed under logical consequences.
+A theory $T$ is \emph{maximal consistent\/} if it is consistent and there is no consistent theory $S\supset T$. Equivalently, if $T$ contains every sentence $\phi$ \emph{consistent with\/} $T$, that is, such that $T\cup\{\phi\}$ is consistent. Clearly a maximal consistent theory is closed under logical consequences.
 
 A theory $T$ is \emph{complete\/} if $\ccl T$ is maximal consistent. It is not easy to prove that a theory is complete. Explicit examples will be given in the next chapters.
 
@@ -468,10 +468,10 @@ The following are equivalent
 \end{itemize}
 \end{proposition}
 \begin{proof}
-To prove \ssf{a}$\IMP$\ssf{b}, assume \ssf{a}. As $T$ is consistent, there is $M\models T$. Then $T\subseteq\Th (M)$. As $T$ is maximal consistent $T=\Th(M)$. Implication \ssf{b}$\IMP$\ssf{c} is immediate.  As for \ssf{c}$\IMP$\ssf{a} note that if $T\cup\{\phi\}$ is consistent then $\neg\phi\not\in T$ therefore $\phi\in T$ follows from \ssf{c}.
+To prove \ssf{a}$\IMP$\ssf{b}, assume that $T$ is consistent. Then there is $M\models T$. Therefore $T\subseteq\Th (M)$. As $T$ is maximal consistent $T=\Th(M)$. Implication \ssf{b}$\IMP$\ssf{c} is immediate.  As for \ssf{c}$\IMP$\ssf{a} note that if $T\cup\{\phi\}$ is consistent then $\neg\phi\not\in T$ therefore $\phi\in T$ follows from \ssf{c}.
 \end{proof}
 
-The proof of the proposition below is is left as an exercise for the reader
+The proof of the proposition below is is left as an exercise for the reader.
 
 \begin{proposition}\label{fattoconsistenzasensolato}
 The following are equivalent
@@ -832,7 +832,7 @@ Write $M$ for the substructure of $N$ with domain $A$. By induction on the synta
 {\IFF}%
 {N\models\phi(a)} for every $a\in M^{|x|}$.
 
-If $\phi(x)$ is atomic the claim follows from $M\subseteq N$ and Lemma~\ref{immersioniqfeq}. The case of Boolean connectives is straightforward, so only the existential quantifier requires a proof
+If $\phi(x)$ is atomic the claim follows from $M\subseteq N$ and the remarks underneath Definition~\ref{isomorfismodef}. The case of Boolean connectives is straightforward, so only the existential quantifier requires a proof
 
 \ceq{\hfill M\models\E x\,\phi(a,x)}%
 {\IFF}%
@@ -845,15 +845,11 @@ If $\phi(x)$ is atomic the claim follows from $M\subseteq N$ and Lemma~\ref{imme
 \ceq{}%
 {\IFF}%
 {N\models\E x\,\phi(a,x)}\hfill $\PMI$ uses \ssf{2}.
-
 \end{proof}
 
 \begin{exercise} 
 Consider $\RR$ in the language of strict orders. Prove that $\RR\sm\{0\}\preceq \RR$.\QED
 \end{exercise}
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -862,10 +858,33 @@ Consider $\RR$ in the language of strict orders. Prove that $\RR\sm\{0\}\preceq 
 \section{The downward L\"owenheim-Skolem theorem}
 \label{LoewenheimSkolem}
 
-The following theorem was proved by L\"owenheim at the beginning of last century. Skolem gave a simpler proof immediately after. At that time the result was perceived as paradoxical. Qualche anno prima i lavori di Zermelo e di Fraenkel avevano convinto la comunit\`a scientifica che l'intera theory degli insiemi potesse essere formalizzata con un linguaggio del prim'ordine. Il teorema  L\"owenheim-Skolem all'ingi\`u implica l'esistenza di un modello numerabile della theory degli insiemi: questo is chiamato il \emph{paradosso di Skolem}. \`E paradossale perch\'e $M$ rende vero, tra l'altro, l'sentence che formalizza l'assioma delle parti, quindi $M$ contiene un elemento $b$ che, dal punto di vista di $M$, is l'insieme dei sottoinsiemi dei numeri naturali. Ma l'insieme degli elementi di $b$ is un sottoinsieme di $M$ and is quindi numerabile. Non is una contraddizione, semplicemente l'espressione: \textit{tutti\/} i sottoinsiemi dei naturali, non ha in $M$ lo stesso significato che ha nel mondo reale. Anche la nozione di cardinali\`a assume un significato diverso. Nel linguaggio della theory degli insiemi is possibile formalizzare al prim'ordine: $b$ non is numerabile. Basta dire che non esiste nessuna biiezione tra $b$ e i numeri naturali. Quindi la biiezione tra gli elementi di $b$ and i numeri naturali (che esiste nel mondo reale) non appartiene ad $M$. Il concetto di equipotente in $M$ ha un altro significato che nella realt\`a~--~anche se chi vive dentro $M$ non se ne pu\`o rendere conto.
+
+The main theorem of this section was proved by L\"owenheim at the beginning of the last century. Skolem gave a simpler proof immediately afterwards.
+At the time, the result was perceived as paradoxical.
+
+A few years earlier, the works of Zermelo and Fraenkel had convinced
+the mathematical community that the whole of set theory could be
+formalised in a first order language. The downward L\"owenheim-Skolem
+theorem implies the existence of an infinite countable model $M$ of
+set theory: this is the so-called  \emph{Skolem paradox}. The
+existence of  $M$ seems paradoxical because, in particular, a sentence
+that formalises the subset axiom holds in $M$. Therefore $M$ contains
+an element $b$ which, in $M$, is the set of subsets of the natural
+numbers. But the set of elements of $b$ is a subset of $M$, and
+therefore it is countable. In fact, this is not a contradiction,
+because the expression `all subsets of the natural numbers' does not
+have the same meaning in $M$ as it has in the real world. The notion
+of cardinality, too, acquires a different meaning. In the language of
+set theory, there is a first order sentence that formalises the fact
+that $b$ is uncountable: the sentence says that there is no bijection
+between $b$ and the natural numbers. Therefore the bijection between
+the elements of $b$ and the natural numbers (which exists in the real
+world) does not belong to $M$. The notion of equinumerosity has a
+different meaning in $M$ and in the real world, but those who live in
+$M$ cannot realise this.
 
 \begin{void_thm}[Downward L\"owenheim-Skolem Theorem]\label{lowenheimskolemallingiu}
-Let $N$ be an infinite structure of signature $L$ and let $A\subseteq N$. Then there is a structure $M$ of cardinality $\le|L(A)|$ such that $A\subseteq M\preceq N$. 
+Let $N$ be an infinite $L$-structure and let $A\subseteq N$. Then there is a structure $M$ of cardinality $\le|L(A)|$ such that $A\subseteq M\preceq N$. 
 \end{void_thm}
 
 \begin{proof}
