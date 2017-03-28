@@ -177,7 +177,7 @@ The following are equivalent
 
 
 
-\section{Un criterio per l'eliminazione dei quantificatori}
+\section{Quantifier elimination by back-and-forth}
 \label{eliminazionequantificatoricriterio}
 
 We say that \emph{$T$ admits\/} (or \emph{has\/}) \emph{positive $\Delta$-elimination of quantifiers\/} if for every formula $\phi(x)$ in $\{\A,\E,\mathord\wedge,\mathord\vee\}\Delta$ there is a formula $\psi(x)$ in $\{\mathord\wedge,\mathord\vee\}\Delta$ such that
@@ -214,7 +214,7 @@ The following are equivalent
 \ssf{2}$\IMP$\ssf{1}\quad We prove by induction of syntax that $\Delta$-morphism preserve the truth of all formulas in $\{\A,\E,\mathord\wedge,\mathord\vee\}\Delta$, this suffices by Lemma~\ref{lem_qfdefinability}. Induction for the connectives $\vee$ and $\wedge$ is trivial.  So assume as induction hypothesis that the truth of  $\phi(x,y)$ is preserved.  By Lemma~\ref{lem_qfdefinability} $\phi(x,y)$ is equivalent tot a formula in $\Delta$, hence by \ssf{2} the truth of $\E y\, \phi (x,y)$ and $\A y \,\phi (x,y)$ is preserved.
 \end{proof}
 
-Condition \ssf{2} of the corollary above may be difficult to verify directly. Condition \ssf{2} of the following corollary of Proposition~\ref{prop_EDelta_estensione} and~\ref{prop_ADelta_estensione} may be easier.
+Condition \ssf{2} of the corollary above may be difficult to verify directly. The following corollary of Proposition~\ref{prop_EDelta_estensione} and~\ref{prop_ADelta_estensione} gives a back-and-forth condition with is easier to verify.
 
 \begin{corollary}\label{criterioeq2}
 Let $|L|\le\lambda$. The following are equivalent
