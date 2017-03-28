@@ -1,131 +1,351 @@
-\documentclass[creche.tex]{subfiles}
-\begin{document}
+\chapter{Preservation theorems}
+\label{eliminazione}
+\def\ceq#1#2#3{\noindent\smash{\parbox[t]{15ex}{$\displaystyle #1$}}\parbox{6ex}{\hfil $#2$}{$\displaystyle #3$}}
 
 
-\chapter{Exercise}
-\label{elimination}
-\def\GammaA{\Gamma_{\hskip-.3ex\scriptscriptstyle\sf e}}
-\def\GammaB{\Gamma_{\hskip-.3ex\scriptscriptstyle\sf c}}
-\def\GammaAn{\Gamma_{\hskip-.3ex\scriptscriptstyle\sf i}}
-\def\GammaAAn{\Gamma_{\hskip-.3ex\scriptscriptstyle\sf ei}}
-\def\GammaC{\Gamma_{\hskip-.3ex\scriptscriptstyle\sf eic}}
+A few results dating from the 1950s describe the relationship between syntactic and semantic properties of first-order formulas. These theorems states that a certain syntactic class of formulas contains, up to logical equivalence, all first-order formulas preserved under a certain algebraic relationship between structures (the existence of a particular kind of homomorphism). Criteria for quantifier-elimination follow from these theorems.
 
-In this section the language $L$ is that of additive groups with extra constant $1$. 
+\section{Lyndon-Robinson Lemma}
+\label{TeoremidiPreservazione}
 
-For $n\in\ZZ$ we write \emph{$x\equiv_ny$\/} as an abbreviation of $\E z\ nz=x-y$. We say that \emph{$x$ is congruent to $y$ modulo $n$}. In this section we denote by \emph{$Q$\/} the set of \emph{prime powers}, i.e.\@ positive integer powers of a single prime number. It is convenient, though not essential, to work only with congruences modulo powers of primes. The usual proof in $\ZZ$ generalizes to the following.
+In this section $T$ is a consistent theory without finite models and $\Delta$ is a set of formulas closed under renaming of variables. At a first reading the reader is encouraged to assume that $\Delta$ is $L_{\rm at}$. 
 
-\begin{proposition}
-If $k,h\in\ZZ$ are coprime then $T_{\rm ag}\ \proves\ x\equiv_{kh}y\;\iff\;x\equiv_ky\wedge x\equiv_hy$.\QED
+If $\ssf{C}\subseteq\{\A,\E,\neg,\vee,\wedge\}$ is a set of connectives, we write \emph{$\ssf{C}\Delta$} for the closure of $\Delta$ with respect to all connectives in $\ssf{C}$. We write \emph{$\neg\Delta$} for the set containing the negation of the formulas in $\Delta$. Warning: do not confuse $\neg\Delta$ with $\{\neg\}\Delta$.
+
+
+
+
+
+% Diremo che $\Delta$ \`e un \emph{insieme di eliminazione\/} per $T$ se ogni formula $\phi(x)$, dove $x$ \`e un'arbitraria tupla di variabili che varia con $\phi(x)$, \`e equivalente modulo $T$ ad una formula in $\Delta$. Detto esplicitamente, se for every formula $\phi(x)$ esiste una formula $\psi(x)$ in $\Delta$ tale che
+% 
+% \hfil$\displaystyle T\proves\ \phi(x)\iff\psi(x)$.
+% 
+% Per esempio $\Delta$ pu\`o essere l'insieme delle formule senza quantificatori, l'insieme delle formule esistenziali, o delle combinazioni booleane di queste. Quando $\Delta$ \`e l'insieme delle formule senza quantificatori 
+
+
+
+Recall that \emph{$\Delta$-morphism\/} is a map $k:M\imp N$ that preserves the truth of formulas in $\Delta$. Below we use the following proposition without further reference.
+
+\begin{proposition}\label{prop_pokj}
+Fix $M\models T$ and $a\in M^{|x|}$. Let $q(x)=\Deltatp_M(a)$. Then for every $\phi(x)\in L$ the following are equivalent
+\begin{itemize}
+\item[1.] $N\models\phi(ka)$ for every $k:M\imp N\models T$ that is a $\Delta$-morphism defined in $a$;
+%\item[1'.] $N\models\phi(b)$ for every $N\models T$ ed ogni tupla $b$ in $N$ tale che $M,a\Rrightarrow_\Delta N,b$.
+\item[2.] $T\ \proves\  q(x)\imp\phi(x)$.
+\end{itemize}
 \end{proposition}
+\begin{proof}\ssf{2}$\IMP$\ssf{1}\quad Immediate.  
 
-Below we axiomatize the theory of $\ZZ$, with the natural interpretation of the symbols. We begin with a weaker theory. The theory \emph{$T_{0}$\/} contains $T_{\rm ag}$ and the following axioms for every $q\in Q$ and every positive integer $r<q$.
-
-% \def\ceq#1#2{\parbox[b]{10ex}{$\displaystyle #1$}\hskip1ex$\displaystyle #2$}
-
-\def\ceq#1#2#3{\parbox[b]{20ex}{$\displaystyle #1$}\parbox[b]{4ex}{\hfil$#2$}$\displaystyle #3$}
-
-\ceq{\ssf{1$_{q,r}$.}\hfill 0\nequiv_qr}{~}{~}
-
-Note that this axiom scheme entails that every model of $T_{0}$ is torsion-free. The theory \emph{$T_{\rm zg}$\/} contains $T_{0}$ and the following axioms for every $q\in Q$
-
-\ceq{\ssf{2$_q$.}\hfill\bigvee_{0\le r<q} x\equiv_qr}{~}{~}
-
-We call $T_{\rm zg}$ the theory of \emph{$\ZZ$-groups\/} after Marker. 
-
-In this section \emph{$\Delta$\/} we denote the set containing all formulas of the form $t=s$, $t\neq s$ and $t\equiv_q s$ for some terms $t$ and $s$. We write $\Delta(A)$ for the set obtained substituting some of the variables in $\Delta$ with parameters in $A$.
-
-Note that all models $T_{\rm 0}$ have the same $\Delta\jj$characteristic.
-
-In this section, whenever we fix some $A\subseteq M\models T_{\rm zg}$, we imply that all logical notions are relative to $T_{\rm zg}\cup\Th_\Delta(M/\<A\>_M)$. In particular, \textit{models\/} are superstructures of $\Diag\<A\>_M$ that model $T_{\rm zg}$ and all sentences in $\Delta(\<A\>_M)$ that holds in $M$. Logical consequence and all derived notions (\textit{consistent}, \textit{complete}, \textit{equivalent}, etc.) are to be understood relative to the theory $T_{\rm zg}\cup\Th_\Delta(M/\<A\>_M)$.
-
-The following proposition explains why we are allowed  not include in $\Delta$ negations of congruences.
-
-\begin{proposition}\label{prop_congr_comp}
-Let $A\subseteq M\models T_{\rm zg}$. Then every prime $\Delta(A)\jj$type is complete. In particular, the inverse of a $\Delta\jj$morphism is a $\Delta\jj$morphism.
-\end{proposition}
-
-\begin{proof}
-It saves notation to prove the claim for types in one variable and then extend. So, let $x$ be a single variable. It suffices to show that every formula of the form $nx\equiv_qa$, for some $a\in\<A\>_M$, either $p(x)\imp kx\equiv_qa$ or $p(x)\imp kx\nequiv_qa$. By the axioms above $r\equiv_qa$ for some integer $0\le r<q$. Hence it suffices to show that either $p(x)\imp kx\equiv_qr$ or $p(x)\imp kx\nequiv_qr$. The axioms above also entail that 
-
-\ceq{\hfill kx\nequiv_qr}{\iff}{\bigvee_{r\neq s<q}nx\equiv_qs}
-
-By Proposition~\ref{lemmatipiprimiconsistenti} there is a model $N$ and some $c\in N$ such that $p(x)\imp\Deltatp(c/A)$. There are two possibilities, either $N\models c\equiv_qr$ and $p(x)\imp kx\equiv_qr$. Otherwise, by the equivalence above $N\models c\equiv_qs$ for some integer $s\neq r$, so $p(x)\imp kx\nequiv_qr$.
-
-What proved above suffices to prove the second claim. This is easily proved by induction of the cardinality of the morphism, which we may assume to be finite. As all models of $T_{\rm zg}$ have the same $\Delta\jj$characteristic, the claim is trivial for the empty map (so inductions starts). Finally note that the second claim imply the first.
+\ssf{1}$\IMP$\ssf{2}\quad Negate \ssf{2}, then there are $N\models T$ and $b\in N^{|x|}$ such that $q(b)\wedge\neg\phi(b)$. Therefore the map $k:M\to N$, where $k=\{\<a,b\>\}$, contradicts \ssf{1}.
 \end{proof}
 
-Fix a single variable $x$ and an infinite tuple of variables $z$. It is convenient to name some subsets of $\Delta_{\restriction x,z}$. Hopefully the following naming are suggestive enough.
+The following is sometimes referred to as the Lyndon-Robinson Lemma.
 
-\ceq{\ssf{e.}\hfill\GammaA}{=}{\big\{nx=t(z)\ :\ n\in\ZZ,\ t(z) \textrm{ a term}\big\}}
-
-\ceq{\ssf{c.}\hfill\GammaB}{=}{\big\{nx\equiv_qt(z)\ :\ n\in\ZZ,\ q\in Q,\ t(z) \textrm{ a term}\big\}}
-
-\ceq{\ssf{i.}\hfill\GammaAn}{=}{\neg\GammaA}
-
-\ceq{\ssf{ei.}\hfill\GammaAAn}{=}{\GammaA \cup\,\GammaAn}
-
-\def\ceq#1#2#3{\parbox[b]{20ex}{$\displaystyle #1$}\parbox[b]{4ex}{\hfil$#2$}$\displaystyle #3$}
-
-When $\Gamma$ is one of those above, $\Gamma(A)$ denotes the set obtained substituting for $z$ a tuple $a\in A^{|z|}$. We say that $p(x)$ is a \emph{trivial type\/} if it is satisfied by any element of any model.
-
-\begin{proposition}
-Let $A\subseteq M\models T_{\rm 0}$. For any $b\in M$ one of the following obtains\nobreak
+\begin{lemma}\label{lem_qfdefinability}
+For every $\phi(x)\in L$ the following are equivalent
 \begin{itemize}
-\item[1.] the type $\GammaA\jj\tp(b/A)$ is trivial;
-\item[2.] the type $q(x)=\Delta\jj\tp(b/A)$ is isolated by some formula in $\GammaA(A)$, that is, $b$ satisfies some $\phi(x)\in\GammaA(A)$ such that $\phi(x)\imp q(x)$.
+\item[1.] $\phi(x)$ is equivalent over $T$ to a formula in $\{\mathord\wedge\mathord\vee\}\Delta$;
+\item[2.] $\phi(x)$ is preserved by $\Delta$-morphisms between models of $T$.
+%\item[2'.] $M\models\phi(a)\IMP N\models\phi(b)$ for every $M,a\Rrightarrow_\Delta N,b$ con $M$ ed $N$ modelli di $T$.
+\end{itemize}
+\end{lemma}
+\begin{proof} \ssf{1}$\IMP$\ssf{2}\quad Immediate.
+
+\ssf{2}$\IMP$\ssf{1}\quad  We claim that from \ssf{2} it follows that
+
+
+\ceq{\#\hfill T}{\proves}{\phi(x)\ \ \iff\ \ \bigvee\big\{\,p(x)\subseteq\Delta\ :\ T\proves p(x)\imp\phi(x)\,\big\}}
+
+Direction $\pmi$ is clear. To verify $\imp$, fix $M\models T$ and let $a\in M^{|x|}$ be such that $M\models\phi(a)$.  From \ssf{2} it follows that $\phi(x)$ satisfy \ssf{1} of Proposition~\ref{prop_pokj}. Therefore $T\proves q(x)\imp\phi(x)$ for $q(x)=\Deltatp(a)$. Hence $q(x)$ is one of the types the occur in the disjuction in $\#$ which is satisfied by $a$.
+
+From $\#$ and compactness we obtain
+
+\ceq{\hfill T}{\proves}{\phi(x)\ \ \iff\ \ \bigvee\big\{\,\psi(x)\in\{\wedge\}\Delta\ :\ T\proves \psi(x)\imp\phi(x)\,\big\}}
+
+Applying compactness again, we replace the infinite disjunction above with a finite one and prove \ssf{2}.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% 
+% \begin{corollary}\label{prop_po}
+% Fissiamo un modello $M\models T$ ed una tupla $a$ di elementi di $M$. Sia $p(x)=\E\Deltatp_M(a)$. Per ogni formula pura $\phi(x)$ le seguenti affermazioni sono equivalenti:
+% \begin{itemize}
+% \item[1.] $N\models\phi(ha)$ for every modello $N\models T$ e for every $\Delta$-morphism totale $h:M\imp N$;
+% \item[2.] $T\ \cup\ p(x)\proves\phi(x)$.
+% \end{itemize}
+% \end{corollary}
+% \begin{proof} 
+% L'implicazione \ssf{2}$\IMP$\ssf{1} \`e immediata per  la proposizione~\ref{presesis}. Dimostriamo \ssf{1}$\IMP$\ssf{2}. Se  $\neg\ssf{2}$ allora esiste un $N\models T$ ed una tupla $b$ tale che  $N\models p(b)\wedge\neg\phi(b)$. Possiamo assumere $N$ sia $\lambda$ satturo per $\lambda$ sufficientemente grande. La mappa $k:M\to N$ con $k=\{\<a,b\>\}$ \`e un $\E\Delta$-morphism e quindi si estende ad un $\E\Delta$-morphism totale $k:M\imp N$ che prova $\neg\ssf{1}$.
+% \end{proof}
+
+\begin{proposition}\label{prop_EDelta_estensione}
+Let $N$ be $\lambda$-saturated and let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
+\begin{itemize}
+\item[1.] $k:M\imp N$ is a $\{\E\wedge\}\Delta$-morphism;
+\item[2.] for every $b\in M$ there is a $\{\E\wedge\}\Delta$-morphism $h:M\imp N$ defined in $b$ that extends $k$;
+\item[3.] for every $b\in M^{<\omega}$ there is a $\Delta$-morphism $h:M\imp N$ defined in $b$ that extends $k$.
 \end{itemize}
 \end{proposition}
 
 \begin{proof}
-If not \ssf{1}, then $b$ satisfies a non trivial formula of the form $nx=a$ for some $a\in\<A\>_M$ and some $n\in\ZZ$. The proof Proposition~\ref{prop_mst_tipi princ_comp} shows that $nx=a$ decides all formulas in $\GammaA(A)$. Now we show that $nx=a$ decides also all formulas of the form $kx\equiv_qc$
+\ssf{1}$\IMP$\ssf{2}\quad Let $a$ enumerate $\dom k$. Define $p(x,y)=\{\E\wedge\}\Deltatp_M (a,b)$. By \ssf{1}, $p(ka,y)$ is finitely consistent in $N$. By saturation there is a $b'\in N$ that realizes $p(ka,y)$. Therefore, $h:M\to N$ where $h=k\cup\{\<b,b'\>\}$, witnesses \ssf{2}.
 
-Let $d\in\<A\>_M$ be such that $kc=d$. By the first part of the proof $nx=a\imp kx=d$. Then 
+\ssf{2}$\IMP$\ssf{3}\quad Iterate $|b|$-times the extension in \ssf{2}. 
 
-\ceq{\hfill nx=a}{\imp}{kx\equiv_qc}\hskip5ex if $M\models c\equiv_q d$;
-
-\ceq{\hfill nx=a}{\imp}{kx\nequiv_qc}\hskip5ex if $M\models c\nequiv_q d$.
-
-This completes the proof.
+\ssf{3}$\IMP$\ssf{1}\quad From \ssf{3} it follows immediately that $k:M\imp N$ is a $\{\wedge\}\Delta$-morphism.  \ to logical equivalence, all formulas in $\{\E\wedge\}\Delta$ are of the form  $\E y \phi (x,y)$ for some tuple of variables $y$ and some $\phi(x,y)$ in $\{\wedge\}\Delta$. Assume $M\models\E y\,\phi(a,y)$ and let $b$ be such that $M\models\phi(a,b)$. By \ssf{3}, we can extend $k$ to some $\Delta$-morphism $h:M\to N$ defined in $b$. Then $N\models\phi(ha,hb)$ and therefore $N\models\E y\,\phi(ka,y)$.
 \end{proof}
 
-\begin{proposition}\label{prop_poiuhfr}
-Let $A\subseteq M\models T_{\rm zg}$. Let $q(x)\subseteq\GammaAn(A)$ and $p(x)\subseteq\GammaB(A)$ be finite consistent types. Then $q(x)\cup p(x)$ is consistent.
+Iterating the lemma above we obtain the following.
+
+\begin{corollary}\label{corol_EDelta_estensione}
+Let $N$ be $\lambda$-saturated and let $|M|\le\lambda$. Let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
+\begin{itemize}
+\item[1.] $k:M\imp N$ is a $\{\E\wedge\}\Delta$-morphism;
+\item[2.] $k:M\imp N$ extends to an $\{\E\wedge\}\Delta$-embedding;
+\item[3.] $k:M\imp N$ extends to an $\Delta$-embedding.\QED
+\end{itemize}
+\end{corollary}
+
+The following theorem is often paraphrased as follows: a formula is existential if and only if (its truth) is preserved under extensions of structures.
+
+\begin{theorem}
+For every $\phi(x)\in L$ the following are equivalent
+\begin{itemize}
+\item[1.] $\phi(x)$ is equivalent over $T$ to a formula in $\{\E{\wedge}{\vee}\}\Delta$;
+\item[2.] $\phi(x)$ is preserved by $\Delta$-embedding between models of $T$.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+\ssf{1}$\IMP$\ssf{2}\quad Immediate. 
+
+\ssf{2}$\IMP$\ssf{1}\quad Negate \ssf{1}. By Lemma~\ref{lem_qfdefinability} there is a $\{\E{\wedge}{\vee}\}\Delta$-morphism $k:M\to N$ between models of $T$ that does not preserve $\phi(x)$. We can assume that $N$ is $\lambda$-saturated for some sufficiently large $\lambda$. By Corollary~\ref{corol_EDelta_estensione} there is a $\Delta$-embedding $h:M\to N$ that extends $k$ and contradicts \ssf{2}.
+\end{proof}
+
+A dual version of the results above is obtained replacing embeddings by epimorphisms (surjective homomorphisms) and $\{\E\wedge\}$ by $\{\A\vee\}$. If $\Delta$ contains the formula $x=y$ and is closed under negation, then $k:M\imp N$ is a $\Delta$-morphism if and only is $k^{-1}:N\imp M$ is a $\Delta$-morphism. In this case the dual version follows from what proved above. Without these assumptions the results need a similar but independent proof.
+
+\begin{proposition}\label{prop_ADelta_estensione}
+Let $M$ be $\lambda$-saturated and let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
+\begin{itemize}
+\item[1.] $k:M\imp N$ is a $\{\A\vee\}\Delta$-morphism;
+\item[2.] for every $c\in N$ there is a $\{\A\vee\}\Delta$-morphism $h:M\imp N$ that extends $k$ and such that $c\in\range h$;
+\item[3.] for every $c\in N^{<\omega}$ there is a $\Delta$-morphism $h:M\imp N$ that extends $k$ and such that $c\in(\range h)^{<\omega}$.
+\end{itemize}
 \end{proposition}
 
+\begin{proof} Left as an exercise for the reader. To prove implication \ssf{1}$\IMP$\ssf{2} define $p(x,y)=\neg\{\A\vee\}\Deltatp_N (ka,c)$, where $a$ is a tuple that enumerates $\dom k$. From \ssf{1} we obtain that $p(a,y)$ is finitely consistent in $M$. Then we proceed as in the proof of Proposition~\ref{prop_EDelta_estensione}.
+\end{proof}
+
+\begin{corollary}\label{corol_EDelta_estensione}
+Let $M$ be $\lambda$-saturated and let $|N|\le\lambda$. Let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
+\begin{itemize}
+\item[1.] $k:M\imp N$ is a $\{\A\vee\}\Delta$-morphism;
+\item[2.] $k:M\imp N$ extends to an $\{\A\vee\}\Delta$-epimorphism;
+\item[3.] $k:M\imp N$ extends to an $\Delta$-epimorphism.\QED
+\end{itemize}
+\end{corollary}
+
+Finally we obtain the following.
+
+\begin{theorem}
+The following are equivalent
+\begin{itemize}
+\item[1.] $\phi(x)$ is equivalent to a formula in $\{\A\vee\}\Delta$;
+\item[2.] every $\Delta$-epimorphism between models of $T$ preserves $\phi(x)$.\QED
+\end{itemize}
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+\section{Un criterio per l'eliminazione dei quantificatori}
+\label{eliminazionequantificatoricriterio}
+
+We say that \emph{$T$ admits\/} (or \emph{has\/}) \emph{positive $\Delta$-elimination of quantifiers\/} if for every formula $\phi(x)$ in $\{\A,\E,\mathord\wedge,\mathord\vee\}\Delta$ there is a formula $\psi(x)$ in $\{\mathord\wedge,\mathord\vee\}\Delta$ such that
+
+\ceq{\hfill T}{\proves}{\phi(x)\iff\psi(x).}
+
+When $\Delta$ is closed under negation the attribute \textit{positive\/} becomes irrelevant and will be omitted. When $\Delta$ is $\atpmL$ or $\qfL$, we simply say that $T$ admits elimination of quantifiers. This is by far the most common case.
+
+Quantifier elimination is often used to prove that a theory is complete because it reduces it to something much simpler to prove. The following is an immediate consequence of the definition above with $x$ replaced by the empty tuple.
+
+\begin{remark}
+If $T$ has elimination of quantifiers then the following are equivalent 
+\begin{itemize}
+\item[1.] $T$ decides all quantifier free sentences;
+\item[2.] $T$ is complete.
+\end{itemize}
+Hence a theory with quantifier elimination is complete if it decides the characteristic, see Definition~\ref{rmk_characteristic}).\QED
+\end{remark}
+
+% Scriveremo  ${\vee}\hskip-.33ex\Delta$ e ${\wedge}\hskip-.2ex\Delta$ per l'insieme delle formule che sono disgiunzione, rispettivamente congiunzione, di formule in $\Delta$ e scriveremo $\E\Delta$ per le formule della forma $\E y\,\phi(x,y)$ dove $y$ \`e una tupla di variabili e $\phi(x,y)$ \`e in $\Delta$. Se vogliamo limitarci a tuple $y$ di lunghezza $1$ scriveremo $\E_1\Delta$. Infine $\pmDelta$ \`e l'insieme che contiene le formule in $\Delta$ e le loro negazioni. Quindi, a meno di equivalenza logica, le formule in $\veewedge\pmDelta$ sono le combinazioni booleane di formule in $\Delta$ e le formule in $\veewedge\Delta$ le combinazioni booleane positive.
+
+The following is a consequence of Lemma~\ref{lem_qfdefinability}.
+
+\begin{corollary}\label{criterioeq1}
+The following are equivalent
+\begin{itemize}
+\item[1.] $T$ has $\Delta$-elimination of quantifiers;
+\item[2.] every $\Delta$-morphism between models of $T$ is both a $\{\E,\wedge\}\Delta$ and a $\{\A,\vee\}\Delta$-morphism.
+\end{itemize}
+\end{corollary}
 \begin{proof}
-A finite number of congruences, if consistent, has infinitely many solutions. Hence it is consistent with any finite number of inequalities.
+\ssf{1}$\IMP$\ssf{2}\quad Immediate.
+
+\ssf{2}$\IMP$\ssf{1}\quad We prove by induction of syntax that $\Delta$-morphism preserve the truth of all formulas in $\{\A,\E,\mathord\wedge,\mathord\vee\}\Delta$, this suffices by Lemma~\ref{lem_qfdefinability}. Induction for the connectives $\vee$ and $\wedge$ is trivial.  So assume as induction hypothesis that the truth of  $\phi(x,y)$ is preserved.  By Lemma~\ref{lem_qfdefinability} $\phi(x,y)$ is equivalent tot a formula in $\Delta$, hence by \ssf{2} the truth of $\E y\, \phi (x,y)$ and $\A y \,\phi (x,y)$ is preserved.
+\end{proof}
+
+Condition \ssf{2} of the corollary above may be difficult to verify directly. Condition \ssf{2} of the following corollary of Proposition~\ref{prop_EDelta_estensione} and~\ref{prop_ADelta_estensione} may be easier.
+
+\begin{corollary}\label{criterioeq2}
+Let $|L|\le\lambda$. The following are equivalent
+\begin{itemize}
+\item[1.] $T$ has $\Delta$-elimination of quantifiers;
+\item[2.] for every finite $\Delta$-morphism $k:M\imp N$ between $\lambda$-saturated models of $T$:
+\begin{itemize}                                                                                               \item[a.] for every $b\in M$ there $\Delta$-morphism $h:M\imp N$ that extends $k$ such that $b\in\dom h$.                                                                                \item[b.] for every $c\,\in\,N$ esiste un $\Delta$-morphism $h:M\imp N$ that extends $k$ such that $c\in\range h$.\QED                                                                                          \end{itemize}
+\end{itemize}
+\end{corollary}
+
+Note that when $\Delta$ contains the formula $x=y$ and is closed under negation, then  $k:M\imp N$ is a $\Delta$-morphism if and only if $k^{-1}:N\imp M$ is a $\Delta$-morphism. In this case \ssf{a} and \ssf{b} are equivalent.
+
+
+
+\begin{exercise}
+Let $L$ be the laanguage of stict orders. Let $T$ be axiomatized by $T_{\rm ol}$ (see Chapter~\ref{relational}) and the following pair of axioms
+\begin{itemize}
+\item[dis$\uparrow$.] $\E z\ \big[x<z\ \wedge\ \neg\E y\ x<y<z\big]$;
+\item[dis$\downarrow$.] $\E z\ \big[ z<x\ \wedge\ \neg\E y\ z<y<x\big]$.
+\end{itemize}
+Note that $T$ is essentially the same theory as in Exercise~\ref{ex_QQxZZ_saturo} but in a different language. Let $\Delta$ be the set of formulas that contains (all alphabetic variants of) the formulas $x=y$, $x<y$, $\E^{=n}y\ (x\mathord<y\mathord<z)$ for all positive integers $n$. Prove that $T$ has $\Delta$-elimination of quantifiers.\QED
+\end{exercise}
+
+
+\begin{exercise}
+Let $T$ be a complete theory without finite models in a language that consists only of unary predicates. Prove that $T$ has elimination of quantifiers.\QED
+\end{exercise}
+
+\begin{comment}
+
+
+\section{La model-completezza}
+
+Per ragioni storiche introduciamo la seguente nozione. 
+
+Diremo che $T$ \`e $\Delta$-modello completa se ogni $\Delta$-morphism $h:M\to N$ totale tra modelli di $T$ \`e un $\{\A\E\mathord\wedge\!\mathord\vee\}\Delta$-morphism. 
+
+Diremo che $T$ \`e $\Delta$-modello completa se ogni $\Delta$-morphism $h:M\to N$ suriettivo tra modelli di $T$ \`e un $\{\A\E\mathord\wedge\!\mathord\vee\}\Delta$-morphism. 
+
+
+
+
+ (la terminologia \`e bizzarra Abraham Robinson.)
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+\section{Un esempio}
+
+Il seguente esempio ha il solo scopo di applicare in un caso molto semplice quando visto nel paragrafo~\ref{eliminazionequantificatoricriterio}. Vale un risultato pi\`u forte e pi\`u generale di quanto affermato dal teorema~\ref{eliminazionearitmeticaadditiva}. Questo infatti \`e un semplice corollario del teorema di Bauer-Monk sull'eliminazione dei quantificatori per i moduli (che qui non dimostreremo).
+
+Il linguaggio, che qui denoteremo con $L_{\rm ga\small+1}$, estende quello dei gruppi additivi con la costante $1$. 
+
+Per ogni intero $n$ scriveremo $\delta_n(x)$ per $\E y\ ny=x$. La formula $\delta_0(x)$ verr\`a letta come $x=0$.  Per il tutto questo paragrafo $\Delta$ denota l'insieme che contiene tutte le formule $\delta_n(x)$, con $n$ non negativo, ed \`e chiuso per sostituzione di variabili con termini puri. Osserviamo che per $\delta_0(x)$ \`e equivalente alla formula $x=0$ quindi $\Delta$ contiene a meno di equivalenza tutte le formule atomiche. Definiamo ora la teoria $T_{\rm 1}$. Questa contiene gli assiomi dei gruppi additivi e
+\begin{itemize}
+\item[1.] $\neg\delta_n(m)$ for every coppia di interi non negativi $m,n$ tali che $n\nmid m$;
+\item[2.] $\displaystyle\A x\ \bigvee^{n-1}_{r=0}\delta_{n}(x+r)$ \ \ for every coppia di interi $m>0$ ed $n>1$.
+\end{itemize}
+
+Tra gli assiomi in \ssf{1} ci sono le formule $\neg\delta_0(n)$ for every $n$ positivo, i modelli di $T_1$ sono gruppi senza torsione e contengono tutti una copia di $\ZZ$.
+
+\begin{lemma}
+Sia $\Delta$ come sopra. La teoria $T_{\rm 1}$ \`e completa per gli enunciati in $\Delta$.
+\end{lemma}
+
+\begin{proof}
+Gli enunciati in $\Delta$ hanno la forma $\delta_n(m)$. Il lemma dice che for every $M\models T_{\rm 1}$
+
+\hfil $M\models\delta_n(m)\ \ \IFF\ \ \Z\models\delta_n(m)$.
+
+la direzione $\PMI$ \`e ovvia perch\'e $\Z\subseteq M$. La direzione opposta \`e garantita dallo schema di assiomi \ssf{1}.
+\end{proof}
+
+\begin{theorem}\label{eliminazionearitmeticaadditiva} 
+La teoria $T_1$ ammette $\Delta$-eliminazione dei quantificatori.
+\end{theorem}
+
+\begin{proof}
+Fissiamo $M$ ed $N$ due modelli $\omega$-saturi di $T_{\rm 1}$ e sia $k:M\to N$  e sia $b$ un elemento di $M$. Verifichiamo che vale la condizione \ssf{2a} del corollario~\ref{criterioeq2}. Sia $a$ una enumerazione di $\dom k$ e poniamo $p(z,x)=\Deltatp_M(a,b)$, vogliamo mostrare che $p(c,x)$ \`e realizzato in $N$.
+
+Prima di procedere osserviamo che dagli assiomi \ssf{1} e \ssf{2} segue 
+
+\ssf{3.}\hfil $\displaystyle\neg\delta_n(x+r)\ \iff\ \bigvee^{n-1}_{r\neq s=0}\delta_n(x+s)$
+
+Le formule in $p(z,x)$ hanno la forma $\delta_n\big(mx+t(z)\big)$ per un intero $m$ ed un termine $t(z)$. Modulo 
+
+$T_1\cup\Th_\Delta(M/a)\proves q(x)\iff p(a,x)$
+
+
+$T_1\cup\Th_\Delta(N/ka)\proves q(x)\iff p(ka,x)$
+
+
+La seguente formula vale in tutti i modelli di $T_{\rm 1}$, segue semplicemente dagli assiomi dei gruppi abeliani,
+
+\hfil$\delta_n(t(z)-r)\ \imp\ \A x\,\Big[\delta_{n}\big(mx+t(z)\big)\ \iff\ \delta_{n}\big(mx+r\big)\Big]$.
+
+
+Per \ssf{2.} sappiamo che for every termine $t(z)$ esiste un intero $0\le r<n$ tale che $M\models\delta_{n}(t(a)+r)$. 
+
+
+
+
+Quindi nelle formule che occorrono in $p(z,x)$ possiamo sostituire i termini $t(z)$ con le opportune costanti $r$ e ottenere un tipo $q(x)$ che in $M$ \`e equivalente $p(a,x)$ ed in $N$ \`e equivalente a $p(c,x)$. 
+
+Per verificare che $p(c,x)$ \`e finitamente consistente in $N$ \`e sufficiente verificare che  $q(x)$ \`e finitamente consistente. Mostriamo che tutte le congiunzione di formule in $q(x)$ sono consistenti in $\Z$ e quindi, poich\'e sono formule esistenziali anche in $N$. Supponiamo per assurdo che esista una congiunzione di formule in $q(x)$ che non \`e soddisfatta in $\Z$, quindi che in $\Z$ valga 
+
+\hfil$\displaystyle\neg\E x\ \bigwedge_{i\in I}\delta_{n_i}(m_ix+r_i)$.
+
+Semplicemente per de Morgan questa formula \`e equivalente a
+
+\hfil$\displaystyle\A x\ \bigvee_{i\in I}\neg\delta_{n_i}(m_ix+r_i)$
+
+Quindi, sostituendo le negazioni con disgiunzioni come in \ssf{4}, ci riduciamo ad una formula della forma
+
+\hfil$\displaystyle\A x\ \bigvee_{j\in J}\delta_{n_j}(m_jx+r_j)$
+
+Questa, se vera in $\Z$, \`e un'istanza dello schema di assiomi \ssf{2}, quindi \`e vera in $M$. Contraddizione.
 \end{proof}
 
 
-\begin{proposition}\label{prop_oenebd}
-Let $A\subseteq M\models T_{\rm zg}$. Every $\GammaB(A)\jj$type is equivalent to a $\GammaB\jj$type.
-\end{proposition}
-
-\begin{proof}
-Note that  $nx\equiv_qa$ is equivalent to $nx\equiv_qr$ for some integer $r\equiv_qa$.
-\end{proof}
+\end{comment}
 
 
-\begin{proposition}\label{prop_jfdbjh}
-A finite $\GammaB\jj$type realized in some model of $T_{\rm zg}$ is realized in $\ZZ$, hence in every  model of $T_{\rm zg}$.
-\end{proposition}
-
-\begin{proof}
-Let $p(x)$ be a consistent finite $\GammaB\jj$type. We can assume the formulas in $p(x)$ are $n_ix\equiv_{q_i}r_i$ where $0\le r_i<q_i$. By consistency, $r_i$ is unique given $q_i$. Then, by the Chinese reminder theorem $p(x)$ has a solution in $\ZZ$ which is substructure of every model of $T_{\rm zg}$.
-\end{proof}
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Esempi: L'aritmetica di Pre\ss burger}
 
 
-\begin{proposition}
-The theory $T_{\rm zg}$ has $\Delta\jj$elimination of quantifiers.
-\end{proposition}
-\begin{proof}
-Let $M$ and $N$ be two $\omega\jj$saturated models of  $T_{\rm zg}$, let $k:M\to N$ be a finite $\Delta\jj$morphism and let $b\in M$. We need to find a $c\in N$ such that $k\cup\{\<b,c\>\}:M\to N$ is a $\Delta\jj$morphism.
-
-Let $a$ be an enumeration of $\dom k$ and let $p(x,z)=\Deltatp(b,a)$. We to find a $c\in N$ that realizes $p(x,ka)$. Define also $p_*(x,z)=\Gamma\!_{*}\jj\tp(b,a)$.
-
-If $p_{\sf\scriptscriptstyle e}(x,a)$ is non trivial, then  $p(x,a)$ is isolated by some formula of the form $nx=t(a)$. As $nx=t(a)$ is consistent in $M$ then $M\models t(a)\equiv_n0$ hence $N\models t(ka)\equiv_n0$. Then in $N$ there is a $c$ such that $nx=t(ka)$, which therefore realizes $p(x,ka)$.
-
-Suppose instead that $p_{\sf\scriptscriptstyle e}(x,a)$ is trivial. By Proposition~\ref{prop_congr_comp} it suffices to realize $p_{\sf\scriptscriptstyle i}(x,ka)$ and $p_{\sf\scriptscriptstyle c}(x,ka)$. By Proposition~\ref{prop_poiuhfr} and $\omega\jj$saturation a realization exist if $p_{\sf\scriptscriptstyle c}(x,ka)$ is finitely consistent. By Proposition~\ref{prop_oenebd}, $p_{\sf\scriptscriptstyle c}(x,a)$ is equivalent its parameters-free part $p(x)$ and the same holds for $p_{\sf\scriptscriptstyle c}(x,ka)$. As $p(x)$ is finitely consistent in $M$, by Proposition~\ref{prop_jfdbjh} it is finitely consistent $\ZZ$ and a fortiori in $N$.
-\end{proof}
-
-\end{document}
+ 
+%\end{comment}

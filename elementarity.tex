@@ -29,12 +29,12 @@ A \emph{theory\/} is a set $T\subseteq L$ of sentences. We write \emph{$M\models
 
 \ceq{\hfill M\models T}{\IMP}{M\models\phi}\qquad for every $M$.
 
-In words, we say that $\phi$ is a \emph{logical consequence\/} of $T$ or that $\phi$ \emph{follows from\/} $T$. If $S$ is a theory \emph{$T\proves S$\/} has a similar meaning. If $T\proves S$ and $S\proves T$ we say that $T$ and $S$ are \emph{logically equivalent}.  We may say that $T$ \emph{axiomatises\/} $S$ (or vice versa).
+In words, we say that $\phi$ is a \emph{logical consequence\/} of $T$ or that $\phi$ \emph{follows from\/} $T$. If $S$ is a theory \emph{$T\proves S$\/} has a similar meaning. If $T\proves S$ and $S\proves T$ we say that $T$ and $S$ are \emph{logically equivalent}.  We may say that $T$ \emph{axiomatizes\/} $S$ (or vice versa).
 
 We say that a theory is \emph{consistent\/} if it has a model. With the notation above, $T$ is consistent if and only if \emph{$T\notproves\bot$}.
 
 
-The \emph{closure of $T$ by logical consequence\/} is the set $\ccl(T)$ which is defined as follows:  
+The \emph{closure of $T$ under logical consequence\/} is the set $\ccl(T)$ which is defined as follows:  
 
 \ceq{\hfill\emph{$\textrm{ccl}(T)$}}{=}{\Big\{\phi\in L\ :\ \textrm{ sentence such that } T\proves\phi\Big\}}
 
@@ -134,7 +134,7 @@ Recall from Example~\ref{expl_graph1} that we represent a graph with a symmetric
 Our last example is a trivial one.
 
 \begin{example}
-Let $L$ be the empty language The \emph{theory of infinite sets\/} is axiomatised by the sentences $\E^{\ge n} x\ (x=x)$ for all positive integer $n$.\QED
+Let $L$ be the empty language The \emph{theory of infinite sets\/} is axiomatized by the sentences $\E^{\ge n} x\ (x=x)$ for all positive integer $n$.\QED
 \end{example}
 
 
@@ -312,16 +312,6 @@ Let $M\preceq N$ and let $\phi(x,y)\in L$. Suppose there are finitely many sets 
 \begin{exercise}
 Consider $\ZZ^n$ as a structure in the additive language of groups with the natural interpretation. Prove that $\ZZ^n\not\equiv\ZZ^m$ for every positive integers $n\neq m$. Hint: in $\ZZ^n$ there are at most $2^n-1$ elements that are not congruent modulo $2$.\QED
 \end{exercise}
-
-
-
-
-
-
-
-
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -526,11 +516,11 @@ By contrast prove that the following are \textit{not\/} equivalent
 \item[a.] $T$ is maximal consistent;
 \item[b.] for every sentence $\phi$, o $\phi\in T$ o  $\neg\phi\in T$ but not both.
 \end{itemize}
-Hint: consider the theory containing all sentences where the symbol $\neg$ occours an even number of times. This theory is not consistent as it contains $\bot$.\QED
+Hint: consider the theory containing all sentences where the symbol $\neg$ occurs an even number of times. This theory is not consistent as it contains $\bot$.\QED
 \end{exercise}
 
 \begin{exercise}
-Prove that if $T$ has exacly $2$ maximal consistent extension $T_1$ and $T_2$ then there is a sentence $\phi$ such that $T,\phi\proves T_1$ and $T,\neg\phi\proves T_2$.\QED
+Prove that if $T$ has exactly $2$ maximal consistent extension $T_1$ and $T_2$ then there is a sentence $\phi$ such that $T,\phi\proves T_1$ and $T,\neg\phi\proves T_2$.\QED
 \end{exercise} 
 
 
@@ -974,5 +964,5 @@ Let $\<M_i:i\in\lambda\>$ be an elementary chain of substructures of $N$. Let $M
 
 
 \begin{exercise}
-Give an alternative answer to Exercise~\ref{ex_LS} using the L\"owenheim-Skolem Theorem (instead of its proof). Hint: construct two countable chains $\<K_i:i<\omega\>$ and  $\<M_i:i<\omega\>$ of countable models such that $K_i\cap M\subseteq M_i\preceq M$ and $A\cup M_i\subseteq K_{i+1}\preceq M$. The required model is $K=\bigcup_{i\in\omega}K_i$ as $K\cap M=\bigcup_{i\in\omega}M_i$.\QED
+Give an alternative answer to Exercise~\ref{ex_LS} using the L\"owenheim-Skolem Theorem (instead of its proof). Hint: construct two countable chains of countable models such that $K_i\cap M\subseteq M_i\preceq M$ and $A\cup M_i\subseteq K_{i+1}\preceq M$. The required model is $K=\bigcup_{i\in\omega}K_i$ as $K\cap M=\bigcup_{i\in\omega}M_i$.\QED
 \end{exercise}

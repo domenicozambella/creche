@@ -412,10 +412,10 @@ Condition \ssf{p} in Definition~\ref{defpreservaveritas} apply to tuples $x$ of 
 
 
 \begin{definition}\label{def_characteristic}
-We call $\Th_\Delta(M)$ the \emph{$\Delta\jj$characteristic} of $M$. We say that $T$ determines the $\Delta\jj$characteristic of its models if $\Th_\Delta(M)=\Th_\Delta(N)$ for all $M,N\models T$. When $\Delta=\atpmL$ we say simply \emph{characteristic}, then $T$ determines the characteristic of its models if $\0:M\to N$ is a partial isomorphisms for all $M,N\models T$. Which is the same as saying that $\<\0\>_M\simeq\<\0\>_N$.\QED
+We call $\Th_\Delta(M)$ the \emph{$\Delta\jj$characteristic} of $M$. We say that $T$  decides the $\Delta\jj$characteristic if $\Th_\Delta(M)=\Th_\Delta(N)$ for all $M,N\models T$. In other words, for any pair of models of $T$, the empty map $\0:M\to N$ is a $\Delta$-morphism. When $\Delta=\atpmL$ we say simply \emph{characteristic}, then $T$ decides the characteristic $\<\0\>_M\simeq\<\0\>_N$ for all $M,N\models T$.\QED
 \end{definition}
 
-Next proposition shows that the we are correctly generalizing the usual notions of homomorphism and embedding. The definition given above allows some more flexibility when the homomorphism is not defined on a substructures of the domain. See also Remark~\ref{rem_extension_homo}.
+Next proposition shows that we are correctly generalizing the usual notions of homomorphism and embedding. The definition given above allows some more flexibility when the homomorphism is not defined on a substructures of the domain. See also Remark~\ref{rem_extension_homo}.
 
 \begin{proposition}
 Let $h:M\imp N$ be a map and suppose that $\dom h$ is a substructure of $M$. Then $h:M\to N$ is a \emph{partial homomorphism\/} if and only if 
@@ -487,7 +487,7 @@ Fix some $a\in M^{|x|}$ then
 
 We conclude this section by dissecting Theorem~\ref{thm_isomorfoeleq}. This is not immediately required in the following. There is a relation between some properties of $\Delta\jj$morphisms closure of $\Delta$ logical connectives. When $\ssf{C}\subseteq\{\A,\E,\neg,\vee,\wedge\}$ is a set of connectives, we write \emph{$\ssf{C}\Delta$} for the closure of $\Delta$ with respect to all connectives in $\ssf{C}$. We write \emph{$\neg\Delta$} for the set containing the negation of the formulas in $\Delta$. Warning: do not confuse this with $\{\neg\}\Delta$.
 
-It is clear that $\Delta$ morphisms are  $\{\wedge,\vee\}\Delta\jj$morphisms. The following propositions are immediate. More interestingly, a sort of converse of Propositions~\ref{presesis} and~\ref{presuniv} holds and will be proved in Chapter~\ref{elimination}.
+It is clear that $\Delta$ morphisms are  $\{\wedge,\vee\}\Delta\jj$morphisms. The following propositions are immediate. More interestingly, a sort of converse of Propositions~\ref{presesis} and~\ref{presuniv} holds and will be proved in Chapter~\ref{eliminazione}.
 
 \begin{proposition}\label{presneg}
 For every given set of formulas $\Delta$ and every injective map $h:M\imp N$ the following are equivalent

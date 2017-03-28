@@ -258,7 +258,9 @@ Let $\phi(x)\in L(\U)$ then the following are equivalent
 We give two proofs of this theorem as we think they are both instructive. 
 
 \begin{proof}
- Implication \ssf{1}$\IMP$\ssf{2} is obvious, we prove \ssf{2}$\IMP$\ssf{1}. From \ssf{2} and homogeneity we obtain
+\ssf{1}$\IMP$\ssf{2} Obvious.
+
+\ssf{2}$\IMP$\ssf{1} From \ssf{2} and homogeneity we obtain
 
 \ceq{\hfill\phi(x)}{\iff}{\bigvee_{q(x)\imp\phi(x)} q(x)}
 
@@ -274,7 +276,7 @@ for some formula $\theta_i(x)\in L(A)$.
 \end{proof}
 
 
-\begin{proof}[Second proof of Proposition~\ref{prop_inv_def}] We prove the non obvious implication. Let $\phi(\U\,;b)$, where $\phi(x\,;z)\in L$ be invariant over $A$. Let $p(z)=\tp(b/A)$. As $f[\phi(\U\,;b)]=\phi(\U\,;fb)$  for every $f\in\Aut(\U/A)$, homogeneity and invariance yield
+\begin{proof}[Second proof of Proposition~\ref{prop_inv_def}] \ssf{2}$\IMP$\ssf{1} Let $\phi(\U\,;b)$, where $\phi(x\,;z)\in L$ be invariant over $A$. Let $p(z)=\tp(b/A)$. As $f[\phi(\U\,;b)]=\phi(\U\,;fb)$  for every $f\in\Aut(\U/A)$, homogeneity and invariance yield
 
 \ceq{\hfill p(z)\wedge p(z')}{\imp}{\A x\ \big[\phi(x\,;z)\iff\phi(x\,;z')\big]}
 
@@ -288,7 +290,7 @@ Hence  $\phi(\U\,;b)$ is defined by the formula $\E z\,\big[\theta(z)\wedge\phi(
 \begin{exercise}
 Let $\phi(x)\in L$. Prove that the following are equivalent
 \begin{itemize}
- \item[1.] $\phi(x)$ is equivalent to a quantifier-free formula $\psi(x)\in L$;
+ \item[1.] $\phi(x)$ is equivalent to some $\psi(x)\in L_{\rm qf}$;
  \item[2.] $a\in\phi(\U)\iff fa\in\phi(\U)$ for every partial isomorphism $f:\U\to\U$ defined in $a$.\QED
 \end{itemize}
 \end{exercise}
@@ -305,7 +307,9 @@ Let $p(x)\subseteq L(\U)$ then the following are equivalent
 We give two proofs of this theorem as we think they are both instructive.  The second proof requires Proposition~\ref{prop_E_type} below.
 
 \begin{proof}
-Implication \ssf{1}$\IMP$\ssf{2} is obvious. As for \ssf{2}$\IMP$\ssf{1} it suffices to show that for every formula $\psi(x)\in p(x)$ there is a formula $\phi(x)\in L(A)$ such that $p(x)\imp\phi(x)\imp\psi(x)$. Fix $\psi(x)\in p(x)$. By invariance, any $q(x)\in S(A)$ consistent with $p(x)$ implies $p(x)$, hence
+\ssf{1}$\IMP$\ssf{2}\quad Obvious. 
+
+\ssf{2}$\IMP$\ssf{1}\quad It suffices to show that for every formula $\psi(x)\in p(x)$ there is a formula $\phi(x)\in L(A)$ such that $p(x)\imp\phi(x)\imp\psi(x)$. Fix $\psi(x)\in p(x)$. By invariance, any $q(x)\in S(A)$ consistent with $p(x)$ implies $p(x)$, hence
 
 \ceq{\hfill p(x)}{\imp}{\bigvee_{q(x)\imp \psi(x)} q(x)}\medrel{\imp}$\psi(x)$
 
@@ -330,18 +334,20 @@ Let $p(x,y)\subseteq L(A)$. Then $\E y\,p(x,y)$ is equivalent to a type over $A$
 
 As an application we give a second proof of Proposition~\ref{prop_inv_types}.
 
-\begin{proof}[Second proof of Proposition~\ref{prop_inv_types}] We prove the non obvious implication. Let $q(x\,;z)\subseteq L$ be such that $q(x\,;a)= p(x)$ for some $a\in\U^{|z|}$ and let $s(z)=\tp(a/A)$. By invariance and homogeneity the types $p(x\,;fa)$ for $f\in\Aut(\U/A)$ are all equivalent. Therefore
+\begin{proof}[Second proof of Proposition~\ref{prop_inv_types}] \ssf{2}$\IMP$\ssf{1}\quad  Write $p(x)$ as the type $q(x\,;a)$ for some $q(x\,;z)\subseteq L$ and some $a\in\U^{|z|}$. Let $s(z)=\tp(a/A)$. By invariance and homogeneity the types $p(x\,;fa)$ for $f\in\Aut(\U/A)$ are all equivalent. Therefore
 
 \ceq{\hfill p(x)}{\iff}{\bigvee_{f\in\Aut(\U/A)}q(x\,;fa)}\smallskip
 
-\ceq{\hfill}{\iff}{ \E z\,\big[s(z)\wedge q(x\,;z)\big]}
+\ceq{\hfill p(x)}{\iff}{\bigvee_{b\,\equiv_Aa}q(x\,;b)}\smallskip
+
+\ceq{\hfill}{\iff}{ \E z\,\big[s(z)\wedge q(x\,;z)\big].}\smallskip
 
 Hence, by Proposition~\ref{prop_E_type}, $p(x)$ is equivalent to a type over $A$.
 \end{proof}
 
 
 \begin{exercise}\label{ex_clopen_definibili}
-Let $p(x)\subseteq L(A)$ be such that $\neg p(x)\iff q(x)$ for some $q(x)\subseteq L(B)$. prove that $p(x)$ is equivalent to some conjunction of formulas in $p(x)$. Cfr.\@ Theorem~\ref{Stone_aperti_chiusi}.\QED 
+Let $p(x)\subseteq L(A)$ be such that $\neg p(x)\iff q(x)$ for some $q(x)\subseteq L(B)$. Prove that $p(x)$ is equivalent to some conjunction of formulas in $p(x)$. Cfr.\@ Theorem~\ref{Stone_aperti_chiusi}.\QED 
 \end{exercise}
 
 
@@ -350,7 +356,7 @@ Let $p(x)\subseteq L(A)$, with $|x|<\omega$. Prove that if $p(\U)$ is infinite t
 \end{exercise}
 
 \begin{exercise}\label{cadinalitafinitasaturazioneinsiemi}
-Let $\phi(x,y)\in L(\U)$ be such that $\big\{\phi(a,\U)\ :\ a\in\U^{|x|}\big\}$ is infinite. Prove that it has cardinality $\kappa$. Does the same hold if $\phi(x,y)$ is replaced by a type $p(x,y)\subseteq L(A)$?\QED 
+Let $\phi(x,y)\in L(\U)$. Prove that if the set $\big\{\phi(a,\U)\ :\ a\in\U^{|x|}\big\}$ is infinite then it has cardinality $\kappa$. Does the claim remains true with a type $p(x,y)\subseteq L(A)$ for $\phi(x,y)$?\QED 
 \end{exercise}
 
 \begin{exercise} 
