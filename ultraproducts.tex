@@ -9,9 +9,9 @@
 
 
 
-\section{Filters and ultrafilters (again)}\label{ultrafiltri}
+\section{Filters and ultrafilters}\label{ultrafiltri}
 
-Readers that went thoroughly through the previous chapter may skip this section which only provides a shortcut for those who want a quick route to the compactness theorem.
+The content of this section will be reviewed in a more general setting in Chapter~\ref{types}.
 
 Let $I$ be any set. A \emph{filter on $I$\/} (or a \emph{filter of $\P(I)$}), is a non empty set $F\subseteq \P(I)$ such that for evry $a, b\in \P(I)$:
 
@@ -161,13 +161,13 @@ A consequence of Proposition~\ref{proposizioneprodottidiretti} is that the direc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ultraproducts}
 
-Assume the notation of previous section.
+Assume the notation of previous section. We assume also the definition and the notation introduced in Section~\ref{types}.\ref{quotient} and ask forgiveness for the non sequentiality.
 
 Let $F$ be a filter on $I$. We define the following congruence relation on $N$, which we lazily denote again by $F$
 
 \ceq{\hfill \hat a\mathrel{F}\hat c}{\IFF}{\big\{\, i\in I\ :\ \hat ai=\hat ci\,\big\}\in F\,.}
 
-It is easy to verify that $\mathrel{F}$ is indeed an equivalence relation: reflexivity and symmetry are evident, transitivity follows from \ssf{f2} in Section~\ref{ultrafiltri}. For $\mathrel{F}$ to be a congruence relation, it remains to verify \ssf{1} above, which is immediate.
+It is easy to verify that $\mathrel{F}$ is indeed an equivalence relation: reflexivity and symmetry are evident, transitivity follows from \ssf{f2} in Section~\ref{ultrafiltri}. For $\mathrel{F}$ to be a congruence relation, it remains to verify that $\hat a \mathrel{F}\hat b$ implies $f^N\hat a \mathrel{F}f^N\hat b$, which is immediate.
 
 The structure $N/{\mathrel{F}}$ is called the \emph{reduced product\/} of the structures $\<M_i:i\in I\>$ or, when $M_i=M$ for all $i\in I$, the \emph{reduced power\/} of $M$. When $F$ is an ultrafilter we say \emph{ultraproduct}, respectively \emph{ultrapower}. 
  It is easy to verify that
@@ -176,7 +176,7 @@ As all $M_i$ are non empty, it is easy to verify that for all $r\in L_{\rm rel}\
 
 \ceq{\sharp\hfill N/F\ \pmodels\ r\hat a}{\IFF}{\big\{\,i\ :\ \ M_i\models r\hat ai\,\big\}\ \in\ F\,.}
 
-Recall that \emph{$\pmodels\phi(\hat a)$\/} is equivalent to $\models\phi([\hat a]_F)$. The notation is introduced in Definition~\ref{def_pseudostructure} to righteously confuse elements with their equivalence class. The next fundamental theorem extends the equivalence above to all formulas.
+The symbol \emph{$\pmodels\phi(\hat a)$\/} is equivalent to $\models\phi([\hat a]_F)$. The notation is introduced in Definition~\ref{def_pseudostructure} to righteously confuse elements with their equivalence class. The next fundamental theorem extends the equivalence above to all formulas.
 
 \begin{void_thm}[\L o\'{s} Theorem]
 Let $F$ be an ultrafilter on $I$. Then for every formula $\phi(x)\in L$ and every $\hat a\in N^{|x|}$, the following are equivalent

@@ -348,6 +348,15 @@ The following are some of the most common $\Delta$-types and $\Delta$-theories
 Clearly, the types/theories in \ssf{2} and \ssf{3} are equivalent. Most used is the theory $\Th_{\textrm{\scriptsize at}^\pm}(M/M)$ which is called the \emph{diagram of $M$\/} and has a dedicated symbol: \emph{Diag$(M)$}.\QED
 \end{notation}
 
+\begin{remark}\label{rem_diagram}
+Let $A\subseteq M\cap N$. Prove that the following are equivalent
+\begin{itemize}
+\item[1.] $N\models\Diag\<A\>_M$;
+\item[2.] $\<A\>_M$ is a substructure of $N$.\QED
+\end{itemize}
+\end{remark}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -383,7 +392,18 @@ Let $\Delta$ be a set of formulas with free variables in the tuple $x=\<x_i: i<\
 Notation: if $a$ is the tuple $\<a_i: i<\lambda\>$ then $ha$ is the tuple $\<ha_i: i<\lambda\>$.\QED
 \end{definition}
 
-When $\Delta=L$ we say \emph{elementary map\/} for $\Delta\jj$morphism. When  $\Delta=\atL\ $ we say  \emph{partial homomorphism\/} and when $\Delta=\atpmL\ $ we say \emph{partial embedding\/} or \emph{partial isomorphism}. We say \emph{embedding\/} for partial embedding which is a total. We say \emph{isomorphism\/} for a partial embedding which is a total and surjective. As usual, if domain and codomain coincide, we say \emph{automorphism}.
+When $\Delta=L$ we say \emph{elementary map\/} for $\Delta\jj$morphism. When  $\Delta=\atL\ $ we say  \emph{partial homomorphism\/} and when $\Delta=\atpmL\ $ we say \emph{partial embedding\/} or \emph{partial isomorphism}. The reason for the latter name is explained in Remark~\ref{rem_extension_homo}.
+
+It is immediate to verify that partial embedding which is a total is an embedding, see Definition~\ref{isomorfismodef}. Similarly, a partial embedding which is a total and surjective is an isomorphism. As for homomorphisms one can easily verify the following proposition.
+
+\begin{proposition}
+Let $h:M\imp N$ be a map and suppose that $\dom h$ is a substructure of $M$. Then $h:M\to N$ is a \emph{partial homomorphism\/} if and only if 
+
+\ceq{\ssf{1.}\hfill a\in r^M}{\IMP}{ha\in r^N}\qquad for every $r\in L_{\rm rel}$ and $a\in(\dom h)^{n_r}$;\smallskip\par
+
+\ceq{\ssf{2.}\hfill h\,f^M(a)}{=}{f^N(h\,a)}\qquad  for every $f\in L_{\rm fun}$ and $a\in(\dom h)^{n_f}$.\QED
+\end{proposition}
+
 
 
 We use $\Delta\jj$morphisms to compare, locally, two structures (or different loci of the same structure). There are different ways to do this, in the proposition below we list a few synonymous expressions. But first some more notation. When $x$ is a fixed tuple of variables, $a\in M^{|x|}$ and $b\in N^{|x|}$ we write
@@ -415,36 +435,6 @@ Condition \ssf{p} in Definition~\ref{defpreservaveritas} apply to tuples $x$ of 
 We call $\Th_\Delta(M)$ the \emph{$\Delta\jj$characteristic} of $M$. We say that $T$  decides the $\Delta\jj$characteristic if $\Th_\Delta(M)=\Th_\Delta(N)$ for all $M,N\models T$. In other words, for any pair of models of $T$, the empty map $\0:M\to N$ is a $\Delta$-morphism. When $\Delta=\atpmL$ we say simply \emph{characteristic}, then $T$ decides the characteristic $\<\0\>_M\simeq\<\0\>_N$ for all $M,N\models T$.\QED
 \end{definition}
 
-Next proposition shows that we are correctly generalizing the usual notions of homomorphism and embedding. The definition given above allows some more flexibility when the homomorphism is not defined on a substructures of the domain. See also Remark~\ref{rem_extension_homo}.
-
-\begin{proposition}
-Let $h:M\imp N$ be a map and suppose that $\dom h$ is a substructure of $M$. Then $h:M\to N$ is a \emph{partial homomorphism\/} if and only if 
-
-\ceq{\ssf{1.}\hfill a\in r^M}{\IMP}{ha\in r^N}\hfill for every $r\in L_{\rm rel}$ and $a\in(\dom h)^{n_r}$;\smallskip\par
-
-\ceq{\ssf{2.}\hfill h\,f^M(a)}{=}{f^N(h\,a)}\hfill for every $f\in L_{\rm fun}$ and $a\in(\dom h)^{n_f}$.
-
-Moreover, $h:M\imp N$ is a \emph{partial embedding\/} if and only if it is an injective homomorphism and the converse implication in \ssf{1} holds.
-\end{proposition}
-
-Note that for for $0\jj$ary functions, i.e.\@ constants, \ssf{2} reads $hc^M=c^N$.\medskip
-
-\begin{proof}[Sketch of proof]
-Requirement \ssf{1} is equivalent to 
-
-\ceq{\ssf{1'.}\hfill M\models r(a)}{\IMP}{N\models r(ha)}\hfill for every $r\in L_{\rm rel}$ and $a\in(\dom h)^{n_r}$.
-
-Requirement \ssf{2} implies
-
-\ceq{\ssf{2'.}\hfill h\,t^M(a)}{=}{t^N(h\,a)}\hfill for every $L$-term $t(x)$ and $a\in(\dom h)^{n_f}$.
-
-Together these yield
-
-\ceq{\ssf{3.}\hfill M\models \phi(a)}{\IMP}{N\models \phi(ha)}\hfill for every $\phi(x)\in L_{\rm at}$ and $a\in(\dom h)^{|x|}$.
-
-As for the second claim, note that preserving  $\atpmL$ is equivalent to strengthening \ssf{3} with a double implication and that injectivity is equivalent to preserving the truth of $a\neq b$.
-\end{proof}
-
 \begin{remark}\label{rem_extension_homo}
 For every map  $h:M\to N$ the following are equivalent 
 \begin{itemize}
@@ -456,38 +446,13 @@ Moreover, $k$ unique. The equivalence holds replacing isomorphism by homomorphis
 The extension $k$ is defining $k\big(t(a)\big)=t(ha)$.\QED
 \end{remark}
 
-\begin{theorem}\label{thm_isomorfoeleq}
-Every isomorphism $h:M\imp N$ is an elementary map.
-\end{theorem}
-
-Note that in particular we obtain that if $M\simeq N$ then $M\equiv N$.
-
-\begin{proof}
-We prove  by induction on the syntax of $\phi(x)$ that
-
-\ceq{\hfill M\models \phi(a)}{\IFF}{N\models \phi(ha)}\hfill for every $\phi(x)\in L$ and every $a\in M^{|x|}$.
-
-If $\phi(x)$ is atomic the claim is easily obtained from the definition. Induction for the boolean connectives is obvious, so here we only deal with the existential quantifier. Assume the claim holds for $\phi(x,y)$ that is
-
-\ceq{\hfill M\models \phi(a,b)}{\IFF}{N\models \phi(ha,hb)} per ogni tupla $a$ ed elemento $b$ in $M$.
-
-Fix some $a\in M^{|x|}$ then
-
-\ceq{\hfill M\ \models\ \E y\;\phi(a,y)}{\IFF}{M\models\phi(a,b)} for some $b\in M$
-
-\ceq{\hfill ~}{\IFF}{N\models\phi(ha,hb)} for some $b\in M$\hfill by induction hypothesis
-
-\ceq{\hfill ~}{\IFF}{N\models\phi(ha,c)} for some $c\in N$\hfill for $\PMI$ we need surjectivity
-
-\ceq{\hfill ~}{\IFF}{N\models\E y\,\phi(ha,y)}.
-\end{proof}
 
 
+We conclude this section with a couple of propositions that break Theorem~\ref{isomorfoeleq} into parts. More interestingly, in Chapter~\ref{eliminazione} we shall prove a sort of converse of Propositions~\ref{presesis} and~\ref{presuniv}. 
 
+This is not immediately required in the following. There is a relation between some properties of $\Delta\jj$morphisms closure of $\Delta$ logical connectives. When $\ssf{C}\subseteq\{\A,\E,\neg,\vee,\wedge\}$ is a set of connectives, we write \emph{$\ssf{C}\Delta$} for the closure of $\Delta$ with respect to all connectives in $\ssf{C}$. We write \emph{$\neg\Delta$} for the set containing the negation of the formulas in $\Delta$. Warning: do not confuse this with $\{\neg\}\Delta$.
 
-We conclude this section by dissecting Theorem~\ref{thm_isomorfoeleq}. This is not immediately required in the following. There is a relation between some properties of $\Delta\jj$morphisms closure of $\Delta$ logical connectives. When $\ssf{C}\subseteq\{\A,\E,\neg,\vee,\wedge\}$ is a set of connectives, we write \emph{$\ssf{C}\Delta$} for the closure of $\Delta$ with respect to all connectives in $\ssf{C}$. We write \emph{$\neg\Delta$} for the set containing the negation of the formulas in $\Delta$. Warning: do not confuse this with $\{\neg\}\Delta$.
-
-It is clear that $\Delta$ morphisms are  $\{\wedge,\vee\}\Delta\jj$morphisms. The following propositions are immediate. More interestingly, a sort of converse of Propositions~\ref{presesis} and~\ref{presuniv} holds and will be proved in Chapter~\ref{eliminazione}.
+It is clear that $\Delta$-morphisms are  $\{\wedge,\vee\}\Delta\jj$morphisms. 
 
 \begin{proposition}\label{presneg}
 For every given set of formulas $\Delta$ and every injective map $h:M\imp N$ the following are equivalent
@@ -520,15 +485,6 @@ When $h:M\to N$ is injective the following is a corollary of Propositions~\ref{p
 \begin{proposition}\label{presuniv}
 For every set of formulas $\Delta$, every surjective $\Delta\jj$morphism $h:M\to N$ is a $\{\A\}\Delta\jj$mor\-phism.\QED
 \end{proposition}
-
-\begin{exercise}\label{ex_diagram}
-Let $M$ be any structure and let $A\subseteq M$. Recall that $\<A\>_M$ demotes the substructure of $M$ generated by $A$. Prove that the following are equivalent for every structure $N$
-\begin{itemize}
-\item[1.] $N\models\Diag\<A\>_M$
-\item[2.] $\id_A:\<A\>_M\to N$ is a partial isomorphism.
-\item[3.] there is an embedding $k:\<A\>_M\to N$ that extends $\id_A$.
-\end{itemize}
-\end{exercise}
 
 
 
