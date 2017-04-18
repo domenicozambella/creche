@@ -195,7 +195,7 @@ where $\pi:a\mapsto [a]_E$ is the projection map.\QED
 \end{proposition}
 
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Quotients clutter the notation with brackets. To avoid the mess, we prefer to reason in $N$ and tweak the satisfaction relation.  We replace equality with $\mathrel{E}$ and adapt the interpretation of relation symbols to \ssf{c3} above. The following definition makes this precise. Warning: it is not standard. 
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Quotients clutter the notation with brackets. To avoid the mess, we prefer to reason in $N$ and tweak the satisfaction relation.  We replace equality with $\mathrel{E}$ and adapt the interpretation of relation symbols to \ssf{c3} above. The following definition makes this precise (an inductive definition is required for instance in the proof of \L o\'{s} Theorem). Warning: it is not standard. 
 
 \begin{definition}\label{def_pseudostructure}
 For $t_2$, $t_2$ closed terms of $L(N)$ define
@@ -275,7 +275,7 @@ The structure $N/F$ is called the \emph{reduced product\/} of the structures $\<
 
 We the notation introduced in Definition~\ref{def_pseudostructure} (see also Proposition~\ref{prop_pseudomodel}) we are ready to state a fundamental theorem about ultraproducts.
 
-\begin{void_thm}[\L o\'{s} Theorem]
+\begin{void_thm}[\L o\'{s} Theorem]\label{thm_los}
 Let $\phi(x)\in L$ and let $F$ be an ultrafilter on $I$. Then for every $\hat a\in N^{|x|}$, the following are equivalent
 \begin{itemize}
 \item[1.] $N/F\ \pmodels\ \phi(\hat a)$;
@@ -297,7 +297,7 @@ So, as $F$ is an \textit{ultra\kern.2ex}filter
 \ceq{}{\IFF}%
 {\big\{i\ :\ M_i\; \models\; \neg\phi(\hat a i)\;\big\}\ \in\ F\,.}
 
-Now consider $\wedge$. Assume as inductive hypothesis the equivalence \ssf{1}$\IFF$\ssf{2} for $\phi(x)$ and $\psi(x)$, then
+Now consider $\wedge$. Assume as inductive hypothesis that the equivalence \ssf{1}$\IFF$\ssf{2} holds for $\phi(x)$ and $\psi(x)$, then
 
 \ceq{\hfill N/F\ \pmodels\ \phi\big(\hat a\big)\wedge\psi\big(\hat a\big)}%
 {\IFF}%
@@ -307,7 +307,7 @@ As filters are closed under intersection we obtain
 
 \ceq{}{\IFF}{\big\{i\ :\ M_i\; \models\; \phi(\hat a i)\wedge\psi(\hat a i)\;\big\}\ \in\ F\,.}
 
-Finally consider $\E y$.  Assume as inductive hypothesis the equivalence \ssf{1}$\IFF$\ssf{2} holds for $\phi(x,y)$, then
+Finally consider $\E y$.  Assume as inductive hypothesis that the equivalence \ssf{1}$\IFF$\ssf{2} holds for $\phi(x,y)$, then
 
 \ceq{\hfill N/F\ \pmodels\ \E y\,\phi\big(\hat a,y\big)}%
 {\IFF}%
@@ -357,7 +357,7 @@ Let \emph{$o$\/} be some fresh element. Let \emph{$M'_i$\/} is a superstructures
  
 It is easy to verify that the $\mathord{\sim_F}$-equivalence classes that do not contain $o^I$ form substructure of 
 
-Let $N'/\mathord{\sim_F}$ be the quotient structure as defined in Section~\ref{quotient}. Prove that $N/F$ is isomorphic to the substructure of $N'/\mathord{\sim_F}$ that contains all equivalence classes but for the one of $o^I$.
+Let $N'/\mathord{\sim_F}$ be the quotient structure as defined in Section~\ref{quotient}. Prove that $N/F$ is isomorphic to the substructure of $N'/\mathord{\sim_F}$ that contains all equivalence classes but for the one of $o^I$.\QED
 \end{exercise}
 
 
@@ -659,12 +659,12 @@ As for the second claim, let $a$ be an enumeration of $M$. We can assume that $p
 
 \ceq{\hfill q(z)}{=}{\big\{\phi(z)\ :\ M\models \phi(a)\big\}}
 
-Clearly, $q(z)\cup p'(x,z)$ is finitely consistent (in $M$). By the first part of the proof there is a model $N'$ such that $N'\models p'(a',b')$ for some $a',b'$. Let $h$ be the function $\{\<a,a'\>\}$. Then $h:M\to N'$ is an isomorphism and we can identify $M$ with $h[M]$. The proposition is proved if we can show that $h[M]\preceq N'$. For any $\phi(z)\in L$ we have
+Clearly, $q(z)\cup p'(x,z)$ is finitely consistent (in $M$). By the first part of the proof there is a model $N'$ such that $N'\models p'(a',b')$ for some $a',b'$. Let $h$ be the function $\{\<a,a'\>\}$. Then $h:M\to N'$ is an embedding and we can identify $M$ with $h[M]$. The proposition is proved if we can show that $h[M]\preceq N'$. For any $\phi(z)\in L$ we have
 
 
-\hfil $h[M]\models\phi(ha)\ \ \IFF\ \  M\models \phi(a)\ \  \IFF\ \  \phi(z)\in q(z)\ \   \IMP\ \  N\models \phi(a')$.
+\hfil $h[M]\models\phi(ha)\ \ \IFF\ \  M\models \phi(a)\ \  \IFF\ \  \phi(z)\in q(z)\ \   \IMP\ \  N'\models \phi(a')$.
 
-Then $h[M]\preceq N$ follows because all sentences in $L(M)$ have the form $\phi(a)$ for some $\phi(z)\in L$.
+Then $h[M]\preceq N'$ follows because all sentences in $L(M)$ have the form $\phi(a)$ for some $\phi(z)\in L$.
 \end{proof}
 
 The following corollary is historically important.
@@ -677,10 +677,5 @@ Every infinite structure has arbitrarily large elementary extensions.
 Let $x=\<x_i:i<\lambda\>$ be a tuple distinct variables, where $\lambda$ is an arbitrary cardinal. The type $p(x)=\big\{x_i\neq x_j: i<j<\lambda\big\}$ is finitely consistent in every infinite structure and every structure that realises $p$ has cardinality $\ge\lambda$. Hence the claim follows from Theorem~\ref{thm_compattezzatipi}.
 \end{proof}
 
-\section{Notes}
-\label{notes_ultra}
-Ideally, one would define the ultraproduct as the quotient structure $N/\mathord{\sim_F}$. Though this may work in most natural cases, it does not produce the intended structure when $r^{M_i}=\0$ for some $M_i$ and some $r$. The standard workaround is to adjust the definition of quotient structure to one that works well (just) in this case. Here, for a change, we use the standard notion of quotient structure but apply it to a modified direct product.
-
-The reader may find the classical ultraproduct construction in virtually every book on model theory and verify that it gives a structure isomorphic to our $N/F$.
 
 \end{document}

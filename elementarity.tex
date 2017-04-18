@@ -226,7 +226,7 @@ Prove that $\Th(\Mod(T))=\ccl(T)$.\QED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Elementary equivalence}\label{eqel}
-The following is one of the most fundamental notions in model theory.
+The following is a fundamental notion in model theory.
 
 \begin{definition}\label{def_el_eq}
 We say that $M$ and $N$ are \emph{elementarily equivalent} if
@@ -899,7 +899,7 @@ We use Tarski-Vaught test to prove $M\preceq N$. Let $\phi(x)\in L(M)$ be consis
 % \end{exercise}
 
 \begin{exercise}\label{ex_LS}
-Assume $L$ is countable and let $M\subseteq N$ and $A\subseteq N$ be both countable. Prove that there is a countable model $K$ such that $A\subseteq K\preceq N$ and $K\cap M\preceq N$ (in particular, $K\cap M$ is a model).  Hint: adapt the construction used to prove the downward L\"owenheim-Skolem.\QED
+Assume $L$ is countable and let $M\preceq N$ have arbitrary (large) cardinality. Let $A\subseteq N$ be countable. Prove that there is a countable model $K$ such that $A\subseteq K\preceq N$ and $K\cap M\preceq N$ (in particular, $K\cap M$ is a model).  Hint: adapt the construction used to prove the downward L\"owenheim-Skolem Theorem.\QED
 \end{exercise}
 
 
@@ -964,5 +964,5 @@ Let $\<M_i:i\in\lambda\>$ be an elementary chain of substructures of $N$. Let $M
 
 
 \begin{exercise}
-Give an alternative answer to Exercise~\ref{ex_LS} using the L\"owenheim-Skolem Theorem (instead of its proof). Hint: construct two countable chains of countable models such that $K_i\cap M\subseteq M_i\preceq M$ and $A\cup M_i\subseteq K_{i+1}\preceq M$. The required model is $K=\bigcup_{i\in\omega}K_i$ as $K\cap M=\bigcup_{i\in\omega}M_i$.\QED
+Give an alternative answer to Exercise~\ref{ex_LS} using the downward L\"owenheim-Skolem Theorem (instead of its proof). Hint: construct two countable chains of countable models such that $K_i\cap M\subseteq M_i\preceq N$ and $A\cup M_i\subseteq K_{i+1}\preceq N$. The required model is $K=\bigcup_{i\in\omega}K_i$. In fact it is easy to check that $K\cap M=\bigcup_{i\in\omega}M_i$.\QED
 \end{exercise}

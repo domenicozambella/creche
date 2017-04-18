@@ -117,13 +117,13 @@ Assume $|L|\le\lambda$ and suppose that $\M$ satisfies \ssf{c0-c5} of Definition
 \begin{proof}
 Let $k:M\to N$ be a morphism between rich models. It suffices to prove that every finite restriction of $k$ is elementary. By \ssf{c1}, we may as well assume that $k$ itself is finite. It suffices to construct $M'\preceq M$ and  $N'\preceq N$ together with a morphism $h:M\to N$ that extends $k$ and maps $M'$ bijectively to $N'$. Then by \ssf{c4} the map $h:M'\to N'$ is also a morphism because it is the composition of morphisms. Finally, by \ssf{c3}, it is an isomorphism, in particular an elementary map.
 
-We construct simultaneously a chain $\<A_i:i<\lambda\>$ of subsets of $M$, a chain $\<B_i:i<\lambda\>$ of subsets of $N$ and a chain functions $\<h_i:i<\lambda\>$, such that $h_i:M\to N$ are morphisms, $\dom h_i\subseteq A_i$ and $\range h_i\subseteq B_i$. In the end we set
+We construct simultaneously a chain $\<A_i:i{<}\lambda\>$ of subsets of $M$, a chain $\<B_i:i{<}\lambda\>$ of subsets of $N$, and a chain functions $\<h_i:i{<}\lambda\>$ such that $h_i:M\to N$ are mor\-phisms, $\dom h_i\subseteq A_i$ and $\range h_i\subseteq B_i$. In the end we set
 
 \hfil $\displaystyle M'\ \ =\ \ \bigcup_{i<\lambda}A_i$,\hfil $\displaystyle N'\ \ =\ \ \bigcup_{i<\lambda}B_i$,\hfil  $\displaystyle h\ \ =\ \ \bigcup_{i<\lambda}h_i$.
 
 The chains start with $A_0=\dom k$, $B_0=\range k$ and $h_0=k$. As usual at limit stages we take the union. Now we consider successor stages. Fix some enumerations of $M$ and $N$. At stage $i+1$ we also fix some enumerations of $A_i$, $B_i$, $L_x(A_i)$, and $L_x(B_i)$, where $|x|=1$. Let $\<i_1,i_2\>$ be the $i\jj$th pair of ordinals $<\lambda$. If the $i_2\jj$th formula in $L_x(A_{i_1})$ is consistent in $M$, pick any solution $a$. Also, if the $i_2\jj$th formula in $L_x(B_{i_1})$ is consistent in $N$, pick any solution $b$. Let $a'$ be the $i_2\jj$th element of $A_{i_1}$ and let $b'$ be the $i_2\jj$th element of $B_{i_1}$. 
 
-Let $h_{i+1}:M\to N$ be a morphism that extends $h_i$ and such that $\dom h_{i+1}=\dom h_i\cup\big\{a'\big\}$ and $\range h_{i+1}=\range h_i\cup\big\{b'\big\}$. Note that the latter requirement is met applying Proposition~\ref{prop_6.1} to $h_i^{-1}:N\to M$. Define $A_{i+1}=A_i\cup\big\{a,h_{i+1}^{-1}b'\big\}$ and $B_{i+1}=B_i\cup\big\{b,h_{i+1}a'\big\}$
+Let $h_{i+1}:M\to N$ be an extension of $h_i$ such that $\dom h_{i+1}=\dom h_i\cup\big\{a'\big\}$ and $\range h_{i+1}=\range h_i\cup\big\{b'\big\}$. Note that the latter requirement is met applying Proposition~\ref{prop_6.1} to $h_i^{-1}:N\to M$. Define $A_{i+1}=A_i\cup\big\{a,h_{i+1}^{-1}b'\big\}$ and $B_{i+1}=B_i\cup\big\{b,h_{i+1}a'\big\}$.
 
 The elements $a$ and $b$, added to $M'$ and $N'$, ensure that $M'\preceq M$ and $N'\preceq N$, by the Tarski-Vaught test. In fact every formula in $L(M')$ belongs to $L(A_{i_1})$ for some $i_1$ and it occurs as $i_2\jj$ formula in the enumeration that has been fixed along with the construction. Therefore at stage $i=\<i_1,i_2\>$ a witness is added to $M'$. The same happens for formulas in $L(N')$. 
 
@@ -134,7 +134,7 @@ A similar argument shows that the elements $a'$ and $b'$, added to the domain an
 Let $L$ be the language of strict orders. Prove that $\QQ\preceq\RR$.\QED
 \end{exercise}
 
-Assume for simplicity that $L$ is countable. Then all $\omega\jj$rich models belong to $\Mod(T)$ for some complete theory $T$. It is interesting to ask if the converse is true: if $T$ is the theory of the $\omega\jj$rich models of $\M$, do all models in $\M\cap \Mod(T)$ are rich?  The answer is affirmative when $T$ is either $T_{\rm dlo}$ or $T_{\rm rg}$, but this is not always the case, see Example~\ref{ex_infiniti_colori} for an easy counterexample. An affirmative answer implies that the theory of rich models is $\omega\jj$categorical. An even more interesting variant of this question is considered in Exercise~\ref{ricchezza_saturazione_EQ}.
+Assume for simplicity that $L$ is countable. Then all $\omega\jj$rich models belong to $\Mod(T)$ for some complete theory $T$. It is interesting to ask if the converse is true: if $T$ is the theory of the $\omega\jj$rich models of $\M$, do all models in $\M\cap \Mod(T)$ are rich?  The answer is affirmative when $T$ is either $T_{\rm dlo}$ or $T_{\rm rg}$, but this is not always the case, see Example~\ref{ex_infiniti_colori} for an easy counterexample. An affirmative answer implies that the theory of rich models is $\omega\jj$categorical. An interesting variant of this question is considered in Exercise~\ref{ricchezza_saturazione_EQ}.
 
 For convenience of the reader, we instantiate Theorem~\ref{thm_morphism_rich_elementary} with the two categories used in Chapter~\ref{relational}.
 
@@ -161,12 +161,12 @@ For the time being when saying that \textit{$T$ has quantifier elimination\/} we
 In the next chapter we introduce important examples of $\omega\jj$rich models that do not have an $\omega\jj$categorical theory. These are algebraic structures (groups, fields etc.) hence more complex than pure relational structures. So, we conclude this section with an example of this phenomenon in almost trivial context. 
 
 \begin{example}\label{ex_infiniti_colori}
-Let $L$ contain a unary predicate $r_n$ for every positive integer $n$. The theory $T_0$ contains the axioms $\neg\E x\, \big[r_n(x)\wedge r_m(x)\big]$ for $n\neq m$ and $\E^{\le n}x\,r_n(x)$ for every $n$. Work in the the category of models of $T_0$ and partial isomorphisms. Let $T$ be the theory that extends $T_0$ with the axioms $\E^{= n} x\, r_n(x)$ for every  $n$. Let $q(x)=\big\{\neg r_n(x):n\in\ZZ^+\big\}$. It is easy to verify that the following are equivalent.
+Let $L$ contain a unary predicate $r_n$ for every positive integer $n$. The theory $T_0$ contains the axioms $\neg\E x\, \big[r_n(x)\wedge r_m(x)\big]$ for $n\neq m$ and $\E^{\le n}x\,r_n(x)$ for every $n$. Work in the the category of models of $T_0$ and partial isomorphisms. Let $T$ be the theory that extends $T_0$ with the axioms $\E^{= n} x\, r_n(x)$ for every  $n$. Let $q(x)$ be the type $\big\{\neg r_n(x):n\in\omega\big\}$. There are models of $T$ that do not realize $q(x)$, hence $T$ is not $\omega$-categorical. It is easy to verify that the following are equivalent.
 \begin{itemize}
  \item[1.] $N$ is $\omega$-rich model;
- \item[2.] $N\models T$ and  $N\models \E^{\ge m} x\ q(x)$ for every $m\in\ZZ^+$.
+ \item[2.] $N\models T$ and  $q(N)$ is infinite.
 \end{itemize}
-There are models of $T$ that do not realize $q(x)$, hence $T$ is not $\omega$-categorical. The reader may use Theorem~\ref{thm_morphism_rich_elementary} to prove that $T$ is complete and has elimination of quantifiers. It is also easy to verify that every uncountable model of $T$ is rich and consequently that $T$ is uncountably categorical.\QED
+The reader may use Theorem~\ref{thm_morphism_rich_elementary} to prove that $T$ is complete and has elimination of quantifiers. It is also easy to verify that every uncountable model of $T$ is rich and consequently that $T$ is uncountably categorical.\QED
 \end{example}
 
 
