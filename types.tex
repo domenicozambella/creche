@@ -394,7 +394,20 @@ Notation: if $a$ is the tuple $\<a_i: i<\lambda\>$ then $ha$ is the tuple $\<ha_
 
 When $\Delta=L$ we say \emph{elementary map\/} for $\Delta\jj$morphism. When  $\Delta=\atL\ $ we say  \emph{partial homomorphism\/} and when $\Delta=\atpmL\ $ we say \emph{partial embedding\/} or \emph{partial isomorphism}. The reason for the latter name is explained in Remark~\ref{rem_extension_homo}.
 
-It is immediate to verify that a partial embedding which is total is an embedding (so, there is not conflict with Definition~\ref{isomorfismodef} above). Similarly, a partial embedding which is a total and surjective is an isomorphism. 
+It is immediate to verify that a partial embedding which is total is an embedding (so, there is not conflict with Definition~\ref{isomorfismodef} above). Similarly, a partial embedding which is a total and surjective is an isomorphism. The precise connection between partial and total homo/iso-morphisms is discussed in following remark. 
+
+
+\begin{remark}\label{rem_extension_homo}
+For every map  $h:M\to N$ the following are equivalent 
+\begin{itemize}
+\item[1.] $h:M\to N$ is a partial isomorphism;
+\item[2.] there is an isomorphism $k:\<\dom h\>_M\to\<\range h\>_N$ that extends $h$.
+\end{itemize}
+Moreover, $k$ unique. The equivalence holds replacing isomorphism by homomorphism (in which case we in \ssf{2} we obtain an surjection). The extension $k$ is obtained defining $k\big(t(a)\big)=t(ha)$. 
+
+Unfortunately, there is no hope to generalize this fact to $\Delta$-morphisms as there is no notion of generated $\Delta$-elementary substructure.\QED
+\end{remark}
+
 
 We use $\Delta\jj$morphisms to compare, locally, two structures (or different loci of the same structure). There are different ways to do this, in the proposition below we list a few synonymous expressions. But first some more notation. When $x$ is a fixed tuple of variables, $a\in M^{|x|}$ and $b\in N^{|x|}$ we write
 
@@ -424,17 +437,6 @@ Condition \ssf{p} in Definition~\ref{defpreservaveritas} apply to tuples $x$ of 
 \begin{definition}\label{def_characteristic}
 We call $\Th_\Delta(M)$ the \emph{$\Delta\jj$characteristic} of $M$. We say that $T$  decides the $\Delta\jj$characteristic if $\Th_\Delta(M)=\Th_\Delta(N)$ for all $M,N\models T$. In other words, for any pair of models of $T$, the empty map $\0:M\to N$ is a $\Delta$-morphism. When $\Delta=\atpmL$ we say simply \emph{characteristic}, then $T$ decides the characteristic $\<\0\>_M\simeq\<\0\>_N$ for all $M,N\models T$.\QED
 \end{definition}
-
-\begin{remark}\label{rem_extension_homo}
-For every map  $h:M\to N$ the following are equivalent 
-\begin{itemize}
-\item[1.] $h:M\to N$ is a partial isomorphism;
-\item[2.] there is an isomorphism $k:\<\dom h\>_M\to\<\range h\>_N$ that extends $h$.
-\end{itemize}
-Moreover, $k$ unique. The equivalence holds replacing isomorphism by homomorphism (in which case we in \ssf{2} we obtain an surjection).
-
-The extension $k$ is defining $k\big(t(a)\big)=t(ha)$.\QED
-\end{remark}
 
 
 
