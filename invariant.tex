@@ -215,6 +215,10 @@ The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{From coheirs to Ramsey to indiscernibles}
+\label{Ramsey}
+
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{9ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 
 Let $X$ be an infinite set an $n,k<\omega$. A total function $f:[X]^n\to k$ is also called a \emph{coloring\/} of $[X]^n$ and is identified with a partition of $[X]^n$ into finitely $k$ classes. A set $H\subseteq X$ such that $f$ is constant on $[H]^n$ is called \emph{monochromatic set}. In the literature it may be called a \emph{homogeneous set}, but we already use this word with a different meaning. The following is a most famous theorem which here we prove it in unusual way.
@@ -231,11 +235,11 @@ Let $L$ be a language that contains $k$ relation symbols $r_0,\dots,r_{k-1}$ of 
 
 %\ceq{\hfill r_i^X}{=}{\Big\{ \<{\mr a_0},\dots,{\mr a_{n-1}}\>\ :\  \big|\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big|=n \ \textrm { and \ }f\big(\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big)= i\Big\}} 
 
-\ceq{\hfill r_i^X}{=}{\Big\{ {\mr a_0},\dots,{\mr a_{n-1}}\ :\  \big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\in[X]^n \ \textrm { and \ }f\big(\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big)= i\Big\}} 
+\ceq{\hfill r_i^X}{=}{\Big\{ {\mr a_0},\dots,{\mr a_{n-1}}\ :\  \big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\in[X]^n \ \textrm { and \ }f\big(\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big)= i\Big\}.} 
 
 Then
 
-\ceq{\ssf{\#}\hfill X}{\models}{\A {\mr x_0},\dots,{\mr x_{n-1}}\ \left[\bigwedge_{0\le i<j<n} {\mr x_i}\neq {\mr x_j}\quad\imp\quad\bigvee_{i<k}r_i({\mr x_0},\dots,{\mr x_{n-1}})\right]}
+\ceq{\ssf{\#}\hfill X}{\models}{\A {\mr x_0},\dots,{\mr x_{n-1}}\ \left[\bigwedge_{0\le i<j<n} {\mr x_i}\neq {\mr x_j}\quad\imp\quad\bigvee_{i<k}r_i({\mr x_0},\dots,{\mr x_{n-1}})\right].}
 
 
 We may assume that $X$ is an elementary substructure of some large saturated model $\U$. Pick any $p({\mr x})\in S(\U)$ finitely satisfied in $X$, not realized in $X$ and let $c=\<{\mr c_i}:i<\omega\>$ be a coheir sequence of $p({\mr x})$. By \ssf{\#} and indiscernibility, all tuples of $n$ distinct elements of $c$ satisfy the same relation, which we assume to be $r_0$. The theorem is proved if we can find in $X$ a sequence $a=\<{\mr a_i}:i<\omega\>$ with the same property. (Note parenthetically that no element of $c$ is in $X$.) We construct $a_{\restriction i}$ by induction on $i$ as follows. 
@@ -299,7 +303,7 @@ Let $I,<_I$ be an infinite linear order and let $a$ be an $I\jj$sequence. Fix a 
   
   Now we extend the result to arbitrary $J$ of cardinality $\le\kappa$. From the argument above, there is a sequence of indiscerbibles $\<b_i:i<\omega\>$ such that $\EMtp(a/A)\subseteq\EMtp(b/A)$. Fix a $J\jj$sequence of variables $z=\<{\mr z_i}:i\in J\>$ and define
 
-  \ceq{\hfill p(z)}{=}{\Big\{\phi(z_{\restriction J_0})\in L(A)\ :\ \phi(b_{\restriction n})\ \textrm{ for some }J_0\subseteq [J]^n,\ n<\omega\Big\}}
+  \ceq{\hfill p(z)}{=}{\Big\{\phi(z_{\restriction J_0})\in L(A)\ :\ \phi(b_{\restriction n})\ \textrm{ for some }J_0\subseteq [J]^n,\ n<\omega\Big\}.}
   
   This type is clearly finitely consistent. Every $c$ that realizes $q(z)$ is a $J\jj$sequence as required by the theorem. 
   \end{proof}
@@ -486,7 +490,9 @@ If $\D\subseteq\U^{|{\gr z}|}$ is invariant over $A$ then every $A\jj$indiscerni
 \end{proposition}
 
 \begin{proof}
-Let $c=\<c_i:i\in I\>$ be an $A\jj$indiscernible sequence. For every $I_0,I_1\in I^{[n]}$ there is an $f\in\Aut(\U/A)$ such that $fc_{\restriction I_0}=c_{\restriction I_1}$, Hence $\phi\big(c_{\restriction I_0}\,;\D\big)\iff \phi\big(fc_{\restriction I_0}\,;f[\D]\big)\iff\phi\big(c_{\restriction I_1}\,;\D\big)$.
+Let $c=\<c_i:i\in I\>$ be an $A\jj$indiscernible sequence. For every $I_0,I_1\in I^{[n]}$ there is an $f\in\Aut(\U/A)$ such that $fc_{\restriction I_0}=c_{\restriction I_1}$, Hence 
+
+\ceq{\hfill \phi\big(c_{\restriction I_0}\,;\D\big)}{\iff}{\phi\big(fc_{\restriction I_0}\,;f[\D]\big)\medrel{\iff}\phi\big(c_{\restriction I_1}\,;\D\big)}.
 \end{proof}
 
 % \begin{exercise}WRONG!!

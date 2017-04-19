@@ -268,12 +268,12 @@ Let $A\subseteq N\models T_{\rm rg}$ and let $\phi(x)\in L(A)$, where $|x|=1$. P
 
 
 \begin{exercise}
-Let $M$ be a graph which is neither null nor complete. Prove that the following are equivalent
+Prove that the following are equivalent for every graph $M$ 
 \begin{itemize}
-\item[1.] $M$ is a random graph;
-\item[2.] if $M_1,M_2\subseteq M$ are such that $M_1\cup M_2=M$, then $M_1\simeq M$ or $M_2\simeq M$.\QED
+\item[1.] $M$ is either the infinite complete graph, the infinite empty graph, or the random graph;
+\item[2.] if $M_1,M_2\subseteq M$ are such that $M_1\sqcup M_2=M$, then $M_1\simeq M$ or $M_2\simeq M$.
 \end{itemize}
-%Hint. For \ssf{2}$\IMP$\sff{1} suppose for a contradiction \ssf{r$_n$} fails for some $n$ and obtain a contradiction reasoning by induction. Suppose \ssf{r$_n$} and \ssf{r$_{n+1}$} fails. Let   
+Hint. For \ssf{2}$\IMP$\ssf{1} first show that if there is a point jointed to all the other the the graph is complete and that if the is an isolate node then the graph is empty. If neither is the case prove \ssf{r$_n$} by induction. Suppose \ssf{r$_n$} and \ssf{r$_{n+1}$} fails. Let $A$ and $B$ a counter example to \ssf{r$_{n+1}$}. Let $M_1$ be the union of $B$ and the set of point correctly jointed to $A$. Let $M_2$ be the union of $A$ and set of those correctly jointed to $B$. Check that these is a partition of $M$ and that both $M_1$ and $M_2$ falsify \ssf{r$_n$}.\QED
 \end{exercise}
 
 \section{Notes}
@@ -286,8 +286,9 @@ The following is a well-written accessible survey on the amazing model theoretic
  \bib{LR}{article}{
    author={Cameron, Peter J.},
    title={The random graph},
-   eprint={arXiv:1301.7544}
+   eprint={https://arxiv.org/abs/1301.7544}
    date={2013}
+   %note={arXiv:1301.7544}
 }  
    
 

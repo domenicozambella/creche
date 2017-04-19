@@ -327,50 +327,46 @@ Consider $\ZZ^n$ as a structure in the additive language of groups with the natu
 \section{Embeddings and isomorphisms}\label{Embeddings and isomorphisms}
 
 
-\def\ceq#1#2#3{\hspace*{8ex}\llap{#1}\parbox{5ex}{\hfil#2}\rlap{#3}\hspace{11ex}}
-
+\def\ceq#1#2#3{\parbox[b]{15ex}{$\displaystyle #1$}\parbox[b]{6ex}{\hfil$#2$}$\displaystyle #3$}
 
 Here we prove that isomorphic structures are elementary equivalent and a few related results.
 
 \begin{definition}\label{isomorfismodef}
 An \emph{embedding\/} of $M$ into $N$ is an injective map $h:M\imp N$ such that
-\begin{itemize}
-\item[1.]\ceq{$a\in r^M$}{$\IFF$}{$ha\in r^N$} for every $r\in L_{\rm rel}$ and $a\in M^{n_r}$
-\item[2.]\ceq{$h\,f^M(a)$}{$=$}{$f^N(h\,a)$} for every $f\in L_{\rm fun}$ and $a\in M^{n_f}$.
-\end{itemize}
+
+\ceq{\ssf{1.}\hfill a\in r^M}{\IFF}{ha\in r^N}\hfill for every $r\in L_{\rm rel}$ and $a\in M^{n_r}$;
+
+\ceq{\ssf{2.}\hfill f^M(a)}{=}{f^N(h\,a)}\hfill for every $f\in L_{\rm fun}$ and $a\in M^{n_f}$.
+
 Note that when $c\in L_{\rm fun}$ is a constant then \ssf{2} reads $hc^M=c^N$. Therefore that $M\subseteq N$  if and only if $\id_M:M\imp N$ is an embedding.
 
 An surjective embedding is an \emph{isomorphism} or, when domain and codomain coincide, an \emph{automorphism}.\QED
 \end{definition}
 
 Condition \ssf{1} above and the assumption that $h$ is injective can be summarized in the following
-\begin{itemize}
-\item[1'.]\ceq{$M\models r(a)$}{$\IFF$}{$N\models r(ha)$} for every $r\in L_{\rm rel}\cup\{=\}$ and every $a\in M^{n_r}$.
-\end{itemize}
+
+\ceq{\ssf{1'.}\hfill M\models r(a)}{\IFF}{N\models r(ha)}\hfill for every $r\in L_{\rm rel}\cup\{=\}$ and every $a\in M^{n_r}$.
 
 Note also that, by straightforward induction on syntax, from \ssf{2} we obtain
 
-\begin{itemize}
-\item[2']\ceq{$h\,t^M(a)$}{$=$}{$t^N(h\,a)$} for every term $t(x)$ and every  $a\in M^{|x|}$.
-\end{itemize}
+\ceq{\ssf{2'}\hfill h\,t^M(a)}{=}{t^N(h\,a)}\hfill for every term $t(x)$ and every  $a\in M^{|x|}$.
 
 Combining these two properties, and by straightforward induction on the syntax, we obtain 
-\begin{itemize}
-\item[3.]\ceq{$M\models\phi(a)$}{$\IFF$}{$N\models\phi(ha)$} for every $\phi(x)\in L_{\rm qf}$ and every $a\in M^{|x|}$.
-\end{itemize}
+
+\ceq{\ssf{3.}\hfill M\models\phi(a)}{\IFF}{N\models\phi(ha)}\hfill for every $\phi(x)\in L_{\rm qf}$ and every $a\in M^{|x|}$.
 
 Recall that $L_{\rm qf}$ for the set of quantifier-free formulas. It is worth noting that when $M\subseteq N$ and $h=\id_M$ then \ssf{3} becomes  
-\begin{itemize}
-\item[3']\ceq{$M\models \phi(a)$}{$\IFF$}{$N\models \phi(a)$} for every $\phi(x)\in L_{\rm qf}$ and for every $a\in M^{|x|}$.
-\end{itemize}
+
+\ceq{\ssf{3'}\hfill M\models \phi(a)}{\IFF}{N\models \phi(a)}\hfill for every $\phi(x)\in L_{\rm qf}$ and for every $a\in M^{|x|}$.
+
 
 \bigskip Finally we prove that first order truth is preserved under isomorphism. We say that a map $h:M\to N$ \emph{fixes\/} $A\subseteq M$ (pointwise) if $\id_A\subseteq h$. An isomorphism that fixes $A$ is also called an \emph{$A$-isomorphism}.
 
 \begin{theorem}\label{isomorfoeleq}
 If $h:M\imp N$ is an isomorphism then for every $\phi(x)\in L$
-\begin{itemize}
-\item[\#]\ceq{$M\models \phi(a)$}{$\IFF$}{$N\models \phi(ha)$} for every $a\in M^{|x|}$
-\end{itemize}
+
+\ceq{\ssf{\#}\hfill M\models \phi(a)}{\IFF}{N\models \phi(ha)} for every $a\in M^{|x|}$
+
 In particular, if $h$ is an $A$-isomorphism then $M\equiv_A N$.
 \end{theorem}
 
@@ -410,6 +406,18 @@ Now we prove that $(0,1)\preceq (0,2)$. By Exercise~\ref{finitanaturaeqel} above
 % Si dimostri che se $h:M\imp N$ is un'immersione allora $h[M]$ is a substructure of $N$ e $h:M\imp h[M]$ is un isomorfismo.\QED
 % \end{exercise}
 
+For the sake of completeness we also give the definition of homomorphism.
+
+\begin{definition}
+A \emph{homomorphism} is a total map $h:M\imp N$ such that
+
+\ceq{\ssf{1.}\hfill a\in r^M}{\IMP}{ha\in r^N}\qquad for every $r\in L_{\rm rel}$ and $a\in M^{n_r}$;\smallskip\par
+
+\ceq{\ssf{2.}\hfill h\,f^M(a)}{=}{f^N(h\,a)}\qquad  for every $f\in L_{\rm fun}$ and $a\in M^{n_f}$.\QED
+\end{definition}
+
+Note that only one implication is required in \ssf{1}.
+
 \begin{exercise}
 Prove that if $h:N\imp N$ is an automorphism and $M\preceq N$ then $h[M]\preceq N$.\QED
 \end{exercise}
@@ -425,9 +433,9 @@ Hint: as $L$-structures are plain sets, every bijection $f:M\to M$ is an automor
 
 \begin{exercise}\label{dlorlkurb}
 Prove that if $\phi(x)$ is an existential formula (i.e.\@ of the form $\E y\,\psi(x,y)$ for $\psi(x,y)\in L_{\rm qf}$) and $h:M\to M$ is an embedding then
-\begin{itemize}
-\item[]\ceq{$M\models \phi(a)$}{$\IMP$}{$N\models \phi(ha)$} for every $a\in M^{|x|}$.\QED
-\end{itemize}
+
+\ceq{\hfill M\models \phi(a)}{\IMP}{N\models \phi(ha)} for every $a\in M^{|x|}$.\QED
+
 \end{exercise}
 
 \begin{exercise}
