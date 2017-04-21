@@ -4,7 +4,7 @@ Lecture notes for an introductory (under)graduate course
 
 Printable output in file `creche.pdf`
 
-##Table of contents
+## Table of contents
 
 *  **Preface**
 *  **Preliminaries and notation**
@@ -20,7 +20,7 @@ Printable output in file `creche.pdf`
   * Embeddings and isomorphisms
   * Completeness
   * The Tarski-Vaught test
-  * The downward L\IeC {\"o}wenheim-Skolem theorem
+  * The downward Löwenheim-Skolem theorem
   * Elementary chains
 *  **Ultraproducts and compactness**
   * Filters and ultrafilters
@@ -29,7 +29,7 @@ Printable output in file `creche.pdf`
   * Ultraproducts
   * The compactness theorem
   * Finite axiomatizability
-  * Realization of types and upword L\IeC {\"o}wenheim-Skolem
+  * Realization of types and upword Löwenheim-Skolem
 *  **Types and morphisms**
   * Semilattices and filters
   * Distributive lattices and prime filters
@@ -39,7 +39,7 @@ Printable output in file `creche.pdf`
   * Dense linear orders
   * Random graphs
   * Notes
-*  **Fra\IeC {\"\i }ss\IeC {\'e} limits**
+*  **Fraïssé limits**
   * Rich models.
   * Weaker notions of universality and homogeneity
   * The amalgamation property
