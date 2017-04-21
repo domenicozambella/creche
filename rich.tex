@@ -2,7 +2,7 @@
 \documentclass[creche.tex]{subfiles}
 \begin{document}
 
-\chapter{Fra\"iss\'e limits}
+\chapter{Fraïssé limits}
 \label{fraisse}
 
 \def\ceq#1#2#3{\parbox[b]{20ex}{$\displaystyle #1$}\parbox[b]{4ex}{\hfil$#2$}$\displaystyle #3$}
@@ -25,18 +25,18 @@ For example, $\M_{\rm ob}$ could consist of all models of some theory $T_0$ and 
 \item[c2.] morphisms are invertible maps and the inverse of a morphism is a morphism;
 \item[c3.] morphisms preserve the truth of $\atL$\,-formulas;
 \item[c4.] if $M$ is a model, every elementary map $k:M\to N$ is morphism (so, $N$ is a model);
-\item[c5.] if $k_i:M\to N$, for $i<\lambda$, is a chain of morphisms, then \smash{$\bigcup_{i<\lambda} k_i:M\to N$} is a morphism.
+\item[c5.] if $k_i:M\to N$ is a chain of morphisms, then \smash{$\bigcup_{i<\lambda} k_i:M\to N$} is a morphism.
 \item[c6.] if $k':M\to N$ is a morphism for every finite $k'\subseteq k$, then $k:M\to N$ is a morphism.\QED
 \end{itemize}
 \end{definition}
  
 Note that \ssf{c0} says that the category is \emph{connected} and that \ssf{c1} implies that any restriction of a morphism is a morphism. Given \ssf{c1}, we can rephrase \ssf{c0} by saying that $\0:M\to N$ is a morphism for any pair of models $M$ and $N$. 
 
-A consequence of \ssf{c4} is that the class of models is closed under elementary equivalence. In fact, if $N\equiv M$ then $\0:M\to N$ is elementary, hence it is a morphism ad, in particular, and $N$ is a model. 
+A consequence of \ssf{c4} is that the class of models is closed under elementary equivalence. In fact, if $N\equiv M$ then $\0:M\to N$ is elementary, hence it is a morphism and, in particular, and $N$ is a model. 
 
 We call \ssf{c6} the \emph{finite character of morphisms}. Note that it implies \ssf{5}. We shall never use \ssf{6} in these notes, but most natural categories of models and partial morphisms have this property.
 
-For the following two definitions to make sense the assumptions above are not required. However, condition \ssf{c2} is relevant to both. The generalization to non injective morphisms is not straightforward (in fact, there are two generalizations: \textit{projective\/} and \textit{inductive\/}). These generalizations are not very common and here we deal only wit the simple case. 
+The following two definitions assume \ssf{c2}. The generalization to non injective morphisms is not straightforward (in fact, there are two generalizations: \textit{projective\/} and \textit{inductive\/}). These generalizations are not very common and will not be considered here. 
 
 \begin{definition}
 Assume that $\M$ satisfies \ssf{c0-c2} of Definition~\ref{def_com_c}. We say that a model $N$ is \emph{$\lambda\jj$rich\/} if for every model $M$ of cardinality $\le\lambda$ and every morphism $k:M\imp N$ of cardinality $<\lambda$ there is a total morphism $h:M\imp N$ that extends $k$. We say that $N$ is \emph{rich\/} tout court  if it is $\lambda\jj$rich for $\lambda=|N|$. When $\M_{\rm ob}=\Mod(T_0)$ for some theory $T_0$ and $\M_{\rm ar}$ is clear from the context, we say \emph{rich model of $T_0$}.\QED
