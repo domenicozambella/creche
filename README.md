@@ -6,7 +6,7 @@ Printable output in file [`creche.pdf`](./creche.pdf)
 
 ## Table of contents
 
-*  [**Preface**](./creche.pdf#page=4)
+*  **Preface**
 *  **Preliminaries and notation**
    * Structures
    * Tuples

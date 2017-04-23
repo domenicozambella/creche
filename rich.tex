@@ -3,7 +3,7 @@
 \begin{document}
 
 \chapter{Fra\"issé limits}
-\label{fraisse}
+\label{fraisse} 
 
 \def\ceq#1#2#3{\parbox[b]{20ex}{$\displaystyle #1$}\parbox[b]{4ex}{\hfil$#2$}$\displaystyle #3$}
 
@@ -24,7 +24,7 @@ For example, $\M_{\rm ob}$ could consist of all models of some theory $T_0$ and 
 \item[c1.] the identity map $\id_A:M\to M$ is a morphism, for any $A\subseteq M$;
 \item[c2.] morphisms are invertible maps and the inverse of a morphism is a morphism;
 \item[c3.] morphisms preserve the truth of $\atL$\,-formulas;
-\item[c4.] if $M$ is a model, every elementary map $k:M\to N$ is morphism (so, $N$ is a model);
+\item[c4.] if $M$ is a model, every elementary map $k:M\to N$ is morphism (and, $N$ is a model);
 \item[c5.] if $k_i:M\to N$ is a chain of morphisms, then \smash{$\bigcup_{i<\lambda} k_i:M\to N$} is a morphism.
 \item[c6.] if $k':M\to N$ is a morphism for every finite $k'\subseteq k$, then $k:M\to N$ is a morphism.\QED
 \end{itemize}
@@ -242,13 +242,15 @@ Implication \ssf{1}$\IMP$\ssf{2} is clear. To prove \ssf{2}$\IMP$\ssf{1} we gene
 
 We say that $\M$ has the \emph{amalgamation property\/} if for every pair of morphisms $f_1:M\to M_1$ and $f_2:M\to M_2$ there are some total morphism $g_1:M_1\to N$ and $g_2:M_2\to N$ such that $g_1\circ f_1\, (a) = g_2\circ f_2\, (a)$ for every $a\;\in\; \dom (g_1\circ f_1)\; \cap\; \dom (g_2\circ f_2)$.
 
-Write \emph{$M\le N$\/} for $M\subseteq N$ and $\id_M:M\to N$ is a morphism. We say that $k:M\to N$ extends to  $h:M'\to N'$ if $k\subseteq h$, $M\le M'$, and  $N\le N'$. As we assume that morphisms are invertible, we may express the amalgamation property in the following convenient form: every morphism extends to a total one.
+We write \emph{$M\le N$\/} for $M\subseteq N$ and $\id_M:M\to N$ is a morphism. We say that $\<M_i:i<\lambda\>$ is a \emph{$\le\jj$chain\/} if $M_i\le M_j$ for all $i<j<\lambda$.
+
+We say that $h:M'\to N'$ \emph{extends\/} $k:M\to N$ if $k\subseteq h$, $M\le M'$, and  $N\le N'$. As we assume that morphisms are invertible, we may express the amalgamation property in the following convenient form: every morphism extends to a total one.
 
 For the following theorem to hold we need the following property:
 \begin{definition}
 We say that $\M$ is \emph{closed under union of $\le\jj$chains\/} if
 \begin{itemize}
-\item[c7.] if $\<M_i:i<\lambda\>$ is such that $M_i\le M_j$ for all $i<j<\lambda$ then \smash{$\displaystyle M_i\le\bigcup_{j<\lambda}M_j$} for all $i<\lambda$.\QED
+\item[c7.] if $\<M_i:i<\lambda\>$ is a $\le\jj$chain,  then \smash{$\displaystyle M_i\le\bigcup_{j<\lambda}M_j$} \ for all $i<\lambda$.\QED
 \end{itemize}
 \end{definition}
 
