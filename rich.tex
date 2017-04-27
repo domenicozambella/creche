@@ -58,12 +58,16 @@ As above, when $\lambda=|N|$ we say \emph{universal}, respectively \emph{homogen
 In Section~\ref{relational}.\ref{dlo} we implicitly used $\M_{\rm ob}=\Mod(T_{\rm lo})$ and partial isomorphisms as $\M_{\rm ar}$. In Section~\ref{relational}.\ref{randomgraph} we used $\M_{\rm ob}=\Mod(T_{\rm gph})$ and again partial isomorphisms as $\M_{\rm ar}$. Corollary~\ref{coroll_ordinericco} proves that every model of $T_{\rm dlo}$ is $\omega\jj$rich.  Corollary~\ref{coroll_graforicco} claims the analogous fact for $T_{\rm rg}$.
 
 
-In the following we always assume that $\M$ satisfies \ssf{c0-c5} of Definition~\ref{def_com_c} even when not all properties are strictly necessary. We also assume that $|L|$ is sufficiently small for the downward L\"owenheim-Skolem theorem to be applicable.
-
-
+In the following we fequently work under the following assumption (even when not all properties are strictly necessary).
+ 
+\begin{assumption}\label{ass_c0-5}
+Assume  $|L|\le\lambda$ and suppose that $\M$ satisfies \ssf{c0-c5} of Definition~\ref{def_com_c}
+\end{assumption} 
+ 
+The assumption on the cardinality $L$ is only necessary to apply the downward L\"owenheim-Skolem Theorem when required.
 
 \begin{proposition}\label{prop_6.1}
-Assume $|L|\le\lambda$ and suppose that $\M$ satisfies \ssf{c0-c5} of Definition~\ref{def_com_c}. Then the following are equivalent
+(Assume~\ref{ass_c0-5})  \  The following are equivalent
 \begin{itemize}
 \item[1.] $N$ is a $\lambda\jj$rich model;
 \item[2.]for every morphism $k:M\imp N$ of cardinality $<\lambda$ and every $b\in M$ there is a morphism $h:M\imp N$ that extends $k$ and is defined in $b$.
@@ -76,7 +80,7 @@ Closure under union of chains of morphisms, which is ensured by \ssf{c5}, immedi
 The following theorem subsumes both Theorem~\ref{zigzagcantor} and Theorem~\ref{gaomegacat}.
 
 \begin{theorem}\label{thm_riccozigzag}
-Assume $|L|\le\lambda$ and suppose that $\M$ satisfies \ssf{c0-c5} of Definition~\ref{def_com_c}. Let $M$ and $N$ be two rich models of the same cardinality $\lambda$. Then every morphism $k:M\imp N$ of cardinality $<\lambda$ extends to an isomorphism.
+(Assume~\ref{ass_c0-5})  \  Let $M$ and $N$ be two rich models of the same cardinality $\lambda$. Then every morphism $k:M\imp N$ of cardinality $<\lambda$ extends to an isomorphism.
 \end{theorem}
 
 \begin{proof}
@@ -85,13 +89,13 @@ When $\lambda=\omega$, we can take the proof of Theorem~\ref{zigzagcantor} and r
 
 
 \begin{corollary}\label{coroll_riccozigzag}
-Assume $|L|\le\lambda$ and suppose that $\M$ satisfies \ssf{c0-c5} of Definition~\ref{def_com_c}. Then all rich models of cardinality $\lambda$ are isomorphic.\QED
+(Assume~\ref{ass_c0-5})  \  Then all rich models of cardinality $\lambda$ are isomorphic.\QED
 \end{corollary}
 
 It is obvious that $\lambda\jj$rich models are $\lambda\jj$universals and, by Theorem~\ref{thm_riccozigzag}, they are $\lambda\jj$ho\-mo\-ge\-ne\-ous. These two notions are weaker than richness. For instance, when $\M$ is as in Section~\ref{relational}.\ref{randomgraph}, the countable graph that has no arc is trivially ultrahomogeneous but it is not universal and a fortiori not rich. On the other hand if we add to a countable random graph an isolated point we obtain an universal graph which is not ultrahomogeneous. However, when taken together, these two properties are equivalent to richness.
 
 \begin{theorem}\label{ricco<->universaleomogeneo}
-Assume that $\M$ satisfies \ssf{c0-c5} of Definition~\ref{def_com_c}. Then the following are equivalent:
+(Assume~\ref{ass_c0-5}) \ The following are equivalent:
 \begin{itemize}
 \item[1.] $N$ is rich;
 \item[2.] $N$ is homogeneous and universal.
@@ -101,18 +105,15 @@ Assume that $\M$ satisfies \ssf{c0-c5} of Definition~\ref{def_com_c}. Then the f
 Implication \ssf{1}$\IMP$\ssf{2} is clear as noted above, so we prove \ssf{2}$\IMP$\ssf{1}. Let $k:M\imp N$ be a morphism of cardinality $<|N|$ and let $b\in M$. As $N$ is universal, there is a morphism \hbox{$f:M\imp N$} defined on $\dom k\cup\big\{b\big\}$. By \ssf{c2} the map $k\circ f^{-1}:N\imp N$ is a morphism of cardinality $<|N|$. By homogeneity it has an extension to a bijective morphism $h:N\imp N$. It is immediate that $h\circ f:M\imp N$ is the required extension of $k$.
 \end{proof}
 
+
 \begin{exercise}
-Let $N$ be the structure obtained by adding to a countable random graph an isolated point. Show that this graph is homogeneous if $\M_{\rm ar}$ is the class of elementary maps.\QED
+Let $N$ be the structure obtained by adding to a countable random graph an isolated point. Show that this graph is homogeneous if $\M_{\rm ar}$ is the class of elementary maps but not if $\M_{\rm ar}$ is the class of partial isomorphisms.\QED
 \end{exercise}
 
-We are interested in \emph{the theory of rich models}, that is, the set of sentences true in every rich model. Next theorem tells us a very important fact about it.
-
-
-
-
+Next theorem is one of the most important facts about $\lambda$-rich models
 
 \begin{theorem}\label{thm_morphism_rich_elementary}
-Assume $|L|\le\lambda$ and suppose that $\M$ satisfies \ssf{c0-c5} of Definition~\ref{def_com_c}. Then every morphism between $\lambda\jj$rich models is elementary. In particular, $\lambda\jj$rich models are elementary equivalent.
+(Assume~\ref{ass_c0-5})  \  Then every morphism between $\lambda\jj$rich models is elementary. In particular, $\lambda\jj$rich models are elementary equivalent.
 \end{theorem}
 
 \begin{proof}
@@ -130,6 +131,8 @@ The elements $a$ and $b$, added to $M'$ and $N'$, ensure that $M'\preceq M$ and 
 
 A similar argument shows that the elements $a'$ and $b'$, added to the domain and range of $h$, ensure that the map $h:M'\to N'$ is both total and surjective. 
 \end{proof}
+
+By the theorem below  we can unambiguisly speak of \emph{the theory of rich models}. In fact it immediately follows that if $M$ is $\mu$-rich and $N$ is $\lambda$-rich then $M\equiv N$.
 
 \begin{exercise}
 Let $L$ be the language of strict orders. Prove that $\QQ\preceq\RR$.\QED
@@ -170,11 +173,9 @@ Let $L$ contain a unary predicate $r_n$ for every positive integer $n$. The theo
 The reader may use Theorem~\ref{thm_morphism_rich_elementary} to prove that $T$ is complete and has elimination of quantifiers. It is also easy to verify that every uncountable model of $T$ is rich and consequently that $T$ is uncountably categorical.\QED
 \end{example}
 
-
 \begin{exercise}\label{ex_finiti_colori}
 Let $T_0$ and $\M$ be as in Example~\ref{ex_infiniti_colori} except that we restrict the language to the relations $r_0,\dots,r_n$ for a fixed $n$. Do $\omega\jj$rich models of $T_0$ exist? Is their theory $\omega\jj$categorical? What if we add to $T_0$ the axiom $r_0(x)\vee\dots\vee r_n(x)$~?\QED
 \end{exercise}
-
 
 \begin{exercise}
 The language contains only two binary relations $<$ and $e$. The theory $T_0$ says that $<$ is a strict linear order and that $e$ is an equivalence relation. Let $\M_{\rm ob}=\Mod(T_0)$ and let $\M_{\rm ar}$  be the class of partial isomorphisms between models.   Do rich models exist? Can we axiomatize their theory? Is it $\omega\jj$categorical?\QED
@@ -188,10 +189,10 @@ The language contains only two binary relations. The theory $T_0$ says that they
 In the language of graphs let $T_0$ say that there are no cycles (equivalently, there is at most one path between any two nodes). In combinatorics these graphs are called \textit{forests}, their connected components, \textit{trees}. Let $\M_{\rm ob}=\Mod(T_0)$ and let $\M_{\rm ar}$  be the class of partial isomorphisms between models. Do rich models exist? Can we axiomatize their theory? Is it $\omega\jj$categorical?\QED
 \end{exercise}
 
-
-
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Weaker notions of universality and homogeneity}\label{weak}
 
 We want to extend the equivalence in Theorem~\ref{ricco<->universaleomogeneo} to $\lambda\jj$rich models. For that we need to weaken the notions of $\lambda\jj$universality and  $\lambda\jj$homogeneity. 
@@ -211,7 +212,7 @@ We say that a structure $N$ is \emph{weakly $\lambda$-universal\/} if for every 
 \end{definition}
 
 \begin{lemma}\label{debolmenteomogeneoandirivieni}
-Assume $|L|\le\lambda$ and suppose that $\M$ satisfies \ssf{c0-c5} of Definition~\ref{def_com_c}. Let $N$ be a weakly $\lambda\jj$ho\-mo\-ge\-ne\-ous model. Let $A\subseteq N$ have cardinality $\le\lambda$ and let $k:N\to N$ be a morphism of cardinality $<\lambda$. Then there is a model  $M\preceq N$ containing $A$ and an automorphism $h:M\to M$ that extends $k$.
+(Assume~\ref{ass_c0-5})  \  Let $N$ be a weakly $\lambda\jj$ho\-mo\-ge\-ne\-ous model. Let $A\subseteq N$ have cardinality $\le\lambda$ and let $k:N\to N$ be a morphism of cardinality $<\lambda$. Then there is a model  $M\preceq N$ containing $A$ and an automorphism $h:M\to M$ that extends $k$.
 \end{lemma}
 
 \begin{proof}
@@ -225,7 +226,7 @@ The chains start with $A_0=A\cup\dom k\cup\range k$ and $h_0=k$. As usual, at li
 
 
 \begin{theorem}\label{ricco=universaledebolmenteomogeneo}
-Assume $|L|\le\lambda$ and suppose that $\M$ satisfies \ssf{c0-c5} of Definition~\ref{def_com_c}. For every model $N$ the following are equivalent
+(Assume~\ref{ass_c0-5})  \  For every model $N$ the following are equivalent
 \begin{itemize}
 \item[1.] $N$ is $\lambda$-rich;
 \item[2.] $N$ is  weakly $\lambda\jj$universal and weakly $\lambda\jj$homogeneous.
@@ -257,7 +258,7 @@ We say that $\M$ is \emph{closed under union of $\le\jj$chains\/} if
 The following is a general existence theorem for rich models.
 
 
-\begin{theorem} Let $\lambda$ be a cardinal such that $\lambda=\lambda^{<\lambda}$. Assume $|L|\le\lambda$ and suppose that $\M$ satisfies \ssf{c0-c5} of Definition~\ref{def_com_c}. Assume further that $\M$ has the amalgamation property and is closed under union of $\le$ chains. Then there is a rich model $N$ of cardinality $\lambda$.
+\begin{theorem} Let $\lambda$ be a cardinal such that $\lambda=\lambda^{<\lambda}$. (Assume~\ref{ass_c0-5})  \  Assume further that $\M$ has the amalgamation property and is closed under union of $\le$ chains. Then there is a rich model $N$ of cardinality $\lambda$.
 \end{theorem}
 
 \begin{proof} We construct $N$ as union of a $\le\jj$chain of models $\langle N_i:i < \lambda\rangle$ such that $|N_i| = \lambda$ for all $i<\lambda$. Let $N_0$ be any model of cardinality $\lambda$. At stage $i+1$, let $f:M\imp N_i$ be the least morphism (in a well-ordering that we specify below) such that $|f|<|M|\le\lambda$ and $f$ has no extension to an embedding $f':M\imp N_i$. Apply the amalgamation property to obtain an total morphism $f':M\imp N'$ that extends $f:M\imp N_i$. By the downword L\"owenheim-Skolem Theorem we may assume $|N'|=\lambda$. Let $N_{i+1}=N'$. At limit stages take the union.

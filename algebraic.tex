@@ -242,11 +242,13 @@ All the rings we consider are \emph{commutative\/}
  
 We denote the theory of commutative rings by \emph{$T_{\rm cr}$}.
 
+In what follows the theory $T_{\rm cr}\cup\Diag\<A\>_M$ is implicit in the sense of Notation~\ref{notation1}, so it is important to remember that $\Diag\<A\>_M$ is not trivial even when $A=\0$. In fact, $\Diag\<\0\>_M$ determines the characteristic of the models.
+
 Let  $A\subseteq M\models T_{\rm cr}$ and let $x$ be a tuple of variables of length $\alpha$, an ordinal. We write $L_{{\rm ter},x}(A)$ for the set of terms $t(x)$ with free variables among $x$ and parameters in $A$. On this set we define the equivalence relation
 
 \ceq{\hfill \emph{$t(x)\sim s(x)$}}%
-{\deq}%
-{T_{\rm cr}\ \cup\ \Diag\<A\>_M \ \proves \ t(x)=s(x).}
+{=}%
+{\proves \ t(x)=s(x).}
 
 On $L_{{\rm ter},x}(A)/\mathord{\sim}$ we define the ring operations in the obvious way so that $L_{{\rm ter},x}(A)/\mathord{\sim}$ is a commutative ring. We denote by $A[x]$ the set of polynomials with variables among $x$ and parameters in $\<A\>_M$. The ring operations on $A[x]$ are defined as usual. The following proposition (which is clear, but tedious to prove) implies in particular that $L_{{\rm ter},x}(A)/\mathord{\sim}$ is isomorphic to $A[x]$. For simplicity we state it only for $|x|=1$.
 
@@ -254,12 +256,10 @@ On $L_{{\rm ter},x}(A)/\mathord{\sim}$ we define the ring operations in the obvi
 \label{prop_formacanonicaterminiau}
 Let  $A\subseteq M\models T_{\rm cr}$ and let $x$ be a single variable. Then for every formula $\phi(x)\in \atL(A)$ there is a unique $n<\omega$ and a unique tuple $a=\<a_i:i\le n\>$ of elements of $\<A\>_M$ such that $a_n\neq0$ and 
 
-\ceq{\hfill T_{\rm cr}\ \cup\ \Diag\<A\>_M}{\proves}{\phi(x)\ \iff\ \sum_{i\le n}a_ix^i\ =\ 0}.\QED
+\ceq{}{\proves}{\phi(x)\ \iff\ \sum_{i\le n}a_ix^i\ =\ 0}.\QED
 \end{proposition}
 
 The integer $n$ in the proposition above is called the \emph{degree of $\phi(x)$}.
-
-In what follows the theory $T_{\rm cr}\cup\Diag\<A\>_M$ is implicit in the sense of Notation~\ref{notation1}, so it is important to remember that $\Diag\<A\>_M$ is not trivial even when $A=\0$. In fact, $\Diag\<\0\>_M$ determines the characteristic of the models.
 
 \begin{definition} Let $A\subseteq M\models T_{\rm cr}$. We say that an element $b\in M$ is \emph{transcendent over $A$\/} if the type $p(x)=\attp_M(b/A)$ is trivial (see Notation~\ref{note_tipi_diagramma} and ~\ref{notation1}). Otherwise we say that $b$ is \emph{algebraic over $A$}. The \emph{transcendence degree\/} of $M$ is the least cardinality of a subset $A\subseteq M$ such that no element of $M$ is transcendent over $A$.\QED
 \end{definition}  

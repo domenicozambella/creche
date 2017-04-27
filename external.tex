@@ -1,0 +1,67 @@
+% !TEX root = creche.tex
+\documentclass[creche.tex]{subfiles}
+\begin{document}
+
+\chapter{Externally definable sets}
+\label{external}
+
+
+Let ${\gr\C},{\gr\D}\subseteq\U^{|{\gr z}|}$. The set ${\gr\D}\cap A^{|{\gr z}|}$ is called the \emph{trace\/} of ${\gr\D}$ over $A$. We write ${\gr\C}=_A{\gr\D}$ if  ${\gr\C}$ and ${\gr\D}$ have the same trace on $A$.
+
+We say that ${\gr\D}$ is \emph{externally definable\/} if there are a global type $p\in S_{\mr x}(\U)$ and a formula $\phi({\mr x}\,;{\gr z})$ such that ${\gr\D}=\{{\gr a};:\;\phi({\mr x}\,;{\gr a})\in p\}$. Equivalently, a set ${\gr\D}$ is externally definable if it is the trace over $\U$ of a set which is definable in some elementary extension of $\U$. This explains the terminology.
+
+We prefer to deal with external definability in a different, though equivalent, way. 
+
+\begin{definition}\label{def_epprox}
+We say that ${\gr\D}$ is \emph{approximable\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite $B$ there is a ${\mr b}\in\U^{|{\mr x}|}$ such that $\phi({\mr b}\,;{\gr\U})=_B{\gr\D}$. We may call the formula $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of ${\gr\D}$. If in addition we have that $\phi({\mr b}\,;{\gr\U})\subseteq{\gr\D}$, we say that  ${\gr\D}$ is \emph{approximable from below}. If  ${\gr\D}\subseteq\phi({\mr b}\,;{\gr\U})$ we say that  ${\gr\D}$ is \emph{approximable from above}.\QED
+\end{definition} 
+
+Approximability from below is an adaptation to our context of the notion of \textit{having an honest definition} in \cite{CS}.  The following proposition is clear by compactness.
+
+\begin{proposition}\label{lem_approx=external}
+For every ${\gr\D}$ the following are equivalent:
+\begin{itemize}
+\item[1.] ${\gr\D}$ is approximable;
+\item[2.] ${\gr\D}$ is externally definable.\QED 
+\end{itemize}
+\end{proposition}
+
+\begin{example}
+Let $T$ be the theory a dense linear orders without endpoints and let $\D\subseteq\U$ be an interval. Then $\D$ is approximable both from below and from above by the formula \mbox{$x_1<z<x_2$}.  Now let $T$ be the theory of the random graph. Then every $\D\subseteq\U$ is approximable and, when $\D$ has small cardinality, it is approximable from above but not from below.\QED
+\end{example}
+
+In Definition~\ref{def_epprox}, the sort $\phi(x,z)$ is fixed (otherwise any set would be approximable) but this requirement of uniformity may be dropped if the sets $B$ are allowed to be infinite.
+
+\begin{proposition}\label{lem_approx_nonunif}
+For every ${\gr\D}$ the following are equivalent:
+\begin{itemize}
+\item[1.] ${\gr\D}$ is approximable;
+\item[2.] for every $B$ of cardinality $\le|T|$ there is $\psi(z)\in L(\U)$ such that $\psi(B)=\D\cap B^{|{\gr z}|}$.
+\end{itemize}
+Similarly, the following are equivalent:
+\begin{itemize}
+\item[3.] ${\gr\D}$ is approximable from below;
+\item[4.]  for every $B\subseteq{\gr\D}$ of cardinality $\le|T|$ there is $\psi(z)\in L(\U)$ such that $B^{|{\gr z}|}\subseteq \psi(\U)\subseteq{\gr\D}$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+To prove \ssf{2}$\IMP$\ssf{1}, for a contradiction assume \ssf{2} and $\neg$\ssf{1}. For each formula $\psi(x,z)\in L$ choose a finite set $B$ such that $\psi(b,B)\neq\D\cap B^{|{\gr z}|}$ for every $b\in\U^{|{\mr x}|}$. Let $C$ be the union of all these finite sets. Clearly $|C|\le|T|$.  By \ssf{2} there are a formula $\phi(x,z)$ and a tuple $c$ such that $\phi(c,C)=\D\cap C^{|{\gr z}|}$, contradicting the definition of $C$.
+
+The implication \ssf{1}$\IMP$\ssf{2} is obtained by compactness and the equivalence \ssf{3}$\IFF$\ssf{4} is proved similarly. 
+\end{proof}
+
+The definition of  $\C\equiv{\gr\D}$ is Section~\ref{extpansions}
+
+\begin{proposition}\label{prop_approx_el_eq}
+If ${\gr\D}$ is approximable of sort $\phi(x,z)$ then so is any $\C$ such that $\C\equiv{\gr\D}$. The same holds for approximability from below and from above.
+\end{proposition}
+
+\begin{proof}
+If the set ${\gr\D}$ is approximable by $\phi(x,z)$ then for every $n$
+
+\hfil$\displaystyle\A z_1,\dots,z_n\;\E x\ \bigwedge^n_{i=1}\big[\phi(x,z_i)\ \iff\ z_i\in\D\big]$. 
+
+So the same holds for any $\C\equiv{\gr\D}$. As for approximability from below, add the conjunct $\A z\,\big[\phi(x,z)\imp z\in\D\big]$ to the formula above, and similarly for approximability from above.
+\end{proof}
+\end{document}

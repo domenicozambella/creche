@@ -124,7 +124,7 @@ diagrams={>=latex}
 \def\imp{\rightarrow}
 \def\pmi{\leftarrow}
 \def\iff{\leftrightarrow}
-\def\niff{\mathrel{{\leftrightarrow}\llap{\raisebox{-0.1ex}{{\small$/$}}\hskip1.0ex}}}
+\def\niff{\mathrel{{\leftrightarrow}\llap{\raisebox{-.1ex}{{\small$/$}}\hskip.5ex}}}
 \def\nequiv{\mathrel{\mbox{$\equiv$\llap{{\small$/$}\hskip.3ex}}}}
 \def\equivEM{\stackrel{\smash{\scalebox{.5}{\rm EM}}}{\equiv}}
 \def\equivL{\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}}
@@ -226,6 +226,7 @@ diagrams={>=latex}
 \newtheorem{lemma}[thm]{Lemma}
 \newtheorem{fact}[thm]{Fact}
 \newtheorem{definition}[thm]{Definition}
+\newtheorem{assumption}[thm]{Assumption}
 \newtheorem{void_thm}[thm]{}
 \theoremstyle{liscio}
 \newtheorem{void_def}[thm]{}
@@ -252,7 +253,7 @@ diagrams={>=latex}
 
 \definecolor{violet}{RGB}{115, 0, 205}
 \definecolor{brown}{RGB}{150, 50, 10}
-\definecolor{green}{RGB}{10,120, 20}
+\definecolor{green}{RGB}{5,100, 15}
 \def\mr{\color{brown}}
 \def\gr{\color{green}}
 \def\vl{\color{violet}}
@@ -274,14 +275,14 @@ diagrams={>=latex}
 \subfile{saturation}
 %\subfile{order}
 \subfile{elimination}
-%\subfile{eliminazione}
 \subfile{geometry}
 \subfile{countable}
 \subfile{imaginary}
 \subfile{invariant}
 \subfile{invariantL}
+%\subfile{external}
 %\subfile{dynamics}
-% \subfile{combinatorics}
+%\subfile{combinatorics}
 %\subfile{stability}
 
 \end{document}

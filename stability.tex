@@ -18,10 +18,10 @@ The \emph{ladder order\/} of a parted formula $\phi({\mr x}\,;{\gr z})$ is the l
 
 \section{}
 
-We say that $\D\subseteq\U^{|{\gr z}|}$ is \emph{$k\jj$approximable\/} by $\phi({\mr x}\,;{\gr z})$ if for every $B\subseteq_k\U^{|{\gr z}|}$ there is a ${\mr a}\in\U^{|{\mr x}|}$ such that $\phi({\mr a}\,;B)=\D\cap B$. For $A\subseteq\U$, we say approximable \emph{from $A$\/} if we can further require that ${\mr a}\in A^{|{\mr x}|}$. We say \emph{almost from $A$\/} if  ${\mr a}\in M^{|{\mr x}|}$ for every model $M$ containing $A$.
+We say that $\D\subseteq\U^{|{\gr z}|}$ is \emph{approximable\/} by $\phi({\mr x}\,;{\gr z})$ if for every finite $B\subseteq\U^{|{\gr z}|}$ there is a ${\mr a}\in\U^{|{\mr x}|}$ such that $\phi({\mr a}\,;B)=\D\cap B$. For $A\subseteq\U$, we say approximable \emph{over $A$\/} if we can further require that ${\mr a}\in A^{|{\mr x}|}$. We say \emph{almost over $A$\/} if  ${\mr a}\in M^{|{\mr x}|}$ for every model $M$ containing $A$.
 
 \begin{proposition}
-If\/ $\D$ is\/ $2\jj$approximable from $A$, then it is invariant over $A$. If it is\/ $2\jj$ap\-prox\-i\-ma\-ble almost from $A$, then it is Lascar invariant over $A$.
+If\/ $\D$ is\/ approximable from $A$, then it is invariant over $A$. If it is\/ ap\-prox\-i\-ma\-ble almost over $A$, then it is Lascar invariant over $A$.
 \end{proposition}
 
 \begin{proof}
@@ -38,16 +38,16 @@ We write, $\phi({\mr x}\,;{\gr z})^*$ for $\phi({\gr z}\,;{\mr x})$. Clearly, th
 \def\B{{\gr{\EuScript B}}}
 \def\Aa{{\mr{\EuScript A}}}
 The following is a version of Harrinton's mysterious 
-Lemma (cfr.~\cite[Lemma 8.3.4]{zt}).
+Lemma (cfr.~\cite[Lemma 8.3.4]{TZ}).
 \begin{lemma}\label{lem_harrington}
 Let $\phi({\mr x}\,;{\gr z})\in L$ be a stable formula and suppose $\B\subseteq\U^{|{\gr z}|}$ and $\Aa\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\gr z}\,;{\mr x})$, respectively. Then the following are equivalent
 \begin{itemize}
-\item[1.] $\phi({\mr x}\,;{\gr z})\wedge{\gr z}\in{\B}$ approximates $\Aa$ 
-\item[2.] $\phi({\gr z}\,;{\mr x})\wedge{\mr x}\in{\Aa}$ approximates $\B$
+\item[1.] $\phi({\mr x}\,;{\gr z})\wedge{\mr x}\in{\Aa}$ approximates $\B$
+\item[2.] $\phi({\gr z}\,;{\mr x})\wedge{\gr z}\in{\B}$ approximates $\Aa$ 
 \end{itemize}
 \end{lemma}
 \begin{proof}
-It suffices to prove \ssf{2}$\IMP$\ssf{1} because the converse implication is equivalent. Assume \ssf{2} and $\neg$\ssf{1}. By the latter,  $\phi({\mr x}\,;{\gr z})\wedge{\gr z}\notin{\B}$ approximates $\Aa$. For $i<\omega$, find recursively ${\mr a_i}\in\Aa$ and  ${\gr b_i}\notin\B$ and such that
+It suffices to prove \ssf{1}$\IMP$\ssf{2} because the converse implication is equivalent. Assume \ssf{1} and negate \ssf{2} for a contradiction.  As $\Aa$ is approximable, if not \ssf{2}, then  $\phi({\mr x}\,;{\gr z})\wedge{\gr z}\notin{\B}$ approximates $\Aa$. Pick ${\mr a_0}$ arbitrarily, then recursively find ${\gr b_i}\notin\B$ and  ${\mr a_i}\in\Aa$ such that
 
 
 {\def\medrel#1{\parbox[t]{12ex}{$\displaystyle\kern2ex #1$}}
@@ -101,6 +101,30 @@ For every $M$ and every externally definable set $\D$ is some $\B\equiv_M\D$ tha
 \begin{proof}
 
 \end{proof}
+
+
+\section{Notes}
+\begin{biblist}[]\normalsize
+
+
+\bib{TZ}{book}{
+   author={Tent, Katrin},
+   author={Ziegler, Martin},
+   title={A course in model theory},
+   series={Lecture Notes in Logic},
+   volume={40},
+   publisher={Association for Symbolic Logic, Cambridge
+   University Press},
+   date={2012},
+   pages={x+248},
+   %isbn={978-0-521-76324-0},
+   %doi={10.1017/CBO9781139015417},
+}
+
+
+
+\end{biblist}
+
 
 \end{document}
 
