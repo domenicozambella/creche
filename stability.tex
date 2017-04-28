@@ -1,9 +1,14 @@
 % !TEX root = creche.tex
 \documentclass[creche.tex]{subfiles}
 \begin{document}
-\chapter{Stable formulas (a scribbling block)}
+\chapter{Stable formulas (tentative, a scribbling block)}
 \label{stability}
- 
+
+\def\mrA{{\mr\Aa}}
+\def\grB{{\gr\B}}
+\def\grC{{\gr\C}}
+\def\grD{{\gr\D}}
+
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
@@ -15,23 +20,25 @@
 \label{external}
 
 
-Let ${\gr\C},{\gr\D}\subseteq\U^{|{\gr z}|}$. The set ${\gr\D}\cap A^{|{\gr z}|}$ is called the \emph{trace\/} of ${\gr\D}$ over $A$. We write ${\gr\C}=_A{\gr\D}$ if  ${\gr\C}$ and ${\gr\D}$ have the same trace on $A$.
+Let $\grC,\grD\subseteq\U^{|{\gr z}|}$. The set $\grD\cap A^{|{\gr z}|}$ is called the \emph{trace\/} of $\grD$ over $A$. We write $\grC=_A\grD$ if  $\grC$ and $\grD$ have the same trace on $A$.
 
-We say that ${\gr\D}$ is \emph{externally definable\/} if there are a global type $p\in S_{\mr x}(\U)$ and a formula $\phi({\mr x}\,;{\gr z})$ such that ${\gr\D}=\{{\gr a}\,:\,\phi({\mr x}\,;{\gr a})\in p\}$. Equivalently, a set ${\gr\D}$ is externally definable if it is the trace over $\U$ of a set which is definable in some elementary extension of $\U$. This explains the terminology.
+We say that $\grD$ is \emph{externally definable\/} if there are a global type $p\in S_{\mr x}(\U)$ and a formula $\phi({\mr x}\,;{\gr z})$ such that $\grD=\{{\gr a}\,:\,\phi({\mr x}\,;{\gr a})\in p\}$. Equivalently, a set $\grD$ is externally definable if it is the trace over $\U$ of a set which is definable in some elementary extension of $\U$. This explains the terminology.
 
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We prefer to deal with external definability in a different, though equivalent, way. This is not the most commond approach.
 
 \begin{definition}\label{def_epprox}
-We say that ${\gr\D}$ is \emph{approximable\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite $B$ there is a ${\mr b}\in\U^{|{\mr x}|}$ such that $\phi({\mr b}\,;{\gr\U})=_B{\gr\D}$. We may call the formula $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of ${\gr\D}$. If in addition we have that $\phi({\mr b}\,;{\gr\U})\subseteq{\gr\D}$, we say that  ${\gr\D}$ is \emph{approximable from below}. If  ${\gr\D}\subseteq\phi({\mr b}\,;{\gr\U})$ we say that  ${\gr\D}$ is \emph{approximable from above}.\QED
+We say that $\grD$ is \emph{approximable\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite $B$ there is a ${\mr b}\in\U^{|{\mr x}|}$ such that $\phi({\mr b}\,;{\gr\U})=_B\grD$. We may call the formula $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grD$. If in addition we have that $\phi({\mr b}\,;{\gr\U})\subseteq\grD$, we say that  $\grD$ is \emph{approximable from below}. If  $\grD\subseteq\phi({\mr b}\,;{\gr\U})$ we say that  $\grD$ is \emph{approximable from above}.\QED
 \end{definition} 
+ 
+Approximability from below is an adaptation to our context of the notion of \textit{having an honest definition} in \cite{CS}.  It will be discussed in Chapter~\textbf{??}.
 
-Approximability from below is an adaptation to our context of the notion of \textit{having an honest definition} in \cite{CS}.  The following proposition is clear by compactness.
+The following proposition is clear by compactness.
 
 \begin{proposition}\label{lem_approx=external}
-For every ${\gr\D}$ the following are equivalent:
+For every $\grD$ the following are equivalent:
 \begin{itemize}
-\item[1.] ${\gr\D}$ is approximable;
-\item[2.] ${\gr\D}$ is externally definable.\QED 
+\item[1.] $\grD$ is approximable;
+\item[2.] $\grD$ is externally definable.\QED 
 \end{itemize}
 \end{proposition}
 
@@ -42,37 +49,51 @@ Let $T$ be the theory a dense linear orders without endpoints. Let $\D\subseteq\
 In Definition~\ref{def_epprox}, the sort $\phi({\mr x}\,;{\gr z})$ is fixed (otherwise any set would be approximable) but this requirement of uniformity may be dropped if the sets $B$ are allowed to be infinite.
 
 \begin{proposition}\label{lem_approx_nonunif}
-For every ${\gr\D}$ the following are equivalent:
+For every $\grD$ the following are equivalent:
 \begin{itemize}
-\item[1.] ${\gr\D}$ is approximable;
-\item[2.] for every $B\subseteq\U$ of cardinality $\le|T|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi({\gr\U})=_B{\gr\D}$.
+\item[1.] $\grD$ is approximable;
+\item[2.] for every $B\subseteq\U$ of cardinality $\le|T|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi({\gr\U})=_B\grD$.
 \end{itemize}
 Similarly, the following are equivalent:
 \begin{itemize}
-\item[3.] ${\gr\D}$ is approximable from below;
-\item[4.]  for every ${\gr B}\subseteq{\gr\D}$ of cardinality $\le|T|$ there is $\psi({\gr z})\in L(\U)$ such that ${\gr B}\subseteq \psi({\gr\U})\subseteq{\gr\D}$.
+\item[3.] $\grD$ is approximable from below;
+\item[4.]  for every ${\gr B}\subseteq\grD$ of cardinality $\le|T|$ there is $\psi({\gr z})\in L(\U)$ such that ${\gr B}\subseteq \psi({\gr\U})\subseteq\grD$.
 \end{itemize}
 \end{proposition}
 
 \begin{proof}
-To prove \ssf{2}$\IMP$\ssf{1} assume \ssf{2} and negate \ssf{1} for a contradiction. For each formula $\psi({\mr x}\,;{\gr z})\in L$ choose a finite set $B$ such that $\psi({\mr b}\,;{\gr\U})\neq_B{\gr\D}$ for every ${\mr b}\in\U^{|{\mr x}|}$. Let $C$ be the union of all these finite sets. Clearly $|C|\le|T|$.  By \ssf{2} there are a formula $\phi({\mr x}\,;{\gr z})$ and a tuple ${\mr c}$ such that $\phi({\mr c}\,;{\gr\U})=_C{\gr\D}$, contradicting the definition of $C$.
+To prove \ssf{2}$\IMP$\ssf{1} assume \ssf{2} and negate \ssf{1} for a contradiction. For each formula $\psi({\mr x}\,;{\gr z})\in L$ choose a finite set $B$ such that $\psi({\mr b}\,;{\gr\U})\neq_B\grD$ for every ${\mr b}\in\U^{|{\mr x}|}$. Let $C$ be the union of all these finite sets. Clearly $|C|\le|T|$.  By \ssf{2} there are a formula $\phi({\mr x}\,;{\gr z})$ and a tuple ${\mr c}$ such that $\phi({\mr c}\,;{\gr\U})=_C\grD$, contradicting the definition of $C$.
 
 The implication \ssf{1}$\IMP$\ssf{2} is obtained by compactness and the equivalence \ssf{3}$\IFF$\ssf{4} is proved similarly. 
 \end{proof}
 
-For ${\gr\C}\subseteq\U^{|{\gr z}|}$ the definition of  ${\gr\C}\equiv{\gr\D}$ is Section~\hyperref[expansions]{\ref{invariant}.\ref{expansions}}.
+Let $\grC\subseteq\U^{|{\gr z}|}$. In Section~\hyperref[expansions]{\ref{invariant}.\ref{expansions}} we defined  $\grC\equiv\grD$.
 
-\begin{proposition}\label{prop_approx_el_eq}
-If ${\gr\D}$ is approximable of sort $\phi({\mr x}\,;{\gr z})$ then so is any ${\gr\C}$ such that ${\gr\C}\equiv{\gr\D}$. The same holds for approximability from below and from above.
-\end{proposition}
-
-\begin{proof}
-If the set ${\gr\D}$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for every $n$
+\begin{remark}\label{prop_approx_el_eq}
+If $\grD$ is approximable of sort $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$. The same holds for approximability from below and from above. In fact, if the set $\grD$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for every $n$
 
 \hfil$\displaystyle\A {\gr z_1},\dots,{\gr z_n}\;\E {\mr x}\ \bigwedge^n_{i=1}\big[\phi({\mr x}\,;{\gr z_i})\ \iff\ {\gr z_i}\in{\gr \D}\big]$. 
 
-So the same holds for any ${\gr\C}\equiv{\gr\D}$. As for approximability from below, add the conjunct $\A {\gr z}\,\big[\phi({\mr x}\,;{\gr z})\imp {\gr z}\in{\gr\D}\big]$ to the formula above, and similarly for approximability from above.
+So the same holds for any $\grC\equiv\grD$. As for approximability from below, add the conjunct $\A {\gr z}\,\big[\phi({\mr x}\,;{\gr z})\imp {\gr z}\in\grD\big]$ to the formula above, and similarly for approximability from above.\QED
+\end{remark}
+
+
+\begin{lemma}\label{lem_harrington}
+Suppose $\grB\subseteq\U^{|{\gr z}|}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\gr z}\,;{\mr x})^*$, respectively. Then the following are equivalent
+\begin{itemize}
+\item[1.] $\phi({\mr x}\,;{\gr z})\wedge{\mr x}\in{\mrA}$ approximates $\grB$
+\item[2.] $\phi({\gr z}\,;{\mr x})^*\wedge{\gr z}\in{\grB}$ approximates $\mrA$ 
+\end{itemize}
+\end{lemma}
+\begin{proof}
+\def\mrsA{{\mr\Aa'}}
+\def\grsB{{\gr\B'}}
+It suffices to prove \ssf{1}$\IMP$\ssf{2} because the converse implication is equivalent. Let $\<\U',\mrsA,\grsB\>$ be a saturated  elementary extension of  $\<\U,\mrA,\grB\>$ of larger cardinality.  Assume \ssf{1}, then by the remark above and saturation, there is an ${\mr a'}\in\mrsA$ such that $\phi({\mr a'}\,;{\gr\U'})=_{\U}\grsB$. Again by saturation and the remark above, there is a ${\gr b'}\in\grsB$ such that $\phi({\mr\U'}\,;{\gr b'})=_{\U,\, {\mr a'}}\mrsA$ which implies $\phi({\mr a'}\,;{\gr b'})$. Now, \ssf{2} follows by elementarity.
 \end{proof}
+
+We say that a set $\grD$ approximable by $\phi({\mr x}\,;{\gr z})$ is stationary over $A$ if it is invariant over $A$ and for any other such set $\grC$ if $\grC=_A\grD$ then  $\grC=\grD$. Note that the notion of stationary depends only on $\phi({\mr x}\,;{\gr z})$ and $A^{|{\gr z}|}\cap\grD$. 
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -83,6 +104,11 @@ So the same holds for any ${\gr\C}\equiv{\gr\D}$. As for approximability from be
 
 The \emph{ladder order\/} of a parted formula $\phi({\mr x}\,;{\gr z})$ is the largest ordinal $n$ such that for some ${\mr a_i}\in\U^{|{\mr x}|}$ and ${\gr b_i}\in\U^{|{\gr z}|}$ 
 
+Though we never made it explicit, by \textit{formula\/} most often we mean a pair $\phi(x)$ that consists of a formula and a tuple of variables. In the following we need to deal with two sorts of variables: those that are placeholder for parameters, and those used to define a set. To make things more complicated here and there we shall switch the role of the variables.
+
+\begin{definition}\label{def_parted-fla}
+A \emph{2-parted formula\/} is a triple $\phi({\mr x}\,;{\gr z})$ consistig of a formula and two tuples of variables. The variables actually occurring in $\phi$ are all among ${\mr x},{\gr z}$. We write $\phi({\gr z}\,;{\mr x})^*$ for the parted formula where the order of the two tuples is switched. The asterisk will avoid confusion with substitution.
+\end{definition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -90,44 +116,31 @@ The \emph{ladder order\/} of a parted formula $\phi({\mr x}\,;{\gr z})$ is the l
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{}
 
-We say that $\D\subseteq\U^{|{\gr z}|}$ is \emph{approximable\/} by $\phi({\mr x}\,;{\gr z})$ if for every finite $B\subseteq\U^{|{\gr z}|}$ there is a ${\mr a}\in\U^{|{\mr x}|}$ such that $\phi({\mr a}\,;B)=\D\cap B$. For $A\subseteq\U$, we say approximable \emph{over $A$\/} if we can further require that ${\mr a}\in A^{|{\mr x}|}$. We say \emph{almost over $A$\/} if  ${\mr a}\in M^{|{\mr x}|}$ for every model $M$ containing $A$.
 
-\begin{proposition}
-If\/ $\D$ is\/ approximable from $A$, then it is invariant over $A$. If it is\/ ap\-prox\-i\-ma\-ble almost over $A$, then it is Lascar invariant over $A$.
-\end{proposition}
-
-\begin{proof}
-Suppose for a contradiction that $f[\D]\neq\D$ for some $f\in\Aut(\U/A)$. Pick some ${\gr b}$ such that ${\gr b}\in\D\niff f{\gr b}\in\D$. Clearly $\big\{{\gr b},f{\gr b}\big\}\cap\D$ cannot be the trace on $\big\{{\gr b},f{\gr b}\big\}$ of a set definable over $A$. The same argument apply to prove Lascar invariance.
-\end{proof}
-
-Tentativo
-
-Let $D\subseteq A$ be the trace on $A$ of a definable set, then it is the trace of some set $\Aa$ definable over $\acl^\eq A$, and such a set $\Aa$ is unique.
-
-We write $\phi({\gr z}\,;{\mr x})^*$ for the parted formula with is the same as $\phi({\mr x}\,;{\gr z})$, as plain formula, but has a different partition of variables, ${\gr z}$ is the first tuple, ${\mr x}$ is the second tuple.
+Let $D\subseteq A$ be the trace on $A$ of a definable set, then it is the trace of some set $\mrA$ definable over $\acl^\eq A$, and such a set $\mrA$ is unique.
 
 {
-\def\B{{\gr{\EuScript B}}}
-\def\Aa{{\mr{\EuScript A}}}
+\def\grB{{\gr{\EuScript B}}}
+\def\mrA{{\mr{\EuScript A}}}
 The following is a version of Harrinton's mysterious 
 Lemma (cfr.~\cite[Lemma 8.3.4]{TZ}).
 \begin{lemma}\label{lem_harrington}
-Let $\phi({\mr x}\,;{\gr z})\in L$ be a stable formula and suppose $\B\subseteq\U^{|{\gr z}|}$ and $\Aa\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\gr z}\,;{\mr x})^*$, respectively. Then the following are equivalent
+Let $\phi({\mr x}\,;{\gr z})\in L$ be a stable formula and suppose $\grB\subseteq\U^{|{\gr z}|}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\gr z}\,;{\mr x})^*$, respectively. Then the following are equivalent
 \begin{itemize}
-\item[1.] $\phi({\mr x}\,;{\gr z})\wedge{\mr x}\in{\Aa}$ approximates $\B$
-\item[2.] $\phi({\gr z}\,;{\mr x})^*\wedge{\gr z}\in{\B}$ approximates $\Aa$ 
+\item[1.] $\phi({\mr x}\,;{\gr z})\wedge{\mr x}\in{\mrA}$ approximates $\grB$
+\item[2.] $\phi({\gr z}\,;{\mr x})^*\wedge{\gr z}\in{\grB}$ approximates $\mrA$ 
 \end{itemize}
 \end{lemma}
 \begin{proof}
-It suffices to prove \ssf{1}$\IMP$\ssf{2} because the converse implication is equivalent. Assume \ssf{1} and negate \ssf{2} for a contradiction.  As $\Aa$ is approximable, if not \ssf{2}, then  $\phi({\mr x}\,;{\gr z})\wedge{\gr z}\notin{\B}$ approximates $\Aa$. Pick ${\mr a_0}$ arbitrarily, then recursively find ${\gr b_i}\notin\B$ and  ${\mr a_i}\in\Aa$ such that
+It suffices to prove \ssf{1}$\IMP$\ssf{2} because the converse implication is equivalent. Assume \ssf{1} and negate \ssf{2} for a contradiction.  As $\mrA$ is approximable, if not \ssf{2}, then  $\phi({\mr x}\,;{\gr z})\wedge{\gr z}\notin{\grB}$ approximates $\mrA$. Pick ${\mr a_0}$ arbitrarily, then recursively find ${\gr b_i}\notin\grB$ and  ${\mr a_i}\in\mrA$ such that
 
 
 {\def\medrel#1{\parbox[t]{12ex}{$\displaystyle\kern2ex #1$}}
 
-\ceq{\hfill\phi(\U\,;{\gr b_i})}{ =_{{\mr a_0},\dots,{\mr a_{i-1}}}}{\Aa} 
+\ceq{\hfill\phi(\U\,;{\gr b_i})}{ =_{{\mr a_0},\dots,{\mr a_{i-1}}}}{\mrA} 
 
 
-\ceq{\hfill\phi({\mr a_i}\,;\U)}{ =_{{\gr b_0},\dots,{\gr b_i}}}{\B}
+\ceq{\hfill\phi({\mr a_i}\,;\U)}{ =_{{\gr b_0},\dots,{\gr b_i}}}{\grB}
 }
 
 Then
@@ -143,11 +156,29 @@ Then
 Which contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
 \end{proof}
 
+
+
+
+
+
+We say that $\D\subseteq\U^{|{\gr z}|}$ is \emph{approximable\/} by $\phi({\mr x}\,;{\gr z})$ if for every finite $B\subseteq\U^{|{\gr z}|}$ there is a ${\mr a}\in\U^{|{\mr x}|}$ such that $\phi({\mr a}\,;B)=\D\cap B$. For $A\subseteq\U$, we say approximable \emph{over $A$\/} if we can further require that ${\mr a}\in A^{|{\mr x}|}$. We say \emph{almost over $A$\/} if  ${\mr a}\in M^{|{\mr x}|}$ for every model $M$ containing $A$.
+
+\begin{proposition}
+If\/ $\D$ is\/ approximable from $A$, then it is invariant over $A$. If it is\/ ap\-prox\-i\-ma\-ble almost over $A$, then it is Lascar invariant over $A$.
+\end{proposition}
+
+\begin{proof}
+Suppose for a contradiction that $f[\D]\neq\D$ for some $f\in\Aut(\U/A)$. Pick some ${\gr b}$ such that ${\gr b}\in\D\niff f{\gr b}\in\D$. Clearly $\big\{{\gr b},f{\gr b}\big\}\cap\D$ cannot be the trace on $\big\{{\gr b},f{\gr b}\big\}$ of a set definable over $A$. The same argument apply to prove Lascar invariance.
+\end{proof}
+
+Tentativo
+
+
 \begin{corollary}
 Under the same assumptions of Lemma~\ref{lem_harrington} the following are mutually exclusive\nobreak
 \begin{itemize}
-\item[1.] $\phi({\mr x}\,;{\gr z})\wedge{\gr z}\notin{\B}$ approximates $\Aa$;
-\item[2.] $\phi({\mr x}\,;{\gr z})\wedge{\gr z}\in{\B}$ approximates $\Aa$.\QED
+\item[1.] $\phi({\mr x}\,;{\gr z})\wedge{\gr z}\notin{\grB}$ approximates $\mrA$;
+\item[2.] $\phi({\mr x}\,;{\gr z})\wedge{\gr z}\in{\grB}$ approximates $\mrA$.\QED
 \end{itemize}
 \end{corollary}
 
@@ -167,7 +198,7 @@ Only \ssf{1}$\IMP$\ssf{2} requires a proof. Assume \ssf{1}. By stability, $\D$ i
 
 
 \begin{proposition}
-For every $M$ and every externally definable set $\D$ is some $\B\equiv_M\D$ that is approximable in $M$. 
+For every $M$ and every externally definable set $\D$ is some $\grB\equiv_M\D$ that is approximable in $M$. 
 \end{proposition}
 
 \begin{proof}
