@@ -22,12 +22,12 @@
 
 Let $\grC,\grD\subseteq\U^{|{\gr z}|}$. The set $\grD\cap A^{|{\gr z}|}$ is called the \emph{trace\/} of $\grD$ over $A$. We write $\grC=_A\grD$ if  $\grC$ and $\grD$ have the same trace on $A$.
 
-We say that $\grD$ is \emph{externally definable\/} if there are a global type $p\in S_{\mr x}(\U)$ and a formula $\phi({\mr x}\,;{\gr z})$ such that $\grD=\{{\gr a}\,:\,\phi({\mr x}\,;{\gr a})\in p\}$. Equivalently, a set $\grD$ is externally definable if it is the trace over $\U$ of a set which is definable in some elementary extension of $\U$. This explains the terminology.
+We say that $\grD$ is \emph{externally definable\/} if there are a global type $p\in S_{\mr x}(\U)$ and a formula $\phi({\mr x}\,;{\gr z})$ such that $\grD=\{{\gr a}\,:\,\phi({\mr x}\,;{\gr a})\in p\}$. Equivalently, a set $\grD$ is externally definable if it is the trace over $\U$ of a set which is definable in some elementary extension of $\U$. Precisely, $\grD$ is the trace on $\U$ of a set of he form $\phi({\mr b'}\,;{\gr\U'})$ where $\<\U',{\gr\D'}\>$ is elementary extension of $\<\U,\grD\>$ and ${\mr b'}\in\U'^{|{\mr x}|}$. This explains the terminology.
 
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We prefer to deal with external definability in a different, though equivalent, way. This is not the most commond approach.
 
 \begin{definition}\label{def_epprox}
-We say that $\grD$ is \emph{approximable\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite $B$ there is a ${\mr b}\in\U^{|{\mr x}|}$ such that $\phi({\mr b}\,;{\gr\U})=_B\grD$. We may call the formula $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grD$. If in addition we have that $\phi({\mr b}\,;{\gr\U})\subseteq\grD$, we say that  $\grD$ is \emph{approximable from below}. If  $\grD\subseteq\phi({\mr b}\,;{\gr\U})$ we say that  $\grD$ is \emph{approximable from above}.\QED
+We say that $\grD$ is \emph{approximable\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite $B$ there is a ${\mr b}\in\U^{|{\mr x}|}$ such that $\phi({\mr b}\,;{\gr\U})=_B\grD$. If in addition we have that $\phi({\mr b}\,;{\gr\U})\subseteq\grD$, we say that  $\grD$ is \emph{approximable from below}. If  $\grD\subseteq\phi({\mr b}\,;{\gr\U})$ we say that  $\grD$ is \emph{approximable from above}. We may call $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grD$.\QED
 \end{definition} 
  
 Approximability from below is an adaptation to our context of the notion of \textit{having an honest definition} in \cite{CS}.  It will be discussed in Chapter~\textbf{??}.
@@ -43,7 +43,9 @@ For every $\grD$ the following are equivalent:
 \end{proposition}
 
 \begin{example}
-Let $T$ be the theory a dense linear orders without endpoints. Let $\D\subseteq\U$ be an interval. Then $\D$ is approximable both from below and from above by the formula \mbox{$x_1<z<x_2$}.  Now let $T$ be the theory of the random graph. Then every $\D\subseteq\U$ is approximable and, when $\D$ has small cardinality, it is approximable from above but not from below.\QED
+Every definable set is trivially approximale. However if we fix the sort, this is not true any more. Let $T=T_{\rm dlo}$. Then $\D=\{z\in\U:a\le z\le b\}$ is approximable both from below and from above by the formula $x_1<z<x_2$ though it is not definable by this formula.
+
+Now, let $T=T_{\rm rg}$. Then every $\D\subseteq\U$ is approximable and, when $\D$ has small infinite cardinality, it is approximable from above but not from below, see Exercise~\ref{ex_rg_small_def_set}.\QED
 \end{example}
 
 In Definition~\ref{def_epprox}, the sort $\phi({\mr x}\,;{\gr z})$ is fixed (otherwise any set would be approximable) but this requirement of uniformity may be dropped if the sets $B$ are allowed to be infinite.
@@ -62,21 +64,33 @@ Similarly, the following are equivalent:
 \end{proposition}
 
 \begin{proof}
-To prove \ssf{2}$\IMP$\ssf{1} assume \ssf{2} and negate \ssf{1} for a contradiction. For each formula $\psi({\mr x}\,;{\gr z})\in L$ choose a finite set $B$ such that $\psi({\mr b}\,;{\gr\U})\neq_B\grD$ for every ${\mr b}\in\U^{|{\mr x}|}$. Let $C$ be the union of all these finite sets. Clearly $|C|\le|T|$.  By \ssf{2} there are a formula $\phi({\mr x}\,;{\gr z})$ and a tuple ${\mr c}$ such that $\phi({\mr c}\,;{\gr\U})=_C\grD$, contradicting the definition of $C$.
+To prove \ssf{2}$\IMP$\ssf{1} assume \ssf{2} and negate \ssf{1} for a contradiction. For each formula $\psi({\mr x}\,;{\gr z})\in L$ choose a finite set $B$ such that $\psi({\mr b}\,;{\gr\U})\neq_B\grD$ for every ${\mr b}\in\U^{|{\mr x}|}$. Let $C$ be the union of all these finite sets. Clearly $|C|\le|T|$. By \ssf{2} there are a formula $\phi({\mr x}\,;{\gr z})$ and a tuple ${\mr c}$ such that $\phi({\mr c}\,;{\gr\U})=_C\grD$, contradicting the definition of $C$.
 
 The implication \ssf{1}$\IMP$\ssf{2} is obtained by compactness and the equivalence \ssf{3}$\IFF$\ssf{4} is proved similarly. 
 \end{proof}
 
-Let $\grC\subseteq\U^{|{\gr z}|}$. In Section~\hyperref[expansions]{\ref{invariant}.\ref{expansions}} we defined  $\grC\equiv\grD$.
+
 
 \begin{remark}\label{prop_approx_el_eq}
-If $\grD$ is approximable of sort $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$. The same holds for approximability from below and from above. In fact, if the set $\grD$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for every $n$
+Let $\grC\subseteq\U^{|{\gr z}|}$. If $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\hyperref[expansions]{\ref{invariant}.\ref{expansions}} for the definition. The same holds for approximability from below and from above. In fact, if the set $\grD$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for every $n$
 
 \hfil$\displaystyle\A {\gr z_1},\dots,{\gr z_n}\;\E {\mr x}\ \bigwedge^n_{i=1}\big[\phi({\mr x}\,;{\gr z_i})\ \iff\ {\gr z_i}\in{\gr \D}\big]$. 
 
 So the same holds for any $\grC\equiv\grD$. As for approximability from below, add the conjunct $\A {\gr z}\,\big[\phi({\mr x}\,;{\gr z})\imp {\gr z}\in\grD\big]$ to the formula above, and similarly for approximability from above.\QED
 \end{remark}
 
+
+\begin{proposition}
+Suppose $\grC,\grD$ are both approximated by  $\psi({\mr x}\,;{\gr z})\in L(A)$ and invariant over $A$.  If $\grC\equiv_A\grD$ then ?????  there is an $A$-automorphism of $\U$ such that $f[\grC]=\grD$. 
+\end{proposition}
+
+\begin{proof}
+\def\grsC{{\gr\C'}}
+\def\grsD{{\gr\D'}}
+Let $\<\U',\grsC,\grsD\>$ be a saturated elementary extension of $\<\U,\grC,\grD\>$ of larger cardinality. Let ${\mr c'}\in\U^{|{\mr x}|}$ be such that $\phi({\mr c'}\,;{\gr\U'})\cap\U^{|{\gr z}|}=\grC$. By saturation and elementarity, there is a ${\mr d'}\equiv_A{\mr c'}$ such that $\phi({\mr d'}\,;{\gr\U'})\cap\U^{|{\gr z}|}=\grD$. Then there is an 
+
+or some 
+\end{proof}
 
 \begin{lemma}\label{lem_harrington}
 Suppose $\grB\subseteq\U^{|{\gr z}|}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\gr z}\,;{\mr x})^*$, respectively. Then the following are equivalent
@@ -88,10 +102,10 @@ Suppose $\grB\subseteq\U^{|{\gr z}|}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are appr
 \begin{proof}
 \def\mrsA{{\mr\Aa'}}
 \def\grsB{{\gr\B'}}
-It suffices to prove \ssf{1}$\IMP$\ssf{2} because the converse implication is equivalent. Let $\<\U',\mrsA,\grsB\>$ be a saturated  elementary extension of  $\<\U,\mrA,\grB\>$ of larger cardinality.  Assume \ssf{1}, then by the remark above and saturation, there is an ${\mr a'}\in\mrsA$ such that $\phi({\mr a'}\,;{\gr\U'})=_{\U}\grsB$. Again by saturation and the remark above, there is a ${\gr b'}\in\grsB$ such that $\phi({\mr\U'}\,;{\gr b'})=_{\U,\, {\mr a'}}\mrsA$ which implies $\phi({\mr a'}\,;{\gr b'})$. Now, \ssf{2} follows by elementarity.
+It suffices to prove \ssf{1}$\IMP$\ssf{2} because the converse implication is equivalent. Let $\<\U',\mrsA,\grsB\>$ be a saturated  elementary extension of  $\<\U,\mrA,\grB\>$ of larger cardinality.  Assume \ssf{1} then, by the remark above and saturation, there is an ${\mr a'}\in\mrsA$ such that $\phi({\mr a'}\,;{\gr\U'})=_{\U}\grsB$. Again by saturation and the remark above, there is a ${\gr b'}\in\U'^{|{\gr z}|}$ such that $\phi({\mr\U'}\,;{\gr b'})=_{\U,\, {\mr a'}}\mrsA$ which implies $\phi({\mr a'}\,;{\gr b'})$. Hence ${\gr b'}\in\grsB$ and \ssf{2} follows.
 \end{proof}
 
-We say that a set $\grD$ approximable by $\phi({\mr x}\,;{\gr z})$ is stationary over $A$ if it is invariant over $A$ and for any other such set $\grC$ if $\grC=_A\grD$ then  $\grC=\grD$. Note that the notion of stationary depends only on $\phi({\mr x}\,;{\gr z})$ and $A^{|{\gr z}|}\cap\grD$. 
+We say that a set $\grD$ approximable by $\phi({\mr x}\,;{\gr z})$ is stationary over $A$ if it is invariant over $A$ and for any other such set $\grC$ if $\grC=_A\grD$ then $\grC=\grD$. Note that the notion of stationary depends only on $\phi({\mr x}\,;{\gr z})$ and $A^{|{\gr z}|}\cap\grD$. 
 
 
 

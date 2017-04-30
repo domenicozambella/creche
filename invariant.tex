@@ -15,7 +15,7 @@
 \def\gr{\color{green}}
 
 
-In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$. Notation and implicit assumptions are as presented in Section~\ref{saturation}.\ref{monster}.
+In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$. Notation and implicit assumptions are as presented in Section~\hyperref[monster]{\ref{saturation}.\ref{monster}}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -63,7 +63,7 @@ Let $p({\mr x})\subseteq L(\U)$ be a consistent type. We say that \emph{$p(x)$ i
 
 In other words, $p({\mr x})$ is invariant over $A$ if the sets $\D_{p,\phi}$ are all invariant over $A$. 
 
-One should not confuse the notions of \textit{invariant type\/} with that of \textit{invariant type-definable set}. The first is mostly applied to global types and refers to the invariance of a family of subsets of $\U^{|{\gr z}|}$. The latter refers to sets of the form $p({\mr\U})\subseteq\U^{|{\mr x}|}$ where $p({\mr x})$ some type of small size.
+One should not confuse the notions of \textit{invariant type\/} with that of \textit{invariant type-definable set}. The first is mostly applied to global types and refers to the invariance of a family of subsets of $\U^{|{\gr z}|}$. The latter refers to sets of the form $p({\mr\U})\subseteq\U^{|{\mr x}|}$ where $p({\mr x})$ a type of small size.
 
 We say that \emph{$p(x)$ does not split over $A$\/} if
 
@@ -471,19 +471,25 @@ Sia $p(x)\in S(\U)$ un tipo globale invariante ed $A$ un insieme arbitrario. All
 
 
 \end{comment}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Expansions}
 \label{expansions}
 
-Given $\D\subseteq\U^{|{\gr z}|}$, we will occasionally find it convenient to expand the language with a predicate for ${\gr z}\in\D$. When ${\gr z}$ finite tuple, it is straightforward how to define such an expansion. When ${\gr z}$ is an infinite tuple, though the intuition stays essentially the same, a more involved definition is required because first-order logic does not allow infinitary predicates.
- 
-We write \emph{$L(\D)$\/} for a two sorted language. We call the two sorts the home sort and the ${\gr z}\jj$sort. The canonical expansion of $\U$ to an $L(\D)\jj$structure is denoted by $\<\U,\D\>$, The domain of the home sort is $\U$, the domain of the ${\gr z}\jj$sort is $\U^{|{\gr z}|}$. Besides the symbols of $L$, there is a function symbol $\pi_i$ for every $i<|{\gr z}|$. These functions have many-sorted arity $\<{\gr z},0\>$  (see Section~\ref{imaginary}.\ref{many-sorted} for the notation) which are interpreted as the projection to the $i\jj$coordinate. There is also a predicate of many-sorted arity $\<{\gr z}\>$ interpreted as $\D$.
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{15ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-The definition above is generalized in the obvious way if for $\D$ we take a tuple $\<\D_i:i<\lambda\>$ of subsets of $\U^{|{\gr z}|}$.
+Given ${\gr\D}\subseteq\U^{|{\gr z}|}$, we will occasionally find it convenient to expand the language $L$ with a predicate for ${\gr z}\in{\gr\D}$. We denote by \emph{$L(\D)$\/} such expansion. We denote by $\<\U,{\gr\D}\>$ the corresponding expansion of $\U$. If  ${\gr\C},{\gr\D}\subseteq\U^{|{\gr z}|}$ write $C\equiv_A{\gr\D}$ for $\<\U,{\gr\C}\>\equiv_A\<\U,{\gr\D}\>$. As usual, $L({\gr\D})$ denotes also the set of formulas in that language, and we write  $L(A\,;\D)$ for the set of formulas with parameters from $A$.
 
-As usual, $L(\D)$ denotes also the set of formulas in that language, and we write  $L(A\,;\D)$ for the set of formulas with parameters from $A$.
 
-If  $\C,\D\subseteq\U^{|{\gr z}|}$ write $C\equiv_A\D$ for $\<\U,\C\>\equiv_A\<\U,\D\>$.
+
+When ${\gr z}$ finite tuple, it is straightforward how to define such an expansions. But when ${\gr z}$ is an infinite tuple, though the intuition stays essentially the same, a more involved definition is required because first-order logic does not allow infinitary predicates. We think of $L(\D)$ for a two sorted language. We call the two sorts the home sort and the ${\gr z}\jj$sort. The canonical expansion of $\U$ to an $L({\gr\D})\jj$structure is denoted by $\<\U,{\gr\D}\>$, The domain of the home sort is $\U$, the domain of the ${\gr z}\jj$sort is $\U^{|{\gr z}|}$. Besides the symbols of $L$, there is a function symbol $\pi_i$ for every $i<|{\gr z}|$. These functions have many-sorted arity $\<{\gr z},0\>$  (see Section~\ref{imaginary}.\ref{many-sorted} for the notation) which are interpreted as the projection to the $i\jj$coordinate. There is also a predicate of many-sorted arity $\<{\gr z}\>$ interpreted as ${\gr\D}$.
+
+The definitions above are generalized in the obvious way if for ${\gr\D}$ we take a tuple $\<{\gr\D}_i:i<\lambda\>$ of subsets of $\U^{|{\gr z_i}|}$.
+
+
+
 
 % \begin{proposition}
 % If $\D\subseteq\U^{|{\gr z}|}$ is invariant over $A$ than every $L(A\,;\D)\jj$definable set is invariant over $A$. 
@@ -505,7 +511,7 @@ Let $c=\<c_i:i\in I\>$ be an $A\jj$indiscernible sequence. For every $I_0,I_1\in
 
 
 \begin{exercise}
-Prove that if $\C\subseteq\U^{|{\gr z}|}$ is type-definable over $B$ then $\equiv_{A,B}$ implies $\equiv_{A\,;\C}$.\QED
+Prove that if ${\gr\C}\subseteq\U^{|{\gr z}|}$ is type-definable over $B$ then $\equiv_{A,B}$ implies $\equiv_{A\,;\C}$.\QED
 \end{exercise} 
 
 

@@ -136,9 +136,11 @@ whose consistence need to be verified.\QED%la cui consistenza dev'essere verific
 Let $\phi(x)\in L(\U)$ and fix an arbitrary set $A$. Prove that the following are equivalent
 \begin{itemize}
 \item[1.] there is some model $M$ containing $A$ and such that $M\cap\phi(\U)=\0$;
-\item[2.] there is no consistent formula $\psi(z_1,\dots,z_n)\in L(A)$ such that \smash{$\displaystyle\psi(z_1,\dots,z_n)\imp\bigwedge^n_{i=1}\phi(z_i)$}.
+\item[2.] there is no consistent formula $\psi(z_1,\dots,z_n)\in L(A)$ such that
+
+ \hfil$\displaystyle\psi(z_1,\dots,z_n)\imp\bigwedge^n_{i=1}\phi(z_i)$.
 \end{itemize}
-Hint: for some $A\subseteq N$, let $c=\<c_i:i<\lambda\>$ be an enumeration of $N^{|x|}$. Let $p(z)=\tp(c/A)$.  Prove that \ssf{2} implies the consistency of the type $p(z)\,\cup\, \big\{\neg\phi(z_i)\, :\, i<\lambda\big\}$ and deduce the existence of the required $M$.\QED
+Hint: let $c=\<c_i:i<\lambda\>$ be an enumeration of $N^{|x|}$, where $N$ is any model containing $A$. Let $p(z)=\tp(c/A)$.  Prove that \ssf{2} implies the consistency of the type $p(z)\,\cup\, \big\{\neg\phi(z_i)\, :\, i<\lambda\big\}$ and deduce the existence of the required $M$.\QED
 \end{exercise}
 
 
@@ -165,9 +167,9 @@ The following are equivalent
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3} are immediate, we prove \ssf{3}$\IMP$\ssf{1}.  Fix a formula $\phi({\mr x}\,;{\gr z})\in L$ and an elementary extension $N$ as required by \ssf{2}. Let $p({\gr z})\subseteq L$ be the following type
+Implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3} are immediate, we prove \ssf{3}$\IMP$\ssf{1}.  Let $\phi({\mr x}\,;{\gr z})\in L$ and fix an elementary extension $N$ as required by \ssf{2}. Let $p({\gr z})\subseteq L$ be the following type
 
-\hfil$p({\gr z})\ \ \deq\ \ \Big\{ \E^{> n}{\mr x}\;\phi({\mr x}\,;{\gr z})\ \wedge\ \E^{> n}{\mr x}\;\neg\phi({\mr x}\,;{\gr z}) \ \ :\ \ n\in\omega\Big\}$.
+\hfil$p({\gr z})\ \ =\ \ \Big\{ \E^{> n}{\mr x}\;\phi({\mr x}\,;{\gr z})\ \wedge\ \E^{> n}{\mr x}\;\neg\phi({\mr x}\,;{\gr z}) \ \ :\ \ n\in\omega\Big\}$.
 
 As $N$ is minimal, $N\notmodels \E z\,p(z)$. By saturation $p(z)$ is not finitely consistent in $M$. Hence, for some $n$ 
 
