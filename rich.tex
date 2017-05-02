@@ -10,7 +10,7 @@
 We introduce \textit{Fra\"iss\'e limits}, aleas \textit{homogeneous-universal\/} or \textit{generic\/} structures, which here we call \textit{rich\/} models, after Poizat. Rich models generalize the examples in Chapters~\ref{relational} and the many more to come. We also prove \textit{elimination of quantifiers\/} for the theories introduced in Chapters~\ref{relational}.
 
 \section{Rich models.}\label{rich}
-We now define \textit{categories of models and partial morphisms}. These are example of concrete categories as intended in category theory. However, apart from the name, in what follows we dispense with all notions of category theory as they would make the exposition less basic than intended (and not provide much more technical instruments). We refer the interested reader to the references at the end of the chapter.
+We now define \textit{categories of models and partial morphisms}. These are example of concrete categories as intended in category theory. However, apart from the name, in what follows we dispense with all notions of category theory as they would make the exposition less basic than intended (without providing more technical instruments). We refer the interested reader to the references at the end of the chapter.
 
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Warning: the terminology introduced in this section is not standard. In the literature many details are left implicit. This is generally safe when the category used is fixed. Here we prefer to be more explicit because, when discussing saturation and quantifier elimination, it helps to compare different categories.
 
@@ -39,15 +39,22 @@ We call \ssf{c6} the \emph{finite character of morphisms}. Note that it implies 
 The following two definitions assume \ssf{c2}. The generalization to non injective morphisms is not straightforward (in fact, there are two generalizations: \textit{projective\/} and \textit{inductive\/}). These generalizations are not very common and will not be considered here. 
 
 \begin{definition}
-Assume that $\M$ satisfies \ssf{c0-c2} of Definition~\ref{def_com_c}. We say that a model $N$ is \emph{$\lambda\jj$rich\/} if for every model $M$ of cardinality $\le\lambda$ and every morphism $k:M\imp N$ of cardinality $<\lambda$ there is a total morphism $h:M\imp N$ that extends $k$. We say that $N$ is \emph{rich\/} tout court  if it is $\lambda\jj$rich for $\lambda=|N|$. When $\M_{\rm ob}=\Mod(T_0)$ for some theory $T_0$ and $\M_{\rm ar}$ is clear from the context, we say \emph{rich model of $T_0$}.\QED
+Assume that $\M$ satisfies \ssf{c0-c2} of Definition~\ref{def_com_c}. We say that a model $N$ is \emph{$\lambda\jj$rich\/} if for every model $M$ of cardinality $\le\lambda$ and every morphism $k:M\imp N$ of cardinality $<\lambda$ there is an embedding $h:M\hookrightarrow N$ that extends $k$. We say that $N$ is \emph{rich\/} tout court  if it is $\lambda\jj$rich for $\lambda=|N|$. When $\M_{\rm ob}=\Mod(T_0)$ for some theory $T_0$ and $\M_{\rm ar}$ is clear from the context, we say \emph{rich model of $T_0$}.\QED
 \end{definition}
 
 Rich models are also called \textit{Fra\"iss\'e limits} or \textit{homogeneous-universal\/} for a reason that will soon be clear; they are also called \textit{generic}. Unfortunately these names are either too long or too generic, so we opt for the less common term \textit{rich\/} proposed by Poizat. 
 
 The following two notions are deeply connected with richness.
 
+
+\newcommand{\hookdoubleheadrightarrow}{%
+  \hookrightarrow\mathrel{\mspace{-15mu}}\rightarrow
+}
+
+
+
 \begin{definition}\label{def_omogenea_universale}
-Assume that $\M$ satisfies \ssf{c0-c2} of Definition~\ref{def_com_c}. We say that a model $N$ is \emph{$\lambda\jj$universal\/} if for every model $M$ of cardinality $\le\lambda$ there is a total morphism $k:M\to N$. We say that a model $N$ is \emph{$\lambda\jj$homogeneous\/} if every $k:N\to N$ of cardinality $<\lambda$ extends to a bijective morphism $h:N\to N$ (an automorphism when \ssf{c3} below holds).
+Assume that $\M$ satisfies \ssf{c0-c2} of Definition~\ref{def_com_c}. We say that a model $N$ is \emph{$\lambda\jj$universal\/} if for every model $M$ of cardinality $\le\lambda$ there is an embedding $k:M\hookrightarrow N$. We say that a model $N$ is \emph{$\lambda\jj$homogeneous\/} if every $k:N\to N$ of cardinality $<\lambda$ extends to a bijective morphism $h:N\hookdoubleheadrightarrow N$ (an automorphism when \ssf{c3} below holds).
 
 Note that the larger $\M_{\rm ar}$, the stronger notion of homogeneity. When  $\M_{\rm ar}$ contains all partial isomorphisms between models (the largest class of morphisms considered here), it is common to say \emph{$\lambda$-ultra\-homo\-geneous\/} for $\lambda\jj$homogeneous. 
 
@@ -74,7 +81,7 @@ The assumption on the cardinality $L$ is only necessary to apply the downward L\
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Closure under union of chains of morphisms, which is ensured by \ssf{c5}, immediately yields \ssf{2}$\IMP$\ssf{1}. As for implication \ssf{1}$\IMP$\ssf{2} we only need to consider the case $\lambda<|M|$.  By the downward L\"owenheim-Skolem theorem there is an  $M'\preceq M$ of cardinality $\lambda$ containing $b$. Let $h:M'\to N$ be the total morphism obtained from \ssf{1}. By \ssf{c4}, the map  $h:M\to N$ is a composition of morphisms, hence a morphism.
+Closure under union of chains of morphisms, which is ensured by \ssf{c5}, immediately yields \ssf{2}$\IMP$\ssf{1}. As for implication \ssf{1}$\IMP$\ssf{2} we only need to consider the case $\lambda<|M|$.  By the downward L\"owenheim-Skolem theorem there is an  $M'\preceq M$ of cardinality $\lambda$ containing $b$. Let $h:M'\hookrightarrow N$ be the embedding obtained from \ssf{1}. By \ssf{c4}, the map  $h:M\to N$ is a composition of morphisms, hence a morphism.
 \end{proof}
 
 The following theorem subsumes both Theorem~\ref{zigzagcantor} and Theorem~\ref{gaomegacat}.
@@ -102,7 +109,7 @@ It is obvious that $\lambda\jj$rich models are $\lambda\jj$universals and, by Th
 \end{itemize}
 \end{theorem}
 \begin{proof} 
-Implication \ssf{1}$\IMP$\ssf{2} is clear as noted above, so we prove \ssf{2}$\IMP$\ssf{1}. Let $k:M\imp N$ be a morphism of cardinality $<|N|$ and let $b\in M$. As $N$ is universal, there is a morphism \hbox{$f:M\imp N$} defined on $\dom k\cup\big\{b\big\}$. By \ssf{c2} the map $k\circ f^{-1}:N\imp N$ is a morphism of cardinality $<|N|$. By homogeneity it has an extension to a bijective morphism $h:N\imp N$. It is immediate that $h\circ f:M\imp N$ is the required extension of $k$.
+Implication \ssf{1}$\IMP$\ssf{2} is clear as noted above, so we prove \ssf{2}$\IMP$\ssf{1}. Let $k:M\imp N$ be a morphism of cardinality $<|N|$ and let $b\in M$. As $N$ is universal, there is a morphism \hbox{$f:M\imp N$} defined on $\dom k\cup\big\{b\big\}$. By \ssf{c2} the map $k\circ f^{-1}:N\imp N$ is a morphism of cardinality $<|N|$. By homogeneity it has an extension to a bijective morphism $h:N\hookdoubleheadrightarrow N$. It is immediate that $h\circ f:M\imp N$ is the required extension of $k$.
 \end{proof}
 
 
@@ -117,7 +124,7 @@ Next theorem is one of the most important facts about $\lambda$-rich models
 \end{theorem}
 
 \begin{proof}
-Let $k:M\to N$ be a morphism between rich models. It suffices to prove that every finite restriction of $k$ is elementary. By \ssf{c1}, we may as well assume that $k$ itself is finite. It suffices to construct $M'\preceq M$ and  $N'\preceq N$ together with a morphism $h:M\to N$ that extends $k$ and maps $M'$ bijectively to $N'$. Then by \ssf{c4} the map $h:M'\to N'$ is also a morphism because it is the composition of morphisms. Finally, by \ssf{c3}, it is an isomorphism, in particular an elementary map.
+Let $k:M\to N$ be a morphism between rich models. It suffices to prove that every finite restriction of $k$ is elementary. By \ssf{c1}, we may as well assume that $k$ itself is finite. It suffices to construct $M'\preceq M$ and  $N'\preceq N$ together with a morphism $h:M\to N$ that extends $k$ and maps $M'$ bijectively to $N'$. Then by \ssf{c4} the map $h:M'\hookdoubleheadrightarrow N'$ is also a morphism because it is the composition of morphisms. Finally, by \ssf{c3}, it is an isomorphism, in particular an elementary map.
 
 We construct simultaneously a chain $\<A_i:i{<}\lambda\>$ of subsets of $M$, a chain $\<B_i:i{<}\lambda\>$ of subsets of $N$, and a chain functions $\<h_i:i{<}\lambda\>$ such that $h_i:M\to N$ are mor\-phisms, $\dom h_i\subseteq A_i$ and $\range h_i\subseteq B_i$. In the end we set
 
@@ -129,7 +136,7 @@ Let $h_{i+1}:M\to N$ be an extension of $h_i$ such that $\dom h_{i+1}=\dom h_i\c
 
 The elements $a$ and $b$, added to $M'$ and $N'$, ensure that $M'\preceq M$ and $N'\preceq N$, by the Tarski-Vaught test. In fact every formula in $L(M')$ belongs to $L(A_{i_1})$ for some $i_1$ and it occurs as $i_2\jj$ formula in the enumeration that has been fixed along with the construction. Therefore at stage $i=\<i_1,i_2\>$ a witness is added to $M'$. The same happens for formulas in $L(N')$. 
 
-A similar argument shows that the elements $a'$ and $b'$, added to the domain and range of $h$, ensure that the map $h:M'\to N'$ is both total and surjective. 
+A similar argument shows that the elements $a'$ and $b'$, added to the domain and range of $h$, ensure that the $h:M'\hookdoubleheadrightarrow N'$ is both total and surjective. 
 \end{proof}
 
 By the theorem below  we can unambiguisly speak of \emph{the theory of rich models}. In fact it immediately follows that if $M$ is $\mu$-rich and $N$ is $\lambda$-rich then $M\equiv N$.
@@ -153,7 +160,7 @@ When partial isomorphism between models of a given theory $T$ coincide with elem
 We will discuss general criteria for elimination of quantifiers in Chapter~\ref{eliminazione}, here we report without proof the following theorem.
 
 \begin{theorem}\label{thm_tutteleimmersionisonoelementari=eliminazioneqantificatori}
-Let $T$ be a theory that decides the characteristic of its models. The following are equivalent
+Let $T$ be a theory that decides the characteristic of its models (see Definition~\ref{def_characteristic}). The following are equivalent
 \begin{itemize}
 \item[1.] $T$ has elimination of quantifiers;
 \item[2.] every partial isomorphism between models $T$ is an elementary map.\QED
@@ -241,13 +248,62 @@ Implication \ssf{1}$\IMP$\ssf{2} is clear. To prove \ssf{2}$\IMP$\ssf{1} we gene
 
 \section{The amalgamation property}
 
-We say that $\M$ has the \emph{amalgamation property\/} if for every pair of morphisms $f_1:M\to M_1$ and $f_2:M\to M_2$ there are some total morphism $g_1:M_1\to N$ and $g_2:M_2\to N$ such that $g_1\circ f_1\, (a) = g_2\circ f_2\, (a)$ for every $a\;\in\; \dom (g_1\circ f_1)\; \cap\; \dom (g_2\circ f_2)$.
+We say that $\M$ has the \emph{amalgamation property\/} if for every pair of morphisms $f_1:M\to M_1$ and $f_2:M\to M_2$ there are two of embeddings $g_1:M_1\hookrightarrow N$ and $g_2:M_2\hookrightarrow N$ such that $g_1\circ f_1\, (a) = g_2\circ f_2\, (a)$ for every $a$ in the common domain of definition, $\dom (f_1)\; \cap\; \dom (f_2)$.
 
-We write \emph{$M\le N$\/} for $M\subseteq N$ and $\id_M:M\to N$ is a morphism. We say that $\<M_i:i<\lambda\>$ is a \emph{$\le\jj$chain\/} if $M_i\le M_j$ for all $i<j<\lambda$.
 
-We say that $h:M'\to N'$ \emph{extends\/} $k:M\to N$ if $k\subseteq h$, $M\le M'$, and  $N\le N'$. As we assume that morphisms are invertible, we may express the amalgamation property in the following convenient form: every morphism extends to a total one.
+\hfil\begin{tikzcd}[row sep=tiny]
+& M_1  \arrow[dr, hook, "g_1\strut" above] & \\
+M \arrow[ur, "f_1" above] \arrow[dr, "f_1" below] &  & N \\
+& M_2  \arrow[ur, hook, "g_2\rule{0ex}{1ex}" below] & \\
+\end{tikzcd}
 
-For the following theorem to hold we need the following property:
+As we assume that morphisms are invertible, we may express the amalgamation property in a more concise form. We need a new defnition.
+
+We write \emph{$M\le N$\/} for $M\subseteq N$ and $\id_M:M\hookrightarrow N$ is a morphism. We say that $h:M'\to N'$ \emph{extends to\/} $k:M\to N$ if $k\subseteq h$, $M\le M'$, and  $N\le N'$.
+
+
+\begin{proposition}
+Assume \ssf{c2}, then the following are equivalent
+\begin{itemize}
+\item[1.] $\M$ has the amalgamation property;
+\item[2.] every morphism $k:M\to N$ extends to total morphism $g : M\hookrightarrow N'$, which corresponde to the following diagram
+
+\hfil\begin{tikzcd}[row sep=tiny]
+& N  \arrow[dr, hook, "\kern2ex{\rm id}_N" above] & \\
+M \arrow[ur, "k\kern1ex" above] \arrow[rr, hook, "g" below] &  & N' \\
+\end{tikzcd}
+
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+\ssf{1}$\IMP$\ssf{2} Given $k:M\to N$, the amalgamation property yields the following commutative diagram which can be simplified to the diagram at the right
+
+\hfil\begin{tikzcd}[row sep=tiny]
+& N  \arrow[dr, hook, "g_1\strut" above] & \\
+M \arrow[ur, "\kern1ex k" above, near start] \arrow[dr, "\id_M" below, near start] &  & N' \\
+& M  \arrow[ur, hook, "g_2\rule{0ex}{1ex}" below] & \\
+\end{tikzcd}
+\hfil\begin{tikzcd}[row sep=tiny]
+& N  \arrow[dr, hook, "g_1\strut" above] & \\
+M \arrow[ur, "\kern1ex k" above, near start] \arrow[rr, hook, "g_2" below] &  & N' \\
+\end{tikzcd}
+
+Up to isomorphism we can assume $g_2=\id_M$, i.e.\@ that $N\le N'$. Hence $g_2:M\hookrightarrow N'$ is the required extension of $k:M\to N$.
+
+\ssf{2}$\IMP$\ssf{1} Let  $f_1:M\to M_1$ and $f_2:M\to M_2$ be given and define $k=f_2\circ f_1^{-1}:M_1\to M_2$. Let  $g:M_1\hookrightarrow N'$ be the extension ensured by \ssf{2}. Then we obtain
+
+\hfil\begin{tikzcd}[row sep=normal, column sep=large]
+& M_1  \arrow[dd, "f_2\circ f_1^{-1}"] \arrow[dr, hook, "\kern1ex g" above] & \\
+M \arrow[ur, "f_1\kern1ex" above] \arrow[dr, "f_2\kern1ex" below] &  & N' \\
+& M_2  \arrow[ur, hook, "\kern3ex\id_{M_2}\rule{0ex}{1.5ex}" below] & \\
+\end{tikzcd}
+
+as required.
+\end{proof}
+
+We say that $\<M_i:i<\lambda\>$ is a \emph{$\le\jj$chain\/} if $M_i\le M_j$ for all $i<j<\lambda$. For the next theorem to hold we need the following property:
+
 \begin{definition}
 We say that $\M$ is \emph{closed under union of $\le\jj$chains\/} if
 \begin{itemize}
@@ -261,16 +317,16 @@ The following is a general existence theorem for rich models.
 \begin{theorem} Let $\lambda$ be a cardinal such that $\lambda=\lambda^{<\lambda}$. (Assume~\ref{ass_c0-5})  \  Assume further that $\M$ has the amalgamation property and is closed under union of $\le$ chains. Then there is a rich model $N$ of cardinality $\lambda$.
 \end{theorem}
 
-\begin{proof} We construct $N$ as union of a $\le\jj$chain of models $\langle N_i:i < \lambda\rangle$ such that $|N_i| = \lambda$ for all $i<\lambda$. Let $N_0$ be any model of cardinality $\lambda$. At stage $i+1$, let $f:M\imp N_i$ be the least morphism (in a well-ordering that we specify below) such that $|f|<|M|\le\lambda$ and $f$ has no extension to an embedding $f':M\imp N_i$. Apply the amalgamation property to obtain an total morphism $f':M\imp N'$ that extends $f:M\imp N_i$. By the downword L\"owenheim-Skolem Theorem we may assume $|N'|=\lambda$. Let $N_{i+1}=N'$. At limit stages take the union.
+\begin{proof} We construct $N$ as union of a $\le\jj$chain of models $\langle N_i:i < \lambda\rangle$ such that $|N_i| = \lambda$ for all $i<\lambda$. Let $N_0$ be any model of cardinality $\lambda$. At stage $i+1$, let $f:M\imp N_i$ be the least morphism (in a well-ordering that we specify below) such that $|f|<|M|\le\lambda$ and $f$ has no extension to an embedding $f':M\hookrightarrow N_i$. Apply the amalgamation property to obtain an total morphism $f':M\imp N'$ that extends $f:M\imp N_i$. By the downword L\"owenheim-Skolem Theorem we may assume $|N'|=\lambda$. Let $N_{i+1}=N'$. At limit stages take the union.
 
 The well-ordering mentioned needs to be chosen so that in the end we forget nobody. So, first at each stage we well-order the isomorphism-type of the morphisms $f:M\imp N_i$ such that  $f<|M|\le\lambda$. Then the required well-ordering is obtained by dovetailing all these well-orderings.  The length of this enumeration is at most $2^\lambda\cdot\lambda^{<\lambda}$, which is $\lambda$ by hypothesis.
 
-We check that $N$ is rich. Let $f:M\imp N$ be a morphism and $|f|<|M|\le\lambda$. The cofinality of $\lambda$ is larger than $|f|$, hence $\range f\subseteq N_i$ for some $i<\lambda$. So $f:M\imp N_i$ is a morphism and at some stage $j$ we have ensured the existence of a total morphism of $f':M\imp N_{j+1}$ that extends $f$.
+We check that $N$ is rich. Let $f:M\imp N$ be a morphism and $|f|<|M|\le\lambda$. The cofinality of $\lambda$ is larger than $|f|$, hence $\range f\subseteq N_i$ for some $i<\lambda$. So $f:M\imp N_i$ is a morphism and at some stage $j$ we have ensured the existence of an embedding of $f':M\hookrightarrow N_{j+1}$ that extends $f$.
 \end{proof}
 
 
 
-\section{Notes}
+\section{Notes and references}
 \begin{biblist}[]\normalsize
 
  \bib{LR}{article}{
