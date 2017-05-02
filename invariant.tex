@@ -14,8 +14,7 @@
 \def\mr{\color{brown}}
 \def\gr{\color{green}}
 
-
-In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$. Notation and implicit assumptions are as presented in Section~\hyperref[monster]{\ref{saturation}.\ref{monster}}.
+In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$. Notation and implicit assumptions are as presented in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -77,9 +76,7 @@ By homogeneity, non splitting is equivalent to invariance. Yet another important
 
 \ceq{\ssf{it3.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\equiv_{A,{\mr c}}{\gr b}}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$. 
 
-
-
-The easiest way to obtain invariant types is via types that are finitely satisfiable in some small set. We say that a type \emph{$p(x)$ is finitely satisfiable in $A$\/} if $\phi(\U)\cap A^{|{\mr x}|}\neq\0$ for every $\phi({\mr x})$ conjunction of formulas in $p$. 
+The easiest way to obtain invariant types is via types that are finitely satisfiable. We say that a type \emph{$p(x)$ is finitely satisfiable in $A$\/} if $\phi(\U)\cap A^{|{\mr x}|}\neq\0$ for every $\phi({\mr x})$ conjunction of formulas in $p$. 
 
 Note that by elementarity every type over a model is finitely satisfiable in the model, that is, if $p({\mr x})\subseteq L(M)$ for some model $M$, then $p({\mr x})$ is finitely satisfiable in $M$.
 
@@ -98,7 +95,7 @@ Every type $q({\mr x})\subseteq L(\U)$ finitely satisfiable in $A$ has an extens
 \end{proposition}
 
 \begin{proof} 
-Let $p({\mr x})\subseteq L(\U)$ be maximal among the types containing $q({\mr x})$ and finitely satisfiable in $A$. We check that $p({\mr x})$ is complete. Suppose for a contradiction that $p({\mr x})$ contains neither $\psi({\mr x})$ nor $\neg\psi({\mr x})$. Then  neither $p({\mr x})\cup\big\{\psi({\mr x})\big\}$ nor $p({\mr x})\cup\big\{\neg\psi({\mr x})\big\}$ is finitely satisfiable in $A$. This contradicts the finite satisfiability of $p({\mr x})$.
+Let $p({\mr x})\subseteq L(\U)$ be maximal among the types containing $q({\mr x})$ and finitely satisfiable in $A$. We prove that $p({\mr x})$ is complete. If for a contradiction that $p({\mr x})$ contains neither $\psi({\mr x})$ nor $\neg\psi({\mr x})$. Then  neither $p({\mr x})\cup\big\{\psi({\mr x})\big\}$ nor $p({\mr x})\cup\big\{\neg\psi({\mr x})\big\}$ is finitely satisfiable in $A$. This contradicts the finite satisfiability of $p({\mr x})$.
 \end{proof}
 
 When $q({\mr x})$ finitely satisfiable in $A$, any type that extends $q({\mr x})$ and is also finitely satisfiable in $A$ is called a \emph{coheir} of $q({\mr x})$  (a somewhat confusing terminology).
@@ -323,7 +320,7 @@ Let $a=\<{\mr a_i}:i\in I\>$ be an $A\jj$indiscernible sequence and let $I\subse
 \end{exercise}
 
 \begin{exercise}
-  Let ${\mr a}\equiv_A{\mr b}$ and define $q({\mr x})=\tp({\mr a}/A)=\tp({\mr b}/A)$. Prove that if $q({\mr x})$ extends to a global $A\jj$invariant type $p({\mr x})\in S(\U)$ then there is a sequence $c=\<{\mr c_i}:i<\omega\>$ such that ${\mr a},c$ and ${\mr b},c$ are both sequences of $A\jj$indiscernibles.\QED
+Let ${\mr a}\equiv_A{\mr b}$ and let $q({\mr x})=\tp({\mr a}/A)=\tp({\mr b}/A)$. Prove that if $q({\mr x})$ extends to a global $A\jj$invariant type $p({\mr x})\in S(\U)$ then there is a sequence $c=\<{\mr c_i}:i<\omega\>$ such that ${\mr a},c$ and ${\mr b},c$ are both sequences of $A\jj$indiscernibles.\QED
 \end{exercise}
 
 

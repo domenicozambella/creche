@@ -72,40 +72,14 @@ The implication \ssf{1}$\IMP$\ssf{2} is obtained by compactness and the equivale
 
 
 \begin{remark}\label{prop_approx_el_eq}
-Let $\grC\subseteq\U^{|{\gr z}|}$. If $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\hyperref[expansions]{\ref{invariant}.\ref{expansions}} for the definition. The same holds for approximability from below and from above. In fact, if the set $\grD$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for every $n$
+Let $\grC\subseteq\U^{|{\gr z}|}$. If $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\hyperref[expansions]{\ref*{invariant}.\ref*{expansions}} for the definition. The same holds for approximability from below and from above. In fact, if the set $\grD$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for every $n$
 
 \hfil$\displaystyle\A {\gr z_1},\dots,{\gr z_n}\;\E {\mr x}\ \bigwedge^n_{i=1}\big[\phi({\mr x}\,;{\gr z_i})\ \iff\ {\gr z_i}\in{\gr \D}\big]$. 
 
 So the same holds for any $\grC\equiv\grD$. As for approximability from below, add the conjunct $\A {\gr z}\,\big[\phi({\mr x}\,;{\gr z})\imp {\gr z}\in\grD\big]$ to the formula above, and similarly for approximability from above.\QED
 \end{remark}
 
-
-\begin{proposition}
-Suppose $\grC,\grD$ are both approximated by  $\psi({\mr x}\,;{\gr z})\in L(A)$ and invariant over $A$.  If $\grC\equiv_A\grD$ then ?????  there is an $A$-automorphism of $\U$ such that $f[\grC]=\grD$. 
-\end{proposition}
-
-\begin{proof}
-\def\grsC{{\gr\C'}}
-\def\grsD{{\gr\D'}}
-Let $\<\U',\grsC,\grsD\>$ be a saturated elementary extension of $\<\U,\grC,\grD\>$ of larger cardinality. Let ${\mr c'}\in\U^{|{\mr x}|}$ be such that $\phi({\mr c'}\,;{\gr\U'})\cap\U^{|{\gr z}|}=\grC$. By saturation and elementarity, there is a ${\mr d'}\equiv_A{\mr c'}$ such that $\phi({\mr d'}\,;{\gr\U'})\cap\U^{|{\gr z}|}=\grD$. Then there is an 
-
-or some 
-\end{proof}
-
-\begin{lemma}\label{lem_harrington}
-Suppose $\grB\subseteq\U^{|{\gr z}|}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\gr z}\,;{\mr x})^*$, respectively. Then the following are equivalent
-\begin{itemize}
-\item[1.] $\phi({\mr x}\,;{\gr z})\wedge{\mr x}\in{\mrA}$ approximates $\grB$
-\item[2.] $\phi({\gr z}\,;{\mr x})^*\wedge{\gr z}\in{\grB}$ approximates $\mrA$ 
-\end{itemize}
-\end{lemma}
-\begin{proof}
-\def\mrsA{{\mr\Aa'}}
-\def\grsB{{\gr\B'}}
-It suffices to prove \ssf{1}$\IMP$\ssf{2} because the converse implication is equivalent. Let $\<\U',\mrsA,\grsB\>$ be a saturated  elementary extension of  $\<\U,\mrA,\grB\>$ of larger cardinality.  Assume \ssf{1} then, by the remark above and saturation, there is an ${\mr a'}\in\mrsA$ such that $\phi({\mr a'}\,;{\gr\U'})=_{\U}\grsB$. Again by saturation and the remark above, there is a ${\gr b'}\in\U'^{|{\gr z}|}$ such that $\phi({\mr\U'}\,;{\gr b'})=_{\U,\, {\mr a'}}\mrsA$ which implies $\phi({\mr a'}\,;{\gr b'})$. Hence ${\gr b'}\in\grsB$ and \ssf{2} follows.
-\end{proof}
-
-We say that a set $\grD$ approximable by $\phi({\mr x}\,;{\gr z})$ is stationary over $A$ if it is invariant over $A$ and for any other such set $\grC$ if $\grC=_A\grD$ then $\grC=\grD$. Note that the notion of stationary depends only on $\phi({\mr x}\,;{\gr z})$ and $A^{|{\gr z}|}\cap\grD$. 
+%We say that a set $\grD$ approximable by $\phi({\mr x}\,;{\gr z})$ is stationary over $A$ if it is invariant over $A$ and for any other such set $\grC$ if $\grC=_A\grD$ then $\grC=\grD$. Note that the notion of stationary depends only on $\phi({\mr x}\,;{\gr z})$ and $A^{|{\gr z}|}\cap\grD$. 
 
 
 
@@ -116,22 +90,78 @@ We say that a set $\grD$ approximable by $\phi({\mr x}\,;{\gr z})$ is stationary
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The ladder property}
 
-The \emph{ladder order\/} of a parted formula $\phi({\mr x}\,;{\gr z})$ is the largest ordinal $n$ such that for some ${\mr a_i}\in\U^{|{\mr x}|}$ and ${\gr b_i}\in\U^{|{\gr z}|}$ 
-
-Though we never made it explicit, by \textit{formula\/} most often we mean a pair $\phi(x)$ that consists of a formula and a tuple of variables. In the following we need to deal with two sorts of variables: those that are placeholder for parameters, and those used to define a set. To make things more complicated here and there we shall switch the role of the variables.
+Someone may have noticed that by \textit{formula\/} we most mean a pair $\phi(x)$ that consists of a formula and a tuple of variables. In the following we need to deal with two sorts of variables: those that are placeholder for parameters, and those used to define a set. To make things more complicated here and there we shall switch the role of the variables.
 
 \begin{definition}\label{def_parted-fla}
 A \emph{2-parted formula\/} is a triple $\phi({\mr x}\,;{\gr z})$ consistig of a formula and two tuples of variables. The variables actually occurring in $\phi$ are all among ${\mr x},{\gr z}$. We write $\phi({\gr z}\,;{\mr x})^*$ for the parted formula where the order of the two tuples is switched. The asterisk will avoid confusion with substitution.
 \end{definition}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{}
+
+The \emph{ladder order\/} of a parted formula $\phi({\mr x}\,;{\gr z})$ is the largest $n\in\omega$ such that for some ${\mr a_i}\in\U^{|{\mr x}|}$ and ${\gr b_i}\in\U^{|{\gr z}|}$ 
+
+\ceq{\hfill i< j}{\IMP}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}\hfill for all $i,j<n$
+
+If such an $n$ exists, we say that  $\phi({\mr x}\,;{\gr z})$ is \emph{stalbe}, otherwise we say it is \emph{instable}. Note that $\phi({\mr x}\,;{\gr z})$ is stable if and only if $\phi({\gr z}\,;{\mr x})^*$ is stable.
+
+The following is arguably the most important fact about stable formulas.
+
+\begin{theorem}
+Any $\grD\subseteq\U^{|{\gr z}|}$ approximated by a stable formula is definable. Precisely, if $\phi({\mr x}\,;{\gr z})$ is a stable formula that approximates $\grD$ then there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in\U^{|{\mr x}|}$ such that 
 
 
-Let $D\subseteq A$ be the trace on $A$ of a definable set, then it is the trace of some set $\mrA$ definable over $\acl^\eq A$, and such a set $\mrA$ is unique.
+\ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\phi({\mr a_{i,j}}\,;{\gr z})}
+
+
+\end{theorem}
+
+\begin{proof}
+
+\end{proof}
+
+
+
+
+\begin{lemma}
+Let $\grD\subseteq\U^{|{\gr z}|}$ be approximated from below by  $\phi({\mr x}\,;{\gr z})$, a stable formula. Then there are ${\mr a_1},\dots,{\mr a_n}\in\U^{|{\mr x}|}$ such that 
+
+
+\ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\phi({\mr a_i}\,;{\gr z})}
+
+
+\end{lemma}
+
+\begin{proof}
+
+\end{proof}
+
+
+
+
+
+
+
+
+
+\begin{lemma}
+If $\phi({\mr x}\,;{\gr z})$ is a stable formula then formula 
+
+
+
+\ceq{\hfill \psi({\mr x_1},\dots,{\mr x_m}\,;{\gr z})}{\iff}{\bigwedge^m_{j=1}\phi({\mr x_j}\,;{\gr z})}
+
+
+is stable.
+
+
+\end{lemma}
+
+\begin{proof}
+
+\end{proof}
+
+
+
+
 
 {
 \def\grB{{\gr{\EuScript B}}}
@@ -172,7 +202,39 @@ Which contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
 
 
 
+\begin{remark}
+Suppose $\grB\subseteq\U^{|{\gr z}|}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\gr z}\,;{\mr x})^*$, respectively. Then the following are equivalent
+\begin{itemize}
+\item[1.] $\phi({\mr x}\,;{\gr z})\wedge{\mr x}\in{\mrA}$ approximates $\grB$
+\item[2.] $\phi({\gr z}\,;{\mr x})^*\wedge{\gr z}\in{\grB}$ approximates $\mrA$ 
+\end{itemize}
+\def\mrsA{{\mr\Aa'}}
+\def\grsB{{\gr\B'}}
+Let $\<\U',\mrsA,\grsB\>$ be a saturated  elementary extension of  $\<\U,\mrA,\grB\>$ of larger cardinality.  Then \ssf{1} is equivalent to
 
+\begin{itemize}
+\item[1'.] there is ${\mr a'}\in\mrsA$ such that $\phi({\mr a'}\,;{\gr\U'})=_{\U}\grsB$
+\item[2'.]  there is ${\gr b'}\in\grsB$ such that $\phi({\mr\U'}\,;{\gr b'})=_{\U}\mrsA$
+\end{itemize}
+
+there is an ${\mr a'}\in\mrsA$ such that $\phi({\mr a'}\,;{\gr\U'})=_{\U}\grsB$. Again by saturation and the remark above, there is a ${\gr b'}\in\U'^{|{\gr z}|}$ such that $\phi({\mr\U'}\,;{\gr b'})=_{\U,\, {\mr a'}}\mrsA$ which implies $\phi({\mr a'}\,;{\gr b'})$. Hence ${\gr b'}\in\grsB$ and \ssf{2} follows.
+\end{remark}
+
+\begin{proposition}
+Suppose $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})\in L(A)$, a stable formula, and Lascar invariant over $A$.  Then $\grC\ \equiv_{\acl^\eq A}\grD$ implies $\grC=\grD$. 
+\end{proposition}
+
+\begin{proof}
+\def\grsC{{\gr\C'}}
+\def\grsD{{\gr\D'}}
+\def\mrA{{\mr\Aa}}
+\def\mrsA{{\mr\Aa'}}
+Let ${\gr b}\in\U^{|{\gr z}|}$ be arbitrary, we prove that ${\gr b}\in\grC\iff{\gr b}\in\grD$. Let $\phi({\mr\U}\,;{\gr b})=\mrA$. Let $\<\U',\mrsA,\grsC,\grsD\>$ be a saturated elementary extension of $\<\U,\mrA, \grC,\grD\>$ of larger cardinality. 
+
+Let ${\mr c'}\in\U^{|{\mr x}|}$ be such that $\phi({\mr c'}\,;{\gr\U'})\cap\U^{|{\gr z}|}=\grC$. By saturation and elementarity, there is a ${\mr d'}\equiv_A{\mr c'}$ such that $\phi({\mr d'}\,;{\gr\U'})\cap\U^{|{\gr z}|}=\grD$. Then there is an 
+
+or some 
+\end{proof}
 
 
 We say that $\D\subseteq\U^{|{\gr z}|}$ is \emph{approximable\/} by $\phi({\mr x}\,;{\gr z})$ if for every finite $B\subseteq\U^{|{\gr z}|}$ there is a ${\mr a}\in\U^{|{\mr x}|}$ such that $\phi({\mr a}\,;B)=\D\cap B$. For $A\subseteq\U$, we say approximable \emph{over $A$\/} if we can further require that ${\mr a}\in A^{|{\mr x}|}$. We say \emph{almost over $A$\/} if  ${\mr a}\in M^{|{\mr x}|}$ for every model $M$ containing $A$.
@@ -212,15 +274,18 @@ Only \ssf{1}$\IMP$\ssf{2} requires a proof. Assume \ssf{1}. By stability, $\D$ i
 
 
 \begin{proposition}
-For every $M$ and every externally definable set $\D$ is some $\grB\equiv_M\D$ that is approximable in $M$. 
+If $\grC\equiv_{\acl^\eq A}\grD$ then there is an $M$ containing $A$, such that  $\grC\equiv_M\gr\D$. 
 \end{proposition}
 
 \begin{proof}
 
 \end{proof}
 
+Let $p(x)\subseteq L(\U\,;\grC,\grD)$ be a type which is finitely satisfiable in every model containing $A$. 
 
-\section{Notes e references}
+
+
+\section{Notes and references}
 \begin{biblist}[]\normalsize
 
 
