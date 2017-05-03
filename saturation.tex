@@ -57,7 +57,7 @@ Assume $|L|\le\lambda$ and let $N$ be an infinite structure. Let $\M$ be the cat
 \begin{itemize}
 \item[1] $N$ is a $\lambda$-saturated structure;
 \item[2] $N$ is a $\lambda$-rich model;
-\item[3] $N$ realizes every type $p(x)\subseteq L(A)$, with $|x|\le\lambda$ and $|A|<\lambda$, finitely consistent in $N$.
+\item[3] $N$ realizes all types $p(x)\subseteq L(A)$, with $|x|\le\lambda$ and $|A|<\lambda$, finitely consistent in $N$.
 \end{itemize}
 \end{theorem}
 
@@ -93,13 +93,19 @@ Countable models of $T_{\rm dlo}$ and $T_{\rm rg}$ and uncountable models of $T_
 By quantifier elimination embeddings coincide with elementary embeddings. Then saturation is proved applying Theorem~\ref{saturo->ricco} and the extension lemmas proved in Section~\ref{relational} and~\ref{algebraic}.
 \end{proof}
 
-\begin{exercise}\label{ricchezza_saturazione_EQ}
-Let $T$ be a consistent theory that decides the characteristic of its models. Consider the category that consists of models of $T$ and partial isomorphism. Assume $|L|\le\lambda$ and prove that the following are equivalent
+The following is a useful test for quantifier elimination.
+
+\begin{theorem}\label{thm_ricchezza_saturazione_QE}
+Assume $|L|\le\lambda$. Consider the category that consists of models of $T$ and partial isomorphism. Then the following are equivalent
 \begin{itemize}
-\item[1.] Every $\lambda\jj$saturated model of $T$ is $\lambda\jj$rich;
-\item[2.] $T$ has elimination of quantifiers.\QED
+\item[1.] every $\lambda\jj$saturated model of $T$ is $\lambda\jj$rich;
+\item[2.] $T$ has elimination of quantifiers.
 \end{itemize}
-\end{exercise}
+\end{theorem}
+
+\begin{proof}
+Implication \ssf{2}$\IMP$\ssf{1} is clear. As for \ssf{1}$\IMP$\ssf{2}, let $k:M\to N$ be a finite partial isomorphism between models of $T$. We claim that it is an elementary map. Let $M'\succeq M$ and $N'\succeq N$ are saturated models of equal cardinality. As these are rich, $k:M'\to N'$ extends to an isomorphism $h:M'\hookdoubleheadrightarrow N'$ and the claim follows.
+\end{proof}
 
 \begin{exercise}\label{ex_QQxZZ_saturo}
 Let $L$ be the language of strict order. Let $T$ be the theory discrete linear orders without endpoints. (An order is discrete if every point has an immediate predecessor and an immediate successor.) Show that the structure $\QQ\times\ZZ$ ordered with the lexicographic order 
@@ -108,7 +114,7 @@ Let $L$ be the language of strict order. Let $T$ be the theory discrete linear o
 
 is a saturated model of $T$. For every $n\in\omega$ add to the language a relation symbol $d(x,y)=n$ and add to $T$ the axiom $d(x,y)=n\iff\E^{=n} z\,(x<z\le y)$.   Let $T'$ be the resulting theory. Prove that $T'$ has quantifier elimination. 
 
-Hint: answer the second question first using exercise~\ref{ricchezza_saturazione_EQ}.\QED 
+Hint: answer the second question first using Theorem~\ref{thm_ricchezza_saturazione_QE}.\QED 
 \end{exercise}
 
 
