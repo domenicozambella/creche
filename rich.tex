@@ -244,8 +244,6 @@ The chains start with $A_0=A\cup\dom k\cup\range k$ and $h_0=k$. As usual, at li
 Implication \ssf{1}$\IMP$\ssf{2} is clear. To prove \ssf{2}$\IMP$\ssf{1} we generalize the proof of Theorem~\ref{ricco<->universaleomogeneo}. We assume \ssf{2} fix some morphism $k:M\imp N$ of cardinality $<\lambda$ and let $b\in M$. By weak $\lambda\jj$universality there is a morphism $f:M\imp N$ with domain of definition $\dom k\cup\big\{b\big\}$. The map $f\circ k^{-1}:N\imp N$ has cardinality $<\lambda$ and, by Lemma~\ref{debolmenteomogeneoandirivieni}, it has an extension to an automorphism $h:N'\to N'$ for some $N'\preceq N$ containing $\range k\cup\range f$. Then $h\circ f:M\imp N$ extends $k$ and is defined on $b$.
 \end{proof}
 
-
-
 \section{The amalgamation property}
 
 We say that $\M$ has the \emph{amalgamation property\/} if for every pair of morphisms $f_1:M\to M_1$ and $f_2:M\to M_2$ there are two of embeddings $g_1:M_1\hookrightarrow N$ and $g_2:M_2\hookrightarrow N$ such that $g_1\circ f_1\, (a) = g_2\circ f_2\, (a)$ for every $a$ in the common domain of definition, $\dom (f_1)\; \cap\; \dom (f_2)$.
@@ -257,21 +255,21 @@ M \arrow[ur, "f_1" above] \arrow[dr, "f_1" below] &  & N \\
 & M_2  \arrow[ur, hook, "g_2\rule{0ex}{1ex}" below] & \\
 \end{tikzcd}
 
-As we assume that morphisms are invertible, we may express the amalgamation property in a more concise form. We need a new defnition.
+As we assume that morphisms are invertible, we may express the amalgamation property in a more concise form. Namely, for every morphism $k:M\to N$ there is morphism  $g:M'\to N'$ such that the following diagram commutes
 
-We write \emph{$M\le N$\/} for $M\subseteq N$ and $\id_M:M\hookrightarrow N$ is a morphism. We say that $h:M'\to N'$ \emph{extends to\/} $k:M\to N$ if $k\subseteq h$, $M\le M'$, and  $N\le N'$.
+\hfil\begin{tikzcd}[row sep=tiny]
+& N  \arrow[dr, hook, "\kern2ex{\rm id}_N" above] & \\
+M \arrow[ur, "k\kern1ex" above] \arrow[rr, hook, "g" below] &  & N' \\
+\end{tikzcd}
+
+It is convenient to use the following terminology. We write \emph{$M\le N$\/} for $M\subseteq N$ and $\id_M:M\hookrightarrow N$ is a morphism. We say that $k:M\to N$ \emph{extends to\/} $g:M'\to N'$ if $k\subseteq h$, $M\le M'$, and  $N\le N'$.
 
 
 \begin{proposition}
 Assume \ssf{c2}, then the following are equivalent
 \begin{itemize}
 \item[1.] $\M$ has the amalgamation property;
-\item[2.] every morphism $k:M\to N$ extends to total morphism $g : M\hookrightarrow N'$, which corresponde to the following diagram
-
-\hfil\begin{tikzcd}[row sep=tiny]
-& N  \arrow[dr, hook, "\kern2ex{\rm id}_N" above] & \\
-M \arrow[ur, "k\kern1ex" above] \arrow[rr, hook, "g" below] &  & N' \\
-\end{tikzcd}
+\item[2.] every morphism $k:M\to N$ extends to an embedding $g : M\hookrightarrow N'$.
 
 \end{itemize}
 \end{proposition}
@@ -291,7 +289,7 @@ M \arrow[ur, "\kern1ex k" above, near start] \arrow[rr, hook, "g_2" below] &  & 
 
 Up to isomorphism we can assume $g_2=\id_M$, i.e.\@ that $N\le N'$. Hence $g_2:M\hookrightarrow N'$ is the required extension of $k:M\to N$.
 
-\ssf{2}$\IMP$\ssf{1} Let  $f_1:M\to M_1$ and $f_2:M\to M_2$ be given and define $k=f_2\circ f_1^{-1}:M_1\to M_2$. Let  $g:M_1\hookrightarrow N'$ be the extension ensured by \ssf{2}. Then we obtain
+\ssf{2}$\IMP$\ssf{1} Let  $f_1:M\to M_1$ and $f_2:M\to M_2$ be given. Let $k=f_2\circ f_1^{-1}:M_1\to M_2$ and let  $g:M_1\hookrightarrow N'$ be the extension ensured by \ssf{2}. Then we obtain
 
 \hfil\begin{tikzcd}[row sep=normal, column sep=large]
 & M_1  \arrow[dd, "f_2\circ f_1^{-1}"] \arrow[dr, hook, "\kern1ex g" above] & \\
@@ -311,21 +309,26 @@ We say that $\M$ is \emph{closed under union of $\le\jj$chains\/} if
 \end{itemize}
 \end{definition}
 
-The following is a general existence theorem for rich models.
+The following is a general existence theorem for rich models. This general form requires large cardinalities. We leave to the reader to verify that if the number if finite morphisms is countable (up to isomorphism) then countable rich models exit.
 
 
-\begin{theorem} Let $\lambda$ be a cardinal such that $\lambda=\lambda^{<\lambda}$. (Assume~\ref{ass_c0-5})  \  Assume further that $\M$ has the amalgamation property and is closed under union of $\le$ chains. Then there is a rich model $N$ of cardinality $\lambda$.
+\begin{theorem}  Assume~\ref{ass_c0-5}. Assume further \ssf{c7} and that $\M$ has the amalgamation property. Let $\lambda$ be such that $|L|<\lambda=\lambda^{<\lambda}$.  Then there is a rich model $N$ of cardinality $\lambda$.
 \end{theorem}
 
-\begin{proof} We construct $N$ as union of a $\le\jj$chain of models $\langle N_i:i < \lambda\rangle$ such that $|N_i| = \lambda$ for all $i<\lambda$. Let $N_0$ be any model of cardinality $\lambda$. At stage $i+1$, let $f:M\imp N_i$ be the least morphism (in a well-ordering that we specify below) such that $|f|<|M|\le\lambda$ and $f$ has no extension to an embedding $f':M\hookrightarrow N_i$. Apply the amalgamation property to obtain an total morphism $f':M\imp N'$ that extends $f:M\imp N_i$. By the downword L\"owenheim-Skolem Theorem we may assume $|N'|=\lambda$. Let $N_{i+1}=N'$. At limit stages take the union.
+\begin{proof} We construct $N$ as union of a $\le\jj$chain of models $\langle N_i:i < \lambda\rangle$ such that $|N_i| = \lambda$. Let $N_0$ be any model of cardinality $\lambda$. At stage $i+1$, let $f:M\imp N_i$ be the least morphism (in a well-ordering that we specify below) such that $|f|\le|M|<\lambda$ and $f$ has no extension to an embedding $f':M\hookrightarrow N_i$. Apply the amalgamation property to obtain an total morphism $f':M\imp N'$ that extends $f:M\imp N_i$. By the downword L\"owenheim-Skolem Theorem we may assume $|N'|=\lambda$. Let $N_{i+1}=N'$. At limit stages take the union.
 
-The well-ordering mentioned needs to be chosen so that in the end we forget nobody. So, first at each stage we well-order the isomorphism-type of the morphisms $f:M\imp N_i$ such that  $f<|M|\le\lambda$. Then the required well-ordering is obtained by dovetailing all these well-orderings.  The length of this enumeration is at most $2^\lambda\cdot\lambda^{<\lambda}$, which is $\lambda$ by hypothesis.
+The well-ordering mentioned needs to be chosen so that in the end we forget nobody. So, first at each stage we well-order the isomorphism-type of the morphisms $f:M\imp N_i$ such that  $f\le|M|<\lambda$. Then the required well-ordering is obtained by dovetailing all these well-orderings.  The length of this enumeration is at most $\lambda^{<\lambda}$, which is $\lambda$ by hypothesis.
 
-We check that $N$ is rich. Let $f:M\imp N$ be a morphism and $|f|<|M|\le\lambda$. The cofinality of $\lambda$ is larger than $|f|$, hence $\range f\subseteq N_i$ for some $i<\lambda$. So $f:M\imp N_i$ is a morphism and at some stage $j$ we have ensured the existence of an embedding of $f':M\hookrightarrow N_{j+1}$ that extends $f$.
+We check that $N$ is rich. Let $f:M\imp N$ be a morphism and $|f|<|M|\le\lambda$. As $|L|<\lambda$ we can appromate $M$ with an elementary chain of structures of cardinality $<\lambda$. Hence we may as well assume that $|f|\le|M|<\lambda$. The cofinality of $\lambda$ is larger than $|f|$, hence $\range f\subseteq N_i$ for some $i<\lambda$. So $f:M\imp N_i$ is a morphism and at some stage $j$ we have ensured the existence of an embedding of $f':M\hookrightarrow N_{j+1}$ that extends $f$.
 \end{proof}
 
+\begin{proposition}
+Let $\M_{\rm ob}$ be the class of all models of a complete theory $T$. Let $\M_{\rm ar}$ contain the elementary maps between models. Then $\M$ has the amalgamation property.
+\end{proposition}
 
-
+\begin{proof}
+Let $k:M\to N$ be an elementary map. Let $a$ enumerate $\dom k$ and let $b$ enumerate $M$. Let $p(x\,;z)=\tp_M(b\,;a)$. The type $p(x\,;a)$ is consisent in $M$, in particular, it is finitely consistent and, by elementarity,  $p(x\,;ka)$ is finitely consistent in $N$. By the compactness theorem, there is $N'\succeq N$ such that $N'\models p(c\,;ka)$ for some $c\in N'^{|x|}$ . Hence $g=\{\<b,c\>\}:M\to N'$ is the required elementary map that extends $k:M\to N$ 
+\end{proof}
 \section{Notes and references}
 \begin{biblist}[]\normalsize
 

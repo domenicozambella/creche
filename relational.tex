@@ -159,7 +159,7 @@ A \emph{random graph\/} is a graph that also satisfies the following axioms for 
 \item[r$_n$.] $\displaystyle\bigwedge^n_{i,j=1} x_i\neq y_j\ \ \imp\ \ \E z \bigwedge^n_{i=1} \big[r(x_i,z) \wedge \neg r(z,y_i)\big]$\hfill for every $n\in\ZZ^+$.
 \end{itemize}
 
-The theory of graphs is denoted by \emph{$T_{\textrm{gph}}$} and the theory of random graphs is denoted by \emph{$T_{\textrm{rg}}$}. The scheme of axioms \ssf{r$_n$} plays the same role of density in the previous section.  It says that given two non empty disjoint sets $X$ and $Y$ of cardinality $\le n$ there is a vertex $z$ that is adjacent to all vertices in $X$ and to no vertex in $Y$. Note that it might well be that $z\in Y$, however $z\in X$ would contradict \ssf{1}.
+The theory of graphs is denoted by \emph{$T_{\textrm{gph}}$} and the theory of random graphs is denoted by \emph{$T_{\textrm{rg}}$}. The scheme of axioms \ssf{r$_n$} plays the same role of density in the previous section.  It says that given two non empty disjoint sets $A^+$ and $A^-$ of cardinality $\le n$ there is a vertex $z$ that is adjacent to all vertices in $A^+$ and to no vertex in $A^-$. Note that it might well be that $z\in A^-$, however $z\in A^+$ would contradict \ssf{1}.
 
 Some readers may doubt if $T_{\rm rg}$ is consistent.
 
@@ -188,13 +188,13 @@ Fix $M\models T_{\rm gph}$ and $N\models T_{\rm rg}$. Let $k:M\imp N$ be a finit
 \end{lemma}
 \begin{proof} The schema of the proof is the same as in Lemma~\ref{lem_ordinericco}, so we use the same notation. Assume $b\notin\dom k$ and define\medskip
 
-\hfil$X=\big\{x\in\dom k\ :\ M\models r(x,b)\big\}\ \ \ \textrm{e}\ \ \ Y=\big\{y\in\dom k\ :\  M\models \neg r(y,b)\big\}$.\medskip
+\hfil$A^+=\big\{x\in\dom k\ :\ M\models r(x,b)\big\}\ \ \ \textrm{e}\ \ \ A^-=\big\{y\in\dom k\ :\  M\models \neg r(y,b)\big\}$.\medskip
 
-These two sets are finite and disjoint, then so are $k[A]$ and $k[B]$. Then there is a $c$ such that\medskip
+These two sets are finite and disjoint, then so are $k[A^+]$ and $k[A^-]$. Then there is a $c$ such that\medskip
 
-\hfil$\displaystyle\bigwedge_{a\in X}r(ka,c)\ \ \wedge\ \bigwedge_{a\in Y}\neg r(ka,c)$.
+\hfil$\displaystyle\bigwedge_{a\in A^+}r(ka,c)\ \ \wedge\ \bigwedge_{a\in A^-}\neg r(ka,c)$.
 
-As $k[A]\cup k[B]=\range k$, it is immediate to verify that $h=k\cup\big\{\<b,c\>\big\}$ is the require extension.
+As $k[A^+]\cup k[A^-]=\range k$, it is immediate to verify that $h=k\cup\big\{\<b,c\>\big\}$ is the require extension.
 \end{proof}
 
 With the same proof of Corollary~\ref{coroll_ordinericco} obtain the following.
