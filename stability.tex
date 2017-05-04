@@ -72,11 +72,11 @@ The implication \ssf{1}$\IMP$\ssf{2} is obtained by compactness and the equivale
 
 
 \begin{remark}\label{prop_approx_el_eq}
-Let $\grC\subseteq\U^{|{\gr z}|}$. If $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\hyperref[expansions]{\ref*{invariant}.\ref*{expansions}} for the definition. The same holds for approximability from below and from above. In fact, if the set $\grD$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for every $n$
+Let $\grC\subseteq\U^{|{\gr z}|}$. If $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\hyperref[expansions]{\ref*{invariant}.\ref*{expansions}} for the definition. In fact, if the set $\grD$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for every $n$
 
 \hfil$\displaystyle\A {\gr z_1},\dots,{\gr z_n}\;\E {\mr x}\ \bigwedge^n_{i=1}\big[\phi({\mr x}\,;{\gr z_i})\ \iff\ {\gr z_i}\in{\gr \D}\big]$. 
 
-So the same holds for any $\grC\equiv\grD$. As for approximability from below, add the conjunct $\A {\gr z}\,\big[\phi({\mr x}\,;{\gr z})\imp {\gr z}\in\grD\big]$ to the formula above, and similarly for approximability from above.\QED
+So the same holds for any $\grC\equiv\grD$. A similar remark apply to approximability from below and from above. For approximability from below, add the conjunct $\A {\gr z}\,\big[\phi({\mr x}\,;{\gr z})\imp {\gr z}\in\grD\big]$ to the formula above, and similarly for approximability from above.\QED
 \end{remark}
 
 %We say that a set $\grD$ approximable by $\phi({\mr x}\,;{\gr z})$ is stationary over $A$ if it is invariant over $A$ and for any other such set $\grC$ if $\grC=_A\grD$ then $\grC=\grD$. Note that the notion of stationary depends only on $\phi({\mr x}\,;{\gr z})$ and $A^{|{\gr z}|}\cap\grD$. 
@@ -90,22 +90,22 @@ So the same holds for any $\grC\equiv\grD$. As for approximability from below, a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The ladder property}
 
-Someone may have noticed that by \textit{formula\/} we most mean a pair $\phi(x)$ that consists of a formula and a tuple of variables. In the following we need to deal with two sorts of variables: those that are placeholder for parameters, and those used to define a set. To make things more complicated here and there we shall switch the role of the variables.
+The attentive reader may have noticed that by \textit{formula\/} we often understand a pair $\phi(x)$ that consists of a formula and a tuple of variables. In the following we need to attach to formulas two two sorts of variables: those that are placeholder for parameters, and those used to define a set. To make things more complicated, here and there we shall invert the roles of the two sorts.
 
 \begin{definition}\label{def_parted-fla}
-A \emph{2-parted formula\/} is a triple $\phi({\mr x}\,;{\gr z})$ consistig of a formula and two tuples of variables. The variables actually occurring in $\phi$ are all among ${\mr x},{\gr z}$. We write $\phi({\gr z}\,;{\mr x})^*$ for the parted formula where the order of the two tuples is switched. The asterisk will avoid confusion with substitution.
+A \emph{2-parted formula\/} is a triple $\phi({\mr x}\,;{\gr z})$ consistig of a formula and two tuples of variables. The variables actually occurring in $\phi$ are all among ${\mr x},{\gr z}$. We write $\phi({\mr x}\,;{\gr z})^*$ for the parted formula where the order of the two tuples is switched.
 \end{definition}
 
 
 The \emph{ladder order\/} of a parted formula $\phi({\mr x}\,;{\gr z})$ is the largest $n\in\omega$ such that for some ${\mr a_i}\in\U^{|{\mr x}|}$ and ${\gr b_i}\in\U^{|{\gr z}|}$ 
 
-\ceq{\hfill i< j}{\IMP}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}\hfill for all $i,j<n$
+\ceq{\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}\hfill for all $i,j<n$
 
-If such an $n$ exists, we say that  $\phi({\mr x}\,;{\gr z})$ is \emph{stalbe}, otherwise we say it is \emph{instable}. Note that $\phi({\mr x}\,;{\gr z})$ is stable if and only if $\phi({\gr z}\,;{\mr x})^*$ is stable.
+If such an $n$ exists, we say that  $\phi({\mr x}\,;{\gr z})$ is \emph{stalbe}, otherwise we say it is \emph{instable}. Note that $\phi({\mr x}\,;{\gr z})$ is stable if and only if $\phi({\mr x}\,;{\gr z})^*$ is stable.
 
 The following is arguably the most important fact about stable formulas.
 
-\begin{theorem}
+\begin{theorem}\label{thm_def_stable_formula}
 Any $\grD\subseteq\U^{|{\gr z}|}$ approximated by a stable formula is definable. Precisely, if $\phi({\mr x}\,;{\gr z})$ is a stable formula that approximates $\grD$ then there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in\U^{|{\mr x}|}$ such that 
 
 
@@ -115,14 +115,15 @@ Any $\grD\subseteq\U^{|{\gr z}|}$ approximated by a stable formula is definable.
 \end{theorem}
 
 \begin{proof}
-
+The theorem follows immediately from the the following three lemmas.
 \end{proof}
 
 
 
 
+
 \begin{lemma}
-Let $\grD\subseteq\U^{|{\gr z}|}$ be approximated from below by  $\phi({\mr x}\,;{\gr z})$, a stable formula. Then there are ${\mr a_1},\dots,{\mr a_n}\in\U^{|{\mr x}|}$ such that 
+If $\grD$ is approximated from below by a stable formula $\phi({\mr x}\,;{\gr z})$ then there are ${\mr a_1},\dots,{\mr a_n}\in\U^{|{\mr x}|}$ such that 
 
 
 \ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\phi({\mr a_i}\,;{\gr z})}
@@ -131,11 +132,12 @@ Let $\grD\subseteq\U^{|{\gr z}|}$ be approximated from below by  $\phi({\mr x}\,
 \end{lemma}
 
 \begin{proof}
+Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that ${\gr b_0},\dots,{\gr b_{n-1}}\in\phi({\mr a_n}\,;{\gr\U})\subseteq\grD$. Then, if possible, choose ${\gr b_n}$ such that
 
+\ceq{\hfill{\gr b_n}}{\in}{\grD\sm\bigvee^n_{i=0}\phi({\mr a_i}\,;{\gr\U})}
+
+and iterate the procedure. By stability, the procedure has to stop as some $n$, yielding the required  ${\mr a_1},\dots,{\mr a_n}$.
 \end{proof}
-
-
-
 
 
 
@@ -143,24 +145,53 @@ Let $\grD\subseteq\U^{|{\gr z}|}$ be approximated from below by  $\phi({\mr x}\,
 
 
 \begin{lemma}
-If $\phi({\mr x}\,;{\gr z})$ is a stable formula then formula 
+If $\grD$ is approximated by a stable formula $\phi({\mr x}\,;{\gr z})$ with ladder order $m$. Then the formula 
 
 
+\ceq{\hfill\psi({\mr x_1},\dots,{\mr x_m}\,;{\gr z})}{\iff}{\bigwedge^m_{j=1}\phi({\mr x_j}\,;{\gr z})}
+
+approximates $\grD$ from below.
+\end{lemma}
+
+\begin{proof}
+Let $B\subseteq\grD$ be finite. It suffices to prove that there are some ${\mr a_1},\dots,{\mr a_m}$ such that $B^{|{\gr z}|}\subseteq\psi({\mr a_1},\dots,{\mr a_m}\,;{\gr\U})\subseteq\grD$. 
+
+Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that $B^{|{\gr z}|}\subseteq\phi({\mr a_n}\,;{\gr\U})\subseteq\U^{|{\gr z}|}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$. Then, if possible, let ${\gr b_n}$ such that
+
+\ceq{\hfill{\gr b_n}}{\in}{\bigwedge^n_{i=0}\phi({\mr a_i},{\gr\U})\sm\grD}
+
+and iterate the procedure. The procedure has to stop at some $n\le m$. Hence the required parameters are ${\mr a_1},\dots,{\mr a_n}=\dots={\mr a_{m}}$.
+\end{proof}
+
+
+
+\begin{lemma}
+If $\phi({\mr x}\,;{\gr z})$ is a stable formula then for every $m$ the formula 
 
 \ceq{\hfill \psi({\mr x_1},\dots,{\mr x_m}\,;{\gr z})}{\iff}{\bigwedge^m_{j=1}\phi({\mr x_j}\,;{\gr z})}
 
 
 is stable.
-
-
 \end{lemma}
 
 \begin{proof}
+For legibility, we only prove that $\phi({\mr x_1}\,;{\gr z})\wedge\phi({\mr x_2}\,;{\gr z})$ is stable. Suppose not and let ${\mr a_i},{\mr c_i}\in\U^{|{\mr x}|}$ and ${\gr b_i}\in\U^{|{\gr z}|}$ be such that 
 
+
+\ceq{\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})\wedge\phi({\mr c_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
+
+
+For every pair $j<i<\omega$
 \end{proof}
 
 
+\begin{remark}
+Theorem~\ref{thm_def_stable_formula} is often stated in the following  apparently more general form. For every $\Aa\subseteq\U$ there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in \Aa^{|{\mr x}|}$ such that
 
+\ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\phi({\mr a_{i,j}}\,;{\gr z})}\hfill for every ${\gr z}\in\Aa^{|{\gr z}|}$
+
+The proof is exactly the same. Note that the equivalence above may not be extended outside of $\Aa$.\QED 
+\end{remark}
 
 
 {
@@ -169,14 +200,26 @@ is stable.
 The following is a version of Harrinton's mysterious 
 Lemma (cfr.~\cite[Lemma 8.3.4]{TZ}).
 \begin{lemma}\label{lem_harrington}
-Let $\phi({\mr x}\,;{\gr z})\in L$ be a stable formula and suppose $\grB\subseteq\U^{|{\gr z}|}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\gr z}\,;{\mr x})^*$, respectively. Then the following are equivalent
+Let $\phi({\mr x}\,;{\gr z})\in L$ be a stable formula and suppose $\grB\subseteq\U^{|{\gr z}|}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\mr x}\,;{\gr z})^*$, respectively. Then one of the following occurs
+
 \begin{itemize}
-\item[1.] $\phi({\mr x}\,;{\gr z})\wedge{\mr x}\in{\mrA}$ approximates $\grB$
-\item[2.] $\phi({\gr z}\,;{\mr x})^*\wedge{\gr z}\in{\grB}$ approximates $\mrA$ 
+\item[1.]
+\ssf{a.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\phantom{*}}\wedge\ {\mr x}\in{\mrA}$ approximates $\grB$ and\\
+\ssf{b.}\kern2ex$\phi({\mr x}\,;{\gr z})^*\wedge\ {\gr z}\in{\grB}$ approximates $\mrA$. 
+
+\item[2.]
+\ssf{a.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\phantom{*}}\wedge\ {\mr x}\notin{\mrA}$ approximates $\grB$ and\\
+\ssf{b.}\kern2ex$\phi({\mr x}\,;{\gr z})^*\wedge\ {\gr z}\notin{\grB}$ approximates $\mrA$. 
 \end{itemize}
+
 \end{lemma}
 \begin{proof}
-It suffices to prove \ssf{1}$\IMP$\ssf{2} because the converse implication is equivalent. Assume \ssf{1} and negate \ssf{2} for a contradiction.  As $\mrA$ is approximable, if not \ssf{2}, then  $\phi({\mr x}\,;{\gr z})\wedge{\gr z}\notin{\grB}$ approximates $\mrA$. Pick ${\mr a_0}$ arbitrarily, then recursively find ${\gr b_i}\notin\grB$ and  ${\mr a_i}\in\mrA$ such that
+Note that at least one of \ssf{1a} or \ssf{2a} occurs. Hence it sufficies to prove that 
+\ssf{1a}$\IMP$\ssf{1b} and 
+\ssf{2a}$\IMP$\ssf{2b}. We only prove the first. The second follows because $\neg\grB$ and $\neg\mrA$ are approximated by $\neg\phi({\mr x}\,;{\gr z})$ and  $\neg\phi({\mr x}\,;{\gr z})^*$, respectively.
+
+
+Assume \ssf{1a} and negate \ssf{1b} for a contradiction.  Then \ssf{2b} holds. Pick ${\mr a_0}$ arbitrarily, then recursively find ${\gr b_i}\notin\grB$ and  ${\mr a_i}\in\mrA$ such that
 
 
 {\def\medrel#1{\parbox[t]{12ex}{$\displaystyle\kern2ex #1$}}
@@ -202,24 +245,24 @@ Which contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
 
 
 
-\begin{remark}
-Suppose $\grB\subseteq\U^{|{\gr z}|}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\gr z}\,;{\mr x})^*$, respectively. Then the following are equivalent
-\begin{itemize}
-\item[1.] $\phi({\mr x}\,;{\gr z})\wedge{\mr x}\in{\mrA}$ approximates $\grB$
-\item[2.] $\phi({\gr z}\,;{\mr x})^*\wedge{\gr z}\in{\grB}$ approximates $\mrA$ 
-\end{itemize}
 \def\mrsA{{\mr\Aa'}}
 \def\grsB{{\gr\B'}}
-Let $\<\U',\mrsA,\grsB\>$ be a saturated  elementary extension of  $\<\U,\mrA,\grB\>$ of larger cardinality.  Then \ssf{1} is equivalent to
+\begin{corollary}
+Under the same assumptions as in Lemma~\ref{lem_harrington}. Let $\<\U',\mrsA,\grsB\>$ be a saturated  elementary extension of  $\<\U,\mrA,\grB\>$ of larger cardinality. Then there are an  ${\mr a'}\in\U^{|{\mr x}|}$ and a ${\gr b'}\in\U^{|{\gr z}|}$ such that $\phi({\mr\U'}\,;{\gr b'})=_{\U,\, {\mr a'}}\mrsA$ and $\phi({\mr a'}\,;{\gr\U'})=_{\U,\,{\gr b'}}\grsB$.
+\end{corollary}
+\begin{proof}
+Note that \ssf{1} in the lemma is equivalent to
 
 \begin{itemize}
-\item[1'.] there is ${\mr a'}\in\mrsA$ such that $\phi({\mr a'}\,;{\gr\U'})=_{\U}\grsB$
-\item[2'.]  there is ${\gr b'}\in\grsB$ such that $\phi({\mr\U'}\,;{\gr b'})=_{\U}\mrsA$
+\item[1'.]
+\ssf{a.}\kern2ex there is an ${\mr a'}\in{\mrA'}$  such that $\phi({\mr a'}\,;{\gr\U'})=_{\U}\grsB$ and\\
+\ssf{b.}\kern2ex   there is a\phantom{n} ${\gr b'}\in\grsB$ such that $\phi({\mr\U'}\,;{\gr b'})=_{\U}\mrsA$. 
 \end{itemize}
 
-there is an ${\mr a'}\in\mrsA$ such that $\phi({\mr a'}\,;{\gr\U'})=_{\U}\grsB$. Again by saturation and the remark above, there is a ${\gr b'}\in\U'^{|{\gr z}|}$ such that $\phi({\mr\U'}\,;{\gr b'})=_{\U,\, {\mr a'}}\mrsA$ which implies $\phi({\mr a'}\,;{\gr b'})$. Hence ${\gr b'}\in\grsB$ and \ssf{2} follows.
-\end{remark}
+If in the above we replace $\in$ by $\notin$, we obtain a property equivalent to \ssf{2}.
 
+Let  ${\mr a'}\in\U^{|{\mr x}|}$ be such that $\phi({\mr a'}\,;{\gr\U'})=_{\U}\grsB$. Suppose first that ${\mr a'}\in\mrsA$. Then \ssf{1'a} holds and by the lemma we obtain \ssf{1b}. By compactness there is ${\gr b'}\in\grsB$ such that $\phi({\mr\U'}\,;{\gr b'})=_{\U,\,{\mr a'}}\mrsA$. Then $\phi({\mr a'}\,;{\gr b'})$ holds, so $\phi({\mr a'}\,;{\gr\U'})=_{\U,\,{\gr b'}}\grsB$ follows. A similar argument apply if  ${\mr a'}\notin\mrsA$.
+\end{proof}
 \begin{proposition}
 Suppose $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})\in L(A)$, a stable formula, and Lascar invariant over $A$.  Then $\grC\ \equiv_{\acl^\eq A}\grD$ implies $\grC=\grD$. 
 \end{proposition}
@@ -248,15 +291,6 @@ Suppose for a contradiction that $f[\D]\neq\D$ for some $f\in\Aut(\U/A)$. Pick s
 \end{proof}
 
 Tentativo
-
-
-\begin{corollary}
-Under the same assumptions of Lemma~\ref{lem_harrington} the following are mutually exclusive\nobreak
-\begin{itemize}
-\item[1.] $\phi({\mr x}\,;{\gr z})\wedge{\gr z}\notin{\grB}$ approximates $\mrA$;
-\item[2.] $\phi({\mr x}\,;{\gr z})\wedge{\gr z}\in{\grB}$ approximates $\mrA$.\QED
-\end{itemize}
-\end{corollary}
 
 }
 
@@ -299,6 +333,7 @@ Let $p(x)\subseteq L(\U\,;\grC,\grD)$ be a type which is finitely satisfiable in
    date={2013},
    number={1},
    pages={409--425},
+   note={\href{https://arxiv.org/abs/1007.4468}{ArXiv:1007.4468}},
    %issn={0021-2172},
    %doi={10.1007/s11856-012-0061-9},
 }
