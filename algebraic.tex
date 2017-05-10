@@ -66,16 +66,16 @@ The following proposition gives a convenient syntactic characterization of indep
 
 
 \begin{proposition}
-Let $A\subseteq M\models T_{\rm ag}$. Then for every $c\in M$ the following are equivalent.
+Let $A\subseteq M\models T_{\rm ag}$. Let $c\in M$ be such that $c^n\neq0$ for every $n\in\omega\sm\{0\}$ (i.e.\@ $c$ is not a torsion element). Then the following are equivalent.
 \begin{itemize}
  \item[1.] $\<A\>_M\cap\<c\>_M=\big\{0\big\}$;
  \item[2.] $p(x)=\attp_M(c/A)$ is trivial (see Notation~\ref{note_tipi_diagramma} and ~\ref{notation1}).
 \end{itemize}
 \end{proposition}
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}\quad By Proposition~\ref{corol_formacanonicaterminimoduli}, a non trivial formula in $p(x)$ may be assumed to have the form $nx=a$ for some $n\in\ZZ\sm\{0\}$ and some $a\in\<A\>_M\sm\{0\}$. If such a formula is satisfied by $c$ then $0\neq a\in\<A\>_M\cap\<c\>_M$. 
+\ssf{1}$\IMP$\ssf{2}\quad By Proposition~\ref{corol_formacanonicaterminimoduli}, a non trivial formula in $p(x)$ may be assumed to have the form $nx=a$ for some $n$ and some $a$. If such a formula is satisfied by $c$ then $a\in\<A\>_M\cap\<c\>_M$. As $c$ is not a torsion element, $n=0$ and the equation is trivial.
 
-\ssf{2}$\IMP$\ssf{1}\quad If $\<A\>_M\cap\<c\>_M\neq\big\{0\big\}$ then $nc=a$ for some $a\in\<A\>_M\sm\{0\}$. Then $c$ satisfies the non trivial equation $nx=a$.
+\ssf{2}$\IMP$\ssf{1}\quad If $\<A\>_M\cap\<c\>_M\neq\big\{0\big\}$ then $nc=a$ for some $a\in\<A\>_M\sm\{0\}$. Then $c$ satisfies some non trivial equation $nx=a$.
 \end{proof}
 
 
@@ -167,12 +167,12 @@ From \ssf{b'} we obtain $N_2\models ma=nc$. As $N_1$ is torsion-free, from \ssf{
 
 The theory of \emph{divisible abelian groups\/} extends $T_{\rm tfag}$ with the following axioms for all  integers $n\neq0$
 \begin{itemize}
-\item[div$_n$] $\E x\ nx=y$.
+\item[div$_n$] $y\neq0\imp\E x\ nx=y$.
 \end{itemize} 
 We denote this theory by \emph{$T_{\rm\bf dag}$}.
 
 \begin{proposition}\label{prop_md_cons_sodd}
-Let $M\models T_{\rm tfag}$ and let $\phi(x)\in\atL(A)$, where $|x|=1$, be consistent. Then $N\models\E x \,\phi(x)$ for every model $N\models T_{\rm dag}\cup\Diag\<A\>_M$.
+Let $A\subseteq M\models T_{\rm tfag}$ and let $\phi(x)\in\atL(A)$, where $|x|=1$, be consistent. Then $N\models\E x \,\phi(x)$ for every model $N\models T_{\rm dag}$.
 \end{proposition}
 
 Note that the proposition mentions $T_{\rm tfag}$ first and then $T_{\rm dag}$. 
@@ -209,7 +209,7 @@ The second case, which has no analogue in Lemma~\ref{lem_ordinericco}, is when $
 Every uncountable model of $T_{\rm dag}$ is rich in the category of models of $T_{\rm tfag}$ and partial isomorphisms. In particular $T_{\rm dag}$ is uncountably categorical, it is complete, and has quantifier elimination.
 \end{corollary}
 \begin{proof}
-Any uncountable $N\models T_{\rm dag}$ has rank $|N|$, therefore it is rich by Lemma~\ref{lemma_modulo_divisibile_ricco_nonnumer}; categoricity and completeness follow. As for quantifier elimination, suppose $k:M\to N$ is a partial isomorphism between models of $T_{\rm dag}$. If $M\preceq M'$ and $M\preceq N'$ are elementary superstructures of uncountable cardinality then $k:M'\to N'$ is elementary by Theorem~\ref{thm_morphism_rich_elementary} and this suffices to conclude that  $k:M\to N$ is elementary. 
+Any uncountable $N\models T_{\rm dag}$ has rank $|N|$, therefore it is rich by Lemma~\ref{lemma_modulo_divisibile_ricco_nonnumer}; categoricity and completeness follow. As for quantifier elimination, let $k:M\to N$ is a partial isomorphism between models of $T_{\rm dag}$. If $M\preceq M'$ and $M\preceq N'$ are elementary superstructures of uncountable cardinality then $k:M'\to N'$ is elementary by Theorem~\ref{thm_morphism_rich_elementary} and this suffices to conclude that  $k:M\to N$ is elementary. 
 \end{proof}
 
 \begin{exercise}
@@ -319,7 +319,7 @@ If $\<A\>_M$ is not a field, polynomials $d(x)$, $t(x)$ and $t'(x)$ as above exi
 
 From \ssf{a} we get $d(b)=0$ or $t(b)=0$. In the first case, as $a(x)$ has minimal degree, we conclude that $t(x)$ is constant.  This implies that any zero of $a(x)$ is also a zero of $a'(x)$, that is, it implies \ssf{1}. 
 
-Now suppose $t(b)=0$. Then the minimality of the degree of $a(x)$ implies that $d(x)=d$, where $d$ is a nonzero constant. If $\<A\>_M$ is a field, apply B\'ezout's identity to obtain two polynomials $c(x)$ and $c'(x)$ such that $d=a(x)c(x)+a'(x)c'(x)$. Then $a(x)$ and $a'(x)$ have no common zeros, and \ssf{2} follows. If $\<A\>_M$ is not a field, we use  B\'ezout's identity in the field of fractions of $\<A\>_M$ and obtain $d'd=a(x)c(x)+a'(x)c'(x)$ for some $d'\in\<A\>_M\sm\big\{0\big\}$. Then we reach the same conclusion.
+Now suppose $t(b)=0$. Then the minimality of the degree of $a(x)$ implies that $d(x)=d$, where $d$ is a nonzero constant. If $\<A\>_M$ is a field, apply B\'ezout's identity to obtain two polynomials $c(x)$ and $c'(x)$ such that $d=a(x)c(x)+a'(x)c'(x)$. Then $a(x)$ and $a'(x)$ have no common zeros, and \ssf{2} follows. If $\<A\>_M$ is not a field, we use  B\'ezout's identity in the field of fractions of $\<A\>_M$ and, for some $d'\in\<A\>_M\sm\big\{0\big\}$, obtain $d'd=a(x)c(x)+a'(x)c'(x)$. Then we reach the same conclusion.
 \end{proof}
 
 
@@ -388,7 +388,7 @@ Every uncountable model of $T^p_{\rm acf}$ is rich in the category of integral d
 The proof requires the same argument as Corollary~\ref{corol_ModDivUltraOmog}. However here we have to fix the characteristic of the integral domain, otherwise the resulting category is not connected. 
 
 \begin{proof}
-Every uncountable $N\models T^p_{\rm acf}$ has transcendence degree $|N|$, therefore it is rich by by Lemma~\ref{lem_acf_ricco_nonnumer}. Categoricity and completeness follow. 
+Every uncountable $N\models T^p_{\rm acf}$ has transcendence degree $|N|$, therefore it is rich by Lemma~\ref{lem_acf_ricco_nonnumer}. Categoricity and completeness follow. 
 
 For quantifier elimination, let $k:M\to N$ be a partial embedding between models of $T^p_{\rm acf}$. Let $M'$ and $N'$ be elementary superstructures of $M$ and $N$ respectively of sufficiently large cardinality. As $M'$ and $N'$ are rich, $k:M'\to N'$ is elementary by Theorem~\ref{thm_morphism_rich_elementary}. Hence 
  $k:M\to N$ is also elementary.
