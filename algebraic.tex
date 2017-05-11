@@ -80,15 +80,15 @@ Let $A\subseteq M\models T_{\rm ag}$. Let $c\in M$ be such that $c^n\neq0$ for e
 
 
 \begin{remark}\label{oss_liberi_qf}
-Let $k:M\to N$ be a partial embedding and let $a$ be an enumeration of $\dom k$. We claim that  $k\cup\big\{\<b,c\>\big\}:M\to N$ is a partial embedding for every $b\in M$ and $c\in N$ that are independent from $a$, respectively $ka$. In fact, it suffices to check that $M,a,b\,\equiv_{\rm at}N,ka, c$. Suppose $\phi(x,z)\in\atL$ \ is such that $M\models\phi(a,b)$. Then by independence $\phi(a,x)$ is trivial, i.e.
+Let $k:M\to N$ be a partial embedding and let ${\gr a}$ be an enumeration of $\dom k$. We claim that  $k\cup\big\{\<{\mr b},{\mr c}\>\big\}:M\to N$ is a partial embedding for every ${\mr b}\in M$ and ${\mr c}\in N$ that are independent from ${\gr a}$, respectively $k{\gr a}$. In fact, it suffices to check that $M,{\gr a},{\mr b}\,\equiv_{\rm at}N,k{\gr a}, {\mr c}$. Suppose $\phi(x,z)\in\atL$ \ is such that $M\models\phi({\gr a},{\mr b})$. Then by independence $\phi({\gr a},x)$ is trivial, i.e.
 
-\ceq{\hfill T_{\rm ag} \cup\ \Diag\<a\>_M}{\proves}{\phi(a,x).}
+\ceq{\hfill T_{\rm ag} \cup\ \Diag\<{\gr a}\>_M}{\proves}{\phi({\gr a},x).}
 
-As $\<a\>_M$ and  $\<ka\>_N$ are isomorphic structures 
+As $\<{\gr a}\>_M$ and  $\<k{\gr a}\>_N$ are isomorphic structures 
 
-\ceq{\hfill T_{\rm ag}\ \cup\ \Diag\<ka\>_N}{\proves}{\phi(ka,x).}
+\ceq{\hfill T_{\rm ag}\ \cup\ \Diag\<k{\gr a}\>_N}{\proves}{\phi(k{\gr a},x).}
 
-Therefore $N\models\phi(ka,c)$. The proof that $N\models\phi(ka,c)$ implies $M\models\phi(a,b)$ is similar.\QED 
+Therefore $N\models\phi(k{\gr a},{\mr c})$. The proof that $N\models\phi(k{\gr a},{\mr c})$ implies $M\models\phi({\gr a},{\mr b})$ is similar.\QED 
 \end{remark}
 
 
@@ -114,10 +114,10 @@ Let $A\subseteq M$ have cardinality $<|M|$. We claim that $M$ contains some elem
 \end{proof}
 
 \begin{proposition}\label{prop_mst_tipi princ_comp}
-Let $A\subseteq M\models T_{\rm tfag}$.  Let $p(x)=\atpmtp(b/A)$, where $b \in M$. Then one of the following holds:   
+Let $A\subseteq M\models T_{\rm tfag}$.  Let $p({\mr x})=\atpmtp({\mr b}/A)$, where ${\mr b} \in M$. Then one of the following holds:   
 \begin{itemize}
-\item[1.] $b$ is independent from $A$;
-\item[2.] $M\models\phi(b)$ for some $\phi(x)\in\atL(A)$ such that $\ \proves\ \phi(x)\imp p(x)$.
+\item[1.] ${\mr b}$ is independent from $A$;
+\item[2.] $M\models\phi({\mr b})$ for some $\phi({\mr x})\in\atL(A)$ such that $\ \proves\ \phi({\mr x})\imp p({\mr x})$.
 \end{itemize}\end{proposition}
 
 Note the similarity with Example~\ref{ex_infiniti_colori}, where the independent type is $q(x)$ and the isolating formulas are the $r_i(x)$. 
@@ -126,17 +126,17 @@ It is important to observe that the set $A$ above may be infinite. This is essen
 %L'insieme $A$ pu\`o essere preso infinito, questo permetter\`a di dimostrare il lemma~\ref{lemma_modulo_divisibile_ricco_nonnumer} senza restrizioni sulla cardinalit\`a e quindi di ottenere la categoricit\`a non numerabile, vedi corollario~\ref{thm_ModDivUltraOmog}. Non \`e cos\`i nell'esercizio~\ref{ex_ol+grf_tipi_princ_comp}. 
 
 \begin{proof}
-If $b$ is dependent from $A$, then $b$ satisfies a non trivial atomic formula $\phi(x)$ which we claim is the formula required in \ssf{2}. It suffices to show that $\phi(x)$ implies a complete $\atpmL(A)$-type. Clearly this type must be $p(x)$. Let $\phi(x)$ have the form $nx=a$ for some $n\in\ZZ\sm\{0\}$ and $a\in\<A\>_M\sm\{0\}$. We show that for every $m\in\ZZ$ and every $c\in\<A\>_M$ one of the following holds
+If ${\mr b}$ is dependent from $A$, then ${\mr b}$ satisfies a non trivial atomic formula $\phi({\mr x})$ which we claim is the formula required in \ssf{2}. It suffices to show that $\phi({\mr x})$ implies a complete $\atpmL(A)$-type. Clearly this type must be $p({\mr x})$. Let $\phi({\mr x})$ have the form $n{\mr x}=a$ for some $n\in\ZZ\sm\{0\}$ and ${\gr a}\in\<A\>_M\sm\{0\}$. We show that for every $m\in\ZZ$ and every ${\gr c}\in\<A\>_M$ one of the following holds
 \begin{itemize}
-\item[a.] $\proves\   nx=a\imp mx=c$;
-\item[b.] $\proves\   nx=a\imp mx\neq c$.
+\item[a.] $\proves\   n{\mr x}={\gr a}\imp m{\mr x}={\gr c}$;
+\item[b.] $\proves\   n{\mr x}={\gr a}\imp m{\mr x}\neq {\gr c}$.
 \end{itemize} 
 Suppose not for a contradiction that neither \ssf{a} nor \ssf{b} holds and fix models $N_1$, $N_2$ and some $b_i\in N_i$ such that
 \begin{itemize}
-\item[a'.] $N_1\models nb_1=a$ \ and \ $N_1\models mb_1\neq c$;
-\item[b'.] $N_2\models nb_2=a$ \ and \ $N_2\models mb_2 = c$.
+\item[a'.] $N_1\models n{\mr b_1}={\gr a}$ \ and \ $N_1\models m{\mr b_1}\neq {\gr c}$;
+\item[b'.] $N_2\models n{\mr b_2}={\gr a}$ \ and \ $N_2\models m{\mr b_2} = {\gr c}$.
 \end{itemize} 
-From \ssf{b'} we obtain $N_2\models ma=nc$. As $N_1$ is torsion-free, from \ssf{a'} we obtain $N_1\models ma\neq nc$. But $ma=nc$ is a formula with parameters in $\<A\>_M$, so it should have the same truth value in all superstructures of $\<A\>_M$, a contradiction.
+From \ssf{b'} we obtain $N_2\models m{\gr a}=n{\gr c}$. As $N_1$ is torsion-free, from \ssf{a'} we obtain $N_1\models m{\gr a}\neq n{\gr c}$. But $m{\gr a}=n{\gr c}$ is a formula with parameters in $\<A\>_M$, so it should have the same truth value in all superstructures of $\<A\>_M$, a contradiction.
 \end{proof}
 
 
@@ -160,9 +160,9 @@ From \ssf{b'} we obtain $N_2\models ma=nc$. As $N_1$ is torsion-free, from \ssf{
 % Let $T$ be one of the theories $T_{\rm lo}$ or $T_{\rm graph}$. Let $A\subseteq M\models T$ be finite. For $b\in M$ let $p(x)=\atpmtp_M(b/A)$. Prove that $\phi(x)\imp p(x)$ for some $\phi(x)$, conjunction of formulas in $p(x)$. Find a counterexample with $A$ infinite.\QED
 % \end{exercise}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Divisible abelian groups}
 
 The theory of \emph{divisible abelian groups\/} extends $T_{\rm tfag}$ with the following axioms for all  integers $n\neq0$
