@@ -1,4 +1,4 @@
-# A Crèche Course in Model Theory
+[`# A Crèche Course in Model Theory`](../../raw/creche.pdf)
 
 Lecture notes for an introductory (under)graduate course
 
@@ -29,7 +29,7 @@ Printable output in file [`creche.pdf`](./creche.pdf)
    * Ultraproducts
    * The compactness theorem
    * Finite axiomatizability
-   * Realization of types and upword Löwenheim-Skolem
+   * Realization of types and upward Löwenheim-Skolem
 *  **Types and morphisms**
    * Semilattices and filters
    * Distributive lattices and prime filters
