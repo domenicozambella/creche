@@ -1,4 +1,4 @@
-[`# A Crèche Course in Model Theory`](../../raw/creche.pdf)
+# [`A Crèche Course in Model Theory`](../../raw/master/creche.pdf)
 
 Lecture notes for an introductory (under)graduate course
 
