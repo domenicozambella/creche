@@ -17,7 +17,7 @@ Recall that when $A\subseteq M$ we denote by \emph{$\<A\>_M$\/} the substructure
 
 In this chapter, whenever some $A\subseteq M\models T$ are fixed, by \textit{model\/} we mean superstructures of $\<A\>_M$ that models $T$. The notions of \textit{logical consequence}, \textit{consistency}, \textit{completeness}, etc.\@ are modified accordingly, and we write $\,\proves\,$ for $T\cup\Diag\<A\>_M\proves\,$. 
 
-We say that a type $p(x)$ is \emph{trivial\/} if $\,\proves p(x)$.\QED
+We say that a type $p({\mr x})$ is \emph{trivial\/} if $\,\proves p({\mr x})$.\QED
 \end{notation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -34,26 +34,26 @@ In this section the language $L$ is that of additive groups. The theory \emph{$T
 \item[a3] $x+0\ = \ 0+x\ = \ x$;
 \item[a4] $x+y\ =\ y+x$.
 \end{itemize}
-Let $x$ be a tuple of variables of length $\alpha$, an ordinal. We write $L_{{\rm ter},x}$ for the set of terms $t(x)$ with free variables among $x$. On this set we define the equivalence relation
+Let $x$ be a tuple of variables of length $\alpha$, an ordinal. We write $L_{{\rm ter},x}$ for the set of terms $t({\mr x})$ with free variables among $x$. On this set we define the equivalence relation
 
 \ceq{\hfill \emph{$t(x)\sim s(x)$}}%
 {=}%
-{T_{\rm ag}\proves t(x)=s(x).}
+{T_{\rm ag}\proves t({\mr x})=s({\mr x}).}
 
 We define the group operations on $L_{{\rm ter},x}/\mathord{\sim}$ in the obvious way. We denote by $\ZZ^{\oplus\alpha}$ the set of tuples of integers of length $\alpha$ that are almost always $0$. The group operations on $\ZZ^{\oplus\alpha}$ are defined coordinate-wise. The following immediate proposition implies in particular that  $L_{{\rm ter},x}/\mathord{\sim}$ is isomorphic to $\ZZ^{\oplus\alpha}$.
 
 \begin{proposition}
 \label{corol_formacanonicaterminimoduli}
-Let $A\subseteq M\models T_{\rm ag}$. Then for every formula $\phi(x)\in\atL(A)$ there are $n\in\ZZ^{\oplus\alpha}$ and $c\in\<A\>_M$ such that 
+Let $A\subseteq M\models T_{\rm ag}$. Then for every formula $\phi({\mr x})\in\atL(A)$ there are $n\in\ZZ^{\oplus\alpha}$ and $c\in\<A\>_M$ such that 
 
-\ceq{\hfill\medrel{\proves}\phi(x)}{\iff}{\sum_{i<\alpha}n_ix_i\ =\ c}.
+\ceq{\hfill\medrel{\proves}\phi({\mr x})}{\iff}{\sum_{i<\alpha}n_ix_i\ =\ c}.
 
 where $n=\<n_i:i<\alpha\>$ and  $x=\<x_i:i<\alpha\>$.\QED
 
 \end{proposition}
 
 \begin{proof}
-Up to equivalence over $T_{\rm ag}$ the formula $\phi(x)$ has the form $s(x)=t(a)$ for some parameter-free terms $s(x)$ and $t(z)$. Over $\Diag\,\<A\>_M$, we can replace $t(a)$ with a single element of  $\<A\>_M$ and write $s(x)$ as the linear combination shown above.
+Up to equivalence over $T_{\rm ag}$ the formula $\phi({\mr x})$ has the form $s({\mr x})=t(a)$ for some parameter-free terms $s({\mr x})$ and $t(z)$. Over $\Diag\,\<A\>_M$, we can replace $t(a)$ with a single element of  $\<A\>_M$ and write $s({\mr x})$ as the linear combination shown above.
 \end{proof}
 
 
@@ -66,29 +66,29 @@ The following proposition gives a convenient syntactic characterization of indep
 
 
 \begin{proposition}
-Let $A\subseteq M\models T_{\rm ag}$. Then for every $c\in M$ the following are equivalent.
+Let $A\subseteq M\models T_{\rm ag}$. Let ${\mr c}\in M$ be such that ${\mr c}^n\neq0$ for every $n\in\omega\sm\{0\}$ (i.e.\@ ${\mr c}$ is not a torsion element). Then the following are equivalent.
 \begin{itemize}
- \item[1.] $\<A\>_M\cap\<c\>_M=\big\{0\big\}$;
- \item[2.] $p(x)=\attp_M(c/A)$ is trivial (see Notation~\ref{note_tipi_diagramma} and ~\ref{notation1}).
+ \item[1.] $\<A\>_M\cap\<{\mr c}\>_M=\big\{0\big\}$;
+ \item[2.] $p({\mr x})=\attp_M({\mr c}/A)$ is trivial (see Notation~\ref{note_tipi_diagramma} and ~\ref{notation1}).
 \end{itemize}
 \end{proposition}
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}\quad By Proposition~\ref{corol_formacanonicaterminimoduli}, a non trivial formula in $p(x)$ may be assumed to have the form $nx=a$ for some $n\in\ZZ\sm\{0\}$ and some $a\in\<A\>_M\sm\{0\}$. If such a formula is satisfied by $c$ then $0\neq a\in\<A\>_M\cap\<c\>_M$. 
+\ssf{1}$\IMP$\ssf{2}\quad By Proposition~\ref{corol_formacanonicaterminimoduli}, a non trivial formula in $p({\mr x})$ may be assumed to have the form $n{\mr x}=a$ for some $n$ and some $a$. If such a formula is satisfied by ${\mr c}$ then $a\in\<A\>_M\cap\<{\mr c}\>_M$. As ${\mr c}$ is not a torsion element, $n=0$ and the equation is trivial.
 
-\ssf{2}$\IMP$\ssf{1}\quad If $\<A\>_M\cap\<c\>_M\neq\big\{0\big\}$ then $nc=a$ for some $a\in\<A\>_M\sm\{0\}$. Then $c$ satisfies the non trivial equation $nx=a$.
+\ssf{2}$\IMP$\ssf{1}\quad If $\<A\>_M\cap\<{\mr c}\>_M\neq\big\{0\big\}$ then $n{\mr c}=a$ for some $a\in\<A\>_M\sm\{0\}$. Then ${\mr c}$ satisfies some non trivial equation $n{\mr x}=a$.
 \end{proof}
 
 
 \begin{remark}\label{oss_liberi_qf}
-Let $k:M\to N$ be a partial embedding and let $a$ be an enumeration of $\dom k$. We claim that  $k\cup\big\{\<b,c\>\big\}:M\to N$ is a partial embedding for every $b\in M$ and $c\in N$ that are independent from $a$, respectively $ka$. In fact, it suffices to check that $M,a,b\,\equiv_{\rm at}N,ka, c$. Suppose $\phi(x,z)\in\atL$ \ is such that $M\models\phi(a,b)$. Then by independence $\phi(a,x)$ is trivial, i.e.
+Let $k:M\to N$ be a partial embedding and let ${\gr a}$ be an enumeration of $\dom k$. We claim that  $k\cup\big\{\<{\mr b},{\mr c}\>\big\}:M\to N$ is a partial embedding for every ${\mr b}\in M$ and ${\mr c}\in N$ that are independent from ${\gr a}$, respectively $k{\gr a}$. In fact, it suffices to check that $M,{\mr b},{\gr a}\,\equiv_{\rm at}N, {\mr c},k{\gr a}$. Suppose $\phi({\mr x}\,;{\gr z})\in\atL$ \ is such that $M\models\phi({\mr b}\,;{\gr a})$. Then by independence $\phi({\mr x}\,;{\gr a})$ is trivial, i.e.
 
-\ceq{\hfill T_{\rm ag} \cup\ \Diag\<a\>_M}{\proves}{\phi(a,x).}
+\ceq{\hfill T_{\rm ag} \cup\ \Diag\<{\gr a}\>_M}{\proves}{\phi({\mr x}\,;{\gr a}).}
 
-As $\<a\>_M$ and  $\<ka\>_N$ are isomorphic structures 
+As $\<{\gr a}\>_M$ and  $\<k{\gr a}\>_N$ are isomorphic structures 
 
-\ceq{\hfill T_{\rm ag}\ \cup\ \Diag\<ka\>_N}{\proves}{\phi(ka,x).}
+\ceq{\hfill T_{\rm ag}\ \cup\ \Diag\<k{\gr a}\>_N}{\proves}{\phi({\mr x}\,;k{\gr a}).}
 
-Therefore $N\models\phi(ka,c)$. The proof that $N\models\phi(ka,c)$ implies $M\models\phi(a,b)$ is similar.\QED 
+Therefore $N\models\phi({\mr c}\,;k{\gr a})$. The proof that $N\models\phi({\mr c}\,;k{\gr a})$ implies $M\models\phi({\mr b}\,;{\gr a})$ is similar.\QED 
 \end{remark}
 
 
@@ -114,35 +114,35 @@ Let $A\subseteq M$ have cardinality $<|M|$. We claim that $M$ contains some elem
 \end{proof}
 
 \begin{proposition}\label{prop_mst_tipi princ_comp}
-Let $A\subseteq M\models T_{\rm tfag}$.  Let $p(x)=\atpmtp(b/A)$, where $b \in M$. Then one of the following holds:   
+Let $A\subseteq M\models T_{\rm tfag}$.  Let $p({\mr x})=\atpmtp({\mr b}/A)$, where ${\mr b} \in M$. Then one of the following holds:   
 \begin{itemize}
-\item[1.] $b$ is independent from $A$;
-\item[2.] $M\models\phi(b)$ for some $\phi(x)\in\atL(A)$ such that $\ \proves\ \phi(x)\imp p(x)$.
+\item[1.] ${\mr b}$ is independent from $A$;
+\item[2.] $M\models\phi({\mr b})$ for some $\phi({\mr x})\in\atL(A)$ such that $\ \proves\ \phi({\mr x})\imp p({\mr x})$.
 \end{itemize}\end{proposition}
 
-Note the similarity with Example~\ref{ex_infiniti_colori}, where the independent type is $q(x)$ and the isolating formulas are the $r_i(x)$. 
+Note the similarity with Example~\ref{ex_infiniti_colori}, where the independent type is $q({\mr x})$ and the isolating formulas are the $r_i({\mr x})$. 
 
 It is important to observe that the set $A$ above may be infinite. This is essential to obtain Corollary~\ref{corol_ModDivUltraOmog}, and it is one of the main differences between this example and the examples encountered in Chapter~\ref{relational}. % (see Exercise~\ref{ex_ol+grf_tipi_princ_comp}).
 %L'insieme $A$ pu\`o essere preso infinito, questo permetter\`a di dimostrare il lemma~\ref{lemma_modulo_divisibile_ricco_nonnumer} senza restrizioni sulla cardinalit\`a e quindi di ottenere la categoricit\`a non numerabile, vedi corollario~\ref{thm_ModDivUltraOmog}. Non \`e cos\`i nell'esercizio~\ref{ex_ol+grf_tipi_princ_comp}. 
 
 \begin{proof}
-If $b$ is dependent from $A$, then $b$ satisfies a non trivial atomic formula $\phi(x)$ which we claim is the formula required in \ssf{2}. It suffices to show that $\phi(x)$ implies a complete $\atpmL(A)$-type. Clearly this type must be $p(x)$. Let $\phi(x)$ have the form $nx=a$ for some $n\in\ZZ\sm\{0\}$ and $a\in\<A\>_M\sm\{0\}$. We show that for every $m\in\ZZ$ and every $c\in\<A\>_M$ one of the following holds
+If ${\mr b}$ is dependent from $A$, then ${\mr b}$ satisfies a non trivial atomic formula $\phi({\mr x})$ which we claim is the formula required in \ssf{2}. It suffices to show that $\phi({\mr x})$ implies a complete $\atpmL(A)$-type. Clearly this type must be $p({\mr x})$. Let $\phi({\mr x})$ have the form $n{\mr x}=a$ for some $n\in\ZZ\sm\{0\}$ and ${\gr a}\in\<A\>_M\sm\{0\}$. We show that for every $m\in\ZZ$ and every ${\gr c}\in\<A\>_M$ one of the following holds
 \begin{itemize}
-\item[a.] $\proves\   nx=a\imp mx=c$;
-\item[b.] $\proves\   nx=a\imp mx\neq c$.
+\item[a.] $\proves\   n{\mr x}={\gr a}\imp m{\mr x}={\gr c}$;
+\item[b.] $\proves\   n{\mr x}={\gr a}\imp m{\mr x}\neq {\gr c}$.
 \end{itemize} 
 Suppose not for a contradiction that neither \ssf{a} nor \ssf{b} holds and fix models $N_1$, $N_2$ and some $b_i\in N_i$ such that
 \begin{itemize}
-\item[a'.] $N_1\models nb_1=a$ \ and \ $N_1\models mb_1\neq c$;
-\item[b'.] $N_2\models nb_2=a$ \ and \ $N_2\models mb_2 = c$.
+\item[a'.] $N_1\models n{\mr b_1}={\gr a}$ \ and \ $N_1\models m{\mr b_1}\neq {\gr c}$;
+\item[b'.] $N_2\models n{\mr b_2}={\gr a}$ \ and \ $N_2\models m{\mr b_2} = {\gr c}$.
 \end{itemize} 
-From \ssf{b'} we obtain $N_2\models ma=nc$. As $N_1$ is torsion-free, from \ssf{a'} we obtain $N_1\models ma\neq nc$. But $ma=nc$ is a formula with parameters in $\<A\>_M$, so it should have the same truth value in all superstructures of $\<A\>_M$, a contradiction.
+From \ssf{b'} we obtain $N_2\models m{\gr a}=n{\gr c}$. As $N_1$ is torsion-free, from \ssf{a'} we obtain $N_1\models m{\gr a}\neq n{\gr c}$. But $m{\gr a}=n{\gr c}$ is a formula with parameters in $\<A\>_M$, so it should have the same truth value in all superstructures of $\<A\>_M$, a contradiction.
 \end{proof}
 
 
 
 
-%\begin{definition} Let $A\subseteq M\models T_{\rm tfag}$. We say that an element $c\in M$ is \emph{independent from $A$\/} if the type $p(x)=\attp_M(c/A)$ is trivial, that is, $N\models \A x\,p(x)$ for every $\<A\>_M\subseteq N\models T_{\rm tfag}$.\QED\end{definition}  
+%\begin{definition} Let $A\subseteq M\models T_{\rm tfag}$. We say that an element $c\in M$ is \emph{independent from $A$\/} if the type $p({\mr x})=\attp_M(c/A)$ is trivial, that is, $N\models \A x\,p({\mr x})$ for every $\<A\>_M\subseteq N\models T_{\rm tfag}$.\QED\end{definition}  
 
 
 % 
@@ -157,59 +157,59 @@ From \ssf{b'} we obtain $N_2\models ma=nc$. As $N_1$ is torsion-free, from \ssf{
 
 
 % \begin{exercise}\label{ex_ol+grf_tipi_princ_comp}
-% Let $T$ be one of the theories $T_{\rm lo}$ or $T_{\rm graph}$. Let $A\subseteq M\models T$ be finite. For $b\in M$ let $p(x)=\atpmtp_M(b/A)$. Prove that $\phi(x)\imp p(x)$ for some $\phi(x)$, conjunction of formulas in $p(x)$. Find a counterexample with $A$ infinite.\QED
+% Let $T$ be one of the theories $T_{\rm lo}$ or $T_{\rm graph}$. Let $A\subseteq M\models T$ be finite. For $b\in M$ let $p({\mr x})=\atpmtp_M(b/A)$. Prove that $\phi({\mr x})\imp p({\mr x})$ for some $\phi({\mr x})$, conjunction of formulas in $p({\mr x})$. Find a counterexample with $A$ infinite.\QED
 % \end{exercise}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Divisible abelian groups}
 
 The theory of \emph{divisible abelian groups\/} extends $T_{\rm tfag}$ with the following axioms for all  integers $n\neq0$
 \begin{itemize}
-\item[div$_n$] $\E x\ nx=y$.
+\item[div$_n$] $y\neq0\imp\E x\ nx=y$.
 \end{itemize} 
 We denote this theory by \emph{$T_{\rm\bf dag}$}.
 
 \begin{proposition}\label{prop_md_cons_sodd}
-Let $M\models T_{\rm tfag}$ and let $\phi(x)\in\atL(A)$, where $|x|=1$, be consistent. Then $N\models\E x \,\phi(x)$ for every model $N\models T_{\rm dag}\cup\Diag\<A\>_M$.
+Let $A\subseteq M\models T_{\rm tfag}$ and let $\phi({\mr x})\in\atL(A)$, where $|{\mr x}|=1$, be consistent. Then $N\models\E {\mr x} \,\phi({\mr x})$ for every model $N\models T_{\rm dag}$.
 \end{proposition}
 
-Note that the proposition mentions $T_{\rm tfag}$ first and then $T_{\rm dag}$. 
+Note that in the proposition above  \textit{consistent\/} means satisfied in some $M'$ such that $\<A_M\>\subseteq M'\models T_{\rm tfag}$.
 
-The claim in the proposition holds more generally for all $\phi(x)\in L_{\rm qf}$ and also when $x$ is a tuple of variables. This follows from Lemma~\ref{lemma_modulo_divisibile_ricco_nonnumer}, whose proof uses the proposition.
+The claim in the proposition holds more generally for all $\phi({\mr x})\in L_{\rm qf}$ and also when ${\mr x}$ is a tuple of variables. This follows from Lemma~\ref{lemma_modulo_divisibile_ricco_nonnumer}, whose proof uses the proposition.
 
 \begin{proof}
-We can assume that $\phi(x)$ has the form $n x= a$ for some $n\in\ZZ$ and some $a\in\<A\>_N$. If $n=0$, then $a=0$ since $\phi(x)$ is consistent, and the claim is trivial. Otherwise a solution exist in $N$ by axiom \ssf{div$_n$}.
+We can assume that $\phi({\mr x})$ has the form $n {\mr x}= {\gr a}$ for some $n\in\ZZ$ and some ${\gr a}\in\<A\>_M$. If $n=0$, then ${\gr a}=0$ since $\phi({\mr x})$ is consistent, and the claim is trivial. If $n\neq0$ then by consistency ${\gr a}\neq0$, hence a solution exist in $N$ by axiom \ssf{div$_n$}.
 \end{proof}
 
 \begin{exercise}
-Prove a converse of Proposition~\ref{prop_md_cons_sodd}. Let $A\subseteq N\models T_{\rm ag}$ and let $x$ be a single variable. Prove that if $N\models\E x \,\phi(x)$ for every consistent $\phi(x)\in\atL(A)$, then $N\models T_{\rm dag}$.\QED
+Prove a converse of Proposition~\ref{prop_md_cons_sodd}. Let $A\subseteq N\models T_{\rm ag}$ and let ${\mr x}$ be a single variable. Prove that if $N\models\E{\mr x} \,\phi({\mr x})$ for every consistent $\phi({\mr x})\in\atL(A)$, then $N\models T_{\rm dag}$.\QED
 \end{exercise}
 
 We are ready to prove that divisible abelian groups of infinite rank are $\omega$-rich. We shall be slightly more general than that.
 
 \begin{lemma}\label{lemma_modulo_divisibile_ricco_nonnumer}
-Let $k:M\imp N$ be a partial isomorphism of cardinality $<\lambda$, where $M\models T_{\rm tfag}$ and $N\models T_{\rm dag}$ has rank $\ \ge\lambda$. Then for every $b\in M$ there is $c\in N$ such that $k\cup\big\{\<b,c\>\big\}:M\imp N$ is a partial isomorphism.
+Let $k:M\imp N$ be a partial isomorphism of cardinality $<\lambda$, where $M\models T_{\rm tfag}$ and $N\models T_{\rm dag}$ is a model of rank $\ \ge\lambda$. Then for every ${\mr b}\in M$ there is ${\mr c}\in N$ such that $k\cup\big\{\<{\mr b}\,;{\mr c}\>\big\}:M\imp N$ is a partial isomorphism.
 \end{lemma}
 
 \begin{proof}
-Let $a$ be an enumeration of $\dom k$ and let $p(x,z)=\atpmtp(b,a)$.  The required $c$ has to realize $p(x,ka)$. We consider two cases. If $b$ is dependent from $a$, then Proposition~\ref{prop_mst_tipi princ_comp} yields a formula $\phi(x,z)\in\atL$ such that 
+Let ${\gr a}$ be an enumeration of $\dom k$ and let $p({\mr x}\,;{\gr z})=\atpmtp({\mr b}\,;{\gr a})$.  The required ${\mr c}$ has to realize $p({\mr x}\,;k{\gr a})$. We consider two cases. If ${\mr b}$ is dependent from ${\gr a}$, then Proposition~\ref{prop_mst_tipi princ_comp} yields a formula $\phi({\mr x}\,;{\gr z})\in\atL$ such that 
 
-\noindent\rlap{\ssf{i.}}\hspace{5ex} $\proves\ \phi(x,a)\imp p(x,a)$
+\noindent\rlap{\ssf{i.}}\hspace{5ex} $\proves\ \phi({\mr x}\,;{\gr a})\imp p({\mr x}\,;{\gr a})$
 
-\noindent\rlap{\ssf{ii.}}\hspace{5ex} $\phi(x,a)$\ \ is consistent.
+\noindent\rlap{\ssf{ii.}}\hspace{5ex} $\phi({\mr x}\,;{\gr a})$\ \ is consistent.
 
-By isomorphism,  \ssf{i} and \ssf{ii} hold with $a$ replaced by $ka$. Then by Proposition~\ref{prop_md_cons_sodd} the formula $\phi(x,ka)$ has a solution $c \in N$.
+By isomorphism,  \ssf{i} and \ssf{ii} hold with ${\gr a}$ replaced by $k{\gr a}$. Then by Proposition~\ref{prop_md_cons_sodd} the formula $\phi({\mr x}\,;k{\gr a})$ has a solution ${\mr c} \in N$.
 
-The second case, which has no analogue in Lemma~\ref{lem_ordinericco}, is when $b$ is independent from $a$. Then by   Remark~\ref{oss_liberi_qf} we may choose $c$ to be any element of $N$ independent from $ka$. Such an element exists because $N$ has rank at least $\lambda$. 
+The second case, which has no analogue in Lemma~\ref{lem_ordinericco}, is when ${\mr b}$ is independent from ${\gr a}$. Then by   Remark~\ref{oss_liberi_qf} we may choose ${\mr c}$ to be any element of $N$ independent from $k{\gr a}$. Such an element exists because $N$ has rank at least $\lambda$. 
 \end{proof}
 
 \begin{corollary}\label{corol_ModDivUltraOmog}
 Every uncountable model of $T_{\rm dag}$ is rich in the category of models of $T_{\rm tfag}$ and partial isomorphisms. In particular $T_{\rm dag}$ is uncountably categorical, it is complete, and has quantifier elimination.
 \end{corollary}
 \begin{proof}
-Any uncountable $N\models T_{\rm dag}$ has rank $|N|$, therefore it is rich by Lemma~\ref{lemma_modulo_divisibile_ricco_nonnumer}; categoricity and completeness follow. As for quantifier elimination, suppose $k:M\to N$ is a partial isomorphism between models of $T_{\rm dag}$. If $M\preceq M'$ and $M\preceq N'$ are elementary superstructures of uncountable cardinality then $k:M'\to N'$ is elementary by Theorem~\ref{thm_morphism_rich_elementary} and this suffices to conclude that  $k:M\to N$ is elementary. 
+Any uncountable $N\models T_{\rm dag}$ has rank $|N|$, therefore it is rich by Lemma~\ref{lemma_modulo_divisibile_ricco_nonnumer}; categoricity and completeness follow. As for quantifier elimination, let $k:M\to N$ is a partial isomorphism between models of $T_{\rm dag}$. If $M\preceq M'$ and $M\preceq N'$ are elementary superstructures of uncountable cardinality then $k:M'\to N'$ is elementary by Theorem~\ref{thm_morphism_rich_elementary} and this suffices to conclude that  $k:M\to N$ is elementary. 
 \end{proof}
 
 \begin{exercise}
@@ -244,24 +244,24 @@ We denote the theory of commutative rings by \emph{$T_{\rm cr}$}.
 
 In what follows the theory $T_{\rm cr}\cup\Diag\<A\>_M$ is implicit in the sense of Notation~\ref{notation1}, so it is important to remember that $\Diag\<A\>_M$ is not trivial even when $A=\0$. In fact, $\Diag\<\0\>_M$ determines the characteristic of the models.
 
-Let  $A\subseteq M\models T_{\rm cr}$ and let $x$ be a tuple of variables of length $\alpha$, an ordinal. We write $L_{{\rm ter},x}(A)$ for the set of terms $t(x)$ with free variables among $x$ and parameters in $A$. On this set we define the equivalence relation
+Let  $A\subseteq M\models T_{\rm cr}$ and let $x$ be a tuple of variables of length $\alpha$, an ordinal. We write $L_{{\rm ter},x}(A)$ for the set of terms $t({\mr x})$ with free variables among $x$ and parameters in $A$. On this set we define the equivalence relation
 
 \ceq{\hfill \emph{$t(x)\sim s(x)$}}%
 {=}%
-{\proves \ t(x)=s(x).}
+{\proves \ t({\mr x})=s({\mr x}).}
 
 On $L_{{\rm ter},x}(A)/\mathord{\sim}$ we define the ring operations in the obvious way so that $L_{{\rm ter},x}(A)/\mathord{\sim}$ is a commutative ring. We denote by $A[x]$ the set of polynomials with variables among $x$ and parameters in $\<A\>_M$. The ring operations on $A[x]$ are defined as usual. The following proposition (which is clear, but tedious to prove) implies in particular that $L_{{\rm ter},x}(A)/\mathord{\sim}$ is isomorphic to $A[x]$. For simplicity we state it only for $|x|=1$.
 
 \begin{proposition}
 \label{prop_formacanonicaterminiau}
-Let  $A\subseteq M\models T_{\rm cr}$ and let $x$ be a single variable. Then for every formula $\phi(x)\in \atL(A)$ there is a unique $n<\omega$ and a unique tuple $a=\<a_i:i\le n\>$ of elements of $\<A\>_M$ such that $a_n\neq0$ and 
+Let  $A\subseteq M\models T_{\rm cr}$ and let $x$ be a single variable. Then for every formula $\phi({\mr x})\in \atL(A)$ there is a unique $n<\omega$ and a unique tuple $a=\<a_i:i\le n\>$ of elements of $\<A\>_M$ such that $a_n\neq0$ and 
 
-\ceq{}{\proves}{\phi(x)\ \iff\ \sum_{i\le n}a_ix^i\ =\ 0}.\QED
+\ceq{}{\proves}{\phi({\mr x})\ \iff\ \sum_{i\le n}a_ix^i\ =\ 0}.\QED
 \end{proposition}
 
 The integer $n$ in the proposition above is called the \emph{degree of $\phi(x)$}.
 
-\begin{definition} Let $A\subseteq M\models T_{\rm cr}$. We say that an element $b\in M$ is \emph{transcendent over $A$\/} if the type $p(x)=\attp_M(b/A)$ is trivial (see Notation~\ref{note_tipi_diagramma} and ~\ref{notation1}). Otherwise we say that $b$ is \emph{algebraic over $A$}. The \emph{transcendence degree\/} of $M$ is the least cardinality of a subset $A\subseteq M$ such that no element of $M$ is transcendent over $A$.\QED
+\begin{definition} Let $A\subseteq M\models T_{\rm cr}$. We say that an element $b\in M$ is \emph{transcendent over $A$\/} if the type $p({\mr x})=\attp_M(b/A)$ is trivial (see Notation~\ref{note_tipi_diagramma} and ~\ref{notation1}). Otherwise we say that $b$ is \emph{algebraic over $A$}. The \emph{transcendence degree\/} of $M$ is the least cardinality of a subset $A\subseteq M$ such that all elements of $M$ are algebraic over $A$.\QED
 \end{definition}  
 
 \begin{remark}\label{oss_liberi_cr}
@@ -290,36 +290,36 @@ Every polynomial has finitely many solutions in an integral domain and there are
 
 
 \begin{proposition}\label{prop_di_tipi princ_comp}
-Let $A\subseteq M\models T_{\rm id}$. For $b\in M$ let $p(x)=\atpmtp(b/A)$. Then one of the following holds  
+Let $A\subseteq M\models T_{\rm id}$. For ${\mr b}\in M$ let $p({\mr x})=\atpmtp({\mr b}/A)$. Then one of the following holds  
 \begin{itemize}
-\item[1.] $b$ is transcendental over $A$;
-\item[2.] $M\models\phi(b)$ for some $\phi(x)\in\atL(A)$ such that
-$\ \proves\ \phi(x)\imp p(x)$.
+\item[1.] ${\mr b}$ is transcendental over $A$;
+\item[2.] $M\models\phi({\mr b})$ for some $\phi({\mr x})\in\atL(A)$ such that
+$\ \proves\ \phi({\mr x})\imp p({\mr x})$.
 \end{itemize}\end{proposition}
 
-Note the similarity with Example~\ref{ex_infiniti_colori}, where the transcendental type is $q(x)$ and the isolating formulas are the $r_i(x)$. 
+Note the similarity with Example~\ref{ex_infiniti_colori}, where the transcendental type is $q({\mr x})$ and the isolating formulas are the $r_i({\mr x})$. 
 
 As in Proposition~\ref{prop_mst_tipi princ_comp}, the set $A$ may be infinite. This is essential to obtain Corollary~\ref{corol_acfUltraOmog}.
 
 
 \begin{proof}
-Suppose $b$ is not transcendental, i.e.\@ it satisfies a non trivial atomic formula. Let $\phi(x)\in\atL(A)$ be a non trivial formula with minimal degree such that $\phi(b)$.  We prove that $\phi(x)$ implies a complete $\atpmL(A)$-type.  Clearly this type must be $p(x)$. We prove that for any $\xi(x)\in\atL(A)$ one of the following holds
+Suppose ${\mr b}$ is not transcendental, i.e.\@ it satisfies a non trivial atomic formula. Let $\phi({\mr x})\in\atL(A)$ be a non trivial formula with minimal degree such that $\phi({\mr b})$.  We prove that $\phi({\mr x})$ implies a complete $\atpmL(A)$-type.  Clearly this type must be $p({\mr x})$. We prove that for any $\xi({\mr x})\in\atL(A)$ one of the following holds
 \begin{itemize}
-\item[1.] $\ \proves\ \phi(x)\imp\phantom{\neg}\xi(x)$
-\item[2.] $\ \proves\ \phi(x)\imp\neg\xi(x)$.
+\item[1.] $\ \proves\ \phi({\mr x})\imp\phantom{\neg}\xi({\mr x})$
+\item[2.] $\ \proves\ \phi({\mr x})\imp\neg\xi({\mr x})$.
 \end{itemize} 
-Let us write $a(x)=0$ and $a'(x)=0$ for the formulas $\phi(x)$ and $\xi(x)$, respectively. Let $n$ be the degree of the polynomial $a(x)$. If $\<A\>_M$ is a field, choose a polynomial $d(x)$ of maximal degree such that
+Let us write $a({\mr x})=0$ and $a'({\mr x})=0$ for the formulas $\phi({\mr x})$ and $\xi({\mr x})$, respectively. Let $n$ be the degree of the polynomial $a({\mr x})$. If $\<A\>_M$ is a field, choose a polynomial $d({\mr x})$ of maximal degree such that
 \begin{itemize}
-\item[a.] $d(x)t(x)=a(x)$
-\item[a'.] $d(x)t'(x)=a'(x)$,
+\item[a.] $d({\mr x})t({\mr x})=a({\mr x})$
+\item[a'.] $d({\mr x})t'({\mr x})=a'({\mr x})$,
 \end{itemize} 
-for some polynomials $t(x)$ and $t'(x)$. 
+for some polynomials $t({\mr x})$ and $t'({\mr x})$. 
 
-If $\<A\>_M$ is not a field, polynomials $d(x)$, $t(x)$ and $t'(x)$ as above exist with coefficients in the field of fractions of $\<A\>_M$. Then \ssf{a} and \ssf{a'} hold up to a factor in $\<A\>_M$ which we absorb in $a(x)$ and $a'(x)$. 
+If $\<A\>_M$ is not a field, polynomials $d({\mr x})$, $t({\mr x})$ and $t'({\mr x})$ as above exist with coefficients in the field of fractions of $\<A\>_M$. Then \ssf{a} and \ssf{a'} hold up to a factor in $\<A\>_M$ which we absorb in $a({\mr x})$ and $a'({\mr x})$. 
 
-From \ssf{a} we get $d(b)=0$ or $t(b)=0$. In the first case, as $a(x)$ has minimal degree, we conclude that $t(x)$ is constant.  This implies that any zero of $a(x)$ is also a zero of $a'(x)$, that is, it implies \ssf{1}. 
+From \ssf{a} we get $d({\mr b})=0$ or $t({\mr b})=0$. In the first case, as $a({\mr x})$ has minimal degree, we conclude that $t({\mr x})$ is constant.  This implies that any zero of $a({\mr x})$ is also a zero of $a'({\mr x})$, that is, it implies \ssf{1}. 
 
-Now suppose $t(b)=0$. Then the minimality of the degree of $a(x)$ implies that $d(x)=d$, where $d$ is a nonzero constant. If $\<A\>_M$ is a field, apply B\'ezout's identity to obtain two polynomials $c(x)$ and $c'(x)$ such that $d=a(x)c(x)+a'(x)c'(x)$. Then $a(x)$ and $a'(x)$ have no common zeros, and \ssf{2} follows. If $\<A\>_M$ is not a field, we use  B\'ezout's identity in the field of fractions of $\<A\>_M$ and obtain $d'd=a(x)c(x)+a'(x)c'(x)$ for some $d'\in\<A\>_M\sm\big\{0\big\}$. Then we reach the same conclusion.
+Now suppose $t({\mr b})=0$. Then the minimality of the degree of $a({\mr x})$ implies that $d({\mr x})=d$, where $d$ is a nonzero constant. If $\<A\>_M$ is a field, apply B\'ezout's identity to obtain two polynomials $c({\mr x})$ and $c'({\mr x})$ such that $d=a({\mr x})c({\mr x})+a'({\mr x})c'({\mr x})$. Then $a({\mr x})$ and $a'({\mr x})$ have no common zeros, and \ssf{2} follows. If $\<A\>_M$ is not a field, we use  B\'ezout's identity in the field of fractions of $\<A\>_M$ and, for some $d'\in\<A\>_M\sm\big\{0\big\}$, obtain $d'd=a({\mr x})c({\mr x})+a'({\mr x})c'({\mr x})$. Then we reach the same conclusion.
 \end{proof}
 
 
@@ -352,45 +352,45 @@ This not a complete theory because it does not decide the characteristic of the 
 The theory \emph{$T^0_{\rm acf}$\/} contains the negation of \ssf{ch$_p$} for all $p$. Note that all models of $T^p_{\rm acf}$ have the same characteristic in the model theoretic sense defined in~\ref{def_characteristic}. In fact, any two fields $M$ and $N$ with the same (algebraic) characteristic have isomorphic prime subfield, that is, $\<\0\>_M \simeq \<\0\>_N$.
 
 \begin{proposition}\label{prop_acf_cons_sodd}
-Let $A\subseteq N\models T_{\rm acf}$ and let $x$ be a single variable. Then $N\models\E x \,\phi(x)$ for every  $\phi(x)\in\atL(A)$ that is consistent with $T_{\rm id}\cup\Diag\<A\>_M$.
+Let $A\subseteq M\models T_{\rm id}$ and let $\phi({\mr x})\in\atL(A)$, where $|{\mr x}|=1$, be consistent. Then $N\models\E {\mr x} \,\phi({\mr x})$ for every model $N\models T_{\rm acf}$.
 \end{proposition}
 
-Note that the proposition mentions $T_{\rm acf}$ first and then $T_{\rm id}$. 
+Note that in the proposition above \textit{consistent\/} means satisfied in some $M'$ such that $\<A_M\>\subseteq M'\models T_{\rm id}$.
 
-The claim in the proposition holds more generally for all $\phi(x)\in L_{\rm qf}$ when $x$ is a tuple of variables. This follows from Lemma~\ref{lem_acf_ricco_nonnumer} whose proof uses the proposition.
+The claim in the proposition holds more generally for all $\phi({\mr x})\in L_{\rm qf}$ when $x$ is a tuple of variables. This follows from Lemma~\ref{lem_acf_ricco_nonnumer} whose proof uses the proposition.
 
 \begin{proof}
-Up to equivalence $\phi(x)$ has the form $a_nx^n + \dots + a_1 x + a_0=0$ for some $a_i\in\<A\>_N$. Choose $n$ minimal. If $n=0$, then $a_0=0$ since $\phi(x)$ is consistent, and the claim is trivial. Otherwise $a_n\neq0$ and the claim follows from \ssf{f} and \ssf{ac$_n$}. 
+Up to equivalence $\phi({\mr x})$ has the form ${\gr a_n}{\mr x}^n + \dots + {\gr a_1} {\mr x} + {\gr a_0}=0$ for some ${\gr a_i}\in\<A\>_N$. Choose $n$ minimal. If $n=0$, then ${\gr a_0}=0$ since $\phi({\mr x})$ is consistent, and the claim is trivial. Otherwise ${\gr a_n}\neq0$ and the claim follows from \ssf{f} and \ssf{ac$_n$}. 
 \end{proof}
 
 \begin{lemma}\label{lem_acf_ricco_nonnumer}
-Let $k:M\imp N$ be a partial isomorphism of cardinality $<\lambda$, where $M\models T_{\rm id}$ and $N\models T_{\rm acf}$ has transcendence degree $\ge\lambda$. Then for every $b\in M$ there is $c\in N$ such that $k\cup\big\{\<b,c\>\big\}:M\imp N$ is a partial isomorphism.
+Let $k:M\imp N$ be a partial isomorphism of cardinality $<\lambda$, where $M\models T_{\rm id}$ and $N\models T_{\rm acf}$ has transcendence degree $\ge\lambda$. Then for every ${\mr b}\in M$ there is ${\mr c}\in N$ such that $k\cup\big\{\<{\mr b},{\mr c}\>\big\}:M\imp N$ is a partial isomorphism.
 \end{lemma}
 
 The following is the proof of Lemma~\ref{lemma_modulo_divisibile_ricco_nonnumer} which we have pasted here for the sake of the lazy reader.
 
 \begin{proof}
-Let $a$ be an enumeration of $\dom k$ and let $p(x,z)=\atpmtp_M(c,a)$. The required $c$ has to realize $p(x,ka)$. We consider two cases. If $b$ is algebraic over $a$, then Proposition~\ref{prop_di_tipi princ_comp} yields a formula $\phi(x,z)\in\atL$ such that 
+Let ${\gr a}$ be an enumeration of $\dom k$ and let $p({\mr x}\,;{\gr z})=\atpmtp_M({\mr c}\,;{\gr a})$. The required ${\mr c}$ has to realize $p({\mr x}\,;k{\gr a})$. We consider two cases. If ${\mr b}$ is algebraic over ${\gr a}$, then Proposition~\ref{prop_di_tipi princ_comp} yields a formula $\phi({\mr x}\,;{\gr z})\in\atL$ such that 
 
-\noindent\rlap{\ssf{i.}}\hspace{5ex} $\phi(x,a)\imp p(x,a)$
+\noindent\rlap{\ssf{i.}}\hspace{5ex} $\phi({\mr x}\,;{\gr a})\imp p({\mr x}\,;{\gr a})$
 
-\noindent\rlap{\ssf{ii.}}\hspace{5ex} $\phi(x,a)$\ \ is consistent.
+\noindent\rlap{\ssf{ii.}}\hspace{5ex} $\phi({\mr x}\,;{\gr a})$\ \ is consistent.
 
-By isomorphism \ssf{i} and \ssf{ii} hold with $a$ replaced by $ka$. Then by Proposition~\ref{prop_acf_cons_sodd} the formula $\phi(x,ka)$ has a solution in $c\in N$.
+By isomorphism \ssf{i} and \ssf{ii} hold with ${\gr a}$ replaced by $k{\gr a}$. Then by Proposition~\ref{prop_acf_cons_sodd} the formula $\phi({\mr x}\,;k{\gr a})$ has a solution in ${\mr c}\in N$.
 
-The second case, which has no analogue in Lemma~\ref{lem_ordinericco}, is when $b$ is transcendent over $a$. Then by  Remark~\ref{oss_liberi_cr} we may choose $c$ to be any element of $N$ transcendent over $ka$. This exists because $N$ has transcendence degree $\ \ge\lambda$. 
+The second case, which has no analogue in Lemma~\ref{lem_ordinericco}, is when ${\mr b}$ is transcendent over ${\gr a}$. Then by  Remark~\ref{oss_liberi_cr} we may choose ${\mr c}$ to be any element of $N$ transcendent over $k{\gr a}$. This exists because $N$ has transcendence degree $\ \ge\lambda$. 
 \end{proof}
 
 \begin{corollary}\label{corol_acfUltraOmog}
-Every uncountable model of $T^p_{\rm acf}$ is rich in the category of integral domains of characteristic $p$ and partial isomorphisms. In particular $T^p_{\rm acf}$ is uncountably categorical, it is complete, and has quantifier elimination.
+Every uncountable model of $T^p_{\rm acf}$ is rich in the category of integral domains of characteristic $p$ and partial isomorphisms. In particular $T^p_{\rm acf}$ is uncountably categorical, and it is complete. Moreover, $T_{\rm acf}$ has quantifier elimination.
 \end{corollary}
 
-The proof requires the same argument as Corollary~\ref{corol_ModDivUltraOmog}. However here we have to fix the characteristic of the integral domain, otherwise the resulting category is not connected. 
+The proof requires the same argument as Corollary~\ref{corol_ModDivUltraOmog}.% However here we have to fix the characteristic of the integral domain, otherwise the resulting category is not connected. 
 
 \begin{proof}
-Every uncountable $N\models T^p_{\rm acf}$ has transcendence degree $|N|$, therefore it is rich by by Lemma~\ref{lem_acf_ricco_nonnumer}. Categoricity and completeness follow. 
+Every uncountable $N\models T^p_{\rm acf}$ has transcendence degree $|N|$, therefore it is rich by Lemma~\ref{lem_acf_ricco_nonnumer}. Categoricity and completeness follow. 
 
-For quantifier elimination, let $k:M\to N$ be a partial embedding between models of $T^p_{\rm acf}$. Let $M'$ and $N'$ be elementary superstructures of $M$ and $N$ respectively of sufficiently large cardinality. As $M'$ and $N'$ are rich, $k:M'\to N'$ is elementary by Theorem~\ref{thm_morphism_rich_elementary}. Hence 
+For quantifier elimination, let $k:M\to N$ be a partial embedding between models of $T_{\rm acf}$. Then $M$ and $N$ have the same charactiristic, i.e.\@ they are model of $T^p_{\rm acf}$ . Let $M'$ and $N'$ be elementary superstructures of $M$ and $N$ respectively of sufficiently large cardinality. As $M'$ and $N'$ are rich, $k:M'\to N'$ is elementary by Theorem~\ref{thm_morphism_rich_elementary}. Hence 
  $k:M\to N$ is also elementary.
 \end{proof}
 
@@ -432,7 +432,7 @@ It suffices to choose $N$ such that $|A|<|N|$ and $|x|\le |N|$; note that $x$ ha
 \begin{proof} Only the inclusion $\supseteq$ requires a proof.  Fix some polynomial $t(x){=}0\notin\ccl\, p(x)$. Then $p(x)\wedge t(x)\neq0$ is consistent, so there is a model $M'$ such that $M'\models p(a)\wedge t(a)\neq0$ for some $a\in {M'}^{|x|}$. Then there is a partial isomorphism $h:M'\to N$ that extends $\id_A$ and is defined on $a$, provided $N$ is large enough to accommodate $a$. This implies that $p(x)\wedge t(x)\neq0$ has a solution in $N$. Hence $t(x)$ does not belong to the set on the r.h.s.  
 \end{proof}
 
-Recall that $A[x]$ denotes the ring of polynomials with variables in $x$ and coefficients in $\<A\>_M$. We identify $\Delta(A)$ and $A[x]$ in the obvious way. Consequently, a $\Delta(A)\jj$type $p(x)$ is identified with a set of polynomials $p\subseteq A[x]$. For $p\subseteq A[x]$ we write \emph{${\rm\bf rad}\,p$} for the \emph{radical ideal generated by $p$}, that is, the intersection of all prime ideals containing $p$. When $p=\rad p$, we say that  \emph{$p$ is a radical ideal}. Recall from algebra that if $p\subseteq A[x]$ is an ideal then
+Recall that $A[x]$ denotes the ring of polynomials with variables in $x$ and coefficients in $\<A\>_M$. We identify $\Delta(A)$ nd $A[x]$ in the obvious way. Consequently, a $\Delta(A)\jj$type $p(x)$ is identified with a set of polynomials $p\subseteq A[x]$. For $p\subseteq A[x]$ we write \emph{${\rm\bf rad}\,p$} for the \emph{radical ideal generated by $p$}, that is, the intersection of all prime ideals containing $p$. When $p=\rad p$, we say that  \emph{$p$ is a radical ideal}. Recall from algebra that if $p\subseteq A[x]$ is an ideal then
 
 \ceq{\ssf{\#}\hfill\rad p}{=}{\Big\{t(x)\  :\ t^n(x)\in p \textrm{ for some positive integer }n\Big\},}
 
@@ -441,7 +441,7 @@ which explains the name.
 
 
 \begin{proposition}\label{prop_chiusura-radicale}
-Let $A\subseteq M\models T_{\rm id}$ and let $p(x)$ be a $\Delta(A)\jj$type. Then $\ccl\,p(x)=\rad p$.
+Let $A\subseteq M\models T_{\rm id}$ and let $p(x)$ be a $\Delta(A)\jj$type. Then $\ccl\,p(x)\simeq\rad p$.
 \end{proposition}
 The proposition holds with a similar proof for the broader class of rings without nilpotent elements. (Which does not come as a surprise.)
 \begin{proof}
@@ -465,7 +465,7 @@ When $x$ is a finite tuple of variables, we can extend the validity of Propositi
 \begin{corollary}[ (Hilbert's Nullstellensatz)]\label{coroll_Nullstellensatz}
 Let $N\models T_{\rm acf}$ and let $p(x)$, where $|x|<\omega$, be a $\Delta(N)\jj$type. Then
 
-\ceq{\hfill\rad p\medrel{=}\ccl\, p(x)}{=}{\Big\{t(x)\  :\  N\models\A x\,[ p(x)\imp t(x)=0]\Big\}.}
+\ceq{\hfill\rad p\medrel{\simeq}\ccl\, p(x)}{=}{\Big\{t(x)\  :\  N\models\A x\,[ p(x)\imp t(x)=0]\Big\}.}
 
 \end{corollary}
 
@@ -485,12 +485,12 @@ Hilbert's Nullstellensatz comes in two variants. The one in Corollary~\ref{corol
 %Hilbert's Nullstellensatz comes in two variants. We already have (up to some small input from algebra) the so-called weak form. This says that in an algebraically closed field every system of equation, which is not blatantly inconsistent, has a solution.
 % 
 % \begin{theorem}[(Hilbert's Nullstellensatz - weak form)]
-% Let $A\subseteq M\models T_{\rm id}$ and let $p(x)$ be a $\Delta(A)\jj$type. If $x$ is a finite tuple. Then for every $\<A\>_M\subseteq N\models T_{\rm acf}$
+% Let $A\subseteq M\models T_{\rm id}$ and let $p({\mr x})$ be a $\Delta(A)\jj$type. If $x$ is a finite tuple. Then for every $\<A\>_M\subseteq N\models T_{\rm acf}$
 % \begin{itemize}
-% \item[1.] $p(x)$ has no solution in $N$;
-% \item[2.] for some polynomial $t_i(x)\in p$ and some parameters $c_i\in\<A\>_M$
+% \item[1.] $p({\mr x})$ has no solution in $N$;
+% \item[2.] for some polynomial $t_i({\mr x})\in p$ and some parameters $c_i\in\<A\>_M$
 % 
-% \ceq{\hfill \sum^n_{i=1}c_i t_i(x)}{=}{1}\QED
+% \ceq{\hfill \sum^n_{i=1}c_i t_i({\mr x})}{=}{1}\QED
 % \end{itemize}
 % \end{theorem}
 % 
@@ -500,7 +500,7 @@ Hilbert's Nullstellensatz comes in two variants. The one in Corollary~\ref{corol
 % \begin{proof}
 % (\ssf{2}$\IMP$\ssf{1}) Trivial.
 % 
-% (\ssf{1}$\IMP$\ssf{2}) Negate \ssf{2} then we can extend $p$ to a maximal ideal $q$. Then $A[x]/q$ is field that extends $\<A\>_M$ and $q(x)$ has a solution in $A[x]/q$. The identity map $\id_A:A[x]/q\to N$ is a partial immersion and, if $A|<|N|$ it can be extend to one which is defined on the solution of $q(x)$ and \ssf{2} follows. In general, we need to apply   Hilbert's Basis Theorem which says that $p$ is finitely generated. In other words, $p(x)$ is a principal $\Delta(A)\jj$type, see Exercise~\ref{ex_fingen_principal}. If $p(x)$ is principal, we can replace $A$ with some finite subset. 
+% (\ssf{1}$\IMP$\ssf{2}) Negate \ssf{2} then we can extend $p$ to a maximal ideal $q$. Then $A[x]/q$ is field that extends $\<A\>_M$ and $q({\mr x})$ has a solution in $A[x]/q$. The identity map $\id_A:A[x]/q\to N$ is a partial immersion and, if $A|<|N|$ it can be extend to one which is defined on the solution of $q({\mr x})$ and \ssf{2} follows. In general, we need to apply   Hilbert's Basis Theorem which says that $p$ is finitely generated. In other words, $p({\mr x})$ is a principal $\Delta(A)\jj$type, see Exercise~\ref{ex_fingen_principal}. If $p({\mr x})$ is principal, we can replace $A$ with some finite subset. 
 % \end{proof}
 
 
