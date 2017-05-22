@@ -188,7 +188,7 @@ By \ssf{4} of Proposition~\ref{prop_brouwerstopology} and \ssf{a} we obtain that
 Let $a,b\in\PP$. If $a\swedge  b=0$ and $a\svee b=1$, we say that $b$ is the \emph{complement\/} of $a$ (and vice versa). The complement of an element need not exist. If the complement exists it is unique, the complement of $a$ is denoted by \emph{$\neg a$}.
 
 \begin{lemma}\label{Stone_aperti_chiusi}
-Let $U\subseteq S(\PP)$ be a clopen set. Then $U=[a]_\PP$ for some $a\in\PP$ (and therefore $a$ has a complement).
+Let $U\subseteq S(\PP)$ be a clopen set. Then $U=[a]_\PP$ for some $a\in\PP$, and $\neg a$ exists.
 \end{lemma}
 
 \begin{proof}
@@ -206,7 +206,7 @@ By compactness, that is Theorem~\ref{thm_reticolocompatto}, there are some finit
 Let $a=\swedge A_0$ and $b=\swedge B_0$. From claim \ssf{4} of Proposition~\ref{prop_brouwerstopology} we obtain $[a]_\PP\cap[b]_\PP=\0$. Therefore $U\subseteq [a]_\PP\ \subseteq\ S(\PP)\sm  [b]_\PP\ \subseteq\ U$. Hence $U= [a]_\PP$ and $b=\neg a$.
 \end{proof}
 
-A \emph{Boolean algebra\/} is a bounded distributive lattice where every element has a complement. In a Boolean algebra, the sets $[a]_\PP$ are clopen and they form also a base of open set of the topology of $S(\PP)$. A topology that has a base of clopen sets is called \emph{zero-dimensional}. By the following proposition the Stone topology is Hausdorff.
+A \emph{Boolean algebra\/} is a bounded distributive lattice where every element has a complement. In a Boolean algebra, the sets $[a]_\PP$ are clopen and they form also a base of open set of the topology of $S(\PP)$. A topology that has a base of clopen sets is called \emph{zero-dimensional}. By the following proposition the Stone topology of a Boolean algebra is Hausdorff.
 
 A proper filter of a Boolean algebra is an \emph{ultrafilter\/} if either $a\in F$ or $\neg a\in F$ for every $a$.
 
@@ -223,7 +223,11 @@ Implication \ssf{2}\,$\IMP$\,\ssf{3} is obtained observing that $a\svee\neg a\in
 \end{proof}
 
 \begin{exercise}
-Suppose we defined $S(\PP)$ as the set of relatively maximal filters. Which essential property would not hold\,?\QED
+Prove that the stone topology on $S(\PP)$ has a base of open compact sets.\QED
+\end{exercise}
+
+\begin{exercise}
+Suppose we had defined $S(\PP)$ as the set of relatively maximal filters. What could possibly go wrong\,?\QED
 \end{exercise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -278,7 +282,7 @@ Implications \ssf{1}$\IMP$\ssf{2} is immediate by Lemma~\ref{lem_poiuyhdsdfd}. T
 We say that $p\subseteq\Delta$ is a \emph{prime $\Delta\jj$type\/} if $\<p\>_\PP$ is a  prime filter. We say that $p$ is a \emph{complete $\Delta\jj$type\/} if $\<p\>_\PP$ is a maximal filter.\QED
 \end{definition}
 
-Though in general neither $\Delta$ not $\PP(\Delta)$ are closed under negation, Lemma~\ref{lem_poiuyhdsdfd} has the following consequence.
+Though in general neither $\Delta$ nor $\PP(\Delta)$ are closed under negation, Lemma~\ref{lem_poiuyhdsdfd} has the following consequence.
 
 \begin{proposition}\label{prop_test_completezza}
 For every consistent $\Delta\jj$type $p$ the following are equivalent
@@ -411,7 +415,7 @@ Unfortunately, there is no hope to generalize this fact to $\Delta$-morphisms as
 \end{remark}
 
 
-We use $\Delta\jj$morphisms to compare, locally, two structures (or different loci of the same structure). There are different ways to do this, in the proposition below we list a few synonymous expressions. But first some more notation. When $x$ is a fixed tuple of variables, $a\in M^{|x|}$ and $b\in N^{|x|}$ we write
+We use $\Delta\jj$morphisms to compare, locally, two structures (or two loci of the same structure). There are different ways to do this, in the proposition below we list a few synonymous expressions. But first some more notation. When $x$ is a fixed tuple of variables, $a\in M^{|x|}$ and $b\in N^{|x|}$ we write
 
 \ceq{\hfill\emph{$M,a$}}{\emph{$\Rrightarrow_\Delta$}}{\emph{$N,b$}}\hfill if $M\models\phi(a)\IMP N\models\phi(b)$ for every $\phi(x)\in\Delta$.
 
