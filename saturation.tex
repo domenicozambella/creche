@@ -22,7 +22,7 @@ Recall that a type $p(x)\subseteq L(M)$ is \emph{finitely consistent in $M$\/} i
 The following remark will be used in the sequel without explicit reference.
 
 \begin{remark}
-Let $p(x,z)\subseteq L$, let $k:M\imp N$ be an elementary map, and let $a\in(\dom h)^{|z|}$. If $p(x,a)$ is finitely consistent in $M$, then $p(x,ka)$ is finitely consistent in $N$.\QED
+Let $k:M\imp N$ be an elementary map and let ${\gr a}$ be an enumeration of $\dom k$. If $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$, then $p({\mr x}\,;k{\gr a})$ is finitely consistent in $N$.\QED
 \end{remark}
 
 \begin{definition}
@@ -37,7 +37,10 @@ We say that $N$ is \emph{saturated\/} tout court if it is $\lambda$-saturated an
 \begin{exercise}
 Suppose $|L|\le\omega$ and let $M$ be an infinite structure. Then for every non-principal ultrafilter $F$ on $\omega$ the structure $M^\omega/F$ is a $\omega_1$-saturated elementary superstructure of $M$.
 
-Hint: the notation is as in Chapter~\ref{ultraprodotti}. Let $\hat c$ be a tuple of length $\omega$ of elements of $M^\omega$ and let $p(x\,;z)=\big\{\phi_i(x\,;z):i<\omega\big\}\subseteq L$ be such that $p(x\,;\hat c)$ be a type finitely consistent in $M^\omega/F$. Without loss of generality we can assume that $\phi_{i+1}(x\,;z)\imp\phi_i(x\,;z)$. Let $\<X_i:i<\omega\>$ be a strictly decreasing chain of elements of $F$ such that  $X_{i+1}\subseteq\big\{j\;:\;M\models\E x\;\phi_i(x,\hat cj)\big\}$. Let $\hat a\in M^\omega$ be such that  $\phi_i(\hat aj,\hat cj)$ holds for every $j\in X_i\sm X_{i+1}$. Then $\hat a$ realizes $p(x)$.\QED
+Hint: the notation is as in Chapter~\ref{ultraprodotti}. Let $|{\mr x}|=1$ and 
+$|{\gr z}|=\omega$. It suffices to consider the types form $p({\mr x}\,;{\gr\hat c})$ where $p({\mr x}\,;{\gr z})=\big\{\phi_i({\mr x}\,;{\gr z}):i<\omega\big\}\subseteq L$ and ${\gr\hat c}\in(M^\omega)^{|{\gr z}|}$. Without loss of generality we can also assume that $\phi_{i+1}({\mr x}\,;{\gr z})\imp\phi_i({\mr x}\,;{\gr z})$, and that all formulas $\phi_i({\mr x}\,;{\gr\hat c})$ are consistent in $M^\omega$. 
+
+Let $\<X_i:i<\omega\>$ be a strictly decreasing chain of elements of the ultrafilter such that  $X_{i+1}\subseteq\big\{j\;:\;M\models\E{\mr x}\;\phi_i({\mr x},{\gr\hat cj})\big\}$. Let ${\mr\hat a}\in M^\omega$ be such that  $\phi_i({\mr\hat aj},{\gr\hat cj})$ holds for every $j\in X_i\sm X_{i+1}$. Then ${\mr\hat a}$ realizes $p({\mr x})$.\QED
 \end{exercise}
 
 
@@ -57,16 +60,16 @@ Assume $|L|\le\lambda$ and let $N$ be an infinite structure. Let $\M$ be the cat
 \begin{itemize}
 \item[1] $N$ is a $\lambda$-saturated structure;
 \item[2] $N$ is a $\lambda$-rich model;
-\item[3] $N$ realizes all types $p(x)\subseteq L(A)$, with $|x|\le\lambda$ and $|A|<\lambda$, finitely consistent in $N$.
+\item[3] $N$ realizes all types $p({\mr x})\subseteq L(A)$, with $|{\mr x}|\le\lambda$ and $|A|<\lambda$, finitely consistent in $N$.
 \end{itemize}
 \end{theorem}
 
 Note that it is the completeness of $T$ which makes the category $\M$ connected.
 
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}. Let $k:M\imp N$ be an elementary map of cardinality $<\lambda$. It suffices to show that for every $b\in M$ there is a $c\in N$ such that $k\cup\big\{\<b,c\>\big\}:M\to N$ is an elementary map. Let $a$ be an enumeration of $\dom k$ and define $p(x\,;z)=\tp_M(b\,;a)$. The required $c$ is any element of $N$ such that $N\models p(c\,;ka)$. As $p(x\,;a)$ is finitely consistent in $M$ then $p(x\,;ka)$ is finitely consistent in $N$. As $|a|<\lambda$, saturation yields the required $c$.
+\ssf{1}$\IMP$\ssf{2}. Let $k:M\imp N$ be an elementary map of cardinality $<\lambda$. It suffices to show that for every ${\mr b}\in M$ there is a ${\mr c}\in N$ such that $k\cup\big\{\<{\mr b},{\mr c}\>\big\}:M\to N$ is an elementary map. Let ${\gr a}$ be an enumeration of $\dom k$ and define $p({\mr x}\,;{\gr z})=\tp_M({\mr b}\,;{\gr a})$. The required ${\mr c}$ is any element of $N$ such that $N\models p({\mr c}\,;k{\gr a})$. As $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$ then $p({\mr x}\,;k{\gr a})$ is finitely consistent in $N$. As $|{\gr a}|<\lambda$, saturation yields the required ${\mr c}$.
 
-\ssf{2}$\IMP$\ssf{3}. Let $p(x)$ be as in \ssf{3}. By the compactness theorem $N\preceq K\models p(b)$ for some model $K$ and $b\in K^{|x|}$. By the downward  L\"owenheim-Skolem theorem there is a model $A,b\subseteq M\preceq K$ of cardinality $\le\lambda$. (Here we use $|L|,|A|,|x|\le\lambda$.) By \ssf{2}, there is an elementary embedding $h:M\to N$ that extends $\id_A$. Finally, as $M\models p(b)$,  elementarity yields $N\models p(hb)$.
+\ssf{2}$\IMP$\ssf{3}. Let $p({\mr x})$ be as in \ssf{3}. By the compactness theorem $N\preceq K\models p({\mr b})$ for some model $K$ and ${\mr b}\in K^{|{\mr x}|}$. By the downward  L\"owenheim-Skolem theorem there is a model $A,{\mr b}\subseteq M\preceq K$ of cardinality $\le\lambda$. (Here we use $|L|,|A|,|{\mr x|}\le\lambda$.) By \ssf{2}, there is an elementary embedding $h:M\hookrightarrow N$ that extends $\id_A$. Finally, as $M\models p({\mr b})$,  elementarity yields $N\models p(h{\mr b})$.
 
 \ssf{3}$\IMP$\ssf{1}.  Trivial. 
 \end{proof}
@@ -96,21 +99,23 @@ By quantifier elimination embeddings coincide with elementary embeddings. Then s
 The following is a useful test for quantifier elimination.
 
 \begin{theorem}\label{thm_ricchezza_saturazione_QE}
-Assume $|L|\le\lambda$. Consider the category that consists of models of $T$ and partial isomorphism. Then the following are equivalent
+Assume $|L|\le\lambda$. Consider the category that consists of models of some theory $T_0$ and partial isomorphism. Suppose $\lambda\jj$rich models exist and denote by $T_1$ their theory. Then the following are equivalent
 \begin{itemize}
-\item[1.] every $\lambda\jj$saturated model of $T$ is $\lambda\jj$rich;
-\item[2.] $T$ has elimination of quantifiers.
+\item[1.] every $\lambda\jj$saturated model of $T_1$ is $\lambda\jj$rich;
+\item[2.] $T_1$ has elimination of quantifiers.
 \end{itemize}
 \end{theorem}
 
-\begin{proof}
-Implication \ssf{2}$\IMP$\ssf{1} is clear. As for \ssf{1}$\IMP$\ssf{2}, let $k:M\to N$ be a finite partial isomorphism between models of $T$. We claim that it is an elementary map. Let $M'\succeq M$ and $N'\succeq N$ are saturated models of equal cardinality. As these are rich, $k:M'\to N'$ extends to an isomorphism $h:M'\hookdoubleheadrightarrow N'$ and the claim follows.
+\begin{proof}\ssf{2}$\IMP$\ssf{1}. Let $N\models T_1$ be $\lambda\jj$saturated. Fix a morphism $k:M\to N$ of cardinality $<\lambda$, some ${\mr b}\in M$ and let $p({\mr x}\,;{\gr z})=\attp_M({\mr b}\,;{\gr a})$, where ${\gr a}$ enumerates $\dom k$. The type $p({\mr x}\,;k{\gr a})$ is realized in any $\lambda\jj$rich model $N'$ that contains $\<k{\gr a}\>_N$. By \ssf{2}, $N\equiv_{k{\gr a}} N'$, so $p({\mr x}\,;k{\gr a})$ is finitely consistent in $N$.  By saturation, it is realised by some ${\mr c}\in N$. Then $k\cup \{\<{\mr b},{\mr c}\>\}:M\to N$ is the required extension.
+
+
+\ssf{1}$\IMP$\ssf{2}. Let $k:M\to N$ be a finite partial isomorphism between models of $T$. We claim that it is an elementary map. Let $M'\succeq M$ and $N'\succeq N$ are saturated models of equal cardinality. As these are rich, $k:M'\to N'$ extends to an isomorphism $h:M'\hookdoubleheadrightarrow N'$ and the claim follows.
 \end{proof}
 
 \begin{exercise}\label{ex_QQxZZ_saturo}
 Let $L$ be the language of strict order. Let $T$ be the theory discrete linear orders without endpoints. (An order is discrete if every point has an immediate predecessor and an immediate successor.) Show that the structure $\QQ\times\ZZ$ ordered with the lexicographic order 
 
-\ceq{\hfill (a_1,a_2)<(b_1,b_2)}{\dIFF}{a_1<b_1\ \ \textrm{or}\ \ a_1=b_1\ \textrm{e}\ a_2<b_2}
+\ceq{\hfill (a_1,a_2)<(b_1,b_2)}{\IFF}{a_1<b_1\ \ \textrm{or}\ \ a_1=b_1\ \textrm{e}\ a_2<b_2}
 
 is a saturated model of $T$. For every $n\in\omega$ add to the language a relation symbol $d(x,y)=n$ and add to $T$ the axiom $d(x,y)=n\iff\E^{=n} z\,(x<z\le y)$.   Let $T'$ be the resulting theory. Prove that $T'$ has quantifier elimination. 
 
@@ -123,10 +128,10 @@ Hint: answer the second question first using Theorem~\ref{thm_ricchezza_saturazi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Homogeneous structures}\label{homogeneous}
-Definition~\ref{def_omogenea_universale} introduces the notion of universal and homogeneous structures a the general context. When the morphisms of the underlying category are the elementary maps we refer to these notion as elementary homogeneity and elementary universality. Though one often omits to specify ``elementary''. We repeat the definition in this particular case. 
+Definition~\ref{def_omogenea_universale} introduces the notion of universal and homogeneous structures a the general context. When the morphisms of the underlying category are the elementary maps we refer to these notion as elementary homogeneity and elementary universality. Though one often omits to specify \textit{elementary}. We repeat the definition in this particular case. 
 
 \begin{definition}
-A structure $N$ is \emph{(elementarily) $\lambda$-universal\/} if every $M\equiv N$ of cardinality $\le\lambda$ there is a elementary embedding $h:M\imp N$. We say  \emph{universal\/} tout court if it is $\lambda$-universal and of cardinality $\lambda$.
+A structure $N$ is \emph{(elementarily) $\lambda$-universal\/} if every $M\equiv N$ of cardinality $\le\lambda$ there is a elementary embedding $h:M\hookrightarrow N$. We say  \emph{universal\/} tout court if it is $\lambda$-universal and of cardinality $\lambda$.
 
 We say that $N$ is \emph{(elementarily) $\lambda$-homogeneous\/} if every elementary map $k:N\to N$ of cardinality $<\lambda$ extends to an automorphism. We say that $N$ is \emph{homogeneous\/} tout court if it is $\lambda$-homogeneous and of cardinality $\lambda$.\QED
 \end{definition}
@@ -147,7 +152,7 @@ Given $A\subseteq N$ we denote by \emph{$\Aut(N/A)$\/} the group of \emph{$A\jj$
 
 When the model $N$ is clear from the context we omit the subscript.
 
-Orbits are particularly interesting if taken in a homogeneous structure. The following proposition is immediate but its importance cannot be overrated.
+Orbits are particularly interesting if taken in a homogeneous structure. The following proposition is immediate but its importance cannot be overestimated.
 
 \begin{proposition}\label{omogeneitaorbitetipi}
 Let $N$ be a $\lambda\jj$homogeneous structure. Let $A\subseteq N$ have cardinality $<\lambda$ and $a\in N^{<\lambda}$. Then $O_N(a/A)=p(N)$, where $p(x)=\tp_N(a/A)$.\QED
