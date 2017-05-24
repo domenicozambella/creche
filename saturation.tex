@@ -106,7 +106,7 @@ Assume $|L|\le\lambda$. Consider the category that consists of models of some th
 \end{itemize}
 \end{theorem}
 
-\begin{proof}\ssf{2}$\IMP$\ssf{1}. Let $N\models T_1$ be $\lambda\jj$saturated. Fix a morphism $k:M\to N$ of cardinality $<\lambda$, some ${\mr b}\in M$ and let $p({\mr x}\,;{\gr z})=\attp_M({\mr b}\,;{\gr a})$, where ${\gr a}$ enumerates $\dom k$. The type $p({\mr x}\,;k{\gr a})$ is realized in any $\lambda\jj$rich model $N'$ that contains $\<k{\gr a}\>_N$. By \ssf{2}, $N\equiv_{k{\gr a}} N'$, so $p({\mr x}\,;k{\gr a})$ is finitely consistent in $N$.  By saturation, it is realised by some ${\mr c}\in N$. Then $k\cup \{\<{\mr b},{\mr c}\>\}:M\to N$ is the required extension.
+\begin{proof}\ssf{2}$\IMP$\ssf{1}. Let $N\models T_1$ be $\lambda\jj$saturated. Fix a morphism $k:M\to N$ of cardinality $<\lambda$, some ${\mr b}\in M$ and let $p({\mr x}\,;{\gr z})=\qftp_M({\mr b}\,;{\gr a})$, where ${\gr a}$ enumerates $\dom k$. The type $p({\mr x}\,;k{\gr a})$ is realized in any $\lambda\jj$rich model $N'$ that contains $\<k{\gr a}\>_N$. By \ssf{2}, $N\equiv_{k{\gr a}} N'$, so $p({\mr x}\,;k{\gr a})$ is finitely consistent in $N$.  By saturation, it is realised by some ${\mr c}\in N$. Then $k\cup \{\<{\mr b},{\mr c}\>\}:M\to N$ is the required extension.
 
 
 \ssf{1}$\IMP$\ssf{2}. Let $k:M\to N$ be a finite partial isomorphism between models of $T$. We claim that it is an elementary map. Let $M'\succeq M$ and $N'\succeq N$ are saturated models of equal cardinality. As these are rich, $k:M'\to N'$ extends to an isomorphism $h:M'\hookdoubleheadrightarrow N'$ and the claim follows.
@@ -257,12 +257,22 @@ If $p(x)\subseteq L(A)$ and $q(x)\subseteq L(B)$ are such that $p(x)\imp \neg q(
 The assumptions say that $p(x)\wedge q(x)$ is inconsistent. Then the formulas $\phi(x)$ and $\psi(x)$ exist by compactness (i.e.\@ saturation).
 \end{proof}
 
-A type-definable set $p(\U)$ is invariant over $A$ if $f[p(\U)]=p(\U)$ for every $f\in\Aut(\U/A)$. Equivalently, if $\orbit(a/A)\subseteq p(\U)$ for every $a\models p(x)$. By homogeneity this is equivalent to requiring that $q(x)\imp p(x)$ for every $a\models p(x)$ and $q(x)=\tp(a/A)$. Proposition~\ref{prop_inv_types} below an important fact about invariant type-definable sets. It may clarify the proof to consider first the particular case of definable sets.
+A definable set as the form $\phi({\mr\U}\,;{\gr b})$ for some formula $\phi({\mr x}\,;{\gr z})\in L$ and some ${\gr b}\in\U^{|{\gr z}|}$. If $f\in\Aut(\U/A)$ then 
+
+\ceq{\hfill f\big[\phi({\mr\U}\,;{\gr b})\big]}{=}{\big\{f{\mr a}\ :\ \phi({\mr a}\,;{\gr b}),\phantom{ff}\ {\mr a}\in\U^{|{\mr x}|}\big\}}
+
+\ceq{ }{=}{\big\{f{\mr a}\ :\ \phi(f{\mr a}\,;f{\gr b}),\ {\mr a}\in\U^{|{\mr x}|}\big\}}
+
+\ceq{ }{=}{\big\{\phantom{f}{\mr a}\ :\ \phi({\mr a}\,;f{\gr b}),\phantom{f}\ {\mr a}\in\U^{|{\mr x}|}\big\}}
+
+Hence automorphisms act on definable sets in a very natural way. Their action of type definable sets is similar.
+
+We say that a set, or a type-definable set $p(\U)$, is \emph{invariant over $A$\/} if $f[p(\U)]=p(\U)$ for every $f\in\Aut(\U/A)$. Equivalently, if $\orbit({\mr a}/A)\subseteq p(\U)$ for every ${\mr a}\models p({\mr x})$. By homogeneity this is equivalent to requiring that $q({\mr x})\imp p({\mr x})$ for every ${\mr a}\models p({\mr x})$ and $q({\mr x})=\tp({\mr a}/A)$. Proposition~\ref{prop_inv_types} below an important fact about invariant type-definable sets. It may clarify the proof to consider first the particular case of definable sets.
 
 \begin{proposition}\label{prop_inv_def}
-Let $\phi(x)\in L(\U)$ then the following are equivalent
+Let $\phi({\mr x})\in L(\U)$ then the following are equivalent
 \begin{itemize}
- \item[1.] $\phi(x)$ is equivalent to some formula $\psi(x)\in L(A)$;
+ \item[1.] $\phi({\mr x})$ is equivalent to some formula $\psi({\mr x})\in L(A)$;
  \item[2.] $\phi(\U)$ is invariant over $A$.
 \end{itemize}
 \end{proposition}
@@ -274,29 +284,29 @@ We give two proofs of this theorem as we think they are both instructive.
 
 \ssf{2}$\IMP$\ssf{1} From \ssf{2} and homogeneity we obtain
 
-\ceq{\hfill\phi(x)}{\iff}{\bigvee_{q(x)\imp\phi(x)} q(x)}
+\ceq{\hfill\phi({\mr x})}{\iff}{\bigvee_{q({\mr x})\imp\phi({\mr x})} q({\mr x})}
 
-where $q(x)$ above range over all types in $S_x(A)$. By compactness, we can rewrite this equivalence 
+where $q({\mr x})$ above range over all types in $S_{\mr x}(A)$. By compactness, we can rewrite this equivalence 
 
-\ceq{\hfill\phi(x)}{\iff}{\bigvee_{\theta(x)\imp\phi(x)} \theta(x)}
+\ceq{\hfill\phi({\mr x})}{\iff}{\bigvee_{\theta({\mr x})\imp\phi({\mr x})} \theta({\mr x})}
 
-where $\theta(x)$ ranges over all formulas in $L(A)$.  This latter equivalence says that $\neg\phi(x)$ is equivalent to a type over $A$. Again by compactness we obtain 
+where $\theta({\mr x})$ ranges over all formulas in $L(A)$.  This latter equivalence says that $\neg\phi({\mr x})$ is equivalent to a type over $A$. Again by compactness we obtain 
 
-\ceq{\hfill\phi(x)}{\iff}{\bigvee^n_{i=1} \theta_i(x)}
+\ceq{\hfill\phi({\mr x})}{\iff}{\bigvee^n_{i=1} \theta_i({\mr x})}
 
-for some formula $\theta_i(x)\in L(A)$.
+for some formula $\theta_i({\mr x})\in L(A)$.
 \end{proof}
 
 
-\begin{proof}[Second proof of Proposition~\ref{prop_inv_def}] \ssf{2}$\IMP$\ssf{1} Let $\phi(\U\,;b)$, where $\phi(x\,;z)\in L$ be invariant over $A$. Let $p(z)=\tp(b/A)$. As $f[\phi(\U\,;b)]=\phi(\U\,;fb)$  for every $f\in\Aut(\U/A)$, homogeneity and invariance yield
+\begin{proof}[Second proof of Proposition~\ref{prop_inv_def}] \ssf{2}$\IMP$\ssf{1} Let $\phi({\mr\U}\,;{\gr b})$, where $\phi({\mr x}\,;{\gr z})\in L$, be a formula invariant over $A$. Let $p({\gr z})=\tp({\gr b}/A)$. As $f[\phi({\mr\U}\,;{\gr b})]=\phi({\mr\U}\,;f{\gr b})$  for every $f\in\Aut(\U/A)$, homogeneity and invariance yield
 
-\ceq{\hfill p(z)\wedge p(z')}{\imp}{\A x\ \big[\phi(x\,;z)\iff\phi(x\,;z')\big]}
+\ceq{\hfill p({\gr z})\wedge p({\gr z'})}{\imp}{\A {\mr x}\ \big[\phi({\mr x}\,;{\gr z})\iff\phi({\mr x}\,;{\gr z'})\big]}
 
-By compactness there is a formula $\theta(z)\in L(A)$ such that 
+By compactness there is a formula $\theta({\gr z})\in L(A)$ such that 
 
-\ceq{\hfill \theta(z)\wedge \theta(z')}{\imp}{\A x\ \big[\phi(x\,;z)\iff\phi(x\,;z')\big]}
+\ceq{\hfill \theta({\gr z})\wedge \theta({\gr z'})}{\imp}{\A {\mr x}\ \big[\phi({\mr x}\,;{\gr z})\iff\phi({\mr x}\,;{\gr z'})\big]}
 
-Hence  $\phi(\U\,;b)$ is defined by the formula $\E z\,\big[\theta(z)\wedge\phi(x\,;z)\big]$, which is a formula in $L(A)$ as required.
+Hence  $\phi({\mr\U}\,;{\gr b})$ is defined by the formula $\E {\gr z}\,\big[\theta({\gr z})\wedge\phi({\mr x}\,;{\gr z})\big]$, which is a formula in $L(A)$ as required.
 \end{proof}
 
 \begin{exercise}
@@ -336,7 +346,7 @@ where $\theta(x)$ ranges over all formulas in $L(A)$. Applying Proposition~\ref{
 This completes the proof.
 \end{proof}
 
-The following easy proposition is very useful. Its proof is left to the reader. Note that it would not hold without saturation saturation: for instance, consider $\RR$ as a structure in the language of strict orders and let $q(x,y)=\tp(-1, 0\,/\,\QQ^+)$. By quantifier elimination, $-1\equiv_{\QQ^+}0$. But $0\notmodels\E y\;q(x,y)$.
+The following easy proposition is very useful. Its proof is left to the reader. Note that it would not hold without saturation saturation: for instance, consider $\RR$ as a structure in the language of strict orders and let $q(x,y)=\tp(-1, 0\,/\,A)$, where $A=\{1/n: 0<n\}$. By quantifier elimination, $-1\equiv_{A}0$. But $0\notmodels\E y\;q(x,y)$.
 
 
 \begin{proposition}\label{prop_E_type}
@@ -346,15 +356,15 @@ Let $p(x,y)\subseteq L(A)$. Then $\E y\,p(x,y)$ is equivalent to a type over $A$
 
 As an application we give a second proof of Proposition~\ref{prop_inv_types}.
 
-\begin{proof}[Second proof of Proposition~\ref{prop_inv_types}] \ssf{2}$\IMP$\ssf{1}\quad  Write $p(x)$ as the type $q(x\,;a)$ for some $q(x\,;z)\subseteq L$ and some $a\in\U^{|z|}$. Let $s(z)=\tp(a/A)$. By invariance and homogeneity the types $p(x\,;fa)$ for $f\in\Aut(\U/A)$ are all equivalent. Therefore
+\begin{proof}[Second proof of Proposition~\ref{prop_inv_types}] \ssf{2}$\IMP$\ssf{1}\quad  Write $p({\mr x})$ as the type $q({\mr x}\,;{\gr b})$ for some $q({\mr x}\,;{\gr z})\subseteq L$ and some $a\in\U^{|{\gr z}|}$. Let $s({\gr z})=\tp({\gr b}/A)$. By invariance and homogeneity the types $p({\mr x}\,;f{\gr b})$ for $f\in\Aut(\U/A)$ are all equivalent. Therefore
 
-\ceq{\hfill p(x)}{\iff}{\bigvee_{f\in\Aut(\U/A)}q(x\,;fa)}\smallskip
+\ceq{\hfill p({\mr x})}{\iff}{\bigvee_{f\in\Aut(\U/A)}q({\mr x}\,;f{\gr b})}\smallskip
 
-\ceq{\hfill p(x)}{\iff}{\bigvee_{b\,\equiv_Aa}q(x\,;b)}\smallskip
+\ceq{\hfill p({\mr x})}{\iff}{\bigvee_{{\gr c}\,\equiv_A{\gr b}}q({\mr x}\,;{\gr c})}\smallskip
 
-\ceq{\hfill}{\iff}{ \E z\,\big[s(z)\wedge q(x\,;z)\big].}\smallskip
+\ceq{\hfill}{\iff}{ \E {\gr z}\,\big[s({\gr z})\wedge q({\mr x}\,;{\gr z})\big].}\smallskip
 
-Hence, by Proposition~\ref{prop_E_type}, $p(x)$ is equivalent to a type over $A$.
+Hence, by Proposition~\ref{prop_E_type}, $p({\mr x})$ is equivalent to a type over $A$.
 \end{proof}
 
 
@@ -403,13 +413,9 @@ dove $p(x)$ corre su tutti i tipi puri senza quantificatori completi. Per compat
 dove $\psi(x)$ corre su tutte le formule pure e libere. Questa dice che $\neg\phi(x)$ \`e equivalente ad un tipo libero. Quindi, dall'esercizio~\ref{definibilitasaturazione}, otteniamo che $\phi(x)\iff\psi(x)$ per una qualche formula libera.\QED
 \end{exercise}
 
-
-
 \begin{exercise}
 Sia $\U$ un modello saturo, $A\subseteq\U$ un sottoinsieme di cardinalit\`a piccola,  e sia $\psi(x)\in L(\U)$. Si dimostri che se $\psi(\U)$ \`e invariante per automorfismi che fissano $A$, allora $\psi(x)$ \`e equivalente ad una formula in $L(A)$.
 \end{exercise}
-
-
 
 \begin{exercise} 
 Fissiamo un insieme di parametri $A$. Sia $p(x)\subseteq L(A)$ un tipo e sia $x$ una tupla finita. Si dimostri che se $p(\U)$ \`e definibile allora \`e definibile da una congiunzione di formule in $p(x)$.\QED 

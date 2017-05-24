@@ -66,21 +66,6 @@ From $\#$ and compactness we obtain
 Applying compactness again, we replace the infinite disjunction above with a finite one and prove \ssf{2}.
 \end{proof}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 % 
 % \begin{corollary}\label{prop_po}
 % Fissiamo un modello $M\models T$ ed una tupla $a$ di elementi di $M$. Sia $p(x)=\E\Deltatp_M(a)$. Per ogni formula pura $\phi(x)$ le seguenti affermazioni sono equivalenti:
@@ -170,14 +155,11 @@ The following are equivalent
 \end{theorem}
 
 
-
-
-
-
-
-
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Quantifier elimination by back-and-forth}
 \label{eliminazionequantificatoricriterio}
 
@@ -222,16 +204,14 @@ Let $|L|\le\lambda$. The following are equivalent
 \begin{itemize}
 \item[1.] $T$ has $\Delta$-elimination of quantifiers;
 \item[2.] for every finite $\Delta$-morphism $k:M\imp N$ between $\lambda$-saturated models of $T$:
-\begin{itemize}                                                                                               \item[a.] for every $b\in M$ there $\Delta$-morphism $h:M\imp N$ that extends $k$ such that $b\in\dom h$.                                                                                \item[b.] for every $c\,\in\,N$ esiste un $\Delta$-morphism $h:M\imp N$ that extends $k$ such that $c\in\range h$.\QED                                                                                          \end{itemize}
+\begin{itemize}                                                                                               \item[a.] for every $b\in M$ some $\Delta$-morphism $h:M\imp N$ extends $k$ and $b\in\dom h$.                                                                                \item[b.] for every $c\,\in\,N$ some $\Delta$-morphism $h:M\imp N$ extends $k$ and $c\in\range h$.\noindent\nolinebreak[4]\hfill\rlap{\ \ $\Box$}                                                                   \end{itemize}
 \end{itemize}
 \end{corollary}
 
 Note that when $\Delta$ contains the formula $x=y$ and is closed under negation, then  $k:M\imp N$ is a $\Delta$-morphism if and only if $k^{-1}:N\imp M$ is a $\Delta$-morphism. In this case \ssf{a} and \ssf{b} are equivalent.
 
-
-
 \begin{exercise}
-Let $L$ be the laanguage of stict orders. Let $T$ be axiomatized by $T_{\rm ol}$ (see Chapter~\ref{relational}) and the following pair of axioms
+Let $L$ be the language of strict orders. Let $T$ be axiomatized by $T_{\rm ol}$ (see Chapter~\ref{relational}) and the following pair of axioms
 \begin{itemize}
 \item[dis$\uparrow$.] $\E z\ \big[x<z\ \wedge\ \neg\E y\ x<y<z\big]$;
 \item[dis$\downarrow$.] $\E z\ \big[ z<x\ \wedge\ \neg\E y\ z<y<x\big]$.
