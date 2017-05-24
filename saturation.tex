@@ -171,7 +171,7 @@ The following are equivalent
 \end{itemize}
 \end{proposition}
 
-The following is an instance of Theorem~\ref{ricco=universaledebolmenteomogeneo}.
+The following is an instance of Theorem~\ref{ricco=universaledebolmenteomogeneo} that the reader may prove directly as an exercise.
 
 \begin{corollary}\label{saturo=universaledebolmenteomogeneo}
 Let $|L|\le\lambda$. The following are equivalent\nobreak
@@ -265,7 +265,7 @@ A definable set as the form $\phi({\mr\U}\,;{\gr b})$ for some formula $\phi({\m
 
 \ceq{ }{=}{\phi({\mr\U}\,;f{\gr b})}
 
-Hence automorphisms act on definable sets in a very natural way. Their action of type definable sets is similar.
+Hence automorphisms act on definable sets in a very natural way. Their action of type-definable sets is similar.
 
 We say that a set ${\mr\D}\subseteq\U^{|{\mr x}|}$ is \emph{invariant over $A$\/} if $f[{\mr\D}]={\mr\D}$ for every $f\in\Aut(\U/A)$. Equivalently, if $\orbit({\mr a}/A)\subseteq {\mr\D}$ for every ${\mr a}\in {\mr\D}$. By homogeneity this is equivalent to requiring that $q({\mr x})\imp {\mr x}\in{\mr\D}$ for every $q({\mr x})=\tp({\mr a}/A)$ where ${\mr a}\in {\mr\D}$.
 
@@ -275,11 +275,11 @@ Proposition~\ref{prop_inv_types} below an important fact about invariant type-de
 Let $\phi({\mr x})\in L(\U)$ then the following are equivalent
 \begin{itemize}
  \item[1.] $\phi({\mr x})$ is equivalent to some formula $\psi({\mr x})\in L(A)$;
- \item[2.] $\phi(\U)$ is invariant over $A$.
+ \item[2.] $\phi({\mr\U})$ is invariant over $A$.
 \end{itemize}
 \end{proposition}
 
-We give two proofs of this theorem as we think they are both instructive. 
+We give two proofs of this theorem as they are both instructive. 
 
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2} Obvious.
@@ -312,38 +312,39 @@ Hence  $\phi({\mr\U}\,;{\gr b})$ is defined by the formula $\E {\gr z}\,\big[\th
 \end{proof}
 
 \begin{exercise}
-Let $\phi(x)\in L$. Prove that the following are equivalent
+Let $\phi({\mr x})\in L$. Prove that the following are equivalent
 \begin{itemize}
- \item[1.] $\phi(x)$ is equivalent to some $\psi(x)\in L_{\rm qf}$;
- \item[2.] $a\in\phi(\U)\iff fa\in\phi(\U)$ for every partial isomorphism $f:\U\to\U$ defined in $a$.\QED
+ \item[1.] $\phi({\mr x})$ is equivalent to some $\psi({\mr x})\in L_{\rm qf}$;
+ \item[2.] $\phi({\mr a})\iff \phi(f{\mr a})$ for every partial isomorphism $f:\U\to\U$ defined in ${\mr a}$.
 \end{itemize}
+Use the result to prove Theorem~\ref{thm_tutteleimmersionisonoelementari=eliminazioneqantificatori} for $T$ complete.\QED
 \end{exercise}
 
 
 \begin{proposition}\label{prop_inv_types}
-Let $p(x)\subseteq L(\U)$ then the following are equivalent
+Let $p({\mr x})\subseteq L(\U)$ then the following are equivalent
 \begin{itemize}
- \item[1.] $p(x)$ is equivalent to some type $q(x)\subseteq L(A)$;
- \item[2.] $p(\U)$ is invariant over $A$.
+ \item[1.] $p({\mr x})$ is equivalent to some type $q({\mr x})\subseteq L(A)$;
+ \item[2.] $p({\mr\U})$ is invariant over $A$.
 \end{itemize}
 \end{proposition}
 
-We give two proofs of this theorem as we think they are both instructive.  The second proof requires Proposition~\ref{prop_E_type} below.
+We give two proofs of this theorem.  The second one requires Proposition~\ref{prop_E_type} below.
 
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2}\quad Obvious. 
 
-\ssf{2}$\IMP$\ssf{1}\quad It suffices to show that for every formula $\psi(x)\in p(x)$ there is a formula $\phi(x)\in L(A)$ such that $p(x)\imp\phi(x)\imp\psi(x)$. Fix $\psi(x)\in p(x)$. By invariance, any $q(x)\in S(A)$ consistent with $p(x)$ implies $p(x)$, hence
+\ssf{2}$\IMP$\ssf{1}\quad It suffices to show that for every formula $\psi({\mr x})\in p({\mr x})$ there is a formula $\phi({\mr x})\in L(A)$ such that $p({\mr x})\imp\phi({\mr x})\imp\psi({\mr x})$. Fix $\psi({\mr x})\in p({\mr x})$. By invariance, any $q({\mr x})\in S(A)$ consistent with $p({\mr x})$ implies $p({\mr x})$, hence
 
-\ceq{\hfill p(x)}{\imp}{\bigvee_{q(x)\imp \psi(x)} q(x)}\medrel{\imp}$\psi(x)$
+\ceq{\hfill p({\mr x})}{\imp}{\bigvee_{q({\mr x})\imp \psi({\mr x})} q({\mr x})}\medrel{\imp}$\psi({\mr x})$
 
-where $q(x)$ above range over all types in $S_x(A)$. By compactness we can rewrite this equivalence as follows
+where $q({\mr x})$ above range over all types in $S_{\mr x}(A)$. By compactness we can rewrite this equivalence as follows
 
-\ceq{\hfill p(x)}{\imp}{\bigvee_{\theta(x)\imp \psi(x)} \theta(x)}\medrel{\imp}$\psi(x)$
+\ceq{\hfill p({\mr x})}{\imp}{\bigvee_{\theta({\mr x})\imp \psi({\mr x})} \theta({\mr x})}\medrel{\imp}$\psi({\mr x})$
 
-where $\theta(x)$ ranges over all formulas in $L(A)$. Applying Proposition~\ref{prop_normality} to the first implication we obtain a finite number of formulas $\theta_i(x)$ such that 
+where $\theta({\mr x})$ ranges over all formulas in $L(A)$. Applying Proposition~\ref{prop_normality} to the first implication we obtain a finite number of formulas $\theta_i({\mr x})$ such that 
 
-\ceq{\hfill p(x)}{\imp}{\bigvee^n_{i=1} \theta_i(x)}\medrel{\imp}$\psi(x)$
+\ceq{\hfill p({\mr x})}{\imp}{\bigvee^n_{i=1} \theta_i({\mr x})}\medrel{\imp}$\psi({\mr x})$
 
 This completes the proof.
 \end{proof}
@@ -352,17 +353,17 @@ The following easy proposition is very useful. Its proof is left to the reader. 
 
 
 \begin{proposition}\label{prop_E_type}
-Let $p(x,y)\subseteq L(A)$. Then $\E y\,p(x,y)$ is equivalent to a type over $A$, namely to the type $\big\{ \E y\,\phi(x,y)\ :\ \phi(x,y) \textrm{ conjunction of formulas in }  p(x,y)\big\}$.\QED 
+Let $p({\mr x}\,;{\gr z})\subseteq L(A)$. Then $\E {\gr z}\,p({\mr x}\,;{\gr z})$ is equivalent to a type over $A$, namely to the type $\big\{ \E {\gr z}\,\phi({\mr x}\,;{\gr z})\ :\ \phi({\mr x}\,;{\gr z}) \textrm{ conjunction of formulas in }  p({\mr x}\,;{\gr z})\big\}$. The theorem holds also when ${\mr x}$ and ${\gr z}$ have length $\kappa$.\QED 
 \end{proposition}
 
 
 As an application we give a second proof of Proposition~\ref{prop_inv_types}.
 
-\begin{proof}[Second proof of Proposition~\ref{prop_inv_types}] \ssf{2}$\IMP$\ssf{1}\quad  Write $p({\mr x})$ as the type $q({\mr x}\,;{\gr b})$ for some $q({\mr x}\,;{\gr z})\subseteq L$ and some $a\in\U^{|{\gr z}|}$. Let $s({\gr z})=\tp({\gr b}/A)$. By invariance and homogeneity the types $p({\mr x}\,;f{\gr b})$ for $f\in\Aut(\U/A)$ are all equivalent. Therefore
+\begin{proof}[Second proof of Proposition~\ref{prop_inv_types}] \ssf{2}$\IMP$\ssf{1}\quad  Write $p({\mr x})$ as the type $q({\mr x}\,;{\gr b})$ for some $q({\mr x}\,;{\gr z})\subseteq L$ and some ${\gr b}\in\U^{|{\gr z}|}$. Let $s({\gr z})=\tp({\gr b}/A)$. By invariance and homogeneity the types $p({\mr x}\,;f{\gr b})$ for $f\in\Aut(\U/A)$ are all equivalent. Therefore
 
 \ceq{\hfill p({\mr x})}{\iff}{\bigvee_{f\in\Aut(\U/A)}q({\mr x}\,;f{\gr b})}\smallskip
 
-\ceq{\hfill p({\mr x})}{\iff}{\bigvee_{{\gr c}\,\equiv_A{\gr b}}q({\mr x}\,;{\gr c})}\smallskip
+\ceq{\hfill p({\mr x})}{\iff}{\bigvee_{{\gr c}\,\equiv_A\,{\gr b}}q({\mr x}\,;{\gr c})}\smallskip
 
 \ceq{\hfill}{\iff}{ \E {\gr z}\,\big[s({\gr z})\wedge q({\mr x}\,;{\gr z})\big].}\smallskip
 
