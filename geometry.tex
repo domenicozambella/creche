@@ -19,27 +19,36 @@ Let ${\mr a}\in\U$ and let $\Aa\subseteq\U$ be some set of parameters (of arbitr
 
 A formula $\phi(u)\in L(A)$ or a type $p(u)\subseteq L(A)$, where $u$ is a finite tuple, with finitely many solutions are called an \emph{algebraic formula}, respectively an \emph{algebraic type}.
 \begin{proposition}\label{prop_tipialgebrici}
-For every $A\subseteq\U$ and every type $p(u)\subseteq L(A)$, where $u$ is a tuple of variables finite length, the following are equivalent
+For every $A\subseteq\U$ and every type $p(u)\subseteq L(A)$, where $|u|<\omega$, the following are equivalent
 \begin{itemize} 
 \item[1] $\E^{\le n}u\; p(u)$;
 \item[2] $\E^{\le n}u\;\phi(u)$ for some $\phi(u)$ which is conjunction of formulas $p(u)$.
 \end{itemize}
 \end{proposition}
-\begin{proof} The non trivial implication is \ssf{1}$\IMP$\ssf{2}. Assume \ssf{1}, then the following type is inconsistent
+\begin{proof} The non trivial implication is \ssf{1}$\IMP$\ssf{2}. Let $\{a_i,\dots,a_n\}$ be all the solutions of $p(u)$. Then 
 
-\hfil$\displaystyle   \bigcup_{j<i\le n}\Big[p(u_i)\cup\big\{u_i\neq u_j\big\}\Big]$
+\ceq{\hfill p(u)}{\iff}{\bigvee^n_{i=1}a_i=u}
 
-By saturation there is a formula $\phi(u)$, conjunction of formulas in $p(u)$, such that
-
-\hfil$\displaystyle\phi(u_0)\ \wedge\ \dots\ \wedge\ \phi(u_n)\ \wedge\bigwedge_{j<i\le n} u_i\neq u_j$.
-
-Which is inconsistent, therefore $\phi(u)$ has at most $n$ solutions.
+Then \ssf{2} follows by compactness (cfr.\@ Theorem~\hyperref[rem_normality]{\ref*{rem_normality}.\ssf{b}}).
+% The non trivial implication is \ssf{1}$\IMP$\ssf{2}. Assume \ssf{1}, then the following type is inconsistent
+% 
+% \hfil$\displaystyle   \bigcup_{j<i\le n}\Big[p(u_i)\cup\big\{u_i\neq u_j\big\}\Big]$
+% 
+% By saturation there is a formula $\phi(u)$, conjunction of formulas in $p(u)$, such that
+% 
+% \hfil$\displaystyle\phi(u_0)\ \wedge\ \dots\ \wedge\ \phi(u_n)\ \wedge\bigwedge_{j<i\le n} u_i\neq u_j$.
+% 
+% Which is inconsistent, therefore $\phi(u)$ has at most $n$ solutions.
 \end{proof}
 
 \begin{exercise}
-For every $a\in\U^n$ and $A\subseteq\U$, the following are equivalent
+Prove that Proposition~\ref{prop_tipialgebrici} does not hold in general for infinite tuple $u$.\QED
+\end{exercise}
+
+\begin{exercise}
+For every $a\in\U^{|u|}$ and $A\subseteq\U$, the following are equivalent
 \begin{itemize}
-\item[1.] $a$ is solution of some algebraic formula  $\phi(u)\in L(A)$, with $|u|=n$;
+\item[1.] $a$ is solution of some algebraic formula  $\phi(u)\in L(A)$;
 \item[2.] $a={\mr a_1},\dots,{\mr a_n}$ for some ${\mr a_1},\dots,{\mr a_n}\in\acl(A)$. 
 \end{itemize}
 Prove also that if $a$ is definable then so are ${\mr a_1},\dots,{\mr a_n}$, and vice versa.\QED
