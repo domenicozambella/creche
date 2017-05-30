@@ -48,25 +48,25 @@ Let $A\subseteq M\models T_{\rm ag}$. Then for every formula $\phi({\mr x})\in\a
 
 \ceq{\hfill\medrel{\proves}\phi({\mr x})}{\iff}{\sum_{i<\alpha}n_ix_i\ =\ c}.
 
-where $n=\<n_i:i<\alpha\>$ and  $x=\<x_i:i<\alpha\>$.\QED
+where $n=\<n_i:i<\alpha\>$ and  ${\mr x}=\<x_i:i<\alpha\>$.\QED
 
 \end{proposition}
 
 \begin{proof}
-Up to equivalence over $T_{\rm ag}$ the formula $\phi({\mr x})$ has the form $s({\mr x})=t(a)$ for some parameter-free terms $s({\mr x})$ and $t(z)$. Over $\Diag\,\<A\>_M$, we can replace $t(a)$ with a single element of  $\<A\>_M$ and write $s({\mr x})$ as the linear combination shown above.
+Up to equivalence over $T_{\rm ag}$ the formula $\phi({\mr x})$ has the form $s({\mr x})=t({\gr a})$ for some parameter-free terms $s({\mr x})$ and $t({\gr z})$. Over $\Diag\,\<A\>_M$, we can replace $t({\gr a})$ with a single  $c\in \<A\>_M$ and write $s({\mr x})$ as the linear combination shown above.
 \end{proof}
 
 
 \begin{definition} Let $M\models T_{\rm ag}$. For $A\subseteq M$ and  $c\in M$. We say that  \emph{$c$ is independent from $A$\/} if $\<A\>_M\cap\<c\>_M=\big\{0\big\}$. Otherwise we say that \emph{$c$ is dependent from $A$}. The \emph{rank\/} of $M$ is the least cardinality of a subset $A\subseteq M$ such that all elements in $M$ are dependent from $A$. We denote it by \emph{\rm\bf rank\,$M$}.\QED
 \end{definition}  
 
-Note that when $M$ is a vector space the condition $\<A\>_M\cap\<c\>_M=\big\{0\big\}$ is equivalent to saying that $c$ is not a linear combination of vectors in $A$ and $\rank M$ coincides with the dimension of $M$. In fact, what we do here for abelian groups could be easily generalized to $D\jj$modules, where $D$ is any integral domain, and in particular to vector spaces.
+Note that when $M$ is a vector space the condition $\<A\>_M\cap\<c\>_M=\big\{0\big\}$ is equivalent to saying that $c$ is not a linear combination of vectors in $A$. Then $\rank M$ coincides with the dimension of $M$. In fact, what we do here for abelian groups could be easily generalized to $D\jj$modules, where $D$ is any integral domain, and in particular to vector spaces.
 
-The following proposition gives a convenient syntactic characterization of independence.
+The following proposition gives a convenient syntactic characterization of independence. An element $c$ of a group is called  \emph{nilpotent}, or in abelian groups also a \emph{torsion element}, if $c^n=0$ for some $n$.
 
 
 \begin{proposition}
-Let $A\subseteq M\models T_{\rm ag}$. Let ${\mr c}\in M$ be such that ${\mr c}^n\neq0$ for every $n\in\omega\sm\{0\}$ (i.e.\@ ${\mr c}$ is not a torsion element). Then the following are equivalent.
+Let $A\subseteq M\models T_{\rm ag}$. Let ${\mr c}\in M$ be not a torsion element. Then the following are equivalent.
 \begin{itemize}
  \item[1.] $\<A\>_M\cap\<{\mr c}\>_M=\big\{0\big\}$;
  \item[2.] $p({\mr x})=\attp_M({\mr c}/A)$ is trivial (see Notation~\ref{note_tipi_diagramma} and ~\ref{notation1}).
@@ -167,7 +167,7 @@ From \ssf{b'} we obtain $N_2\models m{\gr a}=n{\gr c}$. As $N_1$ is torsion-free
 
 The theory of \emph{divisible abelian groups\/} extends $T_{\rm tfag}$ with the following axioms for all  integers $n\neq0$
 \begin{itemize}
-\item[div$_n$] $y\neq0\imp\E x\ nx=y$.
+\item[div] $y\neq0\imp\E x\ nx=y$.
 \end{itemize} 
 We denote this theory by \emph{$T_{\rm\bf dag}$}.
 
@@ -180,14 +180,14 @@ Note that in the proposition above  \textit{consistent\/} means satisfied in som
 The claim in the proposition holds more generally for all $\phi({\mr x})\in L_{\rm qf}$ and also when ${\mr x}$ is a tuple of variables. This follows from Lemma~\ref{lemma_modulo_divisibile_ricco_nonnumer}, whose proof uses the proposition.
 
 \begin{proof}
-We can assume that $\phi({\mr x})$ has the form $n {\mr x}= {\gr a}$ for some $n\in\ZZ$ and some ${\gr a}\in\<A\>_M$. If $n=0$, then ${\gr a}=0$ since $\phi({\mr x})$ is consistent, and the claim is trivial. If $n\neq0$ then by consistency ${\gr a}\neq0$, hence a solution exist in $N$ by axiom \ssf{div$_n$}.
+We can assume that $\phi({\mr x})$ has the form $n {\mr x}= {\gr a}$ for some $n\in\ZZ$ and some ${\gr a}\in\<A\>_M$. If $n=0$, then ${\gr a}=0$ since $\phi({\mr x})$ is consistent, and the claim is trivial. If $n\neq0$ then by consistency ${\gr a}\neq0$, hence a solution exist in $N$ by axiom \ssf{div}.
 \end{proof}
 
 \begin{exercise}
 Prove a converse of Proposition~\ref{prop_md_cons_sodd}. Let $A\subseteq N\models T_{\rm ag}$ and let ${\mr x}$ be a single variable. Prove that if $N\models\E{\mr x} \,\phi({\mr x})$ for every consistent $\phi({\mr x})\in\atL(A)$, then $N\models T_{\rm dag}$.\QED
 \end{exercise}
 
-We are ready to prove that divisible abelian groups of infinite rank are $\omega$-rich. We shall be slightly more general than that.
+We are ready to prove that divisible abelian groups of infinite rank are $\omega$-rich.
 
 \begin{lemma}\label{lemma_modulo_divisibile_ricco_nonnumer}
 Let $k:M\imp N$ be a partial isomorphism of cardinality $<\lambda$, where $M\models T_{\rm tfag}$ and $N\models T_{\rm dag}$ is a model of rank $\ \ge\lambda$. Then for every ${\mr b}\in M$ there is ${\mr c}\in N$ such that $k\cup\big\{\<{\mr b}\,;{\mr c}\>\big\}:M\imp N$ is a partial isomorphism.
@@ -206,7 +206,7 @@ The second case, which has no analogue in Lemma~\ref{lem_ordinericco}, is when $
 \end{proof}
 
 \begin{corollary}\label{corol_ModDivUltraOmog}
-Every uncountable model of $T_{\rm dag}$ is rich in the category of models of $T_{\rm tfag}$ and partial isomorphisms. In particular $T_{\rm dag}$ is uncountably categorical, it is complete, and has quantifier elimination.
+Every uncountable model of $T_{\rm dag}$ is rich in the category of models of $T_{\rm tfag}$ and partial isomorphisms. In particular $T_{\rm dag}$ is uncountably categorical, complete, and has quantifier elimination.
 \end{corollary}
 \begin{proof}
 Any uncountable $N\models T_{\rm dag}$ has rank $|N|$, therefore it is rich by Lemma~\ref{lemma_modulo_divisibile_ricco_nonnumer}; categoricity and completeness follow. As for quantifier elimination, let $k:M\to N$ is a partial isomorphism between models of $T_{\rm dag}$. If $M\preceq M'$ and $M\preceq N'$ are elementary superstructures of uncountable cardinality then $k:M'\to N'$ is elementary by Theorem~\ref{thm_morphism_rich_elementary} and this suffices to conclude that  $k:M\to N$ is elementary. 
@@ -244,24 +244,24 @@ We denote the theory of commutative rings by \emph{$T_{\rm cr}$}.
 
 In what follows the theory $T_{\rm cr}\cup\Diag\<A\>_M$ is implicit in the sense of Notation~\ref{notation1}, so it is important to remember that $\Diag\<A\>_M$ is not trivial even when $A=\0$. In fact, $\Diag\<\0\>_M$ determines the characteristic of the models.
 
-Let  $A\subseteq M\models T_{\rm cr}$ and let $x$ be a tuple of variables of length $\alpha$, an ordinal. We write $L_{{\rm ter},x}(A)$ for the set of terms $t({\mr x})$ with free variables among $x$ and parameters in $A$. On this set we define the equivalence relation
+Let  $A\subseteq M\models T_{\rm cr}$ and let ${\mr x}$ be a tuple of variables of length $\alpha$, an ordinal. We write $L_{{\rm ter},{\mr x}}(A)$ for the set of terms $t({\mr x})$ with free variables among ${\mr x}$ and parameters in $A$. On this set we define the equivalence relation
 
 \ceq{\hfill \emph{$t(x)\sim s(x)$}}%
 {=}%
 {\proves \ t({\mr x})=s({\mr x}).}
 
-On $L_{{\rm ter},x}(A)/\mathord{\sim}$ we define the ring operations in the obvious way so that $L_{{\rm ter},x}(A)/\mathord{\sim}$ is a commutative ring. We denote by $A[x]$ the set of polynomials with variables among $x$ and parameters in $\<A\>_M$. The ring operations on $A[x]$ are defined as usual. The following proposition (which is clear, but tedious to prove) implies in particular that $L_{{\rm ter},x}(A)/\mathord{\sim}$ is isomorphic to $A[x]$. For simplicity we state it only for $|x|=1$.
+On $L_{{\rm ter},{\mr x}}(A)/\mathord{\sim}$ we define the ring operations in the obvious way so that $L_{{\rm ter},{\mr x}}(A)/\mathord{\sim}$ is a commutative ring. We denote by $A[{\mr x}]$ the set of polynomials with variables among ${\mr x}$ and parameters in $\<A\>_M$. The ring operations on $A[{\mr x}]$ are defined as usual. The following proposition (which is clear, but tedious to prove) implies in particular that $L_{{\rm ter},{\mr x}}(A)/\mathord{\sim}$ is isomorphic to $A[{\mr x}]$. For simplicity we state it only for $|{\mr x}|=1$.
 
 \begin{proposition}
 \label{prop_formacanonicaterminiau}
-Let  $A\subseteq M\models T_{\rm cr}$ and let $x$ be a single variable. Then for every formula $\phi({\mr x})\in \atL(A)$ there is a unique $n<\omega$ and a unique tuple $a=\<a_i:i\le n\>$ of elements of $\<A\>_M$ such that $a_n\neq0$ and 
+Let  $A\subseteq M\models T_{\rm cr}$ and let ${\mr x}$ be a single variable. Then for every formula $\phi({\mr x})\in \atL(A)$ there is a unique $n<\omega$ and a unique tuple $\<{\gr a_i}:i\le n\>$ of elements of $\<A\>_M$ such that ${\gr a_n}\neq0$ and 
 
-\ceq{}{\proves}{\phi({\mr x})\ \iff\ \sum_{i\le n}a_ix^i\ =\ 0}.\QED
+\ceq{}{\proves}{\phi({\mr x})\ \iff\ \sum_{i\le n}{\gr a_i}{\mr x}^i\ =\ 0}.\QED
 \end{proposition}
 
 The integer $n$ in the proposition above is called the \emph{degree of $\phi(x)$}.
 
-\begin{definition} Let $A\subseteq M\models T_{\rm cr}$. We say that an element $b\in M$ is \emph{transcendent over $A$\/} if the type $p({\mr x})=\attp_M(b/A)$ is trivial (see Notation~\ref{note_tipi_diagramma} and ~\ref{notation1}). Otherwise we say that $b$ is \emph{algebraic over $A$}. The \emph{transcendence degree\/} of $M$ is the least cardinality of a subset $A\subseteq M$ such that all elements of $M$ are algebraic over $A$.\QED
+\begin{definition} Let $A\subseteq M\models T_{\rm cr}$. We say that an element ${\mr b}\in M$ is \emph{transcendent over $A$\/} if the type $p({\mr x})=\attp_M({\mr b}/A)$ is trivial (see Notation~\ref{note_tipi_diagramma} and ~\ref{notation1}). Otherwise we say that ${\mr b}$ is \emph{algebraic over $A$}. The \emph{transcendence degree\/} of $M$ is the least cardinality of a subset $A\subseteq M$ such that all elements of $M$ are algebraic over $A$.\QED
 \end{definition}  
 
 \begin{remark}\label{oss_liberi_cr}
@@ -284,7 +284,7 @@ Let $M\models T_{\rm id}$ be uncountable. Then $M$ has transcendence degree $|M|
 \end{proposition}
 
 \begin{proof}
-Every polynomial has finitely many solutions in an integral domain and there are $|L(A)|$ polynomials over $A$.
+In an integral domain every polynomial has finitely many solutions and there are $|L(A)|$ polynomials over $A$.
 \end{proof}
 
 
@@ -342,7 +342,7 @@ Fields are structures in the signature of rings: the language contains no symbol
 The theory of \emph{algebraically closed field}, which we denote by \emph{$T_{\rm acf}$}, also contains the following axioms for every positive integer $n$
 
 \begin{itemize}
-\item[ac$_n$.] $\E x\ \big(x^{n} + z_{n-1}x^{n-1} + \dots + z_1 x + z_0\ \ =\ \ 0\big)$
+\item[ac.] $\E {\mr x}\ \big( {\mr x}^{n} + {\gr z_{n-1}} {\mr x}^{n-1} + \dots + {\gr z_1}  {\mr x} + {\gr z_0}\ \ =\ \ 0\big)$
 \end{itemize}
 
 This not a complete theory because it does not decide the characteristic of the field. For a prime $p$, we define the theory \emph{$T^p_{\rm acf}$}, which contains $T_{\rm acf}$ and the axiom
@@ -357,10 +357,10 @@ Let $A\subseteq M\models T_{\rm id}$ and let $\phi({\mr x})\in\atL(A)$, where $|
 
 Note that in the proposition above \textit{consistent\/} means satisfied in some $M'$ such that $\<A_M\>\subseteq M'\models T_{\rm id}$.
 
-The claim in the proposition holds more generally for all $\phi({\mr x})\in L_{\rm qf}$ when $x$ is a tuple of variables. This follows from Lemma~\ref{lem_acf_ricco_nonnumer} whose proof uses the proposition.
+The claim in the proposition holds more generally for all $\phi({\mr x})\in L_{\rm qf}$ when ${\mr x}$ is a tuple of variables. This follows from Lemma~\ref{lem_acf_ricco_nonnumer} whose proof uses the proposition.
 
 \begin{proof}
-Up to equivalence $\phi({\mr x})$ has the form ${\gr a_n}{\mr x}^n + \dots + {\gr a_1} {\mr x} + {\gr a_0}=0$ for some ${\gr a_i}\in\<A\>_N$. Choose $n$ minimal. If $n=0$, then ${\gr a_0}=0$ since $\phi({\mr x})$ is consistent, and the claim is trivial. Otherwise ${\gr a_n}\neq0$ and the claim follows from \ssf{f} and \ssf{ac$_n$}. 
+Up to equivalence $\phi({\mr x})$ has the form ${\gr a_n}{\mr x}^n + \dots + {\gr a_1} {\mr x} + {\gr a_0}=0$ for some ${\gr a_i}\in\<A\>_N$. Choose $n$ minimal. If $n=0$ then ${\gr a_0}=0$ by the consistency of $\phi({\mr x})$ and the claim is trivial. Otherwise ${\gr a_n}\neq0$ and the claim follows from \ssf{f} and \ssf{ac}. 
 \end{proof}
 
 \begin{lemma}\label{lem_acf_ricco_nonnumer}
