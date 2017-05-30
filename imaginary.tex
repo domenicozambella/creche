@@ -23,26 +23,24 @@ In this chapter we fix a signature $L$, a complete theory $T$ without finite mod
 \label{many-sorted}
 \def\Ar{{\rm Ar}}
 
-A many-sorted language consists of three disjoint sets. Besides the usual $L_{\rm fun}$ and $L_{\rm rel}$, we have a set $L_{\rm srt}$ of \emph{sorts}. The language comprises also a \emph{(many-sorted) arity function} that assigns to relations and function symbols a tuple of sorts of finite positive length
-
-\ceq{\hfill\emph{Ar}}{:}{L_{\rm fun}\cup L_{\rm rel}\quad \to\quad L_{\rm srt}^{<\omega}\sm\{\0\}.}
+A many-sorted language consists of three disjoint sets. Besides the usual $L_{\rm fun}$ and $L_{\rm rel}$, we have a set $L_{\rm srt}$ of \emph{sorts}. The language comprises also a \emph{(many-sorted) arity function} that assigns to function and relations symbols $r$, $f$ a tuple of sorts of finite positive length which we call \emph{arity}.
 
 A many sorted structure $M$ consists of
 \begin{itemize}
-\item[1.] For every $s\in L_{\rm srt}$ a set $M_s$.
-\item[2.] For every $f\in L_{\rm fun}$ a function $f^M:M_{s_1}\times\dots\times M_{s_n}\to M_{s_0}$, where $\Ar(f)=\<s_0,\dots,s_n\>$.
-\item[3.] For every $r\in L_{\rm rel}$ a relation $r^M\subseteq M_{s_0}\times\dots\times M_{s_n}$, where $\Ar(r)=\<s_0,\dots,s_n\>$.
+\item[1.] a set $M_s$, for each $s\in L_{\rm srt}$;
+\item[2.] a function $f^M:M_{s_1}\times\dots\times M_{s_n}\to M_{s_0}$, for each $f\in L_{\rm fun}$ of arity $\<s_0,\dots,s_n\>$, ;
+\item[3.] a relation $r^M\subseteq M_{s_0}\times\dots\times M_{s_n}$, for each $r\in L_{\rm rel}$ of arity $\<s_0,\dots,s_n\>$, .
 \end{itemize}
 
-For every sort $s$ we fix a sufficiently large a set of variables $V_s$. Now we define terms by induction. Along the way we assign a sort to each term. 
+For every sort $s$ we fix a sufficiently large a set of variables $V_s$. Now we define terms by induction. Along the way we assign a sort to each term $t$. 
 
-All variables are terms of the respective sort. If $t_1,\dots,t_n$ are terms of sorts $s_1,\dots,s_n$ and $f\in L_{\rm fun}$ is such that $\Ar(f)=\<s_0,\dots,s_n\>$ then $ft_1,\dots,t_n$ is a term of sort $s_0$. 
+All variables are terms of the respective sort. If $t_1,\dots,t_n$ are terms of sorts $s_1,\dots,s_n$ and $f\in L_{\rm fun}$ is of arity $\<s_0,\dots,s_n\>$ then $f\,t_1,\dots,t_n$ is a term of sort $s_0$. 
 
-If $r\in L_{\rm rel}$ then $\Ar(r)=\<s_0,\dots,s_n\>$ then $rt_0,\dots,t_n$ is a formula. Also, $t_1=t_2$ is formula for every pair of terms. All other formulas are constructed by induction using the propositional connectives $\neg$ and $\vee$ and the quantifier $\E x$ (or any other reasonable choice of logical connectives).
+If $r\in L_{\rm rel}$ has arity $\<s_0,\dots,s_n\>$ then $r\,t_0,\dots,t_n$ is a formula. Also, $t_1=t_2$ is formula for every pair of terms of equal sort. All other formulas are constructed by induction using the propositional connectives $\neg$ and $\vee$ and the quantifier $\E x$ (or any other reasonable choice of logical connectives).
 
 Truth of formulas is defined as for one-sorted languages up to one difference: we require that the witness of the quantifier $\E x$ belongs to $M_s$, where $s$ is the sort of the variable $x$.
 
-Second order logic is arguably the most widely used example of many sorted structure. It may be formalized using a language with a sort $n$ for every $n\in\omega$. The sort $0$ is used for the first order elements; the sorts $n>0$ is used for relations of arity $n$. For every $n>0$ the language has a relation symbol $\in_n$ of arity $\<0^n,n\>$, where $0^n$ stands for a string of $0$'s of length $n$. There are also arbitrary many functions and relation symbols of sort $\<0^n,0\>$ for every $n$.
+Second order logic is arguably the most widely used example of many sorted structure. It may be formalized using a language with a sort $n$ for every $n\in\omega$. The sort $0$ is used for the first order elements; the sorts $n>0$ is used for relations of arity $n$. For every $n>0$ the language has a relation symbol $\in_n$ of arity $\<0^n,n\>$, where $0^n$ stands for $n$ many $0$s. There are also arbitrary many functions and relation symbols of sort $\<0^{n+1}\>$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -53,9 +51,9 @@ Second order logic is arguably the most widely used example of many sorted struc
 
 We recall the definition of parted formulas. A \emph{parted formula\/} is a triple that consists of a formula and two tuples of variables. We use a semicolon, as in $\sigma({\mr x}\,;{\gr z})$, to separate the two tuples of variables. Below, ${\gr z}$ is always a placeholder for parameters and ${\mr x}$ is used for the definition of a set.
 
-Given a language $L$ we define a many-sorted language \emph{$L^{\rm\textbf{eq}}$\/} which has a sort for each (parted) formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort\/} or the \emph{first-order sort}. All other sorts are called \emph{second-order sorts}. First of all, $L^\eq$ contains all relations and functions of $L$. The many-sorted arity of a relation $r$ is $\<0,\dots,0\>$, a string of $0$'s of length the arity of $r$ in $L$.  Similarly, the many-sorted arity of a function $f$ is $\<0,\dots,0\>$, a string of $0$'s of length the arity of $f$ in $L$ plus $1$. Moreover $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$. These have arity $\big\<0,\dots,0,\sigma({\mr x}\,;{\gr z})\big\>$ with $|{\mr x}|$ many $0$'s. As there is no risk of ambiguity, we write $\in$ without subscript.
+Given a language $L$ we define a many-sorted language \emph{$L^{\rm\textbf{eq}}$\/} which has a sort for each (parted) formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort\/} or the \emph{first-order sort}. All other sorts are called \emph{second-order sorts}. First of all, $L^\eq$ contains all relations and functions of $L$. The many-sorted arity of a relation $r$ is $\<0^{n_r}\>$, a string of $0$'s of length the arity of $r$ in $L$.  Similarly, the many-sorted arity of a function $f$ is $\<0^{1+n_f}\>$. Moreover $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$. These have arity $\big\<0^{|{\mr x}|},\sigma({\mr x}\,;{\gr z})\big\>$. As there is no risk of ambiguity, we write $\in$ without subscript.
 
-The model \emph{$\U^{\rm\textbf{eq}}$\/} has $\U$ as domain for the home sort. The domain for the sort $\sigma({\mr x}\,;{\gr z})$ contains the definable sets ${\vl a}=\sigma(\U;{\gr b})$ for some ${\gr b}\in\U^{|{\gr z}|}$. The symbols in $L$ have the same interpretation as in the one-sorted case, and $\in$ is interpreted as set membership. We write \emph{$T^{\rm\textbf{eq}}$\/} for $\Th(\U^\eq)$.
+The model \emph{$\U^{\rm\textbf{eq}}$\/} has $\U$ as domain for the home sort. The domain for the sort $\sigma({\mr x}\,;{\gr z})$ contains the definable sets ${\vl a}=\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in\U^{|{\gr z}|}$. The symbols in $L$ have the same interpretation as in the one-sorted case, and $\in$ is interpreted as set membership. We write \emph{$T^{\rm\textbf{eq}}$\/} for $\Th(\U^\eq)$.
 
 As usual \emph{$L^\eq$\/} also denotes the set of formulas constructed in this language and, if $A\subseteq\U^\eq$, we write  \emph{$L^\eq(A)$\/} for the language and the set of formulas that use elements of $A$ as parameters. We write \emph{$L(A)$\/} for the set of formulas in $L^\eq(A)$ that contain no second-order variables (neither free nor quantified).  
 
@@ -67,11 +65,11 @@ It is important to note right away that this expansion is a mild one: the defina
 
 
 \begin{proposition}\label{prop_eqmild}
-Let $\phi({\mr u}\,\,;{\vl v})\in L^\eq$ where ${\mr u}\,$ is a tuple of first-order variables and  ${\vl v}$ a tuple of variables of sort $\sigma_i({\mr x_i}\,;{\gr z_i})$, with tuples of variables. Then there is a formula $\phi'({\mr u}\,\,;{\gr z})\in L$ such that 
+Let $\phi({\mr u}\,;{\vl v})\in L^\eq$ where ${\mr u}\,$ is a tuple of first-order variables and  ${\vl v}$ a tuple of variables of sort $\sigma_i({\mr x_i}\,;{\gr z_i})$ for $i=1,\dots,n$. Then there is a formula $\phi'({\mr u}\,;{\gr z})\in L$ such that 
 
 \hfil$\displaystyle\A {\vl v},{\gr z}\ \bigg[\bigwedge^n_{i=1}{\vl v_i}=\big\{{\mr x_i}:\sigma_i({\mr x_i}\,;{\gr z_i})\big\}\imp\A {\mr u}\ \big[\phi({\mr u}\,;{\vl v})\ \iff\ \phi'({\mr u}\,;{\gr z})\big]\bigg]$
 
-where ${\vl v}$ stand for the tuple ${\vl v_1},\dots,{\vl v_n}$ and ${\gr z}$ for the concatenation of ${\gr z_1},\dots,{\gr z_n}$. For simplicity we are assuming that the tuples ${\gr z_i}$ do not have variables in common.
+where ${\vl v}$ stand for the tuple ${\vl v_1},\dots,{\vl v_n}$ and ${\gr z}$ for the concatenation of ${\gr z_1},\dots,{\gr z_n}$.% For simplicity we are assuming that the tuples ${\gr z_i}$ do not have variables in common.
 \end{proposition}
 
 When $n=0$ the proposition asserts that $L_{{\mr u}}^\eq$ and $L_{{\mr u}}$ have the same expressive power.
@@ -91,7 +89,7 @@ Proposition~\ref{prop_eqmild} should convince the reader that the move from $\U$
 From Proposition~\ref{prop_eqmild} it follows that for every $A\subseteq\U^\eq$, there is a $B\subseteq\U$ such that $L(B)$ is at least as expressive as $L(A)$. The point of $\U^\eq$ is that there might not be any $B\subseteq\U$ such that $L(B)$ is exactly as expressive as $L^\eq(A)$. For instance, suppose $L$ contains only an equivalence relation with infinitely many classes, all with infinite elements. Let ${\vl a}$ be an equivalence class. Then ${\vl a}$ is is definable in $L(B)$ if and only if $B\cap {\vl a}\neq\0$. But no element of ${\vl a}$ is definable in $L^\eq(\{{\vl a}\})$.\QED
 \end{remark}
 
-If $\V\preceq\U$ we write \emph{$\V^{\textbf{eq}}$\/} for the substructure of $\U^\eq$ that has $\V$ as domain of the home sort and  the set of definable sets of the form $\sigma(\U;{\gr b})$ for some ${\gr b}\in \V^{|{\gr z}|}$ as domain of the sort $\sigma({\mr x}\,;{\gr z})$. 
+If $\V\preceq\U$ we write \emph{$\V^{\textbf{eq}}$\/} for the substructure of $\U^\eq$ that has $\V$ as domain of the home sort and  the set of definable sets of the form $\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in \V^{|{\gr z}|}$ as domain of the sort $\sigma({\mr x}\,;{\gr z})$. 
 The following proposition claims that elementary substructures of $\U^\eq$ are exactly those of the form $\V^\eq$ for some $\V\preceq\U$. 
 
 \begin{proposition}
@@ -102,18 +100,18 @@ The following are equivalent for every structure $\V^\dag$ of signature $L^\eq$
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Implication \ssf{2}$\IMP$\ssf{1} is a direct consequence of Proposition~\ref{prop_eqmild}. We prove \ssf{1}$\IMP$\ssf{2}. Let $\V$ be the domain of the home sort of $\V^\dag$. It is clear that $\V\preceq\U$. Let ${\vl a}\in\V^\eq$  have sort $\sigma({\mr x}\,;{\gr z})$, say ${\vl a}=\sigma(\U;{\gr b})$ for some ${\gr b}\in\V^{|{\gr z}|}$. As $\E^{=1}{\vl v}\, \A{\mr x}\,\big[{\mr x}\in{\vl v}\iff\sigma({\mr x}\,;{\gr b})\big]$ holds in $\U^\eq$, by elementarity it holds in $\V^\dag$ and therefore ${\vl a}\in\V^\dag$. This proves $\V^\eq\subseteq\V^\dag$. A similar argument proves the converse inclusion.
+Implication \ssf{2}$\IMP$\ssf{1} is a direct consequence of Proposition~\ref{prop_eqmild}. We prove \ssf{1}$\IMP$\ssf{2}. Let $\V$ be the domain of the home sort of $\V^\dag$. It is clear that $\V\preceq\U$. Let ${\vl a}\in\V^\eq$  have sort $\sigma({\mr x}\,;{\gr z})$, say ${\vl a}=\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in\V^{|{\gr z}|}$. As $\E^{=1}{\vl v}\, \A{\mr x}\,\big[{\mr x}\in{\vl v}\iff\sigma({\mr x}\,;{\gr b})\big]$ holds in $\U^\eq$, by elementarity it holds in $\V^\dag$ and therefore ${\vl a}\in\V^\dag$. This proves $\V^\eq\subseteq\V^\dag$. A similar argument proves the converse inclusion.
 \end{proof}
 
 \begin{proposition}\label{prop_Ueq_saturated}
 Let $A\subseteq\U^\eq$. Then every type $p({\mr u}\,;{\vl v})\subseteq L^\eq(A)$ finitely consistent in $\U^\eq$ is realized in $\U^\eq$. That is, $\U^\eq$ is saturated.
 \end{proposition}
 \begin{proof}
-By Remark~\ref{rem_eqmild}, there is some $B\subseteq\U$ and some $q({\mr u}\,;{\vl v})\subseteq L^\eq(B)$ equivalent to $p({\mr u}\,;{\vl v})$. This already proves the proposition when ${\vl v}$ is the empty tuple. Otherwise, let $q'({\mr u}\,;{\gr z})$ be obtained replacing every formula $\phi({\mr u}\,;{\vl v})$ in $q({\mr u}\,;{\vl v})$ with with the formula $\phi'({\mr u}\,;{\gr z})$ given by Proposition~\ref{prop_eqmild}. Then $q'({\mr u}\,;{\gr z})$ is finitely consistent in $\U$. Assume for clarity of notation that ${\vl v}$ is a single variable of sort  $\sigma({\mr x}\,;{\gr z})$. If ${\mr c}\,;{\gr b}\models q'({\mr u}\,;{\gr z})$ then  ${\mr c}\,;\sigma(\U;{\gr b})\models q({\mr u}\,;{\vl v})$.
+By Remark~\ref{rem_eqmild}, there is some $B\subseteq\U$ and some $q({\mr u}\,;{\vl v})\subseteq L^\eq(B)$ equivalent to $p({\mr u}\,;{\vl v})$. This already proves the proposition when ${\vl v}$ is the empty tuple. Otherwise, let $q'({\mr u}\,;{\gr z})$ be obtained replacing every formula $\phi({\mr u}\,;{\vl v})$ in $q({\mr u}\,;{\vl v})$ with with the formula $\phi'({\mr u}\,;{\gr z})$ given by Proposition~\ref{prop_eqmild}. Then $q'({\mr u}\,;{\gr z})$ is finitely consistent in $\U$. Assume for clarity of notation that ${\vl v}$ is a single variable of sort  $\sigma({\mr x}\,;{\gr z})$. If ${\mr c}\,;{\gr b}\models q'({\mr u}\,;{\gr z})$ then  ${\mr c}\,;\sigma({\mr\U}\,;{\gr b})\models q({\mr u}\,;{\vl v})$.
 \end{proof}
 
 
-Automorphisms of a many-sorted structure are defined in the obvious way: sorts are preserved as well as functions and relations. Every automorphisms $f:\U\imp\U$ extends to an automorphism $f:\U^\eq\imp\U^\eq$ as follows.  If ${\vl a}=\sigma(\U;{\gr b})$ we define $f{\vl a}=\sigma(\U;f{\gr b})$, which clearly preserves the sort. It is easy to check that $f{\vl a}=\big\{f{\mr x}\;:\;{\mr x}\in {\vl a}\big\}$, so $f$ preserves the relation $\in$. Clearly, this extension is unique.
+Automorphisms of a many-sorted structure are defined in the obvious way: sorts are preserved as well as functions and relations. Every automorphisms $f:\U\imp\U$ extends to an automorphism $f:\U^\eq\imp\U^\eq$ as follows.  If ${\vl a}=\sigma({\mr\U}\,;{\gr b})$ we define $f{\vl a}=\sigma({\mr\U}\,;f{\gr b})$, which clearly preserves the sort. It is easy to check that $f{\vl a}=\big\{f{\mr x}\;:\;{\mr x}\in {\vl a}\big\}$, so $f$ preserves the relation $\in$. Clearly, this extension is unique.
 
 The homogeneity of $\U^\eq$ follows by back-and-forth as in the one-sorted case.
 
@@ -159,7 +157,7 @@ Definition~\ref{def_def} treats first- and second-order elements of $\U^\eq$ uni
 Let $A\subseteq\U^\eq$ and let ${\vl a}\in\U^\eq$ have sort $\sigma({\mr x}\,;{\gr z})$ then the following are equivalent
 \begin{itemize}
 \item[1.] ${\vl a}$ is definable over $A$
-\item[2.] ${\vl a}=\psi(\U)$ for some $\psi({\mr x})\in L(A)$
+\item[2.] ${\vl a}=\psi({\mr\U})$ for some $\psi({\mr x})\in L(A)$
 \end{itemize}
 \end{proposition}
 
@@ -176,13 +174,13 @@ The formula $\psi({\mr x})$ in Proposition~\ref{prop_def_def_set} need not be re
 Let $M$ be a model and let ${\vl a}$ be an element of sort $\sigma({\mr x}\,;{\gr z})$. Then the following are equivalent
 \begin{itemize}
 \item[1.]  ${\vl a}\in\dcl^\eq(M)$; 
-\item[2.]  ${\vl a}=\sigma(\U,{\gr b})$ for some ${\gr b}\in M^{|{\gr z}|}$.
+\item[2.]  ${\vl a}=\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in M^{|{\gr z}|}$.
 \end{itemize}
 In particular $M^\eq=\dcl^\eq(M)$.
 \end{proposition}
 
 \begin{proof}
-Assume \ssf{1} and let $\psi({\mr x})\in L(M)$ be such that ${\vl a}=\psi(\U)$. Such a formula exists by Proposition~\ref{prop_def_def_set}. Then $\E{\gr z}\,\A{\mr x}\,\big[\psi({\mr x})\iff\sigma({\mr x}\,;{\gr z})\big]$ holds in $\U^\eq$. By elementarity it holds in $M^\eq$, therefore $\E{\gr z}$ has a witness in $M$. This proves \ssf{1}$\IMP$\ssf{2}, the converse implication is obvious.
+Assume \ssf{1} and let $\psi({\mr x})\in L(M)$ be such that ${\vl a}=\psi({\mr\U})$. Such a formula exists by Proposition~\ref{prop_def_def_set}. Then $\E{\gr z}\,\A{\mr x}\,\big[\psi({\mr x})\iff\sigma({\mr x}\,;{\gr z})\big]$ holds in $\U^\eq$. By elementarity it holds in $M^\eq$, therefore $\E{\gr z}$ has a witness in $M$. This proves \ssf{1}$\IMP$\ssf{2}, the converse implication is obvious.
 \end{proof}
 
 \section{The algebraic closure in the eq-expansion}
@@ -244,11 +242,11 @@ Let $A\subseteq\U^\eq$ and let ${\mr a},{\mr b}\in\U^{|{\mr x}|}$. Then the foll
 \end{itemize} 
 \end{proposition}
 \begin{proof}
-Assume $\neg$\ssf{2} and let $\epsilon({\mr x}\,;{\mr y})$ witness this. Let ${\vl d}=\epsilon(\U\,;{\mr b})$, then  ${\mr b}\in{\vl d}$ and ${\mr a}\notin{\vl d}$. As $\epsilon({\mr x}\,;{\mr y})$ is an $A$-invariant finite equivalence formula, ${\vl d}\in\acl^\eq(A)$, and $\neg$\ssf{1} follows. Vice versa, assume $\neg$\ssf{1} and let $\phi({\mr x})\in L\big(\acl^\eq(A)\big)$ be  such that $\phi({\mr a})\niff\phi({\mr b})$. Let ${\vl d}=\phi(\U)$, then ${\vl d}\in\acl^\eq(A)$. Therefore, by Proposition~\ref{thm_set_alg=feq}, the set ${\vl d}$ is union of equivalence classes of some finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$. Then $\neg\epsilon({\mr a}\,;{\mr b})$ and $\neg$\ssf{2} follows.
+Assume $\neg$\ssf{2} and let $\epsilon({\mr x}\,;{\mr y})$ witness this. Let ${\vl d}=\epsilon({\mr\U}\,;{\mr b})$, then  ${\mr b}\in{\vl d}$ and ${\mr a}\notin{\vl d}$. As $\epsilon({\mr x}\,;{\mr y})$ is an $A$-invariant finite equivalence formula, ${\vl d}\in\acl^\eq(A)$, and $\neg$\ssf{1} follows. Vice versa, assume $\neg$\ssf{1} and let $\phi({\mr x})\in L\big(\acl^\eq(A)\big)$ be  such that $\phi({\mr a})\niff\phi({\mr b})$. Let ${\vl d}=\phi({\mr\U})$, then ${\vl d}\in\acl^\eq(A)$. Therefore, by Proposition~\ref{thm_set_alg=feq}, the set ${\vl d}$ is union of equivalence classes of some finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$. Then $\neg\epsilon({\mr a}\,;{\mr b})$ and $\neg$\ssf{2} follows.
 \end{proof}
 
 \begin{exercise}
-Let $p({\mr x})\subseteq L(A)$ and let $\phi({\mr x}\,;{\mr y})\in L(A)$ be a formula that defines, when restricted to $p(\U)$, an equivalence relation with finitely many classes. Prove that there is a finite equivalence relation definable over $A$ that coincides with $\phi({\mr x}\,;{\mr y})$ on $p(\U)$.\QED
+Let $p({\mr x})\subseteq L(A)$ and let $\phi({\mr x}\,;{\mr y})\in L(A)$ be a formula that defines, when restricted to $p({\mr\U})$, an equivalence relation with finitely many classes. Prove that there is a finite equivalence relation definable over $A$ that coincides with $\phi({\mr x}\,;{\mr y})$ on $p({\mr\U})$.\QED
 \end{exercise}
 
 \begin{exercise}\label{ex_feqthm_senza_eq}
@@ -256,7 +254,7 @@ Let $A\subseteq\U$, let ${\vl a}$ be a definable set with finite orbit over $A$.
 \end{exercise}
 
 \begin{exercise}
-Let $T$ be strongly minimal and let $\phi({\mr x}\,;{\mr y})\in L(A)$ with $|{\mr z}|=1$. For arbitrary $c\in\U$, prove that if the orbit of $\phi(\U\,; {\mr c})$ over $A$ is finite, then $\phi(\U\,; {\mr c})$ is definable over $\acl A$. 
+Let $T$ be strongly minimal and let $\phi({\mr x}\,;{\mr y})\in L(A)$ with $|{\mr z}|=1$. For arbitrary $c\in\U$, prove that if the orbit of $\phi({\mr\U}\,; {\mr c})$ over $A$ is finite, then $\phi({\mr\U}\,; {\mr c})$ is definable over $\acl A$. 
 
 Hint: you can use Theorem~\ref{thm_set_alg=feq}.\QED
 \end{exercise}
@@ -389,18 +387,18 @@ Note that (the interpretation of) the term $t_{\vl a}({\mr x}\,;{\gr y})$ is ind
 \end{proof}
 
 \begin{exercise}
-Let $T$ have elimination of imaginaries and $\phi({\mr x}\,;{\gr z})\in L(A)$. For arbitrary $c\in\U^{|{\gr z}|}$, prove that if the orbit of $\phi(\U\,; {\mr c})$ over $A$ is finite, then $\phi(\U\,; {\mr c})$ is definable over $\acl A$.\QED
+Let $T$ have elimination of imaginaries and $\phi({\mr x}\,;{\gr z})\in L(A)$. For arbitrary $c\in\U^{|{\gr z}|}$, prove that if the orbit of $\phi({\mr\U}\,; {\mr c})$ over $A$ is finite, then $\phi({\mr\U}\,; {\mr c})$ is definable over $\acl A$.\QED
 \end{exercise}
 
 % \begin{exercise}
 % prove that a theory has weak elimination of imaginaries if for every $A\subseteq\U^\eq$, there is a $B\subseteq\U$ such that $L\big(\acl(B)\big)$ and $L\big(acl(A)\big)$ have the same expressive power.\QED
 % \end{exercise}
 
-\section{Imaginaries, the true story}\label{imaginaries_long}
+\section{Imaginaries: the true story}\label{imaginaries_long}
 
 The point of the expansion to $\U^\eq$ is to add a canonical parameter for each definable set. In fact, in $\U^\eq$ every definable subset of $\U^{|{\gr z}|}$ is the canonical parameter if itself. This allows to deal with theories without elimination of imaginaries in the most straightforward way.
 
-The expansion to $\U^\eq$ that was originally introduced by Shelah (and still used everywhere else) is slightly different from the one introduced here. For a given set ${\vl a}=\sigma(\U\,;{\gr b})$ Shelah considers the equivalence relation defined by the formula
+The expansion to $\U^\eq$ that was originally introduced by Shelah (and still used everywhere else) is slightly different from the one introduced here. For a given set ${\vl a}=\sigma({\mr\U}\,;{\gr b})$ Shelah considers the equivalence relation defined by the formula
 
 \ceq{\hfill \epsilon({\gr z}\,;{\gr z'})}{\deq}{\A{\mr x}\,\bigg[\sigma({\mr x}\,;{\gr z})\medrel{\iff}\sigma({\mr x}\,;{\gr z'})\bigg].}
 
