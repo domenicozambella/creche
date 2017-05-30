@@ -112,16 +112,6 @@ Assume $|L|\le\lambda$. Consider the category that consists of models of some th
 \ssf{1}$\IMP$\ssf{2}. Let $k:M\to N$ be a finite partial isomorphism between models of $T$. We claim that it is an elementary map. Let $M'\succeq M$ and $N'\succeq N$ are saturated models of equal cardinality. As these are rich, $k:M'\to N'$ extends to an isomorphism $h:M'\hookdoubleheadrightarrow N'$ and the claim follows.
 \end{proof}
 
-\begin{exercise}\label{ex_QQxZZ_saturo}
-Let $L$ be the language of strict order. Let $T$ be the theory discrete linear orders without endpoints. (An order is discrete if every point has an immediate predecessor and an immediate successor.) Show that the structure $\QQ\times\ZZ$ ordered with the lexicographic order 
-
-\ceq{\hfill (a_1,a_2)<(b_1,b_2)}{\IFF}{a_1<b_1\ \ \textrm{or}\ \ a_1=b_1\ \textrm{e}\ a_2<b_2}
-
-is a saturated model of $T$. For every $n\in\omega$ add to the language a relation symbol $d(x,y)=n$ and add to $T$ the axiom $d(x,y)=n\iff\E^{=n} z\,(x<z\le y)$.   Let $T'$ be the resulting theory. Prove that $T'$ has quantifier elimination. 
-
-Hint: answer the second question first using Theorem~\ref{thm_ricchezza_saturazione_QE}.\QED 
-\end{exercise}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -243,19 +233,30 @@ Some terms acquire a slightly different meaning when working inside a monster mo
 
 Let $x$ be a tuple of variables. For any fixed $A\subseteq \U$ we introduce a topology on $\U^{|x|}$ that we call the \emph{topology induced by $A$} or, for short, \emph{$A\jj$topology}. (This is non standard terminology, not to be confused with the \textit{logic\/} $A\jj$topology in Section~\hyperref[invariant]{\ref*{invariant}.\ref*{KPtypes}}.) The closed sets of the $A\jj$topology are those of the form $p(\U)$ where $p(x)\subseteq L(A)$ is any type over $A$.
 
-For $\phi(x)\in L(A)$ the sets of the form $\phi(\U)$ are clopen in this topology (and vice versa by Exercise~\ref{ex_clopen_definibili}). They form both a base of closed sets and base of open sets, which makes these topologies \textit{zero-dimensional}. By saturation, the topology induced by $A$ is compact. Actually, saturation is equivalent to the compactness of all these topologies as $A$ ranges over the sets of small cardinality.
+For $\phi(x)\in L(A)$ the sets of the form $\phi(\U)$ are clopen in this topology (and vice versa by Proposition~\ref{prop_normality}). They form both a base of closed sets and base of open sets, which makes these topologies \textit{zero-dimensional}. By saturation, the topology induced by $A$ is compact. Actually, saturation is equivalent to the compactness of all these topologies as $A$ ranges over the sets of small cardinality.
 
 These topologies are never T$_0$ as any pair of tuples $a\equiv_A b$ have exactly the same neighborhoods. Such pairs always exist by cardinality reasons. However it is immediate that the topology induced on the quotient $\U^{|x|}/\!\equiv_A$ is Hausdorff (this is the so-called \textit{Kolmogorov quotient}). Indeed, this quotient corresponds to $S_x(A)$ with the topology introduced in Section~\hyperref[frammenti]{\ref{types}.\ref*{frammenti}}.
 
 The following proposition is an immediate consequence of compactness. When $A=B$ it says that the topology induced by $A$ is \textit{normal}: any two closed sets are separated by open sets. It could be called \emph{mutual normality\/} (not a standard name) because the two closed sets belong to different topologies and the separating sets are each found in the corresponding topology.
 
-\begin{proposition}\label{prop_normality}
-If $p(x)\subseteq L(A)$ and $q(x)\subseteq L(B)$ are such that $p(x)\imp \neg q(x)$ then there are some formulas $\phi(x)$ and $\psi(x)$, conjunctions of formulas in $p(x)$, respectively $q(x)$, such that $\phi(x)\imp\neg\psi(x)$.
+%If $p$ is a type of formulas we write $\{\wedge\}p$ for the set of (finite) conjunctions of formulas in $p$. 
+
+\begin{proposition}[(mutual normality)]\label{prop_normality}
+Let $p(x)\subseteq L(A)$ and $q(x)\subseteq L(B)$ be such that $p(x)\imp \neg q(x)$. Then there are $\phi(x)$, conjuction of formulas in $p(x)$, and $\psi(x)$, conjuction of formulas in $q(x)$, such that $\phi(x)\imp\neg\psi(x)$.
 \end{proposition}
 
 \begin{proof}
 The assumptions say that $p(x)\wedge q(x)$ is inconsistent. Then the formulas $\phi(x)$ and $\psi(x)$ exist by compactness (i.e.\@ saturation).
 \end{proof}
+
+\begin{remark}\label{rem_normality}There are many forms in which the proposition above can be applied. For instance, assuming for brevity that $p(x)$ and $q(x)$ are closed under conjunctions,
+\begin{itemize}
+\item[a.] if $p(x)\iff\neg q(x)$ then $p(x)\iff\phi(x)$ for some $\phi(x)\in p(x)$;\smallskip
+\item[b.] if $\displaystyle p(x)\iff\psi(x)$ for some $\psi(x)\in L(\U)$ then $p(x)\iff\phi(x)$ for some $\phi(x)\in p$;\smallskip
+\item[d.] if $\displaystyle p(x)\imp\psi(x)$ for some $\psi(x)\in L(\U)$ then $\phi(x)\imp\psi(x)$ for some $\phi(x)\in p$;\smallskip
+\item[c.] if $\displaystyle p(x)\imp\bigvee_{\psi\in\Psi}\psi(x)$, where $|\Psi|<\kappa$,  then \smash{$\displaystyle p(x)\imp\bigvee^{n}_{i=1}\psi_i(x)$} for some $\psi_i\in\Psi$.\QED
+\end{itemize}
+\end{remark}
 
 A definable set as the form $\phi({\mr\U}\,;{\gr b})$ for some formula $\phi({\mr x}\,;{\gr z})\in L$ and some ${\gr b}\in\U^{|{\gr z}|}$. If $f\in\Aut(\U/A)$ then 
 
@@ -342,7 +343,7 @@ where $q({\mr x})$ above range over all types in $S_{\mr x}(A)$. By compactness 
 
 \ceq{\hfill p({\mr x})}{\imp}{\bigvee_{\theta({\mr x})\imp \psi({\mr x})} \theta({\mr x})}\medrel{\imp}$\psi({\mr x})$
 
-where $\theta({\mr x})$ ranges over all formulas in $L(A)$. Applying Proposition~\ref{prop_normality} to the first implication we obtain a finite number of formulas $\theta_i({\mr x})$ such that 
+where $\theta({\mr x})$ ranges over all formulas in $L(A)$. Applying mutual normality (Proposition~\ref{prop_normality}) to the first implication we obtain a finite number of formulas $\theta_i({\mr x})$ such that 
 
 \ceq{\hfill p({\mr x})}{\imp}{\bigvee^n_{i=1} \theta_i({\mr x})}\medrel{\imp}$\psi({\mr x})$
 
@@ -353,11 +354,10 @@ The following easy proposition is very useful. Its proof is left to the reader. 
 
 
 \begin{proposition}\label{prop_E_type}
-Let $p({\mr x}\,;{\gr z})\subseteq L(A)$. Then $\E {\gr z}\,p({\mr x}\,;{\gr z})$ is equivalent to a type over $A$, namely to the type $\big\{ \E {\gr z}\,\phi({\mr x}\,;{\gr z})\ :\ \phi({\mr x}\,;{\gr z}) \textrm{ conjunction of formulas in }  p({\mr x}\,;{\gr z})\big\}$. The theorem holds also when ${\mr x}$ and ${\gr z}$ have length $\kappa$.\QED 
+Let $p({\mr x}\,;{\gr z})\subseteq L(A)$. Then $\E {\gr z}\,p({\mr x}\,;{\gr z})$ is equivalent to a type over $A$, namely to the type $\big\{ \E {\gr z}\,\phi({\mr x}\,;{\gr z})\ :\ \phi({\mr x}\,;{\gr z}) \textrm{ conjunction of formulas in } p({\mr x}\,;{\gr z}) \big\}$. The theorem holds also when ${\mr x}$ and ${\gr z}$ have length $\kappa$.\QED 
 \end{proposition}
 
-
-As an application we give a second proof of Proposition~\ref{prop_inv_types}.
+As an application we give a second proof of the proposition above.
 
 \begin{proof}[Second proof of Proposition~\ref{prop_inv_types}] \ssf{2}$\IMP$\ssf{1}\quad  Write $p({\mr x})$ as the type $q({\mr x}\,;{\gr b})$ for some $q({\mr x}\,;{\gr z})\subseteq L$ and some ${\gr b}\in\U^{|{\gr z}|}$. Let $s({\gr z})=\tp({\gr b}/A)$. By invariance and homogeneity the types $p({\mr x}\,;f{\gr b})$ for $f\in\Aut(\U/A)$ are all equivalent. Therefore
 
@@ -369,12 +369,6 @@ As an application we give a second proof of Proposition~\ref{prop_inv_types}.
 
 Hence, by Proposition~\ref{prop_E_type}, $p({\mr x})$ is equivalent to a type over $A$.
 \end{proof}
-
-
-\begin{exercise}\label{ex_clopen_definibili}
-Let $p(x)\subseteq L(A)$ be such that $\neg p(x)\iff q(x)$ for some $q(x)\subseteq L(B)$. Prove that $p(x)$ is equivalent to some conjunction of formulas in $p(x)$. Cfr.\@ Theorem~\ref{Stone_aperti_chiusi}.\QED 
-\end{exercise}
-
 
 \begin{exercise}\label{cadinalitafinitasaturazione}
 Let $p(x)\subseteq L(A)$, with $|x|<\omega$. Prove that if $p(\U)$ is infinite then it has cardinality $\kappa$. Show that this may not be true if $x$ is an infinite tuple.\QED 
