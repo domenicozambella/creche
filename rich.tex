@@ -30,7 +30,7 @@ For example, $\M_{\rm ob}$ could consist of all models of some theory $T_0$ and 
 \end{itemize}
 \end{definition}
  
-Note that \ssf{c0} says that the category is \emph{connected} and that \ssf{c1} implies that any restriction of a morphism is a morphism. Given \ssf{c1}, we can rephrase \ssf{c0} by saying that $\0:M\to N$ is a morphism for any pair of models $M$ and $N$. 
+We say that a category is \emph{connected\/} if \ssf{c0} holds. Axiom \ssf{c1} implies that any restriction of a morphism is a morphism. Given \ssf{c1}, we can rephrase \ssf{c0} by saying that $\0:M\to N$ is a morphism for any pair of models $M$ and $N$. 
 
 A consequence of \ssf{c4} is that the class of models is closed under elementary equivalence. In fact, if $N\equiv M$ then $\0:M\to N$ is elementary, hence it is a morphism and, in particular, and $N$ is a model. 
 
@@ -39,19 +39,15 @@ We call \ssf{c6} the \emph{finite character of morphisms}. Note that it implies 
 The following two definitions assume \ssf{c2}. The generalization to non injective morphisms is not straightforward (in fact, there are two generalizations: \textit{projective\/} and \textit{inductive\/}). These generalizations are not very common and will not be considered here. 
 
 \begin{definition}
-Assume that $\M$ satisfies \ssf{c0-c2} of Definition~\ref{def_com_c}. We say that a model $N$ is \emph{$\lambda\jj$rich\/} if for every model $M$ of cardinality $\le\lambda$ and every morphism $k:M\imp N$ of cardinality $<\lambda$ there is an embedding $h:M\hookrightarrow N$ that extends $k$. We say that $N$ is \emph{rich\/} tout court  if it is $\lambda\jj$rich for $\lambda=|N|$. When $\M_{\rm ob}=\Mod(T_0)$ for some theory $T_0$ and $\M_{\rm ar}$ is clear from the context, we say \emph{rich model of $T_0$}.\QED
+Assume that $\M$ satisfies \ssf{c2} of Definition~\ref{def_com_c}. We say that a model $N$ is \emph{$\lambda\jj$rich\/} if for every model $M$ of cardinality $\le\lambda$ and every morphism $k:M\imp N$ of cardinality $<\lambda$ there is an embedding $h:M\hookrightarrow N$ that extends $k$. We say that $N$ is \emph{rich\/} tout court  if it is $\lambda\jj$rich for $\lambda=|N|$. When $\M_{\rm ob}=\Mod(T_0)$ for some theory $T_0$ and $\M_{\rm ar}$ is clear from the context, we say \emph{rich model of $T_0$}.\QED
 \end{definition}
 
 Rich models are also called \textit{Fra\"iss\'e limits} or \textit{homogeneous-universal\/} for a reason that will soon be clear; they are also called \textit{generic}. Unfortunately these names are either too long or too generic, so we opt for the less common term \textit{rich\/} proposed by Poizat. 
 
-The following two notions are deeply connected with richness.
-
-
-
-
+The following two notions are closely connected with richness.
 
 \begin{definition}\label{def_omogenea_universale}
-Assume that $\M$ satisfies \ssf{c0-c2} of Definition~\ref{def_com_c}. We say that a model $N$ is \emph{$\lambda\jj$universal\/} if for every model $M$ of cardinality $\le\lambda$ there is an embedding $k:M\hookrightarrow N$. We say that a model $N$ is \emph{$\lambda\jj$homogeneous\/} if every $k:N\to N$ of cardinality $<\lambda$ extends to a bijective morphism $h:N\hookdoubleheadrightarrow N$ (an automorphism when \ssf{c3} below holds).
+Assume that $\M$ satisfies \ssf{c2} of Definition~\ref{def_com_c}. We say that a model $N$ is \emph{$\lambda\jj$universal\/} if for every model $M$ of cardinality $\le\lambda$ in the same connected component of $N$ there is an embedding $k:M\hookrightarrow N$. We say that a model $N$ is \emph{$\lambda\jj$homogeneous\/} if every $k:N\to N$ of cardinality $<\lambda$ extends to a bijective morphism $h:N\hookdoubleheadrightarrow N$ (an automorphism when \ssf{c3} below holds).
 
 Note that the larger $\M_{\rm ar}$, the stronger notion of homogeneity. When  $\M_{\rm ar}$ contains all partial isomorphisms between models (the largest class of morphisms considered here), it is common to say \emph{$\lambda$-ultra\-homo\-geneous\/} for $\lambda\jj$homogeneous. 
 
@@ -65,7 +61,7 @@ In Section~\hyperref[dlo]{\ref*{relational}.\ref*{dlo}} we implicitly used $\M_{
 In the following we fequently work under the following assumption (even when not all properties are strictly necessary).
  
 \begin{assumption}\label{ass_c0-5}
-Assume  $|L|\le\lambda$ and suppose that $\M$ satisfies \ssf{c0-c5} of Definition~\ref{def_com_c}
+Assume  $|L|\le\lambda$ and suppose that $\M$ satisfies \ssf{c1-c5} of Definition~\ref{def_com_c}
 \end{assumption} 
  
 The assumption on the cardinality $L$ is only necessary to apply the downward L\"owenheim-Skolem Theorem when required.
@@ -93,7 +89,7 @@ When $\lambda=\omega$, we can take the proof of Theorem~\ref{zigzagcantor} and r
 
 
 \begin{corollary}\label{coroll_riccozigzag}
-(Assume~\ref{ass_c0-5})  \  Then all rich models of cardinality $\lambda$ are isomorphic.\QED
+(Assume~\ref{ass_c0-5})  \  Then all rich models of cardinality $\lambda$ in the same connected component are isomorphic.\QED
 \end{corollary}
 
 It is obvious that $\lambda\jj$rich models are $\lambda\jj$universals and, by Theorem~\ref{thm_riccozigzag}, they are $\lambda\jj$ho\-mo\-ge\-ne\-ous. These two notions are weaker than richness. For instance, when $\M$ is as in Section~\hyperref[randomgraph]{\ref*{relational}.\ref*{randomgraph}}, the countable graph that has no arc is trivially ultrahomogeneous but it is not universal and a fortiori not rich. On the other hand if we add to a countable random graph an isolated point we obtain an universal graph which is not ultrahomogeneous. However, when taken together, these two properties are equivalent to richness.
@@ -117,7 +113,7 @@ Let $N$ be the structure obtained by adding to a countable random graph an isola
 Next theorem is one of the most important facts about $\lambda$-rich models
 
 \begin{theorem}\label{thm_morphism_rich_elementary}
-(Assume~\ref{ass_c0-5})  \  Then every morphism between $\lambda\jj$rich models is elementary. In particular, $\lambda\jj$rich models are elementary equivalent.
+(Assume~\ref{ass_c0-5})  \  Then every morphism between $\lambda\jj$rich models is elementary. In particular, $\lambda\jj$rich models in the same connected component are elementary equivalent.
 \end{theorem}
 
 \begin{proof}
@@ -154,10 +150,10 @@ When partial isomorphism between models of a given theory $T$ coincide with elem
 
 \ceq{\hfill T}{\proves}{\psi(x)\iff\phi(x).}
 
-We will discuss general criteria for elimination of quantifiers in Chapter~\ref{eliminazione}, here we report without proof the following theorem.
+We will discuss general criteria for elimination of quantifiers in Chapter~\ref{eliminazione}, see for instance Corollary~\ref{corol_QE} and~\ref{corol_QE_back_and_forth}. Here we report without proof the following theorem.
 
 \begin{theorem}\label{thm_tutteleimmersionisonoelementari=eliminazioneqantificatori}
-Let $T$ be a theory that decides the characteristic of its models (see Definition~\ref{def_characteristic}). The following are equivalent
+The following are equivalent
 \begin{itemize}
 \item[1.] $T$ has elimination of quantifiers;
 \item[2.] every partial isomorphism between models $T$ is an elementary map.\QED
@@ -212,7 +208,7 @@ Assume that $\M$ satisfies \ssf{c0-c5} of Definition~\ref{def_com_c}. Prove that
 \end{exercise}
 
 \begin{definition}\label{def_weakly_universal}
-We say that a structure $N$ is \emph{weakly $\lambda$-universal\/} if for every model $M$ and every $A\subseteq M$ of cardinality $<\lambda$ there is a morphism $k:M\to N$ such that $A\subseteq\dom k$.\QED
+We say that a structure $N$ is \emph{weakly $\lambda$-universal\/} if for every model $M$ in the connected component of $N$ and every $A\subseteq M$ of cardinality $<\lambda$ there is a morphism $k:M\to N$ such that $A\subseteq\dom k$.\QED
 \end{definition}
 
 \begin{lemma}\label{debolmenteomogeneoandirivieni}
