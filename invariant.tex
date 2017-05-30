@@ -21,72 +21,161 @@ In this chapter we fix a signature $L$, a complete theory $T$ without finite mod
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Invariant sets and types}\label{invariant_sets}
 
-Let $\D\subseteq\U^{|{\gr z}|}$, where ${\gr z}$ is a tuple of length $<\kappa$. We say that $\D$ is a \emph{set invariant over $A$}, or \emph{$A\jj$invariant\/} if it is fixed (set-wise) by $A$-automorphisms. That is, $f[\D]=\D$ for every $f\in\Aut(\U/A)$ or, yet in other words,
+Let $\grD\subseteq\U^{|{\gr z}|}$, where ${\gr z}$ is a tuple of length $<\kappa$. We say that $\grD$ is a set \emph{invariant over $A$}, or \emph{$A\jj$invariant\/} if it is fixed (set-wise) by $A$-automorphisms. That is, $f[\grD]=\grD$ for every $f\in\Aut(\U/A)$ or, yet in other words,
 
-\ceq{\ssf{is1.}\hfill {\gr a}\in\D}{\iff}{f\!{\gr a}\in\D}\hfill for every ${\gr a}\in\U^{|{\gr z}|}$ and every $f\in\Aut(\U/A)$,
+\ceq{\ssf{is1.}\hfill {\gr a}\in\grD}{\iff}{f{\gr a}\in\grD}\hfill for every ${\gr a}\in\U^{|{\gr z}|}$ and every $f\in\Aut(\U/A)$,
 
 which, by homogeneity is equivalent to,
 
-\ceq{\ssf{is2.}\hfill {\gr a}\in\D}{\iff}{{\gr b}\in\D}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$ such that ${\gr a}\equiv_A{\gr b}$.
+\ceq{\ssf{is2.}\hfill {\gr a}\in\grD}{\iff}{{\gr b}\in\grD}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$ such that ${\gr a}\equiv_A{\gr b}$.
 
 which yield the following bound on the number of invariant sets
 
 \begin{proposition}\label{prop_numberIS}
-  Let $\lambda=|L_{\gr z}(A)|$. There are at most $2^{2^{\lambda}}$ sets $\D\subseteq\U^{|{\gr z}|}$ that are invariant over $A$.
+Let $\lambda=|L_{\gr z}(A)|$. There are at most $2^{2^{\lambda}}$ sets $\grD\subseteq\U^{|{\gr z}|}$ that are invariant over $A$.
 \end{proposition}
 \begin{proof}
-By \ssf{is2}, sets that are invariant over $A$ are union of equivalence classes of the relation $\equiv_A$, that is, union of sets of the form $p(\U)$ where $p({\gr z})\in S(A)$. Then the number of $A\jj$invariant sets is $2^{|S_{\gr z}(A)|}$. Clearly $|S_{\gr z}(A)|\le 2^\lambda$.
+By \ssf{is2}, sets that are invariant over $A$ are union of equivalence classes of the relation $\equiv_A$, that is, union of sets of the form $p({\gr\U})$ where $p({\gr z})\in S(A)$. Then the number of $A\jj$invariant sets is $2^{|S_{\gr z}(A)|}$. Clearly $|S_{\gr z}(A)|\le 2^\lambda$.
 \end{proof} 
 
-We say that $\D$ is \emph{invariant\/} tout court if it is invariant over some $A$. As we require $\kappa$ to be inaccessible, there are exactly $\kappa$ invariant sets.
+We say that $\grD$ is \emph{invariant\/} tout court if it is invariant over some $A$. As we require $\kappa$ to be inaccessible, there are exactly $\kappa$ invariant sets.
+
+
+
+In this chapter we work with $\Delta$-types where $\Delta$ may be either $L(\Aa)$ or the set of Boolean combinations of $\phi({\mr x}\,;{\gr b})$ for ${\gr b}\in\Aa^{|{\gr z}|}$ and $\phi({\mr x}\,;{\gr z})\in L$ some fixed formula. In the latter case a  $\Delta$-type is also called a \emph{$\phi$-type}. 
+
+Typically $\Aa$ is either the whole of $\U$ or some small set $A\subseteq\U$. We denote by \emph{$S_{\phi}(A)$\/} the set of complete $\phi$-types with parameters in $A$. Types in \emph{$S_{\phi}(\U)$\/} are called \emph{global $\phi$-types}.
+
+
 
 % \begin{proposition}
-% Suppose $M$ realizes every consistent type $p({\gr z})\subseteq L(A)$. Let $D\subseteq M^{|{\gr z}|}$ be such that \ssf{is2} holds for $D$ when restricted to ${\gr a},{\gr b}\in M^{|{\gr z}|}$. Then $D$ is the trace on $M$ of some unique $A\jj$invariant set $\D$.
+% Suppose $M$ realizes every consistent type $p({\gr z})\subseteq L(A)$. Let $D\subseteq M^{|{\gr z}|}$ be such that \ssf{is2} holds for $D$ when restricted to ${\gr a},{\gr b}\in M^{|{\gr z}|}$. Then $D$ is the trace on $M$ of some unique $A\jj$invariant set $\grD$.
 % \end{proposition}
 % 
 % \begin{proof}
-% The set $\D$ is the union, for $p({\gr z})\in S(A)$, of the sets $p(\U)$ that intersect $D$.
+% The set $\grD$ is the union, for $p({\gr z})\in S(A)$, of the sets $p(\U)$ that intersect $D$.
 % \end{proof}
 
 
 
 Let $p({\mr x})\subseteq L(\U)$ be a consistent type. For every formula $\phi({\mr x}\,;{\gr z})\in L$ we define
 
-\ceq{\hfill\emph{$\D_{p,\phi}$}}{\deq}{\Big\{{\gr a}\in\U^{|{\gr z}|}\ :\ \phi({\mr x}\,;{\gr a})\in p\Big\}}
+\ceq{\hfill\emph{$\D_{p,\phi}$}}{=}{\Big\{{\gr a}\in\U^{|{\gr z}|}\ :\ \phi({\mr x}\,;{\gr a})\in p\Big\}}
 
-We can read the notation in two ways. Either the tuple ${\gr z}$ has infinite length and is the same for all formulas, or it is finite and depends on $\phi$. In most cases we opt for the first reading, then $\D_{p,\phi}$ is a cylinder set (independent from all but finitely many coordinates).
+We can read the notation in two ways. Either the tuple ${\gr z}$ has infinite length and is the same for all formulas, or it is finite and depends on $\phi$. This is possible because adding or erasing dummy variables to the second tuple of $\phi({\mr x}\,;{\gr z})$ does not change ${\gr\D_{p,\phi}}$ in any relevant way, in particular invariance is preserved. 
 
-Let $p({\mr x})\subseteq L(\U)$ be a consistent type. We say that \emph{$p(x)$ is invariant over $A$}, or \emph{$A\jj$invariant}, if for every formula $\phi({\mr x}\,;{\gr z})\in L$, 
+%In most cases we opt for the first reading, then ${\gr\D_{p,\phi}}$ is a cylinder set (independent from all but finitely many coordinates).
 
-\ceq{\ssf{it1.}\hfill \phi({\mr x}\,;{\gr a})\in p}{\IFF}{\phi({\mr x}\,;f\!{\gr a})\in p}\hfill for every ${\gr a}\in\U^{|{\gr z}|}$ and every $f\in\Aut(\U/A)$.
+Let $p({\mr x})\subseteq L(\U)$ be a consistent type. We say that $p({\mr x})$ is  \emph{invariant over $A$}, or \emph{$A\jj$invariant}, if for every formula $\phi({\mr x}\,;{\gr z})\in L$, 
 
-In other words, $p({\mr x})$ is invariant over $A$ if the sets $\D_{p,\phi}$ are all invariant over $A$. 
+\ceq{\ssf{it1.}\hfill \phi({\mr x}\,;{\gr a})\in p}{\IFF}{\phi({\mr x}\,;f{\gr a})\in p}\hfill for every ${\gr a}\in\U^{|{\gr z}|}$ and every $f\in\Aut(\U/A)$.
 
-One should not confuse the notions of \textit{invariant type\/} with that of \textit{invariant type-definable set}. The first is mostly applied to global types and refers to the invariance of a family of subsets of $\U^{|{\gr z}|}$. The latter refers to sets of the form $p({\mr\U})\subseteq\U^{|{\mr x}|}$ where $p({\mr x})$ a type of small size.
+A global $\phi$-type can be safely identified with $\D_{p,\phi}$ and a (complete) global type with the collection of all these sets. The notions of invariance coincide.
 
-We say that \emph{$p(x)$ does not split over $A$\/} if
+%One should not confuse the notions of \textit{invariant type\/} with that of \textit{invariant type-definable set}. The first is mostly applied to global types and refers to the invariance of a family of subsets of $\U^{|{\gr z}|}$. The latter refers to sets of the form $p({\mr\U})\subseteq\U^{|{\mr x}|}$ where $p({\mr x})$ a type of small size.
+
+We say that the type $p({\mr x})\subseteq L(\U)$ \emph{does not split over $A$\/} if
 
 \ceq{\ssf{it2.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\Big(\phi({\mr x}\,;{\gr a})\in p\,\IFF\,\phi({\mr x}\,;{\gr b})\in p\Big)}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$
 
-for every formula $\phi({\mr x}\,;{\gr z})\in L$. When $p({\mr x})\in S(\U)$ is a global type, \ssf{it2} is equivalent to
+for every formula $\phi({\mr x}\,;{\gr z})\in L$. For global types \ssf{it2} is equivalent to
 
 \ceq{\ssf{it2'.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})\,\in\, p}
 
-By homogeneity, non splitting is equivalent to invariance. Yet another important equivalent of invariance over $A$ is:
+When $p$ is a $\phi$-type, \ssf{it2} is equivalent to requiring \ssf{it2'} for $\phi({\mr x}\,;{\gr z})$. By homogeneity, non splitting is equivalent to invariance. 
+
+The following is yet another important equivalent of invariance over $A$
 
 \ceq{\ssf{it3.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\equiv_{A,{\mr c}}{\gr b}}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$. 
 
-The easiest way to obtain invariant types is via types that are finitely satisfiable. We say that a type \emph{$p(x)$ is finitely satisfiable in $A$\/} if $\phi(\U)\cap A^{|{\mr x}|}\neq\0$ for every $\phi({\mr x})$ conjunction of formulas in $p$. 
+This apply to global types $p({\mr x})\in S(\U)$ but not for $\phi$-types.
 
-Note that by elementarity every type over a model is finitely satisfiable in the model, that is, if $p({\mr x})\subseteq L(M)$ for some model $M$, then $p({\mr x})$ is finitely satisfiable in $M$.
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+\section{Invariance from the dual perspective}
 
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}The following terminology in not standard. We say that the set $\mrB\subseteq\U^{|{\mr x}|}$ is \emph{quasi-invariant over $A$\/} if for any finitely many automorphisms $f_1,\dots,f_n\in\Aut(\U/A)$ the sets $f_i[\mrB]$ have non-empty intersection.
+
+We say that the type $p({\mr x})\subseteq L(\U)$ is \emph{quasi-invariant over $A$\/} if $\phi({\mr\U})$ is quasi-invariant over $A$  for every $\phi({\mr x})$ conjunction of formulas in $p({\mr x})$.
+
+For global types quasi-invariance coincides with invariance.
+
+\begin{proposition}\label{prop_invariance-quasi-invariance}
+Let $p({\mr x})\in S_{\phi}(\U)$ be a global $\phi$-type, then the following are equivalent
+\begin{itemize}
+\item[1.] $p({\mr x})$ is invariant over $A$;
+\item[2.] $p({\mr x})$ is quasi-invariant over $A$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+\ssf{1}$\IMP$\ssf{2}. Assume $p({\mr x})$ is invariant and let $\psi({\mr x}\,;{\gr b})\,\in\, p$ and some ${\gr b}\in\U^{|{\gr z}|}$. Then $\psi({\mr x}\,;f{\gr b})\,\in\, p$ for every $f\in\Aut(\U/A)$, so \ssf{2} follows from the finite consistency of $p({\mr x})$.
+
+\ssf{2}$\IMP$\ssf{1}. Assume $p({\mr x})$ is not invariant. Then there is ${\gr b}\in\U^{|{\gr z}|}$ such that $\phi({\mr x}\,;{\gr b})\in p$ and $\phi({\mr x}\,;f{\gr b})\notin p$ for some  $f\in\Aut(\U/A)$. By completeness, $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;f{\gr b})$ which clearly is not consistent with its $f$-translate.
+\end{proof}
+
+Quasi-invariance makes sense also for incomplete types. Unfortunately it is not true in general that every quasi-invariant type can be extended to a global one. In next section we consider a stronger notion, \textit{coheirs}, which has this desirable property. In the next chapters we introduce a weaker notion, \textit{non forking}, which also can be preserved by extensions.
+
+\begin{comment}
+We say that $\mrB$ is \emph{drifting over $A$\/} if for every finitely many $f_1,\dots,f_n\in\Aut(\U/A)$ there is a $g\in\Aut(\U/A)$ such that $g[\mrB]$ is disjoint from all $f_i[\mrB]$. %We say that  $\mrB$ is \emph{piecewise drifting\/} if it is the union of finitely many drifting sets. 
+
+
+\begin{lemma}\label{lem_newelski}
+A quasi-invariant set is not the union of finitely many drifting sets.
+\end{lemma}
+
+
+\begin{proof}
+% \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+% \def\ceq#1#2#3{\noindent\parbox[t]{30ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+
+It is convenient to prove an apparently more general claim. If ${\mr\B_1},\dots,{\mr\B_n}$ are all drifting and $\Ll$ is such that for some finite $F\subseteq G$\medskip 
+
+\ceq{\sharp\hfill\Ll}{\subseteq}{\bigcup_{f\in F}f[{\mr\B_1}\cup\dots\cup{\mr\B_n}],} 
+
+then ${\mr\Ll}$ is not quasi-invariant. The claim is vacuously true for $n=0$. Now, assume $n$ is positive and that the claim holds for $n-1$. Define $\mrC={\mr\B_1}\cup\dots\cup{\mr\B_{n-1}}$ and rewrite $\sharp$ as follows
+
+\ceq{\hfill{\mr\Ll}}{\subseteq}{\bigcup_{f\in F}f[\mrC]\ \cup\ \bigcup_{h\in F}h[{\mr\B_n}]}
+
+Since ${\mr\B_n}$ is drifting there is a $g\in G$ such that $g[{\mr\B_n}]$ is disjoint from $h[{\mr\B_n}]$ for every $h\in F$, which implies that\medskip 
+
+\ceq{\hfill{\mr\Ll}\cap g[{\mr\B_n}]}{\subseteq}{\bigcup_{f\in F}f[\mrC].} 
+
+Hence for every $h$ there holds\medskip 
+
+\ceq{\hfill h g^{-1}[{\mr\Ll}]\cap h[{\mr\B_n}]}{\subseteq}{\bigcup_{f\in F}hg^{-1}f[\mrC]} 
+
+So, from $\sharp$ we obtain\medskip 
+
+\ceq{\hfill{\mr\Ll}\cap\bigcap_{h\in F}h g^{-1}[{\mr\Ll}]}{\subseteq}{\bigcup_{f\in F}f[\mrC]\ \cup\ \bigcup_{h\in F}\bigcup_{f\in F}hg^{-1}f[\mrC].}\smallskip
+
+
+\noindent By the induction hypothesis, the set on the r.h.s.\@ is not quasi-invariant. Hence neither is ${\mr\Ll}$, proving the claim and with it the lemma.
+\end{proof}
+
+Every non piecewise drifting type extends to a non drifting global type.
+
+
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+\section{Heirs and coheirs}
+\label{coheirs}
+
+The easiest way to obtain quasi-invariant types is via types that are finitely satisfiable. We say that a type \emph{$p(x)$ is finitely satisfiable in $A$\/} if $\phi({\mr\U})\cap A^{|{\mr x}|}\neq\0$ for every $\phi({\mr x})$ that is a conjunction of formulas in $p$. 
+
+Note that by elementarity every type over a model is finitely satisfiable in the model, that is, if $p({\mr x})\subseteq L(M)$ for some model $M$, then $p({\mr x})$ is finitely satisfiable in $M$. For this reason the notion is mainly applied to models.
 
 \begin{proposition}\label{prop_coeredi_invarienti}
-Let $p({\mr x})\in S(\U)$ be a global type finitely satisfiable in $A$. Then $p({\mr x})$ is $A\jj$in\-vari\-ant.
+Let $p({\mr x})\in S_{\phi}(\U)$ be a global $\phi$-type finitely satisfiable in $A$. Then $p({\mr x})$ is $A\jj$in\-vari\-ant.
 \end{proposition}
 
 \begin{proof}
-Recall that the invariance of $p({\mr x})$ is equivalent to \ssf{it2'}. So, suppose ${\gr a}\equiv_A{\gr b}$. If for a contradiction $p({\mr x})$ does not contain the formula $\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})$, by completeness, it contains  $\phi({\mr x}\,;{\gr a})\niff\phi({\mr x}\,;{\gr b})$. But $p({\mr x})$ finitely satisfiable in $A$, so $\phi({\mr c},{\gr a})\niff\phi({\mr c},{\gr b})$ holds for some ${\mr c}\in A^{|{\mr x}|}$ contradicting ${\gr a}\equiv_A{\gr b}$.
+By Proposition~\ref{prop_invariance-quasi-invariance}, because finitely satisfiable types are quasi-invariant.% Recall that the invariance of $p({\mr x})$ is equivalent to \ssf{it2'}. So, suppose ${\gr a}\equiv_A{\gr b}$. If for a contradiction $p({\mr x})$ does not contain the formula $\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})$, by completeness, it contains  $\phi({\mr x}\,;{\gr a})\niff\phi({\mr x}\,;{\gr b})$. But $p({\mr x})$ finitely satisfiable in $A$, so $\phi({\mr c},{\gr a})\niff\phi({\mr c},{\gr b})$ holds for some ${\mr c}\in A^{|{\mr x}|}$ contradicting ${\gr a}\equiv_A{\gr b}$.
 \end{proof}
 
 
@@ -98,11 +187,16 @@ Every type $q({\mr x})\subseteq L(\U)$ finitely satisfiable in $A$ has an extens
 Let $p({\mr x})\subseteq L(\U)$ be maximal among the types containing $q({\mr x})$ and finitely satisfiable in $A$. We prove that $p({\mr x})$ is complete. If for a contradiction that $p({\mr x})$ contains neither $\psi({\mr x})$ nor $\neg\psi({\mr x})$. Then  neither $p({\mr x})\cup\big\{\psi({\mr x})\big\}$ nor $p({\mr x})\cup\big\{\neg\psi({\mr x})\big\}$ is finitely satisfiable in $A$. This contradicts the finite satisfiability of $p({\mr x})$.
 \end{proof}
 
-When $q({\mr x})$ finitely satisfiable in $A$, any type that extends $q({\mr x})$ and is also finitely satisfiable in $A$ is called a \emph{coheir} of $q({\mr x})$  (a somewhat confusing terminology).
-% \begin{exercise}
+If a global type $p({\mr x})\in S(\U)$ is finitely satisfiable in $M$, we say that it is a \emph{global coheir\/} of $p_{\restriction M}({\mr x})$.
+% \begin{exercise}.
 % Prove that every invariant type $q({\mr x})\subseteq L(\U)$ can be extended to a global invariant type $p({\mr x})\in S(\U)$.(?)\QED
 % \end{exercise}
 
+% We say that $p({\mr x})\in S(\U)$ is a \emph{global heir\/} of $p_{\restriction M}({\mr x})$ if  
+% 
+% \ceq{\hfill{\gr\D_{p,\phi}}\cap M^{|{\gr z}|}\neq\0}{\IFF}{{\gr\D_{p,\phi}}\neq\0}  for every formula $\phi({\mr x}\,;{\gr z})\in L$.
+
+%Every type over a model has an extension to a global coheir. A satisfactory generalization of this notions to types over sets should guarantee this existence. Unfortunately, this is not possible in general and the definition Section~\hyperref[coheirs_sets]{\ref*{invariantL}.\ref*{coheirs_sets}} is as good as it gets.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -116,7 +210,7 @@ In the following $\alpha$ is some infinite ordinal $\le\kappa$ and ${\mr x}$ is 
 
 \ceq{\ssf{Ms.}\hfill {\mr c_i}}{\models}{p_{\restriction A,c_{\restriction i}}({\mr x})}
 
-In particular when $p({\mr x})$ is finitely satisfiable in $A$ we will say that $c$ is a \emph{coheirs sequence}. We may say that $c$ is a Morley (or coheir) sequence without specifying a global type. Then we mean that $c$ is a Morley (respectively coheir) sequence of some invariant global type.
+In particular, when $p({\mr x})$ is finitely satisfiable in some model $M$, we say that $c$ is a \emph{coheirs sequence}. We may say that $c$ is a Morley (or coheir) sequence without specifying a global type. Then we mean that $c$ is a Morley (respectively coheir) sequence of some suitable global type.
 
 The following is a convenient characterization of coheir sequences
 
@@ -124,12 +218,12 @@ The following is a convenient characterization of coheir sequences
 The following are equivalent
 \begin{itemize}
 \item[1.] $c=\<{\mr c_n}:n<\alpha\>$ is a coheir sequence over $A$;
-\item[2.] ${\mr c_{n+1}}\equiv_{A,c_{\restriction n}}{\mr c_n}$ and $\phi(\U)\cap A^{|{\mr x}|}\neq\0$ whenever $\phi({\mr x})\in L(A,c_{\restriction n})$ and  $\phi({\mr c_n})$.
+\item[2.] ${\mr c_{n+1}}\equiv_{A,c_{\restriction n}}{\mr c_n}$ and $\phi({\mr\U})\cap A^{|{\mr x}|}\neq\0$ whenever $\phi({\mr x})\in L(A,c_{\restriction n})$ and  $\phi({\mr c_n})$.
 \end{itemize}
 \end{lemma}
 
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}. Assume \ssf{1} and let $p({\mr x})\in S(\U)$ be a global type finitely satisfiable in $A$ and such that ${\mr c_i}\models p_{\restriction A,c_{\restriction i}}({\mr x})$. The requirement ${\mr c_{n+1}}\equiv_{A,c_{\restriction n}} {\mr c_n}$ is clear. Now, suppose $\phi({\mr c_n})$ for some $\phi({\mr x})\in L(A,c_{\restriction n})$. Then $\phi({\mr x})$ belongs to $p({\mr x})$ hence $\phi(\U)\cap A^{|{\mr x}|}\neq\0$ because $p({\mr x})$ is finitely satisfiable in $A$.
+\ssf{1}$\IMP$\ssf{2}. Assume \ssf{1} and let $p({\mr x})\in S(\U)$ be a global type finitely satisfiable in $A$ and such that ${\mr c_i}\models p_{\restriction A,c_{\restriction i}}({\mr x})$. The requirement ${\mr c_{n+1}}\equiv_{A,c_{\restriction n}} {\mr c_n}$ is clear. Now, suppose $\phi({\mr c_n})$ for some $\phi({\mr x})\in L(A,c_{\restriction n})$. Then $\phi({\mr x})$ belongs to $p({\mr x})$ hence $\phi({\mr\U})\cap A^{|{\mr x}|}\neq\0$ because $p({\mr x})$ is finitely satisfiable in $A$.
 
 \ssf{2}$\IMP$\ssf{1}. Assume \ssf{2} and define
 
@@ -200,8 +294,8 @@ The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({
 % \begin{exercise}
 % The following are equivalent
 % \begin{itemize}
-%  \item[1.] $\D$ is invariant over $M$;
-%  \item[2.] $c_0\in\D\iff c_1\in\D$ for every $M$-indiscernible sequence $\<c_i:i<\omega\>$ 
+%  \item[1.] $\grD$ is invariant over $M$;
+%  \item[2.] $c_0\in\grD\iff c_1\in\grD$ for every $M$-indiscernible sequence $\<c_i:i<\omega\>$ 
 % \end{itemize}
 % 
 % \end{exercise}
@@ -240,7 +334,7 @@ Then
 \ceq{\ssf{\#}\hfill X}{\models}{\A {\mr x_0},\dots,{\mr x_{n-1}}\ \left[\bigwedge_{0\le i<j<n} {\mr x_i}\neq {\mr x_j}\quad\imp\quad\bigvee_{i<k}r_i({\mr x_0},\dots,{\mr x_{n-1}})\right].}
 
 
-We may assume that $X$ is an elementary substructure of some large saturated model $\U$. Pick any $p({\mr x})\in S(\U)$ finitely satisfied in $X$, not realized in $X$ and let $c=\<{\mr c_i}:i<\omega\>$ be a coheir sequence of $p({\mr x})$. By \ssf{\#} and indiscernibility, all tuples of $n$ distinct elements of $c$ satisfy the same relation, which we assume to be $r_0$. The theorem is proved if we can find in $X$ a sequence $a=\<{\mr a_i}:i<\omega\>$ with the same property. (Note parenthetically that no element of $c$ is in $X$.) We construct $a_{\restriction i}$ by induction on $i$ as follows. 
+We may assume that $X$ is an elementary substructure of some large saturated model $\U$. Pick any type $p({\mr x})\in S(\U)$ finitely satisfied in $X$ but not realized in $X$ and let $c=\<{\mr c_i}:i<\omega\>$ be a coheir sequence of $p({\mr x})$. By \ssf{\#} and indiscernibility, all tuples of $n$ distinct elements of $c$ satisfy the same relation, which we assume to be $r_0$. The theorem is proved if we can find in $X$ a sequence $a=\<{\mr a_i}:i<\omega\>$ with the same property. (Note parenthetically that no element of $c$ is in $X$.) We construct $a_{\restriction i}$ by induction on $i$ as follows. 
 
 Assume as induction hypothesis that all subsequences of $a_{\restriction i},c_{\restriction n}$ of length $n$  
 satisfy $r_0$. Our goal is to find ${\mr{a_i}}$ such as the same property holds for $a_{\restriction i},{\mr{a_i}},c_{\restriction n}$. By the indiscernibility of $c$, the property holds for  $a_{\restriction i},c_{\restriction n},{\mr{c_n}}$.  And this can be written by a formula $\phi(a_{\restriction i},c_{\restriction n},{\mr{c_n}})$. As $c$ is a coheir sequence, by Lemma~\ref{lem_coheir_property} we can find  ${\mr{a_i}}\in X$ such that  $\phi(a_{\restriction i},c_{\restriction n},{\mr{a_i}})$. So, as the order is irrelevant,  $a_{\restriction i},{\mr{a_i}},c_{\restriction n}$ satisfies the induction hypothesis.
@@ -322,6 +416,7 @@ Let $a=\<{\mr a_i}:i\in I\>$ be an $A\jj$indiscernible sequence and let $I\subse
 \begin{exercise}
 Let ${\mr a}\equiv_A{\mr b}$ and let $q({\mr x})=\tp({\mr a}/A)=\tp({\mr b}/A)$. Prove that if $q({\mr x})$ extends to a global $A\jj$invariant type $p({\mr x})\in S(\U)$ then there is a sequence $c=\<{\mr c_i}:i<\omega\>$ such that ${\mr a},c$ and ${\mr b},c$ are both sequences of $A\jj$indiscernibles.\QED
 \end{exercise}
+
 
 
 
@@ -468,48 +563,5 @@ Sia $p(x)\in S(\U)$ un tipo globale invariante ed $A$ un insieme arbitrario. All
 
 
 \end{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Expansions}
-\label{expansions}
-
-\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox[t]{15ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
-
-Given ${\gr\D}\subseteq\U^{|{\gr z}|}$, we will occasionally find it convenient to expand the language $L$ with a predicate for ${\gr z}\in{\gr\D}$. We denote by \emph{$L({\gr\D})$\/} such expansion. We denote by $\<\U,{\gr\D}\>$ the corresponding expansion of $\U$. If  ${\gr\C},{\gr\D}\subseteq\U^{|{\gr z}|}$ write ${\gr\C}\equiv_A{\gr\D}$ for $\<\U,{\gr\C}\>\equiv_A\<\U,{\gr\D}\>$. As usual, $L({\gr\D})$ denotes also the set of formulas in that language, and we write  $L(A\,;{\gr\D})$ for the set of formulas with parameters from $A$.
-
-
-
-When ${\gr z}$ finite tuple, it is straightforward how to define such an expansions. But when ${\gr z}$ is an infinite tuple, though the intuition stays essentially the same, a more involved definition is required because first-order logic does not allow infinitary predicates. We think of $L({\gr\D})$ for a two sorted language. We call the two sorts the home sort and the ${\gr z}\jj$sort. The canonical expansion of $\U$ to an $L({\gr\D})\jj$structure is denoted by $\<\U,{\gr\D}\>$, The domain of the home sort is $\U$, the domain of the ${\gr z}\jj$sort is $\U^{|{\gr z}|}$. Besides the symbols of $L$, there is a function symbol $\pi_i$ for every $i<|{\gr z}|$. These functions have many-sorted arity $\<{\gr z},0\>$  (see Section~\hyperref[many-sorted]{\ref*{imaginary}.\ref*{many-sorted}} for the notation) which are interpreted as the projection to the $i\jj$coordinate. There is also a predicate of many-sorted arity $\<{\gr z}\>$ interpreted as ${\gr\D}$.
-
-The definitions above are generalized in the obvious way if for ${\gr\D}$ we take a tuple $\<{\gr\D_i}:i<\lambda\>$ of subsets of $\U^{|{\gr z_i}|}$.
-
-
-
-
-% \begin{proposition}
-% If $\D\subseteq\U^{|{\gr z}|}$ is invariant over $A$ than every $L(A\,;\D)\jj$definable set is invariant over $A$. 
-% \end{proposition}
-
-\begin{proposition}\label{prop_indiscernible_L(A,D)}
-If $\D\subseteq\U^{|{\gr z}|}$ is invariant over $A$ then every $A\jj$indiscernible sequence is indiscernible in the language $L(A\,;\D)$.
-\end{proposition}
-
-\begin{proof}
-Let $c=\<c_i:i\in I\>$ be an $A\jj$indiscernible sequence. For every $I_0,I_1\in I^{[n]}$ there is an $f\in\Aut(\U/A)$ such that $fc_{\restriction I_0}=c_{\restriction I_1}$, Hence 
-
-\ceq{\hfill \phi\big(c_{\restriction I_0}\,;\D\big)}{\iff}{\phi\big(fc_{\restriction I_0}\,;f[\D]\big)\medrel{\iff}\phi\big(c_{\restriction I_1}\,;\D\big)}.
-\end{proof}
-
-% \begin{exercise}WRONG!!
-% Let $p({\mr x})\in S(\U)$ be a global type and let $M$ be a model. Assume that $\<\U\,;\D_{p,\phi}\>\;\preceq\;\<M\,;M\cap\D_{p,\phi}\>$ for every $\phi({\mr x}\,;{\gr z})\in L$ and prove that $p({\mr x})$ is finitely satisfiable in $M$.
-% \end{exercise}
-
-
-\begin{exercise}
-Prove that if ${\gr\C}\subseteq\U^{|{\gr z}|}$ is type-definable over $B$ then $\equiv_{A,B}$ implies $\equiv_{A\,;\C}$.\QED
-\end{exercise} 
-
 
 \end{document}
