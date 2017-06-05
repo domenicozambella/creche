@@ -110,7 +110,7 @@ Let $N$ be $\lambda$-saturated and let $|M|\le\lambda$. Let $k:M\imp N$ be a $\D
 
 The following theorem is often paraphrased as follows: a formula is existential if and only if (its truth) is preserved under extensions of structures.
 
-\begin{theorem}
+\begin{theorem}\label{thm_embeddings_preservation_E}
 For every $\phi(x)\in L$ the following are equivalent
 \begin{itemize}
 \item[1.] $\phi(x)$ is equivalent over $T$ to a formula in $\{\E{\wedge}{\vee}\}\Delta$;
@@ -120,7 +120,7 @@ For every $\phi(x)\in L$ the following are equivalent
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2}\quad Immediate. 
 
-\ssf{2}$\IMP$\ssf{1}\quad Negate \ssf{1}. By Lemma~\ref{lem_qfdefinability} there is a $\{\E\}\Delta$-morphism $k:M\to N$ between models of $T$ that does not preserve $\phi(x)$. We can assume that $N$ is $\lambda$-saturated for some sufficiently large $\lambda$. By Corollary~\ref{corol_EDelta_estensione} there is a $\Delta$-embedding $h:M\to N$ that extends $k$ and contradicts \ssf{2}.
+\ssf{2}$\IMP$\ssf{1}\quad Negate \ssf{1}. By Lemma~\ref{lem_qfdefinability} there is a $\{\E\}\Delta$-morphism $k:M\to N$ between models of $T$ that does not preserve $\phi(x)$. We can assume that $N$ is $\lambda$-saturated for some sufficiently large $\lambda$. By Corollary~\ref{corol_EDelta_estensione} there is a $\Delta$-embedding $h:M\hookrightarrow N$ that extends $k$ and contradicts \ssf{2}.
 \end{proof}
 
 A dual version of the results above is obtained replacing embeddings by epimorphisms (surjective homomorphisms) and $\{\E\}$ by $\{\A\}$. If $\Delta$ contains the formula $x=y$ and is closed under negation, then $k:M\imp N$ is a $\Delta$-morphism if and only is $k^{-1}:N\imp M$ is a $\Delta$-morphism. In this case the dual version follows from what proved above. Without these assumptions the results need a similar but independent proof.
@@ -218,7 +218,7 @@ Note that when $\Delta$ contains the formula $x=y$ and is closed under negation,
 Let $T$ be a complete theory without finite models in a language that consists only of unary predicates. Prove that $T$ has elimination of quantifiers.\QED
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise}\label{ex_discrete_lo}
 Let $L$ be the language of strict orders. The theory $T$ of \emph{discrete linear orders\/} extends the theory of linear orders without endpoints (see Section~\hyperref[dlo]{\ref*{relational}.\ref*{dlo}}) with the following two of axioms
 \begin{itemize}
 \item[dis$\uparrow$.] $\E z\ \big[x<z\ \wedge\ \neg\E y\ x<y<z\big]$;
@@ -246,21 +246,45 @@ For a counter example consider the empty theory in the language with a single un
 \end{exercise}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Model-completeness}
+
+We say that $T$ is \emph{model-complete\/} if every embedding $h:M\hookrightarrow N$ between models of $T$ is an elementary embedding. 
+
+In general we say that $T$ is \emph{$\Delta$-model-complete\/} if every $\Delta$-embedding $h:M\hookrightarrow N$ between models of $T$ is a $\{\A\E\}\Delta$-embedding. 
+
+The notion (and the somewhat weird terminology) was introduced by Abraham Robinson. Model-completeness is equivalent to elimination of quantifiers up to one.
+
+\begin{proposition}
+The following are equivalent
+\begin{itemize}
+\item[1.] $T$ is $\Delta$-model-complete;
+\item[2.] every formula in $\{\A\E\mathord\wedge\mathord\vee\}\Delta$ is equivalent over $T$ to a formula in $\{\E\mathord\wedge\mathord\vee\}\Delta$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+\ssf{1}$\IMP$\ssf{2}\quad By \ssf{1}, every formula $\{\A\E\mathord\wedge\mathord\vee\}\Delta$ is preserved by $\Delta$-embeddings. Then \ssf{2} follows from Theorem~\ref{thm_embeddings_preservation_E}.
+
+\ssf{2}$\IMP$\ssf{1}\quad Clear, because $\Delta$-embeddings preserve formulas in $\{\E\mathord\wedge\mathord\vee\}\Delta$.
+\end{proof}
+
+\begin{exercise}
+Prove that the theory of discrete linear orders defined in Exercise~\ref{ex_discrete_lo} is model-complete.\QED
+\end{exercise}
+
+%Let $T$ be a theory and consider the category where the objects are the models of $T$ and $k:M\to N$ is a morphism if there is a model $M'\subseteq M$ and an embedding $h:M'\hookrightarrow N$ such that $k\subseteq h$.
+
+
+
+
+
 
 \begin{comment}
 
-\section{La model-completezza}
-
-Per ragioni storiche introduciamo la seguente nozione. 
-
-Diremo che $T$ \`e $\Delta$-modello completa se ogni $\Delta$-morphism $h:M\to N$ totale tra modelli di $T$ \`e un $\{\A\E\mathord\wedge\!\mathord\vee\}\Delta$-morphism. 
-
-Diremo che $T$ \`e $\Delta$-modello completa se ogni $\Delta$-morphism $h:M\to N$ suriettivo tra modelli di $T$ \`e un $\{\A\E\mathord\wedge\!\mathord\vee\}\Delta$-morphism. 
-
-
-
-
- (la terminologia \`e bizzarra Abraham Robinson.)
 %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%
