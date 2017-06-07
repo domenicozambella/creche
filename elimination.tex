@@ -254,30 +254,65 @@ For a counter example consider the empty theory in the language with a single un
 
 We say that $T$ is \emph{model-complete\/} if every embedding $h:M\hookrightarrow N$ between models of $T$ is an elementary embedding. 
 
-In general we say that $T$ is \emph{$\Delta$-model-complete\/} if every $\Delta$-embedding $h:M\hookrightarrow N$ between models of $T$ is a $\{\A\E\}\Delta$-embedding. 
+The notion was introduced by Abraham Robinson and has become standard. It is inspired by the fact that $T$ is model-complete if and only if $T\cup\Diag(M)$ is a complete theory, in the language $L(M)$, for every $M\models T$. 
 
-The notion (and the somewhat weird terminology) was introduced by Abraham Robinson. Model-completeness is equivalent to elimination of quantifiers up to one.
+To stress positivity in the next proposition, we generalize the definition as follows. We say that $T$ is \emph{$\Delta$-model-complete\/} if every $\Delta$-embedding $h:M\hookrightarrow N$ between models of $T$ is a $\{\A\E\}\Delta$-embedding. 
+
+Model-completeness is equivalent to a form of elimination of quantifiers.
 
 \begin{proposition}
 The following are equivalent
 \begin{itemize}
 \item[1.] $T$ is $\Delta$-model-complete;
-\item[2.] every formula in $\{\A\E\mathord\wedge\mathord\vee\}\Delta$ is equivalent over $T$ to a formula in $\{\E\mathord\wedge\mathord\vee\}\Delta$.
+\item[2.] $T$ is has $\{\E\}\Delta$-elimination of quantifiers.
 \end{itemize}
 \end{proposition}
 
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}\quad By \ssf{1}, every formula $\{\A\E\mathord\wedge\mathord\vee\}\Delta$ is preserved by $\Delta$-embeddings. Then \ssf{2} follows from Theorem~\ref{thm_embeddings_preservation_E}.
+\ssf{1}$\IMP$\ssf{2}\quad By \ssf{1}, every formula $\{\A\E\mathord\wedge\mathord\vee\}\Delta$ is preserved by $\Delta$-embeddings therefore, by Theorem~\ref{thm_embeddings_preservation_E}, it is equivalent to a formula in $\{\E\mathord\wedge\mathord\vee\}\Delta$.
 
 \ssf{2}$\IMP$\ssf{1}\quad Clear, because $\Delta$-embeddings preserve formulas in $\{\E\mathord\wedge\mathord\vee\}\Delta$.
 \end{proof}
 
+The theory of discrete linear orders defined in Exercise~\ref{ex_discrete_lo} is an example of an model-complete theory without elimination of quantifiers.
+
 \begin{exercise}
-Prove that the theory of discrete linear orders defined in Exercise~\ref{ex_discrete_lo} is model-complete.\QED
+Prove that the theory of discrete linear orders defined is model-complete.\QED
 \end{exercise}
 
-%Let $T$ be a theory and consider the category where the objects are the models of $T$ and $k:M\to N$ is a morphism if there is a model $M'\subseteq M$ and an embedding $h:M'\hookrightarrow N$ such that $k\subseteq h$.
+The difference between quantifier elimination and model-completeness subtle. It boils down to models of $T$ having or not the amalgamation property.
 
+\begin{proposition}
+Assume $T$ is model-complete. Let $\M$ be the category that consists of models of $T$ and partial isomorphisms. Then the following are equivalent
+\begin{itemize}
+\item[1.] $\M$ has the amalgamation property;
+\item[2.] $T$ has $\Delta$-elimination of quantifiers.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+\ssf{1}$\IMP$\ssf{2}\quad By Proposition~\ref{prop_amalgamation_def} every partial morphism $k:M\to N$ extends to an embedding $g : M\hookrightarrow N'$ which, by model-completeness, is an elementary embedding. Model-completeness also implies that $N\preceq N'$. Hence $k:M\to N$ is an elementary map. This proves \ssf{2}.
+
+\ssf{2}$\IMP$\ssf{1}\quad If all morphisms are elementary maps, amalgamations follows from Proposition~\ref{prop_elementary_amalg}.
+\end{proof}
+
+Note however that the models of a model-complete theory $T$ do have amalgamation when the proper notion of morphism is chosen. 
+
+Let $\M'$ be the category that consists of models of $T$ and the maps $k:M\to N$ such that there is a  partial isomorphism $h:M'\to N'$ with 
+\begin{itemize}
+\item[1.] $k\subseteq h$;\quad $M\preceq M'$;\quad  $N\preceq N'$;
+
+\item[2.] $\dom h$ contains a substructure of $M'$ that models $T$ (equivalently $\range h$ and $N'$).
+\end{itemize}
+
+It is clear that if $T$ is model-complete then the morphisms of $\M'$ are exactly the elementary maps. In this case $\M'$ has amalgamation.
+
+\begin{exercise}
+Prove that $\M'$ satisfies \ssf{c6} of Definition~\ref{def_com_c}, finite character of morphisms.
+\end{exercise}
+
+
+%Let $T$ be a theory and consider the category where the objects are the models of $T$ and $k:M\to N$ is a morphism if there is a model $M'\subseteq M$ and an embedding $h:M'\hookrightarrow N$ such that $k\subseteq h$.
 
 
 
