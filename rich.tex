@@ -20,7 +20,7 @@ For example, $\M_{\rm ob}$ could consist of all models of some theory $T_0$ and 
 
 \begin{definition}\label{def_com_c}For ease of reference we list together all properties required below
 \begin{itemize} 
-\item[c0.] between any two models $M$ and $N$ there is some morphism;
+\item[c0.] there is a morphism between any two models $M$ and $N$;
 \item[c1.] the identity map $\id_A:M\to M$ is a morphism, for any $A\subseteq M$;
 \item[c2.] morphisms are invertible maps and the inverse of a morphism is a morphism;
 \item[c3.] morphisms preserve the truth of $\atL$\,-formulas;
@@ -30,7 +30,7 @@ For example, $\M_{\rm ob}$ could consist of all models of some theory $T_0$ and 
 \end{itemize}
 \end{definition}
  
-We say that a category is \emph{connected\/} if \ssf{c0} holds. Axiom \ssf{c1} implies that any restriction of a morphism is a morphism. Given \ssf{c1}, we can rephrase \ssf{c0} by saying that $\0:M\to N$ is a morphism for any pair of models $M$ and $N$. 
+We say that a category is \emph{connected\/} if \ssf{c0} holds. Axiom \ssf{c1} implies that any restriction of a morphism is a morphism. Given \ssf{c1}, we can rephrase \ssf{c0} by saying that $\0:M\to N$ is a morphism for any pair of models $M$ and $N$.
 
 A consequence of \ssf{c4} is that the class of models is closed under elementary equivalence. In fact, if $N\equiv M$ then $\0:M\to N$ is elementary, hence it is a morphism and, in particular, and $N$ is a model. 
 
@@ -258,12 +258,11 @@ M \arrow[ur, "k\kern1ex" above] \arrow[rr, hook, "g" below] &  & N' \\
 It is convenient to use the following terminology. We write \emph{$M\le N$\/} for $M\subseteq N$ and $\id_M:M\hookrightarrow N$ is a morphism. We say that $k:M\to N$ \emph{extends to\/} $g:M'\to N'$ if $k\subseteq h$, $M\le M'$, and  $N\le N'$.
 
 
-\begin{proposition}
+\begin{proposition}\label{prop_amalgamation_def}
 Assume \ssf{c2}, then the following are equivalent
 \begin{itemize}
 \item[1.] $\M$ has the amalgamation property;
 \item[2.] every morphism $k:M\to N$ extends to an embedding $g : M\hookrightarrow N'$.
-
 \end{itemize}
 \end{proposition}
 
@@ -315,12 +314,12 @@ The well-ordering mentioned needs to be chosen so that in the end we forget nobo
 We check that $N$ is rich. Let $f:M\imp N$ be a morphism and $|f|<|M|\le\lambda$. As $|L|<\lambda$ we can appromate $M$ with an elementary chain of structures of cardinality $<\lambda$. Hence we may as well assume that $|f|\le|M|<\lambda$. The cofinality of $\lambda$ is larger than $|f|$, hence $\range f\subseteq N_i$ for some $i<\lambda$. So $f:M\imp N_i$ is a morphism and at some stage $j$ we have ensured the existence of an embedding of $f':M\hookrightarrow N_{j+1}$ that extends $f$.
 \end{proof}
 
-\begin{proposition}
-Let $\M_{\rm ob}$ be the class of all models of a complete theory $T$. Let $\M_{\rm ar}$ contain the elementary maps between models. Then $\M$ has the amalgamation property.
+\begin{proposition}\label{prop_elementary_amalg}
+Let $\M_{\rm ob}$ be the class of all structures of some fixed signature. Let $\M_{\rm ar}$ contain the elementary maps between models. Then $\M$ has the amalgamation property.
 \end{proposition}
 
 \begin{proof}
-Let $k:M\to N$ be an elementary map. Let $a$ enumerate $\dom k$ and let $b$ enumerate $M$. Let $p(x\,;z)=\tp_M(b\,;a)$. The type $p(x\,;a)$ is consisent in $M$, in particular, it is finitely consistent and, by elementarity,  $p(x\,;ka)$ is finitely consistent in $N$. By the compactness theorem, there is $N'\succeq N$ such that $N'\models p(c\,;ka)$ for some $c\in N'^{|x|}$ . Hence $g=\{\<b,c\>\}:M\to N'$ is the required elementary map that extends $k:M\to N$ 
+Let $k:M\to N$ be an elementary map. Let $a$ enumerate $\dom k$ and let $b$ enumerate $M$. Let $p(x\,;z)=\tp_M(b\,;a)$. The type $p(x\,;a)$ is consisent in $M$, in particular, it is finitely consistent and, by elementarity,  $p(x\,;ka)$ is finitely consistent in $N$. By the compactness theorem, there is $N'\succeq N$ such that $N'\models p(c\,;ka)$ for some $c\in N'^{|x|}$ . Hence $g=\{\<b,c\>\}:M\to N'$ is the required elementary map that extends $k:M\to N$.
 \end{proof}
 \section{Notes and references}
 \begin{biblist}[]\normalsize
