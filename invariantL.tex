@@ -26,16 +26,16 @@ In this chapter we fix a signature $L$, a complete theory $T$ without finite mod
 
 \def\ceq#1#2#3{\parbox[t]{16ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-Given $\grD\subseteq\U^{|{\gr z}|}$, occasionally we will find it convenient to expand the language $L$ with a predicate for ${\gr z}\in\grD$. Generally, we denote by $\<\U,\grD\>$ the corresponding expansion of $\U$. We write \emph{$L(\X)$} for the expanded language but, if the intended interpretation of ${\gr\X}$ only going to be $\grD$, we may write \emph{$L(\grD)$} and abbreviate $\<\U\,;\grD\>\models\phi({\gr\X})$ as $\phi(\grD)$. 
+In the next chapter, but marginally also in this chapter, we will find it convenient to expand the language $L$ with a predicate for a given $\grD\subseteq\U^{|{\gr z}|}$. We denote by $\<\U,\grD\>$ the corresponding expansion of $\U$. Generally, we write \emph{$L(\X)$} for the expanded language but, if the intended interpretation of ${\gr\X}$ only going to be $\grD$, we may write \emph{$L(\D)$} and abbreviate $\<\U\,;\grD\>\models\phi({\gr\X})$ as $\phi(\grD)$. 
 
 If ${\gr\grC},\grD\subseteq\U^{|{\gr z}|}$ we abbreviate $\<\U,{\gr\grC}\>\equiv_A\<\U,\grD\>$ as ${\gr\grC}\equiv_A\grD$. We also say that $\grD$ is \emph{saturated\/} if so is the model $\<\U\,;\grD\>$.
 
-What said above is adapted to define the expansion  \emph{$L(\X_i:i<\lambda)$}, where $\X_i$ are predicates of arity $|{\gr z_i}|$. Again, when the sets ${\gr\D_i}\subseteq\U^{|{\gr z_i}|}$ are the only intended interpretation of  $\X_i$, we may write \emph{$L(\D_i:i<\lambda)$}.
+What said above is adapted to define the expansion  \emph{$L(\X_i:i<\lambda)$}, where ${\gr\X_i}$ are predicates of arity $|{\gr z_i}|$. Again, when the sets ${\gr\D_i}\subseteq\U^{|{\gr z_i}|}$ are the only intended interpretation of  ${\gr\X_i}$, we may write \emph{$L(\D_i:i<\lambda)$}.
 
 %As usual, $L({\gr\X})$ and $L(\grD)$ denotes also the set of formulas in that language, and we write  $L(A\,;{\gr\X})$ and $L(A\,;\grD)$ for the set of formulas with parameters from $A$.
 
 \begin{remark}
-The definitions above are straightforeward when ${\gr z}$ finite tuple. When ${\gr z}$ is an infinite tuple the intuition stays the same but a more involved definition is required. In fact, first-order logic does not allow infinitary predicates. We think of $L({\gr\X})$ for a two sorted language. Call one sort the \textit{home sort\/} and the ${\gr z}\jj$\textit{sort}. The expansion $\<\U,\grD\>$ has domain $\U$ for the home sort, and $\U^{|{\gr z}|}$ for the ${\gr z}\jj$sort. Besides the symbols of $L$, there is a function symbol $\pi_i$ for every $i<|{\gr z}|$ which is interpreted as the projection to the $i\jj$coordinate. These functions have arity $\<{\gr z},0\>$ (see Section~\hyperref[many-sorted]{\ref*{imaginary}.\ref*{many-sorted}} for the notation). There is also a predicate of sort $\<{\gr z}\>$ interpreted as $\grD$.\QED
+The definitions above are straightforward when ${\gr z}$ finite tuple. When ${\gr z}$ is an infinite tuple the intuition stays the same but a more involved definition is required. In fact, first-order logic does not allow infinitary predicates. We think of $L({\gr\X})$ for a two sorted language. The \textit{home sort}, denoted by $0$, and the ${\gr z}\jj$\textit{sort}, denoted by ${\gr z}$. The expansion $\<\U,\grD\>$ has domain $\U$ for the home sort, and $\U^{|{\gr z}|}$ for the ${\gr z}\jj$sort. Besides the symbols of $L$, there is a function symbol $\pi_i$ for every $i<|{\gr z}|$ which is interpreted as the projection to the $i\jj$coordinate. These functions have arity $\<{\gr z},0\>$ (see Section~\hyperref[many-sorted]{\ref*{imaginary}.\ref*{many-sorted}} for the notation). There is also a predicate of sort $\<{\gr z}\>$ interpreted as $\grD$.\QED
 \end{remark}
 
 \begin{proposition}\label{prop_indiscernible_L(A,D)}
@@ -82,7 +82,7 @@ So, $\grD$ is invariant over $A$ when $\oorbit(\grD/A)=\big\{\grD\big\}$. We say
 \end{proof}
 
 \begin{theorem}\label{thm_Lascar_indiscernibles}
-  For every $\grD$ and every $A\subseteq M$ the following are equivalent:
+  For every $\grD$ and every $A\subseteq M$ the following are equivalent
   \begin{itemize}
     \item[1.] $\grD$ is Lascar invariant over $A$;
     \item[2.] every set in $\oorbit(\grD/A)$ is $M\mbox{-}$invariant;
@@ -93,19 +93,33 @@ So, $\grD$ is invariant over $A$ when $\oorbit(\grD/A)=\big\{\grD\big\}$. We say
 \end{theorem}
 
 \begin{proof}
-  The implication \ssf{1}$\IMP$\ssf{2} is clear because all sets in $o(\grD/A)$ are Lascar invariant over $A$. When $|M|\le|L(A)|$ implication \ssf{2}$\IMP$\ssf{3} follows from the bounds discussed in Section~\ref{invariant}. So, we may temporary add this assumption on $M$ as, once the proof of the proposition is finished, it is easily seen to be redundant. Implication \ssf{3}$\IMP$\ssf{4} holds because $\kappa$ is strong limit.
+  \ssf{1}$\IMP$\ssf{2}.\quad This implication is clear because all sets in $o(\grD/A)$ are Lascar invariant over $A$. 
+  
+  \ssf{2}$\IMP$\ssf{3}.\quad When $|M|\le|L(A)|$ the implication follows from the bounds discussed in Section~\hyperref[invariant_sets]{\ref*{invariant}.\ref*{invariant_sets}}. We temporary add this assumption on $M$. Once the proof of the proposition is completed, is easily seen to be redundant. 
+  
+  \ssf{3}$\IMP$\ssf{4}.\quad This implication holds because $\kappa$ is a strong limit cardinal.
 
-  We now prove \ssf{4}$\IMP$\ssf{5}. Assume $\neg$\ssf{5}. Then we can find an  $A\mbox{-}$indiscernible sequence $\<{\gr c_i}:i<\kappa\>$ such that ${\gr c_0}\in\grD\niff {\gr c_1}\in\grD$. Define
+  \ssf{4}$\IMP$\ssf{5}.\quad Assume $\neg$\ssf{5}. Then we can find an  $A\mbox{-}$indiscernible sequence $\<{\gr c_i}:i<\kappa\>$ such that ${\gr c_0}\in\grD\niff {\gr c_1}\in\grD$. Define
 
   \ceq{\hfill E({\gr u}\,;{\gr v})}{\IFF}{{\gr u}\in\grC\iff {\gr v}\in\grC}\ \ \ for every $\grC\in o(\grD/A)$.
 
-  Then $E({\gr u}\,;{\gr v})$ is an $A\mbox{-}$invariant equivalence relation. As $\neg E({\gr c_0}\,;{\gr c_1})$, indiscernibility over $A$ implies that $\neg E({\gr c_i\,},{\gr c_j})$ for every $i<j<\kappa$. Then $E({\gr u}\,;{\gr v})$ has $\kappa$ equivalence classes. As $\kappa$ is inaccessible, this implies $\neg$\ssf{4}.
+  Then $E({\gr u}\,;{\gr v})$ is an $A\mbox{-}$invariant equivalence relation. As $\neg E({\gr c_0}\,;{\gr c_1})$, by Proposition~\ref{prop_indiscernible_L(A,D)}, indiscernibility over $A$ implies that $\neg E({\gr c_i\,},{\gr c_j})$ for every $i<j<\kappa$. Then $E({\gr u}\,;{\gr v})$ has $\kappa$ equivalence classes. As $\kappa$ is inaccessible, this implies $\neg$\ssf{4}.
 
-  We prove \ssf{5}$\IMP$\ssf{1}. Assume \ssf{5} and fix any ${\gr a}\equiv_M{\gr b}$ for some model $M$ containing $A$. It suffices to prove that ${\gr a}\in\grD\iff{\gr b}\in\grD$. Let $p({\gr z})\in S(\U)$ be a global coheir of $\tp({\gr a}/M)=\tp({\gr b}/M)$. Let $c=\<{\gr c_i}:i<\omega\>$ be a Morley sequence of $p({\gr z})$ over $M,{\gr a},{\gr b}$. Then both ${\gr a},c$ and ${\gr b},c$ are $A\mbox{-}$indiscernible sequences. So from \ssf{5} we obtain ${\gr a}\in\grD\iff{\gr c_0}\in\grD\iff{\gr b}\in\grD$. 
+  \ssf{5}$\IMP$\ssf{1}.\quad Fix any ${\gr a}\equiv_M{\gr b}$. It suffices to prove that ${\gr a}\in\grD\iff{\gr b}\in\grD$. Let $p({\gr z})\in S(\U)$ be a global coheir of $\tp({\gr a}/M)=\tp({\gr b}/M)$. Let $c=\<{\gr c_i}:i<\omega\>$ be a Morley sequence of $p({\gr z})$ over $M,{\gr a},{\gr b}$. Then both ${\gr a},c$ and ${\gr b},c$ are $A\mbox{-}$indiscernible sequences. Therefore, from \ssf{5} we obtain ${\gr a}\in\grD\iff{\gr c_0}\in\grD\iff{\gr b}\in\grD$. 
 \end{proof}
 
-The following corollary easily follows from Theorem~\ref{thm_Lascar_indiscernibles} and Proposition~\ref{prop_indiscernible_L(A,D)}. As an exercise the reader may wish to prove it using Proposition~\ref{prop_indiscernibles_set_model}.
+For definable sets Lascar invariance reduces to definablity over the algebraic closure.
 
+\begin{corollary}
+For every definable set $\grD$ the following are equivalent
+  \begin{itemize}
+    \item[1.] $\grD$ is Lascar invariant over $A$;
+    \item[2.] $\grD$ is definable over $\acl^\eq(A)$.\QED
+  \end{itemize}
+\end{corollary}
+
+The following corollary easily follows from Theorem~\ref{thm_Lascar_indiscernibles} and Proposition~\ref{prop_indiscernible_L(A,D)}. As an exercise the reader may wish to prove it using Proposition~\ref{prop_indiscernibles_set_model}.
+ 
 \begin{corollary}
 The following are equivalent
 \begin{itemize}
