@@ -28,8 +28,8 @@ A many-sorted language consists of three disjoint sets. Besides the usual $L_{\r
 A many sorted structure $M$ consists of
 \begin{itemize}
 \item[1.] a set $M_s$, for each $s\in L_{\rm srt}$;
-\item[2.] a function $f^M:M_{s_1}\times\dots\times M_{s_n}\to M_{s_0}$, for each $f\in L_{\rm fun}$ of arity $\<s_0,\dots,s_n\>$, ;
-\item[3.] a relation $r^M\subseteq M_{s_0}\times\dots\times M_{s_n}$, for each $r\in L_{\rm rel}$ of arity $\<s_0,\dots,s_n\>$, .
+\item[2.] a function $f^M:M_{s_1}\times\dots\times M_{s_n}\to M_{s_0}$, for each $f\in L_{\rm fun}$ of arity $\<s_0,\dots,s_n\>$;
+\item[3.] a relation $r^M\subseteq M_{s_0}\times\dots\times M_{s_n}$, for each $r\in L_{\rm rel}$ of arity $\<s_0,\dots,s_n\>$.
 \end{itemize}
 
 For every sort $s$ we fix a sufficiently large a set of variables $V_s$. Now we define terms by induction. Along the way we assign a sort to each term $t$. 
@@ -51,7 +51,7 @@ Second order logic is arguably the most widely used example of many sorted struc
 
 We recall the definition of parted formulas. A \emph{parted formula\/} is a triple that consists of a formula and two tuples of variables. We use a semicolon, as in $\sigma({\mr x}\,;{\gr z})$, to separate the two tuples of variables. Below, ${\gr z}$ is always a placeholder for parameters and ${\mr x}$ is used for the definition of a set.
 
-Given a language $L$ we define a many-sorted language \emph{$L^{\rm\textbf{eq}}$\/} which has a sort for each (parted) formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort\/} or the \emph{first-order sort}. All other sorts are called \emph{second-order sorts}. First of all, $L^\eq$ contains all relations and functions of $L$. The many-sorted arity of a relation $r$ is $\<0^{n_r}\>$, a string of $0$'s of length the arity of $r$ in $L$.  Similarly, the many-sorted arity of a function $f$ is $\<0^{1+n_f}\>$. Moreover $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$. These have arity $\big\<0^{|{\mr x}|},\sigma({\mr x}\,;{\gr z})\big\>$. As there is no risk of ambiguity, we write $\in$ without subscript.
+Given a language $L$ we define a many-sorted language \emph{$L^{\rm\textbf{eq}}$\/} which has a sort for each (parted) formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort\/} or the \emph{first-order sort}. All other sorts are called \emph{second-order sorts}. First of all, $L^\eq$ contains all relations and functions of $L$. The many-sorted arity of a relation $r$ is $\<0^{n_r}\>$, a string of $0$'s of length the arity of $r$ in $L$.  Similarly, the many-sorted arity of a function $f$ is $\<0^{1+n_f}\>$. Moreover $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$. These have arity $\big\<0^{|{\mr x}|},\sigma({\mr x}\,;{\gr z})\big\>$. As there is no risk of ambiguity, in the sequel we write $\in$ without subscript.
 
 The model \emph{$\U^{\rm\textbf{eq}}$\/} has $\U$ as domain for the home sort. The domain for the sort $\sigma({\mr x}\,;{\gr z})$ contains the definable sets ${\vl a}=\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in\U^{|{\gr z}|}$. The symbols in $L$ have the same interpretation as in the one-sorted case, and $\in$ is interpreted as set membership. We write \emph{$T^{\rm\textbf{eq}}$\/} for $\Th(\U^\eq)$.
 
@@ -254,7 +254,7 @@ Let $A\subseteq\U$, let ${\vl a}$ be a definable set with finite orbit over $A$.
 \end{exercise}
 
 \begin{exercise}
-Let $T$ be strongly minimal and let $\phi({\mr x}\,;{\mr y})\in L(A)$ with $|{\mr z}|=1$. For arbitrary $c\in\U$, prove that if the orbit of $\phi({\mr\U}\,; {\mr c})$ over $A$ is finite, then $\phi({\mr\U}\,; {\mr c})$ is definable over $\acl A$. 
+Let $T$ be strongly minimal and let $\phi({\mr x}\,;{\mr y})\in L(A)$ with $|{\mr x}|=|{\mr y}|=1$. For arbitrary ${\mr c}\in\U$, prove that if the orbit of $\phi({\mr\U}\,; {\mr c})$ over $A$ is finite, then $\phi({\mr\U}\,; {\mr c})$ is definable over $\acl A$. 
 
 Hint: you can use Theorem~\ref{thm_set_alg=feq}.\QED
 \end{exercise}
