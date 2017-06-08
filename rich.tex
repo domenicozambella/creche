@@ -16,7 +16,7 @@ We now define \textit{categories of models and partial morphisms}. These are exa
 
 A \emph{category (of models and partial morphisms)\/} is a class $\M$ which is disjoint union of two classes: \emph{$\M_{\textrm{ob}}$} and \emph{$\M_{\textrm{ar}}$}. The first is the class of \emph{objects\/} and contains structures with a common signature $L$ which we call \emph{models}. The second is the class of \emph{arrows\/} and contains (partial) maps between models which we call \emph{morphisms}. We require that the identity maps are morphisms and that composition of two morphism is again morphism. This makes $\M$ a well-defined category. 
 
-For example, $\M_{\rm ob}$ could consist of all models of some theory $T_0$ and $\M_{\rm ar}$ of all partial isomorphisms between these. Alternatively, as morphisms we could take elementary maps between models. At a first reading the reader may assume $\M$ is as in one of these two examples. In the general case we need to make some assumptions on $\M$.
+For example, $\M$ could consist of all models of some theory $T_0$ and of all partial isomorphisms between these. Alternatively, as morphisms we could take elementary maps between models. At a first reading the reader may assume $\M$ is as in one of these two examples. In the general case we need to make some assumptions on $\M$.
 
 \begin{definition}\label{def_com_c}For ease of reference we list together all properties required below
 \begin{itemize} 
@@ -107,7 +107,7 @@ Implication \ssf{1}$\IMP$\ssf{2} is clear as noted above, so we prove \ssf{2}$\I
 
 
 \begin{exercise}
-Let $N$ be the structure obtained by adding to a countable random graph an isolated point. Show that this graph is homogeneous if $\M_{\rm ar}$ is the class of elementary maps but not if $\M_{\rm ar}$ is the class of partial isomorphisms.\QED
+Let $N$ be the structure obtained by adding to a countable random graph an isolated point. Show that this graph is homogeneous if morphisms are elementary maps but not if morphisms are simply partial isomorphisms.\QED
 \end{exercise}
 
 Next theorem is one of the most important facts about $\lambda$-rich models
@@ -132,7 +132,7 @@ The elements $a$ and $b$, added to $M'$ and $N'$, ensure that $M'\preceq M$ and 
 A similar argument shows that the elements $a'$ and $b'$, added to the domain and range of $h$, ensure that the $h:M'\hookdoubleheadrightarrow N'$ is both total and surjective. 
 \end{proof}
 
-By the theorem below  we can unambiguisly speak of \emph{the theory of rich models}. In fact it immediately follows that if $M$ is $\mu$-rich and $N$ is $\lambda$-rich then $M\equiv N$.
+The \emph{theory of rich models\/} of $\M$ is the set $T_1$ of sentences that hold in all rich models (or equivalently $|L|$-rich models), assuming they exist. By the theorem above, $T_1$ is complete as soon as $\M$ is connected.
 
 \begin{exercise}
 Let $L$ be the language of strict orders. Prove that $\QQ\preceq\RR$.\QED
@@ -178,15 +178,15 @@ Let $T_0$ and $\M$ be as in Example~\ref{ex_infiniti_colori} except that we rest
 \end{exercise}
 
 \begin{exercise}
-The language contains only the binary relations $<$ and $e$. The theory $T_0$ says that $<$ is a strict linear order and that $e$ is an equivalence relation. Let $\M_{\rm ob}=\Mod(T_0)$ and let $\M_{\rm ar}$  be the class of partial isomorphisms between models.   Do rich models exist? Can we axiomatize their theory? Is it $\omega\jj$categorical?\QED
+The language contains only the binary relations $<$ and $e$. The theory $T_0$ says that $<$ is a strict linear order and that $e$ is an equivalence relation. Let $\M$ consists of models of $T_0$ and partial isomorphisms.  Do rich models exist? Can we axiomatize their theory? Is it $\omega\jj$categorical?\QED
 \end{exercise}
 
 \begin{exercise}
-The language contains only two binary relations. The theory $T_0$ says that they are equivalence relations. Let $\M_{\rm ob}=\Mod(T_0)$ and let $\M_{\rm ar}$ be the class of partial isomorphisms between models. Do rich models exist? Can we axiomatize their theory? Is it $\omega\jj$categorical?\QED
+The language contains only two binary relations. The theory $T_0$ says that they are equivalence relations. Let $\M$ consists of models of $T_0$ and partial isomorphisms. Do rich models exist? Can we axiomatize their theory? Is it $\omega\jj$categorical?\QED
 \end{exercise}
 
 \begin{exercise}
-In the language of graphs let $T_0$ say that there are no cycles (equivalently, there is at most one path between any two nodes). In combinatorics these graphs are called \textit{forests}, their connected components, \textit{trees}. Let $\M_{\rm ob}=\Mod(T_0)$ and let $\M_{\rm ar}$  be the class of partial isomorphisms between models. Do rich models exist? Can we axiomatize their theory? Is it $\omega\jj$categorical?\QED
+In the language of graphs let $T_0$ say that there are no cycles (equivalently, there is at most one path between any two nodes). In combinatorics these graphs are called \textit{forests}, their connected components, \textit{trees}. Let $\M$ consists of models of $T_0$ and partial isomorphisms. Do rich models exist? Can we axiomatize their theory? Is it $\omega\jj$categorical?\QED
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
