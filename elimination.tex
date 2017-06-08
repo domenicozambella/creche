@@ -274,10 +274,10 @@ The following are equivalent
 \ssf{2}$\IMP$\ssf{1}\quad Clear, because $\Delta$-embeddings preserve formulas in $\{\E\mathord\wedge\mathord\vee\}\Delta$.
 \end{proof}
 
-The theory of discrete linear orders defined in Exercise~\ref{ex_discrete_lo} is an example of an model-complete theory without elimination of quantifiers.
+The theory of discrete linear orders defined in Exercise~\ref{ex_discrete_lo} is an example of a model-complete theory without elimination of quantifiers.
 
 \begin{exercise}
-Prove that the theory of discrete linear orders defined is model-complete.\QED
+Prove that the theory of discrete linear orders is model-complete.\QED
 \end{exercise}
 
 The difference between quantifier elimination and model-completeness subtle. It boils down to models of $T$ having or not the amalgamation property.
@@ -286,7 +286,7 @@ The difference between quantifier elimination and model-completeness subtle. It 
 Assume $T$ is model-complete. Let $\M$ be the category that consists of models of $T$ and partial isomorphisms. Then the following are equivalent
 \begin{itemize}
 \item[1.] $\M$ has the amalgamation property;
-\item[2.] $T$ has $\Delta$-elimination of quantifiers.
+\item[2.] $T$ has elimination of quantifiers.
 \end{itemize}
 \end{proposition}
 
@@ -305,11 +305,19 @@ Let $\M'$ be the category that consists of models of $T$ and the maps $k:M\to N$
 \item[2.] $\dom h$ contains a substructure of $M'$ that models $T$ (equivalently $\range h$ and $N'$).
 \end{itemize}
 
-It is clear that if $T$ is model-complete then the morphisms of $\M'$ are exactly the elementary maps. In this case $\M'$ has amalgamation.
+It is clear that if $T$ is model-complete then the morphisms of $\M'$ are exactly the elementary maps. In this case $\M'$ has amalgamation. Vice versa if $\M'$ has amalgamation, the theory of rich models is model-complete.
 
 \begin{exercise}
-Prove that $\M'$ satisfies \ssf{c6} of Definition~\ref{def_com_c}, finite character of morphisms.
+Prove that $\M'$ satisfies \ssf{c6} of Definition~\ref{def_com_c}, finite character of morphisms.\QED
 \end{exercise}
+
+% \begin{exercise}
+% Prove that the following are equivalent 
+% \begin{itemize}
+% \item[1.] $T$ is model-complete;
+% \item[2.] every partial isomorphism between saturated models of $T$ that is defined on a substructure that models $T$ is elementary.\QED
+% \end{itemize}
+% \end{exercise}
 
 
 %Let $T$ be a theory and consider the category where the objects are the models of $T$ and $k:M\to N$ is a morphism if there is a model $M'\subseteq M$ and an embedding $h:M'\hookrightarrow N$ such that $k\subseteq h$.
