@@ -233,10 +233,10 @@ Assume $L$ is countable and that $T$ is complete. Suppose that for every finite 
 \def\ceq#1#2#3{\parbox[b]{15ex}{$\displaystyle #1$}\parbox[b]{6ex}{\hfil$#2$}$\displaystyle #3$}
 
 
-Let $T$ be, as always in this chapter, a complete theory without finite models. Fix a tuple of variable ${\mr x}$ of length $\omega$. We say that $T$ is \emph{small over $A$\/} if $S_{\mr x}(A)$ is countable. The most and (in a sense) the only, interesting case is when $A$ is empty, then we say that  $T$ is \emph{small}.
+Let $T$ be, as always in this chapter, a complete theory without finite models. Let ${\mr x}$ be a tuple of variables of length $\omega$. We say that $T$ is \emph{small over $A$\/} if $S_{\mr x}(A)$ is countable. When $A$ is empty, we simply say that  $T$ is \emph{small}. The set $A$ is only introduced for convenience, $A=\0$ is the only interesting case. 
 
 \begin{proposition}
-If the theory $T$ is small then it is small over any countable $A$.
+If $T$ is small then it is small over any countable $A$.
 \end{proposition}
 
 \begin{proof}
@@ -245,6 +245,7 @@ Let ${\gr a}$ be an enumeration of $A$. As $S_{\mr x}(A)=\big\{p({\mr x}\,;{\gr 
 
 Below we identify $S_{\mr x}(A)$ with $\U^{|{\mr x}|}/\mathord\equiv_A$
 
+\begin{definition}\label{def_tree_formulas}
 Let $\Delta$ be a set of formulas (we mainly use $\Delta=L_{\mr x}(A)$ in this section). A \emph{binary tree of formulas in $\Delta$\/} is a sequence $\<\phi_s\ :\ s\in2^{<\omega}\>$ of parameter-free formulas such that\nobreak
 \begin{itemize}
 \item[1.] for each $s\in 2^\omega$ the type $p_s\ \deq\ \big\{\phi_{s\restriction n}\ :\ n<\omega\big\}$ is consistent;
@@ -327,8 +328,8 @@ We may depict a binary tree of formulas as follows
     };
 \end{tikzpicture}
 
-Where branches are consistent types and distinct branches are inconsistent.
-
+Where branches are consistent types and distinct branches are inconsistent.\QED
+\end{definition}
 
 
 \begin{proposition}\label{prop_small_equivalents}
@@ -348,17 +349,17 @@ Auppose $L(A)$ is countable. The following are equivalent\nobreak
 
 \ssf{3}$\IMP$\ssf{4}\quad Clear.
 
-\ssf{4}$\IMP$\ssf{1}\quad Suppose $\U^{|{\mr x}|}/\mathord\equiv_A$ is uncountable. We define a tree of formulas in $L_{\mr x}(A)$ by induction. Let $\phi_\0({\mr x})=\top$ and assume as induction hypothesis that $\phi_s(\U)/\mathord\equiv_A$ is uncountable and that $\phi_s({\mr x})\imp\phi_{s\restriction n}({\mr x})$ for every $n<|s|$. This will guarantee the consistency of the branches.
+\ssf{4}$\IMP$\ssf{1}\quad We prove the contrapositive: we assume that $\U^{|{\mr x}|}/\mathord\equiv_A$ is uncountable and define a tree of formulas in $L_{\mr x}(A)$ by induction. Let $\phi_\0({\mr x})=\top$ and assume as induction hypothesis that $\phi_s({\mr\U})/\mathord\equiv_A$ is uncountable and that $\phi_s({\mr x})\imp\phi_{s\restriction n}({\mr x})$ for every $n<|s|$. This will guarantee the consistency of the branches.
 
 
-We claim that there is a formula $\psi({\mr x})\in L(A)$ such that both sets $\phi_s(\U)\cap\psi(\U)\,/\equiv_A$ and $\phi_s(\U)\cap\neg\psi(\U)\,/\equiv_A$ are uncountable. If $\psi({\mr x})$ is such a formula, we can define $\phi_{s0}({\mr x})=\phi_s({\mr x})\wedge\psi({\mr x})$ and $\phi_{s1}({\mr x})=\phi_s({\mr x})\wedge\neg\psi({\mr x})$ as this preserves the induction hypothesis.
+We claim that there is a formula $\psi({\mr x})\in L(A)$ such that both sets $\phi_s({\mr\U})\cap\psi({\mr\U})\,/\equiv_A$ and $\phi_s({\mr\U})\cap\neg\psi({\mr\U})\,/\equiv_A$ are uncountable. If $\psi({\mr x})$ is such a formula, we can define $\phi_{s0}({\mr x})=\phi_s({\mr x})\wedge\psi({\mr x})$ and $\phi_{s1}({\mr x})=\phi_s({\mr x})\wedge\neg\psi({\mr x})$ as this preserves the induction hypothesis.
 
 
 First we prove that the following type is consistent
 
-\ceq{\hfill p({\mr x})}{=}{\Big\{\psi({\mr x})\in L(A)\ :\ \phi_s(\U)\cap\neg\psi(\U)\,/\equiv_A \textrm{ is countable }\Big\}.}
+\ceq{\hfill p({\mr x})}{=}{\Big\{\psi({\mr x})\in L(A)\ :\ \phi_s({\mr\U})\cap\neg\psi({\mr\U})\,/\equiv_A \textrm{ is countable }\Big\}.}
 
-Suppose not, then $\neg\psi_1({\mr x})\vee\dots\vee\neg\psi_n({\mr x})$ holds for some $\psi_i({\mr x})\in p$. Hence, as $\phi_s(\U)/\mathord\equiv_A$ is uncountable, at least one of the sets $\phi_s(\U)\cap\neg\psi_i(\U)\,/\equiv_A$ is uncountable, contradicting the definition of $p({\mr x})$.
+Suppose not, then $\neg\psi_1({\mr x})\vee\dots\vee\neg\psi_n({\mr x})$ holds for some $\psi_i({\mr x})\in p$. Hence, as $\phi_s({\mr\U})/\mathord\equiv_A$ is uncountable, at least one of the sets $\phi_s({\mr\U})\cap\neg\psi_i({\mr\U})\,/\equiv_A$ is uncountable, contradicting the definition of $p({\mr x})$.
 
 Finally note that, if the formula $\psi({\mr x})$ required above does not exist, $p({\mr x})$ is complete and, by the definition of $p({\mr x})$ there are countably many types distinct from $p({\mr x})$. This is a contradiction because we assumed $S_{\mr x}(A)$ to be uncountable.
 \end{proof}
