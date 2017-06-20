@@ -121,23 +121,35 @@ Let $\phi({\gr z})\in L(A)$ be a consistent formula. Prove that, if ${\mr a}\in\
 \end{exercise}
 
 
-\begin{exercise}
-Let ${\mr a}\in\U\sm\acl\0$. Prove that $\U$ is isomorphic to some $\U'\preceq \U$ such that ${\mr a}\notin\U'$. Hint: let $c$ be an enumeration of $\U$ and let $p(u)=\tp(c)$ prove that $p(u)\cup\big\{ {\mr u_i}\neq{\mr a} :i<|c|\big\}$ is realized in $\U$.\QED
+\begin{exercise}\label{ex_isosub}
+Let ${\mr a}\in\U\sm\acl\0$. Prove that $\U$ is isomorphic to some $\V\preceq \U$ such that ${\mr a}\notin\V$. Hint: let $c$ be an enumeration of $\U$ and let $p(u)=\tp(c)$ prove that $p(u)\cup\big\{ {\mr u_i}\neq{\mr a} :i<|c|\big\}$ is realized in $\U$.\QED
 \end{exercise}
 
 \begin{exercise}\label{pofu2}
-Let $C$ be a finite set. Prove that if $C\cap M\neq\0$ for every model $M$ containing $A$, then $C\cap\acl(A)\neq\0$. Hint: proceed by induction of the cardinality of $C$. Suppose there is a $c\in C\sm\acl(A)$, then there is a saturated structure $\U'\preceq\U$ such that  $A\subseteq\U'$ and $c\notin\U'$. Apply the induction hypothesis to $C'=C\cap\U'$ with $\U'$ for $\U$.\QED
+Let $C$ be a finite set. Prove that if $C\cap M\neq\0$ for every model $M$ containing $A$, then $C\cap\acl(A)\neq\0$.
+
+Hint: by induction of the cardinality of $C$. Suppose there is a $c\in C\sm\acl(A)$, then there is $\V\simeq\U$ such that $A\subseteq\V\preceq\U$ and $c\notin\V$, see Exercise~\ref{ex_isosub}. Apply the induction hypothesis to $C'=C\cap\V$ with $\V$ for $\U$.\QED
 \end{exercise}
 
 
-\begin{exercise}
+\begin{exercise}\label{ex_acl_intersezioe_2_modelli}
 Prove that for every $A\subseteq N$ there is an $M$ such that $\acl A\,=\,M\cap N$.
 
 Hint: add the requirement $\acl(A_i)\cap N\subseteq\acl(A)$ to the construction used to prove the downward L\"owenheim-Skolem theorem. You need to prove that every consistent $\phi(x)\in L(A_i)$ has a solution $a$ such that $\acl(A_i,a)\cap N\subseteq\acl(A)$. The required $a$ has to realize the type
 
-\hfil$\big\{\phi(x)\big\}\ \cup\ \Big\{\neg\big[\psi(b,x)\wedge\E^{\le n}y\,\psi(y,x)\big]\ :\ b\in N\sm\acl(A),\ \ \psi(y,x)\in L(A_i),\ \ n\le\omega\Big\}$
+\hfil$\big\{\phi(x)\big\}\ \cup\ \Big\{\neg\big[\psi(b,x)\wedge\E^{\le n}y\,\psi(y,x)\big]\ :\ b\in N\sm\acl(A),\ \ \psi(y,x)\in L(A_i),\ \ n<\omega\Big\}$
 
 whose consistence need to be verified.\QED%la cui consistenza dev'essere verificata. Si pu\`o usare l'esercizio~\ref{pofu2} oppure mostrare che il tipo qui sopra \`e chiuso per congiunzione e poi applicare l'esercizio~\ref{pofu} (che \`e pi\`u semplice).
+\end{exercise}
+
+\begin{exercise}
+Prove that for every $A\subseteq N$ there is an $f\in\Aut(\U/A)$ such that $\acl A\,=\,f[N]\cap N$. (This is a stronger version of the claim in Exercise~\ref{ex_acl_intersezioe_2_modelli}.)
+
+Hint: let $c=\<c_i:i<\lambda\>$ be an enumeration of $N$. Let $p(x)=\tp(c/A)$. Consider the type
+
+\hfil$p(x)\ \cup\ \Big\{\neg\big[\psi(b,x)\wedge\E^{\le n}y\,\psi(y,x)\big]\ :\ b\in N\sm\acl(A),\ \ \psi(y,x)\in L_x(A),\ \ n<\omega\Big\}$
+
+Every $a\models p(x)$ enumerates a model $A$-isomorphic to $N$. The consistence of $p(x)$ needs to be verified.\QED%la cui consistenza dev'essere verificata. Si pu\`o usare l'esercizio~\ref{pofu2} oppure mostrare che il tipo qui sopra \`e chiuso per congiunzione e poi applicare l'esercizio~\ref{pofu} (che \`e pi\`u semplice).
 \end{exercise}
 
 
@@ -232,7 +244,7 @@ Independence is symmetric.
 \end{theorem} 
 
 \begin{proof} 
-Suppose ${\gr b}\notin\acl(B,{\mr a})$ and ${\mr a}\in\acl(B,{\gr b})$. We prove that ${\mr a}\in\acl B$. As ${\mr a}\in\acl(B,{\gr b})$, there is a formula $\phi({\mr x},{\gr y})\in L(B)$ such that 
+Suppose ${\gr b}\notin\acl(B,{\mr a})$ and ${\mr a}\in\acl(B,{\gr b})$. We prove that ${\mr a}\in\acl B$. Fix a formula $\phi({\mr x},{\gr y})\in L(B)$ such that $\phi({\mr x},{\gr b})$ witness ${\mr a}\in\acl(B,{\gr b})$, i.e.\@ for some $n$
 
 \ceq{\hfill\phi({\mr a},{\gr b})}{\wedge}{\E^{\le n}{\mr x}\,\phi({\mr x},{\gr b}).}
 
@@ -240,7 +252,7 @@ As ${\gr b}\notin\acl(B,{\mr a})$, the formula
 
 \ceq{\hfill\psi({\mr a},{\gr y})\medrel{=}\phi({\mr a},{\gr y})}{\wedge}{\E^{\le n}{\mr x}\,\phi({\mr x},{\gr y}).}
 
-is not algebraic. Therefore, by strong minimality, $\psi({\mr a},{\gr y})$ has cofinitely many solutions. Hence every model containing $B$ contains a solution of $\psi({\mr a},{\gr y})$. As ${\mr a}$ is algebric in any of these solutions, ${\mr a}$ belongs to every model containing $B$. Therefore, ${\mr a}\in\acl B$ by Theorem~\ref{thm_fmgalois}.
+is not algebraic. Therefore, by strong minimality, $\psi({\mr a},{\gr y})$ has cofinitely many solutions. Hence every model containing $B$ contains a solution of $\psi({\mr a},{\gr y})$. As ${\mr a}$ is algebraic in any of these solutions, ${\mr a}$ belongs to every model containing $B$. Therefore, ${\mr a}\in\acl B$ by Theorem~\ref{thm_fmgalois}.
 \end{proof}
 
 % 
