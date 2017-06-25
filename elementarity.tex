@@ -440,10 +440,13 @@ Prove that if $\phi(x)$ is an existential formula (i.e.\@ of the form $\E y\,\ps
 \end{exercise}
 
 \begin{exercise}
-Assume that the language $L$ contains only the symbol $+$. Consider $\ZZ$ as a structure of signature $L$ with the usual interpretation of $+$. Prove that there is no existential formula that defines the set of even integers. Hint: use exercise~\ref{dlorlkurb}.\QED
+Assume that the language $L$ contains only the symbol $+$. Consider $\ZZ$ as a structure of signature $L$ with the usual interpretation of $+$. Prove that there is no existential formula that defines the set of even integers. Hint: use Exercise~\ref{dlorlkurb}.\QED
 \end{exercise}
 
 
+\begin{exercise}
+Let $N$ be the multiplicative group of $\QQ$. Let $M$ be the subgroup of those rational numbers that are of the form $n/m$ for some odd integers $m$ and $n$. Prove that $M\preceq N$. Hint: use the fundamental theorem of arithmetic and reason as in Example~\ref{expl_ordini_elem}.\QED
+\end{exercise}
 
 
 %%%%%%%%%%%%%%%%%%%%%
@@ -454,9 +457,9 @@ Assume that the language $L$ contains only the symbol $+$. Consider $\ZZ$ as a s
 % %%%%%%%%%%%%%%%%%%%%%
 \section{Completeness}
 
-A theory $T$ is \emph{maximal consistent\/} if it is consistent and there is no consistent theory $S\supset T$. Equivalently, if $T$ contains every sentence $\phi$ \emph{consistent with\/} $T$, that is, such that $T\cup\{\phi\}$ is consistent. Clearly a maximal consistent theory is closed under logical consequences.
+A theory $T$ is \emph{maximal consistent\/} if it is consistent and there is no consistent theory $S$ such that $S\subset T$. Equivalently, $T$ contains every sentence $\phi$ \emph{consistent with\/} $T$, that is, such that $T\cup\{\phi\}$ is consistent. Clearly a maximal consistent theory is closed under logical consequences.
 
-A theory $T$ is \emph{complete\/} if $\ccl T$ is maximal consistent. It is not easy to prove that a theory is complete. Explicit examples will be given in the next chapters.
+A theory $T$ is \emph{complete\/} if $\ccl T$ is maximal consistent. Concrete examples will be given in the next chapters as it is not easy to prove that a theory is complete.
 
 \begin{proposition}\label{fattoconsistenzasen4sostretto}
 The following are equivalent
@@ -861,26 +864,17 @@ Consider $\RR$ in the language of strict orders. Prove that $\RR\sm\{0\}\preceq 
 The main theorem of this section was proved by L\"owenheim at the beginning of the last century. Skolem gave a simpler proof immediately afterwards.
 At the time, the result was perceived as paradoxical.
 
-A few years earlier, the works of Zermelo and Fraenkel had convinced
-the mathematical community that the whole of set theory could be
-formalised in a first order language. The downward L\"owenheim-Skolem
-theorem implies the existence of an infinite countable model $M$ of
-set theory: this is the so-called  \emph{Skolem paradox}. The
-existence of  $M$ seems paradoxical because, in particular, a sentence
-that formalises the subset axiom holds in $M$. Therefore $M$ contains
-an element $b$ which, in $M$, is the set of subsets of the natural
-numbers. But the set of elements of $b$ is a subset of $M$, and
-therefore it is countable. In fact, this is not a contradiction,
-because the expression `all subsets of the natural numbers' does not
-have the same meaning in $M$ as it has in the real world. The notion
-of cardinality, too, acquires a different meaning. In the language of
-set theory, there is a first order sentence that formalises the fact
-that $b$ is uncountable: the sentence says that there is no bijection
-between $b$ and the natural numbers. Therefore the bijection between
-the elements of $b$ and the natural numbers (which exists in the real
-world) does not belong to $M$. The notion of equinumerosity has a
-different meaning in $M$ and in the real world, but those who live in
-$M$ cannot realise this.
+A few years earlier, the works of Zermelo and Fraenkel had convinced the mathematical community that the whole of set theory could be formalised in a first order language. 
+The downward L\"owenheim-Skolem theorem implies the existence of an infinite countable model $M$ of set theory: this is the so-called  \emph{Skolem paradox}. 
+The existence of  $M$ seems paradoxical because, in particular, a sentence that formalises the axiom of power set holds in $M$. 
+Therefore $M$ contains an element $b$ which, in $M$, is the set of subsets of the natural numbers. 
+But the set of elements of $b$ is a subset of $M$, and therefore it is countable. 
+
+In fact, this is not a contradiction, because the expression `all subsets of the natural numbers' does not have the same meaning in $M$ as it has in the real world. 
+The notion of cardinality, too, acquires a different meaning. 
+In the language of set theory, there is a first order sentence that formalises the fact that $b$ is uncountable: the sentence says that there is no bijection between $b$ and the natural numbers. 
+Therefore the bijection between the elements of $b$ and the natural numbers (which exists in the real world) does not belong to $M$. 
+The notion of equinumerosity has a different meaning in $M$ and in the real world, but those who live in $M$ cannot realise this.
 
 \begin{void_thm}[Downward L\"owenheim-Skolem Theorem]\label{lowenheimskolemallingiu}
 Let $N$ be an infinite $L$-structure and let $A\subseteq N$. Then there is a structure $M$ of cardinality $\le|L(A)|$ such that $A\subseteq M\preceq N$. 
