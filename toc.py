@@ -24,13 +24,16 @@ toc = toc.replace(r'\contentsline {chapter}{Preface}{4}{chapter*.2}\n', '')
 
 
 p = compile('\\\\IeC\s\{\\\\"o\}')
-toc = p.sub('ö', toc)
+toc = p.sub('&ouml;', toc)
 
 p = compile('\\\\IeC\s\{\\\\"i\}')
-toc = p.sub('ï', toc)
+toc = p.sub('&iuml;', toc)
+
+p = compile('\\\\"i')
+toc = p.sub('&iuml;', toc)
 
 p = compile('\\\\IeC\s\{\\\\\'e\}')
-toc = p.sub('é', toc)
+toc = p.sub('&eacute;', toc)
 
 
 with open('README.md', 'r') as f:
