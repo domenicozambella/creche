@@ -1,4 +1,4 @@
-# [A Crèche Course in Model Theory](../../raw/master/creche.pdf)
+# [A Cr&egrave;che Course in Model Theory](../../raw/master/creche.pdf)
 
 Lecture notes for an introductory (under)graduate course
 
@@ -20,7 +20,7 @@ Printable output in file [`creche.pdf`](./creche.pdf)
    * Embeddings and isomorphisms
    * Completeness
    * The Tarski-Vaught test
-   * The downward Löwenheim-Skolem theorem
+   * The downward L&ouml;wenheim-Skolem theorem
    * Elementary chains
 *  **Ultraproducts and compactness**
    * Filters and ultrafilters
@@ -29,7 +29,7 @@ Printable output in file [`creche.pdf`](./creche.pdf)
    * Ultraproducts
    * The compactness theorem
    * Finite axiomatizability
-   * Realization of types and upward Löwenheim-Skolem
+   * Realization of types and upward L&ouml;wenheim-Skolem
 *  **Types and morphisms**
    * Semilattices and filters
    * Distributive lattices and prime filters
@@ -39,7 +39,7 @@ Printable output in file [`creche.pdf`](./creche.pdf)
    * Dense linear orders
    * Random graphs
    * Notes and references
-*  **Fra\"issé limits**
+*  **Fra&iuml;ss&eacute; limits**
    * Rich models.
    * Weaker notions of universality and homogeneity
    * The amalgamation property
@@ -59,6 +59,7 @@ Printable output in file [`creche.pdf`](./creche.pdf)
 *  **Preservation theorems**
    * Lyndon-Robinson Lemma
    * Quantifier elimination by back-and-forth
+   * Model-completeness
 *  **Geometry and dimension**
    * Algebraic and definable elements
    * Strongly minimal theories
