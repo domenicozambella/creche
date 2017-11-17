@@ -124,16 +124,15 @@ Every elementary map $k:\U^\eq\to\U^\eq$ of cardinality $<\kappa$ extends to an 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The definable closure in the eq-expansion}
-We may safely confuse automorphism of $\U$ with automorphisms of $\U^\eq$. Let $A\subseteq\U^\eq$ and let $a$ be a tuple of elements of $\U^{\eq}$. We denote by \emph{$\Aut(\U/A)$\/} the set of automorphisms (of $\U^\eq$) that fix all elements of $A$. The symbol \emph{$\orbit(a/A)$\/} denotes the \emph{orbit of $a$ over $A$}. This has been defined in Section~\ref{homogeneous} and now we apply it to $\U^\eq$
+We may safely confuse automorphism of $\U$ with automorphisms of $\U^\eq$. Let $A\subseteq\U^\eq$ and let $a$ be a tuple of elements of $\U^{\eq}$. We denote by \emph{$\Aut(\U/A)$\/} the set of automorphisms (of $\U^\eq$) that fix all elements of $A$. The symbol \emph{$\orbit(a/A)$\/} denotes the \emph{orbit of $a$ over $A$}. This has been defined in Section~\hyperref[homogeneous]{\ref*{saturation}.\ref*{homogeneous}} and now we apply it to $\U^\eq$
 
 \ceq{\hfill\emph{$\orbit(a/A)$}}{\deq}{\big\{fa\;:\; f\in\Aut(\U/A)\big\}.}
 
-By homogeneity, $\O(a/A)=p(\U^\eq)$ where $p(v)=\tp(a/A)$. When $\O(a/A)=\{a\}$ we say that $a$ is \emph{invariant over $A$\/}
- or \emph{$A$-invariant}, for short.
+By homogeneity, $\O(a/A)=p(\U^\eq)$ where $p(v)=\tp(a/A)$. When $\O(a/A)=\{a\}$ we say that $a$ is \emph{invariant over $A$\/} or \emph{$A$-invariant}, for short.
 
 
 \begin{definition}\label{def_def}
-Let $A\subseteq\U^\eq$ and $a\in\U^\eq$. We say that \emph{$a$ is definable over $A$\/} if $\phi(a)\wedge\E^{=1}v\,\phi(v)$ holds for some formula $\phi(v)\in L^\eq(A)$. We write \emph{dcl$^\textrm{eq}(A)$\/} for the set of those $a\in\U^\eq$ that are definable over $A$. We write \emph{dcl$(A)$\/} for $\dcl^\eq(A)\cap\U$. This is the natural generalization of the notion introduced in Section~\ref{acl}.
+Let $A\subseteq\U^\eq$ and $a\in\U^\eq$. When $\phi(a)\wedge\E^{=1}v\,\phi(v)$ holds for some formula $\phi(v)\in L^\eq(A)$, we say that \emph{$a$ is definable over $A$\/} . We write \emph{dcl$^\textrm{eq}(A)$\/} for the set of those $a\in\U^\eq$ that are definable over $A$. We write \emph{dcl$(A)$\/} for $\dcl^\eq(A)\cap\U$. This is the natural generalization of the notion of definability introduced in Section~\hyperref[acl]{\ref*{geometria}.\ref*{acl}}.
 \end{definition}
 
 Saturation and homogeneity of $\U^\eq$ allow us to prove the following proposition with virtually the same proof of Theorem~\ref{thm_dgalois}
@@ -229,7 +228,9 @@ Let $\phi({\vl\X})\in L^\eq(A)$ be an algebraic formula that has ${\vl\Aa}$ amon
 If $\phi({\vl\X})$ has $n$, solutions, then $\epsilon({\mr x}\,;{\mr y})$ has at most $2^n$ equivalence classes. Clearly, ${\vl\Aa}$ is union of some these classes.
 \end{proof}
 
-We write \emph{$a\stackrel{\smash{\scalebox{.5}{\rm\bf Sh}}}{\equiv}_Ab$} for ${\mr a}\,\equiv_{\acl^\eq\! A}{\mr b}$. In words we say that ${\mr a}$ and ${\mr b}$ have the same \emph{Shelah strong-type over $A$}.
+\begin{definition}\label{def_Sh_strong_type}
+We write \emph{$a\stackrel{\smash{\scalebox{.5}{\rm\bf Sh}}}{\equiv}_Ab$} for ${\mr a}\,\equiv_{\acl^\eq\! A}{\mr b}$. In words we say that ${\mr a}$ and ${\mr b}$ have the same \emph{Shelah strong-type over $A$}.\QED
+\end{definition}
 
 \begin{proposition}
 Let $A\subseteq\U^\eq$ and let ${\mr a},{\mr b}\in\U^{|{\mr x}|}$. Then the following are equivalent
@@ -239,7 +240,7 @@ Let $A\subseteq\U^\eq$ and let ${\mr a},{\mr b}\in\U^{|{\mr x}|}$. Then the foll
 \end{itemize} 
 \end{proposition}
 \begin{proof}
-Assume $\neg$\ssf{2} and let $\epsilon({\mr x}\,;{\mr y})$ witness this. Let ${\vl\D}=\epsilon({\mr\U}\,;{\mr b})$, then  ${\mr b}\in{\vl\D}$ and ${\mr a}\notin{\vl\D}$. As $\epsilon({\mr x}\,;{\mr y})$ is an $A$-invariant finite equivalence formula, ${\vl\D}\in\acl^\eq(A)$, and $\neg$\ssf{1} follows. Vice versa, assume $\neg$\ssf{1} and let $\phi({\mr x})\in L\big(\acl^\eq(A)\big)$ be  such that $\phi({\mr a})\niff\phi({\mr b})$. Let ${\vl\D}=\phi({\mr\U})$, then ${\vl\D}\in\acl^\eq(A)$. Therefore, by Proposition~\ref{thm_set_alg=feq}, the set ${\vl\D}$ is union of equivalence classes of some finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$. Then $\neg\epsilon({\mr a}\,;{\mr b})$ and $\neg$\ssf{2} follows.
+Assume $\neg$\ssf{2} and let $\epsilon({\mr x}\,;{\mr y})\in L(A)$ be a finite equivalence formula such that $\neg\epsilon({\mr a}\,;{\mr b})$. Let ${\vl\D}=\epsilon({\mr\U}\,;{\mr b})$, then  ${\mr b}\in{\vl\D}$ and ${\mr a}\notin{\vl\D}$. As $\epsilon({\mr x}\,;{\mr y})$ is an $A$-invariant finite equivalence formula, ${\vl\D}\in\acl^\eq(A)$, and $\neg$\ssf{1} follows. Vice versa, assume $\neg$\ssf{1} and let $\phi({\mr x})\in L\big(\acl^\eq(A)\big)$ be  such that $\phi({\mr a})\niff\phi({\mr b})$. Let ${\vl\D}=\phi({\mr\U})$, then ${\vl\D}\in\acl^\eq(A)$. Therefore, by Proposition~\ref{thm_set_alg=feq}, the set ${\vl\D}$ is union of equivalence classes of some finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$. Then $\neg\epsilon({\mr a}\,;{\mr b})$ and $\neg$\ssf{2} follows.
 \end{proof}
 
 \begin{exercise}
@@ -304,7 +305,7 @@ The following are equivalent
 \begin{itemize}
 \item[1.] $T$ has weak elimination of imaginaries;
 \item[2.] every definable set is interdefinable with a finite set;
-\item[3.] every definable set ${\vl\Aa}$ is definable over $\acl\{{\vl\Aa}\}$.
+\item[3.] every definable set ${\vl\Aa}$ is definable over $\acl\big(\{{\vl\Aa}\}\big)$.
 \end{itemize}
 \end{theorem}
 
@@ -323,7 +324,7 @@ Hence ${\vl\B}$ is finite and ${\vl\B}\in\dcl^\eq\{{\vl\Aa}\}$. We also have ${\
 
 \ceq{\hfill\A{\mr x}\ \bigg[{\mr x}\in{\vl\Aa}}{\iff}{\sigma({\mr x}\,;{\gr b})\bigg].}
 
-for some tuple ${\gr b}$ of elements of $\acl\{{\vl\Aa}\}$.  Fix some algebraic formula $\delta({\gr z}\,;{\vl\Aa})$ satisfied by  ${\gr b}$ and write $\psi({\gr z}\,;{\vl\X})$ for the formula
+for some tuple ${\gr b}$ of elements of $\acl\big(\{{\vl\Aa}\}\big)$.  Fix some algebraic formula $\delta({\gr z}\,;{\vl\Aa})$ satisfied by  ${\gr b}$ and write $\psi({\gr z}\,;{\vl\X})$ for the formula
 
 \ceq{\hfill \A{\mr x}\ \bigg[{\mr x}\in{\vl\X}}{\iff}{\sigma({\mr x}\,;{\gr z})\bigg]\ \wedge\ \delta({\gr z}\,;{\vl\X}).}
 
@@ -340,7 +341,7 @@ The following are equivalent
 \begin{itemize}
 \item[1.] $T$ has elimination of imaginaries;
 \item[2.] every definable set is interdefinable with a tuple of real elements;
-\item[3.] every definable set ${\vl\Aa}$ is definable over $\dcl\{{\vl\Aa}\}$.
+\item[3.] every definable set ${\vl\Aa}$ is definable over $\dcl\big(\{{\vl\Aa}\}\big)$.
 \end{itemize}
 \end{theorem}
 
@@ -357,7 +358,7 @@ $\sharp$\qquad for every $A\subseteq\U^\eq$, every consistent $\phi({\gr z})\in 
 \end{lemma}
 
 \begin{proof}
-Let ${\vl\Aa}\in\U^\eq$ be a definable set and let $\sigma({\mr x}\,;{\gr z})$ be its sort. Then $\A{\mr x}\ \big[{\mr x}\in{\vl\Aa}\iff\sigma({\mr x}\,;{\gr z})\big]$ is consistent and, by $\,\sharp\,$ it  it has a solution in $\acl\{{\vl\Aa}\}$. Hence weak elimination follows from Theorem~\ref{elimimd}.
+Let ${\vl\Aa}\in\U^\eq$ be a definable set of sort $\sigma({\mr x}\,;{\gr z})$. Then $\A{\mr x}\ \big[{\mr x}\in{\vl\Aa}\iff\sigma({\mr x}\,;{\gr z})\big]$ is consistent and, by $\,\sharp\,$ it  it has a solution in $\acl\big(\{{\vl\Aa}\}\big)$. Hence weak elimination follows from Theorem~\ref{elimimd}.
 \end{proof}
 
 \begin{theorem}\label{elimimsm} 
