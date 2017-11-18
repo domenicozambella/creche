@@ -83,7 +83,7 @@ For every $A\subseteq\U$ and every ${\mr a}\in\U$ the following are equivalent
 
 \ssf{1}$\IMP$\ssf{3}. Assume \ssf{1}, then there is a formula $\phi({\mr x})\subseteq L(A)$ such that $\phi({\mr a})\wedge\E^{=k}{\mr x}\;\phi({\mr x})$ for some $k$. By elementarity $\E^{=k}{\mr x}\;\phi({\mr x})$ holds in every model $M$ containing $A$. Again by elementarity, the $k$ solutions of $\phi({\mr x})$ in $M$ are solutions in $\U$, therefore ${\mr a}$ is one of these.
 
-\ssf{3}$\IMP$\ssf{2}. Assume $\orbit({\mr a}/A)$ is infinite then, by Exercise~\ref{cadinalitafinitasaturazione}, it has cardinality $\kappa$. Hence, by cardinality reasons, $\orbit({\mr a}/A)\nsubseteq M$ for every model $M$ containing $A$. Pick any $f\in\Aut(\U/A)$ such that $f{\mr a}\notin M$. Then ${\mr a}\notin f^{-1}[M]$, so $f^{-1}[M]$ is a models that contradicts \ssf{3}.
+\ssf{3}$\IMP$\ssf{2}. Assume $\orbit({\mr a}/A)$ is infinite and fix any model $M$ containing $A$. By Exercise~\ref{cadinalitafinitasaturazione}, $\orbit({\mr a}/A)$  has cardinality $\kappa$, hence $\orbit({\mr a}/A)\nsubseteq M$. Pick any $f\in\Aut(\U/A)$ such that $f{\mr a}\notin M$. Then ${\mr a}\notin f^{-1}[M]$, so $f^{-1}[M]$ is a models that contradicts \ssf{3}.
 \end{proof}
 
 
@@ -122,34 +122,28 @@ Let $\phi({\gr z})\in L(A)$ be a consistent formula. Prove that, if ${\mr a}\in\
 
 
 \begin{exercise}\label{ex_isosub}
-Let ${\mr a}\in\U\sm\acl\0$. Prove that $\U$ is isomorphic to some $\V\preceq \U$ such that ${\mr a}\notin\V$. Hint: let $c$ be an enumeration of $\U$ and let $p(u)=\tp(c)$ prove that $p(u)\cup\big\{ {\mr u_i}\neq{\mr a} :i<|c|\big\}$ is realized in $\U$.\QED
+Let ${\mr a}\in\U\sm\acl\0$. Prove that $\U$ is isomorphic to some $\V\preceq \U$ such that ${\mr a}\notin\V$. Hint: let $c$ be an enumeration of $\U$ and let $p(u)=\tp(c)$ prove that $p(u)\cup\big\{ {\mr u_i}\neq{\mr a} :i<\kappa\big\}$ is realized in $\U$ and that any realization yields the required substructure of $\U$.\QED
 \end{exercise}
 
 \begin{exercise}\label{pofu2}
-Let $C$ be a finite set. Prove that if $C\cap M\neq\0$ for every model $M$ containing $A$, then $C\cap\acl(A)\neq\0$.
-
-Hint: by induction of the cardinality of $C$. Suppose there is a $c\in C\sm\acl(A)$, then there is $\V\simeq\U$ such that $A\subseteq\V\preceq\U$ and $c\notin\V$, see Exercise~\ref{ex_isosub}. Apply the induction hypothesis to $C'=C\cap\V$ with $\V$ for $\U$.\QED
+Let $C$ be a finite set. Prove that if $C\cap M\neq\0$ for every model $M$ containing $A$, then $C\cap\acl(A)\neq\0$. Hint: by induction on the cardinality of $C$. Suppose there is a $c\in C\sm\acl(A)$, then there is $\V\simeq\U$ such that $A\subseteq\V\preceq\U$ and $c\notin\V$, see Exercise~\ref{ex_isosub}. Apply the induction hypothesis to $C'=C\cap\V$ with $\V$ for $\U$.\QED
 \end{exercise}
 
 
 \begin{exercise}\label{ex_acl_intersezioe_2_modelli}
-Prove that for every $A\subseteq N$ there is an $M$ such that $\acl A\,=\,M\cap N$.
-
-Hint: add the requirement $\acl(A_i)\cap N\subseteq\acl(A)$ to the construction used to prove the downward L\"owenheim-Skolem theorem. You need to prove that every consistent $\phi(x)\in L(A_i)$ has a solution $a$ such that $\acl(A_i,a)\cap N\subseteq\acl(A)$. The required $a$ has to realize the type
+Prove that for every $A\subseteq N$ there is an $M$ such that $\acl A\,=\,M\cap N$. Hint: add the requirement $\acl(A_i)\cap N\subseteq\acl(A)$ to the construction used to prove the downward L\"owenheim-Skolem theorem. You need to prove that every consistent $\phi(x)\in L(A_i)$ has a solution $a$ such that $\acl(A_i,a)\cap N\subseteq\acl(A)$. The required $a$ has to realize the type
 
 \hfil$\big\{\phi(x)\big\}\ \cup\ \Big\{\neg\big[\psi(b,x)\wedge\E^{\le n}y\,\psi(y,x)\big]\ :\ b\in N\sm\acl(A),\ \ \psi(y,x)\in L(A_i),\ \ n<\omega\Big\}$
 
-whose consistence need to be verified.\QED%la cui consistenza dev'essere verificata. Si pu\`o usare l'esercizio~\ref{pofu2} oppure mostrare che il tipo qui sopra \`e chiuso per congiunzione e poi applicare l'esercizio~\ref{pofu} (che \`e pi\`u semplice).
+whose consistence need to be verified. (See Exercise~\ref{ex_acl_intersezione_2_modelli_iso} for a different hint.)\QED%la cui consistenza dev'essere verificata. Si pu\`o usare l'esercizio~\ref{pofu2} oppure mostrare che il tipo qui sopra \`e chiuso per congiunzione e poi applicare l'esercizio~\ref{pofu} (che \`e pi\`u semplice).
 \end{exercise}
 
-\begin{exercise}
-Prove that for every $A\subseteq N$ there is an $f\in\Aut(\U/A)$ such that $\acl A\,=\,f[N]\cap N$. (This is a stronger version of the claim in Exercise~\ref{ex_acl_intersezioe_2_modelli}.)
-
-Hint: let $c=\<c_i:i<\lambda\>$ be an enumeration of $N$. Let $p(x)=\tp(c/A)$. Consider the type
+\begin{exercise}\label{ex_acl_intersezione_2_modelli_iso}
+Prove that for every $A\subseteq N$ there is an automorphism $f\in\Aut(\U/A)$ such that $\acl A\,=\,f[N]\cap N$. (This is a stronger version of the claim in Exercise~\ref{ex_acl_intersezioe_2_modelli}.) Hint: let $c$ be an enumeration of $N$. Let $p(x)=\tp(c/A)$. Consider the type
 
 \hfil$p(x)\ \cup\ \Big\{\neg\big[\psi(b,x)\wedge\E^{\le n}y\,\psi(y,x)\big]\ :\ b\in N\sm\acl(A),\ \ \psi(y,x)\in L_x(A),\ \ n<\omega\Big\}$
 
-Every $a\models p(x)$ enumerates a model $A$-isomorphic to $N$. The consistence of $p(x)$ needs to be verified.\QED%la cui consistenza dev'essere verificata. Si pu\`o usare l'esercizio~\ref{pofu2} oppure mostrare che il tipo qui sopra \`e chiuso per congiunzione e poi applicare l'esercizio~\ref{pofu} (che \`e pi\`u semplice).
+Any $a\models p(x)$ enumerates a model $A$-isomorphic to $N$.\QED%la cui consistenza dev'essere verificata. Si pu\`o usare l'esercizio~\ref{pofu2} oppure mostrare che il tipo qui sopra \`e chiuso per congiunzione e poi applicare l'esercizio~\ref{pofu} (che \`e pi\`u semplice).
 \end{exercise}
 
 
@@ -277,13 +271,13 @@ For every $B\subseteq C$ the following are equivalent
 \end{itemize}
 \end{corollary}
 
-We may write \emph{acl$(B/A)$\/} per $\acl(B\cup A)$. The notation is used to suggest to the reader that the role $A$ in the argument is irrelevant and that it could be absorbed in the language. Independence and base \emph{over $A$\/} are defined in the obvious way.
+We may write \emph{acl$(B/A)$\/} per $\acl(B\cup A)$. The notation is used to suggest to the reader that the role of $A$ in the argument is irrelevant and that it could be absorbed in the language. Independent sets \emph{over $A$\/} and bases \emph{over $A$\/} are defined in the obvious way.
 
 \begin{theorem} Fix some arbitrary set $C$, then
 \begin{itemize}
 \item[1] every independent set $B\subseteq C$ can be extended to a base of $C$;
 \item[2] all bases of $C$ have the same cardinality;
-\item[3] claims \ssf{1} and \ssf{2} hold over any set of parameter $A$.
+\item[3] claims \ssf{1} and \ssf{2} hold over any set of parameters $A$.
 \end{itemize}
 \end{theorem}
 
@@ -296,7 +290,7 @@ As for \ssf{2}, assume for a contradiction that $B_1,B_2\subseteq C$ are two bas
 
 Then $B_1\subseteq\acl D$ and $|D|<|B_2|$. By transitivity, $C\subseteq\acl D$ which contradicts the independence of $B_2$. Again the argument generalizes immediately as required in \ssf{3}.
 
-Now we suppose that $B_2$ is finite and prove directly the generalized version. Let $n$ be the least integer such that, for some set of parameters $A$, and some $B_1$ and $B_2$ bases of $C$ over $A$, we have $|B_1|<|B_2|=n+1$. Fix any ${\mr c}\in B_2$. Then $B_2\sm{\mr c}$ is a base over $A,{\mr c}$. Note that $B_1$ is not independent over $A,{\mr c}$. In fact, let $D\subseteq B_1$ be minimal such that as ${\mr c}\in\acl(D/A)$. Note that $D$ cannot be empty and pick an arbitrary ${\mr b}\in D$. By symmetry ${\mr b}\notin\acl(D\sm{\mr b}/A,{\mr c})$. Hence $B_1$ is not an independent set over $A,{\mr c}$. Let $D_1\subset B_1$ be maximal independent over $A,{\mr c}$. Then $D_1$ and $B_2\sm{\mr c}$ are two bases over $A,{\mr c}$ such that $|D_1|<|B_2\sm{\mr c}|=n$, which contradicts the minimality of $n$.
+Now we suppose that $B_2$ is finite and prove directly the generalized version. Let $n$ be the least integer such that, for some set of parameters $A$, and some $B_1$ and $B_2$ bases of $C$ over $A$, we have $|B_1|<|B_2|=n+1$. Fix any ${\mr c}\in B_2$. Then $B_2\sm{\mr c}$ is a base over $A,{\mr c}$. Note that $B_1$ is not independent over $A,{\mr c}$. In fact, as ${\mr c}\in\acl(B/A)$ by symmetry we obtain that ${\mr b}\in\acl(B\sm{\mr b}/A,{\mr c})$ for any ${\mr b}\in B_1$. Now, let $D_1\subset B_1$ be maximal independent over $A,{\mr c}$. Then $D_1$ and $B_2\sm{\mr c}$ are two bases over $A,{\mr c}$ such that $|D_1|<|B_2\sm{\mr c}|=n$, which contradicts the minimality of $n$.
 \end{proof}
 
 \begin{proposition}\label{prop_mappetraindipendenti} 
