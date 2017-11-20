@@ -9,7 +9,7 @@
 
 
 
-In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ larger than $|L|$. (Expect that most relevant theorems are proved under the assumption that $L$ is countable.) Notation and implicit assumptions are as presented in Section~\hyperref[saturation]{\ref*{saturation}.\ref*{monster}}.
+In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ larger than $|L|$. (Expect that all relevant theorems are proved under the assumption that $L$ is countable.) Notation and implicit assumptions are as presented in Section~\hyperref[saturation]{\ref*{saturation}.\ref*{monster}}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -73,14 +73,35 @@ We proceed as in the proof of the downward L\"owenheim-Skolem theorem (precisely
 Gerald Sacks once famously remarked: \textit{Any fool can realize a type but it take a model theorist to omit one}. (Though, as remarked above, the proof reminds more of set theory than model theory.)
 
 
+
+\begin{example}\label{ex_AK}
+The following example shows that in the omitting types theorem we cannot drop the assumption that $L(A)$ is countable. Let $F$ be the set of all bijection between two uncountable sets, $X$ and $Y$. Let $M$ be the model with domain the disjoint union of $F$, $X$ and $Y$. The language has a ternary relation symbol for $f(x)=y$ and unary relations for $X$ and $Y$. Let $\U$ be a saturated elementary extension of $M$.
+
+Let $Y_1\subseteq Y$ be countable. Let $c\in Y\sm Y_1$ and set $p(y)=\tp(c/X,Y_1)$. We claim that $p(y)$ is not isolated but that it is realized in every model containing $X,Y_1$.
+
+No formula could be equivalent to $p(y)$ (nor even a type with finitely many parameters). In fact, for every finite sets $Y_0\subseteq Y_1$ and $X_0\subseteq X$ there is a automorphism of $M$ that fixes $Y_0\cup X_0$ and maps $c$ to some (any) element of $Y_1\sm Y_0$. This automorphism extends to an automorphism of $\U$ and maps $c$ to an element that does not realize $p(y)$.  
+
+The type $p(y)$ cannot be omitted because every model $N$ containing  $X$ has necessarily uncountably many elements of sort $Y$ and therefore realizes $p(y)$.\QED
+\end{example}
+
+
+\begin{exercise}
+Let $p(x)\subseteq L(B)$ and $p_n(x)\subseteq L(A)$, for $n<\omega$, be consistent types such that\smallskip
+
+\ceq{\hfill p(x)}{\imp}{\bigvee_{n<\omega}p_n(x)}
+
+\noindent Prove that there is an $n<\omega$ and a formula $\phi(x)\in L(A)$ consistent with $p(x)$ such that \smallskip
+
+\ceq{\hfill p(x)\wedge\phi(x)}{\imp}{p_n(x)}.\QED
+\end{exercise}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Prime and atomic models}
-
-
 
 We say that \emph{$M$ is prime over $A$\/} if $A\subseteq M$ and for every $N$ containing $A$ there is an elementary embedding $h:M\to N$ that fixes $A$. When $A$ is empty we simply say that $M$ is \emph{prime}. 
 
@@ -104,7 +125,7 @@ Let ${\mr b}$ and ${\gr a}$ be finite tuples. Then the following are equivalent
 \begin{proof}
 Let $p({\mr x},{\gr z})=\tp ({\mr b},{\gr a}/A)$ and note that  $p({\mr x},{\gr a})=\tp({\mr x}/A,{\gr a})$ and $\E{\mr x}\,p({\mr x},{\gr z})=\tp({\gr a}/A)$. 
 
-\ssf{1}$\IMP$\ssf{2}\quad Let $\phi({\mr x},{\gr z})\in L(A)$ be such that $\phi({\mr x},{\gr z})\imp p({\mr x},{\gr z})$. It follows that $\phi({\mr x},{\gr a})\imp p({\mr x},{\gr a})$ and $\E{\mr x}\, \phi({\mr x},{\gr z})\imp \E{\mr x}\,p({\mr x},{\gr z})$. Therefore \ssf{2} holds.
+\ssf{1}$\IMP$\ssf{2}\quad Let $\phi({\mr x},{\gr z})\in p$ be such that $\phi({\mr x},{\gr z})\imp p({\mr x},{\gr z})$. It follows that $\phi({\mr x},{\gr a})\imp p({\mr x},{\gr a})$ and $\E{\mr x}\, \phi({\mr x},{\gr z})\imp \E{\mr x}\,p({\mr x},{\gr z})$. Therefore \ssf{2} holds.
 
 \ssf{2}$\IMP$\ssf{1}\quad Fix $\phi({\mr x}\,;{\gr z}), \psi({\gr z})\in L(A)$ such that $\phi({\mr x}\,;{\gr a})$ isolates $p({\mr x}\,;{\gr a})$ and $\psi({\gr z})$ isolates $\E {\mr x}\, p({\mr x}\,;{\gr z})$. Let $\xi({\mr x}\,;{\gr z})\in p$ be arbitrary. As $\phi({\mr x}\,;{\gr a})\imp\xi({\mr x}\,;{\gr a})$, the formula $\A{\mr x}\,\big[\phi({\mr x}\,;{\gr z})\imp\xi({\mr x}\,;{\gr z})\big]$ belongs to $\E {\mr x}\, p({\mr x},{\gr z})$. Hence $\psi({\gr z})\imp\A{\mr x}\,\big[\phi({\mr x}\,;{\gr z})\imp\xi({\mr x}\,;{\gr z})\big]$. As this holds for all $\xi({\mr x}\,;{\gr z})\in p$, we conclude that $\psi({\gr z})\wedge\phi({\mr x}\,;{\gr z})$ isolates  $p({\mr x},{\gr z})$.
 \end{proof}
@@ -182,7 +203,7 @@ Here we present some important characterizations of $\omega\jj$categoricity. The
 \item[2.] every type $p({\mr x})\subseteq L(A)$ with $|{\mr x}|<\omega$ is isolated. 
 \end{itemize}
 \end{theorem}
-By \ssf{3} of Proposition~\ref{prop_ERNS_equivalents} below, no theory is $\omega$-categorical over an infinite set. The reader can easily prove that that categoricity over some finite $A$ is equivalent to categoricity over $\0$ (see Exercise~\ref{ex_omega_cat_overA}).
+The set $A$ is introduced for convenience. By \ssf{3} of Proposition~\ref{prop_ERNS_equivalents} below, no theory is $\omega$-categorical over an infinite set. The reader can easily prove that that categoricity over some finite $A$ is equivalent to categoricity over $\0$ (see Exercise~\ref{ex_omega_cat_overA}).
 
 \begin{proof} The implication \ssf{1}$\IMP$\ssf{2} is an immediate consequence of the omitting types theorem. In fact, if $p({\mr x})$ is a non-isolated $A\jj$type, then there are two countable models $M$ and $N$ containing $A$ such that $M$ realizes $p({\mr x})\subseteq L(A)$ while $N$ omits it. Then $M$ and $N$ cannot be isomorphic over $A$. As for implication \ssf{2}$\IMP$\ssf{1}, observe that \ssf{2} implies that every countable model containing $A$ is atomic over $A$. But, by Proposition~\ref{prop_atomic_unique}, countable atomic models are unique up to isomorphism.
 \end{proof}
@@ -221,7 +242,7 @@ Prove that the following are equivalent
 
 
 \begin{exercise} 
-Assume $L$ is countable and that $T$ is complete. Suppose that for every finite tuple  ${\mr x}$ there is a model $M$ that realizes only finitely many types in $S_{\mr x}(T)$. Prove that $T$ is $\omega$-categorical.
+Assume $L$ is countable and that $T$ is complete. Suppose that for every finite tuple  ${\mr x}$ there is a model $M$ that realizes only finitely many types in $S_{\mr x}(T)$. Prove that $T$ is $\omega$-categorical.\QED
 \end{exercise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -352,9 +373,9 @@ We claim that there is a formula $\psi({\mr x})\in L(A)$ such that both sets $\p
 
 First we prove that the following type is consistent
 
-\ceq{\hfill p({\mr x})}{=}{\Big\{\psi({\mr x})\in L(A)\ :\ \phi_s({\mr\U})\cap\neg\psi({\mr\U})\,/\equiv_A \textrm{ is countable }\Big\}.}
+\ceq{\hfill p({\mr x})}{=}{\Big\{\xi({\mr x})\in L(A)\ :\ \phi_s({\mr\U})\cap\neg\xi({\mr\U})\,/\equiv_A \textrm{ is countable }\Big\}.}
 
-Suppose not, then $\neg\psi_1({\mr x})\vee\dots\vee\neg\psi_n({\mr x})$ holds for some $\psi_i({\mr x})\in p$. Hence, as $\phi_s({\mr\U})/\mathord\equiv_A$ is uncountable, at least one of the sets $\phi_s({\mr\U})\cap\neg\psi_i({\mr\U})\,/\equiv_A$ is uncountable, contradicting the definition of $p({\mr x})$.
+Suppose not, then $\neg\xi_1({\mr x})\vee\dots\vee\neg\xi_n({\mr x})$ holds for some $\xi_i({\mr x})\in p$. Hence, as $\phi_s({\mr\U})/\mathord\equiv_A$ is uncountable, at least one of the sets $\phi_s({\mr\U})\cap\neg\xi_i({\mr\U})\,/\equiv_A$ is uncountable, contradicting the definition of $p({\mr x})$.
 
 Finally note that, if the formula $\psi({\mr x})$ required above does not exist, $p({\mr x})$ is complete and, by the definition of $p({\mr x})$ there are countably many types distinct from $p({\mr x})$. This is a contradiction because we assumed $S_{\mr x}(A)$ to be uncountable.
 \end{proof}
@@ -405,15 +426,16 @@ We need the following definition. We say that $C\subseteq\U$ is an \emph{homogen
 \begin{lemma}\label{lem_zilbergiocattolo} Suppose $L$ is countable. If $T$ is $\omega\jj$categorical and every finite set is contained in a finite homogeneous set, then $T$ has the finite model property.
 \end{lemma}
 \begin{proof}
-Assume for the moment that $L$ is a relational language. We prove \ssf{fmp} also for formulas with parameters. We prove that for all $n$ there is a finite structure $A\subseteq\U$ where \ssf{fmp} holds for all sentences $\phi\in L(A)$ such that
+%Assume for the moment that $L$ is a relational language. 
+We prove \ssf{fmp} also for formulas with parameters. We prove that for all $n$ there is a finite structure $A\subseteq\U$ where \ssf{fmp} holds for all sentences $\phi\in L(A)$ such that
 
 $\#$\hfil number of parameters in $\phi$\ \  $+$\ \  number of quantifiers in $\phi$\ \ $\le n$.
 
 Fix $n$ and pick some finite set $A$ that is homogeneous and such that all types $p(z)\subseteq L$ with $|z|\le n$ have a realization in $A^{|z|}$. Now we prove \ssf{fmp} by induction on the syntax of $\phi$.
 
-The claim is evident for atomic formulas and the induction step is immediate for boolean connectives. As for induction step for the existential quantifier, consider the formula $\E {\mr x}\,\phi({\mr x}\,;{\gr c})$, where ${\gr c}\in A^{<n}$ and $|{\mr x}|=1$. Implication $\PMI$ of \ssf{fmp} follows immediately from the induction hypothesis and from the fact that, if $\E {\mr x}\,\phi({\mr x}\,;{\gr c})$ satisfy $\#$, also $\phi({\mr d}\,;{\gr c})$ satisfies it. As for $\IMP$, assume $\U\models\E {\mr x}\, \phi({\mr x}\,;{\gr c})$. Let ${\gr a},{\mr b}\in A^{<\omega}$ be a solution of $\phi({\mr x}\,;{\gr z})$ such that ${\gr a}\equiv{\gr c}$. Such a solution exists because all types with $\le n$ variables are realized in $A$. By homogeneity there is a ${\mr d}\in A$ such that ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$ and therefore $A\models\phi({\mr d}\,;{\gr c})$.
-
-Finally consider the case when $L$ contains functions symbols. Note that in \ssf{fmp} we may only require $A$ to be a substructures w.r.t.\@ symbols of $L$ that actually occur in $\phi$. Moreover, in $\#$ we can add the requirement that all functions symbols in $\phi$ have arity $< n$. Now note that if all types $p(z)\subseteq L$ with $|z|\le n$ have a realization in $A^{|z|}$, then $A$ is a substructure w.r.t.\@ a fragment which only contains functions of arity $< n$.
+The claim for atomic formulas is witnessed by any finite structure that contains the parameters of the formula. Such finite substructure exists in fact it suffices to take the algebraic closure which, in an $\omega$-categorical theory, is finite (by \ssf{3} of Lemma~\ref{prop_ERNS_equivalents}). Induction for Boolean connectives is straightforward. As for induction step for the existential quantifier, consider the formula $\E {\mr x}\,\phi({\mr x}\,;{\gr c})$, where ${\gr c}\in A^{<n}$ and $|{\mr x}|=1$. Implication $\PMI$ of \ssf{fmp} follows immediately from the induction hypothesis and from the fact that, if $\E {\mr x}\,\phi({\mr x}\,;{\gr c})$ satisfy $\#$, also $\phi({\mr d}\,;{\gr c})$ satisfies it. As for $\IMP$, assume $\U\models\E {\mr x}\, \phi({\mr x}\,;{\gr c})$. Let ${\gr a},{\mr b}\in A^{<\omega}$ be a solution of $\phi({\mr x}\,;{\gr z})$ such that ${\gr a}\equiv{\gr c}$. Such a solution exists because all types with $\le n$ variables are realized in $A$. By homogeneity there is a ${\mr d}\in A$ such that ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$ and therefore $A\models\phi({\mr d}\,;{\gr c})$.
+%
+%Finally consider the case when $L$ contains functions symbols. Note that in $\#$ we can add the requirement that all functions symbols in $\phi$ have arity $< n$. Now note that if all types $p(z)\subseteq L$ with $|z|\le n$ have a realization in $A^{|z|}$, then $A$ is a substructure w.r.t.\@ a fragment which only contains functions of arity $< n$.
 \end{proof}
 
 \begin{proposition}\label{prop_zilbergiocattolo} If $T$ is strongly minimal, then every algebraically closed set is homogeneous.
@@ -437,7 +459,7 @@ If $T$ is $\omega\jj$categorical the algebraic closure of a finite set is finite
 Assume $L$ is countable and let $T$ be strongly minimal. Prove that the following are equivalent
 \begin{itemize}
 \item[1.] $T$ is $\omega\jj$categorical;
-\item[2.] the algebraic closure of a finite set is finite.\qed
+\item[2.] the algebraic closure of a finite set is finite.\QED
 \end{itemize}
 \end{exercise}
 
@@ -445,9 +467,21 @@ Assume $L$ is countable and let $T$ be strongly minimal. Prove that the followin
 
 
 \section{Notes and references}
+\label{Notes_countable}
+A counter-example to the omitting type in uncountable language was published by Gebhard Fuhrken in 1962. I am not aware of any modern exposition of this (or other) example. My source for Example~\ref{ex_AK} is a post of Alex Kruckman to StackExhange~\cite{AK}.
+
 A famous theorem of Boris Zil'ber claims that Teorema~\ref{thm_zilbergiocattolo} holds for any totally categorical theory. The same theorem has been proved independently by  Cherlin, Harrington and Lachlan with a proof that uses the classification of finite simple groups. This theorem signs the birth of a subject known as \textit{geometric stability theory\/} which studies in depth the geometric properties of model theories which we breafly hinted to in Chapter~\ref{geometria}. The interested reader may consult Pillay's monograph on the subject.
 
 \begin{biblist}[]\normalsize
+
+ \bib{AK}{article}{
+   author={Alex Kruckman},
+   title={Counterexample to the omitting types in uncountable language},
+   eprint={https://math.stackexchange.com/q/2434851},
+   note={URL accessed 2017-11-19},
+   %status={\href{https://math.stackexchange.com/q/2434851}},
+   date={2017},
+}  
 
 \bib{Pillay}{book}{
    author={Pillay, Anand},
@@ -459,7 +493,7 @@ A famous theorem of Boris Zil'ber claims that Teorema~\ref{thm_zilbergiocattolo}
    date={1996},
    pages={x+361},
 }
-
+   
 \end{biblist}
 
 
