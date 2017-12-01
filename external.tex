@@ -1,0 +1,414 @@
+% !TEX root = creche.tex
+\documentclass[creche.tex]{subfiles}
+\begin{document}
+\chapter{Externally definable sets}
+\label{external}
+
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Approximable sets}
+\label{approximable}
+
+\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
+Let $\grC,\grD\subseteq\U^{|{\gr z}|}$.
+The set $\grD\cap A^{|{\gr z}|}$ is called the \emph{trace\/} of $\grD$ over $A$.
+We write $\grC=_A\grD$ if  $\grC$ and $\grD$ have the same trace on $A$.
+
+We say that $\grD$ is \emph{externally definable\/} if it is of the form ${\gr\D_{p,\phi}}$ for some global type $p\in S_{\mr x}(\U)$ and some formula $\phi({\mr x}\,;{\gr z})\in L$, see Section~\hyperref[invariant_sets]{\ref*{invariant}.\ref*{invariant_sets}}. We may say that $\grD$ is externally definable \emph{by $p$}. Equivalently, a set $\grD$ is externally definable if it is the trace over $\U$ of a set which is definable in some elementary extension of $\U$. Precisely, $\grD$ is the trace on $\U$ of a set of the form $\phi({\mr b'}\,;{\gr\U'})$ where $\U'$ is elementary extension of $\U$ and ${\mr b'}\in\U'^{|{\mr x}|}$. The latter interpretation explains the terminology.
+
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We prefer to deal with external definability in a different, though equivalent, way.
+This is not the most common approach.
+
+\begin{definition}\label{def_epprox}
+We say that $\grD$ is \emph{approximated\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite $B$ there is a ${\mr b}\in\U^{|{\mr x}|}$ such that $\phi({\mr b}\,;{\gr\U})=_B\grD$.
+If in addition we have that $\phi({\mr b}\,;{\gr\U})\subseteq\grD$, we say that  $\grD$ is \emph{approximated from below}.
+If  $\grD\subseteq\phi({\mr b}\,;{\gr\U})$ we say that  $\grD$ is \emph{approximated from above}.
+We may call $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grD$.\QED
+\end{definition} 
+ 
+The following proposition is clear by compactness.
+
+\begin{proposition}\label{lem_approx=external}
+For every $\grD$ the following are equivalent
+\begin{itemize}
+\item[1.] $\grD$ is approximable;
+\item[2.] $\grD$ is externally definable.\QED 
+\end{itemize}
+\end{proposition}
+
+Approximability from below is an adaptation to our context of the notion of \textit{having an honest definition} in \cite{CS}.
+\begin{definition}
+We say that the global type $p\in S_{{\mr x}}(\U)$ is \emph{honestly definable\/} if for every $\phi({\mr x}\,;{\gr z})\in L$ the set ${\gr\D_{p,\phi}}$ is approximated from below (by some formula). We say that $p$ is a \emph{definable\/} if the sets ${\gr\D_{p,\phi}}$ are all definable (over $\U$).
+\end{definition}
+
+Note that definable implies honestly definable, but not vice versa.
+
+\begin{example}
+Every definable set is trivially approximable.
+Clearly, only by the right formulas.
+Let $T=T_{\rm dlo}$.
+Then $\D=\{z\in\U:a\le z\le b\}$ is approximable both from below and from above by the formula $x_1<z<x_2$ though it is not definable by this formula.
+
+Now, let $T=T_{\rm rg}$.
+Then every $\D\subseteq\U$ is approximable and, when $\D$ has small infinite cardinality, it is approximable from above but not from below, see Exercise~\ref{ex_rg_small_def_set}.\QED
+\end{example}
+
+In Definition~\ref{def_epprox}, the sort $\phi({\mr x}\,;{\gr z})$ is fixed (otherwise any set would be approximable) but this requirement of uniformity may be dropped if we allow $B$ to have larger cardinality.
+
+\begin{proposition}\label{lem_approx_nonunif}
+For every $\grD$ the following are equivalent
+\begin{itemize}
+\item[1.] $\grD$ is approximable;
+\item[2.] for every $C\subseteq\U$ of cardinality $\le|T|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi({\gr\U})=_C\grD$.
+\end{itemize}
+Similarly, the following are equivalent:
+\begin{itemize}
+\item[3.] $\grD$ is approximable from below;
+\item[4.]  for every ${\gr C}\subseteq\grD$ of cardinality $\le|T|$ there is $\psi({\gr z})\in L(\U)$ such that ${\gr C}\subseteq \psi({\gr\U})\subseteq\grD$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+To prove \ssf{2}$\IMP$\ssf{1} assume \ssf{2} and negate \ssf{1} for a contradiction.
+For each formula $\psi({\mr x}\,;{\gr z})\in L$ choose a finite set $B$ such that $\psi({\mr b}\,;{\gr\U})\neq_B\grD$ for every ${\mr b}\in\U^{|{\mr x}|}$.
+Let $C$ be the union of all these finite sets.
+Clearly $|C|\le|T|$.
+By \ssf{2} there are a formula $\phi({\mr x}\,;{\gr z})$ and a tuple ${\mr c}$ such that $\phi({\mr c}\,;{\gr\U})=_C\grD$, contradicting the definition of $C$.
+
+Implication \ssf{1}$\IMP$\ssf{2} is obtained by compactness and the equivalence \ssf{3}$\IFF$\ssf{4} is proved similarly.
+\end{proof}
+
+
+
+\begin{remark}\label{prop_approx_el_eq}
+Let $\grC\subseteq\U^{|{\gr z}|}$.
+If $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\hyperref[expansions]{\ref*{invariant}.\ref*{expansions}} for the definition.
+In fact, if the set $\grD$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for every $n$
+
+\hfil$\displaystyle\A {\gr z_1},\dots,{\gr z_n}\;\E {\mr x}\ \bigwedge^n_{i=1}\big[\phi({\mr x}\,;{\gr z_i})\ \iff\ {\gr z_i}\in{\gr \D}\big]$.
+
+
+So the same holds for any $\grC\equiv\grD$.
+A similar remark apply to approximability from below and from above.
+For approximability from below, add the conjunct $\A {\gr z}\,\big[\phi({\mr x}\,;{\gr z})\imp {\gr z}\in\grD\big]$ to the formula above.
+Similarly for approximability from above.\QED
+\end{remark}
+
+From the following easy observation of Chernikov and Simon~\cite{CS} we obtain an interesting quantifier elimination result.
+
+% \begin{proposition}
+% Let $\C\subseteq\U^{|{\gr z},w|}$ be approximated from below by the formula $\phi({\mr x}\,;{\gr z},w)$. Then $\grD=\big\{{\gr z}:\E w\ \big({\gr z}\,w\in\C\big)\big\}$ is approximated from below by the formula $\E w\,\phi({\mr x}\,;{\gr z}\,w)$.
+% \end{proposition}
+% 
+% \begin{proof}
+% Let $B\subseteq\U$ be finite. 
+% We want ${\mr a}\in\U^{|{\mr x}|}$ such that 
+% 
+% \ceq{\ssf{a.}\hfill \E w\ \big({\gr b}\,w\in\C\big)}{\iff}{\E w\,\phi({\mr a}\,;{\gr b}\,w)}\hfill for every ${\gr b}\in B^{|{\gr z}|}$
+% 
+% \ceq{\ssf{b.}\hfill \A {\gr z}\;\Big[\E w\,\phi({\mr a}\,;{\gr z}\,w)}{\imp}{\E w\ \big({\gr z}\,w\in\C\big)\Big]}
+% 
+% Let $C\subseteq\U$ be a finite set such that 
+% 
+% \ceq{\ssf{c.}\hfill \E w\in C^{|w|}\ \big({\gr b}\,w\in\C\big)}{\iff}{\E w\ \big({\gr b}\,w\in\C\big)}\hfill for every ${\gr b}\in B^{|{\gr z}|}$
+% 
+% As $\C$ is approximable from below, there is an ${\mr a}$ such that
+% 
+% \ceq{\ssf{a'.}\hfill {\gr b}\,c\in\C}{\iff}{\phi({\mr a}\,;{\gr b}\,c)}\hfill for every ${\gr b}\,c\in \big(B\cup C\big)^{|{\gr z}\,w|}$
+% 
+% \ceq{\ssf{b'.}\hfill \A {\gr z}\,w\ \Big[\phi({\mr a}\,;{\gr z}\,w)}{\imp}{{\gr z}\,w\in\C\Big]}
+% 
+% We obtain \ssf{b} from \ssf{b'} simply by logic. 
+% Implication $\imp$ in \ssf{a} follows from \ssf{a'} and \ssf{c}. 
+% Implication $\pmi$ follows from \ssf{b}.
+% \end{proof}
+
+\begin{proposition}
+Let $\C\subseteq\U^{|y\,{\gr z}|}$ be approximated from below by the formula $\phi({\mr x}\,;y\,{\gr z})$. Then $\grD=\big\{{\gr z}:\E y\ \big(y\,{\gr z}\in\C\big)\big\}$ is approximated from below by the formula $\E y\,\phi({\mr x}\,;y\,{\gr z})$.
+\end{proposition}
+
+\begin{proof}
+\def\vl{\gr}
+Let $B\subseteq\U$ be finite. 
+We want ${\mr a}\in\U^{|{\mr x}|}$ such that 
+
+\ceq{\ssf{a.}\hfill \E y\ \big(y\,{\vl b}\in\C\big)}{\iff}{\E y\,\phi({\mr a}\,;y\,{\vl b})}\hfill for every ${\vl b}\in B^{|{\vl z}|}$
+
+\ceq{\ssf{b.}\hfill \A {\vl z}\;\Big[\E y\,\phi({\mr a}\,;y\,{\vl z})}{\imp}{\E y\ \big(y\,{\vl z}\in\C\big)\Big]}
+
+Let $D\subseteq\U$ be a finite set such that 
+
+\ceq{\ssf{c.}\hfill \E y\in D^{|y|}\ \big(y\,{\vl b}\in\C\big)}{\iff}{\E y\ \big(y\,{\vl b}\in\C\big)}\hfill for every ${\vl b}\in B^{|{\vl z}|}$
+
+As $\C$ is approximable from below, there is an ${\mr a}$ such that
+
+\ceq{\ssf{a'.}\hfill d\,{\vl b}\in\C}{\iff}{\phi({\mr a}\,;d\,{\vl b})}\hfill for every $d\,{\vl b}\in \big(D\cup B\big)^{|y\,{\vl z}|}$
+
+\ceq{\ssf{b'.}\hfill \A y\,{\vl z}\ \Big[\phi({\mr a}\,;y\,{\vl z})}{\imp}{y\,{\vl z}\in\C\Big]}
+
+We obtain \ssf{b} from \ssf{b'} simply by logic. 
+Implication $\imp$ in \ssf{a} follows from \ssf{a'} and \ssf{c}. 
+Implication $\pmi$ follows from \ssf{b}.
+\end{proof}
+
+
+
+\begin{corollary}
+If $p\in S_{{\mr x}}(\U)$ is honestly definable then the family of sets externally definable by $p$ is closed under quantifiers and Boolean combinations. 
+\end{corollary}
+
+\begin{proof}
+The sets externally definable by $p$ are always closed under Boolean operations. By the proposition above, they are closed under quantifiers. 
+\end{proof}
+
+% Let ${\gr z}=\<z_i:i<\lambda\>$ and let $\grD\subseteq\U^{|{\gr z}|}$. 
+% For $I\subseteq\lambda$ we write $\E z_{\restriction I}\,\grD$ for the projection of $\grD$ to the $\lambda\sm I$ coordinates, i.e.\@ the set $\{b_{\restriction\lambda\sm I}: {\gr b}\in\grD\}$. 
+% Expand the language with a symbol for $\E z_{\restriction I}\,\grD$ for every finite $I\subseteq\lambda$. 
+% Then the theory of $\U$ in the expanded language has positive $\Delta$-quantifier elimination, for $\Delta=L\cup\big\{\E z_{\restriction I}\,\grD: I\subseteq\lambda\textrm{ finite}\big\}$, see Section~\hyperref[eliminazionequantificatoricriterio]{\ref*{eliminazione}.\ref*{eliminazionequantificatoricriterio}}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ladder sequences}
+
+
+
+The attentive reader may have noticed that by \textit{formula\/} we often understand a pair $\phi(x)$ that consists of a formula and a tuple of variables.
+In the following we deal with two sorts of variables: those that are placeholder for parameters, and those used to define a set.
+To make things more complicated, here and there we shall invert the roles of the two sorts.
+
+\begin{definition}\label{def_partitioned-fla}
+A \emph{partitioned formula\/}  (strictly speaking, we should say a \emph{$2$-partitioned\/} formula) is a triple $\phi({\mr x}\,;{\gr z})$ consisting of a formula and two tuples of variables. The variables actually occurring in $\phi$ are all among ${\mr x},{\gr z}$. We write $\phi({\mr x}\,;{\gr z})^*$ for the partitioned formula where the order of the two tuples is inverted (i.e.\@ it is the opposite of what displayed).
+\end{definition}
+
+Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be a partitioned formula. We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$ is a \emph{ladder sequence\/} for $\phi({\mr x}\,;{\gr z})$ if 
+
+\ceq{\#\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}\hfill for all $0\le i,j\le\alpha$
+
+We say that $\phi({\mr x}\,;{\gr z})$ is \emph{stable\/} if all ladders have length $\alpha<\omega$. Otherwise we say it is \emph{unstable}. Note that by compactness the ladder sequences of a stable formula cannot have unbounded finite length. 
+
+It is evident that $\phi({\mr x}\,;{\gr z})$ is stable if and only if $\phi({\mr x}\,;{\gr z})^*$ is stable.
+
+Suppose $\phi({\mr x}\,;{\gr z})$ be unstable as witnessed by $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$. By padding redundant variables, we can read $\phi({\mr x}\,;{\gr z})$ as a formula $\phi({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$. Then $\phi({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$ defines the order of the sequence $\<{\mr a_i}\,{\gr b_i} : i<\omega\>$. For this reason it is also common to say that $\phi({\mr x}\,;{\gr z})$ has the \emph{order property}. It simply means that it is unstable. 
+
+The following is arguably one of the most important fact about stable formulas.
+
+\begin{theorem}\label{thm_def_stable_formula}
+Any $\grD\subseteq\U^{|{\gr z}|}$ approximated by a stable formula is definable.
+Precisely, if $\phi({\mr x}\,;{\gr z})$ is a stable formula that approximates $\grD$ then there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in\U^{|{\mr x}|}$ such that 
+
+\ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\phi({\mr a_{i,j}}\,;{\gr z})}
+\end{theorem}
+
+\begin{proof}
+The theorem follows immediately from the the following three lemmas.
+\end{proof}
+
+\begin{remark}
+Theorem~\ref{thm_def_stable_formula} is often stated in the following  apparently more general form.
+For every $\Aa\subseteq\U$ there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in \Aa^{|{\mr x}|}$ such that
+
+\ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\phi({\mr a_{i,j}}\,;{\gr z})}\hfill for every ${\gr z}\in\Aa^{|{\gr z}|}$ 
+
+Note that the equivalence above is restricted to ${\gr\Aa}$.
+
+The proof is exactly the same, in fact elementarity and saturation are never used (to a great extent, no model theory is used either, see Section~\hyperref[stability_combinatorics]{\ref*{combinatorics}.\ref*{stability_combinatorics}}).\QED
+\end{remark}
+
+
+\begin{lemma}
+If $\grD$ is approximated from below by a stable formula $\phi({\mr x}\,;{\gr z})$ then there are ${\mr a_1},\dots,{\mr a_n}\in\U^{|{\mr x}|}$ such that 
+
+\ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\phi({\mr a_i}\,;{\gr z})}
+
+\end{lemma}
+
+\begin{proof}
+Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that ${\gr b_0},\dots,{\gr b_{n-1}}\in\phi({\mr a_n}\,;{\gr\U})\subseteq\grD$.
+Then, if possible, choose ${\gr b_n}$ such that
+
+\ceq{\hfill{\gr b_n}}{\in}{\grD\sm\bigvee^n_{i=0}\phi({\mr a_i}\,;{\gr\U})}
+
+and iterate the procedure.
+By stability, the procedure has to stop as some $n$, yielding the required  ${\mr a_1},\dots,{\mr a_n}$.
+\end{proof}
+
+
+\begin{lemma}
+If $\grD$ is approximated by a stable formula $\phi({\mr x}\,;{\gr z})$ with ladder order $m$.
+Then the formula 
+
+\ceq{\hfill\psi({\mr x_1},\dots,{\mr x_m}\,;{\gr z})}{=}{\bigwedge^m_{j=1}\phi({\mr x_j}\,;{\gr z})}
+
+approximates $\grD$ from below.
+\end{lemma}
+
+\begin{proof}
+Let $B\subseteq\grD$ be finite.
+It suffices to prove that there are some ${\mr a_1},\dots,{\mr a_m}$ such that $B^{|{\gr z}|}\subseteq\psi({\mr a_1},\dots,{\mr a_m}\,;{\gr\U})\subseteq\grD$. Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that 
+
+\hfil$B^{|{\gr z}|}\ \subseteq\ \phi({\mr a_n}\,;{\gr\U})\ \subseteq\ \U^{|{\gr z}|}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
+
+Then, if possible, let ${\gr b_n}$ such that
+
+\ceq{\hfill{\gr b_n}}{\in}{\bigwedge^n_{i=0}\phi({\mr a_i},{\gr\U})\sm\grD}
+
+and iterate the procedure.
+The procedure has to stop at some $n\le m$.
+Hence the required parameters are ${\mr a_1},\dots,{\mr a_n}={\mr a_{n+1}}=\dots={\mr a_{m}}$.
+\end{proof}
+
+\begin{lemma}
+If $\phi({\mr x}\,;{\gr z})$ is a stable formula then for every $m$ the formula 
+
+\ceq{\hfill \psi({\mr x_1},\dots,{\mr x_m}\,;{\gr z})}{\iff}{\bigwedge^m_{j=1}\phi({\mr x_j}\,;{\gr z})}
+
+is stable.
+\end{lemma}
+
+\begin{proof}
+For legibility, we only prove that $\phi({\mr x_1}\,;{\gr z})\wedge\phi({\mr x_2}\,;{\gr z})$ is stable.
+Suppose not and let ${\mr a^1_i},{\mr a^2_i}\in\U^{|{\mr x}|}$ and ${\gr b_i}\in\U^{|{\gr z}|}$ be such that 
+
+\ceq{\hfill i\le j}{\IFF}{\phantom{\neg}\phi({\mr a^1_i}\,;{\gr b_j})\wedge\phi({\mr a^2_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
+
+For $n=1,2$ let $H_n\subseteq\omega^{[2]}$ contain those pairs $j<i$ such that $\neg\phi({\mr a^n_i}\,;{\gr b_j})$. 
+By the equivalence above $H_1\cup H_2=\omega^{[2]}$. 
+By the Ramsey Theorem there is an infinite set $H$ such that $H^{[2]}\subseteq H_n$ for at least one of $n=1,2$. Suppose $H_1$ for definiteness. So, we obtain an infinite sequence $a^1_i$, $b_i$ such that
+
+\ceq{\hfill j<i}{\IFF}{\neg\phi({\mr a^1_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
+
+which contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
+\end{proof}
+
+This last lemma concludes the proof of Theorem~\ref{thm_def_stable_formula}. 
+
+The following proposition highlight the connection between stability and the cardinality of types.  For the definition of tree of formulas see Definition~\ref{def_tree_formulas}.
+
+\begin{proposition}The following are equivalent
+\begin{itemize}
+\item[1.] $\phi({\mr x}\,;{\gr z})$ is a stable formula;
+\item[2.] there are $2^\kappa$ many types in $S_{\phi}(\U)$;
+\item[3.] there are uncountably many types in $S_{\phi}(\U)$; 
+\item[4.] there is $\big\<{\gr b_s}:s\in 2^{<\omega}\big\>$ such that $\big\<\phi({\mr x}\,;{\gr b_s}):s\in 2^{<\omega}\big\>$ is a tree of formulas.
+\end{itemize}
+\end{proposition}
+
+\def\ceq#1#2#3{\parbox{10ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
+\begin{proof}\ssf{1}$\IMP$\ssf{2}\quad
+Let $\I,<_\I$ be a dense linear order of cardinality $\kappa$. Note that we can choose $\I$ such that there are $2^\kappa$ Dedekind's cut in $\I$. Let ${\mr x_i}$ and ${\gr z_i}$, for $i\in\I$, be a tuples of variables. The type that says 
+
+\ceq{\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}\hfill for all $i,j\in\I$
+
+Is finitely consistent. If ${\mr a_i}$, ${\gr b_i}$ is a realization, then for every Dedekind cut  $\C\subseteq\I$ the type that says
+
+\ceq{\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr x}\,;{\gr b_j})\ \iff\ j\in\C}
+
+is a finitely consistent and can be extended to some $p(({\mr x})\in S_{\phi}(\U)$. Any two such types are mutually inconsistent and \ssf{3} follows.
+
+\ssf{2}$\IMP$\ssf{3}\quad Is trivial.
+
+\ssf{3}$\IMP$\ssf{4}\quad Similar to the proof of implication \ssf{4}$\IMP$\ssf{1} in~\ref{prop_small_equivalents}. Fix $s\in 2^{\omega}$ and assume that ${\gr b_{s\restriction i}}$ has been defined for all $i\le |s|$ so that there are uncountably many types $p({\mr x})\in S_{\phi}(\U)$ such that $\phi({\mr x}\,;{\gr b})\iff s(i)=1$ for all $i<|s|$. Note that, by \ssf{3}, ${\gr b_\0}$ can be chosen arbitrarily. For clarity we define
+
+\ceq{\hfill \phi_s({\mr x})}{=}{\bigwedge_{i<|s|}\phi({\mr x}\,;{\gr b_{s\restriction i}})\iff s(i)=1.}
+
+So, our induction hypothesis says that there are uncountably many types containing $\phi_s({\mr x})$. We now claim that the following type is consistent
+
+
+\ceq{\hfill q({\mr x})}{=}{\Big\{\phi({\mr x}\,;{\gr b})\ :\ {\gr b}\in\U^{|{\gr z}|} \textrm{ countably many }p\textrm{ contain } \phi_s({\mr x})\wedge\neg\phi({\mr x}\,;{\gr b})\Big\}.}
+
+
+Suppose not, then for some finitely many formulas $\phi({\mr x}\,;{\gr b_i})\in q$
+
+\ceq{\hfill \phi_s({\mr x})}{\imp}{\bigvee^n_{i=1}\neg\phi({\mr x}\,;{\gr b_i}).}
+
+By the induction hypothesis at least one of the formulas $\phi_s({\mr x})\wedge\phi({\mr x}\,;{\gr b_i})$ is contained in uncountably many $\phi$-types, contradicting the definition of $q$. This proves the claim and we resume the proof of the theorem.
+
+We need to prove that for some ${\gr b}$ both $\phi_s({\mr x})\wedge\phi({\mr x}\,;{\gr b})$ and $\phi_s({\mr x})\wedge\neg\phi({\mr x}\,;{\gr b})$ are contained in uncountably many $\phi$-types. If not then the type $q$ above is a complete $\phi$-type: a unique $q({\mr x})\in S_{\phi}(\U)$ containing $\phi_s({\mr x})$.  
+
+%Assuming \ssf{3} we construct a tree of formulas $\big\<\phi({\mr x}\,;{\gr b_s}):s\in 2^{<\omega}\big\>$ as in Definition~\ref{def_tree_formulas}. Hence to every $s\in s^\omega$ there corresponds a distinct type $p_s$. 
+
+
+\ssf{4}$\IMP$\ssf{1} Fix an arbitrary $n$. For $i=0,\dots, n$ abbreviate $b_{1^i}$ by $b_i$.
+
+\ceq{\hfill a_j}{\models}{\displaystyle\bigwedge^{j-1}_{i=0}\phi({\mr x}\,;{\gr b_i})\wedge \neg\phi({\mr x}\,;{\gr b_j})}
+
+Then 
+
+\ceq{\hfill i<j}{\IFF}{\phi({\mr a_i}\,;{\gr b_j})}
+
+
+We show that there is a ladder sequence of length $n$. For each $s\in2^n$ let $a_s$ be a solution of $\phi_s({\mr x})$. Then for all $r,s\in2^n$ the formula $\phi({\mr a_r}\,;{\gr b_s})$ holds exactly when $r<s$ in the lexicographic order.
+\end{proof}
+
+
+\section{Stable theories}
+
+We say that $T$ is a \emph{stable theory\/} if every formula is stable.
+
+
+\begin{proposition} The following are equivalent
+\begin{itemize}
+\item[1.] $T$ is stable;
+\item[2.] every sequence of $A$-indiscernible is totally $A$-indiscernible.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+Negate \ssf{1} and let $\phi({\mr x}\,;{\gr z})$ be an unstable formula witnessed by the ladder sequence $\<{\mr a_i}\,;{\gr b_i}:i<\omega\>$. Let $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ be 
+indiscernible sequence with the same Ehren\-feucht-Mostowski type. Then $\phi({\mr a'_i}\,;{\gr b'_j})$ if and if $i< j$. 
+
+Conversely, assume that $\<a_i : i<\omega\>$ which is $A$-indiscernible, but not totally. Then there is a formula $\phi(x, y)\in L(A)$ and some $i<j$ such that $\phi(a_i , a_j )\wedge\neg\phi(a_j , a_i ) $. By indiscernibility  $\phi(a_i , a_j )$ holds if and only if $i \le j$. Hence $\phi(x, y)$ is not stable.
+\end{proof}
+
+TO BE CONTINUED\ldots
+
+\section{Notes and references}
+\begin{biblist}[]\normalsize
+
+
+
+\bib{CS}{article}{
+   author={Chernikov, Artem},
+   author={Simon, Pierre},
+   title={Externally definable sets and dependent pairs},
+   status={\href{https://arxiv.org/abs/1007.4468}{arXiv:1007.4468}},
+   journal={Israel J. Math.},
+   volume={194},
+   date={2013},
+   number={1},
+   pages={409--425},
+   %note={},
+   %issn={0021-2172},
+   %doi={10.1007/s11856-012-0061-9},
+}
+
+\bib{TZ}{book}{
+   author={Tent, Katrin},
+   author={Ziegler, Martin},
+   title={A course in model theory},
+   series={Lecture Notes in Logic},
+   volume={40},
+   publisher={Association for Symbolic Logic, Cambridge University Press},
+   date={2012},
+   pages={x+248},
+   %isbn={978-0-521-76324-0},
+   %doi={10.1017/CBO9781139015417},
+}
+
+
+
+\end{biblist}
+
+
+\end{document}
+
+
