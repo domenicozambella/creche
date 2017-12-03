@@ -42,9 +42,9 @@ We say that $\grD$ is \emph{invariant\/} tout court if it is invariant over some
 
 
 
-In this chapter we work with $\Delta$-types where $\Delta$ may be either $L(\Aa)$ or the set of Boolean combinations of $\phi({\mr x}\,;{\gr b})$ for ${\gr b}\in\Aa^{|{\gr z}|}$ and $\phi({\mr x}\,;{\gr z})\in L$ some fixed formula. In the latter case a  $\Delta$-type is also called a \emph{$\phi$-type}. 
+In this chapter we work with $\Delta$-types where $\Delta$ may be either $L(\Aa)$ or the set of Boolean combinations of $\phi({\mr x}\,;{\gr b})$ for ${\gr b}\in\Aa^{|{\gr z}|}$ and $\phi({\mr x}\,;{\gr z})\in L$ some fixed formula. In the latter case a  $\Delta$-type is also called a \emph{$\phi$-type}. Typically $\Aa$ is either the whole of $\U$ or some small set $A\subseteq\U$. 
 
-Typically $\Aa$ is either the whole of $\U$ or some small set $A\subseteq\U$. We denote by \emph{$S_{\phi}(A)$\/} the set of complete $\phi$-types with parameters in $A$. Types in \emph{$S_{\phi}(\U)$\/} are called \emph{global $\phi$-types}.
+We denote by \emph{$S_{\phi}(A)$\/} the set of complete $\phi$-types with parameters in $A$. Types in \emph{$S_{\phi}(\U)$\/} are called \emph{global $\phi$-types}.
 
 
 
@@ -70,7 +70,7 @@ Let $p({\mr x})\subseteq L(\U)$ be a consistent type. We say that $p({\mr x})$ i
 
 \ceq{\ssf{it1.}\hfill \phi({\mr x}\,;{\gr a})\in p}{\IFF}{\phi({\mr x}\,;f{\gr a})\in p}\hfill for every ${\gr a}\in\U^{|{\gr z}|}$ and every $f\in\Aut(\U/A)$.
 
-A global $\phi$-type can be safely identified with $\D_{p,\phi}$ and a (complete) global type with the collection of all these sets. The notions of invariance coincide.
+A global $\phi$-type can be identified with $\D_{p,\phi}$. A global type can be identified with the collection of all these sets. The notions of invariance coincide.
 
 %One should not confuse the notions of \textit{invariant type\/} with that of \textit{invariant type-definable set}. The first is mostly applied to global types and refers to the invariance of a family of subsets of $\U^{|{\gr z}|}$. The latter refers to sets of the form $p({\mr\U})\subseteq\U^{|{\mr x}|}$ where $p({\mr x})$ a type of small size.
 
@@ -96,9 +96,9 @@ This apply to global types $p({\mr x})\in S(\U)$ but not for $\phi$-types.
 %%%%%%%%%%%%%%%%%%%%%%
 \section{Invariance from the dual perspective}
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}The following terminology in not standard. We say that the set $\mrB\subseteq\U^{|{\mr x}|}$ is \emph{quasi-invariant over $A$\/} if for any finitely many automorphisms $f_1,\dots,f_n\in\Aut(\U/A)$ the sets $f_i[\mrB]$ have non-empty intersection.
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}The following terminology in not standard. We say that the set $\mrB\subseteq\U^{|{\mr x}|}$, typically a definable set, is \emph{quasi-invariant over $A$\/} if for any finitely many automorphisms $f_1,\dots,f_n\in\Aut(\U/A)$ the sets $f_i[\mrB]$ have non-empty intersection.
 
-We say that the type $p({\mr x})\subseteq L(\U)$ is \emph{quasi-invariant over $A$\/} if $\phi({\mr\U})$ is quasi-invariant over $A$  for every $\phi({\mr x})$ conjunction of formulas in $p({\mr x})$.
+We say that the type $p({\mr x})\subseteq L(\U)$, typically a global type, is \emph{quasi-invariant over $A$\/} if $\phi({\mr\U})$ is quasi-invariant over $A$  for every $\phi({\mr x})$ conjunction of formulas in $p({\mr x})$. So, the type $p({\mr x})$ is quasi-invariant if the set $p({\mr\V})$ is invariant, where $\V$ is an large saturated extension of $\U$, see Exercise~\ref{ex_quasi_inv_type}.
 
 For global types quasi-invariance coincides with invariance.
 
@@ -115,7 +115,16 @@ Let $p({\mr x})\in S_{\phi}(\U)$ be a global $\phi$-type, then the following are
 \ssf{2}$\IMP$\ssf{1}. Assume $p({\mr x})$ is not invariant. Then there is ${\gr b}\in\U^{|{\gr z}|}$ such that $\phi({\mr x}\,;{\gr b})\in p$ and $\phi({\mr x}\,;f{\gr b})\notin p$ for some  $f\in\Aut(\U/A)$. By completeness, $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;f{\gr b})$ which clearly is not consistent with its $f$-translate.
 \end{proof}
 
-Quasi-invariance makes sense also for incomplete types. Unfortunately it is not true in general that every quasi-invariant type can be extended to a global one. In next section we consider a stronger notion, \textit{coheirs}, which has this desirable property. In the next chapters we introduce a weaker notion, \textit{non forking}, which also can be preserved by extensions.
+Quasi-invariance makes sense also for incomplete types. Unfortunately it is not true in general that every quasi-invariant type can be extended to a global one. In next section we consider a stronger notion, \textit{coheirs}, which has this desirable property, see Proposition~\ref{prop_exisntence_coheirs}. In the next chapters we introduce a weaker notion, \textit{non-forking}, that also allows to extend types to global types.
+
+\begin{exercise}\label{ex_quasi_inv_type}
+Let $p(x)\in L(\U)$. Let $\V$ be a saturated elementary extension of $\U$. Prove that the following are equivalent:
+\begin{itemize}
+\item[1.] the type $p(x)$ is quasi-invariant over $A$
+\item[2.] the set $p(\V)$ is quasi-invariant over $A$ (defined as above with $\V$ for $\U$).\QED
+\end{itemize}
+
+\end{exercise}
 
 \begin{comment}
 We say that $\mrB$ is \emph{drifting over $A$\/} if for every finitely many $f_1,\dots,f_n\in\Aut(\U/A)$ there is a $g\in\Aut(\U/A)$ such that $g[\mrB]$ is disjoint from all $f_i[\mrB]$. %We say that  $\mrB$ is \emph{piecewise drifting\/} if it is the union of finitely many drifting sets. 
@@ -166,7 +175,7 @@ Every non piecewise drifting type extends to a non drifting global type.
 \section{Heirs and coheirs}
 \label{coheirs}
 
-The easiest way to obtain quasi-invariant types is via types that are finitely satisfiable. We say that a type \emph{$p(x)$ is finitely satisfiable in $A$\/} if $\phi({\mr\U})\cap A^{|{\mr x}|}\neq\0$ for every $\phi({\mr x})$ that is a conjunction of formulas in $p$. 
+The easiest way to obtain quasi-invariant types is via types that are finitely satisfiable. We say that a type \emph{$p(x)$ is finitely satisfiable in $A$\/} if $\phi({\mr\U})\cap A^{|{\mr x}|}\neq\0$ for every $\phi({\mr x})$ that is a conjunction of formulas in $p({\mr x})$.
 
 Note that by elementarity every type over a model is finitely satisfiable in the model, that is, if $p({\mr x})\subseteq L(M)$ for some model $M$, then $p({\mr x})$ is finitely satisfiable in $M$. For this reason the notion is mainly applied to models.
 
@@ -206,13 +215,13 @@ If a global type $p({\mr x})\in S(\U)$ is finitely satisfiable in $M$, we say th
 \section{Morley sequences and indiscernibles}
 
 
-In the following $\alpha$ is some infinite ordinal $\le\kappa$ and ${\mr x}$ is a tuple of variables of length $<\kappa$. Let \mbox{$p({\mr x})\in S(\U)$} be a global type invariant over $A$.   We say that $c=\<{\mr c_i}:i<\alpha\>$ is a \emph{Morley sequence of $p(x)$ over $A$\/} if for every $i<\alpha$
+In the following $\alpha$ is some ordinal $\le\kappa$, typically $\omega$, and ${\mr x}$ is a tuple of variables of length $<\kappa$. Let \mbox{$p({\mr x})\in S(\U)$} be a global type invariant over $A$.   We say that $c=\<{\mr c_i}:i<\alpha\>$ is a \emph{Morley sequence of $p(x)$ over $A$\/} if for every $i<\alpha$
 
 \ceq{\ssf{Ms.}\hfill {\mr c_i}}{\models}{p_{\restriction A,c_{\restriction i}}({\mr x})}
 
 In particular, when $p({\mr x})$ is finitely satisfiable in some model $M$, we say that $c$ is a \emph{coheirs sequence}. We may say that $c$ is a Morley (or coheir) sequence without specifying a global type. Then we mean that $c$ is a Morley (respectively coheir) sequence of some suitable global type.
 
-The following is a convenient characterization of coheir sequences
+The following is a convenient characterization of coheir sequences.
 
 \begin{lemma}\label{lem_coheir_property}
 The following are equivalent
@@ -231,7 +240,7 @@ The following are equivalent
 
 Clearly $c$ is a Morley sequence of any global type finitely satisfiable in $A$ that extends $q({\mr x})$. Hence it suffices to show that such type exists. So, we prove that $q({\mr x})$ is finitely satisfiable in $A$ and apply Proposition~\ref{prop_exisntence_coheirs}. 
 
-As \ssf{2} requires that every single formula in $q(x)$ is finitely satisfiable in $A$ it suffices to show that $q(x)$ is closed under conjunctions. Let $\phi_i({\mr x})\in L(A,c_{\restriction n_i})$, for $i=1,2$, be two formulas in $q({\mr x})$ satisfied by  ${\mr c_{n_i}}$. By the first requirement in \ssf{2}, both formulas are satisfied by ${\mr c_m}$ where $m=\max\{n_1,n_2\}$. Hence their conjuction is in  $q({\mr x})$.
+Note that \ssf{2} requires that every single formula in $q(x)$ is finitely satisfiable in $A$. Then it suffices to show that $q(x)$ is closed under conjunctions. Let $\phi_i({\mr x})\in L(A,c_{\restriction n_i})$, for $i=1,2$, be two formulas in $q({\mr x})$ satisfied by  ${\mr c_{n_i}}$. By the first requirement in \ssf{2}, both formulas are satisfied by ${\mr c_m}$ where $m=\max\{n_1,n_2\}$. Hence their conjuction is in  $q({\mr x})$.
 \end{proof}
 
 
@@ -340,7 +349,7 @@ Assume as induction hypothesis that all subsequences of $a_{\restriction i},c_{\
 satisfy $r_0$. Our goal is to find ${\mr{a_i}}$ such as the same property holds for $a_{\restriction i},{\mr{a_i}},c_{\restriction n}$. By the indiscernibility of $c$, the property holds for  $a_{\restriction i},c_{\restriction n},{\mr{c_n}}$.  And this can be written by a formula $\phi(a_{\restriction i},c_{\restriction n},{\mr{c_n}})$. As $c$ is a coheir sequence, by Lemma~\ref{lem_coheir_property} we can find  ${\mr{a_i}}\in X$ such that  $\phi(a_{\restriction i},c_{\restriction n},{\mr{a_i}})$. So, as the order is irrelevant,  $a_{\restriction i},{\mr{a_i}},c_{\restriction n}$ satisfies the induction hypothesis.
 \end{proof}
 
-Let $I,<_I$ be an infinite linear order and let $a$ be an $I\jj$sequence. Fix a sequence of distinct variables $x=\<{\mr x_i}: i<\omega\>$. We write \emph{$p(x)\;=\;\textrm{{\small EM}-tp}(a/A)$} and say that  \emph{$p(x)$ is the Ehren\-feucht-Mostowski type of $a$ over $A$\/} if $p(x)$ is the set of formulas $\phi(x_{\restriction n})\in L(A)$ such that $\phi(a_{\restriction I_0})$ holds for every $I_0\in[I]^{n}$. Note that if $a$ is $A\jj$indiscernible then $\EMtp(a/A)$ is a complete type, and vice versa. Moreover, if $a$ and $b$ are two $A\jj$indiscernible $I\jj$sequences with the same Ehren\-feucht-Mostowski type of $a$ over $A$, then $a\equiv_A b$.
+Let $I,<_I$ be an infinite linear order and let $a$ be an $I\jj$sequence. Fix a sequence of distinct variables $x=\<{\mr x_i}: i<\omega\>$. We write \emph{$p(x)\;=\;\textrm{{\small EM}-tp}(a/A)$} and say that  \emph{$p(x)$ is the Ehren\-feucht-Mostowski type of $a$ over $A$\/} if $p(x)$ is the set of formulas $\phi(x_{\restriction n})\in L(A)$ such that $\phi(a_{\restriction I_0})$ holds for every $I_0\in[I]^{n}$. Note that if $a$ is $A\jj$indiscernible then $\EMtp(a/A)$ is a complete type, and vice versa. So, if $a$ and $b$ are two $A\jj$indiscernible $I\jj$sequences with the same Ehren\-feucht-Mostowski type of $a$ over $A$, then $a\equiv_A b$.
  
 % \begin{theorem}\label{thm_EM}
 %   Let $I,<_I$ be infinite linear order, then for every sequence $a=\<{\mr a_i}:i\in I\>$ there is sequence of $A\jj$in\-dis\-cern\-i\-bles $c=\<{\mr c_i}: i<\omega\>$ such that $c\equivEM_Aa$.
@@ -381,13 +390,17 @@ Let $I,<_I$ be an infinite linear order and let $a$ be an $I\jj$sequence. Fix a 
 
 
 \begin{proof}
-  To begin with, we prove the theorem assuming that both $I$ and $J$ have order type $\omega$. Then any realization of the following type yields a $J$-sequence of $A$-indiscernibles. 
+  We prove the theorem for $I=J=\omega$ and leave the general case to the reader. 
+  
+  Let $c$ be any realization of the following type yields a $J$-sequence of $A$-indiscernibles.
 
-  \ceq{\hfill q(x)}{\cup}{\Big\{\phi(x_{\restriction n})\iff\phi(x_{\restriction J_0})\ :\ \phi(x_{\restriction n})\in L(A),\ \ J_0\in[\omega]^n,\ \ n<\omega\Big\}.}
+  \ceq{\hfill q(x)}{\cup}{\Big\{\phi(x_{\restriction I_0})\iff\phi(x_{\restriction J_0})\ :\ \phi(x_{\restriction n})\in L(A),\ \ I_0\in[I]^n,\ \ J_0\in[J]^n,\ \ n<\omega\Big\}.}
 
-  We will prove that any finite subset of the type above is realized by a subsequence of $a$. First note that any infinite subsequence of $a$ realizes $q(x)$, so we only need to pay attention to the set on the right. We prove that for every $\phi_0,\dots,\phi_{m-1}\in L_x(A)$ and every $n<\omega$ there is an infinite $H\subseteq I$ such that $a_{\restriction H}$
+  We will prove that any finite subset of the type above is realized by a finite subsequence of $a$. First note that any finite subset of $q(x)$ is realized by any subsequence of $a$ of the proper length by the definition of EM-type.
+  
+  Then we only need to pay attention to the set on the right. We prove that for every $\phi_0,\dots,\phi_{m-1}\in L_x(A)$ and every $n<\omega$ there is an infinite $H\subseteq I$ such that $a_{\restriction H}$
 
-  \ceq{\ssf{\#}}{~}{\Big\{\phi_i(x_{\restriction n})\iff\phi_i(x_{\restriction I_0})\ :\  I_0\in[\omega]^n\textrm{ and } i<m\Big\}.}
+  \ceq{\ssf{\#}}{~}{\Big\{\phi_i(x_{\restriction J_0})\iff\phi_i(x_{\restriction I_0})\ :\  I_0\in[I]^n\textrm{ and } i<m\Big\}.}
 
   Let $f:[I]^n\to\P(m)$ map $I_0\in[I]^n$ to the set $\big\{i<m\ :\ \phi_i(a_{\restriction I_0})\big\}$. By Ramsey theorem with $2^m$ colors there is some infinite monochromatic set $H\subseteq I$. As $I$ has order type $\omega$, so does $H$, and it is immediate that $a_{\restriction H}$ realizes \ssf{\#}, as required to prove the theorem with $I$ and $J$ of order type $\omega$.
 

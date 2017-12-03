@@ -91,7 +91,7 @@ Implication \ssf{1}$\IMP$\ssf{2} is obtained by compactness and the equivalence 
 
 \begin{remark}\label{prop_approx_el_eq}
 Let $\grC\subseteq\U^{|{\gr z}|}$.
-If $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\hyperref[expansions]{\ref*{invariant}.\ref*{expansions}} for the definition.
+If $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\hyperref[expansions]{\ref*{invariantL}.\ref*{expansions}} for the definition.
 In fact, if the set $\grD$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for every $n$
 
 \hfil$\displaystyle\A {\gr z_1},\dots,{\gr z_n}\;\E {\mr x}\ \bigwedge^n_{i=1}\big[\phi({\mr x}\,;{\gr z_i})\ \iff\ {\gr z_i}\in{\gr \D}\big]$.
@@ -176,9 +176,7 @@ The sets externally definable by $p$ are always closed under Boolean operations.
 % Then the theory of $\U$ in the expanded language has positive $\Delta$-quantifier elimination, for $\Delta=L\cup\big\{\E z_{\restriction I}\,\grD: I\subseteq\lambda\textrm{ finite}\big\}$, see Section~\hyperref[eliminazionequantificatoricriterio]{\ref*{eliminazione}.\ref*{eliminazionequantificatoricriterio}}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Ladder sequences}
-
-
+\section{Ladder sequences and definability}
 
 The attentive reader may have noticed that by \textit{formula\/} we often understand a pair $\phi(x)$ that consists of a formula and a tuple of variables.
 In the following we deal with two sorts of variables: those that are placeholder for parameters, and those used to define a set.
@@ -208,7 +206,7 @@ Precisely, if $\phi({\mr x}\,;{\gr z})$ is a stable formula that approximates $\
 \end{theorem}
 
 \begin{proof}
-The theorem follows immediately from the the following three lemmas.
+The theorem follows immediately from the the three lemmas below.
 \end{proof}
 
 \begin{remark}
@@ -219,7 +217,7 @@ For every $\Aa\subseteq\U$ there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in \Aa^{
 
 Note that the equivalence above is restricted to ${\gr\Aa}$.
 
-The proof is exactly the same, in fact elementarity and saturation are never used (to a great extent, no model theory is used either).\QED%, see Section~\hyperref[stability_combinatorics]{\ref*{combinatorics}.\ref*{stability_combinatorics}}).
+The proof is exactly the same, in fact elementarity and saturation are never used (to a great extent, no model theory is used either, just finite combinatorics).\QED
 \end{remark}
 
 
@@ -290,56 +288,52 @@ which contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
 
 This last lemma concludes the proof of Theorem~\ref{thm_def_stable_formula}. 
 
-The following proposition highlight the connection between stability and the cardinality of types.  For the definition of tree of formulas see Definition~\ref{def_tree_formulas}.
+The following is an important consequence.
+
+\begin{corollary}
+For every set $\D$ approximable by a stable formula the following are equivalent
+\begin{itemize}
+\item[1.] $\D$ is Lascar invariant over $A$;
+\item[2.] $\D\in\acl^\eq(A)$.
+\end{itemize}
+\end{corollary}
+
+\begin{proof}
+Only \ssf{2}$\IMP$\ssf{3} requires a proof. By \ssf{1} the orbit of $\D$ over $A$ is small. Therefore, as $\D$ is definable by Theorem~\ref{thm_def_stable_formula}, its orbit is finite. Hence $\D\in\acl^\eq(A)$.
+\end{proof}
+
+
+\section{Stability and the number of types}
+
+The following proposition highlight the connection between stability and the cardinality of types.
 
 \begin{proposition}The following are equivalent
 \begin{itemize}
 \item[1.] $\phi({\mr x}\,;{\gr z})$ is a stable formula;
-\item[2.] there are $2^\kappa$ many types in $S_{\phi}(\U)$;
-\item[3.] there are uncountably many types in $S_{\phi}(\U)$; 
-\item[4.] there is $\big\<{\gr b_s}:s\in 2^{<\omega}\big\>$ such that $\big\<\phi({\mr x}\,;{\gr b_s}):s\in 2^{<\omega}\big\>$ is a tree of formulas.
+\item[2.] for is some countable set $A$, such that $\big|S_{\phi}(A)\big|=2^\omega$;
+\item[2'.] for is some countable set $A$, such that $\big|S_{\phi}(A)\big|>\omega$;
+\item[3.] there is binary tree of $\pmDelta$-formulas, for $\Delta=\{\phi({\mr x}\,;{\gr b}):{\gr b}\in\U^{|{\gr z}|}\}$, see Definition~\ref{def_tree_formulas}.
 \end{itemize}
 \end{proposition}
 
-\def\ceq#1#2#3{\parbox{10ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+\def\ceq#1#2#3{\parbox[t]{15ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 \begin{proof}\ssf{1}$\IMP$\ssf{2}\quad
 Let $\I,<_\I$ be a dense linear order of cardinality $\kappa$. Note that we can choose $\I$ such that there are $2^\kappa$ Dedekind's cut in $\I$. Let ${\mr x_i}$ and ${\gr z_i}$, for $i\in\I$, be a tuples of variables. The type that says 
 
-\ceq{\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}\hfill for all $i,j\in\I$
+\ceq{\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr x_i}\,;{\gr z_j})}\hfill for all $i,j\in\I$
 
-Is finitely consistent. If ${\mr a_i}$, ${\gr b_i}$ is a realization, then for every Dedekind cut  $\C\subseteq\I$ the type that says
+is finitely consistent. If ${\mr a_i}$, ${\gr b_i}$ is a realization, then for every Dedekind cut  $\C\subseteq\I$ the type that says
 
 \ceq{\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr x}\,;{\gr b_j})\ \iff\ j\in\C}
 
-is a finitely consistent and can be extended to some $p(({\mr x})\in S_{\phi}(\U)$. Any two such types are mutually inconsistent and \ssf{3} follows.
+is a finitely consistent and can be extended to some $p({\mr x})\in S_{\phi}(\U)$. Any two such types are mutually inconsistent and \ssf{3} follows.
 
-\ssf{2}$\IMP$\ssf{3}\quad Is trivial.
-
-\ssf{3}$\IMP$\ssf{4}\quad Similar to the proof of implication \ssf{4}$\IMP$\ssf{1} in~\ref{prop_small_equivalents}. Fix $s\in 2^{\omega}$ and assume that ${\gr b_{s\restriction i}}$ has been defined for all $i\le |s|$ so that there are uncountably many types $p({\mr x})\in S_{\phi}(\U)$ such that $\phi({\mr x}\,;{\gr b})\iff s(i)=1$ for all $i<|s|$. Note that, by \ssf{3}, ${\gr b_\0}$ can be chosen arbitrarily. For clarity we define
-
-\ceq{\hfill \phi_s({\mr x})}{=}{\bigwedge_{i<|s|}\phi({\mr x}\,;{\gr b_{s\restriction i}})\iff s(i)=1.}
-
-So, our induction hypothesis says that there are uncountably many types containing $\phi_s({\mr x})$. We now claim that the following type is consistent
-
-
-\ceq{\hfill q({\mr x})}{=}{\Big\{\phi({\mr x}\,;{\gr b})\ :\ {\gr b}\in\U^{|{\gr z}|} \textrm{ countably many }p\textrm{ contain } \phi_s({\mr x})\wedge\neg\phi({\mr x}\,;{\gr b})\Big\}.}
-
-
-Suppose not, then for some finitely many formulas $\phi({\mr x}\,;{\gr b_i})\in q$
-
-\ceq{\hfill \phi_s({\mr x})}{\imp}{\bigvee^n_{i=1}\neg\phi({\mr x}\,;{\gr b_i}).}
-
-By the induction hypothesis at least one of the formulas $\phi_s({\mr x})\wedge\phi({\mr x}\,;{\gr b_i})$ is contained in uncountably many $\phi$-types, contradicting the definition of $q$. This proves the claim and we resume the proof of the theorem.
-
-We need to prove that for some ${\gr b}$ both $\phi_s({\mr x})\wedge\phi({\mr x}\,;{\gr b})$ and $\phi_s({\mr x})\wedge\neg\phi({\mr x}\,;{\gr b})$ are contained in uncountably many $\phi$-types. If not then the type $q$ above is a complete $\phi$-type: a unique $q({\mr x})\in S_{\phi}(\U)$ containing $\phi_s({\mr x})$.  
-
-%Assuming \ssf{3} we construct a tree of formulas $\big\<\phi({\mr x}\,;{\gr b_s}):s\in 2^{<\omega}\big\>$ as in Definition~\ref{def_tree_formulas}. Hence to every $s\in s^\omega$ there corresponds a distinct type $p_s$. 
-
+\ssf{2}$\IMP$\ssf{3}\quad As in the proof of implication \ssf{3}$\IMP$\ssf{1} in~\ref{prop_small_equivalents}.
 
 \ssf{4}$\IMP$\ssf{1} Fix an arbitrary $n$. For $i=0,\dots, n$ abbreviate $b_{1^i}$ by $b_i$.
 
-\ceq{\hfill a_j}{\models}{\displaystyle\bigwedge^{j-1}_{i=0}\phi({\mr x}\,;{\gr b_i})\wedge \neg\phi({\mr x}\,;{\gr b_j})}
+\ceq{\hfill {\mr a_j}}{\models}{\displaystyle\bigwedge^{j-1}_{i=0}\phi({\mr x}\,;{\gr b_i})\wedge \neg\phi({\mr x}\,;{\gr b_j})}
 
 Then 
 
@@ -354,6 +348,35 @@ We show that there is a ladder sequence of length $n$. For each $s\in2^n$ let $a
 
 We say that $T$ is a \emph{stable theory\/} if every formula is stable.
 
+The following is arguably one of the most important results that holds when the whole theory is stable. 
+
+\begin{proposition} Let $T$ be stable and let $q({\mr x})\in S\big(\acl^\eq(A)\big)$. Then there is a unique global type $p({\mr x})\in S(\U)$ that is consistent with $q({\mr x})$ and Lascar invariant over $A$.
+\end{proposition}
+
+\begin{proof}
+Let $p_i({\mr x})\in S(\U)$, for $i=1,2$, be two global types invariant over $A$ and consistent with $q({\mr x})$. To prove that $p_1({\mr x}) =p_2({\mr x})$, it suffices to show that for every formula $\phi({\mr x}\,;{\gr z})\in L$
+
+\ceq{\#\hfill {\gr\D_{p_1,\phi}}}{=}{{\gr\D_{p_2,\phi}}}
+
+Note that, by Theorem~\ref{thm_def_stable_formula} both sets are definable, hence in $\U^\eq$.
+
+Let $p'_i({\mr x})\in S(\U^\eq)$ denote the unique extension of $p_i({\mr x})$. Clearly the formulas $\A{\gr z}\,\big[\phi({\mr x}\,;{\gr z})\iff {\gr z}\in {\gr\D_{p_i,\phi}}\big]$ belong to $p'_i({\mr x})$ respectively. 
+
+As $p_i({\mr x})$ are invariant over $A$, so are the sets ${\gr\D_{p_i,\phi}}$. Hence they belong to $\acl^\eq(A)$. Then both formulas $\A{\gr z}\,\big[\phi({\mr x}\,;{\gr z})\iff {\gr z}\in {\gr\D_{p_i,\phi}}\big]$ belong to $q({\mr x})$ and $\#$ follows.
+\end{proof}
+
+
+\begin{corollary}
+If $T$ is stable then the following are equivalent
+\begin{itemize}
+\item[1.] $a\equivL_A b$, see Definition~\ref{def_Lascar_type};
+\item[2.] $a\equivSh_A b$, see Definition~\ref{def_Sh_strong_type}.
+\end{itemize}
+\end{corollary}
+\begin{proof}\ssf{1}$\IMP$\ssf{2}\quad This clearly holds for every theory $T$.
+
+\ssf{2}$\IMP$\ssf{1}\quad Exercise.%It suffices to show that if $a\equivSh_A b$ then $a\equiv_M b$ for some model $M$ containing $A$.
+\end{proof}
 
 \begin{proposition} The following are equivalent
 \begin{itemize}
@@ -369,7 +392,6 @@ indiscernible sequence with the same Ehren\-feucht-Mostowski type. Then $\phi({\
 Conversely, assume that $\<a_i : i<\omega\>$ which is $A$-indiscernible, but not totally. Then there is a formula $\phi(x, y)\in L(A)$ and some $i<j$ such that $\phi(a_i , a_j )\wedge\neg\phi(a_j , a_i ) $. By indiscernibility  $\phi(a_i , a_j )$ holds if and only if $i \le j$. Hence $\phi(x, y)$ is not stable.
 \end{proof}
 
-TO BE CONTINUED\ldots
 
 \section{Notes and references}
 \begin{biblist}[]\normalsize
