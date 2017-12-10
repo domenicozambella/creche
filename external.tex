@@ -305,52 +305,55 @@ Only \ssf{2}$\IMP$\ssf{3} requires a proof. By \ssf{1} the orbit of $\D$ over $A
 
 \section{Stability and the number of types}
 
-The following proposition highlight the connection between stability and the cardinality of types.
+The following proposition highlights the connection between stability and the cardinality of types.
 
 \begin{proposition}The following are equivalent
 \begin{itemize}
 \item[1.] $\phi({\mr x}\,;{\gr z})$ is a stable formula;
-\item[2.] for is some countable set $A$, such that $\big|S_{\phi}(A)\big|=2^\omega$;
-\item[2'.] for is some countable set $A$, such that $\big|S_{\phi}(A)\big|>\omega$;
-\item[3.] there is binary tree of $\pmDelta$-formulas, for $\Delta=\{\phi({\mr x}\,;{\gr b}):{\gr b}\in\U^{|{\gr z}|}\}$, see Definition~\ref{def_tree_formulas}.
+\item[2.] $\big|S_{\phi}(A)\big|=\omega$ for all countable sets $A$;
+\item[3.] $\big|S_{\phi}(A)\big|<2^\omega$ for all countable sets $A$;
+\item[4.] there is no binary tree of formulas in $\big\{\phi({\mr x}\,;{\gr b}):{\gr b}\in\U^{|{\gr z}|}\big\}^\pm$, see Definition~\ref{def_tree_formulas}.
 \end{itemize}
 \end{proposition}
 
 \def\ceq#1#2#3{\parbox[t]{15ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
-\begin{proof}\ssf{1}$\IMP$\ssf{2}\quad
-Let $\I,<_\I$ be a dense linear order of cardinality $\kappa$. Note that we can choose $\I$ such that there are $2^\kappa$ Dedekind's cut in $\I$. Let ${\mr x_i}$ and ${\gr z_i}$, for $i\in\I$, be a tuples of variables. The type that says 
+\begin{proof}\ssf{2}$\IFF$\ssf{3}$\IFF$\ssf{4}\quad By Lemma~\ref{lem_bin_tree}.
 
-\ceq{\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr x_i}\,;{\gr z_j})}\hfill for all $i,j\in\I$
+\ssf{3}$\IMP$\ssf{1}\quad
+ Assume $\neg$\ssf{1}. Let $I,<_I$ be a countable dense linear order. Let ${\mr x_i}$ and ${\gr z_i}$, for $i\in I$, be a tuples of variables. The type that says 
 
-is finitely consistent. If ${\mr a_i}$, ${\gr b_i}$ is a realization, then for every Dedekind cut  $\C\subseteq\I$ the type that says
+\ceq{\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr x_i}\,;{\gr z_j})}\hfill for all $i,j\in I$
 
-\ceq{\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr x}\,;{\gr b_j})\ \iff\ j\in\C}
+is finitely consistent. If ${\mr a_i}$, ${\gr b_i}$ is a realization, then for every Dedekind cut  $C\subseteq I$ the type that says
 
-is a finitely consistent and can be extended to some $p({\mr x})\in S_{\phi}(\U)$. Any two such types are mutually inconsistent and \ssf{3} follows.
+\ceq{\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr x}\,;{\gr b_j})\ \iff\ j\in C}
 
-\ssf{2}$\IMP$\ssf{3}\quad As in the proof of implication \ssf{3}$\IMP$\ssf{1} in~\ref{prop_small_equivalents}.
+is a finitely consistent and can be extended to some $p({\mr x})\in S_{\phi}(\U)$. Any two such types are mutually inconsistent. As there are $2^\omega$ Dedekind's cut $\neg$\ssf{2}  follows.
 
-\ssf{4}$\IMP$\ssf{1} Fix an arbitrary $n$. For $i=0,\dots, n$ abbreviate $b_{1^i}$ by $b_i$.
 
-\ceq{\hfill {\mr a_j}}{\models}{\displaystyle\bigwedge^{j-1}_{i=0}\phi({\mr x}\,;{\gr b_i})\wedge \neg\phi({\mr x}\,;{\gr b_j})}
+\ssf{1}$\IMP$\ssf{4} Assume $\neg$\ssf{4}, then there is a binary tree which without loss of generality has the form $\<\phi_s({\mr x}\,;{\gr b_s}):s\in 2^{<\omega}\>$, where $\phi_s$ stands for $\phi$ if $s$ ends in $1$, for $\neg\phi$ if $s$ ends in $0$, for $\top$ when $s=\0$. 
+
+We show that there is a ladder sequence of length $n$. For $i=0,\dots, n$ abbreviate $b_{1^i}$ by $b_i$. Let ${\mr a_j}$ be such that
+
+\ceq{\hfill {\mr a_j}}{\models}{\displaystyle \neg\phi({\mr x}\,;{\gr b_j})\wedge\bigwedge^{j-1}_{i=0}\phi({\mr x}\,;{\gr b_i})}
 
 Then 
 
 \ceq{\hfill i<j}{\IFF}{\phi({\mr a_i}\,;{\gr b_j})}
 
-
-We show that there is a ladder sequence of length $n$. For each $s\in2^n$ let $a_s$ be a solution of $\phi_s({\mr x})$. Then for all $r,s\in2^n$ the formula $\phi({\mr a_r}\,;{\gr b_s})$ holds exactly when $r<s$ in the lexicographic order.
+which contradicts \ssf{1}.
 \end{proof}
 
 
 \section{Stable theories}
+\label{stable_teories}
 
 We say that $T$ is a \emph{stable theory\/} if every formula is stable.
 
-The following is arguably one of the most important results that holds when the whole theory is stable. 
+The following is arguably one of the most important results that holds when the whole theory is stable. A type over some set $A$ is \emph{stationary\/} if it has a unique global extension that is Lascar invariant over $A$ (strictly speaking: \textit{non-forking over} $A$). The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
 
-\begin{proposition} Let $T$ be stable and let $q({\mr x})\in S\big(\acl^\eq(A)\big)$. Then there is a unique global type $p({\mr x})\in S(\U)$ that is consistent with $q({\mr x})$ and Lascar invariant over $A$.
+\begin{proposition}\label{prop_type_over_acl_stationary} Let $T$ be stable and let $q({\mr x})\in S\big(\acl^\eq(A)\big)$. Then there is a unique global type $p({\mr x})\in S(\U)$ that is consistent with $q({\mr x})$ and Lascar invariant over $A$.
 \end{proposition}
 
 \begin{proof}
@@ -373,9 +376,9 @@ If $T$ is stable then the following are equivalent
 \item[2.] $a\equivSh_A b$, see Definition~\ref{def_Sh_strong_type}.
 \end{itemize}
 \end{corollary}
-\begin{proof}\ssf{1}$\IMP$\ssf{2}\quad This clearly holds for every theory $T$.
+\begin{proof}\ssf{2}$\IMP$\ssf{1}\quad This clearly holds for every theory $T$.
 
-\ssf{2}$\IMP$\ssf{1}\quad Exercise.%It suffices to show that if $a\equivSh_A b$ then $a\equiv_M b$ for some model $M$ containing $A$.
+\ssf{1}$\IMP$\ssf{2}\quad Exercise.%It suffices to show that if $a\equivSh_A b$ then $a\equiv_M b$ for some model $M$ containing $A$.
 \end{proof}
 
 \begin{proposition} The following are equivalent
@@ -389,9 +392,14 @@ If $T$ is stable then the following are equivalent
 Negate \ssf{1} and let $\phi({\mr x}\,;{\gr z})$ be an unstable formula witnessed by the ladder sequence $\<{\mr a_i}\,;{\gr b_i}:i<\omega\>$. Let $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ be 
 indiscernible sequence with the same Ehren\-feucht-Mostowski type. Then $\phi({\mr a'_i}\,;{\gr b'_j})$ if and if $i< j$. 
 
-Conversely, assume that $\<a_i : i<\omega\>$ which is $A$-indiscernible, but not totally. Then there is a formula $\phi(x, y)\in L(A)$ and some $i<j$ such that $\phi(a_i , a_j )\wedge\neg\phi(a_j , a_i ) $. By indiscernibility  $\phi(a_i , a_j )$ holds if and only if $i \le j$. Hence $\phi(x, y)$ is not stable.
+Conversely, assume that $\<a_i : i<\omega\>$ which is $A$-indiscernible, but not totally. Then there is a formula $\phi(x, y)\in L(A)$ and some $i<j$ such that $\phi(a_i , a_j )\wedge\neg\phi(a_j , a_i) $. By indiscernibility  $\phi(a_i, a_j)$ holds if and only if $i \le j$. Hence $\phi(x, y)$ is not stable.
 \end{proof}
 
+
+\section{Canonical bases}
+\label{canonical_bases}
+
+TO BE CONTINUED
 
 \section{Notes and references}
 \begin{biblist}[]\normalsize
