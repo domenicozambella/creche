@@ -91,3 +91,10 @@ Printable output in file [`creche.pdf`](./creche.pdf)
    * The Lascar graph and Newelski's theorem
    * Kim-Pillay types
    * Notes and references
+*  **Externally definable sets**
+   * Approximable sets
+   * Ladder sequences and definability
+   * Stability and the number of types
+   * Stable theories
+   * Canonical bases
+   * Notes and references
