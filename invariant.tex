@@ -29,7 +29,7 @@ which, by homogeneity is equivalent to,
 
 \ceq{\ssf{is2.}\hfill {\gr a}\in\grD}{\iff}{{\gr b}\in\grD}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$ such that ${\gr a}\equiv_A{\gr b}$.
 
-which yield the following bound on the number of invariant sets
+This yields the following bound on the number of invariant sets
 
 \begin{proposition}\label{prop_numberIS}
 Let $\lambda=|L_{\gr z}(A)|$. There are at most $2^{2^{\lambda}}$ sets $\grD\subseteq\U^{|{\gr z}|}$ that are invariant over $A$.
@@ -38,15 +38,9 @@ Let $\lambda=|L_{\gr z}(A)|$. There are at most $2^{2^{\lambda}}$ sets $\grD\sub
 By \ssf{is2}, sets that are invariant over $A$ are union of equivalence classes of the relation $\equiv_A$, that is, union of sets of the form $p({\gr\U})$ where $p({\gr z})\in S(A)$. Then the number of $A\jj$invariant sets is $2^{|S_{\gr z}(A)|}$. Clearly $|S_{\gr z}(A)|\le 2^\lambda$.
 \end{proof} 
 
-We say that $\grD$ is \emph{invariant\/} tout court if it is invariant over some $A$. As we require $\kappa$ to be inaccessible, there are exactly $\kappa$ invariant sets.
+We say that $\grD$ is \emph{invariant\/} tout court if it is invariant over some (small) set $A$. As we require $\kappa$ to be inaccessible, there are exactly $\kappa$ invariant sets.
 
-
-
-In this chapter we work with $\Delta$-types where $\Delta$ may be either $L(\Aa)$ or the set of Boolean combinations of $\phi({\mr x}\,;{\gr b})$ for ${\gr b}\in\Aa^{|{\gr z}|}$ and $\phi({\mr x}\,;{\gr z})\in L$ some fixed formula. In the latter case a  $\Delta$-type is also called a \emph{$\phi$-type}. Typically $\Aa$ is either the whole of $\U$ or some small set $A\subseteq\U$. 
-
-We denote by \emph{$S_{\phi}(A)$\/} the set of complete $\phi$-types with parameters in $A$. Types in \emph{$S_{\phi}(\U)$\/} are called \emph{global $\phi$-types}.
-
-
+In this chapter we work with $\Delta$-types where $\Delta$ may be either $L(\Aa)$ or the set of Boolean combinations of $\phi({\mr x}\,;{\gr b})$ for ${\gr b}\in\Aa^{|{\gr z}|}$ and some fixed $\phi({\mr x}\,;{\gr z})\in L$. In the latter case  $\Delta$-types are called a \emph{$\phi$-types}. We denote by \emph{$S_{\phi}(\Aa)$\/} the set of complete $\phi$-types with parameters in $\Aa$. Typically, $\Aa$ is either the whole of $\U$ or some small set $A\subseteq\U$.  Types in \emph{$S_{\phi}(\U)$\/} are called \emph{global $\phi$-types}.
 
 % \begin{proposition}
 % Suppose $M$ realizes every consistent type $p({\gr z})\subseteq L(A)$. Let $D\subseteq M^{|{\gr z}|}$ be such that \ssf{is2} holds for $D$ when restricted to ${\gr a},{\gr b}\in M^{|{\gr z}|}$. Then $D$ is the trace on $M$ of some unique $A\jj$invariant set $\grD$.
@@ -64,13 +58,11 @@ Let $p({\mr x})\subseteq L(\U)$ be a consistent type. For every formula $\phi({\
 
 We can read the notation in two ways. Either the tuple ${\gr z}$ has infinite length and is the same for all formulas, or it is finite and depends on $\phi$. This is possible because adding or erasing dummy variables to the second tuple of $\phi({\mr x}\,;{\gr z})$ does not change ${\gr\D_{p,\phi}}$ in any relevant way, in particular invariance is preserved. 
 
-%In most cases we opt for the first reading, then ${\gr\D_{p,\phi}}$ is a cylinder set (independent from all but finitely many coordinates).
-
-Let $p({\mr x})\subseteq L(\U)$ be a consistent type. We say that $p({\mr x})$ is  \emph{invariant over $A$}, or \emph{$A\jj$invariant}, if for every formula $\phi({\mr x}\,;{\gr z})\in L$, 
+Let $p({\mr x})\subseteq L(\U)$ be a consistent type (at a first reading the reader may assume that $p(({\mr x})$ is a global types). We say that $p({\mr x})$ is  \emph{invariant over $A$}, or \emph{$A\jj$invariant}, if for every formula $\phi({\mr x}\,;{\gr z})\in L$, 
 
 \ceq{\ssf{it1.}\hfill \phi({\mr x}\,;{\gr a})\in p}{\IFF}{\phi({\mr x}\,;f{\gr a})\in p}\hfill for every ${\gr a}\in\U^{|{\gr z}|}$ and every $f\in\Aut(\U/A)$.
 
-A global $\phi$-type can be identified with $\D_{p,\phi}$. A global type can be identified with the collection of all these sets. The notions of invariance coincide.
+A global $\phi$-type can be identified with $\D_{p,\phi}$ and a global type can be identified with the collection of all these sets. The notions of invariance coincide.
 
 %One should not confuse the notions of \textit{invariant type\/} with that of \textit{invariant type-definable set}. The first is mostly applied to global types and refers to the invariance of a family of subsets of $\U^{|{\gr z}|}$. The latter refers to sets of the form $p({\mr\U})\subseteq\U^{|{\mr x}|}$ where $p({\mr x})$ a type of small size.
 
@@ -98,9 +90,9 @@ This apply to global types $p({\mr x})\in S(\U)$ but not for $\phi$-types.
 
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}The following terminology in not standard. We say that the set $\mrB\subseteq\U^{|{\mr x}|}$, typically a definable set, is \emph{quasi-invariant over $A$\/} if for any finitely many automorphisms $f_1,\dots,f_n\in\Aut(\U/A)$ the sets $f_i[\mrB]$ have non-empty intersection.
 
-We say that the type $p({\mr x})\subseteq L(\U)$, typically a global type, is \emph{quasi-invariant over $A$\/} if $\phi({\mr\U})$ is quasi-invariant over $A$  for every $\phi({\mr x})$ conjunction of formulas in $p({\mr x})$. So, the type $p({\mr x})$ is quasi-invariant if the set $p({\mr\V})$ is invariant, where $\V$ is an large saturated extension of $\U$, see Exercise~\ref{ex_quasi_inv_type}.
+We say that the type $p({\mr x})\subseteq L(\U)$, typically a global type, is \emph{quasi-invariant over $A$\/} if $\phi({\mr\U})$ is quasi-invariant over $A$  for every $\phi({\mr x})$ conjunction of formulas in $p({\mr x})$. For types of small cardinality, this is equivalent to requiring that $p({\mr\U})$ is quasi-invariant.% So, the type $p({\mr x})$ is quasi-invariant if the set $p({\mr\V})$ is invariant, where $\V$ is an large saturated extension of $\U$, see Exercise~\ref{ex_quasi_inv_type}.
 
-For global types quasi-invariance coincides with invariance.
+For global types quasi-invariance coincides with invariance. 
 
 \begin{proposition}\label{prop_invariance-quasi-invariance}
 Let $p({\mr x})\in S_{\phi}(\U)$ be a global $\phi$-type, then the following are equivalent
@@ -115,15 +107,20 @@ Let $p({\mr x})\in S_{\phi}(\U)$ be a global $\phi$-type, then the following are
 \ssf{2}$\IMP$\ssf{1}. Assume $p({\mr x})$ is not invariant. Then there is ${\gr b}\in\U^{|{\gr z}|}$ such that $\phi({\mr x}\,;{\gr b})\in p$ and $\phi({\mr x}\,;f{\gr b})\notin p$ for some  $f\in\Aut(\U/A)$. By completeness, $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;f{\gr b})$ which clearly is not consistent with its $f$-translate.
 \end{proof}
 
-Quasi-invariance makes sense also for incomplete types. Unfortunately it is not true in general that every quasi-invariant type can be extended to a global one. In next section we consider a stronger notion, \textit{coheirs}, which has this desirable property, see Proposition~\ref{prop_exisntence_coheirs}. In the next chapters we introduce a weaker notion, \textit{non-forking}, that also allows to extend types to global types.
+\begin{exercise}
+We say that $\mrB$ \textit{strongly\/} quasi-invariant if for every definable set $\mrD$ at least one of $\mrB\cap\mrD$ and $\mrB\cap\neg\mrD$ is quasi-invariant. Strongly quasi invariant types are defined in analogy to the definition of quasi-invariant type. Note parenthetically that for global types the two notions coincide. Prove that every strongly quasi-invariant type has an extension to a global invariant type.
+
+Hint: it may help to prove that if $\mrB$ is strongly quasi-invariant then for every definable $\mrD$ either $\mrB\cap\mrD$ or $\mrB\cap\neg\mrD$ is strongly quasi-invariant. Then the maximal strongly quasi-invariant set is the required global extension.\QED
+\end{exercise}
+
+%Quasi-invariance makes sense also for incomplete types. Unfortunately it is not true in general that every quasi-invariant type can be extended to a global one. In next section we consider a stronger notion, \textit{coheirs}, which has this desirable property, see Proposition~\ref{prop_exisntence_coheirs}. In the next chapters we introduce a weaker notion, \textit{non-forking}, that also allows to extend types to global types.
 
 \begin{exercise}\label{ex_quasi_inv_type}
 Let $p(x)\in L(\U)$. Let $\V$ be a saturated elementary extension of $\U$. Prove that the following are equivalent:
 \begin{itemize}
-\item[1.] the type $p(x)$ is quasi-invariant over $A$
+\item[1.] the type $p(x)$ is quasi-invariant over $A$;
 \item[2.] the set $p(\V)$ is quasi-invariant over $A$ (defined as above with $\V$ for $\U$).\QED
 \end{itemize}
-
 \end{exercise}
 
 \begin{comment}
@@ -167,12 +164,6 @@ Every non piecewise drifting type extends to a non drifting global type.
 
 
 \end{comment}
-
-%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%
-\section{Heirs and coheirs}
 \label{coheirs}
 
 The easiest way to obtain quasi-invariant types is via types that are finitely satisfiable. We say that a type \emph{$p(x)$ is finitely satisfiable in $A$\/} if $\phi({\mr\U})\cap A^{|{\mr x}|}\neq\0$ for every $\phi({\mr x})$ that is a conjunction of formulas in $p({\mr x})$.
@@ -430,8 +421,22 @@ Let $a=\<{\mr a_i}:i\in I\>$ be an $A\jj$indiscernible sequence and let $I\subse
 Let ${\mr a}\equiv_A{\mr b}$ and let $q({\mr x})=\tp({\mr a}/A)=\tp({\mr b}/A)$. Prove that if $q({\mr x})$ extends to a global $A\jj$invariant type $p({\mr x})\in S(\U)$ then there is a sequence $c=\<{\mr c_i}:i<\omega\>$ such that ${\mr a},c$ and ${\mr b},c$ are both sequences of $A\jj$indiscernibles.\QED
 \end{exercise}
 
+\section{Crap (if this is publicly available, it's just by errror)}
 
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}The following terminology in not standard. We say that the set $\mrB\subseteq\U^{|{\mr x}|}$, typically a definable set, is \emph{strongly quasi-invariant over $A$\/} if for every definable set $\mrD$ either $\mrB\cap\mrD$ or $\mrB\cap\neg\mrD$ is quasi-invariant.
 
+\begin{proposition}If $\mrB$ is strongly quasi-invariant over $A$ and $\<{\mr\D_i}:i<n\>$ is a finite sequence of definable sets that covers $\mrB$, then $\mrB\cap{\mr\D_i}$ is strongly quasi-invariant over $A$ for some $i$.\QED
+\end{proposition}
+
+We say that the type $p({\mr x})\subseteq L(\U)$ is \emph{strongly quasi-invariant over $A$\/} if $\phi({\mr\U})$ is strongly quasi-invariant over $A$ for every $\phi({\mr x})$ conjunction of formulas in $p({\mr x})$.% So, the type $p({\mr x})$ is quasi-invariant if the set $p({\mr\V})$ is invariant, where $\V$ is an large saturated extension of $\U$, see Exercise~\ref{ex_quasi_inv_type}.
+
+\begin{proposition}
+Every strongly quasi-invariant type has an extension to a global strongly quasi-invariant type.
+\end{proposition}
+
+\begin{proof}
+Let $q({\mr x})\subseteq L(\U)$ be a strongly quasi-invariant type and let  $p({\mr x})\subseteq L(\U)$ be a maximally consistent  strongly quasi-invariant type. We claim that $p({\mr x})$ is complete. If not, then there are some formulas $\phi({\mr x})\in L(\U)$ and  $\psi({\mr x})\in p$ such that $\psi({\mr x})\wedge\phi({\mr x})$ and $\psi({\mr x})\wedge\neg\phi({\mr x})$. This contradicts Proposition~\ref{}.
+\end{proof}
 
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

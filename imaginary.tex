@@ -220,8 +220,9 @@ Let $A\subseteq\U^\eq$ and let ${\vl\Aa}\in\U^\eq$ be an element of sort $\sigma
 \ceq{\hfill {\mr x}\in{\vl\Aa}}{\iff}{\bigvee^n_{i=1} \epsilon({\mr x}\,;{\mr c_i}).}
 
 \end{theorem}
-\begin{proof}
-Let $\phi({\vl\X})\in L^\eq(A)$ be an algebraic formula that has ${\vl\Aa}$ among its solutions and define
+\begin{proof} \ssf{2}$\IMP$\ssf{1}\quad If  $\epsilon({\mr x}\,;{\mr y})$ has $m$ classes, then $\O(\Aa/A)$ contains at most $\displaystyle{m\choose n}$ sets.
+
+\ssf{1}$\IMP$\ssf{2}\quad Let $\phi({\vl\X})\in L^\eq(A)$ be an algebraic formula that has ${\vl\Aa}$ among its solutions and define
 
 \ceq{\hfill\epsilon({\mr x}\,;{\mr y})}{=}{\A {\vl\X}\,\bigg[\phi({\vl\X})\ \imp\ \big[{\mr x}\in{\vl\X}\iff{\mr y}\in{\vl\X}\,\big]\bigg]}
 
@@ -229,18 +230,20 @@ If $\phi({\vl\X})$ has $n$, solutions, then $\epsilon({\mr x}\,;{\mr y})$ has at
 \end{proof}
 
 \begin{definition}\label{def_Sh_strong_type}
-We write \emph{$a\stackrel{\smash{\scalebox{.5}{\rm\bf Sh}}}{\equiv}_Ab$} for ${\mr a}\,\equiv_{\acl^\eq\! A}{\mr b}$. In words we say that ${\mr a}$ and ${\mr b}$ have the same \emph{Shelah strong-type over $A$}.\QED
+We write \emph{$a\stackrel{\smash{\scalebox{.5}{\rm\bf Sh}}}{\equiv}_Ab$} when $\epsilon({\mr a}\,;{\mr b})$ holds for every finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$. In words we say that ${\mr a}$ and ${\mr b}$ have the same \emph{Shelah strong-type over $A$}.\QED
 \end{definition}
 
-\begin{proposition}
-Let $A\subseteq\U^\eq$ and let ${\mr a},{\mr b}\in\U^{|{\mr x}|}$. Then the following are equivalent
+\begin{proposition}\label{prop_Shelah_strong_types}
+Let $A\subseteq\U^\eq$ and let ${\mr a},{\mr b}\in\U^{|{\mr x}|}$. Then the following are equivalent\nobreak
 \begin{itemize}
 \item[1.]  ${\mr a}\ \equivSh_A\, {\mr b}$;
-\item[2.]  $\epsilon({\mr a}\,;{\mr b})$ for every finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$.
+\item[2.]  ${\mr a}\,\equiv_{\acl^\eq\! A}{\mr b}$.
 \end{itemize} 
 \end{proposition}
 \begin{proof}
-Assume $\neg$\ssf{2} and let $\epsilon({\mr x}\,;{\mr y})\in L(A)$ be a finite equivalence formula such that $\neg\epsilon({\mr a}\,;{\mr b})$. Let ${\vl\D}=\epsilon({\mr\U}\,;{\mr b})$, then  ${\mr b}\in{\vl\D}$ and ${\mr a}\notin{\vl\D}$. As $\epsilon({\mr x}\,;{\mr y})$ is an $A$-invariant finite equivalence formula, ${\vl\D}\in\acl^\eq(A)$, and $\neg$\ssf{1} follows. Vice versa, assume $\neg$\ssf{1} and let $\phi({\mr x})\in L\big(\acl^\eq(A)\big)$ be  such that $\phi({\mr a})\niff\phi({\mr b})$. Let ${\vl\D}=\phi({\mr\U})$, then ${\vl\D}\in\acl^\eq(A)$. Therefore, by Proposition~\ref{thm_set_alg=feq}, the set ${\vl\D}$ is union of equivalence classes of some finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$. Then $\neg\epsilon({\mr a}\,;{\mr b})$ and $\neg$\ssf{2} follows.
+\ssf{2}$\IMP$\ssf{1}\quad Assume $\neg$\ssf{1} and let $\epsilon({\mr x}\,;{\mr y})\in L(A)$ be a finite equivalence formula such that $\neg\epsilon({\mr a}\,;{\mr b})$. Let ${\vl\D}=\epsilon({\mr\U}\,;{\mr b})$, then  ${\mr b}\in{\vl\D}$ and ${\mr a}\notin{\vl\D}$. As $\epsilon({\mr x}\,;{\mr y})$ is an $A$-invariant finite equivalence formula, ${\vl\D}\in\acl^\eq(A)$, and $\neg$\ssf{2} follows. 
+
+\ssf{1}$\IMP$\ssf{2}\quad Assume $\neg$\ssf{2} and let $\phi({\mr x})\in L\big(\acl^\eq(A)\big)$ be  such that $\phi({\mr a})\niff\phi({\mr b})$. Let ${\vl\D}=\phi({\mr\U})$, then ${\vl\D}\in\acl^\eq(A)$. Therefore, by Proposition~\ref{thm_set_alg=feq}, the set ${\vl\D}$ is union of equivalence classes of some finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$. Then $\neg\epsilon({\mr a}\,;{\mr b})$ and $\neg$\ssf{1} follows.
 \end{proof}
 
 \begin{exercise}
@@ -248,11 +251,11 @@ Let $p({\mr x})\subseteq L(A)$ and let $\phi({\mr x}\,;{\mr y})\in L(A)$ be a fo
 \end{exercise}
 
 \begin{exercise}\label{ex_feqthm_senza_eq}
-Let $A\subseteq\U$, let ${\vl\Aa}$ be a definable set with finite orbit over $A$. Without using $\U^\eq$ prove that ${\vl\Aa}$ is union of classes of a finite equivalence relation definable over $A$.\QED
+Let $A\subseteq\U$, let ${\vl\Aa}$ be a definable set with finite orbit over $A$. Without using the $\eq$-expansion, prove that ${\vl\Aa}$ is union of classes of a finite equivalence relation definable over $A$.\QED
 \end{exercise}
 
 \begin{exercise}
-Let $T$ be strongly minimal and let $\phi({\mr x}\,;{\mr y})\in L(A)$ with $|{\mr x}|=|{\mr y}|=1$. For arbitrary ${\mr c}\in\U$, prove that if the orbit of $\phi({\mr\U}\,; {\mr c})$ over $A$ is finite, then $\phi({\mr\U}\,; {\mr c})$ is definable over $\acl A$. 
+Let $T$ be strongly minimal and let $\phi({\mr x}\,;{\gr z})\in L(A)$ with $|{\mr x}|=1$. For arbitrary ${\gr b}\in\U^{|{\gr z}|}$, prove that if the orbit of $\phi({\mr\U}\,; {\gr b})$ over $A$ is finite, then $\phi({\mr\U}\,; {\gr b})$ is definable over $\acl A$.
 
 Hint: you can use Theorem~\ref{thm_set_alg=feq}.\QED
 \end{exercise}

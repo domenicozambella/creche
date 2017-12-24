@@ -151,103 +151,6 @@ This shows that $\,\sharp\,$ holds for $\phi(x)$ atomic. Induction for the conne
 
 A consequence of Proposition~\ref{proposizioneprodottidiretti} is that the direct product of groups, rings and vector spaces are structures of the same sort. Notably, the product of fields is not a field.
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Quotient structures}\label{quotient}
-\def\ceq#1#2#3{\parbox[b]{20ex}{$\displaystyle #1$}\parbox[b]{6ex}{\hfil$#2$}$\displaystyle #3$}
-
-
-If $\mathrel{E}$ is an equivalence relation on $N$ we write \emph{$[c]_E$\/} for the equivalence class of $c\in N$. We use the same symnol for the equivalenc erelation on $M^n$ defined as follow: if $a=a_1,\dots,a_n$ and $b=b_1,\dots,b_n$ are $n$-tuples of elements of $N$ then \emph{$a\mathrel{E} b$\/} means that  $a_i\mathrel{E} b_i$ holds for all $i$. By \emph{$[a]_E$\/} we mean both the equivalence class of $a\in M^n$ or the for the tuple of equivalence classes $[a_1]_E,\dots,[a_n]_E$. The context will disambiguate.
-
-An equivalence relation $\mathrel{E}$ on a structure $N$ is a \emph{congruence\/} if for every $f\in L_{\rm fun}$
-
-\ceq{\ssf{c1}.\hfill a\mathrel{E} b}{\IMP}{f^N a\mathrel{E} f^N b;}
-
-When $\mathrel{E}$ is a congruence on $N$ we write \emph{$N/E$\/} for the a structure that has as domain the set of $E$-equivalence classes in $N$ and the following interpretation of $f\in L_{\rm fun}$ and $r\in L_{\rm rel}$:
-
-\ceq{\ssf{c2.}\hfill f^{N/E}[a]_E}{=}{\big[f^N a\big]_E\,;}
-
-\ceq{\ssf{c3.}\hfill [a]_E\ \in\ r^{N/E}}{\IFF}{[a]_E\cap r^{N}\neq\0.}
-
-By \ssf{c1} this interpretation is well defined. We call $N/E$ the \emph{quotient structure}. The reader will recognize it as a familiar notion by the following proposition (which is not required in the following and requires the notion of homomorphism, see Definition~\ref{def_homomorphism}. Recall that the \emph{kernel\/} of a total map $h:N\to M$ is the equivalence relation $\mathrel{E}$ such that
-
-\ceq{\hfill a\mathrel{E} b}{\IFF}{ha=hb} 
-
-for every $a,b\in N$.
-
-\begin{proposition}
-Let $h:N\to M$ be a surjective homomorphism and let $E$ be the kernel of $h$. Then there is an isomorphism $k$ that makes the following diagram commute
-
-
-\hspace*{25ex}\begin{tikzcd}
- N \arrow{r}{h}\arrow{d}{\pi} & M \\[3ex]
- N/E \arrow{ur}{k}\\
-\end{tikzcd}
-
-where $\pi:a\mapsto [a]_E$ is the projection map.\QED
-\end{proposition}
-
-
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Quotients clutter the notation with brackets. To avoid the mess, we prefer to reason in $N$ and tweak the satisfaction relation.  We replace equality with $\mathrel{E}$ and adapt the interpretation of relation symbols to \ssf{c3} above. The following definition makes this precise (an inductive definition is required for instance in the proof of \L o\'{s} Theorem). Warning: it is not standard. 
-
-\begin{definition}\label{def_pseudostructure}
-For $t_2$, $t_2$ closed terms of $L(N)$ define
-
-\ceq{\ssf{1$^*$}\hfill N/E\ \pmodels\ t_1=t_2}{\IFF}{[t_1^N]_E=[t_2^N]_E}
-
-For $t$ a tuple of closed terms of $L(N)$ and $r\in L_{\rm rel}$ a relation symbol
-
-\ceq{\ssf{2$^*$}\hfill N/E\ \pmodels\ rt}{\IFF}{[t^N]_E\in r^{N/E}}
-
-Finally the definition is extended to all sentences $\phi\in\ L(N)$ by induction in the usual way
-
-\ceq{\ssf{3$^*$}\hfill N/E\ \pmodels\neg\phi}{\IFF}{\textrm{not }\ N/E\,\pmodels\phi}
-
-\ceq{\ssf{4$^*$}\hfill N/E\ \pmodels\phi\wedge\psi}{\IFF}{N/E\ \pmodels\phi\ \textrm{ and }\ N/E\ \pmodels\psi}
-
-\ceq{\ssf{5$^*$}\hfill N/E\ \pmodels\E x\,\phi(x)}{\IFF}{N/E\ \pmodels\phi(\hat a)}\ for some $a\in N$.\QED
-\end{definition}
-
-% Note that if we treat $=$ as a relation symbol  (i.e.\@ not as a logical symbol) and interpret it with $E$, clause \ssf{1$^*$} becomes an instance of \ssf{2$^*$} in fact
-% 
-% 
-% \ceq{\hfill t_1^N\mathrel{E}t_2^N}{\IFF}{[t^N_1,t^N_2]_E\cap E\neq \0}
-% 
-% by transitivity of $E$. 
-
-Now, by induction on the syntax of formulas one can prove $\pmodels$ does what required. In particular, $N/E\ \pmodels\ \phi(a)\iff\phi(b)$ for every $a\mathrel{E} b$.
-
-\begin{proposition}\label{prop_pseudomodel}
-Let $\mathrel{E}$ be a congruence relation of $N$. Then the following are equivalent for every $\phi(x)\in L$
-
-\ceq{\ssf{1.}\hfill N/E}{\pmodels}{\phi(a);}
-
-\ceq{\ssf{2.}\hfill N/E}{\models}{\phi\big([a]_E\big).}\QED
-\end{proposition}
-
-
-
-% \begin{proof}
-% First note that \ssf{c1} and \ssf{c2} above generalize to terms
-% 
-% \ceq{\ssf{c1'}.\hfill a\mathrel{E} b}{\IMP}{t^N a\mathrel{E} t^N b;}
-% 
-% \ceq{\ssf{c2'.}\hfill t^{N/E}[a]_E}{=}{\big[t^N a\big]_E\,.}
-% 
-% So if $\phi(x)$ is atomic, say it is the formula $rt(x)$ for $r\in L_{\rm rel}\cup\{=\}$ and $t(x)$ is a tuple of terms, then the equivalence \ssf{1}$\IFF$\ssf{2} follows from Definition~\ref{def_pseudostructure}. For general $\phi(x)$ the equivalence is proved by straightforward induction on the syntax. 
-% \end{proof}
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -264,7 +167,7 @@ Let $F$ be a filter on $I$. We define the following congruence relation on $N$
 
 It is easy to verify that $\sim_F$ is indeed an equivalence relation: reflexivity and symmetry are evident, transitivity follows from \ssf{f2} in Section~\ref{ultrafiltri}. It is also clear that $\sim_F$ a congruence. 
 
-We now introduce an ad hoc notion quotient structure \emph{$N/F$\/} by tweaking the definition in Section~\ref{quotient}.  Namely, we replace \ssf{c3}  by the following
+We now introduce an ad hoc notion quotient structure \emph{$N/F$\/} by tweaking the definition in Section~\hyperref[quotient]{\ref*{teorie}.\ref*{quotient}}.  Namely, we replace \ssf{c3}  by the following
 
 \ceq{\ssf{c3'.}\hfill [\hat a]_{\sim_F}\ \in\ r^{N/F}}{\IFF}{\big\{\,i\; :\; \ \hat ai\in r^{M_i}\,\big\}\,\in\, F}
 
