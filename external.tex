@@ -235,7 +235,7 @@ Then, if possible, choose ${\gr b_n}$ such that
 \ceq{\hfill{\gr b_n}}{\in}{\grD\sm\bigvee^n_{i=0}\phi({\mr a_i}\,;{\gr\U})}
 
 and iterate the procedure.
-By stability, the procedure has to stop as some $n$, yielding the required  ${\mr a_1},\dots,{\mr a_n}$.
+By stability, the procedure has to stop at some $n$, yielding the required  ${\mr a_1},\dots,{\mr a_n}$.
 \end{proof}
 
 
@@ -288,19 +288,19 @@ which contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
 
 This last lemma concludes the proof of Theorem~\ref{thm_def_stable_formula}. 
 
-The following is an important consequence.
-
-\begin{corollary}
-For every set $\D$ approximable by a stable formula the following are equivalent
-\begin{itemize}
-\item[1.] $\D$ is Lascar invariant over $A$;
-\item[2.] $\D\in\acl^\eq(A)$.
-\end{itemize}
-\end{corollary}
-
-\begin{proof}
-Only \ssf{2}$\IMP$\ssf{3} requires a proof. By \ssf{1} the orbit of $\D$ over $A$ is small. Therefore, as $\D$ is definable by Theorem~\ref{thm_def_stable_formula}, its orbit is finite. Hence $\D\in\acl^\eq(A)$.
-\end{proof}
+% The following is an important consequence.
+% 
+% \begin{corollary}
+% For every set $\D$ approximable by a stable formula the following are equivalent
+% \begin{itemize}
+% \item[1.] $\D$ is Lascar invariant over $A$;
+% \item[2.] $\D\in\acl^\eq(A)$.
+% \end{itemize}
+% \end{corollary}
+% 
+% \begin{proof}
+% Only \ssf{2}$\IMP$\ssf{3} requires a proof. By \ssf{1} the orbit of $\D$ over $A$ is small. Therefore, as $\D$ is definable by Theorem~\ref{thm_def_stable_formula}, its orbit is finite. Hence $\D\in\acl^\eq(A)$.
+% \end{proof}
 
 \section{Stability and the number of types}
 
@@ -311,7 +311,7 @@ The following proposition highlights the connection between stability and the ca
 \item[1.] $\phi({\mr x}\,;{\gr z})$ is a stable formula;
 \item[2.] $\big|S_{\phi}(A)\big|=\omega$ for all countable sets $A$;
 \item[3.] $\big|S_{\phi}(A)\big|<2^\omega$ for all countable sets $A$;
-\item[4.] there is no binary tree of formulas in $\big\{\phi({\mr x}\,;{\gr b}):{\gr b}\in\U^{|{\gr z}|}\big\}^\pm$, see Definition~\ref{def_tree_formulas}.
+\item[4.] there is no binary tree of formulas in \smash{$\big\{\phi({\mr x}\,;{\gr b}):{\gr b}\in\U^{|{\gr z}|}\big\}^\pm$}, see Definition~\ref{def_tree_formulas}.
 \end{itemize}
 \end{proposition}
 
@@ -352,9 +352,9 @@ Prove that $\phi$ is stable if and only if $|S_\phi(\U)|\le2^\kappa$.\QED
 
 We say that $T$ is a \emph{stable theory\/} if every formula is stable. When $T$ is stable, Lascar invariance is equivalent to something much more manageable.
 
-Let $p({\mr x})\in S(\U)$ be a global type. If for all formulas $\phi({\mr x}\,;{\gr z})\in L$ the sets ${\gr\D_{p,\phi}}$ are definable over $A$ then we say that $p({\mr x})$ is \emph{definable over $A$}. We say that $p({\mr x})$ is \emph{definable\/} if it is definable over some set $A$. 
+Let $p({\mr x})\in S(\U)$ be a global type. We say that $p({\mr x})$ is \emph{definable\/} if  for all formulas $\phi({\mr x}\,;{\gr z})\in L$ the sets ${\gr\D_{p,\phi}}$ are definable. We say that  $p({\mr x})$ is  \emph{definable over $A$} if so are all the sets ${\gr\D_{p,\phi}}$. 
 
-\begin{proposition}\label{prop_type_over_acl2} Let $T$ be stable and let $p({\mr x})\in S(\U^\eq)$. Then the following are equivalent
+\begin{proposition}\label{prop_type_over_acl2} Let $T$ be stable and let $p({\mr x})\in S(\U)$. Then the following are equivalent
 \begin{itemize}
 \item[1.] $p({\mr x})$ is Lascar invariant over $A$;
 \item[2.] $p({\mr x})$ is definable over $\acl^\eq\!A$;
@@ -364,7 +364,7 @@ Let $p({\mr x})\in S(\U)$ be a global type. If for all formulas $\phi({\mr x}\,;
 \begin{proof}
  \ssf{3}$\IMP$\ssf{2}$\IMP$\ssf{1} are clear (stability is not required).
  
- \ssf{1}$\IMP$\ssf{3} The sets ${\gr\D_{p,\phi}}$ are externally definable therefore, by Theorem~\ref{thm_def_stable_formula}, definable (over $\U$). As $p({\mr x})$ is Lascar invariant over $A$, so are the sets ${\gr\D_{p,\phi}}$. Hence they are in $\acl^\eq\!A$. 
+ \ssf{1}$\IMP$\ssf{3} The sets ${\gr\D_{p,\phi}}$ are externally definable therefore, by Theorem~\ref{thm_def_stable_formula}, definable (over $\U$). As $p({\mr x})$ is Lascar invariant over $A$, so are the sets ${\gr\D_{p,\phi}}$. Hence they belong to $\acl^\eq\!A$. 
 \end{proof}
 % 
 % \begin{proposition}\label{prop_type_over_dcl} Let $T$ be stable and let $p({\mr x})\in S(\U)$ be Lascar invariant over $A$. Then for every formula $\phi({\mr x}\,;{\gr z})\in L$ the set ${\gr\D_{p,\phi}}$ belongs to $\dcl^\eq(A,c)$ for every $c\models p_{\restriction A}(x)$.
@@ -383,9 +383,7 @@ Let $p_i({\mr x})\in S(\U^\eq)$, for $i=1,2$, be two global types that extend $q
 
 \ceq{\#\hfill {\gr\D_{p_1,\phi}}}{=}{{\gr\D_{p_2,\phi}}}
 
-Note that, by Proposition~\ref{prop_type_over_acl2} both sets belong to  $\acl^\eq\!A$. Clearly the formulas $\A{\gr z}\,\big[\phi({\mr x}\,;{\gr z})\iff {\gr z}\in {\gr\D_{p_i,\phi}}\big]$ belong to $p_i({\mr x})$. 
-
-As $p_i({\mr x})$ are Lascar invariant over $A$, so are the sets ${\gr\D_{p_i,\phi}}$. As they are definable sets, they belong to $\acl^\eq(A)$. Then both formulas $\A{\gr z}\,\big[\phi({\mr x}\,;{\gr z})\iff {\gr z}\in {\gr\D_{p_i,\phi}}\big]$ belong to $q({\mr x})$ and $\#$ follows.
+Note that, by Proposition~\ref{prop_type_over_acl2} both sets belong to  $\acl^\eq\!A$. Clearly, for $i=1,2$, the formula $\A{\gr z}\,\big[\phi({\mr x}\,;{\gr z})\iff {\gr z}\in {\gr\D_{p_i,\phi}}\big]$ belongs to $p_i({\mr x})$. Then both formulas belong to $q({\mr x})$ and $\#$ follows.
 \end{proof}
 
 \begin{corollary}
@@ -395,9 +393,9 @@ If $T$ is stable then the following are equivalent
 \item[2.] $a\equivSh_A b$, see Definition~\ref{def_Sh_strong_type}.
 \end{itemize}
 \end{corollary}
-\begin{proof}\ssf{1}$\IMP$\ssf{2}. This holds for every theory $T$ and it is left as an exercise to the reader.
+\begin{proof}\ssf{1}$\IMP$\ssf{2}. This is left as an exercise to the reader (stability is not required).
 
-\ssf{2}$\IMP$\ssf{1}. Assume $a\equivSh_A b$. By Proposition~\ref{prop_Shelah_strong_types} this is equivalent to $a\equiv_{\acl^\eq\!A} b$. Let $q(x)=\tp(a/\acl^\eq\!A)=\tp(b/\acl^\eq\!A)$. Let $p(x)\in S(\U^\eq)$ be the unique global type that is invariant over $\acl^\eq A$ and extends $q(x)$ which we obtain from by Proposition~\ref{prop_type_over_acl_stationary}. Let $c=\<c_i:i<\omega\>$ be such that $c_i\models p_{\restriction \acl^\eq(A),\,a,\,b,\,c_{\restriction i}}$. Then $a,c$ and $b,c$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lstp_indiscernibles}.
+\ssf{2}$\IMP$\ssf{1}. Assume $a\equivSh_A b$. By Proposition~\ref{prop_Shelah_strong_types} this is equivalent to $a\equiv_{\acl^\eq\!A} b$. Let $q(x)=\tp(a/{\acl}^\eq\!A)=\tp(b/{\acl}^\eq\!A)$. Let $p(x)\in S(\U^\eq)$ be the unique global type that is invariant over $\acl^\eq\! A$ and extends $q(x)$ which we obtain from by Proposition~\ref{prop_type_over_acl_stationary}. Let $c=\<c_i:i<\omega\>$ be such that $c_i\models p{\restriction \acl^\eq(A),\,a,\,b,\,c_{\restriction i}}$. Then $a,c$ and $b,c$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lstp_indiscernibles}.
 \end{proof}
 
 \begin{proposition} The following are equivalent
@@ -411,7 +409,7 @@ If $T$ is stable then the following are equivalent
 \ssf{2}$\IMP$\ssf{1}. Assume $\neg$\ssf{1} and let $\phi({\mr x}\,;{\gr z})$ be an unstable formula witnessed by the ladder sequence $\<{\mr a_i}\,;{\gr b_i}:i<\omega\>$. Let $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ be 
 indiscernible sequence with the same Ehren\-feucht-Mostowski type. Then $\phi({\mr a'_i}\,;{\gr b'_j})$ if and if $i< j$. 
 
-\ssf{1}$\IMP$\ssf{2}. Assume$\neg$\ssf{2} and let $\<a_i : i<\omega\>$ be $A$-indiscernible, but not totally $A$-in\-dis\-cern\-ible. Then there is a formula $\phi(x, y)\in L(A)$ and some $i<j$ such that $\phi(a_i , a_j )\wedge\neg\phi(a_j , a_i) $. By indiscernibility  $\phi(a_i, a_j)$ holds if and only if $i \le j$. Hence $\phi(x, y)$ is not stable.
+\ssf{1}$\IMP$\ssf{2}. Assume $\neg$\ssf{2} and let $\<a_i : i<\omega\>$ be an $A$-indiscernible sequence, which is not totally $A$-in\-dis\-cern\-ible. Then there is a formula $\phi(x, y)\in L(A)$ and some $i<j$ such that $\phi(a_i , a_j )\wedge\neg\phi(a_j , a_i) $. By indiscernibility  $\phi(a_i, a_j)$ holds if and only if $i\le j$. Hence $\phi(x, y)$ is not stable.
 \end{proof}
 
 \begin{exercise}
