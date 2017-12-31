@@ -1,0 +1,255 @@
+% !TEX root = creche.tex
+\documentclass[creche.tex]{subfiles}
+\begin{document}
+\chapter{Compactness}
+\label{ultraprodotti}
+
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
+We give two proofs of the compactness theorem. The first is syntactic, the second uses ultrapowers.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Compactness from syntax.}
+
+We are going to prove the compactness theorem using the so-called Henkin method. First we observe that when all existential statements witnessed by closed terms (called \textit{Henkin constants\/}), models can be constructed using these witnesses as elements. Then we show that we can always add all the required Henkin constants.
+
+\begin{definition}\label{def_Henkin}
+Fix a language $L$. We say that $T$ is a \emph{Henkin theory} if for every formulas $\phi$ and $\psi$
+
+\begin{itemize}
+\item[0.]\ceq{\hfill \phi\in T}{\IMP}{\neg\phi\notin T}
+\item[1.]\ceq{\hfill\phi\wedge\psi\phantom{)}\in T}{\IMP}{\phantom{\neg}\phi\in T\ \textrm{and}\ \psi\in T}
+\item[2.]\ceq{\hfill\neg(\phi\wedge\psi)\in T}{\IMP}{\neg\phi\in T\ \textrm{or}\ \neg\psi\in T}
+\item[3.]\ceq{\hfill\E x\,\phi\in T}{\IMP}{\phantom{\neg}\phi[x/a]\in T}\quad for some closed term $a$
+\item[4.]\ceq{\hfill\neg\E x\,\phi\in T}{\IMP}{\neg\phi[x/a]\in T}\quad for all closed terms $a$.
+\end{itemize}
+Moreover the following holds for all closed terms $t$ and all closed terms $a, b, c$
+\begin{itemize}
+\item[a.] \ceq{\hfill a{\doteq}a\in T}{ }{ }
+\item[b.] \ceq{\hfill a{\doteq}b\in T}{\IMP}{ b{\doteq}a\in T}
+\item[c.] \ceq{\hfill a{\doteq}b, \ b{\doteq}c\in T}{\IMP}{a{\doteq}c\in T}
+\item[d.] \ceq{\hfill a{\doteq}b,\ \phi[x/a]\in T}{\IMP}{\phi[x/b]\in T}.\QED
+\end{itemize}
+\end{definition}
+
+Fix a theory $T$ and let \emph{$M$} be the structure that has as domain the set of closed terms. Define for every relation symbol
+
+\ceq{\hfill r^M}{=}{\big\{\<a_1,\dots,a_n\>\ :\ r(a_1,\dots,a_n)\in T\big\}.}
+
+Define for every function symbol $f$
+
+\ceq{\hfill f^M}{=}{\big\{\<a_1,\dots,a_n,t\>\ :\  a_1,\dots,a_n\in M, \ t=fa_1\dots a_n\big\}.}
+
+Note that $t^M=t$ for all closed terms $t$. 
+
+Finally, let \emph{$E$} be the relation on $M$ that holds when $a{\doteq}b\in T$. 
+
+\begin{lemma}
+The relation $E$ is a congruence on $M$.
+\end{lemma}
+
+\begin{proof}
+Axioms \ssf{a}-\ssf{c} ensure that $E$ is an equivalence. Axiom \ssf{e} that it is a congruence.  
+\end{proof}
+
+\begin{theorem}
+If $T$ is Henkin theory then $M/E\,\models T$. 
+\end{theorem}
+
+\begin{proof}
+By induction on the complexity of the formula $\phi$ in $T$ we prove that
+
+\ceq{1.\hfill \phi\in T}{\IMP}{M/E\pmodels\phi}\hfill for the notation cf.\@ Definition~\ref{def_pseudostructure}
+
+\ceq{2.\hfill \neg\phi\in T}{\IMP}{M/E\pmodels\neg\phi}
+
+Induction is immediate by \ssf{1}-\ssf{4} of Definition~\ref{def_Henkin}. We verify the claim for atomic formulas. Consider first the formula $\phi= (t{\doteq}s)$ where $t$ and $s$ are closed terms. Recall that $t^M=t$ and $s^M=s$, so claim \ssf{1} is clear. As for \ssf{2}, suppose $M/E\pmodels t{\doteq}s$, that is  $tEs$. Then $t{\doteq}s\in T$ and $\neg t{\doteq}s\notin T$ follows from axiom \ssf{0}.
+
+Now assume $\phi=rt$ for a relation $r$ and a tuple of closed terms $t$. The argument is similar: \ssf{1} is immediate; to prove \ssf{2} suppose that $M/E\pmodels rt$. Then $tEs\in r^M$ for some tuple of closed terms $s$. Then $rs\in T$, and by \ssf{d} $rt\in T$. Finally from \ssf{0} we obtain $\neg rt\notin T$.
+\end{proof}
+
+\begin{proposition}If every finite subset of $T$ has a model then there is a Henkin theory $T'$ containing $T$. (The theory $T'$ may be in a language $L'$ that expands the language $L$ of $T$.)
+\end{proposition}
+
+\begin{proof} Set $\lambda=|L|$. Let $\<c_i:i<\lambda\>$ be some constants not in $L$. Write $L_i$ be the language $L$ expanded with the constants $c_{\restriction i}$ and fix an enumeration of all sentences in $L_\lambda$. 
+
+If $\alpha$ is $0$ or a limit ordinal define 
+
+\ceq{\hfill T'_\alpha}{=}{T_\alpha\medrel{=}T\ \cup\ \bigcup_{i<\alpha}T'_i} 
+
+As for successor ordinals, let $T_{i+1}$ be a maximal finitely consistent set of $L_i$-formulas containing $T'_i$. It is immediate that $T'_i$ satisfy Definition~\ref{def_Henkin} but possibly for \ssf{3}.
+
+Let $\E x\, \phi$ be the least sentence in $L_\lambda$ contradicting \ssf{3} and set $T_{i+1}=T_i\cup\big\{\phi[x/c_i]\big\}$. It is immediate that $T_{i+1}$ is finitely consistent. 
+
+At stage $\lambda$, as all possible counterexamples to \ssf{3} have been ruled out, $T_\lambda$ is a Henkin theory.
+\end{proof}
+
+The compactness theorem is an immediate corollary of the proposition above.
+
+\begin{void_thm}[Compactness Theorem]
+If every finite subset of $T$ is consistent then $T$ is consistent.\QED
+\end{void_thm}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Compactness from ultraproducts}\label{compactness}
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
+
+
+A theory is \emph{finitely consistent\/} if all its finite subsets are consistent. The following theorem is the \textit{fiat lux\/} of model theory. 
+
+\begin{void_thm}[Compactness Theorem]\label{thmcompattezza}
+Every finitely consistent theory is consistent. 
+\end{void_thm}
+
+\begin{proof}
+Let  $T$ be a finitely consistent theory. We claim that the structure $N/F$ which we define below is a model of $T$. Let $I$ be the set of consistent sentences $I$ in the language $L$. For every $\xi\in I$ pick some $M_\xi\models\xi$. For any sentence $\phi\in L$ we write $X_\phi$ for the following subset of $I$
+
+\ceq{\hfill X_\phi}{=}{\Big\{\xi\in I\ :\ \xi\proves \phi\Big\}}
+
+Clearly $\phi$ is consistent if and only if $X_\phi\neq\0$. Moreover $X_{\phi\wedge\psi}\ =\ X_\phi\cap X_\psi$. hence, as $T$ is finitely consistent, the set $B=\big\{X_\phi\,:\,\phi\in T\big\}$ has the finite intersection property. Therefore $B$ extends to an ultrafilter $F$ on $I$. Define
+
+\ceq{\hfill N}{=}{\prod_{\xi\in I}M_\xi}.
+
+We claim that $N/F\models T$. By \L o\v{s} Theorem, for every sentence $\phi\in L$
+
+\ceq{\hfill N/F\models \phi}%
+{\IFF}%
+{\Big\{\xi\ :\ M_\xi\models\phi\Big\}\ \in\ F\,.}
+
+By the definition of $F$, for every $\phi\in T$, the set $X_\phi\subseteq \big\{\xi\ :\ M_\xi\models \phi\big\}$ belongs to $F$. Therefore $N/F\models T$, \textit{et lux fuit}.
+\end{proof}
+
+The compactness theorem can be formulated in the following apparently stronger way.
+
+\begin{corollary}\label{compattezza2}
+If $T\proves\phi$ then there is some finite $S\subseteq T$ such that $S\proves\phi$.
+\end{corollary}
+
+\begin{proof}
+Suppose $S\notproves\phi$ for every finite $S\subseteq T$. Then for every finite $S\subseteq T$ there is a model $M\models S\cup\{\neg\phi\}$. In other words, $T\cup\{\neg\phi\}$ is finitely consistent. By compactness $T\cup\{\neg\phi\}$ hence $T\notproves \phi$.
+\end{proof}
+
+\begin{exercise}
+Let $\Phi\subseteq L$ be a set of sentences and suppose that $\proves\psi\iff\bigvee\Phi$ for some sentence $\psi$. Prove that there is a finite $\Phi_0\subseteq\Phi$ such that  $\proves\psi\iff\bigvee\Phi_0$.\QED
+\end{exercise}
+
+\section{Finite axiomatizability}
+
+A theory $T$ is \emph{finitely axiomatizable\/} if $\ccl(S)=\ccl(T)$ for some finite $S$. The following theorem shows that we can restrict the search of $S$ to the subsets of $T$.
+
+\begin{proposition}\label{finaxsub} For every theory $T$ the following are equivalent
+\begin{itemize}
+\item[1.] $T$ is finitely axiomatizable;
+\item[2.] there a finite $S\subseteq T$ such that $S\proves T$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+Only \ssf{1}$\IMP$\ssf{2} requires a proof. If $T$ is finitely axiomatizable, there is a sentence $\phi$ such that $\ccl(\phi)=\ccl(T)$. Then $T\proves\phi\proves T$. By Proposition~\ref{compattezza2} there is a finite $S\subseteq T$ such that $S\proves\phi$. Then also $S\proves T$.
+\end{proof}
+
+If $L$ is empty, then every structure is a model. The \emph{theory of infinite sets\/} is the set of sentences that hold in every infinite structure.
+
+\begin{example} 
+The theory of infinite sets is not finitely axiomatizable. Define
+
+\ceq{\hfill T_{\infty}}{=}{\big\{\E^{\ge n}x\;(x=x)\big\}\ :\ n\in\omega\big\}}
+
+Every infinite set is a model of $T_{\infty}$ and, vice versa, every model of $T_{\infty}$ is is an infinite set. Then $\ccl(T_{\infty})$ is the theory of infinite sets. Suppose for a contradiction that $T_{\infty}$ is finitely axiomatizable. By Proposition~\ref{finaxsub}, $\E^{\ge n}x (x=x)\proves T_{\infty}$ for some $n$. Any set of cardinality $n+1$ proves that this is not the case.\QED
+\end{example}
+
+The following is a less trivial example. It proves a claim we made in Exercise~\ref{ex_grafo_bipartito}.
+
+\begin{example}
+
+\def\ceq#1#2#3{\parbox{5ex}{$\displaystyle #1$}\parbox{4ex}{\hfil$#2$}$\displaystyle #3$}
+
+Write $T_{\rm gph}$ for the theory of graphs, see Example~\ref{expl_Tgraphs}. Let $\K$ be the following class of structures
+
+
+\ceq{\hfill \K}{=}{\Big\{M\models T_{\rm gph}\ :\ r^M\ \subseteq\ (A\times \neg A)\;\cup\;(\neg A\times A)\textrm{ for some }A\subseteq M\Big\}}
+
+
+We prove that $\K$ is axiomatizable but not finitely axiomatizable, i.e.\@ $\K=\Mod(T)$ for some theory $T$, but $T$ cannot be choosen finite.
+
+A \emph{path of length $n$\/} in $M$ is a sequence $c_0,\dots,c_n\in M$ such that $M\models r(c_i,c_{i+1})$ for every $0\le i<n$. A path is \emph{closed\/} if $c_0=c_n$.  We claim that the following theory axiomatizes $\K$.
+
+
+\ceq{\hfill T}{=}{\Bigg\{\neg\E x_0,\dots x_{2n+1} \Bigg[\bigwedge^{2n}_{i=0} r(x_i,x_{i+1})\ \wedge\ x_0=x_{2n+1} \Bigg]\ \ :\ \ n\in\omega\Bigg\}}
+
+In words, $T$ says that all closed paths have even length. Inclusion $\K\subseteq\Mod(T)$ is clear, we prove $\Mod(T)\subseteq\K$. Let $M\models T$ and let $A_o\subseteq M$ contain exactly one point for every connected component of $M$. Define 
+
+\ceq{\hfill A}{=}{\Bigg\{b\, :\, M\models\E x_0,\dots, x_{2n} \Bigg[\bigwedge^{2n-1}_{i=1} r(x_i,x_{i+1}) \wedge a{=}x_0\wedge x_{2n}{=}b\Bigg],\ a\in A_o,\ n\in\omega\Bigg\}}
+
+We claim that $r^M\subseteq(A\times \neg A)\cup(\neg A\times A)$, hence $M\in\K$. We need to verify that if $r(b,c)$ then neither $b,c\in A$ nor $b,c\in\neg A$.  Suppose for a contradiction that $r(b,c)$ and $b,c\in A$ (the case $b,c\in\neg A$ is similar). As $b$ and $c$ belong to the same connected component, there are two paths $b_0,\dots,b_{2n}$ and $c_0,\dots,c_{2m}$ that connect $a=b_0=c_0\in A_o$ to $b=b_{2n}$ and $c=c_{2m}$. Then $a,b_1,\dots,b_{2n},c_{2m},\dots,c_1,a$ is a closed path of odd length. A contradiction.
+
+We now prove that $\K$ is not finitely axiomatizable. By Proposition~\ref{finaxsub} it suffices to note that no finite $S\subseteq T$ axiomatizes $\K$.\QED
+\end{example}
+
+
+
+
+% 
+% 
+% \begin{exercise}
+% Sia $\phi(x,y)$ una formula pura, $M$ un modello, $\<a_i:i\in\omega\>$ una sequenza di elementi di $M$ tali che $\phi(a_i,M)\subset\phi(a_{i+1},M)$ per tutti gli $i\in\omega$. Si dimostri, se $F$ \`e un ultrafiltro non principale su $\P(\omega)$, allora in $M^\omega/F$ esiste una sequenza $\<\hat b_i:i\in\omega\>$ tale che $\phi(\hat b_{i+1},M)\subset\phi(\hat b_i,M)$.
+% \end{exercise}
+
+
+
+\section{Realization of types and upward Löwenheim-Skolem}
+
+\def\ceq#1#2#3{\parbox{13ex}{$\displaystyle #1$}\parbox{4ex}{\hfil$#2$}$\displaystyle #3$}
+ 
+Recall that a \emph{type\/} is a set of formulas. When we present types we usually declare the variables that may occur in it --~we write \emph{$p(x)$}, \emph{$q(x)$}, etc.\@ where $x$ is a tuple of variables. Clearly, when $x$ is the empty tuple, $p(x)$ is just a theory. We identify a finite types with the conjunction of the formulas contained in it.
+
+We write \emph{$M\models p(a)$} if $M\models\phi(a)$ for every $\phi(x)\in p$.  We say that $a$ is a \emph{solution\/} or a \emph{realization\/} of $p(x)$. An equivalent notation is \emph{$M,a\models p(x)$} or, when $M$ is clear from the context, \emph{$a\models p(x)$}. We say that $p(x)$ is \emph{consistent in $M$\/} it has a solution in $M$. In this case we may write \emph{$M\models\E x\,p(x)$}.  We say that $p(x)$ is \emph{consistent\/} tout court if it is consistent in some model.
+
+We say that a type $p(x)$ is \emph{finitely consistent\/} if all its finite subsets are consistent. If they are all consistent in the same model $M$, we say that $p(x)$ is \emph{finitely consistent in $M$}. The following theorem shows that the latter notion, which is trivial for theories, is very interesting for types.
+
+\begin{void_thm}[Compactness Theorem for types]\label{thm_compattezzatipi}
+Every finitely consistent type $p(x)\subseteq L$ is consistent. Moreover, if $p(x)\subseteq L(M)$ is finitely consistent in $M$ then it is realised in some elementary extension of $M$.
+\end{void_thm}
+
+\begin{proof}
+ 
+Let $L'$ be an expansion of $L$ with a fresh constant symbols $c$, a tuple of constants of the same length as $x$. Then $p(c)$ is a finitely consistent theory in the language $L'$. By the compactness theorem there is an $L'$-structure $N'\models p(c)$. Let $N$ be the reduced of $N'$ to $L$. That is the $L$-structure with the same domain and the same interpretation of $N'$ on the symbols of $L$. Then $N$ realises $p(x)$.  
+
+As for the second claim, let $a$ be an enumeration of $M$. We can assume that $p(x)$ has the form $p'(x,a)$ for some $p'(x,z)\in L$. Define
+
+\ceq{\hfill q(z)}{=}{\big\{\phi(z)\ :\ M\models \phi(a)\big\}}
+
+Clearly, $q(z)\cup p'(x,z)$ is finitely consistent (in $M$). By the first part of the proof there is a model $N'$ such that $N'\models p'(a',b')$ for some $a',b'$. Let $h$ be the function $\{\<a,a'\>\}$. Then $h:M\to N'$ is an embedding and we can identify $M$ with $h[M]$. The proposition is proved if we can show that $h[M]\preceq N'$. For any $\phi(z)\in L$ we have
+
+
+\hfil $h[M]\models\phi(ha)\ \ \IFF\ \  M\models \phi(a)\ \  \IFF\ \  \phi(z)\in q(z)\ \   \IMP\ \  N'\models \phi(a')$.
+
+Then $h[M]\preceq N'$ follows because all sentences in $L(M)$ have the form $\phi(a)$ for some $\phi(z)\in L$.
+\end{proof}
+
+The following corollary is historically important.
+
+\begin{void_thm}[Upward L\"owenheim-Skolem Theorem]
+Every infinite structure has arbitrarily large elementary extensions.
+\end{void_thm}
+
+\begin{proof}
+Let $x=\<x_i:i<\lambda\>$ be a tuple distinct variables, where $\lambda$ is an arbitrary cardinal. The type $p(x)=\big\{x_i\neq x_j: i<j<\lambda\big\}$ is finitely consistent in every infinite structure and every structure that realises $p$ has cardinality $\ge\lambda$. Hence the claim follows from Theorem~\ref{thm_compattezzatipi}.
+\end{proof}
+
+
+\end{document}
