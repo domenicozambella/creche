@@ -18,18 +18,20 @@ Printable output in file [`creche.pdf`](./creche.pdf)
    * Logical consequences
    * Elementary equivalence
    * Embeddings and isomorphisms
+   * Quotient structures
    * Completeness
    * The Tarski-Vaught test
-   * The downward L&ouml;wenheim-Skolem theorem
+   * Downward L&ouml;wenheim-Skolem
    * Elementary chains
 *  **Ultraproducts and compactness**
    * Filters and ultrafilters
    * Direct products
-   * Quotient structures
    * Ultraproducts
-   * The compactness theorem
+*  **Compactness**
+   * Compactness via syntax.
+   * Compactness via ultraproducts
+   * Upward L&ouml;wenheim-Skolem
    * Finite axiomatizability
-   * Realization of types and upward L&ouml;wenheim-Skolem
 *  **Types and morphisms**
    * Semilattices and filters
    * Distributive lattices and prime filters
@@ -82,7 +84,6 @@ Printable output in file [`creche.pdf`](./creche.pdf)
 *  **Invariant sets**
    * Invariant sets and types
    * Invariance from the dual perspective
-   * Heirs and coheirs
    * Morley sequences and indiscernibles
    * From coheirs to Ramsey to indiscernibles
 *  **Lascar invariant sets**
@@ -93,8 +94,7 @@ Printable output in file [`creche.pdf`](./creche.pdf)
    * Notes and references
 *  **Externally definable sets**
    * Approximable sets
-   * Ladder sequences and definability
-   * Stability and the number of types
+   * Ladders and definability
    * Stable theories
-   * Canonical bases
+   * Stability and the number of types
    * Notes and references

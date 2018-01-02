@@ -13,12 +13,12 @@ We present two proofs of the compactness theorem. The first is syntactic, the se
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Compactness from syntax.}
+\section{Compactness via syntax.}
 
-We are going to prove the compactness theorem using the so-called Henkin method. First we observe that when all existential statements witnessed by closed terms (called \textit{Henkin constants\/}), models can be constructed using these witnesses as elements. Then we show that we can always add all the required Henkin constants.
+Here we prove the compactness theorem using the so-called Henkin method. We divide the proof in two steps. Firstly, we observe that when the language is rich enough to name witnesses for all existential statements of the theory, these witnesses (\textit{Henkin constants\/}) form a canonical model. Secondly, we show that we can add the required Henkin constants to any finitely consistent theory.
 
 \begin{definition}\label{def_Henkin}
-Fix a language $L$. We say that $T$ is a \emph{Henkin theory} if for every formulas $\phi$ and $\psi$
+Fix a language $L$. We say that $T$ is a \emph{Henkin theory\/} if for every formulas $\phi$ and $\psi$
 
 \begin{itemize}
 \item[0.]\ceq{\hfill \phi\in T}{\IMP}{\neg\phi\notin T}
@@ -72,7 +72,7 @@ Induction is immediate by \ssf{1}-\ssf{4} of Definition~\ref{def_Henkin}. We ver
 Now assume $\phi=rt$ for a relation $r$ and a tuple of closed terms $t$. The argument is similar: \ssf{1} is immediate; to prove \ssf{2} suppose that $M/E\pmodels rt$. Then $tEs\in r^M$ for some tuple of closed terms $s$. Then $rs\in T$, and by \ssf{d} $rt\in T$. Finally from \ssf{0} we obtain $\neg rt\notin T$.
 \end{proof}
 
-\begin{proposition}If every finite subset of $T$ has a model then there is a Henkin theory $T'$ containing $T$. (The theory $T'$ may be in a language $L'$ that expands the language $L$ of $T$.)
+\begin{proposition}If every finite subset of $T$ has a model then there is a Henkin theory $T'$ containing $T$. (The theory $T'$ may be in an expanded language.)
 \end{proposition}
 
 \begin{proof} Set $\lambda=|L|$. Let $\<c_i:i<\lambda\>$ be some constants not in $L$. Write $L_i$ be the language $L$ expanded with the constants $c_{\restriction i}$ and fix an enumeration of all sentences in $L_\lambda$. 
@@ -85,7 +85,7 @@ As for successor ordinals, let $T_{i+1}$ be a maximal finitely consistent set of
 
 Let $\E x\, \phi$ be the least sentence in $L_\lambda$ contradicting \ssf{3} and set $T_{i+1}=T_i\cup\big\{\phi[x/c_i]\big\}$. It is immediate that $T_{i+1}$ is finitely consistent. 
 
-At stage $\lambda$, as all possible counterexamples to \ssf{3} have been ruled out, $T_\lambda$ is a Henkin theory.
+At stage $\lambda$, as all possible counterexamples to \ssf{3} have been ruled out, $T'=T_\lambda$ is the required Henkin theory.
 \end{proof}
 
 A theory is \emph{finitely consistent\/} if all its finite subsets are consistent. The following theorem is an immediate corollary of the proposition above.
@@ -103,7 +103,7 @@ If every finite subset of $T$ is consistent then $T$ is consistent.\QED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Compactness from ultraproducts}\label{compactness}
+\section{Compactness via ultraproducts}\label{compactness}
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
@@ -146,6 +146,50 @@ Suppose $S\notproves\phi$ for every finite $S\subseteq T$. Then for every finite
 \begin{exercise}
 Let $\Phi\subseteq L$ be a set of sentences and suppose that $\proves\psi\iff\bigvee\Phi$ for some sentence $\psi$. Prove that there is a finite $\Phi_0\subseteq\Phi$ such that  $\proves\psi\iff\bigvee\Phi_0$.\QED
 \end{exercise}
+
+
+\section{Upward Löwenheim-Skolem}
+
+\def\ceq#1#2#3{\parbox{13ex}{$\displaystyle #1$}\parbox{4ex}{\hfil$#2$}$\displaystyle #3$}
+ 
+Recall that a \emph{type\/} is a set of formulas. When we present types we usually declare the variables that may occur in it --~we write \emph{$p(x)$}, \emph{$q(x)$}, etc.\@ where $x$ is a tuple of variables. Clearly, when $x$ is the empty tuple, $p(x)$ is just a theory. We identify a finite types with the conjunction of the formulas contained in it.
+
+We write \emph{$M\models p(a)$} if $M\models\phi(a)$ for every $\phi(x)\in p$.  We say that $a$ is a \emph{solution\/} or a \emph{realization\/} of $p(x)$. An equivalent notation is \emph{$M,a\models p(x)$} or, when $M$ is clear from the context, \emph{$a\models p(x)$}. We say that $p(x)$ is \emph{consistent in $M$\/} it has a solution in $M$. In this case we may write \emph{$M\models\E x\,p(x)$}.  We say that $p(x)$ is \emph{consistent\/} tout court if it is consistent in some model.
+
+We say that a type $p(x)$ is \emph{finitely consistent\/} if all its finite subsets are consistent. If they are all consistent in the same model $M$, we say that $p(x)$ is \emph{finitely consistent in $M$}. The following theorem shows that the latter notion, which is trivial for theories, is very interesting for types.
+
+\begin{void_thm}[Compactness Theorem for types]\label{thm_compattezzatipi}
+Every finitely consistent type $p(x)\subseteq L$ is consistent. Moreover, if $p(x)\subseteq L(M)$ is finitely consistent in $M$ then it is realised in some elementary extension of $M$.
+\end{void_thm}
+
+\begin{proof}
+ 
+Let $L'$ be an expansion of $L$ with a fresh constant symbols $c$, a tuple of constants of the same length as $x$. Then $p(c)$ is a finitely consistent theory in the language $L'$. By the compactness theorem there is an $L'$-structure $N'\models p(c)$. Let $N$ be the reduced of $N'$ to $L$. That is the $L$-structure with the same domain and the same interpretation of $N'$ on the symbols of $L$. Then $N$ realises $p(x)$.  
+
+As for the second claim, let $a$ be an enumeration of $M$. We can assume that $p(x)$ has the form $p'(x,a)$ for some $p'(x,z)\in L$. Define
+
+\ceq{\hfill q(z)}{=}{\big\{\phi(z)\ :\ M\models \phi(a)\big\}}
+
+Clearly, $q(z)\cup p'(x,z)$ is finitely consistent (in $M$). By the first part of the proof there is a model $N'$ such that $N'\models p'(a',b')$ for some $a',b'$. Let $h$ be the function $\{\<a,a'\>\}$. Then $h:M\to N'$ is an embedding and we can identify $M$ with $h[M]$. The proposition is proved if we can show that $h[M]\preceq N'$. For any $\phi(z)\in L$ we have
+
+
+\hfil $h[M]\models\phi(ha)\ \ \IFF\ \  M\models \phi(a)\ \  \IFF\ \  \phi(z)\in q(z)\ \   \IMP\ \  N'\models \phi(a')$.
+
+Then $h[M]\preceq N'$ follows because all sentences in $L(M)$ have the form $\phi(a)$ for some $\phi(z)\in L$.
+\end{proof}
+
+The following corollary is historically important.
+
+\begin{void_thm}[Upward L\"owenheim-Skolem Theorem]
+Every infinite structure has arbitrarily large elementary extensions.
+\end{void_thm}
+
+\begin{proof}
+Let $x=\<x_i:i<\lambda\>$ be a tuple distinct variables, where $\lambda$ is an arbitrary cardinal. The type $p(x)=\big\{x_i\neq x_j: i<j<\lambda\big\}$ is finitely consistent in every infinite structure and every structure that realises $p$ has cardinality $\ge\lambda$. Hence the claim follows from Theorem~\ref{thm_compattezzatipi}.
+\end{proof}
+
+
+
 
 \section{Finite axiomatizability}
 
@@ -209,47 +253,6 @@ We now prove that $\K$ is not finitely axiomatizable. By Proposition~\ref{finaxs
 % Sia $\phi(x,y)$ una formula pura, $M$ un modello, $\<a_i:i\in\omega\>$ una sequenza di elementi di $M$ tali che $\phi(a_i,M)\subset\phi(a_{i+1},M)$ per tutti gli $i\in\omega$. Si dimostri, se $F$ \`e un ultrafiltro non principale su $\P(\omega)$, allora in $M^\omega/F$ esiste una sequenza $\<\hat b_i:i\in\omega\>$ tale che $\phi(\hat b_{i+1},M)\subset\phi(\hat b_i,M)$.
 % \end{exercise}
 
-
-
-\section{Realization of types and upward Löwenheim-Skolem}
-
-\def\ceq#1#2#3{\parbox{13ex}{$\displaystyle #1$}\parbox{4ex}{\hfil$#2$}$\displaystyle #3$}
- 
-Recall that a \emph{type\/} is a set of formulas. When we present types we usually declare the variables that may occur in it --~we write \emph{$p(x)$}, \emph{$q(x)$}, etc.\@ where $x$ is a tuple of variables. Clearly, when $x$ is the empty tuple, $p(x)$ is just a theory. We identify a finite types with the conjunction of the formulas contained in it.
-
-We write \emph{$M\models p(a)$} if $M\models\phi(a)$ for every $\phi(x)\in p$.  We say that $a$ is a \emph{solution\/} or a \emph{realization\/} of $p(x)$. An equivalent notation is \emph{$M,a\models p(x)$} or, when $M$ is clear from the context, \emph{$a\models p(x)$}. We say that $p(x)$ is \emph{consistent in $M$\/} it has a solution in $M$. In this case we may write \emph{$M\models\E x\,p(x)$}.  We say that $p(x)$ is \emph{consistent\/} tout court if it is consistent in some model.
-
-We say that a type $p(x)$ is \emph{finitely consistent\/} if all its finite subsets are consistent. If they are all consistent in the same model $M$, we say that $p(x)$ is \emph{finitely consistent in $M$}. The following theorem shows that the latter notion, which is trivial for theories, is very interesting for types.
-
-\begin{void_thm}[Compactness Theorem for types]\label{thm_compattezzatipi}
-Every finitely consistent type $p(x)\subseteq L$ is consistent. Moreover, if $p(x)\subseteq L(M)$ is finitely consistent in $M$ then it is realised in some elementary extension of $M$.
-\end{void_thm}
-
-\begin{proof}
- 
-Let $L'$ be an expansion of $L$ with a fresh constant symbols $c$, a tuple of constants of the same length as $x$. Then $p(c)$ is a finitely consistent theory in the language $L'$. By the compactness theorem there is an $L'$-structure $N'\models p(c)$. Let $N$ be the reduced of $N'$ to $L$. That is the $L$-structure with the same domain and the same interpretation of $N'$ on the symbols of $L$. Then $N$ realises $p(x)$.  
-
-As for the second claim, let $a$ be an enumeration of $M$. We can assume that $p(x)$ has the form $p'(x,a)$ for some $p'(x,z)\in L$. Define
-
-\ceq{\hfill q(z)}{=}{\big\{\phi(z)\ :\ M\models \phi(a)\big\}}
-
-Clearly, $q(z)\cup p'(x,z)$ is finitely consistent (in $M$). By the first part of the proof there is a model $N'$ such that $N'\models p'(a',b')$ for some $a',b'$. Let $h$ be the function $\{\<a,a'\>\}$. Then $h:M\to N'$ is an embedding and we can identify $M$ with $h[M]$. The proposition is proved if we can show that $h[M]\preceq N'$. For any $\phi(z)\in L$ we have
-
-
-\hfil $h[M]\models\phi(ha)\ \ \IFF\ \  M\models \phi(a)\ \  \IFF\ \  \phi(z)\in q(z)\ \   \IMP\ \  N'\models \phi(a')$.
-
-Then $h[M]\preceq N'$ follows because all sentences in $L(M)$ have the form $\phi(a)$ for some $\phi(z)\in L$.
-\end{proof}
-
-The following corollary is historically important.
-
-\begin{void_thm}[Upward L\"owenheim-Skolem Theorem]
-Every infinite structure has arbitrarily large elementary extensions.
-\end{void_thm}
-
-\begin{proof}
-Let $x=\<x_i:i<\lambda\>$ be a tuple distinct variables, where $\lambda$ is an arbitrary cardinal. The type $p(x)=\big\{x_i\neq x_j: i<j<\lambda\big\}$ is finitely consistent in every infinite structure and every structure that realises $p$ has cardinality $\ge\lambda$. Hence the claim follows from Theorem~\ref{thm_compattezzatipi}.
-\end{proof}
 
 
 \end{document}

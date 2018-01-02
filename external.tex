@@ -176,7 +176,7 @@ The sets externally definable by $p$ are always closed under Boolean operations.
 % Then the theory of $\U$ in the expanded language has positive $\Delta$-quantifier elimination, for $\Delta=L\cup\big\{\E z_{\restriction I}\,\grD: I\subseteq\lambda\textrm{ finite}\big\}$, see Section~\hyperref[eliminazionequantificatoricriterio]{\ref*{eliminazione}.\ref*{eliminazionequantificatoricriterio}}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Ladder sequences and definability}
+\section{Ladders and definability}
 
 The attentive reader may have noticed that by \textit{formula\/} we often understand a pair $\phi(x)$ that consists of a formula and a tuple of variables.
 In the following we deal with two sorts of variables: those that are placeholder for parameters, and those used to define a set.
@@ -302,6 +302,96 @@ This last lemma concludes the proof of Theorem~\ref{thm_def_stable_formula}.
 % Only \ssf{2}$\IMP$\ssf{3} requires a proof. By \ssf{1} the orbit of $\D$ over $A$ is small. Therefore, as $\D$ is definable by Theorem~\ref{thm_def_stable_formula}, its orbit is finite. Hence $\D\in\acl^\eq(A)$.
 % \end{proof}
 
+\section{Stable theories}
+\label{stable_teories}
+
+We say that $T$ is a \emph{stable theory\/} if every formula is stable.
+
+Let $p({\mr x})\in S(\U)$ be a global type. We say that $p({\mr x})$ is a \emph{definable type\/} if  for all formulas $\phi({\mr x}\,;{\gr z})\in L$ the sets ${\gr\D_{p,\phi}}$ are definable. We say that  $p({\mr x})$ is  \emph{definable over $A$} if so are all the sets ${\gr\D_{p,\phi}}$. 
+
+% If $p({\mr x})\in S(\U)$ is a definable global type, the set 
+% 
+% \ceq{\hfill\emph{\Cb(p)}}{=}{{\dcl}^\eq\Big(\big\{{\gr\D_{p,\phi}}\ :\ \phi({\mr x}\,;{\gr z})\in L\big\}\Big)}
+% 
+% is called the \emph{canonical base\/} of $p({\mr x})$. Clearly (almost by definition), any $f\in\Aut(\U)$ fixes $p({\mr x})$ if an only if it fixes the set $\Cb(p)$ pointwise. 
+
+When $T$ is stable, Lascar invariance is equivalent to a more manageable kind of invariance.
+
+\begin{proposition}\label{prop_type_over_acl2} Let $T$ be stable and let $p({\mr x})\in S(\U)$. Then the following are equivalent
+\begin{itemize}
+\item[1.] $p({\mr x})$ is Lascar invariant over $A$;
+\item[2.] $p({\mr x})$ is definable over $\acl^\eq\!A$;
+\item[3.] ${\gr\D_{p,\phi}}\in \acl^\eq\!A$ for all $\phi({\mr x}\,;{\gr z})\in L$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+ \ssf{3}$\IMP$\ssf{2}$\IMP$\ssf{1} are clear (stability is not required).
+ 
+ \ssf{1}$\IMP$\ssf{3} The sets ${\gr\D_{p,\phi}}$ are externally definable therefore, by Theorem~\ref{thm_def_stable_formula}, definable (over $\U$). As $p({\mr x})$ is Lascar invariant over $A$, so are the sets ${\gr\D_{p,\phi}}$. Hence they belong to $\acl^\eq\!A$ by Theorem~\ref{thm_Galois_alg=alg}.
+\end{proof}
+% 
+% \begin{proposition}\label{prop_type_over_dcl} Let $T$ be stable and let $p({\mr x})\in S(\U)$ be Lascar invariant over $A$. Then for every formula $\phi({\mr x}\,;{\gr z})\in L$ the set ${\gr\D_{p,\phi}}$ belongs to $\dcl^\eq(A,c)$ for every $c\models p_{\restriction A}(x)$.
+% \end{proposition}
+% \begin{proof}
+% Without loss of generality we can assume $p({\mr x})\in S(\U^\eq)$. 
+% \end{proof}
+
+
+
+
+
+A type over some set $q({\mr x})\subseteq L(A)$ is \emph{stationary\/} if it has a unique global extension that is Lascar invariant over $A$. The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
+
+\begin{proposition}\label{prop_type_over_acl_stationary} Let $T$ be stable and let $q({\mr x})\in S\big(\acl^\eq\!A\big)$. Then $q({\mr x})$ is stationary.
+\end{proposition}
+
+\begin{proof}
+Let $p_i({\mr x})\in S(\U^\eq)$, for $i=1,2$, be two global types that extend $q({\mr x})$ and are invariant over $\acl^\eq\!A$. To prove that $p_1({\mr x}) =p_2({\mr x})$, it suffices to show that for every formula $\phi({\mr x}\,;{\gr z})\in L$
+
+\ceq{\#\hfill {\gr\D_{p_1,\phi}}}{=}{{\gr\D_{p_2,\phi}}}
+
+Note that, by Proposition~\ref{prop_type_over_acl2} both sets belong to  $\acl^\eq\!A$. Clearly, for $i=1,2$, the formula $\A{\gr z}\,\big[\phi({\mr x}\,;{\gr z})\iff {\gr z}\in {\gr\D_{p_i,\phi}}\big]$ belongs to $p_i({\mr x})$. Then both formulas belong to $q({\mr x})$ and $\#$ follows.
+\end{proof}
+
+
+\begin{corollary}
+If $T$ is stable then the following are equivalent
+\begin{itemize}
+\item[1.] $a\equivL_A b$, see Definition~\ref{def_Lascar_type};
+\item[2.] $a\equivSh_A b$, see Definition~\ref{def_Sh_strong_type}.
+\end{itemize}
+\end{corollary}
+\begin{proof}\ssf{1}$\IMP$\ssf{2}. This is left as an exercise to the reader (stability is not required).
+
+\ssf{2}$\IMP$\ssf{1}. Assume $a\equivSh_A b$. By Proposition~\ref{prop_Shelah_strong_types} this is equivalent to $a\equiv_{\acl^\eq\!A} b$. Let $q(x)=\tp(a/{\acl}^\eq\!A)=\tp(b/{\acl}^\eq\!A)$. Let $p(x)\in S(\U^\eq)$ be the unique global type that is invariant over $\acl^\eq\! A$ and extends $q(x)$ which we obtain from by Proposition~\ref{prop_type_over_acl_stationary}. Let $c=\<c_i:i<\omega\>$ be such that $c_i\models p{\restriction \acl^\eq(A),\,a,\,b,\,c_{\restriction i}}$. Then $a,c$ and $b,c$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lstp_indiscernibles}.
+\end{proof}
+
+
+\begin{proposition} The following are equivalent
+\begin{itemize}
+\item[1.] $T$ is stable;
+\item[2.] every $A$-indiscernible sequence is totally $A$-indiscernible.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+\ssf{2}$\IMP$\ssf{1}. Assume $\neg$\ssf{1} and let $\phi({\mr x}\,;{\gr z})$ be an unstable formula witnessed by the ladder sequence $\<{\mr a_i}\,;{\gr b_i}:i<\omega\>$. Let $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ be 
+indiscernible sequence with the same Ehren\-feucht-Mostowski type. This is not totally indiscernible because $\phi({\mr a'_i}\,;{\gr b'_j})$ if and if $i< j$.
+
+\ssf{1}$\IMP$\ssf{2}. Assume $\neg$\ssf{2} and let $\<a_i : i<\omega\>$ be an $A$-indiscernible sequence, which is not totally $A$-in\-dis\-cern\-ible. Then there is a formula $\phi(x, y)\in L(A)$ and some $i<j$ such that $\phi(a_i , a_j )\wedge\neg\phi(a_j , a_i) $. By indiscernibility  $\phi(a_i, a_j)$ holds if and only if $i\le j$. Hence $\phi(x, y)$ is not stable.
+\end{proof}
+
+\begin{exercise}
+Prove that if every formula $\phi({\mr x}\,;{\gr z})\in L$ with $|{\mr x}|=1$ is stable then $T$ is stable. Hint: by compactness, if all sets approximable by $\phi({\mr x}\,;y,{\gr z})$ are definable, so are the sets approximable by $\phi({\mr x},y\,;{\gr z})$.\QED
+\end{exercise}
+
+
+\begin{exercise}
+Prove that strongly minimal theories are stable.\QED
+\end{exercise}
+
+
+
 \section{Stability and the number of types}
 
 The following proposition highlights the connection between stability and the cardinality of types.
@@ -347,79 +437,7 @@ which contradicts \ssf{1}.
 Prove that $\phi$ is stable if and only if $|S_\phi(\U)|\le2^\kappa$.\QED
 \end{exercise}
 
-\section{Stable theories}
-\label{stable_teories}
 
-We say that $T$ is a \emph{stable theory\/} if every formula is stable. When $T$ is stable, Lascar invariance is equivalent to something much more manageable.
-
-Let $p({\mr x})\in S(\U)$ be a global type. We say that $p({\mr x})$ is a \emph{definable type\/} if  for all formulas $\phi({\mr x}\,;{\gr z})\in L$ the sets ${\gr\D_{p,\phi}}$ are definable. We say that  $p({\mr x})$ is  \emph{definable over $A$} if so are all the sets ${\gr\D_{p,\phi}}$. 
-
-\begin{proposition}\label{prop_type_over_acl2} Let $T$ be stable and let $p({\mr x})\in S(\U)$. Then the following are equivalent
-\begin{itemize}
-\item[1.] $p({\mr x})$ is Lascar invariant over $A$;
-\item[2.] $p({\mr x})$ is definable over $\acl^\eq\!A$;
-\item[3.] ${\gr\D_{p,\phi}}\in \acl^\eq\!A$ for all $\phi({\mr x}\,;{\gr z})\in L$.
-\end{itemize}
-\end{proposition}
-\begin{proof}
- \ssf{3}$\IMP$\ssf{2}$\IMP$\ssf{1} are clear (stability is not required).
- 
- \ssf{1}$\IMP$\ssf{3} The sets ${\gr\D_{p,\phi}}$ are externally definable therefore, by Theorem~\ref{thm_def_stable_formula}, definable (over $\U$). As $p({\mr x})$ is Lascar invariant over $A$, so are the sets ${\gr\D_{p,\phi}}$. Hence they belong to $\acl^\eq\!A$ by Theorem~\ref{thm_Galois_alg=alg}.
-\end{proof}
-% 
-% \begin{proposition}\label{prop_type_over_dcl} Let $T$ be stable and let $p({\mr x})\in S(\U)$ be Lascar invariant over $A$. Then for every formula $\phi({\mr x}\,;{\gr z})\in L$ the set ${\gr\D_{p,\phi}}$ belongs to $\dcl^\eq(A,c)$ for every $c\models p_{\restriction A}(x)$.
-% \end{proposition}
-% \begin{proof}
-% Without loss of generality we can assume $p({\mr x})\in S(\U^\eq)$. 
-% \end{proof}
-
-A type over some set $q({\mr x})\subseteq L(A)$ is \emph{stationary\/} if it has a unique global extension that is Lascar invariant over $A$ (strictly speaking: \textit{non-forking over} $A$). The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
-
-\begin{proposition}\label{prop_type_over_acl_stationary} Let $T$ be stable and let $q({\mr x})\in S\big(\acl^\eq\!A\big)$. Then $q({\mr x})$ is stationary.
-\end{proposition}
-
-\begin{proof}
-Let $p_i({\mr x})\in S(\U^\eq)$, for $i=1,2$, be two global types that extend $q({\mr x})$ and are invariant over $\acl^\eq\!A$. To prove that $p_1({\mr x}) =p_2({\mr x})$, it suffices to show that for every formula $\phi({\mr x}\,;{\gr z})\in L$
-
-\ceq{\#\hfill {\gr\D_{p_1,\phi}}}{=}{{\gr\D_{p_2,\phi}}}
-
-Note that, by Proposition~\ref{prop_type_over_acl2} both sets belong to  $\acl^\eq\!A$. Clearly, for $i=1,2$, the formula $\A{\gr z}\,\big[\phi({\mr x}\,;{\gr z})\iff {\gr z}\in {\gr\D_{p_i,\phi}}\big]$ belongs to $p_i({\mr x})$. Then both formulas belong to $q({\mr x})$ and $\#$ follows.
-\end{proof}
-
-\begin{corollary}
-If $T$ is stable then the following are equivalent
-\begin{itemize}
-\item[1.] $a\equivL_A b$, see Definition~\ref{def_Lascar_type};
-\item[2.] $a\equivSh_A b$, see Definition~\ref{def_Sh_strong_type}.
-\end{itemize}
-\end{corollary}
-\begin{proof}\ssf{1}$\IMP$\ssf{2}. This is left as an exercise to the reader (stability is not required).
-
-\ssf{2}$\IMP$\ssf{1}. Assume $a\equivSh_A b$. By Proposition~\ref{prop_Shelah_strong_types} this is equivalent to $a\equiv_{\acl^\eq\!A} b$. Let $q(x)=\tp(a/{\acl}^\eq\!A)=\tp(b/{\acl}^\eq\!A)$. Let $p(x)\in S(\U^\eq)$ be the unique global type that is invariant over $\acl^\eq\! A$ and extends $q(x)$ which we obtain from by Proposition~\ref{prop_type_over_acl_stationary}. Let $c=\<c_i:i<\omega\>$ be such that $c_i\models p{\restriction \acl^\eq(A),\,a,\,b,\,c_{\restriction i}}$. Then $a,c$ and $b,c$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lstp_indiscernibles}.
-\end{proof}
-
-\begin{proposition} The following are equivalent
-\begin{itemize}
-\item[1.] $T$ is stable;
-\item[2.] every $A$-indiscernible sequence is totally $A$-indiscernible.
-\end{itemize}
-\end{proposition}
-
-\begin{proof}
-\ssf{2}$\IMP$\ssf{1}. Assume $\neg$\ssf{1} and let $\phi({\mr x}\,;{\gr z})$ be an unstable formula witnessed by the ladder sequence $\<{\mr a_i}\,;{\gr b_i}:i<\omega\>$. Let $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ be 
-indiscernible sequence with the same Ehren\-feucht-Mostowski type. Then $\phi({\mr a'_i}\,;{\gr b'_j})$ if and if $i< j$. 
-
-\ssf{1}$\IMP$\ssf{2}. Assume $\neg$\ssf{2} and let $\<a_i : i<\omega\>$ be an $A$-indiscernible sequence, which is not totally $A$-in\-dis\-cern\-ible. Then there is a formula $\phi(x, y)\in L(A)$ and some $i<j$ such that $\phi(a_i , a_j )\wedge\neg\phi(a_j , a_i) $. By indiscernibility  $\phi(a_i, a_j)$ holds if and only if $i\le j$. Hence $\phi(x, y)$ is not stable.
-\end{proof}
-
-\begin{exercise}
-Prove that if every formula $\phi({\mr x}\,;{\gr z})\in L$ with $|{\mr x}|=1$ is stable then $T$ is stable. Hint: by compactness, if all sets approximable by $\phi({\mr x}\,;y,{\gr z})$ are definable, so are the sets approximable by $\phi({\mr x},y\,;{\gr z})$.\QED
-\end{exercise}
-
-
-\begin{exercise}
-Prove that strongly minimal theories are stable.\QED
-\end{exercise}
 
 \section{Notes and references}
 \begin{biblist}[]\normalsize
