@@ -12,74 +12,81 @@
 %\setcounter{page}{1}
 \def\vl{\mr}
 
-The description of first-order definability is simplified if we allow definable sets to be used as second-order parameters in formulas. This leads to the theory of (elimination of) \textit{imaginaries}. The technical reason that induced Shalah to introduce imaginaries will only be clear later, see Sections~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}. Nevertheless the theory may be appreciated in itself.
+The description of first-order definability is simplified if we allow definable sets to be used as second-order parameters in formulas. This leads to the theory of (elimination of) \textit{imaginaries}. The technical reason that induced Shalah to introduce imaginaries will only be clear later, see Sections~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}, but the theory is of independent interest.
 
-In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$. Notation and implicit assumptions are as presented in Section~\hyperref[saturation]{\ref*{saturation}.\ref*{monster}}.
+In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$. The notation and implicit assumptions are as in Section~\hyperref[saturation]{\ref*{saturation}.\ref*{monster}}.
 
 \section{Many-sorted structures}
 \label{many-sorted}
 \def\Ar{{\rm Ar}}
 
-A many-sorted language consists of three disjoint sets. Besides the usual $L_{\rm fun}$ and $L_{\rm rel}$, we have a set $L_{\rm srt}$ of \emph{sorts}. The language comprises also a \emph{(many-sorted) arity function} that assigns to function and relations symbols $r$, $f$ a tuple of sorts of finite positive length which we call \emph{arity}.
+A many-sorted language consists of three disjoint sets. Besides the usual $L_{\rm fun}$ and $L_{\rm rel}$, we have a set $L_{\rm srt}$  whose elements are called \emph{sorts}. The language includes also a \emph{(many-sorted) arity function} that assigns to function and relation symbols $r$, $f$ a tuple of sorts of finite positive length which we call \emph{arity}.
 
-A many sorted structure $M$ consists of
+A many-sorted structure $M$ consists of
 \begin{itemize}
 \item[1.] a set $M_s$, for each $s\in L_{\rm srt}$;
 \item[2.] a function $f^M:M_{s_1}\times\dots\times M_{s_n}\to M_{s_0}$, for each $f\in L_{\rm fun}$ of arity $\<s_0,\dots,s_n\>$;
 \item[3.] a relation $r^M\subseteq M_{s_0}\times\dots\times M_{s_n}$, for each $r\in L_{\rm rel}$ of arity $\<s_0,\dots,s_n\>$.
 \end{itemize}
 
-For every sort $s$ we fix a sufficiently large a set of variables $V_s$. Now we define terms by induction. Along the way we assign a sort to each term $t$. 
+For every sort $s$ we fix a sufficiently large set of variables $V_s$. Now we define terms and their respective sorts by induction.
 
-All variables are terms of the respective sort. If $t_1,\dots,t_n$ are terms of sorts $s_1,\dots,s_n$ and $f\in L_{\rm fun}$ is of arity $\<s_0,\dots,s_n\>$ then $f\,t_1,\dots,t_n$ is a term of sort $s_0$. 
+All variables are terms of their respective sort. If $t_1,\dots,t_n$ are terms of sorts $s_1,\dots,s_n$ and $f\in L_{\rm fun}$ is of arity $\<s_0,\dots,s_n\>$ then $f\,t_1,\dots,t_n$ is a term of sort $s_0$. 
 
-If $r\in L_{\rm rel}$ has arity $\<s_0,\dots,s_n\>$ then $r\,t_0,\dots,t_n$ is a formula. Also, $t_1=t_2$ is formula for every pair of terms of equal sort. All other formulas are constructed by induction using the propositional connectives $\neg$ and $\vee$ and the quantifier $\E x$ (or any other reasonable choice of logical connectives).
+Formulas are deined as follows. If $r\in L_{\rm rel}$ has arity $\<s_0,\dots,s_n\>$ then $r\,t_0,\dots,t_n$ is a formula. Also, $t_1=t_2$ is formula for every pair of terms of equal sort. All other formulas are constructed by induction using the propositional connectives $\neg$ and $\vee$ and the quantifier $\E x$ (or any other reasonable choice of logical connectives).
 
-Truth of formulas is defined as for one-sorted languages up to one difference: we require that the witness of the quantifier $\E x$ belongs to $M_s$, where $s$ is the sort of the variable $x$.
+Truth of formulas is defined as for one-sorted languages except that here we require that the witness of the quantifier $\E x$ belongs to $M_s$, where $s$ is the sort of the variable $x$.
 
-Second order logic is arguably the most widely used example of many sorted structure. It may be formalized using a language with a sort $n$ for every $n\in\omega$. The sort $0$ is used for the first order elements; the sorts $n>0$ is used for relations of arity $n$. For every $n>0$ the language has a relation symbol $\in_n$ of arity $\<0^n,n\>$, where $0^n$ stands for $n$ many $0$s. There are also arbitrary many functions and relation symbols of sort $\<0^{n+1}\>$.
+Models of second-order logic are arguably the most widely used examples of many-sorted structures. They may be described using a language with a sort $n$ for every $n\in\omega$. The sort $0$ is used for the first-order elements; the sorts $n>0$ is used for relations of arity $n$. For every $n>0$ the language has a relation symbol $\in_n$ of arity $\<0^n,n\>$, where 
+
+\ceq{\hfill 0^n}{=}{\underbrace{0,\dots,0}_{n\mbox{\scriptsize-times}}.} 
+
+There are also arbitrary many function and relation symbols of sort $\<0^n\>$ for any $n>0$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The eq-expansion}\label{immaginari}
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Warning: the structure $\U^\eq$ and the theory $T^\eq$ defined below does not coincide with the standard one. As the difference is merely cosmetic, introducing a new notation would be overkill and we prefer to abuse the existing terminology. In Section~\ref{imaginaries_long} below we compare our definition with the standard one. This will also explain the symbol used.
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Warning: the structure $\U^\eq$ and the theory $T^\eq$ defined below do not coincide with the standard ones introduced by Shelah. As the difference is merely cosmetic, introducing new notation would be overkill and we prefer to abuse the existing terminology. In Section~\ref{imaginaries_long} below we compare our definition with the standard one. %This will also explain the symbol used.
 
 We recall the definition of partitioned formulas. A \emph{partitioned formula\/} is a triple that consists of a formula and two tuples of variables. We use a semicolon, as in $\sigma({\mr x}\,;{\gr z})$, to separate the two tuples of variables. Below, ${\gr z}$ is always a placeholder for parameters and ${\mr x}$ is used for the definition of a set.
 
-Given a language $L$ we define a many-sorted language \emph{$L^{\rm\textbf{eq}}$\/} which has a sort for each (partitioned) formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort\/} or the \emph{first-order sort}. All other sorts are called \emph{second-order sorts}. First of all, $L^\eq$ contains all relations and functions of $L$. The many-sorted arity of a relation $r$ is $\<0^{n_r}\>$, a string of $0$'s of length the arity of $r$ in $L$.  Similarly, the many-sorted arity of a function $f$ is $\<0^{1+n_f}\>$. Moreover $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$. These have arity $\big\<0^{|{\mr x}|},\sigma({\mr x}\,;{\gr z})\big\>$. As there is no risk of ambiguity, in the sequel we write $\in$ without subscript.
+Given a language $L$ we define a many-sorted language \emph{$L^{\rm\textbf{eq}}$\/} which has a sort for each (partitioned) formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort}. For better legibility, we will pretend that all formulas $\sigma$ depends on the same pair of tuples ${\mr x}\,;{\gr z}$. This is not the case unless we assume these are infinite tuples and interpret what follows accordingly. 
+
+The home sort is also called the \emph{first-order sort\/} and all other sorts are called \emph{second-order sorts}. First of all, $L^\eq$ contains all relations and functions of $L$. The many-sorted arity of a relation $r$ is $\<0^{n_r}\>$, where $n_r$ is the arity of $r$ in $L$. Similarly, the many-sorted arity of a function $f$ is $\<0^{1+n_f}\>$, where $n_f$ is the arity of $f$ in $L$. Moreover $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$. These have arity \smash{$\big\<0^{|{\mr x}|},\sigma({\mr x}\,;{\gr z})\big\>$}. As there is no risk of ambiguity, in the sequel we write $\in$ without subscript.
 
 The model \emph{$\U^{\rm\textbf{eq}}$\/} has $\U$ as domain for the home sort. The domain for the sort $\sigma({\mr x}\,;{\gr z})$ contains the definable sets ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in\U^{|{\gr z}|}$. The symbols in $L$ have the same interpretation as in the one-sorted case, and $\in$ is interpreted as set membership. We write \emph{$T^{\rm\textbf{eq}}$\/} for $\Th(\U^\eq)$.
 
 As usual \emph{$L^\eq$\/} also denotes the set of formulas constructed in this language and, if $A\subseteq\U^\eq$, we write  \emph{$L^\eq(A)$\/} for the language and the set of formulas that use elements of $A$ as parameters. We write \emph{$L(A)$\/} for the set of formulas in $L^\eq(A)$ that contain no second-order variables (neither free nor quantified).  
 
-% the others are called \emph{imaginary elements}. So, imaginary elements are just definable sets (which below we denote by lower case letters $a,b,c,\dots$).
+We use variations of the symbol ${\vl\X}$ to denote second-order variables.
 
+% the others are called \emph{imaginary elements}. So, imaginary elements are just definable sets (which below we denote by lower case letters $a,b,c,\dots$).
 
 It is important to note right away that this expansion is a mild one: the definable subsets of the home sort of $\U^\eq$ are the same as those of $\U$. In particular, iteration of the expansion would not yield anything new. 
 
 
 
 \begin{proposition}\label{prop_eqmild}
-Let $\phi({\mr u}\,;{\vl\X})\in L^\eq$ where ${\mr u}\,$ is a tuple of first-order variables and  ${\vl\X}$ a tuple of variables of sort $\sigma_i({\mr x_i}\,;{\gr z_i})$ for $i=1,\dots,n$. Then there is a formula $\phi'({\mr u}\,;{\gr z})\in L$ such that 
+Let ${\vl\X}={\vl\X_1},\dots,{\vl\X_n}$ be a tuple of second order variables of sort $\sigma_i({\mr x}\,;{\gr z})$ for $i=1,\dots,n$. Let $\phi({\mr u}\,;{\vl\X})\in L^\eq$ where ${\mr u}\,$ is a tuple of first-order variables. Then there is a formula $\phi'({\mr u}\,;{\gr z})\in L$ such that 
 
-\hfil$\displaystyle\A {\vl\X},{\gr z}\ \bigg[\bigwedge^n_{i=1}{\vl\X_i}=\big\{{\mr x_i}:\sigma_i({\mr x_i}\,;{\gr z_i})\big\}\imp\A {\mr u}\ \big[\phi({\mr u}\,;{\vl\X})\ \iff\ \phi'({\mr u}\,;{\gr z})\big]\bigg]$
+\hfil$\displaystyle\A {\vl\X},{\gr z}\ \bigg[\bigwedge^n_{i=1}{\vl\X_i}=\big\{{\mr x}:\sigma_i({\mr x}\,;{\gr z})\big\}\imp\A {\mr u}\ \big[\phi({\mr u}\,;{\vl\X})\ \iff\ \phi'({\mr u}\,;{\gr z})\big]\bigg]$
 
-where ${\vl\X}$ stand for the tuple ${\vl\X_1},\dots,{\vl\X_n}$ and ${\gr z}$ for the concatenation of ${\gr z_1},\dots,{\gr z_n}$.% For simplicity we are assuming that the tuples ${\gr z_i}$ do not have variables in common.
+% For simplicity we are assuming that the tuples ${\gr z_i}$ do not have variables in common.
 \end{proposition}
 
 When $n=0$ the proposition asserts that $L_{{\mr u}}^\eq$ and $L_{{\mr u}}$ have the same expressive power.
 
 \begin{proof}
-By induction on syntax. When $\phi$ is atomic $\phi'=\phi$ unless it is of the form ${\mr t}\in {\vl\X}$ for some tuple of terms ${\mr t}$ or it has the form ${\vl\X_1}={\vl\X_2}$. In the first case $\phi'$ is the formula $\sigma({\mr t}\,;{\gr z})$. In the second case it is the formula $\A {\mr x}\,\big[\sigma_1({\mr x}\,;{\gr z_1}) \iff\sigma_2({\mr x}\,;{\gr z_2})\big]$. In the latter case we assume that the variables ${\mr x_1}$,${\mr x_2}$ in the sorts of  ${\vl\X_1}$,${\vl\X_2}$ have equal length otherwise we may replace ${\vl\X_1}={\vl\X_2}$ by $\bot$.
+By induction on syntax. When $\phi$ is atomic $\phi'=\phi$ unless it is of the form ${\mr t}\in {\vl\X}$ for some tuple of terms ${\mr t}$ or it has the form ${\vl\X_1}={\vl\X_2}$. In the first case $\phi'$ is the formula $\sigma({\mr t}\,;{\gr z})$. In the second case it is the formula $\A {\mr x}\,\big[\sigma_1({\mr x}\,;{\gr z}) \iff\sigma_2({\mr x}\,;{\gr z})\big]$.
 
-As for connectives they stay unchanged but for the quantifiers $\E {\vl\X}$ where ${\vl\X}$ is a second-order variable, say of sort $\sigma({\mr x}\,;{\gr z})$. These quantifiers are replaced with $\E{\gr z}$.
+The connectives stay unchanged except for the quantifiers $\E {\vl\X}$ where ${\vl\X}$ is a second-order variable, say of sort $\sigma({\mr x}\,;{\gr z})$. These quantifiers are replaced with $\E{\gr z}$.
 \end{proof}
 
 Proposition~\ref{prop_eqmild} implies in particular that we can always eliminate second-order quantifiers. This is an obvious fact that may be obscured by the notation: we can replace $\E {\vl\X}$ by $\E {\gr z}$ if we substitute  $\sigma({\mr t}\,;{\gr z})$ for ${\mr t}\in {\vl\X}$ in the quantified formula.
 
-Proposition~\ref{prop_eqmild} should convince the reader that the move from $\U$ to $\U^\eq$ is almost a trivial one. %Exercise~\ref{ex_feqthm_senza_eq} below should convince the reader that some trivial moves may be highly convenient.
+Proposition~\ref{prop_eqmild} should convince the reader that the move from $\U$ to $\U^\eq$ is almost trivial. %Exercise~\ref{ex_feqthm_senza_eq} below should convince the reader that some trivial moves may be highly convenient.
 
 
 \begin{remark}\label{rem_eqmild}
@@ -87,7 +94,7 @@ From Proposition~\ref{prop_eqmild} it follows that for every $A\subseteq\U^\eq$,
 \end{remark}
 
 If $\V\preceq\U$ we write \emph{$\V^{\textbf{eq}}$\/} for the substructure of $\U^\eq$ that has $\V$ as domain of the home sort and  the set of definable sets of the form $\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in \V^{|{\gr z}|}$ as domain of the sort $\sigma({\mr x}\,;{\gr z})$. 
-The following proposition claims that elementary substructures of $\U^\eq$ are exactly those of the form $\V^\eq$ for some $\V\preceq\U$. 
+The following proposition claims that the elementary substructures of $\U^\eq$ are exactly those of the form $\V^\eq$ for some $\V\preceq\U$. 
 
 \begin{proposition}
 The following are equivalent for every structure $\V^\dag$ of signature $L^\eq$
@@ -124,18 +131,18 @@ Every elementary map $k:\U^\eq\to\U^\eq$ of cardinality $<\kappa$ extends to an 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The definable closure in the eq-expansion}
-We may safely confuse automorphism of $\U$ with automorphisms of $\U^\eq$. Let $A\subseteq\U^\eq$ and let $a$ be a tuple of elements of $\U^{\eq}$. We denote by \emph{$\Aut(\U/A)$\/} the set of automorphisms (of $\U^\eq$) that fix all elements of $A$. The symbol \emph{$\orbit(a/A)$\/} denotes the \emph{orbit of $a$ over $A$}. This has been defined in Section~\hyperref[homogeneous]{\ref*{saturation}.\ref*{homogeneous}} and now we apply it to $\U^\eq$
+We may safely identify automorphism of $\U$ with automorphisms of $\U^\eq$. Let $A\subseteq\U^\eq$ and let $a$ be a tuple of elements of $\U^{\eq}$. We denote by \emph{$\Aut(\U/A)$\/} the set of automorphisms (of $\U^\eq$) that fix all elements of $A$. The symbol \emph{$\orbit(a/A)$\/} denotes the \emph{orbit of $a$ over $A$}. This has been defined in Section~\hyperref[homogeneous]{\ref*{saturation}.\ref*{homogeneous}} and now we apply it to $\U^\eq$
 
-\ceq{\hfill\emph{$\orbit(a/A)$}}{\deq}{\big\{fa\;:\; f\in\Aut(\U/A)\big\}.}
+\ceq{\hfill\emph{$\orbit(a/A)$}}{=}{\big\{fa\;:\; f\in\Aut(\U/A)\big\}.}
 
 By homogeneity, $\O(a/A)=p(\U^\eq)$ where $p(v)=\tp(a/A)$. When $\O(a/A)=\{a\}$ we say that $a$ is \emph{invariant over $A$\/} or \emph{$A$-invariant}, for short.
 
 
 \begin{definition}\label{def_def}
-Let $A\subseteq\U^\eq$ and $a\in\U^\eq$. When $\phi(a)\wedge\E^{=1}v\,\phi(v)$ holds for some formula $\phi(v)\in L^\eq(A)$, we say that \emph{$a$ is definable over $A$\/} . We write \emph{dcl$^\textrm{eq}(A)$\/} for the set of those $a\in\U^\eq$ that are definable over $A$. We write \emph{dcl$(A)$\/} for $\dcl^\eq(A)\cap\U$. This is the natural generalization of the notion of definability introduced in Section~\hyperref[acl]{\ref*{geometria}.\ref*{acl}}.
+Let $A\subseteq\U^\eq$ and $a\in\U^\eq$. When $\phi(a)\wedge\E^{=1}v\,\phi(v)$ holds for some formula $\phi(v)\in L^\eq(A)$, we say that \emph{$a$ is definable over $A$\/} . We write \emph{dcl$^\textrm{eq}(A)$\/} for the set of those $a\in\U^\eq$ that are definable over $A$. We write \emph{dcl$(A)$\/} for $\dcl^\eq(A)\cap\U$. This is the natural generalization of the notion of definability introduced in Section~\hyperref[acl]{\ref*{geometria}.\ref*{acl}}.\QED
 \end{definition}
 
-Saturation and homogeneity of $\U^\eq$ allow us to prove the following proposition with virtually the same proof of Theorem~\ref{thm_dgalois}
+The saturation and homogeneity of $\U^\eq$ allow us to prove the following proposition with virtually the same proof as for Theorem~\ref{thm_dgalois}
 
 \begin{theorem}\label{thm_Galois_def=def}
 For any $A\subseteq\U^\eq$ and $a\in\U^\eq$ the following are equivalent
@@ -150,10 +157,10 @@ Note that a tuple is invariant if and only it all its component are definable. T
 Definition~\ref{def_def} treats first- and second-order elements of $\U^\eq$ uniformly. However, for sets it can be rephrased in a more natural way.
 
 \begin{proposition}\label{prop_def_def_set}
-Let $A\subseteq\U^\eq$ and let ${\vl\Aa}\in\U^\eq$ have sort $\sigma({\mr x}\,;{\gr z})$ then the following are equivalent
+Let $A\subseteq\U^\eq$ and let ${\vl\Aa}\in\U^\eq$ have sort $\sigma({\mr x}\,;{\gr z})$. Then the following are equivalent
 \begin{itemize}
-\item[1.] ${\vl\Aa}$ is definable over $A$
-\item[2.] ${\vl\Aa}=\psi({\mr\U})$ for some $\psi({\mr x})\in L(A)$
+\item[1.] ${\vl\Aa}$ is definable over $A$;
+\item[2.] ${\vl\Aa}=\psi({\mr\U})$ for some $\psi({\mr x})\in L(A)$.
 \end{itemize}
 \end{proposition}
 
