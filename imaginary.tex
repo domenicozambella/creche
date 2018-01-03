@@ -20,7 +20,7 @@ In this chapter we fix a signature $L$, a complete theory $T$ without finite mod
 \label{many-sorted}
 \def\Ar{{\rm Ar}}
 
-A many-sorted language consists of three disjoint sets. Besides the usual $L_{\rm fun}$ and $L_{\rm rel}$, we have a set $L_{\rm srt}$  whose elements are called \emph{sorts}. The language includes also a \emph{(many-sorted) arity function} that assigns to function and relation symbols $r$, $f$ a tuple of sorts of finite positive length which we call \emph{arity}.
+A many-sorted language consists of three disjoint sets. Besides the usual $L_{\rm fun}$ and $L_{\rm rel}$, we have a set $L_{\rm srt}$  whose elements are called \emph{sorts}. The language also includes a \emph{(many-sorted) arity function} that assigns to function and relation symbols $r$, $f$ a tuple of sorts of finite positive length which we call \emph{arity}.
 
 A many-sorted structure $M$ consists of
 \begin{itemize}
@@ -33,15 +33,15 @@ For every sort $s$ we fix a sufficiently large set of variables $V_s$. Now we de
 
 All variables are terms of their respective sort. If $t_1,\dots,t_n$ are terms of sorts $s_1,\dots,s_n$ and $f\in L_{\rm fun}$ is of arity $\<s_0,\dots,s_n\>$ then $f\,t_1,\dots,t_n$ is a term of sort $s_0$. 
 
-Formulas are deined as follows. If $r\in L_{\rm rel}$ has arity $\<s_0,\dots,s_n\>$ then $r\,t_0,\dots,t_n$ is a formula. Also, $t_1=t_2$ is formula for every pair of terms of equal sort. All other formulas are constructed by induction using the propositional connectives $\neg$ and $\vee$ and the quantifier $\E x$ (or any other reasonable choice of logical connectives).
+Formulas are defined as follows. If $r\in L_{\rm rel}$ has arity $\<s_0,\dots,s_n\>$ then $r\,t_0,\dots,t_n$ is a formula. Also, $t_1=t_2$ is formula for every pair of terms of equal sort. All other formulas are constructed by induction using the propositional connectives $\neg$ and $\vee$ and the quantifier $\E x$ (or any other reasonable choice of logical connectives).
 
-Truth of formulas is defined as for one-sorted languages except that here we require that the witness of the quantifier $\E x$ belongs to $M_s$, where $s$ is the sort of the variable $x$.
+Truth of formulas is defined as for one-sorted languages, except that here we require that the witness of the quantifier $\E x$ belongs to $M_s$, where $s$ is the sort of the variable $x$.
 
-Models of second-order logic are arguably the most widely used examples of many-sorted structures. They may be described using a language with a sort $n$ for every $n\in\omega$. The sort $0$ is used for the first-order elements; the sorts $n>0$ is used for relations of arity $n$. For every $n>0$ the language has a relation symbol $\in_n$ of arity $\<0^n,n\>$, where 
+Models of second-order logic are arguably the most widely used examples of many-sorted structures. They may be described using a language with a sort $n$ for every $n\in\omega$. The sort $0$ is used for the first-order elements; the sort $n>0$ is used for relations of arity $n$. For every $n>0$ the language has a relation symbol $\in_n$ of arity $\<0^n,n\>$, where 
 
 \ceq{\hfill 0^n}{=}{\underbrace{0,\dots,0}_{n\mbox{\scriptsize-times}}.} 
 
-There are also arbitrary many function and relation symbols of sort $\<0^n\>$ for any $n>0$.
+There are also arbitrarily many function and relation symbols of sort $\<0^n\>$ for any $n>0$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -52,19 +52,19 @@ There are also arbitrary many function and relation symbols of sort $\<0^n\>$ fo
 
 We recall the definition of partitioned formulas. A \emph{partitioned formula\/} is a triple that consists of a formula and two tuples of variables. We use a semicolon, as in $\sigma({\mr x}\,;{\gr z})$, to separate the two tuples of variables. Below, ${\gr z}$ is always a placeholder for parameters and ${\mr x}$ is used for the definition of a set.
 
-Given a language $L$ we define a many-sorted language \emph{$L^{\rm\textbf{eq}}$\/} which has a sort for each (partitioned) formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort}. For better legibility, we will pretend that all formulas $\sigma$ depends on the same pair of tuples ${\mr x}\,;{\gr z}$. This is not the case unless we assume these are infinite tuples and interpret what follows accordingly. 
+Given a language $L$ we define a many-sorted language \emph{$L^{\rm\textbf{eq}}$\/} which has a sort for each (partitioned) formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort}. For better legibility, we will pretend that all formulas $\sigma$ depend on the same pair of tuples ${\mr x}\,;{\gr z}$, so we assume that ${\mr x}\,;{\gr z}$ are infinite tuples. 
 
-The home sort is also called the \emph{first-order sort\/} and all other sorts are called \emph{second-order sorts}. First of all, $L^\eq$ contains all relations and functions of $L$. The many-sorted arity of a relation $r$ is $\<0^{n_r}\>$, where $n_r$ is the arity of $r$ in $L$. Similarly, the many-sorted arity of a function $f$ is $\<0^{1+n_f}\>$, where $n_f$ is the arity of $f$ in $L$. Moreover $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$. These have arity \smash{$\big\<0^{|{\mr x}|},\sigma({\mr x}\,;{\gr z})\big\>$}. As there is no risk of ambiguity, in the sequel we write $\in$ without subscript.
+The home sort is also called the \emph{first-order sort}. All other sorts are called \emph{second-order sorts}. First of all, $L^\eq$ contains all relations and functions of $L$. The many-sorted arity of a relation $r$ is $\<0^{n_r}\>$, where $n_r$ is the arity of $r$ in $L$. Similarly, the many-sorted arity of a function $f$ is $\<0^{1+n_f}\>$, where $n_f$ is the arity of $f$ in $L$. Moreover, $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$. These relation symbols have arity \smash{$\big\<0^{|{\mr x}|},\sigma({\mr x}\,;{\gr z})\big\>$}. As there is no risk of ambiguity, in what follows we write $\in$ without subscript.
 
 The model \emph{$\U^{\rm\textbf{eq}}$\/} has $\U$ as domain for the home sort. The domain for the sort $\sigma({\mr x}\,;{\gr z})$ contains the definable sets ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in\U^{|{\gr z}|}$. The symbols in $L$ have the same interpretation as in the one-sorted case, and $\in$ is interpreted as set membership. We write \emph{$T^{\rm\textbf{eq}}$\/} for $\Th(\U^\eq)$.
 
 As usual \emph{$L^\eq$\/} also denotes the set of formulas constructed in this language and, if $A\subseteq\U^\eq$, we write  \emph{$L^\eq(A)$\/} for the language and the set of formulas that use elements of $A$ as parameters. We write \emph{$L(A)$\/} for the set of formulas in $L^\eq(A)$ that contain no second-order variables (neither free nor quantified).  
 
-We use variations of the symbol ${\vl\X}$ to denote second-order variables.
+We use the symbol ${\vl\X}$ to denote a generic second-order variable.
 
 % the others are called \emph{imaginary elements}. So, imaginary elements are just definable sets (which below we denote by lower case letters $a,b,c,\dots$).
 
-It is important to note right away that this expansion is a mild one: the definable subsets of the home sort of $\U^\eq$ are the same as those of $\U$. In particular, iteration of the expansion would not yield anything new. 
+It is important to note right away that this expansion of $\U$ is a mild one: the definable subsets of the home sort of $\U^\eq$ are the same as those of $\U$. In particular, iterating the expansion would not yield anything new. 
 
 
 
@@ -79,9 +79,9 @@ Let ${\vl\X}={\vl\X_1},\dots,{\vl\X_n}$ be a tuple of second order variables of 
 When $n=0$ the proposition asserts that $L_{{\mr u}}^\eq$ and $L_{{\mr u}}$ have the same expressive power.
 
 \begin{proof}
-By induction on syntax. When $\phi$ is atomic $\phi'=\phi$ unless it is of the form ${\mr t}\in {\vl\X}$ for some tuple of terms ${\mr t}$ or it has the form ${\vl\X_1}={\vl\X_2}$. In the first case $\phi'$ is the formula $\sigma({\mr t}\,;{\gr z})$. In the second case it is the formula $\A {\mr x}\,\big[\sigma_1({\mr x}\,;{\gr z}) \iff\sigma_2({\mr x}\,;{\gr z})\big]$.
+By induction on syntax. When $\phi$ is atomic, we set $\phi'=\phi$ unless it is of the form ${\mr t}\in {\vl\X}$ for some tuple of terms ${\mr t}$ or it has the form ${\vl\X_1}={\vl\X_2}$. In the first case $\phi'$ is the formula $\sigma({\mr t}\,;{\gr z})$. In the second case it is the formula $\A {\mr x}\,\big[\sigma_1({\mr x}\,;{\gr z}) \iff\sigma_2({\mr x}\,;{\gr z})\big]$.
 
-The connectives stay unchanged except for the quantifiers $\E {\vl\X}$ where ${\vl\X}$ is a second-order variable, say of sort $\sigma({\mr x}\,;{\gr z})$. These quantifiers are replaced with $\E{\gr z}$.
+The connectives stay unchanged except for the quantifiers $\E {\vl\X}$, where ${\vl\X}$ is a second-order variable, say of sort $\sigma({\mr x}\,;{\gr z})$. These quantifiers are replaced by $\E{\gr z}$.
 \end{proof}
 
 Proposition~\ref{prop_eqmild} implies in particular that we can always eliminate second-order quantifiers. This is an obvious fact that may be obscured by the notation: we can replace $\E {\vl\X}$ by $\E {\gr z}$ if we substitute  $\sigma({\mr t}\,;{\gr z})$ for ${\mr t}\in {\vl\X}$ in the quantified formula.
@@ -111,7 +111,7 @@ Implication \ssf{2}$\IMP$\ssf{1} is a direct consequence of Proposition~\ref{pro
 Let $A\subseteq\U^\eq$. Then every type $p({\mr u}\,;{\vl\X})\subseteq L^\eq(A)$ finitely consistent in $\U^\eq$ is realized in $\U^\eq$. That is, $\U^\eq$ is saturated.
 \end{proposition}
 \begin{proof}
-By Remark~\ref{rem_eqmild}, there is some $B\subseteq\U$ and some $q({\mr u}\,;{\vl\X})\subseteq L^\eq(B)$ equivalent to $p({\mr u}\,;{\vl\X})$. This already proves the proposition when ${\vl\X}$ is the empty tuple. Otherwise, let $q'({\mr u}\,;{\gr z})$ be obtained replacing every formula $\phi({\mr u}\,;{\vl\X})$ in $q({\mr u}\,;{\vl\X})$ with with the formula $\phi'({\mr u}\,;{\gr z})$ given by Proposition~\ref{prop_eqmild}. Then $q'({\mr u}\,;{\gr z})$ is finitely consistent in $\U$. Assume for clarity of notation that ${\vl\X}$ is a single variable of sort  $\sigma({\mr x}\,;{\gr z})$. If ${\mr c}\,;{\gr b}\models q'({\mr u}\,;{\gr z})$ then  ${\mr c}\,;\sigma({\mr\U}\,;{\gr b})\models q({\mr u}\,;{\vl\X})$.
+By Remark~\ref{rem_eqmild}, there are some $B\subseteq\U$ and some $q({\mr u}\,;{\vl\X})\subseteq L^\eq(B)$ equivalent to $p({\mr u}\,;{\vl\X})$. This already proves the proposition when ${\vl\X}$ is the empty tuple. Otherwise, let $q'({\mr u}\,;{\gr z})$ be obtained replacing every formula $\phi({\mr u}\,;{\vl\X})$ in $q({\mr u}\,;{\vl\X})$ with the formula $\phi'({\mr u}\,;{\gr z})$ given in Proposition~\ref{prop_eqmild}. Then $q'({\mr u}\,;{\gr z})$ is finitely consistent in $\U$. Assume for clarity of notation that ${\vl\X}$ is a single variable of sort $\sigma({\mr x}\,;{\gr z})$. If ${\mr c}\,;{\gr b}\models q'({\mr u}\,;{\gr z})$, then  ${\mr c}\,;\sigma({\mr\U}\,;{\gr b})\models q({\mr u}\,;{\vl\X})$.
 \end{proof}
 
 
