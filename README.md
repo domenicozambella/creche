@@ -3,7 +3,7 @@
 
 Lecture notes for an introductory (under)graduate course.
 
-<span style="background-color:aaaa00;"> Warning: this branch contains work in progress mixed up with wrong ideas and wild experiments. Please, visit the <em>master</em> branch instead.</span>
+<span style="color:aa0000;"> Warning: this branch contains work in progress mixed up with wrong ideas and wild experiments. Please, visit the <em>master</em> branch instead.</span>
 
 Printable output in file [`creche.pdf`](./creche.pdf)
 
