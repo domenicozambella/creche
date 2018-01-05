@@ -1,12 +1,10 @@
 # [A Cr&egrave;che Course in Model Theory](../../raw/scribbels/creche.pdf)
 
-
 Lecture notes for an introductory (under)graduate course.
 
-`Warning: this branch contains work in progress mixed up with wrong ideas and wild experiments. Please, visit the <em>master</em> branch instead.`
+`Warning: this branch contains work in progress mixed up with wrong ideas and wild experiments.`
 
-Printable output in file [`creche.pdf`](./creche.pdf)
-
+`Please, visit the master branch instead.`
 
 ## Table of contents
 
