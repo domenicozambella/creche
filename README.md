@@ -1,8 +1,12 @@
-# [A Cr&egrave;che Course in Model Theory](../../raw/master/creche.pdf)
+# [A Cr&egrave;che Course in Model Theory](../../raw/scribbels/creche.pdf)
 
-Lecture notes for an introductory (under)graduate course
+
+Lecture notes for an introductory (under)graduate course.
+
+<span style="background-color:aaaa00;"> Warning: this branch contains work in progress mixed up with wrong ideas and wild experiments. Please, visit the <em>master</em> branch instead.</span>
 
 Printable output in file [`creche.pdf`](./creche.pdf)
+
 
 ## Table of contents
 
@@ -98,3 +102,11 @@ Printable output in file [`creche.pdf`](./creche.pdf)
    * Stable theories
    * Stability and the number of types
    * Notes and references
+*  **Continous logic**
+   * Real-valued structures
+*  **Measures???**
+   * Keisler measures
+   * Borel measures
+   * Extension of Keisler measures
+   * Smooth measures
+   * Measure extension
