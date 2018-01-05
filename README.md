@@ -3,7 +3,7 @@
 
 Lecture notes for an introductory (under)graduate course.
 
-<font style="color:aa0000;"> Warning: this branch contains work in progress mixed up with wrong ideas and wild experiments. Please, visit the <em>master</em> branch instead.</font>
+`Warning: this branch contains work in progress mixed up with wrong ideas and wild experiments. Please, visit the <em>master</em> branch instead.`
 
 Printable output in file [`creche.pdf`](./creche.pdf)
 
