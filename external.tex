@@ -487,6 +487,18 @@ Then
 which contradicts \ssf{1}.
 \end{proof}
 
+\begin{theorem}
+The following are equivalent
+\begin{itemize}
+\item[1.] $T$ is stable;
+\item[2.] $|S(A)|\le|A|$ some infinite cardinal $\lambda$, and all sets $A$ of cardinality $\le\lambda$.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+\ssf{2}$\IMP$\ssf{1}. Suppose the formula $\phi({\mr x}\,;{\gr z})$ is unstable. Let $\<{\gr z_s}:s\in2^{<\lambda}\>$ be a sequence variables of length $|{\gr z}|$. Let $p({\gr z_s}:s\in2^{<\lambda})$ be the type that says that $\big\<\phi({\mr x}\,;{\gr z_s}):i<2^{<\lambda}\big\>$ is a binary tree. As  $\phi({\mr x}\,;{\gr z})$ is unstable, $p$ is finitely consistent. As $\lambda$ is an arbitrary infinite cardinal, this contradicts \ssf{2}.
+
+\ssf{1}$\IMP$\ssf{2}. 
+\end{proof}
 \begin{exercise}
 Prove that $\phi$ is stable if and only if $|S_\phi(\U)|\le2^\kappa$.\QED
 \end{exercise}
@@ -495,8 +507,6 @@ Prove that $\phi$ is stable if and only if $|S_\phi(\U)|\le2^\kappa$.\QED
 
 \section{Notes and references}
 \begin{biblist}[]\normalsize
-
-
 
 \bib{CS}{article}{
    author={Chernikov, Artem},
@@ -525,9 +535,6 @@ Prove that $\phi$ is stable if and only if $|S_\phi(\U)|\le2^\kappa$.\QED
    %isbn={978-0-521-76324-0},
    %doi={10.1017/CBO9781139015417},
 }
-
-
-
 \end{biblist}
 
 
