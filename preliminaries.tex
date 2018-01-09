@@ -9,9 +9,9 @@ This chapter introduces the syntax and semantic of first order logic. We assume 
 A \emph{(first order) language $L$\/}\index{language!(first order)}\index{0L@$L$}  (also called \emph{signature\/}\index{signature}) is a triple that consists of
 
 \begin{itemize}
-\item a set \emph{$L_{\rm\bf fun}$}\index{0Lfun@$L_{\rm fun}$} whose elements are called \emph{function symbols}\index{symbol!function}.
-\item a set \emph{$L_{\rm\bf rel}$\/}\index{0Lrel@$L_{\rm rel}$} whose elements are called \emph{relation symbols}\index{symbol!relation}.
-\item a function that assign to every $f\in L_{\rm fun}$ and $r\in L_{\rm rel}$ non negative integers $n_f$ and $n_r$ that we call \emph{arity\/}\index{arity} of the function, respectively relation, symbol. In words we say that $f$ is a \emph{$n_f$-ary} function symbol, similarly for $r$. We may say \emph{constant\/}\index{constant} for $0$-ary function symbol.
+\item[1.] a set \emph{$L_{\rm\bf fun}$}\index{0Lfun@$L_{\rm fun}$} whose elements are called \emph{function symbols}\index{symbol!function}.
+\item[2.] a set \emph{$L_{\rm\bf rel}$\/}\index{0Lrel@$L_{\rm rel}$} whose elements are called \emph{relation symbols}\index{symbol!relation}.
+\item[3.] a function that assign to every $f\in L_{\rm fun}$ and $r\in L_{\rm rel}$ non negative integers $n_f$ and $n_r$ that we call \emph{arity\/}\index{arity} of the function, respectively relation, symbol. In words we say that $f$ is a \emph{$n_f$-ary} function symbol, similarly for $r$. We may say \emph{constant\/}\index{constant} for $0$-ary function symbol.
 \end{itemize}
 
 Waring: it is custom to use the symbol \emph{$L$} to denote both the language and the set of formulas (to be defined below) associated to it. With \emph{$|L|$} we denote he cardinality of $L_{\rm fun}\cup L_{\rm rel}\cup\omega$.
@@ -20,10 +20,12 @@ Waring: it is custom to use the symbol \emph{$L$} to denote both the language an
 A \emph{(first order) structure\/}\index{structure} $M$ of signature $L$ (for short \emph{$L$-structure}) consists of
 
 \begin{itemize}
-\item A set that we call the \emph{domain\/}\index{domain!(of a structure)} or \emph{support}\index{support!(of a structure)} and denote with the same symbol $M$ used for the whole structure
-\item A function that assign to every $f\in L_{\rm fun}$ a total map \emph{$f^M$ $: M^{n_f}\to M$}\index{0fM@$f^M$} and to every  $r\in L_{\rm rel}$ a relation \emph{$r^M\subseteq M^{n_r}$}\index{0rM@$r^M$}. We call $f^M$ and $r^M$ the \emph{interpretation\/}\index{interpretation} of $f$, respectively $r$ in $M$.
+\item[1.] a set that we call the \emph{domain\/}\index{domain!(of a structure)} or \emph{support}\index{support!(of a structure)} and denote with the same symbol $M$ used for the whole structure
+\item[2.] a function that assign to every $f\in L_{\rm fun}$ a total map \emph{$f^M$ $: M^{n_f}\to M$}\index{0fM@$f^M$} 
+\item[3.]a function that assign to every  $r\in L_{\rm rel}$ a relation \emph{$r^M\subseteq M^{n_r}$}\index{0rM@$r^M$}.
 \end{itemize}
-
+ We call $f^M$ and $r^M$ the \emph{interpretation\/}\index{interpretation} of $f$, respectively $r$ in $M$.
+ 
 Recall that by definition $M^0=\{\0\}$\index{function!0-ary}. Therefore the interpretation of a constant $c$ is a function that maps the unique element of $M^0$ into an element of $M$. We will identify $c^M$ with $c^M(\0)$.
 
 We may use the word \emph{model\/} as a synonym of structure. But beware that in some context the word is used to denote some particular sort of structures.  

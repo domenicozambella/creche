@@ -448,23 +448,26 @@ Let $p({\mr x})\in S(\U)$. Prove that there is at most one definably closed set 
 
 \section{Stability and the number of types}
 
-The following proposition highlights the connection between stability and the cardinality of types.
+The following proposition highlights the connection between stability and the cardinality of types. 
 
-\begin{proposition}The following are equivalent
+Binary trees of formulas have been introduced in Definition~\ref{def_tree_formulas}. Here we restrict to trees $\<\psi_s:s\in 2^{<\lambda}\>$ of a particular form. Namely, $\psi_\0=\top$ and for every $s\in 2^{<\lambda}$ we have $\psi_{s1}=\phi({\mr x}\,;{\gr b_s})$ and $\psi_{s0}=\neg\phi({\mr x}\,;{\gr b_s})$. When such a binary tree of height $\omega$ exists, we say that $\phi({\mr x}\,;{\gr z})$ has the \emph{binary tree property}.
+
+\begin{proposition}\label{prop_count_types}
+The following are equivalent
 \begin{itemize}
 \item[1.] $\phi({\mr x}\,;{\gr z})$ is a stable formula;
-\item[2.] $\big|S_{\phi}(A)\big|=\omega$ for all countable sets $A$;
-\item[3.] $\big|S_{\phi}(A)\big|<2^\omega$ for all countable sets $A$;
-\item[4.] there is no binary tree in \smash{$\big\{\phi({\mr x}\,;{\gr b}):{\gr b}\in\U^{|{\gr z}|}\big\}^\pm$}, see Definitions~\ref{def_tree_formulas} and~\ref{def_C_Delta}.
+\item[2.] $\big|S_{\phi}(A)\big|=|A|$ for all infinite sets $A$;
+\item[3.] $\big|S_{\phi}(A)\big|<2^{|A|}$ for all infinite sets $A$;
+\item[4.] $\phi({\mr x}\,;{\gr z})$ does not have the binary tree property.
 \end{itemize}
 \end{proposition}
 
 \def\ceq#1#2#3{\parbox[t]{15ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
-\begin{proof}\ssf{2}$\IFF$\ssf{3}$\IFF$\ssf{4}. By Lemma~\ref{lem_bin_tree}.
+\begin{proof}\ssf{2}$\IFF$\ssf{3}$\IFF$\ssf{4}. This is proved as in Lemma~\ref{lem_bin_tree}.
 
 \ssf{3}$\IMP$\ssf{1}.
-Assume $\neg$\ssf{1}. Let $I,<_I$ be a countable dense linear order. Let ${\mr x_i}$ and ${\gr z_i}$, for $i\in I$, be a tuples of variables. The type that says 
+Assume $\neg$\ssf{1}. Let $I,<_I$ be a dense linear order of cardinality $|A|$. Let ${\mr x_i}$ and ${\gr z_i}$, for $i\in I$, be a tuples of variables. The type that says that
 
 \ceq{\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr x_i}\,;{\gr z_j})}\hfill for all $i,j\in I$
 
@@ -472,21 +475,34 @@ is finitely consistent by $\neg$\ssf{1}. If ${\mr a_i}$, ${\gr b_i}$ is a realiz
 
 \hfil $\big\{\phi({\mr x}\,;{\gr b_j})\ :\ j\in C\big\}\ \ \cup\ \ \big\{\neg\phi({\mr x}\,;{\gr b_j})\ :\ j\notin C\big\}$
 
-is a finitely consistent. Any two such types are mutually inconsistent. As there are $2^\omega$ Dedekind's cut in $I$, $\neg$\ssf{3}  follows.
+is a finitely consistent. Any two such types are mutually inconsistent. As there are $2^{|A|}$ Dedekind's cuts in $I$, $\neg$\ssf{3} follows.
 
-\ssf{1}$\IMP$\ssf{4} Assume $\neg$\ssf{4}. Without loss of generality we can assume that the binary tree of formulas witnessing the failure of \ssf{4} has the form $\<\phi_s({\mr x}\,;{\gr b_s}):s\in 2^{<\omega}\>$, where $\phi_{s1}=\phi=\neg\phi_{s0}$ and $\phi_{\0}=\top$, see Exercise~\ref{ex_binary_tree_canonical}
+\ssf{1}$\IMP$\ssf{4} Assume $\phi({\mr x}\,;{\gr z})$ has the binary tree property witnessed, say, by  $\<{\gr b_s}:s\in 2^{<\omega}\>$. We show that there is a ladder sequence of length $n$. For $i=0,\dots, n$ abbreviate ${\gr b_{1^i}}$ by ${\gr b_i}$. Let ${\mr a_j}$ be such that
 
-We show that there is a ladder sequence of length $n$. For $i=0,\dots, n$ abbreviate $b_{1^i}$ by $b_i$. Let ${\mr a_j}$ be such that
-
-\ceq{\hfill {\mr a_j}}{\models}{\displaystyle \neg\phi({\mr x}\,;{\gr b_j})\wedge\bigwedge^{j-1}_{i=0}\phi({\mr x}\,;{\gr b_i})}
+\ceq{\hfill {\mr a_j}}{\models}{\displaystyle \neg\phi({\mr x}\,;{\gr b_j})\wedge\bigwedge^{j-1}_{i=0}\phi({\mr x}\,;{\gr b_i}).}
 
 Then
 
-\ceq{\hfill i<j}{\IFF}{\phi({\mr a_i}\,;{\gr b_j})}
+\ceq{\hfill i<j}{\IFF}{\phi({\mr a_i}\,;{\gr b_j}),}
 
-which contradicts \ssf{1}.
+so $\<{\mr a_i}\,;{\gr b_i} : i<n\>$ is a ladder sequence of length $n$.
 \end{proof}
 
+\begin{theorem}
+The following are equivalent
+\begin{itemize}
+\item[1.] $T$ is stable;
+\item[2.] $|S(A)|\le|A|$ some infinite cardinal $\lambda$, and all sets $A$ of cardinality $\le\lambda$.
+\item[3.] $|S(A)|\le|A|$ for every set $A$ such that $|L|<\cf(A)$.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+\ssf{2}$\IMP$\ssf{1}. Suppose the formula $\phi({\mr x}\,;{\gr z})$ is unstable. Let $\<{\gr z_s}:s\in2^{<\lambda}\>$ be a sequence variables of length $|{\gr z}|$. Let $p({\gr z_s}:s\in2^{<\lambda})$ be the type that says that $\big\<{\gr z_s}:i<2^{<\lambda}\big\>$ witnesses a binary tree of height $\lambda$. As  $\phi({\mr x}\,;{\gr z})$ is unstable, $p$ is finitely consistent. As $\lambda$ is an arbitrary infinite cardinal, this contradicts \ssf{2}.
+
+\ssf{3}$\IMP$\ssf{2}. Trivial.
+
+\ssf{1}$\IMP$\ssf{3}. Proposition~\ref{prop_count_types} implies that $|S(A)|\le |A|^{|L|}$. Therefore, when $|L|<\cf(A)$, we obtain $|S(A)|\le |A|$.
+\end{proof}
 \begin{exercise}
 Prove that $\phi$ is stable if and only if $|S_\phi(\U)|\le2^\kappa$.\QED
 \end{exercise}
@@ -495,8 +511,6 @@ Prove that $\phi$ is stable if and only if $|S_\phi(\U)|\le2^\kappa$.\QED
 
 \section{Notes and references}
 \begin{biblist}[]\normalsize
-
-
 
 \bib{CS}{article}{
    author={Chernikov, Artem},
@@ -525,9 +539,6 @@ Prove that $\phi$ is stable if and only if $|S_\phi(\U)|\le2^\kappa$.\QED
    %isbn={978-0-521-76324-0},
    %doi={10.1017/CBO9781139015417},
 }
-
-
-
 \end{biblist}
 
 
