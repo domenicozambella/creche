@@ -1,0 +1,94 @@
+% !TEX root = creche.tex
+\documentclass[creche.tex]{subfiles}
+\begin{document}
+\chapter{Not the independence property}
+\label{nip}
+
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
+
+
+In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
+The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Vaknik-Chevronenkis dimension}
+\label{approximable}
+
+\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
+We say that the formula $\phi({\mr x}\,;{\gr z})\in L$ has \emph{Vaknik-Chevronenkis dimension $n$\/} if this is the largest finite cardinatity of a set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that $|S_\phi({\mr A})|=2^n$. If no finite $n$ exists, we say that it has \emph{infinite VC-dimension}. 
+
+Note that the condition $|S_\phi({\mr A})|=2^n$ is equivalent to saying that every subset of ${\mr A}$ is the trace of some definable set of sort $\phi({\mr x}\,;{\gr z})$.
+
+The proof of the following proposition is left as an exercise for the reader.
+
+\begin{proposition}
+The following are equivalent 
+\begin{itemize}
+\item[1.] $\phi({\mr x}\,;{\gr z})\in L$ has finite VC-dimension;
+\item[2.] there is no infinite set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that  every subset of ${\mr A}$ is the trace of some definable set of sort $\phi({\mr x}\,;{\gr z})$.\QED
+\end{itemize}
+\end{proposition}
+
+\begin{lemma}
+The following are equivalent
+\begin{itemize}
+\item[1.] $\phi({\mr x}\,;{\gr z})\in L$ has finite Vaknik-Chevronenkis dimension;
+\item[2.] There is no indiscernible sequence $\<{\mr a_i}:i<\omega\>$ and tuple ${\gr b}$ such that 
+
+\ceq{\hfill\phi({\mr a_i}\,;{\gr b})}{\IFF}{i} is even.
+
+\end{itemize}
+
+\begin{proof}
+For every $I\subseteq\omega$ there is ${\gr b_I}\in\U^{|{\gr z}|}$ such that 
+
+
+\ceq{\hfill\phi({\mr a_i}\,;{\gr b_I})}{\IFF}{i\in I.}
+
+Let $\tau\omega\to\omega$ be an increasing map such that 
+
+\ceq{\hfill \tau(i)\textrm{\ is\ even})}{\IFF}{i\in I.}
+
+
+\ceq{\hfill \tau(i)\textrm{\ is\ even})}{\IFF}{i\in I.}
+
+\end{proof}
+
+
+
+\end{lemma}
+
+\section{Notes and references}
+\begin{biblist}[]\normalsize
+
+\bib{CS}{article}{
+   author={Chernikov, Artem},
+   author={Simon, Pierre},
+   title={Externally definable sets and dependent pairs},
+   status={\href{https://arxiv.org/abs/1007.4468}{arXiv:1007.4468}},
+   journal={Israel J. Math.},
+   volume={194},
+   date={2013},
+   number={1},
+   pages={409--425},
+   %note={},
+   %issn={0021-2172},
+   %doi={10.1007/s11856-012-0061-9},
+}
+
+
+
+\end{biblist}
+
+
+\end{document}
+
+
