@@ -22,10 +22,11 @@ Fix a language $L$. We say that $T$ is a \emph{Henkin theory\/} if for every for
 
 \begin{itemize}
 \item[0.]\ceq{\hfill \phi\in T}{\IMP}{\neg\phi\notin T}
-\item[1.]\ceq{\hfill\phi\wedge\psi\phantom{)}\in T}{\IMP}{\phantom{\neg}\phi\in T\ \textrm{and}\ \psi\in T}
-\item[2.]\ceq{\hfill\neg(\phi\wedge\psi)\in T}{\IMP}{\neg\phi\in T\ \textrm{or}\ \neg\psi\in T}
-\item[3.]\ceq{\hfill\E x\,\phi\in T}{\IMP}{\phantom{\neg}\phi[x/a]\in T}\quad for some closed term $a$
-\item[4.]\ceq{\hfill\neg\E x\,\phi\in T}{\IMP}{\neg\phi[x/a]\in T}\quad for all closed terms $a$.
+\item[1.]\ceq{\hfill\neg\neg\phi\in T}{\IMP}{\phantom{\neg}\phi\in T}
+\item[2.]\ceq{\hfill\phi\wedge\psi\phantom{)}\in T}{\IMP}{\phantom{\neg}\phi\in T\ \textrm{and}\ \psi\in T}
+\item[3.]\ceq{\hfill\neg(\phi\wedge\psi)\in T}{\IMP}{\neg\phi\in T\ \textrm{or}\ \neg\psi\in T}
+\item[4.]\ceq{\hfill\E x\,\phi\in T}{\IMP}{\phantom{\neg}\phi[x/a]\in T}\quad for some closed term $a$
+\item[5.]\ceq{\hfill\neg\E x\,\phi\in T}{\IMP}{\neg\phi[x/a]\in T}\quad for all closed terms $a$.
 \end{itemize}
 Moreover the following holds for all closed terms $t$ and all closed terms $a, b, c$
 \begin{itemize}
@@ -67,7 +68,7 @@ By induction on the complexity of the formula $\phi$ in $T$ we prove that
 
 \ceq{2.\hfill \neg\phi\in T}{\IMP}{M/E\pmodels\neg\phi}
 
-Induction is immediate by \ssf{1}-\ssf{4} of Definition~\ref{def_Henkin}. We verify the claim for atomic formulas. Consider first the formula $\phi= (t{\doteq}s)$ where $t$ and $s$ are closed terms. Recall that $t^M=t$ and $s^M=s$, so claim \ssf{1} is clear. As for \ssf{2}, suppose $M/E\pmodels t{\doteq}s$, that is  $tEs$. Then $t{\doteq}s\in T$ and $\neg t{\doteq}s\notin T$ follows from axiom \ssf{0}.
+Induction is immediate by \ssf{1}-\ssf{5} of Definition~\ref{def_Henkin}. We verify the claim for atomic formulas. Consider first the formula $\phi= (t{\doteq}s)$ where $t$ and $s$ are closed terms. Recall that $t^M=t$ and $s^M=s$, so claim \ssf{1} is clear. As for \ssf{2}, suppose $M/E\pmodels t{\doteq}s$, that is  $tEs$. Then $t{\doteq}s\in T$ and $\neg t{\doteq}s\notin T$ follows from axiom \ssf{0}.
 
 Now assume $\phi=rt$ for a relation $r$ and a tuple of closed terms $t$. The argument is similar: \ssf{1} is immediate; to prove \ssf{2} suppose that $M/E\pmodels rt$. Then $tEs\in r^M$ for some tuple of closed terms $s$. Then $rs\in T$, and by \ssf{d} $rt\in T$. Finally from \ssf{0} we obtain $\neg rt\notin T$.
 \end{proof}
@@ -85,7 +86,7 @@ As for successor ordinals, let $T_{i+1}$ be a maximal finitely consistent set of
 
 Let $\E x\, \phi$ be the least sentence in $L_\lambda$ contradicting \ssf{3} and set $T_{i+1}=T_i\cup\big\{\phi[x/c_i]\big\}$. It is immediate that $T_{i+1}$ is finitely consistent. 
 
-At stage $\lambda$, as all possible counterexamples to \ssf{3} have been ruled out, $T'=T_\lambda$ is the required Henkin theory.
+At stage $\lambda$ all possible counterexamples to \ssf{3} have been ruled out, then $T'=T_\lambda$ is the required Henkin theory.
 \end{proof}
 
 A theory is \emph{finitely consistent\/} if all its finite subsets are consistent. The following theorem is an immediate corollary of the proposition above.
