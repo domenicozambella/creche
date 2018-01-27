@@ -6,14 +6,9 @@
 
 \def\ceq#1#2#3{\parbox[b]{30ex}{$\displaystyle #1$}\parbox[b]{6ex}{\hfil$#2$}$\displaystyle #3$}
 
-
-
-
 In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ larger than $|L|$. (Expect that all relevant theorems are proved under the assumption that $L$ is countable.) The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -266,12 +261,12 @@ Let ${\gr a}$ be an enumeration of a finite set $A$. As $S_{\mr x}(A)=\big\{p({\
 Below we identify $S_{\mr x}(A)$ with $\U^{|{\mr x}|}/\mathord\equiv_A$
 
 \begin{definition}\label{def_tree_formulas}
-Let $\Delta$ be a set of formulas (we mainly use $\Delta=L_{\mr x}(A)$ in this section). A \emph{binary tree of formulas in $\Delta$\/} is a sequence $\<\phi_s\ :\ s\in2^{<\omega}\>$ of formulas in $\Delta\cup\{\top\}$ such that\nobreak
+Let $\Delta$ be a set of formulas (we mainly use $\Delta=L_{\mr x}(A)$ in this section). A \emph{binary tree of formulas in $\Delta$\/} is a sequence $\<\phi_s\ :\ s\in2^{<\lambda}\>$ of formulas in $\Delta\cup\{\top\}$ such that\nobreak
 \begin{itemize}
-\item[1.] for each $s\in 2^\omega$ the type $p_s\ =\ \big\{\phi_{s\restriction n}\ :\ n<\omega\big\}$ is consistent;
-\item[2.] $p_s\cup p_r$ is inconsistent for any two distinct $s,r\in 2^\omega$.
+\item[1.] for each $s\in 2^\omega$ the type $p_s\ =\ \big\{\phi_{s\restriction n}\ :\ n<\lambda\big\}$ is consistent;
+\item[2.] $p_s\cup p_r$ is inconsistent for any two distinct $s,r\in 2^\lambda$.
 \end{itemize}
-(Condition \ssf{2} is usually obtained ensuring the inconsistency of $\phi_{s0}\wedge\phi_{s1}$ for all $s\in2^{<\omega}$.) We may depict a binary tree of formulas as follows
+(Condition \ssf{2} is usually obtained by taking $\phi_{s0}\iff\neg\phi_{s1}$ for every $s$.) We call $\lambda$ the height of the tree. If the height is not specified, we assume it is $\omega$. We may depict a binary tree of formulas as follows
 
 
 % Set the overall layout of the tree
