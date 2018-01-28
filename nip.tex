@@ -23,7 +23,7 @@ The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*
 
 \def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
-We say that the formula $\phi({\mr x}\,;{\gr z})\in L$ has \emph{Vaknik-Chevronenkis dimension $n$\/} if this is the largest finite cardinatity of a set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that $|S_\phi({\mr A})|=2^n$. If no finite $n$ exists, we say that it has \emph{infinite VC-dimension}. 
+We say that the formula $\phi({\mr x}\,;{\gr z})\in L$ has \emph{Vaknik-Chevronenkis dimension $n$\/} if this is the largest finite cardinatity of a set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that $|S_\phi({\mr A})|=2^n$. If such $n$ exists, we say that we say that  $\phi({\mr x}\,;{\gr z})$ is \emph{nip}. 
 
 Note that the condition $|S_\phi({\mr A})|=2^n$ is equivalent to saying that every subset of ${\mr A}$ is the trace of some definable set of sort $\phi({\mr x}\,;{\gr z})$.
 
@@ -32,7 +32,7 @@ Arguing by compactness we obtain the following proposition whose proof is left a
 \begin{proposition}
 The following are equivalent 
 \begin{itemize}
-\item[1.] $\phi({\mr x}\,;{\gr z})\in L$ has finite VC-dimension;
+\item[1.] $\phi({\mr x}\,;{\gr z})\in L$ is nip;
 \item[2.] there is no infinite set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that  every subset of ${\mr A}$ is the trace of some definable set of sort $\phi({\mr x}\,;{\gr z})$.\QED
 \end{itemize}
 \end{proposition}
@@ -61,7 +61,7 @@ is finitely consistent we need to prove that $\psi_{I\restriction n}({\mr a_0},\
 
 \ceq{\hfill \phi({\mr a_{k_i}}\,;{\gr b})}{\IFF}{i\in I.}
 
-This proves that $\psi_{I\restriction n}({\mr a_{k_0}},\dots,{\mr a_{k_{n-1}}})$ holds true. Therefore, by indiscernibility, $\psi_{I\restriction n}({\mr a_0},\dots,{\mr a_{n-1}})$ holds true.
+This proves that $\psi_{I\restriction n}({\mr a_{k_0}},\dots,{\mr a_{k_{n-1}}})$ is true. By indiscernibility, also $\psi_{I\restriction n}({\mr a_0},\dots,{\mr a_{n-1}})$ holds true.
 
 \ssf{2}$\IMP$\ssf{1} Let $I\subseteq\omega$ be the set of even integers. Assume $\neg$\ssf{1} and let  $\<c_i:i<\omega\>$ be an infinite sequence that is shattered by $\phi({\mr x}\,;{\gr z})$.
 Let  $\<{\mr a_i}:i<\omega\>$ be an indiscernible sequence with the same EM-type as $\<c_i:i<\omega\>$. Then $\<a_i:i<\omega\>$ satisfies $\psi_{I\restriction n}({\mr x_0},\dots,{\mr x_{n-1}})$ for all $n$. By compactness there is a $b$ such that
@@ -87,33 +87,37 @@ If $\mrA\subseteq\U^{|{\mr x}|}$ is a set approximable by a formula with finite 
 
 We write \emph{$\neg^n$\/} for $\neg\!\stackrel{n\ \rm times}{\dots\dots\dots}\!\neg$. We abbreviate $\neg^n(\cdot\in\cdot)$ as \emph{$\notin^n$}.
 
-\begin{lemma}
-Let $\grD$ be a set approximable by a formula with finite VC-dimension. Then every global $A$-invariant type $p({\gr z})$ contains a formula $\psi({\gr z})$ such that either $\psi({\gr z})\imp {\gr z}\in\grD$ or $\psi({\gr z})\imp {\gr z}\notin\grD$.
+\begin{lemma}\label{lem_honest}
+Let $\mrA$ be a set approximable by a formula with finite VC-dimension. Then every global $A$-invariant type $p({\mr x})$ contains a formula $\psi({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrA$ or $\psi({\mr x})\imp {\mr x}\notin\mrA$. Moreover, for every sufficiently saturated model $M$ containing $A$, we can require that $\psi({\mr x})\in L(M)$
 \end{lemma}
 
 \begin{proof}
-The property we want to prove is elementary in $L(\grD)$. By  Remark~\ref{rem_el_sat} we can assume that $\grD$ is saturated. By Corollary~\ref{corol_altrank}, there is no infinite sequence $\<{\gr b_i}:i<\omega\>$
+The property we want to prove is elementary in $L(\mrA)$ therefore, by Remark~\ref{rem_el_sat} we can assume that $\mrA$ is saturated. By Corollary~\ref{corol_altrank}, there is no infinite sequence $\<{\mr a_i}:i<\omega\>$
 
-\ceq{\hfill {\mr b_i}}{\models}{p_{A,b\restriction i}({\gr z})\ \cup\ \{{\gr z}\notin^i\grD\}}
+\ceq{\hfill {\mr a_i}}{\models}{p_{A,a\restriction i}({\mr x})\ \cup\ \{{\mr x}\notin^i\mrA\}}
 
-Let $n$ be the largest integer such that $\<{\gr b_i}:i<n\>$ satisfies the condition above. Then
+Let $n$ be the largest integer such that $\<{\mr a_i}:i<n\>$ satisfies the condition above. Then
 
-\ceq{\hfill p_{A,b\restriction n}({\gr z})}{\imp}{{\gr z}\notin^n\grD}
+\ceq{\hfill p_{A,a\restriction n}({\mr x})}{\imp}{{\mr x}\notin^n\mrA}
 
-and the lemma follows by compactness.
+and the first claim of the lemma follows by compactness. Note that if $M\supseteq A$ is saturated in the language $L(\mrA)$, we can further require that all ${\mr a_i}\in M^{|{\mr x}|}$. Hence $\psi({\mr x})\in L(M)$.
 \end{proof}
 
 \begin{theorem}
-Let $\grD$ be a set approximable by a formula with finite VC-dimension. Then $\grD$ is approximable from above and from below.
+Let $\mrA$ be a set approximable by a nip formula. Then $\mrA$ is approximable from above and from below.
 \end{theorem}
 
 \begin{proof}
-Let $B$ be a small set. For every ${\gr b}\in B^{|{\gr z}|}\cap\grD$ there is a type
+Let ${\mr A}\subseteq\mrA$ be any non empty (small) set. As above, by  Remark~\ref{rem_el_sat} we can assume $\mrA$ is saturated. Let $M$ be a model which is saturated in the language $L(\mrA)$. Define
+
+\ceq{\hfill q({\mr x})}{=}{\big\{\phi({\mr x})\in L(M)\ :\ {\mr A}\subseteq\phi({\mr\U})\big\}.}
+
+By compactness, it suffices to prove that $q({\mr x})\imp {\mr x}\in{\mr A}$. Suppose not and fix some ${\mr a}\models q({\mr x})\wedge {\mr x}\notin{\mr A}$. As $\tp({\mr a}/M)$ is finitely satisfied in ${\mr A}$, there is a global type $p({\mr x})\supseteq \tp({\mr a}/M)$ that is finitely satisfied in ${\mr A}$. By Lemma~\ref{lem_honest} there is a formula $\psi({\mr x})\in p({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrA$ or $\psi({\mr x})\imp {\mr x}\notin\mrA$. But the first cannot hold because ${\mr a}\models \psi({\mr x})\wedge {\mr x}\notin{\mr A}$ while the second contradicts ${\mr A}\subseteq\psi({\mr\U})$ and ${\mr A}\subseteq\mrA$.
 \end{proof}
 
-\section{}
-
-If all formulas have a finite VC-dimension, we say that the theory $T$ has the \emph{non-independence property},for short, $T$ is \emph{nip}.
+% \section{}
+% 
+% If all formulas have a finite VC-dimension, we say that the theory $T$ has the \emph{non-independence property},for short, $T$ is \emph{nip}.
 
 \section{Notes and references}
 \begin{biblist}[]\normalsize

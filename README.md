@@ -25,7 +25,7 @@ Lecture notes for an introductory (under)graduate course.
    * The Tarski-Vaught test
    * Downward L&ouml;wenheim-Skolem
    * Elementary chains
-*  **Ultraproducts and compactness**
+*  **Ultraproducts**
    * Filters and ultrafilters
    * Direct products
    * Ultraproducts
