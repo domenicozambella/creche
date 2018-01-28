@@ -23,7 +23,7 @@ Printable output in file [`creche.pdf`](./creche.pdf)
    * The Tarski-Vaught test
    * Downward L&ouml;wenheim-Skolem
    * Elementary chains
-*  **Ultraproducts and compactness**
+*  **Ultraproducts**
    * Filters and ultrafilters
    * Direct products
    * Ultraproducts
