@@ -71,6 +71,12 @@ Let  $\<{\mr a_i}:i<\omega\>$ be an indiscernible sequence with the same EM-type
 This proves $\neg$\ssf{2}.
 \end{proof}
 
+In the next section we need the following corollary.
+
+\begin{corollary}\label{corol_altrank}
+If $\mrA\subseteq\U^{|{\mr x}|}$ is a set approximable by a formula with finite VC-dimension, then $\<{\mr a_i}\in\mrA:i<\omega\>$ converges for any indiscernible sequence $\<{\mr a_i}:i<\omega\>$.\QED
+\end{corollary}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -79,8 +85,6 @@ This proves $\neg$\ssf{2}.
 \section{Honest definitions}
 \label{nip-theory}
 
-If all formulas have a finite VC-dimension, we say that the theory $T$ has the \emph{non-independence property},for short, $T$ is \emph{nip}.
-
 We write \emph{$\neg^n$\/} for $\neg\!\stackrel{n\ \rm times}{\dots\dots\dots}\!\neg$. We abbreviate $\neg^n(\cdot\in\cdot)$ as \emph{$\notin^n$}.
 
 \begin{lemma}
@@ -88,7 +92,7 @@ Let $\grD$ be a set approximable by a formula with finite VC-dimension. Then eve
 \end{lemma}
 
 \begin{proof}
-By Lemma~\ref{lem_altrank}, there is no infinite sequence  $\<{\gr b_i}:i<\omega\>$
+The property we want to prove is elementary in $L(\grD)$. By  Remark~\ref{rem_el_sat} we can assume that $\grD$ is saturated. By Corollary~\ref{corol_altrank}, there is no infinite sequence $\<{\gr b_i}:i<\omega\>$
 
 \ceq{\hfill {\mr b_i}}{\models}{p_{A,b\restriction i}({\gr z})\ \cup\ \{{\gr z}\notin^i\grD\}}
 
@@ -99,7 +103,17 @@ Let $n$ be the largest integer such that $\<{\gr b_i}:i<n\>$ satisfies the condi
 and the lemma follows by compactness.
 \end{proof}
 
+\begin{theorem}
+Let $\grD$ be a set approximable by a formula with finite VC-dimension. Then $\grD$ is approximable from above and from below.
+\end{theorem}
 
+\begin{proof}
+Let $B$ be a small set. For every ${\gr b}\in B^{|{\gr z}|}\cap\grD$ there is a type
+\end{proof}
+
+\section{}
+
+If all formulas have a finite VC-dimension, we say that the theory $T$ has the \emph{non-independence property},for short, $T$ is \emph{nip}.
 
 \section{Notes and references}
 \begin{biblist}[]\normalsize
