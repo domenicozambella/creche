@@ -15,6 +15,7 @@
 \def\gr{\color{green}}
 
 
+
 In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
 The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
 
@@ -38,9 +39,18 @@ We will find it convenient to expand the language $L$ with a predicate for a giv
 \begin{remark}
 The definitions above are straightforward when ${\gr z}$ finite tuple. When ${\gr z}$ is an infinite tuple the intuition stays the same but a more involved definition is required. In fact, first-order logic does not allow infinitary predicates. We think of $L({\gr\X})$ for a two sorted language. The \textit{home sort}, denoted by $0$, and the ${\gr z}\jj$\textit{sort}, denoted by ${\gr z}$. The expansion $\<\U,\grD\>$ has domain $\U$ for the home sort, and $\U^{|{\gr z}|}$ for the ${\gr z}\jj$sort. Besides the symbols of $L$, there is a function symbol $\pi_i$ for every $i<|{\gr z}|$ which is interpreted as the projection to the $i\jj$coordinate. These functions have arity $\<{\gr z},0\>$ (see Section~\hyperref[many-sorted]{\ref*{imaginary}.\ref*{many-sorted}} for the notation). There is also a predicate of sort $\<{\gr z}\>$ interpreted as $\grD$.\QED
 \end{remark}
-If ${\gr\grC},\grD\subseteq\U^{|{\gr z}|}$ we abbreviate $\<\U,{\gr\grC}\>\equiv_A\<\U,\grD\>$ as ${\gr\grC}\equiv_A\grD$. We also say that $\grD$ is \emph{saturated\/} if so is the model $\<\U\,;\grD\>$.
 
 What said above is adapted to define the expansion  \emph{$L(\X_i:i<\lambda)$}, where ${\gr\X_i}$ are predicates of arity $|{\gr z_i}|$. Again, when the sets ${\gr\D_i}\subseteq\U^{|{\gr z_i}|}$ are the only intended interpretation of  ${\gr\X_i}$, we may write \emph{$L(\D_i:i<\lambda)$}.
+
+If $\grC,\grD\subseteq\U^{|{\gr z}|}$ we abbreviate $\<\U,\grC\>\equiv_A\<\U,\grD\>$ as $\grC\equiv_A\grD$. We also say that $\grD$ is \emph{saturated\/} if so is the model $\<\U\,;\grD\>$.
+
+\begin{remark}\label{rem_el_sat}
+For every $\grD\subseteq\U^{|{\gr z}|}$ there is a saturated $\grC\equiv\grD$. In fact, it suffices to find a saturated model $\<\U',{\gr\D'}\>\equiv\<\U,{\gr\D}\>$ of cardinality $\kappa$. By saturation, there is an isomorphism $f:\U'\to\U$. Therefore $f[{\gr\D'}]$ is the required set $\grC$.\QED
+\end{remark}
+
+\begin{exercise}
+Prove that if $\grD\subseteq\U^{|{\gr z}|}$ is saturated and invariant over $A$ than it is definable over $A$.\QED
+\end{exercise} 
 
 \begin{proposition}\label{prop_indiscernible_L(A,D)}
 If $\grD\subseteq\U^{|{\gr z}|}$ is invariant over $A$ then every $A\jj$indiscernible sequence is indiscernible in the language $L(A\,;\grD)$.
@@ -53,9 +63,8 @@ Let $c=\<c_i:i\in I\>$ be an $A\jj$indiscernible sequence. For every $I_0,I_1\in
 \end{proof}
 
 
-
 \begin{exercise}
-Prove that if ${\gr\grC}\subseteq\U^{|{\gr z}|}$ is type-definable over $B$ then $\equiv_{A,B}$ implies $\equiv_{A\,;\grC}$.\QED
+Prove that if $\grC\subseteq\U^{|{\gr z}|}$ is type-definable over $B$ then $\equiv_{A,B}$ implies $\equiv_{A\,;\grC}$.\QED
 \end{exercise} 
 
 
