@@ -253,10 +253,10 @@ approximates $\grD$ from below.
 \end{lemma}
 
 \begin{proof}
-Let $B\subseteq\grD$ be finite.
-It suffices to prove that there are some ${\mr a_1},\dots,{\mr a_m}$ such that $B^{|{\gr z}|}\subseteq\psi({\mr a_1},\dots,{\mr a_m}\,;{\gr\U})\subseteq\grD$. Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that 
+Let ${\gr B}\subseteq\grD$ be finite.
+It suffices to prove that there are some ${\mr a_1},\dots,{\mr a_m}$ such that ${\gr B}\subseteq\psi({\mr a_1},\dots,{\mr a_m}\,;{\gr\U})\subseteq\grD$. Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that 
 
-\hfil$B^{|{\gr z}|}\ \subseteq\ \phi({\mr a_n}\,;{\gr\U})\ \subseteq\ \U^{|{\gr z}|}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
+\hfil${\gr B}\ \subseteq\ \phi({\mr a_n}\,;{\gr\U})\ \subseteq\ \U^{|{\gr z}|}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
 
 Then, if possible, let ${\gr b_n}$ such that
 
@@ -279,11 +279,11 @@ is stable.
 For legibility, we only prove that $\phi({\mr x_1}\,;{\gr z})\wedge\phi({\mr x_2}\,;{\gr z})$ is stable.
 Suppose not and let ${\mr a^1_i},{\mr a^2_i}\in\U^{|{\mr x}|}$ and ${\gr b_i}\in\U^{|{\gr z}|}$ be such that 
 
-\ceq{\hfill i\le j}{\IFF}{\phantom{\neg}\phi({\mr a^1_i}\,;{\gr b_j})\wedge\phi({\mr a^2_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
+\ceq{\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr a^1_i}\,;{\gr b_j})\wedge\phi({\mr a^2_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
 
-For $n=1,2$ let $H_n\subseteq\omega^{[2]}$ contain those pairs $j<i$ such that $\neg\phi({\mr a^n_i}\,;{\gr b_j})$. 
-By the equivalence above $H_1\cup H_2=\omega^{[2]}$. 
-By the Ramsey Theorem there is an infinite set $H$ such that $H^{[2]}\subseteq H_n$ for at least one of $n=1,2$. Suppose $H_1$ for definiteness. So, we obtain an infinite sequence $a^1_i$, $b_i$ such that
+For $n=1,2$ let $H_n\subseteq{\omega\choose 2}$ contain those pairs $j<i$ such that $\neg\phi({\mr a^n_i}\,;{\gr b_j})$. 
+By the equivalence above $H_1\cup H_2={\omega\choose 2}$. 
+By the Ramsey Theorem there is an infinite set $H$ such that ${H\choose 2}\subseteq H_n$ for at least one of $n=1,2$. Suppose $H_1$ for definiteness. So, we obtain an infinite sequence $a^1_i$, $b_i$ such that
 
 \ceq{\hfill j<i}{\IFF}{\neg\phi({\mr a^1_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
 
