@@ -136,7 +136,7 @@ From the following easy observation of Chernikov and Simon~\cite{CS} we obtain a
 % Implication $\pmi$ follows from \ssf{b}.
 % \end{proof}
 
-\begin{proposition}
+\begin{proposition}\label{prop_sh_exp_qe}
 Let $\C\subseteq\U^{|y\,{\gr z}|}$ be approximated from below by the formula $\phi({\mr x}\,;y\,{\gr z})$. Then $\grD=\big\{{\gr z}:\E y\ \big(y\,{\gr z}\in\C\big)\big\}$ is approximated from below by the formula $\E y\,\phi({\mr x}\,;y\,{\gr z})$.
 \end{proposition}
 
@@ -347,7 +347,122 @@ Hence it sufficies to prove that \ssf{1a}$\IMP$\ssf{1b} and \ssf{2a}$\IMP$\ssf{2
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Vaknik-Chevronenkis}
+\label{approximable}
 
+\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
+We say that the formula $\phi({\mr x}\,;{\gr z})\in L$ has \emph{Vaknik-Chevronenkis dimension $n$\/} if this is the largest finite cardinatity of a set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that $|S_\phi({\mr A})|=2^n$. If such $n$ exists, we say that we say that  $\phi({\mr x}\,;{\gr z})$ is \emph{nip}. 
+
+Note that the condition $|S_\phi({\mr A})|=2^n$ is equivalent to saying that every subset of ${\mr A}$ is the trace of some definable set of sort $\phi({\mr x}\,;{\gr z})$.
+
+Arguing by compactness we obtain the following proposition whose proof is left as an exercise for the reader.
+
+\begin{proposition}
+The following are equivalent 
+\begin{itemize}
+\item[1.] $\phi({\mr x}\,;{\gr z})\in L$ is nip;
+\item[2.] there is no infinite set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that  every subset of ${\mr A}$ is the trace of some definable set of sort $\phi({\mr x}\,;{\gr z})$.\QED
+\end{itemize}
+\end{proposition}
+
+From the proposition above and Proposition~\ref{prop_count_types} below it follows that all stable formulas are nip.
+
+We say that the a sequence of sentences $\<\phi_i:i<\omega\>$ \emph{converges\/} if the truth value of $\phi_i$ is eventually constant.  
+
+\begin{lemma}\label{lem_altrank}
+The following are equivalent
+\begin{itemize}
+\item[1.] $\phi({\mr x}\,;{\gr z})\in L$ is nip;
+\item[2.] $\<\phi({\mr a_i}\,;{\gr b}):i<\omega\>$ converges for any ${\gr b}$ and any indiscernible sequence $\<{\mr a_i}:i<\omega\>$.
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+\ssf{1}$\IMP$\ssf{2} Assume $\neg$\ssf{2}. It suffices to prove that for every $I\subseteq\omega$ the type that says 
+
+\ceq{\hfill\phi({\mr a_i}\,;{\gr z})}{\IFF}{i\in I}
+
+is finitely consistent. Let $\psi_{I\restriction n}({\mr x_0},\dots,{\mr x_{n-1}})$ the formula that says that there is a ${\gr z}$ such that
+
+\ceq{\hfill\phi({\mr x_i}\,;{\gr z})}{\IFF}{i\in I}\quad for all $i<n$.
+
+is finitely consistent we need to prove that $\psi_{I\restriction n}({\mr a_0},\dots,{\mr a_{n-1}})$ is true. If there is a ${\gr b}$ such that the truth value of $\<\phi({\mr a_i}\,;{\gr b}):i<\omega\>$ oscillates at least $n$ times, then we can find $k_0<\dots<k_{n-1}$ such that 
+
+
+\ceq{\hfill \phi({\mr a_{k_i}}\,;{\gr b})}{\IFF}{i\in I.}
+
+This proves that $\psi_{I\restriction n}({\mr a_{k_0}},\dots,{\mr a_{k_{n-1}}})$ is true. By indiscernibility, also $\psi_{I\restriction n}({\mr a_0},\dots,{\mr a_{n-1}})$ holds true.
+
+\ssf{2}$\IMP$\ssf{1} Let $I\subseteq\omega$ be the set of even integers. Assume $\neg$\ssf{1} and let  $\<{\mr c_i}:i<\omega\>$ be an infinite sequence that is shattered by $\phi({\mr x}\,;{\gr z})$.
+Let  $\<{\mr a_i}:i<\omega\>$ be an indiscernible sequence with the same EM-type as $\<{\mr c_i}:i<\omega\>$. Then $\<{\mr a_i}:i<\omega\>$ satisfies $\psi_{I\restriction n}({\mr x_0},\dots,{\mr x_{n-1}})$ for all $n$. By compactness there is a $b$ such that
+
+\ceq{\hfill\phi({\mr a_i}\,;{\gr z})}{\IFF}{i}\quad is even.
+
+This proves $\neg$\ssf{2}.
+\end{proof}
+
+In the next section we need the following corollary.
+
+\begin{corollary}\label{corol_altrank}
+If $\mrA\subseteq\U^{|{\mr x}|}$ is a set approximable by a formula with finite VC-dimension, then $\<{\mr a_i}\in\mrA:i<\omega\>$ converges for any indiscernible sequence $\<{\mr a_i}:i<\omega\>$.\QED
+\end{corollary}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Honest definitions}
+\label{nip-theory}
+
+In this section we present a beautiful theorem of Chernikov and Simon~\cite{CS} and their alternative proof of a famous quantifier elimination result of Shelah. 
+
+We write \emph{$\neg^n$\/} for $\neg\!\stackrel{n\ \rm times}{\dots\dots\dots}\!\neg$. We abbreviate $\neg^n(\cdot\in\cdot)$ as \emph{$\notin^n$}.
+
+\begin{lemma}\label{lem_honest}
+Let $\mrA$ be a set approximable by a nip formula and let $A$ be any (small) set of parameters. Then every global $A$-invariant type $p({\mr x})$ contains a formula $\psi({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrA$ or $\psi({\mr x})\imp {\mr x}\notin\mrA$. Moreover, for every sufficiently saturated model $M$ containing $A$, we can require that $\psi({\mr x})\in L(M)$
+\end{lemma}
+
+\begin{proof}
+The property we want to prove is elementary in $L(\mrA)$ therefore, by Remark~\ref{rem_el_sat} we can assume that $\mrA$ is saturated. By Corollary~\ref{corol_altrank}, there is no infinite sequence $\<{\mr a_i}:i<\omega\>$
+
+\ceq{\hfill {\mr a_i}}{\models}{p_{A,a\restriction i}({\mr x})\ \cup\ \{{\mr x}\notin^i\mrA\}}
+
+Let $n$ be the largest integer such that $\<{\mr a_i}:i<n\>$ satisfies the condition above. Then
+
+\ceq{\hfill p_{A,a\restriction n}({\mr x})}{\imp}{{\mr x}\notin^n\mrA}
+
+and the first claim of the lemma follows by compactness. 
+
+Now let $M$ be a model that contains $A$ and such that $\<M,\mrA\>\preceq\<\U,\mrA\>$. Assume also that $\<M,\mrA\>$ is saturated, we can further require that all ${\mr a_i}\in M^{|{\mr x}|}$. Hence $\psi({\mr x})\in L(M)$.
+\end{proof}
+
+\begin{theorem}\label{thm_honest}
+Let $\mrA$ be a set approximable by a nip formula. Then $\mrA$ is approximable from above and from below.
+\end{theorem}
+
+\begin{proof}
+Let ${\mr A}\subseteq\mrA$ be any non empty (small) set. As above, by  Remark~\ref{rem_el_sat} we can assume that $\mrA$ is saturated. Let $M$ be a saturated elementary substructure of $\U$, in the language $L(\mrA)$. Define
+
+\ceq{\hfill q({\mr x})}{=}{\big\{\phi({\mr x})\in L(M)\ :\ {\mr A}\subseteq\phi({\mr\U})\big\}.}
+
+By compactness, it suffices to prove that $q({\mr x})\imp {\mr x}\in{\mr A}$. Suppose not and fix some ${\mr a}\models q({\mr x})\wedge {\mr x}\notin{\mr A}$. As $\tp({\mr a}/M)$ is finitely satisfied in ${\mr A}$, there is a global type $p({\mr x})\supseteq \tp({\mr a}/M)$ that is finitely satisfied in ${\mr A}$. By Lemma~\ref{lem_honest} there is a formula $\psi({\mr x})\in p({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrA$ or $\psi({\mr x})\imp {\mr x}\notin\mrA$. But the first cannot hold because ${\mr a}\models \psi({\mr x})\wedge {\mr x}\notin{\mr A}$ while the second contradicts ${\mr A}\subseteq\psi({\mr\U})$ and ${\mr A}\subseteq\mrA$.
+\end{proof}
+
+If all formulas are nip, we say that the theory \emph{$T$ is nip}.
+
+Let $\<\D_i:i<\lambda\>$ be the collection of all subsets of $\U$, of arbitrary finite arity, that are externally definable. The expansion of $\U$ to the language $L(\X_i:i<\lambda)$ is called the \emph{Shelah expansion\/} of $\U$ and is denoted by \emph{$\U^{\rm Sh}$}. 
+
+From Theorem~\ref{thm_honest} and Proposition~\ref{prop_sh_exp_qe} we obtain the following.
+
+\begin{corollary}
+If $T$ is nip then $\U^{\rm Sh}$ has $L$-elimination of quantifiers. (I.e.\@ every formula is bolean combination of formulas in $L$ and formulas of the form $z\in\D_i$.)\QED
+\end{corollary}
 
 
 \section{Stable theories}
