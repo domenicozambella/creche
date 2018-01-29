@@ -1,4 +1,4 @@
-### [A Cr&egrave;che Course in Model Theory](../../raw/scribbels/creche.pdf)
+### [A Cr&egrave;che Course in Model Theory](../../raw/scribbles/creche.pdf)
 
 Lecture notes for an introductory (under)graduate course.
 
