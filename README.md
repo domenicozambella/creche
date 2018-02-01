@@ -2,7 +2,7 @@
 
 Lecture notes for an introductory (under)graduate course
 
-Printable output in file [`creche.pdf`](./creche.pdf)
+Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
 
 ## Table of contents
 
@@ -28,7 +28,7 @@ Printable output in file [`creche.pdf`](./creche.pdf)
    * Direct products
    * Ultraproducts
 *  **Compactness**
-   * Compactness via syntax.
+   * Compactness via syntax
    * Compactness via ultraproducts
    * Upward L&ouml;wenheim-Skolem
    * Finite axiomatizability
@@ -81,6 +81,7 @@ Printable output in file [`creche.pdf`](./creche.pdf)
    * Elimination of imaginaries
    * Imaginaries: the true story
    * Uniform elimination of imaginaries
+   * Notes and references
 *  **Invariant sets**
    * Invariant sets and types
    * Invariance from the dual perspective
@@ -95,6 +96,8 @@ Printable output in file [`creche.pdf`](./creche.pdf)
 *  **Externally definable sets**
    * Approximable sets
    * Ladders and definability
+   * Vaknik-Chevronenkis dimension
+   * Honest definitions
    * Stable theories
    * Stability and the number of types
    * Notes and references

@@ -351,12 +351,12 @@ Hence it sufficies to prove that \ssf{1a}$\IMP$\ssf{1b} and \ssf{2a}$\IMP$\ssf{2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Vaknik-Chevronenkis}
+\section{Vaknik-Chevronenkis dimension}
 \label{approximable}
 
 \def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
-We say that the formula $\phi({\mr x}\,;{\gr z})\in L$ has \emph{Vaknik-Chevronenkis dimension $n$\/} if this is the largest finite cardinatity of a set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that $|S_\phi({\mr A})|=2^n$. If such $n$ exists, we say that we say that  $\phi({\mr x}\,;{\gr z})$ is \emph{nip}. 
+We say that the formula $\phi({\mr x}\,;{\gr z})\in L$ has \emph{Vaknik-Chevronenkis dimension $n$\/} if this is the largest finite cardinatity of a set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that $|S_\phi({\mr A})|=2^n$. If such $n$ exists, we say that we say that  $\phi({\mr x}\,;{\gr z})$ has finite VC-dimension. 
 
 Note that the condition $|S_\phi({\mr A})|=2^n$ is equivalent to saying that every subset of ${\mr A}$ is the trace of some definable set of sort $\phi({\mr x}\,;{\gr z})$.
 
@@ -365,19 +365,19 @@ Arguing by compactness we obtain the following proposition whose proof is left a
 \begin{proposition}
 The following are equivalent 
 \begin{itemize}
-\item[1.] $\phi({\mr x}\,;{\gr z})\in L$ is nip;
+\item[1.] $\phi({\mr x}\,;{\gr z})\in L$ has finite VC-dimension;
 \item[2.] there is no infinite set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that  every subset of ${\mr A}$ is the trace of some definable set of sort $\phi({\mr x}\,;{\gr z})$.\QED
 \end{itemize}
 \end{proposition}
 
-From the proposition above and Proposition~\ref{prop_count_types} below it follows that all stable formulas are nip.
+From the proposition above and Proposition~\ref{prop_count_types} below it follows that all stable formulas have finite VC-dimension.
 
 We say that the a sequence of sentences $\<\phi_i:i<\omega\>$ \emph{converges\/} if the truth value of $\phi_i$ is eventually constant.  
 
 \begin{lemma}\label{lem_altrank}
 The following are equivalent
 \begin{itemize}
-\item[1.] $\phi({\mr x}\,;{\gr z})\in L$ is nip;
+\item[1.] $\phi({\mr x}\,;{\gr z})\in L$ has finite VC-dimension;
 \item[2.] $\<\phi({\mr a_i}\,;{\gr b}):i<\omega\>$ converges for any ${\gr b}$ and any indiscernible sequence $\<{\mr a_i}:i<\omega\>$.
 \end{itemize}
 \end{lemma}
@@ -418,14 +418,14 @@ If $\mrA\subseteq\U^{|{\mr x}|}$ is a set approximable by a formula with finite 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Honest definitions}
-\label{nip-theory}
+\label{-theory}
 
 In this section we present a beautiful theorem of Chernikov and Simon~\cite{CS} and their alternative proof of a famous quantifier elimination result of Shelah. 
 
 We write \emph{$\neg^n$\/} for $\neg\!\stackrel{n\ \rm times}{\dots\dots\dots}\!\neg$. We abbreviate $\neg^n(\cdot\in\cdot)$ as \emph{$\notin^n$}.
 
 \begin{lemma}\label{lem_honest}
-Let $\mrA$ be a set approximable by a nip formula and let $A$ be any (small) set of parameters. Then every global $A$-invariant type $p({\mr x})$ contains a formula $\psi({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrA$ or $\psi({\mr x})\imp {\mr x}\notin\mrA$. Moreover, for every sufficiently saturated model $M$ containing $A$, we can require that $\psi({\mr x})\in L(M)$
+Let $\mrA$ be a set approximable by a formula with finite VC-dimension and let $A$ be any (small) set of parameters. Then every global $A$-invariant type $p({\mr x})$ contains a formula $\psi({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrA$ or $\psi({\mr x})\imp {\mr x}\notin\mrA$. Moreover, for every sufficiently saturated model $M$ containing $A$, we can require that $\psi({\mr x})\in L(M)$
 \end{lemma}
 
 \begin{proof}
@@ -443,7 +443,7 @@ Now let $M$ be a model that contains $A$ and such that $\<M,\mrA\>\preceq\<\U,\m
 \end{proof}
 
 \begin{theorem}\label{thm_honest}
-Let $\mrA$ be a set approximable by a nip formula. Then $\mrA$ is approximable from above and from below.
+Let $\mrA$ be a set approximable by a formula with finite VC-dimension. Then $\mrA$ is approximable from above and from below.
 \end{theorem}
 
 \begin{proof}
@@ -454,14 +454,14 @@ Let ${\mr A}\subseteq\mrA$ be any non empty (small) set. As above, by  Remark~\r
 By compactness, it suffices to prove that $q({\mr x})\imp {\mr x}\in{\mr A}$. Suppose not and fix some ${\mr a}\models q({\mr x})\wedge {\mr x}\notin{\mr A}$. As $\tp({\mr a}/M)$ is finitely satisfied in ${\mr A}$, there is a global type $p({\mr x})\supseteq \tp({\mr a}/M)$ that is finitely satisfied in ${\mr A}$. By Lemma~\ref{lem_honest} there is a formula $\psi({\mr x})\in p({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrA$ or $\psi({\mr x})\imp {\mr x}\notin\mrA$. But the first cannot hold because ${\mr a}\models \psi({\mr x})\wedge {\mr x}\notin{\mr A}$ while the second contradicts ${\mr A}\subseteq\psi({\mr\U})$ and ${\mr A}\subseteq\mrA$.
 \end{proof}
 
-If all formulas are nip, we say that the theory \emph{$T$ is nip}.
+If all formulas have finite VC-dimension, we say that the theory $T$ has the \emph{non-independence property\/} or \emph{is nip\/} for short.
 
 Let $\<\D_i:i<\lambda\>$ be the collection of all subsets of $\U$, of arbitrary finite arity, that are externally definable. The expansion of $\U$ to the language $L(\X_i:i<\lambda)$ is called the \emph{Shelah expansion\/} of $\U$ and is denoted by \emph{$\U^{\rm Sh}$}. 
 
 From Theorem~\ref{thm_honest} and Proposition~\ref{prop_sh_exp_qe} we obtain the following.
 
 \begin{corollary}\label{corol_sh_exp_qe}
-If $T$ is nip then $\U^{\rm Sh}$ has $L$-elimination of quantifiers. (I.e.\@ every formula is bolean combination of formulas in $L$ and formulas of the form $z\in\D_i$.)\QED
+If $T$ is nip then $\U^{\rm Sh}$ has $L$-elimination of quantifiers. (I.e.\@ every formula is Boolean combination of formulas in $L$ and formulas of the form $z\in\D_i$.)\QED
 \end{corollary}
 
 
