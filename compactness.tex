@@ -2,7 +2,7 @@
 \documentclass[creche.tex]{subfiles}
 \begin{document}
 \chapter{Compactness}
-\label{ultraprodotti}
+\label{compactness}
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
@@ -18,7 +18,7 @@ We present two proofs of the compactness theorem. The first is syntactic, the se
 Here we prove the compactness theorem using the so-called Henkin method. We divide the proof in two steps. Firstly, we observe that when the language is rich enough to name witnesses for all existential statements of the theory, these witnesses (\textit{Henkin constants\/}) form a canonical model. Secondly, we show that we can add the required Henkin constants to any finitely consistent theory.
 
 \begin{definition}\label{def_Henkin}
-Fix a language $L$. We say that $T$ is a \emph{Henkin theory\/} if for every formulas $\phi$ and $\psi$
+Fix a language $L$. Assume formulas are written using only the connectives $\wedge$, $\neg$ and $\E$. We say that $T$ is a \emph{Henkin theory\/} if for every formulas $\phi$ and $\psi$
 
 \begin{itemize}
 \item[0.]\ceq{\hfill \phi\in T}{\IMP}{\neg\phi\notin T}
@@ -104,7 +104,7 @@ If every finite subset of $T$ is consistent then $T$ is consistent.\QED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Compactness via ultraproducts}\label{compactness}
+\section{Compactness via ultraproducts}\label{compactness_Ultra}
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 

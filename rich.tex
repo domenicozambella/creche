@@ -7,7 +7,9 @@
 
 \def\ceq#1#2#3{\parbox[b]{20ex}{$\displaystyle #1$}\parbox[b]{4ex}{\hfil$#2$}$\displaystyle #3$}
 
-We introduce \textit{Fra\"iss\'e limits}, aleas \textit{homogeneous-universal\/} or \textit{generic\/} structures, which here we call \textit{rich\/} models, after Poizat. Rich models generalize the examples in Chapters~\ref{relational} and the many more to come. We also prove \textit{elimination of quantifiers\/} for the theories introduced in Chapters~\ref{relational}.
+We introduce \textit{Fra\"iss\'e limits}, aleas \textit{homogeneous-universal\/} or \textit{generic\/} structures, which here we call \textit{rich\/} models, after Poizat. Rich models generalize the examples in Chapters~\ref{relational} and the many more to come.
+
+\textit{Elimination of quantifiers} is briefly discussed at the end of Section~\ref{rich}. For the time being we identify  quantifier elimination with the property that says that all partial isomorphisms are elementary maps. Proofs are easier with this notion in mind. The equivalence with its syntactic counterpart is only proved in Chapter~\ref{elimination}, when the reader is more familiar with arguments of compactness.
 
 \section{Rich models.}\label{rich}
 We now define \textit{categories of models and partial morphisms}. These are example of concrete categories as intended in category theory. However, apart from the name, in what follows we dispense with all notions of category theory as they would make the exposition less basic than intended (without providing more technical instruments). We refer the interested reader to the references at the end of the chapter.
@@ -146,7 +148,7 @@ Assume for simplicity that $L$ is countable. Then all $\omega\jj$rich models bel
 
 For convenience of the reader, we instantiate Theorem~\ref{thm_morphism_rich_elementary} with the two categories used in Chapter~\ref{relational}.
 
-\begin{corollary}\label{coroll_tutteleimmersionisonoelementari=eliminazioneqantificatori}
+\begin{corollary}\label{coroll_tutteleimmersionisonoelementari_QE}
 Partial isomorphisms between models of $T_{\rm dlo}$ and between models of $T_{\rm rg}$ are elementary maps.\QED
 \end{corollary}
 
@@ -154,9 +156,9 @@ When partial isomorphism between models of a given theory $T$ coincide with elem
 
 \ceq{\hfill T}{\proves}{\psi(x)\iff\phi(x).}
 
-We will discuss general criteria for elimination of quantifiers in Chapter~\ref{eliminazione}, see for instance Corollary~\ref{corol_QE} and~\ref{corol_QE_back_and_forth}. Here we report without proof the following theorem.
+We will discuss general criteria for elimination of quantifiers in Chapter~\ref{elimination}, see for instance Corollary~\ref{corol_QE} and~\ref{corol_QE_back_and_forth}. Here we report without proof the following theorem.
 
-\begin{theorem}\label{thm_tutteleimmersionisonoelementari=eliminazioneqantificatori}
+\begin{theorem}\label{thm_tutteleimmersionisonoelementari_QE}
 The following are equivalent
 \begin{itemize}
 \item[1.] $T$ has elimination of quantifiers;
@@ -164,7 +166,11 @@ The following are equivalent
 \end{itemize}
 \end{theorem}
 
-For the time being when saying that \textit{$T$ has quantifier elimination\/} we intend \ssf{2} of the theorem above.
+For the time being when saying that \textit{$T$ has quantifier elimination\/} we intend \ssf{2} of the theorem above. For instance we rephrase Corollary~\ref{coroll_tutteleimmersionisonoelementari_QE} above as follows.
+
+\begin{corollary}\label{coroll_tutteleimmersionisonoelementari_QE2}
+Partial isomorphisms between models of $T_{\rm dlo}$ and between models of $T_{\rm rg}$ are elementary maps.\QED
+\end{corollary}
 
 In the next chapter we introduce important examples of $\omega\jj$rich models that do not have an $\omega\jj$categorical theory. These are algebraic structures (groups, fields etc.) hence more complex than pure relational structures. So, we conclude this section with an example of this phenomenon in almost trivial context. 
 
