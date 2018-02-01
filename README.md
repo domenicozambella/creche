@@ -30,7 +30,7 @@ Lecture notes for an introductory (under)graduate course.
    * Direct products
    * Ultraproducts
 *  **Compactness**
-   * Compactness via syntax.
+   * Compactness via syntax
    * Compactness via ultraproducts
    * Upward L&ouml;wenheim-Skolem
    * Finite axiomatizability
@@ -83,6 +83,7 @@ Lecture notes for an introductory (under)graduate course.
    * Elimination of imaginaries
    * Imaginaries: the true story
    * Uniform elimination of imaginaries
+   * Notes and references
 *  **Invariant sets**
    * Invariant sets and types
    * Invariance from the dual perspective
@@ -97,14 +98,8 @@ Lecture notes for an introductory (under)graduate course.
 *  **Externally definable sets**
    * Approximable sets
    * Ladders and definability
+   * Vaknik-Chevronenkis
+   * Honest definitions
    * Stable theories
    * Stability and the number of types
    * Notes and references
-*  **Continous logic**
-   * Real-valued structures
-*  **Measures???**
-   * Keisler measures
-   * Borel measures
-   * Extension of Keisler measures
-   * Smooth measures
-   * Measure extension
