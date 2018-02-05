@@ -1,0 +1,96 @@
+% !TEX root = creche.tex
+\documentclass[creche.tex]{subfiles}
+\begin{document}
+\chapter{Distality}
+\label{distal}
+
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
+
+In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
+The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
+
+\section{}
+
+In this section \emph{$\phi\subseteq\mrU\times\grV$} denotes a relation between to sets $\mrU$ and $\grV$.
+We call $\phi$ an \emph{(abstract) incidence relation}.
+We write $\phi({\mr x}\,;{\gr z})$ for $\<{\mr x},{\gr z}\>\in\phi$.
+For ${\mr A}\subseteq\mrU$ and  ${\gr b}\in\grV$ we define
+
+\ceq{\hfill\emph{$\phi({\mr A}\,;{\gr b})$}}{=}{\{{\mr a}\in {\mr A}:\phi({\mr a},{\gr b})\}.}
+
+The sets of this form for are called \emph{definable subsets\/} of ${\mr A}$ or, when more than one relation is involved, \emph{$\phi$-definable}.
+% For ${\gr B}\subseteq\grV$, we write
+% 
+% \ceq{\hfill\emph{$\phi({\mr A}\,;{\gr b})_{{\gr b}\in{\gr B}}$}}{=}{\{\phi({\mr A}\,;{\gr b})\ :\ {\gr b}\in{\gr B}\}}.
+% 
+% But we may also write \emph{$\phi({\mr A}\,;{\gr z})$\/} for $\phi({\mr A}\,;{\gr b})_{{\gr b}\in\grV}$.
+
+We define
+
+\ceq{\hfill\emph{$\phi({\mr A}\,;{\gr z})$}}{=}{\{\phi({\mr A}\,;{\gr b})\ :\ {\gr b}\in\grV\}.}
+
+
+We say that $\phi({\mr x}\,;{\gr z})$ is \emph{nip\/} if there is a finite integer $k$ such that $\phi({\mr A}\,;{\gr z})\neq\P({\mr A})$ for every finite ${\mr A}\subseteq\mrU$ of cardinality larger than $k$.
+
+We say that $\phi({\mr x}\,;{\gr z})$ is \emph{distal\/} if there is a relation $\psi\subseteq{\mr\U}\times{\mr\U^{k}}$ such that for every finite ${\mr A}\subseteq\mrU$ and every ${\gr b}\in\grV$ there is a tuple ${\mr a_1},\dots,{\mr a_k}\in{\mr A}$ such that $\phi({\mr A}\,;{\gr b})=\psi({\mr A}\,;{\mr a_1},\dots,{\mr a_k})$.
+
+\begin{definition}
+Fix $\epsilon\in (0,1)$. We say that $\big\{{\gr c_1},\dots,{\gr c_t}\big\}\subseteq\grV$, is an \emph{$\epsilon$-dense\/} set for $\phi({\mr A};\,{\gr z})$ if there are some ${\mr C_i}\subseteq{\mr A}$ of cardinality $\ge(1-\epsilon)|{\mr A}|$ such that for every ${\gr b}\in\grV$ there is an $i\in[\kern1pt t\kern1pt]$ such that $\phi({\mr C_i};\,{\gr b})=\phi({\mr C_i};\,{\gr c_i})$.\QED
+\end{definition}
+
+
+\begin{theorem}[(Cutting Lemma)] If $\phi({\mr x}\,;{\gr z})$ is distal, then for every $\epsilon\in (0,1]$ there is an integer $t_\epsilon$ such that for every ${\mr A}\subseteq\mrU$ there is a set of cardinality $\le t_\epsilon$ that is $\epsilon$-dense set for $\phi({\mr A};\,{\gr z})$.
+\end{theorem}
+
+\begin{corollary}[(Strong Erd\H os-Hajnal Property for distal relations)] If $\phi({\mr x}\,;{\gr z})$ is distal, then for every $\alpha\in(0,1/2)$ there is a $\beta\in(0,1)$ such that for every finite ${\mr A}\subseteq\mrU$ and ${\gr B}\subseteq\grV$ there are ${\mr A_0}\subseteq{\gr B}$ and ${\gr B_0}\subseteq{\gr B}$ such that $|{\mr A_0}|\ge\alpha|{\mr A}|$ and $|{\gr B_0}|\ge\beta|{\gr B}|$ and ${\mr A_0}{\times}{\gr B_0}$ is either contained in or disjoint of $\phi$.
+\end{corollary}
+
+\begin{proof}
+Let $\epsilon=1-2\alpha$. Let $\big\{{\gr c_1},\dots{\gr c_t}\big\}\subseteq\grV$ be an $\epsilon$-dense set for $\phi({\mr A};\,{\gr z})$ for some $t\le t_\epsilon$. Let ${\mr C_i}\subseteq{\mr A}$ be as in in the definition above. Let $\beta=1/t_\epsilon$. Then there is an $i$ such that $\phi({\mr C_i};\,{\gr b})=\phi({\mr C_i};\,{\gr c_i})$ holds for at least
+ $\beta|{\gr B}|$ many ${\gr b}\in{\gr B}$. Let ${\gr B_0}$ be the set of these ${\gr b}$. Let ${\mr A_0}$ be the largest of the following sets
+
+\hfill$\big\{{\mr a}\in{\mr C_i} : \phi({\mr a};\,{\gr c_i})\big\}$\hfill or \hfill  $\big\{{\mr a}\in{\mr C_i} : \neg\phi({\mr a};\,{\gr c_i})\big\}$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{comment}
+
+
+
+We write %$S\phi({\mr x}\,;{\gr B})$ 
+$S_{\phi({\mr x};\,\mbox{\gr-})}({\gr B})$ for the set of maximal consistent $\pmDelta$-types, where 
+
+\ceq{\hfill\Delta}{=}{\{\phi({\mr x}\,;{\gr b})\ :\ {\gr b}\in{\gr B}\}.}
+
+We say that $\phi$ is distal if there is a relation $\psi\subseteq\mrU\times{\gr\V^k}$ such that for every finite ${\gr B}\subseteq\gr\V$ and every $p({\mr x})\in S_{\phi({\mr x};\,\mbox{\gr-})}({\gr B})$ there are ${\gr b_1},\dots,{\gr b_k}\in{\gr B}$ such that
+
+
+\ceq{\hfill\psi({\mr x}\,;{\gr b_1},\dots,{\gr b_k})}{\iff}{p({\mr x})}
+
+\begin{definition}
+A definable $\epsilon$-cutting of $S_{\phi({\mr x};\,\mbox{\gr-})}({\gr B})$ is a a formula $\psi({\mr x},{\gr z_1},\dots,{\gr z_k})$ such that for all but $\epsilon|{\gr B}|$ elements of every $p({\mr x})\in S_{\phi({\mr x};\,\mbox{\gr-})}({\gr B})$ there are ${\gr b_1},\dots,{\gr b_k}\in{\gr B}$ such that
+
+\ceq{\hfill\psi({\mr x}\,;{\gr b_1},\dots,{\gr b_k})}{\imp}{p({\mr x})}
+\end{definition}
+
+
+\begin{theorem}[(Cutting Lemma)] If $\phi$ is distal the for every $\epsilon\in (0,1]$ there is an integer $t_\epsilon$ such that for every ${\gr B}\subseteq\gr\V$ there is an $\epsilon$-cutting of cardinality at most $t_\epsilon$.
+\end{theorem}
+\end{comment}
+\end{document}
+
+

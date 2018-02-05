@@ -35,7 +35,7 @@ This is not the most common approach.
 \begin{definition}\label{def_epprox}
 We say that $\grD$ is \emph{approximated\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite $B$ there is a ${\mr b}\in\U^{|{\mr x}|}$ such that $\phi({\mr b}\,;{\gr\U})=_B\grD$.
 If in addition we have that $\phi({\mr b}\,;{\gr\U})\subseteq\grD$, we say that  $\grD$ is \emph{approximated from below}.
-If  $\grD\subseteq\phi({\mr b}\,;{\gr\U})$ we say that  $\grD$ is \emph{approximated from above}.
+Similarly, when $\grD\subseteq\phi({\mr b}\,;{\gr\U})$ we say that  $\grD$ is \emph{approximated from above}.
 We may call $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grD$.\QED
 \end{definition} 
  
@@ -366,7 +366,7 @@ Arguing by compactness we obtain the following proposition whose proof is left a
 The following are equivalent 
 \begin{itemize}
 \item[1.] $\phi({\mr x}\,;{\gr z})\in L$ has finite VC-dimension;
-\item[2.] there is no infinite set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that  every subset of ${\mr A}$ is the trace of some definable set of sort $\phi({\mr x}\,;{\gr z})$.\QED
+\item[2.] there is no infinite set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that every subset of ${\mr A}$ is the trace of some definable set of sort $\phi({\mr x}\,;{\gr z})$.\QED
 \end{itemize}
 \end{proposition}
 
@@ -454,7 +454,7 @@ Let ${\mr A}\subseteq\mrA$ be any non empty (small) set. As above, by  Remark~\r
 By compactness, it suffices to prove that $q({\mr x})\imp {\mr x}\in{\mr A}$. Suppose not and fix some ${\mr a}\models q({\mr x})\wedge {\mr x}\notin{\mr A}$. As $\tp({\mr a}/M)$ is finitely satisfied in ${\mr A}$, there is a global type $p({\mr x})\supseteq \tp({\mr a}/M)$ that is finitely satisfied in ${\mr A}$. By Lemma~\ref{lem_honest} there is a formula $\psi({\mr x})\in p({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrA$ or $\psi({\mr x})\imp {\mr x}\notin\mrA$. But the first cannot hold because ${\mr a}\models \psi({\mr x})\wedge {\mr x}\notin{\mr A}$ while the second contradicts ${\mr A}\subseteq\psi({\mr\U})$ and ${\mr A}\subseteq\mrA$.
 \end{proof}
 
-If all formulas have finite VC-dimension, we say that the theory $T$ has the \emph{non-independence property\/} or \emph{is nip\/} for short.
+When all formulas have finite VC-dimension, we say that the theory $T$ has the \emph{non-independence property\/} or, for short, that $T$ \emph{is nip}.
 
 Let $\<\D_i:i<\lambda\>$ be the collection of all subsets of $\U$, of arbitrary finite arity, that are externally definable. The expansion of $\U$ to the language $L(\X_i:i<\lambda)$ is called the \emph{Shelah expansion\/} of $\U$ and is denoted by \emph{$\U^{\rm Sh}$}. 
 

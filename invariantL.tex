@@ -31,7 +31,7 @@ The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*
 
 This section is only marginally required in the present chapter so it can be postponed with minor consequences.
 
-We will find it convenient to expand the language $L$ with a predicate for a given $\grD\subseteq\U^{|{\gr z}|}$. We denote by $\<\U,\grD\>$ the corresponding expansion of $\U$. Generally, we write \emph{$L(\X)$} for the expanded language but, if the intended interpretation of ${\gr\X}$ only going to be $\grD$, we may write \emph{$L(\D)$} and abbreviate $\<\U\,;\grD\>\models\phi({\gr\X})$ as $\phi(\grD)$. 
+We will find it convenient to expand the language $L$ with a predicate for a given $\grD\subseteq\U^{|{\gr z}|}$. We denote by $\<\U,\grD\>$ the corresponding expansion of $\U$. Generally, we write \emph{$L({\gr\X})$} for the expanded language but, if the intended interpretation of ${\gr\X}$ only going to be $\grD$, we may write \emph{$L(\grD)$} and abbreviate $\<\U\,;\grD\>\models\phi({\gr\X})$ as $\phi(\grD)$. 
 
 
 %As usual, $L({\gr\X})$ and $L(\grD)$ denotes also the set of formulas in that language, and we write  $L(A\,;{\gr\X})$ and $L(A\,;\grD)$ for the set of formulas with parameters from $A$.
@@ -40,7 +40,7 @@ We will find it convenient to expand the language $L$ with a predicate for a giv
 The definitions above are straightforward when ${\gr z}$ finite tuple. When ${\gr z}$ is an infinite tuple the intuition stays the same but a more involved definition is required. In fact, first-order logic does not allow infinitary predicates. We think of $L({\gr\X})$ for a two sorted language. The \textit{home sort}, denoted by $0$, and the ${\gr z}\jj$\textit{sort}, denoted by ${\gr z}$. The expansion $\<\U,\grD\>$ has domain $\U$ for the home sort, and $\U^{|{\gr z}|}$ for the ${\gr z}\jj$sort. Besides the symbols of $L$, there is a function symbol $\pi_i$ for every $i<|{\gr z}|$ which is interpreted as the projection to the $i\jj$coordinate. These functions have arity $\<{\gr z},0\>$ (see Section~\hyperref[many-sorted]{\ref*{imaginary}.\ref*{many-sorted}} for the notation). There is also a predicate of sort $\<{\gr z}\>$ interpreted as $\grD$.\QED
 \end{remark}
 
-What said above is adapted to define the expansion  \emph{$L(\X_i:i<\lambda)$}, where ${\gr\X_i}$ are predicates of arity $|{\gr z_i}|$. Again, when the sets ${\gr\D_i}\subseteq\U^{|{\gr z_i}|}$ are the only intended interpretation of  ${\gr\X_i}$, we may write \emph{$L(\D_i:i<\lambda)$}.
+What said above is adapted to define the expansion  \emph{$L({\gr\X_i}:i<\lambda)$}, where ${\gr\X_i}$ are predicates of arity $|{\gr z_i}|$. Again, when the sets ${\gr\D_i}\subseteq\U^{|{\gr z_i}|}$ are the only intended interpretation of  ${\gr\X_i}$, we may write \emph{$L({\gr\D_i}:i<\lambda)$}.
 
 If $\grC,\grD\subseteq\U^{|{\gr z}|}$ we abbreviate $\<\U,\grC\>\equiv_A\<\U,\grD\>$ as $\grC\equiv_A\grD$. We also say that $\grD$ is \emph{saturated\/} if so is the model $\<\U\,;\grD\>$.
 
@@ -79,11 +79,11 @@ Prove that if $\grC\subseteq\U^{|{\gr z}|}$ is type-definable over $B$ then $\eq
 \def\equivL{\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}}
 
 
-Let $\grD\subseteq\U^{|{\gr z}|}$, where ${\gr z}$ is a tuple of length $<\kappa$. The \emph{orbit of $\D$ over $A$\/} is the set
+Let $\grD\subseteq\U^{|{\gr z}|}$, where ${\gr z}$ is a tuple of length $<\kappa$. The \emph{orbit of $\grD$ over $A$\/} is the set
 
-\ceq{\hfill\emph{$\oorbit(\D/A)$}}{\deq}{\Big\{f[\grD]\ :\ f\in\Aut(\U/A)\Big\}}
+\ceq{\hfill\emph{$\oorbit(\grD/A)$}}{\deq}{\Big\{f[\grD]\ :\ f\in\Aut(\U/A)\Big\}}
 
-So, $\grD$ is invariant over $A$ when $\oorbit(\grD/A)=\big\{\grD\big\}$. We say that $\grD$ is \emph{Lascar invariant over $A$\/} if it is invariant over every model $M\supseteq A$. Recall that this means that if ${\gr a}\equiv_M{\gr c}$ for some model $M$ containing $A$ then ${\gr a}\in\grD\iff{\gr c}\in\grD$.
+So, $\grD$ is invariant over $A$ when $\oorbit(\grD/A)=\big\{\grD\big\}$. We say that $\grD$ is \emph{Lascar invariant\/} over $A$ if it is invariant over every model $M\supseteq A$. Recall that this means that if ${\gr a}\equiv_M{\gr c}$ for some model $M$ containing $A$ then ${\gr a}\in\grD\iff{\gr c}\in\grD$.
 
 
 \begin{proposition}\label{prop_numero_quasi_invarianti}
@@ -142,9 +142,9 @@ The following are equivalent
 \end{corollary}
 
 \noindent\llap{\textcolor{red}{\Large\danger}
-\kern1.5ex}Given a tuple ${\gr a}\in\U^{|{\gr z}|}$, we write \emph{$\Ll(a/A)$\/} for the intersection of all sets containing ${\gr a}$ that are Lascar invariant over $A$. Clearly $\Ll({\gr a}/A)$ is Lascar invariant over $A$. The symbol $\Ll({\gr a}/A)$ is not standard.
+\kern1.5ex}Given a tuple ${\gr a}\in\U^{|{\gr z}|}$, we write \emph{$\Ll({\gr a}/A)$\/} for the intersection of all sets containing ${\gr a}$ that are Lascar invariant over $A$. Clearly $\Ll({\gr a}/A)$ is Lascar invariant over $A$. The symbol $\Ll({\gr a}/A)$ is not standard.
 
-\begin{definition}\label{def_Lascar_type}We write \emph{$a\stackrel{\smash{\scalebox{.5}{\rm\bf L}}}{\equiv}_Ab$\/} and say that ${\gr a}$ and ${\gr b}$ have the same \emph{Lascar strong type over $A$\/} if the equivalence ${\gr a}\in\grD\iff{\gr b}\in\grD$ holds for every set $\grD$ that is Lascar invariant over $A$ or, in other words, if $\Ll({\gr a}/A)=\Ll({\gr b}/A)$. The notation ${\rm L{\jj}stp}({\gr a}/A)={\rm L{\jj}stp}({\gr b}/A)$ and ${\gr a}E_{_{L/A}}{\gr b}$ are also common in the the literature.\QED
+\begin{definition}\label{def_Lascar_type}We write \emph{${\gr a}\stackrel{\smash{\scalebox{.5}{\rm\bf L}}}{\equiv}_A{\gr b}$\/} and say that ${\gr a}$ and ${\gr b}$ have the same \emph{Lascar strong type\/} over $A$ if the equivalence ${\gr a}\in\grD\iff{\gr b}\in\grD$ holds for every set $\grD$ that is Lascar invariant over $A$ or, in other words, if $\Ll({\gr a}/A)=\Ll({\gr b}/A)$. The notation ${\rm L{\jj}stp}({\gr a}/A)={\rm L{\jj}stp}({\gr b}/A)$ and ${\gr a}E_{_{L/A}}{\gr b}$ are also common in the the literature.\QED
 \end{definition}
 
 
@@ -159,7 +159,7 @@ The following are equivalent
 \end{proof}
 
 
-Let $p({\mr x})\in S(\U)$ be global type; we say that $p$ is \emph{Lascar invariant over $A$\/} if the sets ${\gr\D_{p,\phi}}$ for $\phi({\mr x}\,;{\gr z})\in L$ all Lascar invariant over $A$. (The sets ${\gr\D_{p,\phi}}$ are defined in Section~\hyperref[invariant_sets]{~\ref*{invariant}.\ref*{invariant_sets}}.)
+Let $p({\mr x})\in S(\U)$ be global type; we say that $p$ is \emph{Lascar invariant\/} over $A$ if the sets ${\gr\D_{p,\phi}}$ for $\phi({\mr x}\,;{\gr z})\in L$ all Lascar invariant over $A$. (The sets ${\gr\D_{p,\phi}}$ are defined in Section~\hyperref[invariant_sets]{~\ref*{invariant}.\ref*{invariant_sets}}.)
 
 \begin{proposition}\label{prop_Lascar_indiscernibles}
   Let $p({\mr x})\in S(\U)$ be a global type. Then the following are equivalent
@@ -246,7 +246,7 @@ As in the proof of Proposition~\ref{prop_exisntence_coheirs}. Let $p({\mr x})\su
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Lascar graph and Newelski's theorem}\label{newelski}
 
-Here we study Lascar strong types from a different viewpoint. The \emph{Lascar graph over $A$\/} has an arc between all pairs ${\gr a},{\gr b}\in \U^{|{\gr z}|}$ such that  ${\gr a}\equiv_M{\gr b}$ for some model $M$ containing $A$. We write \emph{$d_A(a,b)$\/} for the distance between ${\gr a}$ and ${\gr b}$ in the Lascar graph over $A$. Let us spell this out: $d_A({\gr a},{\gr b})\le n$ if there is a sequence ${\gr a_0},\dots,{\gr a_n}$ such that ${\gr a}={\gr a_0}$, ${\gr b}={\gr a_n}$, and ${\gr a_i}\equiv_{M_i}{\gr a_{i+1}}$ for some models $M_i$ containing $A$. We write \emph{$d_A(a,b)<\infty$\/} if ${\gr a}$ and ${\gr b}$ are in the same connected component of the Lascar graph over $A$.
+Here we study Lascar strong types from a different viewpoint. The \emph{Lascar graph\/} over $A$ has an arc between all pairs ${\gr a},{\gr b}\in \U^{|{\gr z}|}$ such that  ${\gr a}\equiv_M{\gr b}$ for some model $M$ containing $A$. We write \emph{$d_A({\gr a},{\gr b})$\/} for the distance between ${\gr a}$ and ${\gr b}$ in the Lascar graph over $A$. Let us spell this out: $d_A({\gr a},{\gr b})\le n$ if there is a sequence ${\gr a_0},\dots,{\gr a_n}$ such that ${\gr a}={\gr a_0}$, ${\gr b}={\gr a_n}$, and ${\gr a_i}\equiv_{M_i}{\gr a_{i+1}}$ for some models $M_i$ containing $A$. We write \emph{$d_A({\gr a},{\gr b})<\infty$\/} if ${\gr a}$ and ${\gr b}$ are in the same connected component of the Lascar graph over $A$.
 
 \begin{proposition}\label{tipoforteLascarediametro} For every ${\gr a}\in\U^{|{\gr z}|}$
 
@@ -418,11 +418,11 @@ Let ${\gr\Ll}$ be quasi-invariant and let $\grD$ be drifting, prove that  ${\gr\
 \section{Kim-Pillay types}\label{KPtypes}
 
 
-Given a tuple ${\gr a}\in\U^{|{\gr z}|}$, we write \emph{$\K(a/A)$\/} for the intersection of all type-definable sets containing ${\gr a}$ that are Lascar invariant over $A$. Or, more concisely, the intersection of all sets that are type-definable over a model containing $A$. We call $\K({\gr a}/A)$ the \emph{Kim-Pillay strong type over $A$}. Clearly,  $\Ll({\gr a}/A)\subseteq\K({\gr a}/A)\subseteq\O({\gr a}/A)$. 
+Given a tuple ${\gr a}\in\U^{|{\gr z}|}$, we write \emph{$\K({\gr a}/A)$\/} for the intersection of all type-definable sets containing ${\gr a}$ that are Lascar invariant over $A$. Or, more concisely, the intersection of all sets that are type-definable over a model containing $A$. We call $\K({\gr a}/A)$ the \emph{Kim-Pillay strong type over $A$}. Clearly,  $\Ll({\gr a}/A)\subseteq\K({\gr a}/A)\subseteq\O({\gr a}/A)$. 
 
 Clearly $\K({\gr a}/A)$ is Lascar invariant over $A$.  It also easy to see that $\K({\gr a}/A)$ is type-definable. In fact, by invariance, we can assume that all types in the intersection above are over $M$, for any fixed model containing $A$. Hence $\K({\gr a}/A)$ is the minimal type-definable set containing ${\gr a}$ and closed under the relation $\equivL_A$. It follows that if ${\gr b}\in\K({\gr a}/A)$ then $\K({\gr b}/A)\subseteq\K({\gr a}/A)$. 
 
-If $\K({\gr a}/A)=\K({\gr b}/A)$, we say that ${\gr a}$ and ${\gr b}$ have the same  \emph{Kim-Pillay strong type over $A$}. We abbreviate this by \emph{$a\stackrel{\smash{\scalebox{.5}{\rm\bf KP}}}{\equiv}_Ab$}. In other words, ${\gr a}\equivKP_A{\gr b}$ holds when ${\gr a}\in\grD\iff{\gr b}\in\grD$ for every type-definable set $\grD$ that is Lascar invariant over $A$.
+If $\K({\gr a}/A)=\K({\gr b}/A)$, we say that ${\gr a}$ and ${\gr b}$ have the same  \emph{Kim-Pillay strong type over $A$}. We abbreviate this by \emph{${\gr a}\stackrel{\smash{\scalebox{.5}{\rm\bf KP}}}{\equiv}_A{\gr b}$}. In other words, ${\gr a}\equivKP_A{\gr b}$ holds when ${\gr a}\in\grD\iff{\gr b}\in\grD$ for every type-definable set $\grD$ that is Lascar invariant over $A$.
 
 %We say that ${\gr a}$ and ${\gr b}$ have the same \emph{Kim-Pillay strong type over $A$\/} if $\K({\gr a}/A)=\K({\gr b}/A)$ or, in other words, when ${\gr a}\in\grD\iff{\gr b}\in\grD$ for every type-definable set $\grD$ that is Lascar invariant over $A$. We write \emph{$a\stackrel{\smash{\scalebox{.5}{\rm\bf KP}}}{\equiv}_Ab$}.
 
