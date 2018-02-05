@@ -17,7 +17,7 @@ In this chapter we fix a signature $L$, a complete theory $T$ without finite mod
 
 \section{The omitting types theorem}\label{omttingtype}
 
-We say that a formula \emph{$\phi(x)$ isolates $p(x)$}, a type, if it is consistent and $\phi({\mr x})\imp p({\mr x})$. When $\Delta$ is a set of formulas, we say that \emph{$\Delta$ isolates $p(x)$\/} if some formula in $\Delta$ does. In this chapter $\Delta$ is always a set of the form $L_{{\mr x}}(A)$ and we say  \emph{$A$ isolates $p(x)$\/} or every simply \emph{$p(x)$ is isolated\/} when $A$ is clear. We say that a model \emph{$M$ omits $p(x)$\/} if it does not realized it. 
+We say that the formula $\phi({\mr x})$ \emph{isolates\/} the type $p({\mr x})$, if $\phi({\mr x})$ is consistent and $\phi({\mr x})\imp p({\mr x})$. When $\Delta$ is a set of formulas, we say that \emph{$\Delta$ isolates $p({\mr x})$\/} if some formula in $\Delta$ does. In this chapter $\Delta$ is always a set of the form $L_{{\mr x}}(A)$ and we say  \emph{$A$ isolates $p({\mr x})$\/} or every simply \emph{$p({\mr x})$ is isolated\/} when $A$ is clear. We say that a model \emph{$M$ omits $p({\mr x})$\/} if it does not realized it. 
 
 Observe that if $p({\mr x})\subseteq L(M)$ then $M$ realizes $p({\mr x})$ if and only if $M$ isolates  $p({\mr x})$. Therefore if $A$ isolates $p({\mr x})$, then every model containing $A$ realizes $p({\mr x})$. Below we prove that the converse also holds when $L$ and $A$ are countable. This a famous classical theorem  which is called the \textit{omitting types theorem}. 
 
@@ -73,7 +73,7 @@ The following example shows that in the omitting types theorem we cannot drop th
 
 Let $Y_1\subseteq Y$ be countable. Let $c\in Y\sm Y_1$ and set $p(y)=\tp(c/X,Y_1)$. We claim that $p(y)$ is not isolated but that it is realized in every model containing $X,Y_1$.
 
-No formula could be equivalent to $p(y)$ (nor even a type with finitely many parameters). In fact, for every finite sets $Y_0\subseteq Y_1$ and $X_0\subseteq X$ there is a automorphism of $M$ that fixes $Y_0\cup X_0$ and maps $c$ to some (any) element of $Y_1\sm Y_0$. This automorphism extends to an automorphism of $\U$ and maps $c$ to an element that does not realize $p(y)$.  
+No formula could be equivalent to $p(y)$ (not even a type with finitely many parameters). In fact, for every finite sets $Y_0\subseteq Y_1$ and $X_0\subseteq X$ there is a automorphism of $M$ that fixes $Y_0\cup X_0$ and maps $c$ to some (any) element of $Y_1\sm Y_0$. This automorphism extends to an automorphism of $\U$ and maps $c$ to an element that does not realize $p(y)$.  
 
 The type $p(y)$ cannot be omitted because every model $N$ containing  $X$ has necessarily uncountably many elements of sort $Y$ and therefore realizes $p(y)$.\QED
 \end{example}
@@ -87,6 +87,18 @@ Let $p(x)\subseteq L(B)$ and $p_n(x)\subseteq L(A)$, for $n<\omega$, be consiste
 \noindent Prove that there is an $n<\omega$ and a formula $\phi(x)\in L(A)$ consistent with $p(x)$ such that \smallskip
 
 \ceq{\hfill p(x)\wedge\phi(x)}{\imp}{p_n(x)}.\QED
+\end{exercise}
+
+
+\begin{exercise}
+Let $M$ be a second countable topological space (i.e.\@ the topology has a countable base). We say that $A\subseteq M$ is meager if it is the countable union of nowhere dense sets. 
+
+Use Lemma~\ref{} to prove the Kuratowski-Ulam Theorem, i.e.\@ that for $A\subseteq M^2$ the following are equivalent 
+\begin{itemize}
+\item[1.] $A$ is meager in $M^2$ (w.r.t.\@ the product topology)
+\item[2.] $\{x\in M : A\cap (\{x\}{\times}M \ \textrm{is not meager}\}$ is meager in $M$.
+\end{itemize}
+Hint: Use the base of the topology as predicated of a first-order language.\QED
 \end{exercise}
 
 

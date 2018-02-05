@@ -23,6 +23,8 @@
 %\usepackage[adobe-utopia]{mathdesign}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+% \usepackage{tikz}
+% \usetikzlibrary{tikzmark}
 \usepackage{tikz-cd}
 \tikzcdset{
 arrow style=tikz,
@@ -85,9 +87,9 @@ diagrams={>=latex}
 \def\dom{\mathop{\rm dom}}
 \def\range{\mathop{\rm img}}
 \def\rank{\mathop{\rm rank}}
-\def\cf{\mathop{\rm cf}}
 \def\dcl{\mathop{\rm dcl}}
 \def\acl{\mathop{\rm acl}}
+\def\cf{\mathop{\rm cf}}
 \def\rad{\mathop{\rm rad}}
 \def\eq{{{\rm eq}}}
 \def\ccl{{\rm ccl}}
@@ -152,7 +154,7 @@ diagrams={>=latex}
 \def\Z{\EuScript Z}
 \def\C{\EuScript C}
 \def\U{\EuScript U}
-\def\H{\EuScript H}
+\def\Hh{\EuScript H}
 \def\I{\EuScript I}
 \def\V{\EuScript V}
 \def\R{\EuScript R}
@@ -172,6 +174,8 @@ diagrams={>=latex}
 \def\phi{\varphi}
 \def\epsilon{\varepsilon}
 \def\ssf#1{\textsf{\small #1}}
+
+
 
 \titlecontents{section}
 [3.8em] % ie, 1.5em (chapter) + 2.3em
@@ -257,7 +261,9 @@ diagrams={>=latex}
 
 \definecolor{violet}{RGB}{115, 0, 205}
 \definecolor{brown}{RGB}{150, 50, 10}
-\definecolor{green}{RGB}{5,100, 15}
+\definecolor{green}{RGB}{5,110, 35}
+\definecolor{lightblue}{rgb}{.98,.98,.70}
+
 \def\mr{\color{brown}}
 \def\gr{\color{green}}
 \def\vl{\color{violet}}
@@ -266,10 +272,15 @@ diagrams={>=latex}
 \def\mrB{{\mr\B}}
 \def\mrC{{\mr\C}}
 \def\mrD{{\mr\D}}
+\def\mrU{{\mr\U}}
 \def\grB{{\gr\B}}
 \def\grC{{\gr\C}}
 \def\grD{{\gr\D}}
+\def\grV{{\gr\V}}
 
+
+\renewcommand*{\emph}[1]{%
+\smash{\tikz[baseline]\node[rectangle, fill=lightblue, rounded corners, inner xsep=.5ex, inner ysep=.2ex, anchor=base, minimum height = 3ex]{#1};}}
 
 
 \begin{document}

@@ -54,7 +54,7 @@ We recall the definition of partitioned formulas. A \emph{partitioned formula\/}
 
 Given a language $L$ we define a many-sorted language \emph{$L^{\rm\textbf{eq}}$\/} which has a sort for each (partitioned) formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort}. For better legibility, we will pretend that all formulas $\sigma$ depend on the same pair of tuples ${\mr x}\,;{\gr z}$, so we assume that ${\mr x}\,;{\gr z}$ are infinite tuples. 
 
-The home sort is also called the \emph{first-order sort}. All other sorts are called \emph{second-order sorts}. First of all, $L^\eq$ contains all relations and functions of $L$. The many-sorted arity of a relation $r$ is $\<0^{n_r}\>$, where $n_r$ is the arity of $r$ in $L$. Similarly, the many-sorted arity of a function $f$ is $\<0^{1+n_f}\>$, where $n_f$ is the arity of $f$ in $L$. Moreover, $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$. These relation symbols have arity \smash{$\big\<0^{|{\mr x}|},\sigma({\mr x}\,;{\gr z})\big\>$}. As there is no risk of ambiguity, in what follows we write $\in$ without subscript.
+The home sort is also called the \emph{first-order sort}. All other sorts are \emph{second-order}. First of all, $L^\eq$ contains all relations and functions of $L$. The many-sorted arity of a relation $r$ is $\<0^{n_r}\>$, where $n_r$ is the arity of $r$ in $L$. Similarly, the many-sorted arity of a function $f$ is $\<0^{1+n_f}\>$, where $n_f$ is the arity of $f$ in $L$. Moreover, $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$. These relation symbols have arity \smash{$\big\<0^{|{\mr x}|},\sigma({\mr x}\,;{\gr z})\big\>$}. As there is no risk of ambiguity, in what follows we write $\in$ without subscript.
 
 The model \emph{$\U^{\rm\textbf{eq}}$\/} has $\U$ as domain for the home sort. The domain for the sort $\sigma({\mr x}\,;{\gr z})$ contains the definable sets ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in\U^{|{\gr z}|}$. The symbols in $L$ have the same interpretation as in the one-sorted case, and $\in$ is interpreted as set membership. We write \emph{$T^{\rm\textbf{eq}}$\/} for $\Th(\U^\eq)$.
 
@@ -237,7 +237,7 @@ If $\phi({\vl\X})$ has $n$, solutions, then $\epsilon({\mr x}\,;{\mr y})$ has at
 \end{proof}
 
 \begin{definition}\label{def_Sh_strong_type}
-We write \emph{$a\stackrel{\smash{\scalebox{.5}{\rm\bf Sh}}}{\equiv}_Ab$} when $\epsilon({\mr a}\,;{\mr b})$ holds for every finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$. In words we say that ${\mr a}$ and ${\mr b}$ have the same \emph{Shelah strong-type over $A$}.\QED
+We write \emph{${\mr a}\stackrel{\smash{\scalebox{.5}{\rm\bf Sh}}}{\equiv}_A{\mr b}$} when $\epsilon({\mr a}\,;{\mr b})$ holds for every finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$. In words we say that ${\mr a}$ and ${\mr b}$ have the same \emph{Shelah strong-type over $A$}.\QED
 \end{definition}
 
 \begin{proposition}\label{prop_Shelah_strong_types}
@@ -319,16 +319,14 @@ The following are equivalent
 \end{itemize}
 \end{theorem}
 
-
-
-\begin{proof}\ssf{1}$\IMP$\ssf{2} Assume \ssf{1} and let ${\vl\B}$ be the set of solutions of the formula
+\begin{proof}\ssf{1}$\IMP$\ssf{2} Assume \ssf{1} and let ${\gr\B}$ be the set of solutions of the formula
 
 \ceq{\hfill\A{\mr x}\ \bigg[{\mr x}\in{\vl\Aa}}{\iff}{\sigma({\mr x}\,;{\gr z})\bigg].}
 
-Hence ${\vl\B}$ is finite and ${\vl\B}\in\dcl^\eq\{{\vl\Aa}\}$. We also have ${\vl\Aa}\in\dcl^\eq\{{\vl\B}\}$ because ${\vl\Aa}$ is definibile by the formula $\E{\gr z}\,\big[{\gr z}\in {\vl\B}\wedge \sigma({\mr x}\,;{\gr z})\big]$. Therefore $\dcl^\eq\{{\vl\Aa}\}=\dcl^\eq\{{\vl\B}\}$. 
+Hence ${\gr\B}$ is finite and ${\gr\B}\in\dcl^\eq\{{\vl\Aa}\}$. We also have ${\vl\Aa}\in\dcl^\eq\{{\gr\B}\}$ because ${\vl\Aa}$ is definibile by the formula $\E{\gr z}\,\big[{\gr z}\in {\gr\B}\wedge \sigma({\mr x}\,;{\gr z})\big]$. Therefore $\dcl^\eq\{{\vl\Aa}\}=\dcl^\eq\{{\gr\B}\}$. 
 
 
-\ssf{2}$\IMP$\ssf{3} Assume $\dcl^\eq\{{\vl\Aa}\}=\dcl^\eq\{{\vl\B}\}$ for some finite set ${\vl\B}$. The elements of ${\vl\B}$, say ${\gr b_1},\dots,{\gr b_n}$, are the (finitely many) solutions of the formula ${\gr z}\in{\vl\B}$. Therefore ${\gr b_1},\dots,{\gr b_n}\in\acl({\vl\B})=\acl({\vl\Aa})$. Let $\phi({\vl\X}\,;{\vl\B})$ be a formula that has ${\vl\Aa}$ as unique solution. Then $\E{\vl\X} \big[{\vl\X}=\big\{{\gr b_1},\dots,{\gr b_n}\big\}\wedge \phi({\vl\X}\,;{\vl\X})\big]$ is the formula that proves \ssf{3}.
+\ssf{2}$\IMP$\ssf{3} Assume $\dcl^\eq\{{\vl\Aa}\}=\dcl^\eq\{{\gr\B}\}$ for some finite set ${\gr\B}$. The elements of ${\gr\B}$, say ${\gr b_1},\dots,{\gr b_n}$, are the (finitely many) solutions of the formula ${\gr z}\in{\gr\B}$. Therefore ${\gr b_1},\dots,{\gr b_n}\in\acl({\gr\B})=\acl({\vl\Aa})$. Let $\phi({\vl\X}\,;{\gr\B})$ be a formula that has ${\vl\Aa}$ as unique solution. Then $\E{\vl\Y} \big[{\vl\Y}=\big\{{\gr b_1},\dots,{\gr b_n}\big\}\wedge \phi({\vl\X}\,;{\vl\Y})\big]$ is the formula that proves \ssf{3}.
 
 \ssf{3}$\IMP$\ssf{1} Assume \ssf{3}. As \ssf{wei} holds trivially for all $\0$-definable sets, we may assume ${\vl\Aa}\neq\0$. Let $\sigma({\mr x}\,;{\gr z})$ be such that
 
@@ -434,7 +432,7 @@ A priori, the formula $\sigma({\mr x}\,;{\gr z})$ may depend on $c$ in a very wi
 
 The role of the formula $\rho({\gr z})$ above is may seem mysterious. It is clarified by the following propositions. In fact, uniform elimination of imaginaries is equivalent to a very natural property which in words says: every definable equivalence relation is the kernel of a definable function. Recall that the kernel of the function $f$ is the relation $fa=fb$.
 
-Uniform elimination of imaginaries is convenient when dealing with interpretations of structure inside other structures. Let us consider a simple concrete example. Suppose $\U$ is a group and let $\H$ be a definable normal subgroup of $\U$. The elements of the quotient structure $\U/\H$ are equivalent classes of a definable equivalence relation. If there is uniform elimination of imaginaries we can identify $\U/\H$ with an actual definable subset of $\G$ (the range of the function $f$ above). Moreover, the group operation of $\G$ are definable functions. As working in $\U/\H$ may be notationally cumbersome, $\G$ may offer a convenient alternative.
+Uniform elimination of imaginaries is convenient when dealing with interpretations of structure inside other structures. Let us consider a simple concrete example. Suppose $\U$ is a group and let $\Hh$ be a definable normal subgroup of $\U$. The elements of the quotient structure $\U/\Hh$ are equivalent classes of a definable equivalence relation. If there is uniform elimination of imaginaries we can identify $\U/\Hh$ with an actual definable subset of $\G$ (the range of the function $f$ above). Moreover, the group operation of $\G$ are definable functions. As working in $\U/\Hh$ may be notationally cumbersome, $\G$ may offer a convenient alternative.
 
 \begin{proposition}\label{prop_uei_standard}
 The following are equivalent

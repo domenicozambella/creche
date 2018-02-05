@@ -189,13 +189,16 @@ Let $L$ be the language of groups. Let $N$ be a group, which we consider as an $
 Fix a language $L$ and a set of variables $V$. A \emph{formula} is a finite sequence of symbols in $L_{\rm fun}\cup L_{\rm rel}\cup V\cup \{\doteq,\bot,\neg,\vee,\E\}$. The last set contains the logical symbols that are called respectively
 
 
-\def\medrel#1{\parbox[t]{4ex}{#1}}
-\def\ceq#1#2{\medrel{#1}{\parbox{25ex}{#2}}}
+
+\def\ceq#1#2{\parbox{3ex}{\noindent\emph{#1}\ }\parbox{27ex}{\ \emph{#2}\ }}
 
 
-\ceq{$\doteq$}{\emph{equality};}\ceq{$\bot$}{\emph{contradiction};}\ceq{$\neg$}{\emph{negation};}
+\ceq{$\doteq$}{equality}%
+\ceq{$\bot$}{contradiction}%
+\ceq{$\neg$}{negation}
 
-\ceq{$\vee$}{\emph{disjunction};}\ceq{$\E$}{\emph{existential quantifier}.}
+\ceq{$\vee$}{disjunction}%
+\ceq{$\E$}{existential quantifier}.
 
 
 Syntactically, $\doteq$ behaves like a binary relation symbol. So, for convenience set $n_{\scriptscriptstyle\doteq}=2$. However $\doteq$ is considered as a logic symbol because its semantic is fixed (it is always interpreted in the diagonal).
@@ -286,11 +289,11 @@ We agree that $\imp$ e $\iff$ bind less than $\wedge$ e $\vee$.  Unary connnecti
 
 \hfil$\E x\,\phi \wedge \psi\ \imp\ \neg\xi\vee\theta$ \ \ \ reads as \ \ \ $\Big[\big[\E x\,\phi\big]\wedge\psi\Big]\ \imp\ \Big[\big[\neg\xi\big]\vee\theta\Big]$
 
-We say that $\A x\,\phi(x)$ is the \emph{universal closure\/} of $\phi(x)$ and that $\E x\,\phi(x)$ is the \emph{existential closure}. We say that $\phi(x)$ \emph{holds in $M$\/} when its universal closure is true in $M$. We say that $\phi(x)$ is \emph{consistent in $M$\/} when its existential closure is true in $M$.
+We say that $\A x\,\phi(x)$ and $\E x\,\phi(x)$ are the \emph{universal}, respectively, \emph{existential closure} of $\phi(x)$. We say that $\phi(x)$ \emph{holds in $M$\/} when its universal closure is true in $M$. We say that $\phi(x)$ is \emph{consistent in $M$\/} when its existential closure is true in $M$.
 
 The semantic of conjunction and disjunction is associative. Then for any finite set of formulas $\{\phi_i:i\in I\}$ we can write without ambiguities 
 
-\hfil \emph{$\displaystyle\bigwedge_{i\in I}\phi_i$}\hfil \emph{$\displaystyle\bigvee_{i\in I}\phi_i$}
+\hfil \emph{$\displaystyle\bigwedge_{i\in I}\phi_i$}\hfil \emph{$\displaystyle\bigvee_{i\in I}\phi_i$}\bigskip
 
 
 When $x=x_1,\dots,x_n$ is a tuple of variables we write \emph{$\E x\,\phi$\/} or \emph{$\E x_1,\dots,x_n\,\phi$\/} for $\E x_1\dots\E x_n\,\phi$.  With first order sentences we are able to say that $\phi(M)$ has at least $n$ elements (also, no more than, or exactly $n$). It is convenient to use the following abbreviations.
