@@ -50,7 +50,14 @@ There are also arbitrarily many function and relation symbols of sort $\<0^n\>$ 
 
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Warning: the structure $\U^\eq$ and the theory $T^\eq$ defined below do not coincide with the standard ones introduced by Shelah. As the difference is merely cosmetic, introducing new notation would be overkill and we prefer to abuse the existing terminology. In Section~\ref{imaginaries_long} below we compare our definition with the standard one. %This will also explain the symbol used.
 
-We recall the definition of partitioned formulas. A \emph{partitioned formula\/} is a triple that consists of a formula and two tuples of variables. We use a semicolon, as in $\sigma({\mr x}\,;{\gr z})$, to separate the two tuples of variables. Below, ${\gr z}$ is always a placeholder for parameters and ${\mr x}$ is used for the definition of a set.
+We recall the definition of partitioned formulas. The attentive reader may have noticed that by \textit{formula\/} we often understand a pair $\phi({\mr x})$ that consists of a formula and a tuple of variables.
+In the following we deal with two sorts of variables: those that are placeholder for parameters, and those used to define a set.
+
+\begin{definition}\label{def_partitioned_fla}
+A \emph{partitioned formula\/}  (strictly speaking, we should say a \emph{$2$-partitioned\/} formula) is a triple $\sigma({\mr x}\,;{\gr z})$ consisting of a formula and two tuples of variables such that the variables occurring in $\sigma$ are all among ${\mr x},{\gr z}$.\QED
+\end{definition}
+
+We use a semicolon to separate the two tuples of variables. Below, ${\gr z}$ is always a placeholder for parameters and ${\mr x}$ runs over the elements of the set defined by the formula.
 
 Given a language $L$ we define a many-sorted language \emph{$L^{\rm\textbf{eq}}$\/} which has a sort for each (partitioned) formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort}. For better legibility, we will pretend that all formulas $\sigma$ depend on the same pair of tuples ${\mr x}\,;{\gr z}$, so we assume that ${\mr x}\,;{\gr z}$ are infinite tuples. 
 
@@ -237,8 +244,10 @@ If $\phi({\vl\X})$ has $n$, solutions, then $\epsilon({\mr x}\,;{\mr y})$ has at
 \end{proof}
 
 \begin{definition}\label{def_Sh_strong_type}
-We write \emph{${\mr a}\stackrel{\smash{\scalebox{.5}{\rm\bf Sh}}}{\equiv}_A{\mr b}$} when $\epsilon({\mr a}\,;{\mr b})$ holds for every finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$. In words we say that ${\mr a}$ and ${\mr b}$ have the same \emph{Shelah strong-type over $A$}.\QED
+We write \emph{${\mr a}\stackrel{\smash{\scalebox{.5}{\rm\bf Sh}}}{\equiv}_A{\mr b}$} when $\epsilon({\mr a}\,;{\mr b})$ holds for every finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$. In words we say that ${\mr a}$ and ${\mr b}$ have the same \emph{Shelah strong-type\/} over $A$.\QED
 \end{definition}
+
+By the following proposition, the Shelah strong type of ${\mr a}$ over $A$ is $\tp({\mr a}/\acl^\eq\!A)$.
 
 \begin{proposition}\label{prop_Shelah_strong_types}
 Let $A\subseteq\U^\eq$ and let ${\mr a},{\mr b}\in\U^{|{\mr x}|}$. Then the following are equivalent\nobreak
@@ -252,6 +261,13 @@ Let $A\subseteq\U^\eq$ and let ${\mr a},{\mr b}\in\U^{|{\mr x}|}$. Then the foll
 
 \ssf{1}$\IMP$\ssf{2}\quad Assume $\neg$\ssf{2} and let $\phi({\mr x})\in L\big(\acl^\eq(A)\big)$ be  such that $\phi({\mr a})\niff\phi({\mr b})$. Let ${\vl\D}=\phi({\mr\U})$, then ${\vl\D}\in\acl^\eq(A)$. Therefore, by Proposition~\ref{thm_set_alg=feq}, the set ${\vl\D}$ is union of equivalence classes of some finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$. Then $\neg\epsilon({\mr a}\,;{\mr b})$ and $\neg$\ssf{1} follows.
 \end{proof}
+
+
+\begin{exercise}
+Let $\S({\gr a}/A)$ be the intersection of all definable sets that contain $a$ and are Lascar invariant over $A$. Prove that $\S({\gr a}/A)=\big\{{\gr b}\ :\ {\gr b}\;\equivSh_A {\gr a}\big\}$.\QED
+\end{exercise}
+
+
 
 \begin{exercise}
 Let $p({\mr x})\subseteq L(A)$ and let $\phi({\mr x}\,;{\mr y})\in L(A)$ be a formula that defines, when restricted to $p({\mr\U})$, an equivalence relation with finitely many classes. Prove that there is a finite equivalence relation definable over $A$ that coincides with $\phi({\mr x}\,;{\mr y})$ on $p({\mr\U})$.\QED
@@ -293,7 +309,7 @@ We say that \emph{$T$ has elimination of imaginaries\/} if for every definable s
 
 We say that the witness of $\E^{=1}{\gr z}$ in the formula above is a \emph{canonical parameter\/} of ${\vl\Aa}$. It is also called a a \emph{canonical name\/} for ${\vl\Aa}$. A set may have different canonical parameters for different formulas $\phi({\mr x}\,;{\gr z})$.
 
-We say that $T$ has \emph{weak\/} elimination of imaginaries if\smallskip
+We say that $T$ has \emph{weak elimination of imaginaries\/} if\smallskip
 
 \ceq{\ssf{wei}\hfill\E^{=k} {\gr z}\;\A {\mr x}\ \bigg[{\mr x}\in{\vl\Aa}}{\iff}{\phi({\mr x}\,;{\gr z})\bigg]}
 
@@ -426,7 +442,7 @@ Let us rephrase the definition of elimination of imaginaries: for every formula 
 
 \ceq{\hfill\E^{=1} {\gr z}\;\A {\mr x}\ \bigg[\phi({\mr x}\,;c)}{\iff}{\sigma({\mr x}\,;{\gr z})\bigg].}
 
-A priori, the formula $\sigma({\mr x}\,;{\gr z})$ may depend on $c$ in a very wild manner. We say that \emph{$T$ has uniform elimination of imaginaries\/} if for every $\phi({\mr x}\,;u)$ there are a formula $\sigma({\mr x}\,;{\gr z})$ and a formula $\rho({\gr z})$ such that 
+A priori, the formula $\sigma({\mr x}\,;{\gr z})$ may depend on $c$ in a very wild manner. We say that $T$ has \emph{uniform elimination of imaginaries\/} if for every $\phi({\mr x}\,;u)$ there are a formula $\sigma({\mr x}\,;{\gr z})$ and a formula $\rho({\gr z})$ such that 
 
 \ceq{\ssf{uei}\hfill\A u\;\E^{=1} {\gr z}\;\bigg[\rho({\gr z})\ \wedge\ \A{\mr x}\ \big[\phi({\mr x}\,;u)}{\iff}{\sigma({\mr x}\,;{\gr z})\big]\bigg].}
 
