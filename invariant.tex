@@ -21,7 +21,7 @@ In this chapter we fix a signature $L$, a complete theory $T$ without finite mod
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Invariant sets and types}\label{invariant_sets}
 
-Let $\grD\subseteq\U^{|{\gr z}|}$, where ${\gr z}$ is a tuple of length $<\kappa$. We say that $\grD$ is a set \emph{invariant over $A$}, or \emph{$A\jj$invariant\/} if it is fixed (set-wise) by $A$-automorphisms. That is, $f[\grD]=\grD$ for every $f\in\Aut(\U/A)$ or, yet in other words,
+Let $\grD\subseteq\U^{|{\gr z}|}$, where ${\gr z}$ is a tuple of length $<\kappa$. We say that $\grD$ is an \emph{$A$-invariant set} if it is fixed (set-wise) by $A$-automorphisms. That is, $f[\grD]=\grD$ for every $f\in\Aut(\U/A)$ or, yet in other words,
 
 \ceq{\ssf{is1.}\hfill {\gr a}\in\grD}{\iff}{f{\gr a}\in\grD}\hfill for every ${\gr a}\in\U^{|{\gr z}|}$ and every $f\in\Aut(\U/A)$,
 
@@ -38,7 +38,7 @@ Let $\lambda=|L_{\gr z}(A)|$. There are at most $2^{2^{\lambda}}$ sets $\grD\sub
 By \ssf{is2}, sets that are invariant over $A$ are union of equivalence classes of the relation $\equiv_A$, that is, union of sets of the form $p({\gr\U})$ where $p({\gr z})\in S(A)$. Then the number of $A\jj$invariant sets is $2^{|S_{\gr z}(A)|}$. Clearly $|S_{\gr z}(A)|\le 2^\lambda$.
 \end{proof} 
 
-We say that $\grD$ is \emph{invariant\/} tout court if it is invariant over some (small) set $A$. As we require $\kappa$ to be inaccessible, there are exactly $\kappa$ invariant sets.
+We say that $\grD$ is an \emph{invariant set\/} if it is invariant over some (small) set $A$. As we require $\kappa$ to be inaccessible, there are exactly $\kappa$ invariant sets.
 
 In this chapter we work with $\Delta$-types where $\Delta$ may be either $L(\Aa)$ or the set of Boolean combinations of $\phi({\mr x}\,;{\gr b})$ for ${\gr b}\in\Aa^{|{\gr z}|}$ and some fixed $\phi({\mr x}\,;{\gr z})\in L$. In the latter case  $\Delta$-types are called a \emph{$\phi$-types}. We denote by \emph{$S_{\phi}(\Aa)$\/} the set of complete $\phi$-types with parameters in $\Aa$. Typically, $\Aa$ is either the whole of $\U$ or some small set $A\subseteq\U$.  Types in \emph{$S_{\phi}(\U)$\/} are called \emph{global $\phi$-types}.
 
@@ -58,15 +58,17 @@ Let $p({\mr x})\subseteq L(\U)$ be a consistent type. For every formula $\phi({\
 
 We can read the notation in two ways. Either the tuple ${\gr z}$ has infinite length and is the same for all formulas, or it is finite and depends on $\phi$. This is possible because adding or erasing dummy variables to the second tuple of $\phi({\mr x}\,;{\gr z})$ does not change ${\gr\D_{p,\phi}}$ in any relevant way, in particular invariance is preserved. 
 
-Let $p({\mr x})\subseteq L(\U)$ be a consistent type (at a first reading the reader may assume that $p({\mr x})$ is a global types). We say that $p({\mr x})$ is  \emph{invariant over $A$}, or \emph{$A\jj$invariant}, if for every formula $\phi({\mr x}\,;{\gr z})\in L$, 
+Let $p({\mr x})\subseteq L(\U)$ be a consistent type. We say that $p({\mr x})$ is an \emph{$A$-invariant type\/}, if for every formula $\phi({\mr x}\,;{\gr z})\in L$, 
 
 \ceq{\ssf{it1.}\hfill \phi({\mr x}\,;{\gr a})\in p}{\IFF}{\phi({\mr x}\,;f{\gr a})\in p}\hfill for every ${\gr a}\in\U^{|{\gr z}|}$ and every $f\in\Aut(\U/A)$.
 
-A global $\phi$-type can be identified with $\D_{p,\phi}$ and a global type can be identified with the collection of all these sets. The notions of invariance for types and sets coincide.
+By \emph{invariant type\/} we mean invariant over some (small) set $A$.
+
+A global $\phi$-type can be identified with ${\gr\D_{p,\phi}}$ and a global type can be identified with the collection of all these sets. The notions of invariance for types and sets coincide.
 
 %One should not confuse the notions of \textit{invariant type\/} with that of \textit{invariant type-definable set}. The first is mostly applied to global types and refers to the invariance of a family of subsets of $\U^{|{\gr z}|}$. The latter refers to sets of the form $p({\mr\U})\subseteq\U^{|{\mr x}|}$ where $p({\mr x})$ a type of small size.
 
-We say that the type $p({\mr x})\subseteq L(\U)$ \emph{does not split over $A$\/} if
+We say that the type $p({\mr x})\subseteq L(\U)$ \emph{does not split\/} over $A$ if
 
 \ceq{\ssf{it2.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\Big(\phi({\mr x}\,;{\gr a})\in p\,\IFF\,\phi({\mr x}\,;{\gr b})\in p\Big)}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$
 
@@ -80,7 +82,7 @@ The following is yet another important equivalent of invariance over $A$ that ea
 
 \ceq{\ssf{it3.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\equiv_{A,{\mr c}}{\gr b}}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$. 
 
-Note that \ssf{3} applies to global types $p({\mr x})\in S(\U)$ but not to $\phi$-types.
+Note that \ssf{it3} applies to global types $p({\mr x})\in S(\U)$ but not to $\phi$-types.
 
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
@@ -88,9 +90,9 @@ Note that \ssf{3} applies to global types $p({\mr x})\in S(\U)$ but not to $\phi
 %%%%%%%%%%%%%%%%%%%%%%
 \section{Invariance from the dual perspective}
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}The following terminology in not standard. We say that the set $\mrB\subseteq\U^{|{\mr x}|}$, typically a definable set, is \emph{quasi-invariant over $A$\/} if for any finitely many automorphisms $f_1,\dots,f_n\in\Aut(\U/A)$ the sets $f_i[\mrB]$ have non-empty intersection.
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}The following terminology in not standard. We say that the set $\mrB\subseteq\U^{|{\mr x}|}$, typically a definable set, is \emph{quasi-invariant\/} over $A$ if for any finitely many automorphisms $f_1,\dots,f_n\in\Aut(\U/A)$ the sets $f_i[\mrB]$ have non-empty intersection.
 
-We say that the type $p({\mr x})\subseteq L(\U)$, typically a global type, is \emph{quasi-invariant over $A$\/} if $\phi({\mr\U})$ is quasi-invariant over $A$  for every $\phi({\mr x})$ conjunction of formulas in $p({\mr x})$. For types of small cardinality, this is equivalent to requiring that $p({\mr\U})$ is quasi-invariant.% So, the type $p({\mr x})$ is quasi-invariant if the set $p({\mr\V})$ is invariant, where $\V$ is an large saturated extension of $\U$, see Exercise~\ref{ex_quasi_inv_type}.
+We say that the type $p({\mr x})\subseteq L(\U)$, typically a global type, is \emph{quasi-invariant\/} over $A$ if $\phi({\mr\U})$ is quasi-invariant over $A$  for every $\phi({\mr x})$ conjunction of formulas in $p({\mr x})$. For types of small cardinality, this is equivalent to requiring that $p({\mr\U})$ is quasi-invariant.% So, the type $p({\mr x})$ is quasi-invariant if the set $p({\mr\V})$ is invariant, where $\V$ is an large saturated extension of $\U$, see Exercise~\ref{ex_quasi_inv_type}.
 
 For global types quasi-invariance coincides with invariance. 
 
@@ -166,7 +168,7 @@ Every non piecewise drifting type extends to a non drifting global type.
 \end{comment}
 \label{coheirs}
 
-The easiest way to obtain quasi-invariant types is via types that are finitely satisfiable. We say that a type \emph{$p({\mr x})$ is finitely satisfiable in $A$\/} if $\phi({\mr\U})\cap A^{|{\mr x}|}\neq\0$ for every $\phi({\mr x})$ that is a conjunction of formulas in $p({\mr x})$.
+The easiest way to obtain quasi-invariant types is via types that are finitely satisfiable. We say that a type$p({\mr x})$ is  \emph{finitely satisfiable\/} in $A$ if $\phi({\mr\U})\cap A^{|{\mr x}|}\neq\0$ for every $\phi({\mr x})$ that is a conjunction of formulas in $p({\mr x})$.
 
 Note that by elementarity every type over a model is finitely satisfiable in the model, that is, if $p({\mr x})\subseteq L(M)$ for some model $M$, then $p({\mr x})$ is finitely satisfiable in $M$. For this reason the notion is mainly applied to models.
 
@@ -206,7 +208,7 @@ If a global type $p({\mr x})\in S(\U)$ is finitely satisfiable in $M$, we say th
 \section{Morley sequences and indiscernibles}
 
 
-In the following $\alpha$ is some ordinal $\le\kappa$, typically $\omega$, and ${\mr x}$ is a tuple of variables of length $<\kappa$. Let \mbox{$p({\mr x})\in S(\U)$} be a global type invariant over $A$.   We say that $c=\<{\mr c_i}:i<\alpha\>$ is a \emph{Morley sequence of $p(x)$ over $A$\/} if for every $i<\alpha$
+In the following $\alpha$ is some ordinal $\le\kappa$, typically $\omega$, and ${\mr x}$ is a tuple of variables of length $<\kappa$. Let \mbox{$p({\mr x})\in S(\U)$} be a global type invariant over $A$.   We say that $c=\<{\mr c_i}:i<\alpha\>$ is a \emph{Morley sequence\/} of $p(x)$ over $A$ if for every $i<\alpha$
 
 \ceq{\ssf{Ms.}\hfill {\mr c_i}}{\models}{p_{\restriction A,c_{\restriction i}}({\mr x})}
 
@@ -237,10 +239,10 @@ Note that \ssf{2} requires that every single formula in $q(x)$ is finitely satis
 
 Let $I,<_I$ be a linear order. We call a function $a:I\to\U^{|{\mr x}|}$ an \emph{$I$-sequence}, or simply a \emph{sequence\/} when $I$ is clear. Often we introduce an $I\jj$sequence by writing $a=\<{\mr a_i}: i\in I\>$. 
 
-If $I_0\subseteq I$ we call $a_{\restriction I_0}$ a \emph{subsequence of $a$}. Most relevant are the subsets $I_0\subseteq I$ that are well-ordered by $<_I$ and, in particular, the finite ones. When $I_0$ has order-type $\alpha$, an ordinal, we identify $a_{\restriction I_0}$ with a tuple of length $\alpha$.  
+If $I_0\subseteq I$ we call $a_{\restriction I_0}$ a \emph{subsequence\/} of $a$. Most relevant are the subsets $I_0\subseteq I$ that are well-ordered by $<_I$ and, in particular, the finite ones. When $I_0$ has order-type $\alpha$, an ordinal, we identify $a_{\restriction I_0}$ with a tuple of length $\alpha$.  
 
 \begin{definition}
-Let $I,<_I$ be an infinite linear order and let $a$ be an $I\jj$sequence. We say that \emph{$a$ is a sequence of indiscernibles over $A$\/} or, a sequence of \emph{$A\jj$indiscernibles}, if $a_{\restriction I_0}\equiv_A a_{\restriction I_1}$ for every $I_0,I_1\in[I]^n$ and $n<\omega$. As usual, \emph{$[I]^n$\/} is the set of subsets of $I$ of cardinality $n$.\QED
+Let $I,<_I$ be an infinite linear order and let $a$ be an $I\jj$sequence. We say that $a$ is a \emph{sequence of indiscernibles\/} over $A$ or, a sequence of \emph{$A\jj$indiscernibles}, if $a_{\restriction I_0}\equiv_A a_{\restriction I_1}$ for every $I_0,I_1\in[I]^n$ and $n<\omega$. As usual, \emph{$[I]^n$\/} is the set of subsets of $I$ of cardinality $n$.\QED
 \end{definition}
 
 The condition above can be formulated in a number of clearly equivalent ways. We can require that that $\phi(a_{i_0},\dots,a_{i_n})\iff\phi(a_{j_0},\dots,a_{j_n})$ for every formula $\phi(x_1,\dots,x_n)\in L(A)$ and every pairs of tuples in $I^n$ such that $i_0<\dots<i_n$ and $j_0<\dots<j_n$. Or we can simply say that for every $i_0,\dots,i_n\in I$ the type $\tp(a_{i_0},\dots,a_{i_n}/A)$ only depends on the order type of $i_0,\dots,i_n$.
@@ -340,7 +342,7 @@ Assume as induction hypothesis that all subsequences of $a_{\restriction i},c_{\
 satisfy $r_0$. Our goal is to find ${\mr{a_i}}$ such as the same property holds for $a_{\restriction i},{\mr{a_i}},c_{\restriction n}$. By the indiscernibility of $c$, the property holds for  $a_{\restriction i},c_{\restriction n},{\mr{c_n}}$.  And this can be written by a formula $\phi(a_{\restriction i},c_{\restriction n},{\mr{c_n}})$. As $c$ is a coheir sequence, by Lemma~\ref{lem_coheir_property} we can find  ${\mr{a_i}}\in X$ such that  $\phi(a_{\restriction i},c_{\restriction n},{\mr{a_i}})$. So, as the order is irrelevant,  $a_{\restriction i},{\mr{a_i}},c_{\restriction n}$ satisfies the induction hypothesis.
 \end{proof}
 
-Let $I,<_I$ be an infinite linear order and let $a$ be an $I\jj$sequence. Fix a sequence of distinct variables $x=\<{\mr x_i}: i<\omega\>$. We write \emph{$p(x)\;=\;\textrm{{\small EM}-tp}(a/A)$} and say that  \emph{$p(x)$ is the Ehren\-feucht-Mostowski type of $a$ over $A$\/} if $p(x)$ is the set of formulas $\phi(x_{\restriction n})\in L(A)$ such that $\phi(a_{\restriction I_0})$ holds for every $I_0\in[I]^{n}$. Note that if $a$ is $A\jj$indiscernible then $\EMtp(a/A)$ is a complete type, and vice versa. So, if $a$ and $b$ are two $A\jj$indiscernible $I\jj$sequences with the same Ehren\-feucht-Mostowski type of $a$ over $A$, then $a\equiv_A b$.
+Let $I,<_I$ be an infinite linear order and let $a$ be an $I\jj$sequence. Fix a sequence of distinct variables $x=\<{\mr x_i}: i<\omega\>$. We write \emph{$p(x)\;=\;\textrm{{\small EM}-tp}(a/A)$} and say that $p(x)$ is the \emph{Ehren\-feucht-Mostowski type\/} of $a$ over $A$ if $p(x)$ is the set of formulas $\phi(x_{\restriction n})\in L(A)$ such that $\phi(a_{\restriction I_0})$ holds for every $I_0\in[I]^{n}$. Note that if $a$ is $A\jj$indiscernible then $\EMtp(a/A)$ is a complete type, and vice versa. So, if $a$ and $b$ are two $A\jj$indiscernible $I\jj$sequences with the same Ehren\-feucht-Mostowski type of $a$ over $A$, then $a\equiv_A b$.
  
 % \begin{theorem}\label{thm_EM}
 %   Let $I,<_I$ be infinite linear order, then for every sequence $a=\<{\mr a_i}:i\in I\>$ there is sequence of $A\jj$in\-dis\-cern\-i\-bles $c=\<{\mr c_i}: i<\omega\>$ such that $c\equivEM_Aa$.
