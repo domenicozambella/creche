@@ -93,12 +93,12 @@ Let $p(x)\subseteq L(B)$ and $p_n(x)\subseteq L(A)$, for $n<\omega$, be consiste
 \begin{exercise}
 Let $M$ be a second countable topological space (i.e.\@ the topology has a countable base). We say that $A\subseteq M$ is meager if it is the countable union of nowhere dense sets. 
 
-Use Lemma~\ref{} to prove the Kuratowski-Ulam Theorem, i.e.\@ that for $A\subseteq M^2$ the following are equivalent 
+Use Lemma~\ref{lem_kuratowskiUlam} to prove the Kuratowski-Ulam Theorem, i.e.\@ that for $A\subseteq M^2$ the following are equivalent  (w.r.t.\@ the product topology)
 \begin{itemize}
-\item[1.] $A$ is meager in $M^2$ (w.r.t.\@ the product topology)
-\item[2.] $\{x\in M : A\cap (\{x\}{\times}M \ \textrm{is not meager}\}$ is meager in $M$.
+\item[1.] $A$ is meager in $M^2$;
+\item[2.] $\Big\{x\in M : A\cap \{x\}{\times}M \ \textrm{is not meager}\Big\}$ is meager in $M$.
 \end{itemize}
-Hint: Use the base of the topology as predicated of a first-order language.\QED
+Hint: Use the base of the topology as predicates of a first-order language.\QED
 \end{exercise}
 
 
@@ -109,9 +109,9 @@ Hint: Use the base of the topology as predicated of a first-order language.\QED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Prime and atomic models}
 
-We say that \emph{$M$ is prime over $A$\/} if $A\subseteq M$ and for every $N$ containing $A$ there is an elementary embedding $h:M\to N$ that fixes $A$. When $A$ is empty we simply say that $M$ is \emph{prime}. 
+We say that $M$ is \emph{prime over $A$\/} if $A\subseteq M$ and for every $N$ containing $A$ there is an elementary embedding $h:M\to N$ that fixes $A$. When $A$ is empty we simply say that $M$ is \emph{prime}. 
 
-There is no syntactic analogue of primeness; the notion that comes most close (and works pretty well when everything is countable) is atomicity. For ${\mr a}\in\U^{|{\mr x}|}$ we say that \emph{$a$ is isolated over $A$\/} if the type $p({\mr x})=\tp({\mr a}/A)$ is isolated. Note that this equivalent to claiming that ${\mr a}$ is an isolated point in $\U^{|{\mr x}|}$ w.r.t.\@ the $A\jj$topology defined in Section~\hyperref[saturation]{\ref*{saturation}.\ref*{monster}}. We say that \emph{$M$ is atomic over $A$\/} if $A\subseteq M$ every ${\mr a}\in M^{<\omega}$ is isolated over $A$.
+There is no syntactic analogue of primeness; the notion that comes most close (and works pretty well when everything is countable) is atomicity. For ${\mr a}\in\U^{|{\mr x}|}$ we say that \emph{${\mr a}$ is isolated over $A$\/} if the type $p({\mr x})=\tp({\mr a}/A)$ is isolated. Note that this equivalent to claiming that ${\mr a}$ is an isolated point in $\U^{|{\mr x}|}$ w.r.t.\@ the $A\jj$topology defined in Section~\hyperref[saturation]{\ref*{saturation}.\ref*{monster}}. We say that $M$ is \emph{atomic over $A$\/} if $A\subseteq M$ and every ${\mr a}\in M^{<\omega}$ is isolated over $A$. When $A$ is empty we say that $M$ is \emph{atomic}. 
 
 % \begin{proposition}
 % Let ${\mr b}$ and ${\gr a}$ be finite tuples. Let $p({\mr x},{\gr z})=\tp ({\mr b},{\gr a}/A)$ then the following are equivalent

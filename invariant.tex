@@ -315,21 +315,25 @@ The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({
 \def\ceq#1#2#3{\parbox[t]{9ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 
-Let $X$ be an infinite set an $n,k<\omega$. A total function $f:[X]^n\to k$ is also called a \emph{coloring\/} of $[X]^n$ and is identified with a partition of $[X]^n$ into finitely $k$ classes. A set $H\subseteq X$ such that $f$ is constant on $[H]^n$ is called \emph{monochromatic set}. In the literature it may be called a \emph{homogeneous set}, but we already use this word with a different meaning. The following is a most famous theorem which here we prove it in unusual way.
+Let $X$ be an infinite set an $n,k<\omega$. A total function 
+
+\ceq{\hfill f}{:}{{X\choose n}\to k} 
+
+is also called a \emph{coloring\/} of ${X\choose n}$, the set of the subsets of $X$ of cardinality $n$. This is identified with a partition of ${X\choose n}$ into finitely $k$ classes. A set $H\subseteq X$ such that $f$ is constant on ${H\choose n}$ is called \emph{monochromatic set}. In the literature it may be called a \emph{homogeneous set}, but we already use this word with a different meaning. The following is a most famous theorem which here we prove it in unusual way.
 
 
 \begin{proposition}[ (Ramsey Theorem)]
-For every infinite set $X$, every $n,k<\omega$ and every coloring $f:[X]^n\to k$ there is an infinite monochromatic set.
+For every infinite set $X$, every $n,k<\omega$ and every coloring $f:{X\choose n}\to k$ there is an infinite monochromatic set.
 \end{proposition}
 
 \begin{proof}
-Let $L$ be a language that contains $k$ relation symbols $r_0,\dots,r_{k-1}$ of arity $n$. Given $f:[X]^n\to k$ as above we define now a structure with domain $X$. The interpretation the relation symbols is
+Let $L$ be a language that contains $k$ relation symbols $r_0,\dots,r_{k-1}$ of arity $n$. Given $f:{X\choose n}\to k$ as above we define now a structure with domain $X$. The interpretation the relation symbols is
 
 %\ceq{\hfill r_i^X}{=}{\Big\{ ({\mr a_0},\dots,a_{n-1})\ :\ |\{{\mr a_0},\dots,a_{n-1}\}|=n \ \textrm { e \ }f\big(\{{\mr a_0},\dots,a_{n-1}\}\big)= i\Big\}}
 
 %\ceq{\hfill r_i^X}{=}{\Big\{ \<{\mr a_0},\dots,{\mr a_{n-1}}\>\ :\  \big|\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big|=n \ \textrm { and \ }f\big(\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big)= i\Big\}} 
 
-\ceq{\hfill r_i^X}{=}{\Big\{ {\mr a_0},\dots,{\mr a_{n-1}}\ :\  \big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\in[X]^n \ \textrm { and \ }f\big(\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big)= i\Big\}.} 
+\ceq{\hfill r_i^X}{=}{\Big\{ {\mr a_0},\dots,{\mr a_{n-1}}\in X \ : \ f\big(\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big)= i\Big\}.} 
 
 Then
 
@@ -342,7 +346,7 @@ Assume as induction hypothesis that all subsequences of $a_{\restriction i},c_{\
 satisfy $r_0$. Our goal is to find ${\mr{a_i}}$ such as the same property holds for $a_{\restriction i},{\mr{a_i}},c_{\restriction n}$. By the indiscernibility of $c$, the property holds for  $a_{\restriction i},c_{\restriction n},{\mr{c_n}}$.  And this can be written by a formula $\phi(a_{\restriction i},c_{\restriction n},{\mr{c_n}})$. As $c$ is a coheir sequence, by Lemma~\ref{lem_coheir_property} we can find  ${\mr{a_i}}\in X$ such that  $\phi(a_{\restriction i},c_{\restriction n},{\mr{a_i}})$. So, as the order is irrelevant,  $a_{\restriction i},{\mr{a_i}},c_{\restriction n}$ satisfies the induction hypothesis.
 \end{proof}
 
-Let $I,<_I$ be an infinite linear order and let $a$ be an $I\jj$sequence. Fix a sequence of distinct variables $x=\<{\mr x_i}: i<\omega\>$. We write \emph{$p(x)\;=\;\textrm{{\small EM}-tp}(a/A)$} and say that $p(x)$ is the \emph{Ehren\-feucht-Mostowski type\/} of $a$ over $A$ if $p(x)$ is the set of formulas $\phi(x_{\restriction n})\in L(A)$ such that $\phi(a_{\restriction I_0})$ holds for every $I_0\in[I]^{n}$. Note that if $a$ is $A\jj$indiscernible then $\EMtp(a/A)$ is a complete type, and vice versa. So, if $a$ and $b$ are two $A\jj$indiscernible $I\jj$sequences with the same Ehren\-feucht-Mostowski type of $a$ over $A$, then $a\equiv_A b$.
+Let $I,<_I$ be an infinite linear order and let $a$ be an $I\jj$sequence. Fix a sequence of distinct variables $x=\<{\mr x_i}: i<\omega\>$. We write \emph{$p(x)\;=\;\textrm{{\small EM}-tp}(a/A)$} and say that $p(x)$ is the \emph{Ehren\-feucht-Mostowski type\/} of $a$ over $A$ if $p(x)$ is the set of formulas $\phi(x_{\restriction n})\in L(A)$ such that $\phi(a_{\restriction I_0})$ holds for every $I_0\in{I\choose n}$. Note that if $a$ is $A\jj$indiscernible then $\EMtp(a/A)$ is a complete type, and vice versa. So, if $a$ and $b$ are two $A\jj$indiscernible $I\jj$sequences with the same Ehren\-feucht-Mostowski type of $a$ over $A$, then $a\equiv_A b$.
  
 % \begin{theorem}\label{thm_EM}
 %   Let $I,<_I$ be infinite linear order, then for every sequence $a=\<{\mr a_i}:i\in I\>$ there is sequence of $A\jj$in\-dis\-cern\-i\-bles $c=\<{\mr c_i}: i<\omega\>$ such that $c\equivEM_Aa$.
@@ -387,21 +391,21 @@ Let $I,<_I$ be an infinite linear order and let $a$ be an $I\jj$sequence. Fix a 
   
   Let $c$ be any realization of the following type yields a $J$-sequence of $A$-indiscernibles.
 
-  \ceq{\hfill q(x)}{\cup}{\Big\{\phi(x_{\restriction I_0})\iff\phi(x_{\restriction J_0})\ :\ \phi(x_{\restriction n})\in L(A),\ \ I_0\in[I]^n,\ \ J_0\in[J]^n,\ \ n<\omega\Big\}.}
+  \ceq{\hfill q(x)}{\cup}{\Big\{\phi(x_{\restriction I_0})\iff\phi(x_{\restriction J_0})\ :\  \phi(x_{\restriction n})\in L(A),  I_0\in{I\choose n},  J_0\in{J\choose n}, n<\omega\Big\}.}
 
   We will prove that any finite subset of the type above is realized by a finite subsequence of $a$. First note that any finite subset of $q(x)$ is realized by any subsequence of $a$ of the proper length by the definition of EM-type.
   
   Then we only need to pay attention to the set on the right. We prove that for every $\phi_0,\dots,\phi_{m-1}\in L_x(A)$ and every $n<\omega$ there is an infinite $H\subseteq I$ such that $a_{\restriction H}$
 
-  \ceq{\ssf{\#}}{~}{\Big\{\phi_i(x_{\restriction J_0})\iff\phi_i(x_{\restriction I_0})\ :\  I_0\in[I]^n\textrm{ and } i<m\Big\}.}
+  \ceq{\ssf{\#}}{~}{\Big\{\phi_i(x_{\restriction J_0})\iff\phi_i(x_{\restriction I_0})\ :\  I_0\in{I\choose n}\textrm{ and } n<m\Big\}.}
 
-  Let $f:[I]^n\to\P(m)$ map $I_0\in[I]^n$ to the set $\big\{i<m\ :\ \phi_i(a_{\restriction I_0})\big\}$. By Ramsey theorem with $2^m$ colors there is some infinite monochromatic set $H\subseteq I$. As $I$ has order type $\omega$, so does $H$, and it is immediate that $a_{\restriction H}$ realizes \ssf{\#}, as required to prove the theorem with $I$ and $J$ of order type $\omega$.
+  Let $f:{I\choose n}\to\P(m)$ map $I_0$ to the set $\big\{n<m\ :\ \phi_i(a_{\restriction I_0})\big\}$. By Ramsey theorem with $2^m$ colors there is some infinite monochromatic set $H\subseteq I$. As $I$ has order type $\omega$, so does $H$, and it is immediate that $a_{\restriction H}$ realizes \ssf{\#}, as required to prove the theorem with $I$ and $J$ of order type $\omega$.
 
   Now we note that the argument above easily generalizes to arbitrary linear order $I$. Only, in this case we cannot guarantee that $H$ has order type $\omega$. However, as $H$ is infinite, for every $k<\omega$ there is a any subset of $H$ of size $k$ that realizes the restriction of \ssf{\#} to $n<k$ and $I_0<k$. This suffices to prove the theorem with $I$ arbitrary and $J$ of order type $\omega$.
   
   Now we extend the result to arbitrary $J$ of cardinality $\le\kappa$. From the argument above, there is a sequence of indiscerbibles $\<b_i:i<\omega\>$ such that $\EMtp(a/A)\subseteq\EMtp(b/A)$. Fix a $J\jj$sequence of variables $z=\<{\mr z_i}:i\in J\>$ and define
 
-  \ceq{\hfill p(z)}{=}{\Big\{\phi(z_{\restriction J_0})\in L(A)\ :\ \phi(b_{\restriction n})\ \textrm{ for some }J_0\subseteq [J]^n,\ n<\omega\Big\}.}
+  \ceq{\hfill p(z)}{=}{\Big\{\phi(z_{\restriction J_0})\in L(A)\ :\ \phi(b_{\restriction n})\ \textrm{ for some }J_0\subseteq{J\choose n},\ n<\omega\Big\}.}
   
   This type is clearly finitely consistent. Every $c$ that realizes $q(z)$ is a $J\jj$sequence as required by the theorem. 
   \end{proof}
@@ -420,7 +424,7 @@ Let $a=\<{\mr a_i}:i\in I\>$ be an $A\jj$indiscernible sequence and let $I\subse
 \end{exercise}
 
 \begin{exercise}
-Let ${\mr a}\equiv_A{\mr b}$ and let $q({\mr x})=\tp({\mr a}/A)=\tp({\mr b}/A)$. Prove that if $q({\mr x})$ extends to a global $A\jj$invariant type $p({\mr x})\in S(\U)$ then there is a sequence $c=\<{\mr c_i}:i<\omega\>$ such that ${\mr a},c$ and ${\mr b},c$ are both sequences of $A\jj$indiscernibles.\QED
+Let  $p({\mr x})\in S(\U)$ be a global type invariant over $A$. Let ${\mr a}$ and ${\mr b}$ two realizations of $p_{\restriction A}({\mr x})$. Prove that there is a sequence $c=\<{\mr c_i}:i<\omega\>$ such that ${\mr a},c$ and ${\mr b},c$ are both sequences of $A\jj$indiscernibles.\QED
 \end{exercise}
 % 
 % \section{Crap (if this is publicly available, it's just by errror)}

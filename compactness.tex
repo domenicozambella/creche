@@ -50,11 +50,11 @@ Note that $t^M=t$ for all closed terms $t$.
 Finally, let \emph{$E$} be the relation on $M$ that holds when $a{\doteq}b\in T$. 
 
 \begin{lemma}
-The relation $E$ is a congruence on $M$.
+The relation $E$ is a congruence on $M$ (as defined in Section~\hyperref[quotient]{\ref*{teorie}.\ref*{quotient}}).
 \end{lemma}
 
 \begin{proof}
-Axioms \ssf{a}-\ssf{c} ensure that $E$ is an equivalence. Axiom \ssf{e} that it is a congruence.  
+Axioms \ssf{a}-\ssf{c} ensure that $E$ is an equivalence. Axiom \ssf{e} that it is a congruence.
 \end{proof}
 
 \begin{theorem}
@@ -155,28 +155,30 @@ Let $\Phi\subseteq L$ be a set of sentences and suppose that $\proves\psi\iff\bi
  
 Recall that a \emph{type\/} is a set of formulas. When we present types we usually declare the variables that may occur in it --~we write \emph{$p(x)$}, \emph{$q(x)$}, etc.\@ where $x$ is a tuple of variables. Clearly, when $x$ is the empty tuple, $p(x)$ is just a theory. We identify a finite types with the conjunction of the formulas contained in it.
 
-We write \emph{$M\models p(a)$} if $M\models\phi(a)$ for every $\phi(x)\in p$.  We say that $a$ is a \emph{solution\/} or a \emph{realization\/} of $p(x)$. An equivalent notation is \emph{$M,a\models p(x)$} or, when $M$ is clear from the context, \emph{$a\models p(x)$}. We say that $p(x)$ is \emph{consistent in $M$\/} it has a solution in $M$. In this case we may write \emph{$M\models\E x\,p(x)$}.  We say that $p(x)$ is \emph{consistent\/} tout court if it is consistent in some model.
+We write \emph{$M\models p(a)$} if $M\models\phi(a)$ for every $\phi(x)\in p$.  We say that $a$ is a \emph{solution\/} or a \emph{realization\/} of $p(x)$. An equivalent notation is \emph{$M,a\models p(x)$} or, when $M$ is clear from the context, \emph{$a\models p(x)$}. We say that $p(x)$ is \emph{consistent in $M$\/} it has a solution in $M$. In this case we may write \emph{$M\models\E x\,p(x)$}.  We say that $p(x)$ is \emph{consistent\/} if it is consistent in some model.
 
 We say that a type $p(x)$ is \emph{finitely consistent\/} if all its finite subsets are consistent. If they are all consistent in the same model $M$, we say that $p(x)$ is finitely consistent \emph{in $M$}. The following theorem shows that the latter notion, which is trivial for theories, is very interesting for types.
 
 \begin{void_thm}[Compactness Theorem for types]\label{thm_compattezzatipi}
-Every finitely consistent type $p(x)\subseteq L$ is consistent. Moreover, if $p(x)\subseteq L(M)$ is finitely consistent in $M$ then it is realised in some elementary extension of $M$.
+Every finitely consistent type $p({\mr x})\subseteq L$ is consistent. Moreover, if $p({\mr x})\subseteq L(M)$ is finitely consistent in $M$ then it is realised in some elementary extension of $M$.
 \end{void_thm}
 
 \begin{proof}
  
-Let $L'$ be an expansion of $L$ with a fresh constant symbols $c$, a tuple of constants of the same length as $x$. Then $p(c)$ is a finitely consistent theory in the language $L'$. By the compactness theorem there is an $L'$-structure $N'\models p(c)$. Let $N$ be the reduced of $N'$ to $L$. That is the $L$-structure with the same domain and the same interpretation of $N'$ on the symbols of $L$. Then $N$ realises $p(x)$.  
+Let $L'$ be the expansion of $L$ obtained by adding the fresh symbols ${\mr c}$, a tuple of constants of the same length as ${\mr x}$. Then $p({\mr c})$ is a finitely consistent theory in the language $L'$. By the compactness theorem there is an $L'$-structure $N'\models p({\mr c})$. Let $N$ be the reduced of $N'$ to $L$. That is the $L$-structure with the same domain and the same interpretation of $N'$ on the symbols of $L$. Note that, though the constants ${\mr c}$ are not in $L$, the elements ${\mr c^{N'}}$ remain in $N$. Then $N,{\mr c^{N'}}\models p({\mr x})$.  
 
-As for the second claim, let $a$ be an enumeration of $M$. We can assume that $p(x)$ has the form $p'(x,a)$ for some $p'(x,z)\in L$. Define
+As for the second claim, let ${\gr a}$ be an enumeration of $M$. We can assume that $p({\mr x})$ has the form $p'({\mr x},{\gr a})$ for some $p'({\mr x},{\gr z})\in L$. Define
 
 \ceq{\hfill q(z)}{=}{\big\{\phi(z)\ :\ M\models \phi(a)\big\}}
 
-Clearly, $q(z)\cup p'(x,z)$ is finitely consistent (in $M$). By the first part of the proof there is a model $N'$ such that $N'\models p'(a',b')$ for some $a',b'$. Let $h$ be the function $\{\<a,a'\>\}$. Then $h:M\to N'$ is an embedding and we can identify $M$ with $h[M]$. The proposition is proved if we can show that $h[M]\preceq N'$. For any $\phi(z)\in L$ we have
+Clearly, $p'({\mr x},{\gr z})\cup q({\gr z})$ is finitely consistent in $M$. By the first part of the proof there is a model $N$ such that $N\models p'({\mr c'},{\gr a'})$ for some ${\mr c'},{\gr a'}\in N^{|{\mr x},{\gr z}|}$. Let $h=\{\<a,a'\>\}$. We claim that $h:M\to N$ is an embedding and that $h[M]\preceq N$. So the theorem follows by identifying $M$ with $h[M]$. 
+
+For any $\phi({\gr z})\in L$ we have
 
 
-\hfil $h[M]\models\phi(ha)\ \ \IFF\ \  M\models \phi(a)\ \  \IFF\ \  \phi(z)\in q(z)\ \   \IMP\ \  N'\models \phi(a')$.
+\hfil $h[M]\models\phi(h{\gr a})\ \ \IFF\ \  M\models \phi({\gr a})\ \  \IFF\ \  \phi(z)\in q({\gr z})\ \   \IMP\ \  N\models \phi({\gr a'})$.
 
-Then $h[M]\preceq N'$ follows because all sentences in $L(M)$ have the form $\phi(a)$ for some $\phi(z)\in L$.
+Then $h[M]\preceq N$ follows because all sentences in $L(M)$ have the form $\phi({\gr a})$ for some $\phi({\gr z})\in L$. (Using a term that will be introduced only in Section~\hyperref[morphisms]{\ref*{types}.\ref*{morphisms}}, we have proved that  $h:M\to N$ is an elementary embedding.)
 \end{proof}
 
 The following corollary is historically important.
@@ -231,7 +233,7 @@ Write $T_{\rm gph}$ for the theory of graphs, see Example~\ref{expl_Tgraphs}. Le
 
 We prove that $\K$ is axiomatizable but not finitely axiomatizable, i.e.\@ $\K=\Mod(T)$ for some theory $T$, but $T$ cannot be choosen finite.
 
-A \emph{path of length $n$\/} in $M$ is a sequence $c_0,\dots,c_n\in M$ such that $M\models r(c_i,c_{i+1})$ for every $0\le i<n$. A path is \emph{closed\/} if $c_0=c_n$.  We claim that the following theory axiomatizes $\K$.
+A \textit{path of length $n$\/} in $M$ is a sequence $c_0,\dots,c_n\in M$ such that $M\models r(c_i,c_{i+1})$ for every $0\le i<n$. A path is \textit{closed\/} if $c_0=c_n$.  We claim that the following theory axiomatizes $\K$.
 
 
 \ceq{\hfill T}{=}{\Bigg\{\neg\E x_0,\dots x_{2n+1} \Bigg[\bigwedge^{2n}_{i=0} r(x_i,x_{i+1})\ \wedge\ x_0=x_{2n+1} \Bigg]\ \ :\ \ n\in\omega\Bigg\}}
