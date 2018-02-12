@@ -207,10 +207,10 @@ In the language of graphs let $T_0$ say that there are no cycles (equivalently, 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Weaker notions of universality and homogeneity}\label{weak}
 
-We want to extend the equivalence in Theorem~\ref{ricco<->universaleomogeneo} to $\lambda\jj$rich models. For that we need to weaken the notions of $\lambda\jj$universality and  $\lambda\jj$homogeneity. 
+We want to extend the equivalence in Theorem~\ref{ricco<->universaleomogeneo} to $\lambda\jj$rich models. For that we need to weaken the notions of $\lambda\jj$universality and  $\lambda\jj$homogeneity. This section is more technical and could be skipped at a first reading.
 
 \begin{definition}
-We say that a structure $N$ is \emph{weakly $\lambda$-homogeneous\/} if for every $b\in N$ every morphism $k:N\imp N$ of cardinality $<\lambda$ extends to one defined in $b$. The term \emph{back-and-forth $\lambda$-homogeneous\/} is also used.\QED
+We say that a structure $N$ is \emph{weakly $\lambda$-homogeneous\/} if for every ${\mr b}\in N$ every morphism $k:N\imp N$ of cardinality $<\lambda$ extends to one defined in ${\mr b}$. The term \emph{back-and-forth $\lambda$-homogeneous\/} is also used.\QED
 \end{definition}
 
 The following easy exercise on back-and-forth is required in the sequel.
@@ -232,7 +232,7 @@ Similar to the proof of Theorem~\ref{thm_morphism_rich_elementary}. We shall con
 
 \hfil $\displaystyle M\ \ =\ \ \bigcup_{i<\lambda}A_i$\hfil  and\hfil  $\displaystyle h\ \ =\ \ \bigcup_{i<\lambda}h_i$ 
 
-The chains start with $A_0=A\cup\dom k\cup\range k$ and $h_0=k$. As usual, at limit stages we take the union. Now we consider successor stages. At stage $i$ we fix some enumerations of $A_i$ and of $L_{\mr x}(A_i)$, where $|{\mr x}|=1$. Let $\<i_1,i_2\>$ be the $i\jj$th pair of ordinals $<\lambda$. If the $i_2\jj$th formula in $L_{\mr x}(A_{i_1})$ is consistent in $N$, let ${\mr a}$ be any of its solutions. Also let ${\gr b}$ be the $i_2\jj$th element of $A_{i_1}$. Let $h_{i+1}:N\to N$ be a minimal morphism that extends $h_i$ and is such that ${\gr b}\in\dom h_{i+1}\cap\range h_{i+1}$. Define $A_{i+1}=A_i\cup\big\{{\mr a},\ h_{i+1}{\gr b},\  h_{i+1}^{-1}{\gr b}\big\}$.
+The chains start with $A_0=A\cup\dom k\cup\range k$ and $h_0=k$. As usual, at limit stages we take the union. Now we consider successor stages. At stage $i$ we fix some enumerations of $A_i$ and of $L_{\mr x}(A_i)$, where $|{\mr x}|=1$. Let $\<i_1,i_2\>$ be the $i\jj$th pair of ordinals $<\lambda$. If the $i_2\jj$th formula in $L_{\mr x}(A_{i_1})$ is consistent in $N$, let ${\gr a}$ be any of its solutions. Also let ${\mr b}$ be the $i_2\jj$th element of $A_{i_1}$. Let $h_{i+1}:N\to N$ be a minimal morphism that extends $h_i$ and is such that ${\mr b}\in\dom h_{i+1}\cap\range h_{i+1}$. Define $A_{i+1}=A_i\cup\big\{{\gr a},\ h_{i+1}{\mr b},\  h_{i+1}^{-1}{\mr b}\big\}$.
 \end{proof}
 
 \begin{theorem}\label{ricco=universaledebolmenteomogeneo}
