@@ -228,26 +228,26 @@ Thoughout this section we assume that $T$ is a complete strongly minimal theory.
 
 When ${\mr a}\notin\acl B$ we say that ${\mr a}$ is \emph{algebraically independent from\/} $B$. We say that $B$ is an \emph{algebraically independent set\/} if every ${\mr a}\in B$ is independent from $B\sm\big\{{\mr a}\big\}$. Below we shall abbreviate $B\cup\big\{{\mr a}\big\}$ by \emph{$B,{\mr a}$} and  $B\sm\big\{{\mr a}\big\}$ by \emph{$B\sm a$}. 
 
-The following is a pivotal property of independence that holds in strongly minimal structures. It is called \emph{symmetry\/} or \emph{exchange principle}. For every $B$ and every pair of elements ${\mr a},{\gr b}\in\U\sm\acl B$
+The following is a pivotal property of independence that holds in strongly minimal structures. It is called \emph{symmetry\/} or \emph{exchange principle}. For every $B$ and every pair of elements ${\mr a},{\mr b}\in\U\sm\acl B$
 
-\ceq{\hfill {\gr b}\in\acl (B,{\mr a})}{\IFF}{{\mr a}\in\acl(B,{\gr b})}
+\ceq{\hfill {\mr b}\in\acl (B,{\mr a})}{\IFF}{{\mr a}\in\acl(B,{\mr b})}
 
 Note that when $T=T_{\rm acf}$ this principle is the so called \emph{Steinitz exchange lemma}.
 
-\begin{theorem}
-Independence is symmetric.
+\begin{theorem} 
+($T$ strongly minimal.) Independence is symmetric.
 \end{theorem} 
 
 \begin{proof} 
-Suppose ${\gr b}\notin\acl(B,{\mr a})$ and ${\mr a}\in\acl(B,{\gr b})$. We prove that ${\mr a}\in\acl B$. Fix a formula $\phi({\mr x},{\gr y})\in L(B)$ such that $\phi({\mr x},{\gr b})$ witness ${\mr a}\in\acl(B,{\gr b})$, i.e.\@ for some $n$
+Suppose ${\mr b}\notin\acl(B,{\mr a})$ and ${\mr a}\in\acl(B,{\mr b})$. We prove that ${\mr a}\in\acl B$. Fix a formula $\phi({\mr x},{\mr y})\in L(B)$ such that $\phi({\mr x},{\mr b})$ witness ${\mr a}\in\acl(B,{\mr b})$, i.e.\@ for some $n$
 
-\ceq{\hfill\phi({\mr a},{\gr b})}{\wedge}{\E^{\le n}{\mr x}\,\phi({\mr x},{\gr b}).}
+\ceq{\hfill\phi({\mr a},{\mr b})}{\wedge}{\E^{\le n}{\mr x}\,\phi({\mr x},{\mr b}).}
 
-As ${\gr b}\notin\acl(B,{\mr a})$, the formula
+As ${\mr b}\notin\acl(B,{\mr a})$, the formula
 
-\ceq{\hfill\psi({\mr a},{\gr y})\medrel{=}\phi({\mr a},{\gr y})}{\wedge}{\E^{\le n}{\mr x}\,\phi({\mr x},{\gr y}).}
+\ceq{\hfill\psi({\mr a},{\mr y})\medrel{=}\phi({\mr a},{\mr y})}{\wedge}{\E^{\le n}{\mr x}\,\phi({\mr x},{\mr y}).}
 
-is not algebraic. Therefore, by strong minimality, $\psi({\mr a},{\gr y})$ has cofinitely many solutions. Hence every model containing $B$ contains a solution of $\psi({\mr a},{\gr y})$. As ${\mr a}$ is algebraic in any of these solutions, ${\mr a}$ belongs to every model containing $B$. Therefore, ${\mr a}\in\acl B$ by Theorem~\ref{thm_fmgalois}.
+is not algebraic. Therefore, by strong minimality, $\psi({\mr a},{\mr y})$ has cofinitely many solutions. Hence every model containing $B$ contains a solution of $\psi({\mr a},{\mr y})$. As ${\mr a}$ is algebraic in any of these solutions, ${\mr a}$ belongs to every model containing $B$. Therefore, ${\mr a}\in\acl B$ by Theorem~\ref{thm_fmgalois}.
 \end{proof}
 
 % 
@@ -258,14 +258,14 @@ is not algebraic. Therefore, by strong minimality, $\psi({\mr a},{\gr y})$ has c
 We say that $B\subseteq C$ is a \emph{base\/} of $C$ if $B$ is an independent set and $C\subseteq\acl B$. The following theorem proves that all bases have the same cardinality, which we call the  \emph{dimension\/} of $C$ and denote by \emph{$\dim C$}. First we need the following lemma.
 
 \begin{lemma}\label{indipendenza+1}
-If $B$ is an independent set and ${\mr a}\notin \acl B$ then $B,{\mr a}$ is also an independent set.
+($T$ strongly minimal.) If $B$ is an independent set and ${\mr a}\notin \acl B$ then $B,{\mr a}$ is also an independent set.
 \end{lemma}
 \begin{proof}
-Suppose $B,{\mr a}$ is not independent and that ${\mr a}\notin \acl B$. Then ${\gr b}\in\acl(B\sm {\gr b},{\mr a})$ for some ${\gr b}\in B$. As ${\mr a},{\gr b}\notin\acl(B\sm {\gr b})$, from symmetry we obtain ${\mr a}\in\acl(B\sm {\gr b},{\gr b})=\acl B$. Hence $B$ is not an independent set. 
+Suppose $B,{\mr a}$ is not independent and that ${\mr a}\notin \acl B$. Then ${\mr b}\in\acl(B\sm {\mr b},{\mr a})$ for some ${\mr b}\in B$. As ${\mr a},{\mr b}\notin\acl(B\sm {\mr b})$, from symmetry we obtain ${\mr a}\in\acl(B\sm {\mr b},{\mr b})=\acl B$. Hence $B$ is not an independent set. 
 \end{proof}
 
 \begin{corollary}\label{basemassimale}
-For every $B\subseteq C$ the following are equivalent
+($T$ strongly minimal.) For every $B\subseteq C$ the following are equivalent
 \begin{itemize}
 \item[1.] $B$ is a base of $C$.
 \item[2.] $B$ is a maximally independent subset of $C$.\QED
@@ -274,7 +274,7 @@ For every $B\subseteq C$ the following are equivalent
 
 We may write \emph{acl$(B/A)$\/} per $\acl(B\cup A)$. The notation is used to suggest to the reader that the role of $A$ in the argument is irrelevant and that it could be absorbed in the language. Independent sets \emph{over $A$\/} and bases \emph{over $A$\/} are defined in the obvious way.
 
-\begin{theorem} Fix some arbitrary set $C$, then
+\begin{theorem} ($T$ strongly minimal.) Fix some arbitrary set $C$, then
 \begin{itemize}
 \item[1] every independent set $B\subseteq C$ can be extended to a base of $C$;
 \item[2] all bases of $C$ have the same cardinality;
@@ -295,34 +295,34 @@ Now we suppose that $B_2$ is finite and prove directly the generalized version. 
 \end{proof}
 
 \begin{proposition}\label{prop_mappetraindipendenti} 
-Let $k$ be an elementary map. Then $k\cup\big\{\<{\mr b},{\mr c}\>\big\}$ is also an elementary map for every ${\mr b}\notin\acl(\dom k)$ and ${\mr c}\notin\acl(\range k)$.
+($T$ strongly minimal.) Let $k$ be an elementary map. Then $k\cup\big\{\<{\mr b},{\mr c}\>\big\}$ is also an elementary map for every ${\mr b}\notin\acl(\dom k)$ and ${\mr c}\notin\acl(\range k)$.
 \end{proposition}
 \begin{proof}
 Let ${\gr a}$ be an enumeration of $\dom k$. We need to show that $\phi({\mr b}\,;{\gr a})\iff\phi({\mr c}\,;k{\gr a})$ holds for every $\phi({\mr x}\,;{\gr z})\in L$. As $k$ is elementary, the formulas $\phi({\mr x}\,;{\gr a})$ and $\phi({\mr x}\,;k{\gr a})$ are either both algebraic or both co-algebraic. As ${\mr b}\notin\acl({\gr a})$ and ${\mr c}\notin\acl(k{\gr a})$, they are both false or both true respectively. So the proposition follows.
 \end{proof}
 
 \begin{corollary}\label{corol_mappetraindipendenti} 
-Every bijection between independent sets is an elementary map.\QED
+($T$ strongly minimal.) Every bijection between independent sets is an elementary map.\QED
 \end{corollary}
 
 Finally we show that dimension classifies models of $T$.
 
 \begin{theorem}
-Models of $T$ with the same dimension are isomorphic.
+($T$ strongly minimal.) Models of $T$ with the same dimension are isomorphic.
 \end{theorem}
 \begin{proof}
 Let $A$ e $B$ be some bases of $M$ and $N$ respectively. By Corollary~\ref{corol_mappetraindipendenti}, any bijectiion between $A$ and $B$ is an elementary map. By Proposition~\ref{prop_estensionemappechiusuraalgebrica}, it extends to the required isomorphism between $\acl A=M$ and $\acl B=N$.
 \end{proof}
 
 \begin{corollary} 
-Strongly minimal theories are $\lambda\jj$categorical for every $\lambda>|L|$.
+($T$ strongly minimal.) Strongly minimal theories are $\lambda\jj$categorical for every $\lambda>|L|$.
 \end{corollary}
 \begin{proof}
 As $|\acl A|\le |L(A)|$, all models of cardinality $\lambda$ have the same dimension $\lambda$.
 \end{proof}
 
 \begin{proposition} 
-For every model $N$ of cardinality $\ge|L|$ the following are equivalent
+($T$ strongly minimal.) For every model $N$ of cardinality $\ge|L|$ the following are equivalent
 \begin{itemize}
 \item[1.] $N$ is saturated;
 \item[2.] $\dim N=|N|$.
@@ -340,15 +340,15 @@ Therefore, if $N$ is saturated, $|B|=|N|$.
 \end{proof}
 
 \begin{exercise}\label{ex_infinite_acl}
-Prove that every infinite algebraically closed set is a model.\QED
+($T$ strongly minimal.) Prove that every infinite algebraically closed set is a model.\QED
 \end{exercise}
 
 \begin{exercise}
-Prove that every model is homogeneous.\QED 
+($T$ strongly minimal.) Prove that every model is homogeneous.\QED 
 \end{exercise}
 
 \begin{exercise}
-Prove that if $\dim N=\dim M+1$ then there is no model $K$ such that $M\prec K\prec N$.\QED 
+($T$ strongly minimal.) Prove that if $\dim N=\dim M+1$ then there is no model $K$ such that $M\prec K\prec N$.\QED 
 \end{exercise}
 
 
