@@ -14,7 +14,7 @@ We introduce \textit{Fra\"iss\'e limits}, aleas \textit{homogeneous-universal\/}
 \section{Rich models.}\label{rich}
 We now define \textit{categories of models and partial morphisms}. These are example of concrete categories as intended in category theory. However, apart from the name, in what follows we dispense with all notions of category theory as they would make the exposition less basic than intended (without providing more technical instruments). %We refer the interested reader to the references at the end of the chapter.
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Warning: the terminology introduced in this section is not standard. In the literature many details are left implicit. This is generally safe when the category used is fixed. Here we prefer to be more explicit because, when discussing saturation and quantifier elimination, it helps to compare different categories.
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Warning: the terminology introduced in this section is not standard. In the literature many details are left implicit. This is generally safe when the category used is fixed. Here we prefer to be more explicit because, when discussing saturation, quantifier elimination, and model completeness, it helps to compare different categories.
 
 A \emph{category (of models and partial morphisms)\/} is a class $\M$ which is disjoint union of two classes: \emph{$\M_{\textrm{ob}}$} and \emph{$\M_{\textrm{hom}}$}. The first is the class of \emph{objects\/} and contains structures with a common signature $L$ which we call \emph{models}. The second is the class of \emph{morphisms\/} and contains (partial) maps between models. We require that the identity maps are morphisms and that composition of two morphism is again morphism. This makes $\M$ a well-defined category. 
 
@@ -31,7 +31,7 @@ For example, $\M$ could consist of all models of some theory $T_0$ and of all pa
 \end{itemize}
 \end{definition}
  
-We say that a category is \emph{connected\/} if \ssf{c0} holds. Axiom \ssf{c1} implies that any restriction of a morphism is a morphism. Given \ssf{c1}, we can rephrase \ssf{c0} by saying that $\0:M\to N$ is a morphism for any pair of models $M$ and $N$. 
+We say that a category is \emph{connected\/} if \ssf{c0} holds. Axiom \ssf{c1} implies that any restriction of a morphism is a morphism. Given \ssf{c1}, we can rephrase \ssf{c0} by saying that $\0:M\to N$ is a morphism for any pair of models $M$ and $N$.
 
 We call \ssf{c2} the \emph{finite character of morphisms}. Note that it implies the following
 
@@ -63,8 +63,7 @@ As above, when $\lambda=|N|$ we say \emph{universal}, \emph{homogeneous} and \em
 
 In Section~\hyperref[dlo]{\ref*{relational}.\ref*{dlo}} we implicitly used $\M_{\rm ob}=\Mod(T_{\rm lo})$ and partial isomorphisms as $\M_{\rm hom}$. In Section~\hyperref[randomgraph]{\ref*{relational}.\ref*{randomgraph}} we used $\M_{\rm ob}=\Mod(T_{\rm gph})$ and again partial isomorphisms as $\M_{\rm hom}$. Corollary~\ref{coroll_ordinericco} proves that every model of $T_{\rm dlo}$ is $\omega\jj$rich.  Corollary~\ref{coroll_graforicco} claims the analogous fact for $T_{\rm rg}$.
 
-
-In the following we fequently work under the following assumption (even when not all properties are strictly necessary).
+In the following we frequently work under the following assumption (even when not all properties are strictly necessary).
  
 \begin{assumption}\label{ass_c0-5}
 Assume  $|L|\le\lambda$ and suppose that $\M$ satisfies \ssf{c0-c5} of Definition~\ref{def_com_c}

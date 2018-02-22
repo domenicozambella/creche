@@ -57,17 +57,17 @@ The class of all models of $T$ is denoted by \emph{$\textrm{Mod}(T)$}. We say th
 \begin{example}\label{Tg}
 Let $L$ be the language of multiplicative groups. Let $T_{\rm g}$ be the set containing the universal closure of following three formulas
 \begin{itemize}
-\item[ass.]\ \  $(x\cdot y)\cdot z\ =\ x\cdot(y\cdot z)$;
-\item[inv.]\ \  $ x\cdot x^{-1}\ =\ x^{-1}\cdot x\ =\ 1$;
-\item[neu.]\ \  $x\cdot 1\ =\ 1\cdot x\ =x$.
+\item[1.]\ \  $(x\cdot y)\cdot z\ =\ x\cdot(y\cdot z)$;
+\item[2.]\ \  $ x\cdot x^{-1}\ =\ x^{-1}\cdot x\ =\ 1$;
+\item[3.]\ \  $x\cdot 1\ =\ 1\cdot x\ =x$.
 \end{itemize}
 Then $T_{\rm g}$ axiomatizes the theory of groups, i.e.\@ $\Th(\K)$ for $\K$ the class of all groups. Let $\phi$ be the universal closure of the following formula
 \begin{itemize}
-\item[can.]\ \  $\ z\cdot x\ =\  z\cdot y\ \imp\ x\ =\ y$. 
+\item[]\ \  $\ z\cdot x\ =\  z\cdot y\ \imp\ x\ =\ y$. 
 \end{itemize}
 As $\phi$ formalizes the cancellation property then $T_{\rm g} \proves\phi$, that is, $\phi$ is a logical consequence of $T_{\rm g}$. Now consider the sentence $\psi$ which is the universal closure of
 \begin{itemize}
-\item[com.]\ \  $x\cdot y\ =\ y\cdot x$. 
+\item[4.]\ \  $x\cdot y\ =\ y\cdot x$. 
 \end{itemize}
 So, commutative groups model $\psi$ and non commutative groups model $\neg\psi$. Hence neither $T_{\rm g}\proves\psi$ nor $T_{\rm g}\proves\neg\psi$. We say that $T_{\rm g}$ \emph{does not decide\/} $\psi$.\QED
 \end{example}
@@ -109,18 +109,18 @@ The theory of commutative rings $T_{\rm cg}$ contains also \ssf{com} of examples
 \end{itemize}
 \end{example}
 
-The axiomatization of vector spaces is less straightforward.
+The axiomatization of of the \emph{theory of vector spaces\/} is less straightforward.
 
 \begin{example}
-Fix a field $K$. The language $L_K$ extends the language of additive groups with a unary function for every element of $K$. The theory of vector fields over $K$ extends $T_{\rm ag}$ with the following axioms (for all $h,k,l\in K$)
+Fix a field $F$. The language $L_F$ extends the language of additive groups with a unary function for every element of $F$. The theory of vector fields over $F$ extends $T_{\rm ag}$ with the following axioms (for all $h,k,l\in F$)
 \begin{itemize}
 \item[m1.] $h\,(x+y)\ =\ h\,x+h\,y$
-\item[m2.] \parbox{25ex}{$l\,x\ =\ h\,x+k\,x$,} where $l\ =\ h+_Kk$
-\item[m3.] \parbox{25ex}{$l\,x\ =\ h\,(k\,x)$,} where $l\ =\ h\cdot_Kk$
-\item[m4.] $0_K\,x\ =\ 0$
-\item[m5.] $1_K\,x\ =\ x$
+\item[m2.] \parbox{25ex}{$l\,x\ =\ h\,x+k\,x$,} where $l\ =\ h+_Fk$
+\item[m3.] \parbox{25ex}{$l\,x\ =\ h\,(k\,x)$,} where $l\ =\ h\cdot_Fk$
+\item[m4.] $0_F\,x\ =\ 0$
+\item[m5.] $1_F\,x\ =\ x$
 \end{itemize}
-The symbols $0_K$ and $1_K$ denote the zero and the unit of $K$. The symbols $+_K$ and $\cdot_K$ denote the sum and the product in $K$. These are not part of $L_K$, they are symbols we use in the metalanguage.\QED
+The symbols $0_F$ and $1_F$ denote the zero and the unit of $F$. The symbols $+_F$ and $\cdot_F$ denote the sum and the product in $F$. These are not part of $L_F$, they are symbols we use in the metalanguage.\QED
 \end{example}
 
 \begin{example}\label{expl_Tgraphs}
@@ -157,20 +157,6 @@ Prove that $\Th(\Mod(T))=\ccl(T)$.\QED
 \end{document}
 
 \begin{comment}
-
-% 
-% \begin{example}
-% Il linguaggio $L_{\rm gi}$ della geometria piana cosiste di due relazioni unarie $p$ and $r$, rispettivamente per punti e rette, and una relazione binaria $i$. Gli assiomi della $T_{\rm gp}$
-% \begin{itemize}
-% \item[gp1.] $p(x)\niff r(x)$;
-% \item[gp2.] $i(x,y)\imp p(x)\wedge r(x)$;
-% \item[gp3.] $p(x)\wedge p(y)\imp \E^{=1} z\,[i(x,z)\wedge i(y,z)]$.
-% \item[gp4.] $p(x)\wedge r(z)\imp \E y\,\neg i(x,z)\wedge i(y,z)]$.
-% \end{itemize}
-% degli spazi vettoriali su un campo $K$ fissato is stato introdotto nell'esempio~\ref{linguaggio_spazi_vettoriali}. La \emph{theory degli spazi vettoriali su $K$\/} contiene gli enunciati di $T_{\rm ga}$ e inoltre, for every $k,h\in K$ la chiusura universale delle seguenti formule:
-% Abbiamo denotato con $0_K$ and $1_K$ lo zero e l'unit\`a di $K$ e con $+_K$ e $\cdot_K$ le operazioni di somma e prodotto in $K$. Queste operazioni si intendono eseguite nel metalinguaggio: in $L_K$ non ci sono simboli di funzione per le operazioni del campo. Se il campo $K$ is infinito $T_K$ contiene infiniti enunciati.\QED
-% \end{example}
-
 
 % \begin{exercise}
 % Siano $T$ e $S$ teorie di linguaggio $L$. Qual'is la relazione tra le seguenti affermazioni? (Si noti che qualcuna is sempre vera, qualcuna sempre falsa.)\smallskip
@@ -356,9 +342,11 @@ Combining these two properties, and by straightforward induction on the syntax, 
 
 \ceq{\ssf{3.}\hfill M\models\phi(a)}{\IFF}{N\models\phi(ha)}\hfill for every $\phi(x)\in L_{\rm qf}$ and every $a\in M^{|x|}$.
 
-Recall that $L_{\rm qf}$ for the set of quantifier-free formulas. It is worth noting that when $M\subseteq N$ and $h=\id_M$ then \ssf{3} becomes  
+Recall that we write $L_{\rm qf}$ for the set of quantifier-free formulas. It is worth noting that when $M\subseteq N$ and $h=\id_M$ then \ssf{3} becomes  
 
 \ceq{\ssf{3'}\hfill M\models \phi(a)}{\IFF}{N\models \phi(a)}\hfill for every $\phi(x)\in L_{\rm qf}$ and for every $a\in M^{|x|}$.
+
+In words this is summarized by saying that the truth of quantifier-free formulas is preserved under sub- and superstructure.
 
 
 \bigskip Finally we prove that first order truth is preserved under isomorphism. We say that a map $h:M\to N$ \emph{fixes\/} $A\subseteq M$ (pointwise) if $\id_A\subseteq h$. An isomorphism that fixes $A$ is also called an \emph{$A$-isomorphism}.
@@ -433,9 +421,11 @@ Hint: as $L$-structures are plain sets, every bijection $f:M\to M$ is an automor
 \end{exercise}
 
 \begin{exercise}\label{dlorlkurb}
-Prove that if $\phi(x)$ is an existential formula (i.e.\@ of the form $\E y\,\psi(x,y)$ for $\psi(x,y)\in L_{\rm qf}$) and $h:M\to M$ is an embedding then
+Prove that if $\phi(x)$ is an existential formula and $h:M\to M$ is an embedding then
 
-\ceq{\hfill M\models \phi(a)}{\IMP}{N\models \phi(ha)} for every $a\in M^{|x|}$.\QED
+\ceq{\hfill M\models \phi(a)}{\IMP}{N\models \phi(ha)}\hfill for every $a\in M^{|x|}$.
+
+Recall that existential formulas as those of the form $\E y\,\psi(x,y)$ for $\psi(x,y)\in L_{\rm qf}$. Note that Theorem~\ref{thm_embeddings_preservation_E} proves that the property above characterizes existential formulas.\QED
 
 \end{exercise}
 
@@ -492,7 +482,9 @@ where $\pi:a\mapsto [a]_E$ is the projection map.\QED
 \end{proposition}
 
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Quotients clutter the notation with brackets. To avoid the mess, we prefer to reason in $N$ and tweak the satisfaction relation.  We replace equality with $\mathrel{E}$ and adapt the interpretation of relation symbols to \ssf{c3} above. The following definition makes this precise (an inductive definition is required for instance in the proof of \L o\'{s} Theorem). Warning: it is not standard. 
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Quotients clutter the notation with brackets. To avoid the mess, we prefer to reason in $N$ and tweak the satisfaction relation.  Warning: this is not standard.
+
+To work in $N$ while thinking of $N/E$, we replace equality with $\mathrel{E}$ and adapt the interpretation of relation symbols according to \ssf{c3} above. The proposition below shows that the definition does what is intended to do.
 
 \begin{definition}\label{def_pseudostructure}
 For $t_2$, $t_2$ closed terms of $L(N)$ define
@@ -626,7 +618,7 @@ Hint: consider the theory containing all sentences where the symbol $\neg$ occur
 \end{exercise}
 
 \begin{exercise}
-Prove that if $T$ has exactly $2$ maximal consistent extension $T_1$ and $T_2$ then there is a sentence $\phi$ such that $T,\phi\proves T_1$ and $T,\neg\phi\proves T_2$.\QED
+Prove that if $T$ has exactly $2$ maximal consistent extension $T_1$ and $T_2$ then there is a sentence $\phi$ such that $T,\phi\proves T_1$ and $T,\neg\phi\proves T_2$. State and prove the generalization to finitely many maximally consistent extensions.\QED
 \end{exercise} 
 
 
@@ -918,9 +910,9 @@ $N\models\E x\,\phi(x)\ \ \IMP\ \ N\models\phi(b)$ for some $b\in A$.
 
 \ceq{}%
 {\IMP}%
-{N\models\phi(b)} for some $b\in M$
+{N\models\phi(b)} for some $b\in M$.
 
-\ssf{2}$\IMP$\ssf{1} we first check that $A$ is the domain of a substructure of $N$, that is, $f^Na\in A$ for every function symbol $f$ and every $a \in A^{n_f}$. This follows from \ssf{2} with $fa=x$ for $\phi(x)$.
+\ssf{2}$\IMP$\ssf{1} Firstly, note that $A$ is the domain of a substructure of $N$, that is, $f^Na\in A$ for every $f\in L_{\rm fun}$ and every $a \in A^{n_f}$. In fact, this follows from \ssf{2} with $fa=x$ for $\phi(x)$.
 
 Write $M$ for the substructure of $N$ with domain $A$. By induction on the syntax we prove
 
@@ -936,11 +928,13 @@ If $\phi(x)$ is atomic the claim follows from $M\subseteq N$ and the remarks und
 
 \ceq{}%
 {\IFF}%
-{N\models\phi(a,b)} for some $b\in M$\hfill by induction hypothesis
+{N\models\phi(a,b)} for some $b\in M$
 
 \ceq{}%
 {\IFF}%
-{N\models\E x\,\phi(a,x)}\hfill $\PMI$ uses \ssf{2}.
+{N\models\E x\,\phi(a,x).}
+
+The second equivalence holds by induction hypothesis, in the last equivalence we use \ssf{2} for the implication $\PMI$.
 \end{proof}
 
 \begin{exercise} 

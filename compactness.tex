@@ -18,7 +18,7 @@ We present two proofs of the compactness theorem. The first is syntactic, the se
 Here we prove the compactness theorem using the so-called Henkin method. We divide the proof in two steps. Firstly, we observe that when the language is rich enough to name witnesses for all existential statements of the theory, these witnesses (\textit{Henkin constants\/}) form a canonical model. Secondly, we show that we can add the required Henkin constants to any finitely consistent theory.
 
 \begin{definition}\label{def_Henkin}
-Fix a language $L$. Assume formulas are written using only the connectives $\wedge$, $\neg$ and $\E$. We say that $T$ is a \emph{Henkin theory\/} if for every formulas $\phi$ and $\psi$
+Fix a language $L$. Assume for simplicity that formulas use only the connectives $\wedge$, $\neg$ and $\E$. We say that $T$ is a \emph{Henkin theory\/} if for every formulas $\phi$ and $\psi$
 
 \begin{itemize}
 \item[0.]\ceq{\hfill \phi\in T}{\IMP}{\neg\phi\notin T}
@@ -110,7 +110,7 @@ If every finite subset of $T$ is consistent then $T$ is consistent.\QED
 
 
 
-A theory is \emph{finitely consistent\/} if all its finite subsets are consistent. The following theorem is the \textit{fiat lux\/} of model theory. 
+We repeat, a theory is \emph{finitely consistent\/} if all its finite subsets are consistent. The following theorem is the \textit{fiat lux\/} of model theory. 
 
 \begin{void_thm}[Compactness Theorem]\label{thmcompattezza}
 Every finitely consistent theory is consistent. 
@@ -167,11 +167,11 @@ Every finitely consistent type $p({\mr x})\subseteq L$ is consistent. Moreover, 
  
 Let $L'$ be the expansion of $L$ obtained by adding the fresh symbols ${\mr c}$, a tuple of constants of the same length as ${\mr x}$. Then $p({\mr c})$ is a finitely consistent theory in the language $L'$. By the compactness theorem there is an $L'$-structure $N'\models p({\mr c})$. Let $N$ be the reduced of $N'$ to $L$. That is the $L$-structure with the same domain and the same interpretation of $N'$ on the symbols of $L$. Note that, though the constants ${\mr c}$ are not in $L$, the elements ${\mr c^{N'}}$ remain in $N$. Then $N,{\mr c^{N'}}\models p({\mr x})$.  
 
-As for the second claim, let ${\gr a}$ be an enumeration of $M$. We can assume that $p({\mr x})$ has the form $p'({\mr x},{\gr a})$ for some $p'({\mr x},{\gr z})\in L$. Define
+As for the second claim, let ${\gr a}$ be an enumeration of $M$. We can assume that $p({\mr x})$ has the form $p'({\mr x}\,;{\gr a})$ for some $p'({\mr x}\,;{\gr z})\in L$. Define
 
 \ceq{\hfill q(z)}{=}{\big\{\phi(z)\ :\ M\models \phi(a)\big\}}
 
-Clearly, $p'({\mr x},{\gr z})\cup q({\gr z})$ is finitely consistent in $M$. By the first part of the proof there is a model $N$ such that $N\models p'({\mr c'},{\gr a'})$ for some ${\mr c'},{\gr a'}\in N^{|{\mr x},{\gr z}|}$. Let $h=\{\<a,a'\>\}$. We claim that $h:M\to N$ is an embedding and that $h[M]\preceq N$. So the theorem follows by identifying $M$ with $h[M]$. 
+Clearly, $p'({\mr x}\,;{\gr z})\cup q({\gr z})$ is finitely consistent in $M$. By the first part of the proof there is a model $N$ such that $N\models p'({\mr c'}\,;{\gr a'})$ for some ${\mr c'},{\gr a'}\in N^{|{\mr x},{\gr z}|}$. Let $h=\{\<a,a'\>\}$. We claim that $h:M\to N$ is an embedding and that $h[M]\preceq N$. So the theorem follows by identifying $M$ with $h[M]$. 
 
 For any $\phi({\gr z})\in L$ we have
 
