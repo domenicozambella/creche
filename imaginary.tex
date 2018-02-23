@@ -50,20 +50,16 @@ There are also arbitrarily many function and relation symbols of sort $\<0^n\>$ 
 
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Warning: the structure $\U^\eq$ and the theory $T^\eq$ defined below do not coincide with the standard ones introduced by Shelah. As the difference is merely cosmetic, introducing new notation would be overkill and we prefer to abuse the existing terminology. In Section~\ref{imaginaries_long} below we compare our definition with the standard one. %This will also explain the symbol used.
 
-We recall the definition of partitioned formulas. The attentive reader may have noticed that by \textit{formula\/} we often understand a pair $\phi({\mr x})$ that consists of a formula and a tuple of variables.
-In the following we deal with two sorts of variables: those that are placeholder for parameters, and those used to define a set.
 
-\begin{definition}\label{def_partitioned_fla}
-A \emph{partitioned formula\/}  (strictly speaking, we should say a \emph{$2$-partitioned\/} formula) is a triple $\sigma({\mr x}\,;{\gr z})$ consisting of a formula and two tuples of variables such that the variables occurring in $\sigma$ are all among ${\mr x},{\gr z}$.\QED
-\end{definition}
 
-We use a semicolon to separate the two tuples of variables. Below, ${\gr z}$ is always a placeholder for parameters and ${\mr x}$ runs over the elements of the set defined by the formula.
 
-Given a language $L$ we define a many-sorted language \emph{$L^{\rm\textbf{eq}}$\/} which has a sort for each (partitioned) formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort}. For better legibility, we will pretend that all formulas $\sigma$ depend on the same pair of tuples ${\mr x}\,;{\gr z}$, so we assume that ${\mr x}\,;{\gr z}$ are infinite tuples. 
+Given a language $L$ we define a many-sorted language \emph{$L^{\eq}$\/} which has a sort for each partitioned formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort}. (Partitioned formulas have been introduced in Definition~\ref{def_partitioned_fla}.)
+
+For better legibility, we will pretend that all formulas $\sigma$ depend on the same pair of tuples ${\mr x}\,;{\gr z}$, so we assume that ${\mr x}\,;{\gr z}$ are infinite tuples. 
 
 The home sort is also called the \emph{first-order sort}. All other sorts are \emph{second-order}. First of all, $L^\eq$ contains all relations and functions of $L$. The many-sorted arity of a relation $r$ is $\<0^{n_r}\>$, where $n_r$ is the arity of $r$ in $L$. Similarly, the many-sorted arity of a function $f$ is $\<0^{1+n_f}\>$, where $n_f$ is the arity of $f$ in $L$. Moreover, $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$. These relation symbols have arity \smash{$\big\<0^{|{\mr x}|},\sigma({\mr x}\,;{\gr z})\big\>$}. As there is no risk of ambiguity, in what follows we write $\in$ without subscript.
 
-The model \emph{$\U^{\rm\textbf{eq}}$\/} has $\U$ as domain for the home sort. The domain for the sort $\sigma({\mr x}\,;{\gr z})$ contains the definable sets ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in\U^{|{\gr z}|}$. The symbols in $L$ have the same interpretation as in the one-sorted case, and $\in$ is interpreted as set membership. We write \emph{$T^{\rm\textbf{eq}}$\/} for $\Th(\U^\eq)$.
+The model \emph{$\U^{\eq}$\/} has $\U$ as domain for the home sort. The domain for the sort $\sigma({\mr x}\,;{\gr z})$ contains the definable sets ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in\U^{|{\gr z}|}$. The symbols in $L$ have the same interpretation as in the one-sorted case, and $\in$ is interpreted as set membership. We write \emph{$T^{\eq}$\/} for $\Th(\U^\eq)$.
 
 As usual \emph{$L^\eq$\/} also denotes the set of formulas constructed in this language and, if $A\subseteq\U^\eq$, we write  \emph{$L^\eq(A)$\/} for the language and the set of formulas that use elements of $A$ as parameters. We write \emph{$L(A)$\/} for the set of formulas in $L^\eq(A)$ that contain no second-order variables (neither free nor quantified).  
 

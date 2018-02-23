@@ -184,9 +184,7 @@ Let $L$ be the language of groups. Let $N$ be a group, which we consider as an $
 \end{example}
 \end{lemma}
 
-
 \section{Formulas}\label{sintassformule}
-
 
 Fix a language $L$ and a set of variables $V$ as in Section~\ref{terminidef}. A \emph{formula} is a finite sequence of symbols in $L_{\rm fun}\cup L_{\rm rel}\cup V\cup \{\doteq,\bot,\neg,\vee,\E\}$. The last set contains the logical symbols that are called respectively
 
@@ -266,6 +264,16 @@ The case when $x$ is the empty tuple is far from trivial. Note that $\phi(\0)^M$
 
 \hfil$\phi(M)=\big\{a\in M^{|x|}: M\models\phi(a)\big\}$.
 
+Note that usually, we say \textit{formula\/} when, strictly speaking, we mean  \textit{pair\/} that consists of a formula and a tuple of variables. Such pairs are interpreted in definable sets (cfr.\@  Definition~\ref{defverita}). In fact, if the tuple of variables were not given, the arity of the corresponding set is not determined.
+
+In some contexts we also want to distinguish between two sorts of variables that play different roles. Some are placeholder for parameters, some are used to define a set. In the the first chapters this is just a clue for the reader, in the last chapter it is an essential part of the definitions. 
+
+\begin{definition}\label{def_partitioned_fla}
+A \emph{partitioned formula\/}  (strictly speaking, we should say a \emph{$2$-partitioned\/} formula) is a triple $\phi({\mr x}\,;{\gr z})$ consisting of a formula and two tuples of variables such that the variables occurring in $\phi$ are all among ${\mr x},{\gr z}$.\QED
+\end{definition}
+
+We use a semicolon to separate the two tuples of variables. Typically, ${\gr z}$ is the placeholder for parameters and ${\mr x}$ runs over the elements of the set defined by the formula.
+
 
 \section{Yet more notation}\label{Altriconnettivi}
 
@@ -307,6 +315,7 @@ When $x=x_1,\dots,x_n$ is a tuple of variables we write \emph{$\E x\,\phi$\/} or
 
 \ceq{\hfill\emph{$\E^{=n}x\;\phi(x)$}}{stands for}{\E^{\ge n}x\;\phi(x)\ \wedge\ \E^{\le n}x\;\phi(x)}
 \smallskip
+
 
 \begin{exercise}
 Let $M$ be an $L$-structure and let $\psi(x), \phi(x,y)\in L$. For each of the following conditions, write a sentence true in $M$ exactly when
