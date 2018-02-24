@@ -57,7 +57,7 @@ If $\grD\subseteq\U^{|{\gr z}|}$ is invariant over $A$ then every $A\jj$indiscer
 \end{proposition}
 
 \begin{proof}
-Let $c=\<c_i:i\in I\>$ be an $A\jj$indiscernible sequence. For every $I_0,I_1\in I^{[n]}$ there is an $f\in\Aut(\U/A)$ such that $fc_{\restriction I_0}=c_{\restriction I_1}$, Hence 
+Let $\bar c=\<c_i:i\in I\>$ be an $A\jj$indiscernible sequence. For every $I_0,I_1\in I^{[n]}$ there is an $f\in\Aut(\U/A)$ such that $fc_{\restriction I_0}=c_{\restriction I_1}$, Hence 
 
 \ceq{\hfill \phi\big(c_{\restriction I_0}\,;\grD\big)}{\iff}{\phi\big(fc_{\restriction I_0}\,;f[\grD]\big)\medrel{\iff}\phi\big(c_{\restriction I_1}\,;\grD\big)}.
 \end{proof}
@@ -118,7 +118,7 @@ So, $\grD$ is invariant over $A$ when $\oorbit(\grD/A)=\big\{\grD\big\}$. We say
 
   Then $E({\gr u}\,;{\gr v})$ is an $A\mbox{-}$invariant equivalence relation. As $\neg E({\gr c_0}\,;{\gr c_1})$, by Proposition~\ref{prop_indiscernible_L(A,D)}, indiscernibility over $A$ implies that $\neg E({\gr c_i\,},{\gr c_j})$ for every $i<j<\kappa$. Then $E({\gr u}\,;{\gr v})$ has $\kappa$ equivalence classes. As $\kappa$ is inaccessible, this implies $\neg$\ssf{4}.
 
-  \ssf{5}$\IMP$\ssf{1}.\quad Fix any ${\gr a}\equiv_N{\gr b}$ where $A\subseteq N$. It suffices to prove that ${\gr a}\in\grD\iff{\gr b}\in\grD$. Let $p({\gr z})\in S(\U)$ be a global coheir of $\tp({\gr a}/N)=\tp({\gr b}/N)$. Let $c=\<{\gr c_i}:i<\omega\>$ be a Morley sequence of $p({\gr z})$ over $N,{\gr a},{\gr b}$. Then both ${\gr a},c$ and ${\gr b},c$ are $A\mbox{-}$indiscernible sequences. Therefore, from \ssf{5} we obtain ${\gr a}\in\grD\iff{\gr c_0}\in\grD\iff{\gr b}\in\grD$. 
+  \ssf{5}$\IMP$\ssf{1}.\quad Fix any ${\gr a}\equiv_N{\gr b}$ where $A\subseteq N$. It suffices to prove that ${\gr a}\in\grD\iff{\gr b}\in\grD$. Let $p({\gr z})\in S(\U)$ be a global coheir of $\tp({\gr a}/N)=\tp({\gr b}/N)$. Let ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ be a Morley sequence of $p({\gr z})$ over $N,{\gr a},{\gr b}$. Then both ${\gr a},{\gr\bar c}$ and ${\gr b},{\gr\bar c}$ are $A\mbox{-}$indiscernible sequences. Therefore, from \ssf{5} we obtain ${\gr a}\in\grD\iff{\gr c_0}\in\grD\iff{\gr b}\in\grD$. 
 \end{proof}
 
 For definable sets Lascar invariance reduces to definablity over the algebraic closure.
@@ -165,17 +165,17 @@ Let $p({\mr x})\in S(\U)$ be global type; we say that $p$ is \emph{Lascar invari
   Let $p({\mr x})\in S(\U)$ be a global type. Then the following are equivalent
   \begin{itemize}
     \item[1.] $p({\mr x})$ is Lascar invariant over $A$;
-    \item[2.] every $A$-indiscernible sequence $c=\<{\gr c_i}:i<\omega\>$ is $A,{\mr a}\jj$indiscernible for every ${\mr a}\models p_{\restriction A, c}$;
-    \item[3.] every $A$-indiscernible sequence $c=\<{\gr c_i}:i<\omega\>$ is indiscernible over any ${\mr a}\models p_{\restriction c}$.
+    \item[2.] every $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ is $A,{\mr a}\jj$indiscernible for every ${\mr a}\models p_{\restriction A,{\gr\bar c}}$;
+    \item[3.] every $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ is indiscernible over any ${\mr a}\models p_{\restriction{\gr\bar c}}$.
   \end{itemize}
   For convenience all tuples ${\gr c_i}$ have length $|{\gr z}|=\omega$.
 \end{proposition}
 \begin{proof} We prove \ssf{1}$\IFF$\ssf{3}. Equivalence  \ssf{1}$\IFF$\ssf{2} can be proved similarly because the Lascar invariance of $p({\mr x})$ easily implies the Lascar invariance of the sets ${\gr\D_{p,\phi}}$ for all $\phi({\mr x}\,;{\gr z})\in L(A)$.
 
   \def\ceq#1#2#3{\parbox[t]{30ex}{$\displaystyle #1$}\parbox[t]{5ex}{$\displaystyle\hfil #2$}{$\displaystyle #3$}}
-  \ssf{3}$\IMP$\ssf{1}\quad If $p({\mr x})$ is not Lascar invariant over $A$ then ${\gr c_0}\in{\gr\D_{p,\phi}}\niff {\gr c_1}\in{\gr\D_{p,\phi}}$ for some $A$-indiscernible sequence $c=\<{\gr c_i}:i<\omega\>$ and some $\phi({\mr x}\,;{\gr z})\in L$. Then $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr c_0})\niff \phi({\mr x}\,;{\gr c_1})$. Hence, $c$ is not indiscernible over any realization of $p({\mr x})_{\restriction{\gr c_0},{\gr c_1}}$ 
+  \ssf{3}$\IMP$\ssf{1}\quad If $p({\mr x})$ is not Lascar invariant over $A$ then ${\gr c_0}\in{\gr\D_{p,\phi}}\niff {\gr c_1}\in{\gr\D_{p,\phi}}$ for some $A$-indiscernible sequence $c=\<{\gr c_i}:i<\omega\>$ and some $\phi({\mr x}\,;{\gr z})\in L$. Then $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr c_0})\niff \phi({\mr x}\,;{\gr c_1})$. Hence, ${\gr\bar c}$ is not indiscernible over any realization of $p({\mr x})_{\restriction{\gr c_0},{\gr c_1}}$ 
   
-  \ssf{1}$\IMP$\ssf{3}\quad Assume \ssf{1} and fix an $A$-indiscernible sequence $c=\<{\gr c_i}:i<\omega\>$ and some ${\mr a}\models p_{\restriction c}$. We need to prove that for every formula $\phi({\mr x}\,;z')\in L$, where $z'={\gr z_1},\dots,{\gr z_n}$,
+  \ssf{1}$\IMP$\ssf{3}\quad Assume \ssf{1} and fix an $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ and some ${\mr a}\models p_{\restriction{\gr\bar c}}$. We need to prove that for every formula $\phi({\mr x}\,;z')\in L$, where $z'={\gr z_1},\dots,{\gr z_n}$,
 
   \ceq{\hfill\phi({\mr a}\,;{\gr c_{0}},\dots,{\gr c_{n-1}})}{\iff}{\phi({\mr a}\,;{\gr c_{i_1}},\dots,{\gr c_{i_{n-1}}}).}
 

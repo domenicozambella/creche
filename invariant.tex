@@ -189,7 +189,7 @@ Every type $q({\mr x})\subseteq L(\U)$ finitely satisfiable in $A$ has an extens
 Let $p({\mr x})\subseteq L(\U)$ be maximal among the types containing $q({\mr x})$ and finitely satisfiable in $A$. We prove that $p({\mr x})$ is complete. If for a contradiction that $p({\mr x})$ contains neither $\psi({\mr x})$ nor $\neg\psi({\mr x})$. Then  neither $p({\mr x})\cup\big\{\psi({\mr x})\big\}$ nor $p({\mr x})\cup\big\{\neg\psi({\mr x})\big\}$ is finitely satisfiable in $A$. This contradicts the finite satisfiability of $p({\mr x})$.
 \end{proof}
 
-If a global type $p({\mr x})\in S(\U)$ is finitely satisfiable in $M$, we say that it is a \emph{global coheir\/} of $p_{\restriction M}({\mr x})$.
+A global type $p({\mr x})\in S(\U)$ may be called a \emph{global coheir\/} of $p_{\restriction M}({\mr x})$ if it is finitely satisfiable in $M$.
 % \begin{exercise}.
 % Prove that every invariant type $q({\mr x})\subseteq L(\U)$ can be extended to a global invariant type $p({\mr x})\in S(\U)$.(?)\QED
 % \end{exercise}
@@ -208,41 +208,41 @@ If a global type $p({\mr x})\in S(\U)$ is finitely satisfiable in $M$, we say th
 \section{Morley sequences and indiscernibles}
 
 
-In the following $\alpha$ is some ordinal $\le\kappa$, typically $\omega$, and ${\mr x}$ is a tuple of variables of length $<\kappa$. Let \mbox{$p({\mr x})\in S(\U)$} be a global type invariant over $A$.   We say that $c=\<{\mr c_i}:i<\alpha\>$ is a \emph{Morley sequence\/} of $p(x)$ over $A$ if for every $i<\alpha$
+In the following $\alpha$ is some ordinal $\le\kappa$, typically $\omega$, and ${\mr x}$ is a tuple of variables of length $<\kappa$. Let \mbox{$p({\mr x})\in S(\U)$} be a global type invariant over $A$.   We say that ${\mr\bar c}=\<{\mr c_i}:i<\alpha\>$ is a \emph{Morley sequence\/} of $p({\mr x})$ over $A$ if for every $i<\alpha$
 
-\ceq{\ssf{Ms.}\hfill {\mr c_i}}{\models}{p_{\restriction A,c_{\restriction i}}({\mr x})}
+\ceq{\ssf{Ms.}\hfill {\mr c_i}}{\models}{p_{\restriction A,{\mr c_{\restriction i}}}({\mr x})}
 
-In particular, when $p({\mr x})$ is finitely satisfiable in some model $M$, we say that $c$ is a \emph{coheirs sequence}. We may say that $c$ is a Morley (or coheir) sequence without specifying a global type. Then we mean that $c$ is a Morley (respectively coheir) sequence of some suitable global type.
+In particular, when $p({\mr x})$ is finitely satisfiable in some model $M$, we say that ${\mr\bar c}$ is a \emph{coheirs sequence}. We may say that ${\mr\bar c}$ is a Morley (or coheir) sequence without specifying a global type. Then we mean that ${\mr\bar c}$ is a Morley (respectively coheir) sequence of some suitable global type.
 
 The following is a convenient characterization of coheir sequences.
 
 \begin{lemma}\label{lem_coheir_property}
 The following are equivalent
 \begin{itemize}
-\item[1.] $c=\<{\mr c_n}:n<\alpha\>$ is a coheir sequence over $A$;
-\item[2.] ${\mr c_{n+1}}\equiv_{A,c_{\restriction n}}{\mr c_n}$ and $\phi({\mr\U})\cap A^{|{\mr x}|}\neq\0$ whenever $\phi({\mr x})\in L(A,c_{\restriction n})$ and  $\phi({\mr c_n})$.
+\item[1.] ${\mr\bar c}=\<{\mr c_n}:n<\alpha\>$ is a coheir sequence over $A$;
+\item[2.] ${\mr c_{n+1}}\equiv_{A,{\mr c_{\restriction n}}}{\mr c_n}$ and $\phi({\mr\U})\cap A^{|{\mr x}|}\neq\0$ whenever $\phi({\mr x})\in L(A,{\mr c_{\restriction n}})$ and  $\phi({\mr c_n})$.
 \end{itemize}
 \end{lemma}
 
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}. Assume \ssf{1} and let $p({\mr x})\in S(\U)$ be a global type finitely satisfiable in $A$ and such that ${\mr c_i}\models p_{\restriction A,c_{\restriction i}}({\mr x})$. The requirement ${\mr c_{n+1}}\equiv_{A,c_{\restriction n}} {\mr c_n}$ is clear. Now, suppose $\phi({\mr c_n})$ for some $\phi({\mr x})\in L(A,c_{\restriction n})$. Then $\phi({\mr x})$ belongs to $p({\mr x})$ hence $\phi({\mr\U})\cap A^{|{\mr x}|}\neq\0$ because $p({\mr x})$ is finitely satisfiable in $A$.
+\ssf{1}$\IMP$\ssf{2}. Assume \ssf{1} and let $p({\mr x})\in S(\U)$ be a global type finitely satisfiable in $A$ and such that ${\mr c_i}\models p_{\restriction A,{\mr c_{\restriction i}}}({\mr x})$. The requirement ${\mr c_{n+1}}\equiv_{A,{\mr c_{\restriction n}}} {\mr c_n}$ is clear. Now, suppose $\phi({\mr c_n})$ for some $\phi({\mr x})\in L(A,{\mr c_{\restriction n}})$. Then $\phi({\mr x})$ belongs to $p({\mr x})$ hence $\phi({\mr\U})\cap A^{|{\mr x}|}\neq\0$ because $p({\mr x})$ is finitely satisfiable in $A$.
 
 \ssf{2}$\IMP$\ssf{1}. Assume \ssf{2} and define
 
-\ceq{\hfill q({\mr x})}{=}{\big\{\phi({\mr x}) \ \ :\ \ {\mr c_n}\models\phi({\mr x})\in L(A,c_{\restriction n})\ \textrm{ for some }\ n<\alpha\big\}.}
+\ceq{\hfill q({\mr x})}{=}{\big\{\phi({\mr x}) \ \ :\ \ {\mr c_n}\models\phi({\mr x})\in L(A,{\mr c_{\restriction n}})\ \textrm{ for some }\ n<\alpha\big\}.}
 
-Clearly $c$ is a Morley sequence of any global type finitely satisfiable in $A$ that extends $q({\mr x})$. Hence it suffices to show that such type exists. So, we prove that $q({\mr x})$ is finitely satisfiable in $A$ and apply Proposition~\ref{prop_exisntence_coheirs}. 
+Clearly ${\mr\bar c}$ is a Morley sequence of any global type finitely satisfiable in $A$ that extends $q({\mr x})$. Hence it suffices to show that such type exists. So, we prove that $q({\mr x})$ is finitely satisfiable in $A$ and apply Proposition~\ref{prop_exisntence_coheirs}. 
 
-Note that \ssf{2} requires that every single formula in $q(x)$ is finitely satisfiable in $A$. Then it suffices to show that $q(x)$ is closed under conjunctions. Let $\phi_i({\mr x})\in L(A,c_{\restriction n_i})$, for $i=1,2$, be two formulas in $q({\mr x})$ satisfied by  ${\mr c_{n_i}}$. By the first requirement in \ssf{2}, both formulas are satisfied by ${\mr c_m}$ where $m=\max\{n_1,n_2\}$. Hence their conjuction is in  $q({\mr x})$.
+Note that \ssf{2} requires that every single formula in $q({\mr x})$ is finitely satisfiable in $A$. Then it suffices to show that $q({\mr x})$ is closed under conjunctions. Let $\phi_i({\mr x})\in L(A,{\mr c_{\restriction n_i}})$, for $i=1,2$, be two formulas in $q({\mr x})$ satisfied by  ${\mr c_{n_i}}$. By the first requirement in \ssf{2}, both formulas are satisfied by ${\mr c_m}$ where $m=\max\{n_1,n_2\}$. Hence their conjuction is in  $q({\mr x})$.
 \end{proof}
 
 
-Let $I,<_I$ be a linear order. We call a function $a:I\to\U^{|{\mr x}|}$ an \emph{$I$-sequence}, or simply a \emph{sequence\/} when $I$ is clear. Often we introduce an $I\jj$sequence by writing $a=\<{\mr a_i}: i\in I\>$. 
+Let $I,<_I$ be a linear order. We call a function ${\mr\bar a}:I\to\U^{|{\mr x}|}$ an \emph{$I$-sequence}, or simply a \emph{sequence\/} when $I$ is clear. Often we introduce an $I\jj$sequence by writing ${\mr\bar a}=\<{\mr a_i}: i\in I\>$. 
 
-If $I_0\subseteq I$ we call $a_{\restriction I_0}$ a \emph{subsequence\/} of $a$. Most relevant are the subsets $I_0\subseteq I$ that are well-ordered by $<_I$ and, in particular, the finite ones. When $I_0$ has order-type $\alpha$, an ordinal, we identify $a_{\restriction I_0}$ with a tuple of length $\alpha$.  
+If $I_0\subseteq I$ we call ${\mr a_{\restriction I_0}}$ a \emph{subsequence\/} of ${\mr\bar a}$. Most relevant are the subsets $I_0\subseteq I$ that are well-ordered by $<_I$ and, in particular, the finite ones. When $I_0$ has order-type $\alpha$, an ordinal, we identify ${\mr a_{\restriction I_0}}$ with a tuple of length $\alpha$.  
 
 \begin{definition}
-Let $I,<_I$ be an infinite linear order and let $a$ be an $I\jj$sequence. We say that $a$ is a \emph{sequence of indiscernibles\/} over $A$ or, a sequence of \emph{$A\jj$indiscernibles}, if $a_{\restriction I_0}\equiv_A a_{\restriction I_1}$ for every $I_0,I_1\in[I]^n$ and $n<\omega$. As usual, \emph{$[I]^n$\/} is the set of subsets of $I$ of cardinality $n$.\QED
+Let $I,<_I$ be an infinite linear order and let ${\mr\bar a}$ be an $I\jj$sequence. We say that $a$ is a \emph{sequence of indiscernibles\/} over $A$ or, a sequence of \emph{$A\jj$indiscernibles}, if ${\mr a_{\restriction I_0}}\equiv_A {\mr a_{\restriction I_1}}$ for every $I_0,I_1\in{I\choose n}$ and $n<\omega$. As usual, \emph{${I\choose n}$\/} is the set of subsets of $I$ of cardinality $n$.\QED
 \end{definition}
 
 The condition above can be formulated in a number of clearly equivalent ways. We can require that that $\phi(a_{i_0},\dots,a_{i_n})\iff\phi(a_{j_0},\dots,a_{j_n})$ for every formula $\phi(x_1,\dots,x_n)\in L(A)$ and every pairs of tuples in $I^n$ such that $i_0<\dots<i_n$ and $j_0<\dots<j_n$. Or we can simply say that for every $i_0,\dots,i_n\in I$ the type $\tp(a_{i_0},\dots,a_{i_n}/A)$ only depends on the order type of $i_0,\dots,i_n$.
@@ -251,7 +251,7 @@ The condition above can be formulated in a number of clearly equivalent ways. We
 
 
 \begin{proposition}
-Let $p({\mr x})\in S(\U)$ be a global $A\jj$invariant type and let $c=\<{\mr c_i}:i<\alpha\>$ be a Morley sequence of $p({\mr x})$ over $A$. Then $c$ is a sequence of indiscernibles over $A$.
+Let $p({\mr x})\in S(\U)$ be a global $A\jj$invariant type and let ${\mr\bar c}=\<{\mr c_i}:i<\alpha\>$ be a Morley sequence of $p({\mr x})$ over $A$. Then ${\mr\bar c}$ is a sequence of indiscernibles over $A$.
 \end{proposition}
 
 \begin{proof}
@@ -260,19 +260,19 @@ Let $p({\mr x})\in S(\U)$ be a global $A\jj$invariant type and let $c=\<{\mr c_i
 
 We prove by induction on $n<\omega$ that
 
-\ceq{\sharp\hfill c_{\restriction n}}{\ \equiv_A}{c_{\restriction I_0}}\ \ \ for every $I_0\subseteq\alpha$ of cardinality $n$.
+\ceq{\sharp\hfill {\mr c_{\restriction n}}}{\ \equiv_A}{\mr c_{\restriction I_0}}\ \ \ for every $I_0\subseteq\alpha$ of cardinality $n$.
 
 For $n=0$ the claim is trivial, then we assume $\,\sharp\,$ above is true and prove that
 
-\ceq{\hfill c_{\restriction n},{\mr c_n}}{\equiv_A}{c_{\restriction I_0},{\mr c_i}}\ \ \ for every $I_0<i<\alpha$.
+\ceq{\hfill {\mr c_{\restriction n}},{\mr c_n}}{\equiv_A}{{\mr c_{\restriction I_0}},{\mr c_i}}\ \ \ for every $I_0<i<\alpha$.
 
-As $c$ is  Morley sequence, $c_n\equiv_{A,c_{\restriction n}} {\mr c_i}$ whenever $n<i$. Hence we can equivalently prove that
+As $c$ is  Morley sequence, ${\mr c_n}\equiv_{A,{\mr c_{\restriction n}}} {\mr c_i}$ whenever $n<i$. Hence we can equivalently prove that
 
-\ceq{\hfill c_{\restriction n},{\mr c_i}}{\equiv_A}{c_{\restriction I_0},{\mr c_i},}
+\ceq{\hfill {\mr c_{\restriction n}},{\mr c_i}}{\equiv_A}{{\mr c_{\restriction I_0}},{\mr c_i},}
 
 which is equivalent to
 
-\ceq{\hfill c_{\restriction n}}{\equiv_{A,\,{\mr c_i}}}{c_{\restriction I_0}.}
+\ceq{\hfill {\mr c_{\restriction n}}}{\equiv_{A,\,{\mr c_i}}}{{\mr c_{\restriction I_0}}.}
 
 The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({\mr x})$ as formulated in \ssf{it3} of Section~\ref{invariant}.
 \end{proof}
@@ -340,13 +340,17 @@ Then
 \ceq{\ssf{\#}\hfill X}{\models}{\A {\mr x_0},\dots,{\mr x_{n-1}}\ \left[\bigwedge_{0\le i<j<n} {\mr x_i}\neq {\mr x_j}\quad\imp\quad\bigvee_{i<k}r_i({\mr x_0},\dots,{\mr x_{n-1}})\right].}
 
 
-We may assume that $X$ is an elementary substructure of some large saturated model $\U$. Pick any type $p({\mr x})\in S(\U)$ finitely satisfied in $X$ but not realized in $X$ and let $c=\<{\mr c_i}:i<\omega\>$ be a coheir sequence of $p({\mr x})$. By \ssf{\#} and indiscernibility, all tuples of $n$ distinct elements of $c$ satisfy the same relation, which we assume to be $r_0$. The theorem is proved if we can find in $X$ a sequence $a=\<{\mr a_i}:i<\omega\>$ with the same property. (Note parenthetically that no element of $c$ is in $X$.) We construct $a_{\restriction i}$ by induction on $i$ as follows. 
+We may assume that $X$ is an elementary substructure of some large saturated model $\U$. Pick any type $p({\mr x})\in S(\U)$ finitely satisfied in $X$ but not realized in $X$ and let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be a coheir sequence of $p({\mr x})$. By \ssf{\#} and indiscernibility, all tuples of $n$ distinct elements of ${\mr c}$ satisfy the same relation, which we assume to be $r_0$. The theorem is proved if we can find in $X$ a sequence ${\mr\bar a}=\<{\mr a_i}:i<\omega\>$ with the same property. (Note parenthetically that no element of ${\mr\bar c}$ is in $X$.) We construct ${\mr a_{\restriction i}}$ by induction on $i$ as follows. 
 
-Assume as induction hypothesis that all subsequences of $a_{\restriction i},c_{\restriction n}$ of length $n$  
-satisfy $r_0$. Our goal is to find ${\mr{a_i}}$ such as the same property holds for $a_{\restriction i},{\mr{a_i}},c_{\restriction n}$. By the indiscernibility of $c$, the property holds for  $a_{\restriction i},c_{\restriction n},{\mr{c_n}}$.  And this can be written by a formula $\phi(a_{\restriction i},c_{\restriction n},{\mr{c_n}})$. As $c$ is a coheir sequence, by Lemma~\ref{lem_coheir_property} we can find  ${\mr{a_i}}\in X$ such that  $\phi(a_{\restriction i},c_{\restriction n},{\mr{a_i}})$. So, as the order is irrelevant,  $a_{\restriction i},{\mr{a_i}},c_{\restriction n}$ satisfies the induction hypothesis.
+Assume as induction hypothesis that all subsequences of ${\mr a_{\restriction i}},{\mr c_{\restriction n}}$ of length $n$  
+satisfy $r_0$. Our goal is to find ${\mr a_i}$ such as the same property holds for ${\mr a_{\restriction i}},{\mr a_i},{\mr c_{\restriction n}}$. By the indiscernibility of ${\mr\bar c}$, the property holds for  ${\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr{c_n}}$.  And this can be written by a formula $\phi({\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr{c_n}})$. As ${\mr\bar c}$ is a coheir sequence, by Lemma~\ref{lem_coheir_property} we can find  ${\mr a_i}\in X$ such that  $\phi({\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr a_i})$. So, as the order is irrelevant,  ${\mr a_{\restriction i}},{\mr a_i},{\mr c_{\restriction n}}$ satisfies the induction hypothesis.
 \end{proof}
 
-Let $I,<_I$ be an infinite linear order and let $a$ be an $I\jj$sequence. Fix a sequence of distinct variables $x=\<{\mr x_i}: i<\omega\>$. We write \emph{$p(x)\;=\;\textrm{{\small EM}-tp}(a/A)$} and say that $p(x)$ is the \emph{Ehren\-feucht-Mostowski type\/} of $a$ over $A$ if $p(x)$ is the set of formulas $\phi(x_{\restriction n})\in L(A)$ such that $\phi(a_{\restriction I_0})$ holds for every $I_0\in{I\choose n}$. Note that if $a$ is $A\jj$indiscernible then $\EMtp(a/A)$ is a complete type, and vice versa. So, if $a$ and $b$ are two $A\jj$indiscernible $I\jj$sequences with the same Ehren\-feucht-Mostowski type of $a$ over $A$, then $a\equiv_A b$.
+Let $I,<_I$ be an infinite linear order and let ${\mr\bar a}$ be an $I\jj$sequence. Fix a sequence of distinct variables ${\mr\bar x}=\<{\mr x_i}: i<\omega\>$. We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$} and say that $p({\mr\bar x})$ is the \emph{Ehren\-feucht-Mostowski type\/} of ${\mr\bar a}$ over $A$ if $p({\mr\bar x})$ is the set of formulas $\phi({\mr x_{\restriction n}})\in L(A)$ such that $\phi({\mr a_{\restriction I_0}})$ holds for every $I_0\in{I\choose n}$. 
+
+Note that ${\mr\bar x}$ is always of order-type $\omega$, while ${\mr\bar a}$ is an arbitrary infinite sequence. Clearly, ${\mr x_i}$ and  ${\mr a_i}$ are tuple of the same sort.
+
+Note also that if ${\mr\bar a}$ is $A\jj$indiscernible then $\EMtp({\mr\bar a}/A)$ is a complete type, and vice versa. So, if ${\mr\bar a}$ and ${\mr\bar c}$ are two $A\jj$indiscernible $I\jj$sequences with the same Ehren\-feucht-Mostowski type over $A$, then ${\mr\bar a}\equiv_A {\mr\bar c}$.
  
 % \begin{theorem}\label{thm_EM}
 %   Let $I,<_I$ be infinite linear order, then for every sequence $a=\<{\mr a_i}:i\in I\>$ there is sequence of $A\jj$in\-dis\-cern\-i\-bles $c=\<{\mr c_i}: i<\omega\>$ such that $c\equivEM_Aa$.
@@ -382,49 +386,40 @@ Let $I,<_I$ be an infinite linear order and let $a$ be an $I\jj$sequence. Fix a 
 
 
 \begin{theorem}[(Ehrenfeucht-Mostowski)]\label{thm_EM}
-  Let $I,<_I$ and $J,<_J$ be two infinite linear orders such that $|J|\le \kappa$. Then for every sequence $a=\<{\mr a_i}:i\in I\>$ there is an $J\jj$sequence of $A$-indiscernibles $c$ such that $\EMtp(a/A)\subseteq\EMtp(c/A)$.
+  Let $I,<_I$ and $J,<_J$ be two infinite linear orders such that $|J|\le \kappa$. Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is an $J\jj$sequence of $A$-indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/A)\subseteq\EMtp({\mr\bar c}/A)$.
 \end{theorem}
 
 
 \begin{proof}
-  We prove the theorem for $I=J=\omega$ and leave the general case to the reader. 
+  We prove the theorem for $I=J=\omega$ and leave the general case to the reader.
+  Let ${\mr\bar c}$ be any realization of the following type yields a $J$-sequence of $A$-indiscernibles.
+
+  \ceq{\hfill q({\mr\bar x})}{\cup}{\Big\{\phi({\mr x_{\restriction I_0}})\iff\phi({\mr x_{\restriction J_0}})\ :\  \phi({\mr x_{\restriction n}})\in L(A), \ I_0, J_0\in{\omega\choose n}, \ n<\omega\Big\}.}
+
+  We will prove that any finite subset of the type above is realized by a finite subsequence of ${\mr\bar a}$. First note that any finite subset of $q({\mr\bar x})$ is realized by any subsequence of ${\mr\bar a}$ of the proper length by the definition of EM-type.
   
-  Let $c$ be any realization of the following type yields a $J$-sequence of $A$-indiscernibles.
+  Then we only need to pay attention to the set on the right. We prove that for $m$ and $n$ arbitrary large and every $\phi_0,\dots,\phi_{m-1}\in L_{\mr x_{\restriction n}}(A)$ there is an infinite $H\subseteq I$ such that ${\mr a_{\restriction H}}$ realizes
 
-  \ceq{\hfill q(x)}{\cup}{\Big\{\phi(x_{\restriction I_0})\iff\phi(x_{\restriction J_0})\ :\  \phi(x_{\restriction n})\in L(A),  I_0\in{I\choose n},  J_0\in{J\choose n}, n<\omega\Big\}.}
+  \ceq{\ssf{\#}}{~}{\Big\{\phi_i({\mr x_{\restriction J_0}})\iff\phi_i({\mr x_{\restriction I_0}})\ :\  I_0, J_0\in{\omega\choose n}\textrm{ and } i<m\Big\}.}
 
-  We will prove that any finite subset of the type above is realized by a finite subsequence of $a$. First note that any finite subset of $q(x)$ is realized by any subsequence of $a$ of the proper length by the definition of EM-type.
-  
-  Then we only need to pay attention to the set on the right. We prove that for every $\phi_0,\dots,\phi_{m-1}\in L_x(A)$ and every $n<\omega$ there is an infinite $H\subseteq I$ such that $a_{\restriction H}$
-
-  \ceq{\ssf{\#}}{~}{\Big\{\phi_i(x_{\restriction J_0})\iff\phi_i(x_{\restriction I_0})\ :\  I_0\in{I\choose n}\textrm{ and } n<m\Big\}.}
-
-  Let $f:{I\choose n}\to\P(m)$ map $I_0$ to the set $\big\{n<m\ :\ \phi_i(a_{\restriction I_0})\big\}$. By Ramsey theorem with $2^m$ colors there is some infinite monochromatic set $H\subseteq I$. As $I$ has order type $\omega$, so does $H$, and it is immediate that $a_{\restriction H}$ realizes \ssf{\#}, as required to prove the theorem with $I$ and $J$ of order type $\omega$.
-
-  Now we note that the argument above easily generalizes to arbitrary linear order $I$. Only, in this case we cannot guarantee that $H$ has order type $\omega$. However, as $H$ is infinite, for every $k<\omega$ there is a any subset of $H$ of size $k$ that realizes the restriction of \ssf{\#} to $n<k$ and $I_0<k$. This suffices to prove the theorem with $I$ arbitrary and $J$ of order type $\omega$.
-  
-  Now we extend the result to arbitrary $J$ of cardinality $\le\kappa$. From the argument above, there is a sequence of indiscerbibles $\<b_i:i<\omega\>$ such that $\EMtp(a/A)\subseteq\EMtp(b/A)$. Fix a $J\jj$sequence of variables $z=\<{\mr z_i}:i\in J\>$ and define
-
-  \ceq{\hfill p(z)}{=}{\Big\{\phi(z_{\restriction J_0})\in L(A)\ :\ \phi(b_{\restriction n})\ \textrm{ for some }J_0\subseteq{J\choose n},\ n<\omega\Big\}.}
-  
-  This type is clearly finitely consistent. Every $c$ that realizes $q(z)$ is a $J\jj$sequence as required by the theorem. 
-  \end{proof}
+  Let $f:{\omega\choose n}\to\P(m)$ map $I_0\in{\omega\choose n}$ to the set $\big\{i<m\ :\ \phi_i({\mr a_{\restriction I_0}})\big\}$. By the Ramsey theorem with $2^m$ colors, there is some infinite monochromatic set $H\subseteq I$. As $I$ has order type $\omega$, so does $H$, and it is immediate that ${\mr a_{\restriction H}}$ realizes \ssf{\#}, as required to prove the theorem with $I=J=\omega$.
+\end{proof}
 
 
 \begin{proposition}\label{prop_indiscernibles_set_model}
-  Let $c=\<{\mr c_i}:i\in I\>$ be a sequence of $A$-indiscernibles. Then $c$ is indiscernible over some model $M$ containing $A$.
+  Let ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ be a sequence of $A$-indiscernibles. Then ${\mr\bar a}$ is indiscernible over some model $M$ containing $A$.
 \end{proposition}
 
 \begin{proof}
-  Fix an arbitrary model $M$ containing $A$. By Theorem~\ref{thm_EM} there is an $I\jj$sequence of $M\jj$indiscernibles $b$ such that $\EMtp(c/M)\subseteq\EMtp(b/M)$. As $c$ is an $A\jj$indiscernible sequence $a\equiv_Ab$, so some $h\in\Aut(\U/A)$ takes $b$ to $c$ coordinatewise. Therefore $hb=c$ is indiscernible over $h[M]$.
+  Fix an arbitrary model $M$ containing $A$. By Theorem~\ref{thm_EM} there is an $I\jj$sequence of $M\jj$indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/M)\subseteq\EMtp({\mr\bar c}/M)$. As ${\mr\bar a}$ is an $A\jj$indiscernible sequence ${\mr\bar a}\equiv_A{\mr\bar c}$. Therefore $h\,{\mr\bar c}={\mr\bar a}$ for some some $h\in\Aut(\U/A)$. Hence ${\mr\bar a}$ is indiscernible over $h[M]$.
 \end{proof}
 
 \begin{exercise}
-Let $a=\<{\mr a_i}:i\in I\>$ be an $A\jj$indiscernible sequence and let $I\subseteq J$ with $|J|\le \kappa$. Then there is an $A\jj$indiscernible sequence $c=\<{\mr c_i}:i\in J\>$ such that $c_{\restriction I}=a$.\QED
+Let ${\bar a}=\<{ a_i}:i\in I\>$ be an $A\jj$indiscernible sequence and let $I\subseteq J$ with $|J|\le \kappa$. Then there is an $A\jj$indiscernible sequence ${\bar c}=\<{ c_i}:i\in J\>$ such that ${ c_{\restriction I}}={\bar a}$.\QED
 \end{exercise}
 
 \begin{exercise}
-Let  $p({\mr x})\in S(\U)$ be a global type invariant over $A$. Let ${\mr a}$ and ${\mr b}$ two realizations of $p_{\restriction A}({\mr x})$. Prove that there is a sequence $c=\<{\mr c_i}:i<\omega\>$ such that ${\mr a},c$ and ${\mr b},c$ are both sequences of $A\jj$indiscernibles.\QED
+Let  $p({ x})\in S(\U)$ be a global type invariant over $A$. Let ${ a}$ and ${ b}$ two realizations of $p_{\restriction A}({ x})$. Prove that there is a sequence $c=\<{ c_i}:i<\omega\>$ such that ${ a},c$ and ${ b},c$ are both sequences of $A\jj$indiscernibles.\QED
 \end{exercise}
 % 
 % \section{Crap (if this is publicly available, it's just by errror)}
@@ -497,11 +492,11 @@ Sia $p\in S_x(\U)$ un tipo globale $A\jj$invariante e supponiamo che $a$ e $b$ s
 \end{proposition}
 \begin{proof}
 %Possiamo assumere che $a=\<a_i:i<\omega\>$ e $\bar c=\<c_i:i<\omega\>$ abbiano lunghezza $\omega$. 
-Per indiscernibilit\`a, \`e sufficiente mostrare che $a_{\restriction i}\equiv_Ac_{\restriction i}$ per ogni $i<\omega$. Ragioniamo per induzione, assumiamo l'equivalenza come ipotesi induttiva, fissiamo una formula $\phi(\bar x_{\restriction i},{\mr x})\in L(A)$ e dimostriamo che 
+Per indiscernibilit\`a, \`e sufficiente mostrare che $a_{\restriction i}\equiv_A{\mr c_{\restriction i}}$ per ogni $i<\omega$. Ragioniamo per induzione, assumiamo l'equivalenza come ipotesi induttiva, fissiamo una formula $\phi(\bar x_{\restriction i},{\mr x})\in L(A)$ e dimostriamo che 
 
-\ceq{\hfill \phi(a_{\restriction i},{\mr a_i})}{\iff}{\phi(c_{\restriction i},{\mr c_i})} 
+\ceq{\hfill \phi(a_{\restriction i},{\mr a_i})}{\iff}{\phi({\mr c_{\restriction i}},{\mr c_i})} 
 
-Se $\phi(a_{\restriction i},{\mr a_i})$ allora $\phi(a_{\restriction i},{\mr x})\in p$. Per l'ipotesi induttiva e per l'invarianza di $p$ otteniamo che anche  $\phi(c_{\restriction i},{\mr x})\in p$ e di qui $\phi(c_{\restriction i},{\mr c_i})$. L'equivalenza segue per simmetria.
+Se $\phi(a_{\restriction i},{\mr a_i})$ allora $\phi(a_{\restriction i},{\mr x})\in p$. Per l'ipotesi induttiva e per l'invarianza di $p$ otteniamo che anche  $\phi({\mr c_{\restriction i}},{\mr x})\in p$ e di qui $\phi({\mr c_{\restriction i}},{\mr c_i})$. L'equivalenza segue per simmetria.
 \end{proof}
 
 Per poter semplificare la definizione~\ref{def_prodotto_tipi} abbiamo bisogno del seguente lemma tecnico:

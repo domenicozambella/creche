@@ -68,7 +68,11 @@ The \emph{language of strict orders\/}\index{language!strict orders} contains on
 \section{Tuples}
 A \emph{tuple of elements of $A$\/}\index{tuple} is a function $a:\alpha\to A$ from an ordinal $\alpha$ to a set $A$.  We call $\alpha$ the \emph{length} of $a$ and denote it by \emph{$|a|$}\index{length!of a tuple}\index{0a@$|a|$}. If $a$ is surjective, we call $a$ an \emph{enumeration\/}\index{enumeration} of $A$. Occasionally, we may say \emph{sequence\/} for tuple --~a word that also applies when the domain is not necessarily an ordinal.
 
-We write \emph{$a_i$} for the $i$-th element of $a$, that is, the element $a(i)$, where $i<\alpha$. We may present a tuple with the notation \emph{$a=\<a_i: i<\alpha\>$}\index{0a0al@$\<a_i: i<\alpha\>$}; when $\alpha$ is finite, we may also write \emph{$a=a_0,\dots,a_{\alpha-1}$}. 
+We write \emph{$a_i$} for the $i$-th element of $a$, that is, the element $a(i)$, where $i<\alpha$. We may present a tuple with the notation \emph{$a=\<a_i: i<\alpha\>$}\index{0a0al@$\<a_i: i<\alpha\>$}; when $\alpha$ is finite, we may also write \emph{$a=a_0,\dots,a_{\alpha-1}$}. We write \emph{$a_{\restriction n}$} for the restriction of $a$ to $n$. 
+
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}In general, for any $I\subseteq\alpha$, we write \emph{$a_{\restriction I}$} for the tuple $\<a_{i_k}: k<n\>$ where $i_0,\dots,i_{n-1}$ are the elements if $I$ in increasing order.
+
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}As a clue to the reader, we may overline the symbols that denote a tuple. Not to overload the notation the elements of the tuple \emph{$\bar a$\/} are sill denoted by $a_i$ (without the bar). Similarly for $a_{\restriction n}$ and $a_{\restriction I}$.
 
 The set of tuples of elements of length $\alpha$ is denoted by \emph{$A^\alpha$}. The set of tuples of length $<\alpha$ is denoted by \emph{$A^{<\alpha}$}. For instance, \emph{$A^{<\omega}$\/} is the set of all finite tuples of elements of $A$. When $\alpha$ is finite we confuse $A^\alpha$ with $\alpha$-th Cartesian power of $A$. In particular $A^1$ is confused with $A$.
 
@@ -104,7 +108,6 @@ Note that any constant $f$, intended as a tuple of length $1$, is a term (by \ss
 The intended meaning of, for instance, the term ${+}\,{+}\,x\,y\,z$ is $(x\,{+}\,y)\,{+}\,z$. The first expression uses an \emph{prefix notation\/}\index{prefix notation} the second the \emph{infix notation}\index{infix notation}. When convenient we (informally) use the infix notation and add parenthesis to improve legibility and avoid ambiguity.
 
 The following lemma shows that the prefix notation allows to write unambiguous terms without the use of parenthesis.
-
 
 \begin{lemma}[ (unique legibility of terms)]\label{lemmaterminileggibilita}
 Let $a$ be a sequence of terms. Suppose $a$ can be obtained both by the concatenation of the terms $t_1,\dots,t_n$ or by the concatenation of the terms $s_1,\dots,s_m$. Then $n=m$ and $s_i=t_i$.
