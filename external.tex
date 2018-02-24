@@ -403,7 +403,7 @@ This proves $\neg$\ssf{2}.
 In the next section we need the following corollary.
 
 \begin{corollary}\label{corol_altrank}
-If $\mrA\subseteq\U^{|{\mr x}|}$ is a set approximable by a formula with finite VC-dimension, then $\<{\mr a_i}\in\mrA:i<\omega\>$ converges for any indiscernible sequence $\<{\mr a_i}:i<\omega\>$.\QED
+If $\mrC\subseteq\U^{|{\mr x}|}$ is a set approximable by a formula with finite VC-dimension, then $\<{\mr a_i}\in\mrC:i<\omega\>$ converges for any indiscernible sequence $\<{\mr a_i}:i<\omega\>$.\QED
 \end{corollary}
 
 
@@ -419,33 +419,33 @@ In this section we present a beautiful theorem of Chernikov and Simon~\cite{CS} 
 We write \emph{$\neg^n$\/} for $\neg\!\stackrel{n\ \rm times}{\dots\dots\dots}\!\neg$. We abbreviate $\neg^n(\cdot\in\cdot)$ as \emph{$\notin^n$}.
 
 \begin{lemma}\label{lem_honest}
-Let $\mrA$ be a set approximable by a formula with finite VC-dimension and let $A$ be any (small) set of parameters. Then every global $A$-invariant type $p({\mr x})$ contains a formula $\psi({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrA$ or $\psi({\mr x})\imp {\mr x}\notin\mrA$. Moreover, for every sufficiently saturated model $M$ containing $A$, we can require that $\psi({\mr x})\in L(M)$
+Let $\mrC$ be a set approximable by a formula with finite VC-dimension and let $A$ be any (small) set of parameters. Then every global $A$-invariant type $p({\mr x})$ contains a formula $\psi({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrC$ or $\psi({\mr x})\imp {\mr x}\notin\mrC$. Moreover, for every sufficiently saturated model $M$ containing $A$, we can require that $\psi({\mr x})\in L(M)$
 \end{lemma}
 
 \begin{proof}
-The property we want to prove is elementary in $L(\mrA)$ therefore, by Remark~\ref{rem_el_sat} we can assume that $\mrA$ is saturated. By Corollary~\ref{corol_altrank}, there is no infinite sequence $\<{\mr a_i}:i<\omega\>$
+The property we want to prove is elementary in $L(\mrC)$ therefore, by Remark~\ref{rem_el_sat} we can assume that $\mrC$ is saturated. By Corollary~\ref{corol_altrank}, there is no infinite sequence $\<{\mr a_i}:i<\omega\>$
 
-\ceq{\hfill {\mr a_i}}{\models}{p_{A,a\restriction i}({\mr x})\ \cup\ \{{\mr x}\notin^i\mrA\}}
+\ceq{\hfill {\mr a_i}}{\models}{p_{A,a\restriction i}({\mr x})\ \cup\ \{{\mr x}\notin^i\mrC\}}
 
 Let $n$ be the largest integer such that $\<{\mr a_i}:i<n\>$ satisfies the condition above. Then
 
-\ceq{\hfill p_{A,a\restriction n}({\mr x})}{\imp}{{\mr x}\notin^n\mrA}
+\ceq{\hfill p_{A,a\restriction n}({\mr x})}{\imp}{{\mr x}\notin^n\mrC}
 
 and the first claim of the lemma follows by compactness. 
 
-Now let $M$ be a model that contains $A$ and such that $\<M,\mrA\>\preceq\<\U,\mrA\>$. Assume also that $\<M,\mrA\>$ is saturated, we can further require that all ${\mr a_i}\in M^{|{\mr x}|}$. Hence $\psi({\mr x})\in L(M)$.
+Now let $M$ be a model that contains $A$ and such that $\<M,\mrC\>\preceq\<\U,\mrC\>$. Assume also that $\<M,\mrC\>$ is saturated, we can further require that all ${\mr a_i}\in M^{|{\mr x}|}$. Hence $\psi({\mr x})\in L(M)$.
 \end{proof}
 
 \begin{theorem}\label{thm_honest}
-Let $\mrA$ be a set approximable by a formula with finite VC-dimension. Then $\mrA$ is approximable from above and from below.
+Let $\mrC$ be a set approximable by a formula with finite VC-dimension. Then $\mrC$ is approximable from above and from below.
 \end{theorem}
 
 \begin{proof}
-Let ${\mr A}\subseteq\mrA$ be any non empty (small) set. As above, by  Remark~\ref{rem_el_sat} we can assume that $\mrA$ is saturated. Let $M$ be a saturated elementary substructure of $\U$, in the language $L(\mrA)$. Define
+Let ${\mr A}\subseteq\mrC$ be any non empty (small) set. As above, by  Remark~\ref{rem_el_sat} we can assume that $\mrC$ is saturated. Let $M$ be a saturated elementary substructure of $\U$, in the language $L(\mrC)$. Define
 
 \ceq{\hfill q({\mr x})}{=}{\big\{\phi({\mr x})\in L(M)\ :\ {\mr A}\subseteq\phi({\mr\U})\big\}.}
 
-By compactness, it suffices to prove that $q({\mr x})\imp {\mr x}\in{\mr A}$. Suppose not and fix some ${\mr a}\models q({\mr x})\wedge {\mr x}\notin{\mr A}$. As $\tp({\mr a}/M)$ is finitely satisfied in ${\mr A}$, there is a global type $p({\mr x})\supseteq \tp({\mr a}/M)$ that is finitely satisfied in ${\mr A}$. By Lemma~\ref{lem_honest} there is a formula $\psi({\mr x})\in p({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrA$ or $\psi({\mr x})\imp {\mr x}\notin\mrA$. But the first cannot hold because ${\mr a}\models \psi({\mr x})\wedge {\mr x}\notin{\mr A}$ while the second contradicts ${\mr A}\subseteq\psi({\mr\U})$ and ${\mr A}\subseteq\mrA$.
+By compactness, it suffices to prove that $q({\mr x})\imp {\mr x}\in\mrC$. Suppose not and fix some ${\mr a}\models q({\mr x})\wedge {\mr x}\notin\mrC$. Let $p({\mr x})=\tp({\mr a}/M)$. As $p({\mr x})$ is finitely satisfied in ${\mr A}$ and $M$ is saturated, from Lemma~\ref{lem_honest} yields a formula $\psi({\mr x})\in p({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrC$ or $\psi({\mr x})\imp {\mr x}\notin\mrC$. But the first contradicts ${\mr a}\models\psi({\mr x})$ and the second cannot hold because $\psi({\mr x})$ is satisfied in ${\mr A}\subseteq\mrC$. 
 \end{proof}
 
 When all formulas have finite VC-dimension, we say that the theory $T$ has the \emph{non-independence property\/} or, for short, that $T$ \emph{is nip}.
