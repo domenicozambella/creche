@@ -350,9 +350,11 @@ Hence it sufficies to prove that \ssf{1a}$\IMP$\ssf{1b} and \ssf{2a}$\IMP$\ssf{2
 
 \def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
-We say that the formula $\phi({\mr x}\,;{\gr z})\in L$ has \emph{Vapknik-Chevronenkis dimension $n$\/} if this is the largest finite cardinatity of a set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that $|S_\phi({\mr A})|=2^n$. If such $n$ exists, we say that we say that  $\phi({\mr x}\,;{\gr z})$ has finite VC-dimension. 
+We say that the formula $\phi({\mr x}\,;{\gr z})\in L$ has \emph{Vapknik-Chevronenkis dimension $n$\/} if this is the largest finite cardinatity of a set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that $|S_\phi({\mr A})|=2^n$. If such $n$ does not exist, we say that we say that  $\phi({\mr x}\,;{\gr z})$ has \emph{infinite VC-dimension}. 
 
 Note that the condition $|S_\phi({\mr A})|=2^n$ is equivalent to saying that every subset of ${\mr A}$ is the trace of some definable set of sort $\phi({\mr x}\,;{\gr z})$.
+
+For instance, the formula ${\gr z_1}<{\mr x}<{\gr z_2}$ in $T_{\rm dlo}$ has VC-dimension $1$.
 
 Arguing by compactness we obtain the following proposition whose proof is left as an exercise for the reader.
 
@@ -516,13 +518,13 @@ Note that, by Proposition~\ref{prop_type_over_acl2} both sets belong to  $\acl^\
 \begin{corollary}
 If $T$ is stable then the following are equivalent
 \begin{itemize}
-\item[1.] $a\equivL_A b$, see Definition~\ref{def_Lascar_type};
-\item[2.] $a\equivSh_A b$, see Definition~\ref{def_Sh_strong_type}.
+\item[1.] ${\mr a}\equivL_A{\mr b}$, see Definition~\ref{def_Lascar_type};
+\item[2.] ${\mr a}\equivSh_A{\mr b}$, see Definition~\ref{def_Sh_strong_type}.
 \end{itemize}
 \end{corollary}
 \begin{proof}\ssf{1}$\IMP$\ssf{2}. This is left as an exercise to the reader (stability is not required).
 
-\ssf{2}$\IMP$\ssf{1}. Assume $a\equivSh_A b$. By Proposition~\ref{prop_Shelah_strong_types} this is equivalent to $a\equiv_{\acl^\eq\!A} b$. Let $q(x)=\tp(a/{\acl}^\eq\!A)=\tp(b/{\acl}^\eq\!A)$. Let $p(x)\in S(\U^\eq)$ be the unique global type that is invariant over $\acl^\eq\! A$ and extends $q(x)$ which we obtain from by Proposition~\ref{prop_type_over_acl_stationary}. Let $c=\<c_i:i<\omega\>$ be such that $c_i\models p{\restriction \acl^\eq(A),\,a,\,b,\,c_{\restriction i}}$. Then $a,c$ and $b,c$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lstp_indiscernibles}.
+\ssf{2}$\IMP$\ssf{1}. Assume ${\mr a}\equivSh_A{\mr b}$. By Proposition~\ref{prop_Shelah_strong_types} this is equivalent to ${\mr a}\equiv_{\acl^\eq\!A}{\mr b}$. Let $q({\mr x})=\tp({\mr a}/{\acl}^\eq\!A)=\tp({\mr b}/{\acl}^\eq\!A)$. Let $p({\mr x})\in S(\U^\eq)$ be the unique global type that is invariant over $\acl^\eq\! A$ and extends $q({\mr x})$ which we obtain from by Proposition~\ref{prop_type_over_acl_stationary}. Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be such that ${\mr c_i}\models p{\restriction \acl^\eq(A),\,{\mr a},\,{\mr b},\,{\mr c_{\restriction i}}}$. Then ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lstp_indiscernibles}.
 \end{proof}
 
 We end this section with a characterization of stability which is not directly related with the properties discussed above. 

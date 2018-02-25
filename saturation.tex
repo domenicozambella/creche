@@ -22,7 +22,7 @@ Recall that a type $p({\mr x})\subseteq L(M)$ is \emph{finitely consistent in $M
 The following remark will be used in the sequel without explicit reference.
 
 \begin{remark}
-Let $k:M\imp N$ be an elementary map and let ${\gr a}$ be an enumeration of $\dom k$. If $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$, then $p({\mr x}\,;k{\gr a})$ is finitely consistent in $N$. (We can drop \textit{finitely} in the antecedent but not in the consequent.)\QED
+Let $k:M\imp N$ be an elementary map and let ${\gr a}$ be an enumeration of $\dom k$. If $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$, then $p({\mr x}\,;k\,{\gr a})$ is finitely consistent in $N$. (We can drop \textit{finitely} in the antecedent but not in the consequent.)\QED
 \end{remark}
 
 \begin{definition}
@@ -67,9 +67,9 @@ Assume $|L|\le\lambda$ and let $N$ be an infinite structure. Let $\M$ be the cat
 Note that it is the completeness of $T$ which makes the category $\M$ connected.
 
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}. Let $k:M\imp N$ be an elementary map of cardinality $<\lambda$. It suffices to show that for every ${\mr b}\in M$ there is a ${\mr c}\in N$ such that $k\cup\big\{\<{\mr b},{\mr c}\>\big\}:M\to N$ is an elementary map. Let ${\gr a}$ be an enumeration of $\dom k$ and define $p({\mr x}\,;{\gr z})=\tp_M({\mr b}\,;{\gr a})$. The required ${\mr c}$ is any element of $N$ such that $N\models p({\mr c}\,;k{\gr a})$. As $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$ then $p({\mr x}\,;k{\gr a})$ is finitely consistent in $N$. As $|{\gr a}|<\lambda$, saturation yields the required ${\mr c}$.
+\ssf{1}$\IMP$\ssf{2}. Let $k:M\imp N$ be an elementary map of cardinality $<\lambda$. It suffices to show that for every ${\mr b}\in M$ there is a ${\mr c}\in N$ such that $k\cup\big\{\<{\mr b},{\mr c}\>\big\}:M\to N$ is an elementary map. Let ${\gr a}$ be an enumeration of $\dom k$ and define $p({\mr x}\,;{\gr z})=\tp_M({\mr b}\,;{\gr a})$. The required ${\mr c}$ is any element of $N$ such that $N\models p({\mr c}\,;k\,{\gr a})$. As $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$ then $p({\mr x}\,;k\,{\gr a})$ is finitely consistent in $N$. As $|{\gr a}|<\lambda$, saturation yields the required ${\mr c}$.
 
-\ssf{2}$\IMP$\ssf{3}. Let $p({\gr z})$ be as in \ssf{3}. By the compactness theorem $N\preceq K\models p({\gr a})$ for some model $K$ and ${\gr a}\in K^{|{\gr z}|}$. By the downward  L\"owenheim-Skolem theorem there is a model $A,{\gr a}\subseteq M\preceq K$ of cardinality $\le\lambda$. (Here we use $|L|,|A|,|{\gr z}|\le\lambda$.) By \ssf{2}, there is an elementary embedding $h:M\hookrightarrow N$ that extends $\id_A$. Finally, as $M\models p({\gr a})$,  elementarity yields $N\models p(h{\gr a})$.
+\ssf{2}$\IMP$\ssf{3}. Let $p({\gr z})$ be as in \ssf{3}. By the compactness theorem $N\preceq K\models p({\gr a})$ for some model $K$ and ${\gr a}\in K^{|{\gr z}|}$. By the downward  L\"owenheim-Skolem theorem there is a model $A,{\gr a}\subseteq M\preceq K$ of cardinality $\le\lambda$. (Here we use $|L|,|A|,|{\gr z}|\le\lambda$.) By \ssf{2}, there is an elementary embedding $h:M\hookrightarrow N$ that extends $\id_A$. Finally, as $M\models p({\gr a})$,  elementarity yields $N\models p(h\,{\gr a})$.
 
 \ssf{3}$\IMP$\ssf{1}.  Trivial. 
 \end{proof}
@@ -106,7 +106,7 @@ Assume $|L|\le\lambda$. Consider the category that consists of models of some th
 \end{itemize}
 \end{theorem}
 
-\begin{proof}\ssf{2}$\IMP$\ssf{1}. Let $N\models T_1$ be $\lambda\jj$saturated. Fix a morphism $k:M\to N$ of cardinality $<\lambda$, some ${\mr b}\in M$ and let $p({\mr x}\,;{\gr z})=\qftp_M({\mr b}\,;{\gr a})$, where ${\gr a}$ enumerates $\dom k$. The type $p({\mr x}\,;k{\gr a})$ is realized in any $\lambda\jj$rich model $N'$ that contains $\<k{\gr a}\>_N$. By \ssf{2}, $N\equiv_{k{\gr a}} N'$, so $p({\mr x}\,;k{\gr a})$ is finitely consistent in $N$.  By saturation, it is realised by some ${\mr c}\in N$. Then $k\cup \{\<{\mr b},{\mr c}\>\}:M\to N$ is the required extension.
+\begin{proof}\ssf{2}$\IMP$\ssf{1}. Let $N\models T_1$ be $\lambda\jj$saturated. Fix a morphism $k:M\to N$ of cardinality $<\lambda$, some ${\mr b}\in M$ and let $p({\mr x}\,;{\gr z})=\qftp_M({\mr b}\,;{\gr a})$, where ${\gr a}$ enumerates $\dom k$. The type $p({\mr x}\,;k\,{\gr a})$ is realized in any $\lambda\jj$rich model $N'$ that contains $\<k\,{\gr a}\>_N$. By \ssf{2}, $N\equiv_{k{\gr a}} N'$, so $p({\mr x}\,;k\,{\gr a})$ is finitely consistent in $N$.  By saturation, it is realised by some ${\mr c}\in N$. Then $k\cup \{\<{\mr b},{\mr c}\>\}:M\to N$ is the required extension.
 
 
 \ssf{1}$\IMP$\ssf{2}. Let $k:M\to N$ be a finite partial isomorphism between models of $T$. We claim that it is an elementary map. Let $M'\succeq M$ and $N'\succeq N$ are saturated models of equal cardinality. As these are rich, $k:M'\to N'$ extends to an isomorphism $h:M'\hookdoubleheadrightarrow N'$ and the claim follows.
