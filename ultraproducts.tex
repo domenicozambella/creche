@@ -246,4 +246,29 @@ Every infinite structure has a proper elementary extension.
 Let $M$ be an infinite structure and let $F$ be an \textit{non principal\/} ultrafilter on $\omega$. By the above remark, it suffices to show that $h[M]$ is a \textit{proper\/} substructure of $M^\omega/F$.  As $M$ is infinite, there is an injective function  $\hat d\in M^\omega$. Then for every $a\in M$ the set $\big\{i:\hat di=a\big\}$ is either empty or a singleton and, as $F$ is non principal, it does not belong to $F$. So, by \L o\v{s} Theorem $M^\omega/F\ \pmodels\ \hat d\neq a^I$ for every $a\in M$, that is, $[\hat d]_F\notin h[M]$.
 \end{proof}
 
+
+\begin{exercise}
+Consider $\NN$ as a structure in the language of strict orders.  Let $F$ be a non principal ultrafilter on $\omega$. Prove that in $\NN^\omega/F$ there is a sequence $\<\hat a_i: i\in\omega\>$ such that $\hat a_{i+1}<\hat a_i$.\QED 
+\end{exercise}
+
+
+
+\begin{exercise}
+Let $I$ be the set of integers $i>1$. For $i\in I$, we write $\ZZ_i$, for the group of addition modulo $i$.  Let $N$ stand for the product \smash{$\displaystyle\prod_{i\in I}\ZZ_i$}. Prove the following, for $F$ ranging over the non principal ultrafilters on $I$
+%\ceq{\hfill N$}%
+% \parbox{6ex}{\hfil$=$}%
+% $\displaystyle\prod_{i\in I}\ZZ_i$
+
+\begin{itemize}
+\item[1.] for some $F$, $N/F$ does not contain any element of finite order;
+\item[2.] for some $F$, $N/F$ has some elements of order $2$;
+\item[3.] for all $F$, $N/F$ contains an element of infinite order;
+\item[4.] for some $F$, $N/F\models \A x\E y\ my=x$ for every integer $m>0$;
+\item[5.] for some $F$, $N/F$ contains an element $\hat a$ such that $N/F\models \A x\ mx\neq\hat a$ for every positive integer $m$.\QED
+\end{itemize}
+\begin{comment}
+\textbf{Soluzione.} Dimostriamo \ssf{1} osservando che $\ZZ_i\models\neg\E x\,[x\neq 0 \wedge mx=0]$  per ogni intero $m$ ed ogni primo $i\nmid m$. Quindi, se $F$ \`e un un ultrafiltro non principale che contiene l'insieme dei numeri primi, $N/F\models\neg\E x\,[x\neq 0 \wedge mx=0]$ per ogni $m$. Per dimostrare \ssf{2} osserviamo che $\ZZ_{2i}\models\E x\,[x\neq 0 \wedge 2x=0]$ per ogni $i$. Quindi se $F$ contiene l'insieme dei numeri pari, $N/F$ contiene un elemento di ordine 2. Per dimostrare \ssf{3} sia $\hat a\in N$ la sequenza che ha valore costante $1$. Chiaramente $\ZZ_i\models m\neq0$ per ogni intero positivo $m$ ed ogni $i>m$. Quindi, se $F$ contiene il filtro di Fr\'echet, $N/F\models m [\hat a]_F\neq 0$ per ogni intero positivo $m$. Dimostriamo \ssf{4} osservando che  $\ZZ_i\models\A x\,\E y\ my=x$ per ogni intero $m$ ed ogni primo $i\nmid m$. Quindi se $F$ \`e un ultrafiltro non principale che contiene l'insieme dei numeri primi,  $N/F\models\A x\,\E y\ my=x$ per ogni $m$. Dimostriamo \ssf{5}. Sia $F$ un ultrafiltro non principale che contiene l'insieme $\{i\,!:i\in I\}$ e sia $\hat a$ la sequenza che ha valore costante $1$. Poich\'e $\ZZ_{i\,!}\models\neg\E x\ mx=1$ per ogni $i>m$, otteniamo $N/F\models\neg\E x\ mx=[\hat a]_F$ per ogni $m>1$.
+\end{comment}
+\end{exercise}
+
 \end{document}
