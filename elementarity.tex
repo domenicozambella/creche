@@ -453,7 +453,8 @@ The content of this section is mainly technical and only required later in the c
 
 If $\mathrel{E}$ is an equivalence relation on $N$ we write \emph{$[c]_E$\/} for the equivalence class of $c\in N$. We use the same symbol for the equivalence relation on $N^n$ defined as follow: if $a=a_1,\dots,a_n$ and $b=b_1,\dots,b_n$ are $n$-tuples of elements of $N$ then \emph{$a\mathrel{E} b$\/} means that  $a_i\mathrel{E} b_i$ holds for all $i$. It is easy to see that $b_1,\dots,b_n\in [a, ..., a_n]_E$ if and only if $b_i \in [a_i]_E$ for all $i$.  Therefore we use the notation \emph{$[a]_E$\/} for both the equivalence class of $a\in N^n$ and the tuple of equivalence classes $[a_1]_E,\dots,[a_n]_E$.
 
-An equivalence relation $\mathrel{E}$ on a structure $N$ is a \emph{congruence\/} if for every $f\in L_{\rm fun}$
+\begin{definition}\label{def_congruence}
+We say that the equivalence relation $\mathrel{E}$ on a structure $N$ is a \emph{congruence\/} if for every $f\in L_{\rm fun}$
 
 \ceq{\ssf{c1}.\hfill a\mathrel{E} b}{\IMP}{f^N a\mathrel{E} f^N b;}
 
@@ -463,7 +464,11 @@ When $\mathrel{E}$ is a congruence on $N$ we write \emph{$N/E$\/} for the a stru
 
 \ceq{\ssf{c3.}\hfill [a]_E\ \in\ r^{N/E}}{\IFF}{[a]_E\cap r^{N}\neq\0.}
 
-By \ssf{c1} this interpretation is well defined. We call $N/E$ the \emph{quotient structure}. The reader will recognize it as a familiar notion by the following proposition (which is not required in the following and requires the notion of homomorphism, see Definition~\ref{def_homomorphism}. Recall that the \emph{kernel\/} of a total map $h:N\to M$ is the equivalence relation $\mathrel{E}$ such that
+We call $N/E$ the \emph{quotient structure}.\QED
+\end{definition}
+
+
+By \ssf{c1} the quotiont structure is well defined. The reader will recognize it as a familiar notion by the following proposition (which is not required in the following and requires the notion of homomorphism, see Definition~\ref{def_homomorphism}. Recall that the \emph{kernel\/} of a total map $h:N\to M$ is the equivalence relation $\mathrel{E}$ such that
 
 \ceq{\hfill a\mathrel{E} b}{\IFF}{ha=hb} 
 
