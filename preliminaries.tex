@@ -1,9 +1,9 @@
 % !TEX root = creche.tex
 \chapter{Preliminaries and notation}\label{termini}
 %\setcounter{page}{1}
-This chapter introduces the syntax and semantic of first order logic. We assume that the reader is not completely unfamiliar with first order logic. 
+This chapter introduces the syntax and semantic of first order logic. We assume that the reader has at some basic familiarity with first order logic. 
 
-The definitions of terms and formulas we give in Section~\ref{terminidef} and~\ref{sintassformule} are more formal than what is required in the following chapters. Our main objective is to ensure the reader that a rigorous definition of language and truth is possible. Though the actual details are not relevant for our purposes.
+The definitions of terms and formulas we give in Section~\ref{terminidef} and~\ref{sintassformule} are more formal than is required in subsequent chapters. Our main objective is to convince the reader that a rigorous definition of language and truth is possible. However, the actual details of such a definition are not relevant for our purposes.
 
 
 \section{Structures}
@@ -13,51 +13,52 @@ A \emph{(first order) language $L$\/}\index{language!(first order)}\index{0L@$L$
 \begin{itemize}
 \item[1.] a set \emph{$L_{\rm fun}$}\index{0Lfun@$L_{\rm fun}$} whose elements are called \emph{function symbols}\index{symbol!function};
 \item[2.] a set \emph{$L_{\rm rel}$\/}\index{0Lrel@$L_{\rm rel}$} whose elements are called \emph{relation symbols}\index{symbol!relation};
-\item[3.] a function that assign to every $f\in L_{\rm fun}$ and $r\in L_{\rm rel}$ non negative integers $n_f$ and $n_r$ that we call \emph{arity\/}\index{arity} of the function, respectively relation, symbol. In words we say that $f$ is a \emph{$n_f$-ary} function symbol, similarly for $r$. We may say \emph{constant\/}\index{constant} for $0$-ary function symbol.
+\item[3.] a function that assigns to every $f\in L_{\rm fun}$, respectively $r\in L_{\rm rel}$, non-negative integers $n_f$ and $n_r$ that we call \emph{arity\/}\index{arity} of the function, respectively relation, symbol. We say that $f$ is an \emph{$n_f$-ary} function symbol, and similarly for $r$. A $0$-ary function symbol is also called a \emph{constant\/}\index{constant}.
 \end{itemize}
 
-Waring: it is custom to use the symbol \emph{$L$} to denote both the language and the set of formulas (to be defined below) associated to it. With \emph{$|L|$} we denote he cardinality of $L_{\rm fun}\cup L_{\rm rel}\cup\omega$.
-
+Warning: it is customary to use the symbol \emph{$L$} to denote both the language and the set of formulas (to be defined below) associated to it. The cardinality of $L_{\rm fun}\cup L_{\rm rel}\cup\omega$ is denoted by \emph{$|L|$}.
 
 A \emph{(first order) structure\/}\index{structure} $M$ of signature $L$ (for short \emph{$L$-structure}) consists of
 
 \begin{itemize}
-\item[1.] a set that we call the \emph{domain\/}\index{domain!(of a structure)} or \emph{support}\index{support!(of a structure)} and denote with the same symbol $M$ used for the whole structure;
-\item[2.] a function that assign to every $f\in L_{\rm fun}$ a total map \emph{$f^M$ $: M^{n_f}\to M$}\index{0fM@$f^M$};
-\item[3.]a function that assign to every  $r\in L_{\rm rel}$ a relation \emph{$r^M\subseteq M^{n_r}$}\index{0rM@$r^M$}.
+\item[1.] a set that we call the \emph{domain\/}\index{domain!(of a structure)} or \emph{support}\index{support!(of a structure)} and denote by the same symbol $M$ used for the structure as a whole;
+\item[2.] a function that assigns to every $f\in L_{\rm fun}$ a total map \emph{$f^M$ $: M^{n_f}\to M$}\index{0fM@$f^M$};
+\item[3.] a function that assigns to every  $r\in L_{\rm rel}$ a relation \emph{$r^M\subseteq M^{n_r}$}\index{0rM@$r^M$}.
 \end{itemize}
- We call $f^M$ and $r^M$ the \emph{interpretation\/}\index{interpretation} of $f$, respectively $r$ in $M$.
+ We call $f^M$, respectively $r^M$, the \emph{interpretation\/}\index{interpretation} of $f$, respectively $r$, in $M$.
  
-Recall that by definition $M^0=\{\0\}$\index{function!0-ary}. Therefore the interpretation of a constant $c$ is a function that maps the unique element of $M^0$ into an element of $M$. We will identify $c^M$ with $c^M(\0)$.
+Recall that, by definition, $M^0=\{\0\}$\index{function!0-ary}. Therefore the interpretation of a constant $c$ is a function that maps the unique element of $M^0$ into an element of $M$. We identify $c^M$ with $c^M(\0)$.
 
-We may use the word \emph{model\/} as a synonym of structure. But beware that in some context the word is used to denote some particular sort of structures.  
+We may use the word \emph{model\/} as a synonym for structure. But beware that, in some contexts, the word is used to denote a particular kind of structure.  
 
-If $M$ is an $L$-structure and $A\subseteq M$ is any subset we write \emph{$L(A)$\/}\index{0LA@$L(A)$, $L(M)$} the language obtained adding to $L_{\rm fun}$ the elements of $A$ as constants. In this context the elements of $A$ are called \emph{parameters}\index{parameter}. There is a canonical expansion of $M$ to an $L(A)$-structure by setting $a^M=a$ for every $a\in A$.
+If $M$ is an $L$-structure and $A\subseteq M$ is any subset, we write \emph{$L(A)$\/}\index{0LA@$L(A)$, $L(M)$} forby  the language obtained adding to $L_{\rm fun}$ the elements of $A$ as constants. In this context, the elements of $A$ are called \emph{parameters}\index{parameter}. There is a canonical expansion of $M$ to an $L(A)$-structure that is obtained by setting $a^M=a$ for every $a\in A$.
 
 \begin{example}\label{LgaLgmLau}
 The \emph{language of additive groups\/}\index{language!of additive groups} consists of the following function symbols\nobreak
 \begin{itemize}
-\item[1.] a constant (that is, a function symbol of arity $0$):\ \ \ \  $0$
-\item[2.] a unary function symbol (that is, of arity $1$):\ \ \ \   $-$
-\item[3.] a binary function symbol (that is, of arity $2$):\ \ \ \  $+$
+\item[1.] a constant (that is, a function symbol of arity $0$) \ \  $0$
+\item[2.] a unary function symbol (that is, of arity $1$) \ \   $-$
+\item[3.] a binary function symbol (that is, of arity $2$)\ \  $+ \,$.
 \end{itemize}
-In the \emph{language of multiplicative groups\/}\index{language!of multiplicative groups\/} the three symbols above are replaced with $1$, ${}^{-1}$, and $\cdot$ respectively. Any group is a structure in either of these two signatures with the obvious interpretation. Needless to say, not all structures with these signature are groups. 
+In the \emph{language of multiplicative groups\/}\index{language!of multiplicative groups\/} the three symbols above are replaced by $1$, ${}^{-1}$, and $\cdot$ respectively. Any group is a structure in either of these two signatures with the obvious interpretation. Needless to say, not all structures with these signatures are groups. 
 
-The \emph{language of (unitary) rings\/} contains all function symbols above with exception of \ ${}^{-1}$. The  \emph{language of ordered rings\/} also contains the binary relation symbol $<$.\QED
+The \emph{language of (unitary) rings\/} contains all function symbols above except \ ${}^{-1}$. The  \emph{language of ordered rings\/} also contains the binary relation symbol $<$.\QED
 \end{example}
 
-The following is a less straightforward example. The reason behind the choice of the language of vector spaces will be clear below, see Example~\ref{ex_substructure}.
+The following is a less straightforward example. The reason behind the choice of the language of vector spaces will become clear in Example~\ref{ex_substructure} below.
 
 \begin{example}\label{linguaggio_spazi_vettoriali}
-Let $F$ be a field. The \emph{language of vector spaces over $F$\/}\index{language!vector spaces}, that here we denote by $L_F$, extends that of additive groups with a unary function symbols $k$ for every $k\in F$. 
+Let $F$ be a field. The \emph{language of vector spaces over $F$\/}\index{language!vector spaces}, that we denote by $L_F$, extends that of additive groups by a unary function symbol $k$ for every $k\in F$. 
 
-Recall that a vector space over $F$ is an abelian group $M$ together with an action of $F$ over $M$, that is, a function $\mu:F\times M\imp M$. To view a vector space over $F$ as an $L_F$-structure we interpret the group symbols in the obvious way and each $k\in F$ as the function $\mu(k,\mbox{-})$.\QED
+Recall that a vector space over $F$ is an abelian group $M$ together with a function $\mu:F\times M\imp M$ satisfying some properties (that we assume well-known, see Example~\ref{ex_ax_vect_sp}).
+ To view a vector space over $F$ as an $L_F$-structure, we interpret the group symbols in the obvious way and each $k\in F$ as the function $\mu(k,\mbox{-})$.\QED
 \end{example}
 
-The languages in the examples above, with the exception of that of ordered rings, are \emph{functional languages}\index{language!functional}, i.e.\@ $L_{\rm rel}=\0$. In the following we consider two important examples of \emph{relational languages\/}\index{language!relational\/} where $L_{\rm fun}=\0$.
+The languages in Examples~\ref{LgaLgmLau} and \ref{linguaggio_spazi_vettoriali}, with the exception of that of ordered rings, are \emph{functional languages}\index{language!functional}, that is, $L_{\rm rel}=\0$. In what follows, we consider two important examples of \emph{relational languages\/}\index{language!relational\/} (that is, languages where $L_{\rm fun}=\0$).
 
 \begin{example}\label{expl_graph1}
-The \emph{language of strict orders\/}\index{language!strict orders} contains only the binary relation symbol $<$. The \emph{language of graphs\/}\index{language!graphs} also contains only a binary relation symbol (there is no canonical choice). In combinatorics a graph is a set of unordered pairs. To associate to a graph a first order structure we identify sets of unordered pairs with symmetric irreflexive relations.\QED
+The \emph{language of strict orders\/}\index{language!strict orders} only contains the binary relation symbol~$<$. The \emph{language of graphs\/}\index{language!graphs}, too, only contains a binary relation symbol (for which there is no standard notation). %NDR is this what you mean by `there is no canonical choice'?
+ In combinatorics, a graph is a set of unordered pairs. To view a graph as a first order structure, we identify sets of unordered pairs with symmetric irreflexive relations.\QED %NDR: the way this is worded is unconvincing.
 \end{example}
 
 
