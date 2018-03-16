@@ -275,7 +275,7 @@ Below we identify $S_{\mr x}(A)$ with $\U^{|{\mr x}|}/\mathord\equiv_A$
 \begin{definition}\label{def_tree_formulas}
 Let $\Delta$ be a set of formulas (we mainly use $\Delta=L_{\mr x}(A)$ in this section). A \emph{binary tree of formulas in $\Delta$\/} is a sequence $\<\phi_s\ :\ s\in2^{<\lambda}\>$ of formulas in $\Delta\cup\{\top\}$ such that\nobreak
 \begin{itemize}
-\item[1.] for each $s\in 2^\omega$ the type $p_s\ =\ \big\{\phi_{s\restriction n}\ :\ n<\lambda\big\}$ is consistent;
+\item[1.] for each $s\in 2^\lambda$ the type $p_s\ =\ \big\{\phi_{s\restriction n}\ :\ n<|s|\big\}$ is consistent;
 \item[2.] $p_s\cup p_r$ is inconsistent for any two distinct $s,r\in 2^\lambda$.
 \end{itemize}
 (Condition \ssf{2} is usually obtained by taking $\phi_{s0}\iff\neg\phi_{s1}$ for every $s$.) We call $\lambda$ the height of the tree. If the height is not specified, we assume it is $\omega$. We may depict a binary tree of formulas as follows
@@ -361,7 +361,7 @@ Where branches are consistent types and distinct branches are inconsistent.\QED
 Let $S(\Delta)$ be denote the set of maximal consistent $\Delta$-types.
 
 \begin{lemma}\label{lem_bin_tree}
-Suppose $\Delta\subseteq L_x(A)$ is countable and closed under negation. Then the following are equivalent\nobreak
+Suppose $\Delta$ is countable and closed under negation. Then the following are equivalent\nobreak
 \begin{itemize}   
 \item[1.] there is a binary tree of formulas in $\Delta$;
 \item[2.] $\big|S(\Delta)\big|=2^\omega$;
@@ -369,7 +369,7 @@ Suppose $\Delta\subseteq L_x(A)$ is countable and closed under negation. Then th
 \end{itemize}
 \end{lemma}
 \begin{proof}
-As implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3} are clear, it suffices to prove \ssf{3}$\IMP$\ssf{1}. We prove the contrapositive: we assume that $S(\Delta)$ is uncountable and define a tree of formulas in $\Delta$ by induction. Begin with $\phi_\0=\top$. For $s\in 2^{<\omega}$ let $p_s$ be as in the definition above. Assume as induction hypothesis that $p_s$ has uncountably many extensions in $S(\Delta)$. This will guarantee the consistency of the branches.
+As implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3} are clear, it suffices to prove \ssf{3}$\IMP$\ssf{1}. We assume that $S(\Delta)$ is uncountable and define a tree of formulas in $\Delta$ by induction. Begin with $\phi_\0=\top$. For $s\in 2^{<\omega}$ let $p_s$ be as in the definition above. Assume as induction hypothesis that $p_s$ has uncountably many extensions in $S(\Delta)$. This will guarantee the consistency of the branches.
 
 It suffices to show that there is a formula $\psi\in\Delta$ such that both $p_s\cap\{\psi\}$ and $p_s\cap\{\neg\psi\}$ have uncountably many extensions in $S(\Delta)$. In fact, we if we define $\phi_{s0}=\psi$ and $\phi_{s1}=\neg\psi$ this preserves the induction hypothesis.
 
@@ -410,7 +410,7 @@ Suppose for a contradiction that $\phi({\mr x})\in L(A)$ is consistent but has n
 \end{proof}
 
 \begin{exercise}\label{ex_binary_tree_canonical}
-Prove that if there is a binary tree of formulas in $\Delta^{\pm}$ then there is a binary tree such that $\phi_{s0}=\neg\phi_{s1}$ and $\phi_{\0}=\top$.\QED
+Suppose $\Delta$ is countable and closed under negation. Prove that if there is a binary tree of formulas  then there is a binary tree such that $\phi_{s0}=\neg\phi_{s1}$ and $\phi_{\0}=\top$.\QED
 \end{exercise}
 
 \begin{exercise}

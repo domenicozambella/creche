@@ -3,7 +3,8 @@
 \usepackage[dvips,a4paper,hmargin={4cm,4cm},vmargin={3.5cm,3.5cm}]{geometry}
 \usepackage[colorlinks=true,bookmarksopen=false,linkcolor=blue,citecolor=red]{hyperref}
 \usepackage{subfiles}
-\usepackage{calc}
+\usepackage{calc} 
+\usepackage{datetime}
 \usepackage{comment}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -285,7 +286,7 @@ diagrams={>=latex}
 
 \begin{document}
 \raggedbottom
-\renewcommand{\contentsname}{A Cr\`eche Course in Model Theory}
+\renewcommand{\contentsname}{A Cr\`eche Course in Model Theory\\[3ex] \normalfont\normalsize Domenico Zambella\vskip-1ex Università di Torino\vskip-1ex \monthname\ \the\year}
 \tableofcontents
 \subfile{preface}
 \subfile{preliminaries}
@@ -304,4 +305,6 @@ diagrams={>=latex}
 \subfile{invariant}
 \subfile{invariantL}
 \subfile{external}
+\subfile{dynamics}
+\subfile{measures}
 \end{document}

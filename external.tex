@@ -182,7 +182,7 @@ The sets externally definable by $p$ are always closed under Boolean operations.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ladders and definability}
 
-Partitioned formulas has been introduced in Definition~\ref{def_partitioned_fla}. Here we write \emph{$\phi({\mr x}\,;{\gr z})^*$\/} for the partitioned formula where the order of the two tuples is inverted (i.e.\@ it is the opposite of what displayed).
+Partitioned formulas have been introduced in Definition~\ref{def_partitioned_fla}. Here we write \emph{$\phi({\mr x}\,;{\gr z})^*$\/} for the partitioned formula where the order of the two tuples is inverted (i.e.\@ it is the opposite of what displayed).
 
 Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be a partitioned formula. We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$ is a \emph{ladder sequence\/} for $\phi({\mr x}\,;{\gr z})$ if 
 
@@ -345,14 +345,16 @@ Hence it sufficies to prove that \ssf{1a}$\IMP$\ssf{1b} and \ssf{2a}$\IMP$\ssf{2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Vaknik-Chevronenkis dimension}
+\section{Vapknik-Chevronenkis dimension}
 \label{sectionVC}
 
 \def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
-We say that the formula $\phi({\mr x}\,;{\gr z})\in L$ has \emph{Vaknik-Chevronenkis dimension $n$\/} if this is the largest finite cardinatity of a set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that $|S_\phi({\mr A})|=2^n$. If such $n$ exists, we say that we say that  $\phi({\mr x}\,;{\gr z})$ has finite VC-dimension. 
+We say that the formula $\phi({\mr x}\,;{\gr z})\in L$ has \emph{Vapknik-Chevronenkis dimension $n$\/} if this is the largest finite cardinatity of a set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that $|S_\phi({\mr A})|=2^n$. If such $n$ does not exist, we say that we say that  $\phi({\mr x}\,;{\gr z})$ has \emph{infinite VC-dimension}. 
 
 Note that the condition $|S_\phi({\mr A})|=2^n$ is equivalent to saying that every subset of ${\mr A}$ is the trace of some definable set of sort $\phi({\mr x}\,;{\gr z})$.
+
+For instance, the formula ${\gr z_1}<{\mr x}<{\gr z_2}$ in $T_{\rm dlo}$ has VC-dimension $1$.
 
 Arguing by compactness we obtain the following proposition whose proof is left as an exercise for the reader.
 
@@ -403,7 +405,7 @@ This proves $\neg$\ssf{2}.
 In the next section we need the following corollary.
 
 \begin{corollary}\label{corol_altrank}
-If $\mrA\subseteq\U^{|{\mr x}|}$ is a set approximable by a formula with finite VC-dimension, then $\<{\mr a_i}\in\mrA:i<\omega\>$ converges for any indiscernible sequence $\<{\mr a_i}:i<\omega\>$.\QED
+If $\mrC\subseteq\U^{|{\mr x}|}$ is a set approximable by a formula with finite VC-dimension, then $\<{\mr a_i}\in\mrC:i<\omega\>$ converges for any indiscernible sequence $\<{\mr a_i}:i<\omega\>$.\QED
 \end{corollary}
 
 
@@ -419,33 +421,33 @@ In this section we present a beautiful theorem of Chernikov and Simon~\cite{CS} 
 We write \emph{$\neg^n$\/} for $\neg\!\stackrel{n\ \rm times}{\dots\dots\dots}\!\neg$. We abbreviate $\neg^n(\cdot\in\cdot)$ as \emph{$\notin^n$}.
 
 \begin{lemma}\label{lem_honest}
-Let $\mrA$ be a set approximable by a formula with finite VC-dimension and let $A$ be any (small) set of parameters. Then every global $A$-invariant type $p({\mr x})$ contains a formula $\psi({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrA$ or $\psi({\mr x})\imp {\mr x}\notin\mrA$. Moreover, for every sufficiently saturated model $M$ containing $A$, we can require that $\psi({\mr x})\in L(M)$
+Let $\mrC$ be a set approximable by a formula with finite VC-dimension and let $A$ be any (small) set of parameters. Then every global $A$-invariant type $p({\mr x})$ contains a formula $\psi({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrC$ or $\psi({\mr x})\imp {\mr x}\notin\mrC$. Moreover, for every sufficiently saturated model $M$ containing $A$, we can require that $\psi({\mr x})\in L(M)$
 \end{lemma}
 
 \begin{proof}
-The property we want to prove is elementary in $L(\mrA)$ therefore, by Remark~\ref{rem_el_sat} we can assume that $\mrA$ is saturated. By Corollary~\ref{corol_altrank}, there is no infinite sequence $\<{\mr a_i}:i<\omega\>$
+The property we want to prove is elementary in $L(\mrC)$ therefore, by Remark~\ref{rem_el_sat} we can assume that $\mrC$ is saturated. By Corollary~\ref{corol_altrank}, there is no infinite sequence $\<{\mr a_i}:i<\omega\>$
 
-\ceq{\hfill {\mr a_i}}{\models}{p_{A,a\restriction i}({\mr x})\ \cup\ \{{\mr x}\notin^i\mrA\}}
+\ceq{\hfill {\mr a_i}}{\models}{p_{A,a\restriction i}({\mr x})\ \cup\ \{{\mr x}\notin^i\mrC\}}
 
 Let $n$ be the largest integer such that $\<{\mr a_i}:i<n\>$ satisfies the condition above. Then
 
-\ceq{\hfill p_{A,a\restriction n}({\mr x})}{\imp}{{\mr x}\notin^n\mrA}
+\ceq{\hfill p_{A,a\restriction n}({\mr x})}{\imp}{{\mr x}\notin^n\mrC}
 
 and the first claim of the lemma follows by compactness. 
 
-Now let $M$ be a model that contains $A$ and such that $\<M,\mrA\>\preceq\<\U,\mrA\>$. Assume also that $\<M,\mrA\>$ is saturated, we can further require that all ${\mr a_i}\in M^{|{\mr x}|}$. Hence $\psi({\mr x})\in L(M)$.
+Now let $M$ be a model that contains $A$ and such that $\<M,\mrC\>\preceq\<\U,\mrC\>$. Assume also that $\<M,\mrC\>$ is saturated, we can further require that all ${\mr a_i}\in M^{|{\mr x}|}$. Hence $\psi({\mr x})\in L(M)$.
 \end{proof}
 
 \begin{theorem}\label{thm_honest}
-Let $\mrA$ be a set approximable by a formula with finite VC-dimension. Then $\mrA$ is approximable from above and from below.
+Let $\mrC$ be a set approximable by a formula with finite VC-dimension. Then $\mrC$ is approximable from above and from below.
 \end{theorem}
 
 \begin{proof}
-Let ${\mr A}\subseteq\mrA$ be any non empty (small) set. As above, by  Remark~\ref{rem_el_sat} we can assume that $\mrA$ is saturated. Let $M$ be a saturated elementary substructure of $\U$, in the language $L(\mrA)$. Define
+Let ${\mr A}\subseteq\mrC$ be any non empty (small) set. As above, by  Remark~\ref{rem_el_sat} we can assume that $\mrC$ is saturated. Let $M$ be a saturated elementary substructure of $\U$, in the language $L(\mrC)$. Define
 
 \ceq{\hfill q({\mr x})}{=}{\big\{\phi({\mr x})\in L(M)\ :\ {\mr A}\subseteq\phi({\mr\U})\big\}.}
 
-By compactness, it suffices to prove that $q({\mr x})\imp {\mr x}\in{\mr A}$. Suppose not and fix some ${\mr a}\models q({\mr x})\wedge {\mr x}\notin{\mr A}$. As $\tp({\mr a}/M)$ is finitely satisfied in ${\mr A}$, there is a global type $p({\mr x})\supseteq \tp({\mr a}/M)$ that is finitely satisfied in ${\mr A}$. By Lemma~\ref{lem_honest} there is a formula $\psi({\mr x})\in p({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrA$ or $\psi({\mr x})\imp {\mr x}\notin\mrA$. But the first cannot hold because ${\mr a}\models \psi({\mr x})\wedge {\mr x}\notin{\mr A}$ while the second contradicts ${\mr A}\subseteq\psi({\mr\U})$ and ${\mr A}\subseteq\mrA$.
+By compactness, it suffices to prove that $q({\mr x})\imp {\mr x}\in\mrC$. Suppose not and fix some ${\mr a}\models q({\mr x})\wedge {\mr x}\notin\mrC$. Let $p({\mr x})=\tp({\mr a}/M)$. As $p({\mr x})$ is finitely satisfied in ${\mr A}$ and $M$ is saturated, from Lemma~\ref{lem_honest} yields a formula $\psi({\mr x})\in p({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrC$ or $\psi({\mr x})\imp {\mr x}\notin\mrC$. But the first contradicts ${\mr a}\models\psi({\mr x})$ and the second cannot hold because $\psi({\mr x})$ is satisfied in ${\mr A}\subseteq\mrC$. 
 \end{proof}
 
 When all formulas have finite VC-dimension, we say that the theory $T$ has the \emph{non-independence property\/} or, for short, that $T$ \emph{is nip}.
@@ -499,7 +501,7 @@ We now turn to Lascar invariance. Quite interestingly when $T$ is stable this re
 
 
 
-A type over some set $q({\mr x})\subseteq L(A)$ is \emph{stationary\/} if it has a unique global extension that is Lascar invariant over $A$. The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
+A type $q({\mr x})\subseteq L(A)$ is \emph{stationary\/} if it has a unique global extension that is Lascar invariant over $A$. The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
 
 \begin{proposition}\label{prop_type_over_acl_stationary} If $T$ is stable then every type $q({\mr x})\in S\big(\acl^\eq\!A\big)$ is stationary.
 \end{proposition}
@@ -516,16 +518,16 @@ Note that, by Proposition~\ref{prop_type_over_acl2} both sets belong to  $\acl^\
 \begin{corollary}
 If $T$ is stable then the following are equivalent
 \begin{itemize}
-\item[1.] $a\equivL_A b$, see Definition~\ref{def_Lascar_type};
-\item[2.] $a\equivSh_A b$, see Definition~\ref{def_Sh_strong_type}.
+\item[1.] ${\mr a}\equivL_A{\mr b}$, see Definition~\ref{def_Lascar_type};
+\item[2.] ${\mr a}\equivSh_A{\mr b}$, see Definition~\ref{def_Sh_strong_type}.
 \end{itemize}
 \end{corollary}
 \begin{proof}\ssf{1}$\IMP$\ssf{2}. This is left as an exercise to the reader (stability is not required).
 
-\ssf{2}$\IMP$\ssf{1}. Assume $a\equivSh_A b$. By Proposition~\ref{prop_Shelah_strong_types} this is equivalent to $a\equiv_{\acl^\eq\!A} b$. Let $q(x)=\tp(a/{\acl}^\eq\!A)=\tp(b/{\acl}^\eq\!A)$. Let $p(x)\in S(\U^\eq)$ be the unique global type that is invariant over $\acl^\eq\! A$ and extends $q(x)$ which we obtain from by Proposition~\ref{prop_type_over_acl_stationary}. Let $c=\<c_i:i<\omega\>$ be such that $c_i\models p{\restriction \acl^\eq(A),\,a,\,b,\,c_{\restriction i}}$. Then $a,c$ and $b,c$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lstp_indiscernibles}.
+\ssf{2}$\IMP$\ssf{1}. Assume ${\mr a}\equivSh_A{\mr b}$. By Proposition~\ref{prop_Shelah_strong_types} this is equivalent to ${\mr a}\equiv_{\acl^\eq\!A}{\mr b}$. Let $q({\mr x})=\tp({\mr a}/{\acl}^\eq\!A)=\tp({\mr b}/{\acl}^\eq\!A)$. Let $p({\mr x})\in S(\U^\eq)$ be the unique global type that is invariant over $\acl^\eq\! A$ and extends $q({\mr x})$ which we obtain from by Proposition~\ref{prop_type_over_acl_stationary}. Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be such that ${\mr c_i}\models p{\restriction \acl^\eq(A),\,{\mr a},\,{\mr b},\,{\mr c_{\restriction i}}}$. Then ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lstp_indiscernibles}.
 \end{proof}
 
-We end this section with a characterization of stability which is not directly related with what above. 
+We end this section with a characterization of stability which is not directly related with the properties discussed above. 
 
 \begin{proposition} The following are equivalent
 \begin{itemize}
@@ -606,19 +608,18 @@ The following are equivalent
 \end{itemize}
 \end{theorem}
 \begin{proof}
-\ssf{2}$\IMP$\ssf{1}. Suppose the formula $\phi({\mr x}\,;{\gr z})$ is unstable. Let $\<{\gr z_s}:s\in2^{<\lambda}\>$ be a sequence variables of length $|{\gr z}|$. Let $p({\gr z_s}:s\in2^{<\lambda})$ be the type that says that $\big\<{\gr z_s}:i<2^{<\lambda}\big\>$ witnesses a binary tree of height $\lambda$. As  $\phi({\mr x}\,;{\gr z})$ is unstable, $p$ is finitely consistent. As $\lambda$ is an arbitrary infinite cardinal, this contradicts \ssf{2}.
+\ssf{2}$\IMP$\ssf{1}. Suppose a formula $\phi({\mr x}\,;{\gr z})$ is unstable. Let $\<{\gr z_s}:s\in2^{<\lambda}\>$ be a sequence variables of length $|{\gr z}|$. Let $p({\gr z_s}:s\in2^{<\lambda})$ be the type that says that $\big\<{\gr z_s}:i<2^{<\lambda}\big\>$ witnesses a binary tree of height $\lambda$. As  $\phi({\mr x}\,;{\gr z})$ is unstable, $p$ is finitely consistent. As $\lambda$ is an arbitrary infinite cardinal, this contradicts \ssf{2}.
 
 \ssf{3}$\IMP$\ssf{2}. Trivial.
 
 \ssf{1}$\IMP$\ssf{3}. Proposition~\ref{prop_count_types} implies that $|S(A)|\le |A|^{|L|}$. Therefore, when $|L|<\cf(A)$, we obtain $|S(A)|\le |A|$.
 \end{proof}
 \begin{exercise}
-Prove that $\phi$ is stable if and only if $|S_\phi(\U)|\le2^\kappa$.\QED
+Prove that $\phi(x\,;z)$ is stable if and only if $|S_\phi(\U)|\le2^\kappa$.\QED
 \end{exercise}
 
-
 \begin{exercise}
-Prove that $\phi({\mr x}\,;{\gr z})$ is stable if and only if every set approximated by $\phi({\mr x}\,;{\gr z})$ is definable.\QED
+Prove that $\phi(x\,;z)$ is stable if and only if every set approximated by $\phi(x\,;z)$ is definable.\QED
 \end{exercise}
 
 \section{Notes and references}

@@ -31,7 +31,7 @@ The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*
 
 This section is only marginally required in the present chapter so it can be postponed with minor consequences.
 
-We will find it convenient to expand the language $L$ with a predicate for a given $\grD\subseteq\U^{|{\gr z}|}$. We denote by $\<\U,\grD\>$ the corresponding expansion of $\U$. Generally, we write \emph{$L({\gr\X})$} for the expanded language but, if the intended interpretation of ${\gr\X}$ only going to be $\grD$, we may write \emph{$L(\grD)$} and abbreviate $\<\U\,;\grD\>\models\phi({\gr\X})$ as $\phi(\grD)$. 
+We will find it convenient to expand the language $L$ with a predicate for a given $\grD\subseteq\U^{|{\gr z}|}$. We denote by $\<\U,\grD\>$ the corresponding expansion of $\U$. Generally, we write \emph{$L({\gr\X})$} for the expanded language but, if the intended interpretation of ${\gr\X}$ is only going to be $\grD$, we may write \emph{$L(\grD)$} and abbreviate $\<\U\,;\grD\>\models\phi({\gr\X})$ as $\phi(\grD)$. 
 
 
 %As usual, $L({\gr\X})$ and $L(\grD)$ denotes also the set of formulas in that language, and we write  $L(A\,;{\gr\X})$ and $L(A\,;\grD)$ for the set of formulas with parameters from $A$.
@@ -57,7 +57,7 @@ If $\grD\subseteq\U^{|{\gr z}|}$ is invariant over $A$ then every $A\jj$indiscer
 \end{proposition}
 
 \begin{proof}
-Let $c=\<c_i:i\in I\>$ be an $A\jj$indiscernible sequence. For every $I_0,I_1\in I^{[n]}$ there is an $f\in\Aut(\U/A)$ such that $fc_{\restriction I_0}=c_{\restriction I_1}$, Hence 
+Let $\bar c=\<c_i:i\in I\>$ be an $A\jj$indiscernible sequence. For every $I_0,I_1\in I^{[n]}$ there is an $f\in\Aut(\U/A)$ such that $fc_{\restriction I_0}=c_{\restriction I_1}$, Hence 
 
 \ceq{\hfill \phi\big(c_{\restriction I_0}\,;\grD\big)}{\iff}{\phi\big(fc_{\restriction I_0}\,;f[\grD]\big)\medrel{\iff}\phi\big(c_{\restriction I_1}\,;\grD\big)}.
 \end{proof}
@@ -118,7 +118,7 @@ So, $\grD$ is invariant over $A$ when $\oorbit(\grD/A)=\big\{\grD\big\}$. We say
 
   Then $E({\gr u}\,;{\gr v})$ is an $A\mbox{-}$invariant equivalence relation. As $\neg E({\gr c_0}\,;{\gr c_1})$, by Proposition~\ref{prop_indiscernible_L(A,D)}, indiscernibility over $A$ implies that $\neg E({\gr c_i\,},{\gr c_j})$ for every $i<j<\kappa$. Then $E({\gr u}\,;{\gr v})$ has $\kappa$ equivalence classes. As $\kappa$ is inaccessible, this implies $\neg$\ssf{4}.
 
-  \ssf{5}$\IMP$\ssf{1}.\quad Fix any ${\gr a}\equiv_N{\gr b}$ where $A\subseteq N$. It suffices to prove that ${\gr a}\in\grD\iff{\gr b}\in\grD$. Let $p({\gr z})\in S(\U)$ be a global coheir of $\tp({\gr a}/N)=\tp({\gr b}/N)$. Let $c=\<{\gr c_i}:i<\omega\>$ be a Morley sequence of $p({\gr z})$ over $N,{\gr a},{\gr b}$. Then both ${\gr a},c$ and ${\gr b},c$ are $A\mbox{-}$indiscernible sequences. Therefore, from \ssf{5} we obtain ${\gr a}\in\grD\iff{\gr c_0}\in\grD\iff{\gr b}\in\grD$. 
+  \ssf{5}$\IMP$\ssf{1}.\quad Fix any ${\gr a}\equiv_N{\gr b}$ where $A\subseteq N$. It suffices to prove that ${\gr a}\in\grD\iff{\gr b}\in\grD$. Let $p({\gr z})\in S(\U)$ be a global coheir of $\tp({\gr a}/N)=\tp({\gr b}/N)$. Let ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ be a Morley sequence of $p({\gr z})$ over $N,{\gr a},{\gr b}$. Then both ${\gr a},{\gr\bar c}$ and ${\gr b},{\gr\bar c}$ are $A\mbox{-}$indiscernible sequences. Therefore, from \ssf{5} we obtain ${\gr a}\in\grD\iff{\gr c_0}\in\grD\iff{\gr b}\in\grD$. 
 \end{proof}
 
 For definable sets Lascar invariance reduces to definablity over the algebraic closure.
@@ -144,7 +144,7 @@ The following are equivalent
 \noindent\llap{\textcolor{red}{\Large\danger}
 \kern1.5ex}Given a tuple ${\gr a}\in\U^{|{\gr z}|}$, we write \emph{$\Ll({\gr a}/A)$\/} for the intersection of all sets containing ${\gr a}$ that are Lascar invariant over $A$. Clearly $\Ll({\gr a}/A)$ is Lascar invariant over $A$. The symbol $\Ll({\gr a}/A)$ is not standard.
 
-\begin{definition}\label{def_Lascar_type}We write \emph{${\gr a}\stackrel{\smash{\scalebox{.5}{\rm\bf L}}}{\equiv}_A{\gr b}$\/} and say that ${\gr a}$ and ${\gr b}$ have the same \emph{Lascar strong type\/} over $A$ if the equivalence ${\gr a}\in\grD\iff{\gr b}\in\grD$ holds for every set $\grD$ that is Lascar invariant over $A$ or, in other words, if $\Ll({\gr a}/A)=\Ll({\gr b}/A)$. The notation ${\rm L{\jj}stp}({\gr a}/A)={\rm L{\jj}stp}({\gr b}/A)$ and ${\gr a}E_{_{L/A}}{\gr b}$ are also common in the the literature.\QED
+\begin{definition}\label{def_Lascar_type}We write \emph{${\gr a}\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}_A{\gr b}$\/} and say that ${\gr a}$ and ${\gr b}$ have the same \emph{Lascar strong type\/} over $A$ if the equivalence ${\gr a}\in\grD\iff{\gr b}\in\grD$ holds for every set $\grD$ that is Lascar invariant over $A$ or, in other words, if $\Ll({\gr a}/A)=\Ll({\gr b}/A)$. The notation ${\rm L{\jj}stp}({\gr a}/A)={\rm L{\jj}stp}({\gr b}/A)$ and ${\gr a}E_{_{L/A}}{\gr b}$ are also common in the the literature.\QED
 \end{definition}
 
 
@@ -165,17 +165,17 @@ Let $p({\mr x})\in S(\U)$ be global type; we say that $p$ is \emph{Lascar invari
   Let $p({\mr x})\in S(\U)$ be a global type. Then the following are equivalent
   \begin{itemize}
     \item[1.] $p({\mr x})$ is Lascar invariant over $A$;
-    \item[2.] every $A$-indiscernible sequence $c=\<{\gr c_i}:i<\omega\>$ is $A,{\mr a}\jj$indiscernible for every ${\mr a}\models p_{\restriction A, c}$;
-    \item[3.] every $A$-indiscernible sequence $c=\<{\gr c_i}:i<\omega\>$ is indiscernible over any ${\mr a}\models p_{\restriction c}$.
+    \item[2.] every $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ is $A,{\mr a}\jj$indiscernible for every ${\mr a}\models p_{\restriction A,{\gr\bar c}}$;
+    \item[3.] every $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ is indiscernible over any ${\mr a}\models p_{\restriction{\gr\bar c}}$.
   \end{itemize}
   For convenience all tuples ${\gr c_i}$ have length $|{\gr z}|=\omega$.
 \end{proposition}
 \begin{proof} We prove \ssf{1}$\IFF$\ssf{3}. Equivalence  \ssf{1}$\IFF$\ssf{2} can be proved similarly because the Lascar invariance of $p({\mr x})$ easily implies the Lascar invariance of the sets ${\gr\D_{p,\phi}}$ for all $\phi({\mr x}\,;{\gr z})\in L(A)$.
 
   \def\ceq#1#2#3{\parbox[t]{30ex}{$\displaystyle #1$}\parbox[t]{5ex}{$\displaystyle\hfil #2$}{$\displaystyle #3$}}
-  \ssf{3}$\IMP$\ssf{1}\quad If $p({\mr x})$ is not Lascar invariant over $A$ then ${\gr c_0}\in{\gr\D_{p,\phi}}\niff {\gr c_1}\in{\gr\D_{p,\phi}}$ for some $A$-indiscernible sequence $c=\<{\gr c_i}:i<\omega\>$ and some $\phi({\mr x}\,;{\gr z})\in L$. Then $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr c_0})\niff \phi({\mr x}\,;{\gr c_1})$. Hence, $c$ is not indiscernible over any realization of $p({\mr x})_{\restriction{\gr c_0},{\gr c_1}}$ 
+  \ssf{3}$\IMP$\ssf{1}\quad If $p({\mr x})$ is not Lascar invariant over $A$ then ${\gr c_0}\in{\gr\D_{p,\phi}}\niff {\gr c_1}\in{\gr\D_{p,\phi}}$ for some $A$-indiscernible sequence $c=\<{\gr c_i}:i<\omega\>$ and some $\phi({\mr x}\,;{\gr z})\in L$. Then $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr c_0})\niff \phi({\mr x}\,;{\gr c_1})$. Hence, ${\gr\bar c}$ is not indiscernible over any realization of $p({\mr x})_{\restriction{\gr c_0},{\gr c_1}}$ 
   
-  \ssf{1}$\IMP$\ssf{3}\quad Assume \ssf{1} and fix an $A$-indiscernible sequence $c=\<{\gr c_i}:i<\omega\>$ and some ${\mr a}\models p_{\restriction c}$. We need to prove that for every formula $\phi({\mr x}\,;z')\in L$, where $z'={\gr z_1},\dots,{\gr z_n}$,
+  \ssf{1}$\IMP$\ssf{3}\quad Assume \ssf{1} and fix an $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ and some ${\mr a}\models p_{\restriction{\gr\bar c}}$. We need to prove that for every formula $\phi({\mr x}\,;z')\in L$, where $z'={\gr z_1},\dots,{\gr z_n}$,
 
   \ceq{\hfill\phi({\mr a}\,;{\gr c_{0}},\dots,{\gr c_{n-1}})}{\iff}{\phi({\mr a}\,;{\gr c_{i_1}},\dots,{\gr c_{i_{n-1}}}).}
 
@@ -190,7 +190,7 @@ Let $p({\mr x})\in S(\U)$ be global type; we say that $p$ is \emph{Lascar invari
 \end{proof}
 
 \begin{exercise}\label{ex_Lstp_indiscernibles}
-  Prove that the equivalence relation ${\gr a}\stackrel{\smash{\scalebox{.5}{\rm\bf L}}}{\equiv}_A{\gr b}$ is the transitive closure of the relation: there is a sequence $\<{\gr c_i}:i<\omega\>$ indiscernible over $A$ such that ${\gr c_0}={\gr a}$ and ${\gr c_1}={\gr b}$. Hint: apply Theorem~\ref{thm_Lascar_indiscernibles}.\QED
+  Prove that the equivalence relation ${\gr a}\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}_A{\gr b}$ is the transitive closure of the relation: there is a sequence $\<{\gr c_i}:i<\omega\>$ indiscernible over $A$ such that ${\gr c_0}={\gr a}$ and ${\gr c_1}={\gr b}$. Hint: apply Theorem~\ref{thm_Lascar_indiscernibles}.\QED
 \end{exercise}
 
 
@@ -357,7 +357,7 @@ Negate \ssf{2} and choose inductively for every $n<\omega$ a formula $\psi_n(x)\
 
 
 
-Finally we can prove Newelski's theorem.
+Finally we can prove Newelski's theorem on the diameter of Lascar types.
 
 
 \begin{theorem}[(Newelski)]
@@ -418,13 +418,19 @@ Let ${\gr\Ll}$ be quasi-invariant and let $\grD$ be drifting, prove that  ${\gr\
 \section{Kim-Pillay types}\label{KPtypes}
 
 
-Given a tuple ${\gr a}\in\U^{|{\gr z}|}$, we write \emph{$\K({\gr a}/A)$\/} for the intersection of all type-definable sets containing ${\gr a}$ that are Lascar invariant over $A$. Or, more concisely, the intersection of all sets that are type-definable over a model containing $A$. We call $\K({\gr a}/A)$ the \emph{Kim-Pillay strong type\/} over $A$. Clearly,  $\Ll({\gr a}/A)\subseteq\K({\gr a}/A)\subseteq\O({\gr a}/A)$. 
+Given a tuple ${\gr a}\in\U^{|{\gr z}|}$, we write \emph{$\K({\gr a}/A)$\/} for the intersection of all type-definable sets containing ${\gr a}$ that are Lascar invariant over $A$. Or, more concisely, the intersection of all sets that are type-definable over a model containing $A$. We call $\K({\gr a}/A)$ the \emph{Kim-Pillay strong type\/} over $A$. Clearly $\K({\gr a}/A)$ is Lascar invariant over $A$.  It also easy to see that $\K({\gr a}/A)$ is type-definable. In fact, by invariance, we can assume that all types in the intersection above are over $M$, for any fixed model containing $A$. Hence $\K({\gr a}/A)$ is the minimal type-definable set containing ${\gr a}$ and closed under the relation $\equivL_A$. It follows that if ${\gr b}\in\K({\gr a}/A)$ then $\K({\gr b}/A)\subseteq\K({\gr a}/A)$.
 
-Clearly $\K({\gr a}/A)$ is Lascar invariant over $A$.  It also easy to see that $\K({\gr a}/A)$ is type-definable. In fact, by invariance, we can assume that all types in the intersection above are over $M$, for any fixed model containing $A$. Hence $\K({\gr a}/A)$ is the minimal type-definable set containing ${\gr a}$ and closed under the relation $\equivL_A$. It follows that if ${\gr b}\in\K({\gr a}/A)$ then $\K({\gr b}/A)\subseteq\K({\gr a}/A)$. 
+To summarize, we recall that we have defined a whole hierarchy of strong types obtained from the intersection of different sets with various sots of invariance
 
-If $\K({\gr a}/A)=\K({\gr b}/A)$, we say that ${\gr a}$ and ${\gr b}$ have the same  \emph{Kim-Pillay strong type\/} over $A$. We abbreviate this by \emph{${\gr a}\stackrel{\smash{\scalebox{.5}{\rm\bf KP}}}{\equiv}_A{\gr b}$}. In other words, we write ${\gr a}\equivKP_A{\gr b}$ when ${\gr a}\in\grD\iff{\gr b}\in\grD$ for every type-definable set $\grD$ that is Lascar invariant over $A$.
+\hfil$\Ll({\gr a}/A)\ \subseteq\ \K({\gr a}/A)\ \subseteq\ \S({\gr a}/A)\ \subseteq\ \O({\gr a}/A)$. 
 
-%We say that ${\gr a}$ and ${\gr b}$ have the same \emph{Kim-Pillay strong type over $A$\/} if $\K({\gr a}/A)=\K({\gr b}/A)$ or, in other words, when ${\gr a}\in\grD\iff{\gr b}\in\grD$ for every type-definable set $\grD$ that is Lascar invariant over $A$. We write \emph{$a\stackrel{\smash{\scalebox{.5}{\rm\bf KP}}}{\equiv}_Ab$}.
+Recall that $\S({\gr a}/A)$ was defined after Proposition~\ref{prop_Shelah_strong_types}.
+
+
+
+If $\K({\gr a}/A)=\K({\gr b}/A)$, we say that ${\gr a}$ and ${\gr b}$ have the same  \emph{Kim-Pillay strong type\/} over $A$. We abbreviate this by \emph{${\gr a}\stackrel{\smash{\scalebox{.5}{\rm KP}}}{\equiv}_A{\gr b}$}. In other words, we write ${\gr a}\equivKP_A{\gr b}$ when ${\gr a}\in\grD\iff{\gr b}\in\grD$ for every type-definable set $\grD$ that is Lascar invariant over $A$.
+
+%We say that ${\gr a}$ and ${\gr b}$ have the same \emph{Kim-Pillay strong type over $A$\/} if $\K({\gr a}/A)=\K({\gr b}/A)$ or, in other words, when ${\gr a}\in\grD\iff{\gr b}\in\grD$ for every type-definable set $\grD$ that is Lascar invariant over $A$. We write \emph{$a\stackrel{\smash{\scalebox{.5}{\rm KP}}}{\equiv}_Ab$}.
 
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Warning: the symbol $\K({\gr a}/A)$ is not standard. The symbol ${\gr a}\equivKP_A{\gr b}$ is not unusual, but some author write ${\rm KP{\jj}stp}({\gr a}/A)={\rm KP{\jj}stp}({\gr b}/A)$ or ${\gr a}\mathrel{E_{_{{\rm KP}/A}}}{\gr b}$.
 
@@ -492,7 +498,6 @@ Denote by $e_A(z\,;w)$ be the finest bounded equivalence relation on $\U^{|{\gr 
   
   $\supseteq$\quad Let $e({\gr z}\,;{\gr w})$ be the type-definable equivalence relation given by Proposition~\ref{prop_bardotto}. The orbit of $\K({\gr b}/A)$ under $\Aut(\U/A)$ has cardinality $<\kappa$. Hence the equivalence relation that $e({\gr z}\,;{\gr w})$ defines on $\orbit({\gr b}/A)$ is bounded. By Lemma~\ref{lem_beq_global} there is  be a type-definable bounded equivalence relation $e'({\gr z}\,;{\gr w})\subseteq L(A)$ that refines $e({\gr z}\,;{\gr w})$ on $\orbit({\gr b}/A)$. As $e'({\gr z}\,;{\gr w})$ is refined by $e_A({\gr z}\,;{\gr w})$, we obtain $e_A(\U\,;{\gr b})\subseteq e(\U\,;{\gr b})=\K({\gr b}/A)$.
 \end{proof}
-
 
 The \emph{logic $A$-topology}, or simply the  \emph{logic topology} when $A$ is empty, is the topology on $\U^{|{\gr z}|}$ whose closed sets are the type-definable Lascar $A$-invariant sets. It is clearly a compact topology. Its Kolmogorov quotient, that is $\U^{|{\gr z}|}/\equivKP$, is Hausdorff. In fact, by Corollary~\ref{corol_KP_simmetry}, the open sets $\neg\K({\gr a}/A)$ and $\neg\K({\gr b}/A)$ separate ${\gr b}\not\equivKP{\gr a}$.
 
