@@ -986,7 +986,7 @@ We will need to adapt the construction above to meet more requirements on the mo
 \begin{void_thm}[Second proof of the downward L\"owenheim-Skolem Theorem]\label{diym_II_lowenheimskolemallingiu}\rm
 From set theory we know there is a bijection $\pi:\lambda\to\lambda^2$ such that $\pi_1(i)$ and $\pi_2(i)$, the two components of $\pi(i)$, are both $\le i$. Suppose we have defined the set $A_j$ for very $j\le i$. Let $\<\phi_k(x)\;:\;k<\lambda\>$ be an enumeration of the formulas in $L(A_{\pi_1(i)})$. Let $b$ be a solution of the $\phi_k(x)$ for $k=\pi_2(i)$ and define $A_{i+1}=A_i\cup\{b\}$.
 
-We use Tarski-Vaught test to prove $M\preceq N$. Let $\phi(x)\in L(M)$ be consistent in $N$. As $\pi$ is a bijection, there is an $i$ such that $\phi(x)$ is the $\pi_2(i)$-th formula enumerated in $L(A_{\pi_1(i)})$. Hence a witness of $\phi(x)$ is enumerated in $M$ at stage $i$.\QED
+We use Tarski-Vaught test to prove $M\preceq N$. Let $\phi(x)\in L(M)$ be consistent in $N$. As $\pi$ is a bijection, there is an $i$ such that $\phi(x)$ is the $\pi_2(i)$-th formula enumerated in $L(A_{\pi_1(i)})$. Hence a witness of $\phi(x)$ is enumerated in $M$ at stage $i+1$.\QED
 \end{void_thm}
 
 
@@ -995,7 +995,7 @@ We use Tarski-Vaught test to prove $M\preceq N$. Let $\phi(x)\in L(M)$ be consis
 % \end{exercise}
 
 \begin{exercise}\label{ex_LS}
-Assume $L$ is countable and let $M\preceq N$ have arbitrary (large) cardinality. Let $A\subseteq N$ be countable. Prove that there is a countable model $K$ such that $A\subseteq K\preceq N$ and $K\cap M\preceq N$ (in particular, $K\cap M$ is a model).  Hint: adapt the construction used to prove the downward L\"owenheim-Skolem Theorem.\QED
+Assume $L$ is countable and let $M\preceq N$ have arbitrary (large) cardinality. Let $A\subseteq N$ be countable. Prove there is a countable model $K$ such that $A\subseteq K\preceq N$ and $K\cap M\preceq N$ (in particular, $K\cap M$ is a model).  Hint: adapt the construction used to prove the downward L\"owenheim-Skolem Theorem.\QED
 \end{exercise}
 
 
@@ -1043,15 +1043,17 @@ where the second implication follows from the induction hypothesis. Vice versa
 
 \ceq{N\models\E y\,\phi(a,y)}{\IMP}{N\models\phi(a,b)} for some $b\in N$
 
-As $a$ is a finite tuple, $a\in M_j^{|x|}$ for some $j$. We can also assume that $b\in M_j$. Then we can apply the induction hypothesis to $\phi(x,y)$ 
+Without loss of generality we can assume that $b\in M_j$ for some $j\ge i$ and obtain
 
 \ceq{}{\IMP}{M_j\models\phi(a,b)} for some $b\in M_j$
+
+Now apply the induction hypothesis to $\phi(x,y)$ and $M_j$
 
 \ceq{}{\IMP}{M_j\models\E y\,\phi(a,y)}
 
 \ceq{}{\IMP}{M_i\models\E y\,\phi(a,y)}
 
-The last implication holds because $M_i\preceq M_j$ or, in case $j<i$, because $M_j\preceq M_i$.
+where the last implication holds because $M_i\preceq M_j$.
 \end{proof}
 
 \begin{exercise}
@@ -1060,5 +1062,5 @@ Let $\<M_i:i\in\lambda\>$ be an elementary chain of substructures of $N$. Let $M
 
 
 \begin{exercise}
-Give an alternative answer to Exercise~\ref{ex_LS} using the downward L\"owenheim-Skolem Theorem (instead of its proof). Hint: construct two countable chains of countable models such that $K_i\cap M\subseteq M_i\preceq N$ and $A\cup M_i\subseteq K_{i+1}\preceq N$. The required model is $K=\bigcup_{i\in\omega}K_i$. In fact it is easy to check that $K\cap M=\bigcup_{i\in\omega}M_i$.\QED
+Give an alternative proof of Exercise~\ref{ex_LS} using the downward L\"owenheim-Skolem Theorem (instead of its proof). Hint: construct two countable chains of countable models such that $K_i\cap M\subseteq M_i\preceq N$ and $A\cup M_i\subseteq K_{i+1}\preceq N$. The required model is $K=\bigcup_{i\in\omega}K_i$. In fact it is easy to check that $K\cap M=\bigcup_{i\in\omega}M_i$.\QED
 \end{exercise}
