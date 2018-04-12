@@ -9,11 +9,6 @@
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{18ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-\definecolor{brown}{RGB}{150, 50, 10}
-\definecolor{green}{RGB}{10,120, 20}
-\def\mr{\color{brown}}
-\def\gr{\color{green}}
-
 In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$. Notation and implicit assumptions are as presented in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -321,12 +316,10 @@ Let $X$ be an arbitrary infinite set an $n,k<\omega$. A total function
 
 is also called a \emph{coloring\/} of ${X\choose n}$, the set of the subsets of $X$ of cardinality $n$. This is identified with a partition of ${X\choose n}$ into finitely $k$ classes. A set $H\subseteq X$ such that $f$ is constant on ${H\choose n}$ is called \emph{monochromatic set}. In the literature it may be called a \emph{homogeneous set}, but we already use this word with a different meaning. The following is a most famous theorem which here we prove it in unusual way.
 
-
+\theoremstyle{mio}
 \newtheorem{Ramsey}[thm]{Ramsey's Theorem}
-%\begin{proposition}[ (Ramsey's Theorem)]
-\begin{Ramsey}
+\begin{Ramsey}\label{thm_Ramsey}
 For every infinite set $M$, every $n,k<\omega$ and every coloring $f:{M\choose n}\to k$ there is an infinite monochromatic set.
-%\end{proposition}
 \end{Ramsey}
 \begin{proof}
 Let $L$ be a language that contains $k$ relation symbols $r_0,\dots,r_{k-1}$ of arity $n$. Given $f:{M\choose n}\to k$ as above we define now a structure with domain $M$. The interpretation the relation symbols is
@@ -385,10 +378,11 @@ Note also that if ${\mr\bar a}$ is $A\jj$indiscernible then $\EMtp({\mr\bar a}/A
 % 
 
 
-
-\begin{theorem}[(Ehrenfeucht-Mostowski)]\label{thm_EM}
+\theoremstyle{mio}
+\newtheorem{EhrenfeuchtMostowski}[thm]{Ehrenfeucht-Mostowski's Theorem}
+\begin{EhrenfeuchtMostowski}\label{thm_EM}
   Let $I,<_I$ and $J,<_J$ be two infinite linear orders such that $|J|\le \kappa$. Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is an $J\jj$sequence of $A$-indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/A)\subseteq\EMtp({\mr\bar c}/A)$.
-\end{theorem}
+\end{EhrenfeuchtMostowski}
 
 
 \begin{proof}
@@ -422,7 +416,6 @@ Let $\bar a=\<a_i:i\in I\>$ be an $A\jj$indiscernible sequence and let $I\subset
 \begin{exercise}
 Let  $p(x)\in S(\U)$ be a global type invariant over $A$. Let $a$ and $b$ two realizations of $p_{\restriction A}(x)$. Prove that there is a sequence $\bar c=\<c_i:i<\omega\>$ such that $a,\bar c$ and $b,\bar c$ are both sequences of $A\jj$indiscernibles.\QED
 \end{exercise}
-\begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -472,17 +465,16 @@ If $\bar a=\<a_i:i<\alpha\>$ is a tuple of elements of $\U$ we write $\fp(\bar a
 
 \ceq{\hfill\emph{$\fp(\bar a)$}}{=}{\Big\{a_{i_1}\cdot\dots\cdot a_{i_n}\ :\quad i_0<\dots<i_{n-1}<\alpha,\ \  n\in\omega\Big\}}.
 
-We agree that $\fp(\bar a)=\0$ when $\bar a$ is the empty tuple.
+We agree that when $\bar a$ is the empty tuple then $\fp(\bar a)=\0$.
 
-\newtheorem{Hindman}[thm]{Hindman's Theorem}
-\begin{Hindman}
-Let $G$ be an infinite semigroup and then for every finite coloring of $G$ there is an infinite tuple $\bar c$ such that $\fp(\bar c)$ is monochromatic.
-\end{Hindman}
+\begin{theorem}
+Let $G$ be an infinite semigroup. Then for every finite coloring of $G$ there is an infinite tuple $\bar c$ such that $\fp(\bar c)$ is monochromatic.
+\end{theorem}
 
 When $G$ is commutative this amount to claiming that there is an infinite monochromatic set cosed under finite sum of distinct elements.
 
 \begin{proof}
-We follow quite closely the proof of Ramsey theorem. We may assume that the colors corresponds to definable sets that form a partition of $G$ and, by elementarity of $\U$. Let $p(x)\in S(\U)$ be the global type obtained from Lemma~\ref{}. For all $i<\omega$ define
+We follow quite closely the proof of Ramsey's Theorem~\ref{thm_Ramsey}. We may assume that the colors corresponds to definable sets that form a partition of $G$ and, by elementarity, of $\U$. Let $p(x)\in S(\U)$ be the global type obtained from Lemma~\ref{}. For all $i<\omega$ define
 
 \ceq{\hfill c_{i+1}}{\models}{p_{\restriction G,\,\fp(c_{\restriction i})}}
 
