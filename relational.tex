@@ -57,11 +57,11 @@ Fix $M\models T_{\rm lo}$ and $N\models T_{\rm dlo}$. Let $k:M\imp N$ be a finit
 \begin{proof}
 Given a finite partial isomorphism $k:M\to N$ define
 
-\ceq{\hfill X}{=}{\big\{x\in\dom(k)\;:\;x<b\big\};}
+\ceq{\hfill A^-}{=}{\big\{a\in\dom(k)\;:\;a<b\big\};}
 
-\ceq{\hfill Y}{=}{\big\{y\in\dom(k)\;:\;b<y\big\}.}
+\ceq{\hfill A^+}{=}{\big\{a\in\dom(k)\;:\;b<a\big\}.}
 
-The sets $X$ and $Y$ are finite and partition $\dom k$, and  $X<Y$. As $k:M\imp N$ is a partial isomorphism, $k[X]<k[Y]$. Then in $N$ there is an element $c$ such that $k[X]<c<k[Y]$. It is easy to check that setting $h=k\cup\big\{\<b,c\>\big\}$ we obtain the required extension.
+The sets $A^-$ and $A^+$ are finite and partition $\dom k$, and  $A^-<A^+$. As $k:M\imp N$ is a partial isomorphism, $k[A^-]<k[A^+]$. Then in $N$ there is an element $c$ such that $k[A^-]<c<k[A^+]$. It is easy to check that setting $h=k\cup\big\{\<b,c\>\big\}$ we obtain the required extension.
 \end{proof}
 
 The following is an equivalent version of Lemma~\ref{lem_ordinericco}.
@@ -262,8 +262,7 @@ Prove that for every countable graph $M$ the following are equivalent
 \item[1.] $M$ is either the infinite complete graph, the infinite empty graph, or the random graph;
 \item[2.] if $M_1,M_2\subseteq M$ are such that $M_1\sqcup M_2=M$, then $M_1\simeq M$ or $M_2\simeq M$.
 \end{itemize}
-Hint. For \ssf{2}$\IMP$\ssf{1} first show that if $r(a,M)=\0$ for some $a\in M$ then the graph is null and if $\
-\{b\}\cup r(b,M)=M$ for some $b$ then the graph is complete. Also note that \ssf{2} implies that a similar property holds for any finite partition of $M$, not just bi-partitions. It follows that if \ssf{2} and there is a finite $A$ such that $\bigcap_{a\in A}r(a, M)=\0$ then the graph is null and if there is a finite $B$ such that $B\cup\bigcup_{b\in B}r(b,M)=M$ then the graph is complete. 
+Hint. For \ssf{2}$\IMP$\ssf{1} first show that if $r(a,M)=\0$ for some $a\in M$ then the graph is null and if $r(b,M)=M\sm\{b\}$ for some $b$, then the graph is complete. Also note that \ssf{2} implies that any finite partition of $M$ contain an element isomorphic to $M$. It follows that if \ssf{2} and there is a finite $A$ such that $\bigcap_{a\in A}r(a, M)=\0$ then the graph is null and if there is a finite $B$ such that $B\cup\bigcup_{b\in B}r(b,M)=M$ then the graph is complete. 
 
 Suppose $M$ is not a random graph. Fix some finite, disjoint $A$ and $B$ such that no $c$ satisfies both $r(A,c)= A$ and $r(B,c)=\0$. Let $M_1=\{c:r(A,c)\neq A\}\sm B$ and $M_2=B\cup\{c:r(B,c)\neq\0\}\sm M_1$. This is a partition of $M$. Now note that 
 
