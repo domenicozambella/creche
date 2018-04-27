@@ -1,7 +1,7 @@
 % !TEX root = creche.tex
 \chapter{Preliminaries and notation}\label{termini}
 %\setcounter{page}{1}
-This chapter introduces the syntax and semantic of first order logic. We assume that the reader has at some basic familiarity with first order logic. 
+This chapter introduces the syntax and semantic of first order logic. We assume that the reader has at least some familiarity with first order logic. 
 
 The definitions of terms and formulas we give in Section~\ref{terminidef} and~\ref{sintassformule} are more formal than is required in subsequent chapters. Our main objective is to convince the reader that a rigorous definition of language and truth is possible. However, the actual details of such a definition are not relevant for our purposes.
 
@@ -27,34 +27,34 @@ A \emph{(first order) structure\/}\index{structure} $M$ of signature $L$ (for sh
 \end{itemize}
  We call $f^M$, respectively $r^M$, the \emph{interpretation\/}\index{interpretation} of $f$, respectively $r$, in $M$.
  
-Recall that, by definition, $M^0=\{\0\}$\index{function!0-ary}. Therefore the interpretation of a constant $c$ is a function that maps the unique element of $M^0$ into an element of $M$. We identify $c^M$ with $c^M(\0)$.
+Recall that, by definition, $M^0=\{\0\}$\index{function!0-ary}. Therefore the interpretation of a constant $c$ is a function that maps the unique element of $M^0$ to an element of $M$. We identify $c^M$ with $c^M(\0)$.
 
 We may use the word \emph{model\/} as a synonym for structure. But beware that, in some contexts, the word is used to denote a particular kind of structure.  
 
-If $M$ is an $L$-structure and $A\subseteq M$ is any subset, we write \emph{$L(A)$\/}\index{0LA@$L(A)$, $L(M)$} forby  the language obtained adding to $L_{\rm fun}$ the elements of $A$ as constants. In this context, the elements of $A$ are called \emph{parameters}\index{parameter}. There is a canonical expansion of $M$ to an $L(A)$-structure that is obtained by setting $a^M=a$ for every $a\in A$.
+If $M$ is an $L$-structure and $A\subseteq M$ is any subset, we write \emph{$L(A)$\/}\index{0LA@$L(A)$, $L(M)$} for  the language obtained by  adding to $L_{\rm fun}$ the elements of $A$ as constants. In this context, the elements of $A$ are called \emph{parameters}\index{parameter}. There is a canonical expansion of $M$ to an $L(A)$-structure that is obtained by setting $a^M=a$ for every $a\in A$.
 
 \begin{example}\label{LgaLgmLau}
-The \emph{language of additive groups\/}\index{language!of additive groups} consists of the following function symbols\nobreak
+The \emph{language of additive groups\/}\index{language!of additive groups} consists of the following function symbols:\nobreak
 \begin{itemize}
 \item[1.] a constant (that is, a function symbol of arity $0$) \ \  $0$
 \item[2.] a unary function symbol (that is, of arity $1$) \ \   $-$
 \item[3.] a binary function symbol (that is, of arity $2$)\ \  $+ \,$.
 \end{itemize}
-In the \emph{language of multiplicative groups\/}\index{language!of multiplicative groups\/} the three symbols above are replaced by $1$, ${}^{-1}$, and $\cdot$ respectively. Any group is a structure in either of these two signatures with the obvious interpretation. Needless to say, not all structures with these signatures are groups. 
+In the \emph{language of multiplicative groups\/}\index{language!of multiplicative groups\/} the three symbols above are replaced by $1$,~${}^{-1}$, and $\cdot$ respectively. Any group is a structure in either of these two signatures with the obvious interpretation. Needless to say, not all structures with these signatures are groups. 
 
-The \emph{language of (unitary) rings\/} contains all function symbols above except \ ${}^{-1}$. The  \emph{language of ordered rings\/} also contains the binary relation symbol $<$.\QED
+The \emph{language of (unitary) rings\/} contains all the function symbols above except \ ${}^{-1}$. The  \emph{language of ordered rings\/} also contains the binary relation symbol $<$.\QED
 \end{example}
 
-The following is a less straightforward example. The reason behind the choice of the language of vector spaces will become clear in Example~\ref{ex_substructure} below.
+The following example is less straightforward. The reason for the choice of the language of vector spaces will become clear in Example~\ref{ex_substructure} below.
 
 \begin{example}\label{linguaggio_spazi_vettoriali}
-Let $F$ be a field. The \emph{language of vector spaces over $F$\/}\index{language!vector spaces}, that we denote by $L_F$, extends that of additive groups by a unary function symbol $k$ for every $k\in F$. 
+Let $F$ be a field. The \emph{language of vector spaces over $F$\/}\index{language!vector spaces}, which we denote by $L_F$, extends that of additive groups by a unary function symbol $k$ for every $k\in F$. 
 
 Recall that a vector space over $F$ is an abelian group $M$ together with a function $\mu:F\times M\imp M$ satisfying some properties (that we assume well-known, see Example~\ref{ex_ax_vect_sp}).
  To view a vector space over $F$ as an $L_F$-structure, we interpret the group symbols in the obvious way and each $k\in F$ as the function $\mu(k,\mbox{-})$.\QED
 \end{example}
 
-The languages in Examples~\ref{LgaLgmLau} and \ref{linguaggio_spazi_vettoriali}, with the exception of that of ordered rings, are \emph{functional languages}\index{language!functional}, that is, $L_{\rm rel}=\0$. In what follows, we consider two important examples of \emph{relational languages\/}\index{language!relational\/} (that is, languages where $L_{\rm fun}=\0$).
+The languages in Examples~\ref{LgaLgmLau} and \ref{linguaggio_spazi_vettoriali}, with the exception of that of ordered rings, are \emph{functional languages}\index{language!functional}, that is, $L_{\rm rel}=\0$. In what follows, we consider two important examples of \emph{relational languages\/}\index{language!relational\/}, that is, languages where $L_{\rm fun}=\0$.
 
 \begin{example}\label{expl_graph1}
 The \emph{language of strict orders\/}\index{language!strict orders} only contains the binary relation symbol~$<$. The \emph{language of graphs\/}\index{language!graphs}, too, only contains a binary relation symbol (for which there is no standard notation). %NDR is this what you mean by `there is no canonical choice'?
@@ -67,21 +67,22 @@ The \emph{language of strict orders\/}\index{language!strict orders} only contai
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tuples}
-A \emph{tuple of elements of $A$\/}\index{tuple} is a function $a:\alpha\to A$ from an ordinal $\alpha$ to a set $A$.  We call $\alpha$ the \emph{length} of $a$ and denote it by \emph{$|a|$}\index{length!of a tuple}\index{0a@$|a|$}. If $a$ is surjective, we call $a$ an \emph{enumeration\/}\index{enumeration} of $A$. Occasionally, we may say \emph{sequence\/} for tuple --~a word that also applies when the domain is not necessarily an ordinal.
+A \emph{tuple of elements of $A$\/}\index{tuple} is a function $a:\alpha\to A$ from an ordinal $\alpha$ to a set $A$.  We call $\alpha$ the \emph{length} of $a$ and denote it by \emph{$|a|$}\index{length!of a tuple}\index{0a@$|a|$}. If $a$ is surjective, it is said to be an \emph{enumeration\/}\index{enumeration} of $A$. Occasionally, we may say \emph{sequence\/} for tuple --~a word that is also used when the domain is not necessarily an ordinal.
 
-We write \emph{$a_i$} for the $i$-th element of $a$, that is, the element $a(i)$, where $i<\alpha$. We may present a tuple with the notation \emph{$a=\<a_i: i<\alpha\>$}\index{0a0al@$\<a_i: i<\alpha\>$}; when $\alpha$ is finite, we may also write \emph{$a=a_0,\dots,a_{\alpha-1}$}. We write \emph{$a_{\restriction n}$} for the restriction of $a$ to $n$. 
+We write \emph{$a_i$} for the $i$-th element of $a$, that is, the element $a(i)$, where $i<\alpha$. We may use the notation \emph{$a=\<a_i: i<\alpha\>$}\index{0a0al@$\<a_i: i<\alpha\>$} for a tuple; when $\alpha$ is finite, we may also write \emph{$a=a_0,\dots,a_{\alpha-1}$}. We write \emph{$a_{\restriction n}$} for the restriction of $a$ to $n$. 
 
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}In general, for any $I\subseteq\alpha$, we write \emph{$a_{\restriction I}$} for the tuple $\<a_{i_k}: k<n\>$ where $i_0,\dots,i_{n-1}$ are the elements if $I$ in increasing order.
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}As a clue to the reader, we may overline the symbols that denote a tuple. Not to overload the notation the elements of the tuple \emph{$\bar a$\/} are sill denoted by $a_i$ (without the bar). Similarly for $a_{\restriction n}$ and $a_{\restriction I}$.
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We sometimes overline %overline non esiste come verbo
+ the symbol that denotes a tuple. For ease of notation, the elements of the tuple \emph{$\bar a$\/} are denoted by $a_i$ (without the bar). Similarly for $a_{\restriction n}$ and $a_{\restriction I}$.
 
-The set of tuples of elements of length $\alpha$ is denoted by \emph{$A^\alpha$}. The set of tuples of length $<\alpha$ is denoted by \emph{$A^{<\alpha}$}. For instance, \emph{$A^{<\omega}$\/} is the set of all finite tuples of elements of $A$. When $\alpha$ is finite we confuse $A^\alpha$ with $\alpha$-th Cartesian power of $A$. In particular $A^1$ is confused with $A$.
+The set of tuples of elements of length $\alpha$ is denoted by \emph{$A^\alpha$}. The set of tuples of length $<\alpha$ is denoted by \emph{$A^{<\alpha}$}. For instance, \emph{$A^{<\omega}$\/} is the set of all finite tuples of elements of $A$. When $\alpha$ is finite we do not distinguish between $A^\alpha$ and the $\alpha$-th Cartesian power of $A$. In particular, we do not distinguish between $A^1$ and $A$.
 
-If $a,b\in A^{|\alpha|}$ and $h$ is a function defined on $A$, we write $h(a)=b$ for $h(a_i)=b_i$. We often confuse the pair $\<a,b\>$ with the tuple of pairs $\<a_i,b_i\>$. The context will resolve the ambiguity.
+If $a,b\in A^{|\alpha|}$ and $h$ is a function defined on $A$, we write $h(a)=b$ for $h(a_i)=b_i$. We often do not distinguish between the pair $\<a,b\>$ and the tuple of pairs $\<a_i,b_i\>$. The context will resolve the ambiguity.
 
 Note that there is a unique tuple of length $0$, the empty set $\0$, which in this context is called \emph{empty tuple\/}\index{empty tuple}. Recall that by definition \emph{$A^{0}$\/}$=\{\0\}$ for every set $A$. Therefore, even when $A$ is empty, $A^{0}$ contains the empty string. 
 
-We will often concatenate tuples. If $a$ and $b$ are tuples we will write \emph{$a\,b$\/} or \emph{$a,b$\/} indifferently. 
+We often concatenate tuples. If $a$ and $b$ are tuples, we write \emph{$a\,b$\/} or, equivalently,\ \emph{$a,b$\/}. 
 
 
 
@@ -91,50 +92,50 @@ We will often concatenate tuples. If $a$ and $b$ are tuples we will write \emph{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Terms}\label{terminidef}
-Fix a infinite set \emph{$V$\/} whose elements we call \emph{variables}\index{variable}. We use the letters $x$, $y$, $z$, ecc.\@ to denote variables or tuple of variables. We rarely refer to $V$ explicitly and we always assume that $V$ is large enough for our needs.
+Let \emph{$V$\/} be an infinite set whose elements we call \emph{variables}\index{variable}. We use the letters $x$, $y$, $z$, etc.\@ to denote variables or tuples of variables. We rarely refer to $V$ explicitly, and we always assume that $V$ is large enough for our needs.
 
 We fix a signature $L$ for the whole section.
 
 \begin{definition}\label{deftermine} 
-A \emph{term\/}\index{term} is a finite sequence of elements of $L_{\rm fun}\cup V$ that are obtained with the following inductive procedure
+A \emph{term\/}\index{term} is a finite sequence of elements of $L_{\rm fun}\cup V$ that are obtained inductively as follows:
 \begin{itemize}
 \item[o.] every variable, intended as a tuple of length $1$, is a term;
-\item[i.] If $f\in L_{\rm fun}$ and $t$ is a tuple obtained concatenating $n_f$ terms, then $f\kern0.1ex t$ is a term. By $f\kern0.1ex t$ we understand the tuple obtained prefixing $t$ by $f$.
+\item[i.] if $f\in L_{\rm fun}$ and $t$ is a tuple obtained by concatenating $n_f$ terms, then $f\kern0.1ex t$ is a term. We write $f\kern0.1ex t$ for the tuple obtained by prefixing $t$ by $f$.
 \end{itemize}
-We will say \emph{$L$-term\/} when we need to specify the language $L$.\QED
+We say \emph{$L$-term\/} when we need to specify the language $L$.\QED
 \end{definition}
 
 Note that any constant $f$, intended as a tuple of length $1$, is a term (by \ssf{i}, the term $f$ is obtained concatenating $n_f=0$ terms and prefixing by $f$). Terms that do not contain variables are called \emph{closed terms}\index{term!closed}.
 
-The intended meaning of, for instance, the term ${+}\,{+}\,x\,y\,z$ is $(x\,{+}\,y)\,{+}\,z$. The first expression uses the \emph{prefix notation\/}\index{prefix notation} the second uses the \emph{infix notation}\index{infix notation}. When convenient we (informally) use the infix notation and add parenthesis to improve legibility and avoid ambiguity.
+The intended meaning of, for instance, the term ${+}\,{+}\,x\,y\,z$ is $(x\,{+}\,y)\,{+}\,z$. The first expression uses \emph{prefix notation\/}\index{prefix notation}; the second uses \emph{infix notation}\index{infix notation}. When convenient, we informally use infix notation and add parentheses to improve legibility and avoid ambiguity.
 
-The following lemma shows that the prefix notation allows to write unambiguous terms without the use of parenthesis.
+The following lemma shows that prefix notation allows to write terms unambiguously without using parentheses.
 
 \begin{lemma}[ (unique legibility of terms)]\label{lemmaterminileggibilita}
-Let $a$ be a sequence of terms. Suppose $a$ can be obtained both by the concatenation of the terms $t_1,\dots,t_n$ or by the concatenation of the terms $s_1,\dots,s_m$. Then $n=m$ and $s_i=t_i$.
+Let $a$ be a sequence of terms. Suppose $a$ can be obtained both by concatenating the terms $t_1,\dots,t_n$ and by concatenating the terms $s_1,\dots,s_m$. Then $n=m$ and $s_i=t_i$.
 \end{lemma}
 \begin{proof}
-By induction on $|a|$. If $|a|=0$ than $n=m=0$ and there is nothing to prove. Suppose the claim holds for tuples of length $k$ and let $a=a_1,\dots,a_{k+1}$. Then $a_1$ is the first element of both  $t_1$ and $s_1$. If $a_1$ is a variable, say $x$, then $t_1$ and $s_1$ are the term $x$ and $n=m=1$. Otherwise $a_1$ is a function symbol, say $f$, then $t_1=f\,\bar t$ and $s_1=f\,\bar s$ where $\bar t$ and $\bar s$ are obtained concatenating he terms $t'_1, \dots, t'_p$ and $s'_1, \dots, s'_p$.  Now apply the induction hypothesis to $a_2,\dots,a_{k+1}$ and to the terms $t'_1, \dots,t'_p,t_2,\dots,t_n$ and $s'_1,\dots,s'_p,s_2,\dots,s_m$.
+By induction on $|a|$. If $|a|=0$ than $n=m=0$ and there is nothing to prove. Suppose the claim holds for tuples of length $k$ and let $a=a_1,\dots,a_{k+1}$. Then $a_1$ is the first element of both  $t_1$ and $s_1$. If $a_1$ is a variable, say $x$, then $t_1$ and $s_1$ are the term $x$ and $n=m=1$. Otherwise $a_1$ is a function symbol, say $f$. Then $t_1=f\,\bar t$ and $s_1=f\,\bar s$, where $\bar t$ and $\bar s$ are obtained by concatenating the terms $t'_1, \dots, t'_p$ and $s'_1, \dots, s'_p$.  Now apply the induction hypothesis to $a_2,\dots,a_{k+1}$ and to the terms $t'_1, \dots,t'_p,t_2,\dots,t_n$ and $s'_1,\dots,s'_p,s_2,\dots,s_m$.
 \end{proof}
 
-If $x=x_1,\dots,x_n$ is a tuple of distinct variables and $s=s_1,\dots,s_n$ is a tuple of terms, we write \emph{$t[x/s]$\/}\index{0txs@$t[x/s]$} for the sequence obtained replacing $x$ by $s$ coordinatewise. Proving that $t[x/s]$ is indeed a term is a tedious task that can be safely skip.
+If $x=x_1,\dots,x_n$ is a tuple of distinct variables and $s=s_1,\dots,s_n$ is a tuple of terms, we write \emph{$t[x/s]$\/}\index{0txs@$t[x/s]$} for the sequence obtained by replacing $x$ by $s$ coordinatewise. Proving that $t[x/s]$ is indeed a term is a tedious task that can be safely skipped.
 
-If $t$ is a term and $x_1,\dots,x_n$ are (tuples of) variables we write \emph{$t(x_1,\dots,x_n)$\/}\index{0tx@$t(x_1,\dots,x_n)$} to declare that the variables occurring in $t$ are among those that occur in $x_1,\dots,x_n$. When a term has been presented as $t(x,y)$, we write \emph{$t(s,y)$\/} for $t[x/s]$.
+If $t$ is a term and $x_1,\dots,x_n$ are (tuples of) variables, we write \emph{$t(x_1,\dots,x_n)$\/}\index{0tx@$t(x_1,\dots,x_n)$} to declare that the variables occurring in $t$ are among those that occur in $x_1,\dots,x_n$. When a term has been presented as $t(x,y)$, we write \emph{$t(s,y)$\/} for $t[x/s]$.
 
-Finally we define the interpretation of a term in a structure $M$. We begin with closed terms. These are interpreted in $0$-ary functions, i.e.\@ an elements of the structure.
+Finally, we define the interpretation of a term in a structure $M$. We begin with closed terms. These are interpreted as $0$-ary functions, i.e.\@ as elements of the structure.
 
 \begin{definition}\label{defterminiinterpretazione}
-Let $t$ be a closed $L(M)$ term. We write \emph{$t^M$}\index{0tM@$t^M$} for the \emph{interpretation of $t$}\index{interpretation!of a closed term}. This is defined by induction of the syntax of $t$
+Let $t$ be a closed $L(M)$ term. The \emph{interpretation of $t$}\index{interpretation!of a closed term}, denoted by \emph{$t^M$}\index{0tM@$t^M$}, is defined by induction of the syntax of $t$ as follows.
 
 \begin{itemize}
-\item[i.] if $t=f\,\bar t$, where $f\in L_{\rm fun}$ and $\bar t$ is a tuple obtained concatenation the terms $t_1,\dots,t_{n_f}$, then $t^M=f^M(t^M_1, \dots, t^M_{n_f})$.
+\item[i.] if $t=f\,\bar t$, where $f\in L_{\rm fun}$ and $\bar t$ is a tuple obtained by concatenating the terms $t_1,\dots,t_{n_f}$, then $t^M=f^M(t^M_1, \dots, t^M_{n_f})$.
 \end{itemize}
 Note that in \ssf{i} we have used Lemma~\ref{lemmaterminileggibilita} in an essential way. In fact this ensures that the sequence $\bar t$ uniquely determines the terms $t_1, \dots, t_{n_f}$.\QED
 \end{definition}
 
-The inductive definition above is based on the case $n_f=0$, i.e.\@ for $f$ a constant (or a parameter).  When $t=c$, a constant, $\bar t$ is the empty tuple, then $t^M=c^M(\0)$ which we abreviate with $c^M$. In particular, if $t=a$, a parameter, then $t^M=a^M=a$.
+The inductive definition above is based on the case $n_f=0$, that is, the case where $f$ a constant, or a parameter.  When $t=c$, a constant, $\bar t$ is the empty tuple, and so $t^M=c^M(\0)$, which we abbreviate as $c^M$. In particular, if $t=a$, a parameter, then $t^M=a^M=a$.
 
-Now we generalize the interpretation to all (non necessarily closed) terms. If $t(x)$ is a term then we define \emph{$t^M\!(x) :\,M^{|x|}\to\, M$}\index{0tMx@$t^M(x)$} to be the function that maps $a\mapsto t(a)^M$.
+Now we generalize the interpretation to all (not necessarily closed) terms. If $t(x)$ is a term, we define \emph{$t^M\!(x) :\,M^{|x|}\to\, M$}\index{0tMx@$t^M(x)$} to be the function that maps $a$ to $t(a)^M$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

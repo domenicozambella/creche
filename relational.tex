@@ -44,7 +44,7 @@ We denote by \emph{$T_{\textrm{lo}}$} the theory strict linear orders and by \em
 
 We introduce some notation to improve readability of the proof of the following theorem. Let $A$ and $B$ be subsets of an ordered set. We write $A<B$ if $a<b$ for every $a\in A$ and $b\in B$. We write $a<B$ e $A<b$ for $\{a\}<B$, respectively $A<\{b\}$. Let $M\models T_{\rm lo}$. Then $M\models T_{\rm dlo}$ if and only if for every finite $A, B\subseteq M$ such that $A<B$ there is a $c$ such that  $A<c<B$.  In fact axiom \ssf{d} is evident and axioms \ssf{nt} and \ssf{e} are obtained taking replacing $A$ and/or $B$ by the empty set.
 
-Now we prove the first of a series of lemmas that we call \emph{extension lemmas}. Recall that in the language of strict orders a map $k:M\to N$ is a partial isomorphism if
+Now we prove the first of a series of lemmas that we call \emph{extension lemmas}. Recall that in the language of strict orders an injective map $k:M\to N$ is a partial isomorphism if 
 
 \ceq{\hfill M\models a<b}{\IFF}{N\models ka<kb}\hfill for every $a,b\in\dom k$.
 
@@ -57,17 +57,17 @@ Fix $M\models T_{\rm lo}$ and $N\models T_{\rm dlo}$. Let $k:M\imp N$ be a finit
 \begin{proof}
 Given a finite partial isomorphism $k:M\to N$ define
 
-\ceq{\hfill X}{=}{\big\{x\in\dom(k)\;:\;x<b\big\};}
+\ceq{\hfill A^-}{=}{\big\{a\in\dom(k)\;:\;a<b\big\};}
 
-\ceq{\hfill Y}{=}{\big\{y\in\dom(k)\;:\;b<y\big\}.}
+\ceq{\hfill A^+}{=}{\big\{a\in\dom(k)\;:\;b<a\big\}.}
 
-The sets $X$ and $Y$ are finite and partition $\dom k$, and  $X<Y$. As $k:M\imp N$ is a partial isomorphism, $k[X]<k[Y]$. Then in $N$ there is an element $c$ such that $k[X]<c<k[Y]$. It is easy to check that setting $h=k\cup\big\{\<b,c\>\big\}$ we obtain the required extension.
+The sets $A^-$ and $A^+$ are finite and partition $\dom k$, and  $A^-<A^+$. As $k:M\imp N$ is a partial isomorphism, $k[A^-]<k[A^+]$. Then in $N$ there is an element $c$ such that $k[A^-]<c<k[A^+]$. It is easy to check that setting $h=k\cup\big\{\<b,c\>\big\}$ we obtain the required extension.
 \end{proof}
 
 The following is an equivalent version of Lemma~\ref{lem_ordinericco}.
 
 \begin{corollary}\label{coroll_ordinericco}
-Let $M\models T_{\rm lo}$ be countable and let $N\models T_{\rm dlo}$. Let $k:M\imp N$ be a finite partial isomorphism. Then there is a (total) embedding $h:M\imp N$ that extends $k$.
+Let $M\models T_{\rm lo}$ be countable and let $N\models T_{\rm dlo}$. Let $k:M\imp N$ be a finite partial isomorphism. Then there is a (total) embedding $h:M\hookrightarrow N$ that extends $k$.
 \end{corollary}
 
 \begin{proof}
@@ -75,7 +75,7 @@ Let $\<a_i:i<\omega\>$ be an enumeration of $M$. Define by induction a chain of 
 
 \ceq{\hfill h}{=}{\bigcup_{i\in\omega} h_i.}
 
-It is immediate to verify that $h:M\imp N$ is the required embedding.
+It is immediate to verify that $h:M\hookrightarrow N$ is the required embedding.
 \end{proof}
 
 
@@ -87,8 +87,8 @@ Prove that the extension Lemma~\ref{lem_ordinericco} characterizes models of $T_
 
 We are now ready to prove that any two countable models of $T_{\rm dlo}$ are isomorphic which is a classical result of Cantor's. Actually what we prove is slightly more general than that. In fact Cantor's theorem is obtained from the theorem below by setting $k=\0$, which we are allowed to, because all models have the same empty characteristic (cfr.\@ Remark~\ref{rmk_characteristic}).
 
-\begin{theorem}\label{zigzagcantor}
-Every finite partial isomorphism $k:M\imp N$ between models of $T_{\rm dlo}$ extends to an isomorphism $g:M\imp N$.
+\begin{theorem}\label{thm_zigzagcantor}
+Every finite partial isomorphism $k:M\imp N$ between countable models of $T_{\rm dlo}$ extends to an isomorphism $g:M\isomap N$.
 \end{theorem}
 
 The following is the archetypal \emph{back-and-forth\/} construction. It is important to note that it does not mention linear orders at all. It only uses the extension Lemma~\ref{lem_ordinericco}. In many other contexts, as soon as we have an extension lemma, we can apply verbatim the same construction (cfr.\@ Theorem~\ref{thm_riccozigzag}).
@@ -103,7 +103,7 @@ We begin by setting $g_0=k$. The inductive step consists of two half-steps that 
 By the extension lemma~\ref{lem_ordinericco} there is a finite partial isomorphism $g_{i+^1\!\!/\!_2}:M\imp N$ that extends $g_i$ and is defined in $a_i$. Now apply the same lemma to extend $\big(g_{i+^1\!\!/\!_2}\big)^{-1}:N\to M$ to a finite partial isomorphism $(g_{i+1})^{-1}:N\to M$ defined in $b_i$.
 \end{proof}
 
-Let $\lambda$ be an infinite cardinal. We say that a theory is \emph{$\lambda\jj$categorical\/} if any two models of $T$ of cardinality $\lambda$ are isomorphic. From Theorem~\ref{zigzagcantor}, taking $k=\0$, we obtain the following.
+Let $\lambda$ be an infinite cardinal. We say that a theory is \emph{$\lambda\jj$categorical\/} if any two models of $T$ of cardinality $\lambda$ are isomorphic. From Theorem~\ref{thm_zigzagcantor}, taking $k=\0$, we obtain the following.
 
 \begin{corollary}
 The theory $T_{\rm dlo}$ is $\omega\jj$categorical.\QED
@@ -124,7 +124,7 @@ Prove that $T_{\rm dlo}$ is not $\lambda\jj$categorical for any uncountable $\la
 \end{exercise}
 
 \begin{exercise}
-Prove that $\RR$, in the language of strict orders, is not isomorphic to $\RR\sm\{0\}$.\QED
+Prove that, in the language of strict orders, $\QQ\preceq\RR$.\QED
 \end{exercise}
 
 \begin{exercise}\label{VaughtEsempio3modelli}
@@ -179,7 +179,7 @@ Random graphs are infinite.
 Suppose for a contradiction that $M$ is a finite random graph. As $M$ contains at least $3$ elements, we can fix two distinct elements $a,b\in M$ and require a $z$ adjacent to all elements of $M\sm\{a,b\}$ and no element of $\{a,b\}$. A remarked above, $z\in\{a,b\}$, then $a$ and $b$ are not adjacent. Now let $w$ be adjacent to all vertices in $M\sm\{a\}$ but not to $a$. The only option is $w=b$, but this implies that $a$ is adjacent to $b$. Contradiction.
 \end{proof}
 
-The following is the analogous of Lemma~\ref{lem_ordinericco} for random graphs. Recall that in the language of graphs a map $k:M\to N$ is a partial isomorphism if
+The following is the analogous of Lemma~\ref{lem_ordinericco} for random graphs. Recall that in the language of graphs a map $k:M\to N$ is a partial isomorphism if it is injective and
 
 \ceq{\hfill M\models r(a,b)}{\IFF}{N\models r(ka,kb)}\hfill for every $a,b\in\dom k$.
 
@@ -194,19 +194,19 @@ These two sets are finite and disjoint, then so are $k[A^+]$ and $k[A^-]$. Then 
 
 \hfil$\displaystyle\bigwedge_{a\in A^+}r(ka,c)\ \ \wedge\ \bigwedge_{a\in A^-}\neg r(ka,c)$.
 
-As $k[A^+]\cup k[A^-]=\range k$, it is immediate to verify that $h=k\cup\big\{\<b,c\>\big\}$ is the require extension.
+As $k[A^+]\cup k[A^-]=\range k$, it is immediate to verify that $h=k\cup\big\{\<b,c\>\big\}$ is the required extension.
 \end{proof}
 
 With the same proof of Corollary~\ref{coroll_ordinericco} obtain the following.
 
 \begin{corollary}\label{coroll_graforicco}
-Let $M\models T_{\rm gph}$ be countable and let $N\models T_{\rm rg}$. Let $k:M\imp N$ be a finite partial isomorphism. Then there is a (total) embedding $h:M\imp N$ that extends $k$.\QED
+Let $M\models T_{\rm gph}$ be countable and let $N\models T_{\rm rg}$. Let $k:M\imp N$ be a finite partial isomorphism. Then there is a (total) embedding $h:M\hookrightarrow N$ that extends $k$.\QED
 \end{corollary}
 
-The proof of Theorem~\ref{zigzagcantor} gives the following theorem and its corollary.
+The proof of Theorem~\ref{thm_zigzagcantor} gives the following theorem and its corollary.
 
 \begin{theorem}\label{gaomegacat}
-Every finite partial isomorphism $k:M\imp N$ between models of $T_{\rm rg}$ extends to an isomorphism $g:M\imp N$.\QED
+Every finite partial isomorphism $k:M\imp N$ between models of $T_{\rm rg}$ extends to an isomorphism $g:M\isomap N$.\QED
 \end{theorem}
 
 \begin{corollary}
@@ -262,10 +262,11 @@ Prove that for every countable graph $M$ the following are equivalent
 \item[1.] $M$ is either the infinite complete graph, the infinite empty graph, or the random graph;
 \item[2.] if $M_1,M_2\subseteq M$ are such that $M_1\sqcup M_2=M$, then $M_1\simeq M$ or $M_2\simeq M$.
 \end{itemize}
-Hint. For \ssf{2}$\IMP$\ssf{1} first show that if $r(a,M)=\0$ for some $a\in M$ then the graph is null and if $\
-\{b\}\cup r(b,M)=M$ for some $b$ then the graph is complete. Also note that \ssf{2} implies that a similar property holds for any finite partition of $M$, not just bi-partitions. It follows that if \ssf{2} and there is a finite $A$ such that $\bigwedge_{a\in A}r(a, M)=\0$ then the graph is null and if there is a finite $B$ such that $B\cup\bigvee_{b\in B}r(b,M)=M$ then the graph is complete. 
+Hint. For \ssf{2}$\IMP$\ssf{1} first show that if $r(a,M)=\0$ for some $a\in M$ then the graph is null and if $r(b,M)=M\sm\{b\}$ for some $b$, then the graph is complete. Clearly, \ssf{2} implies that any finite partition of $M$ contains an element isomorphic to $M$. It follows thats if \ssf{2} and there is a finite $A$ such that $\bigcap_{a\in A}r(a, M)=\0$ then the graph is null and if there is a finite $B$ such that $B\cup\bigcup_{b\in B}r(b,M)=M$ then the graph is complete. 
 
-Suppose $M$ is not a random graph. Fix some finite, disjoint $A$ and $B$ such that no $c$ satisfies both $r(A,c)= A$ and $r(B,c)=\0$. Let $M_1=\{c:r(A,c)\neq A\}\sm B$ and $M_2=B\cup\{c:r(B,c)\neq\0\}\sm M_1$. This is a partition of $M$. Now note that $\bigwedge_{a\in A}r(a, M_1)=\0$ and $\bigvee_{b\in B}r(b, M_2)=M_2$.\QED
+Suppose $M$ is not a random graph. Fix some finite, disjoint $A$ and $B$ such that no $c$ satisfies both $r(A,c)= A$ and $r(B,c)=\0$. Let $M_1=\{c:r(A,c)\neq A\}\sm B$ and $M_2=B\cup\{c:r(B,c)\neq\0\}\sm M_1$. This is a partition of $M$. Now note that 
+
+\hfill$\displaystyle\bigcap_{a\in A}r(a, M_1)=\0$\hfill and\hfill $\displaystyle\bigcup_{b\in B}r(b, M_2)=M_2$.\QED
 \end{exercise}
 
 \section{Notes and references}
