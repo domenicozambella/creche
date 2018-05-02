@@ -113,7 +113,7 @@ Implication \ssf{1}$\IMP$\ssf{2} is clear as noted above, so we prove \ssf{2}$\I
 Let $N$ be the structure obtained by adding to a countable random graph an isolated point. Show that $N$ is homogeneous if morphisms are elementary maps but it is not if morphisms are simply partial isomorphisms.\QED
 \end{exercise}
 
-A consequence of Theorem~\ref{thm_riccozigzag} is that morphisms between rich models of the same cardinality are elementary maps. However, we do not know what happens when the models have different cardinality or when they are merely $\lambda$-rich. Next theorem extend this property to any pair of $\lambda$-rich models. 
+A consequence of Theorem~\ref{thm_riccozigzag} is that morphisms between rich models of the same cardinality are elementary maps. However, the theorem gives no information when the models have different cardinality nor when they are merely $\lambda$-rich. This case is dealt with by next theorem, arguably the main result of this section.
 
 To test the theorem below in a simple case we propose the following exercise.
 
@@ -127,24 +127,22 @@ Every partial isomorphism $k:M\to N$ between models of $T_{\rm dlo}$ (or models 
 \end{theorem}
 
 \begin{proof}
-Let $k:M\to N$ be a morphism between rich models. It suffices to prove that every finite restriction of $k$ is elementary. By \ssf{c1}, we may as well assume that $k$ itself is finite. It suffices to construct $M'\preceq M$ and  $N'\preceq N$ together with a morphism $h:M\to N$ that extends $k$ and maps $M'$ bijectively to $N'$. Then by \ssf{c5} the map $h:M'\isomap N'$ is the composition of morphisms, hence it is a morphism. Finally, by \ssf{c4}, it is an isomorphism, in particular an elementary map.
+Let $k:M\to N$ be a morphism between rich models. It suffices to prove that every finite restriction of $k$ is elementary. By \ssf{c2}, we may as well assume that $k$ itself is finite. It suffices to construct $M'\preceq M$ and  $N'\preceq N$ together with a morphism $h:M\to N$ that extends $k$ and maps $M'$ bijectively to $N'$. Then by \ssf{c5} the map $h:M'\isomap N'$ is the composition of morphisms, hence it is a morphism. Finally, by \ssf{c4}, it is an isomorphism, in particular an elementary map.
 
-We construct simultaneously a chain $\<A_i:i{<}\lambda\>$ of subsets of $M$, a chain $\<B_i:i{<}\lambda\>$ of subsets of $N$, and a chain functions $\<h_i:i{<}\lambda\>$ such that $h_i:M\to N$ are mor\-phisms, $\dom h_i\subseteq A_i$ and $\range h_i\subseteq B_i$. In the end we set
+In general, richness is not preserved under elementary equivalence. Therefore $M'$ and $N'$ need to be constructed simultaneously with $h$. We define a chain of functions $\<h_i:i{<}\lambda\>$ such that $h_i:M\to N$ are mor\-phisms and in the end we set
 
-\hfil $\displaystyle M'\ \ =\ \ \bigcup_{i<\lambda}A_i$,\hfil $\displaystyle N'\ \ =\ \ \bigcup_{i<\lambda}B_i$,\hfil  $\displaystyle h\ \ =\ \ \bigcup_{i<\lambda}h_i$.
+\hfil  $\displaystyle h\ \ =\ \ \bigcup_{i<\lambda}h_i$,\hfil $\displaystyle M'\ =\ \dom h$,\hfil $\displaystyle N'\ =\ \range h$.
 
-We interweave the Löwenheim-Skolem constraction~\ref{diym_II_lowenheimskolemallingiu} with the usual back-and-forth-argument. 
+We interweave the usual back-and-forth-argument with the Löwenheim-Skolem construction~\ref{diym_II_lowenheimskolemallingiu} in order to obtain $M'\preceq M$ and  $N'\preceq N$.
 
-The chains start with $A_0=\dom k$, $B_0=\range k$ and $h_0=k$. At limit stages we take the union. Now we consider successor stages. Fix some enumerations of $M$ and $N$. At stage $i+1$ we also fix some enumerations of $A_i$, $B_i$, $L_{\mr x}(A_i)$, and $L_{\mr x}(B_i)$, where $|{\mr x}|=1$. Let $\<i_1,i_2\>$ be the $i\jj$th pair of ordinals $<\lambda$. If the $i_2\jj$th formula in $L_{\mr x}(A_{i_1})$ is consistent in $M$, pick any solution ${\mr a}$. Also, if the $i_2\jj$th formula in $L_{\mr x}(B_{i_1})$ is consistent in $N$, pick any solution ${\mr b}$. Let ${\gr a'}$ be the $i_2\jj$th element of $A_{i_1}$ and let ${\gr b'}$ be the $i_2\jj$th element of $B_{i_1}$. 
+The chains start with $h_0=k$. At limit stages we take the union. Now assume we have $h_i$. Let $\phi(x)\in L(\dom h_i)$ some formula consistent in $M$ and pick a solution $b\in M$. By $\lambda$-richness there is a $c\in N$ such that $h_i\cup\{\<b,c\>\}:M\to N$ is a morphism. Let $h_{i+^1\!\!/\!_2}=h_i\cup\{\<b,c\>\}$. 
 
-Let $h_{i+1}:M\to N$ be an extension of $h_i$ such that $\dom h_{i+1}=\dom h_i\cup\big\{{\gr a'}\big\}$ and $\range h_{i+1}=\range h_i\cup\big\{{\gr b'}\big\}$. Note that the latter requirement is met applying Proposition~\ref{prop_6.1} to $h_i^{-1}:N\to M$. Define $A_{i+1}=A_i\cup\big\{{\mr a},h_{i+1}^{-1}{\gr b'}\big\}$ and $B_{i+1}=B_i\cup\big\{{\mr b},h_{i+1}{\gr a'}\big\}$.
+Now, as in the proof of Theorem~\ref{thm_zigzagcantor}, we extend $h_{i+^1\!\!/\!_2}$ to finally obtain $h_{i+1}$. We use procedure with the roles of $M$ and $N$ inverted and with $h^{-1}_{i+^1\!\!/\!_2}$ for $h_i$.
 
-The elements ${\mr a}$ and ${\mr b}$, added to $M'$ and $N'$, ensure that $M'\preceq M$ and $N'\preceq N$, by the Tarski-Vaught test. In fact every formula in $L(M')$ belongs to $L(A_{i_1})$ for some $i_1$ and it occurs as $i_2\jj$ formula in the enumeration that has been fixed along with the construction. Therefore at stage $i=\<i_1,i_2\>$ a witness is added to $M'$. The same happens for formulas in $L(N')$. 
-
-A similar argument shows that the elements ${\gr a'}$ and ${\gr b'}$, added to the domain and range of $h$, ensure that the $h:M'\isomap N'$ is both total and surjective. 
+In the end we obtain $M'\preceq M$ if all formulas $\phi(x)\in L(M')$ are eventually considered. A similar consideration holds for $N'$. This is achieved using the same dovetail enumeration as in our second proof the downward Löwenheim-Skolem Theorem~\ref{diym_II_lowenheimskolemallingiu}.
 \end{proof}
 
-The \emph{theory of rich models\/} of $\M$ is the set $T_1$ of sentences that hold in all rich models (or equivalently $|L|$-rich models), assuming they exist. By the theorem above, $T_1$ is complete as soon as $\M$ is connected.
+The \emph{theory of rich models\/} of $\M$ is the set $T_1$ of sentences that hold in all rich models (or, equivalently, in any $|L|$-rich model), assuming they exist. By the theorem above, $T_1$ is complete as soon as $\M$ is connected.
 
 Assume for simplicity that $L$ is countable and that $\M$ is connected. Then all $\omega\jj$rich models belong to $\Mod(T_1)$ for some complete theory $T_1$. It is interesting to ask if the converse is true: if $T_1$ is the theory of the $\omega\jj$rich models of $\M$, do all models in $\M\cap \Mod(T_1)$ are rich?  The answer is affirmative when $T_1$ is either $T_{\rm dlo}$ or $T_{\rm rg}$, but this is not always the case, see Example~\ref{ex_infiniti_colori} for an easy counterexample. An affirmative answer implies that the theory of rich models is $\omega\jj$categorical. An interesting variant of this question is considered in Theorem~\ref{thm_ricchezza_saturazione_QE}.
 
