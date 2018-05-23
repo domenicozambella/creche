@@ -102,18 +102,45 @@ Let $p(x)\subseteq L(\U)$ be maximal among the quasi-invariant types that are fi
 %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section{Hindman's theorem} 
-
+\section{Hindman's theorem}
+\def\ext{{\rm ex}}
 This section is dedicated to another application of coheirs. The argument is essentially the same as for Ramsey's theorem but we apply it to a special coheir that we obtain from Lemma~\ref{}. This lemma relies on ideas taken from topological dynamics which will be discussed in more depth in Chapter~\ref{dynamics}.
 
-Let $G$ be an infinite group which we assume to be a structure in a language $L$ that extends the language of multiplicative groups with a unary relation for every subset of $G$. If $X\subseteq G$ we write $\xi_X(x)$ for the corresponding predicate. We assume that $\U$ is a large saturated elementary extension of $G$. For $\phi(x)\in L(\U)$ we write $\phi(G)$ for $G\cap\phi(\U)$.
+Let $G$ be an infinite semigroup which we assume to be a structure in a language $L$ that extends the language of multiplicative groups. The set of externally definable subsets of $G$ is
+
+\ceq{\hfill\ext(G)}{=}{\Big\{\phi(G)\ :\ \phi(x)\in L(\U)\Big\}}
+
+where $\phi(G)$ stand for $\phi(\U)\cap G$, the trace of $\phi(\U)$ on $G$. 
+
+There is an obvious right-action of $\U$ on its subsets, namely $\D\mapsto \D{\cdot}a$. In particular, the action takes definable sets to definable sets. Namely, the set defined by $\phi(x)$ is mapped to a the set defined by 
+
+\ceq{\hfill\emph{$\phi_{\cdot a^{-1}}(x)$}}{=}{\E y\big[\phi(y)\wedge x{=}y{\cdot}a\big]}. 
+
+By taking the trace on $G$ of the definable sets, we obtain an action of $\U$ on $\ext(G)$. Namely $\phi(G)$ maps to $\phi_{\cdot a^{-1}}(G)$ defined above. 
+
+This action is continuous in the $G$-topology on $\U$. In particular, it is an action on $\U/{\equiv_G}$.
+
+
+
+with a unary relation for every subset of $G$. If $X\subseteq G$ we write $\xi_X(x)$ for the corresponding predicate. We assume that $\U$ is a large saturated elementary extension of $G$. For $\phi(x)\in L(\U)$ we write $\phi(G)$ for $G\cap\phi(\U)$.
+
+
+
+
+
+\begin{lemma}
+There is a $g\in G$ such that $a\equiv$.
+\end{lemma}
+
+\begin{proof}
+
+\end{proof}
 
 The motivation for the choice of the language is to obtain the following: every type in $p(x)\in S(G)$ has a unique global coheir. In fact, as the formula $\phi(x)\niff\xi_{\phi(G)}(x)$ is not satisfied in $G$, all global types that are finitely satisfied in $G$ have to contain the formula $\phi(x)\iff\xi_{\phi(G)}(x)$. Therefore the type 
 
 \ceq{\hfill p'(x)}{=}{\big\{\phi(x)\ :\  \xi_{\phi(G)}(x)\in p\big\}}
 
 is the only possible global coheir of $p(x)$.
-
 
 We want to extend the group operation of $G$ to a multiplication $*$ on $\U/{\equiv_G}$. (The group multiplication in $\U$ is never compatible with the relation $\equiv_G$, see Exercise~\ref{ex_group_operation}.) Given $a,b\in\U$ let $p(x)$ be the unique global coheir of $\tp(\dot a/G)$ and let $\dot a\models p_{\restriction G,b}(x)$ and let $c=\dot a\cdot b$. Note that $\tp(c/G)$ only depends on $\tp(a/G)$ and $\tp(b/G)$ in particular it does not depend on the choice of $\dot a$.
 
@@ -126,7 +153,6 @@ There exists a type $p(x)\in S(\U)$ that is finitely satisfied in $G$ and such t
 \begin{proof}
 Let $q(x)\subseteq L(\U)$ be the maximal type for which \ssf{\#} holds. We claim that for every $q(a\cdot x)\iff q(x)$. 
 \end{proof}
-
 
 Let $\rho(a,b,c)$ be the relation that holds if $c=\dot a\cdot b$ for some $\dot a\models p_{\restriction G,b}(x)$, where $p(x)$ is a global coheir of $\tp(\dot a/G)$.
 
@@ -181,4 +207,24 @@ Let $b\in\U$ be We define $a*b$ as
 \begin{exercise}\label{ex_group_operation}
 Let $G$ be such that ..... Prove that there are $a\equiv_G a'$ and $b\equiv_G b'$ such that $a\,b\equiv_G a'b'$. The operation we define below will only be a subgroup multiplication.\QED
 \end{exercise}
+\def\Ex{\Ee\kern-.2ex\mbox{$\scriptscriptstyle\X$}}
+\section{Altra prova}
+Let $G$ be an infinite semigroup which we assume to be a structure in a language $L$ that extends the language of multiplicative groups. 
+
+The external type of $a$ over $A$ is the set $\Ex(a/A)$
+
+The set of externally definable subsets of $G$ is
+
+\ceq{\hfill\ext(G)}{=}{\Big\{\phi(G)\ :\ \phi(x)\in L(\U)\Big\}}
+
+where $\phi(G)$ stand for $\phi(\U)\cap G$, he trace of $\phi(\U)$ on $G$. 
+
+There is an obvious right-action of $\U$ on its subsets, namely $\D\mapsto \D{\cdot}a$. In particular, the action takes definable sets to definable sets: the set defined by $\phi(x)$ is mapped to a the set defined by 
+
+\ceq{\hfill\phi_{a^{-1}}(x)}{=}{\E y\big[\phi(y)\wedge x{=}y{\cdot}a\big]}. 
+
+By taking the trace on $G$ of the definable sets, we obtain an action of $\U$ on $\ext(G)$. Namely $\phi(x)$ maps to $\phi_{a^{-1}}(x)$ defined above. 
+
+This action is continuous in the $G$-topology on $\U$. In particular, it is an action on $\U/{\equiv_G}$.
+
 
