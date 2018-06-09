@@ -46,7 +46,7 @@ Every strongly quasi-invariant type extends to a global strongly quasi-invariant
 
 
 
-\section{Hindman theorem}
+\section{Hindman theorem                            }
 
 
 \def\fp{{\rm fp}}
@@ -98,12 +98,8 @@ Let $p(x)\subseteq L(\U)$ be maximal among the quasi-invariant types that are fi
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Hindman's theorem}
-\def\ext{{\rm ex}}
+\section{Hindman's theorem                                }
+\def\ext{{\rm ext}}
 This section is dedicated to another application of coheirs. The argument is essentially the same as for Ramsey's theorem but we apply it to a special coheir that we obtain from Lemma~\ref{}. This lemma relies on ideas taken from topological dynamics which will be discussed in more depth in Chapter~\ref{dynamics}.
 
 Let $G$ be an infinite semigroup which we assume to be a structure in a language $L$ that extends the language of multiplicative groups. The set of externally definable subsets of $G$ is
@@ -188,7 +184,7 @@ We follow quite closely the proof of Ramsey's Theorem~\ref{thm_Ramsey}. We may a
 
 By  Lemma~\ref{}, the set $\fp(\bar c)$ is monochromatic. It need not be contained in $G$ though. We use $\bar c$ to define $\bar a\in G^\omega$ such that $\fp(\bar a)$ is monochromatic.
 
-Assume as induction hypothesis that $\fp({\mr a_{\restriction i}},{\mr c_{\restriction n}})$ is monochromatic. Our goal is to find ${\mr a_i}$ such as the same property holds for ${\mr a_{\restriction i}},{\mr a_i},{\mr c_{\restriction n}}$. By the indiscernibility of ${\mr\bar c}$, the property holds for  ${\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr{c_n}}$.  And this can be written by a formula $\phi({\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr{c_n}})$. As ${\mr\bar c}$ is a coheir sequence, by Lemma~\ref{lem_coheir_property} we can find  ${\mr a_i}\in M$ such that  $\phi({\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr a_i})$. So, as the order is irrelevant,  ${\mr a_{\restriction i}},{\mr a_i},{\mr c_{\restriction n}}$ satisfies the induction hypothesis.
+Assume as induction hypothesis that $\fp({\mr a_{\restriction i}},{\mr c_{\restriction n}})$ is monochromatic. Our goal is to find ${\mr a_i}$ such as the same property holds for ${\mr a_{\restriction i}},{\mr a_i},{\mr c_{\restriction n}}$. By the indiscernibility of ${\mr\bar c}$, the property holds for  ${\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr{c_n}}$.  And this can be written by a formula $\phi({\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr{c_n}})$. As ${\mr\bar c}$ is a coheir sequence, by Lemma~\ref{lem_coheir_property} we can find  ${\mr a_i}\in M$ such that $\phi({\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr a_i})$. So, as the order is irrelevant,  ${\mr a_{\restriction i}},{\mr a_i},{\mr c_{\restriction n}}$ satisfies the induction hypothesis.
 \end{proof}
 
 First note that here is natural action of $\U$ on the subsets of $\U$. Namely, for $a\in\U$ and $\D\subseteq\U$ 
@@ -208,23 +204,84 @@ Let $b\in\U$ be We define $a*b$ as
 Let $G$ be such that ..... Prove that there are $a\equiv_G a'$ and $b\equiv_G b'$ such that $a\,b\equiv_G a'b'$. The operation we define below will only be a subgroup multiplication.\QED
 \end{exercise}
 \def\Ex{\Ee\kern-.2ex\mbox{$\scriptscriptstyle\X$}}
-\section{Altra prova}
-Let $G$ be an infinite semigroup which we assume to be a structure in a language $L$ that extends the language of multiplicative groups. 
 
-The external type of $a$ over $A$ is the set $\Ex(a/A)$
 
-The set of externally definable subsets of $G$ is
 
-\ceq{\hfill\ext(G)}{=}{\Big\{\phi(G)\ :\ \phi(x)\in L(\U)\Big\}}
+\section{Altra prova                               }
 
-where $\phi(G)$ stand for $\phi(\U)\cap G$, he trace of $\phi(\U)$ on $G$. 
+Let $G$ be an infinite semigroup which we assume to be a structure in a language $L$ that has a binary function symbol for multiplication and possibly other symbols. 
+
+We identity each element $a\in\U$ with its left action on $\U$, i.e.\@ with the function $a(x)=a{\cdot} x$. We write \emph{$a^{-1}\D$} for $\big\{b:a{\cdot} b\in\D\big\}$, i.e.\@ the inverse image of $\D$ under the action of $a$. If $\D$ is definable by the formula $\phi(x)$ then $a^{-1}\D$ is definable by the formula $\phi(a{\cdot} x)$. This action on $L_x(\U)$ induces in the obvious way an action on $S_x(\U)$, namely $p(x)$ maps to $p(a{\cdot} x)$.
+
+\begin{assumption} 
+For every $G$-definable set $\D\subseteq\U$ and every element $a\in\U$ there is a unique $G$-definable set $\C$ such that $\C=_Ga^{-1}\D$.\QED
+\end{assumption}
+
+The assumption above allows to define an action of $\U$ on $L_x(G)$. For each formula $\phi(x)\in L(G)$ we define \emph{${}^a\kern-1.2pt \phi(x)$\/} to be the unique (up to equivalence) formula in $L(G)$ that is equivalent to $\phi(a{\cdot} x)$ for all $x\in G$. Given $p(x)\in S(G)$ we define \emph{${}^a\kern-.8pt p(x)$\/}$\in S(G)$ to be the type that contains the formulas ${}^a\kern-1.2pt \phi(x)$ for all $\phi(x)\in p$. 
+
+Note that the actions defined above factorize through $\equiv_G$. So, $\U/{\equiv_G}$ acts on $S_x(G)$. As these two sets can be identified, we actually have an operation on $S_x(G)$. For $p,q\in S_x(G)$ we define \emph{$p*q$\/} to be the type ${}^a\kern-.8pt q(x)$ for some (any) $a\models p(x)$.
+
+\begin{lemma}
+For every $p,q\in S_x(G)$, every $a\models p(x)$, and every $b\models q(x)$ that is ??,  we have $a\cdot b\models (p*q) (x)$.
+\end{lemma}
+
+\begin{proof}
+Let ${}^a\kern-1.2pt \phi(x)\in {}^a\kern-.8pt q$ be arbitrary. Then $\phi(a{\cdot} x)\iff{}^a\kern-1.2pt \phi(x)$ holds for every $x\in G$. Then it holds for $b$ and the lemma follows.
+\end{proof}
+
+By the lemma we may consistently define $p*q$ to be $\tp(a{\cdot} b/G)$ for some (any) $a\models p(x)$ and $b\models {}^a\kern-.8pt p$.
+
+
+
+
+We write $a\phi(x)$ for the (any) formula over $G$ that defines $a^{-1}\D$. This is well-defined up to equivalence.
+
+
+Above we have define a right action on $G$-definable sets and a left action on formulas in $L_x(G)$. The latter induces anaction on . Note that these actions factorize through $\equiv_G$. 
+
+Now we define a semigroup operation on $\U/{\equiv_G}$.  
+
+
+
+There is a natural left action of $\U$ on $L_x(\U)$-formulas. Namely, the action of $a\in\U$ maps $\phi(x)$ to the formula $\phi(a{\cdot} x)$ which here we denote by \emph{$a^{-1}\phi(x)$\/}. The notation is justified by the fact that the set defined by $a^{-1}\phi(x)$ is the inverse image of $\phi(\U)$ under the action of $a$. The same notation is also applied to types, we write \emph{$a^{-1}p(x)$\/} for $p(a{\cdot} x)$.
+
+The externally definable subsets of $G$ are the traces on $G$ of the definable sets. The set of all these traces is denoted by 
+
+\ceq{\hfill\emph{\ext(G)}}{=}{\Big\{\phi(\U)\cap G\ :\ \phi(x)\in L(\U)\Big\}}
+
+The action of $\U$ on on formulas induces an action on $\ext(G)$. Clearly, this action factorize through $\equiv_G$.
+
+We now assume that all sets in $\ext(G)$ are the trace of a $G$-definable set and that this set is unique.
+
+If $G$ is a model then by elementarity 
+
+The action of $\U/{equiv_G}$ on $\ext(G)$ induces an action on $L_x(G)$. The action of $a$ on the definable set $\D$ maps it to the unique definable set $\C =_G a^{-1}\D$.
+
+
+
+The action above applies to all formulas in $L_x(\U)$ but here we are mostly interested in the trace on $G$ of the definable sets. 
+
+
+formulas $L_x(G)$ and types in $S_x(G)$. If $p\in S_x(G)$ and $a\equiv_G b$ then 
+
+
+
+
+
 
 There is an obvious right-action of $\U$ on its subsets, namely $\D\mapsto \D{\cdot}a$. In particular, the action takes definable sets to definable sets: the set defined by $\phi(x)$ is mapped to a the set defined by 
 
-\ceq{\hfill\phi_{a^{-1}}(x)}{=}{\E y\big[\phi(y)\wedge x{=}y{\cdot}a\big]}. 
+\ceq{\hfill a^{-1}\phi(x)}{=}{\E y\big[\phi(y)\wedge x{=}a{\cdot}y\big]}. 
 
-By taking the trace on $G$ of the definable sets, we obtain an action of $\U$ on $\ext(G)$. Namely $\phi(x)$ maps to $\phi_{a^{-1}}(x)$ defined above. 
+We stress that $a^{-1}\phi(x)$ is just an abbreviation. If the semigroup $G$ happens to be a group, then  $a^{-1}\phi(\U)=\{a^{-1}b:b\in\phi(\U)\}$. By taking the trace on $G$ of the definable sets, we obtain an action of $\U$ on $\ext(G)$. Namely $\phi(x)$ maps to $\phi_{a^{-1}}(x)$ defined above. 
+
+A 
+
 
 This action is continuous in the $G$-topology on $\U$. In particular, it is an action on $\U/{\equiv_G}$.
 
 
+\section{Altra prova (gruppi, non semigruppi)                             }
+
+
+Let $G$ be an infinite semigroup which we assume to be a structure in a language $L$ that has a binary function symbol for multiplication and possibly other symbols. 
