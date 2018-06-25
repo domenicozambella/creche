@@ -209,7 +209,58 @@ Let $G$ be such that ..... Prove that there are $a\equiv_G a'$ and $b\equiv_G b'
 
 \section{Altra prova                               }
 
-Let $G$ be an infinite semigroup which we assume to be a structure in a language $L$ that has a binary function symbol for multiplication and possibly other symbols. 
+Let $G$ be an infinite semigroup which we assume to be a structure in a language $L$ comprising a symbol for multiplication and possibly other symbols. 
+
+
+In this section we write 
+
+\ceq{\hfill\emph{$a\nonforkc_Ab$}}{\IFF}{\phi(a\,;b) \textrm{ for all }\phi(z\,;x)\in L(A)\textrm{ such that }A\subseteq\phi(a\,;\U)}
+
+\ceq{}{\IFF}{\phi(a\,;A)\neq\0 \textrm{ for all }\phi(z\,;x)\in L(A)\textrm{ such that }\phi(a\,;b)}
+
+which reads, $\tp(b/A,a)$ is finitely satisfied in $A$. We may write \emph{$b\cnonfork_Aa$} for $a\nonforkc_Ab$.
+
+\ceq{\hfill\emph{$a\nonforkc_Ax$}}{=}{\Big\{\phi(a\,;x)\ :\ \phi(z\,;x)\in L(A)\textrm{ and }A\subseteq\phi(a\,;\U)\Big\}}
+
+We shall use, sometimes without reference, the following easy lemma
+
+\begin{lemma}\label{lem_coheirext}
+If $a\nonforkc_Ac$ then for every $b$ there is $c'$ such that $a,b\nonforkc_Ac'\equiv_{A,a}c$. 
+\end{lemma}
+\begin{proof}
+Let $p(x)$ be a global coheir of $\tp(c/A,a)$, which exists by Proposition~\ref{prop_exisntence_coheirs}. Then any $c'\models p_{\restriction A,a,b}(x)$ proves the lemma.  
+\end{proof}
+
+\begin{lemma}
+Let $q(x)\subseteq L(G)$ be a maximal type such that $a{\cdot}b\models q(x)$ for every $a,b\models q(x)$ such that $a\nonforkc_Gb$. Then $q(x)$ is a complete type.
+\end{lemma}
+
+\begin{proof}
+Fix an arbitrary $a\models q(x)$. We prove that
+
+\ceq{\ssf{1}\hfill q(x)}{\imp}{\E x'\ \big[x\equiv_Ga{\cdot}x'\ \wedge\ a\nonforkc_Gx'\big]}
+
+Note that, by $G$-invariance, the r.h.s.\@ is equivalent to a type over $G$. Therefore, by the maximality of $q(x)$, it suffices to show that the r.h.s.\@ is consistent with $q(x)$ and closed under multiplication. As $q(x)$ is closed under multiplication, consistency is witnessed by $a{\cdot}a'$ where $a'$ is any element such that $a\nonforkc_Ga'\models q(x)$.
+%
+%Now, let $b\nonforkc_Gc$ be two realizations of the r.h.s.\@ and let $b',c'$ witness  the respective existential quantifiers. Note that, by Lemma~\ref{lem_coheirext}, we can choose $c'$ such that $a,b,b'\nonforkc_Gc'$. Therefore, from $b\equiv_Ga{\cdot}b'$ we obtain  $b{\cdot}c'\equiv_Ga{\cdot}b'{\cdot}c'$. From transitivity we obtain $a\nonforkc_Gb'{\cdot}c'$. Then $b'{\cdot}c'$ witnesses that $b{\cdot}c'$ satisfies the r.h.s. By elementarity, also $b{\cdot}c$  satisfies the r.h.s.
+
+Now, let $b\nonforkc_Gc$ be two realizations of the r.h.s.\@ and let $b'$ witness the existential quantifier for $b$. By Lemma~\ref{lem_coheirext}, there is $c'$ such that $a, b, b'\nonforkc_Gc'\equiv_{G,b}c$. Then, from $b\equiv_Ga{\cdot}b'$ we obtain  $b{\cdot}c'\equiv_Ga{\cdot}b'{\cdot}c'$.  By transitivity $a\nonforkc_Gb'{\cdot}c'$. Then $b'{\cdot}c'$ witnesses that $b{\cdot}c'$ satisfies the r.h.s. By elementarity, also $b{\cdot}c$  satisfies the r.h.s. This proves \ssf{1}.
+
+
+We now claim that 
+
+\ceq{\ssf{2}\hfill q(x)}{\imp}{\E x'\ \big[a\equiv_Ga{\cdot}x'\ \wedge\ a\nonforkc_Gx'\equiv_Gx\big]}
+
+We proceed as for the proof of \ssf{1}. Consistency is again witnessed by $a$, as can be easily verified substituting $a$ for $x$ in \ssf{1}. Now, let $b\nonforkc_Gc$ be two realizations of the r.h.s.\@ and let $b',c'$ witness the respective existential quantifiers. Note that we can always choose $c'$ such that $a,b'\nonforkc c'\equiv_{Gb}c$. Then from $a\equiv_Ga{\cdot}b'$ we obtain $a{\cdot}c'\equiv_Ga{\cdot}b'{\cdot}c'$ hence $a\equiv_Ga{\cdot}b'{\cdot}c'$. Finally, as $b{\cdot}c\equiv_G b{\cdot}c'$, we obtain that $b'{\cdot}c'$ witnesses that $b{\cdot}c$ satisfies the r.h.s. of \ssf{2}.
+
+Finally we prove that
+
+\ceq{\ssf{3}\hfill q(x)}{\imp}{a\equiv_Gx}
+
+As for \ssf{1} and \ssf{2}, it suffices to prove that if $b\nonforkc_Gc$ are two realizations of the r.h.s.\@ then so is also $b{\cdot}c$. We can assume $a=b$. As $c\models q(x)$, from \ssf{2} we obtain $c'$ such that $a\equiv_Ga{\cdot}c'$ and $a\nonforkc_Gc'\equiv_Gc$. As $a\nonforkc_Gc$ we can assume without loss of generality that $c'\equiv_{G,a}c$ so $a\equiv_Ga{\cdot}c$ follows.
+
+As $a\models q(x)$, \ssf{3} implies that $q(x)=\tp(a/G)$. 
+\end{proof}
 
 We identity each element $a\in\U$ with its left action on $\U$, i.e.\@ with the function $a(x)=a{\cdot} x$. We write \emph{$a^{-1}\D$} for $\big\{b:a{\cdot} b\in\D\big\}$, i.e.\@ the inverse image of $\D$ under the action of $a$. If $\D$ is definable by the formula $\phi(x)$ then $a^{-1}\D$ is definable by the formula $\phi(a{\cdot} x)$. This action on $L_x(\U)$ induces in the obvious way an action on $S_x(\U)$, namely $p(x)$ maps to $p(a{\cdot} x)$.
 
@@ -284,4 +335,44 @@ This action is continuous in the $G$-topology on $\U$. In particular, it is an a
 \section{Altra prova (gruppi, non semigruppi)                             }
 
 
+Let $G$ be an infinite group which we assume to be a structure in a language $L$ that contains the language of multiplicative groups and possibly other symbols.
+
+For $a\in\U$ and $\D\subseteq\U$, we write $a\D$ for the set $\{ab:b\in\D\}$. If $\D$ is defined by the formula $\phi(x)$ then $a\D$ is defined by the formula $\phi(a^{-1}{\cdot}\, x)$.
+
+\begin{assumption} 
+For every $G$-definable set $\D\subseteq\U$ and every $a\in\U$ there is a $G$-definable set $\C$ such that $\C=_Ga\D$.\QED
+\end{assumption}
+
+The assumption above allows to define an action of $\U$ on $L_x(G)$. For each formula $\phi(x)\in L(G)$ we define \emph{$\phi^a(x)$\/} to be the unique (up to equivalence) formula in $L(G)$ that is equivalent to $\phi(a^{-1}{\cdot}\, x)$ for all $x\in G$. Given $p(x)\in S(G)$ we define \emph{$p^a(x)$\/}$\in S(G)$ to be the type that contains the formulas $\phi^a(x)$ for all $\phi(x)\in p$.
+
+Note that the actions defined above factorize through $\equiv_G$. So, $\U/{\equiv_G}$ acts on $S_x(G)$. As these two sets can be identified, we actually have an operation on $S_x(G)$. For $p,q\in S_x(G)$ we define \emph{$p*q$\/} to be the type $q^a(x)$ for some (any) $a\models p(x)$.
+
+\begin{lemma}
+For every $p,q\in S_x(G)$, every $a\models p(x)$, and every $b\models q(x)$ such that $a\nonforkc_G b$ we have $a\cdot b\models (p*q) (x)$.
+\end{lemma}
+
+\begin{proof}
+Let $\phi(x)\in p*q$ be arbitrary. Then $\phi(x)\in q^a$, which we may equivalintly write as $\phi^{a^{-1}}(x)\in q$. Hence, by assumption, $b\models \phi(a{\cdot} x)$. As $\phi(a{\cdot} x)\iff\phi^{a^{-1}}(x)$ holds for every $x\in G$, by independence it holds also for $b$. Therefore $\phi(a{\cdot} b)$ and the lemma follows.
+\end{proof}
+
+\section{Altra prova (semigruppi supersemplificta)                 }
+
 Let $G$ be an infinite semigroup which we assume to be a structure in a language $L$ that has a binary function symbol for multiplication and possibly other symbols. 
+
+\begin{lemma}
+Let $q(x)\subseteq L(G)$ be a maximal type that is 
+\begin{itemize}
+\item[1.] finitely satisfied in $G$
+\item[2.] such that $a{\cdot} b\models q(x)$ for every $a\models q(x)$ and $b\nonforkc_G a$.
+\end{itemize}
+Then $q(x)$ is complete.
+\end{lemma}
+
+\begin{proof}
+Let $p(x)$ be a global coheir of $q(x)$. Let $\<a_i:i\in\omega\>$ be a coheir sequence of $p(x)$. Let $c_i=a_0\cdot\dots\cdot a_i$. By assumption $c_i\models q(x)$. Let $p_i(x)=\tp(c_i/G)$. Define 
+
+\ceq{\hfill p(x)}{=}{\bigcap_{i\in\omega}p_i(x).}
+
+We claim that $p(x)=q(x)$. It suffices to prove that $p(x)$ is closed under  
+\end{proof}
+
