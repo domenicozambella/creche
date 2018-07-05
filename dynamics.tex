@@ -56,8 +56,7 @@ Let $G$ be a semigroup. If $\bar a=\<a_i:i<\alpha\>$ is a tuple of elements of $
 \ceq{\hfill\emph{$\fp(\bar a)$}}{=}{\Big\{a_{i_1}\cdot\dots\cdot a_{i_n}\ :\quad i_0<\dots<i_{n-1}<\alpha,\ \  n\in\omega\Big\}}.
 
 We agree that when $\bar a$ is the empty tuple then $\fp(\bar a)=\0$.
-\theoremstyle{mio}
-\newtheorem{Hindman}[thm]{Hindman's Theorem}
+
 \begin{Hindman}
 Let $G$ be an infinite semigroup. Then for every finite coloring of $G$ there is an infinite tuple $\bar c$ such that $\fp(\bar c)$ is monochromatic.
 \end{Hindman}
@@ -224,7 +223,7 @@ which reads, $\tp(b/A,a)$ is finitely satisfied in $A$. We may write \emph{$b\cn
 
 We shall use, sometimes without reference, the following easy lemma
 
-\begin{lemma}\label{lem_coheirext}
+\begin{lemma}
 If $a\nonforkc_Ac$ then for every $b$ there is $c'$ such that $a,b\nonforkc_Ac'\equiv_{A,a}c$. 
 \end{lemma}
 \begin{proof}
@@ -232,7 +231,7 @@ Let $p(x)$ be a global coheir of $\tp(c/A,a)$, which exists by Proposition~\ref{
 \end{proof}
 
 \begin{lemma}
-Let $q(x)\subseteq L(G)$ be a maximal type such that $a{\cdot}b\models q(x)$ for every $a,b\models q(x)$ such that $a\nonforkc_Gb$. Then $q(x)$ is a complete type.
+Suppose that for every $a\in\U$ the type $a\nonforkc_Gx$ is complete. Let $q(x)\subseteq L(G)$ be a maximal type such that $a{\cdot}b\models q(x)$ for every $a,b\models q(x)$ such that $a\nonforkc_Gb$. Then $q(x)$ is a complete type.
 \end{lemma}
 
 \begin{proof}
@@ -251,7 +250,7 @@ We now claim that
 
 \ceq{\ssf{2}\hfill q(x)}{\imp}{\E x'\ \big[a\equiv_Ga{\cdot}x'\ \wedge\ a\nonforkc_Gx'\equiv_Gx\big]}
 
-We proceed as for the proof of \ssf{1}. Consistency is again witnessed by $a$, as can be easily verified substituting $a$ for $x$ in \ssf{1}. Now, let $b\nonforkc_Gc$ be two realizations of the r.h.s.\@ and let $b',c'$ witness the respective existential quantifiers. Note that we can always choose $c'$ such that $a,b'\nonforkc c'\equiv_{Gb}c$. Then from $a\equiv_Ga{\cdot}b'$ we obtain $a{\cdot}c'\equiv_Ga{\cdot}b'{\cdot}c'$ hence $a\equiv_Ga{\cdot}b'{\cdot}c'$. Finally, as $b{\cdot}c\equiv_G b{\cdot}c'$, we obtain that $b'{\cdot}c'$ witnesses that $b{\cdot}c$ satisfies the r.h.s. of \ssf{2}.
+We proceed as for the proof of \ssf{1}. Consistency is again witnessed by $a$, as can be easily verified substituting $a$ for $x$ in \ssf{1}. Now, let $b\nonforkc_Gc$ be two realizations of the r.h.s.\@ and let $b',c'$ witness the respective existential quantifiers. By Lemma~\ref{lem_coheirext}, we can also require that $a,b,b'\nonforkc c'\equiv_{G}c$. Then from $a\equiv_Ga{\cdot}b'$ we obtain $a{\cdot}c'\equiv_Ga{\cdot}b'{\cdot}c'$ hence $a\equiv_Ga{\cdot}b'{\cdot}c'$. From the completeness of $b\nonforkc_G x$ we infer $c\equiv_{Gb}c'$. Hence $b{\cdot}c\equiv_G b{\cdot}c'$. As $b,b'\nonforkc_Gc'$, we obtain that $b'{\cdot}c'$ witnesses that $b{\cdot}c$ satisfies the r.h.s. of \ssf{2}.
 
 Finally we prove that
 
@@ -282,7 +281,7 @@ Let ${}^a\kern-1.2pt \phi(x)\in {}^a\kern-.8pt q$ be arbitrary. Then $\phi(a{\cd
 
 By the lemma we may consistently define $p*q$ to be $\tp(a{\cdot} b/G)$ for some (any) $a\models p(x)$ and $b\models {}^a\kern-.8pt p$.
 
-
+ttlews
 
 
 We write $a\phi(x)$ for the (any) formula over $G$ that defines $a^{-1}\D$. This is well-defined up to equivalence.
