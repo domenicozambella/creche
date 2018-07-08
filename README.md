@@ -88,7 +88,7 @@ Lecture notes for an introductory (under)graduate course.
    * Invariance from the dual perspective
    * Coheirs
    * Morley sequences and indiscernibles
-   * Ramsey theorem from coheirs sequences
+   * Ramsey theorem from coheir sequences
    * Hindmann theorem from coheir sequences
 *  **Lascar invariant sets**
    * Expansions
