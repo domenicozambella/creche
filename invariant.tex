@@ -79,8 +79,6 @@ By \emph{invariant type\/} we mean invariant over some (small) set $A$.
 A global $\phi$-type can be identified with ${\gr\D_{p,\phi}}$ and a global type can be identified with the collection of all these sets.
 The notions of invariance for types and sets coincide.
 
-%One should not confuse the notions of \textit{invariant type\/} with that of \textit{invariant type-definable set}. The first is mostly applied to global types and refers to the invariance of a family of subsets of $\U^{|{\gr z}|}$. The latter refers to sets of the form $p({\mr\U})\subseteq\U^{|{\mr x}|}$ where $p({\mr x})$ a type of small size.
-
 We say that the type $p({\mr x})\subseteq L(\U)$ \emph{does not split\/} over $A$ if
 
 \ceq{\ssf{it2.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\Big(\phi({\mr x}\,;{\gr a})\in p\,\IFF\,\phi({\mr x}\,;{\gr b})\in p\Big)}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$
@@ -146,14 +144,6 @@ Unfortunately it is not true in general that every quasi-invariant type can be e
 In next section we consider a stronger notion, \textit{coheirs}, which has this desirable property, see Proposition~\ref{prop_exisntence_coheirs}.
 In the next chapters we introduce a weaker notion, \textit{non-forking}, that also allows to extend types to global types.
 
-% \begin{exercise}\label{ex_quasi_inv_type}
-% Let $p({\mr x})\in L(\U)$. Let $\V$ be a saturated elementary extension of $\U$. Prove that the following are equivalent:
-% \begin{itemize}
-% \item[1.] the type $p({\mr x})$ is quasi-invariant over $A$;
-% \item[2.] the set $p(\V)$ is quasi-invariant over $A$ (defined as above with $\V$ for $\U$).\QED
-% \end{itemize}
-% \end{exercise}
-
 \begin{comment}
 We say that $\mrB$ is \emph{drifting over $A$\/} if for every finitely many $f_1,\dots,f_n\in\Aut(\U/A)$ there is a $g\in\Aut(\U/A)$ such that $g[\mrB]$ is disjoint from all $f_i[\mrB]$.
 %We say that  $\mrB$ is \emph{piecewise drifting\/} if it is the union of finitely many drifting sets.
@@ -203,7 +193,7 @@ Every non piecewise drifting type extends to a non drifting global type.
 \section{Coheirs}
 
 The easiest way to obtain types that are invariant over a set $A$ is via types that are finitely satisfiable in $A$.
-We say that a type $p({\mr x})$ is  \emph{finitely satisfiable\/} in $A$ if $\phi({\mr\U})\cap A^{|{\mr x}|}\neq\0$ for every $\phi({\mr x})$ that is a conjunction of formulas in $p({\mr x})$.
+We say that a type $p({\mr x})$ is  \emph{finitely satisfiable\/} in $A$ if every conjunction of formulas in $p({\mr x})$ has a solution in $A^{|{\mr x}|}$.
 
 \begin{proposition}\label{prop_coeredi_quasiinvarienti}
 Every type $p({\mr x})\subseteq L(\U)$ finitely satisfied in $A$ is quasi-invariant over $A$.
@@ -211,7 +201,7 @@ Every type $p({\mr x})\subseteq L(\U)$ finitely satisfied in $A$ is quasi-invari
 \end{proposition}
 
 \begin{proof}
-Clearly, the very same ${\mr a}\in A^{|{\mr x}|}$ that satisfies $\phi({\mr x})$ satisfies also all $\Aut(\U/A)$-translates of $\phi({\mr x})$.
+Clearly, the very same ${\mr a}\in A^{|{\mr x}|}$ that satisfies $\phi({\mr x})$ satisfies also every $\Aut(\U/A)$-translates of $\phi({\mr x})$.
 \end{proof}
 
 The proposition above and Propositions~\ref{prop_invariance-quasi-invariance} yield the following
@@ -236,18 +226,20 @@ This contradicts the finite satisfiability of $p({\mr x})$.
 Note that by elementarity every type over a model is finitely satisfiable in the model, that is, if $p({\mr x})\subseteq L(M)$ for some model $M$, then $p({\mr x})$ is finitely satisfiable in $M$.
 For this reason the notion is mainly applied to models.
 
-If $p({\mr x})$ is a type finitely satisfied in Some set $A$, an extension of $p({\mr x})$ also finitely satisfied in $A$, is called a \emph{coheir\/} of $p({\mr x})$. 
+If $p({\mr x})$ is a type finitely satisfied in some set $A$, an extension of $p({\mr x})$ also finitely satisfied in $A$, is called a \emph{coheir\/} of $p({\mr x})$.
 
 In many cases it is useful to focus on elements instead of types.
 We introduce the following notation to express that $\tp({\mr b}/A,{\gr a})$ is finitely satisfied in $A$
 
 \begin{definition}\label{def_coheir_idepencence} For every ${\gr a}\in\U^{|{\gr z}|}$ and ${\mr b}\in\U^{|{\mr x}|}$ we define as
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}\ceq{\hfill\emph{${\gr a}\nonforkc_A{\mr b}$}}{\IFF}{\phi({\gr a}\,;{\mr b}) \textrm{ for all }\phi({\gr z}\,;{\mr x})\in L(A)\textrm{ such that }A^{|{\mr x}|}\subseteq\phi({\gr a}\,;{\mr \U})}
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}%
+\ceq{\hfill\emph{${\gr a}\nonforkc_A{\mr b}$}}{\IFF}{\phi({\gr a}\,;{\mr b}) \textrm{ for all }\phi({\gr z}\,;{\mr x})\in L(A)\textrm{ such that }A^{|{\mr x}|}\subseteq\phi({\gr a}\,;{\mr \U})}
 
-\ceq{\sl or\ equivalently}{\IFF}{\phi({\gr a}\,;{\mr\U})\cap A^{|{\mr x}|}\neq\0 \textrm{ for all }\phi({\gr z}\,;{\mr x})\in L(A)\textrm{ such that }\phi({\gr a}\,;{\mr b})}
+\ceq{\hfill}{\IFF}{\phi({\gr a}\,;{\mr\U})\cap A^{|{\mr x}|}\neq\0 \textrm{ for all }\phi({\gr z}\,;{\mr x})\in L(A)\textrm{ such that }\phi({\gr a}\,;{\mr b})}
 
-The symbol $\nonforkc$ is not standard. We also write
+The symbol $\nonforkc$ is not standard.
+We also write
 
 \ceq{\hfill\emph{${\gr a}\nonforkc_A{\mr x}$}}{=}{\Big\{\phi({\gr a}\,;{\mr x})\ :\ \phi({\gr z}\,;{\mr x})\in L(A)\textrm{ and }A\subseteq\phi({\gr a}\,;{\mr \U})\Big\}}
 
@@ -278,13 +270,13 @@ Then any ${\mr b'}\models p_{\restriction A,\,{\gr a},\,c}({\mr x})$ proves the 
 \end{proof}
 
 The type ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ defined above is the intersection of all coheirs of $\tp({\mr b}/A)$.
-In general coheirs of $\tp({\mr b}/A)$ may not exist i.e.,  ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ is inconsistent. 
+In general coheirs of $\tp({\mr b}/A)$ may not exist i.e.,  ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ is inconsistent.
 However, it is always consistent when $A$ is a model.
 Even when consistent it need not be a complete.
 In fact, completeness  of the type type ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ is a very strong property.
 An example is given in Lemma~\ref{lem_Hindman}.
 
-\begin{definition}\label{def_stationary}We say that $\nonforkc_A$ is \emph{stationary\/} if ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ is a complete type for every ${\gr a}\in\U^{<\omega}$, every ${\mr b}\in\U^{|{\mr x}|}$, and every tuple of variables ${\mr x}$.
+\begin{definition}\label{def_coheir_stationary}We say that $\nonforkc_A$ is \emph{stationary\/} if ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ is a complete type for every ${\gr a}\in\U^{<\omega}$, every ${\mr b}\in\U^{|{\mr x}|}$, and every tuple of variables ${\mr x}$.
 We say \emph{$n$-stationary\/} if this is restricted to $|{\mr x}|=n$.\QED
 \end{definition}
 
@@ -298,7 +290,8 @@ If for every $\phi({\mr x})\in L(\U)$ there is a formula $\psi({\mr x})\in L(A)$
 \begin{proof}
 Fix ${\gr a}\in\U^{|{\gr z}|}$ and  ${\mr b_i}\in\U^{|{\mr x}|}$ such that ${\gr a}\nonforkc_A{\mr b_i}$ and ${\mr b_1}\equiv_A{\mr b_2}$.
 We claim that ${\mr b_1}\equiv_{A,\,{\gr a}}{\mr b_2}$.
-We need to prove that $\phi({\gr a},\,{\mr b_1})\iff\phi({\gr a},\,{\mr b_2})$ for every  $\phi({\gr z},\,{\mr x})\in L(A)$. Let $\psi({\mr x})\in L(A)$ be such that $\phi({\gr a},\,{\mr \U})=_A\psi({\mr \U})$. 
+We need to prove that $\phi({\gr a},\,{\mr b_1})\iff\phi({\gr a},\,{\mr b_2})$ for every  $\phi({\gr z},\,{\mr x})\in L(A)$.
+Let $\psi({\mr x})\in L(A)$ be such that $\phi({\gr a},\,{\mr \U})=_A\psi({\mr \U})$.
 From ${\gr a}\nonforkc_A{\mr b_i}$ we obtain that  $\phi({\gr a},\,{\mr b_i})\iff\psi({\mr b_i})$.
 Finally, the claim follows because ${\mr b_1}\equiv_A{\mr b_2}$.
 \end{proof}
@@ -315,10 +308,19 @@ Finally, the claim follows because ${\mr b_1}\equiv_A{\mr b_2}$.
 % 
 % \ceq{\hfill{\gr\D_{p,\phi}}\cap M^{|{\gr z}|}\neq\0}{\IFF}{{\gr\D_{p,\phi}}\neq\0}  for every formula $\phi({\mr x}\,;{\gr z})\in L$.
 
-%Every type over a model has an extension to a global coheir. A satisfactory generalization of this notions to types over sets should guarantee this existence. Unfortunately, this is not possible in general and the definition Section~\hyperref[coheirs_sets]{\ref*{invariantL}.\ref*{coheirs_sets}} is as good as it gets.
+%Every type over a model has an extension to a global coheir. 
+%A satisfactory generalization of this notions to types over sets should guarantee this existence.
+%Unfortunately, this is not possible in general and the definition Section~\hyperref[coheirs_sets]{\ref*{invariantL}.\ref*{coheirs_sets}} is as good as it gets.
 
-\begin{example}
+\begin{example}\label{ex_coheir_stationary}
+Stationarity of $\nonforkc_A$ over every $A$, or just over models, is equivalent to the stability of $T$, see Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}.
+However, there are many more theories where the assumption holds for some particular set $A$.
+For instance, when every subset of $A^n$ is the trace of a definable set, $\nonforkc_A$ is clearly $n$-stationary.
+This simple observation will be of help to prove Theorem~\ref{thm_Hindman}.
 
+For natural example let $T=T_{\rm dlo}$ and let $M$ be a model isomorphic to $\RR$.
+By quantifier elimination every definable of $\U$ union of finitely many intervals.
+By Dedekind completeness, the trace on $M$ of any interval of $\U$ coincides with that of an $M$-definable interval.
 \end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -372,11 +374,11 @@ When $I_0$ has order-type $\alpha$, an ordinal, we identify ${\mr a_{\restrictio
  
 \begin{definition}
 Let $I,<_I$ be an infinite linear order and let ${\mr\bar a}$ be an $I\jj$sequence.
-We say that $a$ is a \emph{sequence of indiscernibles\/} over $A$ or, a sequence of \emph{$A\jj$indiscernibles}, if ${\mr a_{\restriction I_0}}\equiv_A {\mr a_{\restriction I_1}}$ for every $I_0,I_1\in I^{[n]}$ and $n<\omega$.
-Recall that \emph{$I^{[n]}$} denotes that the set of \emph{$n$-subsets\/} of $I$,  i.e.\@ the subsets of $I$ of cardinality $n$.
+We say that $a$ is a \emph{sequence of indiscernibles\/} over $A$ or, a sequence of \emph{$A\jj$indiscernibles}, if ${\mr a_{\restriction I_0}}\equiv_A {\mr a_{\restriction I_1}}$ for every $I_0,I_1\in [I]^n$ and $n<\omega$.
+Recall that \emph{$[I]^n$} denotes that the set of \emph{$n$-subsets\/} of $I$,  i.e.\@ the subsets of $I$ of cardinality $n$.
 It is also common to write\smallskip
 
-\ceq{\hfill\emph{$\displaystyle{I\choose n}$}}{=}{I^{[n]}}.\QED
+\ceq{\hfill\emph{$\displaystyle{I\choose n}$}}{=}{[I]^n}.\QED
 \end{definition}
 
 The condition above can be formulated in a number of equivalent ways.
@@ -416,7 +418,8 @@ which is equivalent to
 The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({\mr x})$ as formulated in \ssf{it3} of Section~\ref{invariant}.
 \end{proof}
 
-%Let $I,<_I$ and $J,<_J$ be two infinite linear orders and let $a$ and $b$ be an $I\jj$sequence, respectively a $J\jj$sequence. Note that the expression $a\equiv_A b$ is meaningless unless there is a unique isomorphism between $I,<_I$ and $J,<_J$. However it always make sense, even for non isomorphic orders, when $a$ and $b$ are indiscernibles over $A$. In fact, we agree that \emph{$a\equiv_A b$\/} means $a_{\restriction I_0}\equiv_A b_{\restriction J_0}$ for every finite $I_0\subseteq I$ and $J_0\subseteq J$ of equal cardinality.% That being said, the following proposition is immediate.
+%Let $I,<_I$ and $J,<_J$ be two infinite linear orders and let $a$ and $b$ be an $I\jj$sequence, respectively a $J\jj$sequence
+%Note that the expression $a\equiv_A b$ is meaningless unless there is a unique isomorphism between $I,<_I$ and $J,<_J$. However it always make sense, even for non isomorphic orders, when $a$ and $b$ are indiscernibles over $A$. In fact, we agree that \emph{$a\equiv_A b$\/} means $a_{\restriction I_0}\equiv_A b_{\restriction J_0}$ for every finite $I_0\subseteq I$ and $J_0\subseteq J$ of equal cardinality.% That being said, the following proposition is immediate.
 
 
 % \begin{proposition}\label{prop_embedding_indsc_seq}
@@ -456,26 +459,22 @@ The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({
 
 
 Let $X$ be an arbitrary infinite set an $n,k<\omega$.
-A total function 
-
-\ceq{\hfill f}{:}{{X\choose n}\to k} 
-
-is also called a \emph{$k$-coloring\/} of $X^{[n]}$.
-A $k$-coloring is identified with a partition of $X^{[n]}$ into $k$ classes.
+A total map $f:[X]^n\to k$ called a \emph{$k$-coloring\/} of $[X]^n$.
+A $k$-coloring is identified with a partition of $[X]^n$ into $k$ classes.
 
 
-We say that $H\subseteq X$ is a \emph{monochromatic set\/} if $f$ is constant on $H^{[n]}$.
+We say that $H\subseteq X$ is a \emph{monochromatic set\/} if $f$ is constant on $[H]^n$.
 In the literature it may be called a \emph{homogeneous set}, but we already use this word with a different meaning.
 The following is a very famous theorem which here we prove it in unusual way.
 
 \theoremstyle{mio}
 \newtheorem{Ramsey}[thm]{Ramsey's Theorem}
 \begin{Ramsey}\label{thm_Ramsey}
-For every infinite set $M$, every $n,k<\omega$, and every $n$-coloring of $M^{[n]}$ there is an infinite monochromatic set $H\subseteq M$.
+For every infinite set $M$, every $n,k<\omega$, and every $n$-coloring of $[M]^n$ there is an infinite monochromatic set $H\subseteq M$.
 \end{Ramsey}
 \begin{proof}
 Let $L$ be a language that contains $k$ relation symbols $r_0,\dots,r_{k-1}$ of arity $n$.
-Given $f:M^{[n]}\to k$ as above we define a structure with domain $M$.
+Given $f:[M]^n\to k$ as above we define a structure with domain $M$.
 The interpretation the relation symbols is
 
 %\ceq{\hfill r_i^M}{=}{\Big\{ ({\mr a_0},\dots,a_{n-1})\ :\ |\{{\mr a_0},\dots,a_{n-1}\}|=n \ \textrm { e \ }f\big(\{{\mr a_0},\dots,a_{n-1}\}\big)= i\Big\}}
@@ -487,7 +486,7 @@ The interpretation the relation symbols is
 We may assume that $M$ is an elementary substructure of some large saturated model $\U$.
 Pick any type $p({\mr x})\in S(\U)$ finitely satisfied in $M$ but not realized in $M$ and let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be a coheir sequence of $p({\mr x})$.
 
-There is a first-order sentence saying that the formulas $r_i({\mr x_0},\dots,{\mr x_{n-1}})$ form a coloring of $M^{[n]}$.
+There is a first-order sentence saying that the formulas $r_i({\mr x_0},\dots,{\mr x_{n-1}})$ form a coloring of $[M]^n$.
 
 Then by elementarity the same hols in $\U$.
 By indiscernibility, all tuples of $n$ distinct elements of ${\mr\bar c}$ have the same color.
@@ -510,7 +509,7 @@ So, as the order is irrelevant,  ${\mr a_{\restriction i}},{\mr a_i},{\mr c_{\re
 
 Let $I,<_I$ be an infinite linear order and let ${\mr\bar a}$ be an $I\jj$sequence.
 Fix a sequence of distinct variables ${\mr\bar x}=\<{\mr x_i}: i<\omega\>$.
-We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$} and say that $p({\mr\bar x})$ is the \emph{Ehren\-feucht-Mostowski type\/} of ${\mr\bar a}$ over $A$ if $p({\mr\bar x})$ is the set of formulas $\phi({\mr x_{\restriction n}})\in L(A)$ such that $\phi({\mr a_{\restriction I_0}})$ holds for every $I_0\in I^{[n]}$.
+We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$} and say that $p({\mr\bar x})$ is the \emph{Ehren\-feucht-Mostowski type\/} of ${\mr\bar a}$ over $A$ if $p({\mr\bar x})$ is the set of formulas $\phi({\mr x_{\restriction n}})\in L(A)$ such that $\phi({\mr a_{\restriction I_0}})$ holds for every $I_0\in [I]^n$.
 
 
 Note that ${\mr\bar x}$ is always of order-type $\omega$, while ${\mr\bar a}$ is an arbitrary infinite sequence.
@@ -539,9 +538,9 @@ So, if ${\mr\bar a}$ and ${\mr\bar c}$ are two $A\jj$indiscernible $I\jj$sequenc
 % 
 % \begin{proposition}\label{prop_EM}
 %   Let $I,<_I$ and $J,<_J$ be a linear orders such that $|J|\le \kappa$.
-Let $a$ be an $I\jj$se\-quence of $A\jj$indiscernibles.
-Then there is an $J\jj$sequence of $A$-indiscernibles $c$ such that $c\equivEM_Aa$.
-Moreover, if  $I\subseteq J$ and $|I|<\kappa$, then we can require that $c_{\restriction I}=a$.
+%Let $a$ be an $I\jj$se\-quence of $A\jj$indiscernibles.
+%Then there is an $J\jj$sequence of $A$-indiscernibles $c$ such that $c\equivEM_Aa$.
+%Moreover, if  $I\subseteq J$ and $|I|<\kappa$, then we can require that $c_{\restriction I}=a$.
 % \end{proposition}
 % 
 % \begin{proof}
@@ -576,7 +575,7 @@ We prove that for $m$ and $n$ arbitrary large and every $\phi_0,\dots,\phi_{m-1}
 
   \ceq{\ssf{\#}}{~}{\Big\{\phi_i({\mr x_{\restriction J_0}})\iff\phi_i({\mr x_{\restriction I_0}})\ :\  I_0, J_0\in{\omega\choose n}\textrm{ and } i<m\Big\}.}
 
-  Let $f:\omega^{[n]}\to\P(m)$ map $I_0\in\omega^{[n]}$ to the set $\big\{i<m\ :\ \phi_i({\mr a_{\restriction I_0}})\big\}$.
+  Let $f:[\omega]^n\to\P(m)$ map $I_0\in[\omega]^n$ to the set $\big\{i<m\ :\ \phi_i({\mr a_{\restriction I_0}})\big\}$.
 By the Ramsey theorem with $2^m$ colors, there is some infinite monochromatic set $H\subseteq I$.
 As $I$ has order type $\omega$, so does $H$, and it is immediate that ${\mr a_{\restriction H}}$ realizes \ssf{\#}, as required to prove the theorem with $I=J=\omega$.
 \end{proof}
@@ -607,7 +606,7 @@ Prove that there is a sequence $\bar c=\<c_i:i<\omega\>$ such that $a,\bar c$ an
 \end{exercise}
 
 
-\section{Hindmann theorem from coheir sequences}
+\section{Hindmann theorem from coheir sequences}\label{Hindman}
 
 \def\fp{{\rm fp}}
 
@@ -633,32 +632,31 @@ Then for every finite coloring of $G$ there is an infinite tuple ${\mr\bar c}$ s
 
 Note that when $G$ is commutative this amount to claiming that there is an infinite monochromatic set closed under finite sum of distinct elements.
 
-Our proof follows closely the proof of Ramsey's Theorem~\ref{thm_Ramsey}.
+The proof below follows closely the proof of Ramsey's Theorem~\ref{thm_Ramsey}.
 The essential difference between the two theorems is contained in the following lemma.
 
 We now consider $G$ as a structure a language $L$ containing a symbol for semigroup multiplication and possibly other symbols.
 Let $\U$ be a saturated elementary superstucture of $G$.
 
 \begin{lemma}\label{lem_Hindman}
-Suppose that for every ${\mr a},{\mr b}\in\U$ the type ${\mr a}\nonforkc_G{\mr x}\equiv_G{\mr b}$ is complete.
+Assume that $\nonforkc_G$ is $1$-stationary, see Definition~\ref{def_coheir_stationary}.
 Let $q({\mr x})\subseteq L(G)$ be a maximal type such that ${\mr a}{\cdot}{\mr b}\models q({\mr x})$ for every ${\mr a},{\mr b}\models q({\mr x})$ such that ${\mr a}\nonforkc_G{\mr b}$.
 Then $q({\mr x})$ is a complete type.
 \end{lemma}
 
-
 \begin{proof}
 Fix an arbitrary ${\mr a}\models q({\mr x})$.
-We will prove that $q({\mr x})=\tp(a/G)$ in three steps.
+We will prove that $q({\mr x})=\tp({\mr a}/G)$ in three steps.
 Firsly we prove that
 
-\ceq{\ssf{1}\hfill q({\mr x})}{\imp}{\E{\mr x'}\ \big[{\mr x}\equiv_G{\mr a}{\cdot}{\mr x'}\ \wedge\ {\mr a}\nonforkc_G{\mr x'}\big]}
+\ceq{\ssf{1.}\hfill q({\mr x})}{\imp}{\E{\mr x'}\ \big[{\mr x}\equiv_G{\mr a}{\cdot}{\mr x'}\ \wedge\ {\mr a}\nonforkc_G{\mr x'}\big]}
 
 Note that, by $G$-invariance, the r.h.s.\@ is equivalent to a type over $G$.
 Therefore, by the maximality of $q({\mr x})$, it suffices to show that the r.h.s.\@ is consistent with $q({\mr x})$ and that it is closed under multiplication.
 As $q({\mr x})$ is closed under multiplication, consistency is witnessed by ${\mr a}{\cdot}{\mr a'}$ where ${\mr a'}$ is any element such that ${\mr a}\nonforkc_G{\mr a'}\models q({\mr x})$.
 %
 %Now, let $b\nonforkc_Gc$ be two realizations of the r.h.s.\@ and let $b',c'$ witness  the respective existential quantifiers.
-Note that, by extension, see Lemma~\ref{lem_coheir_independence}, we can choose $c'$ such that ${\mr a},{\mr b},{\mr b'}\nonforkc_G{\mr c'}$.
+Note that, by extension, see Lemma~\ref{lem_coheir_independence}, we can choose ${\mr c'}$ such that ${\mr a},{\mr b},{\mr b'}\nonforkc_G{\mr c'}$.
 Therefore, from ${\mr b}\equiv_G{\mr a}{\cdot}{\mr b'}$ we obtain  ${\mr b}{\cdot}{\mr c'}\equiv_G{\mr a}{\cdot}{\mr b'}{\cdot}{\mr c'}$.
 By transitivity, see Lemma~\ref{lem_coheir_independence}, we obtain ${\mr a}\nonforkc_G{\mr b'}{\cdot}{\mr c'}$.
 Then ${\mr b'}{\cdot}{\mr c'}$ witnesses that ${\mr b}{\cdot}{\mr c'}$ satisfies the r.h.s.
@@ -673,9 +671,9 @@ By elementarity, also ${\mr b}{\cdot}{\mr c}$  satisfies the r.h.s.
 This proves \ssf{1}.
 
 
-Now, we prove that 
+Secondly, we prove that 
 
-\ceq{\ssf{2}\hfill q({\mr x})}{\imp}{\E{\mr x'}\ \big[{\mr a}\equiv_G{\mr a}{\cdot}{\mr x'}\ \wedge\ {\mr a}\nonforkc_G{\mr x'}\equiv_G{\mr x}\big]}
+\ceq{\ssf{2.}\hfill q({\mr x})}{\imp}{\E{\mr x'}\ \big[{\mr a}\equiv_G{\mr a}{\cdot}{\mr x'}\ \wedge\ {\mr a}\nonforkc_G{\mr x'}\equiv_G{\mr x}\big]}
 
 We proceed as for the proof of \ssf{1}.
 Consistency is again witnessed by ${\mr a}$, as can be easily verified substituting ${\mr a}$ for ${\mr x}$ in \ssf{1}.
@@ -689,10 +687,10 @@ of \ssf{2}.
 
 Finally, the proof is complete if we can show that
 
-\ceq{\ssf{3}\hfill q({\mr x})}{\imp}{{\mr a}\equiv_G{\mr x}}
+\ceq{\ssf{3.}\hfill q({\mr x})}{\imp}{{\mr a}\equiv_G{\mr x}}
 
 As for \ssf{1} and \ssf{2}, it suffices to prove that if ${\mr b}\nonforkc_G{\mr c}$ are two realizations of the r.h.s.\@ then so is ${\mr b}{\cdot}{\mr c}$.
-We can assume ${\mr a}={\mr b}$.
+Without loss of generality we can assume ${\mr a}={\mr b}$.
 As ${\mr c}\models q({\mr x})$, from \ssf{2} we obtain ${\mr c'}$ such that ${\mr a}\equiv_G{\mr a}{\cdot}{\mr c'}$ and ${\mr a}\nonforkc_G{\mr c'}\equiv_G{\mr c}$.
 From the completeness of ${\mr a}\nonforkc_G{\mr x}\equiv_G{\mr c}$ we obtain ${\mr c'}\equiv_{G,\,{\mr a}}{\mr c}$, and ${\mr a}\equiv_G{\mr a}{\cdot}{\mr c}$ follows.
 \end{proof}
@@ -700,7 +698,7 @@ From the completeness of ${\mr a}\nonforkc_G{\mr x}\equiv_G{\mr c}$ we obtain ${
 
 
 \begin{proof}[Proof of Hindman's Theorem~\ref{thm_Hindman}]
-We think $G$ as a structure in a language $L$ that extends the language of multiplicative groups with a unary relation symbol for each subset of $G$.
+We think $G$ as a structure in a language $L$ that extends the language of multiplicative groups with a unary relation symbol for each subset of $G$. As observed in Example~\ref{ex_coheir_stationary}, this language makes $\nonforkc_G$ is trivially $1$-stationary.
 
 The colors corresponds to a definable partition of $G$ and, by elementarity, of $\U$.
 Let $p({\mr x})\in S(\U)$ be a global coheir of the type $q({\mr x})\in S(G)$ obtained from Lemma~\ref{lem_Hindman}.
