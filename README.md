@@ -28,7 +28,7 @@ Lecture notes for an introductory (under)graduate course.
 *  **Ultraproducts**
    * Filters and ultrafilters
    * Direct products
-   * Ultraproducts
+   * \L o\'{s}'s Theorem
 *  **Compactness**
    * Compactness via syntax
    * Compactness via ultraproducts
@@ -47,7 +47,6 @@ Lecture notes for an introductory (under)graduate course.
    * Rich models.
    * Weaker notions of universality and homogeneity
    * The amalgamation property
-   * Notes and references
 *  **Some algebraic structures**
    * Abelian groups
    * Torsion-free abelian groups
@@ -87,8 +86,10 @@ Lecture notes for an introductory (under)graduate course.
 *  **Invariant sets**
    * Invariant sets and types
    * Invariance from the dual perspective
+   * Coheirs
    * Morley sequences and indiscernibles
-   * From coheirs to Ramsey to indiscernibles
+   * Ramsey theorem from coheirs sequences
+   * Hindmann theorem from coheir sequences
 *  **Lascar invariant sets**
    * Expansions
    * Lascar strong types
@@ -98,8 +99,14 @@ Lecture notes for an introductory (under)graduate course.
 *  **Externally definable sets**
    * Approximable sets
    * Ladders and definability
-   * Vaknik-Chevronenkis
+   * Vapknik-Chevronenkis dimension
    * Honest definitions
    * Stable theories
    * Stability and the number of types
    * Notes and references
+*  **Measures???**
+   * Keisler measures
+   * Borel measures
+   * Extension of Keisler measures
+   * Smooth measures
+   * Measure extension
