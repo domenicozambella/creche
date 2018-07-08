@@ -1,4 +1,4 @@
-% !TEX root = creche.tex
+=% !TEX root = creche.tex
 \documentclass[creche.tex]{subfiles}
 \begin{document}
 \chapter{Externally definable sets}
@@ -9,7 +9,7 @@
 
 
 
-In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
+In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa>|L|$.
 The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
 
 
@@ -27,7 +27,11 @@ Let $\grC,\grD\subseteq\U^{|{\gr z}|}$.
 The set $\grD\cap A^{|{\gr z}|}$ is called the \emph{trace\/} of $\grD$ over $A$.
 We write $\grC=_A\grD$ if  $\grC$ and $\grD$ have the same trace on $A$.
 
-We say that $\grD$ is \emph{externally definable\/} if it is of the form ${\gr\D_{p,\phi}}$ for some global type $p\in S_{\mr x}(\U)$ and some formula $\phi({\mr x}\,;{\gr z})\in L$, see Section~\hyperref[invariant_sets]{\ref*{invariant}.\ref*{invariant_sets}}. We may say that $\grD$ is externally definable \emph{by $p$}. Equivalently, a set $\grD$ is externally definable if it is the trace over $\U$ of a set which is definable in some elementary extension of $\U$. Precisely, $\grD$ is the trace on $\U$ of a set of the form $\phi({\mr b'}\,;{\gr\U'})$ where $\U'$ is elementary extension of $\U$ and ${\mr b'}\in\U'^{|{\mr x}|}$. The latter interpretation explains the terminology.
+We say that $\grD$ is \emph{externally definable\/} if it is of the form ${\gr\D_{p,\phi}}$ for some global type $p\in S_{\mr x}(\U)$ and some formula $\phi({\mr x}\,;{\gr z})\in L$, see Section~\hyperref[invariant_sets]{\ref*{invariant}.\ref*{invariant_sets}} for the notation.
+We may say that $\grD$ is externally definable \emph{by $p({\mr x})$ and $\phi({\mr x}\,;{\gr z})$}.
+Equivalently, a set $\grD$ is externally definable if it is the trace over $\U$ of a set which is definable in some elementary extension of $\U$.
+Precisely, $\grD$ is the trace on $\U$ of a set of the form $\phi({\mr b'}\,;{\gr\U'})$ where $\U'$ is elementary extension of $\U$ and ${\mr b'}\in\U'^{|{\mr x}|}$.
+The latter interpretation explains the terminology.
 
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We prefer to deal with external definability in a different, though equivalent, way.
 This is not the most common approach.
@@ -44,23 +48,22 @@ The following proposition is clear by compactness.
 \begin{proposition}\label{lem_approx=external}
 For every $\grD$ the following are equivalent
 \begin{itemize}
-\item[1.] $\grD$ is approximable;
-\item[2.] $\grD$ is externally definable.\QED 
+\item[1.] $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$;
+\item[2.] $\grD$ is externally definable by $\phi({\mr x}\,;{\gr z})$.
 \end{itemize}
 \end{proposition}
 
 Approximability from below is an adaptation to our context of the notion of \textit{having an honest definition} in \cite{CS}.
-\begin{definition}
-We say that the global type $p\in S_{{\mr x}}(\U)$ is \emph{honestly definable\/} if for every $\phi({\mr x}\,;{\gr z})\in L$ the set ${\gr\D_{p,\phi}}$ is approximated from below (by some formula). We say that $p$ is a \emph{definable\/} if the sets ${\gr\D_{p,\phi}}$ are all definable (over $\U$). Note that the terminology is misleading: honestly definable is a weaker than definable.
+\begin{definition}\label{def_defble_type}
+We say that the global type $p\in S_{{\mr x}}(\U)$ is \emph{honestly definable\/} if for every $\phi({\mr x}\,;{\gr z})\in L$ the set ${\gr\D_{p,\phi}}$ is approximated from below (by some formula).
+We say that $p$ is \emph{definable\/} if the sets ${\gr\D_{p,\phi}}$ are all definable (over $\U$).
+Note that the terminology is misleading: honestly definable is a weaker than definable.
 \end{definition}
-
-
 
 \begin{example}
 Every definable set is trivially approximable.
-Clearly, only by the right formulas.
-Let $T=T_{\rm dlo}$.
-Then $\D=\{z\in\U:a\le z\le b\}$ is approximable both from below and from above by the formula $x_1<z<x_2$ though it is not definable by this formula.
+Sets may be approximable by different formulas.
+For instance, if $T=T_{\rm dlo}$, then $\D=\{z\in\U:a\le z\le b\}$ is approximable both from below and from above by the formula $x_1<z<x_2$ though it is not definable by this formula.
 
 Now, let $T=T_{\rm rg}$.
 Then every $\D\subseteq\U$ is approximable and, when $\D$ has small infinite cardinality, it is approximable from above but not from below, see Exercise~\ref{ex_rg_small_def_set}.\QED
@@ -74,7 +77,7 @@ For every $\grD$ the following are equivalent
 \item[1.] $\grD$ is approximable;
 \item[2.] for every $C\subseteq\U$ of cardinality $\le|T|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi({\gr\U})=_C\grD$.
 \end{itemize}
-Similarly, the following are equivalent:
+Similarly, the following are equivalent
 \begin{itemize}
 \item[3.] $\grD$ is approximable from below;
 \item[4.]  for every ${\gr C}\subseteq\grD$ of cardinality $\le|T|$ there is $\psi({\gr z})\in L(\U)$ such that ${\gr C}\subseteq \psi({\gr\U})\subseteq\grD$.
@@ -94,20 +97,17 @@ Implication \ssf{1}$\IMP$\ssf{2} is obtained by compactness and the equivalence 
 
 
 \begin{remark}\label{prop_approx_el_eq}
-Let $\grC\subseteq\U^{|{\gr z}|}$.
-If $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\hyperref[expansions]{\ref*{invariantL}.\ref*{expansions}} for the definition.
+If $\grD\subseteq\U^{|{\gr z}|}$ is approximated by $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\hyperref[expansions]{\ref*{invariantL}.\ref*{expansions}} for the notation.
 In fact, if the set $\grD$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for every $n$
 
 \hfil$\displaystyle\A {\gr z_1},\dots,{\gr z_n}\;\E {\mr x}\ \bigwedge^n_{i=1}\big[\phi({\mr x}\,;{\gr z_i})\ \iff\ {\gr z_i}\in{\gr \D}\big]$.
 
 
 So the same holds for any $\grC\equiv\grD$.
-A similar remark apply to approximability from below and from above.
-For approximability from below, add the conjunct $\A {\gr z}\,\big[\phi({\mr x}\,;{\gr z})\imp {\gr z}\in\grD\big]$ to the formula above.
-Similarly for approximability from above.\QED
+A similar remark apply to approximability from below and from above (e.g.\@ for approximability from below, add the conjunct $\A {\gr z}\,\big[\phi({\mr x}\,;{\gr z})\imp {\gr z}\in\grD\big]$ to the formula above).\QED
 \end{remark}
 
-From the following easy observation of Chernikov and Simon~\cite{CS} we obtain an interesting (and misterious) quantifier elimination result originally due to Shelah (see also Corollary~\ref{corol_sh_exp_qe} below).
+From the following easy observation of Chernikov and Simon~\cite{CS} we obtain an interesting (and misterious) quantifier elimination result originally due to Shelah, see Corollary~\ref{corol_sh_exp_qe} below.
 
 % \begin{proposition}
 % Let $\C\subseteq\U^{|{\gr z},w|}$ be approximated from below by the formula $\phi({\mr x}\,;{\gr z},w)$. Then $\grD=\big\{{\gr z}:\E w\ \big({\gr z}\,w\in\C\big)\big\}$ is approximated from below by the formula $\E w\,\phi({\mr x}\,;{\gr z}\,w)$.
@@ -137,7 +137,8 @@ From the following easy observation of Chernikov and Simon~\cite{CS} we obtain a
 % \end{proof}
 
 \begin{proposition}\label{prop_sh_exp_qe}
-Let $\C\subseteq\U^{|y\,{\gr z}|}$ be approximated from below by the formula $\phi({\mr x}\,;y\,{\gr z})$. Then $\grD=\big\{{\gr z}:\E y\ \big(y\,{\gr z}\in\C\big)\big\}$ is approximated from below by the formula $\E y\,\phi({\mr x}\,;y\,{\gr z})$.
+Let $\C\subseteq\U^{|y\,{\gr z}|}$ be approximated from below by the formula $\phi({\mr x}\,;y\,{\gr z})$.
+Then $\grD=\big\{{\gr z}:\E y\ \big(y\,{\gr z}\in\C\big)\big\}$ is approximated from below by the formula $\E y\,\phi({\mr x}\,;y\,{\gr z})$.
 \end{proposition}
 
 \begin{proof}
@@ -171,7 +172,7 @@ If $p\in S_{{\mr x}}(\U)$ is honestly definable then the family of sets external
 \end{corollary}
 
 \begin{proof}
-The sets externally definable by $p$ are always closed under Boolean operations. By the proposition above, they are closed under quantifiers. 
+The sets externally definable by $p({\mr x})$ are always closed under Boolean operations. By the proposition above, they are closed under quantifiers. 
 \end{proof}
 
 % Let ${\gr z}=\<z_i:i<\lambda\>$ and let $\grD\subseteq\U^{|{\gr z}|}$. 
@@ -192,7 +193,7 @@ We say that $\phi({\mr x}\,;{\gr z})$ is \emph{stable\/} if all ladders have len
 
 It is evident that $\phi({\mr x}\,;{\gr z})$ is stable if and only if $\phi({\mr x}\,;{\gr z})^*$ is stable.
 
-Suppose $\phi({\mr x}\,;{\gr z})$ be unstable as witnessed by $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$. By padding redundant variables, we can read $\phi({\mr x}\,;{\gr z})$ as a formula $\phi({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$. Then $\phi({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$ defines the order of the sequence $\<{\mr a_i}\,{\gr b_i} : i<\omega\>$. For this reason it is also common to say that $\phi({\mr x}\,;{\gr z})$ has the \emph{order property}. It simply means that it is unstable. 
+Suppose $\phi({\mr x}\,;{\gr z})$ is unstable as witnessed by the ladder $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$. By padding redundant variables, we can read $\phi({\mr x}\,;{\gr z})$ as a formula $\phi({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$. Then $\phi({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$ defines the order of the sequence $\<{\mr a_i}\,{\gr b_i} : i<\omega\>$. For this reason it is also common to say that $\phi({\mr x}\,;{\gr z})$ has the \emph{order property}, this simply means that it is unstable. 
 
 The following is arguably one of the most important fact about stable formulas.
 
@@ -207,6 +208,8 @@ Precisely, if $\phi({\mr x}\,;{\gr z})$ is a stable formula that approximates $\
 The theorem follows immediately from the the three lemmas below.
 \end{proof}
 
+The converse of the theorem above holds and is proved separately in Theorem~\ref{thm_def_stable_formula2}.  
+
 \begin{remark}
 Theorem~\ref{thm_def_stable_formula} is often stated in the following  apparently more general form.
 For every $\Aa\subseteq\U$ there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in \Aa^{|{\mr x}|}$ such that
@@ -215,8 +218,9 @@ For every $\Aa\subseteq\U$ there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in \Aa^{
 
 Note that the equivalence above is restricted to ${\gr\Aa}$.
 
-The proof is exactly the same, in fact elementarity and saturation are never used (to a great extent, no model theory is used either, just finite combinatorics).\QED
+The proof is exactly the same, in fact elementarity and saturation are never used (to a great extent, no model theory is used either, just finite combinatorics). This contrast to the proof of Theorem~\ref{thm_def_stable_formula2} for which compactness is essential.\QED
 \end{remark}
+
 
 
 \begin{lemma}
@@ -287,6 +291,18 @@ which contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
 This last lemma concludes the proof of Theorem~\ref{thm_def_stable_formula}. 
 
 
+\begin{theorem}\label{thm_def_stable_formula2}
+If every subset of $\U^{|{\gr z}|}$ that is externally definable by $\phi({\mr x}\,;{\gr z})$ is definable, then $\phi({\mr x}\,;{\gr z})$ is stable.
+\end{theorem}
+
+\begin{proof}
+Suppose  $\phi({\mr x}\,;{\gr z})$ is unstable. By compactness there is a ladder sequence  $\<{\mr a_i}\,;{\gr b_i} : i\in I\>$ where $I,<_I$ a saturated dense linear order of cardinality $\kappa$. For every downward Dedekind cut $c\subseteq I$ we pick a global type
+
+\ceq{\hfill p_c({\mr x} ) }{\supseteq}{\big\{\phi({\mr x}\,;{\gr b_i})\iff i\in c\ :\ i\in I\big\}}
+
+Clearly sets ${\gr\D_{p_c,\,\phi} }$ are all distinct. As there are $2^\kappa$ Dedekind cuts not every ${\gr\D_{p_c,\,\phi} }$ is definable.
+\end{proof}
+
 \begin{exercise}\label{ex_harrington}
 \def\grB{{\gr{\EuScript B}}}
 \def\mrA{{\mr{\EuScript A}}}
@@ -299,7 +315,6 @@ Then at least one of the conditions \ssf{1} and \ssf{2} below occurs
 \item[1.]
 \ssf{a.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\phantom{*}}\wedge\ {\mr x}\in{\mrA}$ approximates $\grB$ and\\
 \ssf{b.}\kern2ex$\phi({\mr x}\,;{\gr z})^*\wedge\ {\gr z}\in{\grB}$ approximates $\mrA$.
-
 
 \item[2.]
 \ssf{a.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\phantom{*}}\wedge\ {\mr x}\notin{\mrA}$ approximates $\grB$ and\\
@@ -368,7 +383,7 @@ The following are equivalent
 
 From the proposition above and Proposition~\ref{prop_count_types} below it follows that all stable formulas have finite VC-dimension.
 
-We say that the a sequence of sentences $\<\phi_i:i<\omega\>$ \emph{converges\/} if the truth value of $\phi_i$ is eventually constant.  
+We say that the a sequence of sentences $\<\phi_i:i<\omega\>$ \emph{converges\/} if the truth value of $\phi_i$ is eventually constant.
 
 \begin{lemma}\label{lem_altrank}
 The following are equivalent
@@ -427,11 +442,11 @@ Let $\mrC$ be a set approximable by a formula with finite VC-dimension and let $
 \begin{proof}
 The property we want to prove is elementary in $L(\mrC)$ therefore, by Remark~\ref{rem_el_sat} we can assume that $\mrC$ is saturated. By Corollary~\ref{corol_altrank}, there is no infinite sequence $\<{\mr a_i}:i<\omega\>$
 
-\ceq{\hfill {\mr a_i}}{\models}{p_{A,a\restriction i}({\mr x})\ \cup\ \{{\mr x}\notin^i\mrC\}}
+\ceq{\hfill {\mr a_i}}{\models}{p_{A,\,a\restriction i}({\mr x})\ \cup\ \{{\mr x}\notin^i\mrC\}}
 
 Let $n$ be the largest integer such that $\<{\mr a_i}:i<n\>$ satisfies the condition above. Then
 
-\ceq{\hfill p_{A,a\restriction n}({\mr x})}{\imp}{{\mr x}\notin^n\mrC}
+\ceq{\hfill p_{A,\,a\restriction n}({\mr x})}{\imp}{{\mr x}\notin^n\mrC}
 
 and the first claim of the lemma follows by compactness. 
 
@@ -464,13 +479,11 @@ If $T$ is nip then $\U^{\rm Sh}$ has $L$-elimination of quantifiers. (I.e.\@ eve
 \section{Stable theories}
 \label{stable_teories}
 
-We say that $T$ is a \emph{stable theory\/} if every formula is stable.
+We say that $T$ is a \emph{stable theory\/} if every formula is stable. By Theorem~\ref{thm_def_stable_formula} and~\ref{thm_def_stable_formula2} this is equivalent to requiring that all externally definable sets are definable.
 
-Let $p({\mr x})\in S(\U)$ be a global type. We say that $p({\mr x})$ is a \emph{definable type\/} if  for all formulas $\phi({\mr x}\,;{\gr z})\in L$ the sets ${\gr\D_{p,\phi}}$ are definable. We say that $p({\mr x})$ is  \emph{definable over $A$} if so are all the sets ${\gr\D_{p,\phi}}$. 
+If $p({\mr x})\in S(\U)$ is a global type, a \emph{canonical base\/} of $p({\mr x})$ is a definably closed set $\emph{$\Cb(p)$}\subseteq \U^\eq$ such that an automorphism $f\in\Aut(\U)$ fixes $p({\mr x})$ if and only if it fixes $\Cb(p)$ pointwise. When they exist, canonical bases are unique, see Exercise~\ref{ex_Cb}.
 
-If $p({\mr x})\in S(\U)$ is a global type, a \emph{canonical base\/} of $p({\mr x})$ is a definably closed set $\emph{\Cb(p)}\subseteq \U^\eq$ such that an automorphism $f\in\Aut(\U)$ fixes $p({\mr x})$ if and only if it fixes $\Cb(p)$ pointwise. When they exist, canonical bases are unique, see Exercise~\ref{ex_Cb}.
-
-Clearly, any definable type has a canonical base, namely
+Clearly, all definable types (Definition~\ref{def_defble_type}) have a canonical base, namely
 
 \ceq{\hfill\Cb(p)}{=}{{\dcl}^\eq\Big(\big\{{\gr\D_{p,\phi}}\ :\ \phi({\mr x}\,;{\gr z})\in L\big\}\Big).}
 
@@ -509,11 +522,10 @@ A type $q({\mr x})\subseteq L(A)$ is \emph{stationary\/} if it has a unique glob
 \begin{proof}
 Let $p_i({\mr x})\in S(\U^\eq)$, for $i=1,2$, be two global types that extend $q({\mr x})$ and are invariant over $\acl^\eq\!A$. To prove that $p_1({\mr x}) =p_2({\mr x})$, it suffices to show that for every formula $\phi({\mr x}\,;{\gr z})\in L$
 
-\ceq{\#\hfill {\gr\D_{p_1,\phi}}}{=}{{\gr\D_{p_2,\phi}}}
+\ceq{\#\hfill {\gr\D_{p_1,\,\phi}}}{=}{{\gr\D_{p_2,\,\phi}}}
 
-Note that, by Proposition~\ref{prop_type_over_acl2} both sets belong to  $\acl^\eq\!A$. Clearly, for $i=1,2$, the formula $\A{\gr z}\,\big[\phi({\mr x}\,;{\gr z})\iff {\gr z}\in {\gr\D_{p_i,\phi}}\big]$ belongs to $p_i({\mr x})$. Then both formulas belong to $q({\mr x})$ and $\#$ follows.
+Note that, by Proposition~\ref{prop_type_over_acl2} both sets belong to  $\acl^\eq\!A$. Clearly, for $i=1,2$, the formula $\A{\gr z}\,\big[\phi({\mr x}\,;{\gr z})\iff {\gr z}\in {\gr\D_{p_i,\,\phi}}\big]$ belongs to $p_i({\mr x})$. Then both formulas belong to $q({\mr x})$ and $\#$ follows.
 \end{proof}
-
 
 \begin{corollary}
 If $T$ is stable then the following are equivalent

@@ -51,7 +51,7 @@ diagrams={>=latex}
    \setlength{\rightmargin}{0mm}
    \setlength{\listparindent}{0mm}
    \setlength{\itemindent}{0mm}
-   \setlength{\labelwidth}{2ex}
+   \setlength{\labelwidth}{3ex}
    \setlength{\itemsep}{.4\baselineskip}
    \setlength{\parsep}{0mm}
    \setlength{\partopsep}{0mm}
@@ -115,6 +115,12 @@ diagrams={>=latex}
 \def\pmDelta{\Delta\hskip-.3ex\raisebox{1ex}{\tiny$\pm$}}
 \def\pmDeltatp{\noindent\pmDelta\hskip-.3ex\textrm{-tp}}
 \def\EMtp{\textrm{{\small EM}\mbox{-}tp}}
+\def\nonfork{\mathop{\raise0.2ex\hbox{\ooalign{\hidewidth$\vert$\hidewidth\cr\raise-0.9ex\hbox{$\smile$}}}}}
+
+\def\nonforkc{\mathbin{\raise1.2ex\rlap{\kern1.3ex$\cdot$}\rlap{\kern1.1ex\rule{0.1ex}{1.9ex}}\raise-0.3ex\hbox{$\smile$} } }
+
+\def\cnonfork{\mathbin{\raise1.3ex\rlap{\kern0.4ex$\cdot$}\raise0.6ex\rlap{\kern0.85ex$\vert$}\raise-0.3ex\hbox{$\smile$}} }
+
 
 
 \def\sm{\smallsetminus}
@@ -307,6 +313,5 @@ diagrams={>=latex}
 \subfile{invariant}
 \subfile{invariantL}
 \subfile{external}
-\subfile{dynamics}
 \subfile{measures}
 \end{document}
