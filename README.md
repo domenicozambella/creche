@@ -26,7 +26,7 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
 *  **Ultraproducts**
    * Filters and ultrafilters
    * Direct products
-   * Ultraproducts
+   * \L o\'{s}'s Theorem
 *  **Compactness**
    * Compactness via syntax
    * Compactness via ultraproducts
@@ -45,7 +45,6 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
    * Rich models.
    * Weaker notions of universality and homogeneity
    * The amalgamation property
-   * Notes and references
 *  **Some algebraic structures**
    * Abelian groups
    * Torsion-free abelian groups
@@ -85,8 +84,10 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
 *  **Invariant sets**
    * Invariant sets and types
    * Invariance from the dual perspective
+   * Coheirs
    * Morley sequences and indiscernibles
-   * From coheirs to Ramsey to indiscernibles
+   * Ramsey theorem from coheir sequences
+   * Hindmann theorem from coheir sequences
 *  **Lascar invariant sets**
    * Expansions
    * Lascar strong types
@@ -96,8 +97,10 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
 *  **Externally definable sets**
    * Approximable sets
    * Ladders and definability
-   * Vaknik-Chevronenkis dimension
+   * Vapknik-Chevronenkis dimension
    * Honest definitions
    * Stable theories
    * Stability and the number of types
    * Notes and references
+*  **Keisler measures**
+   * T.b.c.
