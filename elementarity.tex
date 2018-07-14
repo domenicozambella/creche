@@ -369,7 +369,7 @@ An \emph{embedding\/} of $M$ into $N$ is an injective map $h:M\imp N$ such that
 
 \ceq{\ssf{1.}\hfill a\in r^M}{\IFF}{ha\in r^N}\hfill for every $r\in L_{\rm rel}$ and $a\in M^{n_r}$;
 
-\ceq{\ssf{2.}\hfill f^M(a)}{=}{f^N(h\,a)}\hfill for every $f\in L_{\rm fun}$ and $a\in M^{n_f}$.
+\ceq{\ssf{2.}\hfill h\, f^M(a)}{=}{f^N(h\,a)}\hfill for every $f\in L_{\rm fun}$ and $a\in M^{n_f}$.
 
 Note that when $c\in L_{\rm fun}$ is a constant \ssf{2} reads $h\,c^M=c^N$.
 Therefore that $M\subseteq N$  if and only if $\id_M:M\imp N$ is an embedding.
@@ -442,10 +442,7 @@ Let $L$ be the language of strict orders.
 Consider intervals of $\RR$ (or in $\QQ$) as structures in the natural way.
 The intervals $[0,1]$ and $[0,2]$ are isomorphic, hence $[0,1]\equiv[0,2]$ follows from Theorem~\ref{isomorfoeleq}.
 Clearly, $[0,1]$ is a substructure of $[0,2]$.
-However $[0,1]\npreceq [0,2]$, in fact the formula $\A  x\,(x\mathord\le1)$ holds in $[0,1]$ but is false in $[0,2]$.
-
-
-The example above shows that $M\subseteq N$ and $M\equiv N$ does not imply $M\preceq M$.
+However $[0,1]\npreceq [0,2]$, in fact the formula $\A  x\,(x\mathord\le1)$ holds in $[0,1]$ but is false in $[0,2]$. This shows that $M\subseteq N$ and $M\equiv N$ does not imply $M\preceq M$.
 
 Now we prove that $(0,1)\preceq (0,2)$.
 By Exercise~\ref{finitanaturaeqel} above, it suffices to verify that $(0,1)\equiv_B  (0,2)$ for every finite $B\subseteq(0,1)$.
@@ -477,14 +474,14 @@ Let $L$ be the empty language.
 Let $A,D\subseteq M$.
 Prove that the following are equivalent
 \begin{itemize}
- \item[1.] $D$ is definable over $M$;
- \item[2.] either $D$ is finite and $A\subseteq A$ or $\neg D$ is finite and $\neg D\subseteq A$.
+ \item[1.] $D$ is definable over $A$;
+ \item[2.] either $D$ is finite and $D\subseteq A$ or $\neg D$ is finite and $\neg D\subseteq A$.
 \end{itemize}
 Hint: as $L$-structures are plain sets, every bijection $f:M\to M$ is an automorphism.\QED
 \end{exercise}
 
 \begin{exercise}\label{dlorlkurb}
-Prove that if $\phi(x)$ is an existential formula and $h:M\to M$ is an embedding then
+Prove that if $\phi(x)$ is an existential formula and $h:M\to N$ is an embedding then
 
 \ceq{\hfill M\models \phi(a)}{\IMP}{N\models \phi(ha)}\hfill for every $a\in M^{|x|}$.
 
