@@ -74,13 +74,13 @@ Lecture notes for an introductory (under)graduate course.
    * Small theories
    * A toy version of a theorem of Zil'ber
    * Notes and references
-*  **Definability and automorphisms**
+*  **Imaginaries**
    * Many-sorted structures
    * The eq-expansion
    * The definable closure in the eq-expansion
    * The algebraic closure in the eq-expansion
    * Elimination of imaginaries
-   * Imaginaries: the true story
+   * The true story of imaginaries
    * Uniform elimination of imaginaries
    * Notes and references
 *  **Invariant sets**
@@ -88,8 +88,13 @@ Lecture notes for an introductory (under)graduate course.
    * Invariance from the dual perspective
    * Coheirs
    * Morley sequences and indiscernibles
+*  **Ramsey theory**
    * Ramsey theorem from coheir sequences
-   * Hindmann theorem from coheir sequences
+   * Ehrenfeucht-Mostowski construction of indiscernibles
+   * Indempotent types in semigroups (crap)
+   * Hindmann theorem
+   * Crap (this section ought to be hidden)
+   * Hales-Jewett theorem (this section ought to be hidden)
 *  **Lascar invariant sets**
    * Expansions
    * Lascar strong types
