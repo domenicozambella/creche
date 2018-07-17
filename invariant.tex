@@ -230,7 +230,7 @@ If $p({\mr x})$ is a type finitely satisfied in some set $A$, an extension of $p
 In many cases it is useful to focus on elements instead of types.
 We introduce the following notation to express that $\tp({\mr b}/A,{\gr a})$ is finitely satisfied in $A$
 
-\begin{definition}\label{def_coheir_idepencence} For every ${\gr a}\in\U^{|{\gr z}|}$ and ${\mr b}\in\U^{|{\mr x}|}$ we define as
+\begin{definition}\label{def_coheir_idepencence} For every ${\gr a}\in\U^{|{\gr z}|}$ and ${\mr b}\in\U^{|{\mr x}|}$ we define
 
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}%
 \ceq{\hfill\emph{${\gr a}\nonforkc_A{\mr b}$}}{\IFF}{\phi({\gr a}\,;{\mr b}) \textrm{ for all }\phi({\gr z}\,;{\mr x})\in L(A)\textrm{ such that }A^{|{\mr x}|}\subseteq\phi({\gr a}\,;{\mr \U})}
@@ -246,13 +246,13 @@ and we will use the symbol \emph{${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$} wit
 \end{definition}
 
 We imagine ${\gr a}\nonforkc_A{\mr b}$ as saying that ${\mr b}$ is \emph{independent\/} of ${\gr a}$ over $A$.
-This is a very strong form of independence, therefore it does not satisfies many desirable properties .
-For instance, it is in general not symmetric, that is ${\gr a}\nonforkc_A{\mr b}$ is not always equivalent to ${\mr b}\nonforkc_A{\gr a}$ (symmetry being equivalent to stability).
+This is the strongest form of independence we will consider.
+In general it is not symmetric, that is ${\gr a}\nonforkc_A{\mr b}$ is not always equivalent to ${\mr b}\nonforkc_A{\gr a}$ (symmetry being equivalent to stability).
 
 We shall use, sometimes without reference, the following easy lemma
 
 \begin{lemma}\label{lem_coheir_independence}
-The following properties hold for all $A,{\gr a},{\mr b},c$
+The following properties hold for all $A,{\gr a},{\mr b}$, and $c$
 \begin{itemize}
 \item[1.] ${\gr a}\nonforkc_A{\mr b}\ \ \IMP\ \ f{\gr a}\nonforkc_Af{\mr b}$ \ \ for every $f\in\Aut(\U/A)$\hfill \textit{invariance}
 \item[2.] ${\gr a}\nonforkc_A{\mr b}\ \ \IFF\ \ {\gr a_0}\nonforkc_{A_0}{\mr b_0}$\ for all finite $A_0\subseteq A, {\gr a_0}\subseteq{\gr a}, {\mr b_0}\subseteq{\mr b}$\hfill \textit{finite character}
@@ -312,14 +312,13 @@ Finally, the claim follows because ${\mr b_1}\equiv_A{\mr b_2}$.
 %Unfortunately, this is not possible in general and the definition Section~\hyperref[coheirs_sets]{\ref*{invariantL}.\ref*{coheirs_sets}} is as good as it gets.
 
 \begin{example}\label{ex_coheir_stationary}
-Stationarity of $\nonforkc_A$ over every $A$, or just over models, is equivalent to the stability of $T$, see Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}.
+Stationarity of $\nonforkc_A$ over every set $A$, or just over every model, is equivalent to the stability of $T$, see Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}.
 However, there are many more theories where the assumption holds for some particular set $A$.
-For instance, when every subset of $A^n$ is the trace of a definable set, $\nonforkc_A$ is clearly $n$-stationary.
-This simple observation will be of help to prove Theorem~\ref{thm_Hindman}.
-
-For natural example let $T=T_{\rm dlo}$ and let $M$ be a model isomorphic to $\RR$.
+For example, if every subset of $A^n$ is the trace of a definable set, $\nonforkc_A$ is clearly $n$-stationary.
+This simple observation will be of help in the proof of Theorem~\ref{thm_Hindman}.
+For natural example let $T=T_{\rm dlo}$ and let $A\subseteq\U$ have the order-type of $\RR$.
 By quantifier elimination every definable of $\U$ union of finitely many intervals.
-By Dedekind completeness, the trace on $M$ of any interval of $\U$ coincides with that of an $M$-definable interval.
+By Dedekind completeness, the trace on $A$ of any interval of $\U$ coincides with that of an $A$-definable interval. 
 \end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -337,8 +336,7 @@ We say that ${\mr\bar c}=\<{\mr c_i}:i<\alpha\>$ is a \emph{Morley sequence\/} o
 \ceq{\ssf{Ms.}\hfill {\mr c_i}}{\models}{p_{\restriction A,\,{\mr c_{\restriction i}}}({\mr x})}.
 
 We will usually require that $p({\mr x})$ is invariant over $A$.
-In particular, when $p({\mr x})$ is finitely satisfiable in $A$, we say that ${\mr\bar c}$ is a \emph{coheir sequence\/} over $A$.% We may say that ${\mr\bar c}$ is a Morley (or coheir) sequence without specifying a global type.
-Then we mean that ${\mr\bar c}$ is a Morley (respectively coheir) sequence of some suitable global type.
+In particular, when $p({\mr x})$ is finitely satisfiable in $A$, we say that ${\mr\bar c}$ is a \emph{coheir sequence\/} over $A$.
 
 The following is a convenient characterization of coheir sequences.
 

@@ -5,9 +5,12 @@
 \chapter{Ramsey theory}
 \label{ramsey}
 
+In Section~\ref{Ramsey} we prove Ramsey's theorem and in Section~\ref{EM} we present its major application in model theory: the Ehrenfeucht-Mostowsky construction of indiscernibles.
+
+In the remaining sections we prove a few famous results Ramsey theory. Their proof (which is the usual one) is an interesting application of the notion of coheir. These results will not be used elsewhere in these notes.
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox[t]{18ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+\def\ceq#1#2#3{\parbox[t]{12ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 %In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
 %Notation and implicit assumptions are as presented in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
@@ -20,12 +23,9 @@
 \section{Ramsey theorem from coheir sequences}
 \label{Ramsey}
 
-\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox[t]{9ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
-
 In this chapter we are interest in finite partitions.
-We may identify the partition of a set $X$ into $k$ subsets with a map $f:X\to [k]$.
-The elements of $[k]=\{1,\dots,k\}$ are called colors and the partition is also called a \emph{coloring}, or \emph{$k$-coloring}, of $X$. We say that $Y\subseteq X$ is \emph{monochromatic\/} if $f\restriction Y$ is constant on $Y$. 
+We may represent the partition of a set $X$ into $k$ subsets with a map $f:X\to [k]$.
+The elements of $[k]=\{1,\dots,k\}$ are thought of as colors, then the partition is also called a \emph{coloring}, or \emph{$k$-coloring}, of $X$. We say that $Y\subseteq X$ is \emph{monochromatic\/} if $f\restriction Y$ is constant on $Y$. 
 
 Let $M$ be an arbitrary infinite set. Fix $n,k<\omega$ and fix a coloring $f$ of the set of all \emph{$n$-subsets} of $M$, aleas the \emph{complete $n$-uniform hypergraph\/} with vertex set $M$,
 
@@ -38,10 +38,12 @@ The following is a very famous theorem which here we prove it in unusual way. It
 \theoremstyle{mio}
 \newtheorem{Ramsey}[thm]{Ramsey's Theorem}
 \begin{Ramsey}\label{thm_Ramsey}
-For every infinite set $M$, every $n,k<\omega$, every $k$-coloring of ${M\choose n}$ has an infinite monochromatic subgraph $H\subseteq M$.
+Let $M$ be an infinite set and fix some positive integers $n$ and $k$.
+Fix also an arbitrary $k$-coloring of the (edges of the) complete $n$-uniform hypergraph with vertex set $M$.
+Then there infinite monochromatic subgraph $H\subseteq M$.
 \end{Ramsey}
 \begin{proof}
-Let $L$ be a language that contains $k$ relation symbols $r_0,\dots,r_{k-1}$ of arity $n$.
+Let $L$ be a language that contains $k$ relation symbols $r_1,\dots,r_k$ of arity $n$.
 Given a $k$-coloring $f$ we define a structure with domain $M$.
 The interpretation the relation symbols is
 
@@ -49,13 +51,12 @@ The interpretation the relation symbols is
 
 %\ceq{\hfill r_i^M}{=}{\Big\{ \<{\mr a_0},\dots,{\mr a_{n-1}}\>\ :\  \big|\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big|=n \ \textrm { and \ }f\big(\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big)= i\Big\}} 
 
-\ceq{\hfill r_i^M}{=}{\Big\{ {\mr a_0},\dots,{\mr a_{n-1}}\in M \ : \ f\big(\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big)= i\Big\}.} 
+\ceq{\hfill r_i^M}{=}{\Big\{ {\mr a_1},\dots,{\mr a_n}\in M \ : \ f\big(\{{\mr a_1},\dots,{\mr a_n}\}\big)= i\Big\}.} 
 
 We may assume that $M$ is an elementary substructure of some large saturated model $\U$.
 Pick any type $p({\mr x})\in S(\U)$ finitely satisfied in $M$ but not realized in $M$ and let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be a coheir sequence of $p({\mr x})$.
 
-There is a first-order sentence saying that the formulas $r_i({\mr x_0},\dots,{\mr x_{n-1}})$ form a coloring of ${M\choose n}$.
-
+There is a first-order sentence saying that the formulas $r_i({\mr x_1},\dots,{\mr x_n})$ are a coloring of ${M\choose n}$.
 Then by elementarity the same hols in $\U$.
 By indiscernibility, all tuples of $n$ distinct elements of ${\mr\bar c}$ have the same color.
 
@@ -84,12 +85,13 @@ So, as the order is irrelevant,  ${\mr a_{\restriction i}},{\mr a_i},{\mr c_{\re
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Ehrenfeucht-Mostowski construction of indiscernibles}
+\section{Ehrenfeucht-Mostowski construction of indiscernibles}\label{EM}
 
 Let $I,<_I$ be an infinite linear order and let ${\mr\bar a}$ be an $I\jj$sequence.
-Fix a sequence of distinct variables ${\mr\bar x}=\<{\mr x_i}: i<\omega\>$.
-We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$} and say that $p({\mr\bar x})$ is the \emph{Ehren\-feucht-Mostowski type\/} of ${\mr\bar a}$ over $A$ if $p({\mr\bar x})$ is the set of formulas $\phi({\mr x_{\restriction n}})\in L(A)$ such that $\phi({\mr a_{\restriction I_0}})$ holds for every $I_0\in{I\choose n}$.
+Fix a tuple of distinct variables ${\mr\bar x}=\<{\mr x_i}: i<\omega\>$.
+We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$} and say that $p({\mr\bar x})$ is the \emph{Ehren\-feucht-Mostowski type\/} of ${\mr\bar a}$ over $A$ if
 
+\ceq{\hfill p({\mr\bar x})}{=}{\Big\{\phi({\mr x_{\restriction n}})\in L(A)\ :\ \phi({\mr a_{\restriction I_0}})\ \textrm{ holds for every }\ I_0\in{I\choose n}\Big\}.}
 
 Note that ${\mr\bar x}$ is always of order-type $\omega$, while ${\mr\bar a}$ is an arbitrary infinite sequence.
 Clearly, ${\mr x_i}$ and  ${\mr a_i}$ are tuple of the same sort.
@@ -150,32 +152,90 @@ Prove that there is a sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ such that ${
 \end{exercise}
 
 
-\section{Indempotent types in semigroups (crap)}\label{semigroups}
+\section{Indempotents types in semigroups}\label{semigroups}
 
-We say that a type $q({\mr x})\subseteq L(A)$ defines (or is) a \emph{right-ideal\/} if ${\mr a}{\cdot}{\mr b}\models q({\mr x})$ for every ${\mr a}\models q({\mr x})$ and ${\mr b}\in\mrU$ such that ${\mr a}\nonforkc_A{\mr b}$.
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{22ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-Symmetrically, say that $q({\mr x})$ defines a \emph{left-ideal\/} if  ${\mr a}{\cdot}{\mr b}\models q({\mr x})$ for every ${\mr b}\models q({\mr x})$ and ${\mr a}\in\mrU$ such that ${\mr a}\cnonfork_A{\mr b}$.
+In this and the following sections we focus on semigroups definable in a first-order structure. For lighter notation, we assume that $\mrU$ is the domain of a sort in a many-sorted monster model. The language contains, among others, the symbol \emph{$\ \cdot\ $} which is interpreted as binary associative operation on $\mrU$. 
+
+We fix a set of parameters $A$ not necessarily all of the same sort. For any two sets $\mrA,\mrB\subseteq\mrU$ that are invariant over $A$ we define
+
+\ceq{\hfill\emph{$\mrA\cdot_{\!A}\mrB$}}{=}{\Big\{ {\mr a}{\cdot}{\mr b}\ :\ {\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\nonforkc_{\!A}{\mr b}\Big\}}
+
+As $\nonforkc_{\!A}$ is invariant over $A$, the set $\mrA\cdot_{\!A}\mrB$ is also invariant over $A$. We write \emph{${\mr a}\cdot_{\!A}\mrB$} for $\O({\mr a}/A)\cdot_{\!A}\mrB$. The expressions \emph{${\mr a}\cdot_{\!A}{\mr b}$} and \emph{$\mrA\cdot_{\!A}{\mr b}$} have a similar meaning.
+
+\begin{lemma}
+For every invariant sets $\mrA$, $\mrB$, and $\mrC$
+
+\ceq{\hfill\big(\mrA\cdot_{\!A}\mrB\big)\cdot_{\!A}\mrC}{\subseteq}{\mrA\cdot_{\!A}\big(\mrB\cdot_{\!A}\mrC\big)}
+\end{lemma}
+\begin{proof}
+Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ for some ${\mr a}\nonforkc_{\!A}{\mr b}$ and ${\mr a}{\cdot}{\mr b}\nonforkc_{\!A}{\mr c}$.
+By extension (see Lemma~\ref{lem_coheir_independence}), there exists ${\mr c'}$ such that ${\mr a},{\mr b},{\mr a}{\cdot}{\mr b}\nonforkc_{\!A}{\mr c'}\equiv_{A,\,{\mr a}{\cdot}{\mr b}}{\mr c}$.
+By transitivity (again Lemma~\ref{lem_coheir_independence}),  ${\mr a}\nonforkc_{\!A}{\mr b}{\cdot}{\mr c'}$.
+Therefore ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c'}$ belongs to the r.h.s.
+Finally, as ${\mr c'}\equiv_{A,\,{\mr a}{\cdot}{\mr b}}{\mr c}$, also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.
+\end{proof}
+
+We say that $\mrA$ is \emph{idempotent\/} if $\mrA\cdot_{\!A}\mrA\subseteq\mrA$.
+
+\begin{proposition}
+Assume $\mrA$ is minimal idempotent set.
+Then ${\mr a}\cdot_{\!A}\mrA=\mrA$ for every ${\mr a}\in\mrA$.
+The same holds if we restrict to sets that are type-definable.
+\end{proposition}
+\begin{proof}
+We claim that  ${\mr a}\cdot_{\!A}\mrA=\mrA$ for every ${\mr a}\in\mrA$.
+In fact, by the lemma above
+
+\ceq{\hfill\big({\mr a}\cdot_{\!A}\mrA\big)\ \cdot_{\!A}\ \big({\mr a}\cdot_{\!A}\mrA\big)}
+    {\subseteq}
+    {{\mr a}\cdot_{\!A}\Big(\mrA\cdot_{\!A}\big({\mr a}\cdot_{\!A}\mrA\big)\Big)}
+
+\ceq{}{\subseteq}{{\mr a}\cdot_{\!A}\mrA}
+
+Hence the first claim of the lemma follows by the minimality of $\mrA$.
+For the second claim it suffices to note that if $\mrA$ is type-definable then also
+
+\ceq{\hfill{\mr a}\cdot_{\!A}\mrA}{=}{\Big\{{\mr x}\ :\ \E {\mr x'}\in\mrA\ \big( {\mr x}\equiv_A{\mr a}{\cdot}{\mr x'}\big)\Big\}} 
+
+is type-definable.
+\end{proof}
+
+
+\begin{lemma}\label{lem_Hindman}
+Assume that $\nonforkc_G$ is $1$-stationary, see Definition~\ref{def_coheir_stationary}.
+Then, if $\mrA$ is minimal type-definable indempotent, $\mrA=\O({\mr a}/A)$ for any ${\mr a}\in\mrA$.
+\end{lemma}
+
+
+
+
+
+We say that ${\mr a}\in\mrU$ is \emph{idempotent over $A$\/} if ${\mr a}\equiv_A{\mr a}{\cdot}{\mr b}$ whenever ${\mr a}\nonforkc_{\!A}{\mr b}\equiv_A{\mr a}$. By the invariance of $\nonforkc_{\!A}$, see Lemma~\ref{lem_coheir_independence}, idempotency is a property of $\tp({\mr a}/A)$.
+
+We define
+
+\ceq{\hfill\emph{${\mr a}\cdot_{\!A}\mrU$}}{=}{\Big\{ {\mr x}\ :\ \E{\mr x'}\,\big[ {\mr x}\equiv_A{\mr a}{\cdot}{\mr x'}\  \wedge\ {\mr a}\nonforkc_{\!A}{\mr x'}\big]\Big\}}
+
+We say that a type $q({\mr x})\subseteq L(A)$ defines (or is) a \emph{right-ideal\/} if ${\mr a}{\cdot}{\mr b}\models q({\mr x})$ for every ${\mr a}\models q({\mr x})$ and ${\mr b}\in\mrU$ such that ${\mr a}\nonforkc_{\!A}{\mr b}$.
+
+Symmetrically, say that $q({\mr x})$ defines a \emph{left-ideal\/} if  ${\mr a}{\cdot}{\mr b}\models q({\mr x})$ for every ${\mr b}\models q({\mr x})$ and ${\mr a}\in\mrU$ such that ${\mr a}\cnonfork_{\!A}{\mr b}$.
 Finally $q({\mr x})$ defines a \emph{two-sided ideal\/} if it defines both a left- and a right-ideal.
 
 \begin{lemma}
 Let $q({\mr x})\subseteq L(A)$ define a right-ideal. Then the following are equivalent
 \begin{itemize}
 \item[1.] $q({\mr x})$ is maximal among the types that define a right-ideal;
-\item[2.] $q({\mr x})\iff \E{\mr x'}\,\big[ {\mr x}\equiv_A{\mr a}{\cdot}{\mr x'}\  \wedge\ {\mr a}\nonforkc_A{\mr x'}\big]$ for some (any) ${\mr a}\models q({\mr x})$
-\item[3.] $q({\mr x})\iff \E{\mr x'}\,\big[ {\mr x}\equiv_A{\mr a}{\cdot}{\mr x'}\  \wedge\ {\mr a}\nonforkc_A{\mr x'}\models q({\mr x'})\big]$ for some (any) ${\mr a}\models q({\mr x})$
+\item[2.] $q({\mr x})\iff \E{\mr x'}\,\big[ {\mr x}\equiv_A{\mr a}{\cdot}{\mr x'}\  \wedge\ {\mr a}\nonforkc_{\!A}{\mr x'}\big]$ for some (any) ${\mr a}\models q({\mr x})$
+\item[3.] $q({\mr x})\iff \E{\mr x'}\,\big[ {\mr x}\equiv_A{\mr a}{\cdot}{\mr x'}\  \wedge\ {\mr a}\nonforkc_{\!A}{\mr x'}\models q({\mr x'})\big]$ for some (any) ${\mr a}\models q({\mr x})$
 \end{itemize}
 \end{lemma}
 Fix an arbitrary ${\mr a}\models q({\mr x})$.
 Note that, by $G$-invariance, the r.h.s.\@  of \ssf{2} is equivalent to a type over $G$.
 Therefore, by the maximality of $q({\mr x})$, it suffices to show that the r.h.s.\@ is consistent with $q({\mr x})$ and that it is closed under multiplication.
 As $q({\mr x})$ is closed under multiplication, consistency is witnessed by ${\mr a}{\cdot}{\mr a'}$ where ${\mr a'}$ is any element such that ${\mr a}\nonforkc_G{\mr a'}\models q({\mr x})$.
-%
-%Now, let $b\nonforkc_Gc$ be two realizations of the r.h.s.\@ and let $b',c'$ witness  the respective existential quantifiers.
-Note that, by extension, see Lemma~\ref{lem_coheir_independence}, we can choose ${\mr c'}$ such that ${\mr a},{\mr b},{\mr b'}\nonforkc_G{\mr c'}$.
-Therefore, from ${\mr b}\equiv_G{\mr a}{\cdot}{\mr b'}$ we obtain  ${\mr b}{\cdot}{\mr c'}\equiv_G{\mr a}{\cdot}{\mr b'}{\cdot}{\mr c'}$.
-By transitivity, see Lemma~\ref{lem_coheir_independence}, we obtain ${\mr a}\nonforkc_G{\mr b'}{\cdot}{\mr c'}$.
-Then ${\mr b'}{\cdot}{\mr c'}$ witnesses that ${\mr b}{\cdot}{\mr c'}$ satisfies the r.h.s.
-By elementarity, also ${\mr b}{\cdot}{\mr c}$ satisfies the r.h.s.
 
 
 
@@ -226,14 +286,6 @@ Firstly we prove that
 Note that, by $G$-invariance, the r.h.s.\@ is equivalent to a type over $G$.
 Therefore, by the maximality of $q({\mr x})$, it suffices to show that the r.h.s.\@ is consistent with $q({\mr x})$ and that it is closed under multiplication.
 As $q({\mr x})$ is closed under multiplication, consistency is witnessed by ${\mr a}{\cdot}{\mr a'}$ where ${\mr a'}$ is any element such that ${\mr a}\nonforkc_G{\mr a'}\models q({\mr x})$.
-%
-%Now, let $b\nonforkc_Gc$ be two realizations of the r.h.s.\@ and let $b',c'$ witness  the respective existential quantifiers.
-%Note that, by extension, see Lemma~\ref{lem_coheir_independence}, we can choose ${\mr c'}$ such that ${\mr a},{\mr b},{\mr b'}\nonforkc_G{\mr c'}$.
-%Therefore, from ${\mr b}\equiv_G{\mr a}{\cdot}{\mr b'}$ we obtain  ${\mr b}{\cdot}{\mr c'}\equiv_G{\mr a}{\cdot}{\mr b'}{\cdot}{\mr c'}$.
-%By transitivity, see Lemma~\ref{lem_coheir_independence}, we obtain ${\mr a}\nonforkc_G{\mr b'}{\cdot}{\mr c'}$.
-%Then ${\mr b'}{\cdot}{\mr c'}$ witnesses that ${\mr b}{\cdot}{\mr c'}$ satisfies the r.h.s.
-%
-%By elementarity, also ${\mr b}{\cdot}{\mr c}$ satisfies the r.h.s.
 
 Now, let ${\mr b}\nonforkc_G{\mr c}$ be two realizations of the r.h.s.\@ and let ${\mr b'}$ witness the existential quantifier for ${\mr b}$.
 By extension there is ${\mr c'}$ such that ${\mr a}, {\mr b}, {\mr b'}\nonforkc_G{\mr c'}\equiv_{G,\,{\mr b}}{\mr c}$.
@@ -301,7 +353,7 @@ As ${\mr\bar c}$ is a coheir sequence we can find  ${\mr a_i}\in M$ such that $\
 
 We say that a set $\I\subseteq\U$ is a right-ideal if ${\mr a}{\cdot}{\mr b}\in\I$ for every ${\mr a}\in\I$ and ${\mr b}\in\U$ such that ${\mr a}\nonforkc_G{\mr b}$. 
 
-We say that a type $q({\mr x})\subseteq L(A)$ define or is a right-ideal if ${\mr a}{\cdot}{\mr b}\models q({\mr x})$ for every ${\mr a}\models q({\mr x})$ and ${\mr b}\in\U$ such that ${\mr a}\nonforkc_A{\mr b}$.
+We say that a type $q({\mr x})\subseteq L(A)$ define or is a right-ideal if ${\mr a}{\cdot}{\mr b}\models q({\mr x})$ for every ${\mr a}\models q({\mr x})$ and ${\mr b}\in\U$ such that ${\mr a}\nonforkc_{\!A}{\mr b}$.
 
 \begin{proposition}
 The following are equivalent
@@ -368,7 +420,7 @@ Lemma~\ref{lem_tensor} ensures that the definition below is well-defined, i.e.\@
 Let $p({\mr x})\in S(\U)$ be an $A$-invariant type.
 For $q({\gr z})\in S(A)$ we define
 
-\ceq{\hfill\mbox{\emph{$q(z)\otimes_A p({\mr x})$}}}{\deq}{\tp({\gr a\,};{\mr b}/A)}\quad for some ${\gr a}\models q({\gr z})$ and ${\mr b}\models p_{\restriction A,{\gr a}}({\mr x})$.
+\ceq{\hfill\mbox{\emph{$q(z)\otimes_{\!A} p({\mr x})$}}}{\deq}{\tp({\gr a\,};{\mr b}/A)}\quad for some ${\gr a}\models q({\gr z})$ and ${\mr b}\models p_{\restriction A,{\gr a}}({\mr x})$.
 
 When $q({\gr z})\in S(\U)$, we define
 
@@ -511,7 +563,7 @@ Sia $p({\mr x})\in S(\U)$ un tipo globale $A\jj$invariante.
 Allora le seguenti affermazioni sono equivalenti
 \begin{itemize}
 \item[1.]$\<c_i:i<\omega\>$ \`e una sequenze di Morley di $p$ su $A$;
-\item[2.] $\<c_i:i<\omega\>\models p^{(\omega)}|_A$
+\item[2.] $\<c_i:i<\omega\>\models p^{(\omega)}|_{\!A}$
 \end{itemize}
 \end{proposition}
 
@@ -519,12 +571,12 @@ La seguente proposizione torner\`a utile nei prossimi paragrafi, si osservi che 
 
 \begin{proposition}
 Sia $p({\mr x})\in S(\U)$ un tipo globale invariante ed $A$ un insieme arbitrario.
-Allora ogni $\<c_i:i<\omega\>\models p^{(\omega)}|_A$ \`e una sequenza di indiscernibili su $A$.
+Allora ogni $\<c_i:i<\omega\>\models p^{(\omega)}|_{\!A}$ \`e una sequenza di indiscernibili su $A$.
 \end{proposition}
 
 
 \begin{proof}
-\`E sufficiente verificare che se $\<c_i:i<\omega\>\models p^{(\omega)}|_A$ allora $c_{i_0},\dots,c_{i_n}\models p^{(n+1)}|_A$ per ogni $i_0<\dots<i_n<\omega$.
+\`E sufficiente verificare che se $\<c_i:i<\omega\>\models p^{(\omega)}|_{\!A}$ allora $c_{i_0},\dots,c_{i_n}\models p^{(n+1)}|_{\!A}$ per ogni $i_0<\dots<i_n<\omega$.
 
 \end{proof}
 \end{comment}
