@@ -157,16 +157,20 @@ Prove that there is a sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ such that ${
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{22ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-In this and the following sections we focus on semigroups definable in a first-order structure. For lighter notation, we assume that $\mrU$ is the domain of a sort in a many-sorted monster model. The language contains, among others, the symbol \emph{$\ \cdot\ $} which is interpreted as binary associative operation on $\mrU$. 
+In this and the following sections we focus on semigroups definable in a first-order structure.
+For lighter notation, we assume that $\mrU$ is the domain of a sort in a many-sorted monster model.
+The language contains, among others, the symbol \emph{$\ \cdot\ $} which is interpreted as binary associative operation on $\mrU$. 
 
 We fix a set of parameters $A$ not necessarily all of the same sort. For any two sets $\mrA,\mrB\subseteq\mrU$ that are invariant over $A$ we define
 
 \ceq{\hfill\emph{$\mrA\cdot_{\!A}\mrB$}}{=}{\Big\{ {\mr a}{\cdot}{\mr b}\ :\ {\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\nonforkc_{\!A}{\mr b}\Big\}}
 
-As $\nonforkc_{\!A}$ is invariant over $A$, the set $\mrA\cdot_{\!A}\mrB$ is also invariant over $A$. We write \emph{${\mr a}\cdot_{\!A}\mrB$} for $\O({\mr a}/A)\cdot_{\!A}\mrB$. The expressions \emph{${\mr a}\cdot_{\!A}{\mr b}$} and \emph{$\mrA\cdot_{\!A}{\mr b}$} have a similar meaning.
+As $\nonforkc_{\!A}$ is invariant over $A$, the set $\mrA\cdot_{\!A}\mrB$ is also invariant over $A$.
+We write \emph{${\mr a}\cdot_{\!A}\mrB$} for $\O({\mr a}/A)\cdot_{\!A}\mrB$.
+The expressions \emph{${\mr a}\cdot_{\!A}{\mr b}$} and \emph{$\mrA\cdot_{\!A}{\mr b}$} have a similar meaning.
 
 \begin{lemma}
-For every invariant sets $\mrA$, $\mrB$, and $\mrC$
+For every $A$-invariant sets $\mrA$, $\mrB$, and $\mrC$
 
 \ceq{\hfill\big(\mrA\cdot_{\!A}\mrB\big)\cdot_{\!A}\mrC}{\subseteq}{\mrA\cdot_{\!A}\big(\mrB\cdot_{\!A}\mrC\big)}
 \end{lemma}
@@ -178,7 +182,9 @@ Therefore ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c'}$ belongs to the r.h.s.
 Finally, as ${\mr c'}\equiv_{A,\,{\mr a}{\cdot}{\mr b}}{\mr c}$, also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.
 \end{proof}
 
-We say that $\mrA$ is \emph{idempotent\/} if $\mrA\cdot_{\!A}\mrA\subseteq\mrA$.
+We say that $\mrA$ is \emph{idempotent (over $A$)\/} if it is invariant over $A$, non empty, and $\mrA\cdot_{\!A}\mrA\subseteq\mrA$.
+We say that $\mrA$ is a \emph{minimal\/} idempotent if it is idempotent and it does not properly contain any idempotent set.
+A \emph{type-definable\/}  minimal idempotent is defined similarly by restricting to type-definable sets. 
 
 \begin{proposition}
 Assume $\mrA$ is minimal idempotent set.
@@ -203,21 +209,21 @@ For the second claim it suffices to note that if $\mrA$ is type-definable then a
 is type-definable.
 \end{proof}
 
-
 \begin{lemma}\label{lem_Hindman}
-Assume that $\nonforkc_G$ is $1$-stationary, see Definition~\ref{def_coheir_stationary}.
-Then, if $\mrA$ is minimal type-definable indempotent, $\mrA=\O({\mr a}/A)$ for any ${\mr a}\in\mrA$.
+Assume that $\nonforkc_A$ is $1$-stationary, see Definition~\ref{def_coheir_stationary}.
+Then, if $\mrA$ is minimal type-definable idempotent, $\mrA=\O({\mr a}/A)$ for any ${\mr a}\in\mrA$.
 \end{lemma}
 
+\begin{proof}
 
-
+\end{proof}
 
 
 We say that ${\mr a}\in\mrU$ is \emph{idempotent over $A$\/} if ${\mr a}\equiv_A{\mr a}{\cdot}{\mr b}$ whenever ${\mr a}\nonforkc_{\!A}{\mr b}\equiv_A{\mr a}$. By the invariance of $\nonforkc_{\!A}$, see Lemma~\ref{lem_coheir_independence}, idempotency is a property of $\tp({\mr a}/A)$.
 
 We define
 
-\ceq{\hfill\emph{${\mr a}\cdot_{\!A}\mrU$}}{=}{\Big\{ {\mr x}\ :\ \E{\mr x'}\,\big[ {\mr x}\equiv_A{\mr a}{\cdot}{\mr x'}\  \wedge\ {\mr a}\nonforkc_{\!A}{\mr x'}\big]\Big\}}
+\ceq{\hfill\emph{${\mr a}\cdot_{\!A}\mrU$}}{=}{\Big\{ {\mr x}\ :\ \E{\mr x'}\,\big[ {\mr x}\equiv_A{\mr a}{\cdot}{\mr x'}\  \wedge\ {\mr a}\nonforkc_{\!A}{\mr x'}\big]\Big\}.}
 
 We say that a type $q({\mr x})\subseteq L(A)$ defines (or is) a \emph{right-ideal\/} if ${\mr a}{\cdot}{\mr b}\models q({\mr x})$ for every ${\mr a}\models q({\mr x})$ and ${\mr b}\in\mrU$ such that ${\mr a}\nonforkc_{\!A}{\mr b}$.
 
