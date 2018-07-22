@@ -58,7 +58,7 @@ diagrams={>=latex}
    \setlength{\labelsep}{1ex}
    \setlength{\leftmargin}{\labelwidth+\labelsep}
    \let\makelabel\mylabel}}{%
-   \end{list}\vspace*{-1.3mm}}
+   \end{list}\vspace*{-\parskip}}
 
 %\def\emph#1{\textcolor{blue}{\boldmath\textbf{#1}}}
 
@@ -218,7 +218,7 @@ diagrams={>=latex}
      {}%         Indent amount (empty = no indent, \parindent = para indent)
      {\bfseries}% Thm head font
      {}%        Punctuation after thm head
-     {1.5ex}%     Space after thm head: " " = normal interword space;
+     {1ex}%     Space after thm head: " " = normal interword space;
            %   \newline = linebreak
      {\llap{\thmnumber{#2}\hskip2mm}\thmname{#1}\thmnote{\bfseries{} #3}}% Thm head spec (can be left empty, meaning `normal')
 

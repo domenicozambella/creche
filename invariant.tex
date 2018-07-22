@@ -189,7 +189,7 @@ Every non piecewise drifting type extends to a non drifting global type.
 \label{coheirs}
 \end{comment}
 
-\section{Coheirs}
+\section{Heirs and coheirs}
 
 The easiest way to obtain types that are invariant over a set $A$ is via types that are finitely satisfiable in $A$.
 We say that a type $p({\mr x})$ is  \emph{finitely satisfiable\/} in $A$ if every conjunction of formulas in $p({\mr x})$ has a solution in $A^{|{\mr x}|}$.
@@ -256,17 +256,23 @@ The following properties hold for all $A,{\gr a},{\mr b}$, and $c$
 \begin{itemize}
 \item[1.] ${\gr a}\nonforkc_A{\mr b}\ \ \IMP\ \ f{\gr a}\nonforkc_Af{\mr b}$ \ \ for every $f\in\Aut(\U/A)$\hfill \textit{invariance}
 \item[2.] ${\gr a}\nonforkc_A{\mr b}\ \ \IFF\ \ {\gr a_0}\nonforkc_{A_0}{\mr b_0}$\ for all finite $A_0\subseteq A, {\gr a_0}\subseteq{\gr a}, {\mr b_0}\subseteq{\mr b}$\hfill \textit{finite character}
-\item[3$\,'$\!.] ${\gr a},c\nonforkc_A{\mr b}\ \ \IMP\ \ {\gr a}\nonforkc_{A,\,c}{\mr b}$\hfill \textit{transitivity$'$}
-\item[3$\,''$\!.] ${\gr a}\nonforkc_{A,\,c}{\mr b}$ \ and \ ${\gr a}\nonforkc_Ac\ \ \IMP\ \ {\gr a}\nonforkc_Ac,{\mr b}$\hfill \textit{transitivity$''$}
-\item[4.] ${\gr a}\nonforkc_A{\mr b}\ \ \IMP\ \ $ there exists ${\mr b'}\equiv_{A,\,{\gr a}}{\mr b}$ such that ${\gr a},c\nonforkc_A{\mr b'}$\hfill \textit{extension}
+% \item[3$\,'$\!.] ${\gr a},c\nonforkc_A{\mr b}\ \ \IMP\ \ {\gr a}\nonforkc_{A,\,c}{\mr b}$\hfill \textit{transitivity$'$}
+% \item[3$\,''$\!.] ${\gr a}\nonforkc_{A,\,c}{\mr b}$ \ and \ ${\gr a}\nonforkc_Ac\ \ \IMP\ \ {\gr a}\nonforkc_Ac,{\mr b}$\hfill \textit{transitivity$''$}
+\item[3.] ${\gr a},c\nonforkc_{A}{\mr b}$ \ and \ ${\gr a}\nonforkc_Ac\ \ \IMP\ \ {\gr a}\nonforkc_Ac,{\mr b}$\hfill \textit{right transitivity}
+\item[4.] ${\gr a}\nonforkc_A{\mr b}\ \ \IMP\ \ $ there exists ${\mr b'}\equiv_{A,\,{\gr a}}{\mr b}$ such that ${\gr a},c\nonforkc_A{\mr b'}$\hfill \textit{right extension}
+
 \end{itemize}
 \end{lemma}
 \begin{proof}
-The first four properties follow immediately from Definition~\ref{def_coheir_idepencence}.
+Properties \ssf{1}-\ssf{3} follow immediately from Definition~\ref{def_coheir_idepencence}.
 We prove \ssf{4}.
 Let $p({\mr x})$ be a global coheir of $\tp({\mr b}/A,{\gr a})$, which exists by Proposition~\ref{prop_exisntence_coheirs}.
 Then any ${\mr b'}\models p_{\restriction A,\,{\gr a},\,c}({\mr x})$ proves the lemma.
 \end{proof}
+
+
+Transitivity has dual version that holds under stronger assumptions.
+
 
 The type ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ defined above is the intersection of all coheirs of $\tp({\mr b}/A)$.
 In general coheirs of $\tp({\mr b}/A)$ may not exist i.e.,  ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ is inconsistent.
@@ -275,7 +281,7 @@ Even when consistent it need not be a complete.
 In fact, completeness  of the type type ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ is a very strong property.
 An example is given in Lemma~\ref{lem_Hindman}.
 
-\begin{definition}\label{def_coheir_stationary}We say that $\nonforkc_A$ is \emph{stationary\/} if ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ is a complete type for every ${\gr a}\in\U^{<\omega}$, every ${\mr b}\in\U^{|{\mr x}|}$, and every tuple of variables ${\mr x}$.
+\begin{definition}\label{def_coheir_stationary}We say that $\nonforkc_A$ is \emph{stationary\/} if ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ is a complete type (over $A,{\gr a}$) for every ${\gr a}\in\U^{<\omega}$, every ${\mr b}\in\U^{|{\mr x}|}$, and every tuple of variables ${\mr x}$.
 We say \emph{$n$-stationary\/} if this is restricted to $|{\mr x}|=n$.\QED
 \end{definition}
 

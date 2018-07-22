@@ -12,8 +12,6 @@ In the remaining sections we prove a few famous results Ramsey theory. Their pro
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{12ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-%In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
-%Notation and implicit assumptions are as presented in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -25,9 +23,13 @@ In the remaining sections we prove a few famous results Ramsey theory. Their pro
 
 In this chapter we are interest in finite partitions.
 We may represent the partition of a set $X$ into $k$ subsets with a map $f:X\to [k]$.
-The elements of $[k]=\{1,\dots,k\}$ are thought of as colors, then the partition is also called a \emph{coloring}, or \emph{$k$-coloring}, of $X$. We say that $Y\subseteq X$ is \emph{monochromatic\/} if $f\restriction Y$ is constant on $Y$. 
+The elements of $[k]=\{1,\dots,k\}$ are thought of as colors,
+then the partition is also called a \emph{coloring},
+or \emph{$k$-coloring},
+of $X$. We say that $Y\subseteq X$ is \emph{monochromatic\/} if $f\restriction Y$ is constant on $Y$. 
 
-Let $M$ be an arbitrary infinite set. Fix $n,k<\omega$ and fix a coloring $f$ of the set of all \emph{$n$-subsets} of $M$, aleas the \emph{complete $n$-uniform hypergraph\/} with vertex set $M$,
+Let $M$ be an arbitrary infinite set. Fix $n,k<\omega$ and fix a coloring $f$ of the set of all \emph{$n$-subsets} of $M$,
+aleas the \emph{complete $n$-uniform hypergraph\/} with vertex set $M$,
 
 \ceq{\hfill f}{:}{ {M\choose n}\ \ \to\ \ [k]}.
 
@@ -58,7 +60,8 @@ Pick any type $p({\mr x})\in S(\U)$ finitely satisfied in $M$ but not realized i
 
 There is a first-order sentence saying that the formulas $r_i({\mr x_1},\dots,{\mr x_n})$ are a coloring of ${M\choose n}$.
 Then by elementarity the same hols in $\U$.
-By indiscernibility, all tuples of $n$ distinct elements of ${\mr\bar c}$ have the same color.
+By indiscernibility,
+all tuples of $n$ distinct elements of ${\mr\bar c}$ have the same color.
 
 %\ceq{\ssf{\#}\hfill M}{\models}{\A {\mr x_0},\dots,{\mr x_{n-1}}\ \left[\bigwedge_{0\le i<j<n} {\mr x_i}\neq {\mr x_j}\quad\imp\quad\bigvee_{i<k}r_i({\mr x_0},\dots,{\mr x_{n-1}})\right].}
 
@@ -70,10 +73,14 @@ We construct ${\mr a_{\restriction i}}$ by induction on $i$ as follows.
 
 Assume as induction hypothesis that the subsequences of length $n$ of ${\mr a_{\restriction i}},{\mr c_{\restriction n}}$ are monochromatic.
 Our goal is to find ${\mr a_i}$ such as the same property holds for ${\mr a_{\restriction i}},{\mr a_i},{\mr c_{\restriction n}}$.
-By the indiscernibility of ${\mr\bar c}$, the property holds for  ${\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr{c_n}}$.
+By the indiscernibility of ${\mr\bar c}$,
+the property holds for  ${\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr{c_n}}$.
  And this can be written by a formula $\phi({\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr{c_n}})$.
-As ${\mr\bar c}$ is a coheir sequence, by Lemma~\ref{lem_coheir_property} we can find  ${\mr a_i}\in M$ such that  $\phi({\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr a_i})$.
-So, as the order is irrelevant,  ${\mr a_{\restriction i}},{\mr a_i},{\mr c_{\restriction n}}$ satisfies the induction hypothesis.
+As ${\mr\bar c}$ is a coheir sequence,
+by Lemma~\ref{lem_coheir_property} we can find  ${\mr a_i}\in M$ such that  $\phi({\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr a_i})$.
+So,
+as the order is irrelevant,
+${\mr a_{\restriction i}},{\mr a_i},{\mr c_{\restriction n}}$ satisfies the induction hypothesis.
 \end{proof}
 
 
@@ -93,11 +100,16 @@ We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$} and 
 
 \ceq{\hfill p({\mr\bar x})}{=}{\Big\{\phi({\mr x_{\restriction n}})\in L(A)\ :\ \phi({\mr a_{\restriction I_0}})\ \textrm{ holds for every }\ I_0\in{I\choose n}\Big\}.}
 
-Note that ${\mr\bar x}$ is always of order-type $\omega$, while ${\mr\bar a}$ is an arbitrary infinite sequence.
-Clearly, ${\mr x_i}$ and  ${\mr a_i}$ are tuple of the same sort.
+Note that ${\mr\bar x}$ is always of order-type $\omega$,
+while ${\mr\bar a}$ is an arbitrary infinite sequence.
+Clearly,
+${\mr x_i}$ and  ${\mr a_i}$ are tuple of the same sort.
 
-Note also that if ${\mr\bar a}$ is $A\jj$indiscernible then $\EMtp({\mr\bar a}/A)$ is a complete type, and vice versa.
-So, if ${\mr\bar a}$ and ${\mr\bar c}$ are two $A\jj$indiscernible $I\jj$sequences with the same Ehren\-feucht-Mostowski type over $A$, then ${\mr\bar a}\equiv_A {\mr\bar c}$.
+Note also that if ${\mr\bar a}$ is $A\jj$indiscernible then $\EMtp({\mr\bar a}/A)$ is a complete type,
+and vice versa.
+So,
+if ${\mr\bar a}$ and ${\mr\bar c}$ are two $A\jj$indiscernible $I\jj$sequences with the same Ehren\-feucht-Mostowski type over $A$,
+then ${\mr\bar a}\equiv_A {\mr\bar c}$.
 
 \theoremstyle{mio}
 \newtheorem{EhrenfeuchtMostowski}[thm]{Ehrenfeucht-Mostowski's Theorem}
@@ -108,22 +120,30 @@ Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is an $J\jj$seq
 
 
 \begin{proof}
-  We prove the theorem for $I=J=\omega$ and leave the general case to the reader.
-  Let ${\mr\bar c}$ be any realization of the following type yields a $J$-sequence of $A$-indiscernibles.
+We prove the theorem for $I=J=\omega$ and leave the general case to the reader.
+Let ${\mr\bar c}$ be any realization of the following type yields a $J$-sequence of $A$-indiscernibles.
 
-  \ceq{\hfill q({\mr\bar x})}{\cup}{\Big\{\phi({\mr x_{\restriction I_0}})\iff\phi({\mr x_{\restriction J_0}})\ :\  \phi({\mr x_{\restriction n}})\in L(A), \ I_0, J_0\in{\omega\choose n}, \ n<\omega\Big\}.}
+\ceq{\hfill q({\mr\bar x})}
+{\cup}
+{\Big\{\phi({\mr x_{\restriction I_0}})\iff\phi({\mr x_{\restriction J_0}})\ :\  \phi({\mr x_{\restriction n}})\in L(A), \ I_0, J_0\in{\omega\choose n}, \ n<\omega\Big\}.}
 
-  We will prove that any finite subset of the type above is realized by a finite subsequence of ${\mr\bar a}$.
+We will prove that any finite subset of the type above is realized by a finite subsequence of ${\mr\bar a}$.
 First note that any finite subset of $q({\mr\bar x})$ is realized by any subsequence of ${\mr\bar a}$ of the proper length by the definition of EM-type. 
 Then we only need to pay attention to the set on the right.
 
 We prove that for $k$ and $n$ arbitrary large and every $\phi_1,\dots,\phi_k\in L_{\mr x_{\restriction n}}(A)$ there is an infinite $H\subseteq\omega$ such that ${\mr a_{\restriction H}}$ realizes
 
-\ceq{\ssf{\#}}{~}{\Big\{\phi_i({\mr x_{\restriction J_0}})\iff\phi_i({\mr x_{\restriction I_0}})\ :\  I_0, J_0\in{\omega\choose n}\textrm{ and } i\in[k]\Big\}.}
+\ceq{\ssf{\#}}
+{}
+{\Big\{\phi_i({\mr x_{\restriction J_0}})\iff\phi_i({\mr x_{\restriction I_0}})\ :\  I_0, J_0\in{\omega\choose n}\textrm{ and } i\in[k]\Big\}.}
 
 Consider the subsets of $[k]$ as colors and let $f$ be the coloring of ${\omega\choose n}$ that maps $I_0$ to the set $\big\{i\ :\ \phi_i({\mr a_{\restriction I_0}})\big\}$.
-By the Ramsey theorem, there is some infinite monochromatic set $H\subseteq\omega$.
-As $\omega$ has order type $\omega$, so does $H$, and it is immediate that ${\mr a_{\restriction H}}$ realizes \ssf{\#}, as required to prove the theorem with $I=J=\omega$.
+By the Ramsey theorem,
+there is some infinite monochromatic set $H\subseteq\omega$.
+As $\omega$ has order type $\omega$,
+so does $H$,
+and it is immediate that ${\mr a_{\restriction H}}$ realizes \ssf{\#},
+as required to prove the theorem with $I=J=\omega$.
 \end{proof}
 
 
@@ -147,7 +167,8 @@ Then there is an $A\jj$indiscernible sequence $\bar c=\<c_i:i\in J\>$ such that 
 
 \begin{exercise}
 Let  $p({\mr x})\in S(\U)$ be a global type invariant over $A$.
-Let ${\mr a}, {\mr b}\models p_{\restriction A}({\mr x})$.
+Let ${\mr a},
+{\mr b}\models p_{\restriction A}({\mr x})$.
 Prove that there is a sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ such that ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are both sequences of $A\jj$indiscernibles.\QED
 \end{exercise}
 
@@ -158,98 +179,164 @@ Prove that there is a sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ such that ${
 \def\ceq#1#2#3{\parbox[t]{22ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 In this and the following sections we focus on semigroups definable in a first-order structure.
-For lighter notation, we assume that $\mrU$ is the domain of a sort in a many-sorted monster model.
-The language contains, among others, the symbol \emph{$\ \cdot\ $} which is interpreted as binary associative operation on $\mrU$. 
+For a lighter notation,
+we identify our semigroup with $\mrU$,
+which here denotes the domain of a sort in a many-sorted monster model.
+The language contains,
+among others,
+the symbol \emph{$\ \cdot\ $} which is interpreted as binary associative operation on $\mrU$. 
 
-We fix a set of parameters $A$ not necessarily all of the same sort. For any two sets $\mrA,\mrB\subseteq\mrU$ that are invariant over $A$ we define
+We fix a set of parameters $A$,
+not necessarily all of the same sort. For any two sets $\mrA,\mrB\subseteq\mrU$ we define
 
-\ceq{\hfill\emph{$\mrA\cdot_{\!A}\mrB$}}{=}{\Big\{ {\mr a}{\cdot}{\mr b}\ :\ {\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\nonforkc_{\!A}{\mr b}\Big\}}
+\ceq{\hfill\emph{$\mrA\cdot_{\!A}\mrB$}}
+{=}
+{\Big\{ {\mr a}{\cdot}{\mr b}\ :\ {\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\nonforkc_{\!A}{\mr b}\Big\}}
 
-As $\nonforkc_{\!A}$ is invariant over $A$, the set $\mrA\cdot_{\!A}\mrB$ is also invariant over $A$.
-We write \emph{${\mr a}\cdot_{\!A}\mrB$} for $\O({\mr a}/A)\cdot_{\!A}\mrB$.
-The expressions \emph{${\mr a}\cdot_{\!A}{\mr b}$} and \emph{$\mrA\cdot_{\!A}{\mr b}$} have a similar meaning.
+We write \emph{${\mr a}\cdot_{\!A}\mrB$} for $\{{\mr a}\}\cdot_{\!A}\mrB$.
+Similarly for \emph{$\mrA\cdot_{\!A}{\mr b}$} and \emph{${\mr a}\cdot_{\!A}{\mr b}$}.
+Clearly,
+the latter is either $\{{\mr a}{\cdot}{\mr b}\}$  or empty set.
 
-\begin{lemma}
-For every $A$-invariant sets $\mrA$, $\mrB$, and $\mrC$
+Note that unless we add assumptions on $\nonforkc_{\!A}$ or on the underlying theory,
+there is no guarantee that $\mrA\cdot_{\!A}\mrB$ is non empty,
+not even when these sets are $A$-invariant. 
+With this proviso,
+we proceed but with caution.
 
-\ceq{\hfill\big(\mrA\cdot_{\!A}\mrB\big)\cdot_{\!A}\mrC}{\subseteq}{\mrA\cdot_{\!A}\big(\mrB\cdot_{\!A}\mrC\big)}
-\end{lemma}
-\begin{proof}
-Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ for some ${\mr a}\nonforkc_{\!A}{\mr b}$ and ${\mr a}{\cdot}{\mr b}\nonforkc_{\!A}{\mr c}$.
-By extension (see Lemma~\ref{lem_coheir_independence}), there exists ${\mr c'}$ such that ${\mr a},{\mr b},{\mr a}{\cdot}{\mr b}\nonforkc_{\!A}{\mr c'}\equiv_{A,\,{\mr a}{\cdot}{\mr b}}{\mr c}$.
-By transitivity (again Lemma~\ref{lem_coheir_independence}),  ${\mr a}\nonforkc_{\!A}{\mr b}{\cdot}{\mr c'}$.
-Therefore ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c'}$ belongs to the r.h.s.
-Finally, as ${\mr c'}\equiv_{A,\,{\mr a}{\cdot}{\mr b}}{\mr c}$, also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.
-\end{proof}
+By the invariance of $\nonforkc_{\!A}$,
+for every $f\in\Aut(\mrU/A)$ we have $f[\mrA\cdot_{\!A}\mrB]=f[\mrA]\cdot_{\!A}f[\mrB]$.
+Therefore when $\mrA$ and $\mrB$ are invariant over $A$,
+also $\mrA\cdot_{\!A}\mrB$ is invariant over $A$. 
+% And we also have that
+% 
+% \ceq{\hfill{\mr a}\cdot_{\!A}\mrB}{=}{\O({\mr a}/A)\cdot_{\!A}\mrB}
+% 
+% \ceq{\hfill\mrA\cdot_{\!A}{\mr b}}{=}{\mrA\cdot_{\!A}\O({\mr b}/A)}
+% 
+% Below we mainly deal with invariant sets and these identites will be (silently) applied.
 
-We say that $\mrA$ is \emph{idempotent (over $A$)\/} if it is invariant over $A$, non empty, and $\mrA\cdot_{\!A}\mrA\subseteq\mrA$.
-We say that $\mrA$ is a \emph{minimal\/} idempotent if it is idempotent and it does not properly contain any idempotent set.
-A \emph{type-definable\/}  minimal idempotent is defined similarly by restricting to type-definable sets. 
+\begin{proposition}\label{prop_semi_associative}
+For every $A$-invariant sets $\mrA$, $\mrB$, and  $\mrC$.
 
-\begin{proposition}
-Assume $\mrA$ is minimal idempotent set.
-Then ${\mr a}\cdot_{\!A}\mrA=\mrA$ for every ${\mr a}\in\mrA$.
-The same holds if we restrict to sets that are type-definable.
+\ceq{\hfill\big(\mrA\cdot_{\!A}\mrB\big)\cdot_{\!A}\mrC}
+{\subseteq}
+{\mrA\cdot_{\!A}\big(\mrB\cdot_{\!A}\mrC\big)}
 \end{proposition}
 \begin{proof}
-We claim that  ${\mr a}\cdot_{\!A}\mrA=\mrA$ for every ${\mr a}\in\mrA$.
-In fact, by the lemma above
+Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ for some ${\mr a}\nonforkc_{\!A}{\mr b}$ and ${\mr a}{\cdot}{\mr b}\nonforkc_{\!A}{\mr c}$.
+By extension (Lemma~\ref{lem_coheir_independence}),
+there exists ${\mr c'}$ such that ${\mr a},{\mr b},{\mr a}{\cdot}{\mr b}\nonforkc_{\!A}{\mr c'}\equiv_{A,\,{\mr a}{\cdot}{\mr b}}{\mr c}$.
+By transitivity (again Lemma~\ref{lem_coheir_independence}),
+${\mr a}\nonforkc_{\!A}{\mr b}{\cdot}{\mr c'}$.
+Therefore ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c'}$ belongs to the r.h.s.
+Finally,
+as ${\mr c'}\equiv_{A,\,{\mr a}{\cdot}{\mr b}}{\mr c}$,
+also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by invariance.
+\end{proof}
 
-\ceq{\hfill\big({\mr a}\cdot_{\!A}\mrA\big)\ \cdot_{\!A}\ \big({\mr a}\cdot_{\!A}\mrA\big)}
+Let $\mrA$ be a non empty set.
+If $\mrA\cdot_{\!A}\mrA\subseteq\mrA$ we say that it is \emph{idempotent\/} (over $A$).
+% If $\mrA\cdot_{\!A}\mrU\subseteq\mrA$ we say that it is a \emph{right-ideal\/} (over $A$).
+
+\begin{corollary}\label{corol_min_idempotent}
+Assume $\mrB\subseteq\mrA$ are both $A$-invariant. Then if $\mrA$ is idempotent,
+also $\mrB\cdot_{\!A}\mrA$ is idempotent. 
+% Similarly,
+% if $\mrA$ is a right-ideal,
+% also  $\mrB\cdot_{\!A}\mrA$ is a right-ideal.
+\end{corollary}
+\begin{proof}
+We check that if $\mrA$ is idempotent so is $\mrB\cdot_{\!A}\mrA=\mrA$
+
+\ceq{\hfill\big(\mrB\cdot_{\!A}\mrA\big)\ \cdot_{\!A}\ \big(\mrB\cdot_{\!A}\mrA\big)}
     {\subseteq}
-    {{\mr a}\cdot_{\!A}\Big(\mrA\cdot_{\!A}\big({\mr a}\cdot_{\!A}\mrA\big)\Big)}
+    {\big(\mrB\cdot_{\!A}\mrA\big)\ \cdot_{\!A}\ \big(\mrA\cdot_{\!A}\mrA\big)}
 
-\ceq{}{\subseteq}{{\mr a}\cdot_{\!A}\mrA}
+\ceq{}
+    {\subseteq}
+    {\mrB\cdot_{\!A}\Big(\mrA\cdot_{\!A}\big(\mrA\cdot_{\!A}\mrA\big)\Big)}\hfill by the lemma above
 
-Hence the first claim of the lemma follows by the minimality of $\mrA$.
-For the second claim it suffices to note that if $\mrA$ is type-definable then also
+\ceq{}{\subseteq}{\mrB\cdot_{\!A}\mrA}
+% 
+% The proof of the second claim is similar.
+\end{proof}
 
-\ceq{\hfill{\mr a}\cdot_{\!A}\mrA}{=}{\Big\{{\mr x}\ :\ \E {\mr x'}\in\mrA\ \big( {\mr x}\equiv_A{\mr a}{\cdot}{\mr x'}\big)\Big\}} 
+We show that,
+under the assumption of stationarity and independence,
+there is a natural correspondence between the semigroup multiplication of two elements and the operation $\cdot_{\!A}$ between their orbits.
 
-is type-definable.
+
+\begin{proposition}\label{prop_orbits_main}
+Assume $\nonforkc_{\!A}$ is $1$-stationary,
+see Definition~\ref{def_coheir_stationary}. Then for every ${\mr a}\nonforkc_{\!A}{\mr b}$ 
+
+\ceq{\hfill\O({\mr a}{\cdot}{\mr b}/A)}{=}{\O({\mr a}/A)\cdot_{\!A}\O({\mr b}/A)}
+\end{proposition}
+\begin{proof} 
+We prove two inclusions,
+only the second one requires stationarity. 
+
+\begin{itemize}
+\item[$\subseteq$] As ${\mr a}\nonforkc_{\!A}{\mr b}$ holds by hypothesis,
+${\mr a}{\cdot}{\mr b}\in\O({\mr a}/A)\cdot_{\!A}\O({\mr b}/A)$.
+Hence the inclusion follows by invariance.
+
+\item[$\supseteq$] By invariance it suffices to show the l.h.s.\@ contains ${\mr a}\cdot_{\!A}\O({\mr b}/A)$.
+Let ${\mr b'}\in\O({\mr b}/A)$ be such that ${\mr a}\nonforkc_{\!A}{\mr b'}$.
+We claim that ${\mr a}{\cdot}{\mr b'}\in\O({\mr a}{\cdot}{\mr b}/A)$.
+Both ${\mr b}$ and ${\mr b'}$ satisfy ${\mr a}\nonforkc_{\!A}{\mr x}\equiv_A{\mr b}$.
+By $1$-stationarity,
+${\mr b'}\equiv_{A,\,{\mr a}}{\mr b}$.
+Hence ${\mr a}{\cdot}{\mr b}\equiv_A{\mr a}{\cdot}{\mr b'}$ which proves the claim.
+\end{itemize}\vskip-1.2\baselineskip
+\end{proof}
+
+\begin{corollary}[(associativity)]\label{corol_orbits_associative}
+Assume $\nonforkc_{\!M}$ is $1$-stationary and let $M$ be a model.
+Then for every $M$-invariant sets $\mrA$,
+$\mrB$ and  $\mrC$.
+
+\ceq{\hfill\big(\mrA\cdot_{\!M}\mrB\big)\cdot_{\!M}\mrC}
+{=}
+{\mrA\cdot_{\!M}\big(\mrB\cdot_{\!M}\mrC\big)}
+\end{corollary}
+
+\begin{proof}
+We can assume that $\mrA$, $\mrB$ and $\mrC$ are $M$-orbits of elements of $\mrU$.
+Say ${\mr a}$, ${\mr b}$, and ${\mr c}$ respectively.
+As we are working over models,
+we can assume that ${\mr a}\nonforkc_{\!A}{\mr b}$ and ${\mr a}{\cdot}{\mr b}\nonforkc_{\!A}{\mr c}$.
+By Proposition~\ref{prop_orbits_main} the set on the l.h.s.\@ equals $\O({\mr a}{\cdot}{\mr b}{\cdot}{\mr c}/M)$.
+By a similar argument the set on the r.h.s.\@ equals $\O({\mr a'}{\cdot}{\mr b'}{\cdot}{\mr c'}/M)$ for some elements ${\mr a'}$, ${\mr b'}$, and ${\mr c'}$.
+Proposition~\ref{prop_semi_associative} proves that inclusion $\subseteq$ holds in general.
+But inclusion between orbits amounts to equality.
 \end{proof}
 
 \begin{lemma}\label{lem_Hindman}
-Assume that $\nonforkc_A$ is $1$-stationary, see Definition~\ref{def_coheir_stationary}.
-Then, if $\mrA$ is minimal type-definable idempotent, $\mrA=\O({\mr a}/A)$ for any ${\mr a}\in\mrA$.
+Assume $\nonforkc_{\!M}$ is $1$-stationary and let $M$ be a model.
+If $\mrA$ is minimal among the  $M$-invariant,
+idempotent,
+type-definable sets then $\mrA=\O({\mr a}/M)$ for some element ${\mr a}$.
 \end{lemma}
-
 \begin{proof}
-
+By Corollary~\ref{corol_min_idempotent},
+for every ${\mr a}\in\mrA$ the set $\O({\mr a}/M)\cdot_{\!M}\mrA$ is idempotent.
+It is also type-definable and contained in $\mrA$,
+therefore by minimality $\O({\mr a}/M)\cdot_{\!M}\mrA=\mrA$.
+Then there is a ${\mr b}\in\mrA$ such that ${\mr a}\nonforkc_M{\mr b}$ and ${\mr a}{\cdot}{\mr b}={\mr a}$.
+By associativity, the set $\O({\mr a}/M)\cdot_{\!M}\O({\mr b}/M)$ is idempotent.
+By Corollary~\ref{corol_orbits_associative},
+it coincides with $\O({\mr a}/M)$.
+The theorem follows by minimality.
 \end{proof}
 
 
-We say that ${\mr a}\in\mrU$ is \emph{idempotent over $A$\/} if ${\mr a}\equiv_A{\mr a}{\cdot}{\mr b}$ whenever ${\mr a}\nonforkc_{\!A}{\mr b}\equiv_A{\mr a}$. By the invariance of $\nonforkc_{\!A}$, see Lemma~\ref{lem_coheir_independence}, idempotency is a property of $\tp({\mr a}/A)$.
-
-We define
-
-\ceq{\hfill\emph{${\mr a}\cdot_{\!A}\mrU$}}{=}{\Big\{ {\mr x}\ :\ \E{\mr x'}\,\big[ {\mr x}\equiv_A{\mr a}{\cdot}{\mr x'}\  \wedge\ {\mr a}\nonforkc_{\!A}{\mr x'}\big]\Big\}.}
-
-We say that a type $q({\mr x})\subseteq L(A)$ defines (or is) a \emph{right-ideal\/} if ${\mr a}{\cdot}{\mr b}\models q({\mr x})$ for every ${\mr a}\models q({\mr x})$ and ${\mr b}\in\mrU$ such that ${\mr a}\nonforkc_{\!A}{\mr b}$.
-
-Symmetrically, say that $q({\mr x})$ defines a \emph{left-ideal\/} if  ${\mr a}{\cdot}{\mr b}\models q({\mr x})$ for every ${\mr b}\models q({\mr x})$ and ${\mr a}\in\mrU$ such that ${\mr a}\cnonfork_{\!A}{\mr b}$.
-Finally $q({\mr x})$ defines a \emph{two-sided ideal\/} if it defines both a left- and a right-ideal.
-
-\begin{lemma}
-Let $q({\mr x})\subseteq L(A)$ define a right-ideal. Then the following are equivalent
-\begin{itemize}
-\item[1.] $q({\mr x})$ is maximal among the types that define a right-ideal;
-\item[2.] $q({\mr x})\iff \E{\mr x'}\,\big[ {\mr x}\equiv_A{\mr a}{\cdot}{\mr x'}\  \wedge\ {\mr a}\nonforkc_{\!A}{\mr x'}\big]$ for some (any) ${\mr a}\models q({\mr x})$
-\item[3.] $q({\mr x})\iff \E{\mr x'}\,\big[ {\mr x}\equiv_A{\mr a}{\cdot}{\mr x'}\  \wedge\ {\mr a}\nonforkc_{\!A}{\mr x'}\models q({\mr x'})\big]$ for some (any) ${\mr a}\models q({\mr x})$
-\end{itemize}
-\end{lemma}
-Fix an arbitrary ${\mr a}\models q({\mr x})$.
-Note that, by $G$-invariance, the r.h.s.\@  of \ssf{2} is equivalent to a type over $G$.
-Therefore, by the maximality of $q({\mr x})$, it suffices to show that the r.h.s.\@ is consistent with $q({\mr x})$ and that it is closed under multiplication.
-As $q({\mr x})$ is closed under multiplication, consistency is witnessed by ${\mr a}{\cdot}{\mr a'}$ where ${\mr a'}$ is any element such that ${\mr a}\nonforkc_G{\mr a'}\models q({\mr x})$.
-
-
-
-We say that the type is a maximal 
 \section{Hindmann theorem}\label{Hindman}
 
 Let $G$ be an infinite semigroup.
-If ${\mr\bar a}=\<{\mr a_i}:i<\alpha\>$ is a tuple of elements of $G$ we write $\fp_n({\mr\bar a})$ for the sets of products of $n$ elements of ${\mr\bar a}$ taken in increasing order.
+Let ${\mr\bar a}=\<{\mr a_i}:i<\alpha\>$ be a tuple of elements of $G$.
+We write $\fp_n({\mr\bar a})$ for the sets of products of $n$ elements of ${\mr\bar a}$ taken in increasing order.
 Namely,
 
 \ceq{\hfill\emph{$\fp_n({\mr\bar a})$}}{=}{\Big\{{\mr a_{i_1}}\kern-0.5ex\cdot\dots\cdot{\mr a_{i_n}}\ :\quad i_0<\dots<i_{n-1}<\alpha\Big\}}.
@@ -271,63 +358,12 @@ Then for every finite coloring of $G$ there is an infinite tuple ${\mr\bar c}$ s
 Note that when $G$ is commutative this amount to claiming that there is an infinite monochromatic set closed under finite sum of distinct elements.
 
 The proof below follows closely the proof of Ramsey's Theorem~\ref{thm_Ramsey}.
-The essential difference between the two theorems is contained in the following lemma.
+The essential difference between the two theorems is contained in Lemma~\ref{lem_Hindman}.
 
 We now consider $G$ as a structure a language $L$ containing a symbol for semigroup multiplication and possibly other symbols.
 Let $\U$ be a saturated elementary superstucture of $G$.
 
-\begin{lemma}\label{lem_Hindman}
-Assume that $\nonforkc_G$ is $1$-stationary, see Definition~\ref{def_coheir_stationary}.
-Let $q({\mr x})\subseteq L(G)$ be a maximal type such that ${\mr a}{\cdot}{\mr b}\models q({\mr x})$ for every ${\mr a},{\mr b}\models q({\mr x})$ such that ${\mr a}\nonforkc_G{\mr b}$.
-Then $q({\mr x})$ is a complete type.
-\end{lemma}
-
 \begin{proof}
-Fix an arbitrary ${\mr a}\models q({\mr x})$.
-We will prove that $q({\mr x})=\tp({\mr a}/G)$ in three steps.
-Firstly we prove that
-
-\ceq{\ssf{1.}\hfill q({\mr x})}{\imp}{\E{\mr x'}\ \big[{\mr x}\equiv_G{\mr a}{\cdot}{\mr x'}\ \wedge\ {\mr a}\nonforkc_G{\mr x'}\big]}
-
-Note that, by $G$-invariance, the r.h.s.\@ is equivalent to a type over $G$.
-Therefore, by the maximality of $q({\mr x})$, it suffices to show that the r.h.s.\@ is consistent with $q({\mr x})$ and that it is closed under multiplication.
-As $q({\mr x})$ is closed under multiplication, consistency is witnessed by ${\mr a}{\cdot}{\mr a'}$ where ${\mr a'}$ is any element such that ${\mr a}\nonforkc_G{\mr a'}\models q({\mr x})$.
-
-Now, let ${\mr b}\nonforkc_G{\mr c}$ be two realizations of the r.h.s.\@ and let ${\mr b'}$ witness the existential quantifier for ${\mr b}$.
-By extension there is ${\mr c'}$ such that ${\mr a}, {\mr b}, {\mr b'}\nonforkc_G{\mr c'}\equiv_{G,\,{\mr b}}{\mr c}$.
-Then, from ${\mr b}\equiv_G{\mr a}{\cdot}{\mr b'}$ we obtain  ${\mr b}{\cdot}{\mr c'}\equiv_G{\mr a}{\cdot}{\mr b'}{\kern-0.3ex\cdot}{\mr c'}$.
-By transitivity ${\mr a}\nonforkc_G\,{\mr b'}{\kern-0.3ex\cdot}{\mr c'}$.
-Then ${\mr b'}{\kern-0.3ex\cdot}{\mr c'}$ witnesses that ${\mr b}{\cdot}{\mr c'}$ satisfies the r.h.s.
-By elementarity, also ${\mr b}{\cdot}{\mr c}$ satisfies the r.h.s.
-This proves \ssf{1}.
-
-Secondly, we prove that 
-
-\ceq{\ssf{2.}\hfill q({\mr x})}{\imp}{\E{\mr x'}\ \big[{\mr a}\equiv_G{\mr a}{\cdot}{\mr x'}\ \wedge\ {\mr a}\nonforkc_G{\mr x'}\equiv_G{\mr x}\big]}
-
-We proceed as for the proof of \ssf{1}.
-Consistency is again witnessed by ${\mr a}$, as can be easily verified substituting ${\mr a}$ for ${\mr x}$ in \ssf{1}.
-Now, let ${\mr b}\nonforkc_G{\mr c}$ be two realizations of the r.h.s.\@ and let ${\mr b'},{\mr c'}$ witness the respective existential quantifiers.
-By extension we can also require that ${\mr a},{\mr b},{\mr b'}\nonforkc{\mr c'}\equiv_{G}{\mr c}$.
-Then from ${\mr a}\equiv_G{\mr a}{\cdot}{\mr b'}$ we obtain ${\mr a}{\cdot}{\mr c'}\equiv_G{\mr a}{\cdot}{\mr b'}{\kern-0.3ex\cdot}{\mr c'}$ hence ${\mr a}\equiv_G{\mr a}{\cdot}{\mr b'}{\kern-0.3ex\cdot}{\mr c'}$.
-From the completeness of ${\mr b}\nonforkc_G{\mr x}\equiv_G{\mr c}$ we infer ${\mr c}\equiv_{G,\,{\mr b}}{\mr c'}$.
-Hence ${\mr b}{\cdot}{\mr c}\equiv_G {\mr b}{\cdot}{\mr c'}$.
-As ${\mr b},{\mr b'}\nonforkc_G{\mr c'}$, we obtain that ${\mr b'}{\kern-0.3ex\cdot}{\mr c'}$ witnesses that ${\mr b}{\cdot}{\mr c}$ satisfies the r.h.s.
-of \ssf{2}.
-
-Finally, the proof is complete if we can show that
-
-\ceq{\ssf{3.}\hfill q({\mr x})}{\imp}{{\mr a}\equiv_G{\mr x}}
-
-As for \ssf{1} and \ssf{2}, it suffices to prove that if ${\mr b}\nonforkc_G{\mr c}$ are two realizations of the r.h.s.\@ then so is ${\mr b}{\cdot}{\mr c}$.
-Without loss of generality we can assume ${\mr a}={\mr b}$.
-As ${\mr c}\models q({\mr x})$, from \ssf{2} we obtain ${\mr c'}$ such that ${\mr a}\equiv_G{\mr a}{\cdot}{\mr c'}$ and ${\mr a}\nonforkc_G{\mr c'}\equiv_G{\mr c}$.
-From the completeness of ${\mr a}\nonforkc_G{\mr x}\equiv_G{\mr c}$ we obtain ${\mr c'}\equiv_{G,\,{\mr a}}{\mr c}$, and ${\mr a}\equiv_G{\mr a}{\cdot}{\mr c}$ follows.
-\end{proof}
-
-
-
-\begin{proof}[Proof of Hindman's Theorem~\ref{thm_Hindman}]
 We think $G$ as a structure in a language $L$ that extends the language of multiplicative groups with a unary relation symbol for each subset of $G$.
 As observed in Example~\ref{ex_coheir_stationary}, this language makes $\nonforkc_G$ trivially $1$-stationary.
 
@@ -354,32 +390,36 @@ As ${\mr\bar c}$ is a coheir sequence we can find  ${\mr a_i}\in M$ such that $\
  As ${\mr\bar c}$ is indiscernible over $G$, this is equivalent to  $\fp({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr\bar c})$.
 \end{proof}
 
+\section{Ideals and idempotens}
 
-\section{Crap (this section ought to be hidden)}
+If $\mrB\cdot_{\!A}\mrA=\mrA\cdot_{\!A}\mrB=\mrA$, 
+we say that $\mrA$ absorbs $\mrB$ and write $\mrA\le_A\mrB$.
+When $A=M$, a model, and $\nonforkc_{\!M}$ is $1$-stationary, 
+using associativity the relation $\le_M$ is easily proved to be transitive.
+In general it is not a reflexive relation.
+In fact, $\mrA\le_M\mrA$ holds exactly when $\mrA$ is idempotent.
 
-We say that a set $\I\subseteq\U$ is a right-ideal if ${\mr a}{\cdot}{\mr b}\in\I$ for every ${\mr a}\in\I$ and ${\mr b}\in\U$ such that ${\mr a}\nonforkc_G{\mr b}$. 
 
-We say that a type $q({\mr x})\subseteq L(A)$ define or is a right-ideal if ${\mr a}{\cdot}{\mr b}\models q({\mr x})$ for every ${\mr a}\models q({\mr x})$ and ${\mr b}\in\U$ such that ${\mr a}\nonforkc_{\!A}{\mr b}$.
 
-\begin{proposition}
-The following are equivalent
-\begin{itemize}
-\item[1] $\I$ is a minimal right-ideal
-\item[2] ${\mr a}{\cdot}\U=\I$ for every ${\mr a}\in\I$
-\item[3] ${\mr a}{\cdot}\I=\I$ for every ${\mr a}\in\I$
-\end{itemize}
-\end{proposition}
-
-\section{Hales-Jewett theorem (this section ought to be hidden)}
+\section{Hales-Jewett theorem}
 
 Let $G$ be a semigroup.
-A nice subsemigoup of $G$ is a subsemigroup $C$ with the property that if $a{\cdot}b\in C$ then both $a,b\in C$.
+A \emph{nice subsemigroup\/} of $G$ is a subsemigroup $C$ with the property that if $a{\cdot}b\in C$ then both $a,b\in C$.
 
-Let $\sigma_1,\dots,\sigma_n$ be retractions of $G$ to $C$, that is, homomorphisms $\sigma_i:G\to C$ such that $\sigma_i\restriction C=\id_C$.
+\begin{theorem}
+Let $\sigma_1,\dots,\sigma_n$ be  \emph{retractions\/} of $G$ to $C$, that is,
+a homomorphisms $\sigma_i:G\to C$ such that $\sigma_i{\restriction}C=\id_C$.
+Then for every finite coloring of $C$ there is an $a\in G$ such that the set $\{\sigma_i(a):i=1,\dots,n\}$ is monocromatic.
+\end{theorem}
+
+\begin{proof}
+We think $G$ as a structure in a language $L$ that extends the language of multiplicative groups with unary relation symbols for every subset of $G$.
+Let $\chi({\mr x})$ be the formula that defines the subsemigroup $C$.
+
+
+\end{proof}
 
 \begin{comment}
-
-
 % 
 % \section{Crap (if this is publicly available, it's just by errror)}
 % 
