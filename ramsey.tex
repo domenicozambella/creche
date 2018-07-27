@@ -586,40 +586,81 @@ If $\O()$ is idempotent then there is a $b$ such that  such that .
 Let ${\gr G}$ be a semigroup.
 A \emph{nice subsemigroup\/} of ${\gr G}$ is a subsemigroup ${\mr C}$ with the property that if ${\mr a}{\cdot}{\mr b}\in{\mr C}$ then both ${\mr a},{\mr b}\in{\mr C}$.
 \clearpage
+
+
+\begin{proposition}
+Let $\sigma:\mrU\to\mrU$ be a definable semigroup homomorphism. Then 
+\begin{itemize}
+\item[1.] $\sigma\big[{\mr a}_M\big]=\sigma({\mr a})_M$
+
+\item[2.]
+$\sigma\big[{\mr a}\cdot_M{\mr b}\big]=\sigma({\mr a})\cdot_M\sigma({\mr b})$.
+\end{itemize}
+\end{proposition}
+\begin{proof}\noindent
+\begin{itemize}
+\item[1.]
+As ${\mr a}\equiv_M{\mr a'}$ implies $\sigma({\mr a})\equiv_M\sigma({\mr a'})$,
+inclusion $\subseteq$ is clear. 
+For the converse, note that the type 
+$\E{\mr y}\,\big[\sigma({\mr y})={\mr x}\,\wedge\,{\mr y}\equiv_M{\mr a}\big]$ 
+is trivially realized by $\sigma({\mr a})$.
+By invariance it is equivalent to a type over $A$.
+Therefore it is realized by all elements of $\sigma({\mr a})_M$.
+Hence all elements of $\sigma({\mr a})_M$ are image of some element in ${\mr a}_M$.
+
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{33ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+\item[2.] We have to prove the following equality\smallskip
+
+\ceq{\hfill\Big\{\sigma({\mr a'}\cdot{\mr b'})\ :\ {\mr a}\equiv_M{\mr a'}\nonforkc_M{\mr b'}\equiv_M{\mr b} \Big\}}
+{=}
+{\Big\{{\mr a'}{\cdot}{\mr b'}\ :\ \sigma({\mr a})\equiv_M{\mr a'}\nonforkc_M{\mr b'}\equiv_M\sigma({\mr b}) \Big\}.}\smallskip
+
+The set on r.h.s. is easily seen to be equal to \smallskip
+
+\hfil$\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ \sigma({\mr a'})\nonforkc_M\sigma({\mr b'}),\ {\mr a'}\equiv_M{\mr a},\  {\mr b'}\equiv_M{\mr b} \Big\}$.\smallskip
+
+Hence it suffices to check that for every ${\mr a'}$ and ${\mr b'}$\smallskip
+
+\ceq{\hfill{\mr a'}\nonforkc_M{\mr b'}}
+{\IFF}
+{\sigma({\mr a'})\nonforkc_M\sigma({\mr b'})}.\smallskip
+
+The proof of this equivalence is left to the reader (here is where we use that $M$ is a model).
+\end{itemize}\vskip-1.2\baselineskip
+\end{proof}
+
 \begin{theorem}
-Let $\sigma_1,\dots,\sigma_n$ be  \emph{retractions\/} of ${\gr G}$ to ${\mr C}$, that is,
-a homomorphisms $\sigma_i:{\gr G}\to{\mr C}$ such that $\sigma_i{\restriction}{\mr C}={\rm id}_{\mr C}$.
-Then, for every finite coloring of ${\mr C}$,
-there is an ${\gr g}\in{\gr G}$ such that the set $\{\sigma_i({\gr g}):i=1,\dots,n\}$ is monochromatic.
+Let ${\gr C}\subseteq{\mr G}$ be semigroups. Let ${\gr\sigma_1},\dots,{\gr\sigma_n}$ be  \emph{retractions\/} of ${\mr G}$ to ${\gr C}$, that is,
+homomorphisms ${\gr\sigma_i}:{\mr G}\to{\gr C}$ such that ${\gr\sigma_i}{\restriction}{\gr C}={\rm id}_{\gr C}$.
+Then, for every finite coloring of ${\gr C}$,
+there is an ${\mr g}\in{\mr G}$ such that the set $\{{\gr\sigma_i}({\mr g}):i=1,\dots,n\}$ is monochromatic.
 \end{theorem}
 
 \begin{proof}
-Let ${\gr G}\preceq\grV$ and ${\mr C}\preceq\mrU$,
-where  $\grV$ and $\mrU$ are the domains in a many-sorted monster model.
-The language contains a symbol for multiplication and for a semigroup embedding of $\mrU$ in $\grV$, 
-therefore, for lighter notation, we can assume $\mrU\subseteq\grV$.
-The language also contains a symbol for the retractions $\sigma_i:\grV\to\mrU$.
-Then we may use freely that 
-${\gr g}\equiv_{\gr G}{\gr g'}$ implies $\sigma_i({\gr g})\equiv_{\gr G}\sigma_i({\gr g'})$.
-Also 
+Let ${\mr G}\preceq\mrU$ and ${\gr C}\preceq\grV$,
+where  $\mrU$ and $\grV$ are the domains in a many-sorted monster model.
+The language contains a symbol for multiplication and for an embedding of $\grV$ in $\mrU$. 
+For a lighter notation, we assume $\grV\subseteq\mrU$.
+The language also contains a symbol for the retractions ${\gr\sigma_i}:\mrU\to\grV$.
 
-Let ${\mr a}$ be $\le_{\gr G}$-minimal in $\mrU$.
-Let ${\gr g}\in\grV$ be such that ${\gr g}\le_{\gr G}{\mr a}$ and 
-${\gr g}_{\gr G}$ is $\le_{\gr G}$-minimal in $\grV$.
-% Define ${\mr c_i}=\sigma_i({\gr g})$.
-% We claim that ${\gr c_i}\le_{\gr G}{\mr a}$.
-% So by the $\le_{\gr G}$-minimality of ${\mr a}$, the claim implies $({\mr c_i})_{\gr G}={\mr a}_{\gr G}$ for every $i$.
+Let ${\gr a}_{\mr G}$ be $\le_{\mr G}$-minimal in $\grV$.
+Let ${\mr g}_{\mr G}$ be $\le_{\mr G}$-minimal in $\mrU$
+and such that ${\mr g}\le_{\mr G}{\gr a}$.
+% Define ${\mr c_i}={\gr\sigma_i}({\mr g})$.
+% We claim that ${\gr c_i}\le_{\mr G}{\gr a}$.
+% So by the $\le_{\mr G}$-minimality of ${\gr a}$, the claim implies $({\mr c_i})_{\mr G}={\gr a}_{\mr G}$ for every $i$.
 % Hence the theorem follows by the claim. 
 
-Recall that ${\gr g}\le_{\gr G}{\mr a}$ means that 
-${\gr g}\cdot_{\gr G}{\mr a}={\mr a}\cdot_{\gr G}{\gr g}={\gr g}$.
-Applying $\sigma_i$ to each member we obtain 
-$\sigma_i({\gr g})\cdot_{\gr G}{\mr a}={\mr a}\cdot_{\gr G}\sigma_i({\gr g})=\sigma_i({\gr g})$.
-Hence $\sigma_i({\gr g})\le_{\gr G}{\mr a}$ and, by minimality, 
-$\sigma_i({\gr g})\equiv_{\gr G}{\mr a}$.
-In particular the set $\{\sigma_i({\gr g}):i=1,\dots,n\}$ is monochromatic. 
-Though this very ${\gr g}$ need not be in ${\gr G}$,
-by elementarity some ${\gr g'}\in{\gr G}$ is as required by the theorem.
+Recall that ${\mr g}\le_{\mr G}{\gr a}$ means that 
+${\mr g}\cdot_{\mr G}{\gr a}={\gr a}\cdot_{\mr G}{\mr g}={\mr g}_{\mr G}$.
+Applying ${\gr\sigma_i}$ to these equalities we obtain 
+${\gr\sigma_i}({\mr g})\le_{\mr G}{\gr a}$ and, by minimality, 
+${\gr\sigma_i}({\mr g})\equiv_M{\gr a}$.
+In particular the set $\{{\gr\sigma_i}({\mr g}):i=1,\dots,n\}$ is monochromatic. 
+Though this very ${\mr g}$ need not belong to ${\mr G}$,
+by elementarity, ${\mr G}$ contains some ${\mr g'}$ as required by the theorem.
 \end{proof}
 
 \begin{comment}
