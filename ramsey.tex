@@ -5,9 +5,14 @@
 \chapter{Ramsey theory}
 \label{ramsey}
 
-In Section~\ref{Ramsey} we prove Ramsey's theorem and in Section~\ref{EM} we present its major application in model theory: the Ehrenfeucht-Mostowsky construction of indiscernibles.
+In Section~\ref{Ramsey} we prove Ramsey's theorem and in Section~\ref{EM} we present its major application in model theory: 
+the Ehrenfeucht-Mostowsky construction of indiscernibles.
 
-In the remaining sections we prove a few famous results Ramsey theory. Their proof (which is the usual one) is an interesting application of the notion of coheir. These results will not be used elsewhere in these notes.
+In the remaining sections we prove a few famous results Ramsey theory. 
+Their proof is \textit{not the usual one}. 
+It is an interesting application of the notion of coheir.
+These results will not be used elsewhere in these notes.
+The only purpose is to illustrate a concrete (relatively speaking) application of the notion of coheir.
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{12ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
@@ -24,18 +29,21 @@ In the remaining sections we prove a few famous results Ramsey theory. Their pro
 In this chapter we are interest in finite partitions.
 We may represent the partition of a set $X$ into $k$ subsets with a map $f:X\to [k]$.
 The elements of $[k]=\{1,\dots,k\}$ are thought of as colors,
-then the partition is also called a \emph{coloring},
-or \emph{$k$-coloring},
-of $X$. We say that $Y\subseteq X$ is \emph{monochromatic\/} if $f\restriction Y$ is constant on $Y$. 
+and the partition is also called a \emph{coloring},
+or \emph{$k$-coloring}, of $X$.
+We say that $Y\subseteq X$ is \emph{monochromatic\/} if $f\restriction Y$ is constant on $Y$.
 
-Let $M$ be an arbitrary infinite set. Fix $n,k<\omega$ and fix a coloring $f$ of the set of all \emph{$n$-subsets} of $M$,
+Let $M$ be an arbitrary infinite set.
+Fix $n,k<\omega$ and fix a coloring $f$ of the set of all \emph{$n$-subsets} of $M$,
 aleas the \emph{complete $n$-uniform hypergraph\/} with vertex set $M$,
 
 \ceq{\hfill f}{:}{ {M\choose n}\ \ \to\ \ [k]}.
 
-We say that $H\subseteq M$ is a \emph{monochromatic subgraph\/} if the subgraph induced by $H$ is monocromatic. In the literature monochromatic subgraph are also called \emph{homogeneous sets}.
+We say that $H\subseteq M$ is a \emph{monochromatic subgraph\/} if the subgraph induced by $H$ is monocromatic.
+In the literature monochromatic subgraph are also called \emph{homogeneous sets}.
 
-The following is a very famous theorem which here we prove it in unusual way. It will serve as blueprint for other constructions in this chapter.
+The following is a very famous theorem which here we prove it in unusual way.
+It will serve as blueprint for other constructions in this chapter.
 
 \theoremstyle{mio}
 \newtheorem{Ramsey}[thm]{Ramsey's Theorem}
@@ -83,11 +91,6 @@ as the order is irrelevant,
 ${\mr a_{\restriction i}},{\mr a_i},{\mr c_{\restriction n}}$ satisfies the induction hypothesis.
 \end{proof}
 
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -128,7 +131,7 @@ Let ${\mr\bar c}$ be any realization of the following type yields a $J$-sequence
 {\Big\{\phi({\mr x_{\restriction I_0}})\iff\phi({\mr x_{\restriction J_0}})\ :\  \phi({\mr x_{\restriction n}})\in L(A), \ I_0, J_0\in{\omega\choose n}, \ n<\omega\Big\}.}
 
 We will prove that any finite subset of the type above is realized by a finite subsequence of ${\mr\bar a}$.
-First note that any finite subset of $q({\mr\bar x})$ is realized by any subsequence of ${\mr\bar a}$ of the proper length by the definition of EM-type. 
+First note that any finite subset of $q({\mr\bar x})$ is realized by any subsequence of ${\mr\bar a}$ of the proper length by the definition of EM-type.
 Then we only need to pay attention to the set on the right.
 
 We prove that for $k$ and $n$ arbitrary large and every $\phi_1,\dots,\phi_k\in L_{\mr x_{\restriction n}}(A)$ there is an infinite $H\subseteq\omega$ such that ${\mr a_{\restriction H}}$ realizes
@@ -172,7 +175,7 @@ Let ${\mr a},
 Prove that there is a sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ such that ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are both sequences of $A\jj$indiscernibles.\QED
 \end{exercise}
 
-
+\begin{comment}
 \section{Indempotents types in semigroups}\label{semigroups}
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
@@ -184,10 +187,11 @@ we identify our semigroup with $\mrU$,
 which here denotes the domain of a sort in a many-sorted monster model.
 The language contains,
 among others,
-the symbol \emph{$\ \cdot\ $} which is interpreted as binary associative operation on $\mrU$. 
+the symbol \emph{$\ \cdot\ $} which is interpreted as binary associative operation on $\mrU$.
 
 We fix a set of parameters $A$,
-not necessarily all of the same sort. For any two sets $\mrA,\mrB\subseteq\mrU$ we define
+not necessarily all of the same sort.
+For any two sets $\mrA,\mrB\subseteq\mrU$ we define
 
 \ceq{\hfill\emph{$\mrA\cdot_{\!A}\mrB$}}
 {=}
@@ -200,14 +204,14 @@ the latter is either $\{{\mr a}{\cdot}{\mr b}\}$  or empty set.
 
 Note that unless we add assumptions on $\nonforkc_{\!A}$ or on the underlying theory,
 there is no guarantee that $\mrA\cdot_{\!A}\mrB$ is non empty,
-not even when these sets are $A$-invariant. 
+not even when these sets are $A$-invariant.
 With this proviso,
 we proceed but with caution.
 
 By the invariance of $\nonforkc_{\!A}$,
 for every $f\in\Aut(\mrU/A)$ we have $f[\mrA\cdot_{\!A}\mrB]=f[\mrA]\cdot_{\!A}f[\mrB]$.
 Therefore when $\mrA$ and $\mrB$ are invariant over $A$,
-also $\mrA\cdot_{\!A}\mrB$ is invariant over $A$. 
+also $\mrA\cdot_{\!A}\mrB$ is invariant over $A$.
 % And we also have that
 % 
 % \ceq{\hfill{\mr a}\cdot_{\!A}\mrB}{=}{\O({\mr a}/A)\cdot_{\!A}\mrB}
@@ -237,11 +241,11 @@ also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by invariance
 
 Let $\mrA$ be a non empty set.
 If $\mrA\cdot_{\!A}\mrA\subseteq\mrA$ we say that it is \emph{idempotent\/} (over $A$).
-% If $\mrA\cdot_{\!A}\mrU\subseteq\mrA$ we say that it is a \emph{right-ideal\/} (over $A$).
 
 \begin{corollary}\label{corol_min_idempotent}
-Assume $\mrB\subseteq\mrA$ are both $A$-invariant. Then if $\mrA$ is idempotent,
-also $\mrB\cdot_{\!A}\mrA$ is idempotent. 
+Assume $\mrB\subseteq\mrA$ are both $A$-invariant.
+Then if $\mrA$ is idempotent,
+also $\mrB\cdot_{\!A}\mrA$ is idempotent.
 % Similarly,
 % if $\mrA$ is a right-ideal,
 % also  $\mrB\cdot_{\!A}\mrA$ is a right-ideal.
@@ -269,13 +273,13 @@ there is a natural correspondence between the semigroup multiplication of two el
 
 \begin{proposition}\label{prop_orbits_main}
 Assume $\nonforkc_{\!A}$ is $1$-stationary,
-see Definition~\ref{def_coheir_stationary}. Then for every ${\mr a}\nonforkc_{\!A}{\mr b}$ 
+see Definition~\ref{def_coheir_stationary}.Then for every ${\mr a}\nonforkc_{\!A}{\mr b}$ 
 
 \ceq{\hfill\O({\mr a}{\cdot}{\mr b}/A)}{=}{\O({\mr a}/A)\cdot_{\!A}\O({\mr b}/A)}
 \end{proposition}
 \begin{proof} 
 We prove two inclusions,
-only the second one requires stationarity. 
+only the second one requires stationarity.
 
 \begin{itemize}
 \item[$\subseteq$] As ${\mr a}\nonforkc_{\!A}{\mr b}$ holds by hypothesis,
@@ -328,6 +332,164 @@ Then there is a ${\mr b}\in\mrA$ such that ${\mr a}\nonforkc_M{\mr b}$ and ${\mr
 By associativity, the set $\O({\mr a}/M)\cdot_{\!M}\O({\mr b}/M)$ is idempotent.
 By Corollary~\ref{corol_orbits_associative},
 it coincides with $\O({\mr a}/M)$.
+The theorem follows by minimality.
+\end{proof}
+\end{comment}
+
+\section{Indempotents types in semigroups}\label{semigroups}
+
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{22ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+
+In this and the following sections we focus on semigroups definable in a first-order structure.
+For a lighter notation, we identify our semigroup with $\mrU$,
+which here denotes the domain of a sort in a many-sorted monster model.
+The language contains, among others,
+the symbol \emph{$\ \cdot\ $} which is interpreted as a binary associative operation on $\mrU$.
+
+We fix a set of parameters $A$,
+not necessarily all of the same sort.
+For any two sets $\mrA,\mrB\subseteq\mrU$ we define
+
+\ceq{\hfill\emph{$\mrA\cdot_{\!A}\mrB$}}
+{=}
+{\Big\{ {\mr a}{\cdot}{\mr b}\ :\ {\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\nonforkc_{\!A}{\mr b}\Big\}}
+
+We write \emph{${\mr a}\cdot_{\!A}\mrB$} for $\O({\mr a}/A)\cdot_{\!A}\mrB$.
+Similarly for \emph{$\mrA\cdot_{\!A}{\mr b}$} and \emph{${\mr a}\cdot_{\!A}{\mr b}$}.
+In this and the next section we abbreviate $\O({\mr a}/A)$ with ${\mr a}_A$
+
+Note that unless we add assumptions on $\nonforkc_{\!A}$ or on the underlying theory,
+there is no guarantee that $\mrA\cdot_{\!A}\mrB$ is non empty,
+not even when these sets are $A$-invariant.
+With this proviso,
+we proceed but with caution.
+
+By the invariance of $\nonforkc_{\!A}$,
+for every $f\in\Aut(\mrU/A)$ we have $f[\mrA\cdot_{\!A}\mrB]=f[\mrA]\cdot_{\!A}f[\mrB]$.
+Therefore when $\mrA$ and $\mrB$ are invariant over $A$,
+also $\mrA\cdot_{\!A}\mrB$ is invariant over $A$.
+% And we also have that
+% 
+% \ceq{\hfill{\mr a}\cdot_{\!A}\mrB}{=}{\O({\mr a}/A)\cdot_{\!A}\mrB}
+% 
+% \ceq{\hfill\mrA\cdot_{\!A}{\mr b}}{=}{\mrA\cdot_{\!A}\O({\mr b}/A)}
+% 
+% Below we mainly deal with invariant sets and these identites will be (silently) applied.
+
+\begin{proposition}\label{prop_semi_associative}
+For every $A$-invariant sets $\mrA$, $\mrB$, and  $\mrC$.
+
+\ceq{\hfill\big(\mrA\cdot_{\!A}\mrB\big)\cdot_{\!A}\mrC}
+{\subseteq}
+{\mrA\cdot_{\!A}\big(\mrB\cdot_{\!A}\mrC\big)}
+\end{proposition}
+\begin{proof}
+Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ for some ${\mr a}\nonforkc_{\!A}{\mr b}$ and ${\mr a}{\cdot}{\mr b}\nonforkc_{\!A}{\mr c}$.
+By extension (Lemma~\ref{lem_coheir_independence}),
+there exists ${\mr c'}$ such that ${\mr a},{\mr b},{\mr a}{\cdot}{\mr b}\nonforkc_{\!A}{\mr c'}\equiv_{A,\,{\mr a}{\cdot}{\mr b}}{\mr c}$.
+By transitivity (again Lemma~\ref{lem_coheir_independence}),
+${\mr a}\nonforkc_{\!A}{\mr b}{\cdot}{\mr c'}$.
+Therefore ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c'}$ belongs to the r.h.s.
+Finally,
+as ${\mr c'}\equiv_{A,\,{\mr a}{\cdot}{\mr b}}{\mr c}$,
+also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by invariance.
+\end{proof}
+
+Let $\mrA$ be a non empty set.
+If $\mrA\cdot_{\!A}\mrA\subseteq\mrA$ we say that it is \emph{idempotent\/} (over $A$).
+
+\begin{corollary}\label{corol_min_idempotent}
+Assume $\mrB\subseteq\mrA$ are both $A$-invariant.
+Then if $\mrA$ is idempotent,
+also $\mrB\cdot_{\!A}\mrA$ is idempotent.
+% Similarly,
+% if $\mrA$ is a right-ideal,
+% also  $\mrB\cdot_{\!A}\mrA$ is a right-ideal.
+\end{corollary}
+\begin{proof}
+We check that if $\mrA$ is idempotent so is $\mrB\cdot_{\!A}\mrA=\mrA$
+
+\ceq{\hfill\big(\mrB\cdot_{\!A}\mrA\big)\ \cdot_{\!A}\ \big(\mrB\cdot_{\!A}\mrA\big)}
+    {\subseteq}
+    {\big(\mrB\cdot_{\!A}\mrA\big)\ \cdot_{\!A}\ \big(\mrA\cdot_{\!A}\mrA\big)}
+
+\ceq{}
+    {\subseteq}
+    {\mrB\cdot_{\!A}\Big(\mrA\cdot_{\!A}\big(\mrA\cdot_{\!A}\mrA\big)\Big)}\hfill by the lemma above
+
+\ceq{}{\subseteq}{\mrB\cdot_{\!A}\mrA}
+% 
+% The proof of the second claim is similar.
+\end{proof}
+
+We show that,
+under the assumption of stationarity and independence,
+there is a natural correspondence between the semigroup multiplication of two elements and the operation $\cdot_{\!A}$ between their orbits.
+
+
+\begin{proposition}\label{prop_orbits_main}
+Assume $\nonforkc_{\!A}$ is $1$-stationary,
+see Definition~\ref{def_coheir_stationary}.
+Then for every ${\mr a}\nonforkc_{\!A}{\mr b}$ 
+
+\ceq{\hfill({\mr a}{\cdot}{\mr b})_A}{=}{{\mr a}\cdot_{\!A}{\mr b}}
+\end{proposition}
+\begin{proof} 
+We prove two inclusions,
+only the second one requires stationarity.
+
+\begin{itemize}
+\item[$\subseteq$] As ${\mr a}\nonforkc_{\!A}{\mr b}$ holds by hypothesis,
+${\mr a}{\cdot}{\mr b}\in{\mr a}\cdot_{\!A}{\mr b}$.
+Hence the inclusion follows by invariance.
+
+\item[$\supseteq$] By invariance it suffices to show the l.h.s.\@ contains $\{{\mr a}\}\cdot_{\!A}{\mr b}$.
+Let ${\mr b'}\in{\mr b}_A$ be such that ${\mr a}\nonforkc_{\!A}{\mr b'}$.
+We claim that ${\mr a}{\cdot}{\mr b'}\in({\mr a}{\cdot}{\mr b})_A$.
+Both ${\mr b}$ and ${\mr b'}$ satisfy ${\mr a}\nonforkc_{\!A}{\mr x}\equiv_A{\mr b}$.
+By $1$-stationarity,
+${\mr b'}\equiv_{A,\,{\mr a}}{\mr b}$.
+Hence ${\mr a}{\cdot}{\mr b}\equiv_A{\mr a}{\cdot}{\mr b'}$ which proves the claim.
+\end{itemize}\vskip-1.2\baselineskip
+\end{proof}
+
+\begin{corollary}[(associativity)]\label{corol_orbits_associative}
+Assume $\nonforkc_{\!M}$ is $1$-stationary and let $M$ be a model.
+Then for every $M$-invariant sets $\mrA$,
+$\mrB$ and  $\mrC$.
+
+\ceq{\hfill\big(\mrA\cdot_{\!M}\mrB\big)\cdot_{\!M}\mrC}
+{=}
+{\mrA\cdot_{\!M}\big(\mrB\cdot_{\!M}\mrC\big)}
+\end{corollary}
+
+\begin{proof}
+We can assume that $\mrA$, $\mrB$ and $\mrC$ are $M$-orbits of elements of $\mrU$.
+Say ${\mr a}$, ${\mr b}$, and ${\mr c}$ respectively.
+As we are working over models,
+we can assume that ${\mr a}\nonforkc_M{\mr b}$ and ${\mr a}{\cdot}{\mr b}\nonforkc_M{\mr c}$.
+By Proposition~\ref{prop_orbits_main} the set on the l.h.s.\@ equals $({\mr a}{\cdot}{\mr b}{\cdot}{\mr c})_M$.
+By a similar argument the set on the r.h.s.\@ equals $({\mr a'}{\cdot}{\mr b'}{\cdot}{\mr c'})_M$ for some elements ${\mr a'}$, ${\mr b'}$, and ${\mr c'}$.
+Proposition~\ref{prop_semi_associative} proves that inclusion $\subseteq$ holds in general.
+But inclusion between orbits amounts to equality.
+\end{proof}
+
+\begin{lemma}\label{lem_Hindman}
+Assume $\nonforkc_{\!M}$ is $1$-stationary and let $M$ be a model.
+If $\mrA$ is minimal among the  $M$-invariant,
+idempotent,
+type-definable sets then $\mrA=\O({\mr a}/M)$ for some element ${\mr a}$.
+\end{lemma}
+\begin{proof}
+By Corollary~\ref{corol_min_idempotent},
+for every ${\mr a}\in\mrA$ the set ${\mr a}\cdot_{\!M}\mrA$ is idempotent.
+It is also type-definable and contained in $\mrA$,
+therefore by minimality ${\mr a}\cdot_{\!M}\mrA=\mrA$.
+Then there is a ${\mr b}\in\mrA$ such that ${\mr a}\nonforkc_M{\mr b}$ and ${\mr a}{\cdot}{\mr b}={\mr a}$.
+By associativity, the set ${\mr a}\cdot_{\!M}{\mr b}$ is idempotent.
+By Corollary~\ref{corol_orbits_associative},
+it coincides with $({\mr a}{\cdot}{\mr b})_M=({\mr a})_M$.
 The theorem follows by minimality.
 \end{proof}
 
@@ -390,40 +552,81 @@ As ${\mr\bar c}$ is a coheir sequence we can find  ${\mr a_i}\in M$ such that $\
  As ${\mr\bar c}$ is indiscernible over $G$, this is equivalent to  $\fp({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr\bar c})$.
 \end{proof}
 
-\section{Ideals and idempotens}
 
-If $\mrB\cdot_{\!A}\mrA=\mrA\cdot_{\!A}\mrB=\mrA$, 
+
+\section{Hales-Jewett theorem}
+\def\mrI{{\mr\I}} 
+
+
+Let $\mrI$ be an idempotent.
+A set $\mrA$ such that $\mrA\cdot_{\!A}\mrI\subseteq\mrI\cdot_{\!A}\mrA=\mrA$ is called a (two-sided) \emph{ideal\/} of $\mrI$.
+Let us fix $\mrI$ for the time being (in most of the applications $\mrI$ is the whole semigroup $\mrU$).
+We order the ideals by defining \emph{$\mrA\le_{\!A}\mrB$\/} if $\mrA\cdot_{\!A}\mrB\subseteq\mrB\cdot_{\!A}\mrA=\mrA$.
+Clearly, if $\mrA\subseteq\mrB$ are both ideals, then also $\mrA\le_{\!A}\mrB$.
+We are interested in ideals that are $\le_{\!A}$-minimal.
+
+\begin{proposition}
+Fix some type-definable idempotent $\mrI$.
+Then $\le_{\!A}$-minimal ideals exist.
+\end{proposition}
+
+\begin{proof}
+xxx
+\end{proof}
+
 we say that $\mrA$ absorbs $\mrB$ and write $\mrA\le_A\mrB$.
 When $A=M$, a model, and $\nonforkc_{\!M}$ is $1$-stationary, 
 using associativity the relation $\le_M$ is easily proved to be transitive.
 In general it is not a reflexive relation.
 In fact, $\mrA\le_M\mrA$ holds exactly when $\mrA$ is idempotent.
 
+If $\O()$ is idempotent then there is a $b$ such that  such that .
 
 
-\section{Hales-Jewett theorem}
-
-Let $G$ be a semigroup.
-A \emph{nice subsemigroup\/} of $G$ is a subsemigroup $C$ with the property that if $a{\cdot}b\in C$ then both $a,b\in C$.
-
+Let ${\gr G}$ be a semigroup.
+A \emph{nice subsemigroup\/} of ${\gr G}$ is a subsemigroup ${\mr C}$ with the property that if ${\mr a}{\cdot}{\mr b}\in{\mr C}$ then both ${\mr a},{\mr b}\in{\mr C}$.
+\clearpage
 \begin{theorem}
-Let $\sigma_1,\dots,\sigma_n$ be  \emph{retractions\/} of $G$ to $C$, that is,
-a homomorphisms $\sigma_i:G\to C$ such that $\sigma_i{\restriction}C=\id_C$.
-Then for every finite coloring of $C$ there is an $a\in G$ such that the set $\{\sigma_i(a):i=1,\dots,n\}$ is monocromatic.
+Let $\sigma_1,\dots,\sigma_n$ be  \emph{retractions\/} of ${\gr G}$ to ${\mr C}$, that is,
+a homomorphisms $\sigma_i:{\gr G}\to{\mr C}$ such that $\sigma_i{\restriction}{\mr C}={\rm id}_{\mr C}$.
+Then, for every finite coloring of ${\mr C}$,
+there is an ${\gr g}\in{\gr G}$ such that the set $\{\sigma_i({\gr g}):i=1,\dots,n\}$ is monochromatic.
 \end{theorem}
 
 \begin{proof}
-We think $G$ as a structure in a language $L$ that extends the language of multiplicative groups with unary relation symbols for every subset of $G$.
-Let $\chi({\mr x})$ be the formula that defines the subsemigroup $C$.
+Let ${\gr G}\preceq\grV$ and ${\mr C}\preceq\mrU$,
+where  $\grV$ and $\mrU$ are the domains in a many-sorted monster model.
+The language contains a symbol for multiplication and for a semigroup embedding of $\mrU$ in $\grV$, 
+therefore, for lighter notation, we can assume $\mrU\subseteq\grV$.
+The language also contains a symbol for the retractions $\sigma_i:\grV\to\mrU$.
+Then we may use freely that 
+${\gr g}\equiv_{\gr G}{\gr g'}$ implies $\sigma_i({\gr g})\equiv_{\gr G}\sigma_i({\gr g'})$.
+Also 
 
+Let ${\mr a}$ be $\le_{\gr G}$-minimal in $\mrU$.
+Let ${\gr g}\in\grV$ be such that ${\gr g}\le_{\gr G}{\mr a}$ and 
+${\gr g}_{\gr G}$ is $\le_{\gr G}$-minimal in $\grV$.
+% Define ${\mr c_i}=\sigma_i({\gr g})$.
+% We claim that ${\gr c_i}\le_{\gr G}{\mr a}$.
+% So by the $\le_{\gr G}$-minimality of ${\mr a}$, the claim implies $({\mr c_i})_{\gr G}={\mr a}_{\gr G}$ for every $i$.
+% Hence the theorem follows by the claim. 
 
+Recall that ${\gr g}\le_{\gr G}{\mr a}$ means that 
+${\gr g}\cdot_{\gr G}{\mr a}={\mr a}\cdot_{\gr G}{\gr g}={\gr g}$.
+Applying $\sigma_i$ to each member we obtain 
+$\sigma_i({\gr g})\cdot_{\gr G}{\mr a}={\mr a}\cdot_{\gr G}\sigma_i({\gr g})=\sigma_i({\gr g})$.
+Hence $\sigma_i({\gr g})\le_{\gr G}{\mr a}$ and, by minimality, 
+$\sigma_i({\gr g})\equiv_{\gr G}{\mr a}$.
+In particular the set $\{\sigma_i({\gr g}):i=1,\dots,n\}$ is monochromatic. 
+Though this very ${\gr g}$ need not be in ${\gr G}$,
+by elementarity some ${\gr g'}\in{\gr G}$ is as required by the theorem.
 \end{proof}
 
 \begin{comment}
 % 
 % \section{Crap (if this is publicly available, it's just by errror)}
 % 
-% \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}The following terminology in not standard. We say that the set $\mrB\subseteq\U^{|{\mr x}|}$, typically a definable set, is \emph{strongly quasi-invariant over $A$\/} if for every definable set $\mrD$ either $\mrB\cap\mrD$ or $\mrB\cap\neg\mrD$ is quasi-invariant.
+% \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}The following terminology in not standard.We say that the set $\mrB\subseteq\U^{|{\mr x}|}$, typically a definable set, is \emph{strongly quasi-invariant over $A$\/} if for every definable set $\mrD$ either $\mrB\cap\mrD$ or $\mrB\cap\neg\mrD$ is quasi-invariant.
 % 
 % \begin{proposition}If $\mrB$ is strongly quasi-invariant over $A$ and $\<{\mr\D_i}:i<n\>$ is a finite sequence of definable sets that covers $\mrB$, then $\mrB\cap{\mr\D_i}$ is strongly quasi-invariant over $A$ for some $i$.\QED
 % \end{proposition}
@@ -435,7 +638,7 @@ Let $\chi({\mr x})$ be the formula that defines the subsemigroup $C$.
 % \end{proposition}
 % 
 % \begin{proof}
-% Let $q({\mr x})\subseteq L(\U)$ be a strongly quasi-invariant type and let  $p({\mr x})\subseteq L(\U)$ be a maximally consistent  strongly quasi-invariant type. We claim that $p({\mr x})$ is complete. If not, then there are some formulas $\phi({\mr x})\in L(\U)$ and  $\psi({\mr x})\in p$ such that $\psi({\mr x})\wedge\phi({\mr x})$ and $\psi({\mr x})\wedge\neg\phi({\mr x})$. This contradicts Proposition~\ref{}.
+% Let $q({\mr x})\subseteq L(\U)$ be a strongly quasi-invariant type and let  $p({\mr x})\subseteq L(\U)$ be a maximally consistent  strongly quasi-invariant type.We claim that $p({\mr x})$ is complete.If not, then there are some formulas $\phi({\mr x})\in L(\U)$ and  $\psi({\mr x})\in p$ such that $\psi({\mr x})\wedge\phi({\mr x})$ and $\psi({\mr x})\wedge\neg\phi({\mr x})$. This contradicts Proposition~\ref{}.
 % \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

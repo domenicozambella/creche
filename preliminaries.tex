@@ -148,6 +148,9 @@ Now we generalize the interpretation to all (not necessarily closed) terms. If $
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox{10ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
+In the working practice, 
+a \textit{substructure\/} is a subset of a structure that is closed under the interpretation of the functions in the language.  
+But there are a few cases when we need the following formal definition.
 
 \begin{definition}\label{sottostrutturadef}
 Fix a signature $L$ and let $M$ and $N$ be two $L$-structures. We say that $M$ is a \emph{substructure\/} of $N$, and write \emph{$M\subseteq N$}, if
@@ -158,7 +161,7 @@ Fix a signature $L$ and let $M$ and $N$ be two $L$-structures. We say that $M$ i
 \end{itemize}
 \end{definition}
 
-Note that when $f$ is a constant \ssf{2} becomes $f^M=f^N$, in particular the substructures of $N$ contains at least all constants of $N$.
+Note that when $f$ is a constant \ssf{2} becomes $f^M=f^N$, in particular the substructures of $N$ contains at least all the constants of $N$.
 
 If a set $A\subseteq N$ is such that 
 \begin{itemize}
@@ -166,8 +169,8 @@ If a set $A\subseteq N$ is such that
 \end{itemize}
 then there is a unique substructure $M\subseteq N$ with domain $A$, namely, the structure with the following interpretation
 \begin{itemize}
-\item[2.] $f^M\ =\ f^N\restriction M^{n_f}$ (which is a good definition by the assumption on $A$);
-\item[3.] $r^M\ =\ r^N\cap M^{n_r}$.
+\item[2.] $f^M\ =\ f^N\restriction A^{n_f}$ (which is a good definition by the assumption on $A$);
+\item[3.] $r^M\ =\ r^N\cap A^{n_r}$.
 \end{itemize}
 It is usual to confuse subsets of $N$ that satisfy \ssf{1} with the unuque substructure they support.
 
