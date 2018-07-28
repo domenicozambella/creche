@@ -409,13 +409,11 @@ For every map  $h:M\to N$ the following are equivalent
 \end{itemize}
 Moreover, $k$ unique. The equivalence holds replacing isomorphism by homomorphism (in which case we in \ssf{2} we obtain an surjection). The extension $k$ is obtained defining $k\big(t(a)\big)=t(ha)$.
 
-A similar fact holds for partial homomorphims with epimorphism (surjective homomorphism) for isomorphism.
-
-Unfortunately, there is no hope to generalize this fact to $\Delta$-morphisms as, in general, there is no notion of generated $\Delta$-elementary substructure.\QED
+A similar fact holds for partial homomorphims with epimorphism (surjective homomorphism) for isomorphism.\QED
 \end{remark}
 
 
-We use $\Delta\jj$morphisms to compare, locally, two structures (or two loci of the same structure). There are different ways to do this, in the proposition below we list a few synonymous expressions. But first some more notation. When $x$ is a fixed tuple of variables, $a\in M^{|x|}$ and $b\in N^{|x|}$ we write
+We use $\Delta\jj$morphisms to compare, locally, two structures. There are different ways to do this, in the proposition below we list a few synonymous expressions. But first some more notation. When $x$ is a fixed tuple of variables, $a\in M^{|x|}$ and $b\in N^{|x|}$ we write
 
 \ceq{\hfill\emph{$M,a$}}{\emph{$\Rrightarrow_\Delta$}}{\emph{$N,b$}}\hfill if $M\models\phi(a)\IMP N\models\phi(b)$ for every $\phi(x)\in\Delta$.
 
@@ -436,7 +434,7 @@ For every given set of formulas $\Delta$ and every map $h:M\imp N$ the following
 
 
 \begin{remark}\label{rmk_characteristic}
-Condition \ssf{p} in Definition~\ref{defpreservaveritas} apply to tuples $x$ of any length, in particular to the empty tuple. In this case $\phi(x)$ is a sentence, $a\in(\dom h)^0=\{\0\}$ is the empty tuple, and \ssf{p} asserts that $\Th_\Delta(M)\subseteq\Th_\Delta(N)$. When $h=\0$ this is actually all what \ssf{p} says. In fact $\0^{|x|}=\0$ unless $|x|=0$. Still,  $\Th_\Delta(M)\subseteq\Th_\Delta(N)$ may be a non trivial requirement.\QED
+Condition \ssf{p} in Definition~\ref{defpreservaveritas} apply to tuples $x$ of any length, in particular to the empty tuple. In this case $\phi(x)$ is a sentence, $a\in(\dom h)^0=\{\0\}$ is the empty tuple, and \ssf{p} asserts that $\Th_\Delta(M)\subseteq\Th_\Delta(N)$. When $h=\0$ this is actually all that \ssf{p} says. In fact $\0^{|x|}=\0$ unless $|x|=0$. Still,  $\Th_\Delta(M)\subseteq\Th_\Delta(N)$ may be a non trivial requirement.\QED
 \end{remark}
 
 
@@ -448,7 +446,7 @@ We call $\Th_\Delta(M)$ the \emph{$\Delta\jj$characteristic} of $M$. We say that
 
 We conclude this section with a couple of propositions that break Theorem~\ref{isomorfoeleq} into parts. More interestingly, in Chapter~\ref{elimination} we shall prove a sort of converse of Propositions~\ref{presesis} and~\ref{presuniv}.
 
-This is not immediately required in the following. There is a relation between some properties of $\Delta\jj$morphisms closure of $\Delta$ logical connectives. When $\ssf{C}\subseteq\{\A,\E,\neg,\vee,\wedge\}$ is a set of connectives, we write \emph{$\ssf{C}\Delta$} for the closure of $\Delta$ with respect to all connectives in $\ssf{C}$. We write \emph{$\neg\Delta$} for the set containing the negation of the formulas in $\Delta$. Warning: do not confuse $\neg\Delta$ with $\{\neg\}\Delta$.
+Though the following is not immediately required, it is interesting to note that here is a relation between some properties of $\Delta\jj$morphisms and the closure of $\Delta$ under logical connectives. When $\ssf{C}\subseteq\{\A,\E,\neg,\vee,\wedge\}$ is a set of connectives, we write \emph{$\ssf{C}\Delta$} for the closure of $\Delta$ with respect to all connectives in $\ssf{C}$. We write \emph{$\neg\Delta$} for the set containing the negation of the formulas in $\Delta$. Warning: do not confuse $\neg\Delta$ with $\{\neg\}\Delta$.
 
 It is clear that $\Delta$-morphisms are  $\{\wedge,\vee\}\Delta\jj$morphisms.
 
@@ -464,14 +462,14 @@ For every given set of formulas $\Delta$ and every injective map $h:M\imp N$ the
 For every set of formulas $\Delta$, every $\Delta\jj$embedding $h:M\to N$ is a $\{\E\}\Delta\jj$mor\-phism.
 \end{proposition}
 \begin{proof}
-Formulas in $\{\E\}\Delta$ ave the form $\E y\,\phi(x,y)$ where $y$ is a finite tuples of variables and  $\phi(x,y)\in\Delta$. For every tuple $a\in(\dom h)^{|x|}$ we have:
+Formulas in $\{\E\}\Delta$ have the form $\E y\,\phi(x,y)$ where $y$ is a finite tuples of variables and  $\phi(x,y)\in\Delta$. For every tuple $a\in(\dom h)^{|x|}$ we have:
 
 \hfil
 $\begin{array}{rcl}
 M\models\E y\,\phi(a,y) %&\IFF&\\
-&\IMP& M\models\phi(a,b)\textrm{ per una tupla } b\in M^{|y|}  \\[2mm]
+&\IMP& M\models\phi(a,b)\textrm{ for } b\in M^{|y|}  \\[2mm]
 &\IMP& N\models\phi(ha,hb) \\[2mm]
-&\IMP& N\models\phi(ha,c)\textrm{ per una tupla } c\in N^{|y|}  \\[2mm]
+&\IMP& N\models\phi(ha,c)\textrm{ for } c\in N^{|y|}  \\[2mm]
 &\IMP& N\models\E y\,\phi(ha,y).\\
 \end{array}$
 

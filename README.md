@@ -72,22 +72,26 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
    * Small theories
    * A toy version of a theorem of Zil'ber
    * Notes and references
-*  **Definability and automorphisms**
+*  **Imaginaries**
    * Many-sorted structures
    * The eq-expansion
    * The definable closure in the eq-expansion
    * The algebraic closure in the eq-expansion
    * Elimination of imaginaries
-   * Imaginaries: the true story
+   * The true story of imaginaries
    * Uniform elimination of imaginaries
    * Notes and references
 *  **Invariant sets**
    * Invariant sets and types
    * Invariance from the dual perspective
-   * Coheirs
+   * Heirs and coheirs
    * Morley sequences and indiscernibles
+*  **Ramsey theory**
    * Ramsey theorem from coheir sequences
-   * Hindmann theorem from coheir sequences
+   * Ehrenfeucht-Mostowski construction of indiscernibles
+   * Indempotent orbits in semigroups
+   * Hindmann theorem
+   * Hales-Jewett theorem
 *  **Lascar invariant sets**
    * Expansions
    * Lascar strong types

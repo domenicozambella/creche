@@ -165,17 +165,17 @@ Let $p({\mr x})\in S(\U)$ be global type; we say that $p$ is \emph{Lascar invari
   Let $p({\mr x})\in S(\U)$ be a global type. Then the following are equivalent
   \begin{itemize}
     \item[1.] $p({\mr x})$ is Lascar invariant over $A$;
-    \item[2.] every $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ is $A,{\mr a}\jj$indiscernible for every ${\mr a}\models p_{\restriction A,{\gr\bar c}}$;
-    \item[3.] every $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ is indiscernible over any ${\mr a}\models p_{\restriction{\gr\bar c}}$.
+    \item[2.] every $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ is also $A,{\mr a}\jj$indiscernible for every ${\mr a}\models p_{\restriction A,{\gr\bar c}}({\mr x})$;
+    \item[3.] every $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ is indiscernible over any ${\mr a}\models p_{\restriction{\gr\bar c}}({\mr x})$.
   \end{itemize}
   For convenience all tuples ${\gr c_i}$ have length $|{\gr z}|=\omega$.
 \end{proposition}
 \begin{proof} We prove \ssf{1}$\IFF$\ssf{3}. Equivalence  \ssf{1}$\IFF$\ssf{2} can be proved similarly because the Lascar invariance of $p({\mr x})$ easily implies the Lascar invariance of the sets ${\gr\D_{p,\phi}}$ for all $\phi({\mr x}\,;{\gr z})\in L(A)$.
 
   \def\ceq#1#2#3{\parbox[t]{30ex}{$\displaystyle #1$}\parbox[t]{5ex}{$\displaystyle\hfil #2$}{$\displaystyle #3$}}
-  \ssf{3}$\IMP$\ssf{1}\quad If $p({\mr x})$ is not Lascar invariant over $A$ then ${\gr c_0}\in{\gr\D_{p,\phi}}\niff {\gr c_1}\in{\gr\D_{p,\phi}}$ for some $A$-indiscernible sequence $c=\<{\gr c_i}:i<\omega\>$ and some $\phi({\mr x}\,;{\gr z})\in L$. Then $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr c_0})\niff \phi({\mr x}\,;{\gr c_1})$. Hence, ${\gr\bar c}$ is not indiscernible over any realization of $p({\mr x})_{\restriction{\gr c_0},{\gr c_1}}$ 
+  \ssf{3}$\IMP$\ssf{1}\quad If $p({\mr x})$ is not Lascar invariant over $A$ then ${\gr c_0}\in{\gr\D_{p,\phi}}\niff {\gr c_1}\in{\gr\D_{p,\phi}}$ for some $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ and some $\phi({\mr x}\,;{\gr z})\in L$. Then $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr c_0})\niff \phi({\mr x}\,;{\gr c_1})$. Hence, ${\gr\bar c}$ is not indiscernible over any realization of $p({\mr x})_{\restriction{\gr c_0},{\gr c_1}}$ 
   
-  \ssf{1}$\IMP$\ssf{3}\quad Assume \ssf{1} and fix an $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ and some ${\mr a}\models p_{\restriction{\gr\bar c}}$. We need to prove that for every formula $\phi({\mr x}\,;z')\in L$, where $z'={\gr z_1},\dots,{\gr z_n}$,
+  \ssf{1}$\IMP$\ssf{3}\quad Assume \ssf{1} and fix an $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ and some ${\mr a}\models p_{\restriction{\gr\bar c}}$. We need to prove that for every formula $\phi({\mr x}\,;{\gr z'})\in L$, where ${\gr z'}={\gr z_1},\dots,{\gr z_n}$,
 
   \ceq{\hfill\phi({\mr a}\,;{\gr c_{0}},\dots,{\gr c_{n-1}})}{\iff}{\phi({\mr a}\,;{\gr c_{i_1}},\dots,{\gr c_{i_{n-1}}}).}
 
@@ -186,7 +186,7 @@ Let $p({\mr x})\in S(\U)$ be global type; we say that $p$ is \emph{Lascar invari
 
   \ceq{\hfill\phi({\mr a}\,;{\gr c_m},\dots,{\gr c_{m+n-1}})}{\iff}{\phi({\mr a}\,;{\gr c_{i_0}},\dots,{\gr c_{i_{n-1}}}).}
 
-  If the first is false, define $c'_k={\gr c_{km}},\dots,{\gr c_{km+n-1}}$ for all $k<\omega$. Otherwise, do this only for positive $k$ and set $c'_0={\gr c_{i_0}},\dots,{\gr c_{i_{n-1}}}$. In either cases $\<c'_k:k<\omega\>$ is a sequence of $A\jj$in\-dis\-cern\-i\-bles and $c'_0\in\D_{p,\phi}\niff c'_1\in\D_{p,\phi}$. This contradicts \ssf{1}.
+  If the first is false, define ${\gr c'_k}={\gr c_{km}},\dots,{\gr c_{km+n-1}}$ for all $k<\omega$. Otherwise, do this only for positive $k$ and set ${\gr c'_0}={\gr c_{i_0}},\dots,{\gr c_{i_{n-1}}}$. In either cases $\<{\gr c'_k}:k<\omega\>$ is a sequence of $A\jj$in\-dis\-cern\-i\-bles and ${\gr c'_0}\in{\gr\D_{p,\phi}}\niff {\gr c'_1}\in{\gr\D_{p,\phi}}$. This contradicts \ssf{1}.
 \end{proof}
 
 \begin{exercise}\label{ex_Lstp_indiscernibles}
@@ -529,12 +529,11 @@ L\'ogica, Hist\'oria i Filosofia de la Ci\'encia},
    volume={44},
    publisher={Association for Symbolic Logic, Cambridge University Press},
    date={2015},
-   pages={vii+156},
+%   pages={vii+156},
 %   isbn={978-1-107-05775-3},
 %   review={\MR{3560428}},
 %   doi={10.1017/CBO9781107415133},
 }
-
 \end{biblist}
 \begin{comment}
 
