@@ -336,7 +336,7 @@ The theorem follows by minimality.
 \end{proof}
 \end{comment}
 
-\section{Indempotents types in semigroups}\label{semigroups}
+\section{Indempotent orbits in semigroups}\label{semigroups}
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{22ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
@@ -357,25 +357,20 @@ For any two sets $\mrA,\mrB\subseteq\mrU$ we define
 
 We write \emph{${\mr a}\cdot_{\!A}\mrB$} for $\O({\mr a}/A)\cdot_{\!A}\mrB$.
 Similarly for \emph{$\mrA\cdot_{\!A}{\mr b}$} and \emph{${\mr a}\cdot_{\!A}{\mr b}$}.
-In this and the next section we abbreviate $\O({\mr a}/A)$ with ${\mr a}_A$
+In this and the next section we abbreviate $\O({\mr a}/A)$ with \emph{${\mr a}_A$}.
 
-Note that unless we add assumptions on $\nonforkc_{\!A}$ or on the underlying theory,
-there is no guarantee that $\mrA\cdot_{\!A}\mrB$ is non empty,
-not even when these sets are $A$-invariant.
-With this proviso,
-we proceed but with caution.
+% Note that unless we add assumptions on $\nonforkc_{\!A}$,
+% or on the underlying theory,
+% there is no guarantee that $\mrA\cdot_{\!A}\mrB$ is non empty,
+% not even when these sets are $A$-invariant.
+% With this proviso,
+% we proceed but with caution.
 
 By the invariance of $\nonforkc_{\!A}$,
 for every $f\in\Aut(\mrU/A)$ we have $f[\mrA\cdot_{\!A}\mrB]=f[\mrA]\cdot_{\!A}f[\mrB]$.
 Therefore when $\mrA$ and $\mrB$ are invariant over $A$,
 also $\mrA\cdot_{\!A}\mrB$ is invariant over $A$.
-% And we also have that
-% 
-% \ceq{\hfill{\mr a}\cdot_{\!A}\mrB}{=}{\O({\mr a}/A)\cdot_{\!A}\mrB}
-% 
-% \ceq{\hfill\mrA\cdot_{\!A}{\mr b}}{=}{\mrA\cdot_{\!A}\O({\mr b}/A)}
-% 
-% Below we mainly deal with invariant sets and these identites will be (silently) applied.
+Below we mainly deal with invariant sets.
 
 \begin{proposition}\label{prop_semi_associative}
 For every $A$-invariant sets $\mrA$, $\mrB$, and  $\mrC$.
@@ -397,7 +392,7 @@ also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by invariance
 \end{proof}
 
 Let $\mrA$ be a non empty set.
-If $\mrA\cdot_{\!A}\mrA\subseteq\mrA$ we say that it is \emph{idempotent\/} (over $A$).
+When $\mrA\cdot_{\!A}\mrA\subseteq\mrA$, we say that it is \emph{idempotent\/} (over $A$).
 
 \begin{corollary}\label{corol_min_idempotent}
 Assume $\mrB\subseteq\mrA$ are both $A$-invariant.
@@ -423,9 +418,9 @@ We check that if $\mrA$ is idempotent so is $\mrB\cdot_{\!A}\mrA=\mrA$
 % The proof of the second claim is similar.
 \end{proof}
 
-We show that,
-under the assumption of stationarity and independence,
-there is a natural correspondence between the semigroup multiplication of two elements and the operation $\cdot_{\!A}$ between their orbits.
+We show that, under the assumption of stationarity,
+the operation $\cdot_{\!A}$ is a associative.
+The quotient map $\mrU\to\mrU/{\equiv_A}$ comes close to (but not quite) a homeomorphism.
 
 
 \begin{proposition}\label{prop_orbits_main}
@@ -520,7 +515,7 @@ Then for every finite coloring of $G$ there is an infinite tuple ${\mr\bar c}$ s
 Note that when $G$ is commutative this amount to claiming that there is an infinite monochromatic set closed under finite sum of distinct elements.
 
 The proof below follows closely the proof of Ramsey's Theorem~\ref{thm_Ramsey}.
-The essential difference between the two theorems is contained in Lemma~\ref{lem_Hindman}.
+The novelty is all in Lemma~\ref{lem_Hindman}.
 
 We now consider $G$ as a structure a language $L$ containing a symbol for semigroup multiplication and possibly other symbols.
 Let $\U$ be a saturated elementary superstucture of $G$.
@@ -556,40 +551,45 @@ As ${\mr\bar c}$ is a coheir sequence we can find  ${\mr a_i}\in M$ such that $\
 
 \section{Hales-Jewett theorem}
 \def\mrI{{\mr\I}} 
+Assume the notation of Secrion~\ref{semigroups}.
+Assume also that $\nonforkc_{\!M}$ is $1$-stationary and let $M$ be a model.
+
+We write ${\mr a}\le_M{\mr b}$ if ${\mr a}\cdot_M\mrU\subseteq{\mr b}\cdot_M\mrU$.
+In this section we are concerned with elements idempotent orbits.
+We say that ${\mr a}$ is \emph{$\le_M$-minimal\/} if 
+it is idempotent and ${\mr a}\equiv_M{\mr b}$ for every ${\mr b}\le_M{\mr a}$.
+
+% We write ${\mr a}\le_M{\mr b}$ if ${\mr a}\cdot_M{\mr b}={\mr b}\cdot_M{\mr a}={\mr a}_M$.
+% This is easily proved to be a transitive relation.
+% It is also clear that ${\mr a}\le_M{\mr a}$ holds exactly when ${\mr a}_M$ is idempotent.
+% In this section we are concerned with the set of idempotent orbits
+% where $\le_M$ defines a order relation.
 
 
-Let $\mrI$ be an idempotent.
-A set $\mrA$ such that $\mrA\cdot_{\!A}\mrI\subseteq\mrI\cdot_{\!A}\mrA=\mrA$ is called a (two-sided) \emph{ideal\/} of $\mrI$.
-Let us fix $\mrI$ for the time being (in most of the applications $\mrI$ is the whole semigroup $\mrU$).
-We order the ideals by defining \emph{$\mrA\le_{\!A}\mrB$\/} if $\mrA\cdot_{\!A}\mrB\subseteq\mrB\cdot_{\!A}\mrA=\mrA$.
-Clearly, if $\mrA\subseteq\mrB$ are both ideals, then also $\mrA\le_{\!A}\mrB$.
-We are interested in ideals that are $\le_{\!A}$-minimal.
+
 
 \begin{proposition}
-Fix some type-definable idempotent $\mrI$.
-Then $\le_{\!A}$-minimal ideals exist.
+For every idempotent ${\mr a}_M$, there is a $\le_M$-minimal ${\mr b}\le_M{\mr a}$.
 \end{proposition}
 
 \begin{proof}
-xxx
+Construct a decreasing $\le_M$-chain as follows.
+Let ${\mr b_0}={\mr a}$.
+At stage $i$, if ${\mr b_i}$ is $\le_M$-minimal we are finished.
+Otherwise, there is some ${\mr b_{i+1}}<_M{\mr b_i}$.
+At a limit stage $\lambda$ note that the intersection of the sets ${\mr b_i}\cdot_M\mrU$ for $i<\lambda$
+is type definable and idempotent
+and, by Lemma~\ref{lem_Hindman}, contains an element ${\mr b_\lambda}$ with idempotent orbit.
+Then ${\mr b_\lambda}<_M{\mr b_i}$  for every $i<\lambda$.
+Clearly, the construction has to stop at some stage yielding a $\le_M$-minimal ${\mr b}$.
 \end{proof}
-
-we say that $\mrA$ absorbs $\mrB$ and write $\mrA\le_A\mrB$.
-When $A=M$, a model, and $\nonforkc_{\!M}$ is $1$-stationary, 
-using associativity the relation $\le_M$ is easily proved to be transitive.
-In general it is not a reflexive relation.
-In fact, $\mrA\le_M\mrA$ holds exactly when $\mrA$ is idempotent.
-
-If $\O()$ is idempotent then there is a $b$ such that  such that .
-
-
-Let ${\gr G}$ be a semigroup.
-A \emph{nice subsemigroup\/} of ${\gr G}$ is a subsemigroup ${\mr C}$ with the property that if ${\mr a}{\cdot}{\mr b}\in{\mr C}$ then both ${\mr a},{\mr b}\in{\mr C}$.
 \clearpage
 
 
-\begin{proposition}
-Let $\sigma:\mrU\to\mrU$ be a definable semigroup homomorphism. Then 
+\begin{proposition}\label{prop_HJ_tecnical}
+Assume $\nonforkc_{\!M}$ is $1$-stationary and let $M$ be a model.
+Let $\sigma:\mrU\to\mrU$ be a definable semigroup homomorphism.
+Then 
 \begin{itemize}
 \item[1.] $\sigma\big[{\mr a}_M\big]=\sigma({\mr a})_M$
 
@@ -613,53 +613,49 @@ Hence all elements of $\sigma({\mr a})_M$ are image of some element in ${\mr a}_
 \def\ceq#1#2#3{\parbox[t]{33ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 \item[2.] We have to prove the following equality\smallskip
 
-\ceq{\hfill\Big\{\sigma({\mr a'}\cdot{\mr b'})\ :\ {\mr a}\equiv_M{\mr a'}\nonforkc_M{\mr b'}\equiv_M{\mr b} \Big\}}
+\ceq{\hfill\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ {\mr a}\equiv_M{\mr a'}\nonforkc_M{\mr b'}\equiv_M{\mr b} \Big\}}
 {=}
 {\Big\{{\mr a'}{\cdot}{\mr b'}\ :\ \sigma({\mr a})\equiv_M{\mr a'}\nonforkc_M{\mr b'}\equiv_M\sigma({\mr b}) \Big\}.}\smallskip
 
-The set on r.h.s. is easily seen to be equal to \smallskip
+It suffices to prove one inclusion because by Proposition~\ref{prop_orbits_main} both sides are orbits. 
+We prove $\subseteq$. 
+Note that the set on r.h.s.\@ is equal to\smallskip
 
 \hfil$\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ \sigma({\mr a'})\nonforkc_M\sigma({\mr b'}),\ {\mr a'}\equiv_M{\mr a},\  {\mr b'}\equiv_M{\mr b} \Big\}$.\smallskip
 
-Hence it suffices to check that for every ${\mr a'}$ and ${\mr b'}$\smallskip
-
-\ceq{\hfill{\mr a'}\nonforkc_M{\mr b'}}
-{\IFF}
-{\sigma({\mr a'})\nonforkc_M\sigma({\mr b'})}.\smallskip
-
-The proof of this equivalence is left to the reader (here is where we use that $M$ is a model).
+Hence it suffices to note that ${\mr a'}\nonforkc_M{\mr b'}$ implies $\sigma({\mr a'})\nonforkc_M\sigma({\mr b'})$.
 \end{itemize}\vskip-1.2\baselineskip
 \end{proof}
 
 \begin{theorem}
-Let ${\gr C}\subseteq{\mr G}$ be semigroups. Let ${\gr\sigma_1},\dots,{\gr\sigma_n}$ be  \emph{retractions\/} of ${\mr G}$ to ${\gr C}$, that is,
-homomorphisms ${\gr\sigma_i}:{\mr G}\to{\gr C}$ such that ${\gr\sigma_i}{\restriction}{\gr C}={\rm id}_{\gr C}$.
+Let ${\gr C}\subseteq{\mr G}$ be semigroups.
+Let ${\gr\sigma_i}:{\mr G}\to{\gr C}$ for $i=1,\dots,n$ be \emph{retractions}, that is,
+homomorphisms such that ${\gr\sigma_i}{\restriction}{\gr C}={\rm id}_{\gr C}$.
 Then, for every finite coloring of ${\gr C}$,
-there is an ${\mr g}\in{\mr G}$ such that the set $\{{\gr\sigma_i}({\mr g}):i=1,\dots,n\}$ is monochromatic.
+there is a ${\mr g}\in{\mr G}$ such that $\{{\gr\sigma_i}({\mr g}):i=1,\dots,n\}$ is monochromatic.
 \end{theorem}
 
 \begin{proof}
 Let ${\mr G}\preceq\mrU$ and ${\gr C}\preceq\grV$,
-where  $\mrU$ and $\grV$ are the domains in a many-sorted monster model.
-The language contains a symbol for multiplication and for an embedding of $\grV$ in $\mrU$. 
-For a lighter notation, we assume $\grV\subseteq\mrU$.
-The language also contains a symbol for the retractions ${\gr\sigma_i}:\mrU\to\grV$.
+where $\grV$ is a definable subsemigroup of $\mrU$.
+The language contains a symbol for multiplication and for the retractions ${\gr\sigma_i}:\mrU\to\grV$.
+It also contains symbols for all subsets of $\mrU$.
 
-Let ${\gr a}_{\mr G}$ be $\le_{\mr G}$-minimal in $\grV$.
-Let ${\mr g}_{\mr G}$ be $\le_{\mr G}$-minimal in $\mrU$
-and such that ${\mr g}\le_{\mr G}{\gr a}$.
-% Define ${\mr c_i}={\gr\sigma_i}({\mr g})$.
-% We claim that ${\gr c_i}\le_{\mr G}{\gr a}$.
-% So by the $\le_{\mr G}$-minimality of ${\gr a}$, the claim implies $({\mr c_i})_{\mr G}={\gr a}_{\mr G}$ for every $i$.
-% Hence the theorem follows by the claim. 
+As $\grV$ is a definable set, any idempotent orbit in $\grV$ is also an idempotent orbit in $\mrU$.
+But the relation $\le_{\mr G}$ is distinct when it is considered in $\mrU$ or in $\grV$.
+Below we will always specify the context.
 
-Recall that ${\mr g}\le_{\mr G}{\gr a}$ means that 
-${\mr g}\cdot_{\mr G}{\gr a}={\gr a}\cdot_{\mr G}{\mr g}={\mr g}_{\mr G}$.
-Applying ${\gr\sigma_i}$ to these equalities we obtain 
-${\gr\sigma_i}({\mr g})\le_{\mr G}{\gr a}$ and, by minimality, 
-${\gr\sigma_i}({\mr g})\equiv_M{\gr a}$.
+Let ${\gr a}$ be $\le_{\mr G}$-minimal in $\grV$.
+Let ${\mr g}$ be $\le_{\mr G}$-minimal in $\mrU$
+and such that ${\mr g}\le_{\mr G}{\gr a}$ in $\mrU$.
+
+This means that ${\mr g}\cdot_{\mr G}\mrU\subseteq{\gr a}\cdot_{\mr G}\mrU$.
+Therefore, applying Proposition~\ref{prop_HJ_tecnical},  we obtain
+${\gr\sigma_i}({\mr g})\cdot_{\mr G}\grV\subseteq{\gr a}\cdot_{\mr G}\grV$.
+Hence ${\gr\sigma_i}({\mr g})\le_{\mr G}{\gr a}$ and, by minimality, 
+${\gr\sigma_i}({\mr g})\equiv_{\mr G}{\gr a}$.
 In particular the set $\{{\gr\sigma_i}({\mr g}):i=1,\dots,n\}$ is monochromatic. 
-Though this very ${\mr g}$ need not belong to ${\mr G}$,
+This very ${\mr g}$ need not belong to ${\mr G}$ but,
 by elementarity, ${\mr G}$ contains some ${\mr g'}$ as required by the theorem.
 \end{proof}
 
