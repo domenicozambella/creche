@@ -58,7 +58,7 @@ diagrams={>=latex}
    \setlength{\labelsep}{1ex}
    \setlength{\leftmargin}{\labelwidth+\labelsep}
    \let\makelabel\mylabel}}{%
-   \end{list}\vspace*{-1.3mm}}
+   \end{list}\vspace*{-\parskip}}
 
 %\def\emph#1{\textcolor{blue}{\boldmath\textbf{#1}}}
 
@@ -90,6 +90,7 @@ diagrams={>=latex}
 \def\rank{\mathop{\rm rank}}
 \def\dcl{\mathop{\rm dcl}}
 \def\acl{\mathop{\rm acl}}
+\def\fp{{\rm fp}}
 \def\cf{\mathop{\rm cf}}
 \def\rad{\mathop{\rm rad}}
 \def\eq{{{\rm eq}}}
@@ -115,13 +116,15 @@ diagrams={>=latex}
 \def\pmDelta{\Delta\hskip-.3ex\raisebox{1ex}{\tiny$\pm$}}
 \def\pmDeltatp{\noindent\pmDelta\hskip-.3ex\textrm{-tp}}
 \def\EMtp{\textrm{{\small EM}\mbox{-}tp}}
+
 \def\nonfork{\mathop{\raise0.2ex\hbox{\ooalign{\hidewidth$\vert$\hidewidth\cr\raise-0.9ex\hbox{$\smile$}}}}}
 
-\def\nonforkc{\mathbin{\raise1.2ex\rlap{\kern1.3ex$\cdot$}\rlap{\kern1.1ex\rule{0.1ex}{1.9ex}}\raise-0.3ex\hbox{$\smile$} } }
+%\def\nonforkc{\mathbin{\raise1.2ex\rlap{\kern1.3ex$\cdot$}\rlap{\kern1.1ex\rule{0.1ex}{1.9ex}}\raise-0.3ex\hbox{$\smile$} } }
+%\def\cnonfork{\mathbin{\raise1.3ex\rlap{\kern0.4ex$\cdot$}\raise0.6ex\rlap{\kern0.85ex$\vert$}\raise-0.3ex\hbox{$\smile$}} }
 
-\def\cnonfork{\mathbin{\raise1.3ex\rlap{\kern0.4ex$\cdot$}\raise0.6ex\rlap{\kern0.85ex$\vert$}\raise-0.3ex\hbox{$\smile$}} }
+\def\cnonfork{\mathbin{\raise1.8ex\rlap{\kern0.6ex\rule{0.6ex}{0.1ex}}\rlap{\kern1.1ex\rule{0.1ex}{1.9ex}}\raise-0.3ex\hbox{$\smile$} } }
 
-
+\def\nonforkc{\mathbin{\raise1.8ex\rlap{\kern1.1ex\rule{0.6ex}{0.1ex}}\rlap{\kern1.1ex\rule{0.1ex}{1.9ex}}\raise-0.3ex\hbox{$\smile$} } }
 
 \def\sm{\smallsetminus}
 \def\atpmL{L_{\atpm}\hskip-.3ex}
@@ -215,7 +218,7 @@ diagrams={>=latex}
      {}%         Indent amount (empty = no indent, \parindent = para indent)
      {\bfseries}% Thm head font
      {}%        Punctuation after thm head
-     {1.5ex}%     Space after thm head: " " = normal interword space;
+     {1ex}%     Space after thm head: " " = normal interword space;
            %   \newline = linebreak
      {\llap{\thmnumber{#2}\hskip2mm}\thmname{#1}\thmnote{\bfseries{} #3}}% Thm head spec (can be left empty, meaning `normal')
 
@@ -311,6 +314,7 @@ diagrams={>=latex}
 \subfile{countable}
 \subfile{imaginary}
 \subfile{invariant}
+\subfile{ramsey}
 \subfile{invariantL}
 \subfile{external}
 \subfile{measures}
