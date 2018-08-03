@@ -237,7 +237,9 @@ We introduce the following notation to express that $\tp({\mr b}/A,{\gr a})$ is 
 
 \ceq{\hfill}{\IFF}{\phi({\gr a}\,;{\mr\U})\cap A^{|{\mr x}|}\neq\0 \textrm{ for all }\phi({\gr z}\,;{\mr x})\in L(A)\textrm{ such that }\phi({\gr a}\,;{\mr b})}
 
-We call this the \emph{heir/coheir} relation. The symbol $\nonforkc$ is not standard. More properly one says that $\tp({\gr a}/A,{\mr b})$ is the heir of $\tp({\gr a}/A)$ or that $\tp({\mr b}/A,{\gr a})$ is the coheir of $\tp({\mr b}/A)$.
+We call this the \emph{heir/coheir} relation.
+The symbol $\nonforkc$ is not standard.
+More properly one says that $\tp({\gr a}/A,{\mr b})$ is the heir of $\tp({\gr a}/A)$ or that $\tp({\mr b}/A,{\gr a})$ is the coheir of $\tp({\mr b}/A)$.
 
 We also write
 
@@ -279,7 +281,7 @@ The type ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ defined above is the interse
 In general coheirs of $\tp({\mr b}/A)$ may not exist i.e.,  ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ is inconsistent.
 However, it is always consistent when $A$ is a model.
 Even when consistent it need not be a complete.
-In fact, completeness  of the type type ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ is a very strong property.
+In fact, completeness  of the type ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ is a very strong property.
 An example is given in Lemma~\ref{lem_Hindman}.
 
 \begin{definition}\label{def_coheir_stationary}We say that $\nonforkc_A$ is \emph{stationary\/} if ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ is a complete type (over $A,{\gr a}$) for every ${\gr a}\in\U^{<\omega}$, every ${\mr b}\in\U^{|{\mr x}|}$, and every tuple of variables ${\mr x}$.
@@ -294,7 +296,7 @@ If for every $\phi({\mr x})\in L(\U)$ there is a formula $\psi({\mr x})\in L(A)$
 \end{proposition}
 
 \begin{proof}
-Fix ${\gr a}\in\U^{|{\gr z}|}$ and  ${\mr b_i}\in\U^{|{\mr x}|}$ such that ${\gr a}\nonforkc_A{\mr b_i}$ and ${\mr b_1}\equiv_A{\mr b_2}$.
+Fix ${\gr a}\in\U^{|{\gr z}|}$ and  ${\mr b_1},{\mr b_2}\in\U^{|{\mr x}|}$ such that ${\gr a}\nonforkc_A{\mr b_i}$ and ${\mr b_1}\equiv_A{\mr b_2}$.
 We claim that ${\mr b_1}\equiv_{A,\,{\gr a}}{\mr b_2}$.
 We need to prove that $\phi({\gr a},\,{\mr b_1})\iff\phi({\gr a},\,{\mr b_2})$ for every  $\phi({\gr z},\,{\mr x})\in L(A)$.
 Let $\psi({\mr x})\in L(A)$ be such that $\phi({\gr a},\,{\mr \U})=_A\psi({\mr \U})$.
@@ -318,7 +320,7 @@ Finally, the claim follows because ${\mr b_1}\equiv_A{\mr b_2}$.
 %A satisfactory generalization of this notions to types over sets should guarantee this existence.
 %Unfortunately, this is not possible in general and the definition Section~\hyperref[coheirs_sets]{\ref*{invariantL}.\ref*{coheirs_sets}} is as good as it gets.
 
-\begin{example}\label{ex_coheir_stationary}
+\begin{remark}\label{rk_coheir_stationary}
 Stationarity of $\nonforkc_A$ over every set $A$, or just over every model, is equivalent to the stability of $T$, see Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}.
 However, there are many more theories where the assumption holds for some particular set $A$.
 For example, if every subset of $A^n$ is the trace of a definable set, $\nonforkc_A$ is clearly $n$-stationary.
@@ -326,7 +328,7 @@ This simple observation will be of help in the proof of Theorem~\ref{thm_Hindman
 For natural example let $T=T_{\rm dlo}$ and let $A\subseteq\U$ have the order-type of $\RR$.
 By quantifier elimination every definable of $\U$ union of finitely many intervals.
 By Dedekind completeness, the trace on $A$ of any interval of $\U$ coincides with that of an $A$-definable interval. 
-\end{example}
+\end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
