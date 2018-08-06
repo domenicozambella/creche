@@ -104,14 +104,15 @@ The assumption on the cardinality $L$ is only necessary to apply the downward L\
 (Assume~\ref{ass_c1-6})  \  The following are equivalent
 \begin{itemize}
 \item[1.] $N$ is a $\lambda\jj$rich model;
-\item[2.] for every model $M$ of cardinality $\le\lambda$ and every morphism $k:M\imp N$ of cardinality $<\lambda$ there is a embedding $h:M\hookrightarrow N$ that extends $k$.
+\item[2.] for every model $M$ of cardinality $\le\lambda$ and every morphism $k:M\imp N$ of cardinality, say $<\lambda$ there is a embedding $h:M\hookrightarrow N$ that extends $k$.
 \end{itemize}
 \end{proposition}
 \begin{proof}
 Closure under union of chains of morphisms, which is ensured by \ssf{c7}, immediately yields \ssf{1}$\IMP$\ssf{2}.
 As for implication \ssf{2}$\IMP$\ssf{1} we only need to consider the case $\lambda<|M|$.
-By the downward L\"owenheim-Skolem theorem there is an  $M'\preceq M$ of cardinality $\lambda$ containing $b$.
-Let $h:M'\hookrightarrow N$ be the embedding obtained from \ssf{1}.
+Let $k:M\imp N$ be a morphism of cardinality $<\lambda$ and $b\in M$.
+By the downward L\"owenheim-Skolem theorem there is an  $M'\preceq M$ of cardinality $\lambda$ containing $\dom k \cup\{b\}$.
+Let $h:M'\hookrightarrow N$ be the embedding obtained from \ssf{2}.
 By \ssf{c4}, the map  $h:M\to N$ is a composition of morphisms, hence a morphism.
 \end{proof}
 

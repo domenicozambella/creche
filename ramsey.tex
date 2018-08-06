@@ -6,13 +6,11 @@
 \label{ramsey}
 
 In Section~\ref{Ramsey} we prove Ramsey's theorem and in Section~\ref{EM} we present its major application in model theory: 
-the Ehrenfeucht-Mostowsky construction of indiscernibles.
+Ehrenfeucht-Mostowsky's construction of indiscernibles.
 
-In the remaining sections we prove a few famous results Ramsey theory. 
-Their proof is \textit{not the usual one}. 
-It is an interesting application of the notion of coheir.
+In the remaining sections we prove two important results of Ramsey theory.
 These results will not be used elsewhere in these notes.
-The only purpose is to illustrate a concrete (relatively speaking) application of the notion of coheir.
+Our only purpose is to illustrate a concrete (relatively speaking) application of the notion of coheir.
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{12ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
@@ -115,7 +113,7 @@ if ${\mr\bar a}$ and ${\mr\bar c}$ are two $A\jj$indiscernible $I\jj$sequences w
 then ${\mr\bar a}\equiv_A {\mr\bar c}$.
 
 \theoremstyle{mio}
-\newtheorem{EhrenfeuchtMostowski}[thm]{Ehrenfeucht-Mostowski's Theorem}
+\newtheorem{EhrenfeuchtMostowski}[thm]{Ehrenfeucht-Mostowski Theorem}
 \begin{EhrenfeuchtMostowski}\label{thm_EM}
 Let $I,<_I$ and $J,<_J$ be two infinite linear orders such that $|J|\le \kappa$.
 Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is an $J\jj$sequence of $A$-indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/A)\subseteq\EMtp({\mr\bar c}/A)$.
@@ -420,13 +418,14 @@ We check that if $\mrA$ is idempotent so is $\mrB\cdot_{\!A}\mrA=\mrA$
 
 We show that, under the assumption of stationarity,
 the operation $\cdot_{\!A}$ is a associative.
-The quotient map $\mrU\to\mrU/{\equiv_A}$ comes close to a homeomorphism (but not quite).
+The quotient map $\mrU\to\mrU/{\equiv_A}$ fails short of being a homeomorphism.
 
 
 \begin{proposition}\label{prop_orbits_main}
 Assume $\nonforkc_{\!A}$ is $1$-stationary,
 see Definition~\ref{def_coheir_stationary}.
-Then for every ${\mr a}\nonforkc_{\!A}{\mr b}$ 
+Fix ${\mr a}\nonforkc_{\!A}{\mr b}$ arbitrarily.
+Then ${\mr a'}{\cdot}{\mr b'}\equiv_A{\mr a}{\cdot}{\mr b}$ for every ${\mr a'}\equiv_A{\mr a}$ and  ${\mr b'}\equiv_A{\mr b}$. Or, in other words,
 
 \ceq{\hfill({\mr a}{\cdot}{\mr b})_A}{=}{{\mr a}\cdot_{\!A}{\mr b}}
 \end{proposition}
@@ -490,18 +489,18 @@ The theorem follows by minimality.
 
 
 \begin{corollary}\label{corol_idempotent}
-Every type definable idempotent set contains an element with an idmepotent orbit.
+Under the same assumptions as the lemma, every type-definable idempotent set contains an element with an idmepotent orbit.
 \end{corollary}
 
 
 \section{Hindman theorem}\label{Hindman}
 
-Let $G$ be an infinite semigroup.
-Let ${\mr\bar a}=\<{\mr a_i}:i<\alpha\>$ be a tuple of elements of $G$.
+Let $G$ be an infinite semigroup
+and let ${\mr\bar a}\in G^\omega$.
 We write $\fp_n({\mr\bar a})$ for the sets of products of $n$ elements of ${\mr\bar a}$ taken in increasing order.
 Namely,
 
-\ceq{\hfill\emph{$\fp_n({\mr\bar a})$}}{=}{\Big\{{\mr a_{i_1}}\kern-0.5ex\cdot\dots\cdot{\mr a_{i_n}}\ :\quad i_0<\dots<i_{n-1}<\alpha\Big\}}.
+\ceq{\hfill\emph{$\fp_n({\mr\bar a})$}}{=}{\Big\{{\mr a_{i_1}}\kern-0.5ex\cdot\dots\cdot{\mr a_{i_n}}\ :\quad i_0<\dots<i_{n-1}<\omega\Big\}}.
 
 We agree that when ${\mr\bar a}$ is the empty tuple then $\fp_n({\mr\bar a})=\0$.
 Finally we define
@@ -514,32 +513,34 @@ This section is dedicated to the proof of the following theorem.
 \newtheorem{Hindman}[thm]{Hindman Theorem}
 \begin{Hindman}\label{thm_Hindman}
 Let $G$ be an infinite semigroup.
-Then for every finite coloring of $G$ there is an infinite tuple ${\mr\bar c}$ such that $\fp({\mr\bar c})$ is monochromatic.
+Then for every finite coloring of $G$ 
+there is an ${\mr\bar a}\in G^\omega$ 
+such that $\fp({\mr\bar a})$ is monochromatic.
 \end{Hindman}
 
 Note that when $G$ is commutative this amount to claiming that there is an infinite monochromatic set closed under finite sum of distinct elements.
 
-The proof below follows closely the proof of Ramsey's Theorem~\ref{thm_Ramsey}.
+Our proof follows closely the proof of Ramsey's theorem~\ref{thm_Ramsey}.
 The novelty is all in Lemma~\ref{lem_Hindman}.
 
-We now consider $G$ as a structure a language $L$ containing a symbol for semigroup multiplication and possibly other symbols.
-Let $\U$ be a saturated elementary superstucture of $G$.
 
 \begin{proof}
-We think $G$ as a structure in a language $L$ that extends the language of multiplicative groups with a unary relation symbol for each subset of $G$.
-As observed in Remark~\ref{rk_coheir_stationary}, this language makes $\nonforkc_G$ trivially $1$-stationary.
+We interpret $G$ as a structure in a language $L$ 
+that extends the language of multiplicative groups 
+with a unary relation symbol for each subset of $G$.
+Let $\U$ be a saturated elementary superstucture of $G$.
+As observed in Remark~\ref{rk_coheir_stationary}, 
+the language makes $\nonforkc_G$ trivially $1$-stationary.
 
 The colors corresponds to a definable partition of $G$ and, by elementarity, of $\U$.
-Let $p({\mr x})\in S(\U)$ be a global coheir of the type $q({\mr x})\in S(G)$ obtained from Lemma~\ref{lem_Hindman}.
-
-Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be a sequence such that
+Let ${\mr b}$ be an element of $\mrU$ with idempotent orbit as given by Corollary~\ref{corol_idempotent}.
+Let $p({\mr x})\in S(\U)$ be a global coheir of $\tp({\mr b}/G)$.
+Let ${\mr\bar c}$ be a coheir sequence such that
 
 \ceq{\hfill {\mr c_i}}{\models}{p_{\restriction G,\,\fp({\mr c_{\restriction i} } ) }({\mr x}),}
 
-By Lemma~\ref{lem_Hindman}, if ${\mr a}\in \fp({\mr c_{\restriction i}})$ then ${\mr a}{\cdot}{\mr c_i}\models q({\mr x})$.
+By the idempotency of ${\mr b}_G$ and Proposition~\ref{prop_orbits_main}, ${\mr a}\equiv_G{\mr b}$ for all ${\mr a}\in \fp({\mr\bar c})$.
 It follows in particular that $\fp({\mr\bar c})$ is monochromatic.
-
-
 Now, we use the sequence ${\mr\bar c}$ to define ${\mr\bar a}\in G^\omega$ such that $\fp({\mr\bar a})$ is monochromatic.
 
 Assume as induction hypothesis that $\fp({\mr a_{\restriction i}},\,{\mr\bar c})$ is monochromatic.
@@ -558,14 +559,17 @@ We say that a set $\mrA$ is a \emph{right-ideal\/} if $\mrA\cdot_{\!A}\mrU=\mrA$
 We say that an element ${\mr a}$ is \emph{right-minimal\/} if 
 ${\mr a}\in{\mr b}\cdot_{\!A}\mrU$ for every ${\mr b}\in{\mr a}\cdot_{\!A}\mrU$.
 In other words, ${\mr a}$ is right-minimal 
-if ${\mr a}\cdot_{\!A}\mrU$, the right-ideal generated by the orbit of ${\mr a}$, is minimal among the type-definable right-ideals.
+if ${\mr a}\cdot_{\!A}\mrU$, i.e.\@ the right-ideal generated by the orbit of ${\mr a}$, is minimal among the type-definable right-ideals.
 The ambient semigroup $\mrU$ and the set of parameters $A$ will be clear from the contex.
 
 \begin{proposition}\label{prop_minimal_existence1}
 Every invariant right-ideal contains a right-minimal element with idempotent orbit.
 \end{proposition}
 \begin{proof}
-Let $\mrA$ be invariant over $A$. Then for every ${\mr b}\in\mrA$ the set ${\mr b}\cdot_{\!A}\mrU\subseteq\mrA$ is type-definable over $A$. By compacteness we can require that it is minimal. As it is clearly idempotent, by Corollary~\ref{corol_idempotent}, it contains an element ${\mr a}$ with idempotent orbit. Therefore ${\mr a}$ is the required right-minimal element.
+Let $\mrA$ be right-ideal invariant over $A$.
+For every ${\mr b}\in\mrA$ the set ${\mr b}\cdot_{\!A}\mrU\subseteq\mrA$ is type-definable over $A$. 
+By compacteness we can require that it is minimal. 
+As ${\mr b}\cdot_{\!A}\mrU$ is clearly idempotent, by Corollary~\ref{corol_idempotent} it contains an element ${\mr a}$ with idempotent orbit. Therefore ${\mr a}$ is the required right-minimal element.
 \end{proof}
 
 \begin{proposition}\label{prop_minimal_existence2}
@@ -634,12 +638,12 @@ Let $G$ be a semigroup.
 A \emph{nice subsemigroup\/} of $G$ is a subsemigroup $C$ with the property that if ${\mr a}{\cdot}{\mr b}\in C$ then both ${\mr a},{\mr b}\in C$.
 
 
-\begin{theorem}
-Let $G$ be a semigroups and let $C\subseteq G$ be a nice subsemigroup.
-Let $\sigma_i:G\to C$ for $i=1,\dots,n$ be \emph{retractions}, that is,
-homomorphisms such that $\sigma_i{\restriction}C={\rm id}_C$.
+\begin{theorem}\label{thm_abstract_HJ}
+Let $G$ be a semigroup and let $C\subset G$ be a nice subsemigroup.
+Let $\Sigma$ be a finite set of retractions of $G$ to $C$, that is, 
+homomorphisms $\sigma:G\to C$ such that $\sigma_{\restriction C}={\rm id}_C$.
 Then, for every finite coloring of $C$,
-there is a ${\mr g}\in G\sm C$ such that $\{\sigma_i({\mr g}):i=1,\dots,n\}$ is monochromatic.
+there is a ${\mr g}\in G\sm C$ such that $\{\sigma({\mr g}):\sigma\in\Sigma\}$ is monochromatic.
 \end{theorem}
 
 \begin{proof}
@@ -651,47 +655,132 @@ this makes $\nonforkc_G$ trivially $1$-stationary.
 Let $\mrU$ be the definable set such that $C=G\cap\mrU$.
 By elementarity, $\mrU$ is a nice subsemigroup of $\mrV$.
 The language contains also symbols for 
-the retractions $\sigma_i:\mrV\to\mrU$.
+the retractions $\sigma:\mrV\to\mrU$.
 
-Let ${\mr a}\in\mrU$ be right-minimal with idempotent orbit. Therefore by Proposition~\ref{prop_minimal_existence2}, ${\mr a}\equiv_M{\mr b}$
+Let ${\mr a}\in\mrU$ be right-minimal with idempotent orbit over $G$.
+Therefore, by Proposition~\ref{prop_minimal_existence2}, ${\mr a}\equiv_G{\mr b}$
 for every idempotent ${\mr b}\in\big({\mr a}\cdot_G\mrU\big)\cap\big(\mrU\cdot_G{\mr a}\big)$.
 
 We move to $\mrV$ as ambient semigroup.
-By nicety, $\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$ 
-has non empty intersection with $\mrV\sm\mrU$.
+The intersection of $\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$ 
+with $\mrV\sm\mrU$ is non empty, because by nicety both sets contain 
+${\mr a}\cdot_G\big(\mrV\sm\mrU\big)\cdot_G{\mr a}$.
 This intersection is easily seen to be an idempotent set.
-Hence, by Corollary~\ref{corol_idempotent} it contains some ${\mr g}$ with idempotent orbit. Now, from ${\mr g}\in\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$
+Hence, by Corollary~\ref{corol_idempotent} it contains some ${\mr v}$ with idempotent orbit. Now, from ${\mr v}\in\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$
 and Proposition~\ref{prop_HJ_tecnical}, we obtain 
-$\sigma_i({\mr g})\in\big({\mr a}\cdot_G\mrU\big)\cap\big(\mrU\cdot_G{\mr a}\big)$.
-As these $\sigma_i({\mr g})$ are also idempotent, 
-we apply Proposition~\ref{prop_minimal_existence2} to conclude that $\sigma_i({\mr g})\equiv_G{\mr a}$ for all $i$.
-In particular the set $\{\sigma_i({\mr g}):i=1,\dots,n\}$ is monochromatic. 
+$\sigma({\mr v})\in\big({\mr a}\cdot_G\mrU\big)\cap\big(\mrU\cdot_G{\mr a}\big)$
+for all $\sigma\in\Sigma$.
+As $\sigma({\mr v})$ is also idempotent, 
+we apply Proposition~\ref{prop_minimal_existence2} to conclude that 
+$\sigma({\mr v})\equiv_G{\mr a}$.
+In particular the set $\{\sigma({\mr v}):\sigma\in\Sigma\}$ is monochromatic. 
 
-Though the element ${\mr g}$ above need not belong to $G\sm C$,
-by elementarity, $G\sm C$ contains some ${\mr g'}$ with the same property and this proves the theorem.
+Though the element ${\mr v}$ above need not belong to $G\sm C$,
+by elementarity $G\sm C$ contains some ${\mr g}$ with the same property and this proves the theorem.
 \end{proof}
 
 \theoremstyle{mio}
 \newtheorem{HalesJewett}[thm]{Hales-Jewett Theorem}
 \begin{HalesJewett}\label{thm_HalesJewett}
 Let $C$ be an infinite semigroup.
-Fix a tuple of variable $x$ and let $F\subseteq C^{|x|}$ be and arbitrary finite set.
+Fix a tuple of variable $x$ and let $\Sigma\subseteq C^{|x|}$ be a finite set.
 Fix also a finite coloring of $C$.
 Then there is a non constant term $t(x)$ 
 of the language of semigroups with parameters in $C$
-such that $\{ t(a): a\in F\}$ is monochromatic.
+such that $\{ t(\sigma): \sigma\in\Sigma\}$ is monochromatic.
 \end{HalesJewett}
 
 \begin{proof}
-Let $G$ be the set of terms quotiented by equality modulo the theory of semigroups.
-Then to every tuple $a\in F$ the map $t(x)\mapsto t(x/a)$ is a retraction.
-Then we can apply the theorem above. 
+Let $G$ be the set of terms in the language of semigroups with parameters in $C$.
+Then $G$ is a semigroup under the natural operation.
+For every $\sigma\in\Sigma$ the map $t(x)\mapsto t(x/\sigma)$ is clearly a retraction.
+Recall that $t(x/\sigma)$ denotes the substitution of $\sigma$ for $x$ in $t$.
+Now we apply the theorem above.
 \end{proof}
 
-
-
-
 \begin{comment}
+We know to combine the ideas used in the proofs 
+of Hindman's theorem and Hales-Jewett's theorem 
+to obtain the following. 
+
+\begin{proposition}
+Let $G$ be a semigroup and let $C\subset G$ be a nice subsemigroup.
+Let $\Sigma$ be a countable set of retractions of $G$ to $C$.
+Then for every finite coloring of $C$ there is a ${\mr\bar g}\in (G\sm C)^\omega$ 
+such that the sets 
+$\fp \{\sigma({\mr g_{\restriction\,\omega\sm n}})\,:\,\sigma\in\Sigma_0 \}$ are all monochromatic, 
+where $\Sigma_0\subseteq\Sigma$ are arbitrary finite sets 
+and $n=n_{\Sigma_0}$.
+\end{proposition}
+
+Recall that $\sigma({\mr g_{\restriction\,\omega\sm n}})$ is the tuple $\<{\sigma(\mr g_{i+n} } ): i<\omega\>$. 
+In the theorem above, we have stretched definition of $\fp(\mbox{-})$ and applied it to sets of tuples of equal length.
+Precisely, we enhance the definition of $\fp_n(\mbox{-})$ as follows 
+
+\ceq{\hfill\fp_n\{{\mr\bar g^j}\ :\ j\in J\} }{=}{\Big\{{\mr g^{j_1}_{i_1}}\kern-0.5ex\cdot\dots\cdot{\mr g^{j_n}_{i_n}}\ :\quad i_1<\dots<i_n<\alpha, \ \  j_1,\dots,j_n\in J\Big\}}.
+
+Finally $\fp(\mbox{-})$ is defined as the union of the $\fp_n(\mbox{-})$.
+
+
+\begin{proof}
+Reasoning as in the proof of Theorem~\ref{thm_abstract_HJ}, 
+and with the same notation,
+we obtain an element ${\mr v}\in\mrV\sm\mrU$ with idempotent orbit 
+and such that all $\sigma({\mr v})$ for $\sigma\in\Sigma$
+have the same type over $G$.
+
+Let $p({\mr x})\in S(\mrV)$ be a global coheir of $\tp({\mr v}/G)$ and let ${\mr\bar v}$ 
+be a coheir sequence such that ${\mr v_i}\models p_{\restriction A_i }({\mr x})$ where 
+$A_i=G\, \cup\, \fp\{\sigma({\mr v_{\restriction i}})\ :\ \sigma\in\Sigma \}$.
+
+Now, we use the sequence ${\mr\bar v}$ to define the ${\mr\bar g}$ required by the theorem.
+Assume $\Sigma=\{\sigma_i:i<\omega\}$. 
+Assume as induction hypothesis that $\fp\{\sigma_i({\mr g_{\restriction i}},\,{\mr\bar c}) : i<n\}$ is monochromatic.
+Our goal is to find ${\mr a_i}$ such as the same property holds for ${\mr a_{\restriction i}},\,{\mr a_i},\,{\mr\bar c}$.
+
+
+Let $\phi({\mr a_{\restriction i}},\,{\mr c_i},\,{\mr c_{\restriction i}})$ be the sentence that says $\fp_{i+1}({\mr a_{\restriction i}},\,{\mr c_i},\,{\mr c_{\restriction i}})$ is monochromatic.
+As ${\mr\bar c}$ is a coheir sequence we can find  ${\mr a_i}\in M$ such that $\phi({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr c_{\restriction i}})$.
+  Hence $\fp_{i+1}({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr c_{\restriction i}})$ is monochromatic.
+ As ${\mr\bar c}$ is indiscernible over $G$, this is equivalent to  $\fp({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr\bar c})$.
+
+\end{proof}
+
+\section{Hales-Jewett + Hindman \ = \ Carlson}
+ V. Bergelson, A. Blass, and N. Hindman, Partition theorems for spaces of variable words,
+Proc. London Math. Soc. 68 (1994), 449-476. MR 95i:05107
+
+
+\begin{theorem}
+Let $G$ be a semigroups and let $C\subset G$ be a nice subsemigroup.
+Fix a finite coloring of $G$ and ${\mr\bar g}\in G^\omega$.
+Then there is a sequence of retractions $\sigma_i:G\to C$ and 
+an increasing tuple ${\mr\bar s}\in\fp({\mr\bar g})^\omega$ such that
+$\{\sigma_i({\mr s_i}):i<\omega\}$ is monochromatic disjoint of $C$..
+\end{theorem}
+
+
+\theoremstyle{mio}
+\newtheorem{Carlson}[thm]{Carlson Theorem}
+\begin{Carlson}\label{thm_HalesJewett}
+Let $C$ be an infinite semigroup.
+Fix a finite tuple of variables $x$.
+Let $G$ be the set of terms $t(x)$ with parameters in $C$  
+which we consider as a semigroup under the natural operation.
+
+For every coloring of $G$ there are two infinite sequences
+$\bar t=\<t_i:i\in\omega\>$ and $\bar s=\<s_i:i\in\omega\>$ 
+of terms in $G$ such that 
+\begin{itemize}
+\item[1.] None of the terms in $\bar t$ is constant.
+
+\item[2.] The set 
+$\displaystyle\bigg\{t(x/s_{\restriction I})\ :\ t\in\fp(\bar t)\textrm{ and }I\in{\omega\choose |x|}\bigg\}$
+is monochromatic.
+\end{itemize}
+\end{Carlson}
+
+
 % 
 % \section{Crap (if this is publicly available, it's just by errror)}
 % 

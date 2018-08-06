@@ -6,9 +6,13 @@
 
 \def\ceq#1#2#3{\parbox[b]{20ex}{$\displaystyle #1$}\parbox[b]{6ex}{\hfil$#2$}$\displaystyle #3$}
 
-In Section~\ref{reticoli} and~\ref{prime_filters} we introduce distributive lattices and prime filters and prove Stone's representation theorem for distributive lattices. In Section~\ref{frammenti} we discuss lattices that arise from sets of formulas and their prime filters (prime types).  These sections are mainly required for the discussion of Hilbert's Nullstellensatz in Section~\hyperref[Nullstellensatz]{\ref*{algebraic}.\ref*{Nullstellensatz}} below.%We set the terminology that will be used in Chapter~\ref{algebraic} we between algebraic objectswhere types appear as filters in lattices of formulas. , and we need a correspondence between algebraic objects (such as ideals of rings of polynomials) and $\Delta\jj$types where $\Delta$ is a set of equations.
+In Section~\ref{reticoli} and~\ref{prime_filters} we introduce distributive lattices and prime filters and prove Stone's representation theorem for distributive lattices.
+In Section~\ref{frammenti} we discuss lattices that arise from sets of formulas and their prime filters (prime types).
+These sections are mainly required for the discussion of Hilbert's Nullstellensatz in Section~\hyperref[Nullstellensatz]{\ref*{algebraic}.\ref*{Nullstellensatz}} below.
+%We set the terminology that will be used in Chapter~\ref{algebraic} we between algebraic objectswhere types appear as filters in lattices of formulas. , and we need a correspondence between algebraic objects (such as ideals of rings of polynomials) and $\Delta\jj$types where $\Delta$ is a set of equations.
 
-There is a lot of notation in this chapter. The reader may skim through and return to it when we refer to it.
+There is a lot of notation in this chapter.
+The reader may skim through and return to it when we refer to it.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -19,13 +23,17 @@ There is a lot of notation in this chapter. The reader may skim through and retu
 %%%%%%%%%%%%%%%%%%%%%%%%
 \section{Semilattices and filters}\label{reticoli}
 
-A \emph{preorder\/} is a set $\PP$ with a transitive and symmetric relation which we usually denote by $\le$. If $A,B\subseteq\PP$ we write $A\le B$ if $a\le b$ for every $a\in A$ and $b\in B$. We write $a\le B$ and $A\le b$ for $\{a\}\le B$ and  $A\le \{b\}$ respectively.
+A \emph{preorder\/} is a set $\PP$ with a transitive and symmetric relation which we usually denote by $\le$.
+If $A,B\subseteq\PP$ we write $A\le B$ if $a\le b$ for every $a\in A$ and $b\in B$.
+We write $a\le B$ and $A\le b$ for $\{a\}\le B$ and  $A\le \{b\}$ respectively.
 
 Quotienting a preorder by the equivalence relation
 
 \ceq{\hfill a\sim b}{\IFF}{a\le b\quad\textrm{and}\quad b\le a}
 
-gives a \emph{(partial) order}. We often do not distinguish between a preorder and the partial order associated to it. Preorders are very common; here we are interested in the one induced by the relation of logical consequence
+gives a \emph{(partial) order}.
+We often do not distinguish between a preorder and the partial order associated to it.
+Preorders are very common; here we are interested in the one induced by the relation of logical consequence
 
 \ceq{\hfill \phi\le\psi}{\IFF}{\phi\proves\psi,}
 
@@ -33,9 +41,19 @@ or, more generally, by the relation of \emph{logical consequence over a theory $
 
 \ceq{\hfill \phi\le\psi}{\IFF}{T\cup\{\phi\}\proves\psi}.
 
-A partial order $\PP$ is a \emph{lower semilattice\/} if for each pair $a,b\in\PP$ there is a maximal element $c$ such that $c\le\{a,b\}$. We call $c$ the \emph{meet\/} of $a$ and $b$. The meet is unique and is denoted by \emph{$a\swedge b$}. Dually, a partial order is an \emph{upper semilattice\/} if for each pair of elements $a$ and $b$ there is a minimal element $c$ such that $\{a,b\}\le c$. This $c$ is called the \emph{joint\/} of $a$ and $b$. The joint is unique and is denoted by \emph{$a\svee b$}. A \emph{lattice\/} is simultaneously a lower and an upper semilattice.
+A partial order $\PP$ is a \emph{lower semilattice\/} if for each pair $a,b\in\PP$ there is a maximal element $c$ such that $c\le\{a,b\}$.
+We call $c$ the \emph{meet\/} of $a$ and $b$.
+The meet is unique and is denoted by \emph{$a\swedge b$}.
+Dually, a partial order is an \emph{upper semilattice\/} if for each pair of elements $a$ and $b$ there is a minimal element $c$ such that $\{a,b\}\le c$.
+This $c$ is called the \emph{joint\/} of $a$ and $b$.
+The joint is unique and is denoted by \emph{$a\svee b$}.
+A \emph{lattice\/} is simultaneously a lower and an upper semilattice.
 
-An element $c$ such that $c\le \PP$ is called a \emph{lower bound\/} or a \emph{bottom}. An element such that $\PP\le c$ is called an \emph{upper bound\/} or a \emph{top}. Lower and upper bounds are unique and will be denoted by \emph{$0$}, respectively \emph{$1$}. Other symbols common in the literature are \emph{$\bot$}, respectively \emph{$\top$}. A semilattice is \emph{bounded\/} if it has both an upper and a lower bound.
+An element $c$ such that $c\le \PP$ is called a \emph{lower bound\/} or a \emph{bottom}.
+An element such that $\PP\le c$ is called an \emph{upper bound\/} or a \emph{top}.
+Lower and upper bounds are unique and will be denoted by \emph{$0$}, respectively \emph{$1$}.
+Other symbols common in the literature are \emph{$\bot$}, respectively \emph{$\top$}.
+A semilattice is \emph{bounded\/} if it has both an upper and a lower bound.
 
 For the rest of this section we assume that $\PP$ is a bounded lower semilattice.
 
@@ -45,9 +63,12 @@ The meet is associative and commutative
 
 \ceq{\hfill a\swedge b}{=}{a\swedge b}.
 
-Hence we may unambiguously write  $a_1\swedge\dots\swedge a_n$. When $C\subseteq\PP$ is finite, we write \emph{$\swedge C$} for the meet of all the elements of $C$. We agree that $\swedge\0=1$.
+Hence we may unambiguously write  $a_1\swedge\dots\swedge a_n$.
+When $C\subseteq\PP$ is finite, we write \emph{$\swedge C$} for the meet of all the elements of $C$.
+We agree that $\swedge\0=1$.
 
-In an upper semilattice, the dual properties hold for the joint. We write \emph{$\svee C$} for the joint of all elements in $C$ and we agree that  $\svee\0=0$.
+In an upper semilattice, the dual properties hold for the joint.
+We write \emph{$\svee C$} for the joint of all elements in $C$ and we agree that  $\svee\0=0$.
 
 A \emph{filter\/} of $\PP$ is a non-empty set $F\subseteq \PP$ that satisfies the following for all $a,b\in \PP$
 %\ceq{}{}{}
@@ -56,11 +77,19 @@ A \emph{filter\/} of $\PP$ is a non-empty set $F\subseteq \PP$ that satisfies th
 \item[f1.] \ceq{a\in F\ \textrm{ and }\ a\le b}{\IMP}{b\in F}
 \item[f2.] \ceq{a, b\in F}{\IMP}{a\swedge  b\in F.}
 \end{itemize}
-We say that $F$ is a \emph{proper filter\/} if $F\neq \PP$, equivalently if $0\notin F$. We say that $F$ is \emph{principal\/} if $F=\big\{b\ :\ a\le b\big\}$ for some $a\in \PP$. More precisely, we say that $F$ is the \emph{principal filter generated by $a$}. A proper filter $F$ is \emph{maximal\/} if there is no filter $H$ such that $F\subset H\subset \PP$.
+We say that $F$ is a \emph{proper filter\/} if $F\neq \PP$, equivalently if $0\notin F$.
+We say that $F$ is \emph{principal\/} if $F=\big\{b\ :\ a\le b\big\}$ for some $a\in \PP$.
+More precisely, we say that $F$ is the \emph{principal filter generated by $a$}.
+A proper filter $F$ is \emph{maximal\/} if there is no filter $H$ such that $F\subset H\subset \PP$.
 
-We say that a filter $F$ is \emph{maximal relative to $c$\/} if $c\notin F$ and $c\in H$ for every $H\supset F$. So, a filter $F$ is maximal if it is maximal relative to $0$. We say that  $F$ is \emph{relatively maximal\/} when it is maximal relative to some $c$.
+We say that a filter $F$ is \emph{maximal relative to $c$\/} if $c\notin F$ and $c\in H$ for every $H\supset F$.
+So, a filter $F$ is maximal if it is maximal relative to $0$.
+We say that  $F$ is \emph{relatively maximal\/} when it is maximal relative to some $c$.
 
-For $B\subseteq\PP$ we define the \emph{filter generated by $B$\/} to be the intersection of all the filters containing $B$. It is easy to verify that this is indeed a filter.  When $B$ is a finite set, the filter generated by $B$ is the principal filter generated by $\swedge B$. In general we have the following.
+For $B\subseteq\PP$ we define the \emph{filter generated by $B$\/} to be the intersection of all the filters containing $B$.
+It is easy to verify that this is indeed a filter.
+When $B$ is a finite set, the filter generated by $B$ is the principal filter generated by $\swedge B$.
+In general we have the following.
 
 
 \begin{proposition} \label{prop_filter_generated}
@@ -72,11 +101,15 @@ For every $B\subseteq \PP$, the filter generated by $B$ is the set
 This has the following important consequence.
 
 \begin{proposition}\label{esistenzamassimale2}
-Let $B\subseteq \PP$ and let $c\in \PP$. If $\swedge C\not\le c$ for every finite non-empty $C\subseteq B$, then $B$ is contained in a maximal filter relative to $c$.
+Let $B\subseteq \PP$ and let $c\in \PP$.
+If $\swedge C\not\le c$ for every finite non-empty $C\subseteq B$, then $B$ is contained in a maximal filter relative to $c$.
 \end{proposition}
 
 \begin{proof}
-Let $\F$ be the set of filters $F$ such that $B\subseteq F$ and $c\notin F$. By Proposition~\ref{prop_filter_generated}, $\F$ is non-empty. It is immediate that $\F$ is closed under unions of arbitrary chains. Then, by Zorn's lemma, $\F$ has a maximal element.
+Let $\F$ be the set of filters $F$ such that $B\subseteq F$ and $c\notin F$.
+By Proposition~\ref{prop_filter_generated}, $\F$ is non-empty.
+It is immediate that $\F$ is closed under unions of arbitrary chains.
+Then, by Zorn's lemma, $\F$ has a maximal element.
 \end{proof}
 
 \begin{exercise}\label{ex_maximal_equivalent}
@@ -88,7 +121,8 @@ Prove that the following are equivalent
 \end{exercise}
 
 \begin{exercise}
-(A generalization of the exercise above.) Let $B\subseteq \PP$ and let $c\in \PP$ be such that $\swedge C\not\le c$ for every finite non-empty $C\subseteq B$. Prove that the following are equivalent
+(A generalization of the exercise above.) Let $B\subseteq \PP$ and let $c\in \PP$ be such that $\swedge C\not\le c$ for every finite non-empty $C\subseteq B$.
+Prove that the following are equivalent
 \begin{itemize}
 \item[1.] $B$ is a maximal filter relative to $c$;
 \item[2.] $a\notin B\ \ \IMP\ \ b\swedge a \le c$\ \  for some \ \ $b\in B$.\QED
@@ -101,7 +135,8 @@ Prove that the following are equivalent
 
 
 \begin{exercise}
-Let $F\subseteq\PP$ be a non-principal filter. Is $F$ always contained in a maximal non-principal filter\,?\QED
+Let $F\subseteq\PP$ be a non-principal filter.
+Is $F$ always contained in a maximal non-principal filter\,?\QED
 \end{exercise}
 
 
@@ -114,7 +149,8 @@ Let $F\subseteq\PP$ be a non-principal filter. Is $F$ always contained in a maxi
 %%%%%%%%%%%%%%%%%%%%%%%%
 \section{Distributive lattices and prime filters}\label{prime_filters}
 
-Let\ $\PP$ be a lattice. We say that $\PP$ is \emph{distributive\/} if for every $a,b,c\in\PP$
+Let\ $\PP$ be a lattice.
+We say that $\PP$ is \emph{distributive\/} if for every $a,b,c\in\PP$
 
 \ceq{\hfill a\swedge (b\svee c)}{=}{(a\swedge b)\svee (a\swedge c)}
 
@@ -131,14 +167,23 @@ Every relatively maximal filter of\/ $\PP$ is prime.
 \end{proposition}
 
 \begin{proof}
-Let $F$ be maximal relative to $c$ and assume that $a\notin F$ and $b\notin F$. Then, by Exercise~\ref{ex_maximal_equivalent}, there are $d_1, d_2\in F$ such that $d_1\swedge a\le c$ and $d_2\swedge b\le c$. Let $d=d_1\wedge d_2$. Then  $d\swedge a\le c$ and $d\swedge b\le c$ and therefore $(d\swedge a)\svee(d\swedge b)\le c$. Hence, by distributivity, $d\swedge (a\svee b)\le c$. Then $a\svee b\notin F$.
+Let $F$ be maximal relative to $c$ and assume that $a\notin F$ and $b\notin F$.
+Then, by Exercise~\ref{ex_maximal_equivalent}, there are $d_1, d_2\in F$ such that $d_1\swedge a\le c$ and $d_2\swedge b\le c$.
+Let $d=d_1\wedge d_2$.
+Then  $d\swedge a\le c$ and $d\swedge b\le c$ and therefore $(d\swedge a)\svee(d\swedge b)\le c$.
+Hence, by distributivity, $d\swedge (a\svee b)\le c$.
+Then $a\svee b\notin F$.
 \end{proof}
 
-The \emph{Stone space\/} of $\PP$ is a topological space that we denote by \emph{$S(\PP)$}. The points of \emph{$S(\PP)$} are the prime filters of $\PP$. The closed sets of the \emph{Stone topology} are arbitrary intersections of sets of the form
+The \emph{Stone space\/} of $\PP$ is a topological space that we denote by \emph{$S(\PP)$}.
+The points of \emph{$S(\PP)$} are the prime filters of $\PP$.
+The closed sets of the \emph{Stone topology} are arbitrary intersections of sets of the form
 
 \ceq{\hfill\emph{$[a]_\PP$}}{=}{\Big\{\,F\ :\ \textrm{ prime filter such that } a\in F\,\Big\}.}
 
-for $a\in\PP$. In other words, the sets above form a base of closed sets of the Stone topology. Using \ssf{1} and \ssf{3} in the following proposition the reader can easily check that this is indeed a base for a topology.
+for $a\in\PP$.
+In other words, the sets above form a base of closed sets of the Stone topology.
+Using \ssf{1} and \ssf{3} in the following proposition the reader can easily check that this is indeed a base for a topology.
 
 \begin{proposition}\label{prop_brouwerstopology}
 For every $a,b\in\PP$ we have
@@ -150,13 +195,16 @@ For every $a,b\in\PP$ we have
 \end{itemize}
 \end{proposition}
 \begin{proof}
-The verification is immediate. Only \ssf{3} requires that the filters in $S(\PP)$ are prime.
+The verification is immediate.
+Only \ssf{3} requires that the filters in $S(\PP)$ are prime.
 \end{proof}
 
-The closed subsets of $S(\PP)$ ordered by inclusion form a distributive lattice. The following is a representation theorem for distributive lattices.
+The closed subsets of $S(\PP)$ ordered by inclusion form a distributive lattice.
+The following is a representation theorem for distributive lattices.
 
 \begin{theorem}
-The map $a\mapsto [a]_\PP$ is an embedding of $\PP$ in the lattice of the closed subsets of $S(\PP)$. In particular
+The map $a\mapsto [a]_\PP$ is an embedding of $\PP$ in the lattice of the closed subsets of $S(\PP)$.
+In particular
 \begin{itemize}
 \item[1.]\ $0\mapsto \0$;
 \item[2.]\ $1\mapsto S(\PP)$;
@@ -166,7 +214,13 @@ The map $a\mapsto [a]_\PP$ is an embedding of $\PP$ in the lattice of the closed
 \end{theorem}
 
 \begin{proof}
-It is immediate that the map above preserves the order and Proposition~\ref{prop_brouwerstopology} shows that it preserves the lattice operations. We prove that the map is injective. Let $a\neq b$, say  $a\nleq b$. We claim that $\big[a\big]_\PP\nsubseteq\big[b\big]_\PP$. There is a filter $F$ that contains $a$ and is maximal relative to $b$. By Proposition~\ref{prop_massimalisonoprimi} such an $F$ is prime. Then $F\in [a]_\PP\sm[b]_\PP$.
+It is immediate that the map above preserves the order and Proposition~\ref{prop_brouwerstopology} shows that it preserves the lattice operations.
+We prove that the map is injective.
+Let $a\neq b$, say  $a\nleq b$.
+We claim that $\big[a\big]_\PP\nsubseteq\big[b\big]_\PP$.
+There is a filter $F$ that contains $a$ and is maximal relative to $b$.
+By Proposition~\ref{prop_massimalisonoprimi} such an $F$ is prime.
+Then $F\in [a]_\PP\sm[b]_\PP$.
 \end{proof}
 
 
@@ -182,13 +236,19 @@ We claim that
 
 \ceq{\ssf{b.}\hfill\bigcap_{i\in I}[a_i]_\PP}{\neq}{\0.}
 
-By \ssf{4} of Proposition~\ref{prop_brouwerstopology} and \ssf{a} we obtain that $\swedge C\nleq 0$ for every finite $C\subseteq \{a_i:i\in I\}$. By Proposition~\ref{esistenzamassimale2}, there is a maximal (relative to $0$) filter containing $\{a_i:i\in I\}$. By Proposition~\ref{prop_massimalisonoprimi}, such filter is prime and it belongs to the intersection in \ssf{b}.
+By \ssf{4} of Proposition~\ref{prop_brouwerstopology} and \ssf{a} we obtain that $\swedge C\nleq 0$ for every finite $C\subseteq \{a_i:i\in I\}$.
+By Proposition~\ref{esistenzamassimale2}, there is a maximal (relative to $0$) filter containing $\{a_i:i\in I\}$.
+By Proposition~\ref{prop_massimalisonoprimi}, such filter is prime and it belongs to the intersection in \ssf{b}.
 \end{proof}
 
-Let $a,b\in\PP$. If $a\swedge  b=0$ and $a\svee b=1$, we say that $b$ is the \emph{complement\/} of $a$ (and vice versa). The complement of an element need not exist. If the complement exists it is unique, the complement of $a$ is denoted by \emph{$\neg a$}.
+Let $a,b\in\PP$.
+If $a\swedge  b=0$ and $a\svee b=1$, we say that $b$ is the \emph{complement\/} of $a$ (and vice versa).
+The complement of an element need not exist.
+If the complement exists it is unique, the complement of $a$ is denoted by \emph{$\neg a$}.
 
 \begin{lemma}\label{Stone_aperti_chiusi}
-Let $U\subseteq S(\PP)$ be a clopen set. Then $U=[a]_\PP$ for some $a\in\PP$, and $\neg a$ exists.
+Let $U\subseteq S(\PP)$ be a clopen set.
+Then $U=[a]_\PP$ for some $a\in\PP$, and $\neg a$ exists.
 \end{lemma}
 
 \begin{proof}
@@ -203,15 +263,22 @@ By compactness, that is Theorem~\ref{thm_reticolocompatto}, there are some finit
 
 \ceq{\hfill \bigcap_{x\in A_0}[x]_\PP}{\cap}{\bigcap_{y\in B_0}[y]_\PP}$\quad=\quad\0$
 
-Let $a=\swedge A_0$ and $b=\swedge B_0$. From claim \ssf{4} of Proposition~\ref{prop_brouwerstopology} we obtain $[a]_\PP\cap[b]_\PP=\0$. Therefore $U\subseteq [a]_\PP\ \subseteq\ S(\PP)\sm  [b]_\PP\ \subseteq\ U$. Hence $U= [a]_\PP$ and $b=\neg a$.
+Let $a=\swedge A_0$ and $b=\swedge B_0$.
+From claim \ssf{4} of Proposition~\ref{prop_brouwerstopology} we obtain $[a]_\PP\cap[b]_\PP=\0$.
+Therefore $U\subseteq [a]_\PP\ \subseteq\ S(\PP)\sm  [b]_\PP\ \subseteq\ U$.
+Hence $U= [a]_\PP$ and $b=\neg a$.
 \end{proof}
 
-A \emph{Boolean algebra\/} is a bounded distributive lattice where every element has a complement. In a Boolean algebra, the sets $[a]_\PP$ are clopen and they form also a base of open set of the topology of $S(\PP)$. A topology that has a base of clopen sets is called \emph{zero-dimensional}. By the following proposition the Stone topology of a Boolean algebra is Hausdorff.
+A \emph{Boolean algebra\/} is a bounded distributive lattice where every element has a complement.
+In a Boolean algebra, the sets $[a]_\PP$ are clopen and they form also a base of open set of the topology of $S(\PP)$.
+A topology that has a base of clopen sets is called \emph{zero-dimensional}.
+By the following proposition the Stone topology of a Boolean algebra is Hausdorff.
 
 A proper filter of a Boolean algebra is an \emph{ultrafilter\/} if either $a\in F$ or $\neg a\in F$ for every $a$.
 
 \begin{proposition}
-Let $\PP$ be a Boolean algebra. Then the following are equivalent
+Let $\PP$ be a Boolean algebra.
+Then the following are equivalent
 \begin{itemize}
 \item[1.] $F$ is maximal;
 \item[2.] $F$ is prime;
@@ -219,7 +286,8 @@ Let $\PP$ be a Boolean algebra. Then the following are equivalent
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Implication \ssf{2}\,$\IMP$\,\ssf{3} is obtained observing that $a\svee\neg a\in F$. The rest is immediate.
+Implication \ssf{2}\,$\IMP$\,\ssf{3} is obtained observing that $a\svee\neg a\in F$.
+The rest is immediate.
 \end{proof}
 
 \begin{exercise}
@@ -227,7 +295,8 @@ Prove that the stone topology on $S(\PP)$ has a base of open compact sets.\QED
 \end{exercise}
 
 \begin{exercise}
-Suppose we had defined $S(\PP)$ as the set of relatively maximal filters. What could possibly go wrong\,?\QED
+Suppose we had defined $S(\PP)$ as the set of relatively maximal filters.
+What could possibly go wrong\,?\QED
 \end{exercise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -238,13 +307,19 @@ Suppose we had defined $S(\PP)$ as the set of relatively maximal filters. What c
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Types as filters}\label{frammenti}
 
-This section we work with a fixed set of formulas \emph{$\Delta$\/} all with free variables among those of some fixed tuple \emph{$x$}. In this section we do not display $x$ in the notation. Subsets of $\Delta$ are called \emph{$\Delta\jj$types}.
+This section we work with a fixed set of formulas \emph{$\Delta$\/} all with free variables among those of some fixed tuple \emph{$x$}.
+In this section we do not display $x$ in the notation.
+Subsets of $\Delta$ are called \emph{$\Delta\jj$types}.
 
-We associate to $\Delta$ a bounded lattice \emph{$\PP(\Delta)$}. This is the closure under conjunction and disjunction of the formulas in $\Delta\cup\{\bot,\top\}$. The (pre)order relation in $\PP(\Delta)$ is given by
+We associate to $\Delta$ a bounded lattice \emph{$\PP(\Delta)$}.
+This is the closure under conjunction and disjunction of the formulas in $\Delta\cup\{\bot,\top\}$.
+The (pre)order relation in $\PP(\Delta)$ is given by
 
 \ceq{\hfill \psi\le\phi}{\IFF}{T\cup\{\psi\}\ \proves\ \phi},
 
-for some fixed theory $T$. In this section, to lighten notation, we absorb $T$ in the symbol $\proves$. If $p$ is a $\Delta\jj$type we denote by $\<p\>_\PP$ the filter in $\PP(\Delta)$ generated by $p$.
+for some fixed theory $T$.
+In this section, to lighten notation, we absorb $T$ in the symbol $\proves$.
+If $p$ is a $\Delta\jj$type we denote by $\<p\>_\PP$ the filter in $\PP(\Delta)$ generated by $p$.
 
 
 
@@ -260,10 +335,15 @@ In particular $p$ is consistent if and only if $\<p\>_\PP$ is a proper filter.
 
 
 \begin{proof}
-Inclusion $\subseteq$ is clear. Inclusion $\supseteq$ is a consequence of the Compactness Theorem. In fact $p\proves\phi$ implies that $\psi\proves\phi$ for some formula $\psi$ that is conjunction of formulas in $p$. Then $\phi\in\<p\>_\PP$ follows from $\psi\in\<p\>_\PP$ and $\psi\le\phi$.
+Inclusion $\subseteq$ is clear.
+Inclusion $\supseteq$ is a consequence of the Compactness Theorem.
+In fact $p\proves\phi$ implies that $\psi\proves\phi$ for some formula $\psi$ that is conjunction of formulas in $p$.
+Then $\phi\in\<p\>_\PP$ follows from $\psi\in\<p\>_\PP$ and $\psi\le\phi$.
 \end{proof}
 
-We say that $p\subseteq\Delta$ is a \emph{principal $\Delta\jj$type\/} if $\<p\>_\PP$ is a principal. The following lemma is an immediate consequence of the Compactness Theorem. Note that in \ssf{3} the formula $\phi$ is arbitrary, possibly not even in $\PP(\Delta)$.
+We say that $p\subseteq\Delta$ is a \emph{principal $\Delta\jj$type\/} if $\<p\>_\PP$ is a principal.
+The following lemma is an immediate consequence of the Compactness Theorem.
+Note that in \ssf{3} the formula $\phi$ is arbitrary, possibly not even in $\PP(\Delta)$.
 
 \begin{lemma}
 For every $\Delta\jj$type $p$ the following are equivalent
@@ -275,11 +355,15 @@ For every $\Delta\jj$type $p$ the following are equivalent
 \end{lemma}
 
 \begin{proof}
-Implications \ssf{1}$\IMP$\ssf{2} is immediate by Lemma~\ref{lem_poiuyhdsdfd}. To prove \ssf{2}$\IMP$\ssf{3} suppose $\psi\proves p\proves\psi$. Apply compactness to obtain a formula $\phi$, conjunction of formulas in $p$, such that $\phi\proves\psi$. Implications \ssf{3}$\IMP$\ssf{1}is trivial.
+Implications \ssf{1}$\IMP$\ssf{2} is immediate by Lemma~\ref{lem_poiuyhdsdfd}.
+To prove \ssf{2}$\IMP$\ssf{3} suppose $\psi\proves p\proves\psi$.
+Apply compactness to obtain a formula $\phi$, conjunction of formulas in $p$, such that $\phi\proves\psi$.
+Implications \ssf{3}$\IMP$\ssf{1}is trivial.
 \end{proof}
 
 \begin{definition}
-We say that $p\subseteq\Delta$ is a \emph{prime $\Delta\jj$type\/} if $\<p\>_\PP$ is a  prime filter. We say that $p$ is a \emph{complete $\Delta\jj$type\/} if $\<p\>_\PP$ is a maximal filter.\QED
+We say that $p\subseteq\Delta$ is a \emph{prime $\Delta\jj$type\/} if $\<p\>_\PP$ is a  prime filter.
+We say that $p$ is a \emph{complete $\Delta\jj$type\/} if $\<p\>_\PP$ is a maximal filter.\QED
 \end{definition}
 
 Though in general neither $\Delta$ nor $\PP(\Delta)$ are closed under negation, Lemma~\ref{lem_poiuyhdsdfd} has the following consequence.
@@ -292,16 +376,27 @@ For every consistent $\Delta\jj$type $p$ the following are equivalent
 \end{itemize}
 \end{proposition}
 \begin{proof}
-\ssf{2}$\IMP$\ssf{1}. Assume \ssf{2}. As $p$ is consistent, $\<p\>_\PP$ is a proper filter. To prove that it is maximal suppose $\phi\notin\<p\>_\PP$. Then $p\notproves\phi$ and from \ssf{2} it follows that  $p\proves\neg\phi$. Hence no proper filter contains $p\cup\{\phi\}$.
+\ssf{2}$\IMP$\ssf{1}.
+Assume \ssf{2}.
+As $p$ is consistent, $\<p\>_\PP$ is a proper filter.
+To prove that it is maximal suppose $\phi\notin\<p\>_\PP$.
+Then $p\notproves\phi$ and from \ssf{2} it follows that  $p\proves\neg\phi$.
+Hence no proper filter contains $p\cup\{\phi\}$.
 
-\ssf{1}$\IMP$\ssf{2}. As $\<p\>_\PP$ is proper, $p$ is consistent. Suppose $p\notproves\phi$. Then $\phi\notin\<p\>_\PP$ and, as $\<p\>_\PP$ is maximal, $p\cup\{\phi\}$ generates the improper filter. Then $p\cup\{\phi\}$ is inconsistent. Hence $p\proves\neg\phi$.
+\ssf{1}$\IMP$\ssf{2}.
+As $\<p\>_\PP$ is proper, $p$ is consistent.
+Suppose $p\notproves\phi$.
+Then $\phi\notin\<p\>_\PP$ and, as $\<p\>_\PP$ is maximal, $p\cup\{\phi\}$ generates the improper filter.
+Then $p\cup\{\phi\}$ is inconsistent.
+Hence $p\proves\neg\phi$.
 \end{proof}
 
 Given a model $M$ and a tuple $c\in M^{|x|}$ the \emph{$\Delta\jj$type of $c$ in $M$\/} is the sets
 
 \ceq{\hfill \emph{$\Delta\jj$tp$_M(c)$}}{=}{\Big\{\phi(x)\in\Delta\ :\ M\models\phi(c)\Big\}}
 
-When the model $M$ is clear from the context we omit the subscript. When $x$ and $c$ are the empty tuple, we write \emph{$\Th_\Delta(M)$} for $\Deltatp_M(c)$.
+When the model $M$ is clear from the context we omit the subscript.
+When $x$ and $c$ are the empty tuple, we write \emph{$\Th_\Delta(M)$} for $\Deltatp_M(c)$.
 
 \begin{lemma}\label{lemmatipiprimiconsistenti}
 For every $\Delta\jj$type $p$ the following are equivalent
@@ -312,14 +407,16 @@ For every $\Delta\jj$type $p$ the following are equivalent
 \end{itemize}
 \end{lemma}
 \begin{proof}
-Implications \ssf{2}$\IMP$\ssf{3}$\IMP$\ssf{1} are clear, we prove \ssf{1}$\IMP$\ssf{2}. By compactness if the type in \ssf{2} is inconsistent then there are finitely many formulas $\phi_1,\dots,\phi_n\in\Delta$ such that $p\notproves\phi_i$ and
+Implications \ssf{2}$\IMP$\ssf{3}$\IMP$\ssf{1} are clear, we prove \ssf{1}$\IMP$\ssf{2}.
+By compactness if the type in \ssf{2} is inconsistent then there are finitely many formulas $\phi_1,\dots,\phi_n\in\Delta$ such that $p\notproves\phi_i$ and
 
 \ceq{\hfill p}{\proves}{\bigvee^n_{i=1}\phi_i.}
 
 hence $p$ is not prime.
 \end{proof}
 
-The following corollary is immediate. When it comes to verifying that a given $\Delta\jj$type is prime, it simplifies the proof.
+The following corollary is immediate.
+When it comes to verifying that a given $\Delta\jj$type is prime, it simplifies the proof.
 
 \begin{corollary}\label{coroll_test_primalita}
 For every $\Delta\jj$type $p$ the following are equivalent
@@ -329,13 +426,19 @@ For every $\Delta\jj$type $p$ the following are equivalent
 \end{itemize}
 \end{corollary}
 
-The set $\Delta$ above contains only formulas with variables among those of the tuple $x$. In the following it is convenient to consider sets $\Delta$ that are closed under substitution of variables with any other variable. The set of prime $\Delta\jj$types is denoted by \emph{$S(\Delta)$}, and we write \emph{$S_x(\Delta)$\/} when we restrict to types in with variables among those of the tuple $x$.
+The set $\Delta$ above contains only formulas with variables among those of the tuple $x$.
+In the following it is convenient to consider sets $\Delta$ that are closed under substitution of variables with any other variable.
+The set of prime $\Delta\jj$types is denoted by \emph{$S(\Delta)$}, and we write \emph{$S_x(\Delta)$\/} when we restrict to types in with variables among those of the tuple $x$.
 
-The most common $\Delta$ used in the sequel is the set of all formulas in $L(A)$ and the underlying theory is $\Th(M/A)$ for some given model $M$ containing $A$. In this case we write \emph{tp$_M(c/A)$} for $\Deltatp_M(c)$ or, when $A$ is empty, \emph{tp$_M(c)$}. The set $S_x(\Delta)$ is denoted by $S_x(A)$. The topology on  $S_x(A)$ is generated by the clopen
+The most common $\Delta$ used in the sequel is the set of all formulas in $L(A)$ and the underlying theory is $\Th(M/A)$ for some given model $M$ containing $A$.
+In this case we write \emph{tp$_M(c/A)$} for $\Deltatp_M(c)$ or, when $A$ is empty, \emph{tp$_M(c)$}.
+The set $S_x(\Delta)$ is denoted by $S_x(A)$.
+The topology on  $S_x(A)$ is generated by the clopen
 
 \ceq{\hfill\big[\phi(x)\big]}{=}{\Big\{p\in S_x(A)\ :\ \phi(x)\in p\Big\}.}
 
-Sometimes $\Delta$ is the set of all formulas of a given syntactic form. Then we use some more suggestive notation that we summarize below.
+Sometimes $\Delta$ is the set of all formulas of a given syntactic form.
+Then we use some more suggestive notation that we summarize below.
 
 \begin{notation}\label{note_tipi_diagramma}
 The following are some of the most common $\Delta$-types and $\Delta$-theories
@@ -348,11 +451,13 @@ The following are some of the most common $\Delta$-types and $\Delta$-theories
 
 \ceq{\ssf{3.}\hfill\emph{$\qftp(c)$},}{\emph{$\Th_{\textrm{\scriptsize qf}}(M)$\/}}\qquad when $\Delta=\qfL$.
 
-Clearly, the types/theories in \ssf{2} and \ssf{3} are equivalent. Most used is the theory $\Th_{\textrm{\scriptsize at}^\pm}(M/M)$ which is called the \emph{diagram of $M$\/} and has a dedicated symbol: \emph{Diag$(M)$}.\QED
+Clearly, the types/theories in \ssf{2} and \ssf{3} are equivalent.
+Most used is the theory $\Th_{\textrm{\scriptsize at}^\pm}(M/M)$ which is called the \emph{diagram of $M$\/} and has a dedicated symbol: \emph{Diag$(M)$}.\QED
 \end{notation}
 
 \begin{remark}\label{rem_diagram}
-Let $A\subseteq M\cap N$. The following are equivalent
+Let $A\subseteq M\cap N$.
+The following are equivalent
 \begin{itemize}
 \item[1.] $N\models\Diag\<A\>_M$;
 \item[2.] $\<A\>_M$ is a substructure of $N$.\QED
@@ -386,19 +491,26 @@ A \emph{map\/} consists a triple $f:M\imp N$ where
 By \emph{cardinality of $f:M\imp N$\/} we understand the cardinality of the function $f$.\QED
 \end{definition}
 
-If $\dom f = M$ we say that the map is \emph{total}; if $\range f=N$ we say that it is \emph{surjective\/}. The \emph{composition\/} of two maps and the \emph{inverse\/} of a map are defined in the obvious way.
+If $\dom f = M$ we say that the map is \emph{total}; if $\range f=N$ we say that it is \emph{surjective\/}.
+The \emph{composition\/} of two maps and the \emph{inverse\/} of a map are defined in the obvious way.
 
 \begin{definition}\label{defpreservaveritas}
-Let $\Delta$ be a set of formulas with free variables in the tuple $x=\<x_i: i<\lambda\>$. The map $h:M\imp N$ is a \emph{$\Delta\jj$morphism\/} if it  \emph{preserves the truth\/} of all formulas in $\Delta$. By this we mean that
+Let $\Delta$ be a set of formulas with free variables in the tuple $x=\<x_i: i<\lambda\>$.
+The map $h:M\imp N$ is a \emph{$\Delta\jj$morphism\/} if it  \emph{preserves the truth\/} of all formulas in $\Delta$.
+By this we mean that
 \begin{itemize}
 \item[p.] $M\models\phi(a)\ \ \IMP\ \ N\models\phi(ha)$\hfill for every $\phi(x)\in\Delta$ and every $a\in(\dom h)^{|x|}$.
 \end{itemize}
 Notation: if $a$ is the tuple $\<a_i: i<\lambda\>$ then $ha$ is the tuple $\<ha_i: i<\lambda\>$.\QED
 \end{definition}
 
-When $\Delta=L$ we say \emph{elementary map\/} for $\Delta\jj$morphism. When  $\Delta=\atL\ $ we say  \emph{partial homomorphism\/} and when $\Delta=\atpmL\ $ we say \emph{partial embedding\/} or \emph{partial isomorphism}. The reason for the latter name is explained in Remark~\ref{rem_extension_homo}.
+When $\Delta=L$ we will say \emph{elementary map\/} for $\Delta\jj$morphism.
+When  $\Delta=\atL$ we say  \emph{partial homomorphism\/} and when $\Delta=\atpmL$ we say either \emph{partial embedding\/} or \emph{partial isomorphism}.
+The reason for the latter name is explained in Remark~\ref{rem_extension_homo}.
 
-It is immediate to verify that a partial embedding which is total is an embedding (so, there is not conflict with Definition~\ref{isomorfismodef} above). Similarly, a partial embedding which is a total and surjective is an isomorphism. The precise connection between partial and total homo/iso-morphisms is discussed in following remark.
+It is immediate to verify that a partial embedding which is total is an embedding (so, there is not conflict with Definition~\ref{isomorfismodef} above).
+Similarly, a partial embedding which is a total and surjective is an isomorphism.
+The precise connection between partial and total homo/iso-morphisms is discussed in following remark.
 
 
 \begin{remark}\label{rem_extension_homo}
@@ -407,13 +519,19 @@ For every map  $h:M\to N$ the following are equivalent
 \item[1.] $h:M\to N$ is a partial isomorphism;
 \item[2.] there is an isomorphism $k:\<\dom h\>_M\to\<\range h\>_N$ that extends $h$.
 \end{itemize}
-Moreover, $k$ unique. The equivalence holds replacing isomorphism by homomorphism (in which case we in \ssf{2} we obtain an surjection). The extension $k$ is obtained defining $k\big(t(a)\big)=t(ha)$.
+Moreover, $k$ unique.
+The equivalence holds replacing isomorphism by homomorphism 
+(in which case in \ssf{2} we obtain an surjection).
+The extension $k$ is obtained defining $k\big(t(a)\big)=t(ha)$.
 
-A similar fact holds for partial homomorphims with epimorphism (surjective homomorphism) for isomorphism.\QED
+A similar fact holds for partial homomorphims if we replace isomorphism by epimorphism (surjective homomorphism).\QED
 \end{remark}
 
 
-We use $\Delta\jj$morphisms to compare, locally, two structures. There are different ways to do this, in the proposition below we list a few synonymous expressions. But first some more notation. When $x$ is a fixed tuple of variables, $a\in M^{|x|}$ and $b\in N^{|x|}$ we write
+We use $\Delta\jj$morphisms to compare, locally, two structures.
+There are different ways to do this, in the proposition below we list a few synonymous expressions.
+But first some more notation.
+When $x$ is a fixed tuple of variables, $a\in M^{|x|}$ and $b\in N^{|x|}$ we write
 
 \ceq{\hfill\emph{$M,a$}}{\emph{$\Rrightarrow_\Delta$}}{\emph{$N,b$}}\hfill if $M\models\phi(a)\IMP N\models\phi(b)$ for every $\phi(x)\in\Delta$.
 
@@ -434,19 +552,30 @@ For every given set of formulas $\Delta$ and every map $h:M\imp N$ the following
 
 
 \begin{remark}\label{rmk_characteristic}
-Condition \ssf{p} in Definition~\ref{defpreservaveritas} apply to tuples $x$ of any length, in particular to the empty tuple. In this case $\phi(x)$ is a sentence, $a\in(\dom h)^0=\{\0\}$ is the empty tuple, and \ssf{p} asserts that $\Th_\Delta(M)\subseteq\Th_\Delta(N)$. When $h=\0$ this is actually all that \ssf{p} says. In fact $\0^{|x|}=\0$ unless $|x|=0$. Still,  $\Th_\Delta(M)\subseteq\Th_\Delta(N)$ may be a non trivial requirement.\QED
+Condition \ssf{p} in Definition~\ref{defpreservaveritas} apply to tuples $x$ of any length, in particular to the empty tuple.
+In this case $\phi(x)$ is a sentence, $a\in(\dom h)^0=\{\0\}$ is the empty tuple, and \ssf{p} asserts that $\Th_\Delta(M)\subseteq\Th_\Delta(N)$.
+When $h=\0$ this is actually all that \ssf{p} says.
+In fact $\0^{|x|}=\0$ unless $|x|=0$.
+Still,  $\Th_\Delta(M)\subseteq\Th_\Delta(N)$ may be a non trivial requirement.\QED
 \end{remark}
 
 
 \begin{definition}\label{def_characteristic}
-We call $\Th_\Delta(M)$ the \emph{$\Delta\jj$characteristic} of $M$. We say that $T$  \emph{decides\/} the $\Delta\jj$characteristic if $\Th_\Delta(M)=\Th_\Delta(N)$ for all $M,N\models T$. In other words, for any pair of models of $T$, the empty map $\0:M\to N$ is a $\Delta$-morphism. When $\Delta=\atpmL$ we say simply \emph{characteristic}, then $T$ decides the characteristic $\<\0\>_M\simeq\<\0\>_N$ for all $M,N\models T$.\QED
+We call $\Th_\Delta(M)$ the \emph{$\Delta\jj$characteristic} of $M$.
+We say that $T$  \emph{decides\/} the $\Delta\jj$characteristic if $\Th_\Delta(M)=\Th_\Delta(N)$ for all $M,N\models T$.
+In other words, for any pair of models of $T$, the empty map $\0:M\to N$ is a $\Delta$-morphism.
+When $\Delta=\atpmL$ we say simply \emph{characteristic}, then $T$ decides the characteristic $\<\0\>_M\simeq\<\0\>_N$ for all $M,N\models T$.\QED
 \end{definition}
 
 
 
-We conclude this section with a couple of propositions that break Theorem~\ref{isomorfoeleq} into parts. More interestingly, in Chapter~\ref{elimination} we shall prove a sort of converse of Propositions~\ref{presesis} and~\ref{presuniv}.
+We conclude this section with a couple of propositions that break Theorem~\ref{isomorfoeleq} into parts.
+More interestingly, in Chapter~\ref{elimination} we shall prove a sort of converse of Propositions~\ref{presesis} and~\ref{presuniv}.
 
-Though the following is not immediately required, it is interesting to note that here is a relation between some properties of $\Delta\jj$morphisms and the closure of $\Delta$ under logical connectives. When $\ssf{C}\subseteq\{\A,\E,\neg,\vee,\wedge\}$ is a set of connectives, we write \emph{$\ssf{C}\Delta$} for the closure of $\Delta$ with respect to all connectives in $\ssf{C}$. We write \emph{$\neg\Delta$} for the set containing the negation of the formulas in $\Delta$. Warning: do not confuse $\neg\Delta$ with $\{\neg\}\Delta$.
+Though the following is not immediately required, it is interesting to note that here is a relation between some properties of $\Delta\jj$morphisms and the closure of $\Delta$ under logical connectives.
+When $\ssf{C}\subseteq\{\A,\E,\neg,\vee,\wedge\}$ is a set of connectives, we write \emph{$\ssf{C}\Delta$} for the closure of $\Delta$ with respect to all connectives in $\ssf{C}$.
+We write \emph{$\neg\Delta$} for the set containing the negation of the formulas in $\Delta$.
+Warning: do not confuse $\neg\Delta$ with $\{\neg\}\Delta$.
 
 It is clear that $\Delta$-morphisms are  $\{\wedge,\vee\}\Delta\jj$morphisms.
 
@@ -462,7 +591,8 @@ For every given set of formulas $\Delta$ and every injective map $h:M\imp N$ the
 For every set of formulas $\Delta$, every $\Delta\jj$embedding $h:M\to N$ is a $\{\E\}\Delta\jj$mor\-phism.
 \end{proposition}
 \begin{proof}
-Formulas in $\{\E\}\Delta$ have the form $\E y\,\phi(x,y)$ where $y$ is a finite tuples of variables and  $\phi(x,y)\in\Delta$. For every tuple $a\in(\dom h)^{|x|}$ we have:
+Formulas in $\{\E\}\Delta$ have the form $\E y\,\phi(x,y)$ where $y$ is a finite tuples of variables and  $\phi(x,y)\in\Delta$.
+For every tuple $a\in(\dom h)^{|x|}$ we have:
 
 \hfil
 $\begin{array}{rcl}
@@ -476,7 +606,8 @@ M\models\E y\,\phi(a,y) %&\IFF&\\
 Note that the second implication requires the totality of  $h:M\to N$ which guarantees that $\phi(a,y)$ has a solution in $\dom h$.
 \end{proof}
 
-When $h:M\to N$ is injective the following is a corollary of Propositions~\ref{presneg} and~\ref{presesis}. The general proof is the `dual' of that of Propositions~\ref{presesis}.
+When $h:M\to N$ is injective the following is a corollary of Propositions~\ref{presneg} and~\ref{presesis}.
+The general proof is the `dual' of that of Propositions~\ref{presesis}.
 
 \begin{proposition}\label{presuniv}
 For every set of formulas $\Delta$, every surjective $\Delta\jj$morphism $h:M\to N$ is a $\{\A\}\Delta\jj$mor\-phism.\QED
