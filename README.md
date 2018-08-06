@@ -86,15 +86,14 @@ Lecture notes for an introductory (under)graduate course.
 *  **Invariant sets**
    * Invariant sets and types
    * Invariance from the dual perspective
-   * Coheirs
+   * Heirs and coheirs
    * Morley sequences and indiscernibles
 *  **Ramsey theory**
    * Ramsey theorem from coheir sequences
    * Ehrenfeucht-Mostowski construction of indiscernibles
-   * Indempotent types in semigroups (crap)
-   * Hindmann theorem
-   * Crap (this section ought to be hidden)
-   * Hales-Jewett theorem (this section ought to be hidden)
+   * Indempotent orbits in semigroups
+   * Hindman theorem
+   * Hales-Jewett theorem
 *  **Lascar invariant sets**
    * Expansions
    * Lascar strong types
@@ -109,9 +108,5 @@ Lecture notes for an introductory (under)graduate course.
    * Stable theories
    * Stability and the number of types
    * Notes and references
-*  **Measures???**
-   * Keisler measures
-   * Borel measures
-   * Extension of Keisler measures
-   * Smooth measures
-   * Measure extension
+*  **Keisler measures**
+   * T.b.c.
