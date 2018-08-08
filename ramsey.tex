@@ -67,21 +67,19 @@ Pick any type $p({\mr x})\in S(\U)$ finitely satisfied in $M$ but not realized i
 There is a first-order sentence saying that the formulas $r_i({\mr x_1},\dots,{\mr x_n})$ are a coloring of ${M\choose n}$.
 Then by elementarity the same hols in $\U$.
 By indiscernibility,
-all tuples of $n$ distinct elements of ${\mr\bar c}$ have the same color.
+all tuples of $n$ distinct elements of ${\mr\bar c}$ have the same color, say \textit{red}.
 
 %\ceq{\ssf{\#}\hfill M}{\models}{\A {\mr x_0},\dots,{\mr x_{n-1}}\ \left[\bigwedge_{0\le i<j<n} {\mr x_i}\neq {\mr x_j}\quad\imp\quad\bigvee_{i<k}r_i({\mr x_0},\dots,{\mr x_{n-1}})\right].}
 
-
 Note parenthetically that no element of ${\mr\bar c}$ is in $M$.
-The theorem is proved if we can find in $M$ a sequence ${\mr\bar a}=\<{\mr a_i}:i<\omega\>$ with the same property.
+The theorem is proved if we can find in $M$ a sequence ${\mr\bar a}=\<{\mr a_i}:i<\omega\>$ with the same color.
 We construct ${\mr a_{\restriction i}}$ by induction on $i$ as follows.
 
-
-Assume as induction hypothesis that the subsequences of length $n$ of ${\mr a_{\restriction i}},{\mr c_{\restriction n}}$ are monochromatic.
+Assume as induction hypothesis that the subsequences of length $n$ of ${\mr a_{\restriction i}},{\mr c_{\restriction n}}$ are all red.
 Our goal is to find ${\mr a_i}$ such as the same property holds for ${\mr a_{\restriction i}},{\mr a_i},{\mr c_{\restriction n}}$.
 By the indiscernibility of ${\mr\bar c}$,
 the property holds for  ${\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr{c_n}}$.
- And this can be written by a formula $\phi({\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr{c_n}})$.
+And this can be written by a formula $\phi({\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr{c_n}})$.
 As ${\mr\bar c}$ is a coheir sequence,
 by Lemma~\ref{lem_coheir_property} we can find  ${\mr a_i}\in M$ such that  $\phi({\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr a_i})$.
 So,
@@ -295,7 +293,7 @@ Hence ${\mr a}{\cdot}{\mr b}\equiv_A{\mr a}{\cdot}{\mr b'}$ which proves the cla
 \end{proof}
 
 \begin{corollary}[(associativity)]\label{corol_orbits_associative}
-Assume $\nonforkc_{\!M}$ is $1$-stationary and let $M$ be a model.
+Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
 Then for every $M$-invariant sets $\mrA$,
 $\mrB$ and  $\mrC$.
 
@@ -316,7 +314,7 @@ But inclusion between orbits amounts to equality.
 \end{proof}
 
 \begin{lemma}\label{lem_Hindman}
-Assume $\nonforkc_{\!M}$ is $1$-stationary and let $M$ be a model.
+Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
 If $\mrA$ is minimal among the  $M$-invariant,
 idempotent,
 type-definable sets then $\mrA=\O({\mr a}/M)$ for some element ${\mr a}$.
@@ -427,7 +425,7 @@ see Definition~\ref{def_coheir_stationary}.
 Fix ${\mr a}\nonforkc_{\!A}{\mr b}$ arbitrarily.
 Then ${\mr a'}{\cdot}{\mr b'}\equiv_A{\mr a}{\cdot}{\mr b}$ for every ${\mr a'}\equiv_A{\mr a}$ and  ${\mr b'}\equiv_A{\mr b}$. Or, in other words,
 
-\ceq{\hfill({\mr a}{\cdot}{\mr b})_A}{=}{{\mr a}\cdot_{\!A}{\mr b}}
+\ceq{\hfill({\mr a}{\cdot}{\mr b})_A}{=}{{\mr a}\cdot_{\!A}{\mr b}.}
 \end{proposition}
 \begin{proof} 
 We prove two inclusions,
@@ -449,7 +447,7 @@ Hence ${\mr a}{\cdot}{\mr b}\equiv_A{\mr a}{\cdot}{\mr b'}$ which proves the cla
 \end{proof}
 
 \begin{corollary}[(associativity)]\label{corol_orbits_associative}
-Assume $\nonforkc_{\!M}$ is $1$-stationary and let $M$ be a model.
+Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
 Then for every $M$-invariant sets $\mrA$,
 $\mrB$ and  $\mrC$.
 
@@ -470,10 +468,10 @@ But inclusion between orbits amounts to equality.
 \end{proof}
 
 \begin{lemma}\label{lem_Hindman}
-Assume $\nonforkc_{\!M}$ is $1$-stationary and let $M$ be a model.
-If $\mrA$ is minimal among the  $M$-invariant,
-idempotent,
-type-definable sets then $\mrA=\O({\mr a}/M)$ for some (any) element ${\mr a}\in\mrA$.
+Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
+If $\mrA$ is minimal among the
+idempotent sets that are
+type-definable over $M$, then $\mrA=\O({\mr a}/M)$ for some (any) element ${\mr a}\in\mrA$.
 \end{lemma}
 \begin{proof}
 By Corollary~\ref{corol_min_idempotent},
@@ -489,7 +487,7 @@ The theorem follows by minimality.
 
 
 \begin{corollary}\label{corol_idempotent}
-Under the same assumptions as the lemma, every type-definable idempotent set contains an element with an idmepotent orbit.
+Under the same assumptions of the lemma above, every type-definable idempotent set contains an element with an idmepotent orbit.
 \end{corollary}
 
 
@@ -500,7 +498,7 @@ and let ${\mr\bar a}\in G^\omega$.
 We write $\fp_n({\mr\bar a})$ for the sets of products of $n$ elements of ${\mr\bar a}$ taken in increasing order.
 Namely,
 
-\ceq{\hfill\emph{$\fp_n({\mr\bar a})$}}{=}{\Big\{{\mr a_{i_1}}\kern-0.5ex\cdot\dots\cdot{\mr a_{i_n}}\ :\quad i_0<\dots<i_{n-1}<\omega\Big\}}.
+\ceq{\hfill\emph{$\fp_n({\mr\bar a})$}}{=}{\Big\{{\mr a_{i_1}}\kern-0.5ex\cdot\dots\cdot{\mr a_{i_n}}\ :\quad i_1<\dots<i_n<\omega\Big\}}.
 
 We agree that when ${\mr\bar a}$ is the empty tuple then $\fp_n({\mr\bar a})=\0$.
 Finally we define
@@ -541,16 +539,20 @@ Let ${\mr\bar c}$ be a coheir sequence such that
 
 By the idempotency of ${\mr b}_G$ and Proposition~\ref{prop_orbits_main}, ${\mr a}\equiv_G{\mr b}$ for all ${\mr a}\in \fp({\mr\bar c})$.
 It follows in particular that $\fp({\mr\bar c})$ is monochromatic.
-Now, we use the sequence ${\mr\bar c}$ to define ${\mr\bar a}\in G^\omega$ such that $\fp({\mr\bar a})$ is monochromatic.
+For definiteness, say the color \textit{red}.
+Now, we use the sequence ${\mr\bar c}$ to define ${\mr\bar a}\in G^\omega$ such that $\fp({\mr\bar a})$ is red.
 
-Assume as induction hypothesis that $\fp({\mr a_{\restriction i}},\,{\mr\bar c})$ is monochromatic.
-Our goal is to find ${\mr a_i}$ such as the same property holds for ${\mr a_{\restriction i}},\,{\mr a_i},\,{\mr\bar c}$.
+Assume as induction hypothesis that $\fp({\mr a_{\restriction i}},\,{\mr\bar c})$ is red.
+Our goal is to find ${\mr a_i}$ such that the same property holds for ${\mr a_{\restriction i}},\,{\mr a_i},\,{\mr\bar c}$.
 
-
-Let $\phi({\mr a_{\restriction i}},\,{\mr c_i},\,{\mr c_{\restriction i}})$ be the sentence that says $\fp_{i+1}({\mr a_{\restriction i}},\,{\mr c_i},\,{\mr c_{\restriction i}})$ is monochromatic.
-As ${\mr\bar c}$ is a coheir sequence we can find  ${\mr a_i}\in M$ such that $\phi({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr c_{\restriction i}})$.
-  Hence $\fp_{i+1}({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr c_{\restriction i}})$ is monochromatic.
- As ${\mr\bar c}$ is indiscernible over $G$, this is equivalent to  $\fp({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr\bar c})$.
+Let $\phi({\mr a_{\restriction i}},\,{\mr c_i},\,{\mr c_{\restriction i}})$ 
+be the sentence that says that 
+$\fp_{i+1}({\mr a_{\restriction i}},\,{\mr c_i},\,{\mr c_{\restriction i}})$ is red.
+As ${\mr\bar c}$ is a coheir sequence we can find  ${\mr a_i}\in M$ 
+such that $\phi({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr c_{\restriction i}})$.
+Hence $\fp_{i+1}({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr c_{\restriction i}})$ is red.
+As ${\mr\bar c}$ is indiscernible over $G$, 
+this is equivalent to $\fp({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr\bar c})$.
 \end{proof}
 
 \section{Hales-Jewett theorem}
@@ -573,7 +575,7 @@ As ${\mr b}\cdot_{\!A}\mrU$ is clearly idempotent, by Corollary~\ref{corol_idemp
 \end{proof}
 
 \begin{proposition}\label{prop_minimal_existence2}
-Assume $\nonforkc_{\!M}$ is $1$-stationary and let $M$ be a model.
+Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
 If ${\mr a}$ is right-minimal and has idempotent orbit, 
 then ${\mr a}\equiv_M{\mr b}$ 
 for every idempotent ${\mr b}\in\big({\mr a}\cdot_M\mrU\big)\cap\big(\mrU\cdot_M{\mr a}\big)$.
@@ -588,7 +590,7 @@ Therefore, from the idempotency of ${\mr b}_M$ we obtain ${\mr a}_M={\mr b}\cdot
 The following is a technical lemma that is required for the proof of the main theorem.
 
 \begin{proposition}\label{prop_HJ_tecnical}
-Assume $\nonforkc_{\!M}$ is $1$-stationary and let $M$ be a model.
+Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
 Let $\sigma:\mrU\to\mrU$ be a definable semigroup homomorphism.
 Then 
 \begin{itemize}
@@ -608,7 +610,7 @@ $\E{\mr y}\,\big[\sigma({\mr y})={\mr x}\,\wedge\,{\mr y}\equiv_M{\mr a}\big]$
 is trivially realized by $\sigma({\mr a})$.
 By invariance it is equivalent to a type over $A$.
 Therefore it is realized by all elements of $\sigma({\mr a})_M$.
-Hence all elements of $\sigma({\mr a})_M$ are image of some element in ${\mr a}_M$.
+Hence all elements of $\sigma({\mr a})_M$ are the image of some element in ${\mr a}_M$.
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{33ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
@@ -679,6 +681,8 @@ Though the element ${\mr v}$ above need not belong to $G\sm C$,
 by elementarity $G\sm C$ contains some ${\mr g}$ with the same property and this proves the theorem.
 \end{proof}
 
+We conclude by showing how the classical Hales-Jewett's theorem follows from theorem above.
+
 \theoremstyle{mio}
 \newtheorem{HalesJewett}[thm]{Hales-Jewett Theorem}
 \begin{HalesJewett}\label{thm_HalesJewett}
@@ -698,10 +702,66 @@ Recall that $t(x/\sigma)$ denotes the substitution of $\sigma$ for $x$ in $t$.
 Now we apply the theorem above.
 \end{proof}
 
-\begin{comment}
-We know to combine the ideas used in the proofs 
+It is a simple exercise to combine the ideas used in the proofs 
 of Hindman's theorem and Hales-Jewett's theorem 
-to obtain the following. 
+to obtain the following.
+
+
+\begin{proposition}
+Let $G$ be a semigroup and let $C\subset G$ be a nice subsemigroup.
+Let $\sigma:G\to C$ be a retraction.
+Then for every finite coloring of $C$ there is a ${\mr\bar g}\in (G\sm C)^\omega$ 
+such that the sets 
+$\fp(\sigma({\mr\bar g})\big)$ is monochromatic.\QED
+\end{proposition}
+
+As a matter of fact, 
+combining the two theorems mentioned above we obtain a seemingly stronger proposition (which is not required for the following). 
+To state it, we need to extend the scope of $\fp(\mbox{-})$ so that we may apply it to sets of tuples of equal length.
+
+\ceq{\hfill\fp_n\{{\mr\bar g^j}\ :\ j\in J\} }{=}{\Big\{{\mr g^{j_1}_{i_1}}\kern-0.5ex\cdot\dots\cdot{\mr g^{j_n}_{i_n}}\ :\quad i_1<\dots<i_n<\alpha, \ \  j_1,\dots,j_n\in J\Big\}}.
+
+Finally $\fp(\mbox{-})$ is defined as the union of the $\fp_n(\mbox{-})$.
+
+Recall that $\sigma({\mr g_{\restriction\,\omega\sm n}})$ is the tuple $\<{\sigma(\mr g_{i+n} } ): i<\omega\>$. 
+
+
+\begin{proposition}
+Let $C$ be a semigroup and let $C\subset G$ be a nice subsemigroup.
+Let $\Sigma$ be a countable set of retractions of $G$ to $C$.
+Then for every finite coloring of $C$ there is a ${\mr\bar g}\in (G\sm C)^\omega$ 
+such that the sets 
+$\fp \{\sigma({\mr g_{\restriction\,\omega\sm n}})\,:\,\sigma\in\Sigma' \}$ are all monochromatic, 
+where $\Sigma'\subseteq\Sigma$ are arbitrary finite sets 
+and $n=n_{\Sigma'}$.
+\end{proposition}
+
+\begin{proof}[Proof (sketch)]
+Reasoning as in the proof of Theorem~\ref{thm_abstract_HJ}, 
+and with the same notation,
+we obtain an element ${\mr v}\in\mrV\sm\mrU$ with idempotent orbit 
+and such that all $\sigma({\mr v})$ for $\sigma\in\Sigma$
+have the same type over $G$.
+
+Let $p({\mr x})\in S(\mrV)$ be a global coheir of $\tp({\mr v}/G)$ and let ${\mr\bar v}$ 
+be a coheir sequence such that ${\mr v_i}\models p_{\restriction A_i }({\mr x})$ where 
+$A_i=G\, \cup\, \fp\{\sigma({\mr v_{\restriction i}})\ :\ \sigma\in\Sigma \}$.
+By the idempotency of ${\mr v}_G$ and Proposition~\ref{prop_orbits_main}, 
+${\mr a}\equiv_G{\mr v}$ for all ${\mr a}\in \fp({\mr\bar v})$.
+It follows in particular that $\fp({\mr\bar v})$ is monochromatic.
+For definiteness, call its color \textit{red}.
+
+Now we use ${\mr\bar v}$ to define the sequence ${\mr\bar g}$ required by the theorem.
+Assume $\Sigma$ is the union of some sequence of finite sets $\Sigma_n$. 
+Assume as induction hypothesis that 
+$\fp\{\sigma({\mr g_{\restriction n\sm i}},\,{\mr\bar c}) : \sigma\in\Sigma_i\}$ is red for all $i\le n$.
+We want ${\mr g_n}$ such that the same property holds
+for ${\mr g_{\restriction n+1}},\,{\mr\bar c}$ and for all $i\le n+1$.
+It suffices to verify that this is expressible by a first order formula and by reasoning as in the proof of Theorem~\ref{thm_Hindman}.
+\end{proof}
+
+
+\begin{comment}
 
 \begin{proposition}
 Let $G$ be a semigroup and let $C\subset G$ be a nice subsemigroup.
@@ -758,28 +818,6 @@ Then there is a sequence of retractions $\sigma_i:G\to C$ and
 an increasing tuple ${\mr\bar s}\in\fp({\mr\bar g})^\omega$ such that
 $\{\sigma_i({\mr s_i}):i<\omega\}$ is monochromatic disjoint of $C$..
 \end{theorem}
-
-
-\theoremstyle{mio}
-\newtheorem{Carlson}[thm]{Carlson Theorem}
-\begin{Carlson}\label{thm_HalesJewett}
-Let $C$ be an infinite semigroup.
-Fix a finite tuple of variables $x$.
-Let $G$ be the set of terms $t(x)$ with parameters in $C$  
-which we consider as a semigroup under the natural operation.
-
-For every coloring of $G$ there are two infinite sequences
-$\bar t=\<t_i:i\in\omega\>$ and $\bar s=\<s_i:i\in\omega\>$ 
-of terms in $G$ such that 
-\begin{itemize}
-\item[1.] None of the terms in $\bar t$ is constant.
-
-\item[2.] The set 
-$\displaystyle\bigg\{t(x/s_{\restriction I})\ :\ t\in\fp(\bar t)\textrm{ and }I\in{\omega\choose |x|}\bigg\}$
-is monochromatic.
-\end{itemize}
-\end{Carlson}
-
 
 % 
 % \section{Crap (if this is publicly available, it's just by errror)}
