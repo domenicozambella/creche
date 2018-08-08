@@ -298,7 +298,13 @@ diagrams={>=latex}
 
 \begin{document}
 \raggedbottom
-\renewcommand{\contentsname}{A Cr\`eche Course in Model Theory\\[3ex] \normalfont\normalsize Domenico Zambella\vskip-1ex Università di Torino\vskip-1ex \monthname\ \the\year}
+\renewcommand{\contentsname}{%
+A Cr\`eche Course in Model Theory\\[3ex]%
+\parbox{\textwidth}{\normalfont\normalsize
+Domenico Zambella\\
+Università di Torino\\
+ORCID:~\href{https://orcid.org/0000-0003-1141-2898}{000-0003-1141-2898}\\[1ex]
+\monthname\ \the\year}}
 \tableofcontents
 \subfile{preface}
 \subfile{preliminaries}
