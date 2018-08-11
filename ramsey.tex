@@ -555,8 +555,11 @@ As ${\mr\bar c}$ is indiscernible over $G$,
 this is equivalent to $\fp({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr\bar c})$.
 \end{proof}
 
-\section{Hales-Jewett theorem}
-\def\mrI{{\mr\I}} 
+\section{Hales-Jewett Theorem}
+
+Hales-Juvett's theorem is a purely combinatorial statement that implies van der Waerden's theorem.  The original proof Alfred Hales and Robert Jewett is combinatorial. An alternative proof, also combinatorial, has been given by Sheron Shelah. Our proof uses similar tools as Andreas Blass' proof. But we use saturation where he uses Stone-Check compactification. We present two versions of the main theorem. First we prove an abstract algebraic version due to Sabine Koppelberg which is easier to state and to prove. Finally the classical version is derived from the algebraic one.
+
+We need a few definitions. 
 We say that a set $\mrA$ is a \emph{right-ideal\/} if $\mrA\cdot_{\!A}\mrU=\mrA$.
 We say that an element ${\mr a}$ is \emph{right-minimal\/} if 
 ${\mr a}\in{\mr b}\cdot_{\!A}\mrU$ for every ${\mr b}\in{\mr a}\cdot_{\!A}\mrU$.
@@ -576,26 +579,27 @@ As ${\mr b}\cdot_{\!A}\mrU$ is clearly idempotent, by Corollary~\ref{corol_idemp
 
 \begin{proposition}\label{prop_minimal_existence2}
 Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
-Let ${\mr a}$ be right-minimal with idempotent orbit. 
+Let ${\mr a}$ have idempotent orbit. 
 Then 
 \begin{itemize}
 \item[1.] $\big({\mr a}\cdot_M\mrU\big)\cap\big(\mrU\cdot_M{\mr a}\big)$ 
-contains some element ${\mr b}$ with idempotent orbit;
-\item[2.] ${\mr a}\equiv_M{\mr b}$ for every ${\mr b}$ as in \ssf{1}.
+contains some ${\mr b}$ with idempotent orbit;
+\item[2.] moreover, if ${\mr a}$ is right-minimal, then ${\mr a}\equiv_M{\mr b}$ for every ${\mr b}$ as in \ssf{1}.
 \end{itemize}
 \end{proposition}
 \begin{proof} 
-The set in \ssf{1} is not type-definable, 
+Note, parenthetically, that the set in \ssf{1} may not be type-definable, 
 therefore Corollary~\ref{corol_idempotent} does not apply 
-directly and we need a more involved argument.
+directly and we need an indirect argument.
 \begin{itemize}
 \item[1.] Pick ${\mr c}\in{\mr a}\cdot_M\mrU$ with idempotent orbit.
 Such ${\mr c}$ exists by Corollary~\ref{corol_idempotent}.
 From the idempotency of ${\mr a}_M$ we obtain ${\mr c}_M={\mr a}\cdot_M{\mr c}$. 
-From the right-minimality of ${\mr a}$ we infer that ${\mr a}\in{\mr c}\cdot_M\mrU$ 
-and, by the idempotency of ${\mr c}_M$, that ${\mr a}_M={\mr c}\cdot_M{\mr a}$.
+% From the right-minimality of ${\mr a}$ we infer that ${\mr a}\in{\mr c}\cdot_M\mrU$ 
+% and, by the idempotency of ${\mr c}_M$, that ${\mr a}_M={\mr c}\cdot_M{\mr a}$.
 Now it is immediate to verify that any ${\mr b}\in{\mr a}\cdot_M{\mr c}\cdot_M{\mr a}$ is as required by \ssf{1}.
-\item[2.] From ${\mr b}\in\mrU\cdot_M{\mr a}$ and idempotency of ${\mr a}_M$ we obtain ${\mr b}_M={\mr b}\cdot_M{\mr a}$. From the right-minimality of ${\mr a}_M$ we infer that ${\mr a}\in{\mr b}\cdot_M\mrU$. Hence, ${\mr a}_M={\mr b}\cdot_M{\mr a}$, by the idempotency of ${\mr b}$. Therefore ${\mr a}\equiv_M{\mr b}$.
+\item[2.] From ${\mr b}\in\mrU\cdot_M{\mr a}$ and idempotency of ${\mr a}_M$ we obtain ${\mr b}_M={\mr b}\cdot_M{\mr a}$. From the right-minimality of ${\mr a}_M$ we infer that ${\mr a}\in{\mr b}\cdot_M\mrU$. Hence ${\mr a}_M={\mr b}\cdot_M{\mr a}$, by the idempotency of ${\mr b}$. Therefore ${\mr a}_M={\mr b}_M$, which proves \ssf{2}.
+.
 \end{itemize}\vskip-1.2\baselineskip
 \end{proof}
 
@@ -643,18 +647,13 @@ which is in turn contained in the set on the r.h.s.
 \end{itemize}\vskip-1.2\baselineskip
 \end{proof}
 
-
-The following theorem is an abstract version of the Hales-Jewett theorem due to Sabine Koppelberg
-that is easier to state and to prove.
-It requires the following definition.
-
 Let $G$ be a semigroup.
 A \emph{nice subsemigroup\/} of $G$ is a subsemigroup $C$ with the property that if ${\mr a}{\cdot}{\mr b}\in C$ then both ${\mr a},{\mr b}\in C$.
 
 
 \theoremstyle{mio}
 \newtheorem{HalesJewett}[thm]{Hales-Jewett Theorem}
-\begin{HalesJewett}[(abstract version)]\label{thm_abstract_HJ}
+\begin{HalesJewett}[(algebraic version)]\label{thm_abstract_HJ}
 Let $G$ be a semigroup and let $C\subset G$ be a nice subsemigroup.
 Let $\Sigma$ be a finite set of retractions of $G$ to $C$, that is, 
 homomorphisms $\sigma:G\to C$ such that $\sigma_{\restriction C}={\rm id}_C$.
@@ -674,15 +673,14 @@ The language contains also symbols for
 the retractions $\sigma:\mrV\to\mrU$.
 
 Let ${\mr a}\in\mrU$ be right-minimal with idempotent orbit over $G$.
-Therefore, by Proposition~\ref{prop_minimal_existence2}, ${\mr a}\equiv_G{\mr b}$
+Such ${\mr a}$ exists by  Proposition~\ref{prop_minimal_existence1}.%Therefore, by Proposition~\ref{prop_minimal_existence2}, ${\mr a}\equiv_G{\mr b}$
 for every idempotent ${\mr b}\in\big({\mr a}\cdot_G\mrU\big)\cap\big(\mrU\cdot_G{\mr a}\big)$.
 
 We move to $\mrV$ as ambient semigroup.
-The intersection of $\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$ 
-with $\mrV\sm\mrU$ is non empty, because by nicety both sets contain 
-${\mr a}\cdot_G\big(\mrV\sm\mrU\big)\cdot_G{\mr a}$.
-This intersection is easily seen to be an idempotent set.
-Hence, by Corollary~\ref{corol_idempotent} it contains some ${\mr v}$ with idempotent orbit. Now, from ${\mr v}\in\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$
+Inspection of the proof of claim \ssf{1} in Proposition~\ref{prop_minimal_existence2} and nicety, 
+we know that there is a ${\mr v}\in\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$ 
+with idempotent orbit.
+Now, from ${\mr v}\in\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$
 and Proposition~\ref{prop_HJ_tecnical}, we obtain 
 $\sigma\,{\mr v}\in\big({\mr a}\cdot_G\mrU\big)\cap\big(\mrU\cdot_G{\mr a}\big)$
 for all $\sigma\in\Sigma$.
@@ -781,10 +779,8 @@ It suffices to verify that this is expressible by a first order formula, and the
 Let $<$ be a transitive relation on the elements of a semigroup $\mrU$.
 
 \begin{itemize}
-\item[1.] irreflexive 
-\item[2.] transitive
-\item[3.] upward directed: for every $a,b$ there is $c$ such that $a,b<c$;
-\item[4.] $a<b,c$ implies $a<b{\cdot}c$.
+\item[1.] upward directed: for every ${\mr a},{\mr b}$ there is ${\mr c}$ such that ${\mr a},{\mr b}<{\mr c}$;
+\item[2.] ${\mr a}<{\mr b},{\mr c}$ implies ${\mr a}<{\mr b}{\cdot}{\mr c}$.
 \end{itemize}
 
 The set $\mrA\subseteq\mrU$ is \emph{\dotgt-closed\/} 
