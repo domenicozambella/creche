@@ -555,8 +555,11 @@ As ${\mr\bar c}$ is indiscernible over $G$,
 this is equivalent to $\fp({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr\bar c})$.
 \end{proof}
 
-\section{Hales-Jewett theorem}
-\def\mrI{{\mr\I}} 
+\section{Hales-Jewett Theorem}
+
+Hales-Juvett's theorem is a purely combinatorial statement that implies van der Waerden's theorem.  The original proof Alfred Hales and Robert Jewett is combinatorial. An alternative proof, also combinatorial, has been given by Sheron Shelah. Our proof uses similar tools as Andreas Blass' proof. But we use saturation where he uses Stone-Check compactification. We present two versions of the main theorem. First we prove an abstract algebraic version due to Sabine Koppelberg which is easier to state and to prove. Finally the classical version is derived from the algebraic one.
+
+We need a few definitions. 
 We say that a set $\mrA$ is a \emph{right-ideal\/} if $\mrA\cdot_{\!A}\mrU=\mrA$.
 We say that an element ${\mr a}$ is \emph{right-minimal\/} if 
 ${\mr a}\in{\mr b}\cdot_{\!A}\mrU$ for every ${\mr b}\in{\mr a}\cdot_{\!A}\mrU$.
@@ -576,15 +579,28 @@ As ${\mr b}\cdot_{\!A}\mrU$ is clearly idempotent, by Corollary~\ref{corol_idemp
 
 \begin{proposition}\label{prop_minimal_existence2}
 Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
-If ${\mr a}$ is right-minimal and has idempotent orbit, 
-then ${\mr a}\equiv_M{\mr b}$ 
-for every idempotent ${\mr b}\in\big({\mr a}\cdot_M\mrU\big)\cap\big(\mrU\cdot_M{\mr a}\big)$.
+Let ${\mr a}$ have idempotent orbit. 
+Then 
+\begin{itemize}
+\item[1.] $\big({\mr a}\cdot_M\mrU\big)\cap\big(\mrU\cdot_M{\mr a}\big)$ 
+contains some ${\mr b}$ with idempotent orbit;
+\item[2.] moreover, if ${\mr a}$ is right-minimal, then ${\mr a}\equiv_M{\mr b}$ for every ${\mr b}$ as in \ssf{1}.
+\end{itemize}
 \end{proposition}
-\begin{proof}
-Fix ${\mr b}$ be as in the proposition.
-From ${\mr b}\in\mrU\cdot_M{\mr a}$ and the idempotency of ${\mr a}_M$ we obtain ${\mr b}_M={\mr b}\cdot_M{\mr a}$.
-From ${\mr b}\in{\mr a}\cdot_M\mrU$ and right-minimality we have ${\mr a}\in{\mr b}\cdot_M\mrU$.
-Therefore, from the idempotency of ${\mr b}_M$ we obtain ${\mr a}_M={\mr b}\cdot_M{\mr a}$. Hence ${\mr a}_M={\mr b}_M$.
+\begin{proof} 
+Note, parenthetically, that the set in \ssf{1} may not be type-definable, 
+therefore Corollary~\ref{corol_idempotent} does not apply 
+directly and we need an indirect argument.
+\begin{itemize}
+\item[1.] Pick ${\mr c}\in{\mr a}\cdot_M\mrU$ with idempotent orbit.
+Such ${\mr c}$ exists by Corollary~\ref{corol_idempotent}.
+From the idempotency of ${\mr a}_M$ we obtain ${\mr c}_M={\mr a}\cdot_M{\mr c}$. 
+% From the right-minimality of ${\mr a}$ we infer that ${\mr a}\in{\mr c}\cdot_M\mrU$ 
+% and, by the idempotency of ${\mr c}_M$, that ${\mr a}_M={\mr c}\cdot_M{\mr a}$.
+Now it is immediate to verify that any ${\mr b}\in{\mr a}\cdot_M{\mr c}\cdot_M{\mr a}$ is as required by \ssf{1}.
+\item[2.] From ${\mr b}\in\mrU\cdot_M{\mr a}$ and idempotency of ${\mr a}_M$ we obtain ${\mr b}_M={\mr b}\cdot_M{\mr a}$. From the right-minimality of ${\mr a}_M$ we infer that ${\mr a}\in{\mr b}\cdot_M\mrU$. Hence ${\mr a}_M={\mr b}\cdot_M{\mr a}$, by the idempotency of ${\mr b}$. Therefore ${\mr a}_M={\mr b}_M$, which proves \ssf{2}.
+.
+\end{itemize}\vskip-1.2\baselineskip
 \end{proof}
 
 The following is a technical lemma that is required for the proof of the main theorem.
@@ -594,23 +610,23 @@ Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
 Let $\sigma:\mrU\to\mrU$ be a definable semigroup homomorphism.
 Then 
 \begin{itemize}
-\item[1.] $\sigma\big[{\mr a}_M\big]=\sigma({\mr a})_M$
+\item[1.] $\sigma\big[{\mr a}_M\big]=(\sigma\,{\mr a})_M$
 
 \item[2.]
-$\sigma\big[{\mr a}\cdot_M{\mr b}\big]=\sigma({\mr a})\cdot_M\sigma({\mr b})$.
+$\sigma\big[{\mr a}\cdot_M{\mr b}\big]=\sigma\,{\mr a}\cdot_M\sigma\,{\mr b}$.
 \end{itemize}
 \end{proposition}
 \begin{proof}\noindent
 \begin{itemize}
 \item[1.]
-As ${\mr a}\equiv_M{\mr a'}$ implies $\sigma({\mr a})\equiv_M\sigma({\mr a'})$,
+As ${\mr a}\equiv_M{\mr a'}$ implies $\sigma\,{\mr a}\equiv_M\sigma\,{\mr a'}$,
 inclusion $\subseteq$ is clear. 
 For the converse, note that the type 
-$\E{\mr y}\,\big[\sigma({\mr y})={\mr x}\,\wedge\,{\mr y}\equiv_M{\mr a}\big]$ 
-is trivially realized by $\sigma({\mr a})$.
+$\E{\mr y}\,\big[\sigma\,{\mr y}={\mr x}\,\wedge\,{\mr y}\equiv_M{\mr a}\big]$ 
+is trivially realized by $\sigma\,{\mr a}$.
 By invariance it is equivalent to a type over $A$.
-Therefore it is realized by all elements of $\sigma({\mr a})_M$.
-Hence all elements of $\sigma({\mr a})_M$ are the image of some element in ${\mr a}_M$.
+Therefore it is realized by all elements of $(\sigma\,{\mr a})_M$.
+Hence all elements of $(\sigma\,{\mr a})_M$ are the image of some element in ${\mr a}_M$.
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{33ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
@@ -618,35 +634,32 @@ Hence all elements of $\sigma({\mr a})_M$ are the image of some element in ${\mr
 
 \ceq{\hfill\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ {\mr a}\equiv_M{\mr a'}\nonforkc_M{\mr b'}\equiv_M{\mr b} \Big\}}
 {=}
-{\Big\{{\mr a'}{\cdot}{\mr b'}\ :\ \sigma({\mr a})\equiv_M{\mr a'}\nonforkc_M{\mr b'}\equiv_M\sigma({\mr b}) \Big\}.}\smallskip
+{\Big\{{\mr a'}{\cdot}{\mr b'}\ :\ \sigma\,{\mr a}\equiv_M{\mr a'}\nonforkc_M{\mr b'}\equiv_M\sigma\,{\mr b} \Big\}.}\smallskip
 
 It suffices to prove one inclusion because by Proposition~\ref{prop_orbits_main} both sides are orbits. 
 We prove $\subseteq$. 
-Note that ${\mr a'}\nonforkc_M{\mr b'}$ implies $\sigma({\mr a'})\nonforkc_M\sigma({\mr b'})$.
+Note that ${\mr a'}\nonforkc_M{\mr b'}$ implies $\sigma\,{\mr a'}\nonforkc_M\sigma\,{\mr b'}$.
 Hence the set on l.h.s.\@ is contained in the following\smallskip
 
-\hfil$\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ \sigma({\mr a'})\nonforkc_M\sigma({\mr b'}),\ {\mr a'}\equiv_M{\mr a},\  {\mr b'}\equiv_M{\mr b} \Big\}$.\smallskip
+\hfil$\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ \sigma\,{\mr a'}\nonforkc_M\sigma\,{\mr b'},\ {\mr a'}\equiv_M{\mr a},\  {\mr b'}\equiv_M{\mr b} \Big\}$.\smallskip
 
 which is in turn contained in the set on the r.h.s.
 \end{itemize}\vskip-1.2\baselineskip
 \end{proof}
 
-
-The following theorem is an abstract version of the Hales-Jewett Theorem due to Sabine Koppelberg
-that is easier to state and to prove.
-It requires the following definition.
-
 Let $G$ be a semigroup.
 A \emph{nice subsemigroup\/} of $G$ is a subsemigroup $C$ with the property that if ${\mr a}{\cdot}{\mr b}\in C$ then both ${\mr a},{\mr b}\in C$.
 
 
-\begin{theorem}\label{thm_abstract_HJ}
+\theoremstyle{mio}
+\newtheorem{HalesJewett}[thm]{Hales-Jewett Theorem}
+\begin{HalesJewett}[(algebraic version)]\label{thm_abstract_HJ}
 Let $G$ be a semigroup and let $C\subset G$ be a nice subsemigroup.
 Let $\Sigma$ be a finite set of retractions of $G$ to $C$, that is, 
 homomorphisms $\sigma:G\to C$ such that $\sigma_{\restriction C}={\rm id}_C$.
 Then, for every finite coloring of $C$,
-there is a ${\mr g}\in G\sm C$ such that $\{\sigma({\mr g}):\sigma\in\Sigma\}$ is monochromatic.
-\end{theorem}
+there is a ${\mr g}\in G\sm C$ such that $\{\sigma\,{\mr g}:\sigma\in\Sigma\}$ is monochromatic.
+\end{HalesJewett}
 
 \begin{proof}
 Let $G\preceq\mrV$.
@@ -660,22 +673,22 @@ The language contains also symbols for
 the retractions $\sigma:\mrV\to\mrU$.
 
 Let ${\mr a}\in\mrU$ be right-minimal with idempotent orbit over $G$.
-Therefore, by Proposition~\ref{prop_minimal_existence2}, ${\mr a}\equiv_G{\mr b}$
-for every idempotent ${\mr b}\in\big({\mr a}\cdot_G\mrU\big)\cap\big(\mrU\cdot_G{\mr a}\big)$.
+Such ${\mr a}$ exists by  Proposition~\ref{prop_minimal_existence1}.
 
-We move to $\mrV$ as ambient semigroup.
-The intersection of $\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$ 
-with $\mrV\sm\mrU$ is non empty, because by nicety both sets contain 
-${\mr a}\cdot_G\big(\mrV\sm\mrU\big)\cdot_G{\mr a}$.
-This intersection is easily seen to be an idempotent set.
-Hence, by Corollary~\ref{corol_idempotent} it contains some ${\mr v}$ with idempotent orbit. Now, from ${\mr v}\in\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$
+Now we move to $\mrV$ as ambient semigroup.
+By claim \ssf{1} in Proposition~\ref{prop_minimal_existence2}
+there is a ${\mr v}\in\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$ 
+with idempotent orbit.
+We can further require that ${\mr v}\in\mrV\sm\mrU$ 
+(in the proof of claim \ssf{1}, with $\mrV$ for $\mrU$, apply nicety to show that we can choose ${\mr c}\in\mrV\sm\mrU$).
+Now, from ${\mr v}\in\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$
 and Proposition~\ref{prop_HJ_tecnical}, we obtain 
-$\sigma({\mr v})\in\big({\mr a}\cdot_G\mrU\big)\cap\big(\mrU\cdot_G{\mr a}\big)$
+$\sigma\,{\mr v}\in\big({\mr a}\cdot_G\mrU\big)\cap\big(\mrU\cdot_G{\mr a}\big)$
 for all $\sigma\in\Sigma$.
-As $\sigma({\mr v})$ is also idempotent, 
+As $\sigma\,{\mr v}$ is also idempotent, 
 we apply Proposition~\ref{prop_minimal_existence2} to conclude that 
-$\sigma({\mr v})\equiv_G{\mr a}$.
-In particular the set $\{\sigma({\mr v}):\sigma\in\Sigma\}$ is monochromatic. 
+$\sigma\,{\mr v}\equiv_G{\mr a}$.
+In particular the set $\{\sigma\,{\mr v}:\sigma\in\Sigma\}$ is monochromatic. 
 
 Though the element ${\mr v}$ above need not belong to $G\sm C$,
 by elementarity $G\sm C$ contains some ${\mr g}$ with the same property and this proves the theorem.
@@ -683,23 +696,20 @@ by elementarity $G\sm C$ contains some ${\mr g}$ with the same property and this
 
 We conclude by showing how the classical Hales-Jewett's theorem follows from theorem above.
 
-\theoremstyle{mio}
-\newtheorem{HalesJewett}[thm]{Hales-Jewett Theorem}
 \begin{HalesJewett}\label{thm_HalesJewett}
 Let $C$ be an infinite semigroup.
-Fix a tuple of variable $x$ and let $\Sigma\subseteq C^{|x|}$ be a finite set.
+Fix a tuple of variable $x$ and let $F\subseteq C^{|x|}$ be a finite set.
 Fix also a finite coloring of $C$.
 Then there is a non constant term $t(x)$ 
 of the language of semigroups with parameters in $C$
-such that $\{ t(\sigma): \sigma\in\Sigma\}$ is monochromatic.
+such that $\{ t(a): a\in F\}$ is monochromatic.
 \end{HalesJewett}
 
 \begin{proof}
 Let $G$ be the set of terms in the language of semigroups with parameters in $C$.
 Then $G$ is a semigroup under the natural operation.
-For every $\sigma\in\Sigma$ the map $t(x)\mapsto t(x/\sigma)$ is clearly a retraction.
-Recall that $t(x/\sigma)$ denotes the substitution of $\sigma$ for $x$ in $t$.
-Now we apply the theorem above.
+For every $a\in F$ the map $\sigma_a:t(x)\mapsto t(a)$ is a retraction.
+Hence we can apply the theorem above.
 \end{proof}
 
 It is a simple exercise to combine the ideas used in the proofs 
@@ -712,18 +722,18 @@ Let $G$ be a semigroup and let $C\subset G$ be a nice subsemigroup.
 Let $\sigma:G\to C$ be a retraction.
 Then for every finite coloring of $C$ there is a ${\mr\bar g}\in (G\sm C)^\omega$ 
 such that the sets 
-$\fp(\sigma({\mr\bar g})\big)$ is monochromatic.\QED
+$\fp(\sigma\,{\mr\bar g}\big)$ is monochromatic.\QED
 \end{proposition}
 
 As a matter of fact, 
-combining the two theorems mentioned above we obtain a seemingly stronger proposition (which is not required for the following). 
-To state it, we need to extend the scope of $\fp(\mbox{-})$ so that we may apply it to sets of tuples of equal length.
+combining the two theorems mentioned above we obtain a seemingly stronger proposition (required for the following). 
+To state it, we need to extend the scope of $\fp(\mbox{-})$ to sets of tuples of equal length.
 
-\ceq{\hfill\fp_n\{{\mr\bar g^j}\ :\ j\in J\} }{=}{\Big\{{\mr g^{j_1}_{i_1}}\kern-0.5ex\cdot\dots\cdot{\mr g^{j_n}_{i_n}}\ :\quad i_1<\dots<i_n<\alpha, \ \  j_1,\dots,j_n\in J\Big\}}.
+\ceq{\hfill\emph{$\fp_n\{{\mr\bar g^j}\ :\ j\in J\}$} }{=}{\Big\{{\mr g^{j_1}_{i_1}}\kern-0.5ex\cdot\dots\cdot{\mr g^{j_n}_{i_n}}\ :\quad i_1<\dots<i_n<\alpha, \ \  j_1,\dots,j_n\in J\Big\}}.
 
 Finally $\fp(\mbox{-})$ is defined as the union of the $\fp_n(\mbox{-})$.
 
-Recall that $\sigma({\mr g_{\restriction\,\omega\sm n}})$ is the tuple $\<{\sigma(\mr g_{i+n} } ): i<\omega\>$. 
+Recall that $\sigma\,{\mr g_{\restriction\,\omega\sm n}}$ is the tuple $\<{\sigma\,\mr g_{i+n} } : i<\omega\>$. 
 
 
 \begin{proposition}
@@ -731,35 +741,35 @@ Let $C$ be a semigroup and let $C\subset G$ be a nice subsemigroup.
 Let $\Sigma$ be a countable set of retractions of $G$ to $C$.
 Then for every finite coloring of $C$ there is a ${\mr\bar g}\in (G\sm C)^\omega$ 
 such that the sets 
-$\fp \{\sigma({\mr g_{\restriction\,\omega\sm n}})\,:\,\sigma\in\Sigma' \}$ are all monochromatic, 
+$\fp \{\sigma\,{\mr g_{\restriction\,\omega\sm n}}\,:\,\sigma\in\Sigma' \}$ are all monochromatic, 
 where $\Sigma'\subseteq\Sigma$ are arbitrary finite sets 
-and $n=n_{\Sigma'}$.
+and $n=n_{\Sigma'}$.\QED
 \end{proposition}
 
-\begin{proof}[Proof (sketch)]
+\excludecomment{commentproof}
+\begin{commentproof}[Proof (sketch)]
 Reasoning as in the proof of Theorem~\ref{thm_abstract_HJ}, 
 and with the same notation,
 we obtain an element ${\mr v}\in\mrV\sm\mrU$ with idempotent orbit 
-and such that all $\sigma({\mr v})$ for $\sigma\in\Sigma$
+and such that all $\sigma\,{\mr v}$ for $\sigma\in\Sigma$
 have the same type over $G$.
 
 Let $p({\mr x})\in S(\mrV)$ be a global coheir of $\tp({\mr v}/G)$ and let ${\mr\bar v}$ 
 be a coheir sequence such that ${\mr v_i}\models p_{\restriction A_i }({\mr x})$ where 
-$A_i=G\, \cup\, \fp\{\sigma({\mr v_{\restriction i}})\ :\ \sigma\in\Sigma \}$.
+$A_i=G\, \cup\, \fp\{{\mr v_{\restriction i}}:\sigma\in\Sigma\}$.
 By the idempotency of ${\mr v}_G$ and Proposition~\ref{prop_orbits_main}, 
-${\mr a}\equiv_G{\mr v}$ for all ${\mr a}\in \fp({\mr\bar v})$.
-It follows in particular that $\fp({\mr\bar v})$ is monochromatic.
+${\mr a}\equiv_G{\mr v}$ for all ${\mr a}\in \fp\{{\mr v_{\restriction i}}:\sigma\in\Sigma\}$.
+It follows in particular that $\fp\{\sigma\,{\mr v_{\restriction i}}:\sigma\in\Sigma\}$ is monochromatic.
 For definiteness, call its color \textit{red}.
 
 Now we use ${\mr\bar v}$ to define the sequence ${\mr\bar g}$ required by the theorem.
-Assume $\Sigma$ is the union of some sequence of finite sets $\Sigma_n$. 
+Assume $\Sigma$ is the union of $\Sigma_n$, a sequence of finite sets. 
 Assume as induction hypothesis that 
 $\fp\{\sigma({\mr g_{\restriction n\sm i}},\,{\mr\bar c}) : \sigma\in\Sigma_i\}$ is red for all $i\le n$.
 We want ${\mr g_n}$ such that the same property holds
 for ${\mr g_{\restriction n+1}},\,{\mr\bar c}$ and for all $i\le n+1$.
-It suffices to verify that this is expressible by a first order formula and by reasoning as in the proof of Theorem~\ref{thm_Hindman}.
-\end{proof}
-
+It suffices to verify that this is expressible by a first order formula, and then reason as in the proof of Theorem~\ref{thm_Hindman}.
+\end{commentproof}
 
 \begin{comment}
 
