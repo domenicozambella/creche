@@ -673,13 +673,14 @@ The language contains also symbols for
 the retractions $\sigma:\mrV\to\mrU$.
 
 Let ${\mr a}\in\mrU$ be right-minimal with idempotent orbit over $G$.
-Such ${\mr a}$ exists by  Proposition~\ref{prop_minimal_existence1}.%Therefore, by Proposition~\ref{prop_minimal_existence2}, ${\mr a}\equiv_G{\mr b}$
-for every idempotent ${\mr b}\in\big({\mr a}\cdot_G\mrU\big)\cap\big(\mrU\cdot_G{\mr a}\big)$.
+Such ${\mr a}$ exists by  Proposition~\ref{prop_minimal_existence1}.
 
-We move to $\mrV$ as ambient semigroup.
-Inspection of the proof of claim \ssf{1} in Proposition~\ref{prop_minimal_existence2} and nicety, 
-we know that there is a ${\mr v}\in\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$ 
+Now we move to $\mrV$ as ambient semigroup.
+By claim \ssf{1} in Proposition~\ref{prop_minimal_existence2}
+there is a ${\mr v}\in\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$ 
 with idempotent orbit.
+We can further require that ${\mr v}\in\mrV\sm\mrU$ 
+(in the proof of claim \ssf{1}, with $\mrV$ for $\mrU$, apply nicety to show that we can choose ${\mr c}\in\mrV\sm\mrU$).
 Now, from ${\mr v}\in\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$
 and Proposition~\ref{prop_HJ_tecnical}, we obtain 
 $\sigma\,{\mr v}\in\big({\mr a}\cdot_G\mrU\big)\cap\big(\mrU\cdot_G{\mr a}\big)$
@@ -697,19 +698,18 @@ We conclude by showing how the classical Hales-Jewett's theorem follows from the
 
 \begin{HalesJewett}\label{thm_HalesJewett}
 Let $C$ be an infinite semigroup.
-Fix a tuple of variable $x$ and let $\Sigma\subseteq C^{|x|}$ be a finite set.
+Fix a tuple of variable $x$ and let $F\subseteq C^{|x|}$ be a finite set.
 Fix also a finite coloring of $C$.
 Then there is a non constant term $t(x)$ 
 of the language of semigroups with parameters in $C$
-such that $\{ t(\sigma): \sigma\in\Sigma\}$ is monochromatic.
+such that $\{ t(a): a\in F\}$ is monochromatic.
 \end{HalesJewett}
 
 \begin{proof}
 Let $G$ be the set of terms in the language of semigroups with parameters in $C$.
 Then $G$ is a semigroup under the natural operation.
-For every $\sigma\in\Sigma$ the map $t(x)\mapsto t(x/\sigma)$ is clearly a retraction.
-Recall that $t(x/\sigma)$ denotes the substitution of $\sigma$ for $x$ in $t$.
-Now we apply the theorem above.
+For every $a\in F$ the map $\sigma_a:t(x)\mapsto t(a)$ is a retraction.
+Hence we can apply the theorem above.
 \end{proof}
 
 It is a simple exercise to combine the ideas used in the proofs 
@@ -770,81 +770,6 @@ We want ${\mr g_n}$ such that the same property holds
 for ${\mr g_{\restriction n+1}},\,{\mr\bar c}$ and for all $i\le n+1$.
 It suffices to verify that this is expressible by a first order formula, and then reason as in the proof of Theorem~\ref{thm_Hindman}.
 \end{commentproof}
-
-
-\section{Carlson Theorem}
-
-\def\dotgt{$\rlap{\kern0.7ex$\cdot$}>$}
-
-Let $<$ be a transitive relation on the elements of a semigroup $\mrU$.
-
-\begin{itemize}
-\item[1.] upward directed: for every ${\mr a},{\mr b}$ there is ${\mr c}$ such that ${\mr a},{\mr b}<{\mr c}$;
-\item[2.] ${\mr a}<{\mr b},{\mr c}$ implies ${\mr a}<{\mr b}{\cdot}{\mr c}$.
-\end{itemize}
-
-The set $\mrA\subseteq\mrU$ is \emph{\dotgt-closed\/} 
-if ${\mr a}{\cdot}{\mr b}\in\mrA$ 
-for every ${\mr a},{\mr b}\in\mrA$ such that ${\mr a}>{\mr b}$.
-An \emph{ascending path\/} is a tuple ${\mr\bar a}$ of length $\le\omega$ such that ${\mr a_i}<{\mr a_{i+1}}$. Similarly we define \emph{descending paths}.
-
-\begin{theorem}\label{thm_abstract_C}
-Let $G$ be a semigroup and let $C\subset G$ be a nice subsemigroup.
-Let $<$ be a relation on $G$ satisfying \ssf{1-4} above.
-Let $A\subseteq G$ be \dotgt-closed subset.
-Fix also retraction $\sigma:G\to C$.
-Then, for every finite coloring of $C$,
-there is an ascending ${\mr\bar g}\in A^\omega$ such that $\fp(\sigma\,{\mr\bar g})$ is monochromatic.
-\end{theorem}
-
-\begin{proof}
-Reason as in the proof of Theorem~\ref{thm_abstract_HJ} and assume the same notation.
-Now the language contains also a symbol $<$ for the transitive relation in the proposition.
-Let $\mrA\subseteq\mrV$ be the unique definable set such that $A=G\cap\mrA$.
-Let 
-
-
-
-Let $p({\mr x})\in S(\mrV)$ be a global coheir of $\tp({\mr v}/G)$ and let ${\mr\bar v}$ 
-be a coheir sequence such that ${\mr v_i}\models p_{\restriction A_i}({\mr x})$ where 
-$A_i=G\, \cup\, \fp\, {\mr v_{\restriction i} }$.
-By the idempotency of ${\mr v}_G$ and Proposition~\ref{prop_orbits_main}, 
-${\mr a}\equiv_G{\mr v}$ for all ${\mr a}\in \fp\,{\mr\bar v}$.
-It follows that also $\sigma\,{\mr a}\equiv_G\sigma\,{\mr v}$ and in particular that $\fp(\sigma\,{\mr\bar v})$ is monochromatic.
-For definiteness, call its color \textit{red}.
-
-Now we use ${\mr\bar v}$ to define the sequence required by the theorem.
-Assume as induction hypothesis that 
-$\fp\,\sigma({\mr g_{\restriction i}},{\mr\bar c})$ is red.
-We want ${\mr g_i}$ such that the same holds
-for ${\mr g_{\restriction i+1}},\,{\mr\bar c}$.
-It suffices to verify that this is expressible by a first order formula, and then reason as in the proof of Theorem~\ref{thm_Hindman}.
-
-We check that ${\mr\bar g}$ is ascending. Clearly ${\mr v}\in\mrV\sm G$, so it suffices to prove that $G<\mrV\sm G$
-\end{proof}
-
-Let $x=\<x_i:i<\omega\>$ be a tuple of variables. 
-If $s(x)$ and $t(x)$ are terms in the language of semigroups, 
-we write $s(x)<t(x)$ if the indices the variables actually occurring in $s(x)$ 
-are all smaller than the indices of those occurring in $t(x)$.
-We call a term $t(x)$ \textit{descending\/} if it has the form 
-$x_{i_1}\cdot\cdot\cdot\, x_{i_n}$ for some $\omega>i_1>\dots>i_n$.
-Clearly, the set of descending terms is \dotgt-closed.
-
-\theoremstyle{mio}
-\newtheorem{Carlson}[thm]{Carlson Theorem}
-\begin{Carlson}\label{thm_Carlson}
-Let $C$ be a semigroup.
-Fix a finite coloring of $C$ and some $a\in C^\omega$.
-Then there is an ascending tuple of descending terms $\<t_i(x):i<\omega\>$
-such that $\fp\<t_i(a):i<\omega\>$ is monochromatic.
-\end{Carlson}
-
-\begin{proof}
-Let $G$ be the set of terms with free variables among $x$ and parameters in $C$. 
-Let $\sigma:G\to C$ be the reduction that maps $t(x)\mapsto t(x/a)$.
-\end{proof}
-
 
 \begin{comment}
 
