@@ -47,7 +47,7 @@ Assume $|L|<\lambda$ where $\lambda$ is be such that $\lambda^{<\lambda}=\lambda
 \end{theorem}
 
 \begin{proof}
-Without loss of generality, we can assume that $M$ has cardinality $\lambda$. We construct an elementary chain $\<M_i : i<\lambda\>$ of models of cardinality $\lambda$. The chain starts with $M$ and is the union at limit stages. Given $M_i$ we choose as $M_{i+1}$ any model of cardinality $\lambda$ that realizes all types in $S_x(A)$ for all $A\subseteq M_i$ of cardinality $<\lambda$. The required $M_{i+1}$ exists because there are $2^{|L(A)|}\le\lambda$ types in $S_x(A)$ and there are $\lambda^{<\lambda}=\lambda$ sets $A$.
+Without loss of generality, we can assume that $M$ has cardinality $\lambda$. We construct an elementary chain $\<M_i : i<\lambda\>$ of models of cardinality $\lambda$. The chain starts with $M$ and is the union at limit stages. Given $M_i$ we choose as $M_{i+1}$ any model of cardinality $\lambda$ that realizes all types in $S_x(A)$ for all $A\subseteq M_i$ of cardinality $<\lambda$. The required $M_{i+1}$ exists because there are at most $2^{|L(A)|}\le\lambda^{<\lambda}=\lambda$ types in $S_x(A)$ and there are $\lambda^{<\lambda}=\lambda$ sets $A$.
 
 Let $N$ be the union of the chain. We check that $N$ is the required extension. Let $p(x)\in S(A)$ for some $A\subseteq N$ of cardinality $<\lambda$. As $\lambda$ is a regular cardinal,  $A\subseteq M_i$ for some $i<\lambda$. Then $M_{i+1}$ realizes $p(x)$, and so does $N$, by elementarity.
 \end{proof}
@@ -65,7 +65,7 @@ Assume $|L|\le\lambda$ and let $N$ be an infinite structure. Let $\M$ be the cat
 Note that it is the completeness of $T$ which makes the category $\M$ connected.
 
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}. Let $k:M\imp N$ be an elementary map of cardinality $<\lambda$. It suffices to show that for every ${\mr b}\in M$ there is a ${\mr c}\in N$ such that $k\cup\big\{\<{\mr b},{\mr c}\>\big\}:M\to N$ is an elementary map. Let ${\gr a}$ be an enumeration of $\dom k$ and define $p({\mr x}\,;{\gr z})=\tp_M({\mr b}\,;{\gr a})$. The required ${\mr c}$ is any element of $N$ such that $N\models p({\mr c}\,;k\,{\gr a})$. As $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$ then $p({\mr x}\,;k\,{\gr a})$ is finitely consistent in $N$. As $|{\gr a}|<\lambda$, saturation yields the required ${\mr c}$.
+\ssf{1}$\IMP$\ssf{2}. Let $k:M\imp N$ be an elementary map of cardinality $<\lambda$. It suffices to show that for every ${\mr b}\in M$ there is a ${\mr c}\in N$ such that $k\cup\big\{\<{\mr b},{\mr c}\>\big\}:M\to N$ is an elementary map. Let ${\gr a}$ be an enumeration of $\dom k$ and define $p({\mr x}\,;{\gr z})=\tp_M({\mr b}\,;{\gr a})$. As $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$ then $p({\mr x}\,;k\,{\gr a})$ is finitely consistent in $N$. The required ${\mr c}$ is any element of $N$ such that $N\models p({\mr c}\,;k\,{\gr a})$. Such a ${\mr c}$ exists by saturation because $|{\gr a}|<\lambda$.
 
 \ssf{2}$\IMP$\ssf{3}. Let $p({\gr z})$ be as in \ssf{3}. By the compactness theorem $N\preceq K\models p({\gr a})$ for some model $K$ and ${\gr a}\in K^{|{\gr z}|}$. By the downward  L\"owenheim-Skolem theorem there is a model $A,{\gr a}\subseteq M\preceq K$ of cardinality $\le\lambda$. (Here we use $|L|,|A|,|{\gr z}|\le\lambda$.) By \ssf{2}, there is an elementary embedding $h:M\hookrightarrow N$ that extends $\id_A$. Finally, as $M\models p({\gr a})$,  elementarity yields $N\models p(h\,{\gr a})$.
 
