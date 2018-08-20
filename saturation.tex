@@ -15,7 +15,7 @@ The first two section introduce saturation and homogeneity and Section~\ref{mons
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Saturated structures}
 
-Recall that a type $p({\mr x})\subseteq L(M)$ is \emph{finitely consistent in $M$\/} if every $\phi({\mr x})$, conjunction of formulas in $p({\mr x})$, has a solution in $M$. When $A\subseteq M$ we write $S_{\mr x}(A)$ for the set of types that are complete and finitely consistent in $M$. We never display $M$ in the notation as it will always be clear from the context. When $A$ is empty it usual to write $S_{\mr x}(T)$ for $S_{\mr x}(A)$ where $T=\Th(M)$. We write $S(A)$ for the union of $S_{\mr x}(A)$ as ${\mr x}$ ranges over all tuples of variables. Similarly for $S(T)$.
+Recall that a type $p({\mr x})\subseteq L(M)$ is \emph{finitely consistent in $M$\/} if every conjunction of formulas in $p({\mr x})$, has a solution in $M$. When $A\subseteq M$ we write $S_{\mr x}(A)$ for the set of types that are complete and finitely consistent in $M$. We never display $M$ in the notation as it will always be clear from the context. When $A$ is empty it usual to write $S_{\mr x}(T)$ for $S_{\mr x}(A)$ where $T=\Th(M)$. We write $S(A)$ for the union of $S_{\mr x}(A)$ as ${\mr x}$ ranges over all tuples of variables. Similarly for $S(T)$.
 
 The following remark will be used in the sequel without explicit reference.
 
@@ -43,7 +43,7 @@ Let $\<X_i:i<\omega\>$ be a strictly decreasing chain of elements of the ultrafi
 
 
 \begin{theorem}\label{thm_esistenza_staturo_card_inacc}
-Assume $|L|<\lambda$ where $\lambda$ is be such that $\lambda^{<\lambda}=\lambda$. Then every structure $M$ of cardinality $\le\lambda$ has a saturated elementary extension of cardinality $\lambda$.
+Assume $|L|<\lambda$ where $\lambda$ is such that $\lambda^{<\lambda}=\lambda$. Then every structure $M$ of cardinality $\le\lambda$ has a saturated elementary extension of cardinality $\lambda$.
 \end{theorem}
 
 \begin{proof}
@@ -54,7 +54,7 @@ Let $N$ be the union of the chain. We check that $N$ is the required extension. 
 
 
 \begin{theorem}\label{saturo->ricco}
-Assume $|L|\le\lambda$ and let $N$ be an infinite structure. Let $\M$ be the category (see Section~\hyperref[rich]{\ref*{fraisse}.\ref*{rich}}) that consists of models of a compete theory $T$ and elementary maps between these. Then the following are equivalent
+Assume $|L|\le\lambda$ and let $N$ be an infinite structure. Let $\M$ be the category (see Section~\hyperref[rich]{\ref*{fraisse}.\ref*{rich}}) that consists of models of a complete theory $T$ and elementary maps between these. Then the following are equivalent
 \begin{itemize}
 \item[1] $N$ is a $\lambda$-saturated structure;
 \item[2] $N$ is a $\lambda$-rich model;
@@ -116,7 +116,7 @@ Assume $|L|\le\lambda$. Consider the category that consists of models of some th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Homogeneous structures}\label{homogeneous}
-Definition~\ref{def_omogenea_universale} introduces the notion of universal and homogeneous structures a the general context. When the morphisms of the underlying category are the elementary maps we refer to these notion as elementary homogeneity and elementary universality. Though one often omits to specify \textit{elementary}. We repeat the definition in this particular case. 
+Definition~\ref{def_omogenea_universale} introduces the notions of universal and homogeneous structures in a general context. When the morphisms of the underlying category are the elementary maps, we refer to these notions as elementary homogeneity and elementary universality. However, one often omits to specify \textit{elementary}. We repeat Definition~\ref{def_omogenea_universale} in this specific case. 
 
 \begin{definition}
 A structure $N$ is \emph{(elementarily) $\lambda$-universal\/} if every $M\equiv N$ of cardinality $\le\lambda$ there is a elementary embedding $h:M\hookrightarrow N$. We say  \emph{universal\/}  if it is $\lambda$-universal and of cardinality $\lambda$.
@@ -124,7 +124,7 @@ A structure $N$ is \emph{(elementarily) $\lambda$-universal\/} if every $M\equiv
 We say that $N$ is \emph{(elementarily) $\lambda$-homogeneous\/} if every elementary map $k:N\to N$ of cardinality $<\lambda$ extends to an automorphism. We say that $N$ is \emph{homogeneous\/} if it is $\lambda$-homogeneous and of cardinality $\lambda$.\QED
 \end{definition}
 
-As saturated structure are rich, the following theorem is an instance of Theorem~\ref{ricco<->universaleomogeneo}.
+As saturated structures are rich, the following theorem is an instance of Theorem~\ref{ricco<->universaleomogeneo}.
 
 \begin{theorem}\label{thm_saturo_omogeneouniversale}
 For every structure $N$ of cardinality $\ge|L|$ the following are equivalent\nobreak
@@ -140,7 +140,7 @@ Given $A\subseteq N$ we denote by \emph{$\Aut(N/A)$\/} the group of \emph{$A\jj$
 
 When the model $N$ is clear from the context we omit the subscript.
 
-Orbits are particularly interesting if taken in a homogeneous structure. The following proposition is immediate but its importance cannot be overestimated.
+Orbits in a homogeneous structure are particularly interesting. The following proposition is immediate but its importance cannot be overestimated.
 
 \begin{proposition}\label{omogeneitaorbitetipi}
 Let $N$ be a $\lambda\jj$homogeneous structure. Let $A\subseteq N$ have cardinality $<\lambda$ and let ${\mr a}\in N^{<\lambda}$. Then $O_N({\mr a}/A)=p(N)$, where $p({\mr x})=\tp_N({\mr a}/A)$.\QED
@@ -267,12 +267,18 @@ A definable set as the form $\phi({\mr\U}\,;{\gr b})$ for some formula $\phi({\m
 
 Hence automorphisms act on definable sets in a very natural way. Their action of type-definable sets is similar.
 
-We say that a set ${\mr\D}\subseteq\U^{|{\mr x}|}$ is \emph{invariant over $A$\/} if $f[{\mr\D}]={\mr\D}$ for every $f\in\Aut(\U/A)$. Equivalently, if $\orbit({\mr a}/A)\subseteq {\mr\D}$ for every ${\mr a}\in {\mr\D}$. By homogeneity this is equivalent to requiring that $q({\mr x})\imp {\mr x}\in{\mr\D}$ for every $q({\mr x})=\tp({\mr a}/A)$ where ${\mr a}\in {\mr\D}$.
+We say that a set ${\mr\D}\subseteq\U^{|{\mr x}|}$ is \emph{invariant over $A$\/} if $f[{\mr\D}]={\mr\D}$ for every $f\in\Aut(\U/A)$.
+Equivalently, if $\orbit({\mr a}/A)\subseteq {\mr\D}$ for every ${\mr a}\in {\mr\D}$.
+By homogeneity this is equivalent to requiring that 
 
-Proposition~\ref{prop_inv_types} below an important fact about invariant type-definable sets. It may clarify the proof to consider first the particular case of definable sets.
+\ceq{\hfill q({\mr x})}{\imp}{{\mr x}\in{\mr\D}}
+
+for every $q({\mr x})=\tp({\mr a}/A)$ and ${\mr a}\in {\mr\D}$.
+
+Proposition~\ref{prop_inv_types} below is an important fact about invariant type-definable sets. It may clarify the proof to consider first the particular case of definable sets.
 
 \begin{proposition}\label{prop_inv_def}
-Let $\phi({\mr x})\in L(\U)$ then the following are equivalent
+For every $\phi({\mr x})\in L(\U)$ the following are equivalent
 \begin{itemize}
  \item[1.] $\phi({\mr x})$ is equivalent to some formula $\psi({\mr x})\in L(A)$;
  \item[2.] $\phi({\mr\U})$ is invariant over $A$.
@@ -286,13 +292,16 @@ We give two proofs of this theorem as they are both instructive.
 
 \ssf{2}$\IMP$\ssf{1} From \ssf{2} and homogeneity we obtain
 
-\ceq{\hfill\phi({\mr x})}{\iff}{\bigvee_{q({\mr x})\imp\phi({\mr x})} q({\mr x})}
+\ceq{\hfill\phi({\mr x})}{\iff}{\bigvee_{q({\mr x})\in Q} q({\mr x})}
 
-where $q({\mr x})$ above range over all types in $S_{\mr x}(A)$. By compactness, we can rewrite this equivalence 
+where $Q$ is the set of the types in $S_{\mr x}(A)$ such that $q({\mr x})\imp\phi({\mr x})$. 
+By compactness, we can rewrite this equivalence 
 
-\ceq{\hfill\phi({\mr x})}{\iff}{\bigvee_{\theta({\mr x})\imp\phi({\mr x})} \theta({\mr x})}
+\ceq{\hfill\phi({\mr x})}{\iff}{\bigvee_{\theta({\mr x})\in\Theta} \theta({\mr x})}
 
-where $\theta({\mr x})$ ranges over all formulas in $L(A)$.  This latter equivalence says that $\neg\phi({\mr x})$ is equivalent to a type over $A$. Again by compactness we obtain 
+where $\Theta$ is the set of the formulas in $L(A)$ such that $\theta({\mr x})\imp\phi({\mr x})$.
+The latter equivalence says that $\neg\phi({\mr x})$ is equivalent to a type over $A$. 
+Again by compactness we obtain 
 
 \ceq{\hfill\phi({\mr x})}{\iff}{\bigvee^n_{i=1} \theta_i({\mr x})}
 
