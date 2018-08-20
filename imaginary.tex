@@ -68,22 +68,23 @@ As the difference is merely cosmetic, introducing new notation would be overkill
 In Section~\ref{imaginaries_long} below we compare our definition with the standard one.
 %This will also explain the symbol used.
 
-Given a language $L$ we define a many-sorted language \emph{$L^{\eq}$\/} which has a sort for each partitioned formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort}.
-(Partitioned formulas have been introduced in Definition~\ref{def_partitioned_fla}.)
+Given a language $L$, we define a many-sorted language \emph{$L^{\eq}$\/} which has a sort for each partitioned formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort}.
+(Partitioned formulas have been introduced in Definition~\ref{def_partitioned_fla}.) 
 
-For better legibility, we will pretend that all formulas $\sigma$ depend on the same pair of tuples ${\mr x}\,;{\gr z}$, so we assume that ${\mr x}\,;{\gr z}$ are infinite tuples.
+For legibility, we pretend that all formulas $\sigma$ depend on the same variables. so we assume that ${\mr x}\,;{\gr z}$ are infinite tuples. Hence, with the notation of the previous section $L_{\rm srt}=\{0\}\cup L_{{\mr x}\,;{\gr z}}$.
 
 The home sort is also called the \emph{first-order sort}.
 All other sorts are \emph{second-order}.
-First of all, $L^\eq$ contains all relations and functions of $L$.
+First of all, $L^\eq$ contains all relations and functions of the first order language $L$.
 The many-sorted arity of a relation $r$ is $\<0^{n_r}\>$, where $n_r$ is the arity of $r$ in $L$.
 Similarly, the many-sorted arity of a function $f$ is $\<0^{1+n_f}\>$, where $n_f$ is the arity of $f$ in $L$.
 Moreover, $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$.
 These relation symbols have arity \smash{$\big\<0^{|{\mr x}|},\sigma({\mr x}\,;{\gr z})\big\>$}.
-As there is no risk of ambiguity, in what follows we write $\in$ without subscript.
+As there is no risk of ambiguity, in what follows we omit the subscript from $\in$.
 
-The model \emph{$\U^{\eq}$\/} has $\U$ as domain for the home sort.
-The domain for the sort $\sigma({\mr x}\,;{\gr z})$ contains the definable sets ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in\U^{|{\gr z}|}$.
+In \emph{$\U^{\eq}$\/} the domain of the home sort is $\U$.
+The domain for the sort $\sigma({\mr x}\,;{\gr z})$ contains 
+the definable sets ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ as ${\gr b}$ ranges over $\U^{|{\gr z}|}$.
 The symbols in $L$ have the same interpretation as in the one-sorted case, and $\in$ is interpreted as set membership.
 We write \emph{$T^{\eq}$\/} for $\Th(\U^\eq)$.
 
@@ -535,8 +536,8 @@ For arbitrary $c\in\U^{|{\gr z}|}$, prove that if the orbit of $\phi({\mr\U}\,; 
 \section{The true story of imaginaries}\label{imaginaries_long}
 
 The point of the expansion to $\U^\eq$ is to add a canonical parameter for each definable set.
-In fact, in $\U^\eq$ every definable subset of $\U^{|{\gr z}|}$ is the canonical parameter if itself.
-This allows to deal with theories without elimination of imaginaries in the most straightforward way.
+In fact, in $\U^\eq$ every definable subset of $\U^{|{\gr z}|}$ is the canonical parameter of itself.
+This allows us to deal with theories without elimination of imaginaries in the most straightforward way.
 
 The expansion to $\U^\eq$ that was originally introduced by Shelah (and still used everywhere else) is slightly different from the one introduced here.
 For a given set ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ Shelah considers the equivalence relation defined by the formula

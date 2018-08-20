@@ -40,15 +40,15 @@ aleas the \emph{complete $n$-uniform hypergraph\/} with vertex set $M$,
 We say that $H\subseteq M$ is a \emph{monochromatic subgraph\/} if the subgraph induced by $H$ is monocromatic.
 In the literature monochromatic subgraph are also called \emph{homogeneous sets}.
 
-The following is a very famous theorem which here we prove it in unusual way.
-It will serve as blueprint for other constructions in this chapter.
+The following is a very famous theorem which we prove here in unusual way.
+Its proof will serve as blueprint for other constructions in this chapter.
 
 \theoremstyle{mio}
 \newtheorem{Ramsey}[thm]{Ramsey Theorem}
 \begin{Ramsey}\label{thm_Ramsey}
 Let $M$ be an infinite set and fix some positive integers $n$ and $k$.
-Fix also an arbitrary $k$-coloring of the (edges of the) complete $n$-uniform hypergraph with vertex set $M$.
-Then there infinite monochromatic subgraph $H\subseteq M$.
+Fix an arbitrary $k$-coloring of the (edges of the) complete $n$-uniform hypergraph with vertex set $M$.
+Then there is an infinite monochromatic subgraph $H\subseteq M$.
 \end{Ramsey}
 \begin{proof}
 Let $L$ be a language that contains $k$ relation symbols $r_1,\dots,r_k$ of arity $n$.
@@ -337,8 +337,8 @@ The theorem follows by minimality.
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{22ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-In this and the following sections we focus on semigroups definable in a first-order structure.
-For a lighter notation, we identify our semigroup with $\mrU$,
+In this and in the subsequent sections we focus on semigroups definable in first-order structures.
+For ease of notation, we identify our semigroup with $\mrU$,
 which here denotes the domain of a sort in a many-sorted monster model.
 The language contains, among others,
 the symbol \emph{$\ \cdot\ $} which is interpreted as a binary associative operation on $\mrU$.
@@ -349,11 +349,11 @@ For any two sets $\mrA,\mrB\subseteq\mrU$ we define
 
 \ceq{\hfill\emph{$\mrA\cdot_{\!A}\mrB$}}
 {=}
-{\Big\{ {\mr a}{\cdot}{\mr b}\ :\ {\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\cnonfork_{\!A}{\mr b}\Big\}}
+{\Big\{ {\mr a}{\cdot}{\mr b}\ :\ {\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\cnonfork_{\!A}{\mr b}\Big\}.}
 
-In this and the next section we abbreviate $\O({\mr a}/A)$, 
+In this and the next section we denote $\O({\mr a}/A)$, 
 the orbit of ${\mr a}$ under $\Aut(\mrU/A)$, 
-with \emph{${\mr a}_A$}.
+by \emph{${\mr a}_A$}.
 We write \emph{${\mr a}\cdot_{\!A}\mrB$} for $\O({\mr a}/A)\cdot_{\!A}\mrB$.
 Similarly for \emph{$\mrA\cdot_{\!A}{\mr b}$} 
 and \emph{${\mr a}\cdot_{\!A}{\mr b}$}.
@@ -492,8 +492,8 @@ Under the same assumptions of the lemma above, every type-definable idempotent s
 \def\dotcl{ {\rm cl}^{\hbox{\scriptsize\dotlt}} }
 % \def\dotcl{\ooalign{{\rm cl}\cr{\raisebox{1ex}{\hbox{\scriptsize\dotlt}}}\cr} }
 
-Here the theory of idempotents presented in Section~\ref{semigroups} is merged with 
-the proof of Ramsey's theorem to obtain Hindman's theorem in a straightforward way.
+In this section we merge the theory of idempotents presented in Section~\ref{semigroups}
+with the proof of Ramsey's theorem to obtain Hindman's theorem in a straightforward way. 
 
 Let $<$ be a transitive relation on a semigroup $\mrU$.
 We say that $<$ is \emph{upward directed\/} 
@@ -581,9 +581,11 @@ this is equivalent to $\dotcl({\mr a_{\restriction i+1}},\,{\mr\bar c})$ being r
 \end{proof}
 
 
-\section{Hales-Jewett Theorem}
+\section{The Hales-Jewett Theorem}
 
-Hales-Juvett's theorem is a purely combinatorial statement that implies van der Waerden's theorem.
+
+The Hales-Juvett Theorem is a purely combinatorial statement 
+that implies the van der Waerden Theorem.
 
 We need a few definitions. 
 Let $\mrW$ be an idempotent set that is type-definable over $A$.
@@ -620,7 +622,7 @@ therefore Corollary~\ref{corol_idempotent} does not apply
 directly and we need an indirect argument.
 \begin{itemize}
 \item[1.] Pick ${\mr c}\in\mrW\cdot_M{\mr a}$ with idempotent orbit.
-Such ${\mr c}$ exists by Corollary~\ref{corol_idempotent}.
+Such a ${\mr c}$ exists by Corollary~\ref{corol_idempotent}.
 From the idempotency of ${\mr a}_M$ we obtain ${\mr c}\in{\mr c}\cdot_M{\mr a}$. 
 % From the left-minimality of ${\mr a}$ we infer that ${\mr a}\in{\mr c}\cdot_M\mrW$ 
 % and, by the idempotency of ${\mr c}_M$, that ${\mr a}_M={\mr c}\cdot_M{\mr a}$.
@@ -631,7 +633,7 @@ From the left-minimality of ${\mr a}_M$ we infer that ${\mr a}\in\mrW\cdot_M{\mr
 \end{itemize}\vskip-1.2\baselineskip
 \end{proof}
 
-The following is a technical lemma that is required for the proof of the main theorem.
+The following is a technical lemma that is required in the proof of the main theorem.
 
 \begin{proposition}\label{prop_HJ_tecnical}
 Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
@@ -702,13 +704,13 @@ The language contains also symbols for
 the retractions $\sigma:\mrV\to\mrU$.
 
 Let ${\mr a}\in\mrU$ be left-minimal with idempotent orbit over $G$.
-Such ${\mr a}$ exists by  Proposition~\ref{prop_minimal_existence1}.
+Such an ${\mr a}$ exists by Proposition~\ref{prop_minimal_existence1}.
 
 Now we move to $\mrV$ as ambient semigroup.
 By claim \ssf{1} in Proposition~\ref{prop_minimal_existence2}
 there is a ${\mr b}\in\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$ 
 with idempotent orbit.
-We can further require that ${\mr b}\in\mrV\sm\mrU$: in the proof of claim \ssf{1}, with $\mrV$ for $\mrU$, 
+We can further require that ${\mr b}\in\mrV\sm\mrU$: in the proof of claim \ssf{1}, with $\mrV$ for $\mrW$, 
 by nicety we can choose ${\mr c}\in\mrV\sm\mrU$.
 Now, from ${\mr b}\in\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$
 and Proposition~\ref{prop_HJ_tecnical}, we obtain 
@@ -746,10 +748,18 @@ Hence we can apply the theorem above.
 
 \section{Notes and references}
 
+
+The first application of the algebraic structure of $\beta G$ 
+(the Stone-\v{C}ech compactification of a semigroup $G$) 
+to Ramsey Theory is the celebrated Galvin-Glazer proof of Hindman's theorem. 
+Here we have used saturated models in place of Stone-\v{C}ech compactification.
+The idea to replace the semigroup $\beta G$  has been pioneered by Ludomir Newelsi
+in the study of applications of topological dynamics to model theory. 
+
 The original proof of the Hales-Jewett Theorem by Alfred Hales and Robert Jewett is combinatorial~\cite{HJ}.
 An alternative proof, also combinatorial, has been given by Sheron Shelah~\cite{Shelah}.
 Our proof uses tools similar to those introduced by Andreas Blass in~\cite{Blass},
-but we use saturated models where he uses Stone-Check compactification.
+but we use saturated models where he uses Stone-\v{C}ech compactification.
 
 
 \begin{biblist}[]\normalsize
