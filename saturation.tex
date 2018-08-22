@@ -217,6 +217,7 @@ Some terms acquire a slightly different meaning when working inside a monster mo
 
 \begin{litemize}{{\bf type-definable sets}}
 \item[\emph{truth}] we say that $\phi(x)$ holds if $\U\models\A x\,\phi(x)$;
+\item[\emph{consistency}] we say that $\phi(x)$ is consistent if $\U\models\E x\,\phi(x)$, similarly for a type $p(x)$;
 \item[\emph{small/large}] cardinalities smaller than $\kappa$ are called small; 
 \item[\emph{models}] are elementary substructure of $\U$ of small cardinality, they are denoted by the letters $M$ and $N$, and derived symbols;
 \item[\emph{parameters}] are always in $\U$; the symbols $A$, $B$, $C$, etc.\@ denote sets of parameters of small cardinality; calligraphic letters as $\Aa$, $\B$, $\C$, etc.\@ are used for sets of arbitrary cardinality;
@@ -245,7 +246,7 @@ Let $p(x)\subseteq L(A)$ and $q(x)\subseteq L(B)$ be such that $p(x)\imp \neg q(
 \end{proposition}
 
 \begin{proof}
-The assumptions say that $p(x)\wedge q(x)$ is inconsistent. Then the formulas $\phi(x)$ and $\psi(x)$ exist by compactness (i.e.\@ saturation).
+The assumptions say that $p(x)\cup q(x)$ is inconsistent (i.e. not realized in $\U$). Then the formulas $\phi(x)$ and $\psi(x)$ exist by compactness (i.e.\@ saturation).
 \end{proof}
 
 \begin{remark}\label{rem_normality}There are many forms in which the proposition above can be applied. For instance, assuming for brevity that $p(x)$ and $q(x)$ are closed under conjunctions,
@@ -257,7 +258,7 @@ The assumptions say that $p(x)\wedge q(x)$ is inconsistent. Then the formulas $\
 \end{itemize}
 \end{remark}
 
-A definable set as the form $\phi({\mr\U}\,;{\gr b})$ for some formula $\phi({\mr x}\,;{\gr z})\in L$ and some ${\gr b}\in\U^{|{\gr z}|}$. If $f\in\Aut(\U/A)$ then 
+A definable set as the form $\phi({\mr\U}\,;{\gr b})$ for some formula $\phi({\mr x}\,;{\gr z})\in L$ and some ${\gr b}\in\U^{|{\gr z}|}$. If $f\in\Aut(\U)$ then 
 
 \ceq{\hfill f\big[\phi({\mr\U}\,;{\gr b})\big]}{=}{\big\{f{\mr a}\ :\ \phi({\mr a}\,;{\gr b}),\phantom{ff}\ {\mr a}\in\U^{|{\mr x}|}\big\}}
 
@@ -265,10 +266,9 @@ A definable set as the form $\phi({\mr\U}\,;{\gr b})$ for some formula $\phi({\m
 
 \ceq{ }{=}{\phi({\mr\U}\,;f{\gr b}).}
 
-Hence automorphisms act on definable sets in a very natural way. Their action of type-definable sets is similar.
+Hence automorphisms act on definable sets in a very natural way. Their action on type-definable sets is similar.
 
-We say that a set ${\mr\D}\subseteq\U^{|{\mr x}|}$ is \emph{invariant over $A$\/} if $f[{\mr\D}]={\mr\D}$ for every $f\in\Aut(\U/A)$.
-Equivalently, if $\orbit({\mr a}/A)\subseteq {\mr\D}$ for every ${\mr a}\in {\mr\D}$.
+We say that a set ${\mr\D}\subseteq\U^{|{\mr x}|}$ is \emph{invariant over $A$\/} if $f[{\mr\D}]={\mr\D}$ for every $f\in\Aut(\U/A)$ or, equivalently, if $\orbit({\mr a}/A)\subseteq {\mr\D}$ for every ${\mr a}\in {\mr\D}$.
 By homogeneity this is equivalent to requiring that 
 
 \ceq{\hfill q({\mr x})}{\imp}{{\mr x}\in{\mr\D}}
@@ -358,7 +358,11 @@ where $\theta({\mr x})$ ranges over all formulas in $L(A)$. Applying mutual norm
 This completes the proof.
 \end{proof}
 
-The following easy proposition is very useful. Its proof is left to the reader. Note that it would not hold without saturation: for instance, consider $\RR$ as a structure in the language of strict orders and let $q(x,y)=\tp(-1, 0\,/\,A)$, where $A=\{1/n: 0<n\}$. By quantifier elimination, $-1\equiv_{A}0$. But $0\notmodels\E y\;q(x,y)$.
+The following easy proposition is very useful. Its proof is left to the reader. Note that it would not hold without saturation. For a counter example consider $\RR$ as a structure in the language of strict orders and let $q(x,y)=\tp(0,1/A)$, where 
+
+\ceq{\hfill A}{=}{\Big\{1-\frac1n\ :\ 2 \le n\Big\}.} 
+
+By quantifier elimination, $0\equiv_{A}1$. But $1\notmodels\E y\;q(x,y)$, see Exercise~\ref{ex_E_type}.
 
 
 \begin{proposition}\label{prop_E_type}
@@ -399,6 +403,9 @@ Let $\phi(x\,;y)$ be such that for every $b\in\U^{|y|}$ there is a $\psi(x)\in L
 \end{exercise}
 
 
+\begin{exercise}\label{ex_E_type}
+Prove that $1\notmodels\E y\;q(x,y)$, as claimed before Proposition~\ref{prop_E_type}.\QED
+\end{exercise}
 
 \begin{comment}
 \begin{exercise}
