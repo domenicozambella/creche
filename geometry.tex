@@ -95,13 +95,13 @@ For every $A\subseteq\U$ and every ${\mr a}\in\U$ the following hold
 \begin{itemize}
 \item[1]  Se ${\mr a}\in\acl A$ then ${\mr a}\in\acl B$ for some finite $B\subseteq A$;\hfill\emph{finite character}
 \item[2]  $A\subseteq \acl A$;\hfill\emph{extensivity}
-\item[3]  se $A\subseteq B$ allora $\acl A\subseteq \acl B$;\hfill\emph{monotonicity}
+\item[3]  if $A\subseteq B$ then $\acl A\subseteq \acl B$;\hfill\emph{monotonicity}
 \item[4]  $\acl A=\acl(\acl A)$;\hfill\emph{idempotency}
 \item[5]  $\displaystyle\acl A=\bigcap_{A\subseteq M}M$.
 \end{itemize} 
 \end{corollary}
 
-Properties \ssf{1}-\ssf{4} say that the algebraic closure is a closure operator with finite character.
+Properties \ssf{1}-\ssf{4} say that $\acl(\mbox{-})$ is a closure operator with finite character.
 
 \begin{proof}
 Properties \ssf{1}-\ssf{3} are obvious, \ssf{4} follow from \ssf{5} which in turn follows from Theorem~\ref{thm_fmgalois}.
@@ -123,7 +123,7 @@ Let $\phi({\gr z})\in L(A)$ be a consistent formula. Prove that, if ${\mr a}\in\
 
 
 \begin{exercise}\label{ex_isosub}
-Let ${\mr a}\in\U\sm\acl\0$. Prove that $\U$ is isomorphic to some $\V\preceq \U$ such that ${\mr a}\notin\V$. Hint: let $c$ be an enumeration of $\U$ and let $p(u)=\tp(c)$ prove that $p(u)\cup\big\{ {\mr u_i}\neq{\mr a} :i<\kappa\big\}$ is realized in $\U$ and that any realization yields the required substructure of $\U$.\QED
+Let $a\in\U\sm\acl\0$. Prove that $\U$ is isomorphic to some $\V\preceq \U$ such that $a\notin\V$. Hint: let $\bar c$ be an enumeration of $\U$ and let $p(\bar u)=\tp(\bar c)$ prove that $p(\bar u)\cup\big\{ u_i\neq a :i<|\bar u|\big\}$ is realized in $\U$ and that any realization yields the required substructure of $\U$.\QED
 \end{exercise}
 
 \begin{exercise}\label{pofu2}
@@ -156,7 +156,7 @@ Let $\phi(x)\in L(\U)$ and fix an arbitrary set $A$. Prove that the following ar
 
  \hfil$\displaystyle\psi(z_1,\dots,z_n)\imp\bigwedge^n_{i=1}\phi(z_i)$.
 \end{itemize}
-Hint: let $c=\<c_i:i<\lambda\>$ be an enumeration of $N^{|x|}$, where $N$ is any model containing $A$. Let $p(z)=\tp(c/A)$.  Prove that \ssf{2} implies the consistency of the type $p(z)\,\cup\, \big\{\neg\phi(z_i)\, :\, i<\lambda\big\}$ and deduce the existence of the required $M$.\QED
+Hint: let $\bar c$ be an enumeration of $N^{|x|}$, where $N$ is any model containing $A$. Let $p(\bar z)=\tp(\bar c/A)$.  Prove that \ssf{2} implies the consistency of $p(\bar z)\,\cup\, \big\{\neg\phi(z_i)\, :\, i<|\bar z|\big\}$ and deduce the existence of the required $M$.\QED
 \end{exercise}
 
 
