@@ -495,8 +495,21 @@ Under the same assumptions of the lemma above, every type-definable idempotent s
 In this section we merge the theory of idempotents presented in Section~\ref{semigroups}
 with the proof of Ramsey's theorem to obtain Hindman's theorem in a straightforward way. 
 
+
+We write $\fp_n\,{\mr\bar a}$ for the sets of products of $n$ elements of ${\mr\bar a}$ taken in increasing order.
+Namely,
+
+\ceq{\hfill\emph{$\fp_n\,{\mr\bar a}$}}{=}{\Big\{{\mr a_{i_1}}\kern-0.5ex\cdot\dots\cdot{\mr a_{i_m}}\ :\quad i_1<\dots<i_m<|\bar a|,\ \ m\le n\Big\}}.
+
+Finally we define
+
+\ceq{\hfill\emph{$\fp\,{\mr\bar a}$}}{=}{\bigcup_{n\in\omega}\fp_n({\mr\bar a})}.
+
+This section is dedicated to the proof of the following theorem.
+
+
 Let $<$ be a transitive relation on a semigroup $\mrU$.
-We say that $<$ is \emph{upward directed\/} 
+We say that $<$ is \emph{upward-directed\/} 
 if for every ${\mr a},{\mr b}$ there is ${\mr c}$ such that ${\mr a},{\mr b}<{\mr c}$. 
 A set $\mrA\subseteq\mrU$ is \emph{\dotlt-closed\/} 
 if ${\mr a}{\cdot}{\mr b}\in\mrA$ 
@@ -504,33 +517,13 @@ for every ${\mr a},{\mr b}\in\mrA$ such that ${\mr a}<{\mr b}$.
 A set $\mrA\subseteq\mrU$ is \emph{cofinal\/} 
 if for every ${\mr a}\in\mrU$ there is ${\mr b}\in\mrA$ such that ${\mr a}<{\mr b}$. 
 
-For $A\subseteq\mrU$ we write
-
-\ceq{\hfill\emph{$\dotcl(A)$}}{=}{\Big\{{\mr a_1}\kern-0.5ex\cdot\dots\cdot{\mr a_n}\ :\ \textrm{ for }{\mr a_1}<\dots<{\mr a_n} \textrm{ in } A\Big\}}.
-
-The main result of this section is the following generalization of the theorem of Hindman. 
-
-% Let $G$ be an infinite semigroup
-% and let ${\mr\bar a}\in G^{\le\omega}$.
-% We write $\fp_n({\mr\bar a})$ for the sets of products of $n$ elements of ${\mr\bar a}$ taken in increasing order.
-% Namely,
-% 
-% \ceq{\hfill\emph{$\fp_n({\mr\bar a})$}}{=}{\Big\{{\mr a_{i_1}}\kern-0.5ex\cdot\dots\cdot{\mr a_{i_m}}\ :\quad i_1<\dots<i_m<|\bar a|,\ \ m\le n\Big\}}.
-% 
-% We agree that when ${\mr\bar a}$ is the empty tuple then $\fp_n({\mr\bar a})=\0$.
-% Finally we define
-% 
-% \ceq{\hfill\emph{$\fp({\mr\bar a})$}}{=}{\bigcup_{n\in\omega}\fp_n({\mr\bar a})}.
-% 
-% This section is dedicated to the proof of the following theorem.
-
 \theoremstyle{mio}
 \newtheorem{Hindman}[thm]{Hindman Theorem}
 \begin{Hindman}\label{thm_Hindman}
 Let $G$ be an infinite semigroup and 
-let $<$ be a transitive upward directed relation on $G$.
+let $<$ be a transitive upward-directed relation on $G$.
 Then for every finite coloring of $G$ 
-there is an infinite monochromatic \dotlt-closed set $A\subseteq G$.
+there is an ascending tuple $\bar a\in G^\omega$ such that $\fp\,\bar a$ is monochromatic.
 If $G$ countable, we can also require that $A$ is cofinal in $G$.
 \end{Hindman}
 
@@ -538,7 +531,6 @@ Note that this implies that every commutative semigroup $G$ has an infinite mono
 
 Our proof follows closely the proof of Ramsey's theorem~\ref{thm_Ramsey}.
 The novelty is all in Lemma~\ref{lem_Hindman}.
-
 
 \begin{proof}
 We interpret $G$ as a structure in a language $L$ 
@@ -548,7 +540,7 @@ Let $\U$ be a saturated elementary superstucture of $G$.
 As observed in Remark~\ref{rk_coheir_stationary}, 
 the language makes $\nonforkc_G$ trivially $1$-stationary.
 
-We write ${\mr\Aa}$ for the type-definable set $\{{\mr x} : G<{\mr x}\}$ which is non empty because $<$ is upward directed.
+We write ${\mr\Aa}$ for the type-definable set $\{{\mr x} : G<{\mr x}\}$ which is non empty because $<$ is upward-directed.
 
 We claim that ${\mr\Aa}$ is idempotent. 
 In fact, if ${\mr a},{\mr b}\in{\mr\Aa}$ and ${\mr a}\cnonfork_G{\mr b}$ 
@@ -559,31 +551,30 @@ Let ${\mr c}$ be an element of $\mrA$ with idempotent orbit as given by Corollar
 Let $p({\mr x})\in S(\U)$ be a global coheir of $\tp({\mr c}/G)$.
 Let ${\mr\bar c}$ be a tuple such that
 
-\ceq{\hfill {\mr c_i}}{\models}{p_{\restriction G,\,\dotcl({\mr c_{\restriction i} } ) }({\mr x}).}
+\ceq{\hfill {\mr c_i}}{\models}{p_{\restriction G,\,\fp\,{\mr c_{\restriction i} }  }({\mr x}).}
 
 In particular, ${\mr\bar c}$ is a coheir sequence. 
 By the idempotency of ${\mr c}_G$ and Proposition~\ref{prop_orbits_main}, 
-${\mr a}\equiv_G{\mr c}$ for all ${\mr a}\in \dotcl({\mr\bar c})$.
-It follows in particular that $\dotcl({\mr\bar c})$ is monochromatic, say \textit{red}.
+${\mr a}\equiv_G{\mr c}$ for all ${\mr a}\in \fp\,{\mr\bar c}$.
+It follows in particular that $\fp\,{\mr\bar c}$ is monochromatic, say \textit{red}.
 Now, we use the sequence ${\mr\bar c}$ to define ${\mr\bar a}\in G^\omega$
-such that $\dotcl({\mr\bar a})$ is red.
+such that $\fp\,{\mr\bar a}$ is red.
 
-Assume as induction hypothesis that $\dotcl({\mr a_{\restriction i}},\,{\mr\bar c})$ is red.
+Assume as induction hypothesis that $\fp({\mr a_{\restriction i}},\,{\mr\bar c})$ is red.
 Our goal is to find ${\mr a_i}$ such that the same property holds for ${\mr a_{\restriction i+1}},\,{\mr\bar c}$.
 
 Let $\phi({\mr a_{\restriction i}},\,{\mr c_i},\,{\mr c_{\restriction i}})$ 
 be the sentence that says that 
-$\dotcl({\mr a_{\restriction i}},\,{\mr c_i},\,{\mr c_{\restriction i}})$ is red.
+$\fp({\mr a_{\restriction i}},\,{\mr c_i},\,{\mr c_{\restriction i}})$ is red.
 As ${\mr\bar c}$ is a coheir sequence we can find  ${\mr a_i}$ 
 such that $\phi({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr c_{\restriction i}})$.
-Hence $\dotcl({\mr a_{\restriction i+1}},\,{\mr c_{\restriction i}})$ is red.
+Hence $\fp({\mr a_{\restriction i+1}},\,{\mr c_{\restriction i}})$ is red.
 As ${\mr\bar c}$ is indiscernible over $G$, 
-this is equivalent to $\dotcl({\mr a_{\restriction i+1}},\,{\mr\bar c})$ being red.
+this is equivalent to $\fp({\mr a_{\restriction i+1}},\,{\mr\bar c})$ being red.
 
 Finally, note that we can require ${\mr\bar a}$ to be cofinal 
 by imposing that $a_i$ is larger than any given $b\in G$.
 \end{proof}
-
 
 \section{The Hales-Jewett Theorem}
 \label{HJ}
