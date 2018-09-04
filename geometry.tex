@@ -15,20 +15,23 @@ In this chapter we fix a signature $L$, a complete theory $T$ without finite mod
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Algebraic and definable elements}\label{acl}
 
-Let ${\mr a}\in\U$ and let $\Aa\subseteq\U$ be some set of parameters (of arbitrary cardinality). We say that ${\mr a}$ is \emph{algebraic over $\Aa$\/} if $\phi({\mr a})\wedge\E^{=k}{\mr x}\;\phi({\mr x})$ holds for some  formula $\phi({\mr x})\in L(\Aa)$ and  some positive integer $k$. In particular when $k=1$ we say that ${\mr a}$ is \emph{definable over $\Aa$}. We write \emph{acl$(\Aa)$} for the \emph{algebraic closure of $\Aa$}, that is, set of all elements algebraic over $\Aa$. If $\Aa=\acl(\Aa)$, we say that $\Aa$ is \emph{algebraically closed}. The \emph{definable closure of $\Aa$\/} is defined similarly and is denoted by \emph{dcl$(\Aa)$}. 
+Let ${\mr a}\in\U$ and let $\Aa\subseteq\U$ be some set of parameters (of arbitrary cardinality).
+We say that ${\mr a}$ is \emph{algebraic over $\Aa$\/} if $\phi({\mr a})\wedge\E^{=k}{\mr x}\;\phi({\mr x})$ holds for some  formula $\phi({\mr x})\in L(\Aa)$ and  some positive integer $k$.
+In particular, when $k=1$ we say that ${\mr a}$ is \emph{definable over $\Aa$}.
+We write \emph{acl$(\Aa)$} for the \emph{algebraic closure of $\Aa$}, that is, the set of all the elements that are algebraic over $\Aa$. If $\Aa=\acl(\Aa)$, we say that $\Aa$ is \emph{algebraically closed}. The \emph{definable closure of $\Aa$\/} is defined similarly and is denoted by \emph{dcl$(\Aa)$}. 
 
-A formula $\phi(u)\in L(A)$, or a type $p(u)\subseteq L(A)$, where $u$ is a finite tuple, with finitely many solutions are called an \emph{algebraic}.
+Let $x$ be a finite tuple of variables. Formulas $\phi(x)\in L(A)$, or types $p(x)\subseteq L(A)$, with finitely many solutions are called \emph{algebraic}.
 
 \begin{proposition}\label{prop_tipialgebrici}
-For every $A\subseteq\U$ and every type $p(u)\subseteq L(A)$, where $|u|<\omega$, the following are equivalent
+For every $A\subseteq\U$ and every type $p(x)\subseteq L(A)$, where $|x|<\omega$, the following are equivalent
 \begin{itemize} 
-\item[1] $\E^{\le n}u\; p(u)$;
-\item[2] $\E^{\le n}u\;\phi(u)$ for some $\phi(u)$ which is conjunction of formulas $p(u)$.
+\item[1] $\E^{\le n}x\; p(x)$;
+\item[2] $\E^{\le n}x\;\phi(x)$ for some $\phi(x)$ which is conjunction of formulas $p(x)$.
 \end{itemize}
 \end{proposition}
-\begin{proof} The non trivial implication is \ssf{1}$\IMP$\ssf{2}. Let $\{a_i,\dots,a_n\}$ be all the solutions of $p(u)$. Then 
+\begin{proof} The non trivial implication is \ssf{1}$\IMP$\ssf{2}. Let $\{a_i,\dots,a_n\}$ be all the solutions of $p(x)$. Then 
 
-\ceq{\hfill p(u)}{\iff}{\bigvee^n_{i=1}a_i=u}
+\ceq{\hfill p(x)}{\iff}{\bigvee^n_{i=1}a_i=x}
 
 Then \ssf{2} follows by compactness (cfr.\@ Remark~\hyperref[rem_normality]{\ref*{rem_normality}.\ssf{b}}).
 % The non trivial implication is \ssf{1}$\IMP$\ssf{2}. Assume \ssf{1}, then the following type is inconsistent
@@ -42,21 +45,21 @@ Then \ssf{2} follows by compactness (cfr.\@ Remark~\hyperref[rem_normality]{\ref
 % Which is inconsistent, therefore $\phi(u)$ has at most $n$ solutions.
 \end{proof}
 
-\begin{exercise}
-Prove that Proposition~\ref{prop_tipialgebrici} does not hold in general for infinite tuple $u$.\QED
-\end{exercise}
+% \begin{exercise}
+% Prove that Proposition~\ref{prop_tipialgebrici} does not hold in general for infinite tuple $u$.\QED
+% \end{exercise}
+
+
 
 \begin{exercise}
-For every $a\in\U^{|u|}$ and $A\subseteq\U$, the following are equivalent
+For every $a\in\U^n$ and $A\subseteq\U$, the following are equivalent
 \begin{itemize}
-\item[1.] $a$ is solution of some algebraic formula  $\phi(u)\in L(A)$;
-\item[2.] $a={\mr a_1},\dots,{\mr a_n}$ for some ${\mr a_1},\dots,{\mr a_n}\in\acl(A)$. 
+\item[1.] $a$ is solution of some algebraic formula  $\phi(x)\in L(A)$;
+\item[2.] $a=a_1,\dots,a_n$ for some $a_1,\dots,a_n\in\acl(A)$.\QED 
 \end{itemize}
-Prove also that if $a$ is definable then so are ${\mr a_1},\dots,{\mr a_n}$, and vice versa.\QED
 \end{exercise}
 
 
-%%%%%%%%
 \begin{theorem}\label{thm_dgalois}
 For every $A\subseteq\U$ and every ${\mr a}\in\U$ the following are equivalent
 \begin{itemize}
@@ -82,18 +85,18 @@ For every $A\subseteq\U$ and every ${\mr a}\in\U$ the following are equivalent
 
 \begin{proof} \ssf{1}$\IFF$\ssf{2}. This is proved as in Theorem~\ref{thm_dgalois}. 
 
-\ssf{1}$\IMP$\ssf{3}. Assume \ssf{1}, then there is a formula $\phi({\mr x})\subseteq L(A)$ such that $\phi({\mr a})\wedge\E^{=k}{\mr x}\;\phi({\mr x})$ for some $k$. By elementarity $\E^{=k}{\mr x}\;\phi({\mr x})$ holds in every model $M$ containing $A$. Again by elementarity, the $k$ solutions of $\phi({\mr x})$ in $M$ are solutions in $\U$, therefore ${\mr a}$ is one of these.
+\ssf{1}$\IMP$\ssf{3}. Assume \ssf{1}. Then there is a formula $\phi({\mr x})\subseteq L(A)$ such that $\phi({\mr a})\wedge\E^{=k}{\mr x}\;\phi({\mr x})$ for some $k$. By elementarity $\E^{=k}{\mr x}\;\phi({\mr x})$ holds in every model $M$ containing $A$. Again by elementarity, the $k$ solutions of $\phi({\mr x})$ in $M$ are solutions in $\U$, therefore ${\mr a}$ is one of these.
 
-\ssf{3}$\IMP$\ssf{2}. Assume $\orbit({\mr a}/A)$ is infinite and fix any model $M$ containing $A$. By Exercise~\ref{cadinalitafinitasaturazione}, $\orbit({\mr a}/A)$  has cardinality $\kappa$, hence $\orbit({\mr a}/A)\nsubseteq M$. Pick any $f\in\Aut(\U/A)$ such that $f{\mr a}\notin M$. Then ${\mr a}\notin f^{-1}[M]$, so $f^{-1}[M]$ is a models that contradicts \ssf{3}.
+\ssf{3}$\IMP$\ssf{2}. Assume $\orbit({\mr a}/A)$ is infinite and fix any model $M$ containing $A$. By Exercise~\ref{cadinalitafinitasaturazione}, $\orbit({\mr a}/A)$  has cardinality $\kappa$, hence $\orbit({\mr a}/A)\nsubseteq M$. Pick any $f\in\Aut(\U/A)$ such that $f{\mr a}\notin M$. Then ${\mr a}\notin f^{-1}[M]$, so $f^{-1}[M]$ is a model that contradicts \ssf{3}.
 \end{proof}
 
 
 
 
 \begin{corollary}\label{fmacl123} 
-For every $A\subseteq\U$ and every ${\mr a}\in\U$ the following hold
+For every $A\subseteq\U$ and every ${\mr a}\in\U$
 \begin{itemize}
-\item[1]  Se ${\mr a}\in\acl A$ then ${\mr a}\in\acl B$ for some finite $B\subseteq A$;\hfill\emph{finite character}
+\item[1]  if ${\mr a}\in\acl A$ then ${\mr a}\in\acl B$ for some finite $B\subseteq A$;\hfill\emph{finite character}
 \item[2]  $A\subseteq \acl A$;\hfill\emph{extensivity}
 \item[3]  if $A\subseteq B$ then $\acl A\subseteq \acl B$;\hfill\emph{monotonicity}
 \item[4]  $\acl A=\acl(\acl A)$;\hfill\emph{idempotency}
@@ -104,7 +107,7 @@ For every $A\subseteq\U$ and every ${\mr a}\in\U$ the following hold
 Properties \ssf{1}-\ssf{4} say that $\acl(\mbox{-})$ is a closure operator with finite character.
 
 \begin{proof}
-Properties \ssf{1}-\ssf{3} are obvious, \ssf{4} follow from \ssf{5} which in turn follows from Theorem~\ref{thm_fmgalois}.
+Properties \ssf{1}-\ssf{3} are obvious, \ssf{4} follows from \ssf{5} which in turn follows from Theorem~\ref{thm_fmgalois}.
 \end{proof}
 
 \begin{proposition}\label{prop_estensionemappechiusuraalgebrica}
@@ -140,11 +143,11 @@ whose consistence need to be verified. (See Exercise~\ref{ex_acl_intersezione_2_
 \end{exercise}
 
 \begin{exercise}\label{ex_acl_intersezione_2_modelli_iso}
-Prove that for every $A\subseteq N$ there is an automorphism $f\in\Aut(\U/A)$ such that $\acl A\,=\,f[N]\cap N$. (This is a stronger version of the claim in Exercise~\ref{ex_acl_intersezioe_2_modelli}.) Hint: let $c$ be an enumeration of $N$. Let $p(x)=\tp(c/A)$. Consider the type
+Prove that for every $A\subseteq N$ there is an automorphism $f\in\Aut(\U/A)$ such that $\acl A\,=\,f[N]\cap N$. (This is a stronger version of the claim in Exercise~\ref{ex_acl_intersezioe_2_modelli}.) Hint: let $\bar c$ be an enumeration of $N$. Let $p(\bar x)=\tp(\bar c/A)$. Consider the type
 
-\hfil$p(x)\ \cup\ \Big\{\neg\big[\psi(b,x)\wedge\E^{\le n}y\,\psi(y,x)\big]\ :\ b\in N\sm\acl(A),\ \ \psi(y,x)\in L_x(A),\ \ n<\omega\Big\}$
+\hfil$p(x)\ \cup\ \Big\{\neg\big[\psi(b,\bar x)\wedge\E^{\le n}y\,\psi(y,\bar x)\big]\ :\ b\in N\sm\acl(A),\ \ \psi(y,x)\in L(A),\ \ n<\omega\Big\}$
 
-Any $a\models p(x)$ enumerates a model $A$-isomorphic to $N$.\QED%la cui consistenza dev'essere verificata. Si pu\`o usare l'esercizio~\ref{pofu2} oppure mostrare che il tipo qui sopra \`e chiuso per congiunzione e poi applicare l'esercizio~\ref{pofu} (che \`e pi\`u semplice).
+Any $\bar a\models p(\bar x)$ enumerates a model $A$-isomorphic to $N$.\QED%la cui consistenza dev'essere verificata. Si pu\`o usare l'esercizio~\ref{pofu2} oppure mostrare che il tipo qui sopra \`e chiuso per congiunzione e poi applicare l'esercizio~\ref{pofu} (che \`e pi\`u semplice).
 \end{exercise}
 
 

@@ -71,10 +71,12 @@ In Section~\ref{imaginaries_long} below we compare our definition with the stand
 Given a language $L$, we define a many-sorted language \emph{$L^{\eq}$\/} which has a sort for each partitioned formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort}.
 (Partitioned formulas have been introduced in Definition~\ref{def_partitioned_fla}.) 
 
-For legibility, we pretend that all formulas $\sigma$ depend on the same variables. so we assume that ${\mr x}\,;{\gr z}$ are infinite tuples. Hence, with the notation of the previous section $L_{\rm srt}=\{0\}\cup L_{{\mr x}\,;{\gr z}}$.
+For legibility, we pretend that all formulas $\sigma$ depend on the same variables. 
+So we assume that ${\mr x}\,;{\gr z}$ are infinite tuples. 
+Hence, with the notation of the previous section $L_{\rm srt}=\{0\}\cup L_{{\mr x}\,;{\gr z}}$.
 
-The home sort is also called the \emph{first-order sort}.
-All other sorts are \emph{second-order}.
+The home sort is also called the \emph{first-order sort\/} and
+all other sorts are generically called \emph{second-order}.
 First of all, $L^\eq$ contains all relations and functions of the first order language $L$.
 The many-sorted arity of a relation $r$ is $\<0^{n_r}\>$, where $n_r$ is the arity of $r$ in $L$.
 Similarly, the many-sorted arity of a function $f$ is $\<0^{1+n_f}\>$, where $n_f$ is the arity of $f$ in $L$.
@@ -89,7 +91,8 @@ The symbols in $L$ have the same interpretation as in the one-sorted case, and $
 We write \emph{$T^{\eq}$\/} for $\Th(\U^\eq)$.
 
 As usual \emph{$L^\eq$\/} also denotes the set of formulas constructed in this language and, if $A\subseteq\U^\eq$, we write  \emph{$L^\eq(A)$\/} for the language and the set of formulas that use elements of $A$ as parameters.
-We write \emph{$L(A)$\/} for the set of formulas in $L^\eq(A)$ that contain no second-order variables (neither free nor quantified).
+
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We write \emph{$L(A)$\/} for the set of formulas in $L^\eq(A)$ that contain no second-order variables, neither free nor quantified (as $A\subseteq\U^\eq$, it may contain second-order parameters).
 
 We use the symbol ${\vl\X}$ to denote a generic second-order variable.
 
@@ -99,22 +102,21 @@ It is important to note right away that this expansion of $\U$ is a mild one: th
 In particular, iterating the expansion would not yield anything new.
 
 \begin{proposition}\label{prop_eqmild}
-Let ${\vl\X}={\vl\X_1},\dots,{\vl\X_n}$ be a tuple of second order variables of sort $\sigma_i({\mr x}\,;{\gr z})$ for $i=1,\dots,n$.
-Let $\phi({\mr u}\,;{\vl\X})\in L^\eq$ where ${\mr u}\,$ is a tuple of first-order variables.
-Then there is a formula $\phi'({\mr u}\,;{\gr z})\in L$ such that 
+Let ${\vl\bar\X}={\vl\X_1},\dots,{\vl\X_n}$ be a tuple of second order variables of sort $\sigma_i({\mr x}\,;{\gr z})$.
+Then for every formula $\phi({\mr u}\,;{\vl\bar \X})\in L^\eq$ there is a formula $\phi'({\mr u}\,;{\gr\bar z})\in L$, where ${\gr\bar z}$ is a tuple of $n$ copies of ${\gr z}$, such that 
 
-\hfil$\displaystyle\A {\vl\X},{\gr z}\ \bigg[\bigwedge^n_{i=1}{\vl\X_i}=\big\{{\mr x}:\sigma_i({\mr x}\,;{\gr z})\big\}\imp\A {\mr u}\ \big[\phi({\mr u}\,;{\vl\X})\ \iff\ \phi'({\mr u}\,;{\gr z})\big]\bigg]$
+\hfil$\displaystyle\A {\vl\bar\X},{\gr\bar z}\ \bigg[\bigwedge^n_{i=1}{\vl\X_i}=\big\{{\mr x}:\sigma_i({\mr x}\,;{\gr z_i})\big\}\imp\A {\mr u}\ \big[\phi({\mr u}\,;{\vl\bar\X})\ \iff\ \phi'({\mr u}\,;{\gr\bar z})\big]\bigg]$
 
 % For simplicity we are assuming that the tuples ${\gr z_i}$ do not have variables in common.
 \end{proposition}
 
 When $n=0$ the proposition asserts that $L_{{\mr u}}^\eq$ and $L_{{\mr u}}$ have the same expressive power.
 
-\begin{proof}
+\begin{proof}[Proof (sketch)]
 By induction on syntax.
-When $\phi$ is atomic, we set $\phi'=\phi$ unless it is of the form ${\mr t}\in {\vl\X}$ for some tuple of terms ${\mr t}$ or it has the form ${\vl\X_1}={\vl\X_2}$.
-In the first case $\phi'$ is the formula $\sigma({\mr t}\,;{\gr z})$.
-In the second case it is the formula $\A {\mr x}\,\big[\sigma_1({\mr x}\,;{\gr z}) \iff\sigma_2({\mr x}\,;{\gr z})\big]$.
+When $\phi$ is atomic, we set $\phi'=\phi$ unless $\phi$ is of the form ${\mr t}\in {\vl\X_i}$ for some tuple of terms ${\mr t}$ or it has the form ${\vl\X_i}={\vl\X_j}$.
+In the first case $\phi'$ is the formula $\sigma_i({\mr t}\,;{\gr z_i})$.
+In the second case it is the formula $\A {\mr x}\,\big[\sigma_i({\mr x}\,;{\gr z_i}) \iff\sigma_j({\mr x}\,;{\gr z_j})\big]$. 
 
 The connectives stay unchanged except for the quantifiers $\E {\vl\X}$, where ${\vl\X}$ is a second-order variable, say of sort $\sigma({\mr x}\,;{\gr z})$.
 These quantifiers are replaced by $\E{\gr z}$.
@@ -128,9 +130,10 @@ Proposition~\ref{prop_eqmild} should convince the reader that the move from $\U$
 
 
 \begin{remark}\label{rem_eqmild}
-From Proposition~\ref{prop_eqmild} it follows that for every $A\subseteq\U^\eq$, there is a $B\subseteq\U$ such that $L(B)$ is at least as expressive as $L(A)$.
+From Proposition~\ref{prop_eqmild} it follows that for every $A\subseteq\U^\eq$, there exists a $B\subseteq\U$ such that $L(B)$ is at least as expressive as $L(A)$.
+By this we mean that every formula in $L(A)$ is equivalent to some formula in $L(B)$.
 The point of $\U^\eq$ is that there might not be any $B\subseteq\U$ such that $L(B)$ is exactly as expressive as $L^\eq(A)$.
-For instance, suppose $L$ contains only an equivalence relation with infinitely many classes, all with infinite elements.
+For instance, suppose $L$ contains only an equivalence relation with infinitely many infinite classes.
 Let ${\vl\Aa}$ be an equivalence class.
 Then ${\vl\Aa}$ is is definable in $L(B)$ if and only if $B\cap {\vl\Aa}\neq\0$.
 But no element of ${\vl\Aa}$ is definable in $L^\eq(\{{\vl\Aa}\})$.\QED
@@ -165,15 +168,15 @@ That is, $\U^\eq$ is saturated.
 \begin{proof}
 By Remark~\ref{rem_eqmild}, there are some $B\subseteq\U$ and some $q({\mr u}\,;{\vl\X})\subseteq L^\eq(B)$ equivalent to $p({\mr u}\,;{\vl\X})$.
 This already proves the proposition when ${\vl\X}$ is the empty tuple.
-Otherwise, let $q'({\mr u}\,;{\gr z})$ be obtained replacing every formula $\phi({\mr u}\,;{\vl\X})$ in $q({\mr u}\,;{\vl\X})$ with the formula $\phi'({\mr u}\,;{\gr z})$ given in Proposition~\ref{prop_eqmild}.
+Otherwise, let $q'({\mr u}\,;{\gr z})$ be obtained by replacing every formula $\phi({\mr u}\,;{\vl\X})$ in $q({\mr u}\,;{\vl\X})$ with the formula $\phi'({\mr u}\,;{\gr z})$ given in Proposition~\ref{prop_eqmild}.
 Then $q'({\mr u}\,;{\gr z})$ is finitely consistent in $\U$.
 Assume for clarity of notation that ${\vl\X}$ is a single variable of sort $\sigma({\mr x}\,;{\gr z})$.
 If ${\mr c}\,;{\gr b}\models q'({\mr u}\,;{\gr z})$, then  ${\mr c}\,;\sigma({\mr\U}\,;{\gr b})\models q({\mr u}\,;{\vl\X})$.
 \end{proof}
 
 
-Automorphisms of a many-sorted structure are defined in the obvious way: sorts are preserved as well as functions and relations.
-Every automorphisms $f:\U\imp\U$ extends to an automorphism $f:\U^\eq\imp\U^\eq$ as follows.
+Automorphisms of a many-sorted structure are defined in the obvious way: sorts are preserved and so are functions and relations.
+Every automorphism $f:\U\imp\U$ extends to an automorphism $f:\U^\eq\imp\U^\eq$ as follows.
 If ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ we define $f{\vl\Aa}=\sigma({\mr\U}\,;f{\gr b})=f\big[{\vl\Aa}\big]$, which clearly preserves the sort and the relation $\in$.
 Clearly, this extension is unique.
 
@@ -218,9 +221,6 @@ For any $A\subseteq\U^\eq$ and $a\in\U^\eq$ the following are equivalent
 \end{itemize}
 \end{theorem}
 
-Note that a tuple is invariant if and only it all its component are definable.
-Then in Theorem~\ref{thm_Galois_def=def} we may replace $a$ and/or $A$ by a tuple.
-
 Definition~\ref{def_def} treats first- and second-order elements of $\U^\eq$ uniformly.
 However, for sets it can be rephrased in a more natural way.
 
@@ -237,15 +237,15 @@ Then the following are equivalent
 Implication \ssf{2}$\IMP$\ssf{1} is clear because extensionality is implicit in the definition of $\U^\eq$.
 We prove \ssf{1}$\IMP$\ssf{2}.
 Let $\phi({\vl\X})\in L^\eq(A)$ be a formula ${\vl\Aa}$ is the unique solution of.
-Then the required formula $\psi({\mr x})$ is $\E {\vl\X}\,\big[{\mr x}\in {\vl\X}\wedge\phi({\vl\X})\big]$.
+Then \ssf{2} holds with $\E {\vl\X}\,\big[{\mr x}\in {\vl\X}\wedge\phi({\vl\X})\big]$ for $\psi({\mr x})$. This $\psi({\mr x})$ is not a formula in $L(A)$, but Proposition~\ref{prop_eqmild} yields the required formula $\psi'({\mr x})\in L(A)$.
 \end{proof}
 
 By the characterization above, Theorem~\ref{thm_Galois_def=def} when applied to a definable set ${\vl\Aa}$ gives an alternative proof of Proposition~\ref{prop_inv_def}.
 
-The formula $\psi({\mr x})$ in Proposition~\ref{prop_def_def_set} need not be related to the sort $\sigma({\mr x}\,;{\gr z})$.
+The formula $\psi({\mr x})$ in Proposition~\ref{prop_def_def_set} need not be the sort $\sigma({\mr x}\,;{\gr z})$.
 For example, consider the theory of a binary equivalence relation $e({\mr x}\,;{\gr z})$ with two infinite classes, let ${\vl\Aa}$ be one of these classes and let $A\neq\0$ be such that $A\cap {\vl\Aa}=\0$.
 Then ${\vl\Aa}$ is definable over $A$ though not by some formula of the form $e({\mr x}\,;{\gr b})$ for some ${\gr b}\in A$.
-Things change radically if we replace $A$ with a model.
+Things change if we replace $A$ with a model.
 
 \begin{proposition}\label{prop_standard_def_set}
 Let $M$ be a model and let ${\vl\Aa}$ be an element of sort $\sigma({\mr x}\,;{\gr z})$.
@@ -282,7 +282,7 @@ This is the natural generalization of the notion introduced in Section~\hyperref
 % \end{itemize} 
 % \end{proposition}
 
-The following proposition is proved with virtually the same proof of Theorem~\ref{thm_fmgalois}
+The following proposition is proved with virtually the same proof as Theorem~\ref{thm_fmgalois}
 
 \begin{theorem}\label{thm_Galois_alg=alg}
 For every $A\subseteq\U^\eq$ and every $a\in\U^\eq$ the following are equivalent
@@ -533,7 +533,7 @@ For arbitrary $c\in\U^{|{\gr z}|}$, prove that if the orbit of $\phi({\mr\U}\,; 
 % prove that a theory has weak elimination of imaginaries if for every $A\subseteq\U^\eq$, there is a $B\subseteq\U$ such that $L\big(\acl(B)\big)$ and $L\big(acl(A)\big)$ have the same expressive power.\QED
 % \end{exercise}
 
-\section{The true story of imaginaries}\label{imaginaries_long}
+\section{Immaginaries: the true story}\label{imaginaries_long}
 
 The point of the expansion to $\U^\eq$ is to add a canonical parameter for each definable set.
 In fact, in $\U^\eq$ every definable subset of $\U^{|{\gr z}|}$ is the canonical parameter of itself.

@@ -337,30 +337,29 @@ The theorem follows by minimality.
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{22ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-
 In this and the following sections we focus on semigroups definable in a first-order structure.
-For a lighter notation, we identify our semigroup with $\mrU$,
+For a lighter notation, we identify our semigroup with \emph{$\mrG$},
 which here denotes the domain of a sort in a many-sorted monster model.
 The language contains, among others,
-the symbol \emph{$\ \cdot\ $} which is interpreted as a binary associative operation on $\mrU$.
+the symbol \emph{$\ \cdot\ $} which is interpreted as a binary associative operation on $\mrG$.
 
 We fix a set of parameters $A$,
 not necessarily all of the same sort.
-For any two sets $\mrA,\mrB\subseteq\mrU$ we define
+For any two sets $\mrA,\mrB\subseteq\mrG$ we define
 
 \ceq{\hfill\emph{$\mrA\cdot_{\!A}\mrB$}}
 {=}
 {\Big\{ {\mr a}{\cdot}{\mr b}\ :\ {\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\cnonfork_{\!A}{\mr b}\Big\}}
 
 In this and the next section we abbreviate $\O({\mr a}/A)$, 
-the orbit of ${\mr a}$ under $\Aut(\mrU/A)$, 
+the orbit of ${\mr a}$ under $\Aut(\mrG/A)$, 
 with \emph{${\mr a}_A$}.
 We write \emph{${\mr a}\cdot_{\!A}\mrB$} for $\O({\mr a}/A)\cdot_{\!A}\mrB$.
 Similarly for \emph{$\mrA\cdot_{\!A}{\mr b}$} 
 and \emph{${\mr a}\cdot_{\!A}{\mr b}$}.
 
 By the invariance of $\cnonfork_{\!A}$,
-for every $f\in\Aut(\mrU/A)$ we have $f[\mrA\cdot_{\!A}\mrB]=f[\mrA]\cdot_{\!A}f[\mrB]$.
+for every $f\in\Aut(\mrG/A)$ we have $f[\mrA\cdot_{\!A}\mrB]=f[\mrA]\cdot_{\!A}f[\mrB]$.
 Therefore when $\mrA$ and $\mrB$ are invariant over $A$,
 also $\mrA\cdot_{\!A}\mrB$ is invariant over $A$.
 Below we mainly deal with invariant sets.
@@ -412,7 +411,7 @@ We check that if $\mrA$ is idempotent so is $\mrA\cdot_{\!A}\mrB$
 
 We show that, under the assumption of stationarity,
 the operation $\cdot_{\!A}$ is a associative.
-The quotient map $\mrU\to\mrU/{\equiv_A}$ is almost a homeomorphism.
+The quotient map $\mrG\to\mrG/{\equiv_A}$ is almost a homeomorphism.
 
 
 \begin{proposition}\label{prop_orbits_main}
@@ -452,9 +451,9 @@ $\mrB$ and  $\mrC$.
 \end{corollary}
 
 \begin{proof}
-We can assume that $\mrA$, $\mrB$ and $\mrC$ are $M$-orbits of elements of $\mrU$.
-Say ${\mr a}$, ${\mr b}$, and ${\mr c}$ respectively.
-As we are working over models,
+We can assume that $\mrA$, $\mrB$ and $\mrC$ are $M$-orbits.
+Say of ${\mr a}$, ${\mr b}$, and ${\mr c}$ respectively.
+As we are working over a model,
 we can assume that ${\mr a}\cnonfork_M{\mr b}{\cdot}{\mr c}$ and ${\mr b}\cnonfork_M{\mr c}$.
 By Proposition~\ref{prop_orbits_main} the set on the l.h.s.\@ equals $({\mr a}{\cdot}{\mr b}{\cdot}{\mr c})_M$.
 By a similar argument the set on the r.h.s.\@ equals $({\mr a'}{\cdot}{\mr b'}{\cdot}{\mr c'})_M$ for some elements ${\mr a'}$, ${\mr b'}$, and ${\mr c'}$.
@@ -466,7 +465,7 @@ But inclusion between orbits amounts to equality.
 Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
 If $\mrA$ is minimal among the
 idempotent sets that are
-type-definable over $M$, then $\mrA=\O({\mr b}/M)$ for some (any) element ${\mr b}\in\mrA$.
+type-definable over $M$, then $\mrA={\mr b}_M$ for some (any) ${\mr b}\in\mrA$.
 \end{lemma}
 \begin{proof}
 By Corollary~\ref{corol_min_idempotent},
@@ -483,98 +482,88 @@ The theorem follows by minimality.
 \begin{corollary}\label{corol_idempotent}
 Under the same assumptions of the lemma above, every type-definable idempotent set contains an element with an idempotent orbit.\QED
 \end{corollary}
-
 \section{Hindman theorem}\label{Hindman}
 
 
 \def\dotgt{\ooalign{$>$\cr$\cdot$\cr}}
 \def\dotlt{\ooalign{$\kern1ex\cdot$\cr$<$\cr}}
-\def\dotcl{ {\rm cl}^{\hbox{\scriptsize\dotlt}} }
-% \def\dotcl{\ooalign{{\rm cl}\cr{\raisebox{1ex}{\hbox{\scriptsize\dotlt}}}\cr} }
+%\def\dotcl{ {\rm cl}^{\hbox{\scriptsize\dotlt}} }
+%\def\dotcl{\ooalign{{\rm cl}\cr{\raisebox{1ex}{\hbox{\scriptsize\dotlt}}}\cr} }
+\def\dotcl{ {\rm cl} }
 
 In this section we merge the theory of idempotents presented in Section~\ref{semigroups}
 with the proof of Ramsey's theorem to obtain Hindman's theorem in a straightforward way. 
 
-
-We write $\fp_n\,{\mr\bar a}$ for the sets of products of $n$ elements of ${\mr\bar a}$ taken in increasing order.
+Let ${\mr\bar a}$ be a tuple of elements of $\mrG$ of length $\le\omega$. 
+For any $n\le|{\mr\bar a}|$ we write $\fp_n\,{\mr\bar a}$ for the set of 
+finite products of $\le n$ elements of ${\mr\bar a}$ taken in increasing order.
 Namely,
 
-\ceq{\hfill\emph{$\fp_n\,{\mr\bar a}$}}{=}{\Big\{{\mr a_{i_1}}\kern-0.5ex\cdot\dots\cdot{\mr a_{i_m}}\ :\quad i_1<\dots<i_m<|\bar a|,\ \ m\le n\Big\}}.
+\ceq{\hfill\emph{$\fp_n\,{\mr\bar a}$}}{=}{\Big\{{\mr a_{i_0}}\kern-0.5ex\cdot\dots\cdot{\mr a_{i_k}}\ :\quad i_0<\dots<i_k<|{\mr\bar a}|,\ \ k< n\Big\}}.
 
-Finally we define
+When $n=|{\mr\bar a}|$ we write \emph{$\fp\,{\mr\bar a}$}.
 
-\ceq{\hfill\emph{$\fp\,{\mr\bar a}$}}{=}{\bigcup_{n\in\omega}\fp_n({\mr\bar a})}.
-
-This section is dedicated to the proof of the following theorem.
-
-
-Let $<$ be a transitive relation on a semigroup $\mrU$.
+Let $<$ be a preorder on a semigroup.
 We say that $<$ is \emph{upward-directed\/} 
 if for every ${\mr a},{\mr b}$ there is ${\mr c}$ such that ${\mr a},{\mr b}<{\mr c}$. 
-A set $\mrA\subseteq\mrU$ is \emph{\dotlt-closed\/} 
-if ${\mr a}{\cdot}{\mr b}\in\mrA$ 
-for every ${\mr a},{\mr b}\in\mrA$ such that ${\mr a}<{\mr b}$.
-A set $\mrA\subseteq\mrU$ is \emph{cofinal\/} 
-if for every ${\mr a}\in\mrU$ there is ${\mr b}\in\mrA$ such that ${\mr a}<{\mr b}$. 
+We say that $<$ is \emph{\dotlt-closed\/} 
+if ${\mr a}<{\mr b}<{\mr c}$ implies ${\mr a}<{\mr b}{\cdot}{\mr c}$.
 
 \theoremstyle{mio}
 \newtheorem{Hindman}[thm]{Hindman Theorem}
 \begin{Hindman}\label{thm_Hindman}
-Let $G$ be an infinite semigroup and 
-let $<$ be a transitive upward-directed relation on $G$.
+Let $<$ be an upward-directed \dotlt-closed preorder on a semigroup $G$.
 Then for every finite coloring of $G$ 
 there is an ascending tuple $\bar a\in G^\omega$ such that $\fp\,\bar a$ is monochromatic.
-If $G$ countable, we can also require that $A$ is cofinal in $G$.
 \end{Hindman}
 
-Note that this implies that every commutative semigroup $G$ has an infinite monochromatic subset $B$ closed under finite sums of distinct elements (well-order $G$ and take $B\subseteq A$ such that $B,<\,\simeq\,\omega,<\,$).
+Note that this implies that every commutative semigroup $G$ has an infinite monochromatic subset closed under finite sums of distinct elements (order $G$ arbitrarily).
 
 Our proof follows closely the proof of Ramsey's theorem~\ref{thm_Ramsey}.
 The novelty is all in Lemma~\ref{lem_Hindman}.
 
 \begin{proof}
-We interpret $G$ as a structure in a language $L$ 
-that extends the language of multiplicative groups 
-with a symbol for $<$ and for each subset of $G$.
-Let $\U$ be a saturated elementary superstucture of $G$.
+We interpret $G$ as a structure in a language 
+that extends the natural language of semigroups
+with a symbol for $<$ and one for each subset of $G$.
+Let $\mrG$ be a saturated elementary superstucture of $G$.
 As observed in Remark~\ref{rk_coheir_stationary}, 
 the language makes $\nonforkc_G$ trivially $1$-stationary.
 
-We write ${\mr\Aa}$ for the type-definable set $\{{\mr x} : G<{\mr x}\}$ which is non empty because $<$ is upward-directed.
-
-We claim that ${\mr\Aa}$ is idempotent. 
-In fact, if ${\mr a},{\mr b}\in{\mr\Aa}$ and ${\mr a}\cnonfork_G{\mr b}$ 
+Let ${\mr\G'}$ be the type-definable set $\{{\mr x} : G<{\mr x}\}$ 
+which is non empty because $<$ is upward-directed. 
+We claim that ${\mr\G'}$ is idempotent. 
+In fact, if ${\mr a},{\mr b}\in{\mr\G'}$ and ${\mr a}\cnonfork_G{\mr b}$ 
 then, as $G<{\mr a},{\mr b}$, we must have that ${\mr a}<{\mr b}$. 
-Therefore, from the \dotlt-closure of $\mrA$ we infer ${\mr a}{\cdot}{\mr b}\in{\mr\Aa}$.
+Therefore, from the \dotlt-closure of $<$ we infer ${\mr a}{\cdot}{\mr b}\in{\mr\G'}$.
 
-Let ${\mr c}$ be an element of $\mrA$ with idempotent orbit as given by Corollary~\ref{corol_idempotent}.
-Let $p({\mr x})\in S(\U)$ be a global coheir of $\tp({\mr c}/G)$.
-Let ${\mr\bar c}$ be a tuple such that
+Let ${\mr g}$ be an element of ${\mr\G'}$ with idempotent orbit as given by Corollary~\ref{corol_idempotent}.
+Let $p({\mr x})\in S(\mrG)$ be a global coheir of $\tp({\mr g}/G)$.
+Let ${\mr\bar g}$ a coheir sequence of $p({\mr x})$. Note that, as the element of $\fp\,{\mr g_{\restriction i} }$ are definable over ${\mr g_{\restriction i}}$,
 
-\ceq{\hfill {\mr c_i}}{\models}{p_{\restriction G,\,\fp\,{\mr c_{\restriction i} }  }({\mr x}).}
+\ceq{\hfill {\mr g_i}}{\models}{p_{\restriction G,\,\fp\,{\mr g_{\restriction i} }  }({\mr x}).}
 
-In particular, ${\mr\bar c}$ is a coheir sequence. 
-By the idempotency of ${\mr c}_G$ and Proposition~\ref{prop_orbits_main}, 
-${\mr a}\equiv_G{\mr c}$ for all ${\mr a}\in \fp\,{\mr\bar c}$.
-It follows in particular that $\fp\,{\mr\bar c}$ is monochromatic, say \textit{red}.
-Now, we use the sequence ${\mr\bar c}$ to define ${\mr\bar a}\in G^\omega$
-such that $\fp\,{\mr\bar a}$ is red.
+By the idempotency of ${\mr g}_G$ and Proposition~\ref{prop_orbits_main}, 
+${\mr h}\equiv_G{\mr g}$ for all ${\mr h}\in \fp\,{\mr\bar g}$.
+It follows in particular that $\fp\,{\mr\bar g}$ is monochromatic, say all its elements have color $1$.
+Now, we use the sequence ${\mr\bar g}$ to define $\bar a\in G^\omega$
+such that all elements of $\fp\,\bar a$ have color $1$.
 
-Assume as induction hypothesis that $\fp({\mr a_{\restriction i}},\,{\mr\bar c})$ is red.
-Our goal is to find ${\mr a_i}$ such that the same property holds for ${\mr a_{\restriction i+1}},\,{\mr\bar c}$.
+Assume as induction hypothesis that we have $a_{\restriction i}\in G^i$ 
+such that all elements of $\fp(a_{\restriction i},\,{\mr\bar g})$ have color $1$.
+Our goal is to find $a_i$ 
+such that the same property holds for $a_{\restriction i+1},\,{\mr\bar g}$.
 
-Let $\phi({\mr a_{\restriction i}},\,{\mr c_i},\,{\mr c_{\restriction i}})$ 
-be the sentence that says that 
-$\fp({\mr a_{\restriction i}},\,{\mr c_i},\,{\mr c_{\restriction i}})$ is red.
-As ${\mr\bar c}$ is a coheir sequence we can find  ${\mr a_i}$ 
-such that $\phi({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr c_{\restriction i}})$.
-Hence $\fp({\mr a_{\restriction i+1}},\,{\mr c_{\restriction i}})$ is red.
-As ${\mr\bar c}$ is indiscernible over $G$, 
-this is equivalent to $\fp({\mr a_{\restriction i+1}},\,{\mr\bar c})$ being red.
-
-Finally, note that we can require ${\mr\bar a}$ to be cofinal 
-by imposing that $a_i$ is larger than any given $b\in G$.
+Let $\phi(a_{\restriction i},\,{\mr g_i},\,{\mr g_{\restriction i}})$ 
+be the sentence that says that all elements of 
+$\fp_{i+1}(a_{\restriction i},\,{\mr g_i},\,{\mr g_{\restriction i}})$ have color $1$.
+As ${\mr\bar g}$ is a coheir sequence we can find  $a_i$ 
+such that $\phi(a_{\restriction i},\,a_i,\,{\mr g_{\restriction i}})$.
+Hence all elements of $\fp_{i+1}(a_{\restriction i+1},\,{\mr g_{\restriction i}})$ have color $1$.
+As ${\mr\bar g}$ is indiscernible over $G$, 
+this is equivalent to saying that all elements of $\fp(a_{\restriction i+1},\,{\mr\bar g})$ have color $1$.
 \end{proof}
+
 
 \section{The Hales-Jewett Theorem}
 \label{HJ}
@@ -584,59 +573,61 @@ The Hales-Juvett Theorem is a purely combinatorial statement
 that implies the van der Waerden Theorem.
 
 We need a few definitions. 
-Let $\mrW$ be an idempotent set that is type-definable over $A$.
-We say that a set $\mrA\subseteq\mrW$ is a \emph{left-ideal\/} in $\mrW$ if $\mrW\cdot_{\!A}\mrA\subseteq\mrA$.
-We say that an element ${\mr a}$ is \emph{left-minimal\/} in $\mrW$ if 
-${\mr a}\in\mrW\cdot_{\!A}{\mr b}$ for every ${\mr b}\in\mrW\cdot_{\!A}{\mr a}$.
-In other words, ${\mr a}$ is left-minimal 
-if $\mrW\cdot_{\!A}{\mr a}$, i.e.\@ the left-ideal generated by the orbit of ${\mr a}$, is minimal among the type-definable left-ideals.
-The ambient set $\mrW$ and the set of parameters $A$ are often implicit in the context.
+Let $\mrA$ be an idempotent set that is type-definable over $A$.
+We say that an element ${\mr c}$ is \emph{left-minimal\/} w.r.t.\@ $\mrA$ if 
+${\mr c}\in\mrA\cdot_{\!A}{\mr g}$ for every ${\mr g}\in\mrA\cdot_{\!A}{\mr c}$.
+% In other words, ${\mr a}$ is left-minimal 
+% if $\mrW\cdot_{\!A}{\mr a}$, i.e.\@ the left-ideal generated by the orbit of ${\mr a}$, is minimal among the type-definable left-ideals.
+% The ambient set $\mrW$ and the set of parameters $A$ are often implicit in the context.
 
 \begin{proposition}\label{prop_minimal_existence1}
-Let $\mrW$ be an idempotent. 
-Every invariant left-ideal in $\mrW$ contains 
-a left-minimal element with idempotent orbit.
+Let $\mrA$ be idempotent and type-definable over $A$.
+Let ${\mr a}$ be arbitrary.
+Then $\mrA\cdot_{\!A}{\mr a}$ contains an element that is left-minimal w.r.t.\@ $\mrA$.
 \end{proposition}
 \begin{proof}
-Let $\mrA\subseteq\mrW$ be left-ideal invariant over $A$.
-For every ${\mr b}\in\mrA$ the left-ideal $\mrW\cdot_{\!A}{\mr b}\subseteq\mrA$ is type-definable over $A$. 
-By compacteness we can require that it is minimal. 
-As ${\mr b}\cdot_{\!A}\mrW$ is clearly idempotent, by Corollary~\ref{corol_idempotent} it contains an element ${\mr a}$ with idempotent orbit. Therefore ${\mr a}$ is the required left-minimal element.
+If ${\mr b}\in\mrA\cdot_{\!A}{\mr a}$ then $\mrA\cdot_{\!A}{\mr b}\subseteq\mrA\cdot_{\!A}{\mr a}$.
+By compacteness we obtain ${\mr c}\in\mrA\cdot_{\!A}{\mr a}$ such that $\mrA\cdot_{\!A}{\mr b}=\mrA\cdot_{\!A}{\mr c}$ for every ${\mr b}\in\mrA\cdot_{\!A}{\mr c}$. Hence ${\mr c}$ is left-minimal.
 \end{proof}
 
 \begin{proposition}\label{prop_minimal_existence2}
 Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
-Let $\mrW$ be an idempotent. 
-Let ${\mr a}\in\mrW$ have idempotent orbit. 
-Then 
+Let $\mrA$ be idempotent and type-definable over $M$.
+Fix some ${\mr c}$ %with idempotent orbit 
+such that $\mrA\cdot_M{\mr c}\subseteq\mrA$.
+Then
 \begin{itemize}
-\item[1.] $\big({\mr a}\cdot_M\mrW\big)\cap\big(\mrW\cdot_M{\mr a}\big)$ 
-contains some ${\mr c}$ with idempotent orbit;
-\item[2.] moreover, if ${\mr a}$ is left-minimal, ${\mr a}\equiv_M{\mr c}$ for every ${\mr c}$ as in \ssf{1}.
-\end{itemize}
+\item[1.] $\big({\mr c}\cdot_A\mrA\big)\cap\big(\mrA\cdot_M{\mr c}\big)$ 
+contains some ${\mr g}$ with idempotent orbit
+
+\item[2.] moreover, if ${\mr c}$ is left-minimal with idempotent orbit, ${\mr c}\equiv_M{\mr g}$ for every ${\mr g}$ as in \ssf{1}.
+\end{itemize} 
 \end{proposition}
 
 Note, parenthetically, that the set in \ssf{1} may not be type-definable, 
 therefore Corollary~\ref{corol_idempotent} does not apply 
 directly and we need an indirect argument.
 
-\begin{proof} \ssf{1.} \ Pick ${\mr b}\in\mrW\cdot_M{\mr a}$ with idempotent orbit.
-Such a ${\mr b}$ exists by Corollary~\ref{corol_idempotent}.
-From the idempotency of ${\mr a}_M$ we obtain ${\mr b}\in{\mr b}\cdot_M{\mr a}$. 
-% From the left-minimality of ${\mr a}$ we infer that ${\mr a}\in{\mr b}\cdot_M\mrW$ 
-% and, by the idempotency of ${\mr b}_M$, that ${\mr a}_M={\mr b}\cdot_M{\mr a}$.
-Now it is immediate to verify that any ${\mr c}\in{\mr a}\cdot_M{\mr b}\cdot_M{\mr a}$ is as required by \ssf{1}.
+\begin{proof} \ssf{1.} \ 
+As  $\mrA\cdot_M{\mr c}$ is idempotent, 
+by Corollary~\ref{corol_idempotent} it contains some ${\mr b}$ with idempotent orbit.
+%From the idempotency of ${\mr c}_M$ we obtain ${\mr b}\in{\mr b}\cdot_M{\mr c}$. 
+% From the left-minimality of ${\mr c}$ we infer that ${\mr c}\in{\mr b}\cdot_M\mrW$ 
+% and, by the idempotency of ${\mr b}_M$, that ${\mr c}_M={\mr b}\cdot_M{\mr c}$.
+Then any ${\mr g}\in{\mr c}\cdot_M{\mr b}$ is as required by \ssf{1}.
 
-\ssf{2.} \ From ${\mr c}\in{\mr a}\cdot_M\mrW$ and the idempotency of ${\mr a}_M$ 
-we obtain ${\mr c}_M={\mr a}\cdot_M{\mr c}$. 
-From the left-minimality of ${\mr a}_M$ we infer that ${\mr a}\in\mrW\cdot_M{\mr c}$. Hence ${\mr a}_M={\mr a}\cdot_M{\mr c}$, by the idempotency of ${\mr c}$. Therefore ${\mr a}_M={\mr c}_M$, which proves \ssf{2}.
+\ssf{2.} \ From ${\mr g}\in{\mr c}\cdot_M\mrA$ and the idempotency of ${\mr c}_M$ 
+we obtain ${\mr g}_M={\mr c}\cdot_M{\mr g}$. 
+From the left-minimality of ${\mr c}_M$ we infer that ${\mr c}\in\mrA\cdot_M{\mr g}$. Hence ${\mr c}_M={\mr c}\cdot_M{\mr g}$, by the idempotency of ${\mr g}_M$. Therefore ${\mr c}_M={\mr g}_M$, which proves \ssf{2}.
 \end{proof}
+% \excludecomment{grigio}
+% \begin{grigio}
 
 The following is a technical lemma that is required in the proof of the main theorem.
 
 \begin{proposition}\label{prop_HJ_tecnical}
 Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
-Let $\sigma:\mrV\to\mrU$ be a definable semigroup homomorphism.
+Let $\sigma:\mrU\to\mrU$ be a semigroup homomorphism definable over $M$.
 Then 
 \begin{itemize}
 \item[1.] $\sigma\big[{\mr a}_M\big]=(\sigma\,{\mr a})_M$
@@ -674,56 +665,51 @@ Hence the set on l.h.s.\@ is contained in the following\smallskip
 which is in turn contained in the set on the r.h.s.
 \end{proof}
 
-Let $G$ be a semigroup.
-A \emph{nice subsemigroup\/} of $G$ is a subsemigroup $C$ with the property that if ${\mr a}{\cdot}{\mr b}\in C$ then both ${\mr a},{\mr b}\in C$.
+% \end{grigio}
+
+Let $\mrG$ be a semigroup.
+A \emph{nice subsemigroup\/} of $\mrG$ is a subsemigroup $\mrC$ with the property that if ${\mr a}{\cdot}{\mr b}\in\mrC$ then both ${\mr a},{\mr b}\in \mrC$.
 
 
 \theoremstyle{mio}
 \newtheorem{HalesJewett}[thm]{Hales-Jewett Theorem}
 \begin{HalesJewett}[(algebraic version)]\label{thm_abstract_HJ}
 Let $G$ be a semigroup and let $C\subset G$ be a nice subsemigroup.
-Let $\Sigma$ be a finite set of retractions of $G$ to $C$, that is, 
+Let $\Sigma$ be a finite set of retractions of $G$ onto $C$, that is, 
 homomorphisms $\sigma:G\to C$ such that $\sigma_{\restriction C}={\rm id}_C$.
 Then, for every finite coloring of $C$,
-there is a ${\mr g}\in G\sm C$ such that $\{\sigma\,{\mr g}:\sigma\in\Sigma\}$ is monochromatic.
+there is an $a\in G\sm C$ such that $\{\sigma\,a:\sigma\in\Sigma\}$ is monochromatic.
 \end{HalesJewett}
 
 \begin{proof}
-Let $G\preceq\mrV$.
-Here $\mrV$ is a monster model in a language that contains 
-a symbol for multiplication and for all subsets of $G$.
+Let $G\preceq\mrG$.
+Here $\mrG$ is a monster model in a language that expands the natural one with a symbol for all subsets of $G$.
 As observed in Remark~\ref{rk_coheir_stationary}, 
 this makes $\nonforkc_G$ trivially $1$-stationary.
-Let $\mrU$ be the definable set such that $C=G\cap\mrU$.
-By elementarity, $\mrU$ is a nice subsemigroup of $\mrV$.
+Let $\mrC$ be the definable set such that $C=G\cap\mrC$.
+By elementarity, $\mrC$ is a nice subsemigroup of $\mrG$.
 The language contains also symbols for 
-the retractions $\sigma:\mrV\to\mrU$.
+the retractions $\sigma:\mrG\to\mrC$.
 
-Let ${\mr a}\in\mrU$ be left-minimal with idempotent orbit over $G$.
-Such an ${\mr a}$ exists by Proposition~\ref{prop_minimal_existence1}.
+By Proposition~\ref{prop_minimal_existence1}, there is a left-minimal ${\mr c}\in\mrC$.
+As $\mrC\cdot_M{\mr c}$ is clearly idempotent, we can further require that ${\mr c}$ has idempotent orbit.
 
-Now we move to $\mrV$ as ambient semigroup.
-By claim \ssf{1} in Proposition~\ref{prop_minimal_existence2}
-there is a ${\mr c}\in\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$ 
-with idempotent orbit.
-We can further require that ${\mr c}\in\mrV\sm\mrU$. 
-In fact, by nicety, in the proof of claim \ssf{1} we can take ${\mr b}\in\mrV\sm\mrU$.
-Then, again by nicety, obtain that ${\mr c}\in\mrV\sm\mrU$.
-
-From ${\mr c}\in\big({\mr a}\cdot_G\mrV\big)\cap\big(\mrV\cdot_G{\mr a}\big)$
-and Proposition~\ref{prop_HJ_tecnical}, we obtain 
-$\sigma\,{\mr c}\in\big({\mr a}\cdot_G\mrU\big)\cap\big(\mrU\cdot_G{\mr a}\big)$
+By nicety, $\mrA=\mrG\sm\mrC$ satisfy the assumptions of Proposition~\ref{prop_minimal_existence2}.
+Hence $\mrA$ contains some ${\mr g}$ with idempotent orbit that also belongs to 
+$\big({\mr c}\cdot_G\mrG\big)\cap\big(\mrG\cdot_G{\mr c}\big)$. 
+By Proposition~\ref{prop_HJ_tecnical}, we obtain that
+$\sigma\,{\mr g}\in\big({\mr c}\cdot_G\mrC\big)\cap\big(\mrC\cdot_G{\mr c}\big)$
 for all $\sigma\in\Sigma$.
-As $\sigma\,{\mr c}$ is also idempotent, 
+As $\sigma\,{\mr g}$ is also idempotent, 
 we apply Proposition~\ref{prop_minimal_existence2} to conclude that 
-$\sigma\,{\mr c}\equiv_G{\mr a}$.
-In particular the set $\{\sigma\,{\mr c}:\sigma\in\Sigma\}$ is monochromatic. 
+$\sigma\,{\mr g}\equiv_G{\mr c}$.
+In particular the set $\{\sigma\,{\mr g}:\sigma\in\Sigma\}$ is monochromatic. 
 
-Though the element ${\mr c}$ above need not belong to $G\sm C$,
-by elementarity $G\sm C$ contains some ${\mr g}$ with the same property and this proves the theorem.
+Though the element ${\mr g}$ above need not belong to $G\sm C$,
+by elementarity $G\sm C$ contains some $a$ with the same property and this proves the theorem.
 \end{proof}
 
-Finally we show how the classical Hales-Jewett's theorem follows from its abstract version.
+Finally we show how the classical Hales-Jewett theorem follows from its abstract version.
 
 
 \begin{HalesJewett}\label{thm_HalesJewett}

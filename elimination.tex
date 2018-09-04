@@ -9,6 +9,19 @@ In this chapter we present a few results dating from the 1950s that describe the
 \section{Lyndon-Robinson Lemma}
 \label{TeoremidiPreservazione}
 
+
+We refer the reader to Exercise~\ref{ex_qe_in_U} for a simpler version 
+of the main result of this section, the Lyndon-Robinson Lemma. 
+In fact, under the additional assumption of completeness, Lemma~\ref{lem_qfdefinability} 
+becomes essentially identical to the claim in Exercise~\ref{ex_qe_in_U}.
+
+However, we are interested in criteria for quantifier
+elimination, e.g.\@ Corollary~\ref{corol_QE} below.
+Often we first need to prove quantifier elimination 
+in order to be able to prove completeness.
+Therefore the assumption of completeness would make criteria 
+of quantifier elimination less applicable.
+
 In this section $T$ is a consistent theory without finite models and $\Delta$ is a set of formulas closed under renaming of variables. At a first reading the reader is encouraged to assume that $\Delta$ is $L_{\rm at}$. 
 
 \begin{definition}\label{def_C_Delta}
@@ -30,11 +43,11 @@ If $\ssf{C}\subseteq\{\A,\E,\neg,\vee,\wedge\}$ is a set of connectives, we writ
 Recall that \emph{$\Delta$-morphism\/} is a map $k:M\imp N$ that preserves the truth of formulas in $\Delta$. It is immediate that $\Delta$-morphism are automatically $\{\mathord\wedge\mathord\vee\}\Delta$-morphisms. As $\Delta$ is closed under renaming of variables, $\{\E\}\Delta$-morphism are $\{\E\mathord\wedge\mathord\vee\}\Delta$-morphisms and similarly $\{\A\}\Delta$-morphism are $\{\A\mathord\wedge\mathord\vee\}\Delta$-morphisms.
 
 Below we use the following proposition without further reference.
-
+\def\.{\kern0.2ex}
 \begin{proposition}\label{prop_pokj}
 Fix $M\models T$ and ${\mr b}\in M^{|{\mr x}|}$. Let $q({\mr x})=\Deltatp_M({\mr b})$. Then for every $\phi({\mr x})\in L$ the following are equivalent
 \begin{itemize}
-\item[1.] $N\models\phi(k{\mr b})$ for every $k:M\imp N\models T$ that is a $\Delta$-morphism defined in ${\mr b}$;
+\item[1.] $N\models\phi(k\.{\mr b})$ for every $k:M\imp N\models T$ that is a $\Delta$-morphism defined in ${\mr b}$;
 %\item[1'.] $N\models\phi(b)$ for every $N\models T$ ed ogni tupla $b$ in $N$ tale che $M,a\Rrightarrow_\Delta N,b$.
 \item[2.] $T\ \proves\  q({\mr x})\imp\phi({\mr x})$.
 \end{itemize}
@@ -61,7 +74,7 @@ For every $\phi({\mr x})\in L$ the following are equivalent
 
 \ceq{\#\hfill T}{\proves}{\phi({\mr x})\ \ \iff\ \ \bigvee\big\{\,p({\mr x})\subseteq\Delta\ :\ T\proves p({\mr x})\imp\phi({\mr x})\,\big\}}
 
-Direction $\pmi$ is clear. To verify $\imp$, fix $M\models T$ and let ${\mr b}\in M^{|{\mr x}|}$ be such that $M\models\phi({\mr b})$.  From \ssf{2} it follows that $\phi({\mr x})$ satisfy \ssf{1} of Proposition~\ref{prop_pokj}. Therefore $T\proves q({\mr x})\imp\phi({\mr x})$ for $q({\mr x})=\Deltatp({\mr b})$. Hence $q({\mr x})$ is one of the types that occur in the disjuction in $\#$ which therefore is satisfied by ${\mr b}$.
+Implication $\pmi$ is clear. To verify implication $\imp$, fix $M\models T$ and let ${\mr b}\in M^{|{\mr x}|}$ be such that $M\models\phi({\mr b})$.  From \ssf{2} it follows that $\phi({\mr x})$ satisfy \ssf{1} of Proposition~\ref{prop_pokj}. Therefore $T\proves q({\mr x})\imp\phi({\mr x})$ for $q({\mr x})=\Deltatp({\mr b})$. Hence $q({\mr x})$ is one of the types that occur in the disjuction in $\#$ which therefore is satisfied by ${\mr b}$.
 
 From $\#$ and compactness we obtain
 
@@ -69,6 +82,18 @@ From $\#$ and compactness we obtain
 
 Applying compactness again, we replace the infinite disjunction above with a finite one and prove \ssf{2}.
 \end{proof}
+
+The following exercise is immediate but it is arguably the most important result of this chapter. 
+
+\begin{exercise}\label{ex_prove_thm_EQ}
+Prove Theorem~\ref{thm_tutteleimmersionisonoelementari_QE}, that is, that for every theory $T$ the following are equivalent
+\begin{itemize}
+\item[1.] $T$ has elimination of quantifiers;
+\item[2.] every partial isomorphism between models $T$ is an elementary map.\QED
+\end{itemize}
+\end{exercise}
+
+In the rest of these section we ... 
 
 % 
 % \begin{corollary}\label{prop_po}
@@ -87,7 +112,7 @@ Let $N$ be $\lambda$-saturated and let $k:M\imp N$ be a $\Delta$-morphism of car
 \begin{itemize}
 \item[1.] $k:M\imp N$ is a $\{\E\}\Delta$-morphism;
 \item[2.] for every ${\mr b}\in M$ some $\{\E\}\Delta$-morphism $h:M\imp N$ defined in ${\mr b}$ extends $k$;
-\item[3.] for every ${\vl b}\in M^{\omega}$ some $\Delta$-morphism $h:M\imp N$ defined in ${\vl b}$ extends $k$.
+\item[3.] for every ${\mr\bar b}\in M^{\omega}$ some $\Delta$-morphism $h:M\imp N$ defined in ${\mr\bar b}$ extends $k$.
 \end{itemize}
 \end{proposition}
 
@@ -96,7 +121,7 @@ Let $N$ be $\lambda$-saturated and let $k:M\imp N$ be a $\Delta$-morphism of car
 
 \ssf{2}$\IMP$\ssf{3}\quad Iterate $\omega$-times the extension in \ssf{2}. 
 
-\ssf{3}$\IMP$\ssf{1}\quad Let ${\gr a}$ enumerate $\dom k$ and let $|{\gr z}|=|{\gr a}|$. Formulas in $\{\E\}\Delta$ with free variables among ${\gr z}$ are of the form  $\E {\vl x}\, \phi ({\vl x}\,;{\gr z})$ where $\phi({\vl x}\,;{\gr z})$ is in $\Delta$ and ${\gr x}$ is some fixed tuple of length $\omega$. Assume $M\models\E{\vl x}\,\phi({\vl x}\,;{\gr a}))$ and let ${\vl b}$ be such that $M\models\phi({\vl b}\,;{\gr a})$. By \ssf{3}, we can extend $k$ to some $\Delta$-morphism $h:M\to N$ defined in ${\vl b}$. Then $N\models\phi(h{\vl b}\,;h{\gr a})$ and therefore $N\models\E {\vl x}\,\phi({\vl x}\,;k{\gr a})$.
+\ssf{3}$\IMP$\ssf{1}\quad Let ${\gr a}$ enumerate $\dom k$ and let $|{\gr z}|=|{\gr a}|$. Formulas in $\{\E\}\Delta$ with free variables among ${\gr z}$ are of the form  $\E {\mr\bar x}\, \phi ({\mr\bar x}\,;{\gr z})$ where $\phi({\mr\bar x}\,;{\gr z})$ is in $\Delta$ and ${\mr\bar x}$ is some fixed tuple of length $\omega$. Assume $M\models\E{\mr\bar x}\,\phi({\mr\bar x}\,;{\gr a})$ and let ${\mr\bar b}$ be such that $M\models\phi({\mr\bar b}\,;{\gr a})$. By \ssf{3}, we can extend $k$ to some $\Delta$-morphism $h:M\to N$ defined in ${\mr\bar b}$. Then $N\models\phi(h{\mr\bar b}\,;h{\gr a})$ and therefore $N\models\E {\mr\bar x}\,\phi({\mr\bar x}\,;k{\gr a})$.
 \end{proof}
 
 Iterating the lemma above we obtain the following.
@@ -190,7 +215,7 @@ Hence a theory with quantifier elimination is complete if it decides the charact
 
 The following is a consequence of Lemma~\ref{lem_qfdefinability}.
 
-\begin{corollary}\label{corol_QE}
+\begin{corollary}\label{c}
 The following are equivalent
 \begin{itemize}
 \item[1.] $T$ has $\Delta$-elimination of quantifiers;
