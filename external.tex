@@ -189,13 +189,14 @@ Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be a partitioned formula. We say that $\<
 
 \ceq{\#\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}\hfill for all $0\le i,j\le\alpha$
 
-We say that $\phi({\mr x}\,;{\gr z})$ is \emph{stable\/} if all ladders have length $\alpha<\omega$. Otherwise we say it is \emph{unstable}. Note that by compactness the ladder sequences of a stable formula cannot have unbounded finite length. 
+We say that $\phi({\mr x}\,;{\gr z})$ is \emph{stable\/} if all ladders have length $\alpha<\omega$. Otherwise we say it is \emph{unstable}. We may also say that  $\phi({\mr x}\,;{\gr z})$ has the \emph{order property}, see Exercise~\ref{ex_stable_orderproperty}. 
+Note that by compactness if a formulas has the ladder sequences unbounded finite length, then it has an infinite ladder sequence, hence it has the order property.
 
-It is evident that $\phi({\mr x}\,;{\gr z})$ is stable if and only if $\phi({\mr x}\,;{\gr z})^*$ is stable.
+It is clear that $\phi({\mr x}\,;{\gr z})$ is stable if and only if $\phi({\mr x}\,;{\gr z})^*$ is stable.
 
-Suppose $\phi({\mr x}\,;{\gr z})$ is unstable and let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be a ladder sequence. By padding redundant variables, we can read $\phi({\mr x}\,;{\gr z})$ as a formula $\phi({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$. Then $\phi({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$ defines the order of the sequence $\<{\mr a_i}\,{\gr b_i} : i<\omega\>$. For this reason it is also common to say that $\phi({\mr x}\,;{\gr z})$ has the \emph{order property}, this simply means that it is unstable. 
+%Suppose $\phi({\mr x}\,;{\gr z})$ is unstable and let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be a ladder sequence. By padding redundant variables, we can read $\phi({\mr x}\,;{\gr z})$ as a formula $\phi({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$. Then $\phi({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$ defines the order of the sequence $\<{\mr a_i}\,{\gr b_i} : i<\omega\>$. For this reason it is also common to say that $\phi({\mr x}\,;{\gr z})$ has the \emph{order property}, this simply means that it is unstable. 
 
-The following is arguably one of the most important fact about stable formulas.
+The following is arguably one of the most important fact about stable formulas: any set externally definable by a stable formula is definable.
 
 \begin{theorem}\label{thm_def_stable_formula}
 Any $\grD\subseteq\U^{|{\gr z}|}$ approximated by a stable formula is definable.
@@ -211,33 +212,35 @@ The theorem follows immediately from the the three lemmas below.
 The converse of the theorem above holds and is proved separately in Theorem~\ref{thm_def_stable_formula2}.  
 
 \begin{remark}
-Theorem~\ref{thm_def_stable_formula} is often stated in the following  apparently more general form.
-For every $\Aa\subseteq\U$ there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in \Aa^{|{\mr x}|}$ such that
+The conclusion of Theorem~\ref{thm_def_stable_formula} is often stated in the following  apparently more general form:
+for every $\Aa\subseteq\U$ there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in \Aa^{|{\mr x}|}$ such that
 
 \ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\phi({\mr a_{i,j}}\,;{\gr z})}\hfill for every ${\gr z}\in\Aa^{|{\gr z}|}$ 
 
 Note that the equivalence above is restricted to ${\gr\Aa}$.
 
-The proof is exactly the same, in fact elementarity and saturation are never used (to a great extent, no model theory is used either, just finite combinatorics). This contrast to the proof of Theorem~\ref{thm_def_stable_formula2} for which compactness is essential.\QED
+The proof is exactly the same. In fact, elementarity and saturation are never used. In a sense, no model theory is used, either -- just finite combinatorics -- unlike in the proof of Theorem~\ref{thm_def_stable_formula2} where compactness is essential.\QED
 \end{remark}
 
 
 
 \begin{lemma}
-If $\grD$ is approximated from below by a stable formula $\phi({\mr x}\,;{\gr z})$ then there are ${\mr a_1},\dots,{\mr a_n}\in\U^{|{\mr x}|}$ such that 
+If $\grD$ is approximated from below by a stable formula $\phi({\mr x}\,;{\gr z})$ then
 
-\ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\phi({\mr a_i}\,;{\gr z})}
+\ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^{n-1}_{i=0}\phi({\mr a_i}\,;{\gr z})}
 
+for some ${\mr a_0},\dots,{\mr a_n}\in\U^{|{\mr x}|}$. 
 \end{lemma}
 
 \begin{proof}
 Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that ${\gr b_0},\dots,{\gr b_{n-1}}\in\phi({\mr a_n}\,;{\gr\U})\subseteq\grD$.
 Then, if possible, choose ${\gr b_n}$ such that
 
-\ceq{\hfill{\gr b_n}}{\in}{\grD\sm\bigvee^n_{i=0}\phi({\mr a_i}\,;{\gr\U})}
+\ceq{\hfill{\gr b_n}}{\in}{\grD\sm\bigvee^n_{i=0}\phi({\mr a_i}\,;{\gr\U})}.
 
-and iterate the procedure.
-By stability, the procedure has to stop at some $n$, yielding the required  ${\mr a_1},\dots,{\mr a_n}$.
+Then $\<{\mr a_i}\,;{\gr b_i} : i\le n\>$ is a ladder sequence. 
+By stability, for some $n$, the tuple ${\gr b_n}$ does not exist.
+This yields the required  ${\mr a_0},\dots,{\mr a_{n-1}}$.
 \end{proof}
 
 
@@ -360,12 +363,12 @@ Hence it suffices to prove that \ssf{1a}$\IMP$\ssf{1b} and \ssf{2a}$\IMP$\ssf{2b
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Vapknik-Chevronenkis dimension}
+\section{Vapknik-Chervonenkis dimension}
 \label{sectionVC}
 
 \def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
-We say that the formula $\phi({\mr x}\,;{\gr z})\in L$ has \emph{Vapknik-Chevronenkis dimension $n$\/} if this is the largest finite cardinatity of a set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that $|S_\phi({\mr A})|=2^n$. If such $n$ does not exist, we say that we say that  $\phi({\mr x}\,;{\gr z})$ has \emph{infinite VC-dimension}. 
+We say that the formula $\phi({\mr x}\,;{\gr z})\in L$ has \emph{Vapknik-Chervonenkis dimension $n$\/} if this is the largest finite cardinatity of a set ${\mr A}\subseteq\U^{|{\mr x}|}$ such that $|S_\phi({\mr A})|=2^n$. If such $n$ does not exist, we say that we say that  $\phi({\mr x}\,;{\gr z})$ has \emph{infinite VC-dimension}. 
 
 Note that the condition $|S_\phi({\mr A})|=2^n$ is equivalent to saying that every subset of ${\mr A}$ is the trace of some definable set of sort $\phi({\mr x}\,;{\gr z})$.
 
@@ -554,6 +557,16 @@ indiscernible sequence with the same Ehren\-feucht-Mostowski type as $\<{\mr a_i
 
 \ssf{1}$\IMP$\ssf{2}. Assume $\neg$\ssf{2} and let $\<a_i : i<\omega\>$ be an $A$-indiscernible sequence, which is not totally $A$-in\-dis\-cern\-ible. Then there is a formula $\phi(x, y)\in L(A)$ and some $i<j$ such that $\phi(a_i , a_j )\wedge\neg\phi(a_j , a_i) $. By indiscernibility  $\phi(a_i, a_j)$ holds if and only if $i\le j$. Hence $\phi(x\,; y)$ is not stable.
 \end{proof}
+
+\begin{exercise}\label{ex_stable_orderproperty}
+Prove that the following are equivalent
+\begin{itemize}
+\item[1.] $T$ is stable;
+\item[2.] there is an infinite set $A\subseteq\U^{|{\mr x}|}$ and a formula  $\psi({\mr x}\,;{\mr y})$ such that $A$ is linearly ordered by the relation ${\mr a}<{\mr b}\iff\psi({\mr a}\,;{\mr b})$.
+\end{itemize}
+Hint: suppose $\phi({\mr x}\,;{\gr z})$ is unstable and let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be an infinite ladder sequence, then $A=\{{\mr a_i}\,{\gr b_i} : i<\omega\}$ is linearly ordered by ${\mr x}<{\gr z}\,;{\mr y}\,{\gr w})=\phi({\mr x}\,;{\gr z})$.\QED
+\end{exercise}
+
 
 \begin{exercise}
 Prove that if every formula $\phi({\mr x}\,;{\gr z})\in L$ with $|{\mr x}|=1$ is stable then $T$ is stable. Hint: by compactness, if all sets approximable by $\phi({\mr x}\,;y,{\gr z})$ are definable, so are the sets approximable by $\phi({\mr x},y\,;{\gr z})$.\QED
