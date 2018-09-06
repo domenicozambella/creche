@@ -78,7 +78,7 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
    * The definable closure in the eq-expansion
    * The algebraic closure in the eq-expansion
    * Elimination of imaginaries
-   * The true story of imaginaries
+   * Immaginaries: the true story
    * Uniform elimination of imaginaries
    * Notes and references
 *  **Invariant sets**
@@ -90,8 +90,9 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
    * Ramsey theorem from coheir sequences
    * Ehrenfeucht-Mostowski construction of indiscernibles
    * Indempotent orbits in semigroups
-   * Hindmann theorem
-   * Hales-Jewett theorem
+   * Hindman theorem
+   * The Hales-Jewett Theorem
+   * Notes and references
 *  **Lascar invariant sets**
    * Expansions
    * Lascar strong types
@@ -101,7 +102,7 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
 *  **Externally definable sets**
    * Approximable sets
    * Ladders and definability
-   * Vapknik-Chevronenkis dimension
+   * Vapknik-Chervonenkis dimension
    * Honest definitions
    * Stable theories
    * Stability and the number of types
