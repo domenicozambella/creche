@@ -59,32 +59,32 @@ The interpretation the relation symbols is
 
 %\ceq{\hfill r_i^M}{=}{\Big\{ \<{\mr a_0},\dots,{\mr a_{n-1}}\>\ :\  \big|\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big|=n \ \textrm { and \ }f\big(\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big)= i\Big\}} 
 
-\ceq{\hfill r_i^M}{=}{\Big\{ {\mr a_1},\dots,{\mr a_n}\in M \ : \ f\big(\{{\mr a_1},\dots,{\mr a_n}\}\big)= i\Big\}.} 
+\ceq{\hfill r_i^M}{=}{\Big\{  a_1,\dots,a_n\in M \ : \ f\big(\{a_1,\dots,a_n\}\big)= i\Big\}.} 
 
-We may assume that $M$ is an elementary substructure of some large saturated model $\U$.
-Pick any type $p({\mr x})\in S(\U)$ finitely satisfied in $M$ but not realized in $M$ and let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be a coheir sequence of $p({\mr x})$.
+We may assume that $M$ is an elementary substructure of some large saturated model $\mrU$.
+Pick any type $p({\mr x})\in S(\mrU)$ finitely satisfied in $M$ but not realized in $M$ and let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be a coheir sequence of $p({\mr x})$.
 
 There is a first-order sentence saying that the formulas $r_i({\mr x_1},\dots,{\mr x_n})$ are a coloring of ${M\choose n}$.
-Then by elementarity the same hols in $\U$.
+Then by elementarity the same hols in $\mrU$.
 By indiscernibility,
-all tuples of $n$ distinct elements of ${\mr\bar c}$ have the same color, say \textit{red}.
+all tuples of $n$ distinct elements of ${\mr\bar c}$ have the same color, say $1$.
 
 %\ceq{\ssf{\#}\hfill M}{\models}{\A {\mr x_0},\dots,{\mr x_{n-1}}\ \left[\bigwedge_{0\le i<j<n} {\mr x_i}\neq {\mr x_j}\quad\imp\quad\bigvee_{i<k}r_i({\mr x_0},\dots,{\mr x_{n-1}})\right].}
 
 Note parenthetically that no element of ${\mr\bar c}$ is in $M$.
-The theorem is proved if we can find in $M$ a sequence ${\mr\bar a}=\<{\mr a_i}:i<\omega\>$ with the same color.
-We construct ${\mr a_{\restriction i}}$ by induction on $i$ as follows.
+The theorem is proved if we can find in $M$ a sequence $\bar a=\<a_i:i<\omega\>$ with color $1$.
+We construct $a_{\restriction i}$ by induction on $i$ as follows.
 
-Assume as induction hypothesis that the subsequences of length $n$ of ${\mr a_{\restriction i}},{\mr c_{\restriction n}}$ are all red.
-Our goal is to find ${\mr a_i}$ such as the same property holds for ${\mr a_{\restriction i}},{\mr a_i},{\mr c_{\restriction n}}$.
+Assume as induction hypothesis that the subsequences of length $n$ of $a_{\restriction i},{\mr c_{\restriction n}}$ have all color $1$.
+Our goal is to find $a_i\in M$ such that the same property holds for $a_{\restriction i},a_i,{\mr c_{\restriction n}}$.
 By the indiscernibility of ${\mr\bar c}$,
-the property holds for  ${\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr{c_n}}$.
-And this can be written by a formula $\phi({\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr{c_n}})$.
+the property holds for  $a_{\restriction i},{\mr c_{\restriction n}},{\mr{c_n}}$.
+And this can be written by a formula $\phi(a_{\restriction i},{\mr c_{\restriction n}},{\mr{c_n}})$.
 As ${\mr\bar c}$ is a coheir sequence,
-by Lemma~\ref{lem_coheir_property} we can find  ${\mr a_i}\in M$ such that  $\phi({\mr a_{\restriction i}},{\mr c_{\restriction n}},{\mr a_i})$.
+by Lemma~\ref{lem_coheir_property} we can find  $a_i\in M$ such that  $\phi(a_{\restriction i},{\mr c_{\restriction n}},a_i)$.
 So,
 as the order is irrelevant,
-${\mr a_{\restriction i}},{\mr a_i},{\mr c_{\restriction n}}$ satisfies the induction hypothesis.
+$a_{\restriction i},a_i,{\mr c_{\restriction n}}$ satisfies the induction hypothesis.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -485,14 +485,11 @@ Under the same assumptions of the lemma above, every type-definable idempotent s
 \section{Hindman theorem}\label{Hindman}
 
 
-\def\dotgt{\ooalign{$>$\cr$\cdot$\cr}}
-\def\dotlt{\ooalign{$\kern1ex\cdot$\cr$<$\cr}}
-%\def\dotcl{ {\rm cl}^{\hbox{\scriptsize\dotlt}} }
-%\def\dotcl{\ooalign{{\rm cl}\cr{\raisebox{1ex}{\hbox{\scriptsize\dotlt}}}\cr} }
-\def\dotcl{ {\rm cl} }
+\def\reladot{\ooalign{$\kern1ex\cdot$\cr$\rela$\cr}}
 
 In this section we merge the theory of idempotents presented in Section~\ref{semigroups}
 with the proof of Ramsey's theorem to obtain Hindman's theorem in a straightforward way. 
+
 
 Let ${\mr\bar a}$ be a tuple of elements of $\mrG$ of length $\le\omega$. 
 For any $n\le|{\mr\bar a}|$ we write $\fp_n\,{\mr\bar a}$ for the set of 
@@ -503,18 +500,25 @@ Namely,
 
 When $n=|{\mr\bar a}|$ we write \emph{$\fp\,{\mr\bar a}$}.
 
-Let $<$ be a preorder on a semigroup.
-We say that $<$ is \emph{upward-directed\/} 
-if for every ${\mr a},{\mr b}$ there is ${\mr c}$ such that ${\mr a},{\mr b}<{\mr c}$. 
-We say that $<$ is \emph{\dotlt-closed\/} 
-if ${\mr a}<{\mr b}<{\mr c}$ implies ${\mr a}<{\mr b}{\cdot}{\mr c}$.
+Let \emph{$\rela$\/} be a relation on a semigroup $\mrG$. 
+Let $\mrC\subseteq\mrG$.
+Let $\mrA,\mrC\subseteq\mrG$.
+We say that $\mrA$ is \emph{$\rela$-covered\/} by $\mrC$ 
+if for every ${\mr a_1},\dots,{\mr a_n}\in\mrA$ there is ${\mr c}\in\mrC$ such that ${\mr a_i}\rela{\mr c}$ for all $i$. 
+We say that $\mrA$ is \emph{\reladot-closed\/} 
+if ${\mr a}\rela{\mr b}\rela{\mr c}$ implies ${\mr a}\rela{\mr b}{\cdot}{\mr c}$ 
+for all ${\mr a},{\mr b},{\mr c}\in\mrA$.
+A \emph{$\rela$-chain\/} in $\mrG$ is a tuple ${\mr\bar a}\in\mrG^\omega$ such that ${\mr a_i}\rela{\mr a_{i+1}}$.
+
+There plenty of relations meeting the conditions of the theorem below, the most natural being orders and inequality (the symbol hints to these).
 
 \theoremstyle{mio}
 \newtheorem{Hindman}[thm]{Hindman Theorem}
 \begin{Hindman}\label{thm_Hindman}
-Let $<$ be an upward-directed \dotlt-closed preorder on a semigroup $G$.
+Let $\rela$ be a relation on a semigroup $G$.
+Assume that $G$ is  \reladot-closed and $\rela$-covered by $G$.
 Then for every finite coloring of $G$ 
-there is an ascending tuple $\bar a\in G^\omega$ such that $\fp\,\bar a$ is monochromatic.
+there is a $\rela$-chain $\bar a$ such that $\fp\,\bar a$ is monochromatic.
 \end{Hindman}
 
 Note that this implies that every commutative semigroup $G$ has an infinite monochromatic subset closed under finite sums of distinct elements (order $G$ arbitrarily).
@@ -525,17 +529,17 @@ The novelty is all in Lemma~\ref{lem_Hindman}.
 \begin{proof}
 We interpret $G$ as a structure in a language 
 that extends the natural language of semigroups
-with a symbol for $<$ and one for each subset of $G$.
+with a symbol for $\rela$ and one for each subset of $G$.
 Let $\mrG$ be a saturated elementary superstucture of $G$.
 As observed in Remark~\ref{rk_coheir_stationary}, 
 the language makes $\nonforkc_G$ trivially $1$-stationary.
 
-Let ${\mr\G'}$ be the type-definable set $\{{\mr x} : G<{\mr x}\}$ 
-which is non empty because $<$ is upward-directed. 
+Let ${\mr\G'}$ be the type-definable set $\{{\mr x} : G\rela{\mr x}\}$ 
+which is non empty because $\rela$ is $\rela$-covered by $G$. 
 We claim that ${\mr\G'}$ is idempotent. 
 In fact, if ${\mr a},{\mr b}\in{\mr\G'}$ and ${\mr a}\cnonfork_G{\mr b}$ 
-then, as $G<{\mr a},{\mr b}$, we must have that ${\mr a}<{\mr b}$. 
-Therefore, from the \dotlt-closure of $<$ we infer ${\mr a}{\cdot}{\mr b}\in{\mr\G'}$.
+then, as $G\rela{\mr a},{\mr b}$, we must have that ${\mr a}\rela{\mr b}$. 
+Therefore, from the \reladot-closure of $\rela$ we infer ${\mr a}{\cdot}{\mr b}\in{\mr\G'}$.
 
 Let ${\mr g}$ be an element of ${\mr\G'}$ with idempotent orbit as given by Corollary~\ref{corol_idempotent}.
 Let $p({\mr x})\in S(\mrG)$ be a global coheir of $\tp({\mr g}/G)$.
@@ -618,16 +622,14 @@ Then any ${\mr g}\in{\mr c}\cdot_M{\mr b}$ is as required by \ssf{1}.
 
 \ssf{2.} \ From ${\mr g}\in{\mr c}\cdot_M\mrA$ and the idempotency of ${\mr c}_M$ 
 we obtain ${\mr g}_M={\mr c}\cdot_M{\mr g}$. 
-From the left-minimality of ${\mr c}_M$ we infer that ${\mr c}\in\mrA\cdot_M{\mr g}$. Hence ${\mr c}_M={\mr c}\cdot_M{\mr g}$, by the idempotency of ${\mr g}_M$. Therefore ${\mr c}_M={\mr g}_M$, which proves \ssf{2}.
+From ${\mr g}\in\mrA\cdot_M{\mr c}$ and the left-minimality of ${\mr c}_M$ we obtain ${\mr c}\in\mrA\cdot_M{\mr g}$. Hence ${\mr c}_M={\mr c}\cdot_M{\mr g}$, by the idempotency of ${\mr g}_M$. Therefore ${\mr c}_M={\mr g}_M$, which proves \ssf{2}.
 \end{proof}
-% \excludecomment{grigio}
-% \begin{grigio}
 
 The following is a technical lemma that is required in the proof of the main theorem.
 
 \begin{proposition}\label{prop_HJ_tecnical}
 Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
-Let $\sigma:\mrU\to\mrU$ be a semigroup homomorphism definable over $M$.
+Let $\sigma:\mrG\to\mrG$ be a semigroup homomorphism definable over $M$.
 Then 
 \begin{itemize}
 \item[1.] $\sigma\big[{\mr a}_M\big]=(\sigma\,{\mr a})_M$
@@ -697,7 +699,7 @@ As $\mrC\cdot_M{\mr c}$ is clearly idempotent, we can further require that ${\mr
 By nicety, $\mrA=\mrG\sm\mrC$ satisfy the assumptions of Proposition~\ref{prop_minimal_existence2}.
 Hence $\mrA$ contains some ${\mr g}$ with idempotent orbit that also belongs to 
 $\big({\mr c}\cdot_G\mrG\big)\cap\big(\mrG\cdot_G{\mr c}\big)$. 
-By Proposition~\ref{prop_HJ_tecnical}, we obtain that
+From Proposition~\ref{prop_HJ_tecnical} we obtain
 $\sigma\,{\mr g}\in\big({\mr c}\cdot_G\mrC\big)\cap\big(\mrC\cdot_G{\mr c}\big)$
 for all $\sigma\in\Sigma$.
 As $\sigma\,{\mr g}$ is also idempotent, 
@@ -710,7 +712,6 @@ by elementarity $G\sm C$ contains some $a$ with the same property and this prove
 \end{proof}
 
 Finally we show how the classical Hales-Jewett theorem follows from its abstract version.
-
 
 \begin{HalesJewett}\label{thm_HalesJewett}
 Let $C$ be an infinite semigroup.
@@ -728,6 +729,64 @@ Then $G$ is a semigroup under the natural operation.
 For every $a\in C^{|x|}$ the map $\sigma_a:t(x)\mapsto t(a)$ is a retraction.
 Hence we can apply the theorem above.
 \end{proof}
+
+\excludecomment{grigio}
+\begin{grigio}
+
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\lbox#1{\parbox[t]{15ex}{$\displaystyle #1$}}
+\def\rbox#1{{$\displaystyle #1$}}
+\def\ceq#1#2#3{\lbox{#1}\medrel{#2}\rbox{#3}}
+
+It is possible to combine the proofs of the theorems of Hindman and Hales-Jewett to obtain the proposition below. 
+To state the result we first need some definitions.
+% Let ${\mr\bar a}$ be a tuple of elements of $\mrG$ of length $\le\omega$.
+% Let $\Sigma$ be a set of semigroup homomorphisms $\mrG\to\mrC$.
+% Then for any $n\le|{\mr\bar a}|$ we define
+% 
+% \ceq{\hfill\fp^{\Sigma}_n\,{\mr\bar a} }{=}{\Big\{\sigma_{i_0}\,{\mr a_{i_0}}\kern-0.5ex\cdot\dots\cdot\sigma_{i_k}\,{\mr a_{i_k}}\ :\quad i_0<\dots<i_k<|{\mr\bar a}|, \ \  \bar\sigma\in\Sigma^{|{\mr\bar a}|}, \ k< n\Big\}}
+% 
+% When $n=|{\mr\bar a}|$ we write $\fp^{\Sigma}{\mr\bar a}$.
+% 
+Let ${\mr\bar a}$ be a tuple of elements of $\mrG$ of length $\le\omega$.
+Let $\bar\Sigma$ be a tuple of finite sets of homomorphisms $\mrG\to\mrG$.
+Assume $|{\mr\bar a}|=|\bar\Sigma|$.
+For each $n\le|{\mr\bar a}|$ we define
+
+\ceq{\hfill\emph{$\fp^{\bar\Sigma}_n\,{\mr\bar a}$} }{=}{\Big\{\sigma_{i_0}\,{\mr a_{i_0}}\kern-0.5ex\cdot\dots\cdot\sigma_{i_k}\,{\mr a_{i_k}}\ :\quad i_0<\dots<i_k<|{\mr\bar a}|, \ \  \bar\sigma\in\bar\Sigma, \ k< n\Big\}}
+
+When $n=|{\mr\bar a}|$ we write \emph{$\fp^{\bar\Sigma}{\mr\bar a}$}. %Also, if $\bar\Sigma$ is such that $\Sigma_n=\Sigma$ for some fixed $\Sigma$, we write \emph{$\fp^{\Sigma}{\mr\bar a}$} for $\fp^{\bar\Sigma}{\mr\bar a}$.
+
+\begin{proposition}[(Hindman + Hales-Jewett)]\label{prop_H+HJ}
+Let $\bar\Sigma$ be a tuple of finite sets of 
+retractions of a semigroup $G$ onto a subsemigroup $C$.
+Let $\rela$ be a relation on $G$.
+Suppose that $G$ is \reladot-closed and $\rela$-covered by $C$.
+Then for every finite coloring of $C$ there is in $G$ a $\rela$-chain $\bar a$ such that $\fp^{\bar\Sigma}\bar a$ is monochromatic.
+\end{proposition}
+\begin{proof}[Proof (sketch)]
+Let $G\preceq\mrG$ in a language that contains all symbols in the proofs of Theorems~\ref{thm_Hindman} and~\ref{thm_abstract_HJ} with $\Sigma=\bigcup_i\Sigma_i$.
+
+Let ${\mr\C'}=\{{\mr x}\in\mrC\,:\,G<{\mr x}\}$.
+This set is non empty because $G$ is $\rela$-covered by $C$.
+The same argument used for ${\mr\G'}$ in the proof of Theorem~\ref{thm_Hindman} proves that ${\mr\C'}$ is idempotent.
+Then by Proposition~\ref{prop_minimal_existence1} there is some left-minimal ${\mr c}\in{\mr\C'}$.
+As ${\mr\C'}\cdot_M{\mr c}$ is idempotent, we can further require that ${\mr c}$ has idempotent orbit over $M$.
+Let ${\mr\G'}$ be as in the proof of Theorem~\ref{thm_Hindman}.
+As $G$ is  \reladot-closed, ${\mr\G'}\cdot_M{\mr c}\subseteq{\mr\G'}$.
+Then, by Proposition~\ref{prop_minimal_existence2}, 
+${\mr\G'}$ contains some ${\mr g}$ with idempotent orbit that also belongs to 
+$\big({\mr c}\cdot_M\mrG\big)\cap\big(\mrG\cdot_M{\mr c}\big)$.
+By Proposition~\ref{prop_HJ_tecnical}, we obtain that
+$\sigma\,{\mr g}\in\big({\mr c}\cdot_M\mrC\big)\cap\big(\mrC\cdot_M{\mr c}\big)$
+for all $\sigma\in\Sigma$.
+As $(\sigma\,{\mr g})_M$ is also idempotent, 
+we apply Proposition~\ref{prop_minimal_existence2} to conclude that 
+$\sigma\,{\mr g}\equiv_M{\mr c}$ for all $\sigma\in\Sigma$.
+
+Finally, the required chain $\bar a$ is obtained as in the proof of Theorem~\ref{thm_Hindman}.
+\end{proof}
+\end{grigio}
 
 \section{Notes and references}
 
