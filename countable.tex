@@ -469,20 +469,22 @@ Then the following are equivalent\nobreak
 As implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3} are clear, it suffices to prove \ssf{3}$\IMP$\ssf{1}.
 We assume that $S(\Delta)$ is uncountable and define a tree of formulas in $\Delta$ by induction.
 Begin with $\phi_\0=\top$.
-For $s\in 2^{<\omega}$ let $p_s$ be as in the definition above.
+For $s\in 2^{<\omega}$ define
+
+\ceq{\hfill p_s}{=}{\big\{\phi_{s\restriction n}\ :\ n<|s|\big\}.}
+
 Assume as induction hypothesis that $p_s$ has uncountably many extensions in $S(\Delta)$.
 This will guarantee the consistency of the branches.
 
-It suffices to show that there is a formula $\psi\in\Delta$ such that both $p_s\cap\{\psi\}$ and $p_s\cap\{\neg\psi\}$ have uncountably many extensions in $S(\Delta)$.
-In fact, we if we define $\phi_{s0}=\psi$ and $\phi_{s1}=\neg\psi$ this preserves the induction hypothesis.
+It suffices to show that there is a formula $\psi\in\Delta$ such that both $p_s\cup\{\psi\}$ and $p_s\cup\{\neg\psi\}$ have uncountably many extensions in $S(\Delta)$.
+Then, if we define $\phi_{s0}=\psi$ and $\phi_{s1}=\neg\psi$ this preserves the induction hypothesis.
 
-Suppose for a contradiction that such a formula $\psi$ does not exist.
 Consider the following type
 
-\ceq{\hfill q}{=}{\Big\{\xi\in\Delta\ :\ p_s\cap\{\neg\xi\} \textrm{ has }\le\omega\textrm{ extensions in }S(\Delta)\Big\}.}
+\ceq{\hfill q}{=}{\Big\{\xi\in\Delta\ :\ p_s\cup\{\neg\xi\} \textrm{ has }\le\omega\textrm{ extensions in }S(\Delta)\Big\}.}
 
 This type is consistent otherwise $\neg\xi_1\vee\dots\vee\neg\xi_n$ would hold for some $\xi_i\in q$.
-This cannot happen because $p_s$ has uncountably many extensions in $S(\Delta)$ while the $p_s\cap\{\neg\xi_i\}$ have not.
+This cannot happen because $p_s$ has uncountably many extensions in $S(\Delta)$ while by the definition of $q$ each of  $p_s\cup\{\neg\xi_i\}$ has countably many extensions.
 
 If the formula $\psi$ required above does not exist, $q$ is complete hence belongs to $S(\Delta)$.
 But there are countably many types distinct from $q$, so this contradicts \ssf{3}.
