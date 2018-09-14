@@ -471,15 +471,15 @@ We assume that $S(\Delta)$ is uncountable and define a tree of formulas in $\Del
 Begin with $\phi_\0=\top$.
 For $s\in 2^{<\omega}$ define
 
-\ceq{\hfill p_s}{=}{\big\{\phi_{s\restriction n}\ :\ n<|s|\big\}.}
+\ceq{\hfill p_s}{=}{\big\{\phi_{s\restriction n}\ :\ n\le|s|\big\}.}
 
 Assume as induction hypothesis that $p_s$ has uncountably many extensions in $S(\Delta)$.
 This will guarantee the consistency of the branches.
 
 It suffices to show that there is a formula $\psi\in\Delta$ such that both $p_s\cup\{\psi\}$ and $p_s\cup\{\neg\psi\}$ have uncountably many extensions in $S(\Delta)$.
-Then, if we define $\phi_{s0}=\psi$ and $\phi_{s1}=\neg\psi$ this preserves the induction hypothesis.
+Then, if we define $\phi_{s0}=\psi$ and $\phi_{s1}=\neg\psi$.
 
-Consider the following type
+Consider the following type that extends $p_s$
 
 \ceq{\hfill q}{=}{\Big\{\xi\in\Delta\ :\ p_s\cup\{\neg\xi\} \textrm{ has }\le\omega\textrm{ extensions in }S(\Delta)\Big\}.}
 
@@ -487,7 +487,9 @@ This type is consistent otherwise $\neg\xi_1\vee\dots\vee\neg\xi_n$ would hold f
 This cannot happen because $p_s$ has uncountably many extensions in $S(\Delta)$ while by the definition of $q$ each of  $p_s\cup\{\neg\xi_i\}$ has countably many extensions.
 
 If the formula $\psi$ required above does not exist, $q$ is complete hence belongs to $S(\Delta)$.
-But there are countably many types distinct from $q$, so this contradicts \ssf{3}.
+Every type in $S(\Delta)$ that extends $p_s$ and is distinct from $q$ contains $p_s\cup\{\neg\xi\}$ for some $\xi_i\in q$. 
+By the definition of $q$ there are countably many such types so 
+so this contradicts the induction hypothesis.
 \end{proof}
 
 
