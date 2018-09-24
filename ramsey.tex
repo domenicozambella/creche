@@ -604,13 +604,11 @@ We can always assume that the ${\mr c}$ above has indempotent orbit. In fact, by
 \begin{proposition}\label{prop_minimal_existence2}
 Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
 Let $\mrA$ be idempotent and type-definable over $M$.
-Fix some ${\mr c}$ %with idempotent orbit 
-such that ${\mr c}\cdot_M\mrA,\ \mrA\cdot_M{\mr c}\subseteq\mrA$.
-Then
+Let ${\mr c}_M$ be idempotent and such that 
+${\mr c}\cdot_M\mrA,\ \mrA\cdot_M{\mr c}\subseteq\mrA$. Then
 \begin{itemize}
-\item[1.] $\big({\mr c}\cdot_M\mrA\big)\cap\big(\mrA\cdot_M{\mr c}\big)$ is non empty
-\item[2.] if ${\mr c}$ has idempotent orbit, then \ssf{1} contains some ${\mr g}$ with idempotent orbit 
-\item[3.] if moreover ${\mr c}$ is left-minimal, then ${\mr c}\equiv_M{\mr g}$ for every ${\mr g}$ as in \ssf{2}.
+\item[1.]  ${\mr c}\cdot_M\mrA\cdot_M{\mr c}$ contains some ${\mr g}$ with idempotent orbit 
+\item[2.] if moreover ${\mr c}$ is left-minimal, then ${\mr c}\equiv_M{\mr g}$ for every ${\mr g}$ as in \ssf{1}.
 \end{itemize} 
 \end{proposition}
 
@@ -618,18 +616,15 @@ Note, parenthetically, that the set in \ssf{1} may not be type-definable,
 therefore Corollary~\ref{corol_idempotent} does not apply 
 directly and we need an indirect argument.
 
-\begin{proof} \ssf{1.} \  
-Fix any ${\mr a}\in \mrA$. By the assumptions of the proposition, ${\mr c}\cdot_M{\mr a},\ {\mr a}\cdot_M{\mr c}\in\mrA$. Then ${\mr c}\cdot_M{\mr a}\cdot_M{\mr c}$ is contained in the set in \ssf{1}.
-
-\ssf{2.} \ 
+\begin{proof}\ssf{1.} \  
 From ${\mr c}\cdot_M\mrA\subseteq\mrA$ we obtain that $\mrA\cdot_M{\mr c}$ is idempotent.
 As it is  also type-definable, 
-by Corollary~\ref{corol_idempotent} it contains some ${\mr b}$ with idempotent orbit.
-Then ${\mr b}\cdot_M{\mr c}={\mr b}$, from which we obtain that ${\mr c}\cdot_M{\mr b}$ is idempotent and is contained in the set in \ssf{1}.
+by Corollary~\ref{corol_idempotent} it contains a ${\mr b}$ with idempotent orbit.
+Then ${\mr b}\cdot_M{\mr c}={\mr b}$, from which we obtain that ${\mr c}\cdot_M{\mr b}$ is idempotent and contained in ${\mr c}\cdot_M\mrA\cdot_M{\mr c}$.
 
-\ssf{3.} \ From ${\mr g}\in{\mr c}\cdot_M\mrA$ and the idempotency of ${\mr c}_M$ 
+\ssf{2.} \ From ${\mr g}\in{\mr c}\cdot_M\mrA\cdot_M{\mr c}$ and the idempotency of ${\mr c}_M$ 
 we obtain ${\mr g}_M={\mr c}\cdot_M{\mr g}$. 
-From ${\mr g}\in\mrA\cdot_M{\mr c}$ and the left-minimality of ${\mr c}_M$ we obtain ${\mr c}\in\mrA\cdot_M{\mr g}$. Hence ${\mr c}_M={\mr c}\cdot_M{\mr g}$, by the idempotency of ${\mr g}_M$. Therefore ${\mr c}_M={\mr g}_M$, which proves \ssf{2}.
+As ${\mr g}\in\mrA\cdot_M{\mr c}$, from the left-minimality of ${\mr c}_M$ we obtain ${\mr c}\in\mrA\cdot_M{\mr g}$. Hence ${\mr c}_M={\mr c}\cdot_M{\mr g}$, by the idempotency of ${\mr g}_M$. Therefore ${\mr c}_M={\mr g}_M$, which proves \ssf{2}.
 \end{proof}
 % \excludecomment{grigio}
 % \begin{grigio}
@@ -684,7 +679,7 @@ A \emph{nice subsemigroup\/} of $\mrG$ is a subsemigroup $\mrC$ with the propert
 
 \theoremstyle{mio}
 \newtheorem{HalesJewett}[thm]{Hales-Jewett Theorem}
-\begin{HalesJewett}[(algebraic version)]\label{thm_abstract_HJ}
+\begin{HalesJewett}[(abstract version)]\label{thm_abstract_HJ}
 Let $G$ be a semigroup and let $C\subset G$ be a nice subsemigroup.
 Let $\Sigma$ be a finite set of retractions of $G$ onto $C$, that is, 
 homomorphisms $\sigma:G\to C$ such that $\sigma_{\restriction C}={\rm id}_C$.
@@ -706,10 +701,10 @@ By Proposition~\ref{prop_minimal_existence1}, there is a left-minimal ${\mr c}\i
 As $\mrC\cdot_M{\mr c}$ is clearly idempotent, we can further require that ${\mr c}$ has idempotent orbit.
 
 By nicety, $\mrA=\mrG\sm\mrC$ satisfy the assumptions of Proposition~\ref{prop_minimal_existence2}.
-Hence there is some idempotent ${\mr g}\in \big({\mr c}\cdot_G\mrA\big)\cap\big(\mrA\cdot_G{\mr c}\big)$. 
-In particular, ${\mr g}\in\mrA$.
+Hence there is some idempotent ${\mr g}\in{\mr c}\cdot_G(\mrG\sm\mrC)\cdot_G{\mr c}$. 
+In particular, ${\mr g}\in\mrG\sm\mrC$.
 From Proposition~\ref{prop_HJ_tecnical} we obtain
-$\sigma\,{\mr g}\in\big({\mr c}\cdot_G\mrC\big)\cap\big(\mrC\cdot_G{\mr c}\big)$
+$\sigma\,{\mr g}\in{\mr c}\cdot_G\mrC\cdot_G{\mr c}$
 for all $\sigma\in\Sigma$.
 As $\sigma\,{\mr g}$ is also idempotent, 
 we apply Proposition~\ref{prop_minimal_existence2} to conclude that 
@@ -738,6 +733,7 @@ Then $G$ is a semigroup under the natural operation.
 For every $a\in C^{|x|}$ the map $\sigma_a:t(x)\mapsto t(a)$ is a retraction.
 Hence we can apply the theorem above.
 \end{proof}
+
 
 
 \section{Notes and references}
