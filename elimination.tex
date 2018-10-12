@@ -48,11 +48,13 @@ Below we use the following proposition without further reference.
 Fix $M\models T$ and ${\mr b}\in M^{|{\mr x}|}$. Let $q({\mr x})=\Deltatp_M({\mr b})$. Then for every $\phi({\mr x})\in L$ the following are equivalent
 \begin{itemize}
 \item[1.] $N\models\phi(k\.{\mr b})$ for every $k:M\imp N\models T$ that is a $\Delta$-morphism defined in ${\mr b}$;
-%\item[1'.] $N\models\phi(b)$ for every $N\models T$ ed ogni tupla $b$ in $N$ tale che $M,a\Rrightarrow_\Delta N,b$.
+\item[1$'$.] $N\models\phi({\mr c})$ for every $N\models T$ such that $N,{\mr c}\Rrightarrow_\Delta  M,{\mr b}$.
 \item[2.] $T\ \proves\  q({\mr x})\imp\phi({\mr x})$.
 \end{itemize}
 \end{proposition}
-\begin{proof}\ssf{2}$\IMP$\ssf{1}\quad Immediate.  
+\begin{proof} \ssf{1}$\IFF$\ssf{1$'$}\quad In fact, the difference is just in the notation.
+
+\ssf{2}$\IMP$\ssf{1}\quad Immediate.  
 
 \ssf{1}$\IMP$\ssf{2}\quad Negate \ssf{2}, then there are $N\models T$ and ${\mr c}\in N^{|{\mr x}|}$ such that $q({\mr c})\wedge\neg\phi({\mr c})$. Therefore the map $k:M\to N$, where $k=\{\<{\mr b},{\mr c}\>\}$, contradicts \ssf{1}.
 \end{proof}
@@ -147,10 +149,11 @@ For every $\phi(x)\in L$ the following are equivalent
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2}\quad Immediate. 
 
-\ssf{2}$\IMP$\ssf{1}\quad Negate \ssf{1}. By Lemma~\ref{lem_qfdefinability} there is a $\{\E\}\Delta$-morphism $k:M\to N$ between models of $T$ that does not preserve $\phi(x)$. We can assume that $N$ is $\lambda$-saturated for some sufficiently large $\lambda$. By Corollary~\ref{corol_EDelta_estensione} there is a $\Delta$-embedding $h:M\hookrightarrow N$ that extends $k$ and contradicts \ssf{2}.
+\ssf{2}$\IMP$\ssf{1}\quad Negate \ssf{1}. By the Lyndon-Robinson Lemma~\ref{lem_qfdefinability} there is a $\{\E\}\Delta$-morphism $k:M\to N$ between models of $T$ that does not preserve $\phi(x)$. We can assume that $N$ is $\lambda$-saturated for some sufficiently large $\lambda$. By Corollary~\ref{corol_EDelta_estensione} there is a $\Delta$-embedding $h:M\hookrightarrow N$ that extends $k$ and contradicts \ssf{2}.
 \end{proof}
 
-A dual version of the results above is obtained replacing embeddings by epimorphisms (surjective homomorphisms) and $\{\E\}$ by $\{\A\}$. If $\Delta$ contains the formula $x=y$ and is closed under negation, then $k:M\imp N$ is a $\Delta$-morphism if and only is $k^{-1}:N\imp M$ is a $\Delta$-morphism. In this case the dual version follows from what proved above. Without these assumptions the results need a similar but independent proof.
+A dual version of the results above is obtained replacing embeddings by epimorphisms, i.e.\@ surjective (partial) homomorphisms, and $\{\E\}$ by $\{\A\}$. If $\Delta$ contains the formula $x=y$ and is closed under negation, then $k:M\imp N$ is a $\Delta$-morphism if and only is $k^{-1}:N\imp M$ is a $\Delta$-morphism. In this case the dual version follows from what proved above. Without these assumptions the results need a similar but independent proof. 
+
 
 \begin{proposition}\label{prop_ADelta_estensione}
 Let $M$ be $\lambda$-saturated and let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
@@ -180,7 +183,7 @@ Finally we obtain the following.
 \begin{theorem}
 The following are equivalent
 \begin{itemize}
-\item[1.] $\phi(x)$ is equivalent to a formula in $\{\A\}\Delta$;
+\item[1.] $\phi(x)$ is equivalent to a formula in $\{\A{\wedge}{\vee}\}\Delta$;
 \item[2.] every $\Delta$-epimorphism between models of $T$ preserves $\phi(x)$.\QED
 \end{itemize}
 \end{theorem}
@@ -246,7 +249,7 @@ Let $T$ be a complete theory without finite models in a language that consists o
 \end{exercise}
 
 \begin{exercise}\label{ex_discrete_lo}
-Let $L$ be the language of strict orders. The theory of \emph{discrete linear orders\/} extends the theory of linear orders without endpoints (see Section~\hyperref[dlo]{\ref*{relational}.\ref*{dlo}}) with the following two of axioms
+Let $L$ be the language of strict orders.  Let $T$ be the theory of \emph{discrete linear orders}. Namely, $T$ extends $T_{\rm dlo}$  (see Section~\hyperref[dlo]{\ref*{relational}.\ref*{dlo}}) with the following two of axioms with the following two of axioms
 \begin{itemize}
 \item[dis$\uparrow$.] $\E z\ \big[x<z\ \wedge\ \neg\E y\ x<y<z\big]$;
 \item[dis$\downarrow$.] $\E z\ \big[ z<x\ \wedge\ \neg\E y\ z<y<x\big]$.
@@ -332,7 +335,7 @@ Let $\M'$ be the category that consists of models of $T$ and the maps $k:M\to N$
 \item[2.] $\dom h$ contains a substructure of $M'$ that models $T$ (equivalently $\range h$ and $N'$).
 \end{itemize}
 
-It is clear that if $T$ is model-complete then the morphisms of $\M'$ are exactly the elementary maps. In this case $\M'$ has amalgamation. Vice versa if $\M'$ has amalgamation, the theory of rich models is model-complete.
+Moreover, we add as morphisms the maps that are obtained from those above by composition. It is clear that if $T$ is model-complete then the morphisms of $\M'$ are exactly the elementary maps. In this case $\M'$ has amalgamation. Vice versa if $\M'$ has amalgamation, the theory of rich models is model-complete.
 
 \begin{exercise}
 Prove that $\M'$ satisfies finite character of morphisms, \ssf{c2} of Definition~\ref{def_com_c}.\QED

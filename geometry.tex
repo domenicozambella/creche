@@ -6,7 +6,8 @@
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox{35ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
-In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ larger than $|L|$. The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
+In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ larger than $|L|$.
+The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -18,9 +19,12 @@ In this chapter we fix a signature $L$, a complete theory $T$ without finite mod
 Let ${\mr a}\in\U$ and let $\Aa\subseteq\U$ be some set of parameters (of arbitrary cardinality).
 We say that ${\mr a}$ is \emph{algebraic over $\Aa$\/} if $\phi({\mr a})\wedge\E^{=k}{\mr x}\;\phi({\mr x})$ holds for some  formula $\phi({\mr x})\in L(\Aa)$ and  some positive integer $k$.
 In particular, when $k=1$ we say that ${\mr a}$ is \emph{definable over $\Aa$}.
-We write \emph{acl$(\Aa)$} for the \emph{algebraic closure of $\Aa$}, that is, the set of all the elements that are algebraic over $\Aa$. If $\Aa=\acl(\Aa)$, we say that $\Aa$ is \emph{algebraically closed}. The \emph{definable closure of $\Aa$\/} is defined similarly and is denoted by \emph{dcl$(\Aa)$}. 
+We write \emph{acl$(\Aa)$} for the \emph{algebraic closure of $\Aa$}, that is, the set of all the elements that are algebraic over $\Aa$.
+If $\Aa=\acl(\Aa)$, we say that $\Aa$ is \emph{algebraically closed}.
+The \emph{definable closure of $\Aa$\/} is defined similarly and is denoted by \emph{dcl$(\Aa)$}. 
 
-Let $x$ be a finite tuple of variables. Formulas $\phi(x)\in L(A)$, or types $p(x)\subseteq L(A)$, with finitely many solutions are called \emph{algebraic}.
+Let $x$ be a finite tuple of variables.
+Formulas $\phi(x)\in L(A)$, or types $p(x)\subseteq L(A)$, with finitely many solutions are called \emph{algebraic}.
 
 \begin{proposition}\label{prop_tipialgebrici}
 For every $A\subseteq\U$ and every type $p(x)\subseteq L(A)$, where $|x|<\omega$, the following are equivalent
@@ -29,7 +33,9 @@ For every $A\subseteq\U$ and every type $p(x)\subseteq L(A)$, where $|x|<\omega$
 \item[2] $\E^{\le n}x\;\phi(x)$ for some $\phi(x)$ which is conjunction of formulas $p(x)$.
 \end{itemize}
 \end{proposition}
-\begin{proof} The non trivial implication is \ssf{1}$\IMP$\ssf{2}. Let $\{a_i,\dots,a_n\}$ be all the solutions of $p(x)$. Then 
+\begin{proof} The non trivial implication is \ssf{1}$\IMP$\ssf{2}.
+Let $\{a_1,\dots,a_n\}$ be all the solutions of $p(x)$.
+Then 
 
 \ceq{\hfill p(x)}{\iff}{\bigvee^n_{i=1}a_i=x}
 
@@ -172,7 +178,7 @@ Finite and cofinite sets are always (trivially) definable in every structure. We
 We say that $T$, a consistent theory without finite models, is \emph{strongly minimal\/} if 
 for every formula $\phi({\mr x}\,;{\gr z})\in L$, where ${\mr x}$ has arity one, there is an  $n\in\omega$ tale che
 
-\hfil$T\ \ \proves\ \ \A{\gr z}\ \Big[\E^{\le n}{\mr x}\;\phi({\mr x}\,;{\gr z})\ \vee\ \E^{\le n}{\mr x}\;\neg\phi({\mr x}\,;{\gr z})\Big]$.
+\hfil$T\ \ \proves\ \ \E^{\le n}{\mr x}\;\phi({\mr x}\,;{\gr z})\ \vee\ \E^{\le n}{\mr x}\;\neg\phi({\mr x}\,;{\gr z})$.
 
 We show that the semantic notions match with and the syntactic one.
 
@@ -229,13 +235,13 @@ Let $T$ be a complete theory without finite models. Prove that the following are
 
 Thoughout this section we assume that $T$ is a complete strongly minimal theory.  
 
-When ${\mr a}\notin\acl B$ we say that ${\mr a}$ is \emph{algebraically independent from\/} $B$. We say that $B$ is an \emph{algebraically independent set\/} if every ${\mr a}\in B$ is independent from $B\sm\big\{{\mr a}\big\}$. Below we shall abbreviate $B\cup\big\{{\mr a}\big\}$ by \emph{$B,{\mr a}$} and  $B\sm\big\{{\mr a}\big\}$ by \emph{$B\sm a$}. 
+When ${\mr a}\notin\acl B$ we say that ${\mr a}$ is \emph{algebraically independent from\/} $B$. We say that $B$ is an \emph{algebraically independent set\/} if every ${\mr a}\in B$ is independent from $B\sm\big\{{\mr a}\big\}$. Below we shall abbreviate $B\cup\big\{{\mr a}\big\}$ by \emph{$B,{\mr a}$} and  $B\sm\big\{{\mr a}\big\}$ by \emph{$B\sm{\mr a}$}. 
 
 The following is a pivotal property of independence that holds in strongly minimal structures. It is called \emph{symmetry\/} or \emph{exchange principle}. For every $B$ and every pair of elements ${\mr a},{\mr b}\in\U\sm\acl B$
 
 \ceq{\hfill {\mr b}\in\acl (B,{\mr a})}{\IFF}{{\mr a}\in\acl(B,{\mr b})}
 
-Note that when $T=T_{\rm acf}$ this principle is the so called \emph{Steinitz exchange lemma}.
+Note that when $T$ is the theory of vector spaces (over any fixed filed) this principle is the so called \emph{Steinitz exchange lemma}.
 
 \begin{theorem} 
 ($T$ strongly minimal.) Independence is symmetric.
@@ -275,7 +281,9 @@ Suppose $B,{\mr a}$ is not independent and that ${\mr a}\notin \acl B$. Then ${\
 \end{itemize}
 \end{corollary}
 
-We may write \emph{acl$(B/A)$\/} per $\acl(B\cup A)$. The notation is used to suggest to the reader that the role of $A$ in the argument is irrelevant and that it could be absorbed in the language. Independent sets \emph{over $A$\/} and bases \emph{over $A$\/} are defined in the obvious way.
+We may write \emph{acl$(B/A)$\/} per $\acl(B\cup A)$.
+The notation is used to suggest to the reader that the role of $A$ in the argument is irrelevant and that it could be absorbed in the language.
+\emph{Independent sets over $A$\/} and \emph{bases over $A$\/} are defined in the obvious way.
 
 \begin{theorem} ($T$ strongly minimal.) Fix some arbitrary set $C$, then
 \begin{itemize}
@@ -286,22 +294,42 @@ We may write \emph{acl$(B/A)$\/} per $\acl(B\cup A)$. The notation is used to su
 \end{theorem}
 
 \begin{proof}
-By the finite character of algebraic closure, the independent set form an inductive class. Apply Zorn lemma to obtain a maximally independent subset of $C$ containing $B$. By Corollary~\ref{basemassimale} this set is a base of $C$. This prove \ssf{1} and it is immediate that the argument can be generalized as required in \ssf{3}.
+By the finite character of algebraic closure, the independent set form an inductive class.
+Apply Zorn lemma to obtain a maximally independent subset of $C$ containing $B$.
+By Corollary~\ref{basemassimale} this set is a base of $C$.
+This prove \ssf{1} and it is immediate that the argument can be generalized as required in \ssf{3}.
 
-As for \ssf{2}, assume for a contradiction that $B_1,B_2\subseteq C$ are two bases of $C$ and that $|B_1|<|B_2|$. First consider the case when $B_2$ is infinite. For each ${\mr b}\in B_1$ fix a  set $D_{\mr b}\subseteq B_2$ such that ${\mr b}\in\acl(D_{\mr b})$. Let
+As for \ssf{2}, assume for a contradiction that $B_1,B_2\subseteq C$ are two bases of $C$ and that $|B_1|<|B_2|$.
+First consider the case when $B_2$ is infinite.
+For each ${\mr b}\in B_1$ fix a finite set $D_{\mr b}\subseteq B_2$ such that ${\mr b}\in\acl(D_{\mr b})$.
+Let
 
 \ceq{\hfill D}{=}{\bigcup_{{\mr b}\in B_1}D_{\mr b}.}
 
-Then $B_1\subseteq\acl D$ and $|D|<|B_2|$. By transitivity, $C\subseteq\acl D$ which contradicts the independence of $B_2$. Again the argument generalizes immediately as required in \ssf{3}.
+Then $B_1\subseteq\acl D$ and $|D|<|B_2|$.
+By transitivity, $C\subseteq\acl D$ which contradicts the independence of $B_2$.
+Again the argument generalizes immediately as required in \ssf{3}.
 
-Now we suppose that $B_2$ is finite and prove directly the generalized version. Let $n$ be the least integer such that, for some set of parameters $A$, and some $B_1$ and $B_2$ bases of $C$ over $A$, we have $|B_1|<|B_2|=n+1$. Fix any ${\mr c}\in B_2$. Then $B_2\sm{\mr c}$ is a base over $A,{\mr c}$. Note that $B_1$ is not independent over $A,{\mr c}$. In fact, as ${\mr c}\in\acl(B/A)$ by symmetry we obtain that ${\mr b}\in\acl(B\sm{\mr b}/A,{\mr c})$ for any ${\mr b}\in B_1$. Now, let $D_1\subset B_1$ be maximal independent over $A,{\mr c}$. Then $D_1$ and $B_2\sm{\mr c}$ are two bases over $A,{\mr c}$ such that $|D_1|<|B_2\sm{\mr c}|=n$, which contradicts the minimality of $n$.
+Now we suppose that $B_2$ is finite and prove directly the generalized version.
+Let $n$ be the least integer such that, for some set of parameters $A$, and some $B_1$ and $B_2$ bases of $C$ over $A$, we have $|B_1|<|B_2|=n+1$.
+Fix any ${\mr c}\in B_2$.
+Then $B_2\sm{\mr c}$ is a base over $A,{\mr c}$.
+Note that $B_1$ is not independent over $A,{\mr c}$.
+In fact, as ${\mr c}\in\acl(B_1/A)$ by symmetry we obtain that ${\mr b}\in\acl(B_1\sm{\mr b}/A,{\mr c})$ for any ${\mr b}\in B_1$.
+Now, let $D_1\subset B_1$ be maximal independent over $A,{\mr c}$.
+Then $D_1$ and $B_2\sm{\mr c}$ are two bases over $A,{\mr c}$ such that $|D_1|<|B_2\sm{\mr c}|=n$, which contradicts the minimality of $n$.
 \end{proof}
 
 \begin{proposition}\label{prop_mappetraindipendenti} 
-($T$ strongly minimal.) Let $k$ be an elementary map. Then $k\cup\big\{\<{\mr b},{\mr c}\>\big\}$ is also an elementary map for every ${\mr b}\notin\acl(\dom k)$ and ${\mr c}\notin\acl(\range k)$.
+($T$ strongly minimal.) Let $k$ be an elementary map.
+Then $k\cup\big\{\<{\mr b},{\mr c}\>\big\}$ is also an elementary map for every ${\mr b}\notin\acl(\dom k)$ and ${\mr c}\notin\acl(\range k)$.
 \end{proposition}
 \begin{proof}
-Let ${\gr a}$ be an enumeration of $\dom k$. We need to show that $\phi({\mr b}\,;{\gr a})\iff\phi({\mr c}\,;k{\gr a})$ holds for every $\phi({\mr x}\,;{\gr z})\in L$. As $k$ is elementary, the formulas $\phi({\mr x}\,;{\gr a})$ and $\phi({\mr x}\,;k{\gr a})$ are either both algebraic or both co-algebraic. As ${\mr b}\notin\acl({\gr a})$ and ${\mr c}\notin\acl(k{\gr a})$, they are both false or both true respectively. So the proposition follows.
+Let ${\gr a}$ be an enumeration of $\dom k$.
+We need to show that $\phi({\mr b}\,;{\gr a})\iff\phi({\mr c}\,;k{\gr a})$ holds for every $\phi({\mr x}\,;{\gr z})\in L$.
+As $k$ is elementary, the formulas $\phi({\mr x}\,;{\gr a})$ and $\phi({\mr x}\,;k{\gr a})$ are either both algebraic or both co-algebraic.
+As ${\mr b}\notin\acl({\gr a})$ and ${\mr c}\notin\acl(k{\gr a})$, they are both false or both true respectively.
+So the proposition follows.
 \end{proof}
 
 \begin{corollary}\label{corol_mappetraindipendenti} 
@@ -314,7 +342,9 @@ Finally we show that dimension classifies models of $T$.
 ($T$ strongly minimal.) Models of $T$ with the same dimension are isomorphic.
 \end{theorem}
 \begin{proof}
-Let $A$ e $B$ be some bases of $M$ and $N$ respectively. By Corollary~\ref{corol_mappetraindipendenti}, any bijectiion between $A$ and $B$ is an elementary map. By Proposition~\ref{prop_estensionemappechiusuraalgebrica}, it extends to the required isomorphism between $\acl A=M$ and $\acl B=N$.
+Let $A$ e $B$ be some bases of $M$ and $N$ respectively.
+By Corollary~\ref{corol_mappetraindipendenti}, any bijectiion between $A$ and $B$ is an elementary map.
+By Proposition~\ref{prop_estensionemappechiusuraalgebrica}, it extends to the required isomorphism between $\acl A=M$ and $\acl B=N$.
 \end{proof}
 
 \begin{corollary} 
@@ -333,9 +363,15 @@ As $|\acl A|\le |L(A)|$, all models of cardinality $\lambda$ have the same dimen
 \end{proposition}
 
 \begin{proof}
-\ssf{2}$\IMP$\ssf{1}. Assume \ssf{2} and let $k:M\imp N$ be an elementary map of cardinality $<|N|$ and let ${\mr b}\in M$. We want an extension of $k$ defined in ${\mr b}$. If ${\mr b}\in\acl(\dom k)$ the required extension exists by Proposition~\ref{prop_estensionemappechiusuraalgebrica}. Otherwise, pick any ${\mr c}\in N\sm\acl(\range k)$, which exist as $|k|<\dim N=|N|$. By Proposition~\ref{prop_mappetraindipendenti},  $k\cup\big\{\<{\mr b},{\mr c}\>\big\}$ is the required extension.
+\ssf{2}$\IMP$\ssf{1}.
+Assume \ssf{2} and let $k:M\imp N$ be an elementary map of cardinality $<|N|$ and let ${\mr b}\in M$.
+We want an extension of $k$ defined in ${\mr b}$.
+If ${\mr b}\in\acl(\dom k)$ the required extension exists by Proposition~\ref{prop_estensionemappechiusuraalgebrica}.
+Otherwise, pick any ${\mr c}\in N\sm\acl(\range k)$, which exist as $|k|<\dim N=|N|$.
+By Proposition~\ref{prop_mappetraindipendenti},  $k\cup\big\{\<{\mr b},{\mr c}\>\big\}$ is the required extension.
 
-\ssf{1}$\IMP$\ssf{2}. If $B\subseteq N$ is a base of $N$ the following type is not realized in $N$
+\ssf{1}$\IMP$\ssf{2}.
+If $B\subseteq N$ is a base of $N$ the following type is not realized in $N$
 
 \hfil $p({\mr x})\ \ =\ \ \Big\{\neg\phi({\mr x})\ :\ \phi({\mr x})\in L(B)\textrm{ is algebraic }\Big\}$
 
@@ -358,7 +394,8 @@ Therefore, if $N$ is saturated, $|B|=|N|$.
 
 
 %\begin{exercise}
-%Siano $a\equiv_A c$ due tuple e siano $b\notin\acl(A,a)$ e $d\notin\acl(A, c)$ due elementi. Si dimostri che $a,b\equiv_A c,d$.
+%Siano $a\equiv_A c$ due tuple e siano $b\notin\acl(A,a)$ e $d\notin\acl(A, c)$ due elementi.
+%Si dimostri che $a,b\equiv_A c,d$.
 %\end{exercise}
 % 
 % \begin{exercise} 
