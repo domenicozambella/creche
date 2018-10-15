@@ -1120,26 +1120,26 @@ $N\models\E x\,\phi(x)\ \ \IMP\ \ N\models\phi(b)$ for some $b\in A$.
 In fact, this follows from \ssf{2} with $fa=x$ for $\phi(x)$.
 
 Write $M$ for the substructure of $N$ with domain $A$.
-By induction on the syntax we prove
+By induction on the syntax we prove that for every $\xi(x)\in L$
 
-\ceq{\hfill M\models\phi(a)}%
+\ceq{\hfill M\models\xi(a)}%
 {\IFF}%
-{N\models\phi(a)} for every $a\in M^{|x|}$.
+{N\models\xi(a)} for every $a\in M^{|x|}$.
 
-If $\phi(x)$ is atomic the claim follows from $M\subseteq N$ and the remarks underneath Definition~\ref{isomorfismodef}.
-The case of Boolean connectives is straightforward, so only the existential quantifier requires a proof
+If $\xi(x)$ is atomic the claim follows from $M\subseteq N$ and the remarks underneath Definition~\ref{isomorfismodef}.
+The case of Boolean connectives is straightforward, so only the existential quantifier requires a proof. So, let $\xi(x)$ be the formula $\E y\,\psi(x,y)$ and assume the induction hypothesis holds for $\psi(x,y)$
 
-\ceq{\hfill M\models\E x\,\phi(a,x)}%
+\ceq{\hfill M\models\E y\,\psi(a,y)}%
 {\IFF}%
-{M\models\phi(a,b)} for some $b\in M$
+{M\models\psi(a,b)} for some $b\in M$
 
 \ceq{}%
 {\IFF}%
-{N\models\phi(a,b)} for some $b\in M$
+{N\models\psi(a,b)} for some $b\in M$
 
 \ceq{}%
 {\IFF}%
-{N\models\E x\,\phi(a,x).}
+{N\models\E y\,\psi(a,y).}
 
 The second equivalence holds by induction hypothesis, in the last equivalence we use \ssf{2} for the implication $\PMI$.
 \end{proof}
