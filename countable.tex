@@ -167,16 +167,16 @@ Then the following are equivalent
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Let $p({\mr x},{\gr z})=\tp ({\mr b},{\gr a}/A)$ and note that  $p({\mr x},{\gr a})=\tp({\mr x}/A,{\gr a})$ and $\E{\mr x}\,p({\mr x},{\gr z})=\tp({\gr a}/A)$.
+First we fix some notation. Let $p({\mr x},{\gr z})=\tp ({\mr b},{\gr a}/A)$. Then  $p({\mr x},{\gr a})=\tp({\mr b}/A,{\gr a})$. Note also that $\E{\mr x}\,p({\mr x},{\gr z})=\tp({\gr a}/A)$.
 
 
 \ssf{1}$\IMP$\ssf{2}\quad Let $\phi({\mr x},{\gr z})\in p$ be such that $\phi({\mr x},{\gr z})\imp p({\mr x},{\gr z})$.
-It follows that $\phi({\mr x},{\gr a})\imp p({\mr x},{\gr a})$ and $\E{\mr x}\, \phi({\mr x},{\gr z})\imp \E{\mr x}\,p({\mr x},{\gr z})$.
-Therefore \ssf{2} holds.
+Then $\phi({\mr x},{\gr a})\imp p({\mr x},{\gr a})$ and $\E{\mr x}\, \phi({\mr x},{\gr z})\imp \E{\mr x}\,p({\mr x},{\gr z})$.
+Therefore \ssf{2} holds by the remark above.
 
 \ssf{2}$\IMP$\ssf{1}\quad Fix $\phi({\mr x}\,;{\gr z}), \psi({\gr z})\in L(A)$ such that $\phi({\mr x}\,;{\gr a})$ isolates $p({\mr x}\,;{\gr a})$ and $\psi({\gr z})$ isolates $\E {\mr x}\, p({\mr x}\,;{\gr z})$.
 Let $\xi({\mr x}\,;{\gr z})\in p$ be arbitrary.
-As $\phi({\mr x}\,;{\gr a})\imp\xi({\mr x}\,;{\gr a})$, the formula $\A{\mr x}\,\big[\phi({\mr x}\,;{\gr z})\imp\xi({\mr x}\,;{\gr z})\big]$ belongs to $\E {\mr x}\, p({\mr x},{\gr z})$.
+As $\phi({\mr x}\,;{\gr a})\imp\xi({\mr x}\,;{\gr a})$, the formula $\A{\mr x}\,\big[\phi({\mr x}\,;{\gr z})\imp\xi({\mr x}\,;{\gr z})\big]$ belongs to $\tp({\gr a}/A)$ which, as noted above, coincides with $\E {\mr x}\, p({\mr x},{\gr z})$.
 Hence $\psi({\gr z})\imp\A{\mr x}\,\big[\phi({\mr x}\,;{\gr z})\imp\xi({\mr x}\,;{\gr z})\big]$.
 As this holds for all $\xi({\mr x}\,;{\gr z})\in p$, we conclude that $\psi({\gr z})\wedge\phi({\mr x}\,;{\gr z})$ isolates  $p({\mr x},{\gr z})$.
 \end{proof}
