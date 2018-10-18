@@ -225,6 +225,7 @@ Then for every model $M$ the following are equivalent
 
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2}\quad By Propositions~\ref{prop_atomic_over_Aa} and~\ref{prop_atomic_extension}.
+
 \ssf{2}$\IMP$\ssf{1}\quad Some countable model containing $A$ exists, as $M$ embeds in it, $M$ has also to be countable.
 Now we prove that $M$ is atomic over $A$.
 Suppose for a contradiction that there is some ${\mr b}\in M^{<\omega}$ such that $p({\mr x})=\tp({\mr b}/A)$ is not isolated.
@@ -242,8 +243,9 @@ Then the following are equivalent
 \end{proposition} 
 Note that \ssf{2} says that in $\U^{|{\gr z}|}$ isolated points are dense w.r.t.\@ the topology defined in Section~\hyperref[saturation]{\ref*{saturation}.\ref*{monster}}.
 \begin{proof}
-Implication \ssf{1}$\IMP$\ssf{2} hold by elementarity.
-To prove \ssf{2}$\IMP$\ssf{1} we construct by induction a sequence $\<{\mr a_i}:i<\omega\>$.
+\ssf{1}$\IMP$\ssf{2}\quad This holds by elementarity.
+
+\ssf{2}$\IMP$\ssf{1}\quad We construct by induction a sequence $\<{\mr a_i}:i<\omega\>$.
 Reasoning as in (the second proof of) the downword L\"overheim-Skolem theorem ensures that $A\cup\big\{{\mr a_i}:i<\omega\big\}$ is a model.
 To obtain an atomic model we require that ${\gr a_{\restriction i}}$ is isolated over $A$.
 
@@ -267,7 +269,7 @@ Then we can set ${\mr a_i}=f{\mr b}$.
 
 Here we present some important characterizations of $\omega\jj$categoricity.
 The second property below can be stated in different equivalent ways; for convenience, these equivalents are considered in a separate proposition.
-For the time being we introduce the following generalization (which we will prove is completely unnecessary): we say hat $T$ is \emph{$\omega$-categorical over $A$\/} if any two countable models containing $A$ are isomorphic.
+For the time being we introduce the following generalization (which we will prove is completely unnecessary): we say hat $T$ is \emph{$\omega$-categorical\/} over $A$ if any two countable models containing $A$ are isomorphic.
 We say \emph{$\omega$-categorical\/} for $\omega$-categorical over $\0$.
 
 \begin{theorem}[(Engeler, Ryll-Nardzewsky, and Svenonius)] Assume $L(A)$ is countable.
@@ -281,10 +283,10 @@ The following are equivalent:
 The set $A$ is introduced for convenience.
 By \ssf{3} of Proposition~\ref{prop_ERNS_equivalents} below, no theory is $\omega$-categorical over an infinite set, and categoricity over some finite $A$ is equivalent to categoricity over $\0$ (see Exercise~\ref{ex_omega_cat_overA}).
 
-\begin{proof} The implication \ssf{1}$\IMP$\ssf{2} is an immediate consequence of the omitting types theorem.
-In fact, if $p({\mr x})$ is a non-isolated $A\jj$type, then there are two countable models $M$ and $N$ containing $A$ such that $M$ realizes $p({\mr x})\subseteq L(A)$ while $N$ omits it.
+\begin{proof} \ssf{1}$\IMP$\ssf{2}\quad This is an immediate consequence of the omitting types theorem. In fact, if $p({\mr x})$ is a non-isolated $A\jj$type, then there are two countable models $M$ and $N$ containing $A$ such that $M$ realizes $p({\mr x})\subseteq L(A)$ while $N$ omits it.
 Then $M$ and $N$ cannot be isomorphic over $A$.
-As for implication \ssf{2}$\IMP$\ssf{1}, observe that \ssf{2} implies that every countable model containing $A$ is atomic over $A$.
+
+\ssf{2}$\IMP$\ssf{1}\quad Observe that \ssf{2} implies that every countable model containing $A$ is atomic over $A$.
 But, by Proposition~\ref{prop_atomic_unique}, countable atomic models are unique up to isomorphism.
 \end{proof}
 

@@ -477,7 +477,7 @@ Prove that the following are equivalent
  \item[1.] $D$ is definable over $A$;
  \item[2.] either $D$ is finite and $D\subseteq A$, or $\neg D$ is finite and $\neg D\subseteq A$.
 \end{itemize}
-Hint: as $L$-structures are plain sets, every bijection $f:M\to M$ is an automorphism.\QED
+Hint: as structures are plain sets, every bijection $f:M\to M$ is an automorphism.\QED
 \end{exercise}
 
 \begin{exercise}\label{dlorlkurb}
@@ -1172,18 +1172,17 @@ Therefore the bijection between the elements of $b$ and the natural numbers (whi
 The notion of equinumerosity has a different meaning in $M$ and in the real world, but those who live in $M$ cannot realise this.
 
 \begin{void_thm}[Downward L\"owenheim-Skolem Theorem]\label{lowenheimskolemallingiu}
-Let $N$ be an infinite $L$-structure and let $A\subseteq N$.
+Let $N$ be an infinite structure and fix some set $A\subseteq N$.
 Then there is a structure $M$ of cardinality $\le|L(A)|$ such that $A\subseteq M\preceq N$.
 
 \end{void_thm}
 
 \begin{proof}
 Set $\lambda=|L(A)|$.
-Below we construct a chain $\<A_i:i<\lambda\>$ of subsets of $N$.
-The chain begins at $A_0=A$ and is continuous at limit ordinals.
-Finally we set $M=\bigcup_{i<\lambda}A_i$.
+Below we construct a chain $\<A_i:i<\omega\>$ of subsets of $N$.
+The chain begins at $A_0=A$.
+Finally we set $M=\bigcup_{i<\omega}A_i$.
 All $A_i$ will have cardinality $\le\lambda$ so  $|M|\le\lambda$ follows.
-
 
 Now we construct $A_{i+1}$ given $A_i$.
 Assume as induction hypothesis that $|A_i|\le\lambda$.
