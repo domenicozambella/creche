@@ -245,18 +245,17 @@ Note that \ssf{2} says that in $\U^{|{\gr z}|}$ isolated points are dense w.r.t.
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2}\quad This holds by elementarity.
 
-\ssf{2}$\IMP$\ssf{1}\quad We construct by induction a sequence $\<{\mr a_i}:i<\omega\>$.
-Reasoning as in (the second proof of) the downword L\"overheim-Skolem theorem ensures that $A\cup\big\{{\mr a_i}:i<\omega\big\}$ is a model.
+\ssf{2}$\IMP$\ssf{1}\quad We construct by induction a sequence $\<{a_i}:i<\omega\>$.
+Reasoning as in (the second proof of) the downward L\"overheim-Skolem theorem we can easily ensure that $A\cup\big\{{a_i}:i<\omega\big\}$ is a model.
 To obtain an atomic model we require that ${\gr a_{\restriction i}}$ is isolated over $A$.
 
 
-Suppose ${\gr a_{\restriction i}}$ has been defined and let $\phi({\gr z})\in L(A)$ be the formula that isolates $\tp({\gr a_{\restriction i}}/A)$.
-Let $\psi({\mr x}\,;{\gr z})\in L(A)$ be such that $\psi({\mr x}\,;{\gr a_{\restriction i}})$ is consistent (we leave to the reader the details of the enumeration of such formulas).
-Then $\psi({\mr x}\,;{\gr z})\wedge\phi({\gr z})$ is also consistent and by assumption it has a solution ${\mr b}\,;{\gr c}$ that is isolated over $A$.
+Suppose ${\gr a_{\restriction i}}$ has been defined and assume that some formula $\phi({\gr z})\in L(A)$ isolates $\tp({\gr a_{\restriction i}}/A)$.
+Let $\psi({x}\,;{\gr z})\in L(A)$ be such that $\psi({x}\,;{\gr a_{\restriction i}})$ is consistent (we leave to the reader the details of the enumeration of such formulas).
+Then $\psi({x}\,;{\gr z})\wedge\phi({\gr z})$ is also consistent and by assumption it has a solution ${b}\,;{\gr c}$ that is isolated over $A$.
 As ${\gr a_{\restriction i}}\equiv_A{\gr c}$, there is an $A$-automorphism such that $f{\gr c}={\gr a_{\restriction i}}$.
-Therefore $f{\mr b}\,;{\gr a_{\restriction i}}$ is a solution $\psi({\mr x}\,;{\gr z})$ that is also isolated over $A$.
-Then we can set ${\mr a_i}=f{\mr b}$.
-
+Therefore $f{b}\,;{\gr a_{\restriction i}}$ is a solution $\psi({x}\,;{\gr z})$ that is also isolated over $A$.
+Then we can set ${a_i}=f{b}$.
 \end{proof}
 
 

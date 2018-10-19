@@ -1192,28 +1192,40 @@ For every $k$ pick $a_k\in N$ such that $N\models\phi_k(a_k)$.
  Define $A_{i+1}=A_i\cup\{a_k\;:\;k<\lambda\}$.
 Then $|A_{i+1}|\le\lambda$ is clear.
 
-Now use Tarski-Vaught test to prove $M\preceq N$.
+We use the Tarski-Vaught test to prove $M\preceq N$.
 Suppose $\phi(x)\in L(M)$ is consistent in $N$.
 As finitely many parameters occur in formulas, $\phi(x)\in L(A_i)$ for some $i$.
-Then $\phi(x)$ is among the formulas enumerated above and $A_{i+1}\subseteq M$ contains a solution of $\phi(x)$.
+Then $\phi(x)$ is among the formulas we enumerated at stage $i$ and $A_{i+1}\subseteq M$ contains a solution of $\phi(x)$.
 \end{proof}
 
 We will need to adapt the construction above to meet more requirements on the model $M$.
 To better control the elements that enters $M$ it is convenient to add one element at the time (above we add $\lambda$ elements at each stage).
 We need to enumerate formulas with care if we want to complete the construction by stage $\lambda$.
 
+% \begin{void_thm}[Second proof of the downward L\"owenheim-Skolem Theorem]\label{diym_II_lowenheimskolemallingiu}\rm
+% From set theory we know there is a bijection $\pi:\lambda\to\lambda^2$ such that $\pi_1(i)$ and $\pi_2(i)$, the two components of $\pi(i)$, are both $\le i$.
+% Suppose we have defined the sets $A_j$ for every $j\le i$.
+% Let $\<\phi_k(x)\;:\;k<\lambda\>$ be an enumeration of the formulas in $L(A_j)$, where $j=\pi_1(i)$.
+% Let $b$ be a solution of the formula $\phi_k(x)$ for $k=\pi_2(i)$ and define $A_{i+1}=A_i\cup\{b\}$.
+% 
+% We use Tarski-Vaught test to prove $M\preceq N$.
+% Let $\phi(x)\in L(M)$ be consistent in $N$.
+% Then $\phi(x)\in L(A_j)$ for some $j$. Say, $\phi(x)$ is the $k$-th formula in the enumeration above.
+% As $\pi$ is a bijection, there is an $i$ such that $\pi_1(i)=j$ and $\pi_2(i)=k$.
+% Hence a witness of $\phi(x)$ is enumerated in $M$ at stage $i+1$.\QED
+% \end{void_thm}
+
+
 \begin{void_thm}[Second proof of the downward L\"owenheim-Skolem Theorem]\label{diym_II_lowenheimskolemallingiu}\rm
-From set theory we know there is a bijection $\pi:\lambda\to\lambda^2$ such that $\pi_1(i)$ and $\pi_2(i)$, the two components of $\pi(i)$, are both $\le i$.
-Suppose we have defined the set $A_j$ for very $j\le i$.
-Let $\<\phi_k(x)\;:\;k<\lambda\>$ be an enumeration of the formulas in $L(A_{\pi_1(i)})$.
-Let $b$ be a solution of the $\phi_k(x)$ for $k=\pi_2(i)$ and define $A_{i+1}=A_i\cup\{b\}$.
+From set theory we know that there is a bijection $\pi:\lambda^2\to\lambda$ such that $j,k\le\pi(j,k)$ for all $j,k<\lambda$.
+Suppose we have defined the sets $A_j$ for every $j\le i$ and let $\<\phi_k(x)\;:\;k<\lambda\>$ be an enumeration of the consistent formulas of $L(A_j)$. Pick $j,k<i$ such that $\pi(j,k)=i$.
+Let $b$ be a solution of the formula $\phi_k(x)$ and define $A_{i+1}=A_i\cup\{b\}$.
 
 We use Tarski-Vaught test to prove $M\preceq N$.
 Let $\phi(x)\in L(M)$ be consistent in $N$.
-As $\pi$ is a bijection, there is an $i$ such that $\phi(x)$ is the $\pi_2(i)$-th formula enumerated in $L(A_{\pi_1(i)})$.
-Hence a witness of $\phi(x)$ is enumerated in $M$ at stage $i+1$.\QED
+Then $\phi(x)\in L(A_j)$ for some $j$. Say, $\phi(x)$ is the $k$-th formula in the enumeration above.
+Hence a witness of $\phi(x)$ is enumerated in $M$ at stage $\pi(j,k)+1$.\QED
 \end{void_thm}
-
 
 % \begin{exercise}\label{LSenumerazione}
 % Con la notazione usata nella dimostrazione del teorema di L\"owenheim-Skolem, si dimostri che $A_i\subseteq\{a_k\;:\;k<\lambda\}$.
