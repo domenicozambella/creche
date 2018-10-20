@@ -9,7 +9,7 @@
 
 We present two proofs of the compactness theorem. The first is syntactic, the second uses ultrapowers.
 
-Somewhat surprisignly, the compactness theorem is not strctly required for the next few chapters (only from Chapter~\ref{saturation}). So the reading of this chapter may be postponed.
+Somewhat surprisingly, the compactness theorem is not strictly required for the next few chapters (only from Chapter~\ref{saturation}). So the reading of this chapter may be postponed.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -76,20 +76,27 @@ Induction is immediate by \ssf{1}-\ssf{5} of Definition~\ref{def_Henkin}. We ver
 Now assume $\phi=rt$ for a relation $r$ and a tuple of closed terms $t$. The argument is similar: \ssf{1} is immediate; to prove \ssf{2} suppose that $M/E\pmodels rt$. Then $tEs\in r^M$ for some tuple of closed terms $s$. Then $rs\in T$, and by \ssf{d} $rt\in T$. Finally from \ssf{0} we obtain $\neg rt\notin T$.
 \end{proof}
 
-\begin{proposition}If every finite subset of $T$ has a model then there is a Henkin theory $T'$ containing $T$. (The theory $T'$ may be in an expanded language.)
+\begin{proposition}If every finite subset of $T$ has a model then there is a Henkin theory $T'$ containing $T$. The theory $T'$ may be in an expanded language.
 \end{proposition}
 
-\begin{proof} Set $\lambda=|L|$. Let $\<c_i:i<\lambda\>$ be some constants not in $L$. Write $L_i$ be the language $L$ expanded with the constants $c_{\restriction i}$ and fix an enumeration of all sentences in $L_\lambda$. 
+\begin{proof} Set $\lambda=|L|$.
+Let $\<c_i:i<\lambda\>$ be some constants not in $L$.
+Let $L_i$ be the language with constants among $c_{\restriction i}$.
+Fix a variable $x$ and an enumeration $\<\phi_i(x):i<\lambda\>$ of the formulas in $L_\lambda$.
+Suppose that the enumeration is such that $\phi_i(x)\in L_i$.
 
-If $\alpha$ is $0$ or a limit ordinal define 
+We now construct a sequence of finitely consistent $L_i$-theories $T_i$. 
+If $\alpha$ is $0$ or a limit ordinal we define 
 
-\ceq{\hfill T'_\alpha}{=}{T_\alpha\medrel{=}T\ \cup\ \bigcup_{i<\alpha}T'_i} 
+\ceq{\hfill T_\alpha}{=}{T\ \cup\ \bigcup_{i<\alpha}T_i.} 
 
-As for successor ordinals, let $T_{i+1}$ be a maximal finitely consistent set of $L_i$-formulas containing $T'_i$. It is immediate that $T'_i$ satisfy Definition~\ref{def_Henkin} but possibly for \ssf{3}.
+As for successor ordinals, let $S$ be a maximally finitely consistent set of $L_i$-formulas containing $T_i$. It is immediate that $S$ satisfies all requirements in Definition~\ref{def_Henkin} but possibly for \ssf{4}.
 
-Let $\E x\, \phi$ be the least sentence in $L_\lambda$ contradicting \ssf{3} and set $T_{i+1}=T_i\cup\big\{\phi[x/c_i]\big\}$. It is immediate that $T_{i+1}$ is finitely consistent. 
+Now, if $\E x\,\phi_i(x)\in S$ set $T_{i+1}=S\cup\big\{\phi[x/c_i]\big\}$. It is evident that $T_{i+1}$ is finitely consistent. 
 
-At stage $\lambda$ all possible counterexamples to \ssf{3} have been ruled out, then $T'=T_\lambda$ is the required Henkin theory.
+Recall that $\E x\,\phi_i(x)\in L_i$ then, either $\E x\,\phi_i(x)\in T_{i+1}$ or it is not finitely consistent with $T_{i+1}$. Hence this takes care requirement \ssf{4} in Definition~\ref{def_Henkin} as far as  $\phi_i(x)$ is concerned.
+
+At stage $\lambda$ all possible counterexamples to \ssf{4} have been ruled out, then $T'=T_\lambda$ is the required Henkin theory.
 \end{proof}
 
 A theory is \emph{finitely consistent\/} if all its finite subsets are consistent. The following theorem is an immediate corollary of the proposition above.
