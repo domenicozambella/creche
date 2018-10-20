@@ -159,18 +159,9 @@ A \emph{random graph\/} is a graph that also satisfies the following axioms for 
 \item[r$_n$.] $\displaystyle\bigwedge^n_{i,j=1} x_i\neq y_j\ \ \imp\ \ \E z \bigwedge^n_{i=1} \big[r(x_i,z) \wedge \neg r(z,y_i)\big]$\hfill for every $n\in\ZZ^+$.
 \end{itemize}
 
-The theory of graphs is denoted by \emph{$T_{\textrm{gph}}$} and the theory of random graphs is denoted by \emph{$T_{\textrm{rg}}$}. The scheme of axioms \ssf{r$_n$} plays the same role of density in the previous section.  It says that given two non empty disjoint sets $A^+$ and $A^-$ of cardinality $\le n$ there is a vertex $z$ that is adjacent to all vertices in $A^+$ and to no vertex in $A^-$. Note that it might well be that $z\in A^-$, however $z\in A^+$ would contradict \ssf{1}.
+The theory of graphs is denoted by \emph{$T_{\textrm{gph}}$} and the theory of random graphs is denoted by \emph{$T_{\textrm{rg}}$}. The scheme of axioms \ssf{r$_n$} plays the same role of density in the previous section.  It says that given two disjoint sets $A^+$ and $A^-$ of cardinality $\le n$ there is a vertex $z$ that is adjacent to all vertices in $A^+$ and to no vertex in $A^-$. Note that it might well be that $z\in A^-$, however $z\in A^+$ would contradict \ssf{1}. 
 
-Some readers may doubt if $T_{\rm rg}$ is consistent.
-
-\begin{proposition}
-There exists a random graph.
-\end{proposition}
-\begin{proof}
-The domain of $N$ is the set of natural numbers. Let $N\models r(n,m)$ hold if the $n\jj$th prime number divides $m$ or vice versa $m\jj$th prime number divides $n$.
-\end{proof}
-
-
+Strictly speaking, the axioms \ssf{r$_n$} do not mention the cases when $A^+$ or $A^-$ are empty. But once we prove that all random graphs are infinite, we can deal with them by adding redundant elements.
 
 \begin{proposition}
 Random graphs are infinite.
@@ -196,6 +187,17 @@ These two sets are finite and disjoint, then so are $k[A^+]$ and $k[A^-]$. Then 
 
 As $k[A^+]\cup k[A^-]=\range k$, it is immediate to verify that $h=k\cup\big\{\<b,c\>\big\}$ is the required extension.
 \end{proof}
+
+
+Some readers may doubt if $T_{\rm rg}$ is consistent.
+
+\begin{proposition}
+There exists a random graph.
+\end{proposition}
+\begin{proof}
+The domain of $N$ is the set of natural numbers. Let $N\models r(n,m)$ hold if the $n\jj$th prime number divides $m$ or vice versa $m\jj$th prime number divides $n$.
+\end{proof}
+
 
 With the same proof of Corollary~\ref{coroll_ordinericco} obtain the following.
 

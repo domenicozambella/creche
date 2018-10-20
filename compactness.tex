@@ -5,7 +5,7 @@
 \label{compactness}
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+\def\ceq#1#2#3{\parbox{20ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 We present two proofs of the compactness theorem. The first is syntactic, the second uses ultrapowers.
 
@@ -30,7 +30,7 @@ Fix a language $L$. Assume for simplicity that formulas use only the connectives
 \item[4.]\ceq{\hfill\E x\,\phi\in T}{\IMP}{\phantom{\neg}\phi[x/a]\in T}\quad for some closed term $a$
 \item[5.]\ceq{\hfill\neg\E x\,\phi\in T}{\IMP}{\neg\phi[x/a]\in T}\quad for all closed terms $a$.
 \end{itemize}
-Moreover, the following holds for all closed terms $t$ and all closed terms $a, b, c$
+Moreover, the following holds for all closed terms $a, b, c$
 \begin{itemize}
 \item[a.] \ceq{\hfill a{\doteq}a\in T}{ }{ }
 \item[b.] \ceq{\hfill a{\doteq}b\in T}{\IMP}{ b{\doteq}a\in T}
@@ -40,6 +40,7 @@ Moreover, the following holds for all closed terms $t$ and all closed terms $a, 
 \end{definition}
 
 Fix a theory $T$ and let \emph{$M$} be the structure that has as domain the set of closed terms. Define for every relation symbol
+
 
 \ceq{\hfill r^M}{=}{\big\{\<a_1,\dots,a_n\>\ :\ r(a_1,\dots,a_n)\in T\big\}.}
 

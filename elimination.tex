@@ -249,12 +249,12 @@ Let $T$ be a complete theory without finite models in a language that consists o
 \end{exercise}
 
 \begin{exercise}\label{ex_discrete_lo}
-Let $L$ be the language of strict orders.  Let $T$ be the theory of \emph{discrete linear orders}. Namely, $T$ extends $T_{\rm dlo}$  (see Section~\hyperref[dlo]{\ref*{relational}.\ref*{dlo}}) with the following two of axioms with the following two of axioms
+Let $T$ be the theory of \emph{discrete linear orders}. Namely, $T$ extends the theory of linear orders $T_{\rm lo}$  (see Section~\hyperref[dlo]{\ref*{relational}.\ref*{dlo}}) with the following two of axioms with the following two of axioms
 \begin{itemize}
 \item[dis$\uparrow$.] $\E z\ \big[x<z\ \wedge\ \neg\E y\ x<y<z\big]$;
 \item[dis$\downarrow$.] $\E z\ \big[ z<x\ \wedge\ \neg\E y\ z<y<x\big]$.
 \end{itemize}
-Let $\Delta$ be the set of formulas that contains (all alphabetic variants of) the formulas $x<_ny:=\E^{\ge n}z\ (x\mathord<z\mathord< y)$ and their negations (read $<_0$ as $<$). Prove that the theory of discrete linear orders has $\Delta$-elimination of quantifiers. Prove that the structure $\QQ\times\ZZ$ ordered with the lexicographic order 
+Let $\Delta$ be the set of formulas that contains (all alphabetic variants of) the formulas $x<_ny:=\E^{\ge n}z\ (x\mathord<z\mathord< y)$ and their negations, for all positive integers $n$. Prove that the theory of discrete linear orders has $\Delta$-elimination of quantifiers. Prove that the structure $\QQ\times\ZZ$ ordered with the lexicographic order 
 
 \hfil$(a_1,a_2)<(b_1,b_2)\quad\IFF\quad a_1<b_1$\ \ or\ \ ($a_1=b_1$\ \ e\ \ $a_2<b_2$)
 
@@ -282,13 +282,11 @@ For a counter example consider the empty theory in the language with a single un
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Model-completeness}
 
-We say that $T$ is \emph{model-complete\/} if every embedding $h:M\hookrightarrow N$ between models of $T$ is an elementary embedding. 
-
-The notion was introduced by Abraham Robinson and has become standard. It is inspired by the fact that $T$ is model-complete if and only if $T\cup\Diag(M)$ is a complete theory, in the language $L(M)$, for every $M\models T$. 
+We say that $T$ is \emph{model-complete\/} if every embedding $h:M\hookrightarrow N$ between models of $T$ is an elementary embedding. The terminology, introduced by Abraham Robinson, is inspired by the fact that $T$ is model-complete if and only if $T\cup\Diag(M)$ is a complete theory, in the language $L(M)$, for every $M\models T$. 
 
 To stress positivity in the next proposition, we generalize the definition as follows. We say that $T$ is \emph{$\Delta$-model-complete\/} if every $\Delta$-embedding $h:M\hookrightarrow N$ between models of $T$ is a $\{\A\E\}\Delta$-embedding. 
 
-Model-completeness is equivalent a sort of elimination of quantifiers.
+Model-completeness is equivalent to a sort of quantifier elimination.
 
 \begin{proposition}
 The following are equivalent
