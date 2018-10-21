@@ -17,7 +17,7 @@ Somewhat surprisingly, the compactness theorem is not strictly required for the 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Compactness via syntax}
 
-Here we prove the compactness theorem using the so-called Henkin method. We divide the proof in two steps. Firstly, we observe that when the language is rich enough to name witnesses for all existential statements of the theory, these witnesses (\textit{Henkin constants\/}) form a canonical model. Secondly, we show that we can add the required Henkin constants to any finitely consistent theory.
+Here we prove the compactness theorem using the so-called Henkin method. We divide the proof in two steps. Firstly, we observe that when the language is rich enough to name witnesses of all existential statements of the theory, these witnesses (\textit{Henkin constants\/}) form a canonical model. Secondly, we show that we can add the required Henkin constants to any finitely consistent theory.
 
 \begin{definition}\label{def_Henkin}
 Fix a language $L$. Assume for simplicity that formulas use only the connectives $\wedge$, $\neg$ and $\E$. We say that $T$ is a \emph{Henkin theory\/} if for every formulas $\phi$ and $\psi$
@@ -60,6 +60,8 @@ The relation $E$ is a congruence on $M$ (as defined in Section~\hyperref[quotien
 Axioms \ssf{a}-\ssf{c} ensure that $E$ is an equivalence. Axiom \ssf{e} that it is a congruence.
 \end{proof}
 
+Condition \ssf{0} is the only negative requirement of Definition~\ref{def_Henkin} (it requires that $T$ does \textit{not\/} contain some formula). By condition \ssf{0}, Henkin theories do not contain any blatant inconsistency. Surprisingly, this is all what is needed for the existence of a model.
+
 \begin{theorem}
 If $T$ is Henkin theory then $M/E\,\models T$. 
 \end{theorem}
@@ -76,7 +78,7 @@ Induction is immediate by \ssf{1}-\ssf{5} of Definition~\ref{def_Henkin}. We ver
 Now assume $\phi=rt$ for a relation $r$ and a tuple of closed terms $t$. The argument is similar: \ssf{1} is immediate; to prove \ssf{2} suppose that $M/E\pmodels rt$. Then $tEs\in r^M$ for some tuple of closed terms $s$. Then $rs\in T$, and by \ssf{d} $rt\in T$. Finally from \ssf{0} we obtain $\neg rt\notin T$.
 \end{proof}
 
-\begin{proposition}If every finite subset of $T$ has a model then there is a Henkin theory $T'$ containing $T$. The theory $T'$ may be in an expanded language.
+\begin{proposition}\label{prop_Henkin}If every finite subset of $T$ has a model then there is a Henkin theory $T'$ containing $T$. The theory $T'$ may be in an expanded language $L'$..
 \end{proposition}
 
 \begin{proof} Set $\lambda=|L|$.
@@ -90,7 +92,7 @@ If $\alpha$ is $0$ or a limit ordinal we define
 
 \ceq{\hfill T_\alpha}{=}{T\ \cup\ \bigcup_{i<\alpha}T_i.} 
 
-As for successor ordinals, let $S$ be a maximally finitely consistent set of $L_i$-formulas containing $T_i$. It is immediate that $S$ satisfies all requirements in Definition~\ref{def_Henkin} but possibly for \ssf{4}.
+As for successor ordinals, let $S$ be a maximally finitely consistent set of $L_i$-formulas containing $T_i$. (He we appleal to Zorn's lemma, but see the remark below.) It is immediate that $S$ satisfies all requirements in Definition~\ref{def_Henkin} but possibly for \ssf{4}.
 
 Now, if $\E x\,\phi_i(x)\in S$ set $T_{i+1}=S\cup\big\{\phi[x/c_i]\big\}$. It is evident that $T_{i+1}$ is finitely consistent. 
 
@@ -105,7 +107,15 @@ A theory is \emph{finitely consistent\/} if all its finite subsets are consisten
 If every finite subset of $T$ is consistent then $T$ is consistent.\QED
 \end{void_thm}
 
+\begin{remark}
+To keep the proof above short, we appealed to Zorn's lemma. This is not strictly necessary. In fact, if we are given a finitely consistent theory $T$. We can extend $T$ to a theory $S$ that meets Definition~\ref{def_Henkin}, up to condition~\ssf{4}, by adding systematically all required formulas. The procedure is effective and there is no need of Zorn's lemma. 
 
+It is interesting to note that we only need to add to $S$  formulas that are subformulas of formulas in $T$, or alphabetic variants of these (i.e\@ renaming of terms). In particular, when $T$ is finite, $S$ is also finite (assume for simplicity that the language is finite and contains no functions other then constants). Then the construction in Proposition~\ref{prop_Henkin} is an effective procedure to construct in $\omega$ steps a model of $T$.
+
+Now suppose instead that we start with an inconsistent $T$. The procedure above has to come to an halt at same (finite) stage. When it halts, we end up with a finite sequence of finite theories $T_0,\dots, T_n$ where $T_0=T$ and $T_n$ contains some blatant inconsistency (i.e.\@ $\phi$ and $\neg\phi$). Many have interpreted  $T_0,\dots, T_n$ as a formal \textit{proof\/} of the inconsinstency of $T$.
+
+All this has little or no interest to model theory.\QED
+\end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
