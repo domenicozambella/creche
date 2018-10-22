@@ -92,7 +92,7 @@ If $\alpha$ is $0$ or a limit ordinal we define
 
 \ceq{\hfill T_\alpha}{=}{T\ \cup\ \bigcup_{i<\alpha}T_i.} 
 
-As for successor ordinals, let $S$ be a maximally finitely consistent set of $L_i$-formulas containing $T_i$. (He we appleal to Zorn's lemma, but see the remark below.) It is immediate that $S$ satisfies all requirements in Definition~\ref{def_Henkin} but possibly for \ssf{4}.
+As for successor ordinals, let $S$ be a maximally finitely consistent set of $L_i$-formulas containing $T_i$. (Here we use Zorn's lemma, but see the remark below.) It is immediate that $S$ satisfies all requirements in Definition~\ref{def_Henkin} but possibly for \ssf{4}.
 
 Now, if $\E x\,\phi_i(x)\in S$ set $T_{i+1}=S\cup\big\{\phi[x/c_i]\big\}$. It is evident that $T_{i+1}$ is finitely consistent. 
 
@@ -108,13 +108,13 @@ If every finite subset of $T$ is consistent then $T$ is consistent.\QED
 \end{void_thm}
 
 \begin{remark}
-To keep the proof above short, we applied Zorn's lemma. This is not strictly necessary. In fact, if we are given a finitely consistent theory $T$. We can extend $T$ to a theory $S$ that meets Definition~\ref{def_Henkin}, up to condition~\ssf{4}, by adding systematically all required formulas. The procedure is effective and there is no need of Zorn's lemma. 
+To keep the proof above short, we applied Zorn's lemma. This is not strictly necessary. In fact, if we are given a finitely consistent theory $T$. We can extend $T$ to a theory $S$ that meets Definition~\ref{def_Henkin}, up to condition~\ssf{4}, by adding systematically all required formulas. The procedure is effective, hence Zorn's lemma is not required. 
 
-It is interesting to note that we only need to add to $S$ subformulas of formulas in $T$, or formulas obtained by renaming terms. In particular, when $T$ is finite, $S$ is also finite (assume for simplicity that the language is finite and contains no functions other then constants). Then the construction in Proposition~\ref{prop_Henkin} is an effective procedure that produces in $\omega$ steps a model of $T$.
+It is interesting to consider the case when $T$ is finite. Asuume also (though this is not really necessary) that the language contains finitely many symbols and no functions other then constants. Then the construction in Proposition~\ref{prop_Henkin} is an effective procedure that produces in $\omega$ steps a model of $T$. At each step $T_n$ is finite and contains only subformulas of formulas in $T$ or variant on these obtained by substituting constants for variables.
 
-Now suppose instead that we start with an inconsistent $T$. The procedure above has to come to a halt at same (finite) stage. When it halts, we end up with a finite sequence of finite theories $T_0,\dots, T_n$ where $T_0=T$ and $T_n$ contains some blatant inconsistency (i.e.\@ $\phi$ and $\neg\phi$). Many have interpreted  $T_0,\dots, T_n$ as a formal \textit{proof\/} of the inconsinstency of $T$.
+Now suppose instead that we start with an inconsistent $T$. The procedure above has to come to a halt at same (finite) stage becouse a model of $T$ does not exist. When the procedure halts, we end up with a finite sequence of finite theories $T_0,\dots, T_n$ where $T_0=T$ and $T_n$ contains some blatant inconsistency (i.e.\@ $\phi$ and $\neg\phi$). Many have interpreted  $T_0,\dots, T_n$ as a formal \textit{proof\/} of the inconsinstency of $T$.
 
-But all this has little or no interest to model theory.\QED
+All this has little or no interest to model theory. It highlights a fascinating phenomenon.  When we say that $T$ is inconsistent, we say that no structure models $T$. This expression uses a (meta linguistic) universal quantifier that ranges over the class of all structures. Yet this is equivalent to an expression that merely asserts the existence of a finite sequence of finite theories.\QED
 \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
