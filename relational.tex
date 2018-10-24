@@ -7,7 +7,11 @@
 
 \def\ceq#1#2#3{\parbox[b]{20ex}{$\displaystyle #1$}\parbox[b]{4ex}{\hfil$#2$}$\displaystyle #3$}
 
-In the first section we prove that theory of \textit{dense linear orders without endpoints\/} is \textit{$\omega\jj$cate\-gorical}. That is, any two such countable orders are isomorphic.  This is an easy classical result of Cantor. In this chapter we examine Cantor's construction (a so-called \textit{back-and-forth\/} construction) in great detail. In the second section we apply the same technique to prove that the theory of the \textit{random graph\/} is $\omega\mbox{-}$categorical.
+In the first section we prove that theory of \textit{dense linear orders without endpoints\/} is \textit{$\omega\jj$cate\-gorical}.
+That is, any two such countable orders are isomorphic.
+This is an easy classical result of Cantor.
+In this chapter we examine Cantor's construction (a so-called \textit{back-and-forth\/} construction) in great detail.
+In the second section we apply the same technique to prove that the theory of the \textit{random graph\/} is $\omega\mbox{-}$categorical.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17,7 +21,8 @@ In the first section we prove that theory of \textit{dense linear orders without
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Dense linear orders}
 \label{dlo}
-The \emph{language of strict orders}, which in this section we denote by $L$, contains only a binary relation symbol $<$. A structure $M$ of signature $L$ is a \emph{strict order\/} if it models (the universal closure of) the following formulas
+The \emph{language of strict orders}, which in this section we denote by $L$, contains only a binary relation symbol $<$.
+A structure $M$ of signature $L$ is a \emph{strict order\/} if it models (the universal closure of) the following formulas
 \begin{itemize}
 \item[1.] $x \not< x$\hfill irreflexive;
 \item[2.] $x< z< y\ \imp\ x< y$\hfill transitive.
@@ -35,23 +40,34 @@ An order is \emph{dense\/} if
 \item[nt.]  $\E x,y\ (x<y)$\hfill non trivial;
 \item[d.] $x<y\ \imp\ \E z\;(x<z<y)$\hfill dense.
 \end{itemize}
-We need to require the existence of two comparable elements, then \ssf{d} implies that dense orders are in fact infinite. We say that the ordering has no \emph{endpoints\/} if
+We need to require the existence of two comparable elements, then \ssf{d} implies that dense orders are in fact infinite.
+We say that the ordering has no \emph{endpoints\/} if
 \begin{itemize}
 \item[e.] $\E y\ (x<y)\ \wedge\ \E y\ (y<x)$\hfill without endpoints.
 \end{itemize}
 
-We denote by \emph{$T_{\textrm{lo}}$} the theory strict linear orders and by \emph{$T_{\textrm{dlo}}$} the theory of dense linear orders without endpoints. Clearly, these are consistent theories: $\QQ$ with the usual ordering is a model of $T_{\rm dlo}$.
+We denote by \emph{$T_{\textrm{lo}}$} the theory strict linear orders and by \emph{$T_{\textrm{dlo}}$} the theory of dense linear orders without endpoints.
+Clearly, these are consistent theories: $\QQ$ with the usual ordering is a model of $T_{\rm dlo}$.
 
-We introduce some notation to improve readability of the proof of the following theorem. Let $A$ and $B$ be subsets of an ordered set. We write $A<B$ if $a<b$ for every $a\in A$ and $b\in B$. We write $a<B$ e $A<b$ for $\{a\}<B$, respectively $A<\{b\}$. Let $M\models T_{\rm lo}$. Then $M\models T_{\rm dlo}$ if and only if for every finite $A, B\subseteq M$ such that $A<B$ there is a $c$ such that  $A<c<B$.  In fact axiom \ssf{d} is evident and axioms \ssf{nt} and \ssf{e} are obtained taking replacing $A$ and/or $B$ by the empty set.
+We introduce some notation to improve readability of the proof of the following theorem.
+Let $A$ and $B$ be subsets of an ordered set.
+We write $A<B$ if $a<b$ for every $a\in A$ and $b\in B$.
+We write $a<B$ e $A<b$ for $\{a\}<B$, respectively $A<\{b\}$.
+Let $M\models T_{\rm lo}$.
+Then $M\models T_{\rm dlo}$ if and only if for every finite $A, B\subseteq M$ such that $A<B$ there is a $c$ such that  $A<c<B$.
+In fact axiom \ssf{d} is evident and axioms \ssf{nt} and \ssf{e} are obtained taking replacing $A$ and/or $B$ by the empty set.
 
-Now we prove the first of a series of lemmas that we call \emph{extension lemmas}. Recall that in the language of strict orders an injective map $k:M\to N$ is a partial isomorphism if 
+Now we prove the first of a series of lemmas that we call \emph{extension lemmas}.
+Recall that in the language of strict orders an injective map $k:M\to N$ is a partial isomorphism if 
 
 \ceq{\hfill M\models a<b}{\IFF}{N\models ka<kb}\hfill for every $a,b\in\dom k$.
 
 (When $M,N\models T_{\rm lo}$ direction $\IMP$ suffices.)
 
 \begin{lemma}\label{lem_ordinericco}
-Fix $M\models T_{\rm lo}$ and $N\models T_{\rm dlo}$. Let $k:M\imp N$ be a finite partial isomorphism and let $b\in M$. Then there is a partial isomorphism $h:M\imp N$ that extends $k$ and is defined in $b$.
+Fix $M\models T_{\rm lo}$ and $N\models T_{\rm dlo}$.
+Let $k:M\imp N$ be a finite partial isomorphism and let $b\in M$.
+Then there is a partial isomorphism $h:M\imp N$ that extends $k$ and is defined in $b$.
 \end{lemma}
 
 \begin{proof}
@@ -61,17 +77,27 @@ Given a finite partial isomorphism $k:M\to N$ define
 
 \ceq{\hfill A^+}{=}{\big\{a\in\dom(k)\;:\;b<a\big\}.}
 
-The sets $A^-$ and $A^+$ are finite and partition $\dom k$, and  $A^-<A^+$. As $k:M\imp N$ is a partial isomorphism, $k[A^-]<k[A^+]$. Then in $N$ there is an element $c$ such that $k[A^-]<c<k[A^+]$. It is easy to check that setting $h=k\cup\big\{\<b,c\>\big\}$ we obtain the required extension.
+The sets $A^-$ and $A^+$ are finite and partition $\dom k$, and  $A^-<A^+$.
+As $k:M\imp N$ is a partial isomorphism, $k[A^-]<k[A^+]$.
+Then in $N$ there is an element $c$ such that $k[A^-]<c<k[A^+]$.
+It is easy to check that setting $h=k\cup\big\{\<b,c\>\big\}$ we obtain the required extension.
 \end{proof}
 
 The following is an equivalent version of Lemma~\ref{lem_ordinericco}.
 
 \begin{corollary}\label{coroll_ordinericco}
-Let $M\models T_{\rm lo}$ be countable and let $N\models T_{\rm dlo}$. Let $k:M\imp N$ be a finite partial isomorphism. Then there is a (total) embedding $h:M\hookrightarrow N$ that extends $k$.
+Let $M\models T_{\rm lo}$ be countable and let $N\models T_{\rm dlo}$.
+Let $k:M\imp N$ be a finite partial isomorphism.
+Then there is a (total) embedding $h:M\hookrightarrow N$ that extends $k$.
 \end{corollary}
 
 \begin{proof}
-Let $\<a_i:i<\omega\>$ be an enumeration of $M$. Define by induction a chain of finite partial isomorphisms $h_i:M\imp N$ such that $a_i\in\dom h_{i+1}$. The construction starts with $h_0=k$. At stage $i+1$ we chose any finite partial isomorphism $h_{i+1}:M\imp N$ that extends $h_i$ and is defined in $a_i$. This is possible by Lemma~\ref{lem_ordinericco}. In the end we set
+Let $\<a_i:i<\omega\>$ be an enumeration of $M$.
+Define by induction a chain of finite partial isomorphisms $h_i:M\imp N$ such that $a_i\in\dom h_{i+1}$.
+The construction starts with $h_0=k$.
+At stage $i+1$ we chose any finite partial isomorphism $h_{i+1}:M\imp N$ that extends $h_i$ and is defined in $a_i$.
+This is possible by Lemma~\ref{lem_ordinericco}.
+In the end we set
 
 \ceq{\hfill h}{=}{\bigcup_{i\in\omega} h_i.}
 
@@ -80,43 +106,61 @@ It is immediate to verify that $h:M\hookrightarrow N$ is the required embedding.
 
 
 \begin{exercise}\label{ex_ricco->dlo}
-Prove that the extension Lemma~\ref{lem_ordinericco} characterizes models of $T_{\rm dlo}$ among models of $T_{\rm lo}$. That is, if $N$ is a model of $T_{\rm lo}$ such that the conclusion of Lemma~\ref{lem_ordinericco} holds, then $M\models  T_{\rm dlo}$.\QED
+Prove that the extension Lemma~\ref{lem_ordinericco} characterizes models of $T_{\rm dlo}$ among models of $T_{\rm lo}$.
+That is, if $N$ is a model of $T_{\rm lo}$ such that the conclusion of Lemma~\ref{lem_ordinericco} holds, then $M\models  T_{\rm dlo}$.\QED
 \end{exercise}
 
 %We say that a theory is \emph{$\omega\jj$categorical\/} if it has a unique countable model up to isomorphism.
 
-We are now ready to prove that any two countable models of $T_{\rm dlo}$ are isomorphic which is a classical result of Cantor's. Actually what we prove is slightly more general than that. In fact Cantor's theorem is obtained from the theorem below by setting $k=\0$, which we are allowed to, because all models have the same empty characteristic (cfr.\@ Remark~\ref{rmk_characteristic}).
+We are now ready to prove that any two countable models of $T_{\rm dlo}$ are isomorphic which is a classical result of Cantor's.
+Actually what we prove is slightly more general than that.
+In fact Cantor's theorem is obtained from the theorem below by setting $k=\0$, which we are allowed to, because all models have the same empty characteristic (cfr.\@ Remark~\ref{rmk_characteristic}).
 
 \begin{theorem}\label{thm_zigzagcantor}
 Every finite partial isomorphism $k:M\imp N$ between countable models of $T_{\rm dlo}$ extends to an isomorphism $g:M\isomap N$.
 \end{theorem}
 
-The following is the archetypal \emph{back-and-forth\/} construction. It is important to note that it does not mention linear orders at all. It only uses the extension Lemma~\ref{lem_ordinericco}. In many other contexts, as soon as we have an extension lemma, we can apply verbatim the same construction (cfr.\@ Theorem~\ref{thm_riccozigzag}).
+The following is the archetypal \emph{back-and-forth\/} construction.
+It is important to note that it does not mention linear orders at all.
+It only uses the extension Lemma~\ref{lem_ordinericco}.
+In many other contexts, as soon as we have an extension lemma, we can apply verbatim the same construction (cfr.\@ Theorem~\ref{thm_riccozigzag}).
 
 \begin{proof}
-Fix some enumerations of $M$ and $N$, say $\<a_i:i<\omega\>$, respectively $\<b_i:i<\omega\>$.  We define by induction a chain of finite partial isomorphisms $g_i:M\imp N$ such that $a_i\in\dom g_{i+1}$ and $b_i\in\range g_{i+1}$. In the end we set
+Fix some enumerations of $M$ and $N$, say $\<a_i:i<\omega\>$, respectively $\<b_i:i<\omega\>$.
+We define by induction a chain of finite partial isomorphisms $g_i:M\imp N$ such that $a_i\in\dom g_{i+1}$ and $b_i\in\range g_{i+1}$.
+In the end we set
 
 \ceq{\hfill g}{=}{\bigcup_{i\in\omega}g_i}
 
-We begin by setting $g_0=k$. The inductive step consists of two half-steps that we may call the \textit{forth-step} and \textit{back-step}. In the forth-step we define $g_{i+^1\!\!/\!_2}$ such that $a_i\in\dom g_{i+^1\!\!/\!_2}$. in the back-step to define $g_{i+1}$ such that $b_i\in\range g_{i+1}$
+We begin by setting $g_0=k$.
+The inductive step consists of two half-steps that we may call the \textit{forth-step} and \textit{back-step}.
+In the forth-step we define $g_{i+^1\!\!/\!_2}$ such that $a_i\in\dom g_{i+^1\!\!/\!_2}$.
+in the back-step to define $g_{i+1}$ such that $b_i\in\range g_{i+1}$
 
-By the extension lemma~\ref{lem_ordinericco} there is a finite partial isomorphism $g_{i+^1\!\!/\!_2}:M\imp N$ that extends $g_i$ and is defined in $a_i$. Now apply the same lemma to extend $\big(g_{i+^1\!\!/\!_2}\big)^{-1}:N\to M$ to a finite partial isomorphism $(g_{i+1})^{-1}:N\to M$ defined in $b_i$.
+By the extension lemma~\ref{lem_ordinericco} there is a finite partial isomorphism $g_{i+^1\!\!/\!_2}:M\imp N$ that extends $g_i$ and is defined in $a_i$.
+Now apply the same lemma to extend $\big(g_{i+^1\!\!/\!_2}\big)^{-1}:N\to M$ to a finite partial isomorphism $(g_{i+1})^{-1}:N\to M$ defined in $b_i$.
 \end{proof}
 
-Let $\lambda$ be an infinite cardinal. We say that a theory is \emph{$\lambda\jj$categorical\/} if any two models of $T$ of cardinality $\lambda$ are isomorphic. From Theorem~\ref{thm_zigzagcantor}, taking $k=\0$, we obtain the following.
+Let $\lambda$ be an infinite cardinal.
+We say that a theory is \emph{$\lambda\jj$categorical\/} if any two models of $T$ of cardinality $\lambda$ are isomorphic.
+From Theorem~\ref{thm_zigzagcantor}, taking $k=\0$, we obtain the following.
 
 \begin{corollary}
 The theory $T_{\rm dlo}$ is $\omega\jj$categorical.\QED
 \end{corollary}
 
-We also obtain that $T_{\rm dlo}$ is a complete theory. This is consequence of the following general fact.
+We also obtain that $T_{\rm dlo}$ is a complete theory.
+This is consequence of the following general fact.
 
 \begin{proposition}\label{thm_categorical->complete}
 If $T$ has no finite models and is $\lambda\jj$categorical for some $\lambda\ge|L|$, then $T$ is complete.
 \end{proposition}
 
 \begin{proof}
-Let $M$ and $N$ be any two models of $T_{\rm dlo}$. Applying the upward and/or downward L\"owenheim-Skolem theorem, we may assume they both have cardinality $\lambda$. Note that here we use that $N$ and $N$ are both infinite that $\lambda\ge|L|$. Hence $M\simeq N$ and in particular $M\equiv N$.
+Let $M$ and $N$ be any two models of $T_{\rm dlo}$.
+Applying the upward and/or downward L\"owenheim-Skolem theorem, we may assume they both have cardinality $\lambda$.
+Note that here we use that $N$ and $N$ are both infinite and that $\lambda\ge|L|$.
+Hence $M\simeq N$ and in particular $M\equiv N$.
 \end{proof}
 
 \begin{exercise}
@@ -128,12 +172,20 @@ Prove that, in the language of strict orders, $\QQ\preceq\RR$.\QED
 \end{exercise}
 
 \begin{exercise}\label{VaughtEsempio3modelli}
-Let $L$ be the language of strict orders augmented with countably many constants $\big\{c_i: i\in\omega\big\}$. Let $T$ be the theory that extends $T_{\rm dlo}$ with the axioms $c_i<c_{i+1}$ for all $i$. Prove that $T$ is complete. Find three non isomorphic models of this theory. For $N$ a rightly chosen model of $T$, prove the statement in Lemma~\ref{lem_ordinericco}, with $M$ any model of $T$.\QED
+Let $L$ be the language of strict orders augmented with countably many constants $\big\{c_i: i\in\omega\big\}$.
+Let $T$ be the theory that extends $T_{\rm dlo}$ with the axioms $c_i<c_{i+1}$ for all $i$.
+Prove that $T$ is complete.
+Find three non isomorphic models of this theory.
+For $N$ a rightly chosen model of $T$, prove the statement in Lemma~\ref{lem_ordinericco}, with $M$ any model of $T$.\QED
 \end{exercise}
 
 
 \begin{exercise}\label{categorica->completa}
-Show that in Theorem~\ref{thm_categorical->complete} the assumption $\lambda\ge|L|$ is necessary. (Hint. Let $\nu$ be an uncountable cardinal. The language contains only the ordinals $i<\nu$ as constants. The theory $T$ says that there are infinitely many elements and either $i=0$ for every $i<\nu$, or $i\neq j$ for every $i<j<\nu$. Prove that $T$ is $\omega\jj$categorical but incomplete.)\QED
+Show that in Theorem~\ref{thm_categorical->complete} the assumption $\lambda\ge|L|$ is necessary.
+(Hint: let $\nu$ be an uncountable cardinal.
+The language contains only the ordinals $i<\nu$ as constants.
+The theory $T$ says that there are infinitely many elements and either $i=0$ for every $i<\nu$, or $i\neq j$ for every $i<j<\nu$.
+Prove that $T$ is $\omega\jj$categorical but incomplete.)\QED
 \end{exercise}
 
 
@@ -144,14 +196,17 @@ Show that in Theorem~\ref{thm_categorical->complete} the assumption $\lambda\ge|
 \section{Random graphs}
 \label{randomgraph}
 
-Recall that the \emph{language of graphs}, which in this section we denote by $L$, contains only a binary relation $r$. A \emph{graph\/} structure of signature $L$ such that
+Recall that the \emph{language of graphs}, which in this section we denote by $L$, contains only a binary relation $r$.
+A \emph{graph\/} structure of signature $L$ such that
 
 \begin{itemize}
 \item[1.] $\neg r(x,x)$\hfill irreflexive;
 \item[2.] $r(x,y)\imp r(y,x)$\hfill symmetric.
 \end{itemize}
 
-An element of a graph $M$ is called a \emph{vertex\/} or a \emph{node}. An \emph{edge\/} is an unordered pair of vertices $\{a,b\}\subseteq M$ such that $M\models r(a,b)$. In words we may say that $a$ is adjacent to $b$.
+An element of a graph $M$ is called a \emph{vertex\/} or a \emph{node}.
+An \emph{edge\/} is an unordered pair of vertices $\{a,b\}\subseteq M$ such that $M\models r(a,b)$.
+In words we may say that $a$ is adjacent to $b$.
 
 A \emph{random graph\/} is a graph that also satisfies the following axioms for every $n$
 \begin{itemize}
@@ -161,24 +216,30 @@ A \emph{random graph\/} is a graph that also satisfies the following axioms for 
 
 
 The theory of graphs is denoted by \emph{$T_{\textrm{gph}}$} and the theory of random graphs is denoted by \emph{$T_{\textrm{rg}}$}.
-The scheme of axioms \ssf{r$_n$} plays the same role of density in the previous section. 
+The scheme of axioms \ssf{r$_n$} plays the same role of density in the previous section.
 It says that given two disjoint sets $A^+$ and $A^-$ of cardinality $\le n$ there is a vertex $z$ that is adjacent to all vertices in $A^+$ and to no vertex in $A^-$.
-We explicitly required that $z\notin A^-$, by \ssf{1} it is clear that $z\notin A^+$. 
+We explicitly required that $z\notin A^-$, by \ssf{1} it is clear that $z\notin A^+$.
 
-Strictly speaking, the axioms \ssf{r$_n$} do not mention the cases when $A^+$ or $A^-$ are empty. But as it is evident that random graphs are infinite, we can deal with them by adding redundant elements.
+Strictly speaking, the axioms \ssf{r$_n$} do not mention the cases when $A^+$ or $A^-$ are empty.
+But as it is evident that random graphs are infinite, we can deal with them by adding redundant elements.
 
-The following is the analogous of Lemma~\ref{lem_ordinericco} for random graphs. Recall that in the language of graphs a map $k:M\to N$ is a partial isomorphism if it is injective and
+The following is the analogous of Lemma~\ref{lem_ordinericco} for random graphs.
+Recall that in the language of graphs a map $k:M\to N$ is a partial isomorphism if it is injective and
 
 \ceq{\hfill M\models r(a,b)}{\IFF}{N\models r(ka,kb)}\hfill for every $a,b\in\dom k$.
 
 \begin{lemma}\label{lem_graforicco}
-Fix $M\models T_{\rm gph}$ and $N\models T_{\rm rg}$. Let $k:M\imp N$ be a finite partial isomorphism and let $b\in M$. Then there is a partial isomorphism $h:M\imp N$ that extends $k$ and is defined in $b$.
+Fix $M\models T_{\rm gph}$ and $N\models T_{\rm rg}$.
+Let $k:M\imp N$ be a finite partial isomorphism and let $b\in M$.
+Then there is a partial isomorphism $h:M\imp N$ that extends $k$ and is defined in $b$.
 \end{lemma}
-\begin{proof} The schema of the proof is the same as in Lemma~\ref{lem_ordinericco}, so we use the same notation. Assume $b\notin\dom k$ and define\medskip
+\begin{proof} The schema of the proof is the same as in Lemma~\ref{lem_ordinericco}, so we use the same notation.
+Assume $b\notin\dom k$ and define\medskip
 
 \hfil$A^+=\big\{x\in\dom k\ :\ M\models r(x,b)\big\}\ \ \ \textrm{e}\ \ \ A^-=\big\{y\in\dom k\ :\  M\models \neg r(y,b)\big\}$.\medskip
 
-These two sets are finite and disjoint, then so are $k[A^+]$ and $k[A^-]$. Then there is a $c\notin\range k$ such that\medskip
+These two sets are finite and disjoint, then so are $k[A^+]$ and $k[A^-]$.
+Then there is a $c\notin\range k$ such that\medskip
 
 \hfil$\displaystyle\bigwedge_{a\in A^+}r(ka,c)\ \ \wedge\ \bigwedge_{a\in A^-}\neg r(ka,c)$.
 
@@ -192,14 +253,17 @@ Some readers may doubt if $T_{\rm rg}$ is consistent.
 There exists a random graph.
 \end{proposition}
 \begin{proof}
-The domain of $N$ is the set of natural numbers. Let $N\models r(n,m)$ hold if the $n\jj$th prime number divides $m$ or vice versa $m\jj$th prime number divides $n$.
+The domain of $N$ is the set of natural numbers.
+Let $N\models r(n,m)$ hold if the $n\jj$th prime number divides $m$ or vice versa $m\jj$th prime number divides $n$.
 \end{proof}
 
 
 With the same proof of Corollary~\ref{coroll_ordinericco} obtain the following.
 
 \begin{corollary}\label{coroll_graforicco}
-Let $M\models T_{\rm gph}$ be countable and let $N\models T_{\rm rg}$. Let $k:M\imp N$ be a finite partial isomorphism. Then there is a (total) embedding $h:M\hookrightarrow N$ that extends $k$.\QED
+Let $M\models T_{\rm gph}$ be countable and let $N\models T_{\rm rg}$.
+Let $k:M\imp N$ be a finite partial isomorphism.
+Then there is a (total) embedding $h:M\hookrightarrow N$ that extends $k$.\QED
 \end{corollary}
 
 The proof of Theorem~\ref{thm_zigzagcantor} gives the following theorem and its corollary.
@@ -213,11 +277,13 @@ The theory $T_{\rm rg}$ is $\omega\jj$categorical (and therefore complete).\QED
 \end{corollary}
 
 \begin{exercise}
-Let $a,b,c\in N\models T_{\rm rg}$. Prove that $r(a,N)=r(b,N)\cap r(c,N)$ occurs only in the trivial case $a=b=c$.\QED
+Let $a,b,c\in N\models T_{\rm rg}$.
+Prove that $r(a,N)=r(b,N)\cap r(c,N)$ occurs only in the trivial case $a=b=c$.\QED
 \end{exercise}
 
 \begin{exercise}
-Let $N\models T_{\rm rg}$ prove that for every $\phi(x)\in L(N)$ the set $r(b,N)$ is a random graph. Is every random graph $M\subseteq N$ of the form $r(b,N)$ for some $b\in N$~? Is every random graph $M\subseteq N$ of the form $M=\phi(N)$ for some $\phi(x)\in L(N)$~?\QED
+Let $N\models T_{\rm rg}$ prove that for every $\phi(x)\in L(N)$ the set $r(b,N)$ is a random graph.
+Is every random graph $M\subseteq N$ of the form $r(b,N)$ for some $b\in N$~? Is every random graph $M\subseteq N$ of the form $M=\phi(N)$ for some $\phi(x)\in L(N)$~?\QED
 \end{exercise}
 
 % \begin{exercise}
@@ -225,7 +291,13 @@ Let $N\models T_{\rm rg}$ prove that for every $\phi(x)\in L(N)$ the set $r(b,N)
 % \end{exercise}
 
 \begin{exercise}\label{unionedisgiunta}
-Let $N$ be free union of two random graphs $N_1$ and $N_2$. That is, $N=N_1\sqcup N_2$ and $r^N= r^{N_1}\sqcup r^{N_2}$. By $\sqcup$ we denote the disjoint union. Prove that $N$ is not a random graph. Show that $N_1$ is not definable without parameters (assume $|N_1|=|N_2|=\omega$, otherwise the proof is longer). Write a first order sentence $\psi(x,y)$ true if $x$ and $y$ belong to the same connected component of $N$. Axiomatize the class $\K$ of graphs that are free union of two random graphs.\QED
+Let $N$ be free union of two random graphs $N_1$ and $N_2$.
+That is, $N=N_1\sqcup N_2$ and $r^N= r^{N_1}\sqcup r^{N_2}$.
+By $\sqcup$ we denote the disjoint union.
+Prove that $N$ is not a random graph.
+Show that $N_1$ is not definable without parameters (assume $|N_1|=|N_2|=\omega$, otherwise the proof is longer).
+Write a first order sentence $\psi(x,y)$ true if $x$ and $y$ belong to the same connected component of $N$.
+Axiomatize the class $\K$ of graphs that are free union of two random graphs.\QED
 \end{exercise}
 
 % \begin{exercise}\label{N1N2}
@@ -244,15 +316,19 @@ Let $N$ be free union of two random graphs $N_1$ and $N_2$. That is, $N=N_1\sqcu
 % \end{exercise}
 
 \begin{exercise}
-Prove that $T_{\rm rg}$ is not $\lambda\jj$categorical for any uncountable $\lambda$. Hint. Prove that there is a random graph $N$ of cardinality $\lambda$ where every vertex is adjacent to $<\lambda$ vertices. Compare it with its complement graph (the graph that has edges between pairs that are non adjacent in $N$).\QED
+Prove that $T_{\rm rg}$ is not $\lambda\jj$categorical for any uncountable $\lambda$.
+Hint: prove that there is a random graph $N$ of cardinality $\lambda$ where every vertex is adjacent to $<\lambda$ vertices.
+Compare it with its complement graph (the graph that has edges between pairs that are non adjacent in $N$).\QED
 \end{exercise}
 
 \begin{exercise}
-Prove that $T_{\rm rg}$ is not finitely axiomatizable. Hint. Given a random graph $N$ and a set $P$ of cardinality $n+1$ show that you can add edges to $M\sqcup P$ and make it satisfy axiom \ssf{r$_n$} but not \ssf{r$_{n+1}$}.\QED
+Prove that $T_{\rm rg}$ is not finitely axiomatizable.
+Hint: given a random graph $N$ and a set $P$ of cardinality $n+1$ show that you can add edges to $M\sqcup P$ and make it satisfy axiom \ssf{r$_n$} but not \ssf{r$_{n+1}$}.\QED
 \end{exercise}
 
 \begin{exercise}\label{ex_rg_small_def_set}
-Let $A\subseteq N\models T_{\rm rg}$ and let $\phi(x)\in L(A)$, where $|x|=1$. Prove that if $\phi(N)$ is finite then $\phi(N)\subseteq A$.\QED
+Let $A\subseteq N\models T_{\rm rg}$ and let $\phi(x)\in L(A)$, where $|x|=1$.
+Prove that if $\phi(N)$ is finite then $\phi(N)\subseteq A$.\QED
 \end{exercise}
 
 \begin{exercise}[(Peter J.~Cameron)]
@@ -261,9 +337,15 @@ Prove that for every infinite countable graph $M$ the following are equivalent
 \item[1.] $M$ is either random, complete or empty (i.e.\@ $r^M=\0$);
 \item[2.] if $M_1,M_2\subseteq M$ are such that $M_1\sqcup M_2=M$, then $M_1\simeq M$ or $M_2\simeq M$.
 \end{itemize}
-Hint. For \ssf{2}$\IMP$\ssf{1} first show that if $r(a,M)=\0$ for some $a\in M$ then the graph is null and if $\{b\}\cup r(b,M)=M$ for some $b$, then the graph is complete. Clearly, \ssf{2} implies that any finite partition of $M$ contains an element isomorphic to $M$. Then the claim above generalizes as follows: if there is a finite $A$ such that $\bigcap_{a\in A}r(a, M)=\0$ then $M$ is the empty graph and if there is a finite $B$ such that $\bigcup_{b\in B}r(b,M)=M$ then $M$ is the complete graph. 
+Hint: for \ssf{2}$\IMP$\ssf{1} first show that if $r(a,M)=\0$ for some $a\in M$ then the graph is null and if $\{b\}\cup r(b,M)=M$ for some $b$, then the graph is complete.
+Clearly, \ssf{2} implies that any finite partition of $M$ contains an element isomorphic to $M$.
+Then the claim above generalizes as follows: if there is a finite $A$ such that $\bigcap_{a\in A}r(a, M)=\0$ then $M$ is the empty graph and if there is a finite $B$ such that $\bigcup_{b\in B}r(b,M)=M$ then $M$ is the complete graph.
 
-Suppose $M$ is not a random graph. Fix some finite, disjoint $A$ and $B$ such that no $c$ satisfies both $r(A,c)= A$ and $r(B,c)=\0$. Let $M_1=\{c:r(A,c)\neq A\}$ and $M_2=\neg M_1$.  Now note that 
+
+Suppose $M$ is not a random graph.
+Fix some finite, disjoint $A$ and $B$ such that no $c$ satisfies both $r(A,c)= A$ and $r(B,c)=\0$.
+Let $M_1=\{c:r(A,c)\neq A\}$ and $M_2=\neg M_1$.
+ Now note that 
 
 \hfill$\displaystyle\bigcap_{a\in A}r(a, M_1)=\0$\hfill and\hfill $\displaystyle\bigcup_{b\in B}r(b, M_2)=M_2$.\QED
 \end{exercise}
