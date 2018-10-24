@@ -155,20 +155,17 @@ An element of a graph $M$ is called a \emph{vertex\/} or a \emph{node}. An \emph
 
 A \emph{random graph\/} is a graph that also satisfies the following axioms for every $n$
 \begin{itemize}
-\item[nt.] $\E x,y,z\ \ (x\neq y\neq z\neq x)$\hfill non trivial;
-\item[r$_n$.] $\displaystyle\bigwedge^n_{i,j=1} x_i\neq y_j\ \ \imp\ \ \E z \bigwedge^n_{i=1} \big[r(x_i,z) \wedge \neg r(z,y_i)\big]$\hfill for every $n\in\ZZ^+$.
+\item[nt.] $\E x,y\ \ (x\neq y)$\hfill non trivial;
+\item[r$_n$.] $\displaystyle\bigwedge^n_{i,j=1} x_i\neq y_j\ \ \imp\ \ \E z \bigwedge^n_{i=1} \big[r(x_i,z) \wedge \neg r(z,y_i) \wedge z\neq y_i\big]$\hfill for every $n\in\ZZ^+$.
 \end{itemize}
 
-The theory of graphs is denoted by \emph{$T_{\textrm{gph}}$} and the theory of random graphs is denoted by \emph{$T_{\textrm{rg}}$}. The scheme of axioms \ssf{r$_n$} plays the same role of density in the previous section.  It says that given two disjoint sets $A^+$ and $A^-$ of cardinality $\le n$ there is a vertex $z$ that is adjacent to all vertices in $A^+$ and to no vertex in $A^-$. Note that it might well be that $z\in A^-$, however $z\in A^+$ would contradict \ssf{1}. 
 
-Strictly speaking, the axioms \ssf{r$_n$} do not mention the cases when $A^+$ or $A^-$ are empty. But once we prove that all random graphs are infinite, we can deal with them by adding redundant elements.
+The theory of graphs is denoted by \emph{$T_{\textrm{gph}}$} and the theory of random graphs is denoted by \emph{$T_{\textrm{rg}}$}.
+The scheme of axioms \ssf{r$_n$} plays the same role of density in the previous section. 
+It says that given two disjoint sets $A^+$ and $A^-$ of cardinality $\le n$ there is a vertex $z$ that is adjacent to all vertices in $A^+$ and to no vertex in $A^-$.
+We explicitly required that $z\notin A^-$, by \ssf{1} it is clear that $z\notin A^+$. 
 
-\begin{proposition}
-Random graphs are infinite.
-\end{proposition}
-\begin{proof}
-Suppose for a contradiction that $M$ is a finite random graph. As $M$ contains at least $3$ elements, we can fix two distinct elements $a,b\in M$ and require a $z$ adjacent to all elements of $M\sm\{a,b\}$ and no element of $\{a,b\}$. A remarked above, $z\in\{a,b\}$, then $a$ and $b$ are not adjacent. Now let $w$ be adjacent to all vertices in $M\sm\{a\}$ but not to $a$. The only option is $w=b$, but this implies that $a$ is adjacent to $b$. Contradiction.
-\end{proof}
+Strictly speaking, the axioms \ssf{r$_n$} do not mention the cases when $A^+$ or $A^-$ are empty. But as it is evident that random graphs are infinite, we can deal with them by adding redundant elements.
 
 The following is the analogous of Lemma~\ref{lem_ordinericco} for random graphs. Recall that in the language of graphs a map $k:M\to N$ is a partial isomorphism if it is injective and
 
@@ -181,7 +178,7 @@ Fix $M\models T_{\rm gph}$ and $N\models T_{\rm rg}$. Let $k:M\imp N$ be a finit
 
 \hfil$A^+=\big\{x\in\dom k\ :\ M\models r(x,b)\big\}\ \ \ \textrm{e}\ \ \ A^-=\big\{y\in\dom k\ :\  M\models \neg r(y,b)\big\}$.\medskip
 
-These two sets are finite and disjoint, then so are $k[A^+]$ and $k[A^-]$. Then there is a $c$ such that\medskip
+These two sets are finite and disjoint, then so are $k[A^+]$ and $k[A^-]$. Then there is a $c\notin\range k$ such that\medskip
 
 \hfil$\displaystyle\bigwedge_{a\in A^+}r(ka,c)\ \ \wedge\ \bigwedge_{a\in A^-}\neg r(ka,c)$.
 
