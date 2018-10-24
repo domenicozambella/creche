@@ -96,17 +96,18 @@ The following example shows that in the omitting types theorem we cannot drop th
 Let $F$ be the set of all bijections between two uncountable sets, $X$ and $Y$.
 Let $M$ be the model with domain the disjoint union of $F$, $X$ and $Y$.
 The language has a ternary relation symbol for $f(x)=y$ and unary relations for $X$ and $Y$.
-Let $\U$ be a saturated elementary extension of $M$.
+Let $\U$ be a saturated elementary extension of $M$. Then $\U$ is partitioned in threes definable sets $\U_F$, $\U_X$ and $\U_Y$. Each element of $\U_F$ defines a bijection between $\U_X$ and $\U_Y$.
 
-Let $Y_1\subseteq Y$ be countable.
-Let $c\in Y\sm Y_1$ and set $p(y)=\tp(c/X,Y_1)$.
-We claim that $p(y)$ is not isolated but that it is realized in every model containing $X,Y_1$.
+Note that for any two elements $a,b\in\U_Y$, there is an automorphism of $\U$ that fixes $\U_X\cup\U_Y\sm\{a,b\}$ and flips $a$ and $b$.
 
-No formula could be equivalent to $p(y)$ (not even a type with finitely many parameters).
-In fact, for every pair of finite sets $Y_0\subseteq Y_1$ and $X_0\subseteq X$ there is an automorphism of $M$ that fixes $Y_0\cup X_0$ and maps $c$ to some (any) element of $Y_1\sm Y_0$.
-This automorphism extends to an automorphism of $\U$ and maps $c$ to an element that does not realize $p(y)$.
- 
-The type $p(y)$ cannot be omitted because every model $N$ containing  $X$ has necessarily uncountably many elements of sort $Y$ and therefore realizes $p(y)$.\QED
+Now, fix some countable $Y_1\subseteq\U_Y$. 
+Let $c\in\U_Y\sm Y_1$ and set $p(y)=\tp(c/X,Y_1)$.
+We claim that $p(y)$ is realized in every model containing $X,Y_1$.
+In fact, by the remark above $p(\U)=\U_Y\sm Y_1$.
+But every model containing $X$ contains also uncountably many elements of $\U_Y$, hence it contains an element conjugated to $c$ which therefore realizes $p(y)$.
+We claim also that $p(y)$ is not isolated.
+If for a contradiction there is a consistent formula $\phi(y)$ such that $\phi(y)\imp p(y)$, then $\phi(y)$ has a solution in $\U_Y\sm Y_1$.
+By the remark above, this implies that $\phi(\U)$ is a cofinite subset of $\U_Y$ and this contradicts $\phi(\U)\subseteq p(\U)$\QED
 \end{example}
 
 \begin{exercise}
