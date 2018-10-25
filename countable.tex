@@ -95,12 +95,14 @@ Gerald Sacks once famously remarked: \textit{Any fool can realize a type but it 
 The following example shows that in the omitting types theorem we cannot drop the assumption that $L(A)$ is countable.
 Let $F$ be the set of all bijections between two uncountable sets, $X$ and $Y$.
 Let $M$ be the model with domain the disjoint union of $F$, $X$ and $Y$.
-The language has a ternary relation symbol for $f(x)=y$ and unary relations for $X$ and $Y$.
-Let $\U$ be a saturated elementary extension of $M$. Then $\U$ is partitioned in threes definable sets $\U_F$, $\U_X$ and $\U_Y$. Each element of $\U_F$ defines a bijection between $\U_X$ and $\U_Y$.
+The language has a ternary relation symbol for $f(x)=y$ and unary relations for $F$, $X$ and $Y$.
+Let $\U$ be a saturated elementary extension of $M$.
+Then $\U$ is partitioned in three definable sets $\U_F$, $\U_X$ and $\U_Y$.
+Each element of $\U_F$ defines a bijection between $\U_X$ and $\U_Y$.
 
-Note that for any two elements $a,b\in\U_Y$, there is an automorphism of $\U$ that fixes $\U_X\cup\U_Y\sm\{a,b\}$ and flips $a$ and $b$.
+Note that for any two elements $a,b\in\U_Y$, there is an automorphism of $\U$ that fixes $\U_X\cup\U_Y\sm\{a,b\}$ and swaps $a$ and $b$.
 
-Now, fix some countable $Y_1\subseteq\U_Y$. 
+Now, fix some countable $Y_1\subseteq\U_Y$.
 Let $c\in\U_Y\sm Y_1$ and set $p(y)=\tp(c/X,Y_1)$.
 We claim that $p(y)$ is realized in every model containing $X,Y_1$.
 In fact, by the remark above $p(\U)=\U_Y\sm Y_1$.
@@ -168,7 +170,10 @@ Then the following are equivalent
 \end{itemize}
 \end{proposition}
 \begin{proof}
-First we fix some notation. Let $p({\mr x},{\gr z})=\tp ({\mr b},{\gr a}/A)$. Then  $p({\mr x},{\gr a})=\tp({\mr b}/A,{\gr a})$. Note also that $\E{\mr x}\,p({\mr x},{\gr z})=\tp({\gr a}/A)$.
+First we fix some notation.
+Let $p({\mr x},{\gr z})=\tp ({\mr b},{\gr a}/A)$.
+Then  $p({\mr x},{\gr a})=\tp({\mr b}/A,{\gr a})$.
+Note also that $\E{\mr x}\,p({\mr x},{\gr z})=\tp({\gr a}/A)$.
 
 
 \ssf{1}$\IMP$\ssf{2}\quad Let $\phi({\mr x},{\gr z})\in p$ be such that $\phi({\mr x},{\gr z})\imp p({\mr x},{\gr z})$.
@@ -283,7 +288,8 @@ The following are equivalent:
 The set $A$ is introduced for convenience.
 By \ssf{3} of Proposition~\ref{prop_ERNS_equivalents} below, no theory is $\omega$-categorical over an infinite set, and categoricity over some finite $A$ is equivalent to categoricity over $\0$ (see Exercise~\ref{ex_omega_cat_overA}).
 
-\begin{proof} \ssf{1}$\IMP$\ssf{2}\quad This is an immediate consequence of the omitting types theorem. In fact, if $p({\mr x})$ is a non-isolated $A\jj$type, then there are two countable models $M$ and $N$ containing $A$ such that $M$ realizes $p({\mr x})\subseteq L(A)$ while $N$ omits it.
+\begin{proof} \ssf{1}$\IMP$\ssf{2}\quad This is an immediate consequence of the omitting types theorem.
+In fact, if $p({\mr x})$ is a non-isolated $A\jj$type, then there are two countable models $M$ and $N$ containing $A$ such that $M$ realizes $p({\mr x})\subseteq L(A)$ while $N$ omits it.
 Then $M$ and $N$ cannot be isomorphic over $A$.
 
 \ssf{2}$\IMP$\ssf{1}\quad Observe that \ssf{2} implies that every countable model containing $A$ is atomic over $A$.
@@ -352,6 +358,7 @@ We say that $T$ is \emph{small over $A$\/} if $S_{{\mr x}}(A)$ is countable for 
 When $A$ is empty, we simply say that $T$ is \emph{small}.
 The set $A$ is introduced for convenience, in the literature it is used only for $A=\0$.
 A different term is used in another very interesting case, e.g.\@ a theory small over every countable set $A$ is said to be $\omega$-stable.
+For this reason, the term $0$-stable is sometimes used for small.
 
 
 \begin{proposition}
@@ -547,6 +554,10 @@ Prove that if there is a binary tree of formulas  then there is a binary tree su
 \end{exercise}
 
 \begin{exercise}
+Prove that if $T$ is small over $A$, then $T$ is small over $A,a$ for every finite tuple $a$.\QED
+\end{exercise}
+
+\begin{exercise}
 Let $|{\mr x}|=1$.
 Prove that if $S_{{\mr x}}(A)$ is countable for every finite set $A$, then $T$ is small.\QED
 \end{exercise}
@@ -589,17 +600,16 @@ We need the following definition.
 We say that $C\subseteq\U$ is an \emph{homogeneous set\/} if for every pair of tuples  ${\gr a},{\gr c}\in C^{<\omega}$ such that ${\gr a}\equiv{\gr c}$ and for every ${\mr b}\in C$ there is a ${\mr d}\in C$ such that ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$.
 
 \begin{lemma}\label{lem_zilbergiocattolo} Suppose $L$ is countable.
-If $T$ is $\omega\jj$categorical and every finite set is contained in a finite homogeneous set, then $T$ has the finite model property.
+If $T$ is $\omega\jj$categorical and every finite set is contained in a finite homogeneous substructure, then $T$ has the finite model property.
 \end{lemma}
 \begin{proof}
 %Assume for the moment that $L$ is a relational language.
-
 We prove \ssf{fmp} also for formulas with parameters.
 We prove that for all $n$ there is a finite structure $A\subseteq\U$ where \ssf{fmp} holds for all sentences $\phi\in L(A)$ such that
 
 $\#$\hfil number of parameters in $\phi$\ \  $+$\ \  number of quantifiers in $\phi$\ \ $\le n$.
 
-Fix $n$ and pick some finite set $A$ that is homogeneous and such that all types $p(z)\subseteq L$ with $|z|\le n$ have a realization in $A^{|z|}$.
+Fix $n$ and pick some finite substructure $A$ that is homogeneous and such that all types $p(z)\subseteq L$ with $|z|\le n$ have a realization in $A^{|z|}$.
 Now we prove \ssf{fmp} by induction on the syntax of $\phi$.
 
 The claim for atomic formulas is witnessed by any finite structure that contains the parameters of the formula.
@@ -610,11 +620,11 @@ Implication $\PMI$ of \ssf{fmp} follows immediately from the induction hypothesi
 As for $\IMP$, assume $\U\models\E {\mr x}\, \phi({\mr x}\,;{\gr c})$.
 Let ${\gr a},{\mr b}\in A^{<\omega}$ be a solution of $\phi({\mr x}\,;{\gr z})$ such that ${\gr a}\equiv{\gr c}$.
 Such a solution exists because all types with $\le n$ variables are realized in $A$.
-By homogeneity there is a ${\mr d}\in A$ such that ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$ and therefore $A\models\phi({\mr d}\,;{\gr c})$.
-%
-%Finally consider the case when $L$ contains functions symbols.
-Note that in $\#$ we can add the requirement that all functions symbols in $\phi$ have arity $< n$.
-Now note that if all types $p(z)\subseteq L$ with $|z|\le n$ have a realization in $A^{|z|}$, then $A$ is a substructure w.r.t.\@ a fragment which only contains functions of arity $< n$.
+By homogeneity there is a ${\mr d}\in A$ such that ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$ and therefore $A\models\phi({\mr d}\,;{\gr c})$.%
+% Finally consider the case when $L$ contains functions symbols.
+% Now we also need to check that $A$ is a structure.
+% This is true in general but, for simplicity we add to \ssf{\#} the requirement that all function symbols in $L$ have arity $<n$.
+% Note that if all types $p(z)\subseteq L$ with $|z|\le n$ have a realization in $A^{|z|}$, then $A$ is a substructure w.r.t.\@ a fragment which only contains functions of arity $< n$.
 \end{proof}
 
 \begin{proposition}\label{prop_zilbergiocattolo} If $T$ is strongly minimal, then every algebraically closed set is homogeneous.
@@ -623,8 +633,8 @@ Now note that if all types $p(z)\subseteq L$ with $|z|\le n$ have a realization 
 Let $A$ be argebraically closed and fix some ${\gr a},{\gr c}\in A^{<\omega}$ such that ${\gr a}\equiv{\gr c}$.
 Let ${\mr b}$ be an element of $A$.
 Suppose first the case ${\mr b}\in\acl{\gr a}$.
-Fix an $f\in\Aut(\U)$ such that $f({\gr a})={\gr c}$.
-Then ${\mr d}=f{\mr b}$ is the required element, in fact ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$ and ${\mr d}\in\acl{\gr c}\subseteq  A$.
+Fix an $f\in\Aut(\U)$ such that $f({\gr a})={\gr c}$ and $f[A]=\acl A$.
+Then ${\mr d}=f{\mr b}$ is the required element, in fact ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$.
 Now, suppose instead that ${\mr b}\notin\acl{\gr a}$.
 Then any ${\mr d}\notin\acl{\gr c}$ satisfies ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$.
 Such a ${\mr d}$ exists in $A$ otherwise $A=\acl{\gr c}\neq\acl{\gr a}$ which contradicts ${\gr a}\equiv {\gr c}$.
@@ -660,7 +670,7 @@ Implication \ssf{1}$\IMP$\ssf{2} does not require the strong minimality of $T$.\
 \label{Notes_countable}
 An uncountable, non-isolated, complete type that cannot be omitted was produced by Gebhard Fuhrken in 1962.
 Example~\ref{ex_AK} is inspired by a post of Alex Kruckman to StackExhange~\cite{AK}.
-I am not aware of other expositions of this (or other) example.
+I am not aware of other expositions.
 
 A famous theorem of Boris Zil'ber claims that Theorem~\ref{thm_zilbergiocattolo} holds for any totally categorical theory.
 The same theorem has been proved independently by  Cherlin, Harrington and Lachlan with a proof that uses the classification of finite simple groups.
