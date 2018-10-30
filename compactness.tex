@@ -184,19 +184,18 @@ Every finitely consistent type $p({\mr x})\subseteq L$ is consistent. Moreover, 
 \end{void_thm}
 
 \begin{proof}
- 
-Let $L'$ be the expansion of $L$ obtained by adding the fresh symbols ${\mr c}$, a tuple of constants of the same length as ${\mr x}$. Then $p({\mr c})$ is a finitely consistent theory in the language $L'$. By the compactness theorem there is an $L'$-structure $N'\models p({\mr c})$. Let $N$ be the reduced of $N'$ to $L$. That is the $L$-structure with the same domain and the same interpretation of $N'$ on the symbols of $L$. Note that, though the constants ${\mr c}$ are not in $L$, the elements ${\mr c^{N'}}$ remain in $N$. Then $N,{\mr c^{N'}}\models p({\mr x})$.  
+Let $L'$ be the expansion of $L$ obtained by adding the fresh symbols ${\mr c}$, a tuple of constants of the same length as ${\mr x}$. Then $p({\mr c})$ is a finitely consistent theory in the language $L'$. By the compactness theorem there is an $L'$-structure $N'\models p({\mr c})$. Let $N$ be the reduct of $N'$ to $L$. That is the $L$-structure with the same domain and the same interpretation of $N'$ on the symbols of $L$. Note that, though the constants ${\mr c}$ are not in $L$, the elements ${\mr c^{N'}}$ remain in $N$. Then $N,{\mr c^{N'}}\models p({\mr x})$.  
 
-As for the second claim, let ${\gr a}$ be an enumeration of $M$. We can assume that $p({\mr x})$ has the form $p'({\mr x}\,;{\gr a})$ for some $p'({\mr x}\,;{\gr z})\in L$. Define
+As for the second claim, let ${\gr a}$ be an enumeration of $M$. We can assume that $p({\mr x})$ has the form $p'({\mr x}\,;{\gr a})$ for some $p'({\mr x}\,;{\gr z})\subseteq L$. Define
 
-\ceq{\hfill q(z)}{=}{\big\{\phi(z)\ :\ M\models \phi(a)\big\}}
+\ceq{\hfill q({\gr z})}{=}{\big\{\phi({\gr z})\ :\ M\models \phi({\gr a})\big\}}
 
-Clearly, $p'({\mr x}\,;{\gr z})\cup q({\gr z})$ is finitely consistent in $M$. By the first part of the proof there is a model $N$ such that $N\models p'({\mr c'}\,;{\gr a'})$ for some ${\mr c'},{\gr a'}\in N^{|{\mr x},{\gr z}|}$. Let $h=\{\<a,a'\>\}$. We claim that $h:M\to N$ is an embedding and that $h[M]\preceq N$. So the theorem follows by identifying $M$ with $h[M]$. 
+Clearly, $p'({\mr x}\,;{\gr z})\cup q({\gr z})$ is finitely consistent in $M$. Then, by the first part of the proof it is realized in some model $N$ by some ${\mr c'},{\gr a'}\in N^{|{\mr x},{\gr z}|}$. Let $h=\{\<{\gr a},{\gr a'}\>\}$. We claim that $h:M\to N$ is an embedding and that $h[M]\preceq N$. So the theorem follows by identifying $M$ with $h[M]$. 
 
 For any $\phi({\gr z})\in L$ we have
 
 
-\hfil $h[M]\models\phi(h{\gr a})\ \ \IFF\ \  M\models \phi({\gr a})\ \  \IFF\ \  \phi(z)\in q({\gr z})\ \   \IMP\ \  N\models \phi({\gr a'})$.
+\hfil $h[M]\models\phi(h{\gr a})\ \ \IFF\ \  M\models \phi({\gr a})\ \  \IFF\ \  \phi({\gr z})\in q\ \   \IMP\ \  N\models \phi({\gr a'})$.
 
 Then $h[M]\preceq N$ follows because all sentences in $L(M)$ have the form $\phi({\gr a})$ for some $\phi({\gr z})\in L$. (Using a term that will be introduced only in Section~\hyperref[morphisms]{\ref*{types}.\ref*{morphisms}}, we have proved that  $h:M\to N$ is an elementary embedding.)
 \end{proof}
