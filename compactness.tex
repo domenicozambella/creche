@@ -177,26 +177,24 @@ Recall that a \emph{type\/} is a set of formulas. When we present types we usual
 
 We write \emph{$M\models p(a)$} if $M\models\phi(a)$ for every $\phi(x)\in p$.  We say that $a$ is a \emph{solution\/} or a \emph{realization\/} of $p(x)$. An equivalent notation is \emph{$M,a\models p(x)$} or, when $M$ is clear from the context, \emph{$a\models p(x)$}. We say that $p(x)$ is \emph{consistent in $M$\/} it has a solution in $M$. In this case we may write \emph{$M\models\E x\,p(x)$}.  We say that $p(x)$ is \emph{consistent\/} if it is consistent in some model.
 
-We say that a type $p(x)$ is \emph{finitely consistent\/} if all its finite subsets are consistent. If they are all consistent in the same model $M$, we say that $p(x)$ is finitely consistent \emph{in $M$}. The following theorem shows that the latter notion, which is trivial for theories, is very interesting for types.
+We say that a type $p(x)$ is \emph{finitely consistent\/} if all its finite subsets are consistent. If its finite subsets are all consistent in the same model $M$, we say that $p(x)$ is finitely consistent \emph{in $M$}. The following theorem shows that the latter notion, which is trivial for theories, is very interesting for types.
 
 \begin{void_thm}[Compactness Theorem for types]\label{thm_compattezzatipi}
 Every finitely consistent type $p({\mr x})\subseteq L$ is consistent. Moreover, if $p({\mr x})\subseteq L(M)$ is finitely consistent in $M$ then it is realised in some elementary extension of $M$.
 \end{void_thm}
 
 \begin{proof}
-Let $L'$ be the expansion of $L$ obtained by adding the fresh symbols ${\mr c}$, a tuple of constants of the same length as ${\mr x}$. Then $p({\mr c})$ is a finitely consistent theory in the language $L'$. By the compactness theorem there is an $L'$-structure $N'\models p({\mr c})$. Let $N$ be the reduct of $N'$ to $L$. That is the $L$-structure with the same domain and the same interpretation of $N'$ on the symbols of $L$. Note that, though the constants ${\mr c}$ are not in $L$, the elements of the tuple ${\mr c^{N'}}$ remain in $N$. Then $N,{\mr c^{N'}}\models p({\mr x})$.  
+Let $L'$ be the expansion of $L$ obtained by adding the fresh symbols ${\mr c}$, a tuple of constants of the same length as ${\mr x}$. Then $p({\mr c})$ is a finitely consistent theory in the language $L'$. By the compactness theorem there is an $L'$-structure $N'\models p({\mr c})$. Let $N$ be the reduct of $N'$ to $L$. That is the $L$-structure with the same domain and the same interpretation as $N'$ on the symbols of $L$. Note that, though the constants ${\mr c}$ are not in $L$, the elements of the tuple ${\mr c^{N'}}$ remain in $N$. Then $N,{\mr c^{N'}}\models p({\mr x})$.  
 
 As for the second claim, let ${\gr a}$ be an enumeration of $M$. We can assume that $p({\mr x})$ has the form $p'({\mr x}\,;{\gr a})$ for some $p'({\mr x}\,;{\gr z})\subseteq L$. Define
 
 \ceq{\hfill q({\gr z})}{=}{\big\{\phi({\gr z})\ :\ M\models \phi({\gr a})\big\}}
 
-Clearly, $p'({\mr x}\,;{\gr z})\cup q({\gr z})$ is finitely consistent in $M$. Then, by the first part of the proof it is realized in some model $N$ by some ${\mr c'},{\gr a'}\in N^{|{\mr x},{\gr z}|}$. Let $h=\{\<{\gr a},{\gr a'}\>\}$. We claim that $h:M\to N$ is an embedding and that $h[M]\preceq N$. So the theorem follows by identifying $M$ with $h[M]$. 
+Clearly, $p'({\mr x}\,;{\gr z})\cup q({\gr z})$ is finitely consistent in $M$. Then, by the first part of the proof it is realized in some model $N$ by some ${\mr c'},{\gr a'}\in N^{|{\mr x},{\gr z}|}$. Let $h=\{\<{\gr a},{\gr a'}\>\}$. Then for every $\phi({\gr z})\in L$ we have
 
-For any $\phi({\gr z})\in L$ we have
+\hfil $M\models \phi({\gr a})\ \  \IFF\ \  \phi({\gr z})\in q\ \   \IFF\ \  N\models \phi(h{\gr a})$.
 
-\hfil $h[M]\models\phi(h{\gr a})\ \ \IFF\ \  M\models \phi({\gr a})\ \  \IFF\ \  \phi({\gr z})\in q\ \   \IMP\ \  N\models \phi({\gr a'})$.
-
-Then $h[M]\preceq N$ follows because all sentences in $L(M)$ have the form $\phi({\gr a})$ for some $\phi({\gr z})\in L$. (Using a term that will be introduced only in Section~\hyperref[morphisms]{\ref*{types}.\ref*{morphisms}}, we have proved that  $h:M\to N$ is an elementary embedding.)
+In the last equivalence, $\PMI$ holds because $q({\gr z})$ is complete. (Using a term that will be introduced only in Section~\hyperref[morphisms]{\ref*{types}.\ref*{morphisms}}, this shows that  $h:M\to N$ is an elementary embedding.) It is easy to check that $h:M\to N$ is an embedding, hence the equivalence above prove that $h[M]\preceq N$. So the theorem follows by identifying $M$ with $h[M]$.
 \end{proof}
 
 The following corollary is historically important.
