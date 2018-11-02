@@ -52,7 +52,7 @@ Truth of formulas is defined as for one-sorted languages, except that here we re
 Models of second-order logic are arguably the most widely used examples of many-sorted structures.
 They may be described using a language with a sort $n$ for every $n\in\omega$.
 The sort $0$ is used for the first-order elements; the sort $n>0$ is used for relations of arity $n$.
-For every $n>0$ the language has a relation symbol $\in_n$ of arity $\<0^n,n\>$, where $0^n\,=\, 0,\stackrel{n\ \rm times}{\dots\dots},0$.
+For every $n>0$ the language has a relation symbol $\in_n$ of arity $\<0^n,n\>$, where $0^n\,=\, 0\,\stackrel{n\ \rm times}{\dots\dots}\,0$.
 %
 %\ceq{\hfill 0^n}{=}{\underbrace{0,\dots,0}_{n\mbox{\scriptsize-times}}.} 
 %
@@ -72,7 +72,7 @@ Given a language $L$, we define a many-sorted language \emph{$L^{\eq}$\/} which 
 (Partitioned formulas have been introduced in Definition~\ref{def_partitioned_fla}.) 
 
 For legibility, we pretend that all formulas $\sigma$ depend on the same variables. 
-So we assume that ${\mr x}\,;{\gr z}$ are infinite tuples. 
+So we assume that ${\mr x}\,;{\gr z}$ are infinite tuples.
 Hence, with the notation of the previous section $L_{\rm srt}=\{0\}\cup L_{{\mr x}\,;{\gr z}}$.
 
 The home sort is also called the \emph{first-order sort\/} and
@@ -81,8 +81,8 @@ First of all, $L^\eq$ contains all relations and functions of the first order la
 The many-sorted arity of a relation $r$ is $\<0^{n_r}\>$, where $n_r$ is the arity of $r$ in $L$.
 Similarly, the many-sorted arity of a function $f$ is $\<0^{1+n_f}\>$, where $n_f$ is the arity of $f$ in $L$.
 Moreover, $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$.
-These relation symbols have arity \smash{$\big\<0^{|{\mr x}|},\sigma({\mr x}\,;{\gr z})\big\>$}.
-As there is no risk of ambiguity, in what follows we omit the subscript from $\in$.
+These relation symbols have arity \smash{$\big\<0^{|{\mr x_\sigma}|},\sigma({\mr x}\,;{\gr z})\big\>$}, where ${\mr x_\sigma}$ are the variables in ${\mr x}$ that actually occur in $\sigma$. 
+As there is no risk of ambiguity, in what follows we omit $\sigma$ from the subscripts.
 
 In \emph{$\U^{\eq}$\/} the domain of the home sort is $\U$.
 The domain for the sort $\sigma({\mr x}\,;{\gr z})$ contains 
@@ -125,21 +125,22 @@ These quantifiers are replaced by $\E{\gr z}$.
 Proposition~\ref{prop_eqmild} implies in particular that we can always eliminate second-order quantifiers.
 This is an obvious fact that may be obscured by the notation: we can replace $\E {\vl\X}$ by $\E {\gr z}$ if we substitute  $\sigma({\mr t}\,;{\gr z})$ for ${\mr t}\in {\vl\X}$ in the quantified formula.
 
-Proposition~\ref{prop_eqmild} should convince the reader that the move from $\U$ to $\U^\eq$ is almost trivial.
+
 %Exercise~\ref{ex_feqthm_senza_eq} below should convince the reader that some trivial moves may be highly convenient.
 
 
 \begin{remark}\label{rem_eqmild}
-From Proposition~\ref{prop_eqmild} it follows that for every $A\subseteq\U^\eq$, there exists a $B\subseteq\U$ such that $L(B)$ is at least as expressive as $L(A)$.
+Proposition~\ref{prop_eqmild} should convince the reader that the move from $\U$ to $\U^\eq$ is \textit{almost\/} trivial.
+For instance, it implies that for every $A\subseteq\U^\eq$, there exists a $B\subseteq\U$ such that $L(B)$ is at least as expressive as $L(A)$.
 By this we mean that every formula in $L(A)$ is equivalent to some formula in $L(B)$.
-The point of $\U^\eq$ is that there might not be any $B\subseteq\U$ such that $L(B)$ is exactly as expressive as $L^\eq(A)$.
-For instance, suppose $L$ contains only an equivalence relation with infinitely many infinite classes.
+The point of $\U^\eq$ is that there might not be any $B\subseteq\U$ such that $L(B)$ is \textit{exactly\/} as expressive as $L^\eq(A)$.
+For instance, suppose $L$ contains only an equivalence relation with two infinite classes.
 Let ${\vl\Aa}$ be an equivalence class.
-Then ${\vl\Aa}$ is is definable in $L(B)$ if and only if $B\cap {\vl\Aa}\neq\0$.
+Then ${\vl\Aa}$ is definable in $L(B)$ if and only if $B\cap {\vl\Aa}\neq\0$.
 But no element of ${\vl\Aa}$ is definable in $L^\eq(\{{\vl\Aa}\})$.\QED
 \end{remark}
 
-If $\V\preceq\U$ we write \emph{$\V^{\textbf{eq}}$\/} for the substructure of $\U^\eq$ that has $\V$ as domain of the home sort and  the set of definable sets of the form $\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in \V^{|{\gr z}|}$ as domain of the sort $\sigma({\mr x}\,;{\gr z})$.
+If $\V\preceq\U$ we write \emph{$\V^{\eq}$\/} for the substructure of $\U^\eq$ that has $\V$ as domain of the home sort and  the set of definable sets of the form $\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in \V^{|{\gr z}|}$ as domain of the sort $\sigma({\mr x}\,;{\gr z})$.
 The following proposition claims that the elementary substructures of $\U^\eq$ are exactly those of the form $\V^\eq$ for some $\V\preceq\U$.
 
 \begin{proposition}

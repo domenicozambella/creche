@@ -15,12 +15,12 @@ The first two section introduce saturation and homogeneity and Section~\ref{mons
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Saturated structures}
 
-Recall that a type $p({\mr x})\subseteq L(M)$ is \emph{finitely consistent in $M$\/} if every conjunction of formulas in $p({\mr x})$, has a solution in $M$. When $A\subseteq M$ we write $S_{\mr x}(A)$ for the set of types that are complete and finitely consistent in $M$. We never display $M$ in the notation as it will always be clear from the context. When $A$ is empty it usual to write $S_{\mr x}(T)$ for $S_{\mr x}(A)$ where $T=\Th(M)$. We write $S(A)$ for the union of $S_{\mr x}(A)$ as ${\mr x}$ ranges over all tuples of variables. Similarly for $S(T)$.
+Recall that a type $p({\mr x})\subseteq L(M)$ is \emph{finitely consistent in $M$\/} if every conjunction of formulas in $p({\mr x})$, has a solution in $M$. When $A\subseteq M$ we write $S_{\mr x}(A)$ for the set of types whose variables are in ${\mr x}$ which are complete and finitely consistent in $M$. We never display $M$ in the notation as it will always be clear from the context. When $A$ is empty it usual to write $S_{\mr x}(T)$ for $S_{\mr x}(A)$ where $T=\Th(M)$. We write $S(A)$ for the union of $S_{\mr x}(A)$ as ${\mr x}$ ranges over all tuples of variables. Similarly for $S(T)$.
 
 The following remark will be used in the sequel without explicit reference.
 
 \begin{remark}
-Let $k:M\imp N$ be an elementary map and let ${\gr a}$ be an enumeration of $\dom k$. If $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$, then $p({\mr x}\,;k\,{\gr a})$ is finitely consistent in $N$. (We can drop \textit{finitely} in the antecedent but not in the consequent.)\QED
+Let $k:M\imp N$ be an elementary map and let ${\gr a}$ be an enumeration of $\dom k$. Let $p({\mr x}\,;{\gr z})\subseteq L$. If $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$, then $p({\mr x}\,;k\,{\gr a})$ is finitely consistent in $N$. (We can drop \textit{finitely} in the antecedent but not in the consequent.)\QED
 \end{remark}
 
 \begin{definition}
@@ -36,7 +36,7 @@ We say that $N$ is \emph{saturated\/} if it is $\lambda$-saturated and $|N|=\lam
 Suppose $|L|\le\omega$ and let $M$ be an infinite structure. Then for every non-principal ultrafilter $F$ on $\omega$ the structure $M^\omega/F$ is a $\omega_1$-saturated elementary superstructure of $M$.
 
 Hint: the notation is as in Chapter~\ref{ultraprodotti}. Let $|{\mr x}|=1$ and 
-$|{\gr z}|=\omega$. It suffices to consider the types form $p({\mr x}\,;{\gr\hat c})$ where $p({\mr x}\,;{\gr z})=\big\{\phi_i({\mr x}\,;{\gr z}):i<\omega\big\}\subseteq L$ and ${\gr\hat c}\in(M^\omega)^{|{\gr z}|}$. Without loss of generality we can also assume that $\phi_{i+1}({\mr x}\,;{\gr z})\imp\phi_i({\mr x}\,;{\gr z})$, and that all formulas $\phi_i({\mr x}\,;{\gr\hat c})$ are consistent in $M^\omega$. 
+$|{\gr z}|=\omega$. It suffices to consider types of the form $p({\mr x}\,;{\gr\hat c})$ where $p({\mr x}\,;{\gr z})=\big\{\phi_i({\mr x}\,;{\gr z}):i<\omega\big\}\subseteq L$ and ${\gr\hat c}\in(M^\omega)^{|{\gr z}|}$. Without loss of generality we can also assume that $\phi_{i+1}({\mr x}\,;{\gr z})\imp\phi_i({\mr x}\,;{\gr z})$, and that all formulas $\phi_i({\mr x}\,;{\gr\hat c})$ are consistent in $M^\omega$. 
 
 Let $\<X_i:i<\omega\>$ be a strictly decreasing chain of elements of the ultrafilter such that  $X_{i+1}\subseteq\big\{j\;:\;M\models\E{\mr x}\;\phi_i({\mr x},{\gr\hat cj})\big\}$. Let ${\mr\hat a}\in M^\omega$ be such that  $\phi_i({\mr\hat aj},{\gr\hat cj})$ holds for every $j\in X_i\sm X_{i+1}$. Then ${\mr\hat a}$ realizes $p({\mr x})$.\QED
 \end{exercise}
@@ -49,8 +49,15 @@ Assume $|L|<\lambda$ where $\lambda$ is such that $\lambda^{<\lambda}=\lambda$. 
 \begin{proof}
 Without loss of generality, we can assume that $M$ has cardinality $\lambda$. We construct an elementary chain $\<M_i : i<\lambda\>$ of models of cardinality $\lambda$. The chain starts with $M$ and is the union at limit stages. Given $M_i$ we choose as $M_{i+1}$ any model of cardinality $\lambda$ that realizes all types in $S_x(A)$ for all $A\subseteq M_i$ of cardinality $<\lambda$. The required $M_{i+1}$ exists because there are at most $2^{|L(A)|}\le\lambda^{<\lambda}=\lambda$ types in $S_x(A)$ and there are $\lambda^{<\lambda}=\lambda$ sets $A$.
 
-Let $N$ be the union of the chain. We check that $N$ is the required extension. Let $p(x)\in S(A)$ for some $A\subseteq N$ of cardinality $<\lambda$. As $\lambda$ is a regular cardinal,  $A\subseteq M_i$ for some $i<\lambda$. Then $M_{i+1}$ realizes $p(x)$, and so does $N$, by elementarity.
+Let $N$ be the union of the chain. We check that $N$ is the required extension. Let $p(x)\in S(A)$ for some $A\subseteq N$ of cardinality $<\lambda$. As $\lambda^{<\lambda}=\lambda$ implies in particular that $\lambda$ is a regular cardinal,  $A\subseteq M_i$ for some $i<\lambda$. Then $M_{i+1}$ realizes $p(x)$, and so does $N$, by elementarity.
 \end{proof}
+
+\begin{remark}
+For the reader who did not read Section~\hyperref[rich]{\ref*{fraisse}.\ref*{rich}}. Replace \ssf{2} below with the following, and forget about $\M$.
+\begin{itemize}
+\item[2$'$] for every ${\mr b}\in M\models T$,  every elementary map $k:M\to N$ of cardinality $<|N|$ has an extension defined on $b$;
+\end{itemize}
+\end{remark}
 
 
 \begin{theorem}\label{saturo->ricco}
