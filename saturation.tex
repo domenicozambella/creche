@@ -41,6 +41,11 @@ $|{\gr z}|=\omega$. It suffices to consider types of the form $p({\mr x}\,;{\gr\
 Let $\<X_i:i<\omega\>$ be a strictly decreasing chain of elements of the ultrafilter such that  $X_{i+1}\subseteq\big\{j\;:\;M\models\E{\mr x}\;\phi_i({\mr x},{\gr\hat cj})\big\}$. Let ${\mr\hat a}\in M^\omega$ be such that  $\phi_i({\mr\hat aj},{\gr\hat cj})$ holds for every $j\in X_i\sm X_{i+1}$. Then ${\mr\hat a}$ realizes $p({\mr x})$.\QED
 \end{exercise}
 
+We will see that some theories have saturated models that are relatively small in size. However the existence of saturated models of arbitrary theories is problematic. The following theorem claims the existence of saturated models of any cardinality $\lambda$ that is such that $|L|<\lambda=\lambda^{<\lambda}$. The existence of such cardinals is independent of ZFC. Assuming the generalized contimuum hypothesis (GCH), every successor cardinal is such that $\lambda=\lambda^{<\lambda}$. Without assuming GCH, every inaccessible cardinal has this property. Both GCH and the existence of inaccessible cardinals are not generally accepted axioms. 
+
+Nevertheless saturated models are a widely used in model theory, without any worry about their existence. In fact, if consistency would be an issue, they could replaced by models that are both $\lambda$-saturated and $\lambda$-homogeneous (see next section) for some less problematic large cardinal $\lambda$. This is well-known so it is common to cut short all nuisances by simply assuming that saturated models exist.
+
+If $T$ is the theory of the ring $\ZZ$, or any other sufficiently expressive theory, then it is possible to prove that any saturated model of $T$ as a cardinality such that $\lambda=\lambda^{<\lambda}$. As the existence of such cardinals has to be taken as an extra axiom, one could right away assume the existence of saturated models and skip the proof of the following theorem.
 
 \begin{theorem}\label{thm_esistenza_staturo_card_inacc}
 Assume $|L|<\lambda$ where $\lambda$ is such that $\lambda^{<\lambda}=\lambda$. Then every structure $M$ of cardinality $\le\lambda$ has a saturated elementary extension of cardinality $\lambda$.
@@ -55,7 +60,7 @@ Let $N$ be the union of the chain. We check that $N$ is the required extension. 
 \begin{remark}
 For the reader who did not read Section~\hyperref[rich]{\ref*{fraisse}.\ref*{rich}}. Replace \ssf{2} below with the following, and forget about $\M$.
 \begin{itemize}
-\item[2$'$] for every ${\mr b}\in M\models T$,  every elementary map $k:M\to N$ of cardinality $<|N|$ has an extension defined on $b$;
+\item[2$'$] for every ${\mr b}\in M$,  every elementary map $k:M\to N$ of cardinality $<|N|$ has an extension defined on $b$;
 \end{itemize}
 \end{remark}
 
@@ -74,7 +79,7 @@ Note that it is the completeness of $T$ which makes the category $\M$ connected.
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2}. Let $k:M\imp N$ be an elementary map of cardinality $<\lambda$. It suffices to show that for every ${\mr b}\in M$ there is a ${\mr c}\in N$ such that $k\cup\big\{\<{\mr b},{\mr c}\>\big\}:M\to N$ is an elementary map. Let ${\gr a}$ be an enumeration of $\dom k$ and define $p({\mr x}\,;{\gr z})=\tp_M({\mr b}\,;{\gr a})$. As $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$ then $p({\mr x}\,;k\,{\gr a})$ is finitely consistent in $N$. The required ${\mr c}$ is any element of $N$ such that $N\models p({\mr c}\,;k\,{\gr a})$. Such a ${\mr c}$ exists by saturation because $|{\gr a}|<\lambda$.
 
-\ssf{2}$\IMP$\ssf{3}. Let $p({\gr z})$ be as in \ssf{3}. By the compactness theorem $N\preceq K\models p({\gr a})$ for some model $K$ and ${\gr a}\in K^{|{\gr z}|}$. By the downward  L\"owenheim-Skolem theorem there is a model $A,{\gr a}\subseteq M\preceq K$ of cardinality $\le\lambda$. (Here we use $|L|,|A|,|{\gr z}|\le\lambda$.) By \ssf{2}, there is an elementary embedding $h:M\hookrightarrow N$ that extends $\id_A$. Finally, as $M\models p({\gr a})$,  elementarity yields $N\models p(h\,{\gr a})$.
+\ssf{2}$\IMP$\ssf{3}. Let $p({\gr z})$ be as in \ssf{3}. By the compactness theorem $N\preceq K\models p({\gr a})$ for some model $K$ and ${\gr a}\in K^{|{\gr z}|}$. By the downward  L\"owenheim-Skolem theorem there is a model $A,{\gr a}\subseteq M\preceq K$ of cardinality $\le\lambda$. (Here we use $|L|,|A|,|{\gr z}|\le\lambda$.) By \ssf{2}, there is an elementary embedding $h:M\hookrightarrow N$ that extends $\id_A$. (Here we use $|A|<\lambda$.) Finally, as $M\models p({\gr a})$,  elementarity yields $N\models p(h\,{\gr a})$.
 
 \ssf{3}$\IMP$\ssf{1}.  Trivial. 
 \end{proof}
@@ -156,7 +161,7 @@ Let $N$ be a $\lambda\jj$homogeneous structure. Let $A\subseteq N$ have cardinal
 
 Finally, we want to extend the equivalence in Theorem~\ref{thm_saturo_omogeneouniversale} to $\lambda\jj$saturated structures. For this we only need to apply Theorem~\ref{ricco=universaledebolmenteomogeneo}. 
 
-When the morphisms of the underlying category are the elementary maps, we say \emph{weakly $\lambda\jj$saturated} for weakly $\lambda\jj$universal (cfr.\@ Definition~\ref{def_weakly_universal}). This is not the standard definition (i.e.\@ \ssf{2} of the proposition below) but the reader can easily verify that it is equivalent by reasoning as in the proof of theorem~\ref{saturo->ricco}.
+When the morphisms of the underlying category are the elementary maps, we say \emph{weakly $\lambda\jj$saturated} for weakly $\lambda\jj$universal (cfr.\@ Definition~\ref{def_weakly_universal}). This is not the standard definition (that is, \ssf{2} of the proposition below) but the reader can easily verify that it is equivalent by reasoning as in the proof of theorem~\ref{saturo->ricco}.
 
 \begin{proposition}\label{prop_w_saturation}
 The following are equivalent
