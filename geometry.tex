@@ -264,7 +264,7 @@ is not algebraic. Therefore, by strong minimality, $\psi({\mr a},{\mr y})$ has c
 % Dal carattere finito della chiusura agebrica segue facilmente che l'unione di una catena di insiemi indipendenti \`e un insieme indipendente. Questo \`e rilevante, per esempio, per poter applicare il lemma di Zorn.
 % \end{remark}
 
-We say that $B\subseteq C$ is a \emph{base\/} of $C$ if $B$ is an independent set and $C\subseteq\acl B$. The following theorem proves that all bases have the same cardinality, which we call the  \emph{dimension\/} of $C$ and denote by \emph{$\dim C$}. First we need the following lemma.
+We say that $B\subseteq C$ is a \emph{basis\/} of $C$ if $B$ is an independent set and $C\subseteq\acl B$. The following theorem proves that all bases have the same cardinality, which we call the  \emph{dimension\/} of $C$ and denote by \emph{$\dim C$}. First we need the following lemma.
 
 \begin{lemma}\label{indipendenza+1}
 ($T$ strongly minimal.) If $B$ is an independent set and ${\mr a}\notin \acl B$ then $B,{\mr a}$ is also an independent set.
@@ -276,7 +276,7 @@ Suppose $B,{\mr a}$ is not independent and that ${\mr a}\notin \acl B$. Then ${\
 \begin{corollary}\label{basemassimale}
 ($T$ strongly minimal.) For every $B\subseteq C$ the following are equivalent
 \begin{itemize}
-\item[1.] $B$ is a base of $C$.
+\item[1.] $B$ is a basis of $C$.
 \item[2.] $B$ is a maximally independent subset of $C$.\QED
 \end{itemize}
 \end{corollary}
@@ -287,7 +287,7 @@ The notation is used to suggest to the reader that the role of $A$ in the argume
 
 \begin{theorem} ($T$ strongly minimal.) Fix some arbitrary set $C$, then
 \begin{itemize}
-\item[1] every independent set $B\subseteq C$ can be extended to a base of $C$;
+\item[1] every independent set $B\subseteq C$ can be extended to a basis of $C$;
 \item[2] all bases of $C$ have the same cardinality;
 \item[3] claims \ssf{1} and \ssf{2} hold over any set of parameters $A$.
 \end{itemize}
@@ -296,7 +296,7 @@ The notation is used to suggest to the reader that the role of $A$ in the argume
 \begin{proof}
 By the finite character of algebraic closure, the independent set form an inductive class.
 Apply Zorn lemma to obtain a maximally independent subset of $C$ containing $B$.
-By Corollary~\ref{basemassimale} this set is a base of $C$.
+By Corollary~\ref{basemassimale} this set is a basis of $C$.
 This prove \ssf{1} and it is immediate that the argument can be generalized as required in \ssf{3}.
 
 As for \ssf{2}, assume for a contradiction that $B_1,B_2\subseteq C$ are two bases of $C$ and that $|B_1|<|B_2|$.
@@ -313,7 +313,7 @@ Again the argument generalizes immediately as required in \ssf{3}.
 Now we suppose that $B_2$ is finite and prove directly the generalized version.
 Let $n$ be the least integer such that, for some set of parameters $A$, and some $B_1$ and $B_2$ bases of $C$ over $A$, we have $|B_1|<|B_2|=n+1$.
 Fix any ${\mr c}\in B_2$.
-Then $B_2\sm{\mr c}$ is a base over $A,{\mr c}$.
+Then $B_2\sm{\mr c}$ is a basis over $A,{\mr c}$.
 Note that $B_1$ is not independent over $A,{\mr c}$.
 In fact, as ${\mr c}\in\acl(B_1/A)$ by symmetry we obtain that ${\mr b}\in\acl(B_1\sm{\mr b}/A,{\mr c})$ for any ${\mr b}\in B_1$.
 Now, let $D_1\subset B_1$ be maximal independent over $A,{\mr c}$.
@@ -371,7 +371,7 @@ Otherwise, we pick any element ${\mr c}\in N\sm\acl(\range k)$. Such an element 
 Then $k\cup\big\{\<{\mr b},{\mr c}\>\big\}$ is the required extension by Proposition~\ref{prop_mappetraindipendenti}.
 
 \ssf{1}$\IMP$\ssf{2}.
-If $B\subseteq N$ is a base of $N$ the following type is not realized in $N$
+If $B\subseteq N$ is a basis of $N$ the following type is not realized in $N$
 
 \hfil $p({\mr x})\ \ =\ \ \Big\{\neg\phi({\mr x})\ :\ \phi({\mr x})\in L(B)\textrm{ is algebraic }\Big\}$
 
@@ -413,7 +413,7 @@ Sia $\phi({\mr x})$ \`e una formula, dove ${\mr x}$ \`e una tupla di variabili. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \PARAGRAPH{Localization.\label{dimension localized}}
 \inde{\mr x}{localization} 
-The definitions and theorems above can be relativized to some arbitrary set of parameters $A$. We write $\acl_AC$ for $\acl(AC)$. It is immediate to check that $\acl_AC$ is a finitary closure operator with the e{\mr x}change property. The definitions above localize to $A$: we say that $a$ is {\it independent from $B$} \new{over $A$}, that $B$ is an {\it independent set\/} \new{over $A$}, that $B$ is a {\it base for $C$} \new{over $A$}. We write $\dim_AC$ for the {\it dimension of $C$} \new{over $A$}.\STOP
+The definitions and theorems above can be relativized to some arbitrary set of parameters $A$. We write $\acl_AC$ for $\acl(AC)$. It is immediate to check that $\acl_AC$ is a finitary closure operator with the e{\mr x}change property. The definitions above localize to $A$: we say that $a$ is {\it independent from $B$} \new{over $A$}, that $B$ is an {\it independent set\/} \new{over $A$}, that $B$ is a {\it basis for $C$} \new{over $A$}. We write $\dim_AC$ for the {\it dimension of $C$} \new{over $A$}.\STOP
 \PARAGRAPH{An observation.\label{An observation}} The following is straightforward but worth of mention.  Let $T$ be strongly minimal. If $C$ is a set cardinality larger than $|T|$ then $\dim C=|C|$.\STOP
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
