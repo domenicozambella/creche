@@ -77,6 +77,7 @@ We say that $p({\mr x})$ is an \emph{$A$-invariant type\/}, if for every formula
 
 \ceq{\ssf{it1.}\hfill \phi({\mr x}\,;{\gr a})\in p}{\IFF}{\phi({\mr x}\,;f{\gr a})\in p}\hfill for every ${\gr a}\in\U^{|{\gr z}|}$ and every $f\in\Aut(\U/A)$.
 
+Hence $p({\mr x})$ is invariant exactly when all sets $\gr\D_{p,\phi}$ are. 
 By \emph{invariant type\/} we mean invariant over some (small) set $A$.
 
 A global $\phi$-type can be identified with ${\gr\D_{p,\phi}}$ and a global type can be identified with the collection of all these sets.
@@ -87,15 +88,14 @@ We say that the type $p({\mr x})\subseteq L(\U)$ \emph{does not split\/} over $A
 \ceq{\ssf{it2.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\Big(\phi({\mr x}\,;{\gr a})\in p\,\IFF\,\phi({\mr x}\,;{\gr b})\in p\Big)}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$
 
 for every formula $\phi({\mr x}\,;{\gr z})\in L$.
-For global type (or a global $\phi$-types  when $\phi$ is fixed) \ssf{it2} is equivalent to
+By homogeneity, non splitting is equivalent to invariance.
+For global type \ssf{it2} is equivalent to
 
 \ceq{\ssf{it2'.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})\,\in\, p}
 
-By homogeneity, non splitting is equivalent to invariance.
-
 The following is yet another important equivalent of invariance over $A$ that easily follows from \ssf{it2'}
 
-\ceq{\ssf{it3.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\equiv_{A,{\mr c}}{\gr b}}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$.
+\ceq{\ssf{it3.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\equiv_{A,\,{\mr c}}{\gr b}}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$.
 
 Note that \ssf{it3} applies to global types $p({\mr x})\in S(\U)$ but not to $\phi$-types.
 
@@ -109,7 +109,8 @@ Note that \ssf{it3} applies to global types $p({\mr x})\in S(\U)$ but not to $\p
 We say that the set $\mrB\subseteq\U^{|{\mr x}|}$, typically a definable set, is \emph{quasi-invariant\/} over $A$ if for any finitely many automorphisms $f_1,\dots,f_n\in\Aut(\U/A)$ the sets $f_i[\mrB]$ have non-empty intersection.
 
 We say that the type $p({\mr x})\subseteq L(\U)$, typically a global type, is \emph{quasi-invariant\/} over $A$ if $\phi({\mr\U})$ is quasi-invariant over $A$  for every $\phi({\mr x})$ conjunction of formulas in $p({\mr x})$.
-For types of small cardinality, this is equivalent to requiring that $p({\mr\U})$ is quasi-invariant.% So, the type $p({\mr x})$ is quasi-invariant if the set $p({\mr\V})$ is invariant, where $\V$ is an large saturated extension of $\U$, see Exercise~\ref{ex_quasi_inv_type}.
+%For types of small cardinality, this is equivalent to requiring that $p({\mr\U})$ is quasi-invariant.
+% So, the type $p({\mr x})$ is quasi-invariant if the set $p({\mr\V})$ is invariant, where $\V$ is an large saturated extension of $\U$, see Exercise~\ref{ex_quasi_inv_type}.
 
 For global types quasi-invariance coincides with invariance, in fact we have the following.
 
