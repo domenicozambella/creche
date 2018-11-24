@@ -357,8 +357,8 @@ The following is a convenient characterization of coheir sequences.
 \begin{lemma}\label{lem_coheir_property}
 The following are equivalent
 \begin{itemize}
-\item[1.] ${\mr\bar c}=\<{\mr c_n}:n<\alpha\>$ is a coheir sequence over $A$;
-\item[2.] ${\mr c_{\restriction n}}\nonforkc_A{\mr c_n}$ and ${\mr c_{n+1}}\equiv_{A,\,{\mr c_{\restriction n}}}{\mr c_n}$ per ogni $n<\alpha$.
+\item[1.] ${\mr\bar c}=\<{\mr c_n}:n<\omega\>$ is a coheir sequence over $A$;
+\item[2.] ${\mr c_{\restriction n}}\nonforkc_A{\mr c_n}$ and ${\mr c_{n+1}}\equiv_{A,\,{\mr c_{\restriction n}}}{\mr c_n}$ for every $n<\omega$.
 \end{itemize}
 \end{lemma}
 
@@ -370,8 +370,7 @@ Now, suppose $\phi({\mr c_{n+1}})$ for some $\phi({\mr x})\in L(A,{\mr c_{\restr
 Then $\phi({\mr x})$ belongs to $p({\mr x})$ hence $\phi({\mr\U})\cap A^{|{\mr x}|}\neq\0$ because $p({\mr x})$ is finitely satisfiable in $A$.
 
 \ssf{2}$\IMP$\ssf{1}.
-Assume \ssf{2}.
-Then it is immediate that ${\mr\bar c}$ is a coheir sequence of any global type that extends ${\mr\bar c}\nonforkc_A{\mr x}$.
+Let $q({\mr x})=\{\phi({\mr x})\in L({\mr\bar c})\,:\, \phi({\mr c_n}) \textrm{ for cofinitely many } n\}$. From  \ssf{2} it follows that $q({\mr x})$ is finitely satisfied in $A$. Then ${\mr\bar c}$ a coheir sequence of any global type that extends $q({\mr x})$.
 \end{proof}
 
 Let $I,<_I$ be a linear order.
@@ -385,7 +384,7 @@ When $I_0$ has order-type $\alpha$, an ordinal, we identify ${\mr a_{\restrictio
  
 \begin{definition}
 Let $I,<_I$ be an infinite linear order and let ${\mr\bar a}$ be an $I\jj$sequence.
-We say that $a$ is a \emph{sequence of indiscernibles\/} over $A$ or, a sequence of \emph{$A\jj$indiscernibles}, if ${\mr a_{\restriction I_0}}\equiv_A {\mr a_{\restriction I_1}}$ for every $I_0,I_1\in [I]^n$ and $n<\omega$.
+We say that ${\mr\bar a}$ is a \emph{sequence of indiscernibles\/} over $A$ or, an \emph{$A$-indiscernible sequence\/}, if ${\mr a_{\restriction I_0}}\equiv_A {\mr a_{\restriction I_1}}$ for every $I_0,I_1\in [I]^n$ and $n<\omega$.
 Recall that \emph{$[I]^n$} denotes that the set of \emph{$n$-subsets\/} of $I$,  i.e.\@ the subsets of $I$ of cardinality $n$.
 It is also common to write\smallskip
 
@@ -417,7 +416,7 @@ For $n=0$ the claim is trivial, then we assume $\,\sharp\,$ above is true and pr
 
 \ceq{\hfill {\mr c_{\restriction n}},{\mr c_n}}{\equiv_A}{{\mr c_{\restriction I_0}},{\mr c_i}}\ \ \ for every $I_0<i<\alpha$.
 
-As $c$ is  Morley sequence, ${\mr c_n}\equiv_{A,{\mr c_{\restriction n}}} {\mr c_i}$ whenever $n<i$.
+As ${\mr\bar c}$ is  Morley sequence, ${\mr c_n}\equiv_{A,{\mr c_{\restriction n}}} {\mr c_i}$ whenever $n<i$.
 Hence we can equivalently prove that
 
 \ceq{\hfill {\mr c_{\restriction n}},{\mr c_i}}{\equiv_A}{{\mr c_{\restriction I_0}},{\mr c_i},}
@@ -426,7 +425,7 @@ which is equivalent to
 
 \ceq{\hfill {\mr c_{\restriction n}}}{\equiv_{A,\,{\mr c_i}}}{{\mr c_{\restriction I_0}}.}
 
-The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({\mr x})$ as formulated in \ssf{it3} of Section~\ref{invariant}.
+The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({\mr x})$ as formulated in \ssf{it3} of Section~\ref{invariant_sets}.
 \end{proof}
 
 %Let $I,<_I$ and $J,<_J$ be two infinite linear orders and let $a$ and $b$ be an $I\jj$sequence, respectively a $J\jj$sequence
