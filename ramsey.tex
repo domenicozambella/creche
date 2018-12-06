@@ -93,7 +93,7 @@ $a_{\restriction i},a_i,{\mr c_{\restriction n}}$ satisfies the induction hypoth
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ehrenfeucht-Mostowski construction of indiscernibles}\label{EM}
 
-Let $I,<_I$ be an infinite linear order and let ${\mr\bar a}$ be an $I\jj$sequence.
+Let $I,<_I$ be an infinite linear order and let ${\mr\bar a}$ be an $I$-sequence.
 Fix a tuple of distinct variables ${\mr\bar x}=\<{\mr x_i}: i<\omega\>$.
 We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$} and say that $p({\mr\bar x})$ is the \emph{Ehren\-feucht-Mostowski type\/} of ${\mr\bar a}$ over $A$ if
 
@@ -104,22 +104,23 @@ while ${\mr\bar a}$ is an arbitrary infinite sequence.
 Clearly,
 ${\mr x_i}$ and  ${\mr a_i}$ are tuple of the same sort.
 
-Note also that if ${\mr\bar a}$ is $A\jj$indiscernible then $\EMtp({\mr\bar a}/A)$ is a complete type,
+Note also that if ${\mr\bar a}$ is $A$-indiscernible then $\EMtp({\mr\bar a}/A)$ is a complete type,
 and vice versa.
 So,
-if ${\mr\bar a}$ and ${\mr\bar c}$ are two $A\jj$indiscernible $I\jj$sequences with the same Ehren\-feucht-Mostowski type over $A$,
+if ${\mr\bar a}$ and ${\mr\bar c}$ are two $A$-indiscernible $I$-sequences with the same Ehren\-feucht-Mostowski type over $A$,
 then ${\mr\bar a}\equiv_A {\mr\bar c}$.
 
 \theoremstyle{mio}
 \newtheorem{EhrenfeuchtMostowski}[thm]{Ehrenfeucht-Mostowski Theorem}
 \begin{EhrenfeuchtMostowski}\label{thm_EM}
 Let $I,<_I$ and $J,<_J$ be two infinite linear orders such that $|J|\le \kappa$.
-Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is an $J\jj$sequence of $A$-indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/A)\subseteq\EMtp({\mr\bar c}/A)$.
+Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is an $J$-sequence of $A$-indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/A)\subseteq\EMtp({\mr\bar c}/A)$.
 \end{EhrenfeuchtMostowski}
 
 
 \begin{proof}
 We prove the theorem for $I=J=\omega$ and leave the general case to the reader.
+Let $q({\mr\bar x})=\EMtp({\mr\bar a}/A)$.
 Let ${\mr\bar c}$ be any realization of the following type yields a $J$-sequence of $A$-indiscernibles.
 
 \ceq{\hfill q({\mr\bar x})}
@@ -134,41 +135,46 @@ We prove that for $k$ and $n$ arbitrary large and every $\phi_1,\dots,\phi_k\in 
 
 \ceq{\ssf{\#}}
 {}
-{\Big\{\phi_i({\mr x_{\restriction J_0}})\iff\phi_i({\mr x_{\restriction I_0}})\ :\  I_0, J_0\in{\omega\choose n}\textrm{ and } i\in[k]\Big\}.}
+{\Big\{\phi_i({\mr x_{\restriction I_0}})\iff\phi_i({\mr x_{\restriction J_0}})\ :\  I_0, J_0\in{\omega\choose n}\textrm{ and } i\in[k]\Big\}.}
 
 Consider the subsets of $[k]$ as colors and let $f$ be the coloring of ${\omega\choose n}$ that maps $I_0$ to the set $\big\{i\ :\ \phi_i({\mr a_{\restriction I_0}})\big\}$.
 By the Ramsey theorem,
 there is some infinite monochromatic set $H\subseteq\omega$.
-As $\omega$ has order type $\omega$,
-so does $H$,
-and it is immediate that ${\mr a_{\restriction H}}$ realizes \ssf{\#},
+Hence
+
+\ceq{}
+{}
+{\Big\{\phi_i({\mr a_{\restriction I_0}})\iff\phi_i({\mr a_{\restriction J_0}})\ :\  I_0, J_0\in{H\choose n}\textrm{ and } i\in[k]\Big\}.}
+
+As $H$ has order type $\omega$,
+it is immediate that ${\mr a_{\restriction H}}$ realizes \ssf{\#},
 as required to prove the theorem with $I=J=\omega$.
 \end{proof}
 
 
 \begin{proposition}\label{prop_indiscernibles_set_model}
-  Let ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ be a sequence of $A$-indiscernibles.
+Let ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ be a sequence of $A$-indiscernibles.
 Then ${\mr\bar a}$ is indiscernible over some model $M$ containing $A$.
 \end{proposition}
 
 \begin{proof}
-  Fix an arbitrary model $M$ containing $A$.
-By Theorem~\ref{thm_EM} there is an $I\jj$sequence of $M\jj$indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/M)\subseteq\EMtp({\mr\bar c}/M)$.
-As ${\mr\bar a}$ is an $A\jj$indiscernible sequence ${\mr\bar a}\equiv_A{\mr\bar c}$.
+Fix an model $M$ containing $A$.
+By Theorem~\ref{thm_EM} there is an $I$-sequence of $M$-indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/M)\subseteq\EMtp({\mr\bar c}/M)$.
+As ${\mr\bar a}$ is an $A$-indiscernible sequence ${\mr\bar a}\equiv_A{\mr\bar c}$.
 Therefore $h\,{\mr\bar c}={\mr\bar a}$ for some some $h\in\Aut(\U/A)$.
 Hence ${\mr\bar a}$ is indiscernible over $h[M]$.
 \end{proof}
 
 \begin{exercise}
-Let $\bar a=\<a_i:i\in I\>$ be an $A\jj$indiscernible sequence and let $J\supseteq I$ with $|J|\le \kappa$.
-Then there is an $A\jj$indiscernible sequence $\bar c=\<c_i:i\in J\>$ such that $c_{\restriction I}=\bar a$.\QED
+Let $\bar a=\<a_i:i\in I\>$ be an $A$-indiscernible sequence and let $J\supseteq I$ with $|J|\le \kappa$.
+Then there is an $A$-indiscernible sequence $\bar c=\<c_i:i\in J\>$ such that $c_{\restriction I}=\bar a$.\QED
 \end{exercise}
 
 \begin{exercise}
 Let  $p({\mr x})\in S(\U)$ be a global type invariant over $A$.
 Let ${\mr a},
 {\mr b}\models p_{\restriction A}({\mr x})$.
-Prove that there is a sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ such that ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are both sequences of $A\jj$indiscernibles.\QED
+Prove that there is a sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ such that ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are both sequences of $A$-indiscernibles.\QED
 \end{exercise}
 
 \begin{comment}
@@ -381,7 +387,7 @@ ${\mr a'}{\cdot}{\mr b}\cnonfork_{\!A}{\mr c}$.
 Therefore ${\mr a'}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.
 Finally,
 as ${\mr a'}\equiv_{A,\,{\mr b}{\cdot}{\mr c}}{\mr a}$,
-also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by invariance.
+also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by the invariance of $\big(\mrA\cdot_{\!A}\mrB\big)\cdot_{\!A}\mrC$.
 \end{proof}
 
 Let $\mrA$ be a non empty set.
@@ -964,7 +970,7 @@ La seguente proposizione mostra che possiamo ragionevolmente parlare di tipo del
 Questo paragrafo \`e dedicato alla descrizione sintattica di questo tipo.
 
 \begin{proposition}\label{prop_tiposequenzaMorley}
-Sia $p\in S_x(\U)$ un tipo globale $A\jj$invariante e supponiamo che $a$ e $b$ siano due sequenze di Morley di $p$ su $A$.
+Sia $p\in S_x(\U)$ un tipo globale $A$-invariante e supponiamo che $a$ e $b$ siano due sequenze di Morley di $p$ su $A$.
 Allora $a\equiv_A c$.
 
 \end{proposition}
@@ -1026,7 +1032,7 @@ Dal lemma~\ref{lemma_prodotto} otteniamo che $\phi(x,y)\in p({\mr x})\otimes q(y
 
 
 \begin{corollary}
-Se $p({\mr x}),q(y)\in S(\U)$ sono tipi globali $A\jj$invarianti, allora anche $p({\mr x})\otimes q(y)$ \`e $A\jj$invariante.
+Se $p({\mr x}),q(y)\in S(\U)$ sono tipi globali $A$-invarianti, allora anche $p({\mr x})\otimes q(y)$ \`e $A$-invariante.
 \end{corollary}
 
 \begin{proof}
@@ -1063,7 +1069,7 @@ Definiamo induttivamente
 La seguente proposizione giustifica la definizione di $p^{(\omega)}$, la dimostrazione \`e immediata.
 
 \begin{proposition}\label{prop_p^omega_Morley}
-Sia $p({\mr x})\in S(\U)$ un tipo globale $A\jj$invariante.
+Sia $p({\mr x})\in S(\U)$ un tipo globale $A$-invariante.
 Allora le seguenti affermazioni sono equivalenti
 \begin{itemize}
 \item[1.]$\<c_i:i<\omega\>$ \`e una sequenze di Morley di $p$ su $A$;

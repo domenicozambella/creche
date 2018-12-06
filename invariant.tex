@@ -248,9 +248,9 @@ More properly one says that $\tp({\gr a}/A,{\mr b})$ is the heir of $\tp({\gr a}
 
 We also write
 
-\ceq{\hfill\emph{${\gr a}\nonforkc_A{\mr x}$}}{=}{\Big\{\phi({\gr a}\,;{\mr x})\ :\ \phi({\gr z}\,;{\mr x})\in L(A)\textrm{ and }A\subseteq\phi({\gr a}\,;{\mr \U})\Big\}}
+\ceq{\hfill\emph{${\gr a}\nonforkc_A{\mr x}$}}{=}{\Big\{\phi({\gr a}\,;{\mr x})\ :\ \phi({\gr z}\,;{\mr x})\in L(A)\textrm{ and }A^{|{\mr x}|}\subseteq\phi({\gr a}\,;{\mr \U})\Big\}}
 
-and we will use the symbol \emph{${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$} with the obvious meaning.\QED
+and we will use the symbol \emph{${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$} for the union of the types ${\gr a}\nonforkc_A{\mr x}$ and $\tp({\mr b}/A)$.\QED
 \end{definition}
 
 We imagine ${\gr a}\nonforkc_A{\mr b}$ as saying that ${\mr b}$ is \emph{independent\/} of ${\gr a}$ over $A$.
@@ -262,7 +262,7 @@ We shall use, sometimes without reference, the following easy lemma
 \begin{lemma}\label{lem_coheir_independence}
 The following properties hold for all $A,{\gr a},{\mr b}$, and $c$
 \begin{itemize}
-\item[1.] ${\gr a}\nonforkc_A{\mr b}\ \ \IMP\ \ f{\gr a}\nonforkc_Af{\mr b}$ \ \ for every $f\in\Aut(\U/A)$\hfill \textit{invariance}
+\item[1.] ${\gr a}\nonforkc_A{\mr b}\ \ \IFF\ \ f{\gr a}\nonforkc_Af{\mr b}$ \ \ for every $f\in\Aut(\U/A)$\hfill \textit{invariance}
 \item[2.] ${\gr a}\nonforkc_A{\mr b}\ \ \IFF\ \ {\gr a_0}\nonforkc_{A_0}{\mr b_0}$\ for all finite $A_0\subseteq A, {\gr a_0}\subseteq{\gr a}, {\mr b_0}\subseteq{\mr b}$\hfill \textit{finite character}
 % \item[3$\,'$\!.] ${\gr a},c\nonforkc_A{\mr b}\ \ \IMP\ \ {\gr a}\nonforkc_{A,\,c}{\mr b}$\hfill \textit{transitivity$'$}
 % \item[3$\,''$\!.] ${\gr a}\nonforkc_{A,\,c}{\mr b}$ \ and \ ${\gr a}\nonforkc_Ac\ \ \IMP\ \ {\gr a}\nonforkc_Ac,{\mr b}$\hfill \textit{transitivity$''$}
@@ -282,7 +282,7 @@ Then any ${\mr b'}\models p_{\restriction A,\,{\gr a},\,c}({\mr x})$ proves the 
 Transitivity has dual version that holds under stronger assumptions.
 
 
-The type ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ defined above is the intersection of all coheirs of $\tp({\mr b}/A)$.
+The type ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ defined above is the intersection of all global coheirs of $\tp({\mr b}/A)$.
 In general coheirs of $\tp({\mr b}/A)$ may not exist i.e.,  ${\gr a}\nonforkc_A{\mr x}\equiv_A{\mr b}$ is inconsistent.
 However, it is always consistent when $A$ is a model.
 Even when consistent it need not be a complete.
@@ -293,7 +293,7 @@ An example is given in Lemma~\ref{lem_Hindman}.
 We say \emph{$n$-stationary\/} if this is restricted to $|{\mr x}|=n$.\QED
 \end{definition}
 
-Stationarity of $\nonforkc_A$ is often ensured by the following property that will receive the due attention in Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}.
+Stationarity of $\nonforkc_A$ is often ensured by the following property that will receive the due attention in Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}. Recall that for $\D,\C\subseteq\U$ we write $\D=_A\C$ for $\D\cap A=\C\cap A$.
 
 \begin{proposition}
 Fix a tuple of variable ${\mr x}$ of length $n$.
@@ -301,9 +301,11 @@ If for every $\phi({\mr x})\in L(\U)$ there is a formula $\psi({\mr x})\in L(A)$
 \end{proposition}
 
 \begin{proof}
-Fix ${\gr a}\in\U^{|{\gr z}|}$ and  ${\mr b_1},{\mr b_2}\in\U^{|{\mr x}|}$ such that ${\gr a}\nonforkc_A{\mr b_i}$ and ${\mr b_1}\equiv_A{\mr b_2}$.
+Fix ${\gr a}\in\U^{|{\gr z}|}$ and  ${\mr b_1},{\mr b_2}\in\U^{|{\mr x}|}$ 
+such that ${\gr a}\nonforkc_A{\mr b_i}$ and ${\mr b_1}\equiv_A{\mr b_2}$.
 We claim that ${\mr b_1}\equiv_{A,\,{\gr a}}{\mr b_2}$.
-We need to prove that $\phi({\gr a},\,{\mr b_1})\iff\phi({\gr a},\,{\mr b_2})$ for every  $\phi({\gr z},\,{\mr x})\in L(A)$.
+We need to prove that $\phi({\gr a},\,{\mr b_1})\iff\phi({\gr a},\,{\mr b_2})$ 
+for every  $\phi({\gr z},\,{\mr x})\in L(A)$.
 Let $\psi({\mr x})\in L(A)$ be such that $\phi({\gr a},\,{\mr \U})=_A\psi({\mr \U})$.
 From ${\gr a}\nonforkc_A{\mr b_i}$ we obtain that  $\phi({\gr a},\,{\mr b_i})\iff\psi({\mr b_i})$.
 Finally, the claim follows because ${\mr b_1}\equiv_A{\mr b_2}$.
@@ -328,7 +330,7 @@ Finally, the claim follows because ${\mr b_1}\equiv_A{\mr b_2}$.
 \begin{remark}\label{rk_coheir_stationary}
 Stationarity of $\nonforkc_A$ over every set $A$, or just over every model, is equivalent to the stability of $T$, see Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}.
 However, there are many more theories where the assumption holds for some particular set $A$.
-For example, if every subset of $A^n$ is the trace of a definable set, $\nonforkc_A$ is clearly $n$-stationary.
+For example, if every subset of $A^n$ is $A$-definable, $\nonforkc_A$ is clearly $n$-stationary.
 This simple observation will be of help in the proof of Theorem~\ref{thm_Hindman}.
 For natural example let $T=T_{\rm dlo}$ and let $A\subseteq\U$ have the order-type of $\RR$.
 By quantifier elimination every definable of $\U$ union of finitely many intervals.
@@ -370,13 +372,12 @@ Now, suppose $\phi({\mr c_{n+1}})$ for some $\phi({\mr x})\in L(A,{\mr c_{\restr
 Then $\phi({\mr x})$ belongs to $p({\mr x})$ hence $\phi({\mr\U})\cap A^{|{\mr x}|}\neq\0$ because $p({\mr x})$ is finitely satisfiable in $A$.
 
 \ssf{2}$\IMP$\ssf{1}.
-Let $q({\mr x})=\{\phi({\mr x})\in L({\mr\bar c})\,:\, \phi({\mr c_n}) \textrm{ for cofinitely many } n\}$. From  \ssf{2} it follows that $q({\mr x})$ is finitely satisfied in $A$. Then ${\mr\bar c}$ a coheir sequence of any global type that extends $q({\mr x})$.
+Let $q({\mr x})=\{\phi({\mr x})\in L({\mr\bar c})\,:\, \phi({\mr c_n}) \textrm{ holds for cofinitely many } n\}$. From  \ssf{2} it follows that $q({\mr x})$ is finitely satisfied in $A$. Then ${\mr\bar c}$ a coheir sequence of any global type that extends $q({\mr x})$.
 \end{proof}
 
 Let $I,<_I$ be a linear order.
 We call a function ${\mr\bar a}:I\to\U^{|{\mr x}|}$ an \emph{$I$-sequence}, or simply a \emph{sequence\/} when $I$ is clear.
 Often we introduce an $I\jj$sequence by writing ${\mr\bar a}=\<{\mr a_i}: i\in I\>$.
-
 
 If $I_0\subseteq I$ we call ${\mr a_{\restriction I_0}}$ a \emph{subsequence\/} of ${\mr\bar a}$.
 Most relevant are the subsets $I_0\subseteq I$ that are well-ordered by $<_I$ and, in particular, the finite ones.
