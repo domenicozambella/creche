@@ -385,9 +385,8 @@ ${\mr a}\equiv_{A,\,{\mr b}{\cdot}{\mr c}}{\mr a'}\cnonfork_{\!A}{\mr b}{\cdot}{
 By transitivity (again Lemma~\ref{lem_coheir_independence}),
 ${\mr a'}{\cdot}{\mr b}\cnonfork_{\!A}{\mr c}$.
 Therefore ${\mr a'}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.
-Finally,
-as ${\mr a'}\equiv_{A,\,{\mr b}{\cdot}{\mr c}}{\mr a}$,
-also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by the invariance of $\big(\mrA\cdot_{\!A}\mrB\big)\cdot_{\!A}\mrC$.
+Finally, as ${\mr a'}\equiv_{A,\,{\mr b}{\cdot}{\mr c}}{\mr a}$,
+also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by $A$-invariance.
 \end{proof}
 
 Let $\mrA$ be a non empty set.
@@ -475,15 +474,16 @@ idempotent sets that are
 type-definable over $M$, then $\mrA={\mr b}_M$ for some (any) ${\mr b}\in\mrA$.
 \end{lemma}
 \begin{proof}
+Fix arbitrarily some ${\mr b}\in\mrA$.
 By Corollary~\ref{corol_min_idempotent},
-for every ${\mr b}\in\mrA$ the set $\mrA\cdot_{\!M}{\mr b}$ is idempotent.
+the set $\mrA\cdot_{\!M}{\mr b}$ is idempotent.
 It is also type-definable and contained in $\mrA$,
 therefore by minimality $\mrA\cdot_{\!M}{\mr b}=\mrA$.
-Then there is a ${\mr a}\in\mrA$ such that ${\mr a}\cnonfork_M{\mr b}$ and ${\mr a}{\cdot}{\mr b}={\mr b}$.
-By associativity, the set ${\mr a}\cdot_{\!M}{\mr b}$ is idempotent.
-By Corollary~\ref{corol_orbits_associative},
-it coincides with $({\mr a}{\cdot}{\mr b})_M={\mr b}_M$.
-The theorem follows by minimality.
+Let ${\mr\Aa'}\subseteq\mrA$ be minimal among the type-definable idemponent sets such that ${\mr b}\in{\mr\Aa'}\cdot_{\!M}{\mr b}$. 
+Let ${\mr a}\in{\mr\Aa'}$ be such that ${\mr a}\cnonfork_M{\mr b}$ and ${\mr a}{\cdot}{\mr b}={\mr b}$.
+By associativity, $\big({\mr a}\cdot_{\!M}{\mr a}\big)\cdot_{\!M}{\mr b}={\mr b}_M$.
+Therefore is ${\mr a}_M$ idempotent.
+By minimality ${\mr a}_M={\mr\Aa'}=\mrA={\mr b}_M$.
 \end{proof}
 
 \begin{corollary}\label{corol_idempotent}
