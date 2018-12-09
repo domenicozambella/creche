@@ -21,7 +21,8 @@ We say that ${\mr a}$ is \emph{algebraic over $\Aa$\/} if $\phi({\mr a})\wedge\E
 In particular, when $k=1$ we say that ${\mr a}$ is \emph{definable over $\Aa$}.
 We write \emph{acl$(\Aa)$} for the \emph{algebraic closure of $\Aa$}, that is, the set of all the elements that are algebraic over $\Aa$.
 If $\Aa=\acl(\Aa)$, we say that $\Aa$ is \emph{algebraically closed}.
-The \emph{definable closure of $\Aa$\/} is defined similarly and is denoted by \emph{dcl$(\Aa)$}. 
+The \emph{definable closure of $\Aa$\/} is defined similarly and is denoted by \emph{dcl$(\Aa)$}.
+
 
 Let $x$ be a finite tuple of variables.
 Formulas $\phi(x)\in L(A)$, or types $p(x)\subseteq L(A)$, with finitely many solutions are called \emph{algebraic}.
@@ -40,22 +41,7 @@ Then
 \ceq{\hfill p(x)}{\iff}{\bigvee^n_{i=1}a_i=x}
 
 Then \ssf{2} follows by compactness (cfr.\@ Remark~\hyperref[rem_normality]{\ref*{rem_normality}.\ssf{b}}).
-% The non trivial implication is \ssf{1}$\IMP$\ssf{2}. Assume \ssf{1}, then the following type is inconsistent
-% 
-% \hfil$\displaystyle   \bigcup_{j<i\le n}\Big[p(u_i)\cup\big\{u_i\neq u_j\big\}\Big]$
-% 
-% By saturation there is a formula $\phi(u)$, conjunction of formulas in $p(u)$, such that
-% 
-% \hfil$\displaystyle\phi(u_0)\ \wedge\ \dots\ \wedge\ \phi(u_n)\ \wedge\bigwedge_{j<i\le n} u_i\neq u_j$.
-% 
-% Which is inconsistent, therefore $\phi(u)$ has at most $n$ solutions.
 \end{proof}
-
-% \begin{exercise}
-% Prove that Proposition~\ref{prop_tipialgebrici} does not hold in general for infinite tuple $u$.\QED
-% \end{exercise}
-
-
 
 \begin{exercise}
 For every $a\in\U^n$ and $A\subseteq\U$, the following are equivalent
@@ -75,7 +61,9 @@ For every $A\subseteq\U$ and every ${\mr a}\in\U$ the following are equivalent
 \end{theorem}
 
 \begin{proof} 
-Implication \ssf{1}$\IMP$\ssf{2} is obvious. As for  \ssf{2}$\IMP$\ssf{1}, recall that $\orbit({\mr a}/A)$ is the set of realizations of $\tp({\mr a}/A)$, then the theorem follows from Proposition~\ref{prop_tipialgebrici}.
+Implication \ssf{1}$\IMP$\ssf{2} is obvious.
+As for  \ssf{2}$\IMP$\ssf{1}, recall that $\orbit({\mr a}/A)$ is the set of realizations of $\tp({\mr a}/A)$, 
+then the theorem follows from Proposition~\ref{prop_tipialgebrici}.
 \end{proof}
 
 
@@ -89,15 +77,21 @@ For every $A\subseteq\U$ and every ${\mr a}\in\U$ the following are equivalent
 \end{itemize}
 \end{theorem}
 
-\begin{proof} \ssf{1}$\IFF$\ssf{2}. This is proved as in Theorem~\ref{thm_dgalois}. 
+\begin{proof} \ssf{1}$\IFF$\ssf{2}.
+This is proved as in Theorem~\ref{thm_dgalois}.
 
-\ssf{1}$\IMP$\ssf{3}. Assume \ssf{1}. Then there is a formula $\phi({\mr x})\subseteq L(A)$ such that $\phi({\mr a})\wedge\E^{=k}{\mr x}\;\phi({\mr x})$ for some $k$. By elementarity $\E^{=k}{\mr x}\;\phi({\mr x})$ holds in every model $M$ containing $A$. Again by elementarity, the $k$ solutions of $\phi({\mr x})$ in $M$ are solutions in $\U$, therefore ${\mr a}$ is one of these.
+\ssf{1}$\IMP$\ssf{3}.
+Assume \ssf{1}.
+Then there is a formula $\phi({\mr x})\subseteq L(A)$ such that $\phi({\mr a})\wedge\E^{=k}{\mr x}\;\phi({\mr x})$ for some $k$.
+By elementarity $\E^{=k}{\mr x}\;\phi({\mr x})$ holds in every model $M$ containing $A$.
+Again by elementarity, the $k$ solutions of $\phi({\mr x})$ in $M$ are solutions in $\U$, therefore ${\mr a}$ is one of these.
 
-\ssf{3}$\IMP$\ssf{2}. Assume $\orbit({\mr a}/A)$ is infinite and fix any model $M$ containing $A$. By Exercise~\ref{cadinalitafinitasaturazione}, $\orbit({\mr a}/A)$  has cardinality $\kappa$, hence $\orbit({\mr a}/A)\nsubseteq M$. Pick any $f\in\Aut(\U/A)$ such that $f{\mr a}\notin M$. Then ${\mr a}\notin f^{-1}[M]$, so $f^{-1}[M]$ is a model that contradicts \ssf{3}.
+\ssf{3}$\IMP$\ssf{2}.
+Assume $\orbit({\mr a}/A)$ is infinite and fix any model $M$ containing $A$.
+By Exercise~\ref{cadinalitafinitasaturazione}, $\orbit({\mr a}/A)$  has cardinality $\kappa$, hence $\orbit({\mr a}/A)\nsubseteq M$.
+Pick any $f\in\Aut(\U/A)$ such that $f{\mr a}\notin M$.
+Then ${\mr a}\notin f^{-1}[M]$, so $f^{-1}[M]$ is a model that contradicts \ssf{3}.
 \end{proof}
-
-
-
 
 \begin{corollary}\label{fmacl123} 
 For every $A\subseteq\U$ and every ${\mr a}\in\U$
@@ -117,35 +111,51 @@ Properties \ssf{1}-\ssf{3} are obvious, \ssf{4} follows from \ssf{5} which in tu
 \end{proof}
 
 \begin{proposition}\label{prop_estensionemappechiusuraalgebrica}
-If $f\in\Aut(\U)$ then $f\big[\acl(A)\big]=\acl\big(f[A]\big)$ for every $A\subseteq\U$. 
+If $f\in\Aut(\U)$ then $f\big[\acl(A)\big]=\acl\big(f[A]\big)$ for every $A\subseteq\U$.
 \end{proposition}
 
 \begin{proof}
-We prove $f\big[\acl(A)\big]\subseteq\acl\big(f[A]\big)$. Fix ${\mr a}\in\acl(A)$ and let $\phi({\mr x}\,;{\gr z})\in L$ and ${\gr b}\in A^{|{\gr z}|}$ be such that $\phi({\mr x}\,;{\gr b})$ is algebraic formula satisfied by ${\mr a}$. By elementarity, $\phi({\mr x}\,;f{\gr b})$ is algebraic and satisfied by $f{\mr a}$. Therefore  $f{\mr a}$ is algebraic over $f[A]$, which proves the inclusion.
+We prove $f\big[\acl(A)\big]\subseteq\acl\big(f[A]\big)$.
+Fix ${\mr a}\in\acl(A)$ and let $\phi({\mr x}\,;{\gr z})\in L$ and ${\gr b}\in A^{|{\gr z}|}$ be such that 
+$\phi({\mr x}\,;{\gr b})$ is algebraic formula satisfied by ${\mr a}$.
+By elementarity, $\phi({\mr x}\,;f{\gr b})$ is algebraic and satisfied by $f{\mr a}$.
+Therefore  $f{\mr a}$ is algebraic over $f[A]$, which proves the inclusion.
 
 The converse inclusion is obtained by substituting  $f^{-1}$ for $f$ and $f[A]$ for $A$.
 \end{proof}
 
 \begin{exercise}\label{pofu}
-Let $\phi({\gr z})\in L(A)$ be a consistent formula. Prove that, if ${\mr a}\in\acl(A,{\gr b})$ for every ${\gr b}\models\phi({\gr z})$, then ${\mr a}\in\acl(A)$. Prove the same claim with a type $p({\gr z})\subseteq L(A)$ for $\phi({\gr z})$.\QED
+Let $\phi({\gr z})\in L(A)$ be a consistent formula.
+Prove that, if ${\mr a}\in\acl(A,{\gr b})$ for every ${\gr b}\models\phi({\gr z})$, then ${\mr a}\in\acl(A)$.
+Prove the same claim with a type $p({\gr z})\subseteq L(A)$ for $\phi({\gr z})$.\QED
 \end{exercise}
 
 
 \begin{exercise}\label{ex_isosub}
-Let $a\in\U\sm\acl\0$. Prove that $\U$ is isomorphic to some $\V\preceq \U$ such that $a\notin\V$. Hint: let $\bar c$ be an enumeration of $\U$ and let $p(\bar u)=\tp(\bar c)$ prove that $p(\bar u)\cup\big\{ u_i\neq a :i<|\bar u|\big\}$ is realized in $\U$ and that any realization yields the required substructure of $\U$.\QED
+Let $a\in\U\sm\acl\0$.
+Prove that $\U$ is isomorphic to some $\V\preceq \U$ such that $a\notin\V$.
+Hint: let $\bar c$ be an enumeration of $\U$ and let $p(\bar u)=\tp(\bar c)$ prove that $p(\bar u)\cup\big\{ u_i\neq a :i<|\bar u|\big\}$ is realized in $\U$ and that any realization yields the required substructure of $\U$.\QED
 \end{exercise}
 
 \begin{exercise}\label{pofu2}
-Let $C$ be a finite set. Prove that if $C\cap M\neq\0$ for every model $M$ containing $A$, then $C\cap\acl(A)\neq\0$. Hint: by induction on the cardinality of $C$. Suppose there is a $c\in C\sm\acl(A)$, then there is $\V\simeq\U$ such that $A\subseteq\V\preceq\U$ and $c\notin\V$, see Exercise~\ref{ex_isosub}. Apply the induction hypothesis to $C'=C\cap\V$ with $\V$ for $\U$.\QED
+Let $C$ be a finite set.
+Prove that if $C\cap M\neq\0$ for every model $M$ containing $A$, then $C\cap\acl(A)\neq\0$.
+Hint: by induction on the cardinality of $C$.
+Suppose there is a $c\in C\sm\acl(A)$, then there is $\V\simeq\U$ such that $A\subseteq\V\preceq\U$ and $c\notin\V$, see Exercise~\ref{ex_isosub}.
+Apply the induction hypothesis to $C'=C\cap\V$ with $\V$ for $\U$.\QED
 \end{exercise}
 
 
 \begin{exercise}\label{ex_acl_intersezioe_2_modelli}
-Prove that for every $A\subseteq N$ there is an $M$ such that $\acl A\,=\,M\cap N$. Hint: add the requirement $\acl(A_i)\cap N\subseteq\acl(A)$ to the construction used to prove the downward L\"owenheim-Skolem theorem. You need to prove that every consistent $\phi(x)\in L(A_i)$ has a solution $a$ such that $\acl(A_i,a)\cap N\subseteq\acl(A)$. The required $a$ has to realize the type
+Prove that for every $A\subseteq N$ there is an $M$ such that $\acl A\,=\,M\cap N$.
+Hint: add the requirement $\acl(A_i)\cap N\subseteq\acl(A)$ to the construction used to prove the downward L\"owenheim-Skolem theorem. You need to prove that every consistent $\phi(x)\in L(A_i)$ has a solution $a$ such that $\acl(A_i,a)\cap N\subseteq\acl(A)$.
+The required $a$ has to realize the type
 
 \hfil$\big\{\phi(x)\big\}\ \cup\ \Big\{\neg\big[\psi(b,x)\wedge\E^{\le n}y\,\psi(y,x)\big]\ :\ b\in N\sm\acl(A),\ \ \psi(y,x)\in L(A_i),\ \ n<\omega\Big\}$
 
-whose consistence need to be verified. (See Exercise~\ref{ex_acl_intersezione_2_modelli_iso} for a different hint.)\QED%la cui consistenza dev'essere verificata. Si pu\`o usare l'esercizio~\ref{pofu2} oppure mostrare che il tipo qui sopra \`e chiuso per congiunzione e poi applicare l'esercizio~\ref{pofu} (che \`e pi\`u semplice).
+whose consistence need to be verified.
+(See Exercise~\ref{ex_acl_intersezione_2_modelli_iso} for a different hint.)\QED%la cui consistenza dev'essere verificata.
+Si pu\`o usare l'esercizio~\ref{pofu2} oppure mostrare che il tipo qui sopra \`e chiuso per congiunzione e poi applicare l'esercizio~\ref{pofu} (che \`e pi\`u semplice).
 \end{exercise}
 
 \begin{exercise}\label{ex_acl_intersezione_2_modelli_iso}
@@ -153,19 +163,22 @@ Prove that for every $A\subseteq N$ there is an automorphism $f\in\Aut(\U/A)$ su
 
 \hfil$p(x)\ \cup\ \Big\{\neg\big[\psi(b,\bar x)\wedge\E^{\le n}y\,\psi(y,\bar x)\big]\ :\ b\in N\sm\acl(A),\ \ \psi(y,x)\in L(A),\ \ n<\omega\Big\}$
 
-Any $\bar a\models p(\bar x)$ enumerates a model $A$-isomorphic to $N$.\QED%la cui consistenza dev'essere verificata. Si pu\`o usare l'esercizio~\ref{pofu2} oppure mostrare che il tipo qui sopra \`e chiuso per congiunzione e poi applicare l'esercizio~\ref{pofu} (che \`e pi\`u semplice).
+Any $\bar a\models p(\bar x)$ enumerates a model $A$-isomorphic to $N$.\QED
 \end{exercise}
 
 
 \begin{exercise}
-Let $\phi(x)\in L(\U)$ and fix an arbitrary set $A$. Prove that the following are equivalent
+Let $\phi(x)\in L(\U)$ and fix an arbitrary set $A$.
+Prove that the following are equivalent
 \begin{itemize}
 \item[1.] there is some model $M$ containing $A$ and such that $M\cap\phi(\U)=\0$;
 \item[2.] there is no consistent formula $\psi(z_1,\dots,z_n)\in L(A)$ such that
 
  \hfil$\displaystyle\psi(z_1,\dots,z_n)\imp\bigvee^n_{i=1}\phi(z_i)$.
 \end{itemize}
-Hint: let $\bar c$ be an enumeration of $N^{|x|}$, where $N$ is any model containing $A$. Let $p(\bar z)=\tp(\bar c/A)$.  Prove that \ssf{2} implies the consistency of $p(\bar z)\,\cup\, \big\{\neg\phi(z_i)\, :\, i<|\bar z|\big\}$ and deduce the existence of the required $M$.\QED
+Hint: let $\bar c$ be an enumeration of $N^{|x|}$, where $N$ is any model containing $A$.
+Let $p(\bar z)=\tp(\bar c/A)$.
+ Prove that \ssf{2} implies the consistency of $p(\bar z)\,\cup\, \big\{\neg\phi(z_i)\, :\, i<|\bar z|\big\}$ and deduce the existence of the required $M$.\QED
 \end{exercise}
 
 
@@ -173,7 +186,11 @@ Hint: let $\bar c$ be an enumeration of $N^{|x|}$, where $N$ is any model contai
 \section{Strongly minimal theories\label{tfm}}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
-Finite and cofinite sets are always (trivially) definable in every structure. We say that $M$ is a \emph{minimal structure\/} all its definable subsets of arity one are finite or cofinite. Unfortunately, this notion is not elementary, i.e.\@ it is not a property of $\Th(M)$. For instance $\NN$ with only the order relation in the language is a minimal structure but none of its elementary extensions is.  Hence the following definition: we say that $M$ is a \emph{strongly minimal structure\/} if it is minimal and all its elementary extensions are minimal.
+Finite and cofinite sets are always (trivially) definable in every structure.
+We say that $M$ is a \emph{minimal structure\/} all its definable subsets of arity one are finite or cofinite.
+Unfortunately, this notion is not elementary, i.e.\@ it is not a property of $\Th(M)$.
+For instance $\NN$ with only the order relation in the language is a minimal structure but none of its elementary extensions is.
+ Hence the following definition: we say that $M$ is a \emph{strongly minimal structure\/} if it is minimal and all its elementary extensions are minimal.
 
 We say that $T$, a consistent theory without finite models, is \emph{strongly minimal\/} if 
 for every formula $\phi({\mr x}\,;{\gr z})\in L$, where ${\mr x}$ has arity one, there is an  $n\in\omega$ tale che
@@ -192,11 +209,15 @@ The following are equivalent
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3} are immediate, we prove \ssf{3}$\IMP$\ssf{1}.  Let $\phi({\mr x}\,;{\gr z})\in L$ and fix an elementary extension $N$ as required by \ssf{2}. Let $p({\gr z})\subseteq L$ be the following type
+Implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3} are immediate, we prove \ssf{3}$\IMP$\ssf{1}.
+ Let $\phi({\mr x}\,;{\gr z})\in L$ and fix an elementary extension $N$ as required by \ssf{2}.
+Let $p({\gr z})\subseteq L$ be the following type
 
 \hfil$p({\gr z})\ \ =\ \ \Big\{ \E^{> n}{\mr x}\;\phi({\mr x}\,;{\gr z})\ \wedge\ \E^{> n}{\mr x}\;\neg\phi({\mr x}\,;{\gr z}) \ \ :\ \ n\in\omega\Big\}$.
 
-As $N$ is minimal, $N\notmodels \E z\,p(z)$. By saturation $p(z)$ is not finitely consistent in $M$. Hence, for some $n$ 
+As $N$ is minimal, $N\notmodels \E z\,p(z)$.
+By saturation $p(z)$ is not finitely consistent in $M$.
+Hence, for some $n$ 
 
 \hfil$M\ \ \models\ \  \A {\gr z}\ \Big[\E^{\le n}{\mr x}\;\phi({\mr x}\,;{\gr z})\ \vee\ \E^{\le n}{\mr x}\;\neg\phi({\mr x}\,;{\gr z})\Big]$.
 
@@ -206,24 +227,13 @@ which proves that $\Th(M)$ is strongly minimal.
 By quantifier elimination, $T_{\rm acf}$ and $T_{\rm dag}$ are strongly minimal theories.
 
 \begin{exercise}
-Let $T$ be a complete theory without finite models. Prove that the following are equivalent
+Let $T$ be a complete theory without finite models.
+Prove that the following are equivalent
 \begin{itemize}
 \item[1.] $M$ is minimal;
 \item[2.] ${\mr a}\equiv_M{\mr b}$ for every ${\mr a}, {\mr b}\in \U\sm M$.\QED
 \end{itemize}
 \end{exercise}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -233,22 +243,31 @@ Let $T$ be a complete theory without finite models. Prove that the following are
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Independence and dimension}
 
-Thoughout this section we assume that $T$ is a complete strongly minimal theory.  
+Thoughout this section we assume that $T$ is a complete strongly minimal theory.
+ 
 
-When ${\mr a}\notin\acl B$ we say that ${\mr a}$ is \emph{algebraically independent from\/} $B$. We say that $B$ is an \emph{algebraically independent set\/} if every ${\mr a}\in B$ is independent from $B\sm\big\{{\mr a}\big\}$. Below we shall abbreviate $B\cup\big\{{\mr a}\big\}$ by \emph{$B,{\mr a}$} and  $B\sm\big\{{\mr a}\big\}$ by \emph{$B\sm{\mr a}$}. 
+When ${\mr a}\notin\acl B$ we say that ${\mr a}$ is \emph{algebraically independent from\/} $B$.
+We say that $B$ is an \emph{algebraically independent set\/} if every ${\mr a}\in B$ is independent from $B\sm\big\{{\mr a}\big\}$.
+Below we shall abbreviate $B\cup\big\{{\mr a}\big\}$ by \emph{$B,{\mr a}$} and  $B\sm\big\{{\mr a}\big\}$ by \emph{$B\sm{\mr a}$}.
 
-The following is a pivotal property of independence that holds in strongly minimal structures. It is called \emph{symmetry\/} or \emph{exchange principle}. For every $B$ and every pair of elements ${\mr a},{\mr b}\in\U\sm\acl B$
+
+The following is a pivotal property of independence that holds in strongly minimal structures.
+It is called \emph{symmetry\/} or \emph{exchange principle}.
+For every $B$ and every pair of elements ${\mr a},{\mr b}\in\U\sm\acl B$
 
 \ceq{\hfill {\mr b}\in\acl (B,{\mr a})}{\IFF}{{\mr a}\in\acl(B,{\mr b})}
 
-Note that when $T$ is the theory of vector spaces (over any fixed filed) this principle is the so called \emph{Steinitz exchange lemma}.
+Note that when $T$ is the theory of vector spaces (over any fixed field) this principle is the so called \emph{Steinitz exchange lemma}.
 
 \begin{theorem} 
-($T$ strongly minimal.) Independence is symmetric. That is, if ${\mr a},{\mr b}\notin\acl B$ then ${\mr b}\in\acl (B,{\mr a})\IFF{\mr a}\in\acl(B,{\mr b})$
+($T$ strongly minimal.) Independence is symmetric.
+That is, if ${\mr a},{\mr b}\notin\acl B$ then ${\mr b}\in\acl (B,{\mr a})\IFF{\mr a}\in\acl(B,{\mr b})$
 \end{theorem} 
 
 \begin{proof} 
-Suppose ${\mr b}\notin\acl(B,{\mr a})$ and ${\mr a}\in\acl(B,{\mr b})$. We prove that ${\mr a}\in\acl B$. Fix a formula $\phi({\mr x},{\mr y})\in L(B)$ such that $\phi({\mr x},{\mr b})$ witness ${\mr a}\in\acl(B,{\mr b})$, i.e.\@ for some $n$
+Suppose ${\mr b}\notin\acl(B,{\mr a})$ and ${\mr a}\in\acl(B,{\mr b})$.
+We prove that ${\mr a}\in\acl B$.
+Fix a formula $\phi({\mr x},{\mr y})\in L(B)$ such that $\phi({\mr x},{\mr b})$ witness ${\mr a}\in\acl(B,{\mr b})$, i.e.\@ for some $n$
 
 \ceq{\hfill\phi({\mr a},{\mr b})}{\wedge}{\E^{\le n}{\mr x}\,\phi({\mr x},{\mr b}).}
 
@@ -256,21 +275,25 @@ As ${\mr b}\notin\acl(B,{\mr a})$, the formula
 
 \ceq{\hfill\psi({\mr a},{\mr y})\medrel{=}\phi({\mr a},{\mr y})}{\wedge}{\E^{\le n}{\mr x}\,\phi({\mr x},{\mr y}).}
 
-is not algebraic. Therefore, by strong minimality, $\psi({\mr a},{\mr y})$ has cofinitely many solutions. Hence every model containing $B$ contains a solution of $\psi({\mr a},{\mr y})$. As ${\mr a}$ is algebraic in any of these solutions, ${\mr a}$ belongs to every model containing $B$. Therefore, ${\mr a}\in\acl B$ by Theorem~\ref{thm_fmgalois}.
+is not algebraic.
+Therefore, by strong minimality, $\psi({\mr a},{\mr y})$ has cofinitely many solutions.
+Hence every model containing $B$ contains a solution of $\psi({\mr a},{\mr y})$.
+As ${\mr a}$ is algebraic in any of these solutions, ${\mr a}$ belongs to every model containing $B$.
+Therefore, ${\mr a}\in\acl B$ by Theorem~\ref{thm_fmgalois}.
 \end{proof}
 
-% 
-% \begin{remark}
-% Dal carattere finito della chiusura agebrica segue facilmente che l'unione di una catena di insiemi indipendenti \`e un insieme indipendente. Questo \`e rilevante, per esempio, per poter applicare il lemma di Zorn.
-% \end{remark}
-
-We say that $B\subseteq C$ is a \emph{basis\/} of $C$ if $B$ is an independent set and $C\subseteq\acl B$. The following theorem proves that all bases have the same cardinality, which we call the  \emph{dimension\/} of $C$ and denote by \emph{$\dim C$}. First we need the following lemma.
+We say that $B\subseteq C$ is a \emph{basis\/} of $C$ if $B$ is an independent set and $C\subseteq\acl B$.
+The following theorem proves that all bases have the same cardinality, which we call the  \emph{dimension\/} of $C$ and denote by \emph{$\dim C$}.
+First we need the following lemma.
 
 \begin{lemma}\label{indipendenza+1}
 ($T$ strongly minimal.) If $B$ is an independent set and ${\mr a}\notin \acl B$ then $B,{\mr a}$ is also an independent set.
 \end{lemma}
 \begin{proof}
-Suppose $B,{\mr a}$ is not independent and that ${\mr a}\notin \acl B$. Then ${\mr b}\in\acl(B\sm {\mr b},{\mr a})$ for some ${\mr b}\in B$. As ${\mr a},{\mr b}\notin\acl(B\sm {\mr b})$, from symmetry we obtain ${\mr a}\in\acl(B\sm {\mr b},{\mr b})=\acl B$. Hence $B$ is not an independent set. 
+Suppose $B,{\mr a}$ is not independent and that ${\mr a}\notin \acl B$.
+Then ${\mr b}\in\acl(B\sm {\mr b},{\mr a})$ for some ${\mr b}\in B$.
+As ${\mr a},{\mr b}\notin\acl(B\sm {\mr b})$, from symmetry we obtain ${\mr a}\in\acl(B\sm {\mr b},{\mr b})=\acl B$.
+Hence $B$ is not an independent set.
 \end{proof}
 
 \begin{corollary}\label{basemassimale}
@@ -367,7 +390,8 @@ As $|\acl A|\le |L(A)|$, all models of cardinality $\lambda$ have the same dimen
 Assume \ssf{2} and let $k:M\imp N$ be an elementary map of cardinality $<|N|$ and let ${\mr b}\in M$.
 We want an extension of $k$ defined in ${\mr b}$.
 If ${\mr b}\in\acl(\dom k)$ then the required extension exists by Proposition~\ref{prop_estensionemappechiusuraalgebrica}.
-Otherwise, we pick any element ${\mr c}\in N\sm\acl(\range k)$. Such an element exists as $|k|<\dim N=|N|$.
+Otherwise, we pick any element ${\mr c}\in N\sm\acl(\range k)$.
+Such an element exists as $|k|<\dim N=|N|$.
 Then $k\cup\big\{\<{\mr b},{\mr c}\>\big\}$ is the required extension by Proposition~\ref{prop_mappetraindipendenti}.
 
 \ssf{1}$\IMP$\ssf{2}.
