@@ -134,34 +134,47 @@ Prove the same claim with a type $p({\gr z})\subseteq L(A)$ for $\phi({\gr z})$.
 \begin{exercise}\label{ex_isosub}
 Let $a\in\U\sm\acl\0$.
 Prove that $\U$ is isomorphic to some $\V\preceq \U$ such that $a\notin\V$.
-Hint: let $\bar c$ be an enumeration of $\U$ and let $p(\bar u)=\tp(\bar c)$ prove that $p(\bar u)\cup\big\{ u_i\neq a :i<|\bar u|\big\}$ is realized in $\U$ and that any realization yields the required substructure of $\U$.\QED
+Hint: let $\bar c$ be an enumeration of $\U$ and let $p(\bar u)=\tp(\bar c)$ prove that 
+$p(\bar u)\cup\big\{ u_i\neq a :i<|\bar u|\big\}$ is realized in $\U$ and 
+that any realization yields the required substructure of $\U$.\QED
 \end{exercise}
 
 \begin{exercise}\label{pofu2}
 Let $C$ be a finite set.
 Prove that if $C\cap M\neq\0$ for every model $M$ containing $A$, then $C\cap\acl(A)\neq\0$.
 Hint: by induction on the cardinality of $C$.
-Suppose there is a $c\in C\sm\acl(A)$, then there is $\V\simeq\U$ such that $A\subseteq\V\preceq\U$ and $c\notin\V$, see Exercise~\ref{ex_isosub}.
+Suppose there is a $c\in C\sm\acl(A)$, then there is $\V\simeq\U$ such that 
+$A\subseteq\V\preceq\U$ and $c\notin\V$, see Exercise~\ref{ex_isosub}.
 Apply the induction hypothesis to $C'=C\cap\V$ with $\V$ for $\U$.\QED
 \end{exercise}
 
 
 \begin{exercise}\label{ex_acl_intersezioe_2_modelli}
 Prove that for every $A\subseteq N$ there is an $M$ such that $\acl A\,=\,M\cap N$.
-Hint: add the requirement $\acl(A_i)\cap N\subseteq\acl(A)$ to the construction used to prove the downward L\"owenheim-Skolem theorem. You need to prove that every consistent $\phi(x)\in L(A_i)$ has a solution $a$ such that $\acl(A_i,a)\cap N\subseteq\acl(A)$.
+Hint: add the requirement $\acl(A_i)\cap N\subseteq\acl(A)$ to the construction 
+used to prove the downward L\"owenheim-Skolem theorem.
+You need to prove that every consistent $\phi(x)\in L(A_i)$ has a solution $a$ such that 
+$\acl(A_i,a)\cap N\subseteq\acl(A)$.
 The required $a$ has to realize the type
 
-\hfil$\big\{\phi(x)\big\}\ \cup\ \Big\{\neg\big[\psi(b,x)\wedge\E^{\le n}y\,\psi(y,x)\big]\ :\ b\in N\sm\acl(A),\ \ \psi(y,x)\in L(A_i),\ \ n<\omega\Big\}$
+\hfil$\big\{\phi(x)\big\}\ \cup\ \Big\{\neg\big[\psi(b,x)\wedge\E^{\le n}y\,\psi(y,x)\big]
+\ :\ 
+b\in N\sm\acl(A),\ \ \psi(y,x)\in L(A_i),\ \ n<\omega\Big\}$
 
-whose consistence need to be verified.
-(See Exercise~\ref{ex_acl_intersezione_2_modelli_iso} for a different hint.)\QED%la cui consistenza dev'essere verificata.
-Si pu\`o usare l'esercizio~\ref{pofu2} oppure mostrare che il tipo qui sopra \`e chiuso per congiunzione e poi applicare l'esercizio~\ref{pofu} (che \`e pi\`u semplice).
+whose consistency need to be verified.
 \end{exercise}
 
 \begin{exercise}\label{ex_acl_intersezione_2_modelli_iso}
-Prove that for every $A\subseteq N$ there is an automorphism $f\in\Aut(\U/A)$ such that $\acl A\,=\,f[N]\cap N$. (This is a stronger version of the claim in Exercise~\ref{ex_acl_intersezioe_2_modelli}.) Hint: let $\bar c$ be an enumeration of $N$. Let $p(\bar x)=\tp(\bar c/A)$. Consider the type
+Prove that for every $A\subseteq N$ there is an automorphism $f\in\Aut(\U/A)$ such that 
+$\acl A\,=\,f[N]\cap N$. 
+(This is a stronger version of the claim in Exercise~\ref{ex_acl_intersezioe_2_modelli}.) 
+Hint: let $\bar c$ be an enumeration of $N$.
+Let $p(\bar x)=\tp(\bar c/A)$. 
+Consider the type
 
-\hfil$p(x)\ \cup\ \Big\{\neg\big[\psi(b,\bar x)\wedge\E^{\le n}y\,\psi(y,\bar x)\big]\ :\ b\in N\sm\acl(A),\ \ \psi(y,x)\in L(A),\ \ n<\omega\Big\}$
+\hfil$p(x)\ \cup\ \Big\{\neg\big[\psi(b,\bar x)\wedge\E^{\le n}y\,\psi(y,\bar x)\big]
+\ :\ 
+b\in N\sm\acl(A),\ \ \psi(y,x)\in L(A),\ \ n<\omega\Big\}$
 
 Any $\bar a\models p(\bar x)$ enumerates a model $A$-isomorphic to $N$.\QED
 \end{exercise}
@@ -174,11 +187,11 @@ Prove that the following are equivalent
 \item[1.] there is some model $M$ containing $A$ and such that $M\cap\phi(\U)=\0$;
 \item[2.] there is no consistent formula $\psi(z_1,\dots,z_n)\in L(A)$ such that
 
- \hfil$\displaystyle\psi(z_1,\dots,z_n)\imp\bigvee^n_{i=1}\phi(z_i)$.
+\hfil$\displaystyle\psi(z_1,\dots,z_n)\imp\bigvee^n_{i=1}\phi(z_i)$.
 \end{itemize}
 Hint: let $\bar c$ be an enumeration of $N^{|x|}$, where $N$ is any model containing $A$.
 Let $p(\bar z)=\tp(\bar c/A)$.
- Prove that \ssf{2} implies the consistency of $p(\bar z)\,\cup\, \big\{\neg\phi(z_i)\, :\, i<|\bar z|\big\}$ and deduce the existence of the required $M$.\QED
+Prove that \ssf{2} implies the consistency of $p(\bar z)\,\cup\, \big\{\neg\phi(z_i)\, :\, i<|\bar z|\big\}$ and deduce the existence of the required $M$.\QED
 \end{exercise}
 
 
@@ -186,16 +199,23 @@ Let $p(\bar z)=\tp(\bar c/A)$.
 \section{Strongly minimal theories\label{tfm}}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
+\def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox{15ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
 Finite and cofinite sets are always (trivially) definable in every structure.
 We say that $M$ is a \emph{minimal structure\/} all its definable subsets of arity one are finite or cofinite.
 Unfortunately, this notion is not elementary, i.e.\@ it is not a property of $\Th(M)$.
-For instance $\NN$ with only the order relation in the language is a minimal structure but none of its elementary extensions is.
- Hence the following definition: we say that $M$ is a \emph{strongly minimal structure\/} if it is minimal and all its elementary extensions are minimal.
+For instance $\NN$ with only the order relation in the language is a minimal structure but 
+none of its elementary extensions is.
+Hence the following definition: 
+we say that $M$ is a \emph{strongly minimal structure\/} if it is minimal and all its elementary extensions are minimal.
 
 We say that $T$, a consistent theory without finite models, is \emph{strongly minimal\/} if 
 for every formula $\phi({\mr x}\,;{\gr z})\in L$, where ${\mr x}$ has arity one, there is an  $n\in\omega$ tale che
 
-\hfil$T\ \ \proves\ \ \E^{\le n}{\mr x}\;\phi({\mr x}\,;{\gr z})\ \vee\ \E^{\le n}{\mr x}\;\neg\phi({\mr x}\,;{\gr z})$.
+\ceq{\hfill T}
+{\proves}
+{\E^{\le n}{\mr x}\;\phi({\mr x}\,;{\gr z})\ \vee\ \E^{\le n}{\mr x}\;\neg\phi({\mr x}\,;{\gr z}).}
 
 We show that the semantic notions match with and the syntactic one.
 
@@ -210,16 +230,20 @@ The following are equivalent
 \end{proposition}
 \begin{proof}
 Implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3} are immediate, we prove \ssf{3}$\IMP$\ssf{1}.
- Let $\phi({\mr x}\,;{\gr z})\in L$ and fix an elementary extension $N$ as required by \ssf{2}.
+Let $\phi({\mr x}\,;{\gr z})\in L$ and fix an elementary extension $N$ as required by \ssf{2}.
 Let $p({\gr z})\subseteq L$ be the following type
 
-\hfil$p({\gr z})\ \ =\ \ \Big\{ \E^{> n}{\mr x}\;\phi({\mr x}\,;{\gr z})\ \wedge\ \E^{> n}{\mr x}\;\neg\phi({\mr x}\,;{\gr z}) \ \ :\ \ n\in\omega\Big\}$.
+\ceq{\hfill p({\gr z})}
+{=}
+{\Big\{ \E^{> n}{\mr x}\;\phi({\mr x}\,;{\gr z})\ \wedge\ \E^{> n}{\mr x}\;\neg\phi({\mr x}\,;{\gr z}) \ \ :\ \ n\in\omega\Big\}.}
 
 As $N$ is minimal, $N\notmodels \E z\,p(z)$.
 By saturation $p(z)$ is not finitely consistent in $M$.
 Hence, for some $n$ 
 
-\hfil$M\ \ \models\ \  \A {\gr z}\ \Big[\E^{\le n}{\mr x}\;\phi({\mr x}\,;{\gr z})\ \vee\ \E^{\le n}{\mr x}\;\neg\phi({\mr x}\,;{\gr z})\Big]$.
+\ceq{\hfill M}
+{\models}
+{\A {\gr z}\ \Big[\E^{\le n}{\mr x}\;\phi({\mr x}\,;{\gr z})\ \vee\ \E^{\le n}{\mr x}\;\neg\phi({\mr x}\,;{\gr z})\Big].}
 
 which proves that $\Th(M)$ is strongly minimal.
 \end{proof}
@@ -242,6 +266,9 @@ Prove that the following are equivalent
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Independence and dimension}
+\def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox{35ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
 
 Thoughout this section we assume that $T$ is a complete strongly minimal theory.
  
