@@ -366,9 +366,10 @@ We write \emph{${\mr a}\cdot_{\!A}\mrB$} for $\O({\mr a}/A)\cdot_{\!A}\mrB$.
 Similarly for \emph{$\mrA\cdot_{\!A}{\mr b}$} 
 and \emph{${\mr a}\cdot_{\!A}{\mr b}$}.
 
-\begin{lemma}
-If $\mrA$ is type definable over $A$ then so is $\mrA\cdot_A{\mr b}$ for any $b$.
-\end{lemma}
+\begin{proposition}\label{prop_typedef_Ab}
+If $\mrA$ is type definable over $A$ then so is $\mrA\cdot_A{\mr b}$ 
+for any ${\mr b}$.
+\end{proposition}
 \begin{proof}
 The set  $\mrA\cdot_A{\mr b}$ is the union of $\mrA\cdot_A\{{\mr c}\}$ 
 as ${\mr c}$ ranges in ${\mr b}_A$.
@@ -376,9 +377,13 @@ as ${\mr c}$ ranges in ${\mr b}_A$.
 The set $\mrA\cdot_A\{{\mr c}\}$ is type definable, say by the 
 the type $\E{\mr y}\, p({\mr x}, {\mr y},{\mr c})$ where
 
-\ceq{\hfill p({\mr x}, {\mr y})}
+\ceq{\hfill p({\mr x}, {\mr y},  {\mr z})}
 {=}
-{{\mr y}\cnonfork_{\!A}{\mr c}\ \ \wedge\ \ {\mr y}\cdot_A{\mr c}\equiv_A{\mr x}}
+{{\mr y}\cnonfork_{\!A}{\mr c}
+\ \ \wedge\ \ 
+{\mr y}{\cdot}{\mr c}\equiv_A{\mr x}
+\ \ \wedge\ \ 
+{\mr y}\in\mrA}
 
 Note that if $f$ is any $A$-automorphism, then 
 $\E{\mr y}\, p({\mr x}, {\mr y},f{\mr c})$ defines $\mrA\cdot_A\{f{\mr c}\}$.
@@ -449,7 +454,9 @@ The quotient map $\mrG\to\mrG/{\equiv_A}$ is almost a homeomorphism.
 Assume $\nonforkc_{\!A}$ is $1$-stationary,
 see Definition~\ref{def_coheir_stationary}.
 Fix ${\mr a}\cnonfork_{\!A}{\mr b}$ arbitrarily.
-Then ${\mr a'}{\cdot}{\mr b'}\equiv_A{\mr a}{\cdot}{\mr b}$ for every ${\mr a'}\equiv_A{\mr a}$ and  ${\mr b'}\equiv_A{\mr b}$.
+Then ${\mr a'}{\cdot}{\mr b'}\equiv_A{\mr a}{\cdot}{\mr b}$ for every 
+${\mr a'}\equiv_A{\mr a}$ and  ${\mr b'}\equiv_A{\mr b}$ such that
+${\mr a'}\cnonfork_{\!A}{\mr b'}$.
 Or, in other words,
 
 \ceq{\hfill({\mr a}{\cdot}{\mr b})_A}{=}{{\mr a}\cdot_{\!A}{\mr b}.}
@@ -501,18 +508,27 @@ type-definable over $M$, then $\mrA={\mr b}_M$ for some (any) ${\mr b}\in\mrA$.
 \end{lemma}
 \begin{proof}
 Fix arbitrarily some ${\mr b}\in\mrA$.
+%
 By Corollary~\ref{corol_min_idempotent},
-the set $\mrA\cdot_{\!M}{\mr b}$ is idempotent.
-It is also type-definable and contained in $\mrA$, 
-therefore by minimality $\mrA\cdot_{\!M}{\mr b}=\mrA$.
+the set $\mrA\cdot_{\!M}{\mr b}$ is contained in $\mrA$, idempotent and 
+type-definable over $M$ by Proposition~\ref{prop_typedef_Ab}.
+%
+Therefore by minimality $\mrA\cdot_{\!M}{\mr b}=\mrA$.
+%
 Let ${\mr\Aa'}\subseteq\mrA$ contain those ${\mr a}\cnonfork_M{\mr b}$ such that ${\mr a}{\cdot}{\mr b}\equiv_M{\mr b}$.
-As ${\mr b}\in\mrA\cdot_{\!M}{\mr b}$, some ${\mr a}\in{\mr\Aa'}$ exists.
-It is easy to verify that ${\mr\Aa'}$ is type-definable and invariant over $M$.
-By minimality, ${\mr\Aa'}=\mrA$ and we can assume that ${\mr\Aa'}$ 
-is the minimal set satisfying the property above.
-For any ${\mr a}\in{\mr\Aa'}$, 
-it is easy to verify that ${\mr a}\cdot_{\!M}{\mr a}\in{\mr\Aa'}$.
-Then, by minimality, ${\mr a}_M={\mr\Aa'}=\mrA={\mr b}_M$.
+This set is non empty because ${\mr b}\in\mrA\cdot_{\!M}{\mr b}$.
+%
+It is easy to verify that ${\mr\Aa'}$ is type-definable over $A,{\mr b}$ and 
+idempotent.
+%
+It is also easy to verify that it is invariant over $M$,
+hence type-definable over $M$.
+%
+By minimality ${\mr\Aa'}=\mrA$, and therefore ${\mr b}\in{\mr\Aa'}$.
+%
+Then ${\mr b}\cdot_{\!M}{\mr b}={\mr b}$ by the definition of ${\mr\Aa'}$.
+%
+Hence ${\mr b}$ has idempotent orbit, then by minimality $\mrA={\mr b}_M$.
 \end{proof}
 
 \begin{corollary}\label{corol_idempotent}
@@ -583,7 +599,7 @@ Let $\mrG$ be a saturated elementary superstucture of $G$.
 As observed in Remark~\ref{rk_coheir_stationary}, 
 the language makes $\nonforkc_G$ trivially $1$-stationary.
 
-We write ${\mr\G'}$ for the type-definable set $\{{\mr x} : G\cpaw{\mr x}\notin G\}$,
+We write ${\mr\G'}$ for the type-definable set $\{{\mr x} : G\cpaw{\mr x}\}$,
 which is non empty because $G$ is $\cpaw$-covered.
 We claim that ${\mr\G'}$ is idempotent.
 In fact, if ${\mr a},{\mr b}\in{\mr\G'}$ 
@@ -593,7 +609,7 @@ Therefore, from the \cpawdot-closure of $\cpaw$ we infer ${\mr a}{\cdot}{\mr b}\
 
 Let ${\mr g}$ be an element of ${\mr\G'}$ with idempotent orbit as given by Corollary~\ref{corol_idempotent}.
 Let $p({\mr x})\in S(\mrG)$ be a global coheir of $\tp({\mr g}/G)$.
-Let ${\mr\bar g}$ a coheir sequence of $p({\mr x})$.
+Let ${\mr\bar g}$ a coheir sequence of $p({\mr x})$, that is,
 
 \ceq{\hfill {\mr g_i}}{\models}{p_{\restriction G,\,{\mr g_{\restriction i} }  }({\mr x}).}
 
