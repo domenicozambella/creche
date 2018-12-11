@@ -355,7 +355,9 @@ For any two sets $\mrA,\mrB\subseteq\mrG$ we define
 
 \ceq{\hfill\emph{$\mrA\cdot_{\!A}\mrB$}}
 {=}
-{\Big\{ {\mr a}{\cdot}{\mr b}\ :\ {\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\cnonfork_{\!A}{\mr b}\Big\}}
+{\Big\{ {\mr a}{\cdot}{\mr b}
+\ :\ 
+{\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\cnonfork_{\!A}{\mr b}\Big\}}
 
 In this and the next section we abbreviate $\O({\mr a}/A)$, 
 the orbit of ${\mr a}$ under $\Aut(\mrG/A)$, 
@@ -364,9 +366,33 @@ We write \emph{${\mr a}\cdot_{\!A}\mrB$} for $\O({\mr a}/A)\cdot_{\!A}\mrB$.
 Similarly for \emph{$\mrA\cdot_{\!A}{\mr b}$} 
 and \emph{${\mr a}\cdot_{\!A}{\mr b}$}.
 
+\begin{lemma}
+If $\mrA$ is type definable over $A$ then so is $\mrA\cdot_A{\mr b}$ for any $b$.
+\end{lemma}
+\begin{proof}
+The set  $\mrA\cdot_A{\mr b}$ is the union of $\mrA\cdot_A\{{\mr c}\}$ 
+as ${\mr c}$ ranges in ${\mr b}_A$.
+%$
+The set $\mrA\cdot_A\{{\mr c}\}$ is type definable, say by the 
+the type $\E{\mr y}\, p({\mr x}, {\mr y},{\mr c})$ where
+
+\ceq{\hfill p({\mr x}, {\mr y})}
+{=}
+{{\mr y}\cnonfork_{\!A}{\mr c}\ \ \wedge\ \ {\mr y}\cdot_A{\mr c}\equiv_A{\mr x}}
+
+Note that if $f$ is any $A$-automorphism, then 
+$\E{\mr y}\, p({\mr x}, {\mr y},f{\mr c})$ defines $\mrA\cdot_A\{f{\mr c}\}$.
+%
+Therefore if $q({\mr z})=\tp({\mr b}/A)$ then 
+$\E{\mr y},{\mr z}\, \big[q({\mr z})\cup p({\mr x}, {\mr y},{\mr z})\big]$ 
+defines $\mrA\cdot_A {\mr b}$.
+\end{proof}
+
 By the invariance of $\cnonfork_{\!A}$,
-for every $f\in\Aut(\mrG/A)$ we have $f[\mrA\cdot_{\!A}\mrB]=f[\mrA]\cdot_{\!A}f[\mrB]$.
-Therefore when $\mrA$ and $\mrB$ are invariant over $A$,
+for every $f\in\Aut(\mrG/A)$ we have 
+$f[\mrA\cdot_{\!A}\mrB]=f[\mrA]\cdot_{\!A}f[\mrB]$
+%
+Therefore, when $\mrA$ and $\mrB$ are invariant over $A$,
 also $\mrA\cdot_{\!A}\mrB$ is invariant over $A$.
 Below we mainly deal with invariant sets.
 
@@ -477,22 +503,25 @@ type-definable over $M$, then $\mrA={\mr b}_M$ for some (any) ${\mr b}\in\mrA$.
 Fix arbitrarily some ${\mr b}\in\mrA$.
 By Corollary~\ref{corol_min_idempotent},
 the set $\mrA\cdot_{\!M}{\mr b}$ is idempotent.
-It is also type-definable and contained in $\mrA$,
+It is also type-definable and contained in $\mrA$, 
 therefore by minimality $\mrA\cdot_{\!M}{\mr b}=\mrA$.
-Let ${\mr\Aa'}\subseteq\mrA$ be minimal among the type-definable idemponent sets such that ${\mr b}\in{\mr\Aa'}\cdot_{\!M}{\mr b}$. 
-Let ${\mr a}\in{\mr\Aa'}$ be such that ${\mr a}\cnonfork_M{\mr b}$ and ${\mr a}{\cdot}{\mr b}={\mr b}$.
-By associativity, $\big({\mr a}\cdot_{\!M}{\mr a}\big)\cdot_{\!M}{\mr b}={\mr b}_M$.
-Therefore is ${\mr a}_M$ idempotent.
-By minimality ${\mr a}_M={\mr\Aa'}=\mrA={\mr b}_M$.
+Let ${\mr\Aa'}\subseteq\mrA$ contain those ${\mr a}\cnonfork_M{\mr b}$ such that ${\mr a}{\cdot}{\mr b}\equiv_M{\mr b}$.
+As ${\mr b}\in\mrA\cdot_{\!M}{\mr b}$, some ${\mr a}\in{\mr\Aa'}$ exists.
+It is easy to verify that ${\mr\Aa'}$ is type-definable and invariant over $M$.
+By minimality, ${\mr\Aa'}=\mrA$ and we can assume that ${\mr\Aa'}$ 
+is the minimal set satisfying the property above.
+For any ${\mr a}\in{\mr\Aa'}$, 
+it is easy to verify that ${\mr a}\cdot_{\!M}{\mr a}\in{\mr\Aa'}$.
+Then, by minimality, ${\mr a}_M={\mr\Aa'}=\mrA={\mr b}_M$.
 \end{proof}
 
 \begin{corollary}\label{corol_idempotent}
-Under the same assumptions of the lemma above, every type-definable idempotent set contains an element with an idempotent orbit.\QED
+Under the same assumptions of the lemma above, every type-definable idempotent set contains an element 
+with an idempotent orbit.\QED
 \end{corollary}
 
 
 \section{Hindman theorem}\label{Hindman}
-
 
 In this section we merge the theory of idempotents presented in Section~\ref{semigroups}
 with the proof of Ramsey's theorem to obtain Hindman's theorem in a straightforward way.
@@ -538,7 +567,7 @@ Or, on any semigroup $G$, we could take the trivial relation $G^2$ --the theorem
 Let $\cpaw$ be a relation on a semigroup $G$.
 Assume that $G$ is  \cpawdot-closed and $\cpaw$-covered.
 Then for every finite coloring of $G$ 
-there is a $\cpaw$-chain $\bar a$ such that $\fp\,\bar a$ is monochromatic.
+there is an infinite $\cpaw$-chain $\bar a$ such that $\fp\,\bar a$ is monochromatic.
 \end{Hindman}
 
 Note that this implies that every commutative semigroup $G$ has an infinite monochromatic subset closed under finite sums of distinct elements (order $G$ arbitrarily).
