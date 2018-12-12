@@ -127,8 +127,9 @@ diagrams={>=latex}
 \def\nonforkc{\mathbin{\raise1.8ex\rlap{\kern1.1ex\rule{0.6ex}{0.1ex}}\rlap{\kern1.1ex\rule{0.1ex}{1.9ex}}\raise-0.3ex\hbox{$\smile$} } }
 
 
-\def\rela{\mathbin{\ooalign{\kern-0.4ex$-$\hidewidth\cr$<$}}}
-
+\def\cpaw{\mathbin{\ooalign{\kern-0.4ex$-$\hidewidth\cr$<$}}}
+\def\cpawdot{\ooalign{$\kern1.2ex\cdot$\cr$\cpaw$\cr}}
+\def\cev#1{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}}
 
 \def\sm{\smallsetminus}
 \def\atpmL{L_{\atpm}\hskip-.3ex}
@@ -159,7 +160,7 @@ diagrams={>=latex}
 
 %\def\hookdoubleheadrightarrow{\hookrightarrow\mathrel{\mspace{-15mu}}\rightarrow}
 
-\def\isomap{\rlap{\kern0.8ex\raisebox{1ex}{\scriptsize$\sim$}}\rightarrow}
+\def\isomap{\rlap{\kern0.8ex\raisebox{.8ex}{\scriptsize$\kern.2ex\sim$}}\rightarrow}
 
 \def\P{\EuScript P}
 \def\D{\EuScript D}
@@ -300,7 +301,7 @@ diagrams={>=latex}
 
 
 \renewcommand*{\emph}[1]{%
-\smash{\tikz[baseline]\node[rectangle, fill=emphcolor, rounded corners, inner xsep=.5ex, inner ysep=.2ex, anchor=base, minimum height = 3ex]{#1};}}
+\smash{\tikz[baseline]\node[rectangle, fill=emphcolor, rounded corners, inner xsep=0.2ex, inner ysep=0.2ex, anchor=base, minimum height = 2.7ex]{#1};}}
 
 
 \begin{document}
@@ -310,7 +311,7 @@ A Cr\`eche Course in Model Theory\\[3ex]%
 \parbox{\textwidth}{\normalfont\normalsize
 Domenico Zambella\\
 Università di Torino\\
-ORCID:~\href{https://orcid.org/0000-0003-1141-2898}{000-0003-1141-2898}\\[1ex]
+ORCID:~\href{https://orcid.org/0000-0003-1141-2898}{0000-0003-1141-2898}\\[1ex]
 \monthname\ \the\year}}
 \tableofcontents
 \subfile{preface}
@@ -331,5 +332,5 @@ ORCID:~\href{https://orcid.org/0000-0003-1141-2898}{000-0003-1141-2898}\\[1ex]
 \subfile{ramsey}
 \subfile{invariantL}
 \subfile{external}
-\subfile{measures}
+%\subfile{measures}
 \end{document}

@@ -246,7 +246,7 @@ The following is a fundamental notion in model theory.
 \begin{definition}\label{def_el_eq}
 We say that $M$ and $N$ are \emph{elementarily equivalent} if
 \begin{itemize}
-\item[ee.] $N\models\phi\ \ \IFF\ \ M\models \phi$,\hspace{4ex} for every $\phi\in L$.
+\item[ee.] $N\models\phi\ \ \IFF\ \ M\models \phi$,\hspace{4ex} for every sentence $\phi\in L$.
 \end{itemize}
 In this case we write \emph{$M\equiv N$}.
 More generally, we write \emph{$M\equiv_A N$\/} and say that $M$ and $N$ are elementarily equivalent \emph{over $A$} if the following hold
@@ -294,11 +294,11 @@ We generalize the definition of $\Th(M)$ to include parameters
 The following proposition is immediate
 
 \begin{proposition}\label{equivalentielementareequivaleza}
-For every pair of structures $M$ and $N$ and every $A\subseteq N\cap N$ the following are equivalent
+For every pair of structures $M$ and $N$ and every $A\subseteq M\cap N$ the following are equivalent
 \begin{itemize}
 \item[a.] $M\equiv_A N$;
 \item[b.] $\Th(M/A)=\Th(N/A)$;
-\item[c.] \parbox{26ex}{$N\models\phi(a)\ \ \IFF\ \ M\models \phi(a)$}  for every $\phi(x)\in L$ and every $a\in A^{|x|}$.
+\item[c.] \parbox{26ex}{$M\models\phi(a)\ \ \IFF\ \ N\models \phi(a)$}  for every $\phi(x)\in L$ and every $a\in A^{|x|}$.
 \item[d.]  \parbox{26ex}{$\phi(M) \cap A^{|x|}\ =\ \phi(N) \cap A^{|x|}$} for every $\phi(x)\in L$.\QED
 \end{itemize}
 \end{proposition}
@@ -431,7 +431,7 @@ We prove that \# holds for the formula $\E y\,\phi(x,y)$.
 \end{proof}
 
 
-\begin{corollary}
+\begin{corollary}\label{corol_def_set_invariant}
 If $h:M\imp N$ is an isomorphism then $h\big[\phi(M)\big]=\phi(N)$ for every $\phi(x)\in L$.\QED
 \end{corollary}
 
@@ -477,7 +477,7 @@ Prove that the following are equivalent
  \item[1.] $D$ is definable over $A$;
  \item[2.] either $D$ is finite and $D\subseteq A$, or $\neg D$ is finite and $\neg D\subseteq A$.
 \end{itemize}
-Hint: as $L$-structures are plain sets, every bijection $f:M\to M$ is an automorphism.\QED
+Hint: as structures are plain sets, every bijection $f:M\to M$ is an automorphism.\QED
 \end{exercise}
 
 \begin{exercise}\label{dlorlkurb}
@@ -491,9 +491,8 @@ Note that Theorem~\ref{thm_embeddings_preservation_E} proves that the property a
 \end{exercise}
 
 \begin{exercise}
-Assume that the language $L$ contains only the symbol $+$.
-Consider $\ZZ$ as a structure of signature $L$ with the usual interpretation of $+$.
-Prove that there is no existential formula that defines the set of even integers.
+Let $M$ be the model with domain $\ZZ$ in the language that contains only the symbol $+$ which is interpreted in the usual way.
+Prove that there is no existential formula $\phi(x)$ such that $\phi(M)$ is the set of odd integers.
 Hint: use Exercise~\ref{dlorlkurb}.\QED
 \end{exercise}
 
@@ -577,7 +576,7 @@ For $t_2$, $t_2$ closed terms of $L(N)$ define
 
 For $t$ a tuple of closed terms of $L(N)$ and $r\in L_{\rm rel}$ a relation symbol
 
-\ceq{\ssf{2$^*$}\hfill N/E\ \pmodels\ rt}{\IFF}{t^N\,E\;a\in r^N}\quad for some $a\in M^{|t|}$
+\ceq{\ssf{2$^*$}\hfill N/E\ \pmodels\ rt}{\IFF}{t^N\,E\;a}\quad for some $a\in r^N$
 
 Finally the definition is extended to all sentences $\phi\in\ L(N)$ by induction in the usual way
 
@@ -1120,26 +1119,26 @@ $N\models\E x\,\phi(x)\ \ \IMP\ \ N\models\phi(b)$ for some $b\in A$.
 In fact, this follows from \ssf{2} with $fa=x$ for $\phi(x)$.
 
 Write $M$ for the substructure of $N$ with domain $A$.
-By induction on the syntax we prove
+By induction on the syntax we prove that for every $\xi(x)\in L$
 
-\ceq{\hfill M\models\phi(a)}%
+\ceq{\hfill M\models\xi(a)}%
 {\IFF}%
-{N\models\phi(a)} for every $a\in M^{|x|}$.
+{N\models\xi(a)} for every $a\in M^{|x|}$.
 
-If $\phi(x)$ is atomic the claim follows from $M\subseteq N$ and the remarks underneath Definition~\ref{isomorfismodef}.
-The case of Boolean connectives is straightforward, so only the existential quantifier requires a proof
+If $\xi(x)$ is atomic the claim follows from $M\subseteq N$ and the remarks underneath Definition~\ref{isomorfismodef}.
+The case of Boolean connectives is straightforward, so only the existential quantifier requires a proof. So, let $\xi(x)$ be the formula $\E y\,\psi(x,y)$ and assume the induction hypothesis holds for $\psi(x,y)$
 
-\ceq{\hfill M\models\E x\,\phi(a,x)}%
+\ceq{\hfill M\models\E y\,\psi(a,y)}%
 {\IFF}%
-{M\models\phi(a,b)} for some $b\in M$
+{M\models\psi(a,b)} for some $b\in M$
 
 \ceq{}%
 {\IFF}%
-{N\models\phi(a,b)} for some $b\in M$
+{N\models\psi(a,b)} for some $b\in M$
 
 \ceq{}%
 {\IFF}%
-{N\models\E x\,\phi(a,x).}
+{N\models\E y\,\psi(a,y).}
 
 The second equivalence holds by induction hypothesis, in the last equivalence we use \ssf{2} for the implication $\PMI$.
 \end{proof}
@@ -1173,18 +1172,17 @@ Therefore the bijection between the elements of $b$ and the natural numbers (whi
 The notion of equinumerosity has a different meaning in $M$ and in the real world, but those who live in $M$ cannot realise this.
 
 \begin{void_thm}[Downward L\"owenheim-Skolem Theorem]\label{lowenheimskolemallingiu}
-Let $N$ be an infinite $L$-structure and let $A\subseteq N$.
+Let $N$ be an infinite structure and fix some set $A\subseteq N$.
 Then there is a structure $M$ of cardinality $\le|L(A)|$ such that $A\subseteq M\preceq N$.
 
 \end{void_thm}
 
 \begin{proof}
 Set $\lambda=|L(A)|$.
-Below we construct a chain $\<A_i:i<\lambda\>$ of subsets of $N$.
-The chain begins at $A_0=A$ and is continuous at limit ordinals.
-Finally we set $M=\bigcup_{i<\lambda}A_i$.
+Below we construct a chain $\<A_i:i<\omega\>$ of subsets of $N$.
+The chain begins at $A_0=A$.
+Finally we set $M=\bigcup_{i<\omega}A_i$.
 All $A_i$ will have cardinality $\le\lambda$ so  $|M|\le\lambda$ follows.
-
 
 Now we construct $A_{i+1}$ given $A_i$.
 Assume as induction hypothesis that $|A_i|\le\lambda$.
@@ -1194,28 +1192,40 @@ For every $k$ pick $a_k\in N$ such that $N\models\phi_k(a_k)$.
  Define $A_{i+1}=A_i\cup\{a_k\;:\;k<\lambda\}$.
 Then $|A_{i+1}|\le\lambda$ is clear.
 
-Now use Tarski-Vaught test to prove $M\preceq N$.
+We use the Tarski-Vaught test to prove $M\preceq N$.
 Suppose $\phi(x)\in L(M)$ is consistent in $N$.
 As finitely many parameters occur in formulas, $\phi(x)\in L(A_i)$ for some $i$.
-Then $\phi(x)$ is among the formulas enumerated above and $A_{i+1}\subseteq M$ contains a solution of $\phi(x)$.
+Then $\phi(x)$ is among the formulas we enumerated at stage $i$ and $A_{i+1}\subseteq M$ contains a solution of $\phi(x)$.
 \end{proof}
 
 We will need to adapt the construction above to meet more requirements on the model $M$.
 To better control the elements that enters $M$ it is convenient to add one element at the time (above we add $\lambda$ elements at each stage).
 We need to enumerate formulas with care if we want to complete the construction by stage $\lambda$.
 
+% \begin{void_thm}[Second proof of the downward L\"owenheim-Skolem Theorem]\label{diym_II_lowenheimskolemallingiu}\rm
+% From set theory we know there is a bijection $\pi:\lambda\to\lambda^2$ such that $\pi_1(i)$ and $\pi_2(i)$, the two components of $\pi(i)$, are both $\le i$.
+% Suppose we have defined the sets $A_j$ for every $j\le i$.
+% Let $\<\phi_k(x)\;:\;k<\lambda\>$ be an enumeration of the formulas in $L(A_j)$, where $j=\pi_1(i)$.
+% Let $b$ be a solution of the formula $\phi_k(x)$ for $k=\pi_2(i)$ and define $A_{i+1}=A_i\cup\{b\}$.
+% 
+% We use Tarski-Vaught test to prove $M\preceq N$.
+% Let $\phi(x)\in L(M)$ be consistent in $N$.
+% Then $\phi(x)\in L(A_j)$ for some $j$. Say, $\phi(x)$ is the $k$-th formula in the enumeration above.
+% As $\pi$ is a bijection, there is an $i$ such that $\pi_1(i)=j$ and $\pi_2(i)=k$.
+% Hence a witness of $\phi(x)$ is enumerated in $M$ at stage $i+1$.\QED
+% \end{void_thm}
+
+
 \begin{void_thm}[Second proof of the downward L\"owenheim-Skolem Theorem]\label{diym_II_lowenheimskolemallingiu}\rm
-From set theory we know there is a bijection $\pi:\lambda\to\lambda^2$ such that $\pi_1(i)$ and $\pi_2(i)$, the two components of $\pi(i)$, are both $\le i$.
-Suppose we have defined the set $A_j$ for very $j\le i$.
-Let $\<\phi_k(x)\;:\;k<\lambda\>$ be an enumeration of the formulas in $L(A_{\pi_1(i)})$.
-Let $b$ be a solution of the $\phi_k(x)$ for $k=\pi_2(i)$ and define $A_{i+1}=A_i\cup\{b\}$.
+From set theory we know that there is a bijection $\pi:\lambda^2\to\lambda$ such that $j,k\le\pi(j,k)$ for all $j,k<\lambda$.
+Suppose we have defined the sets $A_j$ for every $j\le i$ and let $\<\phi_k(x)\;:\;k<\lambda\>$ be an enumeration of the consistent formulas of $L(A_j)$. Pick $j,k<i$ such that $\pi(j,k)=i$.
+Let $b$ be a solution of the formula $\phi_k(x)$ and define $A_{i+1}=A_i\cup\{b\}$.
 
 We use Tarski-Vaught test to prove $M\preceq N$.
 Let $\phi(x)\in L(M)$ be consistent in $N$.
-As $\pi$ is a bijection, there is an $i$ such that $\phi(x)$ is the $\pi_2(i)$-th formula enumerated in $L(A_{\pi_1(i)})$.
-Hence a witness of $\phi(x)$ is enumerated in $M$ at stage $i+1$.\QED
+Then $\phi(x)\in L(A_j)$ for some $j$. Say, $\phi(x)$ is the $k$-th formula in the enumeration above.
+Hence a witness of $\phi(x)$ is enumerated in $M$ at stage $\pi(j,k)+1$.\QED
 \end{void_thm}
-
 
 % \begin{exercise}\label{LSenumerazione}
 % Con la notazione usata nella dimostrazione del teorema di L\"owenheim-Skolem, si dimostri che $A_i\subseteq\{a_k\;:\;k<\lambda\}$.
@@ -1226,7 +1236,7 @@ Hence a witness of $\phi(x)$ is enumerated in $M$ at stage $i+1$.\QED
 Assume $L$ is countable and let $M\preceq N$ have arbitrary (large) cardinality.
 Let $A\subseteq N$ be countable.
 Prove there is a countable model $K$ such that $A\subseteq K\preceq N$ and $K\cap M\preceq N$ (in particular, $K\cap M$ is a model).
- Hint: adapt the construction used to prove the downward L\"owenheim-Skolem Theorem.\QED
+Hint: adapt the construction used to prove the downward L\"owenheim-Skolem Theorem.\QED
 \end{exercise}
 
 

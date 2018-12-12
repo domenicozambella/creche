@@ -93,7 +93,7 @@ $a_{\restriction i},a_i,{\mr c_{\restriction n}}$ satisfies the induction hypoth
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ehrenfeucht-Mostowski construction of indiscernibles}\label{EM}
 
-Let $I,<_I$ be an infinite linear order and let ${\mr\bar a}$ be an $I\jj$sequence.
+Let $I,<_I$ be an infinite linear order and let ${\mr\bar a}$ be an $I$-sequence.
 Fix a tuple of distinct variables ${\mr\bar x}=\<{\mr x_i}: i<\omega\>$.
 We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$} and say that $p({\mr\bar x})$ is the \emph{Ehren\-feucht-Mostowski type\/} of ${\mr\bar a}$ over $A$ if
 
@@ -104,22 +104,23 @@ while ${\mr\bar a}$ is an arbitrary infinite sequence.
 Clearly,
 ${\mr x_i}$ and  ${\mr a_i}$ are tuple of the same sort.
 
-Note also that if ${\mr\bar a}$ is $A\jj$indiscernible then $\EMtp({\mr\bar a}/A)$ is a complete type,
+Note also that if ${\mr\bar a}$ is $A$-indiscernible then $\EMtp({\mr\bar a}/A)$ is a complete type,
 and vice versa.
 So,
-if ${\mr\bar a}$ and ${\mr\bar c}$ are two $A\jj$indiscernible $I\jj$sequences with the same Ehren\-feucht-Mostowski type over $A$,
+if ${\mr\bar a}$ and ${\mr\bar c}$ are two $A$-indiscernible $I$-sequences with the same Ehren\-feucht-Mostowski type over $A$,
 then ${\mr\bar a}\equiv_A {\mr\bar c}$.
 
 \theoremstyle{mio}
 \newtheorem{EhrenfeuchtMostowski}[thm]{Ehrenfeucht-Mostowski Theorem}
 \begin{EhrenfeuchtMostowski}\label{thm_EM}
 Let $I,<_I$ and $J,<_J$ be two infinite linear orders such that $|J|\le \kappa$.
-Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is an $J\jj$sequence of $A$-indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/A)\subseteq\EMtp({\mr\bar c}/A)$.
+Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is an $J$-sequence of $A$-indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/A)\subseteq\EMtp({\mr\bar c}/A)$.
 \end{EhrenfeuchtMostowski}
 
 
 \begin{proof}
 We prove the theorem for $I=J=\omega$ and leave the general case to the reader.
+Let $q({\mr\bar x})=\EMtp({\mr\bar a}/A)$.
 Let ${\mr\bar c}$ be any realization of the following type yields a $J$-sequence of $A$-indiscernibles.
 
 \ceq{\hfill q({\mr\bar x})}
@@ -134,41 +135,46 @@ We prove that for $k$ and $n$ arbitrary large and every $\phi_1,\dots,\phi_k\in 
 
 \ceq{\ssf{\#}}
 {}
-{\Big\{\phi_i({\mr x_{\restriction J_0}})\iff\phi_i({\mr x_{\restriction I_0}})\ :\  I_0, J_0\in{\omega\choose n}\textrm{ and } i\in[k]\Big\}.}
+{\Big\{\phi_i({\mr x_{\restriction I_0}})\iff\phi_i({\mr x_{\restriction J_0}})\ :\  I_0, J_0\in{\omega\choose n}\textrm{ and } i\in[k]\Big\}.}
 
 Consider the subsets of $[k]$ as colors and let $f$ be the coloring of ${\omega\choose n}$ that maps $I_0$ to the set $\big\{i\ :\ \phi_i({\mr a_{\restriction I_0}})\big\}$.
 By the Ramsey theorem,
 there is some infinite monochromatic set $H\subseteq\omega$.
-As $\omega$ has order type $\omega$,
-so does $H$,
-and it is immediate that ${\mr a_{\restriction H}}$ realizes \ssf{\#},
+Hence
+
+\ceq{}
+{}
+{\Big\{\phi_i({\mr a_{\restriction I_0}})\iff\phi_i({\mr a_{\restriction J_0}})\ :\  I_0, J_0\in{H\choose n}\textrm{ and } i\in[k]\Big\}.}
+
+As $H$ has order type $\omega$,
+it is immediate that ${\mr a_{\restriction H}}$ realizes \ssf{\#},
 as required to prove the theorem with $I=J=\omega$.
 \end{proof}
 
 
 \begin{proposition}\label{prop_indiscernibles_set_model}
-  Let ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ be a sequence of $A$-indiscernibles.
+Let ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ be a sequence of $A$-indiscernibles.
 Then ${\mr\bar a}$ is indiscernible over some model $M$ containing $A$.
 \end{proposition}
 
 \begin{proof}
-  Fix an arbitrary model $M$ containing $A$.
-By Theorem~\ref{thm_EM} there is an $I\jj$sequence of $M\jj$indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/M)\subseteq\EMtp({\mr\bar c}/M)$.
-As ${\mr\bar a}$ is an $A\jj$indiscernible sequence ${\mr\bar a}\equiv_A{\mr\bar c}$.
+Fix an model $M$ containing $A$.
+By Theorem~\ref{thm_EM} there is an $I$-sequence of $M$-indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/M)\subseteq\EMtp({\mr\bar c}/M)$.
+As ${\mr\bar a}$ is an $A$-indiscernible sequence ${\mr\bar a}\equiv_A{\mr\bar c}$.
 Therefore $h\,{\mr\bar c}={\mr\bar a}$ for some some $h\in\Aut(\U/A)$.
 Hence ${\mr\bar a}$ is indiscernible over $h[M]$.
 \end{proof}
 
 \begin{exercise}
-Let $\bar a=\<a_i:i\in I\>$ be an $A\jj$indiscernible sequence and let $J\supseteq I$ with $|J|\le \kappa$.
-Then there is an $A\jj$indiscernible sequence $\bar c=\<c_i:i\in J\>$ such that $c_{\restriction I}=\bar a$.\QED
+Let $\bar a=\<a_i:i\in I\>$ be an $A$-indiscernible sequence and let $J\supseteq I$ with $|J|\le \kappa$.
+Then there is an $A$-indiscernible sequence $\bar c=\<c_i:i\in J\>$ such that $c_{\restriction I}=\bar a$.\QED
 \end{exercise}
 
 \begin{exercise}
 Let  $p({\mr x})\in S(\U)$ be a global type invariant over $A$.
 Let ${\mr a},
 {\mr b}\models p_{\restriction A}({\mr x})$.
-Prove that there is a sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ such that ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are both sequences of $A\jj$indiscernibles.\QED
+Prove that there is a sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ such that ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are both sequences of $A$-indiscernibles.\QED
 \end{exercise}
 
 \begin{comment}
@@ -349,7 +355,9 @@ For any two sets $\mrA,\mrB\subseteq\mrG$ we define
 
 \ceq{\hfill\emph{$\mrA\cdot_{\!A}\mrB$}}
 {=}
-{\Big\{ {\mr a}{\cdot}{\mr b}\ :\ {\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\cnonfork_{\!A}{\mr b}\Big\}}
+{\Big\{ {\mr a}{\cdot}{\mr b}
+\ :\ 
+{\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\cnonfork_{\!A}{\mr b}\Big\}}
 
 In this and the next section we abbreviate $\O({\mr a}/A)$, 
 the orbit of ${\mr a}$ under $\Aut(\mrG/A)$, 
@@ -358,9 +366,38 @@ We write \emph{${\mr a}\cdot_{\!A}\mrB$} for $\O({\mr a}/A)\cdot_{\!A}\mrB$.
 Similarly for \emph{$\mrA\cdot_{\!A}{\mr b}$} 
 and \emph{${\mr a}\cdot_{\!A}{\mr b}$}.
 
+\begin{proposition}\label{prop_typedef_Ab}
+If $\mrA$ is type definable over $A$ then so is $\mrA\cdot_A{\mr b}$ 
+for any ${\mr b}$.
+\end{proposition}
+\begin{proof}
+The set  $\mrA\cdot_A{\mr b}$ is the union of $\mrA\cdot_A\{{\mr c}\}$ 
+as ${\mr c}$ ranges in ${\mr b}_A$.
+%$
+The set $\mrA\cdot_A\{{\mr c}\}$ is type definable, say by the 
+the type $\E{\mr y}\, p({\mr x}, {\mr y},{\mr c})$ where
+
+\ceq{\hfill p({\mr x}, {\mr y},  {\mr z})}
+{=}
+{{\mr y}\cnonfork_{\!A}{\mr c}
+\ \ \wedge\ \ 
+{\mr y}{\cdot}{\mr c}\equiv_A{\mr x}
+\ \ \wedge\ \ 
+{\mr y}\in\mrA}
+
+Note that if $f$ is any $A$-automorphism, then 
+$\E{\mr y}\, p({\mr x}, {\mr y},f{\mr c})$ defines $\mrA\cdot_A\{f{\mr c}\}$.
+%
+Therefore if $q({\mr z})=\tp({\mr b}/A)$ then 
+$\E{\mr y},{\mr z}\, \big[q({\mr z})\cup p({\mr x}, {\mr y},{\mr z})\big]$ 
+defines $\mrA\cdot_A {\mr b}$.
+\end{proof}
+
 By the invariance of $\cnonfork_{\!A}$,
-for every $f\in\Aut(\mrG/A)$ we have $f[\mrA\cdot_{\!A}\mrB]=f[\mrA]\cdot_{\!A}f[\mrB]$.
-Therefore when $\mrA$ and $\mrB$ are invariant over $A$,
+for every $f\in\Aut(\mrG/A)$ we have 
+$f[\mrA\cdot_{\!A}\mrB]=f[\mrA]\cdot_{\!A}f[\mrB]$
+%
+Therefore, when $\mrA$ and $\mrB$ are invariant over $A$,
 also $\mrA\cdot_{\!A}\mrB$ is invariant over $A$.
 Below we mainly deal with invariant sets.
 
@@ -372,16 +409,15 @@ For every $A$-invariant sets $\mrA$, $\mrB$, and  $\mrC$.
 {\big(\mrA\cdot_{\!A}\mrB\big)\cdot_{\!A}\mrC}
 \end{proposition}
 \begin{proof}
-Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ for some ${\mr a}\cnonfork_{\!A}{\mr b}{\cdot}{\mr c}$ and ${\mr b}\cnonfork_{\!A}{\mr c}$.
+Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ where ${\mr a}\cnonfork_{\!A}{\mr b}{\cdot}{\mr c}$ and ${\mr b}\cnonfork_{\!A}{\mr c}$.
 By extension (Lemma~\ref{lem_coheir_independence}),
 there exists ${\mr a'}$ such that 
-${\mr a'}\equiv_{A,\,{\mr b}{\cdot}{\mr c}}{\mr a}\nonforkc_{\!A}{\mr b}{\cdot}{\mr c},\,{\mr a},\,{\mr c}$.
+${\mr a}\equiv_{A,\,{\mr b}{\cdot}{\mr c}}{\mr a'}\cnonfork_{\!A}{\mr b}{\cdot}{\mr c},\,{\mr a},\,{\mr b},\,{\mr c}$.
 By transitivity (again Lemma~\ref{lem_coheir_independence}),
 ${\mr a'}{\cdot}{\mr b}\cnonfork_{\!A}{\mr c}$.
 Therefore ${\mr a'}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.
-Finally,
-as ${\mr a'}\equiv_{A,\,{\mr b}{\cdot}{\mr c}}{\mr a}$,
-also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by invariance.
+Finally, as ${\mr a'}\equiv_{A,\,{\mr b}{\cdot}{\mr c}}{\mr a}$,
+also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by $A$-invariance.
 \end{proof}
 
 Let $\mrA$ be a non empty set.
@@ -410,7 +446,7 @@ We check that if $\mrA$ is idempotent so is $\mrA\cdot_{\!A}\mrB$
 \end{proof}
 
 We show that, under the assumption of stationarity,
-the operation $\cdot_{\!A}$ is a associative.
+the operation $\cdot_{\!A}$ is an associative.
 The quotient map $\mrG\to\mrG/{\equiv_A}$ is almost a homeomorphism.
 
 
@@ -418,7 +454,10 @@ The quotient map $\mrG\to\mrG/{\equiv_A}$ is almost a homeomorphism.
 Assume $\nonforkc_{\!A}$ is $1$-stationary,
 see Definition~\ref{def_coheir_stationary}.
 Fix ${\mr a}\cnonfork_{\!A}{\mr b}$ arbitrarily.
-Then ${\mr a'}{\cdot}{\mr b'}\equiv_A{\mr a}{\cdot}{\mr b}$ for every ${\mr a'}\equiv_A{\mr a}$ and  ${\mr b'}\equiv_A{\mr b}$. Or, in other words,
+Then ${\mr a'}{\cdot}{\mr b'}\equiv_A{\mr a}{\cdot}{\mr b}$ for every 
+${\mr a'}\equiv_A{\mr a}$ and  ${\mr b'}\equiv_A{\mr b}$ such that
+${\mr a'}\cnonfork_{\!A}{\mr b'}$.
+Or, in other words,
 
 \ceq{\hfill({\mr a}{\cdot}{\mr b})_A}{=}{{\mr a}\cdot_{\!A}{\mr b}.}
 \end{proposition}
@@ -468,57 +507,83 @@ idempotent sets that are
 type-definable over $M$, then $\mrA={\mr b}_M$ for some (any) ${\mr b}\in\mrA$.
 \end{lemma}
 \begin{proof}
+Fix arbitrarily some ${\mr b}\in\mrA$.
+%
 By Corollary~\ref{corol_min_idempotent},
-for every ${\mr b}\in\mrA$ the set $\mrA\cdot_{\!M}{\mr b}$ is idempotent.
-It is also type-definable and contained in $\mrA$,
-therefore by minimality $\mrA\cdot_{\!M}{\mr b}=\mrA$.
-Then there is a ${\mr a}\in\mrA$ such that ${\mr a}\cnonfork_M{\mr b}$ and ${\mr a}{\cdot}{\mr b}={\mr b}$.
-By associativity, the set ${\mr a}\cdot_{\!M}{\mr b}$ is idempotent.
-By Corollary~\ref{corol_orbits_associative},
-it coincides with $({\mr a}{\cdot}{\mr b})_M={\mr b}_M$.
-The theorem follows by minimality.
+the set $\mrA\cdot_{\!M}{\mr b}$ is contained in $\mrA$, idempotent and 
+type-definable over $M$ by Proposition~\ref{prop_typedef_Ab}.
+%
+Therefore by minimality $\mrA\cdot_{\!M}{\mr b}=\mrA$.
+%
+Let ${\mr\Aa'}\subseteq\mrA$ contain those ${\mr a}\cnonfork_M{\mr b}$ such that ${\mr a}{\cdot}{\mr b}\equiv_M{\mr b}$.
+This set is non empty because ${\mr b}\in\mrA\cdot_{\!M}{\mr b}$.
+%
+It is easy to verify that ${\mr\Aa'}$ is type-definable over $A,{\mr b}$ and 
+idempotent.
+%
+It is also easy to verify that it is invariant over $M$,
+hence type-definable over $M$.
+%
+By minimality ${\mr\Aa'}=\mrA$, and therefore ${\mr b}\in{\mr\Aa'}$.
+%
+Then ${\mr b}\cdot_{\!M}{\mr b}={\mr b}$ by the definition of ${\mr\Aa'}$.
+%
+Hence ${\mr b}$ has idempotent orbit, then by minimality $\mrA={\mr b}_M$.
 \end{proof}
 
 \begin{corollary}\label{corol_idempotent}
-Under the same assumptions of the lemma above, every type-definable idempotent set contains an element with an idempotent orbit.\QED
+Under the same assumptions of the lemma above, every type-definable idempotent set contains an element 
+with an idempotent orbit.\QED
 \end{corollary}
+
+
 \section{Hindman theorem}\label{Hindman}
 
-
-\def\reladot{\ooalign{$\kern1ex\cdot$\cr$\rela$\cr}}
-
 In this section we merge the theory of idempotents presented in Section~\ref{semigroups}
-with the proof of Ramsey's theorem to obtain Hindman's theorem in a straightforward way. 
+with the proof of Ramsey's theorem to obtain Hindman's theorem in a straightforward way.
+% Though this theorem is not explicitely stated in Newelski's papers, 
+% our proof may be deduced from his work (though the generalization to semigroups may require some work).
+
+Let ${\mr\bar a}$ be a tuple of elements of $\mrG$ of length $\le\omega$.
+We write $\fp\,{\mr\bar a}$ for the set of finite products of elements 
+of ${\mr\bar a}$ taken in increasing order. 
+Namely, 
+
+\ceq{\hfill\emph{$\fp\,{\mr\bar a}$}}
+{=}
+{\Big\{{\mr a_{i_0}}\kern-0.5ex\cdot\dots\cdot{\mr a_{i_k}}\ :\quad i_0<\dots<i_k<|{\mr\bar a}|,\ \ k<|{\mr\bar a}|\Big\}}. 
 
 
-Let ${\mr\bar a}$ be a tuple of elements of $\mrG$ of length $\le\omega$. 
-For any $n\le|{\mr\bar a}|$ we write $\fp_n\,{\mr\bar a}$ for the set of 
-finite products of $\le n$ elements of ${\mr\bar a}$ taken in increasing order.
-Namely,
-
-\ceq{\hfill\emph{$\fp_n\,{\mr\bar a}$}}{=}{\Big\{{\mr a_{i_0}}\kern-0.5ex\cdot\dots\cdot{\mr a_{i_k}}\ :\quad i_0<\dots<i_k<|{\mr\bar a}|,\ \ k< n\Big\}}.
-
-When $n=|{\mr\bar a}|$ we write \emph{$\fp\,{\mr\bar a}$}.
-
-Let \emph{$\rela$\/} be a relation on a semigroup $\mrG$. 
-Let $\mrC\subseteq\mrG$.
+% Let ${\mr\bar a}$ be a tuple of elements of $\mrG$ of length $\le\omega$. 
+% For any $n\le|{\mr\bar a}|$ we write $\fp_n\,{\mr\bar a}$ for the set of 
+% finite products of $\le n$ elements of ${\mr\bar a}$ taken in increasing order.
+% Namely,
+% 
+% \ceq{\hfill\emph{$\fp_n\,{\mr\bar a}$}}{=}{\Big\{{\mr a_{i_0}}\kern-0.5ex\cdot\dots\cdot{\mr a_{i_k}}\ :\quad i_0<\dots<i_k<|{\mr\bar a}|,\ \ k< n\Big\}}.
+% 
+% When $n=|{\mr\bar a}|$ we write \emph{$\fp\,{\mr\bar a}$}. 
+\bigskip
+Let \emph{$\cpaw$\/} be a relation on $\mrG$.
 Let $\mrA,\mrC\subseteq\mrG$.
-We say that $\mrA$ is \emph{$\rela$-covered\/} by $\mrC$ 
-if for every ${\mr a_1},\dots,{\mr a_n}\in\mrA$ there is ${\mr c}\in\mrC$ such that ${\mr a_i}\rela{\mr c}$ for all $i$. 
-We say that $\mrA$ is \emph{\reladot-closed\/} 
-if ${\mr a}\rela{\mr b}\rela{\mr c}$ implies ${\mr a}\rela{\mr b}{\cdot}{\mr c}$ 
+We say that $\mrA$ is \emph{$\cpaw$-covered by $\mrC$\/} 
+if for every ${\mr a_1},\dots,{\mr a_n}\in\mrA$ there are infinitely many ${\mr c}\in\mrC$ such that ${\mr a_i}\cpaw{\mr c}$ for all $i$.
+When $\mrA=\mrC$ we simply sat that $\mrA$ is \emph{$\cpaw$-covered}.
+We say that $\mrA$ is \emph{\cpawdot-closed\/} 
+if ${\mr a}\cpaw{\mr b}\cpaw{\mr c}$ implies ${\mr a}\cpaw{\mr b}{\cdot}{\mr c}$ 
 for all ${\mr a},{\mr b},{\mr c}\in\mrA$.
-A \emph{$\rela$-chain\/} in $\mrG$ is a tuple ${\mr\bar a}\in\mrG^\omega$ such that ${\mr a_i}\rela{\mr a_{i+1}}$.
+A \emph{$\cpaw$-chain\/} in $\mrG$ is a tuple ${\mr\bar a}\in\mrG^{\le\omega}$ such that ${\mr a_i}\cpaw{\mr a_{i+1}}$.
 
-There plenty of relations meeting the conditions of the theorem below, the most natural being orders and inequality (the symbol hints to these).
+The requirements on  $\cpaw$ are hardly restrictive.
+For example, on a free semigroup we can take the preorder relation given by the length of the words.
+Or, on any semigroup $G$, we could take the trivial relation $G^2$ --the theorems below would remain non trivial. %In Section~\ref{carlson} we will apply more elaborated relations. 
 
 \theoremstyle{mio}
 \newtheorem{Hindman}[thm]{Hindman Theorem}
 \begin{Hindman}\label{thm_Hindman}
-Let $\rela$ be a relation on a semigroup $G$.
-Assume that $G$ is  \reladot-closed and $\rela$-covered by $G$.
+Let $\cpaw$ be a relation on a semigroup $G$.
+Assume that $G$ is  \cpawdot-closed and $\cpaw$-covered.
 Then for every finite coloring of $G$ 
-there is a $\rela$-chain $\bar a$ such that $\fp\,\bar a$ is monochromatic.
+there is an infinite $\cpaw$-chain $\bar a$ such that $\fp\,\bar a$ is monochromatic.
 \end{Hindman}
 
 Note that this implies that every commutative semigroup $G$ has an infinite monochromatic subset closed under finite sums of distinct elements (order $G$ arbitrarily).
@@ -529,56 +594,65 @@ The novelty is all in Lemma~\ref{lem_Hindman}.
 \begin{proof}
 We interpret $G$ as a structure in a language 
 that extends the natural language of semigroups
-with a symbol for $\rela$ and one for each subset of $G$.
+with a symbol for $\cpaw$ and one for each subset of $G$.
 Let $\mrG$ be a saturated elementary superstucture of $G$.
 As observed in Remark~\ref{rk_coheir_stationary}, 
 the language makes $\nonforkc_G$ trivially $1$-stationary.
 
-Let ${\mr\G'}$ be the type-definable set $\{{\mr x} : G\rela{\mr x}\}$ 
-which is non empty because $\rela$ is $\rela$-covered by $G$. 
-We claim that ${\mr\G'}$ is idempotent. 
-In fact, if ${\mr a},{\mr b}\in{\mr\G'}$ and ${\mr a}\cnonfork_G{\mr b}$ 
-then, as $G\rela{\mr a},{\mr b}$, we must have that ${\mr a}\rela{\mr b}$. 
-Therefore, from the \reladot-closure of $\rela$ we infer ${\mr a}{\cdot}{\mr b}\in{\mr\G'}$.
+We write ${\mr\G'}$ for the type-definable set $\{{\mr x} : G\cpaw{\mr x}\}$,
+which is non empty because $G$ is $\cpaw$-covered.
+We claim that ${\mr\G'}$ is idempotent.
+In fact, if ${\mr a},{\mr b}\in{\mr\G'}$ 
+then, as $G\cpaw{\mr a},{\mr b}$ and ${\mr a}\cnonfork_G{\mr b}$, 
+we must have that ${\mr a}\cpaw{\mr b}$.
+Therefore, from the \cpawdot-closure of $\cpaw$ we infer ${\mr a}{\cdot}{\mr b}\in{\mr\G'}$.
 
 Let ${\mr g}$ be an element of ${\mr\G'}$ with idempotent orbit as given by Corollary~\ref{corol_idempotent}.
 Let $p({\mr x})\in S(\mrG)$ be a global coheir of $\tp({\mr g}/G)$.
-Let ${\mr\bar g}$ a coheir sequence of $p({\mr x})$. Note that, as the element of $\fp\,{\mr g_{\restriction i} }$ are definable over ${\mr g_{\restriction i}}$,
+Let ${\mr\bar g}$ a coheir sequence of $p({\mr x})$, that is,
 
-\ceq{\hfill {\mr g_i}}{\models}{p_{\restriction G,\,\fp\,{\mr g_{\restriction i} }  }({\mr x}).}
+\ceq{\hfill {\mr g_i}}{\models}{p_{\restriction G,\,{\mr g_{\restriction i} }  }({\mr x}).}
 
+We write ${\mr \cev{g}_{\restriction i}}$ for the tuple ${\mr g_{i-1}},\dots,{\mr g_{0}}$.
+%Note that, as the element of $\fp\,{\mr \cev{g}_{\restriction i} }$ are definable over ${\mr g_{\restriction i}}$,
 By the idempotency of ${\mr g}_G$ and Proposition~\ref{prop_orbits_main}, 
-${\mr h}\equiv_G{\mr g}$ for all ${\mr h}\in \fp\,{\mr\bar g}$.
-It follows in particular that $\fp\,{\mr\bar g}$ is monochromatic, say all its elements have color $1$.
+${\mr h}\equiv_G{\mr g}$ for all ${\mr h}\in \fp\,{\mr \cev{g}_{\restriction i}}$ and all $i$.
+It follows in particular that $\fp\,{\mr \cev{g}_{\restriction i}}$ is monochromatic, say all its elements have color $1$.
 Now, we use the sequence ${\mr\bar g}$ to define $\bar a\in G^\omega$
 such that all elements of $\fp\,\bar a$ have color $1$.
 
 Assume as induction hypothesis that we have $a_{\restriction i}\in G^i$ 
-such that all elements of $\fp(a_{\restriction i},\,{\mr\bar g})$ have color $1$.
+such that all elements of $\fp(a_{\restriction i},\,{\mr g_0})$ have color $1$.
 Our goal is to find $a_i$ 
-such that the same property holds for $a_{\restriction i+1},\,{\mr\bar g}$.
+such that the same property holds for $\fp(a_{\restriction i+1},\,{\mr g_0})$.
 
-Let $\phi(a_{\restriction i},\,{\mr g_i},\,{\mr g_{\restriction i}})$ 
-be the sentence that says that all elements of 
-$\fp_{i+1}(a_{\restriction i},\,{\mr g_i},\,{\mr g_{\restriction i}})$ have color $1$.
+
+First we claim that from the induction hypothesis it follows that, 
+for all $j$, all elements of $\fp(a_{\restriction i},\,{\mr\cev{g}_{\restriction j}})$ have color $1$.
+In fact, the elements of $\fp(a_{\restriction i},\,{\mr\cev{g}_{\restriction j}})$ have the form 
+$b\cdot{\mr h}$ for some $b\in\fp(a_{\restriction i})$ and ${\mr h}\in\fp({\mr\cev{g}_{\restriction j}})$.
+As ${\mr h}\equiv_G{\mr g}$, we conclude that $b\cdot{\mr h}\equiv_Gb\cdot {\mr g_0}$, which proves the claim.
+
+Let $\phi(a_{\restriction i},\,{\mr g_{i+1}},\,{\mr g_{\restriction i+1}})$ 
+say that all elements of $\fp(a_{\restriction i},\,{\mr\cev{g}_{\restriction i+2}})$ have color $1$.
 As ${\mr\bar g}$ is a coheir sequence we can find  $a_i$ 
-such that $\phi(a_{\restriction i},\,a_i,\,{\mr g_{\restriction i}})$.
-Hence all elements of $\fp_{i+1}(a_{\restriction i+1},\,{\mr g_{\restriction i}})$ have color $1$.
-As ${\mr\bar g}$ is indiscernible over $G$, 
-this is equivalent to saying that all elements of $\fp(a_{\restriction i+1},\,{\mr\bar g})$ have color $1$.
+such that $\phi(a_{\restriction i},\,a_i,\,{\mr g_{\restriction i+1}})$.
+Hence all elements of $\fp(a_{\restriction i+1},\,{\mr g_{\restriction i+1}})$ have color $1$.
+Therefore $a_i$ is as required.
 \end{proof}
-
 
 \section{The Hales-Jewett Theorem}
 \label{HJ}
 
 
-The Hales-Juvett Theorem is a purely combinatorial statement 
+The Hales-Jewett Theorem is a purely combinatorial statement 
 that implies the van der Waerden Theorem.
 
-We need a few definitions. 
+
+We need a few definitions.
+We work with the same notation as Section~\ref{semigroups}.
 Let $\mrA$ be an idempotent set that is type-definable over $A$.
-We say that an element ${\mr c}$ is \emph{left-minimal\/} w.r.t.\@ $\mrA$ if 
+We say that an element ${\mr c}$ is \emph{left-minimal\/} (w.r.t.\@ $\mrA$) if 
 ${\mr c}\in\mrA\cdot_{\!A}{\mr g}$ for every ${\mr g}\in\mrA\cdot_{\!A}{\mr c}$.
 % In other words, ${\mr a}$ is left-minimal 
 % if $\mrW\cdot_{\!A}{\mr a}$, i.e.\@ the left-ideal generated by the orbit of ${\mr a}$, is minimal among the type-definable left-ideals.
@@ -587,24 +661,27 @@ ${\mr c}\in\mrA\cdot_{\!A}{\mr g}$ for every ${\mr g}\in\mrA\cdot_{\!A}{\mr c}$.
 \begin{proposition}\label{prop_minimal_existence1}
 Let $\mrA$ be idempotent and type-definable over $A$.
 Let ${\mr a}$ be arbitrary.
-Then $\mrA\cdot_{\!A}{\mr a}$ contains an element that is left-minimal w.r.t.\@ $\mrA$.
+Then $\mrA\cdot_{\!A}{\mr a}$ contains a left-minimal element ${\mr c}$.
+When $\mrA\cdot_{\!A}{\mr a}\,\cap\mrA$ is non empty, we can also require that ${\mr c}$ has idempotent orbit.
 \end{proposition}
 \begin{proof}
 If ${\mr b}\in\mrA\cdot_{\!A}{\mr a}$ then $\mrA\cdot_{\!A}{\mr b}\subseteq\mrA\cdot_{\!A}{\mr a}$.
-By compacteness we obtain ${\mr c}\in\mrA\cdot_{\!A}{\mr a}$ such that $\mrA\cdot_{\!A}{\mr b}=\mrA\cdot_{\!A}{\mr c}$ for every ${\mr b}\in\mrA\cdot_{\!A}{\mr c}$. Hence ${\mr c}$ is left-minimal.
+By compacteness we obtain ${\mr c'}\in\mrA\cdot_{\!A}{\mr a}$ such that $\mrA\cdot_{\!A}{\mr b}=\mrA\cdot_{\!A}{\mr c'}$ for every ${\mr b}\in\mrA\cdot_{\!A}{\mr c'}$.
+Hence every ${\mr c}\in\mrA\cdot_{\!A}{\mr c'}$ is left-minimal.
+Note that if ${\mr b}\in\mrA$ then by idempotency  $\mrA\cdot_{\!A}{\mr b}\subseteq\mrA$. Hence when $\mrA\cdot_{\!A}{\mr a}$ and $\mrA$ have non empty intersection, we can also require that ${\mr c'}\in\mrA$. 
+Then $\mrA\cdot_{\!A}{\mr c'}$ is idempotent. 
+Therefore, by Corollary~\ref{corol_idempotent} there is some ${\mr c}\in\mrA\cdot_{\!A}{\mr c'}$ with idempotent orbit.
 \end{proof}
 
 \begin{proposition}\label{prop_minimal_existence2}
 Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
 Let $\mrA$ be idempotent and type-definable over $M$.
-Fix some ${\mr c}$ %with idempotent orbit 
-such that $\mrA\cdot_M{\mr c}\subseteq\mrA$.
+Let ${\mr c}_M$ be idempotent and such that 
+${\mr c}\cdot_M\mrA,\ \mrA\cdot_M{\mr c}\subseteq\mrA$.
 Then
 \begin{itemize}
-\item[1.] $\big({\mr c}\cdot_A\mrA\big)\cap\big(\mrA\cdot_M{\mr c}\big)$ 
-contains some ${\mr g}$ with idempotent orbit
-
-\item[2.] moreover, if ${\mr c}$ is left-minimal with idempotent orbit, ${\mr c}\equiv_M{\mr g}$ for every ${\mr g}$ as in \ssf{1}.
+\item[1.]  ${\mr c}\cdot_M\mrA\cdot_M{\mr c}$ contains some ${\mr g}$ with idempotent orbit 
+\item[2.] if moreover ${\mr c}$ is left-minimal, then ${\mr c}\equiv_M{\mr g}$ for every ${\mr g}$ as in \ssf{1}.
 \end{itemize} 
 \end{proposition}
 
@@ -612,18 +689,20 @@ Note, parenthetically, that the set in \ssf{1} may not be type-definable,
 therefore Corollary~\ref{corol_idempotent} does not apply 
 directly and we need an indirect argument.
 
-\begin{proof} \ssf{1.} \ 
-As  $\mrA\cdot_M{\mr c}$ is idempotent, 
-by Corollary~\ref{corol_idempotent} it contains some ${\mr b}$ with idempotent orbit.
-%From the idempotency of ${\mr c}_M$ we obtain ${\mr b}\in{\mr b}\cdot_M{\mr c}$. 
-% From the left-minimality of ${\mr c}$ we infer that ${\mr c}\in{\mr b}\cdot_M\mrW$ 
-% and, by the idempotency of ${\mr b}_M$, that ${\mr c}_M={\mr b}\cdot_M{\mr c}$.
-Then any ${\mr g}\in{\mr c}\cdot_M{\mr b}$ is as required by \ssf{1}.
+\begin{proof}\ssf{1.} \  
+From ${\mr c}\cdot_M\mrA\subseteq\mrA$ we obtain that $\mrA\cdot_M{\mr c}$ is idempotent.
+As it is  also type-definable, 
+by Corollary~\ref{corol_idempotent} it contains a ${\mr b}$ with idempotent orbit.
+Then ${\mr b}\cdot_M{\mr c}={\mr b}$, from which we obtain that ${\mr c}\cdot_M{\mr b}$ is idempotent and contained in ${\mr c}\cdot_M\mrA\cdot_M{\mr c}$.
 
-\ssf{2.} \ From ${\mr g}\in{\mr c}\cdot_M\mrA$ and the idempotency of ${\mr c}_M$ 
-we obtain ${\mr g}_M={\mr c}\cdot_M{\mr g}$. 
-From ${\mr g}\in\mrA\cdot_M{\mr c}$ and the left-minimality of ${\mr c}_M$ we obtain ${\mr c}\in\mrA\cdot_M{\mr g}$. Hence ${\mr c}_M={\mr c}\cdot_M{\mr g}$, by the idempotency of ${\mr g}_M$. Therefore ${\mr c}_M={\mr g}_M$, which proves \ssf{2}.
+\ssf{2.} \ From ${\mr g}\in{\mr c}\cdot_M\mrA\cdot_M{\mr c}$ and the idempotency of ${\mr c}_M$ 
+we obtain ${\mr g}_M={\mr c}\cdot_M{\mr g}$.
+As ${\mr g}\in\mrA\cdot_M{\mr c}$, from the left-minimality of ${\mr c}_M$ we obtain ${\mr c}\in\mrA\cdot_M{\mr g}$.
+Hence ${\mr c}_M={\mr c}\cdot_M{\mr g}$, by the idempotency of ${\mr g}_M$.
+Therefore ${\mr c}_M={\mr g}_M$, which proves \ssf{2}.
 \end{proof}
+% \excludecomment{grigio}
+% \begin{grigio}
 
 The following is a technical lemma that is required in the proof of the main theorem.
 
@@ -640,7 +719,7 @@ $\sigma\big[{\mr a}\cdot_M{\mr b}\big]=\sigma\,{\mr a}\cdot_M\sigma\,{\mr b}$.
 \end{proposition}
 \begin{proof}\ \ssf{1.}  
 As ${\mr a}\equiv_M{\mr a'}$ implies $\sigma\,{\mr a}\equiv_M\sigma\,{\mr a'}$,
-inclusion $\subseteq$ is clear. 
+inclusion $\subseteq$ is clear.
 For the converse, note that the type 
 $\E{\mr y}\,\big[\sigma\,{\mr y}={\mr x}\,\wedge\,{\mr y}\equiv_M{\mr a}\big]$ 
 is trivially realized by $\sigma\,{\mr a}$.
@@ -657,8 +736,8 @@ We have to prove the following equality\smallskip
 {=}
 {\Big\{{\mr a'}{\cdot}{\mr b'}\ :\ \sigma\,{\mr a}\equiv_M{\mr a'}\cnonfork_M{\mr b'}\equiv_M\sigma\,{\mr b} \Big\}.}\smallskip
 
-It suffices to prove one inclusion because by Proposition~\ref{prop_orbits_main} both sides are orbits. 
-We prove $\subseteq$. 
+It suffices to prove one inclusion because by Proposition~\ref{prop_orbits_main} both sides are orbits.
+We prove $\subseteq$.
 Note that ${\mr a'}\cnonfork_M{\mr b'}$ implies $\sigma\,{\mr a'}\cnonfork_M\sigma\,{\mr b'}$.
 Hence the set on l.h.s.\@ is contained in the following\smallskip
 
@@ -675,8 +754,8 @@ A \emph{nice subsemigroup\/} of $\mrG$ is a subsemigroup $\mrC$ with the propert
 
 \theoremstyle{mio}
 \newtheorem{HalesJewett}[thm]{Hales-Jewett Theorem}
-\begin{HalesJewett}[(algebraic version)]\label{thm_abstract_HJ}
-Let $G$ be a semigroup and let $C\subset G$ be a nice subsemigroup.
+\begin{HalesJewett}[(Koppelberg's version)]\label{thm_abstract_HJ}
+Let $G$ be an infinite semigroup and let $C\subset G$ be a nice subsemigroup.
 Let $\Sigma$ be a finite set of retractions of $G$ onto $C$, that is, 
 homomorphisms $\sigma:G\to C$ such that $\sigma_{\restriction C}={\rm id}_C$.
 Then, for every finite coloring of $C$,
@@ -697,15 +776,15 @@ By Proposition~\ref{prop_minimal_existence1}, there is a left-minimal ${\mr c}\i
 As $\mrC\cdot_M{\mr c}$ is clearly idempotent, we can further require that ${\mr c}$ has idempotent orbit.
 
 By nicety, $\mrA=\mrG\sm\mrC$ satisfy the assumptions of Proposition~\ref{prop_minimal_existence2}.
-Hence $\mrA$ contains some ${\mr g}$ with idempotent orbit that also belongs to 
-$\big({\mr c}\cdot_G\mrG\big)\cap\big(\mrG\cdot_G{\mr c}\big)$. 
+Hence there is some idempotent ${\mr g}\in{\mr c}\cdot_G(\mrG\sm\mrC)\cdot_G{\mr c}$.
+In particular, ${\mr g}\in\mrG\sm\mrC$.
 From Proposition~\ref{prop_HJ_tecnical} we obtain
-$\sigma\,{\mr g}\in\big({\mr c}\cdot_G\mrC\big)\cap\big(\mrC\cdot_G{\mr c}\big)$
+$\sigma\,{\mr g}\in{\mr c}\cdot_G\mrC\cdot_G{\mr c}$
 for all $\sigma\in\Sigma$.
 As $\sigma\,{\mr g}$ is also idempotent, 
 we apply Proposition~\ref{prop_minimal_existence2} to conclude that 
 $\sigma\,{\mr g}\equiv_G{\mr c}$.
-In particular the set $\{\sigma\,{\mr g}:\sigma\in\Sigma\}$ is monochromatic. 
+In particular the set $\{\sigma\,{\mr g}:\sigma\in\Sigma\}$ is monochromatic.
 
 Though the element ${\mr g}$ above need not belong to $G\sm C$,
 by elementarity $G\sm C$ contains some $a$ with the same property and this proves the theorem.
@@ -713,9 +792,9 @@ by elementarity $G\sm C$ contains some $a$ with the same property and this prove
 
 Finally we show how the classical Hales-Jewett theorem follows from its abstract version.
 
-\begin{HalesJewett}\label{thm_HalesJewett}
+\begin{HalesJewett}[(Classical version)]\label{thm_HalesJewett}
 Let $C$ be an infinite semigroup.
-Fix a tuple of variable $x$ and let $F\subseteq C^{|x|}$ be a finite set.
+Fix a tuple of variables $x$ and let $F\subseteq C^{|x|}$ be a finite set.
 Fix also a finite coloring of $C$.
 Then there is a non constant term $t(x)$ 
 of the language of semigroups with parameters in $C$
@@ -730,63 +809,38 @@ For every $a\in C^{|x|}$ the map $\sigma_a:t(x)\mapsto t(a)$ is a retraction.
 Hence we can apply the theorem above.
 \end{proof}
 
-\excludecomment{grigio}
-\begin{grigio}
+We conclude with a variant of Theorem~\ref{thm_abstract_HJ} that applies to a broader class of semigroup homomorphisms. For $\Sigma$ a set of maps $\sigma:G\to C$ and $c\in C$ we define 
 
-\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
-\def\lbox#1{\parbox[t]{15ex}{$\displaystyle #1$}}
-\def\rbox#1{{$\displaystyle #1$}}
-\def\ceq#1#2#3{\lbox{#1}\medrel{#2}\rbox{#3}}
+\ceq{\hfill\emph{$\Sigma^{-1}[c]$}}{=}{\bigcap_{\sigma\in\Sigma}\sigma^{-1}[c]}\smallskip
 
-It is possible to combine the proofs of the theorems of Hindman and Hales-Jewett to obtain the proposition below. 
-To state the result we first need some definitions.
-% Let ${\mr\bar a}$ be a tuple of elements of $\mrG$ of length $\le\omega$.
-% Let $\Sigma$ be a set of semigroup homomorphisms $\mrG\to\mrC$.
-% Then for any $n\le|{\mr\bar a}|$ we define
-% 
-% \ceq{\hfill\fp^{\Sigma}_n\,{\mr\bar a} }{=}{\Big\{\sigma_{i_0}\,{\mr a_{i_0}}\kern-0.5ex\cdot\dots\cdot\sigma_{i_k}\,{\mr a_{i_k}}\ :\quad i_0<\dots<i_k<|{\mr\bar a}|, \ \  \bar\sigma\in\Sigma^{|{\mr\bar a}|}, \ k< n\Big\}}
-% 
-% When $n=|{\mr\bar a}|$ we write $\fp^{\Sigma}{\mr\bar a}$.
-% 
-Let ${\mr\bar a}$ be a tuple of elements of $\mrG$ of length $\le\omega$.
-Let $\bar\Sigma$ be a tuple of finite sets of homomorphisms $\mrG\to\mrG$.
-Assume $|{\mr\bar a}|=|\bar\Sigma|$.
-For each $n\le|{\mr\bar a}|$ we define
+Clearly, when the maps in $\Sigma$ are retractions, $\Sigma^{-1}[c]$ is non empty for all $c\in C$ because it contains at least $c$.
 
-\ceq{\hfill\emph{$\fp^{\bar\Sigma}_n\,{\mr\bar a}$} }{=}{\Big\{\sigma_{i_0}\,{\mr a_{i_0}}\kern-0.5ex\cdot\dots\cdot\sigma_{i_k}\,{\mr a_{i_k}}\ :\quad i_0<\dots<i_k<|{\mr\bar a}|, \ \  \bar\sigma\in\bar\Sigma, \ k< n\Big\}}
+\begin{HalesJewett}[(Yet another variant)]\label{thm_hom_HJ}
+Let $\Sigma$ be a finite set of homomorphisms $\sigma:G\to C$ 
+between infinite semigroups
+such that $\Sigma^{-1}[c]$ is non empty for all $c\in C$.
+Then, for every finite coloring of $C$, there is a $g\in G$ such that the set 
+$\{\sigma\,g\ :\ \sigma\in\Sigma\}$ is monochromatic.
+\end{HalesJewett}
 
-When $n=|{\mr\bar a}|$ we write \emph{$\fp^{\bar\Sigma}{\mr\bar a}$}. %Also, if $\bar\Sigma$ is such that $\Sigma_n=\Sigma$ for some fixed $\Sigma$, we write \emph{$\fp^{\Sigma}{\mr\bar a}$} for $\fp^{\bar\Sigma}{\mr\bar a}$.
+\begin{proof}
+Let $G*C$ be free product of the two semigroups.
+That is, $G*C$ contains finite sequences of elements of $G\cup C$, below called \textit{words}, that alternate elements in $G$ with elements in $C$.
+The product of two words is obtained concatenating them and, when it applies, replacing two contiguous elements of the same group by their product.
+Note that $C$ is a nice subsemigroups of $G*C$.
 
-\begin{proposition}[(Hindman + Hales-Jewett)]\label{prop_H+HJ}
-Let $\bar\Sigma$ be a tuple of finite sets of 
-retractions of a semigroup $G$ onto a subsemigroup $C$.
-Let $\rela$ be a relation on $G$.
-Suppose that $G$ is \reladot-closed and $\rela$-covered by $C$.
-Then for every finite coloring of $C$ there is in $G$ a $\rela$-chain $\bar a$ such that $\fp^{\bar\Sigma}\bar a$ is monochromatic.
-\end{proposition}
-\begin{proof}[Proof (sketch)]
-Let $G\preceq\mrG$ in a language that contains all symbols in the proofs of Theorems~\ref{thm_Hindman} and~\ref{thm_abstract_HJ} with $\Sigma=\bigcup_i\Sigma_i$.
+Any homomorphism $\sigma:G\to C$ extends canonically to a retraction of $G*C$ to $C$.
+In fact, this extension is unique: the elements of $G$ that occur in a word are replaced by their image under $\sigma$, finally the elements in the resulting sequence are multiplied.
+This extension is denoted by the same symbol $\sigma$.
 
-Let ${\mr\C'}=\{{\mr x}\in\mrC\,:\,G<{\mr x}\}$.
-This set is non empty because $G$ is $\rela$-covered by $C$.
-The same argument used for ${\mr\G'}$ in the proof of Theorem~\ref{thm_Hindman} proves that ${\mr\C'}$ is idempotent.
-Then by Proposition~\ref{prop_minimal_existence1} there is some left-minimal ${\mr c}\in{\mr\C'}$.
-As ${\mr\C'}\cdot_M{\mr c}$ is idempotent, we can further require that ${\mr c}$ has idempotent orbit over $M$.
-Let ${\mr\G'}$ be as in the proof of Theorem~\ref{thm_Hindman}.
-As $G$ is  \reladot-closed, ${\mr\G'}\cdot_M{\mr c}\subseteq{\mr\G'}$.
-Then, by Proposition~\ref{prop_minimal_existence2}, 
-${\mr\G'}$ contains some ${\mr g}$ with idempotent orbit that also belongs to 
-$\big({\mr c}\cdot_M\mrG\big)\cap\big(\mrG\cdot_M{\mr c}\big)$.
-By Proposition~\ref{prop_HJ_tecnical}, we obtain that
-$\sigma\,{\mr g}\in\big({\mr c}\cdot_M\mrC\big)\cap\big(\mrC\cdot_M{\mr c}\big)$
-for all $\sigma\in\Sigma$.
-As $(\sigma\,{\mr g})_M$ is also idempotent, 
-we apply Proposition~\ref{prop_minimal_existence2} to conclude that 
-$\sigma\,{\mr g}\equiv_M{\mr c}$ for all $\sigma\in\Sigma$.
-
-Finally, the required chain $\bar a$ is obtained as in the proof of Theorem~\ref{thm_Hindman}.
+Apply Theorem~\ref{thm_abstract_HJ} to obtain some $w\in G*C$ such that $\{\sigma \,w:\sigma\in\Sigma\}$ is monochromatic. Suppose $w=c_0\cdot g_0\cdots\cdots c_n\cdot g_n$ for some $g_i\in G$ and $c_i\in C$, where one or both of $c_0$ or $g_n$ could be absent. Pick some $h_i\in\Sigma^{-1}[c_i]$ and let $g=h_0\cdot g_0\cdots\cdots h_n\cdot g_n$. Then $\{\sigma\,g:\sigma\in\Sigma\}$ is monochromatic as required to complete the proof.
 \end{proof}
-\end{grigio}
+
+
+
+
+
+
 
 \section{Notes and references}
 
@@ -961,7 +1015,7 @@ La seguente proposizione mostra che possiamo ragionevolmente parlare di tipo del
 Questo paragrafo \`e dedicato alla descrizione sintattica di questo tipo.
 
 \begin{proposition}\label{prop_tiposequenzaMorley}
-Sia $p\in S_x(\U)$ un tipo globale $A\jj$invariante e supponiamo che $a$ e $b$ siano due sequenze di Morley di $p$ su $A$.
+Sia $p\in S_x(\U)$ un tipo globale $A$-invariante e supponiamo che $a$ e $b$ siano due sequenze di Morley di $p$ su $A$.
 Allora $a\equiv_A c$.
 
 \end{proposition}
@@ -1023,7 +1077,7 @@ Dal lemma~\ref{lemma_prodotto} otteniamo che $\phi(x,y)\in p({\mr x})\otimes q(y
 
 
 \begin{corollary}
-Se $p({\mr x}),q(y)\in S(\U)$ sono tipi globali $A\jj$invarianti, allora anche $p({\mr x})\otimes q(y)$ \`e $A\jj$invariante.
+Se $p({\mr x}),q(y)\in S(\U)$ sono tipi globali $A$-invarianti, allora anche $p({\mr x})\otimes q(y)$ \`e $A$-invariante.
 \end{corollary}
 
 \begin{proof}
@@ -1060,7 +1114,7 @@ Definiamo induttivamente
 La seguente proposizione giustifica la definizione di $p^{(\omega)}$, la dimostrazione \`e immediata.
 
 \begin{proposition}\label{prop_p^omega_Morley}
-Sia $p({\mr x})\in S(\U)$ un tipo globale $A\jj$invariante.
+Sia $p({\mr x})\in S(\U)$ un tipo globale $A$-invariante.
 Allora le seguenti affermazioni sono equivalenti
 \begin{itemize}
 \item[1.]$\<c_i:i<\omega\>$ \`e una sequenze di Morley di $p$ su $A$;

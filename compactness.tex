@@ -5,11 +5,11 @@
 \label{compactness}
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+\def\ceq#1#2#3{\parbox{20ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 We present two proofs of the compactness theorem. The first is syntactic, the second uses ultrapowers.
 
-Somewhat surprisignly, the compactness theorem is not strctly required for the next few chapters (only from Chapter~\ref{saturation}). So the reading of this chapter may be postponed.
+Somewhat surprisingly, the compactness theorem is not strictly required for the next few chapters (only from Chapter~\ref{saturation}). So the reading of this chapter may be postponed.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17,7 +17,7 @@ Somewhat surprisignly, the compactness theorem is not strctly required for the n
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Compactness via syntax}
 
-Here we prove the compactness theorem using the so-called Henkin method. We divide the proof in two steps. Firstly, we observe that when the language is rich enough to name witnesses for all existential statements of the theory, these witnesses (\textit{Henkin constants\/}) form a canonical model. Secondly, we show that we can add the required Henkin constants to any finitely consistent theory.
+Here we prove the compactness theorem using the so-called Henkin method. We divide the proof in two steps. Firstly, we observe that when the language is rich enough to name witnesses of all existential statements of the theory, these witnesses (\textit{Henkin constants\/}) form a canonical model. Secondly, we show that we can add the required Henkin constants to any finitely consistent theory.
 
 \begin{definition}\label{def_Henkin}
 Fix a language $L$. Assume for simplicity that formulas use only the connectives $\wedge$, $\neg$ and $\E$. We say that $T$ is a \emph{Henkin theory\/} if for every formulas $\phi$ and $\psi$
@@ -30,7 +30,7 @@ Fix a language $L$. Assume for simplicity that formulas use only the connectives
 \item[4.]\ceq{\hfill\E x\,\phi\in T}{\IMP}{\phantom{\neg}\phi[x/a]\in T}\quad for some closed term $a$
 \item[5.]\ceq{\hfill\neg\E x\,\phi\in T}{\IMP}{\neg\phi[x/a]\in T}\quad for all closed terms $a$.
 \end{itemize}
-Moreover, the following holds for all closed terms $t$ and all closed terms $a, b, c$
+Moreover, the following holds for all closed terms $a, b, c$
 \begin{itemize}
 \item[a.] \ceq{\hfill a{\doteq}a\in T}{ }{ }
 \item[b.] \ceq{\hfill a{\doteq}b\in T}{\IMP}{ b{\doteq}a\in T}
@@ -40,6 +40,7 @@ Moreover, the following holds for all closed terms $t$ and all closed terms $a, 
 \end{definition}
 
 Fix a theory $T$ and let \emph{$M$} be the structure that has as domain the set of closed terms. Define for every relation symbol
+
 
 \ceq{\hfill r^M}{=}{\big\{\<a_1,\dots,a_n\>\ :\ r(a_1,\dots,a_n)\in T\big\}.}
 
@@ -59,6 +60,8 @@ The relation $E$ is a congruence on $M$ (as defined in Section~\hyperref[quotien
 Axioms \ssf{a}-\ssf{c} ensure that $E$ is an equivalence. Axiom \ssf{e} that it is a congruence.
 \end{proof}
 
+Condition \ssf{0} is the only negative requirement of Definition~\ref{def_Henkin} (it requires that $T$ does \textit{not\/} contain some formula). By condition \ssf{0}, Henkin theories do not contain any blatant inconsistency. Surprisingly, this is all what is needed for the existence of a model.
+
 \begin{theorem}
 If $T$ is Henkin theory then $M/E\,\models T$. 
 \end{theorem}
@@ -75,20 +78,27 @@ Induction is immediate by \ssf{1}-\ssf{5} of Definition~\ref{def_Henkin}. We ver
 Now assume $\phi=rt$ for a relation $r$ and a tuple of closed terms $t$. The argument is similar: \ssf{1} is immediate; to prove \ssf{2} suppose that $M/E\pmodels rt$. Then $tEs\in r^M$ for some tuple of closed terms $s$. Then $rs\in T$, and by \ssf{d} $rt\in T$. Finally from \ssf{0} we obtain $\neg rt\notin T$.
 \end{proof}
 
-\begin{proposition}If every finite subset of $T$ has a model then there is a Henkin theory $T'$ containing $T$. (The theory $T'$ may be in an expanded language.)
+\begin{proposition}\label{prop_Henkin}If every finite subset of $T$ has a model then there is a Henkin theory $T'$ containing $T$. The theory $T'$ may be in an expanded language $L'$..
 \end{proposition}
 
-\begin{proof} Set $\lambda=|L|$. Let $\<c_i:i<\lambda\>$ be some constants not in $L$. Write $L_i$ be the language $L$ expanded with the constants $c_{\restriction i}$ and fix an enumeration of all sentences in $L_\lambda$. 
+\begin{proof} Set $\lambda=|L|$.
+Let $\<c_i:i<\lambda\>$ be some constants not in $L$.
+Let $L_i$ be the language with constants among $c_{\restriction i}$.
+Fix a variable $x$ and an enumeration $\<\phi_i(x):i<\lambda\>$ of the formulas in $L_\lambda$.
+Suppose that the enumeration is such that $\phi_i(x)\in L_i$.
 
-If $\alpha$ is $0$ or a limit ordinal define 
+We now construct a sequence of finitely consistent $L_i$-theories $T_i$. 
+If $\alpha$ is $0$ or a limit ordinal we define 
 
-\ceq{\hfill T'_\alpha}{=}{T_\alpha\medrel{=}T\ \cup\ \bigcup_{i<\alpha}T'_i} 
+\ceq{\hfill T_\alpha}{=}{T\ \cup\ \bigcup_{i<\alpha}T_i.} 
 
-As for successor ordinals, let $T_{i+1}$ be a maximal finitely consistent set of $L_i$-formulas containing $T'_i$. It is immediate that $T'_i$ satisfy Definition~\ref{def_Henkin} but possibly for \ssf{3}.
+As for successor ordinals, let $S_i$ be a maximally finitely consistent set of $L_i$-formulas containing $T_i$. (Here we use Zorn's lemma, but see the remark below.) It is immediate that $S_i$ satisfies all requirements in Definition~\ref{def_Henkin} but possibly for \ssf{4}.
 
-Let $\E x\, \phi$ be the least sentence in $L_\lambda$ contradicting \ssf{3} and set $T_{i+1}=T_i\cup\big\{\phi[x/c_i]\big\}$. It is immediate that $T_{i+1}$ is finitely consistent. 
+Now, if $\E x\,\phi_i(x)\in S_i$ set $T_{i+1}=S_i\cup\big\{\phi[x/c_i]\big\}$. As $c_i$ does not occur in $S_i$, it is evident that $T_{i+1}$ is finitely consistent. 
 
-At stage $\lambda$ all possible counterexamples to \ssf{3} have been ruled out, then $T'=T_\lambda$ is the required Henkin theory.
+Recall that we assumed $\E x\,\phi_i(x)\in L_i$. Then, either $\E x\,\phi_i(x)\in T_{i+1}$ or it is not finitely consistent with $T_{i+1}$. Hence stage $i$ settle requirement \ssf{4} in Definition~\ref{def_Henkin} as far as  $\phi_i(x)$ is concerned.
+
+At stage $\lambda$ all possible counterexamples to \ssf{4} have been ruled out, then $T'=T_\lambda$ is the required Henkin theory.
 \end{proof}
 
 A theory is \emph{finitely consistent\/} if all its finite subsets are consistent. The following theorem is an immediate corollary of the proposition above.
@@ -97,7 +107,15 @@ A theory is \emph{finitely consistent\/} if all its finite subsets are consisten
 If every finite subset of $T$ is consistent then $T$ is consistent.\QED
 \end{void_thm}
 
+\begin{remark}
+To keep the proof above short, we applied Zorn's lemma. This is not strictly necessary. In fact, if we are given a finitely consistent theory $T$. We can extend $T$ to a theory $S$ that meets Definition~\ref{def_Henkin}, up to condition~\ssf{4}, by adding systematically all required formulas. The procedure is effective, hence Zorn's lemma is not required. 
 
+It is interesting to consider the case when $T$ is finite. Assume also (though this is not really necessary) that the language contains finitely many symbols and no functions other then constants. Then the construction in Proposition~\ref{prop_Henkin} is an effective procedure that produces in $\omega$ steps a model of $T$. At each step $T_n$ is finite and contains only subformulas of formulas in $T$ or variant on these obtained by substituting constants for variables.
+
+Now suppose instead that we start with an inconsistent $T$. The procedure above has to come to a halt at same (finite) stage because a model of $T$ does not exist. When the procedure halts, we end up with a finite sequence of finite theories $T_0,\dots, T_n$ where $T_0=T$ and $T_n$ contains some blatant inconsistency (i.e.\@ $\phi$ and $\neg\phi$). Many have interpreted  $T_0,\dots, T_n$ as a formal \textit{proof\/} of the inconsistency of $T$.
+
+All this has little or no interest to model theory. But it highlights a fascinating phenomenon.  When we say that $T$ is inconsistent, we say that no structure models $T$. This expression uses a (meta linguistic) universal quantifier that ranges over the class of all structures. Yet this is equivalent to an expression that merely asserts the existence of a finite sequence of finite theories.\QED
+\end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -159,28 +177,26 @@ Recall that a \emph{type\/} is a set of formulas. When we present types we usual
 
 We write \emph{$M\models p(a)$} if $M\models\phi(a)$ for every $\phi(x)\in p$.  We say that $a$ is a \emph{solution\/} or a \emph{realization\/} of $p(x)$. An equivalent notation is \emph{$M,a\models p(x)$} or, when $M$ is clear from the context, \emph{$a\models p(x)$}. We say that $p(x)$ is \emph{consistent in $M$\/} it has a solution in $M$. In this case we may write \emph{$M\models\E x\,p(x)$}.  We say that $p(x)$ is \emph{consistent\/} if it is consistent in some model.
 
-We say that a type $p(x)$ is \emph{finitely consistent\/} if all its finite subsets are consistent. If they are all consistent in the same model $M$, we say that $p(x)$ is finitely consistent \emph{in $M$}. The following theorem shows that the latter notion, which is trivial for theories, is very interesting for types.
+We say that a type $p(x)$ is \emph{finitely consistent\/} if all its finite subsets are consistent. If its finite subsets are all consistent in the same model $M$, we say that $p(x)$ is finitely consistent \emph{in $M$}. The following theorem shows that the latter notion, which is trivial for theories, is very interesting for types.
 
 \begin{void_thm}[Compactness Theorem for types]\label{thm_compattezzatipi}
 Every finitely consistent type $p({\mr x})\subseteq L$ is consistent. Moreover, if $p({\mr x})\subseteq L(M)$ is finitely consistent in $M$ then it is realised in some elementary extension of $M$.
 \end{void_thm}
 
 \begin{proof}
- 
-Let $L'$ be the expansion of $L$ obtained by adding the fresh symbols ${\mr c}$, a tuple of constants of the same length as ${\mr x}$. Then $p({\mr c})$ is a finitely consistent theory in the language $L'$. By the compactness theorem there is an $L'$-structure $N'\models p({\mr c})$. Let $N$ be the reduced of $N'$ to $L$. That is the $L$-structure with the same domain and the same interpretation of $N'$ on the symbols of $L$. Note that, though the constants ${\mr c}$ are not in $L$, the elements ${\mr c^{N'}}$ remain in $N$. Then $N,{\mr c^{N'}}\models p({\mr x})$.  
+Let $L'$ be the expansion of $L$ obtained by adding the fresh symbols ${\mr c}$, a tuple of constants of the same length as ${\mr x}$. Then $p({\mr c})$ is a finitely consistent theory in the language $L'$. By the compactness theorem there is an $L'$-structure $N'\models p({\mr c})$. Let $N$ be the reduct of $N'$ to $L$. That is the $L$-structure with the same domain and the same interpretation as $N'$ on the symbols of $L$. Note that, though the constants ${\mr c}$ are not in $L$, the elements of the tuple ${\mr c^{N'}}$ remain in $N$. Then $N,{\mr c^{N'}}\models p({\mr x})$.  
 
-As for the second claim, let ${\gr a}$ be an enumeration of $M$. We can assume that $p({\mr x})$ has the form $p'({\mr x}\,;{\gr a})$ for some $p'({\mr x}\,;{\gr z})\in L$. Define
+As for the second claim, let ${\gr a}$ be an enumeration of $M$. We can assume that $p({\mr x})$ has the form $p'({\mr x}\,;{\gr a})$ for some $p'({\mr x}\,;{\gr z})\subseteq L$. Define
 
-\ceq{\hfill q(z)}{=}{\big\{\phi(z)\ :\ M\models \phi(a)\big\}}
+\ceq{\hfill q({\gr z})}{=}{\big\{\phi({\gr z})\ :\ M\models \phi({\gr a})\big\}}
 
-Clearly, $p'({\mr x}\,;{\gr z})\cup q({\gr z})$ is finitely consistent in $M$. By the first part of the proof there is a model $N$ such that $N\models p'({\mr c'}\,;{\gr a'})$ for some ${\mr c'},{\gr a'}\in N^{|{\mr x},{\gr z}|}$. Let $h=\{\<a,a'\>\}$. We claim that $h:M\to N$ is an embedding and that $h[M]\preceq N$. So the theorem follows by identifying $M$ with $h[M]$. 
+Clearly, $p'({\mr x}\,;{\gr z})\cup q({\gr z})$ is finitely consistent in $M$. Then, by the first part of the proof it is realized in some model $N$ by some ${\mr c'},{\gr a'}\in N^{|{\mr x},{\gr z}|}$. Let $h=\{\<{\gr a},{\gr a'}\>\}$. Then for every $\phi({\gr z})\in L$ we have
 
-For any $\phi({\gr z})\in L$ we have
+\hfil $M\models \phi({\gr a})\ \  \IFF\ \  \phi({\gr z})\in q\ \   \IFF\ \  N\models \phi(h{\gr a})$.
 
+In the last equivalence, $\PMI$ holds because $q({\gr z})$ is complete. (Using a term that will be introduced only in Section~\hyperref[morphisms]{\ref*{types}.\ref*{morphisms}}, this shows that  $h:M\to N$ is an elementary embedding.) 
 
-\hfil $h[M]\models\phi(h{\gr a})\ \ \IFF\ \  M\models \phi({\gr a})\ \  \IFF\ \  \phi(z)\in q({\gr z})\ \   \IMP\ \  N\models \phi({\gr a'})$.
-
-Then $h[M]\preceq N$ follows because all sentences in $L(M)$ have the form $\phi({\gr a})$ for some $\phi({\gr z})\in L$. (Using a term that will be introduced only in Section~\hyperref[morphisms]{\ref*{types}.\ref*{morphisms}}, we have proved that  $h:M\to N$ is an elementary embedding.)
+By the remarks after Definition~\ref{isomorfismodef}, $h:M\to N$ is an embedding. Hence the equivalence above prove that $h[M]\preceq N$. So the theorem follows by identifying $M$ with $h[M]$.
 \end{proof}
 
 The following corollary is historically important.
@@ -192,9 +208,6 @@ Every infinite structure has arbitrarily large elementary extensions.
 \begin{proof}
 Let $x=\<x_i:i<\lambda\>$ be a tuple distinct variables, where $\lambda$ is an arbitrary cardinal. The type $p(x)=\big\{x_i\neq x_j: i<j<\lambda\big\}$ is finitely consistent in every infinite structure and every structure that realises $p$ has cardinality $\ge\lambda$. Hence the claim follows from Theorem~\ref{thm_compattezzatipi}.
 \end{proof}
-
-
-
 
 \section{Finite axiomatizability}
 
@@ -229,14 +242,11 @@ The following is a less trivial example. It proves a claim we made in Exercise~\
 
 Write $T_{\rm gph}$ for the theory of graphs, see Example~\ref{expl_Tgraphs}. Let $\K$ be the following class of structures
 
-
 \ceq{\hfill \K}{=}{\Big\{M\models T_{\rm gph}\ :\ r^M\ \subseteq\ (A\times \neg A)\;\cup\;(\neg A\times A)\textrm{ for some }A\subseteq M\Big\}}
-
 
 We prove that $\K$ is axiomatizable but not finitely axiomatizable, i.e.\@ $\K=\Mod(T)$ for some theory $T$, but $T$ cannot be choosen finite.
 
 A \textit{path of length $n$\/} in $M$ is a sequence $c_0,\dots,c_n\in M$ such that $M\models r(c_i,c_{i+1})$ for every $0\le i<n$. A path is \textit{closed\/} if $c_0=c_n$.  We claim that the following theory axiomatizes $\K$.
-
 
 \ceq{\hfill T}{=}{\Bigg\{\neg\E x_0,\dots x_{2n+1} \Bigg[\bigwedge^{2n}_{i=0} r(x_i,x_{i+1})\ \wedge\ x_0=x_{2n+1} \Bigg]\ \ :\ \ n\in\omega\Bigg\}}
 
