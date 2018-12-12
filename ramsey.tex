@@ -755,7 +755,6 @@ which is in turn contained in the set on the r.h.s.
 Let $\mrG$ be a semigroup.
 A \emph{nice subsemigroup\/} of $\mrG$ is a subsemigroup $\mrC$ with the property that if ${\mr a}{\cdot}{\mr b}\in\mrC$ then both ${\mr a},{\mr b}\in \mrC$.
 
-
 \theoremstyle{mio}
 \newtheorem{HalesJewett}[thm]{Hales-Jewett Theorem}
 \begin{HalesJewett}[(Koppelberg's version)]\label{thm_abstract_HJ}
@@ -779,19 +778,28 @@ the retractions $\sigma:\mrG\to\mrC$.
 By Proposition~\ref{prop_minimal_existence1}, there is a left-minimal ${\mr c}\in\mrC$.
 As $\mrC\cdot_M{\mr c}$ is clearly idempotent, we can further require that ${\mr c}$ has idempotent orbit.
 
-By nicety, $\mrA=\mrG\sm\mrC$ satisfy the assumptions of Proposition~\ref{prop_minimal_existence2}.
-Hence there is some idempotent ${\mr g}\in{\mr c}\cdot_G(\mrG\sm\mrC)\cdot_G{\mr c}$.
+By nicety, $\mrG\sm\mrC$ satisfy the assumptions of 
+Proposition~\ref{prop_minimal_existence2}.
+%
+Hence, by the first claim of that proposition, there is an idempotent
+${\mr g}\in{\mr c}\cdot_G(\mrG\sm\mrC)\cdot_G{\mr c}$.
+%
 In particular, ${\mr g}\in\mrG\sm\mrC$.
-From Proposition~\ref{prop_HJ_tecnical} we obtain
-$\sigma\,{\mr g}\in{\mr c}\cdot_G\mrC\cdot_G{\mr c}$
+%
+Now apply the second claim of Proposition~\ref{prop_HJ_tecnical}, 
+with $\mrC$ for $\mrA$ to  obtain 
+$\sigma\,{\mr g}\in{\mr c}\cdot_G\mrC\cdot_G{\mr c}$ 
 for all $\sigma\in\Sigma$.
-As $\sigma\,{\mr g}$ is also idempotent, 
-we apply Proposition~\ref{prop_minimal_existence2} to conclude that 
+%
+As $\sigma\,{\mr g}$ is also idempotent, we apply 
+Proposition~\ref{prop_minimal_existence2} to conclude that 
 $\sigma\,{\mr g}\equiv_G{\mr c}$.
+%
 In particular the set $\{\sigma\,{\mr g}:\sigma\in\Sigma\}$ is monochromatic.
 
 Though the element ${\mr g}$ above need not belong to $G\sm C$,
-by elementarity $G\sm C$ contains some $a$ with the same property and this proves the theorem.
+by elementarity $G\sm C$ contains some $a$ with the same property and 
+this proves the theorem.
 \end{proof}
 
 Finally we show how the classical Hales-Jewett theorem follows from its abstract version.
@@ -837,14 +845,15 @@ Any homomorphism $\sigma:G\to C$ extends canonically to a retraction of $G*C$ to
 In fact, this extension is unique: the elements of $G$ that occur in a word are replaced by their image under $\sigma$, finally the elements in the resulting sequence are multiplied.
 This extension is denoted by the same symbol $\sigma$.
 
-Apply Theorem~\ref{thm_abstract_HJ} to obtain some $w\in G*C$ such that $\{\sigma \,w:\sigma\in\Sigma\}$ is monochromatic. Suppose $w=c_0\cdot g_0\cdots\cdots c_n\cdot g_n$ for some $g_i\in G$ and $c_i\in C$, where one or both of $c_0$ or $g_n$ could be absent. Pick some $h_i\in\Sigma^{-1}[c_i]$ and let $g=h_0\cdot g_0\cdots\cdots h_n\cdot g_n$. Then $\{\sigma\,g:\sigma\in\Sigma\}$ is monochromatic as required to complete the proof.
+Apply Theorem~\ref{thm_abstract_HJ} to obtain some $w\in G*C$ such that 
+$\{\sigma \,w:\sigma\in\Sigma\}$ is monochromatic.
+%
+Suppose $w=c_0\cdot g_0\cdots\cdots c_n\cdot g_n$ for some $g_i\in G$ and $c_i\in C$, 
+where one or both of $c_0$ or $g_n$ could be absent. Pick some $h_i\in\Sigma^{-1}[c_i]$ and 
+let $g=h_0\cdot g_0\cdots\cdots h_n\cdot g_n$.
+%
+Then $\{\sigma\,g:\sigma\in\Sigma\}$ is monochromatic as required to complete the proof.H
 \end{proof}
-
-
-
-
-
-
 
 \section{Notes and references}
 

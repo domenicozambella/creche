@@ -151,15 +151,34 @@ The following are equivalent
 
 
 \begin{proposition}
-  The relation $\equivL_A$ is the finest equivalence relation with $<\kappa$ classes that is invariant over $A$.\QED
+  The relation $\equivL_A$ is the finest equivalence relation 
+  with $<\kappa$ classes that is invariant over $A$.\QED
 \end{proposition}
 
 \begin{proof}
-  Clearly $\equivL_A$ is an equivalence relation invariant over $A$. Each equivalence class is Lascar invariant over $A$, hence the number of equivalence classes is bounded by the number of Lascar invariant sets over $A$. To see that $\equivL_A$ is the finest of such equivalences. Suppose $\grD$ is an equivalence class of an $A$-invariant equivalence relation with $<\kappa$ classes. Then $\oorbit(\grD/A)$ has also cardinality $<\kappa$. Then $\grD$ is Lascar invariant and as such it is union of classes of the relation $\equivL_A$. 
+  Clearly $\equivL_A$ is an equivalence relation invariant over $A$.
+  %
+  Each equivalence class is Lascar invariant over $A$, 
+  hence the number of equivalence classes is bounded by 
+  the number of Lascar invariant sets over $A$.
+  %
+  To see that $\equivL_A$ is the finest of such equivalences.
+  %
+  Suppose $\grD$ is an equivalence class of an $A$-invariant 
+  equivalence relation with $<\kappa$ classes.
+  %
+  Then $\oorbit(\grD/A)$ has also cardinality $<\kappa$.
+  Then $\grD$ is Lascar invariant and as such it is union of 
+  classes of the relation $\equivL_A$. 
 \end{proof}
 
-
-Let $p({\mr x})\in S(\U)$ be global type; we say that $p$ is \emph{Lascar invariant\/} over $A$ if the sets ${\gr\D_{p,\phi}}$ for $\phi({\mr x}\,;{\gr z})\in L$ all Lascar invariant over $A$. (The sets ${\gr\D_{p,\phi}}$ are defined in Section~\hyperref[invariant_sets]{~\ref*{invariant}.\ref*{invariant_sets}}.)
+Let $p({\mr x})\in S(\U)$ be global type; 
+we say that $p$ is \emph{Lascar invariant\/} over $A$ if 
+the sets ${\gr\D_{p,\phi}}$ for $\phi({\mr x}\,;{\gr z})\in L$ are all 
+Lascar invariant over $A$. 
+%
+(The sets ${\gr\D_{p,\phi}}$ are defined in 
+Section~\hyperref[invariant_sets]{~\ref*{invariant}.\ref*{invariant_sets}}.)
 
 \begin{proposition}\label{prop_Lascar_indiscernibles}
   Let $p({\mr x})\in S(\U)$ be a global type. Then the following are equivalent
@@ -170,9 +189,15 @@ Let $p({\mr x})\in S(\U)$ be global type; we say that $p$ is \emph{Lascar invari
   \end{itemize}
   For convenience all tuples ${\gr c_i}$ have length $|{\gr z}|=\omega$.
 \end{proposition}
-\begin{proof} We prove \ssf{1}$\IFF$\ssf{3}. Equivalence  \ssf{1}$\IFF$\ssf{2} can be proved similarly because the Lascar invariance of $p({\mr x})$ easily implies the Lascar invariance of the sets ${\gr\D_{p,\phi}}$ for all $\phi({\mr x}\,;{\gr z})\in L(A)$.
 
-  \def\ceq#1#2#3{\parbox[t]{30ex}{$\displaystyle #1$}\parbox[t]{5ex}{$\displaystyle\hfil #2$}{$\displaystyle #3$}}
+\def\ceq#1#2#3{\parbox[t]{30ex}{$\displaystyle #1$}\parbox[t]{5ex}{$\displaystyle\hfil #2$}{$\displaystyle #3$}}
+\begin{proof} 
+  We prove \ssf{1}$\IFF$\ssf{3}.
+  %
+  Equivalence  \ssf{1}$\IFF$\ssf{2} can be proved similarly because 
+  the Lascar invariance of $p({\mr x})$ easily implies the Lascar invariance of 
+  the sets ${\gr\D_{p,\phi}}$ for all $\phi({\mr x}\,;{\gr z})\in L(A)$.
+
   \ssf{3}$\IMP$\ssf{1}\quad If $p({\mr x})$ is not Lascar invariant over $A$ then ${\gr c_0}\in{\gr\D_{p,\phi}}\niff {\gr c_1}\in{\gr\D_{p,\phi}}$ for some $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ and some $\phi({\mr x}\,;{\gr z})\in L$. Then $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr c_0})\niff \phi({\mr x}\,;{\gr c_1})$. Hence, ${\gr\bar c}$ is not indiscernible over any realization of $p({\mr x})_{\restriction{\gr c_0},{\gr c_1}}$ 
   
   \ssf{1}$\IMP$\ssf{3}\quad Assume \ssf{1} and fix an $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ and some ${\mr a}\models p_{\restriction{\gr\bar c}}$. We need to prove that for every formula $\phi({\mr x}\,;{\gr z'})\in L$, where ${\gr z'}={\gr z_1},\dots,{\gr z_n}$,
