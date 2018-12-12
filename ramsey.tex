@@ -177,167 +177,6 @@ Let ${\mr a},
 Prove that there is a sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ such that ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are both sequences of $A$-indiscernibles.\QED
 \end{exercise}
 
-\begin{comment}
-\section{Indempotents types in semigroups}\label{semigroups}
-
-\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox[t]{22ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
-
-In this and the following sections we focus on semigroups definable in a first-order structure.
-For a lighter notation,
-we identify our semigroup with $\mrU$,
-which here denotes the domain of a sort in a many-sorted monster model.
-The language contains,
-among others,
-the symbol \emph{$\ \cdot\ $} which is interpreted as binary associative operation on $\mrU$.
-
-We fix a set of parameters $A$,
-not necessarily all of the same sort.
-For any two sets $\mrA,\mrB\subseteq\mrU$ we define
-
-\ceq{\hfill\emph{$\mrA\cdot_{\!A}\mrB$}}
-{=}
-{\Big\{ {\mr a}{\cdot}{\mr b}\ :\ {\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\nonforkc_{\!A}{\mr b}\Big\}}
-
-We write \emph{${\mr a}\cdot_{\!A}\mrB$} for $\{{\mr a}\}\cdot_{\!A}\mrB$.
-Similarly for \emph{$\mrA\cdot_{\!A}{\mr b}$} and \emph{${\mr a}\cdot_{\!A}{\mr b}$}.
-Clearly,
-the latter is either $\{{\mr a}{\cdot}{\mr b}\}$  or empty set.
-
-Note that unless we add assumptions on $\nonforkc_{\!A}$ or on the underlying theory,
-there is no guarantee that $\mrA\cdot_{\!A}\mrB$ is non empty,
-not even when these sets are $A$-invariant.
-With this proviso,
-we proceed but with caution.
-
-By the invariance of $\nonforkc_{\!A}$,
-for every $f\in\Aut(\mrU/A)$ we have $f[\mrA\cdot_{\!A}\mrB]=f[\mrA]\cdot_{\!A}f[\mrB]$.
-Therefore when $\mrA$ and $\mrB$ are invariant over $A$,
-also $\mrA\cdot_{\!A}\mrB$ is invariant over $A$.
-% And we also have that
-% 
-% \ceq{\hfill{\mr a}\cdot_{\!A}\mrB}{=}{\O({\mr a}/A)\cdot_{\!A}\mrB}
-% 
-% \ceq{\hfill\mrA\cdot_{\!A}{\mr b}}{=}{\mrA\cdot_{\!A}\O({\mr b}/A)}
-% 
-% Below we mainly deal with invariant sets and these identites will be (silently) applied.
-
-\begin{proposition}\label{prop_semi_associative}
-For every $A$-invariant sets $\mrA$, $\mrB$, and  $\mrC$.
-
-\ceq{\hfill\big(\mrA\cdot_{\!A}\mrB\big)\cdot_{\!A}\mrC}
-{\subseteq}
-{\mrA\cdot_{\!A}\big(\mrB\cdot_{\!A}\mrC\big)}
-\end{proposition}
-\begin{proof}
-Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ for some ${\mr a}\nonforkc_{\!A}{\mr b}$ and ${\mr a}{\cdot}{\mr b}\nonforkc_{\!A}{\mr c}$.
-By extension (Lemma~\ref{lem_coheir_independence}),
-there exists ${\mr c'}$ such that ${\mr a},{\mr b},{\mr a}{\cdot}{\mr b}\nonforkc_{\!A}{\mr c'}\equiv_{A,\,{\mr a}{\cdot}{\mr b}}{\mr c}$.
-By transitivity (again Lemma~\ref{lem_coheir_independence}),
-${\mr a}\nonforkc_{\!A}{\mr b}{\cdot}{\mr c'}$.
-Therefore ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c'}$ belongs to the r.h.s.
-Finally,
-as ${\mr c'}\equiv_{A,\,{\mr a}{\cdot}{\mr b}}{\mr c}$,
-also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by invariance.
-\end{proof}
-
-Let $\mrA$ be a non empty set.
-If $\mrA\cdot_{\!A}\mrA\subseteq\mrA$ we say that it is \emph{idempotent\/} (over $A$).
-
-\begin{corollary}\label{corol_min_idempotent}
-Assume $\mrB\subseteq\mrA$ are both $A$-invariant.
-Then if $\mrA$ is idempotent,
-also $\mrB\cdot_{\!A}\mrA$ is idempotent.
-% Similarly,
-% if $\mrA$ is a right-ideal,
-% also  $\mrB\cdot_{\!A}\mrA$ is a right-ideal.
-\end{corollary}
-\begin{proof}
-We check that if $\mrA$ is idempotent so is $\mrB\cdot_{\!A}\mrA=\mrA$
-
-\ceq{\hfill\big(\mrB\cdot_{\!A}\mrA\big)\ \cdot_{\!A}\ \big(\mrB\cdot_{\!A}\mrA\big)}
-    {\subseteq}
-    {\big(\mrB\cdot_{\!A}\mrA\big)\ \cdot_{\!A}\ \big(\mrA\cdot_{\!A}\mrA\big)}
-
-\ceq{}
-    {\subseteq}
-    {\mrB\cdot_{\!A}\Big(\mrA\cdot_{\!A}\big(\mrA\cdot_{\!A}\mrA\big)\Big)}\hfill by the lemma above
-
-\ceq{}{\subseteq}{\mrB\cdot_{\!A}\mrA}
-% 
-% The proof of the second claim is similar.
-\end{proof}
-
-We show that,
-under the assumption of stationarity and independence,
-there is a natural correspondence between the semigroup multiplication of two elements and the operation $\cdot_{\!A}$ between their orbits.
-
-
-\begin{proposition}\label{prop_orbits_main}
-Assume $\nonforkc_{\!A}$ is $1$-stationary,
-see Definition~\ref{def_coheir_stationary}.Then for every ${\mr a}\nonforkc_{\!A}{\mr b}$ 
-
-\ceq{\hfill\O({\mr a}{\cdot}{\mr b}/A)}{=}{\O({\mr a}/A)\cdot_{\!A}\O({\mr b}/A)}
-\end{proposition}
-\begin{proof} 
-We prove two inclusions,
-only the second one requires stationarity.
-
-\begin{itemize}
-\item[$\subseteq$] As ${\mr a}\nonforkc_{\!A}{\mr b}$ holds by hypothesis,
-${\mr a}{\cdot}{\mr b}\in\O({\mr a}/A)\cdot_{\!A}\O({\mr b}/A)$.
-Hence the inclusion follows by invariance.
-
-\item[$\supseteq$] By invariance it suffices to show the l.h.s.\@ contains ${\mr a}\cdot_{\!A}\O({\mr b}/A)$.
-Let ${\mr b'}\in\O({\mr b}/A)$ be such that ${\mr a}\nonforkc_{\!A}{\mr b'}$.
-We claim that ${\mr a}{\cdot}{\mr b'}\in\O({\mr a}{\cdot}{\mr b}/A)$.
-Both ${\mr b}$ and ${\mr b'}$ satisfy ${\mr a}\nonforkc_{\!A}{\mr x}\equiv_A{\mr b}$.
-By $1$-stationarity,
-${\mr b'}\equiv_{A,\,{\mr a}}{\mr b}$.
-Hence ${\mr a}{\cdot}{\mr b}\equiv_A{\mr a}{\cdot}{\mr b'}$ which proves the claim.
-\end{itemize}\vskip-1.2\baselineskip
-\end{proof}
-
-\begin{corollary}[(associativity)]\label{corol_orbits_associative}
-Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
-Then for every $M$-invariant sets $\mrA$,
-$\mrB$ and  $\mrC$.
-
-\ceq{\hfill\big(\mrA\cdot_{\!M}\mrB\big)\cdot_{\!M}\mrC}
-{=}
-{\mrA\cdot_{\!M}\big(\mrB\cdot_{\!M}\mrC\big)}
-\end{corollary}
-
-\begin{proof}
-We can assume that $\mrA$, $\mrB$ and $\mrC$ are $M$-orbits of elements of $\mrU$.
-Say ${\mr a}$, ${\mr b}$, and ${\mr c}$ respectively.
-As we are working over models,
-we can assume that ${\mr a}\nonforkc_{\!A}{\mr b}$ and ${\mr a}{\cdot}{\mr b}\nonforkc_{\!A}{\mr c}$.
-By Proposition~\ref{prop_orbits_main} the set on the l.h.s.\@ equals $\O({\mr a}{\cdot}{\mr b}{\cdot}{\mr c}/M)$.
-By a similar argument the set on the r.h.s.\@ equals $\O({\mr a'}{\cdot}{\mr b'}{\cdot}{\mr c'}/M)$ for some elements ${\mr a'}$, ${\mr b'}$, and ${\mr c'}$.
-Proposition~\ref{prop_semi_associative} proves that inclusion $\subseteq$ holds in general.
-But inclusion between orbits amounts to equality.
-\end{proof}
-
-\begin{lemma}\label{lem_Hindman}
-Let $M$ be a model and assume $\nonforkc_{\!M}$ is $1$-stationary.
-If $\mrA$ is minimal among the  $M$-invariant,
-idempotent,
-type-definable sets then $\mrA=\O({\mr a}/M)$ for some element ${\mr a}$.
-\end{lemma}
-\begin{proof}
-By Corollary~\ref{corol_min_idempotent},
-for every ${\mr a}\in\mrA$ the set $\O({\mr a}/M)\cdot_{\!M}\mrA$ is idempotent.
-It is also type-definable and contained in $\mrA$,
-therefore by minimality $\O({\mr a}/M)\cdot_{\!M}\mrA=\mrA$.
-Then there is a ${\mr b}\in\mrA$ such that ${\mr a}\nonforkc_M{\mr b}$ and ${\mr a}{\cdot}{\mr b}={\mr a}$.
-By associativity, the set $\O({\mr a}/M)\cdot_{\!M}\O({\mr b}/M)$ is idempotent.
-By Corollary~\ref{corol_orbits_associative},
-it coincides with $\O({\mr a}/M)$.
-The theorem follows by minimality.
-\end{proof}
-\end{comment}
-
 \section{Indempotent orbits in semigroups}\label{semigroups}
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
@@ -506,6 +345,7 @@ If $\mrA$ is minimal among the
 idempotent sets that are
 type-definable over $M$, then $\mrA={\mr b}_M$ for some (any) ${\mr b}\in\mrA$.
 \end{lemma}
+
 \begin{proof}
 Fix arbitrarily some ${\mr b}\in\mrA$.
 %
@@ -540,7 +380,6 @@ Under the same assumptions of the lemma above, every type-definable
 idempotent set contains an element with an idempotent orbit.\QED
 \end{corollary}
 
-
 \section{Hindman theorem}\label{Hindman}
 
 In this section we merge the theory of idempotents presented in Section~\ref{semigroups}
@@ -556,7 +395,6 @@ Namely,
 \ceq{\hfill\emph{$\fp\,{\mr\bar a}$}}
 {=}
 {\Big\{{\mr a_{i_0}}\kern-0.5ex\cdot\dots\cdot{\mr a_{i_k}}\ :\quad i_0<\dots<i_k<|{\mr\bar a}|,\ \ k<|{\mr\bar a}|\Big\}}. 
-
 
 % Let ${\mr\bar a}$ be a tuple of elements of $\mrG$ of length $\le\omega$. 
 % For any $n\le|{\mr\bar a}|$ we write $\fp_n\,{\mr\bar a}$ for the set of 
@@ -579,79 +417,97 @@ A \emph{$\cpaw$-chain\/} in $\mrG$ is a tuple ${\mr\bar a}\in\mrG^{\le\omega}$ s
 
 The requirements on  $\cpaw$ are hardly restrictive.
 For example, on a free semigroup we can take the preorder relation given by the length of the words.
-Or, on any semigroup $G$, we could take the trivial relation $G^2$ --the theorems below would remain non trivial. %In Section~\ref{carlson} we will apply more elaborated relations. 
+%
+Or, on any semigroup $G$, we could take the trivial relation $G^2$ --the theorem below would remain non trivial.
 
 \theoremstyle{mio}
 \newtheorem{Hindman}[thm]{Hindman Theorem}
 \begin{Hindman}\label{thm_Hindman}
 Let $\cpaw$ be a relation on a semigroup $G$.
+%
 Assume that $G$ is  \cpawdot-closed and $\cpaw$-covered.
+%
 Then for every finite coloring of $G$ 
 there is an infinite $\cpaw$-chain $\bar a$ such that $\fp\,\bar a$ is monochromatic.
 \end{Hindman}
 
-Note that this implies that every commutative semigroup $G$ has an infinite monochromatic subset closed under finite sums of distinct elements (order $G$ arbitrarily).
+Note that this implies that every commutative semigroup $G$ has an infinite monochromatic subset 
+closed under finite sums of distinct elements (order $G$ arbitrarily).
 
 Our proof follows closely the proof of Ramsey's theorem~\ref{thm_Ramsey}.
+%
 The novelty is all in Lemma~\ref{lem_Hindman}.
 
 \begin{proof}
 We interpret $G$ as a structure in a language 
 that extends the natural language of semigroups
 with a symbol for $\cpaw$ and one for each subset of $G$.
+%
 Let $\mrG$ be a saturated elementary superstucture of $G$.
+%
 As observed in Remark~\ref{rk_coheir_stationary}, 
 the language makes $\nonforkc_G$ trivially $1$-stationary.
 
 We write ${\mr\G'}$ for the type-definable set $\{{\mr x} : G\cpaw{\mr x}\}$,
 which is non empty because $G$ is $\cpaw$-covered.
+%
 We claim that ${\mr\G'}$ is idempotent.
+%
 In fact, if ${\mr a},{\mr b}\in{\mr\G'}$ 
 then, as $G\cpaw{\mr a},{\mr b}$ and ${\mr a}\cnonfork_G{\mr b}$, 
 we must have that ${\mr a}\cpaw{\mr b}$.
+%
 Therefore, from the \cpawdot-closure of $\cpaw$ we infer ${\mr a}{\cdot}{\mr b}\in{\mr\G'}$.
 
-Let ${\mr g}$ be an element of ${\mr\G'}$ with idempotent orbit as given by Corollary~\ref{corol_idempotent}.
+Let ${\mr g}$ be an element of ${\mr\G'}$ with idempotent orbit 
+as given by Corollary~\ref{corol_idempotent}.
+%
 Let $p({\mr x})\in S(\mrG)$ be a global coheir of $\tp({\mr g}/G)$.
+%
 Let ${\mr\bar g}$ a coheir sequence of $p({\mr x})$, that is,
 
 \ceq{\hfill {\mr g_i}}{\models}{p_{\restriction G,\,{\mr g_{\restriction i} }  }({\mr x}).}
 
 We write ${\mr \cev{g}_{\restriction i}}$ for the tuple ${\mr g_{i-1}},\dots,{\mr g_{0}}$.
-%Note that, as the element of $\fp\,{\mr \cev{g}_{\restriction i} }$ are definable over ${\mr g_{\restriction i}}$,
+%
 By the idempotency of ${\mr g}_G$ and Proposition~\ref{prop_orbits_main}, 
 ${\mr h}\equiv_G{\mr g}$ for all ${\mr h}\in \fp\,{\mr \cev{g}_{\restriction i}}$ and all $i$.
-It follows in particular that $\fp\,{\mr \cev{g}_{\restriction i}}$ is monochromatic, say all its elements have color $1$.
+It follows in particular that $\fp\,{\mr \cev{g}_{\restriction i}}$ is monochromatic, 
+say all its elements have color $1$.
+%
 Now, we use the sequence ${\mr\bar g}$ to define $\bar a\in G^\omega$
 such that all elements of $\fp\,\bar a$ have color $1$.
 
 Assume as induction hypothesis that we have $a_{\restriction i}\in G^i$ 
 such that all elements of $\fp(a_{\restriction i},\,{\mr g_0})$ have color $1$.
+%
 Our goal is to find $a_i$ 
 such that the same property holds for $\fp(a_{\restriction i+1},\,{\mr g_0})$.
 
-
 First we claim that from the induction hypothesis it follows that, 
 for all $j$, all elements of $\fp(a_{\restriction i},\,{\mr\cev{g}_{\restriction j}})$ have color $1$.
+%
 In fact, the elements of $\fp(a_{\restriction i},\,{\mr\cev{g}_{\restriction j}})$ have the form 
 $b\cdot{\mr h}$ for some $b\in\fp(a_{\restriction i})$ and ${\mr h}\in\fp({\mr\cev{g}_{\restriction j}})$.
+%
 As ${\mr h}\equiv_G{\mr g}$, we conclude that $b\cdot{\mr h}\equiv_Gb\cdot {\mr g_0}$, which proves the claim.
 
 Let $\phi(a_{\restriction i},\,{\mr g_{i+1}},\,{\mr g_{\restriction i+1}})$ 
 say that all elements of $\fp(a_{\restriction i},\,{\mr\cev{g}_{\restriction i+2}})$ have color $1$.
+%
 As ${\mr\bar g}$ is a coheir sequence we can find  $a_i$ 
 such that $\phi(a_{\restriction i},\,a_i,\,{\mr g_{\restriction i+1}})$.
+%
 Hence all elements of $\fp(a_{\restriction i+1},\,{\mr g_{\restriction i+1}})$ have color $1$.
+%
 Therefore $a_i$ is as required.
 \end{proof}
 
 \section{The Hales-Jewett Theorem}
 \label{HJ}
 
-
 The Hales-Jewett Theorem is a purely combinatorial statement 
 that implies the van der Waerden Theorem.
-
 
 We need a few definitions.
 We work with the same notation as Section~\ref{semigroups}.
