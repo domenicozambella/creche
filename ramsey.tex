@@ -356,7 +356,7 @@ type-definable over $M$ by Proposition~\ref{prop_typedef_Ab}.
 Therefore by minimality $\mrA\cdot_{\!M}{\mr b}=\mrA$.
 %
 Let ${\mr\Aa'}\subseteq\mrA$ contain those ${\mr a}$ such that 
-${\mr a}\cdot_{\!M}{\mr b}\equiv_M{\mr b}$.
+${\mr a}\cdot_{\!M}{\mr b}={\mr b}_M$.
 %
 This set is non empty because ${\mr b}\in\mrA\cdot_{\!M}{\mr b}$.
 %
@@ -487,8 +487,9 @@ such that the same property holds for $\fp(a_{\restriction i+1},\,{\mr g_0})$.
 First we claim that from the induction hypothesis it follows that, 
 for all $j$, all elements of $\fp(a_{\restriction i},\,{\mr\cev{g}_{\restriction j}})$ have color $1$.
 %
-In fact, the elements of $\fp(a_{\restriction i},\,{\mr\cev{g}_{\restriction j}})$ have the form 
-$b\cdot{\mr h}$ for some $b\in\fp(a_{\restriction i})$ and ${\mr h}\in\fp({\mr\cev{g}_{\restriction j}})$.
+In fact, the elements of $\fp(a_{\restriction i},\,{\mr\cev{g}_{\restriction j}})$ 
+have the form $b\cdot{\mr h}$ for some $b\in\fp(a_{\restriction i})$
+and ${\mr h}\in\fp({\mr\cev{g}_{\restriction j}})$.
 %
 As ${\mr h}\equiv_G{\mr g}$, we conclude that $b\cdot{\mr h}\equiv_Gb\cdot {\mr g_0}$, which proves the claim.
 
@@ -642,8 +643,8 @@ ${\mr g}\in{\mr c}\cdot_G(\mrG\sm\mrC)\cdot_G{\mr c}$.
 %
 In particular, ${\mr g}\in\mrG\sm\mrC$.
 %
-Now apply the second claim of Proposition~\ref{prop_HJ_tecnical}, 
-with $\mrC$ for $\mrA$ to  obtain 
+Now apply the second claim of Proposition~\ref{prop_HJ_tecnical},
+with $\mrC$ for $\mrA$, to  obtain 
 $\sigma\,{\mr g}\in{\mr c}\cdot_G\mrC\cdot_G{\mr c}$ 
 for all $\sigma\in\Sigma$.
 %
@@ -677,7 +678,10 @@ For every $a\in C^{|x|}$ the map $\sigma_a:t(x)\mapsto t(a)$ is a retraction.
 Hence we can apply the theorem above.
 \end{proof}
 
-We conclude with a variant of Theorem~\ref{thm_abstract_HJ} that applies to a broader class of semigroup homomorphisms. For $\Sigma$ a set of maps $\sigma:G\to C$ and $c\in C$ we define 
+We conclude with a variant of Theorem~\ref{thm_abstract_HJ} that applies to 
+a broader class of semigroup homomorphisms. 
+%
+For $\Sigma$ a set of maps $\sigma:G\to C$ and $c\in C$ we define 
 
 \ceq{\hfill\emph{$\Sigma^{-1}[c]$}}{=}{\bigcap_{\sigma\in\Sigma}\sigma^{-1}[c]}\smallskip
 
