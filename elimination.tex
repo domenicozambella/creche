@@ -11,21 +11,21 @@ In this chapter we present a few results dating from the 1950s that describe the
 
 
 We refer the reader to Exercise~\ref{ex_qe_in_U} for a simpler version 
-of the main result of this section, the Lyndon-Robinson Lemma. 
+of the main result in this section, the Lyndon-Robinson Lemma. 
 In fact, under the additional assumption of completeness, Lemma~\ref{lem_qfdefinability} 
-becomes essentially identical to the claim in Exercise~\ref{ex_qe_in_U}.
+is essentially the same as the claim in Exercise~\ref{ex_qe_in_U}.
 
 However, we are interested in criteria for quantifier
 elimination, e.g.\@ Corollary~\ref{corol_QE} below.
-Often we first need to prove quantifier elimination 
-in order to be able to prove completeness.
-Therefore the assumption of completeness would make criteria 
-of quantifier elimination less applicable.
+We often need to prove quantifier elimination in order to prove completeness.
+Therefore any assumption of completeness would make criteria for quantifier elimination less applicable.
 
-In this section $T$ is a consistent theory without finite models and $\Delta$ is a set of formulas closed under renaming of variables. At a first reading the reader is encouraged to assume that $\Delta$ is $L_{\rm at}$. 
+In this section $T$ is a consistent theory without finite models and $\Delta$ is a set of formulas closed under renaming of variables. 
+At a first reading the reader is encouraged to assume that $\Delta$ is $L_{\rm at}$.
 
 \begin{definition}\label{def_C_Delta}
-If $\ssf{C}\subseteq\{\A,\E,\neg,\vee,\wedge\}$ is a set of connectives, we write \emph{$\ssf{C}\Delta$} for the closure of $\Delta$ with respect to all connectives in $\ssf{C}$. We may write $\pmDelta$ for $\{\neg\}\Delta$.\QED%Note that $\ssf{C}_1\ssf{C}_2\Delta$ does not always coincide with $\big(\ssf{C}_1\cup\ssf{C}_2)\Delta$.
+If $\ssf{C}\subseteq\{\A,\E,\neg,\vee,\wedge\}$ is a set of connectives, we write \emph{$\ssf{C}\Delta$} for the closure of $\Delta$ with respect to all connectives in $\ssf{C}$.
+We may write $\pmDelta$ for $\{\neg\}\Delta$.\QED%Note that $\ssf{C}_1\ssf{C}_2\Delta$ does not always coincide with $\big(\ssf{C}_1\cup\ssf{C}_2)\Delta$.
 \end{definition}
 
 
@@ -71,18 +71,21 @@ For every $\phi({\mr x})\in L$ the following are equivalent
 \end{lemma}
 \begin{proof} \ssf{1}$\IMP$\ssf{2}\quad Immediate.
 
-\ssf{2}$\IMP$\ssf{1}\quad  We claim that from \ssf{2} it follows that
+\ssf{2}$\IMP$\ssf{1}\quad  We claim that \ssf{2} implies
 
+\ceq{\#\hfill T}{\proves}{\phi({\mr x})\ \ \iff\ \ \bigvee\big\{\,p({\mr x})\subseteq\Delta\ :\ T\proves p({\mr x})\imp\phi({\mr x})\,\big\}.}
 
-\ceq{\#\hfill T}{\proves}{\phi({\mr x})\ \ \iff\ \ \bigvee\big\{\,p({\mr x})\subseteq\Delta\ :\ T\proves p({\mr x})\imp\phi({\mr x})\,\big\}}
-
-Implication $\pmi$ is clear. To verify implication $\imp$, fix $M\models T$ and let ${\mr b}\in M^{|{\mr x}|}$ be such that $M\models\phi({\mr b})$.  From \ssf{2} it follows that $\phi({\mr x})$ satisfy \ssf{1} of Proposition~\ref{prop_pokj}. Therefore $T\proves q({\mr x})\imp\phi({\mr x})$ for $q({\mr x})=\Deltatp({\mr b})$. Hence $q({\mr x})$ is one of the types that occur in the disjuction in $\#$ which therefore is satisfied by ${\mr b}$.
+The implication $\pmi$ is clear.
+To verify the implication $\imp$, let $M\models T$ and let ${\mr b}\in M^{|{\mr x}|}$ be such that $M\models\phi({\mr b})$.
+From \ssf{2} it follows that $\phi({\mr x})$ satisfies \ssf{1} of Proposition~\ref{prop_pokj}.
+Therefore $T\proves q({\mr x})\imp\phi({\mr x})$ for $q({\mr x})=\Deltatp({\mr b})$.
+Hence $q({\mr x})$ is one of the types that occur in the disjuction in $\#$ which therefore is satisfied by ${\mr b}$.
 
 From $\#$ and compactness we obtain
 
-\ceq{\hfill T}{\proves}{\phi({\mr x})\ \ \iff\ \ \bigvee\big\{\,\psi({\mr x})\in\{\wedge\}\Delta\ :\ T\proves \psi({\mr x})\imp\phi({\mr x})\,\big\}}
+\ceq{\hfill T}{\proves}{\phi({\mr x})\ \ \iff\ \ \bigvee\big\{\,\psi({\mr x})\in\{\wedge\}\Delta\ :\ T\proves \psi({\mr x})\imp\phi({\mr x})\,\big\}.}
 
-Applying compactness again, we replace the infinite disjunction above with a finite one and prove \ssf{2}.
+Applying compactness again allows us to replace the infinite disjunction above with a finite one and prove \ssf{2}.
 \end{proof}
 
 The following exercise is immediate but it is arguably the most important result of this chapter. 
@@ -249,7 +252,7 @@ Let $T$ be a complete theory without finite models in a language that consists o
 \end{exercise}
 
 \begin{exercise}\label{ex_discrete_lo}
-Let $T$ be the theory of \emph{discrete linear orders}. Namely, $T$ extends the theory of linear orders $T_{\rm lo}$  (see Section~\hyperref[dlo]{\ref*{relational}.\ref*{dlo}}) with the following two of axioms with the following two of axioms
+Let $T$ be the theory of \emph{discrete linear orders}, that is, $T$ extends the theory of linear orders $T_{\rm lo}$  (see Section~\hyperref[dlo]{\ref*{relational}.\ref*{dlo}}) with the following two of axioms with the following two of axioms
 \begin{itemize}
 \item[dis$\uparrow$.] $\E z\ \big[x<z\ \wedge\ \neg\E y\ x<y<z\big]$;
 \item[dis$\downarrow$.] $\E z\ \big[ z<x\ \wedge\ \neg\E y\ z<y<x\big]$.
@@ -265,7 +268,7 @@ is a saturated model of $T$.\QED
 
 \begin{exercise}
 Let $T$ be a consistent theory. Suppose that all completions of $T$ are of the form 
-$T\cup S$ for some set $S$ of quantifier-free sentences. Prove that, if all completion of $T$ have elimination of quantifiers, so does $T$. Show that this fails when the completions of $T$ have arbitrary complexity. 
+$T\cup S$ for some set $S$ of quantifier-free sentences. Prove that if all completions of $T$ have elimination of quantifiers, so does $T$. Show that this fails when the completions of $T$ have arbitrary complexity. 
 
 Note. Thought the claim follows immediately from Corollary~\ref{corol_QE}, a direct proof by compactness is also instructive. Prove that for every formula $\phi(x)$ there are some quantifier-free sentences $\sigma_i$ and quantifier-free formulas $\psi_i(x)$ such that
 
@@ -286,7 +289,7 @@ We say that $T$ is \emph{model-complete\/} if every embedding $h:M\hookrightarro
 
 To stress positivity in the next proposition, we generalize the definition as follows. We say that $T$ is \emph{$\Delta$-model-complete\/} if every $\Delta$-embedding $h:M\hookrightarrow N$ between models of $T$ is a $\{\A\E\}\Delta$-embedding. 
 
-Model-completeness is equivalent to a sort of quantifier elimination.
+Model-completeness is equivalent to a property akin to quantifier elimination.
 
 \begin{proposition}
 The following are equivalent

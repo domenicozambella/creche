@@ -17,7 +17,7 @@ The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*
 \section{Algebraic and definable elements}\label{acl}
 
 Let ${\mr a}\in\U$ and let $\Aa\subseteq\U$ be some set of parameters (of arbitrary cardinality).
-We say that ${\mr a}$ is \emph{algebraic over $\Aa$\/} if $\phi({\mr a})\wedge\E^{=k}{\mr x}\;\phi({\mr x})$ holds for some  formula $\phi({\mr x})\in L(\Aa)$ and  some positive integer $k$.
+We say that ${\mr a}$ is \emph{algebraic over $\Aa$\/} if $\phi({\mr a})\wedge\E^{=k}{\mr x}\;\phi({\mr x})$ holds for a formula $\phi({\mr x})\in L(\Aa)$ and  some positive integer $k$.
 In particular, when $k=1$ we say that ${\mr a}$ is \emph{definable over $\Aa$}.
 We write \emph{acl$(\Aa)$} for the \emph{algebraic closure of $\Aa$}, that is, the set of all the elements that are algebraic over $\Aa$.
 If $\Aa=\acl(\Aa)$, we say that $\Aa$ is \emph{algebraically closed}.
@@ -31,7 +31,7 @@ Formulas $\phi(x)\in L(A)$, or types $p(x)\subseteq L(A)$, with finitely many so
 For every $A\subseteq\U$ and every type $p(x)\subseteq L(A)$, where $|x|<\omega$, the following are equivalent
 \begin{itemize} 
 \item[1] $\E^{\le n}x\; p(x)$;
-\item[2] $\E^{\le n}x\;\phi(x)$ for some $\phi(x)$ which is conjunction of formulas $p(x)$.
+\item[2] $\E^{\le n}x\;\phi(x)$ for some $\phi(x)$ which is a conjunction of formulas in $p(x)$.
 \end{itemize}
 \end{proposition}
 \begin{proof} The non trivial implication is \ssf{1}$\IMP$\ssf{2}.
@@ -203,7 +203,7 @@ Prove that \ssf{2} implies the consistency of $p(\bar z)\,\cup\, \big\{\neg\phi(
 \def\ceq#1#2#3{\parbox{15ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 Finite and cofinite sets are always (trivially) definable in every structure.
-We say that $M$ is a \emph{minimal structure\/} all its definable subsets of arity one are finite or cofinite.
+We say that $M$ is a \emph{minimal structure\/} if all its definable subsets of arity one are finite or cofinite.
 Unfortunately, this notion is not elementary, i.e.\@ it is not a property of $\Th(M)$.
 For instance $\NN$ with only the order relation in the language is a minimal structure but 
 none of its elementary extensions is.
@@ -229,7 +229,7 @@ The following are equivalent
 \end{proposition}
 \begin{proof}
 Implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3} are immediate, we prove \ssf{3}$\IMP$\ssf{1}.
-Let $\phi({\mr x}\,;{\gr z})\in L$ and fix an elementary extension $N$ as required by \ssf{2}.
+Let $\phi({\mr x}\,;{\gr z})\in L$ and let $N$ be the elementary extension given by \ssf{3}.
 Let $p({\gr z})\subseteq L$ be the following type
 
 \ceq{\hfill p({\gr z})}
@@ -237,7 +237,7 @@ Let $p({\gr z})\subseteq L$ be the following type
 {\Big\{ \E^{> n}{\mr x}\;\phi({\mr x}\,;{\gr z})\ \wedge\ \E^{> n}{\mr x}\;\neg\phi({\mr x}\,;{\gr z}) \ \ :\ \ n\in\omega\Big\}.}
 
 As $N$ is minimal, $N\notmodels \E z\,p(z)$.
-By saturation $p(z)$ is not finitely consistent in $M$.
+By $\omega$-saturation $p(z)$ is not finitely consistent in $M$.
 Hence, for some $n$ 
 
 \ceq{\hfill M}
@@ -293,7 +293,7 @@ That is, if ${\mr a},{\mr b}\notin\acl B$ then ${\mr b}\in\acl (B,{\mr a})\IFF{\
 \begin{proof} 
 Suppose ${\mr b}\notin\acl(B,{\mr a})$ and ${\mr a}\in\acl(B,{\mr b})$.
 We prove that ${\mr a}\in\acl B$.
-Fix a formula $\phi({\mr x},{\mr y})\in L(B)$ such that $\phi({\mr x},{\mr b})$ witness ${\mr a}\in\acl(B,{\mr b})$, i.e.\@ for some $n$
+Fix a formula $\phi({\mr x},{\mr y})\in L(B)$ such that $\phi({\mr x},{\mr b})$ witnesses ${\mr a}\in\acl(B,{\mr b})$, i.e.\@ for some $n$
 
 \ceq{\hfill\phi({\mr a},{\mr b})}{\wedge}{\E^{\le n}{\mr x}\,\phi({\mr x},{\mr b}).}
 
@@ -330,8 +330,8 @@ Hence $B$ is not an independent set.
 \end{itemize}
 \end{corollary}
 
-We may write \emph{acl$(B/A)$\/} per $\acl(B\cup A)$.
-The notation is used to suggest to the reader that the role of $A$ in the argument is irrelevant and that it could be absorbed in the language.
+We may write \emph{acl$(B/A)$\/} for $\acl(B\cup A)$.
+The notation is used to suggest to the reader that $A$ could be absorbed into the language.
 \emph{Independent sets over $A$\/} and \emph{bases over $A$\/} are defined in the obvious way.
 
 \begin{theorem} ($T$ strongly minimal.) Fix some arbitrary set $C$, then
@@ -346,7 +346,7 @@ The notation is used to suggest to the reader that the role of $A$ in the argume
 By the finite character of algebraic closure, the independent set form an inductive class.
 Apply Zorn lemma to obtain a maximally independent subset of $C$ containing $B$.
 By Corollary~\ref{basemassimale} this set is a basis of $C$.
-This prove \ssf{1} and it is immediate that the argument can be generalized as required in \ssf{3}.
+This proves \ssf{1} and it is immediate that the argument can be generalized as required in \ssf{3}.
 
 As for \ssf{2}, assume for a contradiction that $B_1,B_2\subseteq C$ are two bases of $C$ and that $|B_1|<|B_2|$.
 First consider the case when $B_2$ is infinite.
@@ -391,7 +391,7 @@ Finally we show that dimension classifies models of $T$.
 ($T$ strongly minimal.) Models of $T$ with the same dimension are isomorphic.
 \end{theorem}
 \begin{proof}
-Let $A$ e $B$ be some bases of $M$ and $N$ respectively.
+Let $A$ e $B$ be bases of $M$ and $N$ respectively.
 By Corollary~\ref{corol_mappetraindipendenti}, any bijectiion between $A$ and $B$ is an elementary map.
 By Proposition~\ref{prop_estensionemappechiusuraalgebrica}, it extends to the required isomorphism between $\acl A=M$ and $\acl B=N$.
 \end{proof}

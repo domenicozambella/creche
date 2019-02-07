@@ -630,17 +630,17 @@ Then the following are equivalent for every $\phi(x)\in L$
 % %%%%%%%%%%%%%%%%%%%%%
 \section{Completeness}
 
-A theory $T$ is \emph{maximal consistent\/} if it is consistent and there is no consistent theory $S$ such that $S\subset T$.
+A theory $T$ is \emph{maximally consistent\/} if it is consistent and there is no consistent theory $S$ such that $S\subset T$.
 Equivalently, $T$ contains every sentence $\phi$ \emph{consistent with\/} $T$, that is, such that $T\cup\{\phi\}$ is consistent.
-Clearly a maximal consistent theory is closed under logical consequences.
+Clearly a maximally consistent theory is closed under logical consequences.
 
-A theory $T$ is \emph{complete\/} if $\ccl T$ is maximal consistent.
+A theory $T$ is \emph{complete\/} if $\ccl T$ is maximally consistent.
 Concrete examples will be given in the next chapters as it is not easy to prove that a theory is complete.
 
 \begin{proposition}\label{fattoconsistenzasen4sostretto}
 The following are equivalent
 \begin{itemize}
-\item[a.] $T$ is maximal consistent;
+\item[a.] $T$ is maximally consistent;
 \item[b.] $T=\Th(M)$ for some structure $M$;
 \item[c.] $T$ is consistent and $\phi\in T$ or $\neg\phi\in T$ for every sentence $\phi$.
 \end{itemize}
@@ -649,7 +649,7 @@ The following are equivalent
 To prove \ssf{a}$\IMP$\ssf{b}, assume that $T$ is consistent.
 Then there is $M\models T$.
 Therefore $T\subseteq\Th (M)$.
-As $T$ is maximal consistent $T=\Th(M)$.
+As $T$ is maximally consistent $T=\Th(M)$.
 Implication \ssf{b}$\IMP$\ssf{c} is immediate.
  As for \ssf{c}$\IMP$\ssf{a} note that if $T\cup\{\phi\}$ is consistent then $\neg\phi\not\in T$ therefore $\phi\in T$ follows from \ssf{c}.
 \end{proof}
@@ -660,7 +660,7 @@ The proof of the proposition below is is left as an exercise for the reader.
 The following are equivalent
 \begin{itemize}
 \item[a.] $T$ is complete;
-\item[b.] there is a unique maximal consistent theory $S$ such that $T\subseteq S$;
+\item[b.] there is a unique maximally consistent theory $S$ such that $T\subseteq S$;
 \item[c.] $T$ is consistent and $T\proves\Th(M)$ for every $M\models T$;
 \item[d.] $T$ is consistent and $T\proves\phi$ o $T\proves\neg\phi$ for every sentence $\phi$;
 \item[e.] $T$ is consistent and $M\equiv N$ for every pair of models of $T$.\QED
@@ -668,9 +668,9 @@ The following are equivalent
 \end{proposition}
 % \begin{proof}
 % \ssf{a}$\,\IMP\,$\ssf{b}.
-% Assume \ssf{a}, then $\ccl(T)$ is maximal consistent.
+% Assume \ssf{a}, then $\ccl(T)$ is maximally consistent.
 % If $T\subseteq S$ then $\ccl(T)\subseteq\ccl(S)=S$.
-% If $S$ is maximal consistent then $\ccl(T)=S$.
+% If $S$ is maximally consistent then $\ccl(T)=S$.
 % \ssf{b}$\IMP$\ssf{c}.
 % Assume \ssf{b}.
 % The consistency of $T$ follows from the existence of $S$.
@@ -686,7 +686,7 @@ The following are equivalent
 % Siano $M\nequiv N$ due modelli di $T$ e fissiamo un sentence $\phi$ such that $M\models\phi$ e $N\models\neg\phi$.
 % Quindi non is vero n\'e $T\proves\phi$ n\'e $T\proves\neg\phi$.
 %  Dimostriamo \ssf{e}$\IMP$\ssf{a}.
-% Assumiamo \ssf{e} e dimostriamo che $\ccl(T)$ is maximal consistent.
+% Assumiamo \ssf{e} e dimostriamo che $\ccl(T)$ is maximally consistent.
 % La coerenza is ovvia.
 % Sia $\phi$ un sentence arbitrario e supponiamo che $\phi\notin\ccl(T)$.
 % Allora esiste un modello di $T$ such that $M\models\neg\phi$.
@@ -742,7 +742,7 @@ Prove that the following are equivalent
 \end{itemize}
 By contrast prove that the following are \textit{not\/} equivalent
 \begin{itemize}
-\item[a.] $T$ is maximal consistent;
+\item[a.] $T$ is maximally consistent;
 \item[b.] for every sentence $\phi$, o $\phi\in T$ o  $\neg\phi\in T$ but not both.
 \end{itemize}
 Hint: consider the theory containing all sentences where the symbol $\neg$ occurs an even number of times.
@@ -750,7 +750,7 @@ This theory is not consistent as it contains $\bot$.\QED
 \end{exercise}
 
 \begin{exercise}
-Prove that if $T$ has exactly $2$ maximal consistent extension $T_1$ and $T_2$ then there is a sentence $\phi$ such that $T,\phi\proves T_1$ and $T,\neg\phi\proves T_2$.
+Prove that if $T$ has exactly $2$ maximally consistent extension $T_1$ and $T_2$ then there is a sentence $\phi$ such that $T,\phi\proves T_1$ and $T,\neg\phi\proves T_2$.
 State and prove the generalization to finitely many maximally consistent extensions.\QED
 \end{exercise} 
 
