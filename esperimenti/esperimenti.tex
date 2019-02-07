@@ -83,6 +83,7 @@ diagrams={>=latex}
 \def\RR{\mathds R}
 \def\BB{\mathds B}
 \def\CC{\mathds C}
+\def\DD{\mathds D}
 \def\PP{\mathds P}
 \def\Ar{{\rm Ar}}
 \def\dom{\mathop{\rm dom}}
@@ -298,6 +299,8 @@ diagrams={>=latex}
 \def\grC{{\gr\C}}
 \def\grD{{\gr\D}}
 \def\grV{{\gr\V}}
+\def\grCC{{\gr\CC}}
+\def\grDD{{\gr\DD}}
 
 
 \renewcommand*{\emph}[1]{%
@@ -307,9 +310,180 @@ diagrams={>=latex}
 \begin{document}
 \raggedbottom
  
+\section{Approximations}
+\def\medrel#1{\parbox[t]{6ex}{\hfil$#1$}}
+\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+\def\uuu{{\mathds 1}}
+\def\gruuu{{\mathds 1}}
+
+For  $p\in S_{\mr x}(\U)$, a global type, we write ${\gr\uuu_{\phi,p}}:\U^{|{\gr z}|}\to\RR$ for the indicator function of the set ${\gr\D_{p,\phi}}$.
+%
+For $n\le\omega$ let $\bar p=\<p_i:i<n\>$ be a tuple of global types.
+%
+We write  ${\gr\uuu_{\phi,\bar p}}$ for the corresponding tuple of indicator functions.
+%
+For $\bar\alpha\in\RR^{n}$ we write
+
+\ceq{\hfill\bar\alpha\cdot{\gr\uuu_{\phi,\bar p}}}{=}{\sum^n_{i=0}\alpha_i\cdot{\gr\uuu_{\phi, p_i}}}
+
+Finally, if ${\mr b}\in\U^{|{\mr x}|}$ then ${\gr\uuu_{\phi, b}}$ denotes the indicator functon of the set $\phi({\mr b};\,{\gr\U})$.
+%
+Note that this coincides with ${\gr\uuu_{\phi, p}}$, for $p$ the unique global type realized in ${\mr b}$.
+
+We say that the function $\grDD:\U^{|{\gr z}|}\to\RR$ is \emph{externally definable\/} if $\grDD=_\epsilon\bar\alpha\cdot{\gr\uuu_{\phi,\bar p}}$ for some $\bar\alpha$ and $\bar p$.
+
+\begin{definition}\label{def_epprox}
+We say that $\grDD$ is \emph{approximated\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every positive $\epsilon$ there is a finite tuple ${\mr\bar b}\in\big(\U^{|{\mr x}|}\big)^{<\omega}$ such that 
+
+\ceq{\hfill\big\|\grDD\ -\ \bar\alpha\cdot{\gr\uuu_{\phi,\bar b}}\big\|}{<}{\epsilon,} 
+
+where the norm is the sup-norm.
+%
+We may also write \emph{$\grDD=_\epsilon\bar\alpha\cdot{\gr\uuu_{\phi,\bar p}}$.}
+%
+If in addition we have that $\bar\alpha\cdot{\gr\uuu_{\phi,\bar b}}\le\grDD$, we say that  $\grDD$ is \emph{approximated from below}.
+Similarly, when $\grDD\leq\bar\alpha\cdot{\gr\uuu_{\phi,\bar b}}$ we say that  $\grDD$ is \emph{approximated from above}.
+We may call $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grDD$.\QED
+\end{definition} 
+ 
+The following proposition is clear by compactness.
+
+\begin{proposition}\label{lem_approx=external}
+For every $\grD$ the following are equivalent
+\begin{itemize}
+\item[1.] $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$;
+\item[2.] $\grD$ is externally definable by $\phi({\mr x}\,;{\gr z})$.\QED
+\end{itemize}
+\end{proposition}
+
+Approximability from below is an adaptation to our context of the notion of \textit{having an honest definition} in \cite{CS}.
+\begin{definition}\label{def_defble_type}
+We say that the global type $p\in S_{{\mr x}}(\U)$ is \emph{honestly definable\/} if for every $\phi({\mr x}\,;{\gr z})\in L$ the set ${\gr\D_{p,\phi}}$ is approximated from below (by some formula).
+We say that $p$ is \emph{definable\/} if the sets ${\gr\D_{p,\phi}}$ are all definable (over $\U$).
+Note that the terminology is misleading: honestly definable is weaker than definable.
+\end{definition}
+
+\begin{example}
+Every definable set is trivially approximable.
+Sets may be approximable by different formulas.
+For instance, if $T=T_{\rm dlo}$, then $\D=\{z\in\U:a\le z\le b\}$ is approximable both from below and from above by the formula $x_1<z<x_2$ though it is not definable by this formula.
+
+Now, let $T=T_{\rm rg}$.
+Then every $\D\subseteq\U$ is approximable and, when $\D$ has small infinite cardinality, it is approximable from above but not from below, see Exercise~\ref{ex_rg_small_def_set}.\QED
+\end{example}
+
+In Definition~\ref{def_epprox}, the sort $\phi({\mr x}\,;{\gr z})$ is fixed (otherwise any set would be approximable) but this requirement of uniformity may be dropped if we allow $B$ to have larger cardinality.
+
+\begin{proposition}\label{lem_approx_nonunif}
+For every $\grD$ the following are equivalent
+\begin{itemize}
+\item[1.] $\grD$ is approximable;
+\item[2.] for every $C\subseteq\U$ of cardinality $\le|T|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi({\gr\U})=_C\grD$.
+\end{itemize}
+Similarly, the following are equivalent
+\begin{itemize}
+\item[3.] $\grD$ is approximable from below;
+\item[4.]  for every ${\gr C}\subseteq\grD$ of cardinality $\le|T|$ there is $\psi({\gr z})\in L(\U)$ such that ${\gr C}\subseteq \psi({\gr\U})\subseteq\grD$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+To prove \ssf{2}$\IMP$\ssf{1} assume \ssf{2} and negate \ssf{1} for a contradiction.
+For each formula $\psi({\mr x}\,;{\gr z})\in L$ choose a finite set $B$ such that $\psi({\mr b}\,;{\gr\U})\neq_B\grD$ for every ${\mr b}\in\U^{|{\mr x}|}$.
+Let $C$ be the union of all these finite sets.
+Clearly $|C|\le|T|$.
+By \ssf{2} there are a formula $\phi({\mr x}\,;{\gr z})$ and a tuple ${\mr c}$ such that $\phi({\mr c}\,;{\gr\U})=_C\grD$, contradicting the definition of $C$.
+
+Implication \ssf{1}$\IMP$\ssf{2} is obtained by compactness and the equivalence \ssf{3}$\IFF$\ssf{4} is proved similarly.
+\end{proof}
 
 
-\section{Ziegler's example}
+
+\begin{remark}\label{prop_approx_el_eq}
+If $\grD\subseteq\U^{|{\gr z}|}$ is approximated by $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\hyperref[expansions]{\ref*{invariantL}.\ref*{expansions}} for the notation.
+In fact, if the set $\grD$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for every $n$
+
+\hfil$\displaystyle\A {\gr z_1},\dots,{\gr z_n}\;\E {\mr x}\ \bigwedge^n_{i=1}\big[\phi({\mr x}\,;{\gr z_i})\ \iff\ {\gr z_i}\in{\gr \D}\big]$.
+
+
+So the same holds for any $\grC\equiv\grD$.
+A similar remark apply to approximability from below and from above (e.g.\@ for approximability from below, add the conjunct $\A {\gr z}\,\big[\phi({\mr x}\,;{\gr z})\imp {\gr z}\in\grD\big]$ to the formula above).\QED
+\end{remark}
+
+From the following easy observation of Chernikov and Simon~\cite{CS} we obtain an interesting (and misterious) quantifier elimination result originally due to Shelah, see Corollary~\ref{corol_sh_exp_qe} below.
+
+% \begin{proposition}
+% Let $\C\subseteq\U^{|{\gr z},w|}$ be approximated from below by the formula $\phi({\mr x}\,;{\gr z},w)$. Then $\grD=\big\{{\gr z}:\E w\ \big({\gr z}\,w\in\C\big)\big\}$ is approximated from below by the formula $\E w\,\phi({\mr x}\,;{\gr z}\,w)$.
+% \end{proposition}
+% 
+% \begin{proof}
+% Let $B\subseteq\U$ be finite. 
+% We want ${\mr a}\in\U^{|{\mr x}|}$ such that 
+% 
+% \ceq{\ssf{a.}\hfill \E w\ \big({\gr b}\,w\in\C\big)}{\iff}{\E w\,\phi({\mr a}\,;{\gr b}\,w)}\hfill for every ${\gr b}\in B^{|{\gr z}|}$
+% 
+% \ceq{\ssf{b.}\hfill \A {\gr z}\;\Big[\E w\,\phi({\mr a}\,;{\gr z}\,w)}{\imp}{\E w\ \big({\gr z}\,w\in\C\big)\Big]}
+% 
+% Let $C\subseteq\U$ be a finite set such that 
+% 
+% \ceq{\ssf{c.}\hfill \E w\in C^{|w|}\ \big({\gr b}\,w\in\C\big)}{\iff}{\E w\ \big({\gr b}\,w\in\C\big)}\hfill for every ${\gr b}\in B^{|{\gr z}|}$
+% 
+% As $\C$ is approximable from below, there is an ${\mr a}$ such that
+% 
+% \ceq{\ssf{a'.}\hfill {\gr b}\,c\in\C}{\iff}{\phi({\mr a}\,;{\gr b}\,c)}\hfill for every ${\gr b}\,c\in \big(B\cup C\big)^{|{\gr z}\,w|}$
+% 
+% \ceq{\ssf{b'.}\hfill \A {\gr z}\,w\ \Big[\phi({\mr a}\,;{\gr z}\,w)}{\imp}{{\gr z}\,w\in\C\Big]}
+% 
+% We obtain \ssf{b} from \ssf{b'} simply by logic. 
+% Implication $\imp$ in \ssf{a} follows from \ssf{a'} and \ssf{c}. 
+% Implication $\pmi$ follows from \ssf{b}.
+% \end{proof}
+
+\begin{proposition}\label{prop_sh_exp_qe}
+Let $\C\subseteq\U^{|y\,{\gr z}|}$ be approximated from below by the formula $\phi({\mr x}\,;y\,{\gr z})$.
+Then $\grD=\big\{{\gr z}:\E y\ \big(y\,{\gr z}\in\C\big)\big\}$ is approximated from below by the formula $\E y\,\phi({\mr x}\,;y\,{\gr z})$.
+\end{proposition}
+
+\begin{proof}
+\def\vl{\gr}
+Let $B\subseteq\U$ be finite. 
+We want ${\mr a}\in\U^{|{\mr x}|}$ such that 
+
+\ceq{\ssf{a.}\hfill \E y\ \big(y\,{\vl b}\in\C\big)}{\iff}{\E y\,\phi({\mr a}\,;y\,{\vl b})}\hfill for every ${\vl b}\in B^{|{\vl z}|}$
+
+\ceq{\ssf{b.}\hfill \A {\vl z}\;\Big[\E y\,\phi({\mr a}\,;y\,{\vl z})}{\imp}{\E y\ \big(y\,{\vl z}\in\C\big)\Big]}
+
+Let $D\subseteq\U$ be a finite set such that 
+
+\ceq{\ssf{c.}\hfill \E y\in D^{|y|}\ \big(y\,{\vl b}\in\C\big)}{\iff}{\E y\ \big(y\,{\vl b}\in\C\big)}\hfill for every ${\vl b}\in B^{|{\vl z}|}$
+
+As $\C$ is approximable from below, there is an ${\mr a}$ such that
+
+\ceq{\ssf{a'.}\hfill d\,{\vl b}\in\C}{\iff}{\phi({\mr a}\,;d\,{\vl b})}\hfill for every $d\,{\vl b}\in \big(D\cup B\big)^{|y\,{\vl z}|}$
+
+\ceq{\ssf{b'.}\hfill \A y\,{\vl z}\ \Big[\phi({\mr a}\,;y\,{\vl z})}{\imp}{y\,{\vl z}\in\C\Big]}
+
+We obtain \ssf{b} from \ssf{b'} simply by logic. 
+Implication $\imp$ in \ssf{a} follows from \ssf{a'} and \ssf{c}. 
+Implication $\pmi$ follows from \ssf{b}.
+\end{proof}
+
+
+
+\begin{corollary}
+If $p\in S_{{\mr x}}(\U)$ is honestly definable then the family of sets externally definable by $p$ is closed under quantifiers and Boolean combinations. 
+\end{corollary}
+
+\begin{proof}
+The sets externally definable by $p({\mr x})$ are always closed under Boolean operations. By the proposition above, they are closed under quantifiers. 
+\end{proof}
+
+
+
+\section{Recycle bin}
+
+
+\subsection{Ziegler's example}
 
 
 
@@ -328,9 +502,6 @@ Write $r(x,y)$ for $x=y\vee y<_xf(x)\vee x<_yf(y)$
 
 
 \end{document}
-
-
-
 
 The language $L$ consists of a binary relation symbol $<$ and, for every positive integer $n$, a binary relation denoted by $|x-y|<n$. Consider the structure with domain $\QQ$ and the relation symbols interpreted in the natural way. Let $T$ be the theory of this structure.
 

@@ -20,7 +20,9 @@ Somewhat surprisingly, the compactness theorem is not strictly required for the 
 Here we prove the compactness theorem using the so-called Henkin method. We divide the proof in two steps. Firstly, we observe that when the language is rich enough to name witnesses of all existential statements of the theory, these witnesses (\textit{Henkin constants\/}) form a canonical model. Secondly, we show that we can add the required Henkin constants to any finitely consistent theory.
 
 \begin{definition}\label{def_Henkin}
-Fix a language $L$. Assume for simplicity that formulas use only the connectives $\wedge$, $\neg$ and $\E$. We say that $T$ is a \emph{Henkin theory\/} if for every formulas $\phi$ and $\psi$
+Fix a language $L$.
+Assume for simplicity that formulas use only the connectives $\wedge$, $\neg$ and $\E$.
+We say that $T$ is a \emph{Henkin theory\/} if for all formulas $\phi$ and $\psi$
 
 \begin{itemize}
 \item[0.]\ceq{\hfill \phi\in T}{\IMP}{\neg\phi\notin T}
@@ -180,23 +182,34 @@ We write \emph{$M\models p(a)$} if $M\models\phi(a)$ for every $\phi(x)\in p$.  
 We say that a type $p(x)$ is \emph{finitely consistent\/} if all its finite subsets are consistent. If its finite subsets are all consistent in the same model $M$, we say that $p(x)$ is finitely consistent \emph{in $M$}. The following theorem shows that the latter notion, which is trivial for theories, is very interesting for types.
 
 \begin{void_thm}[Compactness Theorem for types]\label{thm_compattezzatipi}
-Every finitely consistent type $p({\mr x})\subseteq L$ is consistent. Moreover, if $p({\mr x})\subseteq L(M)$ is finitely consistent in $M$ then it is realised in some elementary extension of $M$.
+Every finitely consistent type $p({\mr x})\subseteq L$ is consistent.
+Moreover, if $p({\mr x})\subseteq L(M)$ is finitely consistent in $M$ then it is realised in some elementary extension of $M$.
 \end{void_thm}
 
 \begin{proof}
-Let $L'$ be the expansion of $L$ obtained by adding the fresh symbols ${\mr c}$, a tuple of constants of the same length as ${\mr x}$. Then $p({\mr c})$ is a finitely consistent theory in the language $L'$. By the compactness theorem there is an $L'$-structure $N'\models p({\mr c})$. Let $N$ be the reduct of $N'$ to $L$. That is the $L$-structure with the same domain and the same interpretation as $N'$ on the symbols of $L$. Note that, though the constants ${\mr c}$ are not in $L$, the elements of the tuple ${\mr c^{N'}}$ remain in $N$. Then $N,{\mr c^{N'}}\models p({\mr x})$.  
+Let $L'$ be the expansion of $L$ obtained by adding the fresh symbols ${\mr c}$, a tuple of constants of the same length as ${\mr x}$.
+Then $p({\mr c})$ is a finitely consistent theory in the language $L'$. By the compactness theorem there is an $L'$-structure $N'\models p({\mr c})$.
+Let $N$ be the reduct of $N'$ to $L$, that is, the $L$-structure with the same domain and the same interpretation as $N'$ on the symbols of $L$.
+Note that, though the constants ${\mr c}$ are not in $L$, the elements of the tuple ${\mr c^{N'}}$ remain in $N$.
+Then $N,{\mr c^{N'}}\models p({\mr x})$.  
 
-As for the second claim, let ${\gr a}$ be an enumeration of $M$. We can assume that $p({\mr x})$ has the form $p'({\mr x}\,;{\gr a})$ for some $p'({\mr x}\,;{\gr z})\subseteq L$. Define
+As for the second claim, let ${\gr a}$ be an enumeration of $M$. 
+We can assume that $p({\mr x})$ has the form $p'({\mr x}\,;{\gr a})$ for some $p'({\mr x}\,;{\gr z})\subseteq L$.
+Define
 
 \ceq{\hfill q({\gr z})}{=}{\big\{\phi({\gr z})\ :\ M\models \phi({\gr a})\big\}}
 
-Clearly, $p'({\mr x}\,;{\gr z})\cup q({\gr z})$ is finitely consistent in $M$. Then, by the first part of the proof it is realized in some model $N$ by some ${\mr c'},{\gr a'}\in N^{|{\mr x},{\gr z}|}$. Let $h=\{\<{\gr a},{\gr a'}\>\}$. Then for every $\phi({\gr z})\in L$ we have
+Clearly, $p'({\mr x}\,;{\gr z})\cup q({\gr z})$ is finitely consistent in $M$.
+Then, by the first part of the proof, it is realized in some model $N$ by some ${\mr c'},{\gr a'}\in N^{|{\mr x},{\gr z}|}$. Let $h=\{\<{\gr a},{\gr a'}\>\}$.
+Then for every $\phi({\gr z})\in L$ we have
 
 \hfil $M\models \phi({\gr a})\ \  \IFF\ \  \phi({\gr z})\in q\ \   \IFF\ \  N\models \phi(h{\gr a})$.
 
-In the last equivalence, $\PMI$ holds because $q({\gr z})$ is complete. (Using a term that will be introduced only in Section~\hyperref[morphisms]{\ref*{types}.\ref*{morphisms}}, this shows that  $h:M\to N$ is an elementary embedding.) 
+In the last equivalence, $\PMI$ holds because $q({\gr z})$ is complete.
+(Using a term that will be introduced only in Section~\hyperref[morphisms]{\ref*{types}.\ref*{morphisms}}, this shows that  $h:M\to N$ is an elementary embedding.) 
 
-By the remarks after Definition~\ref{isomorfismodef}, $h:M\to N$ is an embedding. Hence the equivalence above prove that $h[M]\preceq N$. So the theorem follows by identifying $M$ with $h[M]$.
+By the remarks after Definition~\ref{isomorfismodef}, $h:M\to N$ is an embedding.
+Hence the equivalence above prove that $h[M]\preceq N$. So the theorem follows by identifying $M$ with $h[M]$.
 \end{proof}
 
 The following corollary is historically important.
@@ -206,7 +219,9 @@ Every infinite structure has arbitrarily large elementary extensions.
 \end{void_thm}
 
 \begin{proof}
-Let $x=\<x_i:i<\lambda\>$ be a tuple distinct variables, where $\lambda$ is an arbitrary cardinal. The type $p(x)=\big\{x_i\neq x_j: i<j<\lambda\big\}$ is finitely consistent in every infinite structure and every structure that realises $p$ has cardinality $\ge\lambda$. Hence the claim follows from Theorem~\ref{thm_compattezzatipi}.
+Let $x=\<x_i:i<\lambda\>$ be a tuple of distinct variables, where $\lambda$ is an arbitrary cardinal.
+The type $p(x)=\big\{x_i\neq x_j: i<j<\lambda\big\}$ is finitely consistent in every infinite structure and every structure that realises $p$ has cardinality $\ge\lambda$.
+Hence the claim follows from Theorem~\ref{thm_compattezzatipi}.
 \end{proof}
 
 \section{Finite axiomatizability}
@@ -224,29 +239,36 @@ A theory $T$ is \emph{finitely axiomatizable\/} if $\ccl(S)=\ccl(T)$ for some fi
 Only \ssf{1}$\IMP$\ssf{2} requires a proof. If $T$ is finitely axiomatizable, there is a sentence $\phi$ such that $\ccl(\phi)=\ccl(T)$. Then $T\proves\phi\proves T$. By Proposition~\ref{compattezza2} there is a finite $S\subseteq T$ such that $S\proves\phi$. Then also $S\proves T$.
 \end{proof}
 
-If $L$ is empty, then every structure is a model. The \emph{theory of infinite sets\/} is the set of sentences that hold in every infinite structure.
+If $L$ is empty, then every structure is a model.
+The \emph{theory of infinite sets\/} is the set of sentences that hold in every infinite structure.
 
 \begin{example} 
-The theory of infinite sets is not finitely axiomatizable. Define
+The theory of infinite sets is not finitely axiomatizable.
+Define
 
 \ceq{\hfill T_{\infty}}{=}{\big\{\E^{\ge n}x\;(x=x)\big\}\ :\ n\in\omega\big\}}
 
-Every infinite set is a model of $T_{\infty}$ and, vice versa, every model of $T_{\infty}$ is is an infinite set. Then $\ccl(T_{\infty})$ is the theory of infinite sets. Suppose for a contradiction that $T_{\infty}$ is finitely axiomatizable. By Proposition~\ref{finaxsub}, $\E^{\ge n}x (x=x)\proves T_{\infty}$ for some $n$. Any set of cardinality $n+1$ proves that this is not the case.\QED
+Every infinite set is a model of $T_{\infty}$ and, vice versa, every model of $T_{\infty}$ is is an infinite set.
+Then $\ccl(T_{\infty})$ is the theory of infinite sets. Suppose for a contradiction that $T_{\infty}$ is finitely axiomatizable. By Proposition~\ref{finaxsub}, $\E^{\ge n}x (x=x)\proves T_{\infty}$ for some $n$. Any set of cardinality $n+1$ proves that this is not the case.\QED
 \end{example}
 
-The following is a less trivial example. It proves a claim we made in Exercise~\ref{ex_grafo_bipartito}.
+The following is a less trivial example.
+It proves a claim we made in Exercise~\ref{ex_grafo_bipartito}.
 
 \begin{example}
 
 \def\ceq#1#2#3{\parbox{5ex}{$\displaystyle #1$}\parbox{4ex}{\hfil$#2$}$\displaystyle #3$}
 
-Write $T_{\rm gph}$ for the theory of graphs, see Example~\ref{expl_Tgraphs}. Let $\K$ be the following class of structures
+Write $T_{\rm gph}$ for the theory of graphs, see Example~\ref{expl_Tgraphs}.
+Let $\K$ be the following class of structures
 
 \ceq{\hfill \K}{=}{\Big\{M\models T_{\rm gph}\ :\ r^M\ \subseteq\ (A\times \neg A)\;\cup\;(\neg A\times A)\textrm{ for some }A\subseteq M\Big\}}
 
 We prove that $\K$ is axiomatizable but not finitely axiomatizable, i.e.\@ $\K=\Mod(T)$ for some theory $T$, but $T$ cannot be choosen finite.
 
-A \textit{path of length $n$\/} in $M$ is a sequence $c_0,\dots,c_n\in M$ such that $M\models r(c_i,c_{i+1})$ for every $0\le i<n$. A path is \textit{closed\/} if $c_0=c_n$.  We claim that the following theory axiomatizes $\K$.
+A \textit{path of length $n$\/} in $M$ is a sequence $c_0,\dots,c_n\in M$ such that $M\models r(c_i,c_{i+1})$ for every $0\le i<n$.
+A path is \textit{closed\/} if $c_0=c_n$.
+We claim that the following theory axiomatizes $\K$.
 
 \ceq{\hfill T}{=}{\Bigg\{\neg\E x_0,\dots x_{2n+1} \Bigg[\bigwedge^{2n}_{i=0} r(x_i,x_{i+1})\ \wedge\ x_0=x_{2n+1} \Bigg]\ \ :\ \ n\in\omega\Bigg\}}
 

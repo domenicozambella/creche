@@ -62,7 +62,7 @@ Recall that in the language of strict orders an injective map $k:M\to N$ is a pa
 
 \ceq{\hfill M\models a<b}{\IFF}{N\models ka<kb}\hfill for every $a,b\in\dom k$.
 
-(When $M,N\models T_{\rm lo}$ direction $\IMP$ suffices.)
+(When $M,N\models T_{\rm lo}$ the direction $\IMP$ suffices.)
 
 \begin{lemma}\label{lem_ordinericco}
 Fix $M\models T_{\rm lo}$ and $N\models T_{\rm dlo}$.
@@ -80,7 +80,7 @@ Given a finite partial isomorphism $k:M\to N$ define
 The sets $A^-$ and $A^+$ are finite and partition $\dom k$, and  $A^-<A^+$.
 As $k:M\imp N$ is a partial isomorphism, $k[A^-]<k[A^+]$.
 Then in $N$ there is an element $c$ such that $k[A^-]<c<k[A^+]$.
-It is easy to check that setting $h=k\cup\big\{\<b,c\>\big\}$ we obtain the required extension.
+It is easy to check that setting $h=k\cup\big\{\<b,c\>\big\}$ gives the required extension.
 \end{proof}
 
 The following is an equivalent version of Lemma~\ref{lem_ordinericco}.
@@ -123,19 +123,19 @@ Every finite partial isomorphism $k:M\imp N$ between countable models of $T_{\rm
 The following is the archetypal \emph{back-and-forth\/} construction.
 It is important to note that it does not mention linear orders at all.
 It only uses the extension Lemma~\ref{lem_ordinericco}.
-In many other contexts, as soon as we have an extension lemma, we can apply verbatim the same construction (cfr.\@ Theorem~\ref{thm_riccozigzag}).
+The same construction can be applied in many other contexts where an extension lemma holds (cfr.\@ Theorem~\ref{thm_riccozigzag}).
 
 \begin{proof}
-Fix some enumerations of $M$ and $N$, say $\<a_i:i<\omega\>$, respectively $\<b_i:i<\omega\>$.
+Let $\<a_i:i<\omega\>$ and $\<b_i:i<\omega\>$ be enumerations of $M$ and $N$ respectively.
 We define by induction a chain of finite partial isomorphisms $g_i:M\imp N$ such that $a_i\in\dom g_{i+1}$ and $b_i\in\range g_{i+1}$.
 In the end we set
 
 \ceq{\hfill g}{=}{\bigcup_{i\in\omega}g_i}
 
-We begin by setting $g_0=k$.
-The inductive step consists of two half-steps that we may call the \textit{forth-step} and \textit{back-step}.
-In the forth-step we define $g_{i+^1\!\!/\!_2}$ such that $a_i\in\dom g_{i+^1\!\!/\!_2}$.
-in the back-step to define $g_{i+1}$ such that $b_i\in\range g_{i+1}$
+We begin by letting $g_0=k$.
+The inductive step consists of two half-steps that we call the \textit{forth step} and \textit{back step}.
+In the forth step we define $g_{i+^1\!\!/\!_2}$ such that $a_i\in\dom g_{i+^1\!\!/\!_2}$.
+In the back step to define $g_{i+1}$ such that $b_i\in\range g_{i+1}$.
 
 By the extension lemma~\ref{lem_ordinericco} there is a finite partial isomorphism $g_{i+^1\!\!/\!_2}:M\imp N$ that extends $g_i$ and is defined in $a_i$.
 Now apply the same lemma to extend $\big(g_{i+^1\!\!/\!_2}\big)^{-1}:N\to M$ to a finite partial isomorphism $(g_{i+1})^{-1}:N\to M$ defined in $b_i$.
@@ -157,7 +157,7 @@ If $T$ has no finite models and is $\lambda\jj$categorical for some $\lambda\ge|
 \end{proposition}
 
 \begin{proof}
-Let $M$ and $N$ be any two models of $T_{\rm dlo}$.
+Let $M$ and $N$ be any two models of $T$.
 Applying the upward and/or downward L\"owenheim-Skolem theorem, we may assume they both have cardinality $\lambda$.
 Note that here we use that $N$ and $N$ are both infinite and that $\lambda\ge|L|$.
 Hence $M\simeq N$ and in particular $M\equiv N$.
@@ -172,11 +172,11 @@ Prove that, in the language of strict orders, $\QQ\preceq\RR$.\QED
 \end{exercise}
 
 \begin{exercise}\label{VaughtEsempio3modelli}
-Let $L$ be the language of strict orders augmented with countably many constants $\big\{c_i: i\in\omega\big\}$.
-Let $T$ be the theory that extends $T_{\rm dlo}$ with the axioms $c_i<c_{i+1}$ for all $i$.
+Let $L$ be the language of strict orders expanded with countably many constants $\big\{c_i: i\in\omega\big\}$.
+Let $T$ be the theory that extends $T_{\rm dlo}$ by the axioms $c_i<c_{i+1}$ for all $i$.
 Prove that $T$ is complete.
 Find three non isomorphic models of this theory.
-For $N$ a rightly chosen model of $T$, prove the statement in Lemma~\ref{lem_ordinericco}, with $M$ any model of $T$.\QED
+For a suitably chosen model $N$ of $T$, prove the statement in Lemma~\ref{lem_ordinericco}, where $M$ any model of $T$.\QED
 \end{exercise}
 
 
@@ -216,7 +216,7 @@ A \emph{random graph\/} is a graph that also satisfies the following axioms for 
 
 
 The theory of graphs is denoted by \emph{$T_{\textrm{gph}}$} and the theory of random graphs is denoted by \emph{$T_{\textrm{rg}}$}.
-The scheme of axioms \ssf{r$_n$} plays the same role of density in the previous section.
+The scheme of axioms \ssf{r$_n$} plays the same role as density in the previous section.
 It says that given two disjoint sets $A^+$ and $A^-$ of cardinality $\le n$ there is a vertex $z$ that is adjacent to all vertices in $A^+$ and to no vertex in $A^-$.
 We explicitly required that $z\notin A^-$, by \ssf{1} it is clear that $z\notin A^+$.
 
@@ -233,7 +233,7 @@ Fix $M\models T_{\rm gph}$ and $N\models T_{\rm rg}$.
 Let $k:M\imp N$ be a finite partial isomorphism and let $b\in M$.
 Then there is a partial isomorphism $h:M\imp N$ that extends $k$ and is defined in $b$.
 \end{lemma}
-\begin{proof} The schema of the proof is the same as in Lemma~\ref{lem_ordinericco}, so we use the same notation.
+\begin{proof} The structure of the proof is the same as in Lemma~\ref{lem_ordinericco}, so we use the same notation.
 Assume $b\notin\dom k$ and define\medskip
 
 \hfil$A^+=\big\{x\in\dom k\ :\ M\models r(x,b)\big\}\ \ \ \textrm{e}\ \ \ A^-=\big\{y\in\dom k\ :\  M\models \neg r(y,b)\big\}$.\medskip
@@ -247,14 +247,14 @@ As $k[A^+]\cup k[A^-]=\range k$, it is immediate to verify that $h=k\cup\big\{\<
 \end{proof}
 
 
-Some readers may doubt if $T_{\rm rg}$ is consistent.
+Some readers may doubt that $T_{\rm rg}$ is consistent.
 
 \begin{proposition}
 There exists a random graph.
 \end{proposition}
 \begin{proof}
 The domain of $N$ is the set of natural numbers.
-Let $N\models r(n,m)$ hold if the $n\jj$th prime number divides $m$ or vice versa $m\jj$th prime number divides $n$.
+Let $N\models r(n,m)$ hold if the $n\jj$th prime number divides $m$ or, conversely, the $m\jj$th prime number divides $n$.
 \end{proof}
 
 
@@ -269,7 +269,7 @@ Then there is a (total) embedding $h:M\hookrightarrow N$ that extends $k$.\QED
 The proof of Theorem~\ref{thm_zigzagcantor} gives the following theorem and its corollary.
 
 \begin{theorem}\label{gaomegacat}
-Every finite partial isomorphism $k:M\imp N$ between models of $T_{\rm rg}$ of equal cardinality extends to an isomorphism $g:M\isomap N$.\QED
+Every finite partial isomorphism $k:M\imp N$ between models of $T_{\rm rg}$ of the same cardinality extends to an isomorphism $g:M\isomap N$.\QED
 \end{theorem}
 
 \begin{corollary}
