@@ -187,9 +187,9 @@ Partitioned formulas have been introduced in Definition~\ref{def_partitioned_fla
 
 Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be a partitioned formula. We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$ is a \emph{ladder sequence\/} for $\phi({\mr x}\,;{\gr z})$ if 
 
-\ceq{\#\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}\hfill for all $0\le i,j\le\alpha$
+\ceq{\#\hfill i\le j}{\IFF}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}\hfill for all $0\le i,j\le\alpha$
 
-We say that $\phi({\mr x}\,;{\gr z})$ is \emph{stable\/} if all ladders have length $\alpha<\omega$. Otherwise we say it is \emph{unstable} or that it has the \emph{order property}. 
+We say that $\phi({\mr x}\,;{\gr z})$ is \emph{stable\/} if for some finite $n$ all ladders have length at most $n$. Otherwise we say it is \emph{unstable} or that it has the \emph{order property}. 
 Note that if a formulas admits ladder sequences of unbounded finite length, then it admits an infinite one, hence it has the order property.
 
 It is clear that $\phi({\mr x}\,;{\gr z})$ is stable if and only if $\phi({\mr x}\,;{\gr z})^*$ is stable.
@@ -211,13 +211,13 @@ The theorem follows immediately from the the three lemmas below.
 
 The converse of the theorem above holds and is proved separately in Theorem~\ref{thm_def_stable_formula2}.  
 
-\begin{remark}
+\begin{remark}\label{rem_sability_no_compactness}
 The conclusion of Theorem~\ref{thm_def_stable_formula} is often stated in the following  apparently more general form:
 for every $\Aa\subseteq\U$ there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in \Aa^{|{\mr x}|}$ such that
 
-\ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\phi({\mr a_{i,j}}\,;{\gr z})}\hfill for every ${\gr z}\in\Aa^{|{\gr z}|}$ 
+\ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\phi({\mr a_{i,j}}\,;{\gr z})}
 
-Note that the equivalence above is restricted to ${\gr\Aa}$.
+holds for all ${\gr z}\in{\gr\Aa}^{|{\gr z}|}$.
 
 The proof is exactly the same. In fact, elementarity and saturation are never used. In a sense, no model theory is used, either -- just finite combinatorics -- unlike in the proof of Theorem~\ref{thm_def_stable_formula2} where compactness is essential.\QED
 \end{remark}
@@ -233,7 +233,7 @@ for some ${\mr a_0},\dots,{\mr a_n}\in\U^{|{\mr x}|}$.
 \end{lemma}
 
 \begin{proof}
-Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that ${\gr b_0},\dots,{\gr b_{n-1}}\in\phi({\mr a_n}\,;{\gr\U})\subseteq\grD$.
+Pick any ${\gr b_0}\in\grD$. Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that ${\gr b_0},\dots,{\gr b_{n-1}}\in\phi({\mr a_n}\,;{\gr\U})\subseteq\grD$.
 Then, if possible, choose ${\gr b_n}$ such that
 
 \ceq{\hfill{\gr b_n}}{\in}{\grD\sm\bigvee^n_{i=0}\phi({\mr a_i}\,;{\gr\U})}.
@@ -248,14 +248,14 @@ This yields the required  ${\mr a_0},\dots,{\mr a_{n-1}}$.
 If $\grD$ is approximated by a stable formula $\phi({\mr x}\,;{\gr z})$ with ladder order $m$.
 Then the formula 
 
-\ceq{\hfill\psi({\mr x_1},\dots,{\mr x_m}\,;{\gr z})}{=}{\bigwedge^m_{j=1}\phi({\mr x_j}\,;{\gr z})}
+\ceq{\hfill\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr z})}{=}{\bigwedge^m_{j=0}\phi({\mr x_j}\,;{\gr z})}
 
 approximates $\grD$ from below.
 \end{lemma}
 
 \begin{proof}
 Let ${\gr B}\subseteq\grD$ be finite.
-It suffices to prove that there are some ${\mr a_1},\dots,{\mr a_m}$ such that ${\gr B}\subseteq\psi({\mr a_1},\dots,{\mr a_m}\,;{\gr\U})\subseteq\grD$. Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that 
+It suffices to prove that there are some ${\mr a_0},\dots,{\mr a_m}$ such that ${\gr B}\subseteq\psi({\mr a_0},\dots,{\mr a_m}\,;{\gr\U})\subseteq\grD$. Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that 
 
 \hfil${\gr B}\ \subseteq\ \phi({\mr a_n}\,;{\gr\U})\ \subseteq\ \U^{|{\gr z}|}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
 
@@ -268,7 +268,7 @@ The procedure has to stop at some $n\le m$.
 Hence the required parameters are ${\mr a_1},\dots,{\mr a_n}={\mr a_{n+1}}=\dots={\mr a_{m}}$.
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{lem_stable3}
 If $\phi({\mr x}\,;{\gr z})$ is a stable formula then for every $m$ the formula 
 
 \ceq{\hfill \psi({\mr x_1},\dots,{\mr x_m}\,;{\gr z})}{\iff}{\bigwedge^m_{j=1}\phi({\mr x_j}\,;{\gr z})}
@@ -277,18 +277,21 @@ is stable.
 \end{lemma}
 
 \begin{proof}
-For legibility, we only prove that $\phi({\mr x_1}\,;{\gr z})\wedge\phi({\mr x_2}\,;{\gr z})$ is stable.
-Suppose not and let ${\mr a^1_i},{\mr a^2_i}\in\U^{|{\mr x}|}$ and ${\gr b_i}\in\U^{|{\gr z}|}$ be such that 
+It suffices to prove that if $\phi_1({\mr x_1}\,;{\gr z})\wedge\phi_2({\mr x_2}\,;{\gr z})$ is unstable then one of the formulas $\phi_n({\mr x_i}\,;{\gr z})$ is unstable. For simplicity, we use that instability implies the existence of an infinite ladder (this uses compactness, apparently contradicting Remark~\ref{rem_sability_no_compactness}). We leave to the reader to adapt the argument so that compactness is not required.
 
-\ceq{\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr a^1_i}\,;{\gr b_j})\wedge\phi({\mr a^2_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
+Let ${\mr a^1_i},{\mr a^2_i}\in\U^{|{\mr x}|}$ and ${\gr b_i}\in\U^{|{\gr z}|}$ be such that 
 
-For $n=1,2$ let $H_n\subseteq{\omega\choose 2}$ contain those pairs $j<i$ such that $\neg\phi({\mr a^n_i}\,;{\gr b_j})$. 
+\ceq{\hfill i\le j}{\IFF}{\phantom{\neg}\phi({\mr a^1_i}\,;{\gr b_j})\wedge\phi({\mr a^2_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
+
+
+
+For $n=1,2$ let $H_n\subseteq{\omega\choose 2}$ contain those pairs $j<i$ such that $\neg\phi_n({\mr a^n_i}\,;{\gr b_j})$. 
 By the equivalence above $H_1\cup H_2={\omega\choose 2}$. 
 By the Ramsey Theorem there is an infinite set $H$ such that ${H\choose 2}\subseteq H_n$ for at least one of $n=1,2$. Suppose $H_1$ for definiteness. So, we obtain an infinite sequence $a^1_i$, $b_i$ such that
 
-\ceq{\hfill j<i}{\IFF}{\neg\phi({\mr a^1_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
+\ceq{\hfill j<i}{\IFF}{\neg\phi_1({\mr a^1_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
 
-which contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
+hence $\phi_1({\mr x_1}\,;{\gr z})$ is unstable.
 \end{proof}
 
 This last lemma concludes the proof of Theorem~\ref{thm_def_stable_formula}. 
@@ -514,9 +517,6 @@ We now turn to Lascar invariance. Quite interestingly when $T$ is stable this re
 % \end{proof}
 
 
-
-
-
 A type $q({\mr x})\subseteq L(A)$ is \emph{stationary\/} if it has a unique global extension that is Lascar invariant over $A$. The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
 
 \begin{proposition}\label{prop_type_over_acl_stationary} If $T$ is stable then every type $q({\mr x})\in S\big(\acl^\eq\!A\big)$ is stationary.
@@ -646,39 +646,6 @@ Prove that $\phi(x\,;z)$ is stable if and only if $|S_\phi(\U)|\le2^\kappa$.\QED
 \begin{exercise}
 Prove that $\phi(x\,;z)$ is stable if and only if every set approximated by $\phi(x\,;z)$ is definable.\QED
 \end{exercise}
-
-\section{Notes and references}
-\begin{biblist}[]\normalsize
-
-\bib{CS}{article}{
-   author={Chernikov, Artem},
-   author={Simon, Pierre},
-   title={Externally definable sets and dependent pairs},
-   status={\href{https://arxiv.org/abs/1007.4468}{arXiv:1007.4468}},
-   journal={Israel J. Math.},
-   volume={194},
-   date={2013},
-   number={1},
-   pages={409--425},
-   %note={},
-   %issn={0021-2172},
-   %doi={10.1007/s11856-012-0061-9},
-}
-
-\bib{TZ}{book}{
-   author={Tent, Katrin},
-   author={Ziegler, Martin},
-   title={A course in model theory},
-   series={Lecture Notes in Logic},
-   volume={40},
-   publisher={Association for Symbolic Logic, Cambridge University Press},
-   date={2012},
-   pages={x+248},
-   %isbn={978-0-521-76324-0},
-   %doi={10.1017/CBO9781139015417},
-}
-\end{biblist}
-
 
 \end{document}
 
