@@ -308,12 +308,24 @@ diagrams={>=latex}
 
 
 \begin{document}
+
+\def\medrel#1{\parbox[t]{6ex}{\hfil$#1$}}
+\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
+
+Let $I\subseteq |x|=|z|$ and let $y$ be a tuple of length $|I|$. Define
+
+\ceq{\hfill\theta_I(y,x,z)}{=}{y=x_{\restriction I}\wedge\bigwedge_{i\notin I} x_i\neq z_i}
+
+$\bar x=\<x_i:i<\omega\>$ sequence of indiscernibles over $\Aa$.
+
+$\theta_I(y,x_0,x_1)$
+
+$\Aa=\phi(\U,x_0)$
 \end{document}
 
 
 \section{Approximations}
-\def\medrel#1{\parbox[t]{6ex}{\hfil$#1$}}
-\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 \def\uuu{{\mathds 1}}
 \def\gruuu{{\mathds 1}}
 
