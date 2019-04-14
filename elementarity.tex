@@ -1,6 +1,5 @@
 % !TEX root = creche.tex
 \documentclass[creche.tex]{subfiles}
-\begin{document}
 \chapter{Theories and elementarity}
 \label{teorie}
 
@@ -630,7 +629,7 @@ Then the following are equivalent for every $\phi(x)\in L$
 % %%%%%%%%%%%%%%%%%%%%%
 \section{Completeness}
 
-A theory $T$ is \emph{maximally consistent\/} if it is consistent and there is no consistent theory $S$ such that $S\subset T$.
+A theory $T$ is \emph{maximally consistent\/} if it is consistent and there is no consistent theory $S$ such that $T\subset S$.
 Equivalently, $T$ contains every sentence $\phi$ \emph{consistent with\/} $T$, that is, such that $T\cup\{\phi\}$ is consistent.
 Clearly a maximally consistent theory is closed under logical consequences.
 
@@ -756,10 +755,7 @@ State and prove the generalization to finitely many maximally consistent extensi
 
 
 
-
 \begin{comment}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -944,13 +940,14 @@ Otteniamo
 Un qualsiasi $c$ che testimonia la verit\`a di questa formula in $\nsR$ is tale che $c\approx a\neq c$ e contemporaneamente $\epsilon\le |\ns fc-l|$, ma $\dot\epsilon$ is stato scelto standard, quindi  $\ns fc\not\approx l$.
 \end{proof}
 
+
 Il seguente corollario is immediato.
 
 \begin{corollary} Per ogni $f:\RR\to\RR$ the following are equivalent:
 \begin{itemize}
 \item[a.] $f$ is continua
 \item[b.] $\ns f(a)\approx \ns f(c)$ for every for every $a$ standard e ogni iperreale $c\approx a$;
-\item[c.] $\ns f(b)\approx \ns f(c)$ for every $b\approx c$ iperreali finiti.\QED
+% \item[c.] $\ns f(b)\approx \ns f(c)$ for every $b\approx c$ iperreali finiti.\QED
 \end{itemize}
 \end{corollary}
 
@@ -1013,7 +1010,7 @@ Quindi possiamo fissare un arbitrario infinitesimo $\dot\delta>0$ and ottenere $
 Poich\'e $\dot\delta$ is infinitesimo, $a\approx b$ come richiesto per negare \ssf{b}.
 \end{proof}
 
-\begin{c}
+
 La seguente proposizione is immediata conseguenza della proposizione~\ref{fattolimitinonstandard}
 
 \begin{proposition}
@@ -1028,11 +1025,11 @@ Si noti questo vale in $\RR$ se e solo se valge in $\nsR$.
 is finito e la sua parte standard is indipendente da $h$.
 \end{itemize}
 \end{proposition}
-\end{c}
+
 
 %Nel passato si sono sperimentati approcci didattici alternativi al calcolo classico basati sull'analisi non standard.
-Il testo di  H.
-Jerome Keisler, \textit{Foundations of infinitesimal calculus}, disponibile in rete con licenza \cc is un elegante tentativo di insegnare l'analisi reale a studenti del prim'anno usando l'analisi nonstandard ma senza assumere prerequisiti di logica.
+% Il testo di  H.
+% Jerome Keisler, \textit{Foundations of infinitesimal calculus}, disponibile in rete con licenza \cc is un elegante tentativo di insegnare l'analisi reale a studenti del prim'anno usando l'analisi nonstandard ma senza assumere prerequisiti di logica.
 
 
 \begin{exercise}
@@ -1063,10 +1060,7 @@ Si dimostri che the following are equivalent for every insieme $X\subseteq\RR$:\
 \end{itemize}
 \end{exercise}
 
-\begin{exercise}
-Si dimostri che $\RR$ and $\0$ sono gli unici due sottoinsiemi $X\subseteq\RR$ such that:
-\begin{itemize}
-\item[]  $b\approx a\in\ns X \ \ \IMP\ \ b\in\ns X$ for every coppia di iperreali $a, b$.\QED
+\begin{exercise}\QED
 \end{itemize}
 \end{exercise}
 
@@ -1075,6 +1069,8 @@ Si dimostri che $|\RR|\;\le\;|\nsQ|$ ovvero che $\nsQ$ ha almeno la cardinalit\`
 (Suggerimento: si definisca una funzione iniettiva $f:\RR\to\nsQ$ scegliendo nella monade di ogni reale standard un razionale nonstandard.)\QED
 \end{exercise}
 \end{comment}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1320,5 +1316,3 @@ Hint: construct two countable chains of countable models such that $K_i\cap M\su
 The required model is $K=\bigcup_{i\in\omega}K_i$.
 In fact it is easy to check that $K\cap M=\bigcup_{i\in\omega}M_i$.\QED
 \end{exercise}
-
-\end{document}
