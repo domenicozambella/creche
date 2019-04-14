@@ -1,6 +1,5 @@
 % !TEX root = creche.tex
 \documentclass[creche.tex]{subfiles}
-\begin{document}
 \chapter{Compactness}
 \label{compactness}
 
@@ -44,11 +43,11 @@ Moreover, the following holds for all closed terms $a, b, c$
 Fix a theory $T$ and let \emph{$M$} be the structure that has as domain the set of closed terms. Define for every relation symbol
 
 
-\ceq{\hfill r^M}{=}{\big\{\<a_1,\dots,a_n\>\ :\ r(a_1,\dots,a_n)\in T\big\}.}
+\ceq{\hfill r^M}{=}{\big\{\<a_1,\dots,a_n\>\in M^{n_r}\ :\ r(a_1,\dots,a_n)\in T\big\}.}
 
 Define for every function symbol $f$
 
-\ceq{\hfill f^M}{=}{\big\{\<a_1,\dots,a_n,t\>\ :\  a_1,\dots,a_n\in M, \ t=fa_1\dots a_n\big\}.}
+\ceq{\hfill f^M}{=}{\big\{\<a_1,\dots,a_n,t\>\in M^{n_f+1}\ :\ t=fa_1\dots a_n\big\}.}
 
 An easy proof by induction shows that $t^M=t$ for all closed terms $t$. 
 
@@ -75,12 +74,19 @@ By induction on the complexity of the formula $\phi$ in $T$ we prove that
 
 \ceq{2.\hfill \neg\phi\in T}{\IMP}{M/E\pmodels\neg\phi}
 
-Induction is immediate by \ssf{1}-\ssf{5} of Definition~\ref{def_Henkin}. We verify the claim for atomic formulas. Consider first the formula $\phi= (t{\doteq}s)$ where $t$ and $s$ are closed terms. Recall that $t^M=t$ and $s^M=s$, so claim \ssf{1} is clear. As for \ssf{2}, suppose $M/E\pmodels t{\doteq}s$, that is  $tEs$. Then $t{\doteq}s\in T$ and $\neg t{\doteq}s\notin T$ follows from axiom \ssf{0}.
+Induction is immediate by \ssf{1}-\ssf{5} of Definition~\ref{def_Henkin}.
+%
+Hence we only need to verify the claim for atomic formulas.
+%
+Consider first the formula $\phi= (t_1{\doteq}t_2)$ where the $t_i$ are closed terms.
+%
+By the definition of $M$, for every closed term $t$ we have $t^M=t$ so claim \ssf{1} is clear. As for \ssf{2}, suppose $M/E\pmodels t_1{\doteq}t_2$, that is  $t_1Et_2$.
+Then $t_1{\doteq}t_2\in T$ and $\neg t_1{\doteq}t_2\notin T$ follows from axiom \ssf{0}.
 
 Now assume $\phi=rt$ for a relation $r$ and a tuple of closed terms $t$. The argument is similar: \ssf{1} is immediate; to prove \ssf{2} suppose that $M/E\pmodels rt$. Then $tEs\in r^M$ for some tuple of closed terms $s$. Then $rs\in T$, and by \ssf{d} $rt\in T$. Finally from \ssf{0} we obtain $\neg rt\notin T$.
 \end{proof}
 
-\begin{proposition}\label{prop_Henkin}If every finite subset of $T$ has a model then there is a Henkin theory $T'$ containing $T$. The theory $T'$ may be in an expanded language $L'$..
+\begin{proposition}\label{prop_Henkin}If every finite subset of $T$ has a model then there is a Henkin theory $T'$ containing $T$. The theory $T'$ may be in an expanded language $L'$.
 \end{proposition}
 
 \begin{proof} Set $\lambda=|L|$.
@@ -103,10 +109,10 @@ Recall that we assumed $\E x\,\phi_i(x)\in L_i$. Then, either $\E x\,\phi_i(x)\i
 At stage $\lambda$ all possible counterexamples to \ssf{4} have been ruled out, then $T'=T_\lambda$ is the required Henkin theory.
 \end{proof}
 
-A theory is \emph{finitely consistent\/} if all its finite subsets are consistent. The following theorem is an immediate corollary of the proposition above.
+A theory $T$ is \emph{finitely consistent\/} if all its finite subsets are consistent. The following theorem is an immediate corollary of the proposition above.
 
 \begin{void_thm}[Compactness Theorem]
-If every finite subset of $T$ is consistent then $T$ is consistent.\QED
+If $T$ is finitely consistent then $T$ is consistent.\QED
 \end{void_thm}
 
 \begin{remark}
@@ -199,7 +205,7 @@ Define
 
 \ceq{\hfill q({\gr z})}{=}{\big\{\phi({\gr z})\ :\ M\models \phi({\gr a})\big\}}
 
-Clearly, $p'({\mr x}\,;{\gr z})\cup q({\gr z})$ is finitely consistent in $M$.
+Clearly, $p'({\mr x}\,;{\gr z})\cup q({\gr z})$ is finitely consistent.
 Then, by the first part of the proof, it is realized in some model $N$ by some ${\mr c'},{\gr a'}\in N^{|{\mr x},{\gr z}|}$. Let $h=\{\<{\gr a},{\gr a'}\>\}$.
 Then for every $\phi({\gr z})\in L$ we have
 
@@ -280,6 +286,3 @@ We claim that $r^M\subseteq(A\times \neg A)\cup(\neg A\times A)$, hence $M\in\K$
 
 We now prove that $\K$ is not finitely axiomatizable. By Proposition~\ref{finaxsub} it suffices to note that no finite $S\subseteq T$ axiomatizes $\K$.\QED
 \end{example}
-
-
-\end{document}

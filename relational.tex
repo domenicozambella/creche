@@ -1,6 +1,5 @@
 % !TEX root = creche.tex
 \documentclass[creche.tex]{subfiles}
-\begin{document}
 
 \chapter{Some relational structures}
 \label{relational}
@@ -282,8 +281,8 @@ Prove that $r(a,N)=r(b,N)\cap r(c,N)$ occurs only in the trivial case $a=b=c$.\Q
 \end{exercise}
 
 \begin{exercise}
-Let $N\models T_{\rm rg}$ prove that for every $\phi(x)\in L(N)$ the set $r(b,N)$ is a random graph.
-Is every random graph $M\subseteq N$ of the form $r(b,N)$ for some $b\in N$~? Is every random graph $M\subseteq N$ of the form $M=\phi(N)$ for some $\phi(x)\in L(N)$~?\QED
+Let $N\models T_{\rm rg}$ prove that for every $b\in N$ the set $r(b,N)$ is a random graph.
+Is every random graph $M\subseteq N$ of the form $\phi(N)$ for some $\phi(x)\in L(N)$~?\QED
 \end{exercise}
 
 % \begin{exercise}
@@ -345,7 +344,7 @@ Then the claim above generalizes as follows: if there is a finite $A$ such that 
 Suppose $M$ is not a random graph.
 Fix some finite, disjoint $A$ and $B$ such that no $c$ satisfies both $r(A,c)= A$ and $r(B,c)=\0$.
 Let $M_1=\{c:r(A,c)\neq A\}$ and $M_2=\neg M_1$.
- Now note that 
+Now note that 
 
 \hfill$\displaystyle\bigcap_{a\in A}r(a, M_1)=\0$\hfill and\hfill $\displaystyle\bigcup_{b\in B}r(b, M_2)=M_2$.\QED
 \end{exercise}
@@ -353,5 +352,3 @@ Let $M_1=\{c:r(A,c)\neq A\}$ and $M_2=\neg M_1$.
 \section{Notes and references}
 
 We refer the reader to~\cite{Cameron} for a well-written accessible survey on the amazing model theoretic properties of the random graph.
-
-\end{document}
