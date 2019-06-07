@@ -272,8 +272,8 @@ ${\mr a}$ is \emph{independent\/} from ${\gr b}$ over $M$.
 %
 This is a strong notion of independence.
 %
-In general it is not symmetric, that is ${\gr a}\nonforkc_A{\mr b}$ is not 
-equivalent to ${\mr b}\nonforkc_A{\gr a}$ 
+In general it is not symmetric, that is ${\mr b}\cnonfork_A{\gr a}$ is not 
+equivalent to ${\gr a}\cnonfork_A{\mr b}$ 
 (symmetry is equivalent to stability).
 
 We shall use, sometimes without reference, the following easy lemma
@@ -313,7 +313,7 @@ However, in general it need not be a complete over $A,{\gr b}$.
 %
 In fact, completeness is a very strong property.
 
-\begin{definition}\label{def_coheir_stationary}We say that $\cnonfork_M$ is \emph{stationary\/} if ${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$ is a complete type over $A,{\gr b}$ for all finite tuples ${\gr b}$ and ${\mr a}$.
+\begin{definition}\label{def_coheir_stationary}We say that $\cnonfork_M$ is \emph{stationary\/} if ${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$ is a complete type over $M,{\gr b}$ for all finite tuples ${\gr b}$ and ${\mr a}$.
 
 We say \emph{$n$-stationary\/} if this is restricted to $|{\mr a}|=n$.\QED
 \end{definition}
@@ -329,10 +329,10 @@ If for every $\phi({\mr x})\in L(\U)$ there is a formula $\psi({\mr x})\in L(M)$
 
 \begin{proof}
 Fix ${\gr b}\in\U^{|{\gr z}|}$ and ${\mr a_1},{\mr a_2}\in\U^{|{\mr x}|}$ 
-such that ${\mr a_i}\cnonfork_A{\gr b}$ and ${\mr a_1}\equiv_M{\mr a_2}$.
+such that ${\mr a_i}\cnonfork_M{\gr b}$ and ${\mr a_1}\equiv_M{\mr a_2}$.
 We claim that ${\mr a_1}\equiv_{M,\,{\gr b}}{\mr a_2}$.
-We need to prove that $\phi({\mr b};\,{\mr a_1})\iff\phi({\gr b};\,{\mr a_2})$ 
-for every  $\phi({\gr z};\,{\mr x})\in L(A)$.
+We need to prove that $\phi({\gr b};\,{\mr a_1})\iff\phi({\gr b};\,{\mr a_2})$ 
+for every  $\phi({\gr z};\,{\mr x})\in L(M)$.
 Let $\psi({\mr x})\in L(A)$ be such that $\phi({\gr b},\,{\mr \U})=_M\psi({\mr \U})$.
 From ${\mr a_i}\cnonfork_M{\gr b}$ we obtain that  $\phi({\gr b},\,{\mr a_i})\iff\psi({\mr a_i})$.
 Finally, the claim follows because ${\mr a_1}\equiv_M{\mr a_2}$.
@@ -355,9 +355,9 @@ Finally, the claim follows because ${\mr a_1}\equiv_M{\mr a_2}$.
 %Unfortunately, this is not possible in general and the definition Section~\hyperref[coheirs_sets]{\ref*{invariantL}.\ref*{coheirs_sets}} is as good as it gets.
 
 \begin{remark}\label{rk_coheir_stationary}
-Stationarity of $\nonforkc_A$ over every set $A$, or just over every model, is equivalent to the stability of $T$, see Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}.
+Stationarity of $\cnonfork_A$ over every set $A$, or just over every model, is equivalent to the stability of $T$, see Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}.
 However, there are many more theories where the assumption holds for some particular set $A$.
-For example, if every subset of $A^n$ is $A$-definable, $\nonforkc_A$ is clearly $n$-stationary.
+For example, if every subset of $A^n$ is $A$-definable, $\cnonfork_A$ is clearly $n$-stationary.
 This simple observation will be of help in the proof of Theorem~\ref{thm_Hindman}.
 For natural example let $T=T_{\rm dlo}$ and let $A\subseteq\U$ have the order-type of $\RR$.
 By quantifier elimination every definable of $\U$ union of finitely many intervals.

@@ -40,15 +40,18 @@ Moreover, the following holds for all closed terms $a, b, c$
 \end{itemize}
 \end{definition}
 
-Fix a theory $T$ and let \emph{$M$} be the structure that has as domain the set of closed terms. Define for every relation symbol
+Fix a theory $T$ and let \emph{$M$} be the structure that has as domain the set of closed terms. Define for every relation symbol $r$
 
+\ceq{\hfill r^M}{=}{\big\{\<a_1,\dots,a_n\>\in M^n\ :\ r(a_1,\dots,a_n)\in T\big\},}
 
-\ceq{\hfill r^M}{=}{\big\{\<a_1,\dots,a_n\>\in M^{n_r}\ :\ r(a_1,\dots,a_n)\in T\big\}.}
-
+where $n$ is the arity of $r$.
+%
 Define for every function symbol $f$
 
-\ceq{\hfill f^M}{=}{\big\{\<a_1,\dots,a_n,t\>\in M^{n_f+1}\ :\ t=fa_1\dots a_n\big\}.}
+\ceq{\hfill f^M}{=}{\big\{\<t, a_1,\dots,a_n\>\in M^{n+1}\ :\ t=fa_1\dots a_n\big\}.}
 
+where $n$ is the arity of $r$.
+%
 An easy proof by induction shows that $t^M=t$ for all closed terms $t$. 
 
 Finally, let \emph{$E$} be the relation on $M$ that holds when $a{\doteq}b\in T$. 
@@ -58,13 +61,13 @@ The relation $E$ is a congruence on $M$ (as defined in Section~\hyperref[quotien
 \end{lemma}
 
 \begin{proof}
-Axioms \ssf{a}-\ssf{c} ensure that $E$ is an equivalence. Axiom \ssf{e} that it is a congruence.
+Axioms \ssf{a}-\ssf{c} ensure that $E$ is an equivalence. We claim that that $E$ is a congruence. This is immediate for unary functions: apply \ssf{e} to the formula $fx\doteq fa$. In general the claim is easily proved by induction on the arity of $f$.
 \end{proof}
 
 Condition \ssf{0} is the only negative requirement of Definition~\ref{def_Henkin} (it requires that $T$ does \textit{not\/} contain some formula). By condition \ssf{0}, Henkin theories do not contain any blatant inconsistency. Surprisingly, this is all what is needed for the existence of a model.
 
 \begin{theorem}
-If $T$ is Henkin theory then $M/E\,\models T$. 
+If $T$ is Henkin theory then $M{/}E\,\models T$. 
 \end{theorem}
 
 \begin{proof}

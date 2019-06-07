@@ -562,22 +562,20 @@ Still,  $\Th_\Delta(M)\subseteq\Th_\Delta(N)$ may be a non trivial requirement.\
 
 \begin{definition}\label{def_characteristic}
 We call $\Th_\Delta(M)$ the \emph{$\Delta\jj$theory} of $M$.
-We say that $T$  \emph{decides\/} the $\Delta\jj$theory if $\Th_\Delta(M)=\Th_\Delta(N)$ for all $M,N\models T$.
+We say that the theory $T$ is \emph{$\Delta$-complete\/} if $\Th_\Delta(M)=\Th_\Delta(N)$ for all $M,N\models T$.
 In other words, for any pair of models of $T$, the empty map $\0:M\to N$ is a $\Delta$-morphism.
-When $\Delta=\atpmL$ we say simply \emph{characteristic}, then $T$ decides the characteristic $\<\0\>_M\simeq\<\0\>_N$ for all $M,N\models T$.\QED
+When $T$ is $\atpmL$-complete we say that $T$ decides the \emph{characteristic\/} of its models (by analogy with rings and fields). Note that when $T$ decides the characteristic of its models, we have $\<\0\>_M\simeq\<\0\>_N$ for all $M,N\models T$.\QED
 \end{definition}
-
-
 
 We conclude this section with a couple of propositions that break Theorem~\ref{isomorfoeleq} into parts.
 More interestingly, in Chapter~\ref{elimination} we shall prove a sort of converse of Propositions~\ref{presesis} and~\ref{presuniv}.
 
-Though the following is not immediately required, it is interesting to note that here is a relation between some properties of $\Delta\jj$morphisms and the closure of $\Delta$ under logical connectives.
-When $\ssf{C}\subseteq\{\A,\E,\neg,\vee,\wedge\}$ is a set of connectives, we write \emph{$\ssf{C}\Delta$} for the closure of $\Delta$ with respect to all connectives in $\ssf{C}$.
+It is interesting to note that there is a relation between certain properties of $\Delta\jj$morphisms and the closure of $\Delta$ under logical connectives.
+When $\ssf{C}\subseteq\{\A,\E,\neg,\vee,\wedge\}$ is a set of connectives, we write \emph{$\ssf{C}\Delta$} for the closure of $\Delta$ with respect to the connectives in $\ssf{C}$.
 We write \emph{$\neg\Delta$} for the set containing the negation of the formulas in $\Delta$.
-Warning: do not confuse $\neg\Delta$ with $\{\neg\}\Delta$.
+Warning: do not confuse $\neg\Delta$ with $\{\neg\}\Delta$. Up to logical equivalence $\{\neg\}\Delta=\Delta\cup\neg\Delta$.
 
-It is clear that $\Delta$-morphisms are  $\{\wedge,\vee\}\Delta\jj$morphisms.
+It is clear that $\Delta$-morphisms are $\{\wedge,\vee\}\Delta\jj$morphisms.
 
 \begin{proposition}\label{presneg}
 For every given set of formulas $\Delta$ and every injective map $h:M\imp N$ the following are equivalent
