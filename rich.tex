@@ -1,8 +1,7 @@
 % !TEX root = creche.tex
 \documentclass[creche.tex]{subfiles}
-\begin{document}
 
-\chapter{Fra\"issé limits}
+\chapter{Rich models}
 \label{fraisse} 
 
 \def\ceq#1#2#3{\parbox[b]{20ex}{$\displaystyle #1$}\parbox[b]{4ex}{\hfil$#2$}$\displaystyle #3$}
@@ -65,8 +64,8 @@ These generalizations are not very common and will not be considered here.
 
 \begin{definition}
 Assume that $\M$ satisfies \ssf{c1}-\ssf{c3} of Definition~\ref{def_com_c}.
-We say that a model $N$ is \emph{$\lambda\jj$rich\/} if for every model $M$, every ${\mr b}\in M$ and every morphism $k:M\imp N$ of cardinality $<\lambda$ there is a ${\mr c}\in N$ such that $k\cup\{\<{\mr b},{\mr c}\>\}:M\to N$ is a morphism.
-We say that $N$ is \emph{rich\/} if it is $\lambda\jj$rich for $\lambda=|N|$.
+We say that a model $N$ is \emph{$\lambda$-rich\/} if for every model $M$, every ${\mr b}\in M$ and every morphism $k:M\imp N$ of cardinality $<\lambda$ there is a ${\mr c}\in N$ such that $k\cup\{\<{\mr b},{\mr c}\>\}:M\to N$ is a morphism.
+We say that $N$ is \emph{rich\/} if it is $\lambda$-rich for $\lambda=|N|$.
 When $\M_{\rm ob}=\Mod(T_0)$ for some theory $T_0$ and $\M_{\rm hom}$ is clear from the context, we say \emph{rich model of $T_0$}.\QED
 \end{definition}
 
@@ -77,11 +76,11 @@ The following two notions are closely connected with richness.
 
 \begin{definition}\label{def_omogenea_universale}
 Assume that $\M$ satisfies \ssf{c1}-\ssf{c3} of Definition~\ref{def_com_c}.
-We say that a model $N$ is \emph{$\lambda\jj$universal\/} if for every model $M$ of cardinality $\le\lambda$ in the same connected component of $N$ there is an embedding $k:M\hookrightarrow N$.
-We say that a model $N$ is \emph{$\lambda\jj$homogeneous\/} if every $k:N\to N$ of cardinality $<\lambda$ extends to a bijective morphism $h:N\isomap N$ (an automorphism when \ssf{c4} below holds).
+We say that a model $N$ is \emph{$\lambda$-universal\/} if for every model $M$ of cardinality $\le\lambda$ in the same connected component of $N$ there is an embedding $k:M\hookrightarrow N$.
+We say that a model $N$ is \emph{$\lambda$-homogeneous\/} if every $k:N\to N$ of cardinality $<\lambda$ extends to a bijective morphism $h:N\isomap N$ (an automorphism when \ssf{c4} below holds).
 
 Note that the larger $\M_{\rm hom}$, the stronger notion of homogeneity.
-When  $\M_{\rm hom}$ contains all partial isomorphisms between models (the largest class of morphisms considered here), it is common to say \emph{$\lambda$-ultra\-homo\-geneous\/} for $\lambda\jj$homogeneous.
+When  $\M_{\rm hom}$ contains all partial isomorphisms between models (the largest class of morphisms considered here), it is common to say \emph{$\lambda$-ultra\-homo\-geneous\/} for $\lambda$-homogeneous.
 
 As above, when $\lambda=|N|$ we say \emph{universal}, \emph{homogeneous} and \emph{ultrahomogeneous}.\QED
 \end{definition}
@@ -89,7 +88,7 @@ As above, when $\lambda=|N|$ we say \emph{universal}, \emph{homogeneous} and \em
 
 In Section~\hyperref[dlo]{\ref*{relational}.\ref*{dlo}} we implicitly used $\M_{\rm ob}=\Mod(T_{\rm lo})$ and partial isomorphisms as $\M_{\rm hom}$.
 In Section~\hyperref[randomgraph]{\ref*{relational}.\ref*{randomgraph}} we used $\M_{\rm ob}=\Mod(T_{\rm gph})$ and again partial isomorphisms as $\M_{\rm hom}$.
-Corollary~\ref{coroll_ordinericco} proves that every model of $T_{\rm dlo}$ is $\omega\jj$rich.
+Corollary~\ref{coroll_ordinericco} proves that every model of $T_{\rm dlo}$ is $\omega$-rich.
 Corollary~\ref{coroll_graforicco} claims the analogous fact for $T_{\rm rg}$.
 
 In the following we frequently work under the following assumption (even when not all properties are strictly necessary).
@@ -103,10 +102,11 @@ The assumption on the cardinality $L$ is only necessary to apply the downward L\
 \begin{proposition}\label{prop_6.1}
 (Assume~\ref{ass_c1-6})  \  The following are equivalent
 \begin{itemize}
-\item[1.] $N$ is a $\lambda\jj$rich model;
+\item[1.] $N$ is a $\lambda$-rich model;
 \item[2.] for every model $M$ of cardinality $\le\lambda$ and every morphism $k:M\imp N$ of cardinality, say $<\lambda$ there is a embedding $h:M\hookrightarrow N$ that extends $k$.
 \end{itemize}
 \end{proposition}
+
 \begin{proof}
 Closure under union of chains of morphisms, which is ensured by \ssf{c7}, immediately yields \ssf{1}$\IMP$\ssf{2}.
 As for implication \ssf{2}$\IMP$\ssf{1} we only need to consider the case $\lambda<|M|$.
@@ -134,7 +134,7 @@ By \ssf{c7} we can simply take the union.
 (Assume~\ref{ass_c1-6})  \  Then all rich models of cardinality $\lambda$ in the same connected component are isomorphic.\QED
 \end{corollary}
 
-It is obvious that $\lambda\jj$rich models are $\lambda\jj$universal and, by Theorem~\ref{thm_riccozigzag}, they are $\lambda\jj$ho\-mo\-ge\-ne\-ous.
+It is obvious that $\lambda$-rich models are $\lambda$-universal and, by Theorem~\ref{thm_riccozigzag}, they are $\lambda$-ho\-mo\-ge\-ne\-ous.
 These two notions are weaker than richness.
 For instance, when $\M$ is as in Section~\hyperref[randomgraph]{\ref*{relational}.\ref*{randomgraph}}, the countable graph with no edge is trivially ultrahomogeneous but it is not universal and a fortiori not rich.
 On the other hand if we add to a countable random graph an isolated point we obtain a universal graph which is not ultrahomogeneous.
@@ -174,10 +174,16 @@ Every partial isomorphism $k:M\to N$ between models of $T_{\rm dlo}$ (or models 
 Hint: use downward Löwenheim-Skolem and Theorem~\ref{thm_zigzagcantor}.\QED
 \end{exercise}
 
+\section{The theory of rich models and quantifier elimination}
+
+
+Let $\lambda\ge|L|$ be given. The \emph{theory of the rich models\/} of $\M$ is the set $T_1$ of sentences that hold in all $\lambda$ rich models. The theorem below proves that $T_1$ does not depends on $\lambda$ (and we could also restrict to rich models when they exist).
+
+It also follows from the theorem that $T_1$ is complete as soon as $\M$ is connected.
 
 \begin{theorem}\label{thm_morphism_rich_elementary}
-(Assume~\ref{ass_c1-6})  \  Every morphism between $\lambda\jj$rich models is elementary.
-In particular, $\lambda\jj$rich models in the same connected component are elementary equivalent.
+(Assume~\ref{ass_c1-6})  \  Every morphism between $\lambda$-rich models is elementary.
+In particular, $\lambda$-rich models in the same connected component are elementary equivalent.
 \end{theorem}
 
 \begin{proof}
@@ -211,16 +217,22 @@ A similar consideration holds for $N'$.
 This is achieved using the same dovetail enumeration as in our second proof the downward Löwenheim-Skolem Theorem~\ref{diym_II_lowenheimskolemallingiu}.
 \end{proof}
 
-The \emph{theory of rich models\/} of $\M$ is the set $T_1$ of sentences that hold in all rich models (or, equivalently, in any $|L|$-rich model), assuming they exist.
-By the theorem above, $T_1$ is complete as soon as $\M$ is connected.
+Assume for simplicity that $\M$ is connected.
+Then all $\lambda$-rich models belong to $\Mod(T_1)$ for some complete theory $T_1$.
+It is interesting to ask if the converse is true: if $T_1$ is the theory of the $\lambda$-rich models of $\M$, do all models in $\Mod(T_1)$ are rich?
+The answer is affirmative when $\lambda=\omega$ and $T_1$ is either $T_{\rm dlo}$ or $T_{\rm rg}$, but this is not always the case, see Example~\ref{ex_infiniti_colori} for an easy to grasp counterexample.
+But in fact, any non $\lambda$-categorical theory counterexamples.
 
-Assume for simplicity that $L$ is countable and that $\M$ is connected.
-Then all $\omega\jj$rich models belong to $\Mod(T_1)$ for some complete theory $T_1$.
-It is interesting to ask if the converse is true: if $T_1$ is the theory of the $\omega\jj$rich models of $\M$, do all models in $\M\cap \Mod(T_1)$ are rich?  The answer is affirmative when $T_1$ is either $T_{\rm dlo}$ or $T_{\rm rg}$, but this is not always the case, see Example~\ref{ex_infiniti_colori} for an easy counterexample.
-An affirmative answer implies that the theory of rich models is $\omega\jj$categorical.
-An interesting variant of this question is considered in Theorem~\ref{thm_ricchezza_saturazione_QE}.
+\begin{remark}
+    Assume~\ref{ass_c1-6})  \  Assume $\M$ is connected.
+    Let $T_1$ be the theory of the rich models of $\M$.
+    If every model of $T_1$ is $\lambda$-rich then $T_1$ is $\lambda$-categorical.
+    (This is a conseguence of Corollary~\ref{corol_QE_back_and_forth})\QED
+\end{remark}
 
-For convenience of the reader, we instantiate Theorem~\ref{thm_morphism_rich_elementary} with the two categories used in Chapter~\ref{relational}.
+A very interesting interesting variant of the question asked above is considered in Theorem~\ref{thm_ricchezza_saturazione_QE} where it is related to an important phenomenon that we now indroduce.
+
+First, to have a concrete example at hand, we instantiate Theorem~\ref{thm_morphism_rich_elementary} with the two categories used in Chapter~\ref{relational}.
 
 \begin{corollary}\label{coroll_tutteleimmersionisonoelementari_QE}
 Partial isomorphisms between models of $T_{\rm dlo}$ and between models of $T_{\rm rg}$ are elementary maps.\QED
@@ -244,15 +256,13 @@ The following are equivalent
 \end{itemize}
 \end{theorem}
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}For the time being when saying that \textit{$T$ has quantifier elimination\/} we intend \ssf{2} of the theorem above.
-The equivalence with \ssf{1} will be proved only in Chapter~\ref{elimination}, see Exercise~\ref{ex_prove_thm_EQ} or Corollary~\ref{corol_QE}, but it is not required in the meanwhile if you accept the theorem above as a definition of quantifier elimination.
-For instance we rephrase Corollary~\ref{coroll_tutteleimmersionisonoelementari_QE} above as follows.
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}This theorem will be proved only in Chapter~\ref{elimination}, see Exercise~\ref{ex_prove_thm_EQ} or Corollary~\ref{corol_QE}.
+%
+For the time being we do not need the syntactic version of elimination of quantifiers, so when saying that \textit{$T$ has quantifier elimination\/} we intend \ssf{2} of the theorem above.
+For instance we rephrase Corollary~\ref{coroll_tutteleimmersionisonoelementari_QE} above by saying that $T_{\rm dlo}$ and $T_{\rm rg}$ have elimination of quantifiers.
 
-\begin{corollary}\label{coroll_tutteleimmersionisonoelementari_QE2}
-The theories $T_{\rm dlo}$ and $T_{\rm rg}$ have elimination of quantifiers.\QED
-\end{corollary}
 
-In the next chapter we introduce important examples of $\omega\jj$rich models that do not have an $\omega\jj$categorical theory.
+In the next chapter we introduce important examples of $\omega$-rich models that do not have an $\omega$-categorical theory.
 These are algebraic structures (groups, fields etc.) hence more complex than pure relational structures.
 So, we conclude this section with an example of this phenomenon in an almost trivial context.
 
@@ -274,7 +284,7 @@ It is also easy to verify that every uncountable model of $T_1$ is rich and cons
 
 \begin{exercise}\label{ex_finiti_colori}
 Let $T_0$ and $\M$ be as in Example~\ref{ex_infiniti_colori} except that we restrict the language to the relations $r_0,\dots,r_n$ for a fixed $n$.
-Do $\omega\jj$rich models of $T_0$ exist? Is their theory $\omega\jj$categorical? What if we add to $T_0$ the axiom $r_0(x)\vee\dots\vee r_n(x)$~?\QED
+Do $\omega$-rich models of $T_0$ exist? Is their theory $\omega$-categorical? What if we add to $T_0$ the axiom $r_0(x)\vee\dots\vee r_n(x)$~?\QED
 \end{exercise}
 
 \begin{exercise}
@@ -299,13 +309,11 @@ Do rich models exist? Can we axiomatize their theory? If so, does it have elimin
 \end{exercise}
 
 \begin{exercise}
-Prove that the following are equivalent
+Assuming Theorem~\ref{thm_tutteleimmersionisonoelementari_QE}, prove that the following are equivalent
 \begin{itemize}
     \item[1.] $T$ has elimination of quantifiers;
-    \item[2.] every finite partial isomorphism between models $T$ is an elementary map.
+    \item[2.] every \textit{finite\/} partial isomorphism between models $T$ is an elementary map.\QED
 \end{itemize}
-Hint. From what shown in this section, the equivalence holds with \textit{finite\/} replaced by $<|L|$.
-Prove that this is sufficient.\QED
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -314,8 +322,8 @@ Prove that this is sufficient.\QED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Weaker notions of universality and homogeneity}\label{weak}
 
-We want to extend the equivalence in Theorem~\ref{ricco<->universaleomogeneo} to $\lambda\jj$rich models.
-For that we need to weaken the notions of $\lambda\jj$universality and  $\lambda\jj$homogeneity.
+We want to extend the equivalence in Theorem~\ref{ricco<->universaleomogeneo} to $\lambda$-rich models.
+For that we need to weaken the notions of $\lambda$-universality and  $\lambda$-homogeneity.
 This section is more technical and could be skipped at a first reading.
 
 \begin{definition}
@@ -326,7 +334,7 @@ The term \emph{back-and-forth $\lambda$-homogeneous\/} is also used.\QED
 The following easy exercise on back-and-forth is required in the sequel.
 
 \begin{exercise}\label{omogeneo=debolmenteaomogeneo}
-(Assume~\ref{ass_c1-6}) \ Prove that any weakly $\lambda\jj$ho\-mo\-ge\-ne\-ous structure of cardinality $\lambda$ is homogeneous.\QED
+(Assume~\ref{ass_c1-6}) \ Prove that any weakly $\lambda$-ho\-mo\-ge\-ne\-ous structure of cardinality $\lambda$ is homogeneous.\QED
 \end{exercise}
 
 \begin{definition}\label{def_weakly_universal}
@@ -334,7 +342,7 @@ We say that a structure $N$ is \emph{weakly $\lambda$-universal\/} if for every 
 \end{definition}
 
 \begin{lemma}\label{debolmenteomogeneoandirivieni}
-(Assume~\ref{ass_c1-6})  \  Let $N$ be a weakly $\lambda\jj$ho\-mo\-ge\-ne\-ous model.
+(Assume~\ref{ass_c1-6})  \  Let $N$ be a weakly $\lambda$-ho\-mo\-ge\-ne\-ous model.
 Let $A\subseteq N$ have cardinality $\le\lambda$ and let $k:N\to N$ be a morphism of cardinality $<\lambda$.
 Then there is a model  $M\preceq N$ containing $A$ and an automorphism $h:M\isomap M$ that extends $k$.
 \end{lemma}
@@ -350,9 +358,9 @@ The chains start with $A_0=A\cup\dom k\cup\range k$ and $h_0=k$.
 As usual, at limit stages we take the union.
 Now we consider successor stages.
 At stage $i$ we fix some enumerations of $A_i$ and of $L_{\mr x}(A_i)$, where $|{\mr x}|=1$.
-Let $\<i_1,i_2\>$ be the $i\jj$th pair of ordinals $<\lambda$.
-If the $i_2\jj$th formula in $L_{\mr x}(A_{i_1})$ is consistent in $N$, let ${\gr a}$ be any of its solutions.
-Also let ${\mr b}$ be the $i_2\jj$th element of $A_{i_1}$.
+Let $\<i_1,i_2\>$ be the $i$-th pair of ordinals $<\lambda$.
+If the $i_2$-th formula in $L_{\mr x}(A_{i_1})$ is consistent in $N$, let ${\gr a}$ be any of its solutions.
+Also let ${\mr b}$ be the $i_2$-th element of $A_{i_1}$.
 Let $h_{i+1}:N\to N$ be a minimal morphism that extends $h_i$ and is such that ${\mr b}\in\dom h_{i+1}\cap\range h_{i+1}$.
 Define $A_{i+1}=A_i\cup\big\{{\gr a},\ h_{i+1}{\mr b},\  h_{i+1}^{-1}{\mr b}\big\}$.
 \end{proof}
@@ -361,7 +369,7 @@ Define $A_{i+1}=A_i\cup\big\{{\gr a},\ h_{i+1}{\mr b},\  h_{i+1}^{-1}{\mr b}\big
 (Assume~\ref{ass_c1-6})  \  For every model $N$ the following are equivalent
 \begin{itemize}
 \item[1.] $N$ is $\lambda$-rich;
-\item[2.] $N$ is  weakly $\lambda\jj$universal and weakly $\lambda\jj$homogeneous.
+\item[2.] $N$ is  weakly $\lambda$-universal and weakly $\lambda$-homogeneous.
 \end{itemize}
 \end{theorem}
 
@@ -369,7 +377,7 @@ Define $A_{i+1}=A_i\cup\big\{{\gr a},\ h_{i+1}{\mr b},\  h_{i+1}^{-1}{\mr b}\big
 Implication \ssf{1}$\IMP$\ssf{2} is clear.
 To prove \ssf{2}$\IMP$\ssf{1} we generalize the proof of Theorem~\ref{ricco<->universaleomogeneo}.
 We assume \ssf{2} fix some morphism $k:M\imp N$ of cardinality $<\lambda$ and let $b\in M$.
-By weak $\lambda\jj$universality there is a morphism $f:M\imp N$ with domain of definition $\dom k\cup\big\{b\big\}$.
+By weak $\lambda$-universality there is a morphism $f:M\imp N$ with domain of definition $\dom k\cup\big\{b\big\}$.
 The map $f\circ k^{-1}:N\imp N$ has cardinality $<\lambda$ and, by Lemma~\ref{debolmenteomogeneoandirivieni}, it has an extension to an automorphism $h:N'\isomap N'$ for some $N'\preceq N$ containing $\range k\cup\range f$.
 Then $h\circ f:M\imp N$ extends $k$ and is defined on $b$.
 \end{proof}
@@ -520,7 +528,7 @@ Hence $g=\{\<{\mr b},{\mr c}\>\}:M\to N'$ is the required elementary map that ex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{A non $\omega$-categorical example}\label{eserciziorisolto}
 
-In the next chapter we introduce important examples of $\omega\jj$rich models that do not have an $\omega\jj$categorical theory.
+In the next chapter we introduce important examples of $\omega$-rich models that do not have an $\omega$-categorical theory.
 They are algebraic structures (groups, fields etc.) hence more complex than pure relational structures.
 So, it may be useful to observe the phenomenon in a simpler context.
 (It is not the simplest one, see Exercise~\ref{ex_infiniti_colori}.)
@@ -567,6 +575,3 @@ In this case the required $c$ is any witness of $M\models \E x\, p_{a,b}(x)$ wit
 
 We sum up: $\Mod(T)$ contains countable models that not rich, hence $T$ is not $\omega$-categorical; still, by Theorem~\ref{thm_morphism_rich_elementary}, $T$ is complete and has elimination of quantifiers.
 \end{comment}
-
-
-\end{document}

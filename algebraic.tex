@@ -27,7 +27,7 @@ We say that a type $p({\mr x})$ is \emph{trivial\/} if $\,\proves p({\mr x})$.\Q
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Abelian groups}
 \label{gruppi}
-In this section the language $L$ is that of additive groups. The theory \emph{$T_{\rm ag}$} of \emph{abelian groups\/} is axiomatized by the universal closure of the following axioms\nobreak
+The language $L$ is that of additive groups. The theory \emph{$T_{\rm ag}$} of \emph{abelian groups\/} is axiomatized by the universal closure of the following axioms\nobreak
 \begin{itemize}
 \item[a1] $(x+y) +z\ =\ y+(x+z)$;
 \item[a2] $x+(-x)\ =\ (-x)+x\ =\ 0$;
@@ -57,27 +57,30 @@ Up to equivalence over $T_{\rm ag}$ the formula $\phi({\mr x})$ has the form $s(
 \end{proof}
 
 
-\begin{definition} Let $M\models T_{\rm ag}$. For $A\subseteq M$ and  $c\in M$. We say that  \emph{$c$ is independent from $A$\/} if $\<A\>_M\cap\<c\>_M=\big\{0\big\}$. Otherwise we say that \emph{$c$ is dependent from $A$}. The \emph{rank\/} of $M$ is the least cardinality of a subset $A\subseteq M$ such that all elements in $M$ are dependent from $A$. We denote it by \emph{$\rank(M)$}.\QED
+\begin{definition} 
+    Let $M\models T_{\rm ag}$.
+    For $A\subseteq M$ and  $c\in M$, we say that  \emph{$c$ is independent from $A$\/} if $\<A\>_M\cap\<c\>_M=\big\{0\big\}$.
+    Otherwise we say that \emph{$c$ is dependent from $A$}.
+    The \emph{rank\/} of $M$ is the least cardinality of a subset $A\subseteq M$ such that all elements in $M$ are dependent from $A$. We denote it by \emph{$\rank(M)$}.\QED
 \end{definition}  
 
 Note that when $M$ is a vector space the condition $\<A\>_M\cap\<c\>_M=\big\{0\big\}$ is equivalent to saying that $c$ is not a linear combination of vectors in $A$. Then $\rank M$ coincides with the dimension of $M$. In fact, what we do here for abelian groups could be easily generalized to $D\jj$modules, where $D$ is any integral domain, and in particular to vector spaces.
 
-The following proposition gives a convenient syntactic characterization of independence. An element $c$ of a group is called  \emph{nilpotent}, or in abelian groups also a \emph{torsion element}, if $c^n=0$ for some $n$.
-
+The following proposition gives a convenient syntactic characterization of independence. An element $c$ of an abelian group is a \emph{torsion element} if $nc=0$ for some positive integer. 
 
 \begin{proposition}
-Let $A\subseteq M\models T_{\rm ag}$. Let ${\mr c}\in M$ be not a torsion element. Then the following are equivalent.
+Let $A\subseteq M\models T_{\rm ag}$. Suppose that ${\mr c}\in M$ is not a torsion element.
+Then the following are equivalent
 \begin{itemize}
  \item[1.] $\<A\>_M\cap\<{\mr c}\>_M=\big\{0\big\}$;
  \item[2.] $p({\mr x})=\attp_M({\mr c}/A)$ is trivial (see Notation~\ref{note_tipi_diagramma} and ~\ref{notation1}).
 \end{itemize}
 \end{proposition}
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}\quad By Proposition~\ref{corol_formacanonicaterminimoduli}, a non trivial formula in $p({\mr x})$ may be assumed to have the form $n{\mr x}=a$ for some $n$ and some $a$. If such a formula is satisfied by ${\mr c}$ then $a\in\<A\>_M\cap\<{\mr c}\>_M$. As ${\mr c}$ is not a torsion element, $n=0$ and the equation is trivial.
+\ssf{1}$\IMP$\ssf{2}\quad By Proposition~\ref{corol_formacanonicaterminimoduli}, formulas in $p({\mr x})$ may be assumed to have the form $n{\mr x}=a$ for some integer $n$ and some $a\in\<A\>_M$. As this formula is satisfied by ${\mr c}$ then $a\in\<A\>_M\cap\<{\mr c}\>_M$. Hence $a=0$. As ${\mr c}$ is not a torsion element, $n=0$ and the equation is trivial.
 
-\ssf{2}$\IMP$\ssf{1}\quad If $\<A\>_M\cap\<{\mr c}\>_M\neq\big\{0\big\}$ then $n{\mr c}=a$ for some $a\in\<A\>_M\sm\{0\}$. Then ${\mr c}$ satisfies some non trivial equation $n{\mr x}=a$.
+\ssf{2}$\IMP$\ssf{1}\quad If $\<A\>_M\cap\<{\mr c}\>_M\neq\big\{0\big\}$ then $n{\mr c}=a$ for some $a\in\<A\>_M\sm\{0\}$ and some positive integer $n$. Then ${\mr c}$ satisfies the non trivial equation $n{\mr x}=a$.
 \end{proof}
-
 
 \begin{remark}\label{oss_liberi_qf}
 Let $k:M\to N$ be a partial embedding and let ${\gr a}$ be an enumeration of $\dom k$. We claim that  $k\cup\big\{\<{\mr b},{\mr c}\>\big\}:M\to N$ is a partial embedding for every ${\mr b}\in M$ and ${\mr c}\in N$ that are independent from ${\gr a}$, respectively $k{\gr a}$. In fact, it suffices to check that $M,{\mr b},{\gr a}\,\equiv_{\rm at}N, {\mr c},k{\gr a}$. Suppose $\phi({\mr x}\,;{\gr z})\in\atL$ \ is such that $M\models\phi({\mr b}\,;{\gr a})$. Then by independence $\phi({\mr x}\,;{\gr a})$ is trivial, i.e.
@@ -144,9 +147,6 @@ From \ssf{b'} we obtain $N_2\models m{\gr a}=n{\gr c}$. As $N_1$ is torsion-free
 
 %\begin{definition} Let $A\subseteq M\models T_{\rm tfag}$. We say that an element $c\in M$ is \emph{independent from $A$\/} if the type $p({\mr x})=\attp_M(c/A)$ is trivial, that is, $N\models \A x\,p({\mr x})$ for every $\<A\>_M\subseteq N\models T_{\rm tfag}$.\QED\end{definition}  
 
-
-% 
-% 
 % \begin{proposition}\label{prop_independent_ag}
 % Let $k:M\to N$ be a partial isomorphism between models of $T_{\rm tfag}$. Let $b\in M$ and $c\in N$ be independent from $\dom k$, respectively $\range k$. Then  $k\cup\big\{\<b,c\>\big\}:M\to N$ is partial isomorphism.
 % \end{proposition}
@@ -165,7 +165,7 @@ From \ssf{b'} we obtain $N_2\models m{\gr a}=n{\gr c}$. As $N_1$ is torsion-free
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Divisible abelian groups}
 
-The theory of \emph{divisible abelian groups\/} extends $T_{\rm tfag}$ with the following axioms for all  integers $n\neq0$
+The theory of \emph{divisible abelian groups\/} extends $T_{\rm tfag}$ with the following axioms for all integers $n\neq0$
 \begin{itemize}
 \item[div] $y\neq0\imp\E x\ nx=y$.
 \end{itemize} 

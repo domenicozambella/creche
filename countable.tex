@@ -575,7 +575,7 @@ Clearly $K\not\simeq M$ and, by Exercises~\ref{ex_omega_cat_overA} and~\ref{ex_o
 %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%
-\section{A toy version of a theorem of Zil'ber}
+\section{A toy version of a theorem of Zil'ber}\label{toy}
 
 As an application we prove that if $T$ is $\omega\jj$categorical and strongly minimal then it is not finitely axiomatizable.
 
@@ -595,7 +595,7 @@ But $T\proves \E^{>k}\!x\,(x=x)$ for every $k$.
 A contradiction.
 \end{proof}
 We need the following definition.
-We say that $C\subseteq\U$ is an \emph{homogeneous set\/} if for every pair of tuples  ${\gr a},{\gr c}\in C^{<\omega}$ such that ${\gr a}\equiv{\gr c}$ and for every ${\mr b}\in C$ there is a ${\mr d}\in C$ such that ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$.
+We say that $C\subseteq\U$ is a \emph{homogeneous set\/} if for every pair of tuples  ${\gr a},{\gr c}\in C^{<\omega}$ such that ${\gr a}\equiv{\gr c}$ and for every ${\mr b}\in C$ there is a ${\mr d}\in C$ such that ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$.
 
 \begin{lemma}\label{lem_zilbergiocattolo} Suppose $L$ is countable.
 If $T$ is $\omega\jj$categorical and every finite set is contained in a finite homogeneous substructure, then $T$ has the finite model property.
@@ -628,14 +628,14 @@ By homogeneity there is a ${\mr d}\in A$ such that ${\gr a},{\mr b}\equiv {\gr c
 \begin{proposition}\label{prop_zilbergiocattolo} If $T$ is strongly minimal, then every algebraically closed set is homogeneous.
 \end{proposition}
 \begin{proof}
-Let $A$ be argebraically closed and fix some ${\gr a},{\gr c}\in A^{<\omega}$ such that ${\gr a}\equiv{\gr c}$.
+Let $A$ be algebraically closed and let ${\gr a},{\gr c}\in A^{<\omega}$ be such that ${\gr a}\equiv{\gr c}$.
 Let ${\mr b}$ be an element of $A$.
-Suppose first the case ${\mr b}\in\acl{\gr a}$.
-Fix an $f\in\Aut(\U)$ such that $f({\gr a})={\gr c}$ and $f[A]=\acl A$.
+Suppose first that ${\mr b}\in\acl{\gr a}$.
+Let $f\in\Aut(\U)$ be such that $f({\gr a})={\gr c}$ and $f[A]=\acl A$.
 Then ${\mr d}=f{\mr b}$ is the required element, in fact ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$.
 Now, suppose instead that ${\mr b}\notin\acl{\gr a}$.
 Then any ${\mr d}\notin\acl{\gr c}$ satisfies ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$.
-Such a ${\mr d}$ exists in $A$ otherwise $A=\acl{\gr c}\neq\acl{\gr a}$ which contradicts ${\gr a}\equiv {\gr c}$.
+Such a ${\mr d}$ exists in $A$, otherwise $A=\acl{\gr c}\neq\acl{\gr a}$, which contradicts ${\gr a}\equiv {\gr c}$.
 \end{proof}
 
 From the propositions above we finally obtain the following.
@@ -673,7 +673,8 @@ I am not aware of other expositions.
 A famous theorem of Boris Zil'ber claims that Theorem~\ref{thm_zilbergiocattolo} holds for any totally categorical theory.
 The same theorem has been proved independently by  Cherlin, Harrington and Lachlan with a proof that uses the classification of finite simple groups.
 This theorem signs the birth of a subject known as \textit{geometric stability theory\/} which studies in depth the geometric properties of model theories which we briefly hinted to in Chapter~\ref{geometria}.
-The interested reader may consult Pillay's monograph~\cite{Pillay}.
+The interested reader may consult Pillay's monograph~\cite{Pillay}. 
+The material in Section~\ref{toy} comes from~\cite[Section~2.6]{Pillay} 
 
 
 
