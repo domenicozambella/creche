@@ -399,11 +399,8 @@ where $\theta({\mr x})$ ranges over all formulas in $L(A)$. Applying mutual norm
 This completes the proof.
 \end{proof}
 
-The following easy proposition is very useful. Its proof is left to the reader. Note that it would not hold without saturation. For a counter example consider $\RR$ as a structure in the language of strict orders and let $q(x,y)=\tp(0,1/A)$, where 
-
-\ceq{\hfill A}{=}{\Big\{1-\frac1n\ :\ 2 \le n\Big\}.} 
-
-By quantifier elimination, $0\equiv_{A}1$. But $1\notmodels\E y\;q(x,y)$, see Exercise~\ref{ex_E_type}.
+The following easy proposition is very useful. Its proof is left to the reader. Note that it would not hold without saturation. For a counter example consider $\RR$ as a structure in the language of strict orders and let $q(x,y)=\tp_\RR(0,1/A)$, where $A=\{1+1/n: n>1\}$.
+By quantifier elimination, $0\equiv_{A}1$. But $\RR,1\notmodels\E y\;q(x,y)$, see Exercise~\ref{ex_E_type}.
 
 
 \begin{proposition}\label{prop_E_type}
@@ -444,9 +441,12 @@ Let $\phi(x\,;y)\in L(\U)$. Prove that the following are equivalent
 Let $\phi(x\,;y)$ be such that for every $b\in\U^{|y|}$ there is a $\psi(x)\in L$ such that $\psi(x)\imp\phi(x\,;b)$. Prove that we can choose $\psi(x)$ in a finite subset of $L$.\QED
 \end{exercise}
 
-
 \begin{exercise}\label{ex_E_type}
 Prove that $1\notmodels\E y\;q(x,y)$, as claimed before Proposition~\ref{prop_E_type}.\QED
+\end{exercise}
+
+\begin{exercise}
+  Let $\phi(x)\in L(\U)$ and suppose that $\phi(a)\iff\phi(b)$ for every $a,b\in\U\sm A$ such that $a\equiv_Bb$. Prove that there is a formula $\psi(x)\in L(B)$ and a finite $A_0\subseteq A$ such that $\phi(\U)\sm A_0=\psi(\U)\sm A_0$.\QED
 \end{exercise}
 
 \begin{comment}
