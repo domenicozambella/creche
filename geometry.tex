@@ -4,7 +4,7 @@
 
 
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox{15ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+\def\ceq#1#2#3{\parbox{35ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ larger than $|L|$.
 The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
@@ -130,15 +130,6 @@ Prove that, if ${\mr a}\in\acl(A,{\gr b})$ for every ${\gr b}\models\phi({\gr z}
 Prove the same claim with a type $p({\gr z})\subseteq L(A)$ for $\phi({\gr z})$.\QED
 \end{exercise}
 
-\begin{exercise}\label{pofu}
-  Let $\phi(\bar x)\in L(A)$ be a consistent formula and let
-
-  \ceq{\hfill\psi(y)}{=}{\A\bar x\ \Big[\phi(\bar x)\imp\bigvee_{i<|\bar x|} x_i=y\Big]}
-
-  Prove that, if consistent, $\psi(y)$ is algebraic. 
-  Give both a direct proof and one using the exercise above.\QED
-\end{exercise}
-
 
 \begin{exercise}\label{ex_isosub}
 Let $a\in\U\sm\acl\0$.
@@ -158,33 +149,34 @@ Apply the induction hypothesis to $C'=C\cap\V$ with $\V$ for $\U$.\QED
 \end{exercise}
 
 
-% \begin{exercise}\label{ex_acl_intersezioe_2_modelli}
-% Prove that for every $A\subseteq N$ there is an $M$ such that $\acl A\,=\,M\cap N$.
-% Hint: add the requirement $\acl(A_i)\cap N\subseteq\acl(A)$ to the construction 
-% used to prove the downward L\"owenheim-Skolem theorem.
-% You need to prove that every consistent $\phi(x)\in L(A_i)$ has a solution $a$ such that 
-% $\acl(A_i,a)\cap N\subseteq\acl(A)$.
-% The required $a$ has to realize the type
+\begin{exercise}\label{ex_acl_intersezioe_2_modelli}
+Prove that for every $A\subseteq N$ there is an $M$ such that $\acl A\,=\,M\cap N$.
+Hint: add the requirement $\acl(A_i)\cap N\subseteq\acl(A)$ to the construction 
+used to prove the downward L\"owenheim-Skolem theorem.
+You need to prove that every consistent $\phi(x)\in L(A_i)$ has a solution $a$ such that 
+$\acl(A_i,a)\cap N\subseteq\acl(A)$.
+The required $a$ has to realize the type
 
-% \hfil$\big\{\phi(x)\big\}\ \cup\ \Big\{\neg\big[\psi(b,x)\wedge\E^{\le n}y\,\psi(y,x)\big]
-% \ :\ 
-% b\in N{\sm}\acl(A),\  \psi(y,x){\in} L(A_i),\ n{<}\omega\Big\}$
+\hfil$\big\{\phi(x)\big\}\ \cup\ \Big\{\neg\big[\psi(b,x)\wedge\E^{\le n}y\,\psi(y,x)\big]
+\ :\ 
+b\in N\sm\acl(A),\ \ \psi(y,x)\in L(A_i),\ \ n<\omega\Big\}$
 
-% whose consistency need to be verified.
-% \end{exercise}
+whose consistency need to be verified.
+\end{exercise}
 
 \begin{exercise}\label{ex_acl_intersezione_2_modelli_iso}
-  Prove that for every $A\subseteq N$ there is an $M$ such that $\acl A\,=\,M\cap N$.
-  % Prove that for every $A\subseteq N$ there is an automorphism $f\in\Aut(\U/A)$ such that 
-  % $\acl A\,=\,f[N]\cap N$. 
-  % (This is a stronger version of the claim in Exercise~\ref{ex_acl_intersezioe_2_modelli}.) 
-  Hint: let $\bar c$ be an enumeration of $N$.
-  Let $p(\bar x)=\tp(\bar c/A)$. 
-  Consider the type
+Prove that for every $A\subseteq N$ there is an automorphism $f\in\Aut(\U/A)$ such that 
+$\acl A\,=\,f[N]\cap N$. 
+(This is a stronger version of the claim in Exercise~\ref{ex_acl_intersezioe_2_modelli}.) 
+Hint: let $\bar c$ be an enumeration of $N$.
+Let $p(\bar x)=\tp(\bar c/A)$. 
+Consider the type
 
-  \hfill$p(x)\ \cup\ \Big\{\neg\big[\psi(b,\bar x)\wedge\E^{\le n}y\,\psi(y,\bar x)\big]
-  \ :\ 
-  b\in N{\sm}\acl(A),\ \psi(y,x){\in} L(A),\ n{<}\omega\Big\}$.\QED
+\hfil$p(x)\ \cup\ \Big\{\neg\big[\psi(b,\bar x)\wedge\E^{\le n}y\,\psi(y,\bar x)\big]
+\ :\ 
+b\in N\sm\acl(A),\ \ \psi(y,x)\in L(A),\ \ n<\omega\Big\}$
+
+Any $\bar a\models p(\bar x)$ enumerates a model $A$-isomorphic to $N$.\QED
 \end{exercise}
 
 
@@ -195,7 +187,7 @@ Prove that the following are equivalent
 \item[1.] there is some model $M$ containing $A$ and such that $M\cap\phi(\U)=\0$;
 \item[2.] there is no consistent formula $\psi(z_1,\dots,z_n)\in L(A)$ such that
 
-\ceq{\hfill\psi(z_1,\dots,z_n)}{\imp}{\bigvee^n_{i=1}\phi(z_i).}
+\hfil$\displaystyle\psi(z_1,\dots,z_n)\imp\bigvee^n_{i=1}\phi(z_i)$.
 \end{itemize}
 Hint: let $\bar c$ be an enumeration of $N^{|x|}$, where $N$ is any model containing $A$.
 Let $p(\bar z)=\tp(\bar c/A)$.

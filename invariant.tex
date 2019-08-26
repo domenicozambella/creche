@@ -8,8 +8,8 @@
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{16ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
-Notation and implicit assumptions are as presented in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
+In this chapter, $L$ is a signature, $T$ is a complete theory without finite models, and $\U$ is a saturated model of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
+We use the same notation and make the same implicit assumptions as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17,29 +17,29 @@ Notation and implicit assumptions are as presented in Section~\hyperref[monster]
 \section{Invariant sets and types}\label{invariant_sets}
 
 Let $\grD\subseteq\U^{|{\gr z}|}$, where ${\gr z}$ is a tuple of length $<\kappa$.
-We say that $\grD$ is an \emph{$A$-invariant set} if it is fixed (set-wise) by $A$-automorphisms.
+We say that $\grD$ is an \emph{$A$-invariant set} if it is fixed setwise by all $A$-automorphisms.
 That is, $f[\grD]=\grD$ for every automorphism $f\in\Aut(\U/A)$ or, yet in other words,
 
 \ceq{\ssf{is1.}\hfill {\gr a}\in\grD}{\iff}{f{\gr a}\in\grD}\hfill for every ${\gr a}\in\U^{|{\gr z}|}$ and every $f\in\Aut(\U/A)$,
 
-which, by homogeneity is equivalent to,
+which, by homogeneity, is equivalent to,
 
 \ceq{\ssf{is2.}\hfill {\gr a}\in\grD}{\iff}{{\gr b}\in\grD}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$ such that ${\gr a}\equiv_A{\gr b}$.
 
-This yields the following bound on the number of invariant sets
+These equivalent conditions yield the following bound on the number of invariant sets.
 
 \begin{proposition}\label{prop_numberIS}
 Let $\lambda=|L_{\gr z}(A)|$.
 There are at most $2^{2^{\lambda}}$ sets $\grD\subseteq\U^{|{\gr z}|}$ that are invariant over $A$.
 \end{proposition}
 \begin{proof}
-By \ssf{is2}, sets that are invariant over $A$ are unions of equivalence classes of the relation $\equiv_A$, that is, union of sets of the form $p({\gr\U})$ where $p({\gr z})\in S(A)$.
-Then the number of $A$-invariant sets is $2^{|S_{\gr z}(A)|}$.
+By \ssf{is2}, sets that are invariant over $A$ are unions of equivalence classes of the relation $\equiv_A$, that is, unions of sets of the form $p({\gr\U})$ where $p({\gr z})\in S(A)$.
+Then the number of $A$-invariant sets is at most $2^{|S_{\gr z}(A)|}$.
 Clearly $|S_{\gr z}(A)|\le 2^\lambda$.
 \end{proof} 
 
 We say that $\grD$ is an \emph{invariant set\/} if it is invariant over some (small) set $A$.
-Since is assumed $\kappa$ to be inaccessible, there are exactly $\kappa$ invariant sets.
+Since  $\kappa$ is assumed to be inaccessible, there are exactly $\kappa$ invariant sets.
 
 In this chapter we work with $\Delta$-types, that is subsets of $\Delta$, where either  $\Delta=L(\Aa)$ or 
 
@@ -47,7 +47,7 @@ In this chapter we work with $\Delta$-types, that is subsets of $\Delta$, where 
 
 for some given $\phi({\mr x}\,;{\gr z})\in L$.
 In the latter case  $\Delta$-types are called \emph{$\phi$-types}.
-We denote by \emph{$S_{\phi}(\Aa)$\/} the set of complete and finitely consistent $\phi$-types with parameters in $\Aa$.
+We denote by \emph{$S_{\phi}(\Aa)$\/} the set of maximal $\phi$-types with parameters in $\Aa$.
 Typically, $\Aa$ is either the whole of $\U$ or some small set $A\subseteq\U$.
 Types in \emph{$S_{\phi}(\U)$\/} are called \emph{global $\phi$-types}.
 
@@ -66,8 +66,7 @@ For every formula $\phi({\mr x}\,;{\gr z})\in L$ we define
 
 \ceq{\hfill\emph{$\gr\D_{p,\phi}$}}{=}{\Big\{{\gr a}\in\U^{|{\gr z}|}\ :\ \phi({\mr x}\,;{\gr a})\in p\Big\}.}
 
-We can read the notation in two ways.
-Either the tuple ${\gr z}$ has infinite length and is the same for all formulas, or it is finite and depends on $\phi$.
+We can read the notation in two ways: either the tuple ${\gr z}$ has infinite length and is the same for all formulas, or it is finite and depends on $\phi$.
 This is possible because adding or erasing dummy variables to the second tuple of $\phi({\mr x}\,;{\gr z})$ does not change ${\gr\D_{p,\phi}}$ in any relevant way; in particular, invariance is preserved.
 
 Let $p({\mr x})\subseteq L(\U)$ be a consistent type.
@@ -75,8 +74,8 @@ We say that $p({\mr x})$ is an \emph{$A$-invariant type\/} if, for every formula
 
 \ceq{\ssf{it1.}\hfill\phi({\mr x}\,;{\gr a})\in p}{\IFF}{\phi({\mr x}\,;f{\gr a})\in p}\hfill for every ${\gr a}\in\U^{|{\gr z}|}$ and every $f\in\Aut(\U/A)$.
 
-Hence $p({\mr x})$ is invariant exactly when all sets $\gr\D_{p,\phi}$ are. 
-By \emph{invariant type\/} we mean invariant over some (small) set $A$.
+Hence $p({\mr x})$ is invariant exactly when all the sets $\gr\D_{p,\phi}$ are. 
+By \emph{invariant type\/} we mean a type that is invariant over some (small) set $A$.
 
 A global $\phi$-type can be identified with ${\gr\D_{p,\phi}}$ and a global type can be identified with the collection of the sets  ${\gr\D_{p,\phi}}$, where $\phi$ ranges over $L$.
 The notions of invariance for types and sets coincide.
@@ -87,11 +86,11 @@ We say that the type $p({\mr x})\subseteq L(\U)$ \emph{does not split\/} over $A
 
 for every formula $\phi({\mr x}\,;{\gr z})\in L$.
 By homogeneity, non splitting is equivalent to invariance.
-For global type \ssf{it2} is equivalent to
+For global types \ssf{it2} is equivalent to
 
-\ceq{\ssf{it2'.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})\,\in\, p}
+\ceq{\ssf{it2$^\prime$.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})\,\in\, p}
 
-The following is yet another important equivalent characterization of invariance over $A$ that easily follows from \ssf{it2'}
+The following is another important equivalent characterization of invariance over $A$ that follows easily  from \ssf{it2$^\prime$}:
 
 \ceq{\ssf{it3.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\equiv_{A,\,{\mr c}}{\gr b}}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$.
 
@@ -103,18 +102,18 @@ Note that \ssf{it3} applies to global types $p({\mr x})\in S(\U)$ but not to $\p
 %%%%%%%%%%%%%%%%%%%%%%
 \section{Invariance from a dual perspective}
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}The following terminology is not standard.
-We say that the set $\mrB\subseteq\U^{|{\mr x}|}$, typically a definable set, is \emph{quasi-invariant\/} over $A$ if for any finitely many automorphisms $f_1,\dots,f_n\in\Aut(\U/A)$ the sets $f_i[\mrB]$ have non-empty intersection.
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}The following terminology is non-standard.
+We say that the set $\mrB\subseteq\U^{|{\mr x}|}$, typically a definable set, is \emph{quasi-invariant\/} over $A$ if whenever $f_1,\dots,f_n$ is a finite tuple of automorphisms in $\Aut(\U/A)$, the sets $f_i[\mrB]$ have non-empty intersection.
 
-We say that the type $p({\mr x})\subseteq L(\U)$, typically a global type, is \emph{quasi-invariant\/} over $A$ if $\phi({\mr\U})$ is quasi-invariant over $A$  for every $\phi({\mr x})$ conjunction of formulas in $p({\mr x})$.
+We say that the type $p({\mr x})\subseteq L(\U)$, typically a global type, is \emph{quasi-invariant\/} over $A$ if $\phi({\mr\U})$ is quasi-invariant over $A$  for every  conjunction $\phi({\mr x})$ of formulas in $p({\mr x})$.
 %For types of small cardinality, this is equivalent to requiring that $p({\mr\U})$ is quasi-invariant.
 % So, the type $p({\mr x})$ is quasi-invariant if the set $p({\mr\V})$ is invariant, where $\V$ is an large saturated extension of $\U$, see Exercise~\ref{ex_quasi_inv_type}.
 
-For global types quasi-invariance coincides with invariance, in fact we have the following.
+For global types, quasi-invariance coincides with invariance. In fact we have the following equivalence.
 
 
 \begin{proposition}\label{prop_invariance-quasi-invariance}
-Let $p({\mr x})\in S_{\phi}(\U)$ be a global $\phi$-type, then the following are equivalent
+Let $p({\mr x})\in S_{\phi}(\U)$ be a global $\phi$-type. Then the following are equivalent
 \begin{itemize}
 \item[1.] $p({\mr x})$ is invariant over $A$;
 \item[2.] $p({\mr x})$ is quasi-invariant over $A$.
@@ -122,7 +121,7 @@ Let $p({\mr x})\in S_{\phi}(\U)$ be a global $\phi$-type, then the following are
 \end{proposition}
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2}.
-Assume $p({\mr x})$ is invariant and let $\psi({\mr x}\,;{\gr b})\,\in\, p$ and some ${\gr b}\in\U^{|{\gr z}|}$.
+Assume $p({\mr x})$ is invariant and let $\psi({\mr x}\,;{\gr b})\,\in\, p$ where ${\gr b}\in\U^{|{\gr z}|}$.
 Then $\psi({\mr x}\,;f{\gr b})\,\in\, p$ for every $f\in\Aut(\U/A)$, so \ssf{2} follows from the finite consistency of $p({\mr x})$.
 
 \ssf{2}$\IMP$\ssf{1}.
@@ -133,8 +132,8 @@ By completeness, $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr b})\wedg
 
 \begin{exercise}
 We say that $\mrB$ \textit{strongly\/} quasi-invariant if for every definable set $\mrD$ at least one of $\mrB\cap\mrD$ and $\mrB\cap\neg\mrD$ is quasi-invariant.
-Strongly quasi invariant types are defined in analogy to the definition of quasi-invariant type.
-Note parenthetically that for global types the two notions coincide.
+Strongly quasi invariant types are defined similarly to quasi-invariant types.
+Note incidentally that for global types the two notions coincide.
 Prove that every strongly quasi-invariant type has an extension to a global invariant type.
 
 Hint: it may help to prove that if $\mrB$ is strongly quasi-invariant then for every definable $\mrD$ either $\mrB\cap\mrD$ or $\mrB\cap\neg\mrD$ is strongly quasi-invariant.
@@ -142,12 +141,11 @@ Then the maximal strongly quasi-invariant set is the required global extension.\
 \end{exercise}
 
 %Quasi-invariance makes sense also for incomplete types.
-Unfortunately it is not true in general that every quasi-invariant type can be extended to a global one.
-In next section we consider a stronger notion, \textit{coheirs}, which has this desirable property, see Proposition~\ref{prop_exisntence_coheirs}.
-In the next chapters we introduce a weaker notion, \textit{non-forking}, that also allows to extend types to global types.
+%Unfortunately it is not true in general that every quasi-invariant type can be extended to a global one. In next section we consider the stronger notion of types that are \textit{coheirs}. We shall see in Proposition~\ref{prop_exisntence_coheirs} that coheirs have this desirable property.
+Unfortunately, a quasi-invariant type does not necessarily extend to a quasi-invariant global type. There are, however, other properties of types that guarantee that an extension to a global type with the property can be found. In the next section we introduce one of these properties, that of being a \textit{coheir}, and in subsequent chapters yet another one, \textit{non-forking}. Being a coheir is stronger that being quasi-invariant, and non-forking is weaker.
 
 \begin{comment}
-We say that $\mrB$ is \emph{drifting over $A$\/} if for every finitely many $f_1,\dots,f_n\in\Aut(\U/A)$ there is a $g\in\Aut(\U/A)$ such that $g[\mrB]$ is disjoint from all $f_i[\mrB]$.
+We say that $\mrB$ is \emph{drifting over $A$\/} if whenever $f_1,\dots,f_n$ is a finite tuple in $\Aut(\U/A)$, there is $g\in\Aut(\U/A)$ such that $g[\mrB]$ is disjoint from all $f_i[\mrB]$.
 %We say that  $\mrB$ is \emph{piecewise drifting\/} if it is the union of finitely many drifting sets.
 
 \begin{lemma}\label{lem_newelski}
@@ -199,42 +197,45 @@ We say that a type $p({\mr x})$ is  \emph{finitely satisfiable\/} in a set $A$ i
 
 
 \begin{proposition}\label{prop_coeredi_quasiinvarienti}
-Every type $p({\mr x})\subseteq L(\U)$ finitely satisfied in $A$ is quasi-invariant over $A$.
+Every type $p({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $A$ is quasi-invariant over $A$.
 \end{proposition}
 
 \begin{proof}
-Clearly, the very same ${\mr a}\in A^{|{\mr x}|}$ that satisfies $\phi({\mr x})$ satisfies also every $\Aut(\U/A)$-translates of $\phi({\mr x})$.
+Clearly, the same ${\mr a}\in A^{|{\mr x}|}$ that satisfies $\phi({\mr x})$ also satisfies every $\Aut(\U/A)$-translate of $\phi({\mr x})$.
 \end{proof}
 
-The proposition above and Propositions~\ref{prop_invariance-quasi-invariance} yield the following
+Propositions~\ref{prop_invariance-quasi-invariance} and~\ref{prop_coeredi_quasiinvarienti} yield the following proposition.
 
 \begin{proposition}\label{prop_coeredi_invarienti}
-Let $p({\mr x})\in S_{\phi}(\U)$ be a global $\phi$-type finitely satisfiable in $A$.
+Let $p({\mr x})\in S_{\phi}(\U)$ be a global $\phi$-type that is finitely satisfiable in $A$.
 Then $p({\mr x})$ is $A$-in\-vari\-ant.\QED
 \end{proposition}
 
 \begin{proposition}\label{prop_exisntence_coheirs}
-Every type $q({\mr x})\subseteq L(\U)$ finitely satisfiable in $A$ has an extension to a global type finitely satisfiable in $A$.
+Every type $q({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $A$ has an extension to a global type that is finitely satisfiable in $A$.
 \end{proposition}
 
 \begin{proof} 
 Let $p({\mr x})\subseteq L(\U)$ be maximal among the types containing $q({\mr x})$ and finitely satisfiable in $A$.
 We prove that $p({\mr x})$ is complete.
-If for a contradiction that $p({\mr x})$ contains neither $\psi({\mr x})$ nor $\neg\psi({\mr x})$.
-Then  neither $p({\mr x})\cup\big\{\psi({\mr x})\big\}$ nor $p({\mr x})\cup\big\{\neg\psi({\mr x})\big\}$ is finitely satisfiable in $A$.
+Suppose for a contradiction that $p({\mr x})$ contains neither $\psi({\mr x})$ nor $\neg\psi({\mr x})$.
+Then  neither $p({\mr x})\cup\big\{\psi({\mr x})\big\}$ nor $p({\mr x})\cup\big\{\neg\psi({\mr x})\big\}$ are finitely satisfiable in $A$.
 This contradicts the finite satisfiability of $p({\mr x})$.
 \end{proof}
 
-We will most of the time apply the notion of finite satisfiability with a model for $A$ because of the following proposition, which is evident by elementarity.
+In most cases we work with types that are finitely satisfiable over a model. The reason is explained by the next proposition, which is clear by elementarity.
 
 \begin{proposition}\label{prop_coher_over_model}
-    Every type over a model is finitely satisfiable in that model, that is, whenever $p({\mr x})\subseteq L(M)$, then $p({\mr x})$ is finitely satisfiable in $M$.
+    Every consistent type over a model is finitely satisfiable in that model, that is, whenever $p({\mr x})\subseteq L(M)$ is consistent, $p({\mr x})$ is finitely satisfiable in $M$. \QED
 \end{proposition}
 
-A type that extends $p({\mr x})$ and is finitely satisfied in $M$ is called a \emph{coheir\/} of $p({\mr x})$ over $M$.
+\begin{definition}\label{def_choeir_uno} A type $p({\mr x}) \subseteq L(\U)$ that is finitely satisfiable in $M$ is said to be a \emph{coheir\/} of $p_{\restriction M}({\mr x})$. \QED
+\end{definition}
+
+%A type that extends $p({\mr x})$ and is finitely satisfied in $M$ is called a \emph{coheir\/} of $p({\mr x})$ over~$M$.
 
 In many cases it is useful to focus on elements instead of types.
-We introduce the following notation to express that $\tp({\mr b}/M,{\gr a})$ is finitely satisfied in $M$
+We introduce the following notation to express that $\tp({\mr b}/M,{\gr a})$ is finitely satisfied in $M$.
 
 \begin{definition}\label{def_coheir_idepencence} 
     For every ${\mr a}\in\U^{|{\mr x}|}$ and ${\gr b}\in\U^{|{\gr z}|}$ we define
@@ -245,38 +246,39 @@ We introduce the following notation to express that $\tp({\mr b}/M,{\gr a})$ is 
     {\IFF}
     {\phi({\mr\U},{\gr b})\cap M^{|{\mr x}|}\neq\0
     \textrm{ for all }\phi({\mr x}\,;{\gr z})\in L(M) 
-    \textrm{ such that }\phi({\mr a}\,;{\gr b})}
+    \textrm{ such that }\phi({\mr a}\,;{\gr b})}.
  
-    We call this the \emph{coheir-heir} relation.
+    %We call this the \emph{coheir-heir} relation.
     %
-    We also say that $\tp({\mr a}/M,{\gr b})$ is a coheir of $\tp({\mr a}/M)$.
+    We say that $\tp({\mr a}/M,{\gr b})$ is a \emph{coheir} of $\tp({\mr a}/M)$, or, equivalently, that $\tp({\mr b}/M,{\gr a})$ is a \emph{heir} of $\tp({\mr b}/M)$.
     
     We define the type
  
     \ceq{\hfill\emph{${\mr x}\cnonfork_M{\gr b}$}}
     {=}
-    {\Big\{\phi({\mr x}\,;{\gr b})
+    {\Big\{\phi({\mr x}\,;{\gr z})
     \ :\ 
     \phi({\mr x}\,;{\gr b})\in L(M)
     \textrm{ and } M^{|{\mr x}|}\subseteq\phi(\mrU\,;{\gr b})\Big\}.}
 
-    The tuples ${\mr a}$ realizing this type are exactly those such that ${\mr a}\cnonfork_M{\gr b}$.
-    % 
-    We will use the symbol \emph{${\mr a}\equiv_A{\mr x}\cnonfork_M{\gr b}$} 
+      % 
+    We will use the symbol \emph{${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$} 
     for the union of the types ${\mr x}\cnonfork_M{\gr b}$ and 
-    $\tp({\mr a}/A)$.\QED
+    $\tp({\mr a}/M)$.\QED
 \end{definition}
+ The tuples ${\mr a}$ realizing ${\mr x}\cnonfork_M{\gr b}$ are exactly those such that ${\mr a}\cnonfork_M{\gr b}$. Note that $\tp({\mr a}/M,{\gr b})$ is a coheir of $\tp({\mr a}/M)$ according to Definition~\ref{def_choeir_uno}, so the terminology is consistent.
 
-We imagine ${\mr a}\cnonfork_A{\gr b}$ as saying that 
+We think of  ${\mr a}\cnonfork_M{\gr b}$ as saying that 
 ${\mr a}$ is \emph{independent\/} from ${\gr b}$ over $M$.
 %
-This is a strong notion of independence.
+%This is a strong notion of independence.
 %
-In general it is not symmetric, that is ${\mr b}\cnonfork_A{\gr a}$ is not 
-equivalent to ${\gr a}\cnonfork_A{\mr b}$ 
-(symmetry is equivalent to stability).
+In general %it is not symmetric, that is 
+${\mr b}\cnonfork_M{\gr a}$ is not 
+equivalent to ${\gr a}\cnonfork_M{\mr b}$. 
+%(symmetry is equivalent to stability).
 
-We shall use, sometimes without reference, the following easy lemma
+We shall use, sometimes without explicit reference, the following easy lemma.
 
 \begin{lemma}\label{lem_coheir_independence}
     The following properties hold for all $M,{\mr a},{\mr b}$, and $c$
@@ -303,37 +305,37 @@ Let $p({\mr x})$ be a global coheir of $\tp({\mr a}/A,{\gr b})$, which exists by
 Then any ${\mr a'}\models p_{\restriction A,\,{\gr b},\,c}({\mr x})$ proves the lemma.
 \end{proof}
 
-Transitivity has dual version that holds under stronger assumptions.
+%Transitivity has dual version that holds under stronger assumptions.
 
-The type ${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$ defined above is the intersection of all global coheirs of $\tp({\mr a}/A)$.
+The type ${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$ in Definition~\ref{def_coheir_idepencence} is the intersection of all global coheirs of $\tp({\mr a}/M)$.
 %
-Its consictency is guaranteed by the fact that $M$ is a model (see Proposition~\ref{prop_coher_over_model}).
+Its consistency is guaranteed by the fact that $M$ is a model (see Proposition~\ref{prop_coher_over_model}).
 %
-However, in general it need not be a complete over $A,{\gr b}$.
+However, in general it need not be a complete type over $M,{\gr b}$.
 %
-In fact, completeness is a very strong property.
+In fact, completeness in this case is a strong property.
 
-\begin{definition}\label{def_coheir_stationary}We say that $\cnonfork_M$ is \emph{stationary\/} if ${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$ is a complete type over $M,{\gr b}$ for all finite tuples ${\gr b}$ and ${\mr a}$.
+\begin{definition}\label{def_coheir_stationary} We say that $\cnonfork_M$ is \emph{stationary\/} if ${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$ is a complete type over $M,{\gr b}$ for all finite tuples ${\gr b}$ and ${\mr a}$.
 
 We say \emph{$n$-stationary\/} if this is restricted to $|{\mr a}|=n$.\QED
 \end{definition}
 %
 An application of stationarity is given in Section~\hyperref[stable_teories]{\ref*{ramsey}.\ref*{semigroups}}.
 
-Stationarity is often ensured by the following property that will receive due attention in Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}. Recall that for $\D,\C\subseteq\U$ we write $\D=_A\C$ for $\D\cap A=\C\cap A$.
+Stationarity is often ensured by the following property, which will receive due attention in Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}. Recall that for $\D,\C\subseteq\U$ we write $\D=_A\C$ for $\D\cap A=\C\cap A$.
 
 \begin{proposition}
-Fix a tuple of variable ${\mr x}$ of length $n$.
+Let ${\mr x}$ be a tuple of variables of length $n$.
 If for every $\phi({\mr x})\in L(\U)$ there is a formula $\psi({\mr x})\in L(M)$ such that $\phi(\U)=_M\psi(\U)$ then $\cnonfork_M$ is $n$-stationary.
 \end{proposition}
 
 \begin{proof}
-Fix ${\gr b}\in\U^{|{\gr z}|}$ and ${\mr a_1},{\mr a_2}\in\U^{|{\mr x}|}$ 
-such that ${\mr a_i}\cnonfork_M{\gr b}$ and ${\mr a_1}\equiv_M{\mr a_2}$.
+Let  ${\gr b}\in\U^{|{\gr z}|}$ and ${\mr a_1},{\mr a_2}\in\U^{|{\mr x}|}$ 
+be such that ${\mr a_i}\cnonfork_M{\gr b}$ and ${\mr a_1}\equiv_M{\mr a_2}$.
 We claim that ${\mr a_1}\equiv_{M,\,{\gr b}}{\mr a_2}$.
 We need to prove that $\phi({\gr b};\,{\mr a_1})\iff\phi({\gr b};\,{\mr a_2})$ 
 for every  $\phi({\gr z};\,{\mr x})\in L(M)$.
-Let $\psi({\mr x})\in L(A)$ be such that $\phi({\gr b},\,{\mr \U})=_M\psi({\mr \U})$.
+Let $\psi({\mr x})\in L(M)$ be such that $\phi({\gr b},\,{\mr \U})=_M\psi({\mr \U})$.
 From ${\mr a_i}\cnonfork_M{\gr b}$ we obtain that  $\phi({\gr b},\,{\mr a_i})\iff\psi({\mr a_i})$.
 Finally, the claim follows because ${\mr a_1}\equiv_M{\mr a_2}$.
 \end{proof}
@@ -355,13 +357,13 @@ Finally, the claim follows because ${\mr a_1}\equiv_M{\mr a_2}$.
 %Unfortunately, this is not possible in general and the definition Section~\hyperref[coheirs_sets]{\ref*{invariantL}.\ref*{coheirs_sets}} is as good as it gets.
 
 \begin{remark}\label{rk_coheir_stationary}
-Stationarity of $\cnonfork_A$ over every set $A$, or just over every model, is equivalent to the stability of $T$, see Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}.
-However, there are many more theories where the assumption holds for some particular set $A$.
-For example, if every subset of $A^n$ is $A$-definable, $\cnonfork_A$ is clearly $n$-stationary.
-This simple observation will be of help in the proof of Theorem~\ref{thm_Hindman}.
-For natural example let $T=T_{\rm dlo}$ and let $A\subseteq\U$ have the order-type of $\RR$.
-By quantifier elimination every definable of $\U$ union of finitely many intervals.
-By Dedekind completeness, the trace on $A$ of any interval of $\U$ coincides with that of an $A$-definable interval. 
+%The stationarity of $\cnonfork_A$ over every set $A$, or just over every model, is equivalent to the stability of $T$, see Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}.
+There are many theories where the stationarity of $\cnonfork_M$ holds for some particular $M$.
+For example, if every subset of $M^n$ is $M$-definable then $\cnonfork_M$ is clearly $n$-stationary.
+This simple observation will help in the proof of Theorem~\ref{thm_Hindman}.
+For a natural example, let $T=T_{\rm dlo}$ and let $M\subseteq\U$ have the order type of $\RR$.
+By quantifier elimination every definable subset of $\U$ is a union of finitely many intervals.
+By Dedekind completeness, the trace on $M$ of any interval of $\U$ coincides with that of an $M$-definable interval. 
 \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -372,60 +374,66 @@ By Dedekind completeness, the trace on $A$ of any interval of $\U$ coincides wit
 \section{Morley sequences and indiscernibles}
 
 
-In the following $\alpha$ is some ordinal $\le\kappa$, typically $\omega$, and ${\mr x}$ is a tuple of variables of length $<\kappa$.
+In what follows $\alpha$ is some ordinal $\le\kappa$, typically $\omega$, and ${\mr x}$ is a tuple of variables of length $<\kappa$.
+
 Let \mbox{$p({\mr x})\in S(\U)$} be a global type.
 We say that ${\mr\bar c}=\<{\mr c_i}:i<\alpha\>$ is a \emph{Morley sequence\/} of $p({\mr x})$ over $A$ if for every $i<\alpha$
 
 \ceq{\ssf{Ms.}\hfill {\mr c_i}}{\models}{p_{\restriction A,\,{\mr c_{\restriction i}}}({\mr x})}.
 
-We will usually require that $p({\mr x})$ is invariant over $A$.
-In particular, when $p({\mr x})$ is finitely satisfiable in $A$, we say that ${\mr\bar c}$ is a \emph{coheir sequence\/} over $A$.
+We usually require that $p({\mr x})$ is invariant over $A$.
+In particular, when $p({\mr x})$ is finitely satisfiable in $A$ we say that ${\mr\bar c}$ is a \emph{coheir sequence\/} of $p({\mr x})$ over $A$. 
+
+When we say that ${\mr\bar c}$ is a coheir sequence over $A$ we mean that there is a type $p({\mr x})$ that is finitely satisfiable in $A$ such that ${\mr\bar c}$ is a \emph{coheir sequence\/} of $p({\mr x})$.
 
 The following is a convenient characterization of coheir sequences.
 
 \begin{lemma}\label{lem_coheir_property}
 The following are equivalent
 \begin{itemize}
-\item[1.] ${\mr\bar c}=\<{\mr c_n}:n<\omega\>$ is a coheir sequence over $A$;
+\item[1.] ${\mr\bar c}=\<{\mr c_n}:n<\omega\>$ is a coheir sequence over $M$;
 \item[2.] ${\mr c_n}\cnonfork_M{\mr c_{\restriction n}}$ and ${\mr c_{n+1}}\equiv_{M,\,{\mr c_{\restriction n}}}{\mr c_n}$ for every $n<\omega$.
 \end{itemize}
 \end{lemma}
 
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2}.
-Assume \ssf{1} and let $p({\mr x})\in S(\U)$ be a global type finitely satisfiable in $M$ and such that ${\mr c_i}\models p_{\restriction M,{\mr c_{\restriction i}}}({\mr x})$.
+Assume \ssf{1} and let $p({\mr x})\in S(\U)$ be a global type that is finitely satisfiable in $M$ and such that ${\mr c_i}\models p_{\restriction M,{\mr c_{\restriction i}}}({\mr x})$.
 The requirement ${\mr c_{n+1}}\equiv_{M,{\mr c_{\restriction n}}} {\mr c_n}$ is clear.
 Now, suppose $\phi({\mr c_{n+1}})$ for some $\phi({\mr x})\in L(M,{\mr c_{\restriction n+1}})$.
-Then $\phi({\mr x})$ belongs to $p({\mr x})$ hence $\phi({\mr\U})\cap M^{|{\mr x}|}\neq\0$ because $p({\mr x})$ is finitely satisfiable in $M$. This proves ${\mr c_n}\cnonfork_M{\mr c_{\restriction n}}$.
+Then $\phi({\mr x})$ belongs to $p({\mr x})$, so $\phi({\mr\U})\cap M^{|{\mr x}|}\neq\0$ because $p({\mr x})$ is finitely satisfiable in $M$. This proves ${\mr c_n}\cnonfork_M{\mr c_{\restriction n}}$.
 
 \ssf{2}$\IMP$\ssf{1}.
-Let $q({\mr x})=\{\phi({\mr x})\in L({\mr\bar c})\,:\, \phi({\mr c_n}) \textrm{ holds for cofinitely many } n\}$. From  \ssf{2} it follows that $q({\mr x})$ is finitely satisfied in $M$. Then ${\mr\bar c}$ a coheir sequence of any global type that extends $q({\mr x})$.
+Let $q({\mr x})=\{\phi({\mr x})\in L({\mr\bar c})\,:\, \phi({\mr c_n}) \textrm{ holds for cofinitely many } n\}$. From  \ssf{2} it follows that $q({\mr x})$ is finitely satisfiable in $M$. Then ${\mr\bar c}$ is a coheir sequence of any global type that extends $q({\mr x})$.
 \end{proof}
 
-Let $I,<_I$ be a linear order.
-We call a function ${\mr\bar a}:I\to\U^{|{\mr x}|}$ an \emph{$I$-sequence}, or simply a \emph{sequence\/} when $I$ is clear.
-Often we introduce an $I$-sequence by writing ${\mr\bar a}=\<{\mr a_i}: i\in I\>$.
+Let $(I,<_I)$ be a linear order.
+A function ${\mr\bar a}:I\to\U^{|{\mr x}|}$ is said to be an \emph{$I$-sequence}, or simply a \emph{sequence\/} when $I$ is clear.
+We will often introduce an $I$-sequence as ${\mr\bar a}=\<{\mr a_i}: i\in I\>$.
 
 If $I_0\subseteq I$ we call ${\mr a_{\restriction I_0}}$ a \emph{subsequence\/} of ${\mr\bar a}$.
-Most relevant are the subsets $I_0\subseteq I$ that are well-ordered by $<_I$ and, in particular, the finite ones.
-When $I_0$ has order-type $\alpha$, an ordinal, we identify ${\mr a_{\restriction I_0}}$ with a tuple of length $\alpha$.
- 
-\begin{definition}
-Let $I,<_I$ be an infinite linear order and let ${\mr\bar a}$ be an $I$-sequence.
-We say that ${\mr\bar a}$ is a \emph{sequence of indiscernibles\/} over $A$ or, an \emph{$A$-indiscernible sequence\/}, if ${\mr a_{\restriction I_0}}\equiv_A {\mr a_{\restriction I_1}}$ for every $I_0,I_1\in [I]^n$ and $n<\omega$.
-Recall that \emph{$[I]^n$} denotes that the set of \emph{$n$-subsets\/} of $I$,  i.e.\@ the subsets of $I$ of cardinality $n$.
-It is also common to write\smallskip
+The subsets $I_0\subseteq I$ that are well-ordered by $<_I$, in particular the finite ones, are especially relevant.
+When $I_0$ has order type $\alpha$, an ordinal, we identify ${\mr a_{\restriction I_0}}$ with a tuple of length $\alpha$.
 
-\ceq{\hfill\emph{$\displaystyle{I\choose n}$}}{=}{[I]^n}.\QED
+Recall that \emph{$[I]^n$} denotes that the set of \emph{$n$-subsets\/} of $I$,  i.e.\@ the subsets of $I$ of cardinality $n$.
+The notation \smallskip
+
+\ceq{\hfill\emph{$\displaystyle{I\choose n}$}}{=}{[I]^n}
+
+is also common.
+\begin{definition}
+Let $(I,<_I)$ be an infinite linear order and let ${\mr\bar a}$ be an $I$-sequence.
+We say that ${\mr\bar a}$ is a \emph{sequence of indiscernibles\/} over $A$ or, an \emph{$A$-indiscernible sequence\/}, if ${\mr a_{\restriction I_0}}\equiv_A {\mr a_{\restriction I_1}}$ for every $I_0,I_1\in [I]^n$ and $n<\omega$.
+\QED
 \end{definition}
 
-The condition above can be formulated in a number of equivalent ways.
-We can require that for every formula $\phi(x_1,\dots,x_n)\in L(A)$ and every pairs of tuples in $I^n$ such that $i_0<\dots<i_n$ and $j_0<\dots<j_n$.
+The indiscernibility condition can be formulated in a number of equivalent ways.
+For example, we can require that, for every formula $\phi(x_1,\dots,x_n)\in L(A)$ and every pair of tuples in $I^n$ such that $i_0<\dots<i_n$ and $j_0<\dots<j_n$,
 
 
 \ceq{\hfill\phi(a_{i_0},\dots,a_{i_n})}{\iff}{\phi(a_{j_0},\dots,a_{j_n})}
 
-Or we can simply say that for every $i_0,\dots,i_n\in I$ the type $\tp(a_{i_0},\dots,a_{i_n}/A)$ only depends on the order type of $i_0,\dots,i_n$.
+Alternatively, we can simply say that for all $i_0,\dots,i_n\in I$ the type $\tp(a_{i_0},\dots,a_{i_n}/A)$ only depends on the order type of $i_0,\dots,i_n$.
 
 \begin{proposition}
 Let $p({\mr x})\in S(\U)$ be a global $A$-invariant type and let ${\mr\bar c}=\<{\mr c_i}:i<\alpha\>$ be a Morley sequence of $p({\mr x})$ over $A$.
@@ -440,7 +448,7 @@ We prove by induction on $n<\omega$ that
 
 \ceq{\sharp\hfill {\mr c_{\restriction n}}}{\ \equiv_A}{\mr c_{\restriction I_0}}\ \ \ for every $I_0\subseteq\alpha$ of cardinality $n$.
 
-For $n=0$ the claim is trivial, then we assume $\,\sharp\,$ above is true and prove that
+For $n=0$ the claim is trivial. We assume inductively that $\,\sharp\,$ above is true and prove that
 
 \ceq{\hfill {\mr c_{\restriction n}},{\mr c_n}}{\equiv_A}{{\mr c_{\restriction I_0}},{\mr c_i}}\ \ \ for every $I_0<i<\alpha$.
 

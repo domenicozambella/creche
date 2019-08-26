@@ -6,8 +6,8 @@
 
 \def\ceq#1#2#3{\parbox[b]{30ex}{$\displaystyle #1$}\parbox[b]{6ex}{\hfil$#2$}$\displaystyle #3$}
 
-In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ larger than $|L|$.
-(Expect that all relevant theorems are proved under the assumption that $L$ is countable.)
+In this chapter $L$ is a fix signature, $T$ a complete theory without finite models, and $\U$ is a saturated model of inaccessible cardinality $\kappa$ larger than $|L|$.
+We make no blanket assumption on the cardinality of $L$, but the main theorems require $L$ to be countable.
 The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
 
 
@@ -19,41 +19,42 @@ The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*
 
 \section{The omitting types theorem}\label{omttingtype}
 
-We say that the formula $\phi({\mr x})$ \emph{isolates\/} the type $p({\mr x})$ if $\phi({\mr x})$ is consistent and $\phi({\mr x})\imp p({\mr x})$.
+We say that the formula $\phi({\mr x})$ \emph{isolates\/} the type $p({\mr x})$ when $\phi({\mr x})$ is consistent and $\phi({\mr x})\imp p({\mr x})$.
 When $\Delta$ is a set of formulas, we say that \emph{$\Delta$ isolates $p({\mr x})$\/} if some formula in $\Delta$ does.
-In this chapter $\Delta$ is always a set of the form $L_{{\mr x}}(A)$ and we say  \emph{$A$ isolates $p({\mr x})$\/} or every simply \emph{$p({\mr x})$ is isolated\/} when $A$ is clear.
-We say that a model \emph{$M$ omits $p({\mr x})$\/} if it does not realize it.
-
+When $\Delta=L_{{\mr x}}(A)$, we say that \emph{$A$ isolates $p({\mr x})$\/} or, when $A$ is clear, that \emph{$p({\mr x})$ is isolated.}
+We say that a model \emph{$M$ omits $p({\mr x})$\/} if $p({\mr x})$ is not realized in $M$.
 
 Observe that if $p({\mr x})\subseteq L(M)$ then $M$ realizes $p({\mr x})$ if and only if $M$ isolates  $p({\mr x})$.
 Therefore if $A$ isolates $p({\mr x})$, then every model containing $A$ realizes $p({\mr x})$.
-Below we prove that the converse also holds when $L$ and $A$ are countable.
-This a famous classical theorem  which is called the \textit{omitting types theorem}.
+Below we prove that the converse holds when $L$ and $A$ are countable.
+This is a famous classical theorem that is called the \textit{omitting types theorem\/} because it is proved by constructing a model $M$ that omits a given non-isolated type $p({\mr x})$.
 
-The construction of a model $M$ omitting $p({\mr x})$ proceeds by stages.
-Along the construction we preserve the property of being {\em isolated\/}  since that of being {\em realized\/} is not well behaved in sets which are not models.
-In the limit, when a model is obtained, these two properties coincide.
+%In our proof $M$ is constructed in stages.
+%Along the construction {\em isolated\/}  since that of being {\em realized\/} is not well-behaved in sets which are not models.
+%In the limit, when a model is obtained, these two properties coincide.
 
-The omitting types theorem requires the following lemma which is an analogue of the Kura\-towski-Ulam theorem (i.e., the so-called Fubini theorem for Baire category).
+%The omitting types theorem requires the following lemma which is an analogue of the Kura\-towski-Ulam theorem (i.e., the so-called Fubini theorem for Baire category).
+
+The core of the argument lies in the following lemma. 
 
 \begin{lemma}\label{lem_kuratowskiUlam}
 Assume $L(A)$ is countable.
 Let $p({\mr x})\subseteq L(A)$ and suppose that $A$ does not isolate $p({\mr x})$.
-Then every consistent formula $\psi({\gr z})\in L(A)$ has a solution ${\gr a}$ such that $A,{\gr a}$ does not isolate $p({\mr x})$.
+Then, if $\psi({\gr z})\in L(A)$ is consistent, $\psi({\gr z})$ has a solution ${\gr a}$ such that $A,{\gr a}$ does not isolate $p({\mr x})$.
 \end{lemma}
 \begin{proof}
-We construct sequence of formulas $\<\psi_i({\gr z}):i<\omega\>$ such that any realization ${\gr a}$ of the type  $q({\gr z})=\big\{\psi_i({\gr z}):i<\omega\big\}$ is as required by the lemma.
+We construct a sequence of formulas $\<\psi_i({\gr z}):i<\omega\>$ such that any realization~${\gr a}$ of the type $\big\{\psi_i({\gr z}):i<\omega\big\}$ is the required solution of $\psi({\gr z})$.
 
-To begin with, we fix an enumeration $\<\xi_i({\mr x}\,;{\gr z}):i<\omega\>$ of all formulas in $L_{{\mr x}\,;{\gr z}}(A)$ and set $\psi_0({\gr z})= \psi({\gr z})$.
-At stage $i+1$, if $\xi_i({\mr x}\,;{\gr z})\wedge\psi_i({\gr z})$ is inconsistent, let $\psi_{i+1}({\gr z})=\psi_i({\gr z})$, otherwise let
+Let $\<\xi_i({\mr x}\,;{\gr z}):i<\omega\>$ be an enumeration of $L_{{\mr x}\,;{\gr z}}(A)$. Take $\psi_0({\gr z})= \psi({\gr z})$.
+At stage $i+1$:
+\begin{itemize}
+   \item if $\xi_i({\mr x}\,;{\gr z})\wedge\psi_i({\gr z})$ is inconsistent, let $\psi_{i+1}({\gr z})=\psi_i({\gr z})$;
+   \item otherwise, pick some $\phi({\mr x})\in p$ such that $\displaystyle\psi_i({\gr z}) \wedge \E{\mr x}\,\big[\xi_i({\mr x}\,;{\gr z})\wedge\neg\phi({\mr x})\big]$ is consistent and let this conjunction be $\psi_{i+1}({\gr z})$.
+\end{itemize}
+This guarantees that $\xi_i({\mr x}\,;{\gr a})$ for any ${\gr a}\models\psi_{i+1}({\gr z})$ does not isolate $p({\mr x})$.
+The proof is complete if we can show that it is always possible to find the formula $\phi({\mr x})$ required above.
 
-\ceq{\hfill\psi_{i+1}({\gr z})}{=}{\psi_i({\gr z})\ \ \wedge\ \ \E{\mr x}\,\big[\xi_i({\mr x}\,;{\gr z})\wedge\neg\phi({\mr x})\big]}
- 
-for some formula $\phi({\mr x})\in p$ such that the resulting $\psi_{i+1}({\gr z})$ is consistent.
-If possible, this guarantees that $\xi_i({\mr x}\,;{\gr a})$ for any ${\gr a}\models q({\gr z})$ does not isolate $p({\mr x})$.
-The proof is complete if we can show that it is always possible to find such a formula $\phi({\mr x})$.
-
-Suppose by way of contradiction that no formula makes $\psi_{i+1}({\gr z})$ consistent, that is, 
+Suppose for a contradiction that no formula makes $\psi_{i+1}({\gr z})$ consistent, that is, 
 
 \ceq{\hfill\xi_i({\mr x}\,;{\gr z})\wedge\psi_i({\gr z})}{\imp}{\phi({\mr x})} 
 
@@ -69,55 +70,58 @@ that is, $p({\mr x})$ is isolated by a formula in $L_{{\mr x}}(A)$, which contra
 Then for every consistent type $p({\mr x})\subseteq L(A)$ the following are equivalent
 \begin{itemize}   
 \item[1.] all models containing $A$ realize $p({\mr x})$;
-\item[2.] $p({\mr x})$ is isolated.
+\item[2.] $A$ isolates $p({\mr x})$.
 \end{itemize}
 \end{theorem}
 
-The theorem owes its name to the contrapositive of implication \ssf{1}$\IMP$\ssf{2}.
-
 \begin{proof}
-Implication \ssf{2}$\IMP$\ssf{1} is clear, we prove \ssf{1}$\IMP$\ssf{2}.
-Assume $A$ does not isolate $p({\mr x})$.
-The model $M$ is the union of a chain $\<A_i:i<\omega\>$ of countable subsets of $\U$ that starts with $A_0=A$.
-Along the construction we require as inductive hypothesis that $A_i$ does not isolate $p({\mr x})$.
-At the end, $M$ will not isolate $p({\mr x})$ which for a model is equivalent to omitting.
+The implication \ssf{2}$\IMP$\ssf{1} is clear. 
+We prove \ssf{1}$\IMP$\ssf{2}.
+Assume that $A$ does not isolate $p({\mr x})$.
+The model $M$ is the union of a chain $\<A_i:i<\omega\>$ of countable subsets of $\U$ where $A_0=A$.
+Along the construction we require that $A_i$ does not isolate $p({\mr x})$.
+At the end, $M$ will not isolate $p({\mr x})$.
+Since $M$ is a model, this this is equivalent to $M$ omitting $p({\mr x})$.
 
-We proceed as in the proof of the downward L\"owenheim-Skolem theorem (either of the two proofs apply, but it may be more natural to use the second one~\ref{diym_II_lowenheimskolemallingiu}).
-Lemma~\ref{lem_kuratowskiUlam} ensure that we can satisfy any consistent formula in $A_i$ and preserve the inductive hypothesis.
+We proceed as in the proof of the downward L\"owenheim-Skolem theorem.
+Assume that $A_i$ does not isolate $p({\mr x})$.
+With the notation of Proof~\ref{diym_II_lowenheimskolemallingiu}, at stage $i=\pi(j,k)$ apply Lemma~\ref{lem_kuratowskiUlam} to find a solution $a$ of $\phi_k({\mr x})$ such that $A_{i+1}=A_i,a$ does not isolates $p({\mr x})$.
 \end{proof}
 
 Gerald Sacks once famously remarked: \textit{Any fool can realize a type but it takes a model theorist to omit one}.
-(Though, as remarked above, the proof reminds more of set theory than model theory.)
-
-
+However, the diagonalization method in the proof of Lemma~\ref{lem_kuratowskiUlam} lean towards descriptive set theory.
+(We invite the interested reader to compare this lemma with the Kura\-towski-Ulam theorem.)
 
 \begin{example}\label{ex_AK}
 The following example shows that in the omitting types theorem we cannot drop the assumption that $L(A)$ is countable.
 Let $F$ be the set of all bijections between two uncountable sets, $X$ and $Y$.
-Let $M$ be the model with domain the disjoint union of $F$, $X$ and $Y$.
-The language has a ternary relation symbol for $f(x)=y$ and unary relations for $F$, $X$ and $Y$.
+Let $M$ be the model whose domain is domain the disjoint union of $F$, $X$ and $Y$.
+The language has a ternary relation symbol for $f(x)=y$ and unary relation symbols for $F$, $X$, and $Y$.
 Let $\U$ be a saturated elementary extension of $M$.
-Then $\U$ is partitioned in three definable sets $\U_F$, $\U_X$ and $\U_Y$.
+Then $\U$ is partitioned into three definable sets $\U_F$, $\U_X$ and $\U_Y$.
 Each element of $\U_F$ defines a bijection between $\U_X$ and $\U_Y$.
 
 Note that for any two elements $a,b\in\U_Y$, there is an automorphism of $\U$ that fixes $\U_X\cup\U_Y\sm\{a,b\}$ and swaps $a$ and $b$.
 
-Now, fix some countable $Y_1\subseteq\U_Y$.
-Let $c\in\U_Y\sm Y_1$ and set $p(y)=\tp(c/X,Y_1)$.
+Now, let $Y_1\subseteq\U_Y$ be countable.
+Let $c\in\U_Y\sm Y_1$ and let $p(y)=\tp(c/X,Y_1)$.
 We claim that $p(y)$ is realized in every model containing $X,Y_1$.
 In fact, by the remark above $p(\U)=\U_Y\sm Y_1$.
-But every model containing $X$ contains also uncountably many elements of $\U_Y$, hence it contains an element conjugated to $c$ which therefore realizes $p(y)$.
-We claim also that $p(y)$ is not isolated.
-If for a contradiction there is a consistent formula $\phi(y)$ such that $\phi(y)\imp p(y)$, then $\phi(y)$ has a solution in $\U_Y\sm Y_1$.
-By the remark above, this implies that $\phi(\U)$ is a cofinite subset of $\U_Y$ and this contradicts $\phi(\U)\subseteq p(\U)$\QED
+But every model containing $X$ also contains uncountably many elements of $\U_Y$, hence it contains a conjugate of $c$ which therefore realizes $p(y)$.
+We also claim that $p(y)$ is not isolated.
+Suppose for a contradiction there is a consistent formula $\phi(y)$ such that $\phi(y)\imp p(y)$.
+Then $\phi(y)$ has a solution in $\U_Y\sm Y_1$.
+By the remark above, this implies that $\phi(\U)$ is a cofinite subset of $\U_Y$ and this contradicts $\phi(\U)\subseteq p(\U)$.\QED
 \end{example}
 
 \begin{exercise}
-Let $p(x)\subseteq L(B)$ and $p_n(x)\subseteq L(A)$ be consistent types such that\smallskip
+Let $p(x)\subseteq L(B)$ and $p_n(x)\subseteq L(A)$, for $n<\omega$, be consistent types such that\smallskip
 
 \ceq{\hfill p(x)}{\imp}{\bigvee_{n<\omega}p_n(x)}
 
-Prove that there is an $n<\omega$ and a formula $\phi(x)\in L(A)$ consistent with $p(x)$ such that $p(x)\wedge\phi(x) \imp p_n(x)$.\QED
+\noindent Prove that there is an $n<\omega$ and a formula $\phi(x)\in L(A)$ consistent with $p(x)$ such that \smallskip
+
+\ceq{\hfill p(x)\wedge\phi(x)}{\imp}{p_n(x)}.\QED
 \end{exercise}
 \begin{comment}
 \begin{exercise}
@@ -144,10 +148,11 @@ We say that $M$ is \emph{prime over $A$\/} if $A\subseteq M$ and for every $N$ c
 When $A$ is empty we simply say that $M$ is \emph{prime}.
 
 
-There is no syntactic analogue of primeness; the notion that comes most close (and works pretty well when everything is countable) is atomicity.
-For ${\mr a}\in\U^{|{\mr x}|}$ we say that \emph{${\mr a}$ is isolated over $A$\/} if the type $p({\mr x})=\tp({\mr a}/A)$ is isolated.
+There is no syntactic analogue of primeness.
+The closest notion, which works well when everything is countable, is atomicity.
+For ${\mr a}\in\U^{|{\mr x}|}$ we say that${\mr a}$ is  \emph{isolated\/} over $A$ if the type $p({\mr x})=\tp({\mr a}/A)$ is isolated.
 Note that this equivalent to claiming that ${\mr a}$ is an isolated point in $\U^{|{\mr x}|}$ w.r.t.\@ the $A\jj$topology defined in Section~\hyperref[saturation]{\ref*{saturation}.\ref*{monster}}.
-We say that $M$ is \emph{atomic over $A$\/} if $A\subseteq M$ and every ${\mr a}\in M^{<\omega}$ is isolated over $A$.
+We say that $M$ is \emph{atomic\/} over $A$ if $A\subseteq M$ and every ${\mr a}\in M^{<\omega}$ is isolated over $A$.
 When $A$ is empty we say that $M$ is \emph{atomic}.
 
 % \begin{proposition}
@@ -160,7 +165,7 @@ When $A$ is empty we say that $M$ is \emph{atomic}.
 % \end{proposition}
 
 \begin{proposition}
-Let ${\mr b}$ and ${\gr a}$ be finite tuples.
+Let ${\gr a}$ and ${\mr b}$ be finite tuples.
 Then the following are equivalent
 \begin{itemize}
 \item[1.] $A$ isolates  ${\mr b},{\gr a}$;
@@ -168,7 +173,6 @@ Then the following are equivalent
 \end{itemize}
 \end{proposition}
 \begin{proof}
-First we fix some notation.
 Let $p({\mr x},{\gr z})=\tp ({\mr b},{\gr a}/A)$.
 Then  $p({\mr x},{\gr a})=\tp({\mr b}/A,{\gr a})$.
 Note also that $\E{\mr x}\,p({\mr x},{\gr z})=\tp({\gr a}/A)$.
@@ -648,6 +652,7 @@ Therefore from Proposition~\ref{prop_zilbergiocattolo} we infer that $T$ satisfi
 Hence $T$ has the finite model property, so, by Proposition~\ref{prop_fmp_fa} it is not finitely axiomatizable.
 \end{proof}
 
+
 \begin{exercise} 
 Assume $L$ is countable and let $T$ be strongly minimal.
 Prove that the following are equivalent
@@ -657,6 +662,9 @@ Prove that the following are equivalent
 \end{itemize}
 Implication \ssf{1}$\IMP$\ssf{2} does not require the strong minimality of $T$.\QED
 \end{exercise}
+
+
+
 
 \section{Notes and references}
 \label{Notes_countable}
@@ -668,7 +676,7 @@ A famous theorem of Boris Zil'ber claims that Theorem~\ref{thm_zilbergiocattolo}
 The same theorem has been proved independently by  Cherlin, Harrington and Lachlan with a proof that uses the classification of finite simple groups.
 This theorem signs the birth of a subject known as \textit{geometric stability theory\/} which studies in depth the geometric properties of model theories which we briefly hinted to in Chapter~\ref{geometria}.
 The interested reader may consult Pillay's monograph~\cite{Pillay}. 
-The material in Section~\ref{toy} is freely taken from~\cite[Section~2.6]{Pillay} 
+The material in Section~\ref{toy} comes from~\cite[Section~2.6]{Pillay} 
 
 
 

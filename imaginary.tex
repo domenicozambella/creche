@@ -1,6 +1,5 @@
 % !TEX root = creche.tex
 \documentclass[creche.tex]{subfiles}
-\begin{document}
 \chapter{Imaginaries}
 \label{imaginary}
 
@@ -12,11 +11,11 @@
 %\setcounter{page}{1}
 \def\vl{\mr}
 
-The description of first-order definability is simplified if we find a way to use definable sets as parameters in formulas.
-This leads to the theory of \textit{imaginaries}.
-The technical reason that induced Shelah to introduce imaginaries will be explained in Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}.
+The description of first-order definability is simplified if we allow definable sets to be used as second-order parameters in formulas.
+This leads to the theory of (elimination of) \textit{imaginaries}.
+The technical reason that induced Shalah to introduce imaginaries will only be clear later, see Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}, but the theory is of independent interest.
 
-Throughout this chapter, $T$ is a complete theory without finite models in the language $L$ and $\U$ is a saturated model of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
+In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
 The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
 
 \section{Many-sorted structures}
@@ -25,7 +24,7 @@ The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*
 
 A many-sorted language consists of three disjoint sets.
 Besides the usual $L_{\rm fun}$ and $L_{\rm rel}$, we have a set $L_{\rm srt}$  whose elements are called \emph{sorts}.
-The language also includes a \emph{many-sorted arity function} that assigns to each function and relation symbols a tuple of sorts of finite positive length which we call \emph{arity}.
+The language also includes a \emph{(many-sorted) arity function} that assigns to function and relation symbols $r$, $f$ a tuple of sorts of finite positive length which we call \emph{arity}.
 
 A many-sorted structure $M$ consists of
 \begin{itemize}
@@ -40,16 +39,17 @@ Now we define terms and their respective sorts by induction.
 All variables are terms of their respective sort.
 If $t_1,\dots,t_n$ are terms of sorts $s_1,\dots,s_n$ and $f\in L_{\rm fun}$ is of arity $\<s_0,\dots,s_n\>$ then $f\,t_1,\dots,t_n$ is a term of sort $s_0$.
 
+
 Formulas are defined as follows.
 If $r\in L_{\rm rel}$ has arity $\<s_0,\dots,s_n\>$ then $r\,t_0,\dots,t_n$ is a formula.
 Also, $t_1=t_2$ is formula for every pair of terms of equal sort.
 All other formulas are constructed by induction using the propositional connectives $\neg$ and $\vee$ and the quantifier $\E x$ (or any other reasonable choice of logical connectives).
 
-The truth of formulas is defined as for one-sorted languages, except that here we require that the witness of the quantifier $\E x$ belongs to $M_s$, where $s$ is the sort of the variable $x$.
+Truth of formulas is defined as for one-sorted languages, except that here we require that the witness of the quantifier $\E x$ belongs to $M_s$, where $s$ is the sort of the variable $x$.
 
-Models of second-order logic are a familiar examples of many-sorted structures.
-They may be described though a language with a sort $n$ for every $n\in\omega$.
-The sort $0$ is used for first-order elements; for each $n>0$ the sort $n$ is used for relations of arity $n$.
+Models of second-order logic are arguably the most widely used examples of many-sorted structures.
+They may be described using a language with a sort $n$ for every $n\in\omega$.
+The sort $0$ is used for the first-order elements; the sort $n>0$ is used for relations of arity $n$.
 For every $n>0$ the language has a relation symbol $\in_n$ of arity $\<0^n,n\>$, where $0^n\,=\, 0\,\stackrel{n\ \rm times}{\dots\dots}\,0$.
 %
 %\ceq{\hfill 0^n}{=}{\underbrace{0,\dots,0}_{n\mbox{\scriptsize-times}}.} 
@@ -66,21 +66,23 @@ As the difference is merely cosmetic, introducing new notation would be overkill
 In Section~\ref{imaginaries_long} below we compare our definition with the standard one.
 %This will also explain the symbol used.
 
-Let $L_{{\mr x}\,;{\gr z}}$ be the set of partitioned formulas  $\sigma({\mr x}\,;{\gr z})\in L$ where ${\mr x}\,;{\gr z}$ are fixed infinite tuples of variables.
-(Partitioned formulas were introduced in Definition~\ref{def_partitioned_fla}.)
+Given a language $L$, we define a many-sorted language \emph{$L^{\eq}$\/} which has a sort for each partitioned formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort}.
+(Partitioned formulas have been introduced in Definition~\ref{def_partitioned_fla}.) 
 
-We define a many-sorted language \emph{$L^{\eq}$\/} which has a sort for each formula in $L_{{\mr x}\,;{\gr z}}$ and a sort \emph{$0$\/} which we call the \emph{home sort}. 
-Hence $L_{\rm srt}=\{0\}\cup L_{{\mr x}\,;{\gr z}}$ with the notation of the previous section.
+For legibility, we pretend that all formulas $\sigma$ depend on the same variables. 
+So we assume that ${\mr x}\,;{\gr z}$ are infinite tuples.
+Hence, with the notation of the previous section $L_{\rm srt}=\{0\}\cup L_{{\mr x}\,;{\gr z}}$.
 
-The language $L^\eq$ contains all the relations and functions of the language $L$.
+The home sort is also called the \emph{first-order sort\/} and
+all other sorts are generically called \emph{second-order}.
+First of all, $L^\eq$ contains all relations and functions of the first order language $L$.
 The many-sorted arity of a relation $r$ is $\<0^{n_r}\>$, where $n_r$ is the arity of $r$ in $L$.
 Similarly, the many-sorted arity of a function $f$ is $\<0^{1+n_f}\>$, where $n_f$ is the arity of $f$ in $L$.
 Moreover, $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$.
 These relation symbols have arity \smash{$\big\<0^{|{\mr x_\sigma}|},\sigma({\mr x}\,;{\gr z})\big\>$}, where ${\mr x_\sigma}$ are the variables in ${\mr x}$ that actually occur in $\sigma$. 
 As there is no risk of ambiguity, in what follows we omit $\sigma$ from the subscripts.
 
-The only $L^\eq$ structure we will consider is \emph{$\U^{\eq}$.} t
-The domain of the home sort of $\U^{\eq}$ is $\U$.
+In \emph{$\U^{\eq}$\/} the domain of the home sort is $\U$.
 The domain for the sort $\sigma({\mr x}\,;{\gr z})$ contains 
 the definable sets ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ as ${\gr b}$ ranges over $\U^{|{\gr z}|}$.
 The symbols in $L$ have the same interpretation as in the one-sorted case, and $\in$ is interpreted as set membership.
@@ -88,36 +90,25 @@ We write \emph{$T^{\eq}$\/} for $\Th(\U^\eq)$.
 
 As usual \emph{$L^\eq$\/} also denotes the set of formulas constructed in this language and, if $A\subseteq\U^\eq$, we write  \emph{$L^\eq(A)$\/} for the language and the set of formulas that use elements of $A$ as parameters.
 
-We may say \emph{first-order sort\/} for home sort and \emph{second-order\/} for all other sorts. This is meant to remind the reader that elements of $\U^\eq$ that are not in $\U$ are subsets of $\U$ (albeit definable ones).
-%(beware that this is an improper use of the word). 
-% However $\U^\eq$ differs from the second-order structures mentioned in the previous section in two respects. 
-% Firstly, in $\U^\eq$ all sets are definable, secondly $\U^\eq$ the has a distict sort for each formula $\sigma({\mr x}\,;{\gr z})$.
-
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We write \emph{$L(A)$\/} for the set of formulas in $L^\eq(A)$ that contain no second-order variables, neither free nor quantified (when $A\subseteq\U^\eq$, formulas may contain second-order parameters).
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We write \emph{$L(A)$\/} for the set of formulas in $L^\eq(A)$ that contain no second-order variables, neither free nor quantified (when $A\subseteq\U^\eq$, it may contain second-order parameters).
 
 We use the symbol ${\vl\X}$ to denote a generic second-order variable.
 
 % the others are called \emph{imaginary elements}. So, imaginary elements are just definable sets (which below we denote by lower case letters $a,b,c,\dots$).
 
-% {\color{red} It is important to note right away that this expansion of $\U$ is a mild one: the definable subsets of the home sort of $\U^\eq$ are the same as those of $\U$.
-% In particular, iterating the expansion gives nothing new.}
-
-The following proposition asserts that the difference between $\U^\eq$ and $\U$ is merely formal: second-order variables and parameters may, in a sense, be eliminated.
-The intuition is as follows: consider a formula that contains the second-order parameter $\mrA$, where $\mrA$ is defined by the formula $\sigma({\mr x}\,; {\gr a})$. Then we can replace ${\mr x}\in\mrA$ by $\sigma({\mr x}\,; {\gr a})$, and thus obtain an equivalent formula without the second-order paramenter $\Aa$.
-Similarly, if a formula contains a second-order quantifier $\E{\mr\X}$, where ${\mr\X}$ is of sort $\sigma({\mr x}\,; {\gr z})$, if we replace ${\mr x}\in{\mr\X}$ by $\sigma({\mr x}\,; {\gr z})$ and $\E{\mr\X}$ by $\E{\gr z}$ we obtain an equivalent formula without the second-order quantifier $\E{\mr\X}$.
-
-Unfortunately, a formal proof by induction requires a statement that is more convoluted than we would like.
+It is important to note right away that this expansion of $\U$ is a mild one: the definable subsets of the home sort of $\U^\eq$ are the same as those of $\U$.
+In particular, iterating the expansion would not yield anything new.
 
 \begin{proposition}\label{prop_eqmild}
 Let ${\vl\bar\X}={\vl\X_1},\dots,{\vl\X_n}$ be a tuple of second order variables of sort $\sigma_i({\mr x}\,;{\gr z})$.
-Then for every formula $\phi({\mr u}\,;{\vl\bar \X})\in L^\eq$ there is a formula $\phi'({\mr u}\,;{\gr\bar z})\in L$, where ${\gr\bar z}={\gr z_1},\dots,{\gr z_n}$, such that the following holds in $\U^\eq$
+Then for every formula $\phi({\mr u}\,;{\vl\bar \X})\in L^\eq$ there is a formula $\phi'({\mr u}\,;{\gr\bar z})\in L$, where ${\gr\bar z}$ is a tuple of $n$ copies of ${\gr z}$, such that the following holds in $\U^\eq$
 
 \hfil$\displaystyle\A {\vl\bar\X},{\gr\bar z}\ \bigg[\bigwedge^n_{i=1}{\vl\X_i}=\big\{{\mr x}:\sigma_i({\mr x}\,;{\gr z_i})\big\}\imp\A {\mr u}\ \big[\phi({\mr u}\,;{\vl\bar\X})\ \iff\ \phi'({\mr u}\,;{\gr\bar z})\big]\bigg].$
 
 % For simplicity we are assuming that the tuples ${\gr z_i}$ do not have variables in common.
 \end{proposition}
 
-The proposition asserts in particular that, if restrected to formulas without second-order free variables, $L^\eq$ and $L$ have the same expressive power.
+When $n=0$ the proposition asserts that $L_{{\mr u}}^\eq$ and $L_{{\mr u}}$ have the same expressive power.
 
 \begin{proof}[Proof (sketch)]
 By induction on syntax.
@@ -143,8 +134,8 @@ The point of $\U^\eq$ is that there might not be any $B\subseteq\U$ such that $L
 
 For instance, suppose $L$ contains only a binary relation which is interpreted as an equivalence relation with infinitely many infinite classes.
 Let ${\vl\Aa}$ be an equivalence class and let $A=\{{\vl\Aa}\}$.
-Then ${\vl\Aa}$ is definable in $L(B)$ if and only if $B\cap {\vl\Aa}\neq\0$.
-However, no element of ${\vl\Aa}$ is definable in $L(A)$.\QED
+Then for ${\vl\Aa}$ is definable in $L(B)$ if and only if $B\cap {\vl\Aa}\neq\0$.
+But no element of ${\vl\Aa}$ is definable in $L(A)$.\QED
 \end{remark}
 
 If $\V\preceq\U$ we write \emph{$\V^{\eq}$\/} for the substructure of $\U^\eq$ that has $\V$ as domain of the home sort and  the set of definable sets of the form $\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in \V^{|{\gr z}|}$ as domain of the sort $\sigma({\mr x}\,;{\gr z})$.
@@ -183,7 +174,7 @@ If ${\mr c}\,;{\gr b}\models q'({\mr u}\,;{\gr z})$, then  ${\mr c}\,;\sigma({\m
 \end{proof}
 
 
-The automorphisms of a many-sorted structure are defined in the obvious way: sorts are preserved, and so are functions and relations.
+Automorphisms of a many-sorted structure are defined in the obvious way: sorts are preserved and so are functions and relations.
 Every automorphism $f:\U\imp\U$ extends to an automorphism $f:\U^\eq\imp\U^\eq$ as follows.
 If ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ we define $f{\vl\Aa}=\sigma({\mr\U}\,;f{\gr b})=f\big[{\vl\Aa}\big]$, which clearly preserves the sort and the relation $\in$.
 Clearly, this extension is unique.
@@ -201,7 +192,9 @@ Every elementary map $k:\U^\eq\to\U^\eq$ of cardinality $<\kappa$ extends to an 
 \section{The definable closure in the eq-expansion}
 We may safely identify automorphism of $\U$ with automorphisms of $\U^\eq$.
 Let $A\subseteq\U^\eq$ and let $a$ be a tuple of elements of $\U^{\eq}$.
-Therefore \emph{$\Aut(\U/A)$\/} also denotes the set of automorphisms of $\U^\eq$ that fix $A$ pointwise, and \emph{$\orbit(a/A)$\/} denotes the \emph{orbit of $a$ over $A$\/} in  $\U^\eq$, that is
+We denote by \emph{$\Aut(\U/A)$\/} the set of automorphisms (of $\U^\eq$) that fix all elements of $A$.
+The symbol \emph{$\orbit(a/A)$\/} denotes the \emph{orbit of $a$ over $A$}.
+This has been defined in Section~\hyperref[homogeneous]{\ref*{saturation}.\ref*{homogeneous}} and now we apply it to $\U^\eq$
 
 \ceq{\hfill\emph{$\orbit(a/A)$}}{=}{\big\{fa\;:\; f\in\Aut(\U/A)\big\}.}
 
@@ -217,7 +210,7 @@ We write \emph{dcl$(A)$\/} for $\dcl^\eq(A)\cap\U$.
 This is the natural generalization of the notion of definability introduced in Section~\hyperref[acl]{\ref*{geometria}.\ref*{acl}}.\QED
 \end{definition}
 
-The saturation and homogeneity of $\U^\eq$ allow us to prove the following proposition with virtually the same proof as for Theorem~\ref{thm_dgalois}.
+The saturation and homogeneity of $\U^\eq$ allow us to prove the following proposition with virtually the same proof as for Theorem~\ref{thm_dgalois}
 
 \begin{theorem}\label{thm_Galois_def=def}
 For any $A\subseteq\U^\eq$ and $a\in\U^\eq$ the following are equivalent
@@ -246,7 +239,7 @@ Let $\phi({\vl\X})\in L^\eq(A)$ be a formula ${\vl\Aa}$ is the unique solution o
 Then \ssf{2} holds with $\E {\vl\X}\,\big[{\mr x}\in {\vl\X}\wedge\phi({\vl\X})\big]$ for $\psi'({\mr x})$. This $\psi'({\mr x})$ is a formula in $L^\eq(A)$. Proposition~\ref{prop_eqmild} yields the required formula $\psi({\mr x})\in L(A)$.
 \end{proof}
 
-By the characterization above, applying Theorem~\ref{thm_Galois_def=def} to a definable set ${\vl\Aa}$ gives an alternative proof of Proposition~\ref{prop_inv_def}.
+By the characterization above, Theorem~\ref{thm_Galois_def=def} when applied to a definable set ${\vl\Aa}$ gives an alternative proof of Proposition~\ref{prop_inv_def}.
 
 The formula $\psi({\mr x})$ in Proposition~\ref{prop_def_def_set} need not be the sort $\sigma({\mr x}\,;{\gr z})$.
 For example, consider the theory of a binary equivalence relation $e({\mr x}\,;{\gr z})$ with two infinite classes, let ${\vl\Aa}$ be one of these classes and let $A\neq\0$ be such that $A\cap {\vl\Aa}=\0$.
@@ -696,7 +689,3 @@ As for uniqueness, note that if ${\gr b},d_i$ and ${\gr b'},d_{i'}$ are two dist
 By what assumed on $\sigma_i({\mr x}\,;{\gr z})$, we obtain that $\phi({\mr x}\,;a)$ is inconsistent.
 A contradiction which proves the theorem.
 \end{proof}
-
-
-
-\end{document}

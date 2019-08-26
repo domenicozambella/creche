@@ -1,6 +1,5 @@
 % !TEX root = creche.tex
 \documentclass[creche.tex]{subfiles}
-\begin{document}
 \chapter{Saturation and homogeneity}
 \label{saturation}
  
@@ -13,9 +12,10 @@ The first two section introduce saturation and homogeneity and Section~\ref{mons
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Saturated structures}
+\section{Saturated structures}\label{saturation_section}
 
-Recall that a type $p({\mr x})\subseteq L(M)$ is \emph{finitely consistent in $M$\/} if every conjunction of formulas in $p({\mr x})$ has a solution in $M$.%
+Recall that a type $p({\mr x})\subseteq L(M)$ is \emph{finitely consistent in $M$\/} if every conjunction of formulas in $p({\mr x})$ has a solution in $M$.
+%
 When $A\subseteq M$ we write $S_{\mr x}(A)$ for the set of types whose variables are in ${\mr x}$ which are complete and finitely consistent in $M$.
 We never display $M$ in the notation as it will always be clear from the context.
 When $A$ is empty it usual to write $S_{\mr x}(T)$ for $S_{\mr x}(A)$ where $T=\Th(M)$.
@@ -27,7 +27,7 @@ The following remark will be used in the sequel without explicit reference.
 Let $k:M\imp N$ be an elementary map and let ${\gr a}$ be an enumeration of $\dom k$. Let $p({\mr x}\,;{\gr z})\subseteq L$. If $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$, then $p({\mr x}\,;k\,{\gr a})$ is finitely consistent in $N$. (We can drop \textit{finitely} in the antecedent but not in the consequent.)\QED
 \end{remark}
 
-\begin{definition}
+\begin{definition}\label{def_saturation}
 Let ${\mr x}$ be a single variable and let $\lambda$ be an infinite cardinal. We say that a structure $N$ is \emph{$\lambda$-saturated} if it realizes every type $p({\mr x})$ such that
 \begin{itemize}
 \item[1.] $p({\mr x})\subseteq L(A)$ for some $A\subseteq N$ of cardinality $<\lambda$;
@@ -264,7 +264,9 @@ Some terms acquire a slightly different meaning when working inside a monster mo
 \end{litemize}
 
 
-Let $x$ be a tuple of variables. For any fixed $A\subseteq \U$ we introduce a topology on $\U^{|x|}$ that we call the \emph{topology induced by $A$} or, for short, \emph{$A\jj$topology}. (This is non standard terminology, not to be confused with the \textit{logic\/} $A\jj$topology in Section~\hyperref[invariant]{\ref*{invariant}.\ref*{KPtypes}}.) The closed sets of the $A\jj$topology are those of the form $p(\U)$ where $p(x)\subseteq L(A)$ is any type over $A$.
+Let $x$ be a tuple of variables. For any fixed $A\subseteq \U$ we introduce a topology on $\U^{|x|}$ that we call the \emph{topology induced by $A$} or, for short, \emph{$A\jj$topology}. 
+(This is non standard terminology, not to be confused with the \textit{logic\/} $A\jj$topology in Section~\hyperref[invariant]{\ref*{invariant}.\ref*{KPtypes}}.)
+The closed sets of the $A\jj$topology are those of the form $p(\U)$ where $p(x)\subseteq L(A)$ is a type over $A$.
 
 For $\phi(x)\in L(A)$ the sets of the form $\phi(\U)$ are clopen in this topology (and vice versa by Proposition~\ref{prop_normality}). They form both a base of closed sets and base of open sets, which makes these topologies \textit{zero-dimensional}. By saturation, the topology induced by $A$ is compact. Actually, saturation is equivalent to the compactness of all these topologies as $A$ ranges over the sets of small cardinality.
 
@@ -399,8 +401,11 @@ where $\theta({\mr x})$ ranges over all formulas in $L(A)$. Applying mutual norm
 This completes the proof.
 \end{proof}
 
-The following easy proposition is very useful. Its proof is left to the reader. Note that it would not hold without saturation. For a counter example consider $\RR$ as a structure in the language of strict orders and let $q(x,y)=\tp_\RR(0,1/A)$, where $A=\{1+1/n: n>1\}$.
-By quantifier elimination, $0\equiv_{A}1$. But $\RR,1\notmodels\E y\;q(x,y)$, see Exercise~\ref{ex_E_type}.
+The following easy proposition is very useful. Its proof is left to the reader. Note that it would not hold without saturation. For a counter example consider $\RR$ as a structure in the language of strict orders and let $q(x,y)=\tp(0,1/A)$, where 
+
+\ceq{\hfill A}{=}{\Big\{1+\frac1{n+1}\ :\ n\in\omega\Big\}.} 
+
+By quantifier elimination, $0\equiv_{A}1$ but $\RR,1\notmodels\E y\;q(x,y)$. However, in any sufficiently saturated elementary extension of $\RR$, we have $1\notmodels\E y\;q(x,y)$.
 
 
 \begin{proposition}\label{prop_E_type}
@@ -437,16 +442,8 @@ Let $\phi(x\,;y)\in L(\U)$. Prove that the following are equivalent
 \end{itemize}
 \end{exercise}
 
-\begin{exercise} 
-Let $\phi(x\,;y)$ be such that for every $b\in\U^{|y|}$ there is a $\psi(x)\in L$ such that $\psi(x)\imp\phi(x\,;b)$. Prove that we can choose $\psi(x)$ in a finite subset of $L$.\QED
-\end{exercise}
-
 \begin{exercise}\label{ex_E_type}
 Prove that $\RR,1\notmodels\E y\;q(x,y)$, as claimed before Proposition~\ref{prop_E_type}.\QED
-\end{exercise}
-
-\begin{exercise}
-  Let $\phi(x)\in L(\U)$ and suppose that $\phi(a)\iff\phi(b)$ for every $a,b\in\U\sm A$ such that $a\equiv_Bb$. Prove that there is a formula $\psi(x)\in L(B)$ and a finite $A_0\subseteq A$ such that $\phi(\U)\sm A_0=\psi(\U)\sm A_0$.\QED
 \end{exercise}
 
 \begin{comment}
@@ -625,7 +622,5 @@ Supponiamo che per ogni $a$ l'insieme $\phi(a,\U)$ sia finito. Allora esiste un 
 Si consideri il tipo $p(x)=\{\E^{> n}y\,\phi(x,y)\ :\ n\in\omega\}$. Se non esiste un limite finito alla cardinalit\`a degli insiemi $\phi(a,\U)$ allora $p(x)$ \`e finitamente consistente. Se $b$ \`e una realizzazione di $p(x)$ allora  $\phi(b,\U)$ non pu\`o che avere cardinalit\`a infinita. 
 \end{proof}
 \end{comment}
-
-\end{document}
 
 
