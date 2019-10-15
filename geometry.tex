@@ -354,11 +354,12 @@ Finally we prove the main theorem about basis.
   By transitivity, $C\subseteq\acl D$ which contradicts the independence of $B$.
 
   Now we suppose that $B$ is finite. 
-  As $|A|<|B|$, there is $b\in B\sm A$.
+  As $|A|<|B|$, there is a $b\in B\sm A$.
   As $b\in\acl(A)$ but $b\notin\acl(B\sm b)$ then $A\nsubseteq\acl(B\sm b)$.
   Then there is an $a\in A$ such that $a\notin\acl(B\sm b)$.
-  By Lemma~\ref{indipendenza+1} $B\sm b, a$ is independent.
-  This shows that we can assume $A\subseteq B$, a contradction.
+  By Lemma~\ref{indipendenza+1} $B\sm b, a$ is an independent set that, by what proved above, is contained in a base $B'$.
+  As $|A|<|B'|$, we can iterate the procedure.
+  After $|A|+1$ iterations we reach a contradiction.
 \end{proof}
 
 \begin{proposition}\label{prop_mappetraindipendenti}
@@ -400,11 +401,11 @@ By Proposition~\ref{prop_estensionemappechiusuraalgebrica}, it extends to the re
 \end{proof}
 
 \begin{proposition}
-($T$ strongly minimal.) For every model $N$ of cardinality $\ge|L|$ the following are equivalent
-\begin{itemize}
-\item[1.] $N$ is saturated;
-\item[2.] $\dim N=|N|$.
-\end{itemize}
+  ($T$ strongly minimal.) For every model $N$ of cardinality $\ge|L|$ the following are equivalent
+  \begin{itemize}
+  \item[1.] $N$ is saturated;
+  \item[2.] $\dim N=|N|$.
+  \end{itemize}
 \end{proposition}
 
 \begin{proof}
@@ -416,12 +417,12 @@ Otherwise, we pick any element ${\mr c}\in N\sm\acl(\range k)$.
 Such an element exists as $|k|<\dim N=|N|$.
 Then $k\cup\big\{\<{\mr b},{\mr c}\>\big\}$ is the required extension by Proposition~\ref{prop_mappetraindipendenti}.
 
-\ssf{1}$\IMP$\ssf{2}.
-If $B\subseteq N$ is a basis of $N$ the following type is not realized in $N$
+  \ssf{1}$\IMP$\ssf{2}.
+  If $B\subseteq N$ is a basis of $N$ the following type is not realized in $N$
 
-\hfil $p({\mr x})\ \ =\ \ \Big\{\neg\phi({\mr x})\ :\ \phi({\mr x})\in L(B)\textrm{ is algebraic }\Big\}$
+  \hfil $p({\mr x})\ \ =\ \ \Big\{\neg\phi({\mr x})\ :\ \phi({\mr x})\in L(B)\textrm{ is algebraic }\Big\}$
 
-Therefore, if $N$ is saturated, $|B|=|N|$.
+  Therefore, if $N$ is saturated, $|B|=|N|$.
 \end{proof}
 
 \begin{exercise}\label{ex_infinite_acl}
