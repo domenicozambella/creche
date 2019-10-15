@@ -130,7 +130,6 @@ Prove that, if ${\mr a}\in\acl(A,{\gr b})$ for every ${\gr b}\models\phi({\gr z}
 Prove the same claim with a type $p({\gr z})\subseteq L(A)$ for $\phi({\gr z})$.\QED
 \end{exercise}
 
-
 \begin{exercise}\label{ex_isosub}
 Let $a\in\U\sm\acl\0$.
 Prove that $\U$ is isomorphic to some $\V\preceq \U$ such that $a\notin\V$.
@@ -147,7 +146,6 @@ Suppose there is a $c\in C\sm\acl(A)$, then there is $\V\simeq\U$ such that
 $A\subseteq\V\preceq\U$ and $c\notin\V$, see Exercise~\ref{ex_isosub}.
 Apply the induction hypothesis to $C'=C\cap\V$ with $\V$ for $\U$.\QED
 \end{exercise}
-
 
 \begin{exercise}\label{ex_acl_intersezioe_2_modelli}
 Prove that for every $A\subseteq N$ there is an $M$ such that $\acl A\,=\,M\cap N$.
@@ -330,55 +328,49 @@ Hence $B$ is not an independent set.
 \end{itemize}
 \end{corollary}
 
-We may write \emph{acl$(B/A)$\/} for $\acl(B\cup A)$.
-The notation is used to suggest to the reader that $A$ could be absorbed into the language.
-\emph{Independent sets over $A$\/} and \emph{bases over $A$\/} are defined in the obvious way.
+Finally we prove the main theorem about basis.
 
 \begin{theorem} ($T$ strongly minimal.) Fix some arbitrary set $C$, then
-\begin{itemize}
-\item[1] every independent set $B\subseteq C$ can be extended to a basis of $C$;
-\item[2] all bases of $C$ have the same cardinality;
-\item[3] claims \ssf{1} and \ssf{2} hold over any set of parameters $A$.
-\end{itemize}
+  \begin{itemize}
+  \item[1] every independent set $B\subseteq C$ can be extended to a basis of $C$;
+  \item[2] all bases of $C$ have the same cardinality.
+  \end{itemize}
 \end{theorem}
 
 \begin{proof}
-By the finite character of algebraic closure, the independent set form an inductive class.
-Apply Zorn lemma to obtain a maximally independent subset of $C$ containing $B$.
-By Corollary~\ref{basemassimale} this set is a basis of $C$.
-This proves \ssf{1} and it is immediate that the argument can be generalized as required in \ssf{3}.
+  By the finite character of algebraic closure, the independent set form an inductive class.
+  Apply Zorn lemma to obtain a maximally independent subset of $C$ containing $B$.
+  By Corollary~\ref{basemassimale} this set is a basis of $C$.
+  This proves \ssf{1}.
 
-As for \ssf{2}, assume for a contradiction that $B_1,B_2\subseteq C$ are two bases of $C$ and that $|B_1|<|B_2|$.
-First consider the case when $B_2$ is infinite.
-For each ${\mr b}\in B_1$ fix a finite set $D_{\mr b}\subseteq B_2$ such that ${\mr b}\in\acl(D_{\mr b})$.
-Let
+  As for \ssf{2}, assume for a contradiction that $A,B\subseteq C$ are two bases of $C$ and that $|A|<|B|$.
+  First consider the case when $B$ is infinite.
+  For each ${\mr a}\in A$ fix a finite set $D_{\mr a}\subseteq B$ such that ${\mr a}\in\acl(D_{\mr a})$.
+  Let
 
-\ceq{\hfill D}{=}{\bigcup_{{\mr b}\in B_1}D_{\mr b}.}
+  \ceq{\hfill D}{=}{\bigcup_{{\mr a}\in A}D_{\mr a}.}
 
-Then $B_1\subseteq\acl D$ and $|D|<|B_2|$.
-By transitivity, $C\subseteq\acl D$ which contradicts the independence of $B_2$.
-Again the argument generalizes immediately as required in \ssf{3}.
+  Then $A\subseteq\acl D$ and $|D|<|B|$.
+  By transitivity, $C\subseteq\acl D$ which contradicts the independence of $B$.
 
-Now we suppose that $B_2$ is finite and prove directly the generalized version.
-Let $n$ be the least integer such that, for some set of parameters $A$, and some $B_1$ and $B_2$ bases of $C$ over $A$, we have $|B_1|<|B_2|=n+1$.
-Fix any ${\mr c}\in B_2$.
-Then $B_2\sm{\mr c}$ is a basis over $A,{\mr c}$.
-Note that $B_1$ is not independent over $A,{\mr c}$.
-In fact, as ${\mr c}\in\acl(B_1/A)$ by symmetry we obtain that ${\mr b}\in\acl(B_1\sm{\mr b}/A,{\mr c})$ for any ${\mr b}\in B_1$.
-Now, let $D_1\subset B_1$ be maximal independent over $A,{\mr c}$.
-Then $D_1$ and $B_2\sm{\mr c}$ are two bases over $A,{\mr c}$ such that $|D_1|<|B_2\sm{\mr c}|=n$, which contradicts the minimality of $n$.
+  Now we suppose that $B$ is finite. 
+  As $|A|<|B|$, there is $b\in B\sm A$.
+  As $b\in\acl(A)$ but $b\notin\acl(B\sm b)$ then $A\nsubseteq\acl(B\sm b)$.
+  Then there is an $a\in A$ such that $a\notin\acl(B\sm b)$.
+  By Lemma~\ref{indipendenza+1} $B\sm b, a$ is independent.
+  This shows that we can assume $A\subseteq B$, a contradction.
 \end{proof}
 
-\begin{proposition}\label{prop_mappetraindipendenti} 
-($T$ strongly minimal.) Let $k$ be an elementary map.
-Then $k\cup\big\{\<{\mr b},{\mr c}\>\big\}$ is also an elementary map for every ${\mr b}\notin\acl(\dom k)$ and ${\mr c}\notin\acl(\range k)$.
+\begin{proposition}\label{prop_mappetraindipendenti}
+  ($T$ strongly minimal.) Let $k$ be an elementary map.
+  Then $k\cup\big\{\<{\mr b},{\mr c}\>\big\}$ is also an elementary map for every ${\mr b}\notin\acl(\dom k)$ and ${\mr c}\notin\acl(\range k)$.
 \end{proposition}
 \begin{proof}
-Let ${\gr a}$ be an enumeration of $\dom k$.
-We need to show that $\phi({\mr b}\,;{\gr a})\iff\phi({\mr c}\,;k{\gr a})$ holds for every $\phi({\mr x}\,;{\gr z})\in L$.
-As $k$ is elementary, the formulas $\phi({\mr x}\,;{\gr a})$ and $\phi({\mr x}\,;k{\gr a})$ are either both algebraic or both co-algebraic.
-As ${\mr b}\notin\acl({\gr a})$ and ${\mr c}\notin\acl(k{\gr a})$, they are both false or both true respectively.
-So the proposition follows.
+  Let ${\gr a}$ be an enumeration of $\dom k$.
+  We need to show that $\phi({\mr b}\,;{\gr a})\iff\phi({\mr c}\,;k{\gr a})$ holds for every $\phi({\mr x}\,;{\gr z})\in L$.
+  As $k$ is elementary, the formulas $\phi({\mr x}\,;{\gr a})$ and $\phi({\mr x}\,;k{\gr a})$ are either both algebraic or both co-algebraic.
+  As ${\mr b}\notin\acl({\gr a})$ and ${\mr c}\notin\acl(k{\gr a})$, they are both false or both true respectively.
+  So the proposition follows.
 \end{proof}
 
 \begin{corollary}\label{corol_mappetraindipendenti} 
@@ -407,7 +399,7 @@ By Proposition~\ref{prop_estensionemappechiusuraalgebrica}, it extends to the re
   Therefore all models of cardinality $\lambda$ are isomorphic because they all have the same dimension $\lambda$.
 \end{proof}
 
-\begin{proposition} 
+\begin{proposition}
 ($T$ strongly minimal.) For every model $N$ of cardinality $\ge|L|$ the following are equivalent
 \begin{itemize}
 \item[1.] $N$ is saturated;
