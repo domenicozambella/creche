@@ -205,29 +205,19 @@ When $\O(a/A)=\{a\}$ we say that $a$ is \emph{invariant over $A$\/} or \emph{$A$
 \begin{definition}\label{def_def}
 Let $A\subseteq\U^\eq$ and $a\in\U^\eq$.
 When $\phi(a)\wedge\E^{=1}v\,\phi(v)$ holds for some formula $\phi(v)\in L^\eq(A)$, we say that \emph{$a$ is definable over $A$}.
-We write \emph{dcl$^\textrm{eq}(A)$\/} for the set of those $a\in\U^\eq$ that are definable over $A$.
-We write \emph{dcl$(A)$\/} for $\dcl^\eq(A)\cap\U$.
+We write \emph{\rm dcl$^{\rm eq}(A)$\/} for the set of those $a\in\U^\eq$ that are definable over $A$.
+We write \emph{\rm dcl$(A)$\/} for $\dcl^\eq(A)\cap\U$.
 This is the natural generalization of the notion of definability introduced in Section~\hyperref[acl]{\ref*{geometria}.\ref*{acl}}.\QED
 \end{definition}
 
-The saturation and homogeneity of $\U^\eq$ allow us to prove the following proposition with virtually the same proof as for Theorem~\ref{thm_dgalois}
-
-\begin{theorem}\label{thm_Galois_def=def}
-For any $A\subseteq\U^\eq$ and $a\in\U^\eq$ the following are equivalent
-\begin{itemize}
-\item[1.] $a$ is invariant over $A$;
-\item[2.] $a\in\dcl^\eq(A)$.\QED
-\end{itemize}
-\end{theorem}
-
-Definition~\ref{def_def} treats first- and second-order elements of $\U^\eq$ uniformly.
-However, for sets it can be rephrased in a more natural way.
+The definition above treats first- and second-order elements of $\U^\eq$ uniformly.
+The following propositions proves that when $a\in\U^\eq$ is a definable set, the notion of definability coincides with the one usually applied to sets.
 
 \begin{proposition}\label{prop_def_def_set}
 Let $A\subseteq\U^\eq$ and let ${\vl\Aa}\in\U^\eq$ have sort $\sigma({\mr x}\,;{\gr z})$.
 Then the following are equivalent
 \begin{itemize}
-\item[1.] ${\vl\Aa}$ is definable over $A$;
+\item[1.] ${\vl\Aa}\in\dcl^\eq(A)$;
 \item[2.] ${\vl\Aa}=\psi({\mr\U})$ for some $\psi({\mr x})\in L(A)$.
 \end{itemize}
 \end{proposition}
@@ -239,8 +229,19 @@ Let $\phi({\vl\X})\in L^\eq(A)$ be a formula ${\vl\Aa}$ is the unique solution o
 Then \ssf{2} holds with $\E {\vl\X}\,\big[{\mr x}\in {\vl\X}\wedge\phi({\vl\X})\big]$ for $\psi'({\mr x})$. This $\psi'({\mr x})$ is a formula in $L^\eq(A)$. Proposition~\ref{prop_eqmild} yields the required formula $\psi({\mr x})\in L(A)$.
 \end{proof}
 
-By the characterization above, Theorem~\ref{thm_Galois_def=def} when applied to a definable set ${\vl\Aa}$ gives an alternative proof of Proposition~\ref{prop_inv_def}.
+The saturation and homogeneity of $\U^\eq$ allows us to prove the following proposition with virtually the same proof as for Theorem~\ref{thm_dgalois}
 
+\begin{theorem}\label{thm_Galois_def=def}
+For any $A\subseteq\U^\eq$ and $a\in\U^\eq$ the following are equivalent
+\begin{itemize}
+\item[1.] $a$ is invariant over $A$;
+\item[2.] $a\in\dcl^\eq(A)$.\QED
+\end{itemize}
+\end{theorem}
+
+By Proposition~\ref{prop_def_def_set}, Theorem~\ref{thm_Galois_def=def} when applied to a definable set ${\vl\Aa}$ gives an alternative proof of Proposition~\ref{prop_inv_def}.
+
+We conclude this section with a remark about the canonicity of the definitions of sets.
 The formula $\psi({\mr x})$ in Proposition~\ref{prop_def_def_set} need not be the sort $\sigma({\mr x}\,;{\gr z})$.
 For example, consider the theory of a binary equivalence relation $e({\mr x}\,;{\gr z})$ with two infinite classes, let ${\vl\Aa}$ be one of these classes and let $A\neq\0$ be such that $A\cap {\vl\Aa}=\0$.
 Then ${\vl\Aa}$ is definable over $A$ though not by some formula of the form $e({\mr x}\,;{\gr b})$ for some ${\gr b}\in A$.
@@ -264,13 +265,22 @@ By elementarity it holds in $M$, therefore $\E{\gr z}$ has a witness in $M$.
 This proves \ssf{1}$\IMP$\ssf{2}, the converse implication is obvious.
 \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The algebraic closure in the eq-expansion}
 
-Let $A\subseteq\U^\eq$ and $a\in\U^\eq$.
-We say that \emph{$a$ is algebraic over $A$\/} if $\phi(a)\wedge\E^{=k}v\,\phi(v)$ holds for some formula $\phi(v)\in L^\eq(A)$ and some positive integer $k$.
-We write \emph{acl$^\textrm{eq}(A)$\/} for the set of those $a\in\U^\eq$ that are algebraic over $A$.
-We write \emph{acl$(A)$\/} for $\acl^\eq(A)\cap\U$.
-This is the natural generalization of the notion introduced in Section~\hyperref[acl]{\ref*{geometria}.\ref*{acl}}.
+The following is the natural generalization of the notion introduced in Section~\hyperref[acl]{\ref*{geometria}.\ref*{acl}}.
+
+\begin{definition}
+  Let $A\subseteq\U^\eq$ and $a\in\U^\eq$.
+  We say that \emph{$a$ is algebraic over $A$\/} if a formula of the form $\phi(a)\wedge\E^{=k}v\,\phi(v)$ holds for some $\phi(v)\in L^\eq(A)$ and some positive integer $k$.
+  We write \emph{\rm acl$^{\rm eq}(A)$\/} for the set of those $a\in\U^\eq$ that are algebraic over $A$.
+  We write \emph{\rm acl$(A)$\/} for $\acl^\eq(A)\cap\U$.
+\end{definition}
 
 % \begin{proposition}\label{acl123} For every $A\subseteq\U^\eq$ and every $a\in\U^{\eq}$
 % \begin{itemize}
