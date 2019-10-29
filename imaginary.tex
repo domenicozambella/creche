@@ -3,7 +3,6 @@
 \chapter{Imaginaries}
 \label{imaginary}
 
-
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{25ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
@@ -400,8 +399,7 @@ We say that \emph{$T$ has elimination of imaginaries\/} if for every definable s
 
 \ceq{\ssf{ei}\hfill\E^{=1} {\gr z}\;\A {\mr x}\ \bigg[{\mr x}\in{\vl\Aa}}{\iff}{\phi({\mr x}\,;{\gr z})\bigg]}
 
-We say that the witness of $\E^{=1}{\gr z}$ in the formula above is a \emph{canonical parameter\/} of ${\vl\Aa}$.
-It is also called a a \emph{canonical name\/} for ${\vl\Aa}$.
+We say that the witness of $\E^{=1}{\gr z}$ in the formula above is a \emph{canonical parameter\/} of ${\vl\Aa}$ or a \emph{canonical name\/} for ${\vl\Aa}$.
 A set may have different canonical parameters for different formulas $\phi({\mr x}\,;{\gr z})$.
 
 We say that $T$ has \emph{weak elimination of imaginaries\/} if\smallskip
@@ -418,11 +416,6 @@ Therefore $\0$-definabile sets have all (at least) the empty string as a canonic
 To show that the notions above are well-defined properties of a theory one needs to check that they are independent of our choice of monster model.
 We leave this to the reader as an exercise.
 
-\begin{exercise}
-Let $M$ be an arbitrary model.
-Prove that \ssf{ei} and \ssf{wei} hold (in $\U^\eq$) if and only if they hold in $M^\eq$.\QED
-\end{exercise}
-
 We say that two tuples $a$ and $b$ of elements of $\U^\eq$ are \emph{interdefinable\/} if $\dcl^\eq(a)=\dcl^\eq(b)$.
 By Theorem~\ref{thm_Galois_def=def} this is equivalent to saying that $\Aut(\U/a)=\Aut(\U/b)$, that is, the automorphisms that fix $a$ fix also $b$, and vice versa.
 
@@ -431,9 +424,12 @@ The following are equivalent
 \begin{itemize}
 \item[1.] $T$ has weak elimination of imaginaries;
 \item[2.] every definable set is interdefinable with a finite set;
-\item[3.] every definable set ${\vl\Aa}$ is definable over $\acl\big(\{{\vl\Aa}\}\big)$.
+\item[3.] every definable set ${\vl\Aa}$ is definable over $\acl\{{\vl\Aa}\}$;
+\item[4.] $\dcl^\eq\{{\vl\Aa}\}=\dcl^\eq\big(\acl\{{\vl\Aa}\}\big)$.
 \end{itemize}
 \end{theorem}
+
+% N.B.\@ it is important to note the difference between $\acl{\vl\Aa}$ and $\acl\{{\vl\Aa}\}$. In the first, the parameter are the elements of ${\vl\Aa}$. In the latter, the set ${\vl\Aa}$ is the (second-order) paramenter.
 
 \begin{proof}\ssf{1}$\IMP$\ssf{2} Assume \ssf{1} and let ${\gr\B}$ be the set of solutions of the formula
 
@@ -443,13 +439,13 @@ Hence ${\gr\B}$ is finite and ${\gr\B}\in\dcl^\eq\{{\vl\Aa}\}$.
 We also have ${\vl\Aa}\in\dcl^\eq\{{\gr\B}\}$ because ${\vl\Aa}$ is definibile by the formula $\E{\gr z}\,\big[{\gr z}\in {\gr\B}\wedge \sigma({\mr x}\,;{\gr z})\big]$.
 Therefore $\dcl^\eq\{{\vl\Aa}\}=\dcl^\eq\{{\gr\B}\}$.
 
-
-
 \ssf{2}$\IMP$\ssf{3} Assume $\dcl^\eq\{{\vl\Aa}\}=\dcl^\eq\{{\gr\B}\}$ for some finite set ${\gr\B}$.
 The elements of ${\gr\B}$, say ${\gr b_1},\dots,{\gr b_n}$, are the (finitely many) solutions of the formula ${\gr z}\in{\gr\B}$.
-Therefore ${\gr b_1},\dots,{\gr b_n}\in\acl({\gr\B})=\acl({\vl\Aa})$.
+Therefore ${\gr b_1},\dots,{\gr b_n}\in\acl\{{\gr\B}\}=\acl\{{\vl\Aa}\}$.
 Let $\phi({\vl\X}\,;{\gr\B})$ be a formula that has ${\vl\Aa}$ as unique solution.
 Then $\E{\vl\Y} \big[{\vl\Y}=\big\{{\gr b_1},\dots,{\gr b_n}\big\}\wedge \phi({\vl\X}\,;{\vl\Y})\big]$ is the formula that proves \ssf{3}.
+
+\ssf{3}$\IFF$\ssf{4} It suffices to rephrase \ssf{3} as ${\vl\Aa}\in\dcl^\eq\big(\acl\{{\vl\Aa}\}\big)$. 
 
 \ssf{3}$\IMP$\ssf{1} Assume \ssf{3}.
 As \ssf{wei} holds trivially for all $\0$-definable sets, we may assume ${\vl\Aa}\neq\0$.
@@ -457,7 +453,7 @@ Let $\sigma({\mr x}\,;{\gr z})$ be such that
 
 \ceq{\hfill\A{\mr x}\ \bigg[{\mr x}\in{\vl\Aa}}{\iff}{\sigma({\mr x}\,;{\gr b})\bigg].}
 
-for some tuple ${\gr b}$ of elements of $\acl\big(\{{\vl\Aa}\}\big)$.
+for some tuple ${\gr b}$ of elements of $\acl\{{\vl\Aa}\}$.
 Fix some algebraic formula $\delta({\gr z}\,;{\vl\Aa})$ satisfied by  ${\gr b}$ and write $\psi({\gr z}\,;{\vl\X})$ for the formula
 
 \ceq{\hfill \A{\mr x}\ \bigg[{\mr x}\in{\vl\X}}{\iff}{\sigma({\mr x}\,;{\gr z})\bigg]\ \wedge\ \delta({\gr z}\,;{\vl\X}).}
@@ -472,18 +468,26 @@ By $\,\sharp\,$ and the definition of $\psi({\gr z}\,;{\vl\X})$ we obtain ${\vl\
 \end{proof}
 
 
+There are a notions of elimination of imaginaries that are weaker than weak elimination.
+For instance, we say that $T$ has \emph{geometric elimination of imaginaries\/} if for every $A\subseteq\U$
+
+\ceq{\hfill\textstyle\acl^\eq\{{\vl\Aa}\}}{=}{\textstyle\acl^\eq\big(\acl\{{\vl\Aa}\}\big)}
+
+This will not  be applied in these notes, but see Exercises~\ref{ex_est} and~\ref{ex_wei=est+gei}.
+
 \begin{theorem}\label{elimimf} 
 The following are equivalent
 \begin{itemize}
 \item[1.] $T$ has elimination of imaginaries;
 \item[2.] every definable set is interdefinable with a tuple of real elements;
-\item[3.] every definable set ${\vl\Aa}$ is definable over $\dcl\big(\{{\vl\Aa}\}\big)$.
+\item[3.] every definable set ${\vl\Aa}$ is definable over $\dcl\{{\vl\Aa}\}$;
+\item[4.] $\dcl^\eq\{{\vl\Aa}\}=\dcl^\eq\big(\dcl\{{\vl\Aa}\}\big)$.
 \end{itemize}
 \end{theorem}
 
 \begin{proof}
-Implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3} are immediate.
-Implication \ssf{3}$\IMP$\ssf{1}is identical to the homologous implication in Theorem~\ref{elimimd}, just substitute algebraic with definable.
+Implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3}$\IFF$\ssf{4} are immediate.
+Implication \ssf{3}$\IMP$\ssf{1} is identical to the homologous implication in Theorem~\ref{elimimd}, just substitute algebraic with definable.
 \end{proof}
 
 We now consider elimination of imaginaries in two concrete structures: 
@@ -498,7 +502,7 @@ $\sharp$\qquad for every $A\subseteq\U^\eq$, every consistent $\phi({\gr z})\in 
 
 \begin{proof}
 Let ${\vl\Aa}\in\U^\eq$ be a definable set of sort $\sigma({\mr x}\,;{\gr z})$.
-Then $\A{\mr x}\ \big[{\mr x}\in{\vl\Aa}\iff\sigma({\mr x}\,;{\gr z})\big]$ is consistent and, by $\,\sharp\,$ it  it has a solution in $\acl\big(\{{\vl\Aa}\}\big)$.
+Then $\A{\mr x}\ \big[{\mr x}\in{\vl\Aa}\iff\sigma({\mr x}\,;{\gr z})\big]$ is consistent and, by $\,\sharp\,$ it  it has a solution in $\acl\{{\vl\Aa}\}$.
 Hence weak elimination follows from Theorem~\ref{elimimd}.
 \end{proof}
 
@@ -537,6 +541,24 @@ Hence  ${\vl\Aa}$ and  $c$ are interdefinable.
 \begin{exercise}
 Let $T$ have elimination of imaginaries and $\phi({\mr x}\,;{\gr z})\in L(A)$.
 For arbitrary ${\gr c}\in\U^{|{\gr z}|}$, prove that if the orbit of $\phi({\mr\U}\,; {\gr c})$ over $A$ is finite, then $\phi({\mr\U}\,; {\gr c})$ is definable over $\acl A$.\QED
+\end{exercise}
+
+
+\begin{exercise}\label{ex_est}
+  Prove that following are equivalent for every $A\subseteq\U$
+  \begin{itemize}
+  \item[1.]  $\acl^\eq A=\dcl^\eq\big(\acl A\big)$ for every $A\subseteq\U$;
+  \item[2.]  $\Aut(\U/\acl^\eq A)= \Aut(\U/\acl A)$;
+  \item[3.] ${\mr a}\,\equiv_{\acl A}{\mr b}\ \IFF\ {\mr a}\ \smash{\equivSh_A}\, {\mr b}$ \ \ for every $A\subseteq\U$ and  ${\mr a},{\mr b}\in\U^{<\omega}$.\QED
+  \end{itemize} 
+\end{exercise}
+
+\begin{exercise}\label{ex_wei=est+gei}
+  Prove that the following are equivalent
+  \begin{itemize}
+  \item[1.]  $T$ has weak elimination of imaginaries;
+  \item[2.]  $T$ has geometric elimination of imaginaries and \ssf{1} of Exercise~\ref{ex_est} holds.\QED
+  \end{itemize} 
 \end{exercise}
 
 % \begin{exercise}
