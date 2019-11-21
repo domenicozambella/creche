@@ -45,7 +45,7 @@ We may call $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grD$.\QED
  
 The following proposition is clear by compactness.
 
-\begin{proposition}\label{lem_approx=external}
+\begin{proposition}\label{prop_approx=external}
 For every $\grD$ the following are equivalent
 \begin{itemize}
 \item[1.] $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$;
@@ -222,31 +222,33 @@ holds for all ${\gr z}\in{\gr\Aa}^{|{\gr z}|}$.
 The proof is exactly the same. In fact, elementarity and saturation are never used. In a sense, no model theory is used, either -- just finite combinatorics -- unlike in the proof of Theorem~\ref{thm_def_stable_formula2} where compactness is essential.\QED
 \end{remark}
 
-
-
 \begin{lemma}
 If $\grD$ is approximated from below by a stable formula $\phi({\mr x}\,;{\gr z})$ then
 
-\ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^{n-1}_{i=0}\phi({\mr a_i}\,;{\gr z})}
+\ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=0}\phi({\mr a_i}\,;{\gr z})}
 
 for some ${\mr a_0},\dots,{\mr a_n}\in\U^{|{\mr x}|}$. 
 \end{lemma}
 
 \begin{proof}
-Pick any ${\gr b_0}\in\grD$. Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that ${\gr b_0},\dots,{\gr b_{n-1}}\in\phi({\mr a_n}\,;{\gr\U})\subseteq\grD$.
-Then, if possible, choose ${\gr b_n}$ such that
+We define by recursion a ladder sequence for $\phi({\mr x}\,;{\gr z})$.
+Suppose that ${\gr b_0},\dots,{\gr b_{n-1}}\in\grD$ have been defined (this assumption is empty if $n=0$).
+We first define ${\mr a_n}$, then ${\gr b_n}$. 
+Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that ${\gr b_0},\dots,{\gr b_{n-1}}\in\phi({\mr a_n}\,;{\gr\U})\subseteq\grD$.
+This is possible because $\grD$ is approximated from below.
+Now, if possible, choose ${\gr b_n}$ such that
 
 \ceq{\hfill{\gr b_n}}{\in}{\grD\sm\bigvee^n_{i=0}\phi({\mr a_i}\,;{\gr\U})}.
 
 Then $\<{\mr a_i}\,;{\gr b_i} : i\le n\>$ is a ladder sequence. 
 By stability, for some $n$, the tuple ${\gr b_n}$ does not exist.
-This yields the required  ${\mr a_0},\dots,{\mr a_{n-1}}$.
+This yields the required ${\mr a_0},\dots,{\mr a_n}$.
 \end{proof}
 
 
 \begin{lemma}
-If $\grD$ is approximated by a stable formula $\phi({\mr x}\,;{\gr z})$ with ladder order $m$.
-Then the formula 
+If $\grD$ is approximated by a stable formula $\phi({\mr x}\,;{\gr z})$.
+Then, for some $m$, the formula 
 
 \ceq{\hfill\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr z})}{=}{\bigwedge^m_{j=0}\phi({\mr x_j}\,;{\gr z})}
 
@@ -254,17 +256,22 @@ approximates $\grD$ from below.
 \end{lemma}
 
 \begin{proof}
+Let $m$ be such that there is no ladder sequence for $\phi({\mr x}\,;{\gr z})$ of length greater then $m$.
 Let ${\gr B}\subseteq\grD$ be finite.
-It suffices to prove that there are some ${\mr a_0},\dots,{\mr a_m}$ such that ${\gr B}\subseteq\psi({\mr a_0},\dots,{\mr a_m}\,;{\gr\U})\subseteq\grD$. Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that 
+We prove that there are some ${\mr a_0},\dots,{\mr a_m}$ such that ${\gr B}\subseteq\psi({\mr a_0},\dots,{\mr a_m}\,;{\gr\U})\subseteq\grD$.
+As in the proof above, we define by recursion a ladder sequence for $\phi({\mr x}\,;{\gr z})$.
+Suppose that ${\mr a_0},\dots,{\mr a_{n-1}}$ and ${\gr b_0},\dots,{\gr b_{n-1}}\notin\grD$ have been defined.
+We first define ${\mr a_n}$, then ${\gr b_n}$. 
+Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that 
 
 \hfil${\gr B}\ \subseteq\ \phi({\mr a_n}\,;{\gr\U})\ \subseteq\ \U^{|{\gr z}|}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
 
+This ${\mr a_n}$ exists, because $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$.
 Then, if possible, let ${\gr b_n}$ such that
 
 \ceq{\hfill{\gr b_n}}{\in}{\bigwedge^n_{i=0}\phi({\mr a_i},{\gr\U})\sm\grD}
 
-and iterate the procedure.
-The procedure has to stop at some $n\le m$.
+This procedure has to stop at some $n\le m$.
 Hence the required parameters are ${\mr a_1},\dots,{\mr a_n}={\mr a_{n+1}}=\dots={\mr a_{m}}$.
 \end{proof}
 
@@ -281,9 +288,7 @@ It suffices to prove that if $\phi_1({\mr x_1}\,;{\gr z})\wedge\phi_2({\mr x_2}\
 
 Let ${\mr a^1_i},{\mr a^2_i}\in\U^{|{\mr x}|}$ and ${\gr b_i}\in\U^{|{\gr z}|}$ be such that 
 
-\ceq{\hfill i\le j}{\IFF}{\phantom{\neg}\phi({\mr a^1_i}\,;{\gr b_j})\wedge\phi({\mr a^2_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
-
-
+\ceq{\hfill i\le j}{\IFF}{\phantom{\neg}\phi_1({\mr a^1_i}\,;{\gr b_j})\wedge\phi_2({\mr a^2_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
 
 For $n=1,2$ let $H_n\subseteq{\omega\choose 2}$ contain those pairs $j<i$ such that $\neg\phi_n({\mr a^n_i}\,;{\gr b_j})$. 
 By the equivalence above $H_1\cup H_2={\omega\choose 2}$. 
@@ -298,15 +303,29 @@ This last lemma concludes the proof of Theorem~\ref{thm_def_stable_formula}.
 
 
 \begin{theorem}\label{thm_def_stable_formula2}
-If every subset of $\U^{|{\gr z}|}$ that is externally definable by $\phi({\mr x}\,;{\gr z})$ is definable, then $\phi({\mr x}\,;{\gr z})$ is stable.
+  The following are equivalent
+  \begin{itemize}
+    \item[1.] $\phi({\mr x}\,;{\gr z})$ is stable;
+    \item[2.] every subset of $\U^{|{\gr z}|}$ that is externally definable by $\phi({\mr x}\,;{\gr z})$ is definable;
+    \item[3.] there are $\le\kappa$ subsets of $\U^{|{\gr z}|}$ that are externally definable by $\phi({\mr x}\,;{\gr z})$;
+    \item[4.] there are $<2^\kappa$ subsets of $\U^{|{\gr z}|}$ that are externally definable by $\phi({\mr x}\,;{\gr z})$.
+  \end{itemize}
 \end{theorem}
 
 \begin{proof}
-Suppose  $\phi({\mr x}\,;{\gr z})$ is unstable. By compactness there is a ladder sequence  $\<{\mr a_i}\,;{\gr b_i} : i\in I\>$ where $I,<_I$ a saturated dense linear order of cardinality $\kappa$. For every downward Dedekind cut $c\subseteq I$ we pick a global type
+\ssf{1}$\IMP$\ssf{2} is clear by Proposition~\ref{prop_approx=external} and Theorem~\ref{thm_def_stable_formula}.
+
+\ssf{2}$\IMP$\ssf{3}$\IMP$\ssf{4} are obvious.
+
+\ssf{4}$\IMP$\ssf{1} is proved by contraposition.
+Suppose that $\phi({\mr x}\,;{\gr z})$ is not stable.
+By compactness there is a ladder sequence  $\<{\mr a_i}\,;{\gr b_i} : i\in I\>$ where $I,<_I$ a dense linear order of cardinality $\kappa$ with $2^\kappa$ cuts.
+By \textit{cut\/} we mean a subset $c\subseteq I$ that is closed downward.
+For every such $c\subseteq I$ we pick a global type
 
 \ceq{\hfill p_c({\mr x} ) }{\supseteq}{\big\{\phi({\mr x}\,;{\gr b_i})\iff i\in c\ :\ i\in I\big\}}
 
-Clearly sets ${\gr\D_{p_c,\,\phi} }$ are all distinct. As there are $2^\kappa$ Dedekind cuts not every ${\gr\D_{p_c,\,\phi} }$ is definable.
+Clearly sets ${\gr\D_{p_c,\,\phi} }$ are all distinct.
 \end{proof}
 
 \begin{exercise}\label{ex_harrington}
@@ -485,7 +504,7 @@ If $T$ is nip then $\U^{\rm Sh}$ has $L$-elimination of quantifiers. (I.e.\@ eve
 \section{Stable theories}
 \label{stable_teories}
 
-We say that $T$ is a \emph{stable theory\/} if every formula is stable. By Theorem~\ref{thm_def_stable_formula} and~\ref{thm_def_stable_formula2} this is equivalent to requiring that all externally definable sets are definable.
+We say that $T$ is a \emph{stable theory\/} if every formula is stable. By Theorem~\ref{thm_def_stable_formula2} this is equivalent to requiring that all externally definable sets are definable.
 
 If $p({\mr x})\in S(\U)$ is a global type, a \emph{canonical base\/} of $p({\mr x})$ is a definably closed set $\emph{$\Cb(p)$}\subseteq \U^\eq$ such that an automorphism $f\in\Aut(\U)$ fixes $p({\mr x})$ if and only if it fixes $\Cb(p)$ pointwise. When they exist, canonical bases are unique, see Exercise~\ref{ex_Cb}.
 

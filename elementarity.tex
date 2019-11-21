@@ -1216,15 +1216,19 @@ We need to enumerate formulas with care if we want to complete the construction 
 % \end{void_thm}
 
 
-\begin{void_thm}[Second proof of the downward L\"owenheim-Skolem Theorem]\label{diym_II_lowenheimskolemallingiu}\rm
-From set theory we know that there is a bijection $\pi:\lambda^2\to\lambda$ such that $j,k\le\pi(j,k)$ for all $j,k<\lambda$.
-Suppose we have defined the sets $A_j$ for every $j\le i$ and let $\<\phi_k(x)\;:\;k<\lambda\>$ be an enumeration of the consistent formulas of $L(A_j)$. Pick $j,k<i$ such that $\pi(j,k)=i$.
-Let $b$ be a solution of the formula $\phi_k(x)$ and define $A_{i+1}=A_i\cup\{b\}$.
+\begin{void_thm}%
+  [Second proof of the downward L\"owenheim-Skolem Theorem]
+  \label{diym_II_lowenheimskolemallingiu}\rm
+  From set theory we know that there is a bijection $\pi:\lambda^2\to\lambda$ such that $j,k\le\pi(j,k)$ for all $j,k<\lambda$.
+  Suppose we have defined the sets $A_j$ for every $j\le i$ and let $\<\phi^j_k(x)\;:\;k<\lambda\>$ be an enumeration of the consistent formulas of $L(A_j)$.
+  Let $j,k\le i$ be such that $\pi(j,k)=i$.
+  Let $b$ be a solution of the formula $\phi^j_k(x)$ and define $A_{i+1}=A_i\cup\{b\}$.
 
-We use Tarski-Vaught test to prove $M\preceq N$.
-Let $\phi(x)\in L(M)$ be consistent in $N$.
-Then $\phi(x)\in L(A_j)$ for some $j$. Say, $\phi(x)$ is the $k$-th formula in the enumeration above.
-Hence a witness of $\phi(x)$ is enumerated in $M$ at stage $\pi(j,k)+1$.\QED
+  We use Tarski-Vaught test to prove $M\preceq N$.
+  Let $\phi(x)\in L(M)$ be consistent in $N$.
+  Then $\phi(x)\in L(A_j)$ for some $j$.
+  Then $\phi(x)=\phi^j_k$ for some $k$.
+  Hence a witness of $\phi(x)$ is enumerated in $M$ at stage $\pi(j,k)+1$.\QED
 \end{void_thm}
 
 % \begin{exercise}\label{LSenumerazione}
