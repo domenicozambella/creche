@@ -419,23 +419,18 @@ The following are equivalent
 \end{lemma}
 
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2} Assume $\neg$\ssf{2}. It suffices to prove that for every $I\subseteq\omega$ the type that says 
+\ssf{1}$\IMP$\ssf{2} Assume $\neg$\ssf{2} and let $n<\omega$ be an arbitrary finite ordinal. It suffices to prove that for every $I\subseteq n$ the formula $\psi_{I}({\mr a_0},\dots,{\mr a_{n-1}}\,;{\gr z} )$ that says 
 
 \ceq{\hfill\phi({\mr a_i}\,;{\gr z})}{\IFF}{i\in I}
 
-is finitely consistent. Let $\psi_{I\restriction n}({\mr x_0},\dots,{\mr x_{n-1}})$ the formula that says that there is a ${\gr z}$ such that
-
-\ceq{\hfill\phi({\mr x_i}\,;{\gr z})}{\IFF}{i\in I}\quad for all $i<n$.
-
-is finitely consistent we need to prove that $\psi_{I\restriction n}({\mr a_0},\dots,{\mr a_{n-1}})$ is true. If there is a ${\gr b}$ such that the truth value of $\<\phi({\mr a_i}\,;{\gr b}):i<\omega\>$ oscillates at least $n$ times, then we can find $k_0<\dots<k_{n-1}$ such that 
-
+is consistent. If there is a ${\gr b}$ such that the truth value of $\<\phi({\mr a_i}\,;{\gr b}):i<\omega\>$ oscillates at least $n$ times, then we can find $k_0<\dots<k_{n-1}$ such that 
 
 \ceq{\hfill \phi({\mr a_{k_i}}\,;{\gr b})}{\IFF}{i\in I.}
 
-This proves that $\psi_{I\restriction n}({\mr a_{k_0}},\dots,{\mr a_{k_{n-1}}})$ is true. By indiscernibility, also $\psi_{I\restriction n}({\mr a_0},\dots,{\mr a_{n-1}})$ holds true.
+Then the formula $\psi_{I}({\mr a_{k_0}},\dots,{\mr a_{k_{n-1}}}\,;{\gr z})$ is consistent. Therefore, by indiscernibility, also the formula  $\psi_{I}({\mr a_0},\dots,{\mr a_{n-1}}\,;{\gr z} )$ is consistent.
 
 \ssf{2}$\IMP$\ssf{1} Let $I\subseteq\omega$ be the set of even integers. Assume $\neg$\ssf{1} and let  $\<{\mr c_i}:i<\omega\>$ be an infinite sequence that is shattered by $\phi({\mr x}\,;{\gr z})$.
-Let  $\<{\mr a_i}:i<\omega\>$ be an indiscernible sequence with the same EM-type as $\<{\mr c_i}:i<\omega\>$. Then $\<{\mr a_i}:i<\omega\>$ satisfies $\psi_{I\restriction n}({\mr x_0},\dots,{\mr x_{n-1}})$ for all $n$. By compactness there is a $b$ such that
+Let  $\<{\mr a_i}:i<\omega\>$ be an indiscernible sequence with the same EM-type as $\<{\mr c_i}:i<\omega\>$. Then $\<{\mr a_i}:i<\omega\>$ satisfies $\E{\gr z}\,\psi_{I\restriction n}({\mr x_0},\dots,{\mr x_{n-1}}\,;{\gr z})$ for all $n$. By compactness there is a $b$ such that
 
 \ceq{\hfill\phi({\mr a_i}\,;{\gr z})}{\IFF}{i}\quad is even.
 
@@ -447,6 +442,21 @@ In the next section we need the following corollary.
 \begin{corollary}\label{corol_altrank}
 If $\mrC\subseteq\U^{|{\mr x}|}$ is a set approximable by a formula with finite VC-dimension, then $\<{\mr a_i}\in\mrC:i<\omega\>$ converges for any indiscernible sequence $\<{\mr a_i}:i<\omega\>$.\QED
 \end{corollary}
+
+% We prove that if $\phi({\mr x}\,;{\gr z})$ has finite VC-dimension than also  $\phi({\mr x}\,;{\gr z})^*$ has finite VC-dimension. Note however that the dimension may increase exponentially.
+
+% \begin{theorem}
+%   .........
+% \end{theorem}
+
+% \begin{theorem}
+%   If $\phi()$ has VC-dimension $k$ then for every $A$ of cardinality $\le n$
+  
+%   \ceq{\hfill\big|S_\phi(A)\big|}{\le}{\sum_{i=0}^k{n \choose i}} 
+
+%   hence $\le e\cdot n^k$, where $e$ is Euler's constant.
+% \end{theorem}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -461,7 +471,7 @@ In this section we present a beautiful theorem of Chernikov and Simon~\cite{CS} 
 We write \emph{$\neg^n$\/} for $\neg\!\stackrel{n\ \rm times}{\dots\dots\dots}\!\neg$. We abbreviate $\neg^n(\cdot\in\cdot)$ as \emph{$\notin^n$}.
 
 \begin{lemma}\label{lem_honest}
-Let $\mrC$ be a set approximable by a formula with finite VC-dimension and let $A$ be any (small) set of parameters. Then every global $A$-invariant type $p({\mr x})$ contains a formula $\psi({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrC$ or $\psi({\mr x})\imp {\mr x}\notin\mrC$. Moreover, for every sufficiently saturated model $M$ containing $A$, we can require that $\psi({\mr x})\in L(M)$
+Let $\mrC$ be a set approximable by a formula with finite VC-dimension and let $A$ be any (small) set of parameters. Then every global $A$-invariant type $p({\mr x})$ contains a formula $\psi({\mr x})$ such that either $\psi({\mr x})\imp {\mr x}\in\mrC$ or $\psi({\mr x})\imp {\mr x}\notin\mrC$. Moreover, for every sufficiently saturated model $M$ containing $A$, we can require that $\psi({\mr x})\in L(M)$.
 \end{lemma}
 
 \begin{proof}
@@ -585,7 +595,7 @@ We end this section with a characterization of stability which is not directly r
 \ssf{2}$\IMP$\ssf{1}. Assume $\neg$\ssf{1} and let $\phi({\mr x}\,;{\gr z})$ be an unstable formula witnessed by the ladder sequence $\<{\mr a_i}\,;{\gr b_i}:i<\omega\>$. Let $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ be 
 indiscernible sequence with the same Ehren\-feucht-Mostowski type as $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$. This is not totally indiscernible because $\phi({\mr a'_i}\,;{\gr b'_j})$ if and if $i< j$.
 
-\ssf{1}$\IMP$\ssf{2}. Assume $\neg$\ssf{2} and let $\<a_i : i<\omega\>$ be an $A$-indiscernible sequence, which is not totally $A$-in\-dis\-cern\-ible. Then there is a formula $\phi(x, y)\in L(A)$ and some $i<j$ such that $\phi(a_i , a_j )\wedge\neg\phi(a_j , a_i) $. By indiscernibility  $\phi(a_i, a_j)$ holds if and only if $i\le j$. Hence $\phi(x\,; y)$ is not stable.
+\ssf{1}$\IMP$\ssf{2}. Assume $\neg$\ssf{2} and let $\<a_i : i<\omega\>$ be an $A$-indiscernible sequence, which is not totally $A$-in\-dis\-cern\-ible. Then there is a formula $\phi(x, y)\in L(A)$ and some $i<j$ such that $\phi(a_i , a_j )\wedge\neg\phi(a_j , a_i) $. By indiscernibility  $\phi(a_i, a_j)\vee a_i=a_j$ holds if and only if $i\le j$. Hence $\phi(x\,; y)\vee x=y$ is not stable.
 \end{proof}
 
 \begin{exercise}\label{ex_stable_orderproperty}
@@ -663,12 +673,13 @@ so $\<{\mr a_i}\,;{\gr b_i} : i<n\>$ is a ladder sequence of length $n$.
 The following are equivalent
 \begin{itemize}
 \item[1.] $T$ is stable;
-\item[2.] $|S(A)|\le|A|$ some infinite cardinal $\lambda$, and all sets $A$ of cardinality $\le\lambda$;
+\item[2.] $|S(A)|\le|A|$ for some infinite cardinal $\lambda$, and all sets $A$ of cardinality $\le\lambda$;
 \item[3.] $|S(A)|\le|A|$ for every set $A$ such that $|L|<\cf(A)$.
 \end{itemize}
 \end{theorem}
 \begin{proof}
-\ssf{2}$\IMP$\ssf{1}. Suppose a formula $\phi({\mr x}\,;{\gr z})$ is unstable.
+\ssf{2}$\IMP$\ssf{1}.
+Suppose a formula $\phi({\mr x}\,;{\gr z})$ is unstable.
 Let $\<{\gr z_s}:s\in2^{<\lambda}\>$ be a sequence variables of length $|{\gr z}|$.
 Let $p({\gr z_s}:s\in2^{<\lambda})$ be the type that says that $\big\<{\gr z_s}:i<2^{<\lambda}\big\>$ witnesses a binary tree of height $\lambda$.
 As  $\phi({\mr x}\,;{\gr z})$ is unstable, $p$ is finitely consistent.
