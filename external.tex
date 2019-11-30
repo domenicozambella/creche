@@ -319,11 +319,10 @@ This last lemma concludes the proof of Theorem~\ref{thm_def_stable_formula}.
 
 \ssf{4}$\IMP$\ssf{1} is proved by contraposition.
 Suppose that $\phi({\mr x}\,;{\gr z})$ is not stable.
-By compactness there is a ladder sequence  $\<{\mr a_i}\,;{\gr b_i} : i\in I\>$ where $I,<_I$ a dense linear order of cardinality $\kappa$ with $2^\kappa$ cuts.
-By \textit{cut\/} we mean a subset $c\subseteq I$ that is closed downward.
+By compactness there is a ladder sequence  $\<{\mr a_i}\,;{\gr b_i} : i\in I\>$ where $I,<_I$ a dense linear order of cardinality $\kappa$ with $2^\kappa$ cuts, where by \textit{cut\/} we mean a subset $c\subseteq I$ that is closed downward.
 For every such $c\subseteq I$ we pick a global type
 
-\ceq{\hfill p_c({\mr x} ) }{\supseteq}{\big\{\phi({\mr x}\,;{\gr b_i})\iff i\in c\ :\ i\in I\big\}}
+\ceq{\hfill p_c({\mr x} ) }{\supseteq}{\big\{\phi({\mr x}\,;{\gr b_i})\iff i\in c\ :\ i\in I\big\}.}
 
 Clearly sets ${\gr\D_{p_c,\,\phi} }$ are all distinct.
 \end{proof}
@@ -406,7 +405,7 @@ The following are equivalent
 \end{itemize}
 \end{proposition}
 
-From the proposition above and Proposition~\ref{prop_count_types} below it follows that all stable formulas have finite VC-dimension.
+From the proposition above and Proposition~\ref{thm_count_types} below it follows that all stable formulas have finite VC-dimension.
 
 We say that the a sequence of sentences $\<\phi_i:i<\omega\>$ \emph{converges\/} if the truth value of $\phi_i$ is eventually constant.
 
@@ -511,6 +510,13 @@ If $T$ is nip then $\U^{\rm Sh}$ has $L$-elimination of quantifiers. (I.e.\@ eve
 \end{corollary}
 
 
+
+% \section{UDTFS}
+% \label{UDTFS}
+
+% For every $n$ there is a $k$ such
+
+
 \section{Stable theories}
 \label{stable_teories}
 
@@ -604,7 +610,7 @@ Prove that the following are equivalent
 \item[1.] $T$ is stable;
 \item[2.] there is an infinite set $A\subseteq\U^{|{\mr x}|}$ and a formula  $\psi({\mr x}\,;{\mr y})$ such that $A$ is linearly ordered by the relation ${\mr a}<{\mr b}\iff\psi({\mr a}\,;{\mr b})$.
 \end{itemize}
-Hint: suppose $\phi({\mr x}\,;{\gr z})$ is unstable and let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be an infinite ladder sequence, then $A=\{{\mr a_i}\,{\gr b_i} : i<\omega\}$ is linearly ordered by ${\mr x}<{\gr z}\,;{\mr y}\,{\gr w})=\phi({\mr x}\,;{\gr z})$.\QED
+Hint: suppose $\phi({\mr x}\,;{\gr z})$ is unstable and let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be an infinite ladder sequence, then $A=\{{\mr a_i}\,{\gr b_i} : i<\omega\}$ is linearly ordered.\QED
 \end{exercise}
 
 
@@ -628,77 +634,60 @@ The following proposition highlights the connection between stability and the ca
 
 Binary trees of formulas have been introduced in Definition~\ref{def_tree_formulas}. Here we restrict to trees $\<\psi_s:s\in 2^{<\lambda}\>$ of a particular form. Namely, $\psi_\0=\top$ and for every $s\in 2^{<\lambda}$ we have $\psi_{s1}=\phi({\mr x}\,;{\gr b_s})$ and $\psi_{s0}=\neg\phi({\mr x}\,;{\gr b_s})$. When such a binary tree of height $\omega$ exists, we say that $\phi({\mr x}\,;{\gr z})$ has the \emph{binary tree property}.
 
-\begin{proposition}\label{prop_count_types}
+\begin{theorem}\label{thm_count_types}
+  The following are equivalent
+  \begin{itemize}
+  \item[1.] $\phi({\mr x}\,;{\gr z})$ is not stable;
+  \item[2.] $\phi({\mr x}\,;{\gr z})$ has the binary tree property.
+  \end{itemize}
+\end{theorem}
+
+\begin{proof}
+  \ssf{1}$\IMP$\ssf{2}.
+  From $\ssf{1}$, by compactness, there is a ladder sequence  $\<{\mr a_s}\,;{\gr b_s} : s\in2^{<\omega}\>$, where $2^{<\omega}$ is ordered lexicografically.
+  Again by compactness, for every $r\in2^\omega$ the type $\big\{\phi({\mr x}\,;{\gr b_s})\iff r<s : s\in2^{<\omega}\big\}$ is consistent.
+  This shows that the infinite branches of the tree $\<\phi({\mr x}\,;{\gr b_s}):s\in2^{<\omega}\>$ are consistent.
+  Hence $\phi({\mr x}\,;{\gr z})$ has the binary tree property.
+
+  \ssf{2}$\IMP$\ssf{1}. From $\ssf{2}$, by compactess, there is a binary tree of height $\kappa$. 
+  Hence there are $2^\kappa$ sets that are externally definable by $\phi({\mr x}\,;{\gr z})$.
+  Therefore, by Therorem~\ref{thm_def_stable_formula2}, $\phi({\mr x}\,;{\gr z})$ is not stable.
+\end{proof}
+   
+\begin{corollary}\label{corol_count_types}
 The following are equivalent
 \begin{itemize}
 \item[1.] $\phi({\mr x}\,;{\gr z})$ is a stable formula;
-\item[2.] $\big|S_{\phi}(A)\big|=|A|$ for all infinite sets $A$;
-\item[3.] $\big|S_{\phi}(A)\big|<2^{|A|}$ for all infinite sets $A$;
-\item[4.] $\phi({\mr x}\,;{\gr z})$ does not have the binary tree property.
+\item[2.] $\big|S_{\phi}(A)\big|=|A|$ for all countable sets $A$;
+\item[3.] $\big|S_{\phi}(A)\big|<2^{|A|}$ for all countable sets $A$.
 \end{itemize}
-\end{proposition}
+\end{corollary}
 
-\def\ceq#1#2#3{\parbox[t]{15ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
-
-\begin{proof}\ssf{2}$\IFF$\ssf{3}$\IFF$\ssf{4}. This is proved as in Lemma~\ref{lem_bin_tree}.
-
-\ssf{3}$\IMP$\ssf{1}.
-Assume $\neg$\ssf{1}. Let $I,<_I$ be a dense linear order of cardinality $|A|$. Let ${\mr x_i}$ and ${\gr z_i}$, for $i\in I$, be a tuples of variables. The type that says that
-
-\ceq{\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr x_i}\,;{\gr z_j})}\hfill for all $i,j\in I$
-
-is finitely consistent by $\neg$\ssf{1}.
-If ${\mr a_i}$, ${\gr b_i}$ is a realization of this type, then for every $<_I$-upward closed set $C\subseteq I$ the type
-
-\hfil $\big\{\phi({\mr x}\,;{\gr b_j})\ :\ j\in C\big\}\ \ \cup\ \ \big\{\neg\phi({\mr x}\,;{\gr b_j})\ :\ j\notin C\big\}$
-
-is a finitely consistent.
-Any two such types are mutually inconsistent.
-As there are $2^{|A|}$ Dedekind's cuts in $I$, $\neg$\ssf{3} follows.
-
-\ssf{1}$\IMP$\ssf{4} Assume $\phi({\mr x}\,;{\gr z})$ has the binary tree property witnessed, say, by  $\<{\gr b_s}:s\in 2^{<\omega}\>$.
-We show that there is a ladder sequence of length $n$. For $i=0,\dots, n$ abbreviate ${\gr b_{1^i}}$ by ${\gr b_i}$.
-Let ${\mr a_j}$ be such that
-
-\vskip-1ex \ceq{\hfill {\mr a_j}}{\models}{\displaystyle \neg\phi({\mr x}\,;{\gr b_j})\wedge\bigwedge^{j-1}_{i=0}\phi({\mr x}\,;{\gr b_i}).}
-
-\vskip-2ex Then
-
-\ceq{\hfill i<j}{\IFF}{\phi({\mr a_i}\,;{\gr b_j}),}
-
-so $\<{\mr a_i}\,;{\gr b_i} : i<n\>$ is a ladder sequence of length $n$.
-\end{proof}
-
-\begin{theorem}
-The following are equivalent
-\begin{itemize}
-\item[1.] $T$ is stable;
-\item[2.] $|S(A)|\le|A|$ for some infinite cardinal $\lambda$, and all sets $A$ of cardinality $\le\lambda$;
-\item[3.] $|S(A)|\le|A|$ for every set $A$ such that $|L|<\cf(A)$.
-\end{itemize}
-\end{theorem}
 \begin{proof}
-\ssf{2}$\IMP$\ssf{1}.
-Suppose a formula $\phi({\mr x}\,;{\gr z})$ is unstable.
-Let $\<{\gr z_s}:s\in2^{<\lambda}\>$ be a sequence variables of length $|{\gr z}|$.
-Let $p({\gr z_s}:s\in2^{<\lambda})$ be the type that says that $\big\<{\gr z_s}:i<2^{<\lambda}\big\>$ witnesses a binary tree of height $\lambda$.
-As  $\phi({\mr x}\,;{\gr z})$ is unstable, $p$ is finitely consistent.
-As $\lambda$ is an arbitrary infinite cardinal, this contradicts \ssf{2}.
-
-\ssf{3}$\IMP$\ssf{2}.
-Trivial.
-
-\ssf{1}$\IMP$\ssf{3}.
-Proposition~\ref{prop_count_types} implies that $|S(A)|\le |A|^{|L|}$. Therefore, when $|L|<\cf(A)$, we obtain $|S(A)|\le |A|$.
+  The corollary follows immediately from Lemma~\ref{lem_bin_tree} and Theorem~\ref{thm_count_types}.
 \end{proof}
-\begin{exercise}
-Prove that $\phi(x\,;z)$ is stable if and only if $|S_\phi(\U)|\le2^\kappa$.\QED
-\end{exercise}
 
-\begin{exercise}
-Prove that $\phi(x\,;z)$ is stable if and only if every set approximated by $\phi(x\,;z)$ is definable.\QED
-\end{exercise}
+% \begin{theorem}
+% The following are equivalent
+% \begin{itemize}
+% \item[1.] $T$ is stable;
+% \item[2.] $|S(A)|\le|A|$ for some infinite cardinal $\lambda$, and all sets $A$ of cardinality $\le\lambda$;
+% \item[3.] $|S(A)|\le|A|$ for every set $A$ such that $|L|<\cf(A)$.
+% \end{itemize}
+% \end{theorem}
+% \begin{proof}
+% \ssf{2}$\IMP$\ssf{1}.
+% Suppose a formula $\phi({\mr x}\,;{\gr z})$ is unstable.
+% Let $\<{\gr z_s}:s\in2^{<\lambda}\>$ be a sequence variables of length $|{\gr z}|$.
+% Let $p({\gr z_s}:s\in2^{<\lambda})$ be the type that says that $\big\<{\gr z_s}:i<2^{<\lambda}\big\>$ witnesses a binary tree of height $\lambda$.
+% As  $\phi({\mr x}\,;{\gr z})$ is unstable, $p$ is finitely consistent.
+% As $\lambda$ is an arbitrary infinite cardinal, this contradicts \ssf{2}.
+
+% \ssf{3}$\IMP$\ssf{2}.
+% Trivial.
+
+% \ssf{1}$\IMP$\ssf{3}.
+% Proposition~\ref{thm_count_types} implies that $|S(A)|\le |A|^{|L|}$. Therefore, when $|L|<\cf(A)$, we obtain $|S(A)|\le |A|$.
+% \end{proof}
 
 \end{document}
-
-
