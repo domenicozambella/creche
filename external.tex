@@ -393,7 +393,7 @@ We say that the formula $\phi({\mr x}\,;{\gr z})\in L$ has \emph{Vapknik-Chervon
 
 Note that the condition $|S_\phi({\mr A})|=2^n$ is equivalent to saying that every subset of ${\mr A}$ is the trace of some definable set of sort $\phi({\mr x}\,;{\gr z})$.
 
-For instance, the formula ${\gr z_1}<{\mr x}<{\gr z_2}$ in $T_{\rm dlo}$ has VC-dimension $1$.
+For instance, the formula ${\gr z_1}<{\mr x}<{\gr z_2}$ in $T_{\rm dlo}$ has VC-dimension $2$.
 
 Arguing by compactness we obtain the following proposition whose proof is left as an exercise for the reader.
 
@@ -429,7 +429,7 @@ is consistent. If there is a ${\gr b}$ such that the truth value of $\<\phi({\mr
 Then the formula $\psi_{I}({\mr a_{k_0}},\dots,{\mr a_{k_{n-1}}}\,;{\gr z})$ is consistent. Therefore, by indiscernibility, also the formula  $\psi_{I}({\mr a_0},\dots,{\mr a_{n-1}}\,;{\gr z} )$ is consistent.
 
 \ssf{2}$\IMP$\ssf{1} Let $I\subseteq\omega$ be the set of even integers. Assume $\neg$\ssf{1} and let  $\<{\mr c_i}:i<\omega\>$ be an infinite sequence that is shattered by $\phi({\mr x}\,;{\gr z})$.
-Let  $\<{\mr a_i}:i<\omega\>$ be an indiscernible sequence with the same EM-type as $\<{\mr c_i}:i<\omega\>$. Then $\<{\mr a_i}:i<\omega\>$ satisfies $\E{\gr z}\,\psi_{I\restriction n}({\mr x_0},\dots,{\mr x_{n-1}}\,;{\gr z})$ for all $n$. By compactness there is a $b$ such that
+Let  $\<{\mr a_i}:i<\omega\>$ be an indiscernible sequence that models the EM-type of $\<{\mr c_i}:i<\omega\>$. Then $\<{\mr a_i}:i<\omega\>$ satisfies $\E{\gr z}\,\psi_{I\restriction n}({\mr x_0},\dots,{\mr x_{n-1}}\,;{\gr z})$ for all $n$. By compactness there is a $b$ such that
 
 \ceq{\hfill\phi({\mr a_i}\,;{\gr z})}{\IFF}{i}\quad is even.
 
@@ -463,7 +463,7 @@ If $\mrC\subseteq\U^{|{\mr x}|}$ is a set approximable by a formula with finite 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Honest definitions}
-\label{-theory}
+\label{honest}
 
 In this section we present a beautiful theorem of Chernikov and Simon~\cite{CS} and their alternative proof of a famous quantifier elimination result of Shelah. 
 
@@ -599,7 +599,7 @@ We end this section with a characterization of stability which is not directly r
 
 \begin{proof}
 \ssf{2}$\IMP$\ssf{1}. Assume $\neg$\ssf{1} and let $\phi({\mr x}\,;{\gr z})$ be an unstable formula witnessed by the ladder sequence $\<{\mr a_i}\,;{\gr b_i}:i<\omega\>$. Let $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ be 
-indiscernible sequence with the same Ehren\-feucht-Mostowski type as $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$. This is not totally indiscernible because $\phi({\mr a'_i}\,;{\gr b'_j})$ if and if $i< j$.
+indiscernible sequence that models the EM-type of $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$. This is not totally indiscernible because $\phi({\mr a'_i}\,;{\gr b'_j})$ if and if $i< j$.
 
 \ssf{1}$\IMP$\ssf{2}. Assume $\neg$\ssf{2} and let $\<a_i : i<\omega\>$ be an $A$-indiscernible sequence, which is not totally $A$-in\-dis\-cern\-ible. Then there is a formula $\phi(x, y)\in L(A)$ and some $i<j$ such that $\phi(a_i , a_j )\wedge\neg\phi(a_j , a_i) $. By indiscernibility  $\phi(a_i, a_j)\vee a_i=a_j$ holds if and only if $i\le j$. Hence $\phi(x\,; y)\vee x=y$ is not stable.
 \end{proof}
@@ -645,20 +645,34 @@ Binary trees of formulas have been introduced in Definition~\ref{def_tree_formul
 \begin{proof}
   \ssf{1}$\IMP$\ssf{2}.
   From $\ssf{1}$, by compactness, there is a ladder sequence  $\<{\mr a_s}\,;{\gr b_s} : s\in2^{<\omega}\>$, where $2^{<\omega}$ is ordered lexicografically.
-  Again by compactness, for every $r\in2^\omega$ the type $\big\{\phi({\mr x}\,;{\gr b_s})\iff r<s : s\in2^{<\omega}\big\}$ is consistent.
-  This shows that the infinite branches of the tree $\<\phi({\mr x}\,;{\gr b_s}):s\in2^{<\omega}\>$ are consistent.
-  Hence $\phi({\mr x}\,;{\gr z})$ has the binary tree property.
+  We claim that for every $r\in2^\omega$ the type $p_r({\mr x})=\big\{\phi({\mr x}\,;{\gr b_s})\iff r<s : s\in2^{<\omega}\big\}$ is consistent. 
+  In fact, $\phi({\mr a_{r\restriction (n+1)}}\,;{\gr b_s})$ holds for all $s\in2^{<n}$.
+  Then concistency follows by compactness.
+
+  
+  Let $\psi_\0({\mr x})=\top$.
+  Then, for $s\in 2^{<\omega}$ and $i\in 2$, define $\psi_{s^\frown i}({\mr x})=\neg^i\phi({\mr x}\,;{\gr b_{s^\frown1}})$, where $\neg^i$ has been defined in Section~\ref{honest}.
+  We claim that $\<\psi_s({\mr x}):s\in 2^{<\omega}\>$ is a binary tree. 
+  We need to prove is that the branches are consistent.
+  Then it suffices to show that $\psi_{r\restriction (n+1)}({\mr x})\in p_r$.
+
+  First, suppose that $r(n)=0$. 
+  Then $\psi_{r\restriction (n+1)}({\mr x})=\phi({\mr x}\,;{\gr b_{r\restriction n^\frown1}})$.
+  This formula belongs to $p_r({\mr x})$ because $r<r{\restriction} n^\frown1$.
+  Otherwise $r(n)=1$. 
+  Then $\psi_{r\restriction (n+1)}({\mr x})=\neg\phi({\mr x}\,;{\gr b_{r\restriction n^\frown1}})$.
+  This formula belongs to $p_r({\mr x})$ because $r{\restriction} n^\frown1<r$.
 
   \ssf{2}$\IMP$\ssf{1}. From $\ssf{2}$, by compactess, there is a binary tree of height $\kappa$. 
   Hence there are $2^\kappa$ sets that are externally definable by $\phi({\mr x}\,;{\gr z})$.
   Therefore, by Therorem~\ref{thm_def_stable_formula2}, $\phi({\mr x}\,;{\gr z})$ is not stable.
 \end{proof}
-   
+
 \begin{corollary}\label{corol_count_types}
 The following are equivalent
 \begin{itemize}
 \item[1.] $\phi({\mr x}\,;{\gr z})$ is a stable formula;
-\item[2.] $\big|S_{\phi}(A)\big|=|A|$ for all countable sets $A$;
+\item[2.] $\big|S_{\phi}(A)\big|\le|A|$ for all countable sets $A$;
 \item[3.] $\big|S_{\phi}(A)\big|<2^{|A|}$ for all countable sets $A$.
 \end{itemize}
 \end{corollary}
