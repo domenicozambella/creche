@@ -511,10 +511,11 @@ If $T$ is nip then $\U^{\rm Sh}$ has $L$-elimination of quantifiers. (I.e.\@ eve
 
 
 
-% \section{UDTFS}
-% \label{UDTFS}
+\section{UDTFS}
+\label{UDTFS}
 
-% For every $n$ there is a $k$ such
+Choose a positive integer $q_\psi$ for each formula $\psi\in L$. Let $\phi()\in L$ be given.
+Then there are finitely may formulas $\psi_j()$, for $j<n$, such that for every set $\D$ that is approximable by $\phi()$ there is a $j<n$ such that for every $B\subseteq\D$ of cardinality $<q_{\psi_j}$ there is a $d\in\D$ such that $B\subseteq\psi_j()\subseteq\D$.
 
 
 \section{Stable theories}
@@ -632,7 +633,7 @@ Let $p({\mr x})\in S(\U)$. Prove that there is at most one definably closed set 
 
 The following proposition highlights the connection between stability and the cardinality of types. 
 
-Binary trees of formulas have been introduced in Definition~\ref{def_tree_formulas}. Here we restrict to trees $\<\psi_s:s\in 2^{<\lambda}\>$ of a particular form. Namely, $\psi_\0=\top$ and for every $s\in 2^{<\lambda}$ we have $\psi_{s1}=\phi({\mr x}\,;{\gr b_s})$ and $\psi_{s0}=\neg\phi({\mr x}\,;{\gr b_s})$. When such a binary tree of height $\omega$ exists, we say that $\phi({\mr x}\,;{\gr z})$ has the \emph{binary tree property}.
+Binary trees of formulas have been introduced in Definition~\ref{def_tree_formulas}. Here we restrict to trees of a particular form. Namely, $\<\psi_s:s\in 2^{<\omega}\>$  where $\psi_\0=\top$ and for $s\in 2^{<\omega}$ and $i\in 2$ we have $\psi_{s^\frown i}({\mr x})=\neg^i\phi({\mr x}\,;{\gr b_s})$. The notation $\neg^i$ has been defined in Section~\ref{honest}. When a binary tree of this form exists, we say that $\phi({\mr x}\,;{\gr z})$ has the \emph{binary tree property}.
 
 \begin{theorem}\label{thm_count_types}
   The following are equivalent
@@ -646,22 +647,18 @@ Binary trees of formulas have been introduced in Definition~\ref{def_tree_formul
   \ssf{1}$\IMP$\ssf{2}.
   From $\ssf{1}$, by compactness, there is a ladder sequence  $\<{\mr a_s}\,;{\gr b_s} : s\in2^{<\omega}\>$, where $2^{<\omega}$ is ordered lexicografically.
   We claim that for every $r\in2^\omega$ the type $p_r({\mr x})=\big\{\phi({\mr x}\,;{\gr b_s})\iff r<s : s\in2^{<\omega}\big\}$ is consistent. 
-  In fact, $\phi({\mr a_{r\restriction (n+1)}}\,;{\gr b_s})$ holds for all $s\in2^{<n}$.
-  Then concistency follows by compactness.
+  In fact, $\phi({\mr a_{r\restriction n}}\,;{\gr b_s})$ holds for all $s\in2^{<n}$.
+  Then consistency follows by compactness.
 
-  
-  Let $\psi_\0({\mr x})=\top$.
-  Then, for $s\in 2^{<\omega}$ and $i\in 2$, define $\psi_{s^\frown i}({\mr x})=\neg^i\phi({\mr x}\,;{\gr b_{s^\frown1}})$, where $\neg^i$ has been defined in Section~\ref{honest}.
-  We claim that $\<\psi_s({\mr x}):s\in 2^{<\omega}\>$ is a binary tree. 
-  We need to prove is that the branches are consistent.
-  Then it suffices to show that $\psi_{r\restriction (n+1)}({\mr x})\in p_r$.
+  For $s\in2^{<\omega}$ let $\psi_s({\mr x})$ be as above with ${\gr b_{s^\frown1}}$ for ${\gr b_s}$.
+  We claim that $\<\psi_s({\mr x}):s\in 2^{<\omega}\>$ is a binary tree.
+  We need to prove that the branches are consistent.
+  It suffices to show that $\psi_{r\restriction (n+1)}({\mr x})\in p_r$.
 
   First, suppose that $r(n)=0$. 
-  Then $\psi_{r\restriction (n+1)}({\mr x})=\phi({\mr x}\,;{\gr b_{r\restriction n^\frown1}})$.
-  This formula belongs to $p_r({\mr x})$ because $r<r{\restriction} n^\frown1$.
+  Then $\psi_{r\restriction (n+1)}({\mr x})=\phi({\mr x}\,;{\gr b_{r\restriction n^\frown1}})$ belongs to $p_r({\mr x})$ because $r<r{\restriction} n^\frown1$.
   Otherwise $r(n)=1$. 
-  Then $\psi_{r\restriction (n+1)}({\mr x})=\neg\phi({\mr x}\,;{\gr b_{r\restriction n^\frown1}})$.
-  This formula belongs to $p_r({\mr x})$ because $r{\restriction} n^\frown1<r$.
+  Then $\psi_{r\restriction (n+1)}({\mr x})=\neg\phi({\mr x}\,;{\gr b_{r\restriction(n+1)}})$ belongs to $p_r({\mr x})$ because $r\not< r{\restriction}(n+1)$.
 
   \ssf{2}$\IMP$\ssf{1}. From $\ssf{2}$, by compactess, there is a binary tree of height $\kappa$. 
   Hence there are $2^\kappa$ sets that are externally definable by $\phi({\mr x}\,;{\gr z})$.
