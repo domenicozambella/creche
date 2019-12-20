@@ -487,7 +487,8 @@ Let $n$ be the largest integer such that $\<{\gr b_i}:i<n\>$ satisfies the condi
 
 and the first claim of the lemma follows by compactness. 
 
-Now let $N$ be a model that contains $A$ and such that $\<N,\grC\>\preceq\<\U,\grC\>$. Assume also that $\<N,\grC\>$ is $|A|^+$-saturated, we can further require that all ${\gr b_i}\in N^{|{\gr z}|}$. Hence $\psi({\gr z})\in L(N)$.
+Now let $N$ be a model that contains $A$ and such that $\<N,\grC\>\preceq\<\U,\grC\>$.
+Assume also that $\<N,\grC\>$ is $|A|^+$-saturated, we can further require that all ${\gr b_i}\in N^{|{\gr z}|}$. Hence $\psi({\gr z})\in L(N)$.
 \end{proof}
 
 \begin{corollary}\label{corol_honest}
@@ -497,14 +498,14 @@ Now let $N$ be a model that contains $A$ and such that $\<N,\grC\>\preceq\<\U,\g
 \end{corollary}
 
 \begin{proof}
-  Let $c$ be tuple that enumerates a $|M|^+$-saturated model containing $M$ and define $q({\gr z})={\gr z}\cnonfork_Mc$.
-  By the lemma above, for every ${\gr b}\models q({\gr z})$ there is a formula $\psi_{\gr b}({\gr z})\in\tp({\gr b}/c)$ such that either $\psi_{\gr b}({\gr\U})\subseteq\grC$ or $\psi_{\gr b}({\gr\U})\subseteq\neg\grC$.
-  Which one obtains depends on whether ${\gr b}\in\grC$ or ${\gr b}\notin\grC$.
+  Let $c$ be tuple that enumerates a $|M|^+$-saturated model containing $M$ and define $q({\gr z})={\gr z}\cnonfork_Mc$, see Definition~\ref{def_coheir_idepencence}.
+  For every ${\gr b}\models q({\gr z})$ the type $\tp({\gr b}/c)$ extends to a global coheir, in particular, a type invariant over $M$. 
+  By the lemma above, there is a formula $\psi_{\gr b}({\gr z})\in\tp({\gr b}/c)$ such that either $\psi_{\gr b}({\gr\U})\subseteq\grC$ or $\psi_{\gr b}({\gr\U})\subseteq\neg\grC$, depending on whether ${\gr b}\in\grC$ or ${\gr b}\notin\grC$.
   Hence
 
-  \ceq{\hfill q({\gr\U})}{=}{\bigcup_{{\gr b}\models q({\gr z})}\psi_{\gr b}({\gr\U}).}
+  \ceq{\hfill q({\gr\U})}{=}{\bigcup_{{\gr b}\,\models\, q({\gr z})}\psi_{\gr b}({\gr\U}).}
 
-  Compactness, we obtain the required formula $\psi({\gr z})=\psi_{\gr b_1}({\gr z})\vee\dots\vee\psi_{\gr b_n}({\gr z})$ for some ${\gr b_1},\dots,{\gr b_n}\in q({\gr\U})\cap\grC$.
+  By compactness, the required formula $\psi({\gr z})$ is the disjunction $\psi_{\gr b_1}({\gr z})\vee\dots\vee\psi_{\gr b_n}({\gr z})$ for some ${\gr b_1},\dots,{\gr b_n}\in q({\gr\U})\cap\grC$.
 
   Finally, note that $\grC$ is approximable from below by Lemma~\ref{lem_approx_nonunif}.
 \end{proof}
@@ -519,11 +520,11 @@ From Corollary~\ref{corol_honest} and Proposition~\ref{prop_sh_exp_qe} we obtain
 If $T$ is nip then $\U^{\rm Sh}$ has $L$-elimination of quantifiers. (I.e.\@ every formula is Boolean combination of formulas in $L$ and formulas of the form $z\in\D_i$.)\QED
 \end{corollary}
 
-\section{UDTFS}
-\label{UDTFS}
+% \section{UDTFS}
+% \label{UDTFS}
 
-Choose a positive integer $q_\psi$ for each formula $\psi\in L$. Let $\phi()\in L$ be given.
-Then there are finitely may formulas $\psi_j()$, for $j<n$, such that for every set $\D$ that is approximable by $\phi()$ there is a $j<n$ such that for every $B\subseteq\D$ of cardinality $<q_{\psi_j}$ there is a $d\in\D$ such that $B\subseteq\psi_j()\subseteq\D$.
+% Choose a positive integer $q_\psi$ for each formula $\psi\in L$. Let $\phi()\in L$ be given.
+% Then there are finitely may formulas $\psi_j()$, for $j<n$, such that for every set $\D$ that is approximable by $\phi()$ there is a $j<n$ such that for every $B\subseteq\D$ of cardinality $<q_{\psi_j}$ there is a $d\in\D$ such that $B\subseteq\psi_j()\subseteq\D$.
 
 
 \section{Stable theories}
