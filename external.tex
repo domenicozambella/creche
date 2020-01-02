@@ -27,33 +27,44 @@ Let $\grC,\grD\subseteq\U^{|{\gr z}|}$.
 The set $\grD\cap A^{|{\gr z}|}$ is called the \emph{trace\/} of $\grD$ over $A$.
 We write $\grC=_A\grD$ if  $\grC$ and $\grD$ have the same trace on $A$.
 
-We say that $\grD$ is \emph{externally definable\/} if it is of the form ${\gr\D_{p,\phi}}$ for some global type $p\in S_{\mr x}(\U)$ and some formula $\phi({\mr x}\,;{\gr z})\in L$, see Section~\hyperref[invariant_sets]{\ref*{invariant}.\ref*{invariant_sets}} for the notation.
-We may say that $\grD$ is externally definable \emph{by $p({\mr x})$ and $\phi({\mr x}\,;{\gr z})$}.
+Let $p({\mr x})\subseteq L(\U)$ be a consistent type.
+Recall from Section~\hyperref[invariant_sets]{\ref*{invariant}.\ref*{invariant_sets}} that for every formula $\phi({\mr x}\,;{\gr z})\in L$ we define
+
+\ceq{\hfill\emph{$\gr\D_{p,\phi}$}}{=}{\Big\{{\gr a}\in\U^{|{\gr z}|}\ :\ \phi({\mr x}\,;{\gr a})\in p\Big\}.}
+
+We say that $\grD$ is \emph{externally definable\/} if it is of the form ${\gr\D_{p,\phi}}$ for a type $p(x)$ in $S(\U)$ or $S_\phi(\U)$.
+We say that $\grD$ is externally definable \emph{by $p({\mr x})$ and $\phi({\mr x}\,;{\gr z})$}.
+
 Equivalently, a set $\grD$ is externally definable if it is the trace over $\U$ of a set which is definable in some elementary extension of $\U$.
-Precisely, $\grD$ is the trace on $\U$ of a set of the form $\phi({\mr b'}\,;{\gr\U'})$ where $\U'$ is elementary extension of $\U$ and ${\mr b'}\in\U'^{|{\mr x}|}$.
+More precisely, $\grD$ is the trace on $\U$ of a set of the form $\phi({\mr ^{*\kern-.3ex}b}\,;{\gr ^{*\kern-.2ex}\U})$ where $ ^{*\kern-.2ex}\U$ is elementary extension of $\U$ and ${\mr  ^{*\kern-.3ex}b}\in {}^{*\kern-.2ex}\U^{|{\mr x}|}$.
 The latter interpretation explains the terminology.
 
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We prefer to deal with external definability in a different, though equivalent, way.
 This is not the most common approach.
 
 \begin{definition}\label{def_epprox}
-We say that $\grD$ is \emph{approximated\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite $B$ there is a ${\mr b}\in\U^{|{\mr x}|}$ such that $\phi({\mr b}\,;{\gr\U})=_B\grD$.
-If in addition we have that $\phi({\mr b}\,;{\gr\U})\subseteq\grD$, we say that  $\grD$ is \emph{approximated from below}.
-Similarly, when $\grD\subseteq\phi({\mr b}\,;{\gr\U})$ we say that  $\grD$ is \emph{approximated from above}.
-We may call $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grD$.\QED
+We say that $\grD$ is \emph{approximated\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite $B$ there is a tuple ${\mr a}\in\U^{|{\mr x}|}$ such that $\phi({\mr a}\,;{\gr\U})=_B\grD$.
+We call $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grD$.
+If in addition $\phi({\mr a}\,;{\gr\U})\subseteq\grD$, we say that  $\grD$ is \emph{approximated from below}.
+Equivalently, we say that  $\grD$ is approximated from below if for every finite ${\gr B}\subseteq\grD$ there is a tuple ${\mr a}\in\U^{|{\mr x}|}$ such that  ${\gr B}\subseteq\phi({\mr a}\,;{\gr\U})\subseteq\grD$.
+The dual notion of \emph{approximation from above\/} is defined as expected (and coincides with $\neg\grD$ being approximated by $\neg\phi({\mr x}\,;{\gr z})$ from below).\QED
 \end{definition} 
- 
+
+
 The following proposition is clear by compactness.
 
 \begin{proposition}\label{prop_approx=external}
-For every $\grD$ the following are equivalent
-\begin{itemize}
-\item[1.] $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$;
-\item[2.] $\grD$ is externally definable by $\phi({\mr x}\,;{\gr z})$.\QED
-\end{itemize}
+   For every $\grD$ the following are equivalent
+   \begin{itemize}
+   \item[1.] $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$;
+   \item[2.] $\grD$ is externally definable by $\phi({\mr x}\,;{\gr z})$.\QED
+   \end{itemize}
 \end{proposition}
 
+The rest of this section is only required in Chapter~\ref{vc}.
+
 Approximability from below is an adaptation to our context of the notion of \textit{having an honest definition} in \cite{CS}.
+
 \begin{definition}\label{def_defble_type}
 We say that the global type $p\in S_{{\mr x}}(\U)$ is \emph{honestly definable\/} if for every $\phi({\mr x}\,;{\gr z})\in L$ the set ${\gr\D_{p,\phi}}$ is approximated from below (by some formula).
 We say that $p$ is \emph{definable\/} if the sets ${\gr\D_{p,\phi}}$ are all definable (over $\U$).
@@ -77,11 +88,6 @@ For every $\grD$ the following are equivalent
 \item[1.] $\grD$ is approximable;
 \item[2.] for every $C\subseteq\U$ of cardinality $\le|T|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi({\gr\U})=_C\grD$.
 \end{itemize}
-Similarly, the following are equivalent
-\begin{itemize}
-\item[3.] $\grD$ is approximable from below;
-\item[4.]  for every ${\gr C}\subseteq\grD$ of cardinality $\le|T|$ there is $\psi({\gr z})\in L(\U)$ such that ${\gr C}\subseteq \psi({\gr\U})\subseteq\grD$.
-\end{itemize}
 \end{proposition}
 
 \begin{proof}
@@ -90,8 +96,6 @@ For each formula $\psi({\mr x}\,;{\gr z})\in L$ choose a finite set $B$ such tha
 Let $C$ be the union of all these finite sets.
 Clearly $|C|\le|T|$.
 By \ssf{2} there are a formula $\phi({\mr x}\,;{\gr z})$ and a tuple ${\mr c}$ such that $\phi({\mr c}\,;{\gr\U})=_C\grD$, contradicting the definition of $C$.
-
-Implication \ssf{1}$\IMP$\ssf{2} is obtained by compactness and the equivalence \ssf{3}$\IFF$\ssf{4} is proved similarly.
 \end{proof}
 
 
@@ -183,16 +187,18 @@ The sets externally definable by $p({\mr x})$ are always closed under Boolean op
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ladders and definability}
 
-Partitioned formulas have been introduced in Definition~\ref{def_partitioned_fla}. Here we write \emph{$\phi({\mr x}\,;{\gr z})^*$\/} for the partitioned formula where the order of the two tuples is inverted (i.e.\@ it is the opposite of what displayed).
 
-Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be a partitioned formula. We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$ is a \emph{ladder sequence\/} for $\phi({\mr x}\,;{\gr z})$ if 
+%Here we write \emph{$\phi({\mr x}\,;{\gr z})^*$\/} for the partitioned formula where the order of the two tuples is inverted (i.e.\@ it is the opposite of what displayed).
+
+Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be a partitioned formula (these have been introduced in Definition~\ref{def_partitioned_fla}).
+We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$ is a \emph{ladder sequence\/} for $\phi({\mr x}\,;{\gr z})$ if 
 
 \ceq{\#\hfill i\le j}{\IFF}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}\hfill for all $0\le i,j\le\alpha$
 
 We say that $\phi({\mr x}\,;{\gr z})$ is \emph{stable\/} if for some finite $n$ all ladders have length at most $n$. Otherwise we say it is \emph{unstable} or that it has the \emph{order property}. 
-Note that if a formulas admits ladder sequences of unbounded finite length, then it admits an infinite one, hence it has the order property.
+Note that if a formulas admits ladder sequences of unbounded finite length, then it admits an infinite one.
 
-It is clear that $\phi({\mr x}\,;{\gr z})$ is stable if and only if $\phi({\mr x}\,;{\gr z})^*$ is stable.
+%It is clear that $\phi({\mr x}\,;{\gr z})$ is stable if and only if $\phi({\mr x}\,;{\gr z})^*$ is stable.
 
 %Suppose $\phi({\mr x}\,;{\gr z})$ is unstable and let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be a ladder sequence. By padding redundant variables, we can read $\phi({\mr x}\,;{\gr z})$ as a formula $\phi({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$. Then $\phi({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$ defines the order of the sequence $\<{\mr a_i}\,{\gr b_i} : i<\omega\>$. For this reason it is also common to say that $\phi({\mr x}\,;{\gr z})$ has the \emph{order property}, this simply means that it is unstable. 
 
@@ -200,7 +206,7 @@ The following theorem claims what is arguably one of the most important properti
 
 \begin{theorem}\label{thm_def_stable_formula}
 Any $\grD\subseteq\U^{|{\gr z}|}$ approximated by a stable formula is definable.
-Precisely, if $\phi({\mr x}\,;{\gr z})$ is a stable formula that approximates $\grD$ then there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in\U^{|{\mr x}|}$ such that 
+More precisely, if $\phi({\mr x}\,;{\gr z})$ is a stable formula that approximates $\grD$ then there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in\U^{|{\mr x}|}$ such that 
 
 \ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\phi({\mr a_{i,j}}\,;{\gr z})}
 \end{theorem}
@@ -209,7 +215,7 @@ Precisely, if $\phi({\mr x}\,;{\gr z})$ is a stable formula that approximates $\
 The theorem follows immediately from the the three lemmas below.
 \end{proof}
 
-The converse of the theorem above holds and is proved separately in Theorem~\ref{thm_def_stable_formula2}.  
+Below, in Theorem~\ref{thm_def_stable_formula2}, we proves the converse of teh theorem above:  if every set approxiamted by $\phi({\mr x}\,;{\gr z})$ is definable then  $\phi({\mr x}\,;{\gr z})$ is stable.
 
 \begin{remark}\label{rem_sability_no_compactness}
 The conclusion of Theorem~\ref{thm_def_stable_formula} is often stated in the following  apparently more general form:
@@ -231,16 +237,17 @@ for some ${\mr a_0},\dots,{\mr a_n}\in\U^{|{\mr x}|}$.
 \end{lemma}
 
 \begin{proof}
-We define by recursion a ladder sequence for $\phi({\mr x}\,;{\gr z})$.
-Suppose that ${\gr b_0},\dots,{\gr b_{n-1}}\in\grD$ have been defined (this assumption is empty if $n=0$).
+The elements ${\mr a_0},\dots,{\mr a_n}$ are defined recursively together with some auxiliary elements ${\gr b_0},\dots,{\gr b_{n-1}}\in\grD$.
+
+Suppose ${\gr b_0},\dots,{\gr b_{n-1}}$ have been defined (this assumption is empty if $n=0$).
 We first define ${\mr a_n}$, then ${\gr b_n}$. 
 Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that ${\gr b_0},\dots,{\gr b_{n-1}}\in\phi({\mr a_n}\,;{\gr\U})\subseteq\grD$.
 This is possible because $\grD$ is approximated from below.
 Now, if possible, choose ${\gr b_n}$ such that
 
-\ceq{\hfill{\gr b_n}}{\in}{\grD\sm\bigvee^n_{i=0}\phi({\mr a_i}\,;{\gr\U})}.
+\ceq{\hfill{\gr b_n}}{\in}{\grD\sm\bigcup^n_{i=0}\phi({\mr a_i}\,;{\gr\U})}.
 
-Then $\<{\mr a_i}\,;{\gr b_i} : i\le n\>$ is a ladder sequence. 
+Then $\<{\mr a_{n-i}}\,;{\gr b_{n-i}} : i\le n\>$ is a ladder sequence. 
 By stability, for some $n$, the tuple ${\gr b_n}$ does not exist.
 This yields the required ${\mr a_0},\dots,{\mr a_n}$.
 \end{proof}
@@ -269,7 +276,7 @@ Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that
 This ${\mr a_n}$ exists, because $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$.
 Then, if possible, let ${\gr b_n}$ such that
 
-\ceq{\hfill{\gr b_n}}{\in}{\bigwedge^n_{i=0}\phi({\mr a_i},{\gr\U})\sm\grD}
+\ceq{\hfill{\gr b_n}}{\in}{\bigcap^n_{i=0}\phi({\mr a_i},{\gr\U})\sm\grD}
 
 This procedure has to stop at some $n\le m$.
 Hence the required parameters are ${\mr a_1},\dots,{\mr a_n}={\mr a_{n+1}}=\dots={\mr a_{m}}$.
@@ -327,204 +334,58 @@ For every such $c\subseteq I$ we pick a global type
 Clearly sets ${\gr\D_{p_c,\,\phi} }$ are all distinct.
 \end{proof}
 
-\begin{exercise}\label{ex_harrington}
-\def\grB{{\gr{\EuScript B}}}
-\def\mrA{{\mr{\EuScript A}}}
-The following is a version of Harrington's mysterious 
-Lemma (cfr.~\cite[Lemma 8.3.4]{TZ}).
-Let $\phi({\mr x}\,;{\gr z})\in L$ be a stable formula and suppose $\grB\subseteq\U^{|{\gr z}|}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\mr x}\,;{\gr z})^*$, respectively.
-Then at least one of the conditions \ssf{1} and \ssf{2} below occurs
+% \begin{exercise}\label{ex_harrington}
+% \def\grB{{\gr{\EuScript B}}}
+% \def\mrA{{\mr{\EuScript A}}}
+% The following is a version of Harrington's mysterious 
+% Lemma (cfr.~\cite[Lemma 8.3.4]{TZ}).
+% Let $\phi({\mr x}\,;{\gr z})\in L$ be a stable formula and suppose $\grB\subseteq\U^{|{\gr z}|}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\mr x}\,;{\gr z})^*$, respectively.
+% Then at least one of the conditions \ssf{1} and \ssf{2} below occurs
 
-\begin{itemize}
-\item[1.]
-\ssf{a.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\phantom{*}}\wedge\ {\mr x}\in{\mrA}$ approximates $\grB$ and\\
-\ssf{b.}\kern2ex$\phi({\mr x}\,;{\gr z})^*\wedge\ {\gr z}\in{\grB}$ approximates $\mrA$.
+% \begin{itemize}
+% \item[1.]
+% \ssf{a.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\phantom{*}}\wedge\ {\mr x}\in{\mrA}$ approximates $\grB$ and\\
+% \ssf{b.}\kern2ex$\phi({\mr x}\,;{\gr z})^*\wedge\ {\gr z}\in{\grB}$ approximates $\mrA$.
 
-\item[2.]
-\ssf{a.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\phantom{*}}\wedge\ {\mr x}\notin{\mrA}$ approximates $\grB$ and\\
-\ssf{b.}\kern2ex$\phi({\mr x}\,;{\gr z})^*\wedge\ {\gr z}\notin{\grB}$ approximates $\mrA$.
+% \item[2.]
+% \ssf{a.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\phantom{*}}\wedge\ {\mr x}\notin{\mrA}$ approximates $\grB$ and\\
+% \ssf{b.}\kern2ex$\phi({\mr x}\,;{\gr z})^*\wedge\ {\gr z}\notin{\grB}$ approximates $\mrA$.
 
-\end{itemize}
-Hint: Note that at least one of \ssf{1a} or \ssf{2a} occurs.
-Hence it suffices to prove that \ssf{1a}$\IMP$\ssf{1b} and \ssf{2a}$\IMP$\ssf{2b}. The two implications are essentially equivalent.
+% \end{itemize}
+% Hint: Note that at least one of \ssf{1a} or \ssf{2a} occurs.
+% Hence it suffices to prove that \ssf{1a}$\IMP$\ssf{1b} and \ssf{2a}$\IMP$\ssf{2b}. The two implications are essentially equivalent.
 % \begin{proof}
 % Note that at least one of \ssf{1a} or \ssf{2a} occurs.
 % Hence it suffices to prove that \ssf{1a}$\IMP$\ssf{1b} and \ssf{2a}$\IMP$\ssf{2b}.
 % We only prove the first.
 % The second follows because $\neg\grB$ and $\neg\mrA$ are approximated by $\neg\phi({\mr x}\,;{\gr z})$ and  $\neg\phi({\mr x}\,;{\gr z})^*$, respectively.
-% 
+
 % Assume \ssf{1a} and negate \ssf{1b} for a contradiction.
 % Then \ssf{2b} holds.
 % Pick ${\mr a_0}$ arbitrarily, then recursively find ${\gr b_i}\notin\grB$ and  ${\mr a_i}\in\mrA$ such that
-% 
+
 % {\def\medrel#1{\parbox[t]{12ex}{$\displaystyle\kern2ex #1$}}
-% 
+
 % \ceq{\hfill\phi(\U\,;{\gr b_i})}{ =_{{\mr a_0},\dots,{\mr a_{i-1}}}}{\mrA} 
-% 
+
 % \ceq{\hfill\phi({\mr a_i}\,;\U)}{ =_{{\gr b_0},\dots,{\gr b_i}}}{\grB}
 % }
-% 
+
 % Then
-% 
+
 % {\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\kern2ex #1$}}
-% 
+
 % \ceq{\hfill i< j}{\IMP}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}
-% 
+
 % \ceq{\hfill j\le i}{\IMP}{\neg\phi({\mr a_i}\,;{\gr b_j})}
-% 
+
 % }
-% 
+
 % Which contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
 % \end{proof}
-\end{exercise}
+% \end{exercise}
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Vapknik-Chervonenkis dimension}
-\label{sectionVC}
-
-\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
-
-We say that the formula $\phi({\mr x}\,;{\gr z})\in L$ has \emph{Vapknik-Chervonenkis dimension $n$\/} if this is the largest finite cardinatity of a set ${\gr B}\subseteq\U^{|{\gr z}|}$ such that $|S_\phi({\gr B})|=2^n$. If such $n$ does not exist, we say that we say that  $\phi({\mr x}\,;{\gr z})$ has \emph{infinite VC-dimension}. 
-
-Note that the condition $|S_\phi({\gr B})|=2^n$ is equivalent to saying that every subset of ${\gr B}$ is the trace of some definable set of sort $\phi({\mr x}\,;{\gr z})$.
-
-For instance, the formula ${\mr x_1}<{\gr z}<{\mr x_2}$ in $T_{\rm dlo}$ has VC-dimension $2$.
-
-Arguing by compactness we obtain the following proposition whose proof is left as an exercise for the reader.
-
-\begin{proposition}
-The following are equivalent 
-\begin{itemize}
-\item[1.] $\phi({\mr x}\,;{\gr z})\in L$ has finite VC-dimension;
-\item[2.] there is no infinite set ${\gr B}\subseteq\U^{|{\gr z}|}$ such that every subset of ${\gr B}$ is the trace of some definable set of sort $\phi({\mr x}\,;{\gr z})$.\QED
-\end{itemize}
-\end{proposition}
-
-From the proposition above and Proposition~\ref{thm_count_types} below it follows that all stable formulas have finite VC-dimension.
-
-We say that the a sequence of sentences $\<\phi_i:i<\omega\>$ \emph{converges\/} if the truth value of $\phi_i$ is eventually constant.
-
-\begin{lemma}\label{lem_altrank}
-The following are equivalent
-\begin{itemize}
-\item[1.] $\phi({\mr x}\,;{\gr z})\in L$ has finite VC-dimension;
-\item[2.] $\<\phi({\mr a}\,;{\gr b_i}):i<\omega\>$ converges for any ${\mr a}$ and any indiscernible sequence $\<{\gr b_i}:i<\omega\>$.
-\end{itemize}
-\end{lemma}
-
-\begin{proof}
-\ssf{1}$\IMP$\ssf{2} Negate \ssf{2} and let $n<\omega$. It suffices to prove that for every $I\subseteq n$ the formula $\psi_{I}({\mr x}\,;{\gr b_0},\dots,{\gr b_{n-1}} )$ that says 
-
-\ceq{\hfill\phi({\mr x}\,;{\gr b_i})}{\IFF}{i\in I}
-
-is consistent. If there is a ${\mr a}$ such that the truth value of $\<\phi({\mr a}\,;{\gr b_i}):i<\omega\>$ oscillates at least $n$ times, then we can find $k_0<\dots<k_{n-1}$ such that 
-
-\ceq{\hfill \phi({\mr a}\,;{\gr b_{k_i}})}{\IFF}{i\in I.}
-
-Then the formula $\psi_{I}({\mr x}\,;{\gr b_{k_0}},\dots,{\gr b_{k_{n-1}}})$ is consistent.
-Therefore, by indiscernibility, also the formula  $\psi_{I}({\mr x}\,;{\gr b_0},\dots,{\gr b_{n-1}})$ is consistent.
-
-\ssf{2}$\IMP$\ssf{1} Let $I\subseteq\omega$ be the set of even integers.
-Negate \ssf{1} and let  $\<{\gr c_i}:i<\omega\>$ be an infinite sequence that is shattered by $\phi({\mr x}\,;{\gr z})$.
-Let  $\<{\gr b_i}:i<\omega\>$ be an indiscernible sequence that models the EM-type of $\<{\gr c_i}:i<\omega\>$. Then $\<{\gr b_i}:i<\omega\>$ satisfies $\E{\mr x}\,\psi_{I\restriction n}({\mr x}\,;{\gr z_0},\dots,{\gr z_{n-1}})$ for all $n$.
-By compactness there is a ${\mr a}$ such that
-
-\ceq{\hfill\phi({\mr a}\,;{\gr b_i})}{\IFF}{i\in I}.
-
-This proves $\neg$\ssf{2}.
-\end{proof}
-
-In the next section we need the following corollary.
-
-\begin{corollary}\label{corol_altrank}
-If $\grC\subseteq\U^{|{\gr z}|}$ is a set approximable by a formula with finite VC-dimension, then $\<{\gr b_i}\in\grC:i<\omega\>$ converges for any indiscernible sequence $\<{\gr b_i}:i<\omega\>$.\QED
-\end{corollary}
-
-% We prove that if $\phi({\mr x}\,;{\gr z})$ has finite VC-dimension than also  $\phi({\mr x}\,;{\gr z})^*$ has finite VC-dimension. Note however that the dimension may increase exponentially.
-
-% \begin{theorem}
-%   .........
-% \end{theorem}
-
-% \begin{theorem}
-%   If $\phi()$ has VC-dimension $k$ then for every $A$ of cardinality $\le n$
-  
-%   \ceq{\hfill\big|S_\phi(A)\big|}{\le}{\sum_{i=0}^k{n \choose i}} 
-
-%   hence $\le e\cdot n^k$, where $e$ is Euler's constant.
-% \end{theorem}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Honest definitions}
-\label{honest}
-
-In this section we present a beautiful theorem of Chernikov and Simon~\cite{CS} and their alternative proof of a famous quantifier elimination result of Shelah. 
-
-We write \emph{$\neg^n$\/} for $\neg\!\stackrel{n\ \rm times}{\dots\dots\dots}\!\neg$. We abbreviate $\neg^n(\cdot\in\cdot)$ as \emph{$\notin^n$}.
-
-\begin{lemma}\label{lem_honest}
-Let $\grC$ be a set approximable by a formula with finite VC-dimension and let $A$ be any (small) set of parameters. Then every global $A$-invariant type $p({\gr z})$ contains a formula $\psi({\gr z})$ such that either $\psi({\gr\U})\subseteq\grC$ or $\psi({\gr\U})\subseteq\neg\grC$. Moreover, for every $|A|^+$-saturated model $N$ containing $A$, we can require that $\psi({\gr z})\in L(N)$.
-\end{lemma}
-
-\begin{proof}
-The property we want to prove is elementary in $L(\grC)$ therefore, by Remark~\ref{rem_el_sat} we can assume that $\grC$ is saturated. By Corollary~\ref{corol_altrank}, there is no infinite sequence $\<{\gr b_i}:i<\omega\>$
-
-\ceq{\hfill {\gr b_i}}{\models}{p_{A,\,{\gr b\restriction i}}({\gr z})\ \cup\ \{{\gr z}\notin^i\grC\}}
-
-Let $n$ be the largest integer such that $\<{\gr b_i}:i<n\>$ satisfies the condition above. Then
-
-\ceq{\hfill p_{A,\,{\gr b\restriction n}}({\gr z})}{\imp}{{\gr z}\notin^n\grC}
-
-and the first claim of the lemma follows by compactness. 
-
-Now let $N$ be a model that contains $A$ and such that $\<N,\grC\>\preceq\<\U,\grC\>$.
-Assume also that $\<N,\grC\>$ is $|A|^+$-saturated, we can further require that all ${\gr b_i}\in N^{|{\gr z}|}$. Hence $\psi({\gr z})\in L(N)$.
-\end{proof}
-
-\begin{corollary}\label{corol_honest}
-  Let $\grC$ be a set approximable by a formula with finite VC-dimension.
-  Then every model $M$ there are a type $q({\gr z})\subseteq L(M)$ such that $M^{|{\gr z}|}\subseteq q({\gr\U})$ and a formula $\psi({\gr z})\in L(\U)$ such that $q({\gr\U})\cap\grC\subseteq\psi({\gr\U})\subseteq\grC$.
-  In particular $\grC$ is approximable from below.
-\end{corollary}
-
-\begin{proof}
-  Let $c$ be tuple that enumerates a $|M|^+$-saturated model containing $M$ and define $q({\gr z})={\gr z}\cnonfork_Mc$, see Definition~\ref{def_coheir_idepencence}.
-  For every ${\gr b}\models q({\gr z})$ the type $\tp({\gr b}/c)$ extends to a global coheir, in particular, a type invariant over $M$. 
-  By the lemma above, there is a formula $\psi_{\gr b}({\gr z})\in\tp({\gr b}/c)$ such that either $\psi_{\gr b}({\gr\U})\subseteq\grC$ or $\psi_{\gr b}({\gr\U})\subseteq\neg\grC$, depending on whether ${\gr b}\in\grC$ or ${\gr b}\notin\grC$.
-  Hence
-
-  \ceq{\hfill q({\gr\U})}{=}{\bigcup_{{\gr b}\,\models\, q({\gr z})}\psi_{\gr b}({\gr\U}).}
-
-  By compactness, the required formula $\psi({\gr z})$ is the disjunction $\psi_{\gr b_1}({\gr z})\vee\dots\vee\psi_{\gr b_n}({\gr z})$ for some ${\gr b_1},\dots,{\gr b_n}\in q({\gr\U})\cap\grC$.
-
-  Finally, note that $\grC$ is approximable from below by Lemma~\ref{lem_approx_nonunif}.
-\end{proof}
-
-When all formulas have finite VC-dimension, we say that the theory $T$ has the \emph{non-independence property\/} or, for short, that $T$ \emph{is nip}.
-
-Let $\<\D_i:i<\lambda\>$ be the collection of all subsets of $\U$, of arbitrary finite arity, that are externally definable. The expansion of $\U$ to the language $L(\X_i:i<\lambda)$ is called the \emph{Shelah expansion\/} of $\U$ and is denoted by \emph{$\U^{\rm Sh}$}. 
-
-From Corollary~\ref{corol_honest} and Proposition~\ref{prop_sh_exp_qe} we obtain the following.
-
-\begin{corollary}\label{corol_sh_exp_qe}
-If $T$ is nip then $\U^{\rm Sh}$ has $L$-elimination of quantifiers. (I.e.\@ every formula is Boolean combination of formulas in $L$ and formulas of the form $z\in\D_i$.)\QED
-\end{corollary}
-
-% \section{UDTFS}
-% \label{UDTFS}
-
-% Choose a positive integer $q_\psi$ for each formula $\psi\in L$. Let $\phi()\in L$ be given.
-% Then there are finitely may formulas $\psi_j()$, for $j<n$, such that for every set $\D$ that is approximable by $\phi()$ there is a $j<n$ such that for every $B\subseteq\D$ of cardinality $<q_{\psi_j}$ there is a $d\in\D$ such that $B\subseteq\psi_j()\subseteq\D$.
 
 
 \section{Stable theories}
@@ -642,7 +503,90 @@ Let $p({\mr x})\in S(\U)$. Prove that there is at most one definably closed set 
 
 The following proposition highlights the connection between stability and the cardinality of types. 
 
-Binary trees of formulas have been introduced in Definition~\ref{def_tree_formulas}. Here we restrict to trees of a particular form. Namely, $\<\psi_s:s\in 2^{<\omega}\>$  where $\psi_\0=\top$ and for $s\in 2^{<\omega}$ and $i\in 2$ we have $\psi_{s^\frown i}({\mr x})=\neg^i\phi({\mr x}\,;{\gr b_s})$. The notation $\neg^i$ has been defined in Section~\ref{honest}. When a binary tree of this form exists, we say that $\phi({\mr x}\,;{\gr z})$ has the \emph{binary tree property}.
+Binary trees of formulas have been introduced in Definition~\ref{def_tree_formulas}.
+Here we restrict to trees of a particular form.
+Namely, $\<\psi_s:s\in 2^{<\omega}\>$  where $\psi_\0=\top$ and for $s\in 2^{<\omega}$ and $i\in 2$ we have $\psi_{s^\frown i}({\mr x})=\neg^i\phi({\mr x}\,;{\gr b_s})$.
+
+In general, we write \emph{$\neg^i$\/} for $\neg\!\stackrel{i\ \rm times}{\dots\dots\dots}\!\neg$.
+
+% Set the overall layout of the tree
+\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=2.5cm]
+\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=1.2cm]
+\tikzstyle{level 3}=[level distance=2.5cm, sibling distance=0.5cm]
+\tikzstyle{level 4}=[level distance=0.5cm, sibling distance=0.5cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag0} = [text width=1.5ex, align=left]
+\tikzstyle{bag} = [text width=7.5ex, align=right]
+%\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+\def\leaf{...}
+
+\quad
+\begin{tikzpicture}[grow=right]
+\node[bag0] {{$\top$}}
+    child {
+        node[bag] {$\phi(x;b_{\0}\!)$}      
+            child {
+                node[bag] {$\phi(x;b_0\!)$}
+                    child {
+                       node[bag] {\footnotesize$\phi(x;b_{00})$\rlap{$\ \cdots$}}
+                       edge from parent
+                    }    
+                    child {
+                       node[bag] {\footnotesize$\llap{$\neg$}\phi(x;b_{00})$\rlap{$\ \cdots$}}
+                       edge from parent
+                    }  
+                 edge from parent
+            }
+            child {
+                node[bag] {\llap{$\neg$}$\phi(x;b_0\!)$}
+                edge from parent
+                    child {
+                       node[bag] {\footnotesize$\phi(x;b_{01})$\rlap{$\ \cdots$}}
+                       edge from parent
+                    }    
+                    child {
+                       node[bag] {\footnotesize\llap{$\neg$}$\phi(x;b_{01})$\rlap{$\ \cdots$}}
+                       edge from parent
+                    }  
+                 edge from parent
+            }
+       edge from parent 
+    }
+    child {
+        node[bag] {\llap{$\neg$}$\phi(x;b_{\0}\!)$}         
+            child {
+                node[bag] {$\phi(x;b_1\!)$}
+                    child {
+                       node[bag] {\footnotesize$\phi(x;b_{10})$\rlap{$\ \cdots$}}
+                       edge from parent
+                    }    
+                    child {
+                       node[bag] {\footnotesize\llap{$\neg$}$\phi(x;b_{10})$\rlap{$\ \cdots$}}
+                       edge from parent
+                    }  
+                 edge from parent
+            }
+            child {
+                node[bag] {\llap{$\neg$}$\phi(x;b_1\!)$}
+                edge from parent
+                    child {
+                       node[bag] {\footnotesize$\phi(x;b_{11})$\rlap{$\ \cdots$}}
+                       edge from parent
+                    }    
+                    child {
+                       node[bag] {\footnotesize\llap{$\neg$}$\phi(x;b_{11})$\rlap{$\ \cdots$}}
+                       edge from parent
+                    }  
+                 edge from parent
+            } 
+        edge from parent
+    };
+\end{tikzpicture}
+
+\medskip
+When a binary tree of this form exists, we say that $\phi({\mr x}\,;{\gr z})$ has the \emph{binary tree property}.
 
 \begin{theorem}\label{thm_count_types}
   The following are equivalent
