@@ -42,7 +42,7 @@ The latter interpretation explains the terminology.
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We prefer to deal with external definability in a different, though equivalent, way.
 This is not the most common approach.
 
-\begin{definition}\label{def_epprox}
+\begin{definition}\label{def_approx}
 We say that $\grD$ is \emph{approximated\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite $B$ there is a tuple ${\mr a}\in\U^{|{\mr x}|}$ such that $\phi({\mr a}\,;{\gr\U})=_B\grD$.
 We call $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grD$.
 If in addition $\phi({\mr a}\,;{\gr\U})\subseteq\grD$, we say that  $\grD$ is \emph{approximated from below}.
@@ -80,7 +80,7 @@ Now, let $T=T_{\rm rg}$.
 Then every $\D\subseteq\U$ is approximable and, when $\D$ has small infinite cardinality, it is approximable from above but not from below, see Exercise~\ref{ex_rg_small_def_set}.\QED
 \end{example}
 
-In Definition~\ref{def_epprox}, the sort $\phi({\mr x}\,;{\gr z})$ is fixed (otherwise any set would be approximable) but this requirement of uniformity may be dropped if we allow $B$ to have larger cardinality.
+In Definition~\ref{def_approx}, the sort $\phi({\mr x}\,;{\gr z})$ is fixed (otherwise any set would be approximable) but this requirement of uniformity may be dropped if we allow $B$ to have larger cardinality.
 
 \begin{proposition}\label{lem_approx_nonunif}
 For every $\grD$ the following are equivalent
@@ -193,10 +193,22 @@ The sets externally definable by $p({\mr x})$ are always closed under Boolean op
 Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be a partitioned formula (these have been introduced in Definition~\ref{def_partitioned_fla}).
 We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$ is a \emph{ladder sequence\/} for $\phi({\mr x}\,;{\gr z})$ if 
 
-\ceq{\#\hfill i\le j}{\IFF}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}\hfill for all $0\le i,j\le\alpha$
+\ceq{\#\hfill i< j}{\IFF}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}\hfill for all $0\le i,j<\alpha$
 
-We say that $\phi({\mr x}\,;{\gr z})$ is \emph{stable\/} if for some finite $n$ all ladders have length at most $n$. Otherwise we say it is \emph{unstable} or that it has the \emph{order property}. 
+We say that the formula $\phi({\mr x}\,;{\gr z})$ is \emph{stable\/} if for some finite $n$ all ladders have length at most $n$. Otherwise we say it is \emph{unstable} or that it has the \emph{order property}.
+
 Note that if a formulas admits ladder sequences of unbounded finite length, then it admits an infinite one.
+
+The following easy exercise shows that stability is sort of chain condition.
+
+\begin{exercise}
+   Prove that the following are equivalent
+   \begin{itemize}
+   \item[1.]  $\phi({\mr x}\,;{\gr z})$ has a ladder sequence of length $n$;
+   \item[2.] there a set ${\gr B}$ such that $\phi({\mr a_0}\,;{\gr B})\subset\dots\subset\phi({\mr a_n}\,;{\gr B})$ for some $\<{\mr a_i} : i<n\>$.\QED
+   \end{itemize}
+\end{exercise}
+
 
 %It is clear that $\phi({\mr x}\,;{\gr z})$ is stable if and only if $\phi({\mr x}\,;{\gr z})^*$ is stable.
 
@@ -219,11 +231,9 @@ Below, in Theorem~\ref{thm_def_stable_formula2}, we proves the converse of teh t
 
 \begin{remark}\label{rem_sability_no_compactness}
 The conclusion of Theorem~\ref{thm_def_stable_formula} is often stated in the following  apparently more general form:
-for every $\Aa\subseteq\U$ there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in \Aa^{|{\mr x}|}$ such that
+for every $\Aa\subseteq\U$ there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in \Aa^{|{\mr x}|}$ such that for all ${\gr b}\in{\gr\Aa}^{|{\gr z}|}$
 
-\ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\phi({\mr a_{i,j}}\,;{\gr z})}
-
-holds for all ${\gr z}\in{\gr\Aa}^{|{\gr z}|}$.
+\ceq{\hfill {\gr b}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\phi({\mr a_{i,j}}\,;{\gr b}).}
 
 The proof is exactly the same. In fact, elementarity and saturation are never used. In a sense, no model theory is used, either -- just finite combinatorics -- unlike in the proof of Theorem~\ref{thm_def_stable_formula2} where compactness is essential.\QED
 \end{remark}
@@ -247,7 +257,7 @@ Now, if possible, choose ${\gr b_n}$ such that
 
 \ceq{\hfill{\gr b_n}}{\in}{\grD\sm\bigcup^n_{i=0}\phi({\mr a_i}\,;{\gr\U})}.
 
-Then $\<{\mr a_{n-i}}\,;{\gr b_{n-i}} : i\le n\>$ is a ladder sequence. 
+Then $\<{\mr a_i}\,;{\gr b_i} : i\le n\>$ is a ladder sequence. 
 By stability, for some $n$, the tuple ${\gr b_n}$ does not exist.
 This yields the required ${\mr a_0},\dots,{\mr a_n}$.
 \end{proof}
@@ -264,16 +274,17 @@ approximates $\grD$ from below.
 
 \begin{proof}
 Let $m$ be such that there is no ladder sequence for $\phi({\mr x}\,;{\gr z})$ of length greater then $m$.
-Let ${\gr B}\subseteq\grD$ be finite.
-We prove that there are some ${\mr a_0},\dots,{\mr a_m}$ such that ${\gr B}\subseteq\psi({\mr a_0},\dots,{\mr a_m}\,;{\gr\U})\subseteq\grD$.
+Let ${\gr C}\subseteq\grD$ be finite.
+We prove that there are some ${\mr a_0},\dots,{\mr a_m}$ such that ${\gr C}\subseteq\psi({\mr a_0},\dots,{\mr a_m}\,;{\gr\U})\subseteq\grD$.
 As in the proof above, we define by recursion a ladder sequence for $\phi({\mr x}\,;{\gr z})$.
 Suppose that ${\mr a_0},\dots,{\mr a_{n-1}}$ and ${\gr b_0},\dots,{\gr b_{n-1}}\notin\grD$ have been defined.
 We first define ${\mr a_n}$, then ${\gr b_n}$. 
 Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that 
 
-\hfil${\gr B}\ \subseteq\ \phi({\mr a_n}\,;{\gr\U})\ \subseteq\ \U^{|{\gr z}|}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
+\hfil${\gr C}\ \subseteq\ \phi({\mr a_n}\,;{\gr\U})\ \subseteq\ \U^{|{\gr z}|}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
 
 This ${\mr a_n}$ exists, because $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$.
+(Apply Definition~\ref{def_approx} with any $B$ such that ${\gr C}\cup\{{\gr b_0},\dots,{\gr b_{n-1}}\}\subseteq B^{|{\gr z}|}$.)
 Then, if possible, let ${\gr b_n}$ such that
 
 \ceq{\hfill{\gr b_n}}{\in}{\bigcap^n_{i=0}\phi({\mr a_i},{\gr\U})\sm\grD}
@@ -283,11 +294,7 @@ Hence the required parameters are ${\mr a_1},\dots,{\mr a_n}={\mr a_{n+1}}=\dots
 \end{proof}
 
 \begin{lemma}\label{lem_stable3}
-If $\phi({\mr x}\,;{\gr z})$ is a stable formula then for every $m$ the formula 
-
-\ceq{\hfill \psi({\mr x_1},\dots,{\mr x_m}\,;{\gr z})}{\iff}{\bigwedge^m_{j=1}\phi({\mr x_j}\,;{\gr z})}
-
-is stable.
+If $\phi({\mr x}\,;{\gr z})$ is a stable formula then for every $m$ the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr z})$ defined above is stable.
 \end{lemma}
 
 \begin{proof}

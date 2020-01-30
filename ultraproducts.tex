@@ -126,7 +126,7 @@ The interpretation of $r\in L_{\rm fun}$ is the product of the relations $r^{M_i
 The following proposition is immediate.
 
 \begin{proposition}\label{proposizioneprodottidiretti}
-If $\wedge$ is the only connective and $\A$, $\E$ the only quantifiers that occur in $\phi(x)\in L$, then for every $\hat a\in N^{|x|}$
+If $=, \wedge, \A$, $\E$ are the only logical symbol that occur in $\phi(x)\in L$, then for every $\hat a\in N^{|x|}$
 
 \ceq{\sharp\hfill N\models \phi(\hat a)}
 {\IFF}
@@ -165,12 +165,49 @@ Let $F$ be a filter on $I$. We define the following congruence on $N$ (see Defin
 %It is easy to verify that $\sim_F$ is indeed an equivalence relation: reflexivity 
 To check that $\sim_F$ is indeed a congruence, first we need to check that it is an equivalence relation. Reflexivity and symmetry are immediate, and transitivity follows from \ssf{f2} in Section~\ref{ultrafiltri}. Then we check that $\sim_F$ is compatible with the functions of $L$, that is, that \ssf{c1} of Definition~\ref{def_congruence} is satisfied. This follows from~\ssf{f1} in Section~\ref{ultrafiltri}. 
 
-For brevity, we write $N/F$ for $N/{\sim}_F$ and $[\hat a]_F$ for $[\hat a]_{\sim_F}$. Then \ssf{c3} of Section~\hyperref[quotient]{\ref*{teorie}.\ref*{quotient}} gives
+For brevity, we write $N/F$ for $N/{\sim}_F$ and $[\hat a]_F$ for $[\hat a]_{\sim_F}$. 
 
-\ceq{\ssf{c3$^\prime$.}\hfill [\hat a]_F\ \in\ r^{N/F}}{\IFF}{\big\{\,i\; :\; \ \hat ai=\hat bi\in r^{M_i}\,\big\}\,\in\, F}\quad for some $\hat b\in N$.
-
-\smallskip
 The structure $N/F$ is called the \emph{reduced product\/} of the structures $\<M_i:i\in I\>$ or, when $M_i=M$ for all $i\in I$, the \emph{reduced power\/} of $M$. When $F$ is an ultrafilter we say \emph{ultraproduct}, respectively \emph{ultrapower}.
+
+It is worth highlighting the following proposition which is a special case of \L o\v{s}'s Theorem below (but it is does not require $F$ to be an \textit{ultra\kern.2ex}filter).
+
+\begin{proposition}\label{prop_eq_ultra}
+  Let $r\in L_{\rm rel}$.
+  Let $t(x)$ be tuple of terms of length $n_r$. 
+  Then for every $\hat a\in N^{|x|}$ and every filter $F$ the following are equivalent
+  \begin{itemize}
+  \item[1.] $N/F\pmodels r\,t(\hat a)$;
+
+  \item[2.] $\big\{i\; :\ M_i\models r\,t(\hat ai)\,\big\}\,\in\, F$.
+  \end{itemize}
+\end{proposition}
+
+\begin{proof}
+  \ssf{1}$\IMP$\ssf{2} 
+  Assume \ssf{1}.
+  Then, by \ssf{2*} of Definition~\ref{def_pseudostructure}, there is a $\hat b\sim t^N(\hat a)$ such that $N\models r\,\hat b$.
+  Therefore $M_i\models r\,\hat bi$ for all $i\in I$.
+  But $\hat b\sim t(\hat a)$ means that $\big\{i\, :\, \hat bi= t(\hat ai)\big\}$ is in $F$ and \ssf{2} follows.
+
+  \ssf{2}$\IMP$\ssf{1} 
+  Assume \ssf{2}. 
+  The, in particular, $M_i\models r\,t(\hat ai)$ for some $i\in I$.
+  Pick one of such $i$, say $i_0$.
+  Now let $\hat b\in N$ be as follows
+
+  \ceq{\hfill\hat bi}
+  {=}
+  {\left\{
+    \begin{array}{ll}
+      t(\hat ai)   &{\rm if}\ M_i\models r\,t(\hat ai)\\
+      t(\hat ai_0) &{\rm otherwise.}\\
+    \end{array}
+  \right.}
+
+  Then $\hat b\sim t(\hat ai)$.
+  By construction, $M_i\models r\,\hat bi$ for all $i\in I$.
+  Therefore \ssf{1} follows from \ssf{2*} of Definition~\ref{def_pseudostructure}.
+\end{proof}
 
 \begin{void_thm}[\L o\'{s}'s Theorem]\label{thm_los}
 Let $\phi(x)\in L$ and let $F$ be an ultrafilter on $I$. Then for every $\hat a\in N^{|x|}$ the following are equivalent:
@@ -181,7 +218,9 @@ Let $\phi(x)\in L$ and let $F$ be an ultrafilter on $I$. Then for every $\hat a\
 \end{void_thm}
 
 \begin{proof}
-We proceed by induction on the syntax of $\phi(x)$. Suppose $\phi(x)$ is of the form $rt(x)$ for some tuple of terms $t(x)$ and $r\in L_{\rm rel}\cup\{=\}$. Then \ssf{1}$\IFF$\ssf{2} is clear.
+We proceed by induction on the syntax of $\phi(x)$. 
+If $\phi(x)$ is equality, then equivalence holds by definition of $sim$. 
+If $\phi(x)$ is of the form $r\,t(x)$ for some tuple of terms $t(x)$ and $r\in L_{\rm rel}$ then \ssf{1}$\IFF$\ssf{2} is Proposition~\ref{prop_eq_ultra}.
 
 We prove the inductive step for the connectives $\neg$, $\wedge$, and the quantifier $\E$. We begin with $\neg$. This is the only place in the proof where the assumption that $F$ is an \textit{ultra\kern.2ex}filter is required. By the inductive hypothesis,
 

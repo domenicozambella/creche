@@ -315,7 +315,7 @@ We show that if $G$ is simple and $H\preceq G$ then also $H$ is simple.
 Recall that $G$ is simple if all its normal subgroups are trivial, equivalently, if for every $a\in G\sm \{1\}$ the set $\big\{gag^{-1}\,:\,g\in G\big\}$ generates the whole group $G$.
 
 
-Assume $H$ is not simple then there $a,b\in H$ be such that $b$ is not product of elements of $\big\{hah^{-1}\,:\,h\in H\big\}$, hence for every $n$ 
+Assume $H$ is not simple. Then there are $a,b\in H$ such that $b$ is not the product of elements of $\big\{hah^{-1}\,:\,h\in H\big\}$. Then for every $n$ 
 
 \hfil$H\ \models\ \neg\E x_1,\dots,x_n\ \ \big(b\ \ =\ \ x_1ax_1^{-1}\cdot\cdot\cdot\ x_nax_n^{-1}\big)$
 
@@ -562,11 +562,16 @@ where $\pi:a\mapsto [a]_E$ is the projection map.\QED
 
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Quotients clutter the notation with brackets.
 To avoid the mess, we prefer to reason in $N$ and tweak the satisfaction relation.
- Warning: this is not standard.
+Warning: this is not standard (though it is what we all do all the time, informally).
 
-Essentially, we work in $N$ while thinking of $N/E$.
-So, we replace equality with $\mathrel{E}$ and adapt the interpretation of relation symbols according to \ssf{c3} above.
-The proposition below shows that the definition does what is intended to do.
+Recall that in model theory, equality is not treated as a all other predicates.
+In fact, the interpretation of equality is fixed to always be the identity relation.
+In a few contexts is convinient to allow any congruence to interprete equality. 
+This allows to work in $N$ while thinking of $N/E$.
+
+%So, we replace equality with $\mathrel{E}$ and adapt the interpretation of relation symbols according to \ssf{c3} above.
+We define $N/E\pmodels\;$ to be $N\models\;$ but with equality interpreted with $\mathrel{E}$.
+The proposition below shows that this is the same thing as the regular truth in the quotient structure,  $N/E\models$.
 
 \begin{definition}\label{def_pseudostructure}
 For $t_2$, $t_2$ closed terms of $L(N)$ define

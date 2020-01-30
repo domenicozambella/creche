@@ -67,9 +67,10 @@ is consistent. If there is a ${\mr a}$ such that the truth value of $\<\phi({\mr
 Then the formula $\psi_{I}({\mr x}\,;{\gr b_{k_0}},\dots,{\gr b_{k_{n-1}}})$ is consistent.
 Therefore, by indiscernibility, also the formula  $\psi_{I}({\mr x}\,;{\gr b_0},\dots,{\gr b_{n-1}})$ is consistent.
 
-\ssf{2}$\IMP$\ssf{1} Let $I\subseteq\omega$ be the set of even integers.
+\ssf{2}$\IMP$\ssf{1}
 Negate \ssf{1} and let  $\<{\gr c_i}:i<\omega\>$ be an infinite sequence that is shattered by $\phi({\mr x}\,;{\gr z})$.
-Let  $\<{\gr b_i}:i<\omega\>$ be an indiscernible sequence that models the EM-type of $\<{\gr c_i}:i<\omega\>$. Then $\<{\gr b_i}:i<\omega\>$ satisfies $\E{\mr x}\,\psi_{I\restriction n}({\mr x}\,;{\gr z_0},\dots,{\gr z_{n-1}})$ for all $n$.
+Let  $\<{\gr b_i}:i<\omega\>$ be an indiscernible sequence that models the EM-type of $\<{\gr c_i}:i<\omega\>$. Then $\<{\gr b_i}:i<\omega\>$ satisfies $\E{\mr x}\,\psi_{I\restriction n}({\mr x}\,;{\gr z_0},\dots,{\gr z_{n-1}})$ for all $n$. 
+Let $I\subseteq\omega$ be the set of even integers.
 By compactness there is a ${\mr a}$ such that
 
 \ceq{\hfill\phi({\mr a}\,;{\gr b_i})}{\IFF}{i\in I}.
@@ -106,11 +107,12 @@ If $\grC\subseteq\U^{|{\gr z}|}$ is a set approximable by a formula with finite 
 \section{Honest definitions}
 \label{honest}
 
-In this section we present a beautiful theorem of Chernikov and Simon~\cite{CS} and their alternative proof of a famous quantifier elimination result of Shelah. 
+In this section we present a beautiful theorem by Chernikov and Simon~\cite{CS} and their alternative proof of a famous quantifier elimination result by Shelah. 
 
-We write \emph{$\neg^n$\/} for $\neg\!\stackrel{n\ \rm times}{\dots\dots\dots}\!\neg$. We abbreviate $\neg^n(\cdot\in\cdot)$ as \emph{$\notin^n$}.
+We write \emph{$\neg^n$\/} for $\neg\!\stackrel{n\ \rm times}{\dots\dots\dots}\!\neg$.
+We abbreviate $\neg^n(\cdot\in\cdot)$ as \emph{$\notin^n$}.
 
-Recall that saturated sets have been defined in Definition~\ref{def_ins_sat}. 
+Saturated sets have been defined in Definition~\ref{def_ins_sat}. 
 
 \begin{lemma}\label{lem_honest}
 Let $\grC$ be saturated set approximable by a formula with finite VC-dimension and let $A$ be a set of parameters.
@@ -119,13 +121,13 @@ Moreover, we can require that $\psi({\gr z})\in L(N)$, for any sufficiently satu
 \end{lemma}
 
 \begin{proof}
-The property we want to prove is elementary in $L(\grC)$ therefore, by Remark~\ref{rem_el_sat} we can assume that $\grC$ is saturated. By Corollary~\ref{corol_altrank}, there is no infinite sequence $\<{\gr b_i}:i<\omega\>$
+  By Corollary~\ref{corol_altrank}, there is no infinite sequence $\<{\gr b_i}:i<\omega\>$
 
 \ceq{\hfill {\gr b_i}}{\models}{p_{A,\,{\gr b\restriction i}}({\gr z})\ \cup\ \{{\gr z}\notin^i\grC\}}
 
-Let $n$ be the largest integer such that $\<{\gr b_i}:i<n\>$ satisfies the condition above. Then
+Let $n$ be the largest integer such that there is a sequence $\<{\gr b_i}:i<n\>$ that satisfies the condition above. Then
 
-\ceq{\hfill p_{A,\,{\gr b\restriction n}}({\gr z})}{\imp}{{\gr z}\notin^n\grC}
+\ceq{\hfill p_{A,\,{\gr b\restriction n}}({\gr z})}{\imp}{{\gr z}\notin^{n+1}\grC}
 
 and the first claim of the lemma follows by compactness. 
 
