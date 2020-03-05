@@ -141,18 +141,24 @@ All this has little or no interest to model theory. But it highlights a fascinat
 
 
 
-We repeat, a theory is \emph{finitely consistent\/} if all its finite subsets are consistent. The following theorem is the \textit{fiat lux\/} of model theory. 
+Recall that a theory is \emph{finitely consistent\/} if all its finite subsets are consistent. The following theorem is the \textit{fiat lux\/} of model theory. 
 
 \begin{void_thm}[Compactness Theorem]\label{thmcompattezza}
 Every finitely consistent theory is consistent. 
 \end{void_thm}
 
 \begin{proof}
-Let  $T$ be a finitely consistent theory. We claim that the structure $N/F$ which we define below is a model of $T$. Let $I$ be the set of consistent sentences $I$ in the language $L$. For every $\xi\in I$ pick some $M_\xi\models\xi$. For any sentence $\phi\in L$ we write $X_\phi$ for the following subset of $I$
+Let  $T$ be a finitely consistent theory. 
 
-\ceq{\hfill X_\phi}{=}{\Big\{\xi\in I\ :\ \xi\proves \phi\Big\}}
+We claim that the structure $N/F$ which we define below is a model of $T$. Let $I$ be the set of consistent sentences $I$ in the language $L$.
+For every $\xi\in I$ pick some $M_\xi\models\xi$.
+For any sentence $\phi\in L$ we define
 
-Clearly $\phi$ is consistent if and only if $X_\phi\neq\0$. Moreover $X_{\phi\wedge\psi}\ =\ X_\phi\cap X_\psi$. hence, as $T$ is finitely consistent, the set $B=\big\{X_\phi\,:\,\phi\in T\big\}$ has the finite intersection property. Therefore $B$ extends to an ultrafilter $F$ on $I$. Define
+\ceq{\hfill X_\phi}{=}{\Big\{\xi\in I\ :\ \xi\proves \phi\Big\}.}
+
+Clearly $\phi$ is consistent if and only if $X_\phi\neq\0$.
+Moreover $X_{\phi\wedge\psi}\ =\ X_\phi\cap X_\psi$.
+Hence, as $T$ is finitely consistent, the set $B=\big\{X_\phi\,:\,\phi\in T\big\}$ has the finite intersection property. Therefore $B$ extends to an ultrafilter $F$ on $I$. Define
 
 \ceq{\hfill N}{=}{\prod_{\xi\in I}M_\xi}.
 
@@ -179,12 +185,21 @@ Suppose $S\notproves\phi$ for every finite $S\subseteq T$. Then for every finite
 Let $\Phi\subseteq L$ be a set of sentences and suppose that $\proves\psi\iff\bigvee\Phi$ for some sentence $\psi$. Prove that there is a finite $\Phi_0\subseteq\Phi$ such that  $\proves\psi\iff\bigvee\Phi_0$.\QED
 \end{exercise}
 
-
+\begin{exercise}
+Let ${\mathcal C}$ be a class of structures. 
+Let $\Th({\mathcal C}) = \big\{\varphi\ |\ M\models \varphi\ \mathrm{for\ all}\ M \in {\mathcal C}\big\}$ be the theory of ${\mathcal C}$. 
+Prove the following are equivalent
+\begin{itemize}
+\item[1.] $N\models\Th({\mathcal C})$; 
+\item[2.] $N$ is elementarily equivalent to an ultraproduct of elements of ${\mathcal C}$.
+\end{itemize}
+\end{exercise}
 \section{Upward Löwenheim-Skolem}
 
 \def\ceq#1#2#3{\parbox{13ex}{$\displaystyle #1$}\parbox{4ex}{\hfil$#2$}$\displaystyle #3$}
  
-Recall that a \emph{type\/} is a set of formulas. When we present types we usually declare the variables that may occur in it --~we write \emph{$p(x)$}, \emph{$q(x)$}, etc.\@ where $x$ is a tuple of variables. Clearly, when $x$ is the empty tuple, $p(x)$ is just a theory. We identify a finite types with the conjunction of the formulas contained in it.
+Recall that a \emph{type\/} is a set of formulas. When we present types we usually declare the variables that may occur in it --~we write \emph{$p(x)$}, \emph{$q(x)$}, etc.\@ where $x$ is a tuple of variables.
+When $x$ is the empty tuple, $p(x)$ is just a theory. We identify a finite types with the conjunction of the formulas contained in it.
 
 We write \emph{$M\models p(a)$} if $M\models\phi(a)$ for every $\phi(x)\in p$.  We say that $a$ is a \emph{solution\/} or a \emph{realization\/} of $p(x)$. An equivalent notation is \emph{$M,a\models p(x)$} or, when $M$ is clear from the context, \emph{$a\models p(x)$}. We say that $p(x)$ is \emph{consistent in $M$\/} it has a solution in $M$. In this case we may write \emph{$M\models\E x\,p(x)$}.  We say that $p(x)$ is \emph{consistent\/} if it is consistent in some model.
 
@@ -266,14 +281,14 @@ It proves a claim we made in Exercise~\ref{ex_grafo_bipartito}.
 
 \begin{example}
 
-\def\ceq#1#2#3{\parbox{5ex}{$\displaystyle #1$}\parbox{4ex}{\hfil$#2$}$\displaystyle #3$}
+\def\ceq#1#2#3{\parbox{5ex}{$\displaystyle #1$}\parbox{4ex}{\hfil$#2$}$\displaystyle #3$.}
 
-Write $T_{\rm gph}$ for the theory of graphs, see Example~\ref{expl_Tgraphs}.
+Let $T_{\rm gph}$ be the theory of graphs, as in Example~\ref{expl_Tgraphs}.
 Let $\K$ be the following class of structures
 
 \ceq{\hfill \K}{=}{\Big\{M\models T_{\rm gph}\ :\ r^M\ \subseteq\ (A\times \neg A)\;\cup\;(\neg A\times A)\textrm{ for some }A\subseteq M\Big\}}
 
-We prove that $\K$ is axiomatizable but not finitely axiomatizable, i.e.\@ $\K=\Mod(T)$ for some theory $T$, but $T$ cannot be choosen finite.
+We prove that $\K$ is axiomatizable but not finitely axiomatizable: $\K=\Mod(T)$ for some theory $T$, but any such $T$ is not finite.
 
 A \textit{path of length $n$\/} in $M$ is a sequence $c_0,\dots,c_n\in M$ such that $M\models r(c_i,c_{i+1})$ for every $0\le i<n$.
 A path is \textit{closed\/} if $c_0=c_n$.
