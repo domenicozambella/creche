@@ -395,22 +395,31 @@ where $q({\mr x})$ above range over all types in $S_{\mr x}(A)$. By compactness 
 
 where $\theta({\mr x})$ ranges over all formulas in $L(A)$. Applying mutual normality (Proposition~\ref{prop_normality}) to the first implication we obtain a finite number of formulas $\theta_i({\mr x})$ such that 
 
-\ceq{\hfill p({\mr x})}{\imp}{\bigvee^n_{i=1} \theta_i({\mr x})}\medrel{\imp}$\psi({\mr x}).$
+\ceq{\hfill p({\mr x})}
+{\imp}
+{\bigvee^n_{i=1} \theta_i({\mr x})}
+\medrel{\imp}
+$\psi({\mr x}).$
 
 This completes the proof.
 \end{proof}
 
-The following easy proposition is very useful. Its proof is left to the reader. Note that it would not hold without saturation. For a counter example consider $\RR$ as a structure in the language of strict orders and let $q(x,y)=\tp(0,1/A)$, where 
+The following easy proposition is very useful.
+Its proof is left to the reader.
+Note that it would not hold without saturation.
+For a counter example consider $\RR$ as a structure in the language of strict orders and let $q(x,y)=\tp(0,1/A)$, where 
 
 \ceq{\hfill A}{=}{\Big\{1+\frac1{n+1}\ :\ n\in\omega\Big\}.} 
 
-By quantifier elimination, $0\equiv_{A}1$ but $\RR,1\notmodels\E y\;q(x,y)$. However, in any sufficiently saturated elementary extension of $\RR$, we have $1\notmodels\E y\;q(x,y)$.
+By quantifier elimination, $0\equiv_{A}1$ but $\RR,1\notmodels\E y\;q(x,y)$.
+However, in any sufficiently saturated elementary extension of $\RR$, we have $1\notmodels\E y\;q(x,y)$.
 
 
 \begin{proposition}\label{prop_E_type}
-Let $p({\mr x}\,;{\gr z})\subseteq L(A)$. There is a type $q({\mr x})\subseteq L(A)$ such that
+Let $p({\mr x}\,;{\gr z})\subseteq L(A)$.
+There is a type $q({\mr x})\subseteq L(A)$ such that
 
-\ceq{\hfill\U}{\models}{\A {\mr x}\,\big[\E {\gr z}\,p({\mr x}\,;{\gr z})\ \iff\ q({\mr x})\big].} 
+\ceq{\hfill\U}{\models}{\A {\mr x}\,\big[\E {\gr z}\,p({\mr x}\,;{\gr z})\ \iff\ q({\mr x})\big].}
 
 The theorem holds also when ${\mr x}$ and ${\gr z}$ have length $\kappa$.
 \end{proposition}
@@ -424,7 +433,10 @@ The theorem holds also when ${\mr x}$ and ${\gr z}$ have length $\kappa$.
 \end{proof}
 As an application we give a second proof of the proposition above.
 
-\begin{proof}[Second proof of Proposition~\ref{prop_inv_types}] \ssf{2}$\IMP$\ssf{1}\quad  Write $p({\mr x})$ as the type $q({\mr x}\,;{\gr b})$ for some $q({\mr x}\,;{\gr z})\subseteq L$ and some ${\gr b}\in\U^{|{\gr z}|}$. Let $s({\gr z})=\tp({\gr b}/A)$. By invariance and homogeneity the types $q({\mr x}\,;f{\gr b})$ for $f\in\Aut(\U/A)$ are all equivalent. Therefore
+\begin{proof}[Second proof of Proposition~\ref{prop_inv_types}] \ssf{2}$\IMP$\ssf{1}\quad  Write $p({\mr x})$ as the type $q({\mr x}\,;{\gr b})$ for some $q({\mr x}\,;{\gr z})\subseteq L$ and some ${\gr b}\in\U^{|{\gr z}|}$.
+Let $s({\gr z})=\tp({\gr b}/A)$.
+By invariance and homogeneity the types $q({\mr x}\,;f{\gr b})$ for $f\in\Aut(\U/A)$ are all equivalent.
+Therefore
 
 \ceq{\hfill p({\mr x})}{\iff}{\bigvee_{f\in\Aut(\U/A)}q({\mr x}\,;f{\gr b})}\smallskip
 
