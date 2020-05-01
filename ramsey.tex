@@ -6,7 +6,7 @@
 \label{ramsey}
 
 In Section~\ref{Ramsey} we prove Ramsey's theorem and in Section~\ref{EM} we present its major application in model theory: 
-Ehrenfeucht-Mostowsky's construction of indiscernibles.
+the Ehrenfeucht-Mostowski construction of indiscernibles.
 
 In the remaining sections we prove two important results of Ramsey theory.
 These results will not be used elsewhere in these notes.
@@ -35,7 +35,7 @@ Let $M$ be an arbitrary infinite set.
 Fix $n,k<\omega$ and fix a coloring $f$ of the set of all \emph{$n$-subsets} of $M$,
 aleas the \emph{complete $n$-uniform hypergraph\/} with vertex set $M$,
 
-\ceq{\hfill f}{:}{ {M\choose n}\ \ \to\ \ [k]}.
+\ceq{\hfill f}{:}{ \binom{M}{n}\ \ \to\ \ [k]}.
 
 We say that $H\subseteq M$ is a \emph{monochromatic subgraph\/} if the subgraph induced by $H$ is monocromatic.
 In the literature monochromatic subgraph are also called \emph{homogeneous sets}.
@@ -64,7 +64,7 @@ The interpretation the relation symbols is
 We may assume that $M$ is an elementary substructure of some large saturated model $\mrU$.
 Pick any type $p({\mr x})\in S(\mrU)$ finitely satisfied in $M$ but not realized in $M$ and let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be a coheir sequence of $p({\mr x})$ over $M$.
 
-There is a first-order sentence saying that the formulas $r_i({\mr x_1},\dots,{\mr x_n})$ are a coloring of ${M\choose n}$.
+There is a first-order sentence saying that the formulas $r_i({\mr x_1},\dots,{\mr x_n})$ are a coloring of $M^{(n)}$.
 Then by elementarity the same hols in $\mrU$.
 By indiscernibility,
 all tuples of $n$ distinct elements of ${\mr\bar c}$ have the same color, say $1$.
@@ -110,7 +110,7 @@ Let $I,<_I$ be an infinite linear order and let ${\mr\bar a}$ be an $I$-sequence
 Fix a tuple of distinct variables ${\mr\bar x}=\<{\mr x_i}: i<\omega\>$.
 We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$} and say that $p({\mr\bar x})$ is the \emph{Ehren\-feucht-Mostowski type\/} of ${\mr\bar a}$ over $A$ if
 
-\ceq{\hfill p({\mr\bar x})}{=}{\Big\{\phi({\mr x_{\restriction n}})\in L(A)\ :\ \phi({\mr a_{\restriction I_0}})\ \textrm{ holds for every }\ I_0\in{I\choose n}\Big\}.}
+\ceq{\hfill p({\mr\bar x})}{=}{\Big\{\phi({\mr x_{\restriction n}})\in L(A)\ :\ \phi({\mr a_{\restriction I_0}})\ \textrm{ holds for every }\ I_0\in\binom{I}{n}\Big\}.}
 
 Note that ${\mr\bar x}$ is always of order-type $\omega$,
 while ${\mr\bar a}$ is an arbitrary infinite sequence.
@@ -130,7 +130,6 @@ Let $I,<_I$ and $J,<_J$ be two infinite linear orders such that $|J|\le \kappa$.
 Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is an $J$-sequence of $A$-indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/A)\subseteq\EMtp({\mr\bar c}/A)$.
 \end{EhrenfeuchtMostowski}
 
-
 \begin{proof}
 We prove the theorem for $I=J=\omega$ and leave the general case to the reader.
 Let $q({\mr\bar x})=\EMtp({\mr\bar a}/A)$.
@@ -138,7 +137,7 @@ Let ${\mr\bar c}$ be any realization of the following type yields a $J$-sequence
 
 \ceq{\hfill q({\mr\bar x})}
 {\cup}
-{\Big\{\phi({\mr x_{\restriction I_0}})\iff\phi({\mr x_{\restriction J_0}})\ :\  \phi({\mr x_{\restriction n}})\in L(A), \ I_0, J_0\in{\omega\choose n}, \ n<\omega\Big\}.}
+{\Big\{\phi({\mr x_{\restriction I_0}})\iff\phi({\mr x_{\restriction J_0}})\ :\  \phi({\mr x_{\restriction n}})\in L(A), \ I_0, J_0\in\binom{\omega}{n}, \ n<\omega\Big\}.}
 
 We will prove that any finite subset of the type above is realized by a finite subsequence of ${\mr\bar a}$.
 First note that any finite subset of $q({\mr\bar x})$ is realized by any subsequence of ${\mr\bar a}$ of the proper length by the definition of EM-type.
@@ -148,16 +147,16 @@ We prove that for $k$ and $n$ arbitrary large and every $\phi_1,\dots,\phi_k\in 
 
 \ceq{\ssf{\#}}
 {}
-{\Big\{\phi_i({\mr x_{\restriction I_0}})\iff\phi_i({\mr x_{\restriction J_0}})\ :\  I_0, J_0\in{\omega\choose n}\textrm{ and } i\in[k]\Big\}.}
+{\Big\{\phi_i({\mr x_{\restriction I_0}})\iff\phi_i({\mr x_{\restriction J_0}})\ :\  I_0, J_0\in\binom{\omega}{n}\textrm{ and } i\in[k]\Big\}.}
 
-Consider the subsets of $[k]$ as colors and let $f$ be the coloring of ${\omega\choose n}$ that maps $I_0$ to the set $\big\{i\ :\ \phi_i({\mr a_{\restriction I_0}})\big\}$.
+Consider the subsets of $[k]$ as colors and let $f$ be the coloring of $\omega^{(n)}$ that maps $I_0$ to the set $\big\{i\ :\ \phi_i({\mr a_{\restriction I_0}})\big\}$.
 By the Ramsey theorem,
 there is some infinite monochromatic set $H\subseteq\omega$.
 Hence
 
 \ceq{}
 {}
-{\Big\{\phi_i({\mr a_{\restriction I_0}})\iff\phi_i({\mr a_{\restriction J_0}})\ :\  I_0, J_0\in{H\choose n}\textrm{ and } i\in[k]\Big\}.}
+{\Big\{\phi_i({\mr a_{\restriction I_0}})\iff\phi_i({\mr a_{\restriction J_0}})\ :\  I_0, J_0\in\binom{H}{n}\textrm{ and } i\in[k]\Big\}.}
 
 As $H$ has order type $\omega$,
 it is immediate that ${\mr a_{\restriction H}}$ realizes \ssf{\#},

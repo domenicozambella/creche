@@ -1,5 +1,6 @@
 % !TEX root = creche.tex
 \documentclass[creche.tex]{subfiles}
+\begin{document}
 \chapter{Imaginaries}
 \label{imaginary}
 
@@ -12,7 +13,7 @@
 
 The description of first-order definability is simplified if we allow definable sets to be used as second-order parameters in formulas.
 This leads to the theory of (elimination of) \textit{imaginaries}.
-The technical reason that induced Shalah to introduce imaginaries will only be clear later, see Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}, but the theory is of independent interest.
+The technical reason that induced Shalah to introduce imaginaries will only be clear later, see Section~\hyperref[stable_theories]{\ref*{external}.\ref*{stable_theories}}, but the theory is of independent interest.
 
 In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
 The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
@@ -318,7 +319,7 @@ Then the following are equivalent
 \ceq{\hfill {\mr x}\in{\vl\Aa}}{\iff}{\bigvee^n_{i=1} \epsilon({\mr x}\,;{\mr c_i}).}
 
 \end{theorem}
-\begin{proof} \ssf{2}$\IMP$\ssf{1}\quad If  $\epsilon({\mr x}\,;{\mr y})$ has $m$ classes, then $\O(\Aa/A)$ contains at most $\displaystyle{m\choose n}$ sets.
+\begin{proof} \ssf{2}$\IMP$\ssf{1}\quad If  $\epsilon({\mr x}\,;{\mr y})$ has $m$ classes, then $\O(\Aa/A)$ contains at most $\displaystyle\binom{m}{n}$ sets.
 
 \ssf{1}$\IMP$\ssf{2}\quad Let $\phi({\vl\X})\in L^\eq(A)$ be an algebraic formula that has ${\vl\Aa}$ among its solutions and define
 
@@ -411,7 +412,7 @@ for some positive integer $k$.\QED
 
 In the formulas above we allow ${\gr z}$ to be the empty string.
 In this case we read \ssf{ei} and \ssf{wei} omitting the quantifiers $\E^{=1}{\gr z}$, respectively $\E^{=k}{\gr z}$.
-Therefore $\0$-definabile sets have all (at least) the empty string as a canonical parameter.
+Therefore $\0$-definable sets have all (at least) the empty string as a canonical parameter.
 
 To show that the notions above are well-defined properties of a theory one needs to check that they are independent of our choice of monster model.
 We leave this to the reader as an exercise.
@@ -429,14 +430,14 @@ The following are equivalent
 \end{itemize}
 \end{theorem}
 
-% N.B.\@ it is important to note the difference between $\acl{\vl\Aa}$ and $\acl\{{\vl\Aa}\}$. In the first, the parameter are the elements of ${\vl\Aa}$. In the latter, the set ${\vl\Aa}$ is the (second-order) paramenter.
+% N.B.\@ it is important to note the difference between $\acl{\vl\Aa}$ and $\acl\{{\vl\Aa}\}$. In the first, the parameter are the elements of ${\vl\Aa}$. In the latter, the set ${\vl\Aa}$ is the (second-order) parameter.
 
 \begin{proof}\ssf{1}$\IMP$\ssf{2} Assume \ssf{1} and let ${\gr\B}$ be the set of solutions of the formula
 
 \ceq{\hfill\A{\mr x}\ \bigg[{\mr x}\in{\vl\Aa}}{\iff}{\sigma({\mr x}\,;{\gr z})\bigg].}
 
 Hence ${\gr\B}$ is finite and ${\gr\B}\in\dcl^\eq\{{\vl\Aa}\}$.
-We also have ${\vl\Aa}\in\dcl^\eq\{{\gr\B}\}$ because ${\vl\Aa}$ is definibile by the formula $\E{\gr z}\,\big[{\gr z}\in {\gr\B}\wedge \sigma({\mr x}\,;{\gr z})\big]$.
+We also have ${\vl\Aa}\in\dcl^\eq\{{\gr\B}\}$ because ${\vl\Aa}$ is definable by the formula $\E{\gr z}\,\big[{\gr z}\in {\gr\B}\wedge \sigma({\mr x}\,;{\gr z})\big]$.
 Therefore $\dcl^\eq\{{\vl\Aa}\}=\dcl^\eq\{{\gr\B}\}$.
 
 \ssf{2}$\IMP$\ssf{3} Assume $\dcl^\eq\{{\vl\Aa}\}=\dcl^\eq\{{\gr\B}\}$ for some finite set ${\gr\B}$.
@@ -471,7 +472,7 @@ By $\,\sharp\,$ and the definition of $\psi({\gr z}\,;{\vl\X})$ we obtain ${\vl\
 There are a notions of elimination of imaginaries that are weaker than weak elimination.
 For instance, we say that $T$ has \emph{geometric elimination of imaginaries\/} if for every $A\subseteq\U$
 
-\ceq{\hfill\textstyle\acl^\eq\{{\vl\Aa}\}}{=}{\textstyle\acl^\eq\big(\acl\{{\vl\Aa}\}\big)}
+\ceq{\hfill{\acl}^\eq\{{\vl\Aa}\}}{=}{{\acl}^\eq\big(\acl\{{\vl\Aa}\}\big)}
 
 This will not  be applied in these notes, but see Exercises~\ref{ex_est} and~\ref{ex_wei=est+gei}.
 
@@ -490,7 +491,7 @@ Implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3}$\IFF$\ssf{4} are immediate.
 Implication \ssf{3}$\IMP$\ssf{1} is identical to the homologous implication in Theorem~\ref{elimimd}, just substitute algebraic with definable.
 \end{proof}
 
-We now consider elimination of imaginaries in two concrete structures: 
+We now consider elimination of imaginaries in two concrete theories: 
 algebraically closed fields and real closed fields.
 The following lemma is required in the proof of Theorem~\ref{elimimsm} below.
 
@@ -593,7 +594,7 @@ Shelah's $L^\eq$ contains functions that map tuples in the home sort to their eq
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{35ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-Sometimes in the literature elimination of imaginaries is confused with uniform elimination of imaginaries, see e.g.~\cite[Definition 8.4.2]{TZ}.
+Sometimes in the literature elimination of imaginaries is confused with uniform elimination of imaginaries, see e.g.~\cite{TZ}*{Definition 8.4.2}.
 Theorem~\ref{thm_ei_unif} below shows that the difference is immaterial.
 This section is more technical and could be skipped at a first reading.
 
@@ -721,3 +722,4 @@ As for uniqueness, note that if ${\gr b},d_i$ and ${\gr b'},d_{i'}$ are two dist
 By what assumed on $\sigma_i({\mr x}\,;{\gr z})$, we obtain that $\phi({\mr x}\,;a)$ is inconsistent.
 A contradiction which proves the theorem.
 \end{proof}
+\end{document}

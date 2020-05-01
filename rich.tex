@@ -97,7 +97,7 @@ In the following we frequently work under the following assumption (even when no
 Assume  $|L|\le\lambda$ and suppose that $\M$ satisfies \ssf{c1-c6} of Definition~\ref{def_com_c}
 \end{assumption} 
  
-The assumption on the cardinality $L$ is only necessary to apply the downward L\"owenheim-Skolem Theorem when required.
+The assumption on the cardinality of $L$ is necessary to apply the downward L\"owenheim-Skolem Theorem when required.
 
 \begin{proposition}\label{prop_6.1}
 (Assume~\ref{ass_c1-6})  \  The following are equivalent
@@ -134,7 +134,8 @@ By \ssf{c7} we can simply take the union.
 (Assume~\ref{ass_c1-6})  \  Then all rich models of cardinality $\lambda$ in the same connected component are isomorphic.\QED
 \end{corollary}
 
-It is obvious that $\lambda$-rich models are $\lambda$-universal and, by Theorem~\ref{thm_riccozigzag}, they are $\lambda$-ho\-mo\-ge\-ne\-ous.
+It is obvious that rich models are universal.
+By Theorem~\ref{thm_riccozigzag}, rich models they are ho\-mo\-ge\-ne\-ous.
 These two notions are weaker than richness.
 For instance, when $\M$ is as in Section~\hyperref[randomgraph]{\ref*{relational}.\ref*{randomgraph}}, the countable graph with no edge is trivially ultrahomogeneous but it is not universal and a fortiori not rich.
 On the other hand if we add to a countable random graph an isolated point we obtain a universal graph which is not ultrahomogeneous.
@@ -323,7 +324,7 @@ Assuming Theorem~\ref{thm_tutteleimmersionisonoelementari_QE}, prove that the fo
 \section{Weaker notions of universality and homogeneity}\label{weak}
 
 We want to extend the equivalence in Theorem~\ref{ricco<->universaleomogeneo} to $\lambda$-rich models.
-For that we need to weaken the notions of $\lambda$-universality and  $\lambda$-homogeneity.
+For that we need to weaken the notions of $\lambda$-homogeneity.
 This section is more technical and could be skipped at a first reading.
 
 \begin{definition}
@@ -337,9 +338,9 @@ The following easy exercise on back-and-forth is required in the sequel.
 (Assume~\ref{ass_c1-6}) \ Prove that any weakly $\lambda$-ho\-mo\-ge\-ne\-ous structure of cardinality $\lambda$ is homogeneous.\QED
 \end{exercise}
 
-\begin{definition}\label{def_weakly_universal}
-We say that a structure $N$ is \emph{weakly $\lambda$-universal\/} if for every model $M$ in the connected component of $N$ and every $A\subseteq M$ of cardinality $<\lambda$ there is a morphism $k:M\to N$ such that $A\subseteq\dom k$.\QED
-\end{definition}
+% \begin{definition}\label{def_weakly_universal}
+% We say that a structure $N$ is \emph{weakly $\lambda$-universal\/} if for every model $M$ in the connected component of $N$ and every $A\subseteq M$ of cardinality $<\lambda$ there is a morphism $k:M\to N$ such that $A\subseteq\dom k$.\QED
+% \end{definition}
 
 \begin{lemma}\label{debolmenteomogeneoandirivieni}
 (Assume~\ref{ass_c1-6})  \  Let $N$ be a weakly $\lambda$-ho\-mo\-ge\-ne\-ous model.
@@ -369,7 +370,7 @@ Define $A_{i+1}=A_i\cup\big\{{\gr a},\ h_{i+1}{\mr b},\  h_{i+1}^{-1}{\mr b}\big
 (Assume~\ref{ass_c1-6})  \  For every model $N$ the following are equivalent
 \begin{itemize}
 \item[1.] $N$ is $\lambda$-rich;
-\item[2.] $N$ is  weakly $\lambda$-universal and weakly $\lambda$-homogeneous.
+\item[2.] $N$ is $\lambda$-universal and weakly $\lambda$-homogeneous.
 \end{itemize}
 \end{theorem}
 
@@ -377,7 +378,7 @@ Define $A_{i+1}=A_i\cup\big\{{\gr a},\ h_{i+1}{\mr b},\  h_{i+1}^{-1}{\mr b}\big
 Implication \ssf{1}$\IMP$\ssf{2} is clear.
 To prove \ssf{2}$\IMP$\ssf{1} we generalize the proof of Theorem~\ref{ricco<->universaleomogeneo}.
 We assume \ssf{2} fix some morphism $k:M\imp N$ of cardinality $<\lambda$ and let $b\in M$.
-By weak $\lambda$-universality there is a morphism $f:M\imp N$ with domain of definition $\dom k\cup\big\{b\big\}$.
+By $\lambda$-universality and the downward L\"owenheim-Skolem theorem, there is a morphism $f:M\imp N$ with domain of definition $\dom k\cup\big\{b\big\}$.
 The map $f\circ k^{-1}:N\imp N$ has cardinality $<\lambda$ and, by Lemma~\ref{debolmenteomogeneoandirivieni}, it has an extension to an automorphism $h:N'\isomap N'$ for some $N'\preceq N$ containing $\range k\cup\range f$.
 Then $h\circ f:M\imp N$ extends $k$ and is defined on $b$.
 \end{proof}

@@ -3,7 +3,7 @@
 from re import *
 import os
 
-with open('aux/creche.toc', 'r') as f:
+with open('creche.toc', 'r') as f:
     toc = f.read()
     f.closed
 

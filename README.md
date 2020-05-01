@@ -26,7 +26,7 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
 *  **Ultraproducts**
    * Filters and ultrafilters
    * Direct products
-   * \L o\'{s}'s Theorem
+   * &#321;o&#347;'s Theorem
 *  **Compactness**
    * Compactness via syntax
    * Compactness via ultraproducts
@@ -41,8 +41,9 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
    * Dense linear orders
    * Random graphs
    * Notes and references
-*  **Fra&iuml;ss&eacute; limits**
+*  **Rich models**
    * Rich models.
+   * The theory of rich models and quantifier elimination
    * Weaker notions of universality and homogeneity
    * The amalgamation property
 *  **Some algebraic structures**
@@ -78,18 +79,17 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
    * The definable closure in the eq-expansion
    * The algebraic closure in the eq-expansion
    * Elimination of imaginaries
-   * Immaginaries: the true story
+   * Imaginaries: the true story
    * Uniform elimination of imaginaries
-   * Notes and references
 *  **Invariant sets**
    * Invariant sets and types
-   * Invariance from the dual perspective
+   * Invariance from a dual perspective
    * Heirs and coheirs
    * Morley sequences and indiscernibles
 *  **Ramsey theory**
-   * Ramsey theorem from coheir sequences
-   * Ehrenfeucht-Mostowski construction of indiscernibles
-   * Indempotent orbits in semigroups
+   * Ramsey's theorem from coheir sequences
+   * The Ehrenfeucht-Mostowski theorem
+   * Idempotent orbits in semigroups
    * Hindman theorem
    * The Hales-Jewett Theorem
    * Notes and references
@@ -102,10 +102,8 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
 *  **Externally definable sets**
    * Approximable sets
    * Ladders and definability
-   * Vapknik-Chervonenkis dimension
-   * Honest definitions
    * Stable theories
    * Stability and the number of types
-   * Notes and references
-*  **Keisler measures**
-   * T.b.c.
+*  **Vapnik-Chervonenkis theory**
+   * Vapnik-Chervonenkis dimension
+   * Honest definitions

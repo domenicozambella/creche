@@ -137,6 +137,27 @@ Hint: Use the base of the topology as predicates of a first-order language.\QED
 \end{exercise}
 \end{comment}
 
+\begin{exercise} 
+  Let $A\subseteq B$ and $p(x)\subseteq L(A)$. 
+  Suppose that $\tp(a/B)$ is isolated for every $a\models p(x)$.
+  Prove that $p(x)$ is isolated over $A$.\QED
+  % 
+  % \def\ceq#1#2#3{\parbox[b]{15ex}{$\displaystyle #1$}\parbox[b]{6ex}{\hfil$#2$}$\displaystyle #3$}
+  % Hint. 
+  % In general when $B\subseteq A$
+  %
+  % \ceq{\hfill p(x)}{\iff}{\bigvee\Big\{q(x)\in S(A)\ :\ q(x){\rm\ consistent\ with\ } p(x)\Big\}}
+  %
+  % If all these types $q(x)$ are isolated, by compactness there are finitely many of them.
+  % Let $\phi_1(x)\dots,\phi_n(x)\in L(A)$ be the the formulas that isolate these types.
+  % Then 
+  % 
+  % \ceq{\hfill p(x)}{\iff}{\bigvee^n_{i=1}\phi_i(x)}
+  %
+  % Again by compactness, there is a formula $\psi(x)\in p$ such that
+  %
+  % \ceq{\hfill\psi(x)}{\iff}{\bigvee^n_{i=1}\phi_i(x)}
+  \end{exercise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -345,6 +366,7 @@ Assume $L$ is countable and that $T$ is complete.
 Suppose that for every finite tuple  ${\mr x}$ there is a model $M$ that realizes only finitely many types in $S_{\mr x}(T)$.
 Prove that $T$ is $\omega$-categorical.\QED
 \end{exercise}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -676,7 +698,7 @@ The same theorem has been proved independently by Cherlin, Harrington and Lachla
 Their proof uses the classification of finite simple groups.
 This theorem marks the birth of a subject known as \textit{geometric stability theory\/} which studies in depth the geometric properties which we briefly mentioned in Chapter~\ref{geometria}.
 The interested reader may consult Pillay's monograph~\cite{Pillay}. 
-The material in Section~\ref{toy} comes from~\cite[Section~2.6]{Pillay} 
+The material in Section~\ref{toy} comes from~\cite{Pillay}*{Section~2.6} 
 
 \end{document}
 
