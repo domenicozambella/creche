@@ -165,7 +165,8 @@ Let $F$ be a filter on $I$. We define the following congruence on $N$ (see Defin
 %It is easy to verify that $\sim_F$ is indeed an equivalence relation: reflexivity 
 To check that $\sim_F$ is indeed a congruence, first we need to check that it is an equivalence relation. Reflexivity and symmetry are immediate, and transitivity follows from \ssf{f2} in Section~\ref{ultrafiltri}. Then we check that $\sim_F$ is compatible with the functions of $L$, that is, that \ssf{c1} of Definition~\ref{def_congruence} is satisfied. This follows from~\ssf{f1} in Section~\ref{ultrafiltri}. 
 
-For brevity, we write $N/F$ for $N/{\sim}_F$ and $[\hat a]_F$ for $[\hat a]_{\sim_F}$. 
+For brevity, we write $N/F$ for $N/{\sim}_F$ and $[\hat a]_F$ for $[\hat a]_{\sim_F}$.
+We write $N/F\pmodels\phi(\hat a)$ for $N/F\models\phi([\hat a]_F)$, though a more formal interpretation of $\,\pmodels\,$ is given in Definition~\ref{def_pseudostructure}.
 
 The structure $N/F$ is called the \emph{reduced product\/} of the structures $\<M_i:i\in I\>$ or, when $M_i=M$ for all $i\in I$, the \emph{reduced power\/} of $M$. When $F$ is an ultrafilter we say \emph{ultraproduct}, respectively \emph{ultrapower}.
 
@@ -173,12 +174,12 @@ It is worth highlighting the following proposition which is a special case of \L
 
 \begin{proposition}\label{prop_eq_ultra}
   Let $r\in L_{\rm rel}$.
-  Let $t(x)$ be tuple of terms of length $n_r$. 
+  Let $t(x)$ be tuple of terms of length $n_r$, the arity of $r$. 
   Then for every $\hat a\in N^{|x|}$ and every filter $F$ the following are equivalent
   \begin{itemize}
-  \item[1.] $N/F\pmodels r\,t(\hat a)$;
+  \item[1.] $N/F\,\pmodels r\,t(\hat a)$;
 
-  \item[2.] $\big\{i\; :\ M_i\models r\,t(\hat ai)\,\big\}\,\in\, F$.
+  \item[2.] $\big\{i\; :\ M_i\,\models r\,t(\hat ai)\,\big\}\,\in\, F$.
   \end{itemize}
 \end{proposition}
 
@@ -280,15 +281,18 @@ Every infinite structure has a proper elementary extension.
 \end{corollary}
 
 \begin{proof}
-Let $M$ be an infinite structure and let $F$ be a \textit{non-principal\/} ultrafilter on $\omega$. It suffices to show that $h[M]$, the image of the embedding defined above, is a \textit{proper\/} substructure of $M^\omega/F$.  As $M$ is infinite, there is an injective function  $\hat d\in M^\omega$. Then for every $a\in M$ the set $\big\{i:\hat di=a\big\}$ is either empty or a singleton and, as $F$ is non principal, it does not belong to $F$. So, by \L o\v{s} Theorem, we have $M^\omega/F\ \pmodels\ \hat d\neq a^I$ for every $a\in M$, that is, $[\hat d]_F\notin h[M]$.
+Let $M$ be an infinite structure and let $F$ be a \textit{non-principal\/} ultrafilter on $\omega$.
+It suffices to show that $h[M]$, the image of the embedding defined above, is a \textit{proper\/} substructure of $M^\omega\!/F$. 
+As $M$ is infinite, there is an injective function  $\hat d\in M^\omega$.
+Then for every $a\in M$ the set $\big\{i:\hat d\,i=a\big\}$ is either empty or a singleton and, as $F$ is non principal, it does not belong to $F$.
+So, by \L o\v{s} Theorem, we have $M^\omega\!/F\ \pmodels\ \hat d\neq a^I$ for every $a\in M$, that is, $[\hat d\,]_F\notin h[M]$.
 \end{proof}
 
-
 \begin{exercise}
-Consider $\NN$ as a structure in the language of strict orders.  Let $F$ be a non-principal ultrafilter on $\omega$. Prove that in $\NN^\omega/F$ there is a sequence $\<\hat a_i: i\in\omega\>$ such that $\hat a_{i+1}<\hat a_i$.\QED 
+Consider $\NN$ as a structure in the language of strict orders. 
+Let $F$ be a non-principal ultrafilter on $\omega$.
+Prove that in $\NN^\omega$ there is a sequence $\<\hat a_i: i\in\omega\>$ such that $\NN^\omega\!/F\,\models\,[\hat a_{i+1}]_F<[\hat a_i]_F$.\QED 
 \end{exercise}
-
-
 
 \begin{exercise}
 Let $I$ be the set of integers $i>1$. For $i\in I$, let $\ZZ_i$ denote the additive group of integers modulo $i$, and let $N$ denote the product \smash{$\displaystyle\prod_{i\in I}\ZZ_i$}. Prove that, if $F$ is a non-principal ultrafilter on $I$,
@@ -297,7 +301,7 @@ Let $I$ be the set of integers $i>1$. For $i\in I$, let $\ZZ_i$ denote the addit
 \item[1.] for some $F$, $N/F$ does not contain any element of finite order;
 \item[2.] for some $F$, $N/F$ has some elements of order $2$;
 \item[3.] for all $F$, $N/F$ contains an element of infinite order;
-\item[4.] for some $F$, $N/F\models \A x\E y\ my=x$ for every integer $m>0$;
+\item[4.] for some $F$, $N/F\models \A x\,\E y\ my=x$ for every integer $m>0$;
 \item[5.] for some $F$, $N/F$ contains an element $\hat a$ such that $N/F\models \A x\ mx\neq\hat a$ for every positive integer $m$.\QED
 \end{itemize}
 \begin{comment}

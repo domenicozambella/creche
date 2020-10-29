@@ -1,0 +1,199 @@
+% !TEX root = creche.tex
+\documentclass[creche.tex]{subfiles}
+\chapter{Pseudofinite structures}
+\label{oalgebraic}
+
+\def\medrel#1{\parbox[t]{5ex}{\hfil$\displaystyle #1$}}
+\def\ceq#1#2#3{\parbox[t]{20ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
+
+Work in progress
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Pseudofinite structures}
+
+Let $T_0$ be a given theory with arbitrarily large finite models.
+%
+We define 
+
+\ceq{\hfill\emph{$T_{\rm fin}$}}{=}{\{\phi: M_0\models\phi\textrm{ for all finite } M_0\models T_0\}}.
+
+A structure $M$ is a \emph{pseudofinite\/} model of $T_0$ if $M\models T_{\rm fin}$.
+%
+Note that this is equivalent to requiring that for every sentence $\phi\in\Th(M)$ there is a finite structure $M_0\models\phi$.
+
+If $M_0$ is a finite model we write $(M_0,\RR)$ for the two-sorted structure described below.
+%
+The language of $(M_0,\RR)$, denoted by $L'$, expands the language of $M_0$ and $\RR$, where $\RR$ is considered as a structure in the language of ordered rings.
+
+In $L'$ we include a function $f_\phi:M_0^{|z|}\to\RR$ for each formula $\phi(x\,;z)\in L$.
+%
+The value of $f_\phi(b)$ is the cardinality of $\phi(M_0\,;b)$.
+
+We define
+
+\ceq{\hfill\emph{$T'_{\rm fin}$}}{=}{\{\phi\in L': (M_0,\RR)\models\phi\textrm{ for all finite } M_0\models T_0\}}.
+
+The following is immediate.
+
+\begin{proposition}
+  Every pseudofinite structure $M$ has an expansion $(M\,;{}^*\kern-.2ex\RR)\models T'_{\rm fin}$.
+\end{proposition}
+
+In the sequel we work with a pseudofinite monster model $\U$ of a given theory $T_0$.
+We fix an arbitrary expansion $(\U\,;{}^*\kern-.2ex\RR)\models T'_{\rm fin}$ of cardinality $\kappa$.
+%
+We will write \emph{${}^*\kern-.3ex|\phi(x\,;b)|$\/} for $f_\phi(b)$.
+%
+We call this the \emph{hyperfinite cardinality\/} of $\phi(\U\,;b)$.
+%
+By the definition of  $T'_{\rm fin}$ it is clear that the hyperfinite cardinality of a definable set $\D$ does not depend on the formula defining it, so we can unambiguously write ${}^*\kern-.3ex|\D|$.
+
+
+\section{Coarse counting}
+
+Let $C\subseteq {}^*\kern-.2ex\RR$ be such that
+\begin{itemize}
+  \item[1.] $1\in C$
+  \item[2.] $c\in C\ \ \IMP\  c>0$
+  \item[3.] $c\in C\ \ \IMP\  c^{-1}\in C$
+  \item[4.] $c,d\in C\ \ \IMP\  c\cdot d\in C$
+  \item[5.] $c,d\in C\ \ \IMP\  c+d\in C$
+  \item[6.] $c,d\in C\ \ \IMP\  {}^*\kern-.3ex[c,d]\subseteq C$\quad where ${}^*\kern-.3ex[c,d]$ denotes the interval in ${}^*\kern-.2ex\RR$
+\end{itemize}
+
+The main application presented here use a set $C$ defined as follows
+
+\ceq{\ssf{fin}\hfill C}{=}{\bigcup_{r,s\in\QQ^+}{}^*\kern-.3ex\big[r,\ s\big].}
+
+In other words, the set in \ssf{fin} is the the convex hull of $\QQ^+$ and is the smallest set $C$ satisfying \ssf{1-6} above.
+
+For $r,s\in {}^*\kern-.2ex\RR$ we write \emph{$r\sim_Cs$\/} if $c\,r=s$ for some $c\in C$.
+%
+By \ssf{1}, \ssf{3}, and \ssf{4} above, this is an equivalence relation.
+%
+We write \emph{$[r]_C$\/} for the equivalence class of $r$, that is the set $\{c\,r:c\in C\}$.
+
+The following easy proposition illustrates the intended use of these notions.
+
+\begin{proposition}
+  Let $\U$ be a pseudofinite model of $T_0$.
+  %
+  Let $C$ be as in \ssf{fin} above.
+  %
+  Assume that $\phi(x\,;z)\in L$ is such that 
+  ${}^*\kern-.3ex\big|\phi(\U\,;b)\big|\sim_C\kern-.5ex{}^*\kern-.3ex\big|\U\big|$ 
+  for some $b\in\U^{|z|}$.
+  %
+  Then there is an $\epsilon>0$ such that 
+  $\epsilon\cdot\big|M_0\big|\le\big|\phi(M_0\,;b_0)\big|$ 
+  for every finite $M_0\models T_0$ and some $b_0\in M_0^{|z|}$.
+\end{proposition}
+
+\begin{proof}
+  If 
+  $c\cdot\kern-.3ex{}^*\kern-.3ex\big|\U\big|={}^*\kern-.3ex\big|\phi(\U\,;b)\big|$ 
+  for some $c\in C$, then there is a standard $\epsilon>0$ such that 
+  $\epsilon\cdot\kern-.3ex{}^*\kern-.3ex\big|\U\big|\le{}^*\kern-.3ex\big|\phi(\U\,;b)\big|$.
+  %
+  As
+  $\E z\ \epsilon\cdot\kern-.3ex{}^*\kern-.3ex\big|\U\big|\le{}^*\kern-.3ex\big|\phi(\U\,;z)\big|$
+  is expressible in $L'$, the claim follows by pseudofiniteness.
+\end{proof}
+
+
+
+We write \emph{$[r]_C<[s]_C$\/} if $c\,r<s$ for all $c\in C$.
+%
+It is easy to verify that this defines a total order on ${}^*\kern-.2ex\RR/{\sim}_C$.
+%
+We also define an operation of sum on ${}^*\kern-.2ex\RR/{\sim}_C$ by stipulating that 
+
+\ceq{\hfill \emph{$[r]_C+[s]_C$\/}}
+{=}
+{[r\cdot s]_C}
+
+It is immediate to verify that this operation is well-defined.
+
+The following easy proposition plays an important role.
+
+\begin{proposition}\label{prop_+=max}
+  For every non negative $r,s\in{}^*\kern-.2ex\RR$
+
+  \ceq{\hfill r+s}
+  {\sim_C}
+  {\max\{r,\,s\}}
+
+  In particular, if $\U$ is pseudofinite and $\D, \C\subseteq\U^{|z|}$ are two definable sets, then
+
+  \ceq{\hfill {}^*\kern-.2ex\big|\D\cup\C\big|}
+  {\sim_C}
+  {\max\big\{{}^*\kern-.2ex|\D|,\, {}^*\kern-.2ex|\C|\big\}.}
+\end{proposition} 
+
+\begin{proof}
+  In fact 
+
+\ceq{\hfill \big[\max\{r,s\}\big]_C}
+{\le}
+{\big[r+s\big]_C}
+
+\ceq{}
+{\le}
+{\big[2\max\{r,s\}\big]_C}
+
+\ceq{}
+{=}
+{\big[\max\{r,s\}\big]_C.}
+
+This proves the fist equivalence.
+%
+The second equivalence is proved similarly.
+\end{proof}
+
+
+
+
+\section{}
+
+
+Let $\phi(x\,;z)\in L$ be a stable formula.
+%
+Let $\Delta=\{\phi(x\,;b), \neg\phi(x\,;b) :\, b\in\U^{|z|}\}$.
+%
+For $\D\subseteq\U^{|x|}$, we write $R_{\Delta}(\D)$ for Shelah's binary rank of $\D$.
+%
+That is, the maximal hight of a binary tree of formulas in $\Delta$ whose all branches are consistent in $\D$.
+%
+As  $\phi(x\,;z)\in L$ is stable  $R_{\Delta}(\D)$ is always finite and bounded by $R_{\Delta}(\U^{|x|})$.
+
+
+
+Among the $\Delta$-definable sets such that 
+${}^*\kern-.3ex\big|\D\big|\sim_C\kern-.5ex{}^*\kern-.3ex\big|\U\big|$
+pick one that minimizes $R_{\Delta}(\D)$.
+%
+Let $p(x)$ be a $\Delta$-type that is maximal with property that  
+
+\ceq{\hfill {}^*\kern-.3ex\big|\psi(\D)\big|}{\sim_C}{{}^*\kern-.3ex\big|\U\big|};
+
+for every $\psi(x)$ that is a conjunction of formulas in $p(x)$.
+By Proposition~\ref{prop_+=max}, $p(x)$ is complete.
+%
+
+
+
+Notice that for any definable set $\C$ qnd eny formula $\psi(x)$, at least one of the following obtains
+
+
+\ceq{\hfill {}^*\kern-.3ex\big|\neg\psi(\C)\big|}{\sim_C}{{}^*\kern-.3ex\big|\C\big|}.
+
+Hence, the minimality $R_{\Delta}(\D)$ implies that it not possible that for some $\psi(x)\in\wedge\Delta$ both 
+
+\ceq{\hfill R_{\Delta}\big(\psi(\D)\big)}{<}{m};\quad and 
+
+\ceq{\hfill R_{\Delta}\big(\neg\psi(\D)\big)}{<}{m}.
+
+Then there is a complete $\Delta$-type $p(x)$ such that $R_\Delta(\psi(\D))$ for all $\psi(x)\in p$. 

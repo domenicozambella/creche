@@ -1,0 +1,301 @@
+% !TEX root = creche.tex
+\documentclass[creche.tex]{subfiles}
+\chapter{Ordered algebraic structures}
+\label{oalgebraic}
+
+
+Work in progress
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ordered divisible abelian groups}
+
+\def\medrel#1{\parbox{5ex}{\hfil$\displaystyle #1$}}
+\def\ceq#1#2#3{\parbox{20ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
+We work in language of ordered additive groups $L=\{0,-,+, <\}$.
+%
+The theory of \emph{ordered abelian groups,} denoted by \emph{$T_{\rm oag}$,} contains $T_{\rm lo}\cup T_{\rm ag}$ and the axiom
+
+\begin{itemize}
+  \item[oa.] $x<y\ \imp\ x+z<y+z$.
+\end{itemize}
+
+It is not difficult to verify that for every positive integer $n$
+
+\ceq{\#\hfill T_{\rm oag}}{\proves}{x < y \ \iff\ n\,x<n\,y.}
+
+In particular, every model of $T_{\rm oag}$ is a torsion-free group and its order has no endpoints.
+
+We write \emph{$T_{\rm odag}$\/} for the theory of \emph{ordered divisible abelian groups\/} which is obtained by adding to $T_{\rm oag}$ the axiom of divisibility, \ssf{div} of Section~\hyperref[dag]{\ref*{algebraic}.\ref*{dag}}.
+%
+Note that
+
+\ceq{\hfill T_{\rm oag}}{\proves}{x < y\ \wedge\ 2z=x+y\ \ \imp\ \ x<z<y.}
+
+Hence $T_{\rm odag}$ is a dense linear order.
+
+
+We base our study of $T_{\rm odag}$ on what we know about models of $T_{\rm dag}$ and $T_{\rm dlo}$.
+%
+For this reason we split $L_{\rm at}$ into equations and inequalities.
+%
+We use the notation \emph{$L_{\rm at,=}$\/} and \emph{$L_{\rm at,<}$\/} respectively.
+%
+The sets $L_{\rm at^\pm,=}$ and $L_{\rm at^\pm,<}$ are defined similarly.
+
+For $p(x)\subseteq\atpmL(A)$ we write $p_{=}(x)$ and $p_{<}(x)$ for the intersection of $p(x)$ with $L_{\rm at^\pm,=}$ and $L_{\rm at^\pm,<}$ respectively.
+%
+If $p_{=}(x)$ is trivial (as defined in Notation~\ref{notation1}) then we say that $p(x)$ is \emph{equationally trivial.}
+
+In this section we use the notion of independence introduced in Definition~\ref{def_rank_independece_ag}.
+%
+Proposition~\ref{prop_trivial_type_in_ag} adapts to the following 
+
+\begin{proposition}\label{prop_trivial_type_in_oag}
+  Let $A\subseteq M\models T_{\rm oag}$.
+  %
+  Then for every ${\mr c}\in M$ the following are equivalent
+  \begin{itemize}
+  \item[1.] ${\mr c}$ is independent from $A$;
+  \item[2.] $p({\mr x})=\attp_M({\mr c}/A)$ is equationally trivial.\QED
+  \end{itemize}
+\end{proposition}
+
+Remark~\ref{oss_liberi_qf} takes the following form
+
+\begin{remark}\label{rk_oag_ind}
+  Let $k:M\to N$ be a partial embedding and let ${\gr a}$ be an enumeration of $\dom k$.
+  %
+  We claim that $k\cup\big\{\<{\mr b},{\mr c}\>\big\}:M\to N$ is a partial embedding for every ${\mr b}\in M$ and ${\mr c}\in N$ that are independent from ${\gr a}$, respectively $k{\gr a}$ and such that $\attp_{M,<}({\mr b}\,;{\gr a})=\attp_{N,<}({\mr c}\,;k{\gr a})$.\QED 
+\end{remark}
+
+Dependent elements behave pretty much as those in models of $T_{\rm tfag}$.
+%
+In fact we have the following adaptation of Proposition~\ref{prop_tfag_tipi_princ_comp}.
+The proof is essentially the same.
+
+\begin{proposition}\label{prop_oag_tipi_princ_comp}
+  Let $A\subseteq M\models T_{\rm oag}$.
+  %
+  Let $p({\mr x})=\atpmtp({\mr b}/A)$, where ${\mr b} \in M$.
+  %
+  Then one of the following holds   
+  \begin{itemize}
+  \item[1.] ${\mr b}$ is independent from $A$;
+  \item[2.] $\proves\,\phi({\mr x})\iff p({\mr x})$ for some $\phi({\mr x})\in p$.
+  \end{itemize}
+\end{proposition}
+
+\begin{proof}
+  If we choose the equation $\phi({\mr x})$ as in the proof of Proposition~\ref{prop_tfag_tipi_princ_comp} we obtain $\proves\phi({\mr x})\imp p_{=}({\mr x})$ with the same proof.
+  %
+  We only need to show that $\proves\phi({\mr x})\imp p_{<}({\mr x})$.
+  %
+  We repeat the same argument, almost literally.
+  %
+  We need to prove that for every $m\in\ZZ$ and every ${\gr c}\in\<A\>_M$ one of the following holds
+  \begin{itemize}
+  \item[a.] $\proves\   n{\mr x}={\gr a}\imp m{\mr x}<{\gr c}$;
+  \item[b.] $\proves\   n{\mr x}={\gr a}\imp m{\mr x}\not<{\gr c}$.
+  \end{itemize}
+  Suppose for a contradiction that neither \ssf{a} nor \ssf{b} holds and fix models $N_1$, $N_2$ and some $b_i\in N_i$ such that
+  \begin{itemize}
+  \item[a$'$.] $N_1\models n{\mr b_1}={\gr a}$ \ and \ $N_1\models m{\mr b_1}\not< {\gr c}$;
+  \item[b$'$.] $N_2\models n{\mr b_2}={\gr a}$ \ and \ $N_2\models m{\mr b_2} < {\gr c}$.
+  %
+  \end{itemize} 
+  From \ssf{a$'$} and \# above we infer that $N_1\models m{\gr a}\not<n{\gr c}$.
+  %
+  From \ssf{b$'$} we infer $N_1\models m{\gr a}<n{\gr c}$.
+  %
+  But $m{\gr a}<n{\gr c}$ is a formula with parameters in $\<A\>_M$, so it should have the same truth value in all superstructures of $\<A\>_M$, a contradiction.
+\end{proof}
+
+As Remark~\ref{rk_oag_ind} suggests, infinite rank alone is not sufficient to guarantee richness.
+%
+The following property will be required.
+\begin{definition}
+  We say that $M\models T_{\rm oag}$ is \emph{$\omega$-large\/} if for every finite $A\subseteq M$, every finitely consistent $p({\mr x})\subseteq L_{\rm at, <}(A)$ is realized in $M$.\QED
+\end{definition}
+
+
+%
+The term \textit{large\/} is unimaginative, but it is provisional.
+%
+It will be clear in Section~\hyperref[saturation_section]{\ref*{saturation}.\ref*{saturation_section}} that largeness captures the notion of $\omega$-saturation for models of $T_{\rm lo}$.
+
+% \begin{example}
+%   The additive groups $\QQ$ and $\RR$, with the usual order, are natural models of $T_{\rm odag}$.
+%   % 
+%   It is easy to see that $\QQ$ has rank $1$ while $\RR$ has infinite rank for cardinality reasons.
+
+%   In contrast to $T_{\rm dag}$, infinite rank does not fully capture the notion of $\omega$-richness among models of $T_{\rm odag}$ as the following example shows.
+
+%   Consider the type $p(x)\subseteq L$ that contains the formulas $x>n\,1$ for all $n$.
+%   %
+%   This type is clearly finitely consistent in $\RR$ and, by compactness, it is realized in some elementary extension of $\RR$, but it is not realized in $\RR$.
+%   %
+%   This elementary extension shows that $\RR$ is not rich.\QED
+% \end{example}
+
+% The example above motivates the following definition.
+
+The proof of the following proposition is left to the reader as an exercise.
+
+\begin{proposition}\label{prop_odag_large_exists}
+  Every $M \models T_{\rm odag}$ has an $\omega$-large elementary extension.\QED 
+\end{proposition}
+
+As it happens, large implies infinite rank.
+
+\begin{proposition}\label{prop_odag_ind_dense}
+  Let $M\models T_{\rm odag}$ be $\omega$-large.
+  Then for every finite $A\subseteq M$ there is a dense set of elements that are independent of $A$.
+  In particular $M$ has infinite rank.
+\end{proposition}
+
+\begin{proof}
+  Let $a<b$ be arbitrary elements of $M$.
+  It suffices to construct a finitely consistent type $p(x)\subseteq L_{\rm at, <}(A,a,b)$ containing $a<x<b$ that has only solutions independent of $A$.
+  By Proposition~\ref{prop_trivial_type_in_oag}, dependent elements are solution of a non trivial equation with parameters in $A$.
+  As there are countably many of such equations and each has a unique solution, we can enumerate $\<a_i:i\in\omega\>$ all elements dependent from $A$.
+  By density, the type $\{a_i\neq x\}$ is finitely consistent with  $a<x<b$.
+  We obtain $p(x)$ by replacing $a_i\neq x$ with either $x<a_i$ or $a_i<x$ according to which one preserve finite consistency.
+\end{proof}
+
+We are ready to prove that $\omega$-large models of $T_{\rm odag}$ are $\omega$-rich.
+
+\begin{lemma}\label{lem_odag_rich}
+  Let $N\models T_{\rm odag}$ be $\omega$-large.
+  %
+  Then for every finite partial embedding $k:M\imp N$ from some $M\models T_{\rm oag}$ and every ${\mr b}\in M$ there is ${\mr c}\in N$ such that $k\cup\big\{\<{\mr b}\,;{\mr c}\>\big\}:M\imp N$ is a partial isomorphism.
+  %
+  That is, $N$ is $\omega$-rich in the category of models of $T_{\rm oag}$ with partial embeddings as morphisms.
+\end{lemma}
+
+\begin{proof}
+  Let ${\gr a}$ be an enumeration of $\dom k$ and let $p({\mr x}\,;{\gr z})=\atpmtp({\mr b}\,;{\gr a})$.
+  %
+  The required ${\mr c}$ has to realize $p({\mr x}\,;k{\gr a})$.
+  %
+  We consider two cases.
+  %  
+  If ${\mr b}$ is dependent from ${\gr a}$, then Proposition~\ref{prop_oag_tipi_princ_comp} yields a formula $\phi({\mr x}\,;{\gr z})\in L_{\rm at,=}$ such that 
+
+  \noindent\rlap{\ssf{i.}}\hspace{5ex} $\proves\ \phi({\mr x}\,;{\gr a})\imp p({\mr x}\,;{\gr a})$;
+
+  \noindent\rlap{\ssf{ii.}}\hspace{5ex} $\phi({\mr x} \,;{\gr a})$ is consistent\hfill (recall, the underlying theory is $T_{\rm oag}\cup\<{\gr a}\>_M$).
+
+  By isomorphism, \ssf{i} and \ssf{ii} hold with ${\gr a}$ replaced by $k{\gr a}$.
+  %
+  As remarked at the beginning of this section $M\models T_{\rm tfag}$ and $N\models T_{\rm dag}$.
+  %
+  As  $\phi({\mr x}\,;{\gr z})\in L_{\rm at}$, we can apply Proposition~\ref{prop_md_cons_sodd} and infer that the formula $\phi({\mr x}\,;k{\gr a})$ has a solution ${\mr c} \in N$.
+
+  The second case is when ${\mr b}$ is independent from ${\gr a}$.
+  %
+  Then by Remark~\ref{rk_oag_ind} it suffices to find some ${\mr c}\in N$ that is independent from $k{\gr a}$ and realizes the type $p({\mr x}\,;k{\gr a})$, where $p({\mr x}\,;{\gr a})=\attp_{M,<}({\mr b}\,;{\gr a})$.
+  Such a exists by two facts.
+  First Proposition~\ref{prop_odag_ind_dense} ensure that $p({\mr x}\,;k{\gr a})$ is finitely consistent, then the $\omega$-largeness of $N$ yields the required ${\mr c}$.
+\end{proof}
+
+Unsurprisingly the lemma above yields no categoricity result.
+%
+However quantifier elimination follows in the usual way.
+
+\begin{corollary}
+  The theory $T_{\rm odag}$ has elimination of quantifiers.
+\end{corollary}
+  
+\begin{proof}
+  Let $k:M\to N$ be a partial embedding between models of $T_{\rm odag}$.
+  %
+  If we prove that $k$ is elementary, elimination of quantifiers follows by Theorem~\ref{thm_tutteleimmersionisonoelementari_QE}.
+  
+  The argument is the usual one.
+  %
+  We can assume that $k$ is finite and $M$, $N$ countable.
+  %
+  Let $M'$ and $N'$ be the large countable elementary superstructures of $M$, respectively $N$ given by Proposition~\ref{prop_odag_large_exists}.
+  %
+  As $M'$ and $N'$ are rich, $k:M'\to N'$ is elementary by Theorem~\ref{thm_morphism_rich_elementary}.
+  %
+  Hence $k:M\to N$ is also elementary.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Presburger arithmetic}
+
+T.b.c.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Real closed fields}
+
+We work in the language of ordered rings $L=\{0,\,1,-,+,\,\cdot,\,<\}$.
+%
+The theory of \emph{ordered integral domains,} $T_{\rm oid}$ contains $T_{\rm oid}\cup T_{\rm oag}$ and the axioms
+
+\begin{itemize}
+  \item[1.]  $0<1$
+  \item[op.] $0<z\wedge x<y\ \imp\ z\,x<z\,y$.
+\end{itemize}
+
+It follows immediately that ordered integral domains have characteristic $0$.
+
+As in the previous section, we split $L_{\rm at}$ into equations $L_{\rm at,=}$ and inequalities $L_{\rm at,<}$.
+The same we do for $L_{\rm at^\pm}$.
+For $p(x)\subseteq\atpmL(A)$ we write $p_{=}(x)$ and $p_{<}(x)$ for their intersection with $L_{\rm at^\pm,=}$ and $L_{\rm at^\pm,<}$, respectively.
+
+If $p_{=}(x)$ is trivial (as defined in Notation~\ref{notation1}) then we say that $p(x)$ is \emph{transcendental\/} over $A$.
+%
+Otherwise we say that it is  \emph{algebraic\/} over $A$.
+
+\begin{proposition}\label{prop_di_tipi princ_comp}
+  Let $A\subseteq M\models T_{\rm oid}$.
+  %
+  For ${\mr b}\in M$ let $p({\mr x})=\atpmtp({\mr b}/A)$.
+  %
+  Then one of the following holds 
+  \begin{itemize}
+  \item[1.] ${\mr b}$ is transcendental over $A$;
+  \item[2.] $M\models\phi({\mr b})$ for some $\phi({\mr x})\in L_{\rm at}(A)$ such that $\ \proves\phi({\mr x})\imp p({\mr x})$.
+  \end{itemize}
+\end{proposition}
+
+\begin{proof}
+  Let $\phi({\mr x})$ be as in the proof of Proposition~\ref{prop_di_tipi_princ_comp}.
+  %
+  Then $\ \proves\phi({\mr x})\imp p_{=}({\mr x})$.
+  %
+  Hence it remains to be proved that $\ \proves\phi({\mr x})\imp p_{<}({\mr x})$.
+  
+  Suppose not for a contradiction. 
+  %
+  Then there are two models $\<A\>_M\subseteq N_i\models T_{\rm oid}$, some ${\mr b_i}\in N_i$, and some ${\gr a},{\gr c}\in\<A\>_M$ such that 
+  \begin{itemize}
+  \item[a$'$.] $N_1\models \phi({\mr b_1})$ \ and \ $N_1\models {\gr a}\,{\mr b_1}\not< {\gr c}$;
+  \item[b$'$.] $N_2\models \phi({\mr b_2})$ \ and \ $N_2\models {\gr a}\,{\mr b_2} < {\gr c}$.
+  %
+  
+  \end{itemize} 
+  From \ssf{a$'$} and \# above we infer that $N_1\models m{\gr a}\not<n{\gr c}$.
+  %
+  From \ssf{b$'$} we infer $N_1\models m{\gr a}<n{\gr c}$.
+  %
+  But $m{\gr a}<n{\gr c}$ is a formula with parameters in $\<A\>_M$, so it should have the same truth value in all superstructures of $\<A\>_M$, a contradiction.
+
+
+
+  
+  %As $\phi({\mr x})$ are finitely many solution there are some $a,c\in\<A\>_M$ such that ${\mr b}$ is the only solution of $\phi({\mr x})$ in the interval $[a,c]$.
+  
+  
+\end{proof}
+
+

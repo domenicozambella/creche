@@ -39,7 +39,7 @@ We say that a type $p({\mr x})$ is \emph{trivial\/} if $\,\proves p({\mr x})$.\Q
 \label{gruppi}
 The language $L$ is that of additive groups.
 %
-The theory \emph{$T_{\rm ag}$} of \emph{abelian groups\/} is axiomatized by the universal closure of the following axioms\nobreak
+The theory \emph{$T_{\rm ag}$} of \emph{abelian groups\/} is axiomatized by the universal closure of the usual axioms\nobreak
 \begin{itemize}
 \item[a1] $(x+y) +z\ =\ y+(x+z)$;
 \item[a2] $x+(-x)\ =\ (-x)+x\ =\ 0$;
@@ -64,35 +64,32 @@ The group operations on $\ZZ^{\oplus\alpha}$ are defined coordinate-wise.
 %
 The following immediate proposition implies in particular that  $L_{{\rm ter},{\mr x}}/\mathord{\sim}$ is isomorphic to $\ZZ^{\oplus\alpha}$.
 
-\begin{proposition}
-\label{corol_formacanonicaterminimoduli}
-Let $A\subseteq M\models T_{\rm ag}$.
-%
-Then for every formula $\phi({\mr x})\in L_{\rm at}(A)$ there are $n\in\ZZ^{\oplus\alpha}$ and $c\in\<A\>_M$ such that 
+\begin{proposition}\label{corol_formacanonicaterminimoduli}
+  Let $A\subseteq M\models T_{\rm ag}$.
+  %
+  Then for every formula $\phi({\mr x})\in L_{\rm at}(A)$ there are $n\in\ZZ^{\oplus\alpha}$ and $c\in\<A\>_M$ such that 
 
-\ceq{\hfill\medrel{\proves}\phi({\mr x})}{\iff}{\sum_{i<\alpha}n_ix_i\ =\ c}.
+  \ceq{\hfill\medrel{\proves}\phi({\mr x})}{\iff}{\sum_{i<\alpha}n_ix_i\ =\ c}.
 
-where $n=\<n_i:i<\alpha\>$ and  ${\mr x}=\<x_i:i<\alpha\>$.\QED
-
+  where $n=\<n_i:i<\alpha\>$ and  ${\mr x}=\<x_i:i<\alpha\>$.\QED
 \end{proposition}
 
 \begin{proof}
-Up to equivalence over $T_{\rm ag}$ the formula $\phi({\mr x})$ has the form $s({\mr x})=t({\gr a})$ for some parameter-free terms $s({\mr x})$ and $t({\gr z})$.
-%
-Over $\Diag\,\<A\>_M$, we can replace $t({\gr a})$ with a single  $c\in \<A\>_M$ and write $s({\mr x})$ as the linear combination shown above.
+  Up to equivalence over $T_{\rm ag}$ the formula $\phi({\mr x})$ has the form $s({\mr x})=t({\gr a})$ for some parameter-free terms $s({\mr x})$ and $t({\gr z})$.
+  %
+  Over $\Diag\,\<A\>_M$, we can replace $t({\gr a})$ with a single  $c\in \<A\>_M$ and write $s({\mr x})$ as the linear combination shown above.
 \end{proof}
 
-
 \begin{definition}\label{def_rank_independece_ag}
-    Let $M\models T_{\rm ag}$.
-%
-    For $A\subseteq M$ and  $c\in M$, we say that  \emph{$c$ is independent from $A$\/} if $\<A\>_M\cap\<c\>_M=\big\{0\big\}$.
-%
-    Otherwise we say that \emph{$c$ is dependent from $A$}.
-%
-    The \emph{rank\/} of $M$ is the least cardinality of a subset $A\subseteq M$ such that all elements in $M$ are dependent from $A$.
-%
-    We denote it by \emph{$\rank(M)$}.\QED
+  Let $M\models T_{\rm ag}$.
+  %
+  For $A\subseteq M$ and  $c\in M$, we say that  \emph{$c$ is independent from $A$\/} if $\<A\>_M\cap\<c\>_M=\big\{0\big\}$.
+  %
+  Otherwise we say that \emph{$c$ is dependent from $A$}.
+  %
+  The \emph{rank\/} of $M$ is the least cardinality of a subset $A\subseteq M$ such that all elements in $M$ are dependent from $A$.
+  %
+  We denote it by \emph{$\rank(M)$}.\QED
 \end{definition}  
 
 Note that when $M$ is a vector space the condition $\<A\>_M\cap\<c\>_M=\big\{0\big\}$ is equivalent to saying that $c$ is not a linear combination of vectors in $A$.
@@ -100,64 +97,59 @@ Note that when $M$ is a vector space the condition $\<A\>_M\cap\<c\>_M=\big\{0\b
 Then $\rank M$ coincides with the dimension of $M$.
 %
 In fact, what we do here for abelian groups could be easily generalized to $D\jj$modules, where $D$ is any integral domain, and in particular to vector spaces.
-
-The following proposition gives a convenient syntactic characterization of independence.
 %
+In practice, it is more convenient to use the following syntactic characterization of independence.
+
 An element $c$ of an abelian group is a \emph{torsion element} if $nc=0$ for some positive integer.
 
-
 \begin{proposition}\label{prop_trivial_type_in_ag}
-Let $A\subseteq M\models T_{\rm ag}$.
-%
-Suppose that ${\mr c}\in M$ is not a torsion element.
-%
-Then the following are equivalent
-\begin{itemize}
- \item[1.] $c$ is independent from $A$;
- \item[2.] $p({\mr x})=\attp_M({\mr c}/A)$ is trivial (see Notation~\ref{note_tipi_diagramma} and ~\ref{notation1}).
-\end{itemize}
+  Let $A\subseteq M\models T_{\rm ag}$.
+  %
+  Suppose that ${\mr c}\in M$ is not a torsion element.
+  %
+  Then the following are equivalent
+  \begin{itemize}
+  \item[1.] $c$ is independent from $A$;
+  \item[2.] $p({\mr x})=\attp_M({\mr c}/A)$ is trivial (see Notation~\ref{notation1}).
+  \end{itemize}
 \end{proposition}
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}\quad By Proposition~\ref{corol_formacanonicaterminimoduli}, formulas in $p({\mr x})$ may be assumed to have the form $n{\mr x}=a$ for some integer $n$ and some $a\in\<A\>_M$.
-%
-As this formula is satisfied by ${\mr c}$ then $a\in\<A\>_M\cap\<{\mr c}\>_M$.
-%
-Hence $a=0$.
-%
-As ${\mr c}$ is not a torsion element, $n=0$ and the equation is trivial.
+  \ssf{1}$\IMP$\ssf{2}\quad By Proposition~\ref{corol_formacanonicaterminimoduli}, formulas in $p({\mr x})$ may be assumed to have the form $n{\mr x}=a$ for some integer $n$ and some $a\in\<A\>_M$.
+  %
+  As this formula is satisfied by ${\mr c}$ then $a\in\<A\>_M\cap\<{\mr c}\>_M$.
+  %
+  Hence $a=0$.
+  %
+  As ${\mr c}$ is not a torsion element, $n=0$ and the equation is trivial.
 
-\ssf{2}$\IMP$\ssf{1}\quad If $\<A\>_M\cap\<{\mr c}\>_M\neq\big\{0\big\}$ then $n{\mr c}=a$ for some $a\in\<A\>_M\sm\{0\}$ and some positive integer $n$.
-%
-Then ${\mr c}$ satisfies the non trivial equation $n{\mr x}=a$.
+  \ssf{2}$\IMP$\ssf{1}\quad If $\<A\>_M\cap\<{\mr c}\>_M\neq\big\{0\big\}$ then $n{\mr c}=a$ for some $a\in\<A\>_M\sm\{0\}$ and some positive integer $n$.
+  %
+  Then ${\mr c}$ satisfies the non trivial equation $n{\mr x}=a$.
 \end{proof}
 
 \begin{remark}\label{oss_liberi_qf}
-Let $k:M\to N$ be a partial embedding and let ${\gr a}$ be an enumeration of $\dom k$.
-%
-We claim that  $k\cup\big\{\<{\mr b},{\mr c}\>\big\}:M\to N$ is a partial embedding for every ${\mr b}\in M$ and ${\mr c}\in N$ that are independent from ${\gr a}$, respectively $k{\gr a}$.
-%
-In fact, it suffices to check that $M,{\mr b},{\gr a}\,\equiv_{\rm at}N, {\mr c},k{\gr a}$.
-%
-Suppose $\phi({\mr x}\,;{\gr z})\in L_{\rm at}$ \ is such that $M\models\phi({\mr b}\,;{\gr a})$.
-%
-Then by independence $\phi({\mr x}\,;{\gr a})$ is trivial, i.e.
+  Let $k:M\to N$ be a partial embedding and let ${\gr a}$ be an enumeration of $\dom k$.
+  %
+  We claim that  $k\cup\big\{\<{\mr b},{\mr c}\>\big\}:M\to N$ is a partial embedding for every ${\mr b}\in M$ and ${\mr c}\in N$ that are independent from ${\gr a}$, respectively $k{\gr a}$.
+  %
+  In fact, it suffices to check that $M,{\mr b},{\gr a}\,\equiv_{\rm at}N, {\mr c},k{\gr a}$.
+  %
+  Suppose $\phi({\mr x}\,;{\gr z})\in L_{\rm at}$ \ is such that $M\models\phi({\mr b}\,;{\gr a})$.
+  %
+  Then by independence $\phi({\mr x}\,;{\gr a})$ is trivial, i.e.
 
-\ceq{\hfill T_{\rm ag} \cup\ \Diag\<{\gr a}\>_M}{\proves}{\phi({\mr x}\,;{\gr a}).}
+  \ceq{\hfill T_{\rm ag} \cup\ \Diag\<{\gr a}\>_M}{\proves}{\phi({\mr x}\,;{\gr a}).}
 
-As $\<{\gr a}\>_M$ and  $\<k{\gr a}\>_N$ are isomorphic structures 
+  As $\<{\gr a}\>_M$ and  $\<k{\gr a}\>_N$ are isomorphic structures 
 
-\ceq{\hfill T_{\rm ag}\ \cup\ \Diag\<k{\gr a}\>_N}{\proves}{\phi({\mr x}\,;k{\gr a}).}
+  \ceq{\hfill T_{\rm ag}\ \cup\ \Diag\<k{\gr a}\>_N}{\proves}{\phi({\mr x}\,;k{\gr a}).}
 
-Therefore $N\models\phi({\mr c}\,;k{\gr a})$.
-%
-This proves $M,{\mr b},{\gr a}\,\Rrightarrow_{\rm at}N, {\mr c},k{\gr a}$.
-%
-As the same assumptions apply to $k^{-1}:N\to M$ we obtain $M,{\mr b},{\gr a}\,\Lleftarrow_{\rm at}N, {\mr c},k{\gr a}$.
-
-The proof that $N\models\phi({\mr c}\,;k{\gr a})$ implies $M\models\phi({\mr b}\,;{\gr a})$ is similar.\QED 
+  Therefore $N\models\phi({\mr c}\,;k{\gr a})$.
+  %
+  This proves $M,{\mr b},{\gr a}\,\Rrightarrow_{\rm at}N, {\mr c},k{\gr a}$.
+  
+  As the same assumptions apply to $k^{-1}:N\to M$, we also have $M,{\mr b},{\gr a}\,\Lleftarrow_{\rm at}N, {\mr c},k{\gr a}$.\QED 
 \end{remark}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -262,7 +254,7 @@ But $m{\gr a}=n{\gr c}$ is a formula with parameters in $\<A\>_M$, so it should 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Divisible abelian groups}
+\section{Divisible abelian groups}\label{dag}
 
 The theory of \emph{divisible abelian groups\/} extends $T_{\rm tfag}$ with the following axioms for all integers $n\neq0$
 \begin{itemize}
@@ -345,7 +337,7 @@ If $M\preceq M'$ and $M\preceq N'$ are elementary superstructures of uncountable
 \end{proof}
 
 \begin{exercise}
-Prove that every model of $T_{\rm dag}$ is $\omega\jj$ultraomogeneous (indipendenlty of cardinality and rank).\QED
+Prove that every model of $T_{\rm dag}$ is $\omega\jj$ultrahomogeneous (independently of cardinality and rank).\QED
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -418,15 +410,15 @@ The integer $n$ in the proposition above is called the \emph{degree of $\phi(x)$
 \begin{definition}\label{def_id_trans_alg}
    Let $A\subseteq M\models T_{\rm cr}$.
 %
-  We say that an element ${\mr b}\in M$ is \emph{transcendent over $A$\/} if the type $p({\mr x})=\attp_M({\mr b}/A)$ is trivial (see Notation~\ref{note_tipi_diagramma} and ~\ref{notation1}).
+  We say that an element ${\mr b}\in M$ is \emph{transcendental over $A$\/} if the type $p({\mr x})=\attp_M({\mr b}/A)$ is trivial (see Notation~\ref{note_tipi_diagramma} and ~\ref{notation1}).
 %
   Otherwise we say that ${\mr b}$ is \emph{algebraic over $A$}.
 %
-  The \emph{transcendence degree\/} of $M$ is the least cardinality of a subset $A\subseteq M$ such that all elements of $M$ are algebraic over $A$.\QED
+  The \emph{transcendence degree\/} of $M$ is the least cardinality of a subset $A\subseteq M$ such that all the elements of $M$ are algebraic over $A$.\QED
 \end{definition}  
 
 \begin{remark}\label{oss_liberi_cr}
-Remark~\ref{oss_liberi_qf} holds here with `independent' replaced by `transcendent' and $T_{\rm ag}$ replaced by $T_{\rm cr}$.\QED
+Remark~\ref{oss_liberi_qf} holds here with `independent' replaced by `transcendental' and $T_{\rm ag}$ replaced by $T_{\rm cr}$.\QED
 \end{remark}
 
 \section{Integral domains}
@@ -437,7 +429,7 @@ We say that $a$ is a \emph{zero divisor} if $a\,b=0$ for some $b\in M\sm\{0\}$.
 %
 An \emph{integral domain\/} is a commutative ring without zero divisors.
 %
-The theorey of integral domains contains the axioms of commutative rings and the following
+The theory of integral domains contains the axioms of commutative rings and the following
 \begin{itemize}
 \item[nt.] $0\neq 1$
 \item[id.] $x\mdot y =0\ \imp\ x=0\ \vee\ y=0$.
@@ -469,8 +461,7 @@ In an integral domain every polynomial has finitely many solutions and there are
 \end{proof}
 
 
-
-\begin{proposition}\label{prop_di_tipi princ_comp}
+\begin{proposition}\label{prop_di_tipi_princ_comp}
 Let $A\subseteq M\models T_{\rm id}$.
 %
 For ${\mr b}\in M$ let $p({\mr x})=\atpmtp({\mr b}/A)$.
@@ -505,12 +496,11 @@ We prove that for any $\xi({\mr x})\in L_{\rm at}(A)$ one of the following holds
 \end{itemize} 
 Let us write $a({\mr x})=0$ and $a'({\mr x})=0$ for the formulas $\phi({\mr x})$ and $\xi({\mr x})$, respectively.
 %
-If $\<A\>_M$ is a field, choose a polynomial $d({\mr x})$ of maximal degree such that
+If $\<A\>_M$ is a field, choose a polynomial $d({\mr x})$ of maximal degree such that for some polynomials $t({\mr x})$ and $t'({\mr x})$ the following hold
 \begin{itemize}
-\item[a.] $d({\mr x})t({\mr x})=a({\mr x})$
-\item[a$'$.] $d({\mr x})t'({\mr x})=a'({\mr x})$,
-\end{itemize} 
-for some polynomials $t({\mr x})$ and $t'({\mr x})$.
+\item[a.] $d({\mr x})\,t({\mr x})\;=a({\mr x})$
+\item[a$'$.] $d({\mr x})\,t'({\mr x})=a'({\mr x})$,
+\end{itemize}
 
 If $\<A\>_M$ is not a field, polynomials $d({\mr x})$, $t({\mr x})$ and $t'({\mr x})$ as above exist with coefficients in the field of fractions of $\<A\>_M$.
 %
@@ -534,9 +524,6 @@ If $\<A\>_M$ is not a field, we use  B\'ezout's identity in the field of fractio
 %
 Then we reach the same conclusion.
 \end{proof}
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -605,7 +592,7 @@ The required ${\mr c}$ has to realize $p({\mr x}\,;k{\gr a})$.
 %
 We consider two cases.
 %
-If ${\mr b}$ is algebraic over ${\gr a}$, then Proposition~\ref{prop_di_tipi princ_comp} yields a formula $\phi({\mr x}\,;{\gr z})\in L_{\rm at}$ such that 
+If ${\mr b}$ is algebraic over ${\gr a}$, then Proposition~\ref{prop_di_tipi_princ_comp} yields a formula $\phi({\mr x}\,;{\gr z})\in L_{\rm at}$ such that 
 
 \noindent\rlap{\ssf{i.}}\hspace{5ex} $\phi({\mr x}\,;{\gr a})\imp p({\mr x}\,;{\gr a})$
 
@@ -615,9 +602,9 @@ By isomorphism \ssf{i} and \ssf{ii} hold with ${\gr a}$ replaced by $k{\gr a}$.
 %
 Then by Proposition~\ref{prop_acf_cons_sodd} the formula $\phi({\mr x}\,;k{\gr a})$ has a solution in ${\mr c}\in N$.
 
-The second case, which has no analogue in Lemma~\ref{lem_ordinericco}, is when ${\mr b}$ is transcendent over ${\gr a}$.
+The second case, which has no analogue in Lemma~\ref{lem_ordinericco}, is when ${\mr b}$ is transcendental over ${\gr a}$.
 %
-Then by  Remark~\ref{oss_liberi_cr} we may choose ${\mr c}$ to be any element of $N$ transcendent over $k{\gr a}$.
+Then by  Remark~\ref{oss_liberi_cr} we may choose ${\mr c}$ to be any element of $N$ transcendental over $k{\gr a}$.
 %
 This exists because $N$ has transcendence degree $\ \ge\lambda$.
 \end{proof}
@@ -625,7 +612,7 @@ This exists because $N$ has transcendence degree $\ \ge\lambda$.
 Below few important consequences of this lemma.
 
 \begin{corollary}\label{corol_acfUltraOmog}
-Work in the category of models of $T_{\rm id}$ with partial embeddings as morphisms.Then the following are equivalent.
+Work in the category of models of $T_{\rm id}$ with partial embeddings as morphisms. Then the following are equivalent
 %
 \begin{itemize}
 \item[1.] $N$ is a $\lambda$-rich model
@@ -656,8 +643,6 @@ As $M'$ and $N'$ are rich, $k:M'\to N'$ is elementary by Theorem~\ref{thm_morphi
 Hence $k:M\to N$ is also elementary.
 \end{proof}
 
-
-
 \begin{corollary}
 The theories $T^p_{\rm acf}$ are complete and uncountably categorical (i.e.\@ $\lambda$-categorical for every uncountable $\lambda$)
 \end{corollary}
@@ -667,11 +652,9 @@ Two models of $T^p_{\rm acf}$ belong to the same connected component.
 Then, as every uncountable model of $T^p_{\rm acf}$ is rich, uncountable categoricity and completeness follow.
 \end{proof}
 
-
 \begin{exercise}
-Prove that every model of $T_{\rm acf}$ is $\omega\jj$ultrahomogeneous (indipendently of cardinality and transcendence degree).\QED
+Prove that every model of $T_{\rm acf}$ is $\omega\jj$ultrahomogeneous (independently of cardinality and transcendence degree).\QED
 \end{exercise}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -701,32 +684,34 @@ In particular, in this section we work over the theory $T_{\rm id}\cup\Diag\<A\>
 %
 In general, closure under logical consequences is an elusive notion.
 %
-Hence Propositions~\ref{prop_Nullstellensatz} and~\ref{prop_chiusura-radicale} are useful because they give a model theoretical, respectively algebraic, characterisation of $\ccl\, p(x)$.
+Hence Propositions~\ref{prop_Nullstellensatz} and~\ref{prop_chiusura-radicale} are useful because they give a model theoretical, respectively algebraic, characterization of $\ccl\, p(x)$.
 
 \begin{proposition}\label{prop_Nullstellensatz}
-Let $A\subseteq M\models T_{\rm id}$ and let $p(x)$ be a $\Delta(A)\jj$type.
-%
-Fix some $N$ of sufficiently large cardinality such that $\<A\>_M\subseteq N\models T_{\rm acf}$.
-%
-Then 
+  Let $A\subseteq M\models T_{\rm id}$ and let $p(x)$ be a $\Delta(A)\jj$type.
+  %
+  Fix some $N$ of sufficiently large cardinality such that $\<A\>_M\subseteq N\models T_{\rm acf}$.
+  %
+  Then 
 
-\ceq{\hfill\ccl\, p(x)}{=}{\Big\{t(x)=0\,:\,  N\models\A x\,\big[ p(x)\imp t(x){=}0\big]\Big\}.}
-
+  \ceq{\hfill\ccl\, p(x)}{=}{\Big\{t(x)=0\,:\,  N\models\A x\,\big[ p(x)\imp t(x){=}0\big]\Big\}.}
 \end{proposition}
 
 The cardinality of $N$ is the proposition is sufficiently large when $|A|<|N|$ and $|x|\le |N|$; note that here $x$ has possibly infinite length.
 %
 In Corollary~\ref{coroll_Nullstellensatz} below we will considerably strengthen this proposition for finite $x$.
 
-\begin{proof} Only the inclusion $\supseteq$ requires a proof, then suppose $t(x){=}0\notin\ccl\, p(x)$.
-%
-As $p(x)\wedge t(x)\neq0$ is consistent, there is a model $M'$ such that $M'\models p(a)\wedge t(a)\neq0$ for some $a\in {M'}^{|x|}$.
-%
-Then there is a partial isomorphism $h:M'\to N$ that extends $\id_A$ and is defined on $a$, provided $N$ is large enough to accommodate $a$.
-%
-This implies that $p(x)\wedge t(x)\neq0$ has a solution in $N$.
-%
-Hence $t(x)$ does not belong to the set on the r.h.s.
+\begin{proof} 
+  Only the inclusion $\supseteq$ requires a proof.
+  %
+  Suppose $t(x){=}0\notin\ccl\, p(x)$.
+  %
+  As $p(x)\wedge t(x)\neq0$ is consistent, there is a model $M'$ such that $M'\models p(a)\wedge t(a)\neq0$ for some $a\in {M'}^{|x|}$.
+  %
+  Then there is a partial isomorphism $h:M'\to N$ that extends $\id_A$ and is defined on $a$, provided $N$ is large enough to accommodate $a$.
+  %
+  This implies that $p(x)\wedge t(x)\neq0$ has a solution in $N$.
+  %
+  Hence $t(x)$ does not belong to the set on the r.h.s.
 \end{proof}
 
 Recall that $A[x]$ denotes the ring of polynomials with variables in $x$ and coefficients in $\<A\>_M$.
@@ -745,65 +730,59 @@ Recall from algebra that if $p\subseteq A[x]$ is an ideal then
 
 An identity that justifies the name.
 
-
-
 \begin{proposition}\label{prop_chiusura-radicale}
-Let $A\subseteq M\models T_{\rm id}$ and let $p(x)$ be a $\Delta(A)\jj$type.
-%
-Then $\ccl\,p(x)\simeq\rad p$.
+  Let $A\subseteq M\models T_{\rm id}$ and let $p(x)$ be a $\Delta(A)\jj$type.
+  %
+  Then $\ccl\,p(x)\simeq\rad p$.
 \end{proposition}
 The proposition holds with a similar proof for the broader class of rings without nilpotent elements.
 %
 (Which does not come as a surprise.)
 \begin{proof}
-$(\supseteq)$\quad We claim that $\ccl\,p(x)$ is an ideal.
-%
-In fact, for every pair of $L(A)$-terms $t(x)$ and $s(x)$
+  $(\supseteq)$\quad We claim that $\ccl\,p(x)$ is an ideal.
+  %
+  In fact, for every pair of $L(A)$-terms $t(x)$ and $s(x)$
 
-\ceq{\hfill t(x)=0}{\proves}{s(x)t(x) = 0}
+  \ceq{\hfill t(x)=0}{\proves}{s(x)t(x) = 0}
 
-\ceq{\hfill s(x)=t(x)=0}{\proves}{s(x)+t(x) = 0}
+  \ceq{\hfill s(x)=t(x)=0}{\proves}{s(x)+t(x) = 0}
 
-Moreover, as integral domains do not have nilpotent elements
+  Moreover, as integral domains do not have nilpotent elements
 
-\ceq{\hfill t^n(x)=0}{\proves}{t(x) = 0}
+  \ceq{\hfill t^n(x)=0}{\proves}{t(x) = 0}
 
-By \ssf{\#} above, $\ccl\,p(x)$ is a radical ideal which proves $\ccl\,p(x)\supseteq \rad p$.
+  By \ssf{\#} above, $\ccl\,p(x)$ is a radical ideal which proves $\ccl\,p(x)\supseteq \rad p$.
 
-$(\subseteq)$\quad We fix some $t(x)\notin\rad p$ and prove that $p(x)\wedge t(x)\neq0$ is consistent.
-%
-Let $q$ be some prime ideal containing $p$ such that $t(x)\notin q$.
-%
-As $q$ is prime, the ring $A[x]/q$ is an integral domain.
-%
-The polynomials that vanish in  $A[x]/q$ at $x+q$ are exactly those in $q$.
-%
-Hence $A[x]/q$ witnesses the consistency of $q(x)\wedge t(x)\neq0$.
+  $(\subseteq)$\quad We fix some $t(x)\notin\rad p$ and prove that $p(x)\wedge t(x)\neq0$ is consistent.
+  %
+  Let $q$ be some prime ideal containing $p$ such that $t(x)\notin q$.
+  %
+  As $q$ is prime, the ring $A[x]/q$ is an integral domain.
+  %
+  The polynomials that vanish in  $A[x]/q$ at $x+q$ are exactly those in $q$.
+  %
+  Hence $A[x]/q$ witnesses the consistency of $p(x)\wedge t(x)\neq0$.
 \end{proof}
 
 When $x$ is a finite tuple of variables, we can extend the validity of Proposition~\ref{prop_Nullstellensatz} to the case $A=M=N$.
 
 \begin{corollary}[ (Hilbert's Nullstellensatz)]\label{coroll_Nullstellensatz}
-Let $N\models T_{\rm acf}$ and let $p(x)$, where $|x|<\omega$, be a $\Delta(N)\jj$type.
-%
-Then
+  Let $N\models T_{\rm acf}$ and let $p(x)$, where $|x|<\omega$, be a $\Delta(N)\jj$type.
+  %
+  Then
 
-\ceq{\hfill\rad p\medrel{\simeq}\ccl\, p(x)}{=}{\Big\{t(x)\  :\  N\models\A x\,[ p(x)\imp t(x)=0]\Big\}.}
-
+  \ceq{\hfill\rad p\medrel{\simeq}\ccl\, p(x)}{=}{\Big\{t(x)=0\  :\  N\models\A x\,[ p(x)\imp t(x)=0]\Big\}.}
 \end{corollary}
 
-
-
 \begin{proof}
-Let $N'$ be a large elementary extension of $N$.
-%
-By Proposition~\ref{prop_Nullstellensatz}, the claim holds for $N'$.
-%
-By Hilbert's Basis Theorem, the ideal generated by $p$ is finitely generated hence $p(x)$ is equivalent to a formula (cfr.\@ Exercise~\ref{ex_fingen_principal}).
-%
-Therefore, by elementarity, the claim holds for $N$.
+  Let $N'$ be a large elementary extension of $N$.
+  %
+  By Proposition~\ref{prop_Nullstellensatz}, the claim holds for $N'$.
+  %
+  By Hilbert's Basis Theorem, the ideal generated by $p$ is finitely generated hence $p(x)$ is equivalent to a formula (cfr.\@ Exercise~\ref{ex_fingen_principal}).
+  %
+  Therefore, by elementarity, the claim holds for $N$.
 \end{proof}
-
 
 Hilbert's Nullstellensatz comes in two variants.
 %
@@ -837,7 +816,6 @@ The weaker variant is stated in Exercise~\ref{ex_weakNullstellensatz}.
 % (\ssf{1}$\IMP$\ssf{2}) Negate \ssf{2} then we can extend $p$ to a maximal ideal $q$. Then $A[x]/q$ is field that extends $\<A\>_M$ and $q({\mr x})$ has a solution in $A[x]/q$. The identity map $\id_A:A[x]/q\to N$ is a partial immersion and, if $A|<|N|$ it can be extend to one which is defined on the solution of $q({\mr x})$ and \ssf{2} follows. In general, we need to apply   Hilbert's Basis Theorem which says that $p$ is finitely generated. In other words, $p({\mr x})$ is a principal $\Delta(A)\jj$type, see Exercise~\ref{ex_fingen_principal}. If $p({\mr x})$ is principal, we can replace $A$ with some finite subset. 
 % \end{proof}
 
-
 We conclude this section by showing that the notions of primeness for types and ideals coincide (if we restrict to types closed under logical consequences).
 
 \begin{proposition}\label{prop_tipi_e_ideali_primi}
@@ -857,7 +835,7 @@ Clearly, over $T_{\rm id} \cup\Diag\<A\>_M$  we have $\ \proves\ t(x)\cdot s(x)=
 %
 As $p(x)$ is a prime $\Delta(A)\jj$type, $p(x)\proves t(x)=0$ or $p(x)\proves s(x)=0$.
 %
-By Proposition~\ref{prop_chiusura-radicale}, the type $p(x)$ is closed under logical consequences, therefore $t(x)\in p$ or $s(x)\in p$.
+As the type $p(x)$ is closed under logical consequences, $t(x)\in p$ or $s(x)\in p$.
 
 \ssf{2}$\IMP$\ssf{1} \ Assume $p$ is a prime ideal and for some $t_i(x)=0\in\Delta(A)$
 

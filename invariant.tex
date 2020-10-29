@@ -242,7 +242,7 @@ In most cases we work with types that are finitely satisfiable over a model. The
 %A type that extends $p({\mr x})$ and is finitely satisfied in $M$ is called a \emph{coheir\/} of $p({\mr x})$ over~$M$.
 
 In many cases it is useful to focus on elements instead of types.
-We introduce the following notation to express that $\tp({\mr b}/M,{\gr a})$ is finitely satisfied in $M$.
+We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is finitely satisfied in $M$.
 
 \begin{definition}\label{def_coheir_idepencence} 
   For every ${\mr a}\in\U^{|{\mr x}|}$ and ${\gr b}\in\U^{|{\gr z}|}$ we define
@@ -263,7 +263,7 @@ We introduce the following notation to express that $\tp({\mr b}/M,{\gr a})$ is 
 
   \ceq{\hfill\emph{${\mr x}\cnonfork_M{\gr b}$}}
   {=}
-  {\Big\{\phi({\mr x}\,;{\gr z})
+  {\Big\{\phi({\mr x}\,;{\gr b})
   \ :\ 
   \phi({\mr x}\,;{\gr b})\in L(M)
   \textrm{ and } M^{|{\mr x}|}\subseteq\phi(\mrU\,;{\gr b})\Big\}.}
@@ -340,10 +340,10 @@ If for every $\phi({\mr x})\in L(\U)$ there is a formula $\psi({\mr x})\in L(M)$
 Let  ${\gr b}\in\U^{|{\gr z}|}$ and ${\mr a_1},{\mr a_2}\in\U^{|{\mr x}|}$ 
 be such that ${\mr a_i}\cnonfork_M{\gr b}$ and ${\mr a_1}\equiv_M{\mr a_2}$.
 We claim that ${\mr a_1}\equiv_{M,\,{\gr b}}{\mr a_2}$.
-We need to prove that $\phi({\gr b};\,{\mr a_1})\iff\phi({\gr b};\,{\mr a_2})$ 
-for every  $\phi({\gr z};\,{\mr x})\in L(M)$.
-Let $\psi({\mr x})\in L(M)$ be such that $\phi({\gr b},\,{\mr \U})=_M\psi({\mr \U})$.
-From ${\mr a_i}\cnonfork_M{\gr b}$ we obtain that  $\phi({\gr b},\,{\mr a_i})\iff\psi({\mr a_i})$.
+We need to prove that $\phi({\gr b}\,;{\mr a_1})\iff\phi({\gr b}\,;{\mr a_2})$ 
+for every  $\phi({\gr z}\,;{\mr x})\in L(M)$.
+Let $\psi({\mr x})\in L(M)$ be such that $\phi({\gr b}\,;{\mr \U})=_M\psi({\mr \U})$.
+From ${\mr a_i}\cnonfork_M{\gr b}$ we obtain that  $\phi({\gr b}\,;{\mr a_i})\iff\psi({\mr a_i})$.
 Finally, the claim follows because ${\mr a_1}\equiv_M{\mr a_2}$.
 \end{proof}
 
