@@ -74,8 +74,8 @@ So we assume that ${\mr x}\,;{\gr z}$ are infinite tuples.
 Hence, with the notation of the previous section $L_{\rm srt}=\{0\}\cup L_{{\mr x}\,;{\gr z}}$.
 
 The home sort is also called the \emph{first-order sort\/} and
-all other sorts are generically called \emph{second-order}.
-First of all, $L^\eq$ contains all relations and functions of the first order language $L$.
+all other sorts are called \emph{second-order}.
+First of all, $L^\eq$ contains all the relations and functions of the first order language $L$.
 The many-sorted arity of a relation $r$ is $\<0^{n_r}\>$, where $n_r$ is the arity of $r$ in $L$.
 Similarly, the many-sorted arity of a function $f$ is $\<0^{1+n_f}\>$, where $n_f$ is the arity of $f$ in $L$.
 Moreover, $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$.
@@ -101,7 +101,7 @@ In particular, iterating the expansion would not yield anything new.
 
 \begin{proposition}\label{prop_eqmild}
 Let ${\vl\bar\X}={\vl\X_1},\dots,{\vl\X_n}$ be a tuple of second order variables of sort $\sigma_i({\mr x}\,;{\gr z})$.
-Then for every formula $\phi({\mr u}\,;{\vl\bar \X})\in L^\eq$ there is a formula $\phi'({\mr u}\,;{\gr\bar z})\in L$, where ${\gr\bar z}$ is a tuple of $n$ copies of ${\gr z}$, such that the following holds in $\U^\eq$
+Then for every formula $\phi({\mr u}\,;{\vl\bar \X})\in L^\eq$ there is a formula $\phi'({\mr u}\,;{\gr\bar z})\in L$, where ${\gr\bar z}$ is a tuple of $n$ variables of length $|{\gr z}|$, such that the following holds in $\U^\eq$
 
 \hfil$\displaystyle\A {\vl\bar\X},{\gr\bar z}\ \bigg[\bigwedge^n_{i=1}{\vl\X_i}=\big\{{\mr x}:\sigma_i({\mr x}\,;{\gr z_i})\big\}\imp\A {\mr u}\ \big[\phi({\mr u}\,;{\vl\bar\X})\ \iff\ \phi'({\mr u}\,;{\gr\bar z})\big]\bigg].$
 
@@ -153,10 +153,13 @@ Implication \ssf{2}$\IMP$\ssf{1} is a direct consequence of Proposition~\ref{pro
 We prove \ssf{1}$\IMP$\ssf{2}.
 Let $\V$ be the domain of the home sort of $\V^\dag$.
 It is clear that $\V\preceq\U$.
-Let ${\vl\Aa}\in\V^\eq$  have sort $\sigma({\mr x}\,;{\gr z})$, say ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in\V^{|{\gr z}|}$.
+Let ${\vl\Aa}\in\V^\eq$ have sort $\sigma({\mr x}\,;{\gr z})$, say ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in\V^{|{\gr z}|}$.
 As $\E^{=1}{\vl\X}\, \A{\mr x}\,\big[{\mr x}\in{\vl\X}\iff\sigma({\mr x}\,;{\gr b})\big]$ holds in $\U^\eq$, by elementarity it holds in $\V^\dag$ and therefore ${\vl\Aa}\in\V^\dag$.
 This proves $\V^\eq\subseteq\V^\dag$.
 A similar argument proves the converse inclusion.
+Given ${\vl\Aa}\in\V^\dag$ of sort $\sigma({\mr x}\,;{\gr z})$, the formula $\A{\mr x}\,\big[{\mr x}\in{\vl\Aa}\iff\sigma({\mr x}\,;{\gr b})\big]$ holds in $\V^\dag$ for some ${\gr b}$ in the home sort.
+%
+By elementarity, ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in\V$.
 \end{proof}
 
 \begin{proposition}\label{prop_Ueq_saturated}
@@ -426,7 +429,7 @@ The following are equivalent
 \item[1.] $T$ has weak elimination of imaginaries;
 \item[2.] every definable set is interdefinable with a finite set;
 \item[3.] every definable set ${\vl\Aa}$ is definable over $\acl\{{\vl\Aa}\}$;
-\item[4.] $\dcl^\eq\{{\vl\Aa}\}=\dcl^\eq\big(\acl\{{\vl\Aa}\}\big)$.
+\item[4.] $\dcl^\eq\{{\vl\Aa}\}=\dcl^\eq\big(\acl\{{\vl\Aa}\}\big)$ (???).
 \end{itemize}
 \end{theorem}
 
@@ -482,7 +485,7 @@ The following are equivalent
 \item[1.] $T$ has elimination of imaginaries;
 \item[2.] every definable set is interdefinable with a tuple of real elements;
 \item[3.] every definable set ${\vl\Aa}$ is definable over $\dcl\{{\vl\Aa}\}$;
-\item[4.] $\dcl^\eq\{{\vl\Aa}\}=\dcl^\eq\big(\dcl\{{\vl\Aa}\}\big)$.
+\item[4.] $\dcl^\eq\{{\vl\Aa}\}=\dcl^\eq\big(\dcl\{{\vl\Aa}\}\big)$ (???).
 \end{itemize}
 \end{theorem}
 

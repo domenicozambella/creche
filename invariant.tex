@@ -110,9 +110,12 @@ Note that \ssf{it3} applies to global types $p({\mr x})\in S(\U)$ but not to $\p
 \section{Invariance from a dual perspective}
 
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}The following terminology is non-standard.
-We say that the set $\mrB\subseteq\U^{|{\mr x}|}$, typically a definable set, is \emph{quasi-invariant\/} over $A$ if whenever $f_1,\dots,f_n$ is a finite tuple of automorphisms in $\Aut(\U/A)$, the sets $f_i[\mrB]$ have non-empty intersection.
+We say that the set $\mrB\subseteq\U^{|{\mr x}|}$, typically a definable set, is \emph{quasi-invariant\/} over $M$ if whenever $f_1,\dots,f_n$ is a finite tuple of automorphisms in $\Aut(\U/M)$, the sets $f_i[\mrB]$ have non-empty intersection.
 
-We say that the type $p({\mr x})\subseteq L(\U)$, typically a global type, is \emph{quasi-invariant\/} over $A$ if $\phi({\mr\U})$ is quasi-invariant over $A$  for every  conjunction $\phi({\mr x})$ of formulas in $p({\mr x})$.
+We say that the type $p({\mr x})\subseteq L(\U)$, typically a global type, is \emph{quasi-invariant\/} over $M$ if $\phi({\mr\U})$ is quasi-invariant over $M$  for every  conjunction $\phi({\mr x})$ of formulas in $p({\mr x})$.
+
+The definitions above and all what we say in this paragraph remains valid if we replace the model $M$ with an arbitrary set $A$.
+However the correct generalization involves the notion of strong automorphism developed in Chapter~\ref{invariant}.
 %For types of small cardinality, this is equivalent to requiring that $p({\mr\U})$ is quasi-invariant.
 % So, the type $p({\mr x})$ is quasi-invariant if the set $p({\mr\V})$ is invariant, where $\V$ is an large saturated extension of $\U$, see Exercise~\ref{ex_quasi_inv_type}.
 
@@ -122,18 +125,18 @@ For global types, quasi-invariance coincides with invariance. In fact we have th
 \begin{proposition}\label{prop_invariance-quasi-invariance}
 Let $p({\mr x})\in S_{\phi}(\U)$ be a global $\phi$-type. Then the following are equivalent
 \begin{itemize}
-\item[1.] $p({\mr x})$ is invariant over $A$;
-\item[2.] $p({\mr x})$ is quasi-invariant over $A$.
+\item[1.] $p({\mr x})$ is invariant over $M$;
+\item[2.] $p({\mr x})$ is quasi-invariant over $M$.
 \end{itemize}
 \end{proposition}
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2}.
 Assume $p({\mr x})$ is invariant and let $\psi({\mr x}\,;{\gr b})\,\in\, p$ where ${\gr b}\in\U^{|{\gr z}|}$.
-Then $\psi({\mr x}\,;f{\gr b})\,\in\, p$ for every $f\in\Aut(\U/A)$, so \ssf{2} follows from the finite consistency of $p({\mr x})$.
+Then $\psi({\mr x}\,;f{\gr b})\,\in\, p$ for every $f\in\Aut(\U/M)$, so \ssf{2} follows from the finite consistency of $p({\mr x})$.
 
 \ssf{2}$\IMP$\ssf{1}.
 Assume $p({\mr x})$ is not invariant.
-Then there is ${\gr b}\in\U^{|{\gr z}|}$ such that $\phi({\mr x}\,;{\gr b})\in p$ and $\phi({\mr x}\,;f{\gr b})\notin p$ for some  $f\in\Aut(\U/A)$.
+Then there is ${\gr b}\in\U^{|{\gr z}|}$ such that $\phi({\mr x}\,;{\gr b})\in p$ and $\phi({\mr x}\,;f{\gr b})\notin p$ for some  $f\in\Aut(\U/M)$.
 By completeness, $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;f{\gr b})$ which clearly is not consistent with its $f$-translate.
 \end{proof}
 
@@ -200,33 +203,33 @@ Every non piecewise drifting type extends to a non drifting global type.
 \section{Heirs and coheirs}
 
 The easiest way to obtain types that are invariant over a model $M$ is via types that are finitely satisfiable in $M$.
-We say that a type $p({\mr x})$ is  \emph{finitely satisfiable\/} in a set $A$ if every conjunction of formulas in $p({\mr x})$ has a solution in $A^{|{\mr x}|}$.
+We say that a type $p({\mr x})$ is  \emph{finitely satisfiable\/} in $M$ if every conjunction of formulas in $p({\mr x})$ has a solution in $M^{|{\mr x}|}$.
 
 
 \begin{proposition}\label{prop_coeredi_quasiinvarienti}
-Every type $p({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $A$ is quasi-invariant over $A$.
+Every type $p({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $M$ is quasi-invariant over $M$.
 \end{proposition}
 
 \begin{proof}
-Clearly, the same ${\mr a}\in A^{|{\mr x}|}$ that satisfies $\phi({\mr x})$ also satisfies every $\Aut(\U/A)$-translate of $\phi({\mr x})$.
+Clearly, the same ${\mr a}\in M^{|{\mr x}|}$ that satisfies $\phi({\mr x})$ also satisfies every $\Aut(\U/M)$-translate of $\phi({\mr x})$.
 \end{proof}
 
 Propositions~\ref{prop_invariance-quasi-invariance} and~\ref{prop_coeredi_quasiinvarienti} yield the following proposition.
 
 \begin{proposition}\label{prop_coeredi_invarienti}
-Let $p({\mr x})\in S_{\phi}(\U)$ be a global $\phi$-type that is finitely satisfiable in $A$.
-Then $p({\mr x})$ is $A$-in\-vari\-ant.\QED
+Let $p({\mr x})\in S_{\phi}(\U)$ be a global $\phi$-type that is finitely satisfiable in $M$.
+Then $p({\mr x})$ is $M$-in\-vari\-ant.\QED
 \end{proposition}
 
 \begin{proposition}\label{prop_exisntence_coheirs}
-Every type $q({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $A$ has an extension to a global type that is finitely satisfiable in $A$.
+Every type $q({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $M$ has an extension to a global type that is finitely satisfiable in $M$.
 \end{proposition}
 
 \begin{proof} 
-Let $p({\mr x})\subseteq L(\U)$ be maximal among the types containing $q({\mr x})$ and finitely satisfiable in $A$.
+Let $p({\mr x})\subseteq L(\U)$ be maximal among the types containing $q({\mr x})$ and finitely satisfiable in $M$.
 We prove that $p({\mr x})$ is complete.
 Suppose for a contradiction that $p({\mr x})$ contains neither $\psi({\mr x})$ nor $\neg\psi({\mr x})$.
-Then  neither $p({\mr x})\cup\big\{\psi({\mr x})\big\}$ nor $p({\mr x})\cup\big\{\neg\psi({\mr x})\big\}$ are finitely satisfiable in $A$.
+Then  neither $p({\mr x})\cup\big\{\psi({\mr x})\big\}$ nor $p({\mr x})\cup\big\{\neg\psi({\mr x})\big\}$ are finitely satisfiable in $M$.
 This contradicts the finite satisfiability of $p({\mr x})$.
 \end{proof}
 
@@ -384,14 +387,14 @@ By Dedekind completeness, the trace on $M$ of any interval of $\U$ coincides wit
 In what follows $\alpha$ is some ordinal $\le\kappa$, typically $\omega$, and ${\mr x}$ is a tuple of variables of length $<\kappa$.
 
 Let \mbox{$p({\mr x})\in S(\U)$} be a global type.
-We say that ${\mr\bar c}=\<{\mr c_i}:i<\alpha\>$ is a \emph{Morley sequence\/} of $p({\mr x})$ over $A$ if for every $i<\alpha$
+We say that ${\mr\bar c}=\<{\mr c_i}:i<\alpha\>$ is a \emph{Morley sequence\/} of $p({\mr x})$ over $M$ if for every $i<\alpha$
 
-\ceq{\ssf{Ms.}\hfill {\mr c_i}}{\models}{p_{\restriction A,\,{\mr c_{\restriction i}}}({\mr x})}.
+\ceq{\ssf{Ms.}\hfill {\mr c_i}}{\models}{p_{\restriction  M,\,{\mr c_{\restriction i}}}({\mr x})}.
 
-We usually require that $p({\mr x})$ is invariant over $A$.
-In particular, when $p({\mr x})$ is finitely satisfiable in $A$ we say that ${\mr\bar c}$ is a \emph{coheir sequence\/} of $p({\mr x})$ over $A$. 
+We usually require that $p({\mr x})$ is invariant over $M$.
+In particular, when $p({\mr x})$ is finitely satisfiable in $M$ we say that ${\mr\bar c}$ is a \emph{coheir sequence\/} of $p({\mr x})$ over $M$. 
 
-When we say that ${\mr\bar c}$ is a coheir sequence over $A$ we mean that there is a type $p({\mr x})$ that is finitely satisfiable in $A$ such that ${\mr\bar c}$ is a \emph{coheir sequence\/} of $p({\mr x})$.
+When we say that ${\mr\bar c}$ is a coheir sequence over $M$ we mean that there is a type $p({\mr x})$ that is finitely satisfiable in $M$ such that ${\mr\bar c}$ is a \emph{coheir sequence\/} of $p({\mr x})$.
 
 The following is a convenient characterization of coheir sequences.
 
