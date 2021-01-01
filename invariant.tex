@@ -93,15 +93,15 @@ We say that the type $p({\mr x})\subseteq L(\U)$ \emph{does not split\/} over $A
 
 for every formula $\phi({\mr x}\,;{\gr z})\in L$.
 By homogeneity, non splitting is equivalent to invariance.
-For global types \ssf{it2} is equivalent to
+For global $\phi$-types types \ssf{it2} is equivalent to
 
-\ceq{\ssf{it2$^\prime$.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})\,\in\, p}
+\ceq{\ssf{it2$^\prime$.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{p({\mr x})\,\models\,\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})}
 
-The following is another important equivalent characterization of invariance over $A$ of a global type $p(x)$ that follows easily  from \ssf{it2$^\prime$}
+The following is another important equivalent characterization of invariance over $A$ of a global type $p(x)\in S(\U)$ that follows easily  from \ssf{it2}
 
 \ceq{\ssf{it3.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\equiv_{A,\,{\mr c}}{\gr b}}\hfill for all ${\gr a},{\gr b}\in\U^{|{\gr z}|}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$.
 
-Note that \ssf{it3} applies to global types $p({\mr x})\in S(\U)$ but not to $\phi$-types.
+Note that \ssf{it3} applies to complete types but not to $\phi$-types.
 
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
@@ -311,8 +311,8 @@ We shall use, sometimes without explicit reference, the following easy lemma.
 
 Properties \ssf{1}-\ssf{3} follow immediately from Definition~\ref{def_coheir_idepencence}.
 We prove \ssf{4}.
-Let $p({\mr x})$ be a global coheir of $\tp({\mr a}/A,{\gr b})$, which exists by Proposition~\ref{prop_exisntence_coheirs}.
-Then any ${\mr a'}\models p_{\restriction A,\,{\gr b},\,c}({\mr x})$ proves the lemma.
+Assume ${\mr a}\cnonfork_M{\gr b}$, that is,  $\tp({\mr a}/M,{\gr b})$ is finitely satisfiable in $M$. By Proposition~\ref{prop_exisntence_coheirs} $\tp({\mr a}/M,{\gr b})$ extends to a global type $p({\mr x})$ that is finitely satisfiable in $M$.
+Then any ${\mr a'}\models p_{\restriction M,\,{\gr b},\,c}({\mr x})$ proves the lemma.
 \end{proof}
 
 %Transitivity has dual version that holds under stronger assumptions.
@@ -387,14 +387,13 @@ By Dedekind completeness, the trace on $M$ of any interval of $\U$ coincides wit
 In what follows $\alpha$ is some ordinal $\le\kappa$, typically $\omega$, and ${\mr x}$ is a tuple of variables of length $<\kappa$.
 
 Let \mbox{$p({\mr x})\in S(\U)$} be a global type.
-We say that ${\mr\bar c}=\<{\mr c_i}:i<\alpha\>$ is a \emph{Morley sequence\/} of $p({\mr x})$ over $M$ if for every $i<\alpha$
+We say that ${\mr\bar c}=\<{\mr c_i}:i<\alpha\>$ is a \emph{Morley sequence\/} of $p({\mr x})$ over $A$ if for every $i<\alpha$
 
-\ceq{\ssf{Ms.}\hfill {\mr c_i}}{\models}{p_{\restriction  M,\,{\mr c_{\restriction i}}}({\mr x})}.
+\ceq{\ssf{Ms.}\hfill {\mr c_i}}{\models}{p_{\restriction  A,\,{\mr c_{\restriction i}}}({\mr x})}.
 
-We usually require that $p({\mr x})$ is invariant over $M$.
-In particular, when $p({\mr x})$ is finitely satisfiable in $M$ we say that ${\mr\bar c}$ is a \emph{coheir sequence\/} of $p({\mr x})$ over $M$. 
+When $A$ is a model, say $M$, and $p({\mr x})$ is finitely satisfiable in $M$, we say that ${\mr\bar c}$ is a \emph{coheir sequence\/} of $p({\mr x})$ over $M$. 
 
-When we say that ${\mr\bar c}$ is a coheir sequence over $M$ we mean that there is a type $p({\mr x})$ that is finitely satisfiable in $M$ such that ${\mr\bar c}$ is a \emph{coheir sequence\/} of $p({\mr x})$.
+When we say that ${\mr\bar c}$ is a coheir sequence over $M$ (with no explicit reference to a global type), we mean that \textit{there is\/} a type $p({\mr x})\in S(\U)$ that is finitely satisfiable in $M$ such that ${\mr\bar c}$ is a \emph{coheir sequence\/} of $p({\mr x})$.
 
 The following is a convenient characterization of coheir sequences.
 
@@ -414,7 +413,23 @@ Now, suppose $\phi({\mr c_{n+1}})$ for some $\phi({\mr x})\in L(M,{\mr c_{\restr
 Then $\phi({\mr x})$ belongs to $p({\mr x})$, so $\phi({\mr\U})\cap M^{|{\mr x}|}\neq\0$ because $p({\mr x})$ is finitely satisfiable in $M$. This proves ${\mr c_n}\cnonfork_M{\mr c_{\restriction n}}$.
 
 \ssf{2}$\IMP$\ssf{1}.
-Let $q({\mr x})=\{\phi({\mr x})\in L({\mr\bar c})\,:\, \phi({\mr c_n}) \textrm{ holds for cofinitely many } n\}$. From  \ssf{2} it follows that $q({\mr x})$ is finitely satisfiable in $M$. Then ${\mr\bar c}$ is a coheir sequence of any global type that extends $q({\mr x})$.
+Let $q({\mr x})=\{\phi({\mr x})\in L(M, {\mr\bar c})\,:\, \phi({\mr c_n}) \textrm{ holds for cofinitely many } n\}$.
+%
+We claim that $q({\mr x})$ is finitely satisfiable in $M$.
+%
+Let $\phi({\mr x}\,;{\mr z})\in L(M)$ be such that $\phi({\mr x}\,;{\mr c_{\restriction n}})\in q$.
+%
+By the definition of $q({\mr x})$, the formula $\phi({\mr c_m}\,;{\mr c_{\restriction n}})$ holds for all sufficiently large $m$.
+%
+Hence, from \ssf{2} we infer ${\mr c_m}\cnonfork_{M,\,{\mr c_{\restriction n}}}{\mr c_n}$ and conclude that $\phi({\mr x}\,;{\mr c_{\restriction n}})$ is satisfied in $M$.
+
+Let $p({\mr x})$ be any global extension of $q({\mr x})$ finitely saisfied in $M$. 
+%
+We prove that ${\mr\bar c}$ is a Morley sequence of $p({\mr x})$ over $M$.
+%
+By \ssf{2} either ${\mr c_m}\models p_{\restriction  M,\,{\mr c_{\restriction n}}}({\mr x})$ for all $m\ge n$ or ${\mr c_m}\notmodels p_{\restriction  M,\,{\mr c_{\restriction n}}}({\mr x})$ for all $m\ge n$.
+%
+As $p({\mr x})$ extends $q({\mr x})$, the latter cannot occur.
 \end{proof}
 
 Let $(I,<_I)$ be a linear order.

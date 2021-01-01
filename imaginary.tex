@@ -13,7 +13,7 @@
 
 The description of first-order definability is simplified if we allow definable sets to be used as second-order parameters in formulas.
 This leads to the theory of (elimination of) \textit{imaginaries}.
-The technical reason that induced Shalah to introduce imaginaries will only be clear later, see Section~\hyperref[stable_theories]{\ref*{external}.\ref*{stable_theories}}, but the theory is of independent interest.
+The technical reason that induced Shelah to introduce imaginaries will only be clear later, see Section~\hyperref[stable_theories]{\ref*{external}.\ref*{stable_theories}}, but the theory is of independent interest.
 
 In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
 The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
@@ -101,14 +101,16 @@ In particular, iterating the expansion would not yield anything new.
 
 \begin{proposition}\label{prop_eqmild}
 Let ${\vl\bar\X}={\vl\X_1},\dots,{\vl\X_n}$ be a tuple of second order variables of sort $\sigma_i({\mr x}\,;{\gr z})$.
-Then for every formula $\phi({\mr u}\,;{\vl\bar \X})\in L^\eq$ there is a formula $\phi'({\mr u}\,;{\gr\bar z})\in L$, where ${\gr\bar z}$ is a tuple of $n$ variables of length $|{\gr z}|$, such that the following holds in $\U^\eq$
+Then for every formula $\phi({\mr x}\,;{\vl\bar \X})\in L^\eq$ there is a formula $\phi'({\mr x}\,;{\gr\bar z})\in L$, where ${\gr\bar z}={\gr z_1},\dots,{\gr z_n}$ is a tuple variables of length $|{\gr z}|$, such that the following holds in $\U^\eq$
 
-\hfil$\displaystyle\A {\vl\bar\X},{\gr\bar z}\ \bigg[\bigwedge^n_{i=1}{\vl\X_i}=\big\{{\mr x}:\sigma_i({\mr x}\,;{\gr z_i})\big\}\imp\A {\mr u}\ \big[\phi({\mr u}\,;{\vl\bar\X})\ \iff\ \phi'({\mr u}\,;{\gr\bar z})\big]\bigg].$
+\ceq{\hfill \phi({\mr x}\,;{\vl\bar\Aa})}{\iff}{\phi'({\mr x}\,;{\gr\bar b})}
+
+for every ${\vl\bar\Aa}={\vl\Aa_1},\dots,{\vl\Aa_n}$ and ${\gr\bar b}={\gr b_1},\dots,{\gr b_n}$ such that ${\vl\Aa_i}=\sigma({\mr\U}\,;{\gr b_i})$.
 
 % For simplicity we are assuming that the tuples ${\gr z_i}$ do not have variables in common.
 \end{proposition}
 
-When $n=0$ the proposition asserts that $L_{{\mr u}}^\eq$ and $L_{{\mr u}}$ have the same expressive power.
+When $n=0$ the proposition asserts that $L_{{\mr x}}^\eq$ and $L_{{\mr x}}$ have the same expressive power.
 
 \begin{proof}[Proof (sketch)]
 By induction on syntax.
