@@ -163,7 +163,7 @@ Hence $M\simeq N$ and in particular $M\equiv N$.
 \end{proof}
 
 \begin{exercise}
-Prove that $T_{\rm dlo}$ is not $\lambda\jj$categorical for any uncountable $\lambda$.\QED
+Prove that $T_{\rm dlo}$ is not $\lambda$-categorical for any uncountable $\lambda$.\QED
 \end{exercise}
 
 \begin{exercise}
@@ -325,12 +325,17 @@ Prove that $T_{\rm rg}$ is not finitely axiomatizable.
 Hint: given a random graph $N$ and a set $P$ of cardinality $n+1$ show that you can add edges to $M\sqcup P$ and make it satisfy axiom \ssf{r$_n$} but not \ssf{r$_{n+1}$}.\QED
 \end{exercise}
 
-\begin{exercise}\label{ex_rg_small_def_set}
-Let $A\subseteq N\models T_{\rm rg}$ and let $\phi(x)\in L(A)$, where $|x|=1$.
-Prove that if $\phi(N)$ is finite then $\phi(N)\subseteq A$.\QED
+\begin{exercise}
+Let $N\models T_{\rm rg}$ and let $\phi(x)\in L(N)$, where $|x|=1$.
+Prove that for some finite sets $A,B,C,D\subseteq N$  the following holds in $N$
+
+\ceq{\hfill \phi(x)\quad}
+{\iff}
+{\quad\bigwedge_{a\in A}r(x,a)\ \wedge\ \bigwedge_{b\in B}\neg r(x,b)\ \wedge\  x\in C\ \wedge\  x\notin D}.\QED
 \end{exercise}
 
-\begin{exercise}[(Peter J.~Cameron)]
+
+\begin{exercise}[ (Peter J.~Cameron)]
 Prove that for every infinite countable graph $M$ the following are equivalent
 \begin{itemize}
 \item[1.] $M$ is either random, complete or empty (i.e.\@ $r^M=\0$);
