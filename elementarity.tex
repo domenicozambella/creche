@@ -132,10 +132,11 @@ The theory of ordered rings $T_{\rm or}$ extends $T_{\rm cr}$ with
 \end{itemize}
 \end{example}
 
-The axiomatization of the \emph{theory of vector spaces\/} is less straightforward.
 
 \begin{example}\label{ex_ax_vect_sp}
+The axiomatization of the \emph{theory of vector spaces\/} is less straightforward.
 Fix a field $F$.
+%
 The language $L_F$ extends the language of additive groups with a unary function for every element of $F$.
 The theory of vector fields over $F$ extends $T_{\rm ag}$ with the following axioms (for all $h,k,l\in F$)
 \begin{itemize}
@@ -305,7 +306,7 @@ For every pair of structures $M$ and $N$ and every $A\subseteq M\cap N$ the foll
 If we restate \ssf{a} and \ssf{c} of the proposition above when $A=M$ we obtain that the following are equivalent
 \begin{itemize}
 \item[a'.] $M\preceq N$;
-\item[c'.] \parbox{26ex}{$\phi(M)\ =\ \phi(N) \cap M^{|x|}$} for every $\phi(x)\in L$.
+\item[d'.] \parbox{26ex}{$\phi(M)\ =\ \phi(N) \cap M^{|x|}$} for every $\phi(x)\in L$.
 \end{itemize}
 Note that \ssf{c'} extends to all definable sets what Definition~\ref{sottostrutturadef} requires for a few basic definable sets.
 
@@ -356,6 +357,316 @@ Hint: in $\ZZ^n$ there are at most $2^n$ elements that are not congruent modulo 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{An axample: nonstandard analysis}
+\label{nonstandard}
+\def\nsR{{}^*\kern-.2ex\RR}
+\def\nsN{{}^*\kern-.2ex\NN}
+\def\nsQ{{}^*\kern-.2ex\QQ}
+\def\ns{{}^*\kern-.2ex}
+\def\st{{\rm st}}
+
+This section concerns an example that is useful to look at in some detail to get some familiarity with the notion of elementary substructure. The example is culturally interesting, because it formalises rigorously the notions of infinity and infinitesimal, which were used in Newton and Leibniz's time to develop real analysis. These notions were not well defined - in fact, they were inconsistent.
+
+It was only in the mid 19th century that mathematicians of Weiertsrass' generation developed the notion of limit, thus providing rigorous grounds for the development of analysis.
+
+Nonstandard analysis was developed by Abraham Robinson in the 1950s. Robinson found a way to formalise the ideas of infinity and infinitesimals through the concept of elementary extension. 
+
+The notation that follows will be used throughout this section.
+
+The language we use contains
+\begin{itemize}
+\item[1.] $X$, a relation symbol of arity $n$, for every $n\in\omega$ and every $X\subseteq \RR^n$;
+\item[2.] $f$, a function symbol of arity $n$, for every $n\in\omega$ and every  $f:\RR^n\imp\RR$.
+\end{itemize}
+The \emph{standard model of real analysis} is $\RR$ with the natural interpretation of the symbols in our language, so we use the same symbol for an element of the language and its interpretation in $\RR$.
+This is not an abuse of notation: in this case, elements and interpretations coincide.
+
+Suppose $\RR$ has a proper elementary extension \emph{$\nsR$.} The existence of such an extension will be proved later.
+ The interpretations of the symbols $f$ and $X$ in \emph{$\nsR$} will be denoted by  \emph{$\ns f$} and \emph{$\ns X$,} respectively. The elements of $\nsR$ are called \emph{hyperreals,} the elements of  $\RR$ are called \emph{standard (hyper)reals,} those in $\nsR\sm\RR$ are called  \emph{nonstandard (hyper)reals.}
+
+It is easy to verify that $\nsR$ is an ordered field. This is because the operations sum and product are in the language, and so is the order relation. The property of being an ordered field can be expressed via a set of sentences  that are true in $\RR$, and hence also in $\nsR$.
+
+
+A hyperreal $c$ is said to be \emph{infinitesimal} if $|c|<\epsilon$ for every positive standard $\epsilon$. A hyperreal $c$ is \emph{infinite} if $k<|c|$ for every standard $k$; the hyperreal $c$ if \emph{finite} otherwise. Hence if $c$ is infinite, then $c^{-1}$ is infinitesimal.
+Clearly, all standard reals are finite, and $0$ is the only infinitesimal standard real.
+
+\begin{lemma}\label{esistenzainfinitesimi}
+There are infinite nonstandard hyperreals and nonzero infinitesimals.
+\end{lemma}
+\begin{proof}
+Let $c\in\nsR\sm\RR$ and suppose $c$ is not infinite --- otherwise, $c$ and $c^{-1}$ prove the lemma.
+Then the set $\big\{ a\in\RR: c<a\big\}$ is a nonempty set of reals that is bounded below.
+Let $b\in\RR$ the least upper bound. We show that $b-c$ is a nonzero infinitesimal.
+We have that $b-c\neq 0$ because $c\in\nsR\sm\RR$ and $b\in\RR$.
+Assume for a contradiction that $\epsilon < |b-c|$ for some standard positive $\epsilon$. Then $c<b-\epsilon$, or $b+\epsilon< c$, depending on whether $c<b$ or $b<c$.
+Both cases contradict that $b$ is an infimum.
+\end{proof}
+
+As it happens, the proof above shows the following.
+
+\begin{corollary}[ (of the proof)]\label{corol_esistenzainfinitesimi}
+  For every finite hyperreal $c$ there is a standard $b$ such that $|c-b|$ is infinitesimal.\QED
+\end{corollary}
+
+
+The existence of infinite non standard hyperreals shows that $\nsR$ is not archimedean: standard integers are not cofinal in $\nsR$. However, by elementarity, the nonstandard integers $\nsN$ are cofinal in $\nsR$: from the perspective of an inhabitant of $\nsR$, the latter is a normal archimedean field.
+
+The proof of the following lemma is left to the reader.
+
+\begin{lemma}\label{prodottosommainfinitesimi}
+Infinitesimals are closed under sum, product and multiplication by standard reals.
+\end{lemma}
+
+Dedekind completeness is another fundamental property of $\RR$ that does not hold in~$\nsR$. An ordered set is \emph{Dedekind complete} if every subset that is bounded above has a least upper bound. Then $\nsR$ is not Dedekind complete: the set of infinitesimals is bounded (both above and below), but, by Lemma~\ref{prodottosommainfinitesimi}, it does not have a least upper bound. It follows that Dedekind completeness is \textit{not\/} a first-order property. 
+
+However, it sometimes happens that properties that hold of all sets in the standard model hold in $\nsR$ for definable sets only.
+
+ 
+\begin{exercise}\label{dedekindcomplete}
+  Every definable (possibly with parameters) subset of $\nsR$ that is bounded above has a least upper bound.\QED
+\end{exercise}
+% The lemma concerns parameter-definable sets in $\nsR$, otherwise the proof would be immediate.
+
+% \begin{proof}  Let $x$ be a single variable, $a$ a tuple of parameters in $\nsR$ and let $\phi(z,x)$ be a pure formula.
+%  We want to show that if  $\phi(a,\nsR)$ is bounded above then it has a least upper bound. The following formula $\psi(z,y)$ says that $y$ is an upper bound for the set defined by $\phi(z,x)$, where $z$ is a tuple of parameters:
+
+% \hfil $\psi(z,y)\ \ =\ \  \A x\ \big[\phi(z,x)\imp x\le y\big]$.
+
+% The following formula $\xi(z,w)$ says that $w$ is the least upper bound of the set defined by $\phi(z,x)$.
+
+
+% \hfil $\xi(z,w)\ \ =\ \  \psi(z,w)\ \wedge\ \A y\ \big[\psi(z,y)\imp w\le y\big]$.
+
+% So we must show that in $\nsR$ we have $\E y\,\psi(z,y)\ \imp\ \E w\,\xi(z,w)$.
+% But this is a first order formula that holds in $\RR$, and therefore it holds in every elementary extension of $\RR$.
+% \end{proof}
+
+We define the following equivalence relation on $\nsR$: we write \emph{$a\approx b$\/} if $|a-b|$ is infinitesimal.
+The fact that this is an equivalence relation follows from Lemma~\ref{prodottosommainfinitesimi}.
+The equivalence class of $c$ is called \emph{monad.}
+
+\begin{lemma}
+If $c$ is a finite hyperreal, there is a unique real in the monad of $c$. 
+\end{lemma}
+\begin{proof}
+Existence follows from Corillary~\ref{corol_esistenzainfinitesimi}. For uniqueness, observe that if $b_1\approx b_2$ are both standard, then $|b_1-b_2|$ is a standard infinitesimal, that is, $0$.
+\end{proof}
+
+Hyperreals that are not finite are said to be \emph{infinite}.
+If $c$ is finite, the unique standard real in the monad of $c$ is called \emph{standard part\/} of $c$ and it is denoted by \emph{$\st(c)$}.
+
+In the following lemma, the expressions on the left can be formalised as first-order sentences, and therefore they hold in $\RR$ if and only if they hold in $\nsR$.
+
+\begin{proposition}\label{fattolimitinonstandard}
+For every $f:\RR\to\RR$, for every $a, l\in\RR$ the following equivalences hold.\nobreak
+\begin{itemize}
+\item[a.]\parbox{7ex}{\hfil$\displaystyle\lim_{x\to+\infty}$}
+\parbox{11ex}{$fx\;=+\infty$}
+\parbox{8ex}{\hfil$\IFF$}
+$\ns f(c)$ is positive and infinite for every infinite $c>0$.
+
+\item[b.]\parbox{7ex}{\hfil$\displaystyle\lim_{x\to+\infty}$}
+\parbox{11ex}{$fx\;=\;l$}
+\parbox{8ex}{\hfil$\IFF$}
+$\ns f(c)\approx l$ for every infinite $c>0$.
+
+\item[c.]\parbox{7ex}{\hfil$\displaystyle\lim_{x\to a}$}
+\parbox{11ex}{$fx\;=+\infty$}
+\parbox{8ex}{\hfil$\IFF$}
+$\ns f(c)$ is positive and infinite for every $c\approx a\neq c$.
+
+\item[d.]\parbox{7ex}{\hfil$\displaystyle\lim_{x\to a}$}
+\parbox{11ex}{$fx\;=\;l$}
+\parbox{8ex}{\hfil$\IFF$}
+$\ns f(c)\approx l$ for every for every $c\approx a\neq c$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+We prove part \ssf{d} and we leave the other parts as an exercise.
+For $\IMP$, assume that the left-hand side of the equivalence \ssf{d} holds and we write it as a first-order sentence:
+
+\begin{itemize}
+\item[1.]\hspace*{9ex}$\A\,\epsilon>0\ \E\,\delta>0\ \A x\ \Big[0<|x-a|<\delta\ \ \imp\ \ |fx-l|<\epsilon\Big]$.
+\end{itemize}
+
+By assumption, the formula \ssf{1} holds in $\RR$, or, equivalently, in $\nsR$. In what follows, we use certain abbreviations which we assume the reader can translate into first-order formulas. For consistency with standard notation in analysis, we use the Greek letters $\epsilon$ and $\delta$ as variables. The symbols $\dot\epsilon$ e $\dot\delta$ denote parameters.
+
+
+We now check that $\ns f(c)\approx l$ holds for every $c\approx a\neq c$, that is, $|\ns fc-l|<\dot\epsilon$ for every positive standard $\dot\epsilon$.
+Fix a standard positive $\dot\epsilon$ and let $\dot\delta \in \RR$ be a standard real obtained from \ssf{1}.
+By elementarity, we have
+
+
+\begin{itemize}
+\item[]\hspace*{9ex}$\phantom{\A\,\epsilon>0\ \E\,\delta>0}\llap{$\nsR\;\models$}\ \A x\ \Big[0<|x-a|<\dot\delta\ \ \imp\ \ |fx-l|<\dot\epsilon\Big]$,
+\end{itemize}
+
+where $\dot\epsilon$ and $\dot\delta$ are now parameters.
+If  $a\approx c\neq a$, then $0<|c-a|<\dot\delta$ certainly holds (because $\dot\delta$ is standard).
+Hence \ssf{1} gives $|\ns fc-l|<\dot\epsilon$.
+
+
+For $\PMI$, assume that \ssf{1} is false, that is, assume that, in $\RR$,
+
+\begin{itemize}
+\item[2.]\hspace*{9ex}$\E\,\epsilon>0\ \A\,\delta>0\ \E x\ \Big[0<|x-a|<\delta\ \ \wedge\ \ \epsilon\le |fx-l|\Big]$,
+\end{itemize}
+
+We want to show that $\ns f(c)\not\approx l$ for some $c\neq a$ infinitely close to $a$.
+Fix a witness $\dot\epsilon$ of this formula in $\RR$ --- so $\dot\epsilon$ is a standard real.
+Now, by elementarity we have
+
+\begin{itemize}
+\item[]\hspace*{9ex}$\phantom{\E\,\epsilon>0}\llap{$\nsR\;\models$}\ \A\,\delta>0\ \E x\ \Big[0<|x-a|<\delta\ \ \wedge\ \ \dot\epsilon\le |fx-l|\Big]$.
+\end{itemize}
+
+Let $\dot\delta$ be an arbitrary infinitesimal. Then 
+
+\begin{itemize}
+\item[]\hspace*{9ex}$\phantom{\E\,\epsilon>0\ \A\,\delta>0}\llap{$\nsR\;\models$}\ \E x\ \Big[0<|x-a|<\dot\delta\ \ \wedge\ \ \dot\epsilon\le |fx-l|\Big]$.
+\end{itemize}
+
+Any $c$ that witnesses the truth of this formula in $\nsR$ is such that $c\approx a\neq c$ and, simultaneously, $\epsilon\le |\ns fc-l|$. But $\dot\epsilon$ was chosen to be standard, so $\ns fc\not\approx l$.
+\end{proof}
+
+
+The following corollary is immediate.
+
+\begin{corollary} \label{continuo} For every $f:\RR\to\RR$ the following are equivalent
+\begin{itemize}
+\item[a.] $f$ is continuous;
+\item[b.] $\ns f(a)\approx \ns f(c)$ for every pair of finite hyperreals such that $c\approx a$.\QED
+\end{itemize}
+\end{corollary}
+
+In Corollary~\ref{continuo}, it is important to restrict \ssf{c} to \textit{finite\/} hyperreals, otherwise we get a stronger property.
+
+\begin{proposition} For every $f:\RR\to\RR$, the following are equivalent
+\begin{itemize}
+\item[a.] $f$ is uniformly continuous;
+\item[b.] $\ns f(a)\approx\ns  f(b)$ for every pair of hyperreals such that $a\approx b$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+We prove \ssf{a}\,$\IMP$\,\ssf{b}.
+Recall that $f$ is uniformly continuous if
+
+\begin{itemize}
+\item[1.]\hspace*{9ex}$\RR\ \models\ \A\,\epsilon>0\ \E\,\delta>0\ \A x, y\ \Big[|x-y|<\delta\ \ \imp\ \ |fx-fy|<\epsilon\Big]$.
+\end{itemize}
+
+Assume \ssf{a} and let $a\approx b$.
+We wnat to show that $|\ns f(a)-\ns f(b)|<\dot\epsilon$ for every positive standard $\dot\epsilon$. 
+Given a standard positive $\dot\epsilon$, let $\dot\delta$ be a standard real obtained from the validity of \ssf{1} in $\RR$.
+Now elementarity gives
+
+\begin{itemize}
+\item[2.]\hspace*{9ex}$\phantom{\RR\ \models\ \A\,\epsilon>0\ \E\,\delta>0}\llap{$\nsR\;\models$}\ \A x, y\ \Big[|x-y|<\dot\delta\ \ \imp\ \ |fx-fy|<\dot\epsilon\Big]$.
+\end{itemize}
+
+In particular,
+
+\begin{itemize}
+\item[]\hspace*{9ex}$\phantom{\RR\ \models\ \A\,\epsilon>0\ \E\,\delta>0\ \A x, y}\llap{$\nsR\;\models$}\ \phantom{\Big[}|a-b|<\dot\delta\ \ \imp\ \ |fa-fb|<\dot\epsilon$.
+\end{itemize}
+
+Since $a\approx b$, we have $|a-b|<\dot\delta$ for any standard $\dot\delta$.
+It follows that $|\ns f(a)-\ns f(b)|<\dot\epsilon$.
+
+To prove \ssf{b}\,$\IMP$\,\ssf{a} we negate \ssf{a}
+
+\begin{itemize}
+\item[3.]\hspace*{9ex}$\RR\ \models\ \E\,\epsilon>0\ \A\,\delta>0\ \E x, y\ \Big[|x-y|<\delta\ \ \wedge\ \ \epsilon\le|fx-fy|\Big]$.
+\end{itemize}
+
+We want  $a\approx b$ such that $\dot\epsilon\le|\ns f(a)-\ns f(b)|$ for some positive standard $\dot\epsilon$.
+Let $\dot\epsilon$ be a standard real that witnesses the truth of \ssf{3} in $\RR$.
+Elementarity gives
+
+\begin{itemize}
+\item[]\hspace*{9ex}$\phantom{\RR\ \models\ \E\,\epsilon>0}\llap{$\nsR\ \models$}\ \A\,\delta>0\ \E x, y\ \Big[|x-y|<\delta\ \ \wedge\ \ \dot\epsilon\le|fx-fy|\Big]$.
+\end{itemize}
+
+So we can fix an arbitrary infinitesimal $\dot\delta>0$ and get $a,b\in\nsR$ such that
+
+
+\begin{itemize}
+\item[]\hspace*{9ex}$\phantom{\RR\ \models\ \E\,\epsilon>0\ \A\,\delta>0\ \E x, y\ \Big[}\llap{$\nsR\ \models\ $}|a-b|<\dot\delta\ \ \wedge\ \ \dot\epsilon\le|fa-fb|$.
+\end{itemize}
+
+Since $\dot\delta$ is infinitesimal, we have $a\approx b$, as required. %to negate \ssf{b}.
+\end{proof}
+
+
+The following proposition is an immediate consequence of Proposition~\ref{fattolimitinonstandard}.
+
+\begin{proposition}
+For every unary function $f$ and every standard $a$, the following are equivalent.
+\begin{itemize}
+\item[a.] $f$ is differentiable in $a$;
+\item[b.] $\displaystyle\frac{f(a)-f(a+h)}{h}$ is finite and has the same standard part for all infinitesimal $h\neq0$.
+\end{itemize}
+\end{proposition}
+
+
+%Nel passato si sono sperimentati approcci didattici alternativi al calcolo classico basati sull'analisi non standard.
+% Il testo di  H.
+% Jerome Keisler, \textit{Foundations of infinitesimal calculus}, disponibile in rete con licenza \cc is un elegante tentativo di insegnare l'analisi reale a studenti del prim'anno usando l'analisi nonstandard ma senza assumere prerequisiti di logica.
+
+
+\begin{exercise}
+Prove that if the function $f:\RR\to\RR$ is injective, then  $\ns f a$ is nonstantard whenever $a$ is nonstandard.\QED
+\end{exercise}
+
+\begin{exercise}
+Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
+\begin{itemize}
+\item[1.]  $X$ is a finite set;
+\item[2.]  $\ns X=X$.\QED
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}
+Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
+\begin{itemize}
+\item[1.]  $X$ is an open set in the usual topology on $\RR$;
+\item[2.]  $b\approx a\in X \ \ \IMP\ \ b\in\ns X$ for every $b\in\nsR$.\QED
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}
+Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
+\begin{itemize}
+\item[1.]  $X$ is closed in the usual topology on $\RR$;
+\item[2.]  $a\in\ns X \ \ \IMP\ \ \st\, a\in X$ for every finite $a\in\nsR$.\QED
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}
+  For which sets $X \subseteq \RR$ does the following hold?
+  \begin{itemize}
+  \item[2.] $b\approx a\in\ns X \ \IMP\ b\in\ns X$ for every $a,b\in\nsR$.\QED
+  \end{itemize}
+\end{exercise}
+
+\begin{exercise}
+Prove that $|\RR|\;\le\;|\nsQ|$, that is, that the cardinality of $\nsQ$ is at least that of the continuum.
+(Hint: define an injective function $f:\RR\to\nsQ$ by choosing a nonstandard rational in the monad of every standard real.) \QED
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Embeddings and isomorphisms}\label{Embeddings and isomorphisms}
 
 
@@ -364,7 +675,7 @@ Hint: in $\ZZ^n$ there are at most $2^n$ elements that are not congruent modulo 
 Here we prove that isomorphic structures are elementarily equivalent and a few related results.
 
 \begin{definition}\label{isomorfismodef}
-An \emph{embedding\/} of $M$ into $N$ is an injective map $h:M\imp N$ such that
+An \emph{embedding\/} of $M$ into $N$ is an injective total map $h:M\hookrightarrow N$ such that
 
 \ceq{\ssf{1.}\hfill a\in r^M}{\IFF}{ha\in r^N}\hfill for every $r\in L_{\rm rel}$ and $a\in M^{n_r}$;
 
@@ -455,7 +766,7 @@ This follows again by Theorem~\ref{isomorfoeleq} as $(0,1)$ and $(0,2)$ are $B$-
 For the sake of completeness we also give the definition of homomorphism.
 
 \begin{definition}\label{def_homomorphism}
-A \emph{homomorphism} is a total map $h:M\imp N$ such that
+A \emph{homomorphism} is a total map $h:M\to N$ such that
 
 \ceq{\ssf{1.}\hfill a\in r^M}{\IMP}{ha\in r^N}\qquad for every $r\in L_{\rm rel}$ and $a\in M^{n_r}$;\smallskip\par
 
@@ -480,7 +791,7 @@ Hint: as structures are plain sets, every bijection $f:M\to M$ is an automorphis
 \end{exercise}
 
 \begin{exercise}\label{dlorlkurb}
-Prove that if $\phi(x)$ is an existential formula and $h:M\to N$ is an embedding then
+Prove that if $\phi(x)$ is an existential formula and $h:M\hookrightarrow N$ is an embedding then
 
 \ceq{\hfill M\models \phi(a)}{\IMP}{N\models \phi(ha)}\hfill for every $a\in M^{|x|}$.
 
@@ -760,321 +1071,6 @@ State and prove the generalization to finitely many maximally consistent extensi
 
 
 
-\begin{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Un esempio: l'analisi nonstandard}
-\label{nonstandard}
-\def\nsR{{}^*\kern-.2ex\RR}
-\def\nsQ{{}^*\kern-.2ex\QQ}
-\def\ns{{}^*\kern-.2ex}
-\def\st{{\rm st}}
-
-Questo paragrafo is dedicato ad un esempio che analizzeremo un po' in dettaglio perch\'e is utile per impratichirsi con la relazione di elementary substructure.
-Questo esempio is comunque culturalmente interessante.
-Infatti d\`a rigore matematico al formalismo usato ai tempi di Leibniz e Newton per fare analisi matematica.
-Allora l'analisi matematica era fondata sui concetti di infinito e di infinitesimo, nozioni che al tempo erano mal definite se non contraddittore.
-Solo dalla met\`a dell'ottocento i matematici della generazione di Weistra\ss{} rimediarono a questi vizi di forma fondando l'analisi matematica sul concetto di limite.
-L'analisi non standard invece recupera la dignit\`a matematica degli infiniti and infinitesimi usando il concetto di estensione elementare.
-Fu scoperta verso la met\`a del novecento da Abraham Robinson.
-
-Fissiamo un po' di notazione valida per tutto il paragrafo.
-Il linguaggio che useremo contiene
-\begin{itemize}
-\item[1.] un simbolo di relazione $n$-aria for every $X\subseteq \RR^n$;
-\item[2.] un simbolo di funzione $n$-aria for every $f:\RR^n\imp\RR$;
-\end{itemize}
-Chiameremo $\RR$, con la naturale interpretazione dei simboli, il \emph{modello standard dell'analisi reale}.
-
-Quindi lo stesso simbolo denota elementi del linguaggio e l'interpretazione in $\RR$.
-Non si tratta di un abuso di linguaggio, sono proprio la stessa cosa~! 
-
-Assumiamo che esista una estensione elementare propria di $\RR$ e fissiamone una che indicheremo con \emph{$\nsR$}.
-L'esistenza di questa estensione verr\`a dimostrata pi\`u avanti.
-
-
-L'interpretazione dei simboli $f$ and $X$ in $\nsR$ verr\`a indicata con \emph{$\ns f$} e \emph{$\ns X$}.
-Gli elementi di $\nsR$ verranno chiamati \emph{iperreali}, gli elementi di $\RR$ li chiameremo \emph{(iper)reali standard}, quelli in $\nsR\sm\RR$ li chiameremo \emph{(iper)reali nonstandard}.
-
-\`E immediato verificare che $\nsR$ is un campo ordinato.
-Infatti, le operazioni di somma e prodotto appartengono al linguaggio, come pure la relazione d'ordine.
-La propriet\`a di essere un campo ordinato is traducibile in un insieme di enunciati che, essendo veri in $\RR$, saranno veri anche in $\nsR$.
-
-
-Un iperreale $c$ si dice \emph{infinitesimo} se $|c|<\epsilon$ for every $\epsilon$ standard positivo.
- Un iperreale $c$ si dice \emph{infinito} se $k<|c|$ for every $k$ standard, altrimenti si dice \emph{finito}.
-Quindi se $c$ is infinito $c^{-1}$ is infinitesimale.
-Ovviamente, tutti i reali standard sono finiti e $0$ is l'unico reale standard infinitesimo.
-
-\begin{lemma}\label{esistenzainfinitesimi}
-Esistono iperreali nonstandard infiniti and infinitesimi non nulli.
-\end{lemma}
-\begin{proof}
-Sia $c\in\nsR\sm\RR$ e supponiamo che $c$ non sia infinito, altrimenti $c$ e $c^{-1}$ dimostrano il lemma.
-Quindi l'insieme $\big\{ a\in\RR: c<a\big\}$ is un insieme non vuoto e limitato di reali.
-Sia $b\in\RR$ l'estremo inferiore di questo insieme.
-Mostriamo che $b-c$ is infinitesimo non nullo.
-Non is nullo perchis $c\in\nsR\sm\RR$ e $b\in\RR$.
-Inoltre, se per assurdo che $\epsilon < |b-c|$ for some $\epsilon$ standard positivo, allora $c<b-\epsilon$, oppure $b+\epsilon< c$, (a seconda se $c<b$ o $b<c$).
-Entrambe queste possibilit\`a contraddiocono le propriet\`a dell'estremo inferiore.
-\end{proof}
-
-L'esistenza di iperreali nonstandard infiniti prova che $\nsR$ non is un campo archimedeo: gli interi standard non sono cofinali in $\nsR$.
-Si osservi che per\`o, per elementarit\`a, gli interi nonstandard $\ns\ZZ$ sono cofinali in $\nsR$: nella prospettiva di chi vive in $\nsR$, si tratta di un normalissimo campo archimedeo.
-
-
-La dimostrazione del seguente lemma is lasciata al lettore.
-
-\begin{lemma}\label{prodottosommainfinitesimi}
-Gli infinitesimi sono chiusi per somma prodotto e sono anche chiusi rispetto alla moltiplicazione per reali standard.
-\end{lemma}
-
-La completezza di Dedekind is un'altra propriet\`a fondamentale di $\RR$ che non vale in $\nsR$.
-Questa dice che ogni sottoinsieme limitato superiormente ha un estremo superiore.
-In $\nsR$ non vale: infatti l'insieme degli infinitesimi is ovviamente limitato ma, per il lemma~\ref{prodottosommainfinitesimi}, non ha estremo superiore.
-Quindi la completezza di Dedekind \textit{non\/} is una propriet\`a del prim'ordine.
-Comunque in casi particolari is preservata nel passaggio dai reali standard agli iperreali.
-Come succede spesso, propriet\`a che nel modello standard valgono per tutti gli insiemi valgono in $\nsR$ solo per gli insiemi definibili.
- 
-\begin{lemma}\label{dedekindcomplete}
-Ogni sottoinsieme di $\nsR$ di ariet\`a 1, definibile (anche con parametri), e limitato superiormente (in $\nsR$) ha un estremo superiore.
-\end{lemma}
-
-Si noti che il lemma si riferisce a insiemi i definibili con parametri in $\nsR$, altrimenti la dimostrazione sarebbe immediata.
-
-\begin{proof}  Sia $x$ una singola variabile, $a$ una tupla di parametri in $\nsR$ e sia $\phi(z,x)$ una formula pura.
-Dobbiamo mostrare che se $\phi(a,\nsR)$ is limitato allora ha un estremo superiore.
-La seguente formula $\psi(z,y)$ dice che $y$ is un maggiorante dell'insieme definito da $\phi(z,x)$ con $z$ una tupla di parametri:
-
-\hfil $\psi(z,y)\ \ =\ \  \A x\ \big[\phi(z,x)\imp x\le y\big]$.
-
-La seguente formula $\xi(z,w)$ dice che $w$ is l'estremo superiore (il minimo dei maggioranti) dell'insieme definito da $\phi(z,x)$.
-
-
-\hfil $\xi(z,w)\ \ =\ \  \psi(z,y)\ \wedge\ \A y\ \big[\psi(z,y)\imp w\le y\big]$.
-
-Quindi dobbiamo mostrare che in $\nsR$ vale $\E y\,\psi(z,y)\ \imp\ \E w\,\xi(z,w)$.
-Questa is una formula del prim'ordine che vale in $\RR$ is quindi vale anche in ogni sua estensione elementare.
-\end{proof}
-
-Definiamo su $\nsR$ una relazione di equivalenza: scriveremo $a\approx b$ se $a-b$ is infinitesimo.
-Che sia effettivamente una relazione di equivalenza, segue facilmente dal lemma~\ref{prodottosommainfinitesimi}.
-La classe di equivalenza di $c$ si chiama \emph{monade\/} di $c$, in onore di Leibniz.
-
-\begin{lemma}
-Se $c$ is un iperreale finito, nella monade di $c$ esiste un'unico reale.
-\end{lemma}
-\begin{proof}
-Per l'esistenza is sufficiente scorrere la dimostrazione del lemma~\ref{esistenzainfinitesimi} e osservare che il reale standard $b$ is tale che $b\approx c$.
-Per l'unicit\`a osserviamo che se $b_1\approx b_2$ sono entrambi standard, allora $b_1-b_2$ is un infinitesimo standard, quindi $0$.
- 
-\end{proof}
-
-Gli iperreali che non sono infiniti si dicono \emph{finiti}.
-Se $c$ is finito, quell'unico reale standard nella monade di $c$ si chiama \emph{parte standard\/} di $c$ e si denota con \emph{$\st(c)$}.
-
-Si noti che nel seguente lemma le espressioni alla sinistra si formalizzano direttamente in enunciati del prim'ordine quindi valgono in $\RR$ se e solo se valgono in $\nsR$.
-
-\begin{proposition}\label{fattolimitinonstandard}
-Per ogni $f:\RR\to\RR$, for every $a, l\in\RR$ valgono le seguenti equivalenze.
-\begin{itemize}
-\item[a.]\ \parbox{6ex}{$\displaystyle\lim_{x\imp+\infty}$}\parbox{11ex}{$fx\;=+\infty$}\parbox{10ex}{\hfil$\IFF$}$\ns f(c)$ is infinito positivo for every $c>0$ infinito.
-
-\item[b.]\ \parbox{6ex}{$\displaystyle\lim_{x\imp+\infty}$}\parbox{11ex}{$fx\;=\;l$}\parbox{10ex}{\hfil$\IFF$}$\ns f(c)\approx l$ for every $c>0$ infinito.
-
-\item[c.]\ \parbox{6ex}{$\displaystyle\lim_{x\imp a}$}\parbox{11ex}{$fx\;=+\infty$}\parbox{10ex}{\hfil$\IFF$}$\ns f(c)$ is infinito positivo for every $c\approx a\neq c$.
-
-\item[d.]\ \parbox{6ex}{$\displaystyle\lim_{x\imp a}$}\parbox{11ex}{$fx\;=\;l$}\parbox{10ex}{\hfil$\IFF$}$\ns f(c)\approx l$ for every for every $c\approx a\neq c$.
-\end{itemize}
-\end{proposition}
-
-\begin{proof}
-Dimostriamo \ssf{d} e lasciamo le altre per esercizio.
- Per dimostrare la direzione $\IMP$ assumiamo la parte sinistra dell'equivalenza \ssf{d} e la riscriviamo come formula del prim'ordine:
-
-\begin{itemize}
-\item[1.]\hspace*{9ex}$\A\,\epsilon>0\ \E\,\delta>0\ \A x\ \Big[0<|x-a|<\delta\ \ \imp\ \ |fx-l|<\epsilon\Big]$.
-\end{itemize}
-
-La nostra ipotesi dice che formula \ssf{1} is vera in $\RR$, o equivalentemente in $\nsR$.
-Abbiamo usato alcune abbreviazioni che supponiamo il lettore sappia tradurre in formule e per avvicinarci alla notazione usata in analisi useremo le lettere $\epsilon$ e $\delta$ come variabili.
-I simboli $\dot\epsilon$ e $\dot\delta$ denoteranno parametri.
-
-
-Verifichiamo ora che $\ns f(c)\approx l$ vale for every $c\approx a\neq c$, ovvero che $|\ns fc-l|<\dot\epsilon$ for every $\dot\epsilon$ standard positivo.
-Fissiamo $\dot\epsilon$ standard positivo, sia $\dot\delta$ un reale standard ottenuto dalla verit\`a di \ssf{1} in $\RR$.
-Ora per elementarit\`a otteniamo
-
-
-\begin{itemize}
-\item[]\hspace*{9ex}$\phantom{\A\,\epsilon>0\ \E\,\delta>0}\llap{$\nsR\;\models$}\ \A x\ \Big[0<|x-a|<\dot\delta\ \ \imp\ \ |fx-l|<\dot\epsilon\Big]$,
-\end{itemize}
-
-dove $\dot\epsilon$ e $\dot\delta$ ora stanno per parametri.
-Se  $a\approx c\neq a$, allora $0<|c-a|<\dot\delta$ is sicuramente soddisfatta (perch\'e $\dot\delta$ is standard).
-Quindi da \ssf{1}, otteniamo $|\ns fc-l|<\dot\epsilon$.
-
-
-Per dimostrare la direzione $\PMI$ supponiamo \ssf{1} sia falsa.
-Ovvero, in $\RR$ vale
-
-\begin{itemize}
-\item[2.]\hspace*{9ex}$\E\,\epsilon>0\ \A\,\delta>0\ \E x\ \Big[0<|x-a|<\delta\ \ \wedge\ \ \epsilon\le |fx-l|\Big]$,
-\end{itemize}
-
-vogliamo dimostrare che $\ns f(c)\not\approx l$ for some $c\neq a$ infinitamente vicino ad $a$.
-Fissiamo un $\dot\epsilon$ che testimonia la verit\`a di questa formula in $\RR$, un reale standard dunque.
-Ora, per elementarit\`a osserviamo che
-
-\begin{itemize}
-\item[]\hspace*{9ex}$\phantom{\E\,\epsilon>0}\llap{$\nsR\;\models$}\ \A\,\delta>0\ \E x\ \Big[0<|x-a|<\delta\ \ \wedge\ \ \dot\epsilon\le |fx-l|\Big]$.
-\end{itemize}
-
-Quindi fissiamo un arbitraio $\dot\delta$ infinitesimo.
-Otteniamo 
-
-\begin{itemize}
-\item[]\hspace*{9ex}$\phantom{\E\,\epsilon>0\ \A\,\delta>0}\llap{$\nsR\;\models$}\ \E x\ \Big[0<|x-a|<\dot\delta\ \ \wedge\ \ \dot\epsilon\le |fx-l|\Big]$.
-\end{itemize}
-
-Un qualsiasi $c$ che testimonia la verit\`a di questa formula in $\nsR$ is tale che $c\approx a\neq c$ e contemporaneamente $\epsilon\le |\ns fc-l|$, ma $\dot\epsilon$ is stato scelto standard, quindi  $\ns fc\not\approx l$.
-\end{proof}
-
-
-Il seguente corollario is immediato.
-
-\begin{corollary} Per ogni $f:\RR\to\RR$ the following are equivalent:
-\begin{itemize}
-\item[a.] $f$ is continua
-\item[b.] $\ns f(a)\approx \ns f(c)$ for every for every $a$ standard e ogni iperreale $c\approx a$;
-% \item[c.] $\ns f(b)\approx \ns f(c)$ for every $b\approx c$ iperreali finiti.\QED
-\end{itemize}
-\end{corollary}
-
-\`E importante nel corollario qui sopra restringere \ssf{c} a iperreali \textit{finiti\/} altrimenti otteniamo una propriet\`a pi\`u forte:
-
-\begin{proposition} Per ogni $f:\RR\to\RR$ the following are equivalent:
-\begin{itemize}
-\item[a.] $f$ is uniformemente continua;
-\item[b.] $\ns f(a)\approx\ns  f(b)$ for every coppia di iperreali $a\approx b$.
-\end{itemize}
-\end{proposition}
-
-\begin{proof}
-Dimostriamo \ssf{a}\,$\IMP$\,\ssf{b}.
-Ricordiamo che $f$ is uniformemente continua se 
-
-\begin{itemize}
-\item[1.]\hspace*{9ex}$\RR\ \models\ \A\,\epsilon>0\ \E\,\delta>0\ \A x, y\ \Big[|x-y|<\delta\ \ \imp\ \ |fx-fy|<\epsilon\Big]$.
-\end{itemize}
-
-Assumiamo \ssf{a} e fissiamo $a\approx b$.
-Vogliamo mostrare che $|\ns f(a)-\ns f(b)|<\dot\epsilon$ for every $\dot\epsilon$ standard positivo.
-Fissato $\dot\epsilon$ standard positivo, sia $\dot\delta$ un reale standard ottenuto dalla validit\`a di \ssf{1} in $\RR$.
-Ora per elementarit\`a otteniamo
-
-\begin{itemize}
-\item[2.]\hspace*{9ex}$\phantom{\RR\ \models\ \A\,\epsilon>0\ \E\,\delta>0}\llap{$\nsR\;\models$}\ \A x, y\ \Big[|x-y|<\dot\delta\ \ \imp\ \ |fx-fy|<\dot\epsilon\Big]$.
-\end{itemize}
-
-In particolare 
-
-\begin{itemize}
-\item[]\hspace*{9ex}$\phantom{\RR\ \models\ \A\,\epsilon>0\ \E\,\delta>0\ \A x, y}\llap{$\nsR\;\models$}\ \phantom{\Big[}|a-b|<\dot\delta\ \ \imp\ \ |fa-fb|<\dot\epsilon$.
-\end{itemize}
-
-Poich\'e $a\approx b$ allora $|a-b|<\dot\delta$ per qualunque $\dot\delta$ standard.
-Quindi $|\ns f(a)-\ns f(b)|<\dot\epsilon$.
-
-Per dimostrare \ssf{b}\,$\IMP$\,\ssf{a} neghiamo \ssf{a}
-
-\begin{itemize}
-\item[3.]\hspace*{9ex}$\RR\ \models\ \E\,\epsilon>0\ \A\,\delta>0\ \E x, y\ \Big[|x-y|<\delta\ \ \wedge\ \ \epsilon\le|fx-fy|\Big]$.
-\end{itemize}
-
-Vogliamo trovare $a\approx b$ such that $\dot\epsilon\le|\ns f(a)-\ns f(b)|$ for some $\dot\epsilon$ standard positivo.
-Sia $\dot\epsilon$ un reale standard che testimonia la verit\`a di \ssf{3} in $\RR$.
-Per elementarit\`a otteniamo 
-
-\begin{itemize}
-\item[]\hspace*{9ex}$\phantom{\RR\ \models\ \E\,\epsilon>0}\llap{$\nsR\ \models$}\ \A\,\delta>0\ \E x, y\ \Big[|x-y|<\delta\ \ \wedge\ \ \dot\epsilon\le|fx-fy|\Big]$.
-\end{itemize}
-
-Quindi possiamo fissare un arbitrario infinitesimo $\dot\delta>0$ and ottenere $a,b\in\nsR$ such that 
-
-
-\begin{itemize}
-\item[]\hspace*{9ex}$\phantom{\RR\ \models\ \E\,\epsilon>0\ \A\,\delta>0\ \E x, y\ \Big[}\llap{$\nsR\ \models\ $}|a-b|<\dot\delta\ \ \wedge\ \ \dot\epsilon\le|fa-fb|$.
-\end{itemize}
-
-Poich\'e $\dot\delta$ is infinitesimo, $a\approx b$ come richiesto per negare \ssf{b}.
-\end{proof}
-
-
-La seguente proposizione is immediata conseguenza della proposizione~\ref{fattolimitinonstandard}
-
-\begin{proposition}
-Per ogni funzione unaria $f$ e for every $a$ standard, the following are equivalent.
-\begin{itemize}
-\item[a.] $f$ is differenziabile in $a$.
-Si noti questo vale in $\RR$ se e solo se valge in $\nsR$.
-\item[b.] for every $h$ infinitesimo il rapporto
-
-\hfil$\displaystyle\frac{f(a)-f(a+h)}{h}$
-
-is finito e la sua parte standard is indipendente da $h$.
-\end{itemize}
-\end{proposition}
-
-
-%Nel passato si sono sperimentati approcci didattici alternativi al calcolo classico basati sull'analisi non standard.
-% Il testo di  H.
-% Jerome Keisler, \textit{Foundations of infinitesimal calculus}, disponibile in rete con licenza \cc is un elegante tentativo di insegnare l'analisi reale a studenti del prim'anno usando l'analisi nonstandard ma senza assumere prerequisiti di logica.
-
-
-\begin{exercise}
-Si dimostri che se $f:\RR\to\RR$ is una funzione iniettiva allora  $\ns f a\in\nsR\sm\RR$ for every $a\in\nsR\sm\RR$.\QED
-\end{exercise}
-
-\begin{exercise}
-Si dimostri che the following are equivalent for every insieme $X\subseteq\RR$:\nobreak
-\begin{itemize}
-\item[1.]  $X$ is un insieme finito;
-\item[2.]  $\ns X=X$.\QED
-\end{itemize}
-\end{exercise}
-
-\begin{exercise}
-Si dimostri che the following are equivalent for every insieme $X\subseteq\RR$:\nobreak
-\begin{itemize}
-\item[1.]  $X$ is un aperto nell'usuale topologia di $\RR$;
-\item[2.]  $b\approx a\in\ns X \ \ \IMP\ \ b\in\ns X$ for every $a$ standard e $b$ arbitrario.\QED
-\end{itemize}
-\end{exercise}
-
-\begin{exercise}
-Si dimostri che the following are equivalent for every insieme $X\subseteq\RR$:\nobreak
-\begin{itemize}
-\item[1.]  $X$ is un chiuso nell'usuale topologia di $\RR$;
-\item[2.]  $a\in\ns X \ \ \IMP\ \ \st a\in\ns X$ for every finito $a$.\QED
-\end{itemize}
-\end{exercise}
-
-\begin{exercise}\QED
-\end{itemize}
-\end{exercise}
-
-\begin{exercise}
-Si dimostri che $|\RR|\;\le\;|\nsQ|$ ovvero che $\nsQ$ ha almeno la cardinalit\`a del continuo.
-(Suggerimento: si definisca una funzione iniettiva $f:\RR\to\nsQ$ scegliendo nella monade di ogni reale standard un razionale nonstandard.)\QED
-\end{exercise}
-\end{comment}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1118,7 +1114,7 @@ $N\models\E x\,\phi(x)\ \ \IMP\ \ N\models\phi(b)$ for some $b\in A$.
 
 \ceq{}%
 {\IMP}%
-{N\models\phi(b)} for some $b\in M$.
+{N\models\phi(b)} for some $b\in A$.
 
 \ssf{2}$\IMP$\ssf{1} Firstly, note that $A$ is the domain of a substructure of $N$, that is, $f^Na\in A$ for every $f\in L_{\rm fun}$ and every $a \in A^{n_f}$.
 In fact, this follows from \ssf{2} with $fa=x$ for $\phi(x)$.

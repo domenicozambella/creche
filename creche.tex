@@ -64,7 +64,7 @@ diagrams={>=latex}
 
 % \setlength{\fboxsep}{0.3mm}
 % \def\emph#1{\fcolorbox{white}{gray!50}{\vphantom{Iq}#1}}
-\def\emph#1{\textcolor{blue}{\textbf{\boldmath #1}}}
+%\def\emph#1{\textcolor{blue}{\textbf{\boldmath #1}}}
 
 \def\jj{\mbox{-}}
 \def\E{\exists}
@@ -158,7 +158,7 @@ diagrams={>=latex}
 
 %\def\hookdoubleheadrightarrow{\hookrightarrow\mathrel{\mspace{-15mu}}\rightarrow}
 
-\def\isomap{\rlap{\kern0.7ex\raisebox{.8ex}{\scriptsize$\kern.2ex\sim$}}\rightarrow}
+\def\isomap{\mathrel{\rlap{\kern0.7ex\raisebox{.7ex}{\scriptsize$\kern.2ex\sim$}}\rightarrow}}
 
 \def\P{\EuScript P}
 \def\D{\EuScript D}
@@ -278,7 +278,7 @@ diagrams={>=latex}
 \definecolor{violet}{RGB}{115, 0, 205}
 \definecolor{brown}{RGB}{150, 50, 10}
 \definecolor{green}{RGB}{5,110, 35}
-\definecolor{emphcolor}{rgb}{.98,.98,.70}
+\definecolor{emphcolor}{rgb}{.70,.98,.98}
 
 \def\mr{\color{brown}}
 \def\gr{\color{green}}
@@ -299,7 +299,7 @@ diagrams={>=latex}
 
 
 \renewcommand*{\emph}[1]{%
-\smash{\tikz[baseline]\node[rectangle, fill=emphcolor, rounded corners, inner xsep=0.2ex, inner ysep=0.2ex, anchor=base, minimum height = 2.7ex]{#1};}}
+\smash{\tikz[baseline]\node[rectangle, fill=green!40, rounded corners, inner xsep=0.2ex, inner ysep=0.2ex, anchor=base, minimum height = 2.7ex]{#1};}}
 
 
 \begin{document}

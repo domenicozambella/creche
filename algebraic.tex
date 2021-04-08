@@ -122,9 +122,12 @@ An element $c$ of an abelian group is a \emph{torsion element} if $nc=0$ for som
   %
   As ${\mr c}$ is not a torsion element, $n=0$ and the equation is trivial.
 
-  \ssf{2}$\IMP$\ssf{1}\quad If $\<A\>_M\cap\<{\mr c}\>_M\neq\big\{0\big\}$ then $n{\mr c}=a$ for some $a\in\<A\>_M\sm\{0\}$ and some positive integer $n$.
+  \ssf{2}$\IMP$\ssf{1}\quad If $\<A\>_M\cap\<{\mr c}\>_M\neq\big\{0\big\}$ then $n{\mr c}=a$ for some $a\in\<A\>_M\sm\{0\}$ and some $n\in\ZZ\sm\{0\}$.
   %
-  Then ${\mr c}$ satisfies the non trivial equation $n{\mr x}=a$.
+  Then ${\mr c}$ satisfies the equation $n{\mr x}=a$.
+  %
+  This equation is nontrivial (e.g., in $M$ it is not satisfied by $2c$).
+
 \end{proof}
 
 \begin{remark}\label{oss_liberi_qf}
@@ -265,7 +268,7 @@ We denote this theory by \emph{$T_{\rm dag}$}.
 \begin{proposition}\label{prop_md_cons_sodd}
 Let $A\subseteq M\models T_{\rm tfag}$ and let $\phi({\mr x})\in L_{\rm at}(A)$, where $|{\mr x}|=1$, be consistent.
 %
-Then $N\models\E {\mr x} \,\phi({\mr x})$ for every model $N\models T_{\rm dag}$.
+Then $N\models\E {\mr x} \,\phi({\mr x})$ for every $N$ such that $\<A\>_M\subseteq N\models T_{\rm dag}$.
 \end{proposition}
 
 Note that in the proposition above  \textit{consistent\/} means satisfied in some $M'$ such that $\<A\>_M\subseteq M'\models T_{\rm tfag}$.
@@ -322,14 +325,24 @@ Then by   Remark~\ref{oss_liberi_qf} we may choose ${\mr c}$ to be any element o
 Such an element exists because $N$ has rank at least $\lambda$.
 \end{proof}
 
-\begin{corollary}\label{corol_ModDivUltraOmog}
-Every uncountable model of $T_{\rm dag}$ is rich in the category of models of $T_{\rm tfag}$ and partial isomorphisms.
+Below few important consequences of this lemma.
+
+\begin{corollary}\label{corol_acfUltraOmog}
+Work in the category of models of $T_{\rm tfag}$ with partial embeddings as morphisms. Then the following are equivalent
 %
-In particular $T_{\rm dag}$ is uncountably categorical, complete, and has quantifier elimination.
+\begin{itemize}
+\item[1.] $N$ is a $\lambda$-rich model
+\item[2.] $N\models T_{\rm dag}$ and has rank $\ge\lambda$
+\end{itemize}
+In particular every uncountable $N\models T_{\rm dag}$ is rich.
+\end{corollary}
+
+\begin{corollary}\label{corol_ModDivUltraOmog}
+The theory $T_{\rm dag}$ is uncountably categorical, complete, and has quantifier elimination.
 \end{corollary}
 
 \begin{proof}
-Any uncountable $N\models T_{\rm dag}$ has rank $|N|$, therefore it is rich by Lemma~\ref{lemma_modulo_divisibile_ricco_nonnumer}; categoricity and completeness follow.
+Categoricity and completeness ar immediate (the category presented in the corollary above is connected).
 %
 As for quantifier elimination, let $k:M\to N$ is a partial isomorphism between models of $T_{\rm dag}$.
 %
@@ -361,7 +374,7 @@ The theory of rings contains the following axioms
 \item[r3] $(x+y)\mdot z\ =\ x\mdot z + y\mdot z$,
 \item[r4] $z\mdot (x+y)\ =\ z\mdot x + z\mdot y$.
 \end{itemize}
-
+?
 All the rings we consider are \emph{commutative\/} 
 
 \begin{itemize}
@@ -618,6 +631,7 @@ Work in the category of models of $T_{\rm id}$ with partial embeddings as morphi
 \item[1.] $N$ is a $\lambda$-rich model
 \item[2.] $N\models T_{\rm acf}$ and has transcendence degree $\ge\lambda$
 \end{itemize}
+In particular every uncountable $N\models T_{\rm acf}$ is rich.
 \end{corollary}
 \begin{proof}
 Implication $\ssf{2}\IMP\ssf{1}$ is an immediate consequence of Lemma~\ref{lem_acf_ricco_nonnumer}.

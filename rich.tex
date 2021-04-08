@@ -78,7 +78,7 @@ The following two notions are closely connected with richness.
 \begin{definition}\label{def_omogenea_universale}
 Assume that $\M$ satisfies \ssf{c1}-\ssf{c3} of Definition~\ref{def_com_c}.
 We say that a model $N$ is \emph{$\lambda$-universal\/} if for every model $M$ of cardinality $\le\lambda$ in the same connected component as $N$ there is an embedding $k:M\hookrightarrow N$.
-We say that a model $N$ is \emph{$\lambda$-homogeneous\/} if every $k:N\to N$ of cardinality $<\lambda$ extends to a bijective morphism $h:N\isomap N$ (an automorphism when \ssf{c4} below holds).
+We say that a model $N$ is \emph{$\lambda$-homogeneous\/} if every $k:N\to N$ of cardinality $<\lambda$ extends to a bijective morphism $h:N\isomap N$ (an automorphism when \ssf{c4} holds).
 
 Note that the larger $\M_{\rm hom}$, the stronger notion of homogeneity.
 When  $\M_{\rm hom}$ contains all partial isomorphisms between models (the largest class of morphisms considered here), it is common to say \emph{$\lambda$-ultra\-homo\-geneous\/} for $\lambda$-homogeneous.
@@ -185,7 +185,7 @@ The theorem below proves that $T_1$ is complete as soon as $\M$ is connected.
 
 \begin{theorem}\label{thm_morphism_rich_elementary}
 (Assume~\ref{ass_c1-6})  \  Every morphism between $\lambda$-rich models is elementary.
-In particular, $\lambda$-rich models in the same connected component are elementary equivalent.
+In particular, $\lambda$-rich models in the same connected component are elementarily equivalent.
 \end{theorem}
 
 \begin{proof}
@@ -222,14 +222,14 @@ This is achieved using the same dovetail enumeration as in our second proof the 
 Assume for simplicity that $\M$ is connected.
 Then all $\lambda$-rich models belong to $\Mod(T_1)$ for some complete theory $T_1$.
 It is interesting to ask if the converse is true: if $T_1$ is the theory of the $\lambda$-rich models of $\M$, do all models in $\Mod(T_1)$ are rich?
-The answer is affirmative when $\lambda=\omega$ and $T_1$ is either $T_{\rm dlo}$ or $T_{\rm rg}$, but this is not always the case, see Example~\ref{ex_infiniti_colori} for an easy to grasp counterexample.
-But in fact, any non $\lambda$-categorical theory counterexamples.
+% The answer is affirmative when $\lambda=\omega$ and $T_1$ is either $T_{\rm dlo}$ or $T_{\rm rg}$, but this is not always the case.
+% See Example~\ref{ex_infiniti_colori} for an easy to grasp counterexample, though any non $\lambda$-categorical theory is a counterexample.
 
 \begin{remark}
-    Assume~\ref{ass_c1-6})  \  Assume $\M$ is connected.
+    (Assume~\ref{ass_c1-6})  \  Assume $\M$ is connected.
     Let $T_1$ be the theory of the rich models of $\M$.
     If every model of $T_1$ is $\lambda$-rich then $T_1$ is $\lambda$-categorical.
-    (This is a conseguence of Corollary~\ref{corol_QE_back_and_forth})\QED
+    (This is a conseguence of Corollary~\ref{coroll_riccozigzag})\QED
 \end{remark}
 
 A very interesting interesting variant of the question asked above is considered in Theorem~\ref{thm_ricchezza_saturazione_QE} where it is related to an important phenomenon that we now indroduce.
@@ -254,7 +254,7 @@ Here we report without proof the following theorem.
 The following are equivalent
 \begin{itemize}
 \item[1.] $T$ has elimination of quantifiers;
-\item[2.] every partial isomorphism between models $T$ is an elementary map.\QED
+\item[2.] every partial isomorphism between models of $T$ is an elementary map.\QED
 \end{itemize}
 \end{theorem}
 
@@ -286,7 +286,12 @@ It is also easy to verify that every uncountable model of $T_1$ is rich and cons
 
 \begin{exercise}\label{ex_finiti_colori}
 Let $T_0$ and $\M$ be as in Example~\ref{ex_infiniti_colori} except that we restrict the language to the relations $r_0,\dots,r_n$ for a fixed $n$.
-Do $\omega$-rich models of $T_0$ exist? Is their theory $\omega$-categorical? What if we add to $T_0$ the axiom $r_0(x)\vee\dots\vee r_n(x)$~?\QED
+Do $\omega$-rich models of $T_0$ exist? 
+If so, let $T_1$ be the set of sentences that hold in all rich model.
+Does $T_1$ has elimination of quantifiers?
+Is $T_1$ $\omega$-categorical? 
+Answer the questions above when we add to the language a constant $0$.
+Answer the questions above when we drop the axioms $\neg\E x\, \big[r_n(x)\wedge r_m(x)\big]$.\QED
 \end{exercise}
 
 \begin{exercise}
