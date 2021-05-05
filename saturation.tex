@@ -132,7 +132,7 @@ Assume $|L|\le\lambda$. Consider the category that consists of models of some th
 \begin{proof}\ssf{2}$\IMP$\ssf{1}. Let $N\models T_1$ be $\lambda\mbox{-}$saturated. Fix a partial isomorphism $k:M\to N$ of cardinality $<\lambda$, some ${\mr b}\in M$ and let $p({\mr x}\,;{\gr z})=\qftp_M({\mr b}\,;{\gr a})$, where ${\gr a}$ enumerates $\dom k$. The type $p({\mr x}\,;k\,{\gr a})$ is realized in any $\lambda\mbox{-}$rich model $N'$ that contains $\<k\,{\gr a}\>_N$. By \ssf{2}, $N\equiv_{k{\gr a}} N'$, so $p({\mr x}\,;k\,{\gr a})$ is finitely consistent in $N$.  By saturation, it is realised by some ${\mr c}\in N$. Then $k\cup \{\<{\mr b},{\mr c}\>\}:M\to N$ is the required extension.
 
 
-\ssf{1}$\IMP$\ssf{2}. Let $k:M\to N$ be a finite partial isomorphism between models of $T$. We claim that it is an elementary map. Let $M'\succeq M$ and $N'\succeq N$ are $\lambda$-saturated models of equal cardinality. As these are $\lambda$-rich, $k:M'\to N'$ extends to an isomorphism $h:M'\isomap N'$ and the claim follows.
+\ssf{1}$\IMP$\ssf{2}. Let $k:M\to N$ be a finite partial isomorphism between models of $T$. We claim that it is an elementary map. Let $M'\succeq M$ and $N'\succeq N$ are $\lambda$-saturated models. As these are $\lambda$-rich, $k:M'\to N'$ is elementary by Theorem~\ref{thm_morphism_rich_elementary}.
 \end{proof}
 
 \begin{exercise}
@@ -181,7 +181,7 @@ Let $N$ be a $\lambda\mbox{-}$homogeneous structure. Let $A\subseteq N$ have car
 
 Finally, we want to extend the equivalence in Theorem~\ref{thm_saturo_omogeneouniversale} to $\lambda\mbox{-}$saturated structures. For this we only need to apply Theorem~\ref{ricco=universaledebolmenteomogeneo}. 
 
-When the morphisms of the underlying category are the elementary maps, it is usual to replace the notion of $\lambda\mbox{-}$universal (cfr.\@ Definition~\ref{def_weakly_universal}) with the following.
+When the morphisms of the underlying category are the elementary maps, it is usual to replace the notion of $\lambda\mbox{-}$universal (cfr.\@ Definition~\ref{def_omogenea_universale}) with the following.
 
 \begin{definition}\label{def_w_saturation}
   We say that $N$ is \emph{weakly $\lambda\mbox{-}$saturated\/} if $N$ realizes every type $p(x)\subseteq L$, where $|x|\le\lambda$, that is finitely consistent in $N$.\QED
@@ -457,6 +457,10 @@ Therefore
 Hence, by Proposition~\ref{prop_E_type}, $p({\mr x})$ is equivalent to a type over $A$.
 \end{proof}
 
+\begin{exercise}\label{ex_E_type}
+Prove that $\RR,1\notmodels\E y\;q(x,y)$, as claimed before Proposition~\ref{prop_E_type}.\QED
+\end{exercise}
+
 \begin{exercise}\label{cadinalitafinitasaturazione}
 Let $p(x)\subseteq L(A)$, with $|x|<\omega$. Prove that if $p(\U)$ is infinite then it has cardinality $\kappa$. Show that this may not be true if $x$ is an infinite tuple (i.e., $p(\U)$ may be infinite and of cardinality $<\kappa^{|x|}$).\QED 
 \end{exercise}
@@ -472,8 +476,4 @@ Let $\phi(x\,;y)\in L(\U)$. Prove that the following are equivalent
 \item[1.] there is a sequence $\<a_i\,:\,i\in\omega\>$ such that $\phi(\U\,;a_i)\subset\phi(\U\,;a_{i+1})$ for every $i<\omega$;
 \item[2.] there is a sequence $\<a_i\,:\,i\in\omega\>$ such that $\phi(\U\,;a_{i+1})\subset\phi(\U\,;a_i)$ for every $i<\omega$.\QED  
 \end{itemize}
-\end{exercise}
-
-\begin{exercise}\label{ex_E_type}
-Prove that $\RR,1\notmodels\E y\;q(x,y)$, as claimed before Proposition~\ref{prop_E_type}.\QED
 \end{exercise}

@@ -40,10 +40,10 @@ Then \ssf{2} follows by compactness (cfr.\@ Remark~\hyperref[rem_normality]{\ref
 \end{proof}
 
 \begin{exercise}
-For every $a\in\U^n$ and $A\subseteq\U$, the following are equivalent
+For every $a\in\U^{|x|}$ and $A\subseteq\U$, the following are equivalent
 \begin{itemize}
 \item[1.] $a$ is solution of some algebraic formula  $\phi(x)\in L(A)$;
-\item[2.] $a=a_1,\dots,a_n$ for some $a_1,\dots,a_n\in\acl(A)$.\QED 
+\item[2.] $a=a_1,\dots,a_n$ for some $a_1,\dots,a_n\in\acl(A)$.\QED
 \end{itemize}
 \end{exercise}
 
@@ -344,13 +344,14 @@ Finally we prove the main theorem about basis.
   Then $A\subseteq\acl D$ and $|D|<|B|$.
   By transitivity, $C\subseteq\acl D$ which contradicts the independence of $B$.
 
-  Now we suppose that $B$ is finite. 
+  Now we suppose that $B$ is finite.
+  Choose $B$ such that $|B\sm A|$ is minimal.
   As $|A|<|B|$, there is a $b\in B\sm A$.
   As $b\in\acl(A)$ but $b\notin\acl(B\sm b)$ then $A\nsubseteq\acl(B\sm b)$.
   Then there is an $a\in A$ such that $a\notin\acl(B\sm b)$.
-  By Lemma~\ref{indipendenza+1} $B\sm b, a$ is an independent set that, by what proved above, is contained in a base $B'$.
-  As $|A|<|B'|$, we can iterate the procedure.
-  After $|A|+1$ iterations we reach a contradiction.
+  By Lemma~\ref{indipendenza+1} $B\sm b, a$ is an independent set.
+  Therefore, by what proved above, it is contained in a base $B'$.
+  As $|B'\sm A|<|B\sm A|$, we have a contradiction.
 \end{proof}
 
 \begin{proposition}\label{prop_mappetraindipendenti}
