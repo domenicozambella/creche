@@ -200,6 +200,7 @@ Every non piecewise drifting type extends to a non drifting global type.
 \end{comment}
 
 \section{Heirs and coheirs}
+\label{coheirs}
 
 The easiest way to obtain types that are invariant over a model $M$ is via types that are finitely satisfiable in $M$.
 We say that a type $p({\mr x})$ is  \emph{finitely satisfiable\/} in $M$ if every conjunction of formulas in $p({\mr x})$ has a solution in $M^{|{\mr x}|}$.
@@ -225,10 +226,9 @@ Every type $q({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $M$ has a
 \end{proposition}
 
 \begin{proof} 
-Let $p({\mr x})\subseteq L(\U)$ be maximal among the types containing $q({\mr x})$ and finitely satisfiable in $M$.
+Let $p({\mr x})\subseteq L(\U)$ be maximal among the types that contain $q({\mr x})$ and are finitely satisfiable in $M$.
 We prove that $p({\mr x})$ is complete.
-Suppose for a contradiction that $p({\mr x})$ contains neither $\psi({\mr x})$ nor $\neg\psi({\mr x})$.
-Then  neither $p({\mr x})\cup\big\{\psi({\mr x})\big\}$ nor $p({\mr x})\cup\big\{\neg\psi({\mr x})\big\}$ are finitely satisfiable in $M$.
+If for a contradiction $p({\mr x})$ contains neither $\psi({\mr x})$ nor $\neg\psi({\mr x})$, then  neither $p({\mr x})\cup\big\{\psi({\mr x})\big\}$ nor $p({\mr x})\cup\big\{\neg\psi({\mr x})\big\}$ are finitely satisfiable in $M$.
 This contradicts the finite satisfiability of $p({\mr x})$.
 \end{proof}
 

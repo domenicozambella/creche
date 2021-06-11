@@ -129,7 +129,8 @@ For definable sets Lascar invariance reduces to definablity over the algebraic c
 For every definable set $\grD$ the following are equivalent
   \begin{itemize}
     \item[1.] $\grD$ is Lascar invariant over $A$;
-    \item[2.] $\grD$ is definable over $\acl^\eq(A)$.\QED
+    \item[2.] $\grD$ is definable over every model containing $A$
+    \item[3.] $\grD\in\acl^\eq(A)$.\QED
   \end{itemize}
 \end{corollary}
 
@@ -148,9 +149,6 @@ The following are equivalent
 
 \begin{definition}\label{def_Lascar_type}We write \emph{${\gr a}\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}_A{\gr b}$\/} and say that ${\gr a}$ and ${\gr b}$ have the same \emph{Lascar strong type\/} over $A$ if the equivalence ${\gr a}\in\grD\iff{\gr b}\in\grD$ holds for every set $\grD$ that is Lascar invariant over $A$ or, in other words, if $\Ll({\gr a}/A)=\Ll({\gr b}/A)$. The notation ${\rm L{\jj}stp}({\gr a}/A)={\rm L{\jj}stp}({\gr b}/A)$ and ${\gr a}E_{_{L/A}}{\gr b}$ are also common in the the literature.\QED
 \end{definition}
-
-
-
 
 \begin{proposition}
   The relation $\equivL_A$ is the finest equivalence relation with $<\kappa$ classes that is invariant over $A$.\QED
@@ -192,11 +190,9 @@ Let $p({\mr x})\in S(\U)$ be global type; we say that $p$ is \emph{Lascar invari
 \end{proof}
 
 \begin{exercise}\label{ex_Lstp_indiscernibles}
-  Prove that the equivalence relation ${\gr a}\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}_A{\gr b}$ is the transitive closure of the relation: there is a sequence $\<{\gr c_i}:i<\omega\>$ indiscernible over $A$ such that ${\gr c_0}={\gr a}$ and ${\gr c_1}={\gr b}$. Hint: apply Theorem~\ref{thm_Lascar_indiscernibles}.\QED
+  Pcerove that the equivalence relation ${\gr a}\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}_A{\gr b}$ is the transitive closure of the relation: there is a sequence $\<{\gr c_i}:i<\omega\>$ indiscernible over $A$ such that ${\gr c_0}={\gr a}$ and ${\gr c_1}={\gr b}$. Hint: apply Theorem~\ref{thm_Lascar_indiscernibles}.\QED
 \end{exercise}
 
-
-\begin{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -205,40 +201,69 @@ Let $p({\mr x})\in S(\U)$ be global type; we say that $p$ is \emph{Lascar invari
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Coheirs over sets}\label{coheirs_sets}
 
-We used finite satisfiability and coheirs to obtain invariant types. Here we mention a natural generalization which produces Lascar invariant types. 
+In this section we consider a property that implies the existence of global Lascar invariant types and has simple syntactic characterization.
+It is a natural generalization to a set of the notion of finite satisfiability over a model introduced in Section~\hyperref[coheirs]{\ref*{invariant}.\ref*{coheirs}}.
 
-We say that $\phi({\mr x})\in L(\U)$ is \emph{almost satisfied\/} in $A$ if it is satisfied in every model containing $A$. A type $p({\mr x})\subseteq L(\U)$ is \emph{almost (finitely) satisfied\/} in $A$ if each of its finite subsets is almost satisfied in $A$. 
+% In Section~\hyperref[coheirs]{\ref*{invariant}.\ref*{coheirs}} finite satisfiability over a model has been used to prove that every consistent type over a model has a global extension to a type that is invariant over that model. 
+% Ideally, we would like to prove a similar existence property for Lascar invariance over a set but this is not possible in general.
+% In fact, in Example~\ref{ex_circ_order}, we preset a theory that has no global type that is Lascar invariant over $\0$.
 
-A global type  $p({\mr x})\in S(\U)$ that is almost satisfiable in $A$, is called a \emph{global coheir\/} of $p_{\restriction A}({\mr x})$. Note that when $A$ is a model we obtain the same notion defined a the end of Section~\hyperref[coheirs]{\ref*{invariant}.\ref*{coheirs}}. 
+We say that $\phi({\mr x})\in L(\U)$ is \emph{almost satisfiable\/} in $A$ if it is satisfiable in every model containing $A$.
+A type $p({\mr x})\subseteq L(\U)$ is \emph{almost (finitely) satisfiable\/} in $A$ if every conjunction of formulas in $p({\mr x})$ is almost satisfiable in $A$. 
+
+A global type $p({\mr x})\in S(\U)$ that is almost satisfiable in $A$, is called a \emph{global coheir\/} of $p_{\restriction A}({\mr x})$. 
+Note that when $A$ is a model we obtain the same notion defined in Section~\hyperref[coheirs]{\ref*{invariant}.\ref*{coheirs}}.
 
 The following is immediate.
 
 \begin{proposition}
-Let $p({\mr x})\in S(\U)$ be a global coheir of $p_{\restriction A}({\mr x})$. Then $p({\mr x})$ is Lascar invariant over $A$.\QED
+Every type $p({\mr x})\subseteq L(\U)$ that is almost satisfiable in $A$ is Lascar invariant over $A$.\QED
 \end{proposition}
 
-We say that $A$ is a \emph{coheir extension base\/} if whenever $\phi({\mr x})\vee\psi({\mr x})$ is almost satisfied in $A$, at least one of $\phi({\mr x})$ or $\psi({\mr x})$ is almost satisfied in $A$. 
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}The terminology is not standard. It is related with the notion of extensions bases for forking, see e.g.~\cite{Simon}.  
 
-\begin{example}
-Trivially, every model is a coheir extension base. When $T=T_{\rm dlo}$ only the models are coheir extension bases. The general proof is left to the reader. Here we consider the case $A\cap(a,c)=\0$ for some $a,c\in A$. Let $b\in(a,c)$. Then every model containing $A$ intersects $(a,b)\cup (b,c)$, but some models may omit $(a,b)$, others $(b,c)$. In Chapter~\ref{external} we will see that in some important class of theories, \textit{stable theories}, all sets are coheir extension bases.\QED
-\end{example}
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We say that $A$ is a \emph{coheir extension base\/} if every type that is almost satisfiable in $A$ has an extension to a global one.
+The terminology is not standard.
+It is inspired by the analogy with extensions bases for forking, see e.g.~\cite{Simon}.  
 
 \begin{proposition}\label{prop_exisntence_coheirs_over_sets}
-Assume $A$ is a coheir extension base. Then every type $q({\mr x})\subseteq L(\U)$ almost satisfiable in $A$ has an extension to a global type almost satisfiable in $A$.
+  The following are equivalent
+  \begin{itemize}
+    \item[1.] $A$ is a coheir extension base;
+    \item[2.] for all $\phi({\mr x}), \psi({\mr x})\in L(\U)$ if $\phi({\mr x})\vee\psi({\mr x})$ is almost satisfiable in $A$, then $\phi({\mr x})$ or $\psi({\mr x})$ is almost satisfiable in $A$. 
+  \end{itemize}  
 \end{proposition}
-
+  
 \begin{proof} 
-As in the proof of Proposition~\ref{prop_exisntence_coheirs}. Let $p({\mr x})\subseteq L(\U)$ be maximal among the types containing $q({\mr x})$ and finitely satisfiable in $A$. We prove that $p({\mr x})$ is complete. If for a contradiction that $p({\mr x})$ contains neither $\psi({\mr x})$ nor $\neg\psi({\mr x})$. Then for some formula $\psi({\mr x})\in p$ neither $\psi({\mr x})\cup\big\{\psi({\mr x})\big\}$ nor $\psi({\mr x})\cup\big\{\neg\psi({\mr x})\big\}$ is finitely satisfiable in $A$. The disjunction of these two formulas is $\psi({\mr x})$. So, this contradicts the finite satisfiability of $p({\mr x})$.
+  \ssf2$\IMP$\ssf1 Assume \ssf2. If $\phi({\mr x})\vee\psi({\mr x})$ is almost satisfiable in $A$, then it is contained in a global type $p({\mr x})$ the type almost satisfiable in $A$. 
+  Then \ssf1 follows from the completeness of $p({\mr x})$.
+  
+  \ssf1$\IMP$\ssf2 Assume \ssf2 and repeat the proof of Proposition~\ref{prop_exisntence_coheirs}.
 \end{proof}
+  
+Trivially, every model is an extension base for coheirs.
+The following example shows that for some theories may have no other extension bases.
 
+\begin{example}
+  Consider $T_{\rm dlo}$.
+  Suppose $A$ is not a model.
+  We show that $A$ is not an extension base for coheirs.
+  As $A$ is not a model, there are $a<c$ in $A$ such that either $A\cap(a,c)=\0$ or $a\le A$ or $A\le c$.
+  In the first case let $b\in(a,c)$. 
+  Then every model containing $A$ intersects $(a,b)\cup (b,c)$, but there are both models that omit $(a,b)$ and models that omit $(b,c)$.
+  In the second case let $b<a$ and consider $(-\infty,b)\cup (b,a)$.
+  The third case is symmetric.\QED
+\end{example}
+
+In Chapter~\ref{external} we will see that for some important class of theories, \textit{stable theories}, all sets are coheir extension bases.
+
+% \begin{example}\label{ex_circ_order}
+%   Let $U$ be the usual unit circle in the plane and define a ternary relation $r(x,y,z)$ on $U$ that holds if either $x$ and $z$ are diametrically opposite, or $y$ lies in the (closed) shortest arc between $x$ and $z$.\QED
+% \end{example}
 
 % \begin{exercise}
 % Let $\lambda>|L(A)|$ be such that saturated models of cardinality $\lambda$ exist. Prove that if $\phi({\mr x})$ is satisfied in every saturated model $N\supseteq A$ of cardinality $\lambda$, then it is almost satisfied in $A$.
 % \end{exercise}
-
-\end{comment}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
