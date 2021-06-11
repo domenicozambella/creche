@@ -779,13 +779,13 @@ We prefer to apply the following lemma (which in turn implies Hilbert's Basis Th
 For the sake of completeness, below we state Hilbert's Basis Theorem.
 The result is not required in this notes so we defer its proof until we have developed the proper tools.
 
-\begin{void_thm}[Hilbert's Basis Theorem (model theoretic version)]
+\begin{void_thm}[Hilbert's Basis Theorem (model theoretic version)]\label{Hilbert_basis}
   Let $x$ be a finite tuple. 
   Then every type $p(x)\subseteq\atL(A)$ is equivalent to one of its finite subsets.
 \end{void_thm}
 
 \begin{proof}
-  See Exercise~\ref{}.
+  See Exercise~\ref{ex_Hilbert_basis}.
 \end{proof}
 
 \begin{void_thm}[Hilbert's Nullstellensatz (model theoretic version)]\label{thm_Nullstellensatz}
@@ -806,7 +806,7 @@ The result is not required in this notes so we defer its proof until we have dev
   Therefore, by elementarity, the claim holds for $N$.
 \end{proof}
 
-In the remaining of the section, we show how to translate the model theoretic version of the Nullstellensatz into more common algebraic formulation.
+In the remaining of the section, we show how to translate the model theoretic version of the Nullstellensatz into a more common algebraic formulation.
 
 Let $A[x]$ be the ring of polynomials with variables in $x$ and coefficients in $\<A\>_M$.
 %
@@ -844,12 +844,12 @@ The following is a preliminary result.
   {\proves}
   {t(x)=0\vee s(x)=0}
   
-  As $p(x)$ is a prime type, $p(x)\proves t(x)=0$ or $p(x)\proves s(x)=0$.
+  If $p(x)$ is a prime type, $p(x)\proves t(x)=0$ or $p(x)\proves s(x)=0$.
   %
   As $p(x)$ is closed under logical consequences, $t(x)\in\P_p$ or $s(x)\in\P_p$.
 
   \ssf2$\IMP$\ssf1 \ First, we prove that $p(x)$ is closed under logical consequence.
-  Equivalently we assume that $t(x)=0\notin p(x)$ and prove that $p(x)\wedge t(x)\neq0$ is consistent.
+  Equivalently, we assume that $t(x)=0\notin p(x)$ and prove that $p(x)\wedge t(x)\neq0$ is consistent.
   As $\P_p$ is a prime ideal, $A[x]/\P_p$ is integral domain.
   We denote by $x+\P_p$ the quivalence class of $x\in A[x]$.
   Then  $x+\P_p$ satisfy exactly the formulas in $p(x)$. 
