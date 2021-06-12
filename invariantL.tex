@@ -5,7 +5,6 @@
 \chapter{Lascar invariant sets}
 \label{invariantL}
 
-
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{18ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
@@ -14,12 +13,8 @@
 \def\mr{\color{brown}}
 \def\gr{\color{green}}
 
-
-
 In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
 The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -202,11 +197,12 @@ Let $p({\mr x})\in S(\U)$ be global type; we say that $p$ is \emph{Lascar invari
 \section{Coheirs over sets}\label{coheirs_sets}
 
 In this section we consider a property that implies the existence of global Lascar invariant types and has simple syntactic characterization.
-It is a natural generalization to a set of the notion of finite satisfiability over a model introduced in Section~\hyperref[coheirs]{\ref*{invariant}.\ref*{coheirs}}.
+It is a natural generalization to a set of the notion of finite satisfiability over a model that we introduced in Section~\hyperref[coheirs]{\ref*{invariant}.\ref*{coheirs}}.
 
-% In Section~\hyperref[coheirs]{\ref*{invariant}.\ref*{coheirs}} finite satisfiability over a model has been used to prove that every consistent type over a model has a global extension to a type that is invariant over that model. 
-% Ideally, we would like to prove a similar existence property for Lascar invariance over a set but this is not possible in general.
-% In fact, in Example~\ref{ex_circ_order}, we preset a theory that has no global type that is Lascar invariant over $\0$.
+In Section~\hyperref[coheirs]{\ref*{invariant}.\ref*{coheirs}} finite satisfiability over a model has been used to prove that every consistent type over a model has a global extension to a type that is invariant over that model. 
+Ideally, we would like to prove here a similar existence property for Lascar invariance over a set.
+But this is not possible in general.
+In fact, in Example~\ref{ex_circ_order}, we preset a theory that has no global Lascar invariant type.
 
 We say that $\phi({\mr x})\in L(\U)$ is \emph{almost satisfiable\/} in $A$ if it is satisfiable in every model containing $A$.
 A type $p({\mr x})\subseteq L(\U)$ is \emph{almost (finitely) satisfiable\/} in $A$ if every conjunction of formulas in $p({\mr x})$ is almost satisfiable in $A$. 
@@ -219,8 +215,6 @@ The following is immediate.
 \begin{proposition}
 Every type $p({\mr x})\subseteq L(\U)$ that is almost satisfiable in $A$ is Lascar invariant over $A$.\QED
 \end{proposition}
-
-
 
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We say that $A$ is a \emph{coheir extension base\/} if every type that is almost satisfiable in $A$ has an extension to a global one.
 The terminology is not standard.
@@ -235,14 +229,14 @@ It is inspired by the analogy with extensions bases for forking, see e.g.~\cite{
 \end{proposition}
   
 \begin{proof} 
-  \ssf2$\IMP$\ssf1 Assume \ssf2. If $\phi({\mr x})\vee\psi({\mr x})$ is almost satisfiable in $A$, then it is contained in a global type $p({\mr x})$ the type almost satisfiable in $A$. 
+  \ssf2$\IMP$\ssf1 Assume \ssf2. If $\phi({\mr x})\vee\psi({\mr x})$ is almost satisfiable in $A$, then it is contained in a global type $p({\mr x})$ that is almost satisfiable in $A$. 
   Then \ssf1 follows from the completeness of $p({\mr x})$.
   
   \ssf1$\IMP$\ssf2 Assume \ssf2 and repeat the proof of Proposition~\ref{prop_exisntence_coheirs}.
 \end{proof}
   
 Trivially, every model is an extension base for coheirs.
-The following example shows that for some theories may have no other extension bases.
+The following example shows that some theories may have no other extension bases.
 
 \begin{example}
   Consider $T_{\rm dlo}$.
@@ -257,9 +251,31 @@ The following example shows that for some theories may have no other extension b
 
 In Chapter~\ref{external} we will see that for some important class of theories, \textit{stable theories}, all sets are coheir extension bases.
 
-% \begin{example}\label{ex_circ_order}
-%   Let $U$ be the usual unit circle in the plane and define a ternary relation $r(x,y,z)$ on $U$ that holds if either $x$ and $z$ are diametrically opposite, or $y$ lies in the (closed) shortest arc between $x$ and $z$.\QED
-% \end{example}
+\begin{example}\label{ex_circ_order}
+  We present a theory without global types that are Lascar invariant over the empty set.
+  Let $T$ be the theory of $\QQ$ with the cyclic order, i.e.\@ with a ternary predicate ${\rm cyc}(a, b, c)$ that  holds if
+
+  \hfil $(a < b < c)\ \vee\ (b < c < a)\ \vee\ (c < a < b)$.
+
+  The picture to keep in mind is that of a circle, where ${\rm cyc}(a, b, c)$ holds if we encounter $a,b,c$ in that order when going clockwise.
+
+  We will implicitly use in what follows that $T$ has elimination of quantifiers.
+  Let $p(x)\in S(\U)$.
+  We claim that $p(x)$ is not Lascar invariant over the emty set.
+  Suppose it is, for a contradiction.
+  We can find $a<b$ in $\U$ such that either ${\rm cyc}(a, x, b)$ or ${\rm cyc}(a, b, x)$ is in $p(x)$.
+  We show that both these possibilities are contradictory.
+  \begin{itemize}
+  \item[1.] If $p(x)$ contains ${\rm cyc}(a, x, b)$,
+  let $M<a$ be a model and pick $c$ such that $b<c$.
+  Then $a, b \equiv_M b, c$, hence ${\rm cyc}(b, x, c)$ is also in $p(x)$.
+  A contradiction.
+  \item[2.] If $p(x)$ contains ${\rm cyc}(a, b, x)$,
+  let $a<M<b$ and pick $a'$ such that $a<a'<M$. 
+  As $a, a' \equiv_M b,a$, also  ${\rm cyc}(b, a, x)$ is in $p(x)$.
+  A contradiction.\QED
+  \end{itemize}
+\end{example}
 
 % \begin{exercise}
 % Let $\lambda>|L(A)|$ be such that saturated models of cardinality $\lambda$ exist. Prove that if $\phi({\mr x})$ is satisfied in every saturated model $N\supseteq A$ of cardinality $\lambda$, then it is almost satisfied in $A$.
