@@ -690,8 +690,7 @@ Fix a tuple of variables \emph{$x$\/} and a subset \emph{$A$} of an integral dom
 % Types $p(x)\subseteq L_{\rm eq}(A)$ are called equational types.
 % %
 % These corresponds to possibly infinite systems of polynomial equations with coefficients in $\<A\>_M$.
-In this section we are mainly interested in formulas in $L_{\rm at}(A)$.
-We redefine accordingly the symbol of closure under logical consequences
+In this section we are interested in formulas in $L_{\rm at}(A)$ hence we redefine accordingly the symbol of closure under logical consequences
 
 \ceq{\hfill\emph{$\ccl\,p(x)$}}{=}{\Big\{\phi(x)\in\atL(A)\ :\ p(x)\, \proves\, \phi(x)\Big\}.}
 
@@ -741,7 +740,7 @@ We prefer to derive it from the following lemma, which has a simpler proof (thou
 
 \begin{lemma}\label{lem_basisthm}
   Let $A\subseteq M\models T_{\rm id}$ and let $p(x)\subseteq\atL(A)$, where $x$ is finite, be closed under  logical consequences. 
-  Then $\psi(x)\proves p(x)$, for $\psi(x)$ a conjunction of formulas in $p(x)$.
+  Then $\psi(x)\proves p(x)$, for some $\psi(x)$ conjunction of formulas in $p(x)$.
 \end{lemma}
 
 \begin{proof}
@@ -790,14 +789,12 @@ We prefer to derive it from the following lemma, which has a simpler proof (thou
 \end{void_thm}
 
 \begin{proof}
-  Note that in the r.h.s.\@ we can substiture $p(x)$ by $\ccl\,p(x)$, simply by logic.
-  Therefore we can assume that $p(x)$ is closed under logical consequences.
-
-  By Proposition~\ref{prop_Nullstellensatz0}, the equality above holds if we replace $N$ by a sufficiently large structure $N'$, i.e.\@\vskip-.5\baselineskip
+  By Proposition~\ref{prop_Nullstellensatz0}, the equality above holds if we replace $N$ by a sufficiently large elementay extension $N'$, i.e.
   
   \ceq{}{=}{\Big\{\phi(x)\in\atL(N)\ :\ N'\models\A x\,[ p(x)\imp\phi(x)]\Big\}.}
   
-  By Lemma~\ref{lem_basisthm} we can replace $p(x)$ with a formula $\psi(x)$
+  Note that we can substiture $p(x)$ by $\ccl\,p(x)$, simply by logic.
+  Then, by Lemma~\ref{lem_basisthm}, we can replace $\ccl\,p(x)$ with an equivalent formula $\psi(x)$
   
   \ceq{}{=}{\Big\{\phi(x)\in\atL(N)\ :\ N'\models\A x\,[\psi(x)\imp\phi(x)]\Big\}.}
   
