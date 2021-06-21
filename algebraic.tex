@@ -680,7 +680,7 @@ Prove that every model of $T_{\rm acf}$ is $\omega\jj$ultrahomogeneous (independ
 \label{Nullstellensatz}
 
 \def\medrel#1{\parbox{5ex}{\hfil$\displaystyle #1$}}
-\def\ceq#1#2#3{\parbox{20ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+\def\ceq#1#2#3{\parbox[t]{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 Fix a tuple of variables \emph{$x$\/} and a subset \emph{$A$} of an integral domain \emph{$M$.}
 % %
@@ -690,24 +690,25 @@ Fix a tuple of variables \emph{$x$\/} and a subset \emph{$A$} of an integral dom
 % Types $p(x)\subseteq L_{\rm eq}(A)$ are called equational types.
 % %
 % These corresponds to possibly infinite systems of polynomial equations with coefficients in $\<A\>_M$.
-In this section we are interested in the closure under logical consequences restrected to atomic formulas. 
-Not to overload the notation, we do not introduce a dedicated symbol 
+In this section we are mainly interested in formulas in $L_{\rm at}(A)$.
+We redefine accordingly the symbol of closure under logical consequences
 
-\ceq{\hfill\emph{$\ccl\, p(x)$}}{=}{\Big\{\phi(x)\in\atL(A)\ :\ p(x)\, \proves\, \phi(x)\Big\}}
+\ceq{\hfill\emph{$\ccl\,p(x)$}}{=}{\Big\{\phi(x)\in\atL(A)\ :\ p(x)\, \proves\, \phi(x)\Big\}.}
 
 Recall that we work under the assumptions made in Notation~\ref{notation1}.
 %
-In particular, in this section we work over the theory $T_{\rm id}\cup\Diag\<A\>_M$.
+In particular, in this section we work over the theory $T_{\rm id}\cup\Diag\<A\>_M$ and the symbol $\vdash$ has to be interpreted accordingly. 
+Spoiler alert: in the end we will set $A=M=N\models T_{\rm acf}$.
 
 In general, the notion of closure under logical consequences is elusive.
 %
-Hence Propositions~\ref{prop_Nullstellensatz0} and~\ref{prop_chiusura-radicale} are useful because they give a model theoretical characterization of $\ccl\, p(x)$.
-We also give an algebraic charactisation in Corollary~\ref{prop_chiusura_radicale}.
+Hence Propositions~\ref{prop_Nullstellensatz0} and~\ref{thm_Nullstellensatz} are useful because they give a model theoretical characterization of $\ccl\, p(x)$.
+Corollary~\ref{prop_chiusura_radicale} gives an algebraic charactisation.
 
 \begin{proposition}\label{prop_Nullstellensatz0}
-  Let $A\subseteq M\models T_{\rm id}$ and let $p(x)\subseteq\atpmL(A)$.
+  Let $A\subseteq M\models T_{\rm id}$ and let $p(x)\subseteq\atL(A)$.
   %
-  Fix some $N$ of sufficiently large cardinality such that $\<A\>_M\subseteq N\models T_{\rm acf}$.
+  Let $N$ be of sufficiently large cardinality and such that $\<A\>_M\subseteq N\models T_{\rm acf}$.
   %
   Then 
 
@@ -719,7 +720,7 @@ The cardinality of $N$ is sufficiently large if $|L(A)|<|N|$ and $|x|\le |N|$; n
 \begin{proof} 
   Only the inclusion $\supseteq$ requires a proof.
   %
-  Suppose $\phi(x)\notin\ccl\, p(x)$ or, in other words, that $p(x)\wedge \neg\phi(x)$ is consistent.
+  Suppose $\phi(x)\in\atL(A)$ is such that $p(x)\wedge \neg\phi(x)$ is consistent.
   Then there is a model $M_1$ of cardinality $<|L(A)|$ and $\le |x|$ such that $M_1\models p(a)\wedge \neg\phi(a)$ for some $a\in {M_1}^{|x|}$.
   %
   By Corollary~\ref{corol_acfUltraOmog}, if $N$ is large enough, there is a partial isomorphism $h:M_1\to N$ that extends $\id_A$ and is defined on $a$.
@@ -730,80 +731,81 @@ The cardinality of $N$ is sufficiently large if $|L(A)|<|N|$ and $|x|\le |N|$; n
 \end{proof}
 
 In the poposition above we could replace $\atL$ by $\atpmL$.
-But we are mostly interesed in a strenghening of Proposition~\ref{prop_Nullstellensatz0} that requires positive formulas.
+But here we are interesed in a strenghening, the Nullstennensatz, that requires positive formulas.
 
-Hilbert's Nullstennensatz below extends the validity of Proposition~\ref{prop_Nullstellensatz0} to the case $A=M=N$ (assuming $x$ finite). 
-While Proposition~\ref{prop_Nullstellensatz0} could be generalized to many other theories, Hilbert's Nullstennensatz rests on some exquisitely algebraic phenomenon. In fact, model theory has no general tools to deal with large set of parameters. 
+Hilbert's Nullstennensatz extends the validity of the proposition above to the case $A=M=N$ (assuming $x$ finite). 
+While Proposition~\ref{prop_Nullstellensatz0} could be generalized to other theories, the Nullstennensatz rests on some exquisitely algebraic phenomenon. In fact, model theory has no general tools to deal with large set of parameters. 
 
-Usually, Hilbert's Nullstellensatz is derived from Hilbert's Basis Theorem.
-We prefer to apply the following lemma (which seems weaker, but is equivalent to Hilbert's Basis Theorem via a standard compacteness argument).
+Usually, the Nullstellensatz is derived from Hilbert's Basis Theorem.
+We prefer to derive it from the following lemma, which has a simpler proof (though being in essence very close to the Basis Theorem).
 
 \begin{lemma}\label{lem_basisthm}
-  Let $p(x)\subseteq\atpmL(A)$, where $x$ is finite. 
-  Then there is a conjunction of formulas in $p(x)$, say $\psi(x)$, such that $\psi(x)\proves p_+(x)$, where $p_+(x)=p(x)\cap\atL(A)$.
+  Let $A\subseteq M\models T_{\rm id}$ and let $p(x)\subseteq\atL(A)$, where $x$ is finite, be closed under  logical consequences. 
+  Then $\psi(x)\proves p(x)$, for $\psi(x)$ a conjunction of formulas in $p(x)$.
 \end{lemma}
 
 \begin{proof}
   By induction on the length of $x$.
   If $x$ is the empty tuple, the lemma is trivial.
   Now, let $x$ be finite tuple and let $y$ be a single variable.
-  Let $p(x,y)\subseteq\atpmL(A)$.
-  We write $p(x)$ for the set of formulas $\phi(x)\in\atpmL(A)$ such that $p(x,y)\proves\phi(x)$.
-  Assume as induction hypothesis that there is a conjunction of formulas in $p(x)$, say $\psi(x)$, such that $\psi(x)\proves p_+(x)$.
+  Let $p(x,y)\subseteq\atL(A)$ be closed under logical consequences.
+  Write $p(x)$ for the set of formulas $\phi(x)\in\atL(A)$ such that $p(x,y)\proves\phi(x)$.
+  Assume as induction hypothesis that there is a conjunction of formulas in $p(x)$, say $\psi(x)$, such that $\psi(x)\proves p(x)$.
   We prove the lemma with $x,y$ for $x$.
 
-  Let $\psi(x,y)\in\atL(A)$ have minimal degree (in $y$) among the formulas such that $p(x,y)\proves\psi(x,y)$ and $\psi(x)\notproves\psi(x,y)$.
-  Let $n>0$ be the degree of $\psi(x,y)$, so we may assume $\psi(x,y)$ has the form $t(x,y)=0$ where 
+  Let $\psi(x,y)\in\atL(A)$ have minimal degree (in $y$) among the formulas in $p(x,y)$ such that $\psi(x)\notproves\psi(x,y)$.
+  Let $n$ be the degree of $\psi(x,y)$, which is non zero, because $\psi(x)\notproves\psi(x,y)$.
+  So we may assume $\psi(x,y)$ has the form 
   
-  \ceq{\hfill t(x,y)}{=}{t_n(x)\cdot y^n + t'(x,y),}
+  \ceq{\hfill t_n(x)\cdot y^n + t'(x,y)}{=}{0,}
 
-  $t'(x,y)$ is a polynomial of degree $<n$, and $p(x)\notproves t_n(x)=0$. We claim that
+  $t'(x,y)$ is a polynomial of degree $<n$. 
+  %
+  We claim that
 
-  \ceq{\ssf1\hfill p_+(x,y)}{\dashv}{t_n(x)\neq0\; \wedge\; \psi(x)\;\wedge\; \psi(x,y)}
+  \ceq{\ssf1\hfill\psi(x)\wedge\psi(x,y)}{\vdash}{p(x,y)}
 
-  Suppose not and let $s(x,y){=}0\in p_+(x,y)$ be a counter example to \ssf1 of minimal degree.
-  By the minimaly of $n$ we may assume that $s(x,y)$ has the form
+  Suppose not and let $\phi(x,y)\in p(x,y)$ be a counter example to \ssf1 of minimal degree.  
+  By the minimaly of $n$, the degree of $\phi(x,y)$ is $n+i$ for some $i\ge0$. 
+  Hence $\phi(x,y)$ is of the form 
   
-  \ceq{\hfill s(x,y)}{=}{s_{n+i}(x)\cdot y^{n+i}+s'(x,y)}
+  \ceq{\hfill s_{n+i}(x)\cdot y^{n+i}+s'(x,y)}{=}{0,}
   
-  for some polynomial $s'(x,y)$ of degree $<n+i$ and some $i\ge0$.
+  for some polynomial $s'(x,y)$ of degree $<n+i$.
   Clearly
 
   \ceq{\ssf2.\hfill p(x,y)}{\proves}{s_{n+i}(x)\cdot t(x,y)\cdot y^{i} - t_n(x)\cdot s(x,y) = 0.}
   
   It is also clear that the polynomial in \ssf2 has degree $<n+i$.
-  This contradicts the choice of $s(x,y)$.
+  This contradicts the minimality of the degree of $\phi(x,y)$.
   A contradicion that proves the proposition.
 \end{proof}
 
-For the sake of completeness, below we state Hilbert's Basis Theorem.
-The result is not required in this notes so we defer its proof until we have developed the proper tools.
-
-\begin{void_thm}[Hilbert's Basis Theorem (model theoretic version)]\label{Hilbert_basis}
-  Let $x$ be a finite tuple. 
-  Then every type $p(x)\subseteq\atL(A)$ is equivalent to one of its finite subsets.
-\end{void_thm}
-
-\begin{proof}
-  See Exercise~\ref{ex_Hilbert_basis}.
-\end{proof}
-
 \begin{void_thm}[Hilbert's Nullstellensatz (model theoretic version)]\label{thm_Nullstellensatz}
-  Let $N\models T_{\rm acf}$. Let $p(x)\subseteq\atpmL(N)$, where $x$ is a finite tuple.
+  Let $N\models T_{\rm acf}$. Let $p(x)\subseteq\atL(N)$, where $x$ is a finite tuple.
   %
   Then
 
-  \ceq{\hfill\ccl\,p(x)}{=}{\Big\{\phi(x)\in\atL(N)\ :\ N\models\A x\,[ p(x)\imp\phi(x)]\Big\}.}
+  \ceq{\hfill\ccl\, p(x)}{=}{\Big\{\phi(x)\in\atL(N)\ :\ N\models\A x\,[ p(x)\imp\phi(x)]\Big\}.}
 \end{void_thm}
 
 \begin{proof}
-  Let $N'$ be a large elementary extension of $N$.
-  %
-  By Proposition~\ref{prop_Nullstellensatz0}, the claim holds with $N'$ for $N$.
-  %
-  By Lemma~\ref{lem_basisthm}, we can replace $p(x)$ with a conjunction of formulas in $p(x)$.
-  %
-  Therefore, by elementarity, the claim holds for $N$.
+  Note that in the r.h.s.\@ we can substiture $p(x)$ by $\ccl\,p(x)$, simply by logic.
+  Therefore we can assume that $p(x)$ is closed under logical consequences.
+
+  By Proposition~\ref{prop_Nullstellensatz0}, the equality above holds if we replace $N$ by a sufficiently large structure $N'$, i.e.\@\vskip-.5\baselineskip
+  
+  \ceq{}{=}{\Big\{\phi(x)\in\atL(N)\ :\ N'\models\A x\,[ p(x)\imp\phi(x)]\Big\}.}
+  
+  By Lemma~\ref{lem_basisthm} we can replace $p(x)$ with a formula $\psi(x)$
+  
+  \ceq{}{=}{\Big\{\phi(x)\in\atL(N)\ :\ N'\models\A x\,[\psi(x)\imp\phi(x)]\Big\}.}
+  
+  Now, by elementarity, we can replace back $N$
+
+  \ceq{}{=}{\Big\{\phi(x)\in\atL(N)\ :\ N\models\A x\,[\psi(x)\imp\phi(x)]\Big\}.}
+
+  Finally, we replace back $p(x)$ and obtan the desired equality.
 \end{proof}
 
 In the remaining of the section, we show how to translate the model theoretic version of the Nullstellensatz into a more common algebraic formulation.
@@ -851,7 +853,7 @@ The following is a preliminary result.
   \ssf2$\IMP$\ssf1 \ First, we prove that $p(x)$ is closed under logical consequence.
   Equivalently, we assume that $t(x)=0\notin p(x)$ and prove that $p(x)\wedge t(x)\neq0$ is consistent.
   As $\P_p$ is a prime ideal, $A[x]/\P_p$ is integral domain.
-  We denote by $x+\P_p$ the quivalence class of $x\in A[x]$.
+  We denote by $x+\P_p$ the quivalence class of the polynomial $x\in A[x]$.
   Then  $x+\P_p$ satisfy exactly the formulas in $p(x)$. 
   Hence it witnesses the concistency of $p(x)\wedge t(x)\neq0$ in $A[x]/\P_p$.
 
@@ -900,7 +902,7 @@ From Propositions~\ref{prop_tipi_e_ideali_primi} and~\ref{prop_chiusura-radicale
   Let $A\subseteq M\models T_{\rm id}$ and let $p(x)\subseteq\atL(A)$.
   %
   Then $\P_{\ccl\,p(x)}=\sqrt{\P_p}$.
-  Equivalently, $\ccl\,p_\P(x)=\sqrt{\P}$ for all subset $\P\subseteq A[x]$.\QED
+  Equivalently, $\ccl\,p_\P(x)=p_{\sqrt{\P}}$ for all subset $\P\subseteq A[x]$.\QED
 \end{corollary}
 
 We are ready to translate the Nullstellensatz in a language more familiar to algebrists.
@@ -923,25 +925,24 @@ Clearly, $\I(A)$ is an ideal of $N[x]$.
   Hence from the model theoretic version of the Nullstellensatz we obtain $p_{\I}(x)=\ccl\,p_\P(x)$, that in turn coincides with $p_{\I}(x)=p_{\sqrt{\P}}(x)$ by the corollary above.
 \end{proof}
 
-\begin{exercise}\label{ex_weakNullstellensatz}
-  Let $N\models T_{\rm acf}$ and let $p(x)\subseteq\atL(A)$ where $|x|<\omega$.
-%
-  Prove that the following are equivalent
-  \begin{itemize}
-  \item[1.] $p$ is a proper ideal;
-  \item[2.] $p(x)$ has a solution in $N$.\QED
-  \end{itemize}
-  The claim translato is what is kown as the weak Nullstellensatz.
-\end{exercise}
+% \begin{exercise}\label{ex_weakNullstellensatz}
+%   Let $N\models T_{\rm acf}$ and let $p(x)\subseteq\atL(N)$ where $|x|<\omega$.
+% %
+%   Prove that the following are equivalent
+%   \begin{itemize}
+%   \item[1.] $p$ is a proper ideal;
+%   \item[2.] $p(x)$ has a solution in $N$.
+%   \end{itemize}
+%   The claim is a model theoretic translation of is what is kown as the weak Nullstellensatz.\QED
+% \end{exercise}
 
-
-\begin{exercise}\label{ex_fingen_principal}
-  Let $A\subseteq M\models T_{\rm id}$ and let $p(x)\subseteq\atL(A)$.
-%
-Prove that the following are equivalent
-  \begin{itemize}
-  \item[1.] $p(x)$ is a principal type;
-  \item[2.] the ideal generated by $p$ is finitely generated.\QED
-  \end{itemize}
-\end{exercise}
+% \begin{exercise}\label{ex_fingen_principal}
+%   Let $A\subseteq M\models T_{\rm id}$ and let $p(x)\subseteq\atL(A)$.
+% %
+% Prove that the following are equivalent
+%   \begin{itemize}
+%   \item[1.] $p(x)$ is a principal type;
+%   \item[2.] the ideal generated by $p$ is finitely generated.\QED
+% \end{itemize}
+% \end{exercise}
 
