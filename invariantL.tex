@@ -224,15 +224,15 @@ It is inspired by the analogy with extensions bases for forking, see e.g.~\cite{
   The following are equivalent
   \begin{itemize}
     \item[1.] $A$ is a coheir extension base;
-    \item[2.] for all $\phi({\mr x}), \psi({\mr x})\in L(\U)$ if $\phi({\mr x})\vee\psi({\mr x})$ is almost satisfiable in $A$, then $\phi({\mr x})$ or $\psi({\mr x})$ is almost satisfiable in $A$. 
+    \item[2.] for all $\phi({\mr x}), \psi({\mr x})\in L(\U)$ if $\phi({\mr x})\vee\psi({\mr x})$ is almost satisfiable in $A$, then $\phi({\mr x})$ or $\psi({\mr x})$ is almost satisfied in $A$. 
   \end{itemize}  
 \end{proposition}
   
 \begin{proof} 
-  \ssf2$\IMP$\ssf1 Assume \ssf2. If $\phi({\mr x})\vee\psi({\mr x})$ is almost satisfiable in $A$, then it is contained in a global type $p({\mr x})$ that is almost satisfiable in $A$. 
-  Then \ssf1 follows from the completeness of $p({\mr x})$.
+  \ssf1$\IMP$\ssf2 Assume \ssf1. If $\phi({\mr x})\vee\psi({\mr x})$ is almost satisfiable in $A$, then it is contained in a global type $p({\mr x})$ that is almost satisfiable in $A$. 
+  Then by the completeness of $p({\mr x})$ either $\phi({\mr x})$ or $\psi({\mr x})$ is in $p(x)$ and, consequently, is almost satisfied in $A$.
   
-  \ssf1$\IMP$\ssf2 Assume \ssf2 and repeat the proof of Proposition~\ref{prop_exisntence_coheirs}.
+  \ssf2$\IMP$\ssf1 Assume \ssf2 and repeat the proof of Proposition~\ref{prop_exisntence_coheirs}.
 \end{proof}
   
 Trivially, every model is an extension base for coheirs.

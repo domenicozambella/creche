@@ -111,10 +111,10 @@ Note that \ssf{it3} applies to complete types but not to $\phi$-types.
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}The following terminology is non-standard.
 We say that the set $\mrB\subseteq\U^{|{\mr x}|}$, typically a definable set, is \emph{quasi-invariant\/} over $M$ if whenever $f_1,\dots,f_n$ is a finite tuple of automorphisms in $\Aut(\U/M)$, the sets $f_i[\mrB]$ have non-empty intersection.
 
-We say that the type $p({\mr x})\subseteq L(\U)$, typically a global type, is \emph{quasi-invariant\/} over $M$ if $\phi({\mr\U})$ is quasi-invariant over $M$  for every  conjunction $\phi({\mr x})$ of formulas in $p({\mr x})$.
+We say that the type $p({\mr x})\subseteq L(\U)$, typically a global type, is \emph{quasi-invariant\/} over $M$ if $\phi({\mr\U})$ is quasi-invariant over $M$  for every $\phi({\mr x})$ that is conjunction of formulas in $p({\mr x})$.
 
 The definitions above and all what we say in this paragraph remains valid if we replace the model $M$ with an arbitrary set $A$.
-However the correct generalization involves the notion of strong automorphism developed in Chapter~\ref{invariant}.
+However the correct generalization to a set involves the notion of strong automorphism developed in Chapter~\ref{invariant}.
 %For types of small cardinality, this is equivalent to requiring that $p({\mr\U})$ is quasi-invariant.
 % So, the type $p({\mr x})$ is quasi-invariant if the set $p({\mr\V})$ is invariant, where $\V$ is an large saturated extension of $\U$, see Exercise~\ref{ex_quasi_inv_type}.
 
@@ -139,19 +139,33 @@ Then there is ${\gr b}\in\U^{|{\gr z}|}$ such that $\phi({\mr x}\,;{\gr b})\in p
 By completeness, $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;f{\gr b})$ which clearly is not consistent with its $f$-translate.
 \end{proof}
 
-\begin{exercise}
-We say that $\mrB\subseteq\U^{|{\mr x}|}$ \textit{strongly\/} quasi-invariant if for every finite cover of $\U^{|{\mr x}|}$ by finitely many definable sets $\mr\D_i$, for $i=1,\dots,n$, one set $\mrB\cap\mrD_i$ is quasi-invariant.
-Strongly quasi invariant types are defined similarly to quasi-invariant types.
-Note incidentally that for global types the two notions coincide.
-Prove that every strongly quasi-invariant type has an extension to a global invariant type.
+Unfortunately, a quasi-invariant type does not necessarily extend to a global type that is also quasi-invariant.
+A better notion is obtained with the following definition (that will not be used in this chapter).
 
-Hint: it may help to prove that if $\mrB$ is strongly quasi-invariant then for every finite definable cover $\mr\D_i$, for $i=1,\dots,n$,  some $\mrB\cap\mr\D_i$ is strongly quasi-invariant.
-Then the maximal strongly quasi-invariant set is the required global extension.\QED
-\end{exercise}
+We say that a set $\mrB\subseteq\U^{|{\mr x}|}$ is \emph{strongly quasi-invariant\/} over $M$ if for every finite cover of $\mrB$ by definable sets
+
+\ceq{\hfill\mrB}
+{\subseteq}
+{\bigcup_{i=1}^n\mr\D_i}
+
+at least one of these $\mr\D_i$ is quasi-invariant over $M$.
+Strongly quasi invariant types are defined similarly to quasi-invariant types.
+Note that for global types the two notions coincide.
+
+The following easy proposition is the motivation behind the definition above.
+
+\begin{proposition}
+  Every type $p(x)\subseteq L(\U)$ that is strongly quasi invariant over $M$ extends to a global type that is quasi invariant over $M$.\QED
+\end{proposition}
+
+
+
+
+
 
 %Quasi-invariance makes sense also for incomplete types.
 %Unfortunately it is not true in general that every quasi-invariant type can be extended to a global one. In next section we consider the stronger notion of types that are \textit{coheirs}. We shall see in Proposition~\ref{prop_exisntence_coheirs} that coheirs have this desirable property.
-Unfortunately, a quasi-invariant type does not necessarily extend to a quasi-invariant global type. There are, however, other properties of types that guarantee that an extension to a global type with the property can be found. In the next section we introduce one of these properties, that of being a \textit{coheir}, and in subsequent chapters yet another one, \textit{non-forking}. Being a coheir is stronger that being quasi-invariant, and non-forking is weaker.
+
 
 \begin{comment}
 We say that $\mrB$ is \emph{drifting over $A$\/} if whenever $f_1,\dots,f_n$ is a finite tuple in $\Aut(\U/A)$, there is $g\in\Aut(\U/A)$ such that $g[\mrB]$ is disjoint from all $f_i[\mrB]$.
@@ -214,7 +228,7 @@ Every type $p({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $M$ is qu
 Clearly, the same ${\mr a}\in M^{|{\mr x}|}$ that satisfies $\phi({\mr x})$ also satisfies every $\Aut(\U/M)$-translate of $\phi({\mr x})$.
 \end{proof}
 
-Propositions~\ref{prop_invariance-quasi-invariance} and~\ref{prop_coeredi_quasiinvarienti} yield the following proposition.
+Propositions~\ref{prop_invariance-quasi-invariance} and~\ref{prop_coeredi_quasiinvarienti} yield the following (but a direct proof is also easy).
 
 \begin{proposition}\label{prop_coeredi_invarienti}
 Let $p({\mr x})\in S_{\phi}(\U)$ be a global $\phi$-type that is finitely satisfiable in $M$.

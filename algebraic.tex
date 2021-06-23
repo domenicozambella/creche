@@ -680,7 +680,7 @@ Prove that every model of $T_{\rm acf}$ is $\omega\jj$ultrahomogeneous (independ
 \label{Nullstellensatz}
 
 \def\medrel#1{\parbox{5ex}{\hfil$\displaystyle #1$}}
-\def\ceq#1#2#3{\parbox[t]{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+\def\ceq#1#2#3{\parbox[t]{20ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 Fix a tuple of variables \emph{$x$\/} and a subset \emph{$A$} of an integral domain \emph{$M$.}
 % %
@@ -696,8 +696,7 @@ In this section we are interested in formulas in $L_{\rm at}(A)$ hence we redefi
 
 Recall that we work under the assumptions made in Notation~\ref{notation1}.
 %
-In particular, in this section we work over the theory $T_{\rm id}\cup\Diag\<A\>_M$ and the symbol $\vdash$ has to be interpreted accordingly. 
-Spoiler alert: in the end we will set $A=M=N\models T_{\rm acf}$.
+In particular, in this section we work over the theory $T_{\rm id}\cup\Diag\<A\>_M$ and the symbol $\vdash$ has to be interpreted accordingly.
 
 In general, the notion of closure under logical consequences is elusive.
 %
@@ -733,13 +732,13 @@ In the poposition above we could replace $\atL$ by $\atpmL$.
 But here we are interesed in a strenghening, the Nullstennensatz, that requires positive formulas.
 
 Hilbert's Nullstennensatz extends the validity of the proposition above to the case $A=M=N$ (assuming $x$ finite). 
-While Proposition~\ref{prop_Nullstellensatz0} could be generalized to other theories, the Nullstennensatz rests on some exquisitely algebraic phenomenon. In fact, model theory has no general tools to deal with large set of parameters. 
-
-Usually, the Nullstellensatz is derived from Hilbert's Basis Theorem.
-We prefer to derive it from the following lemma, which has a simpler proof (though being in essence very close to the Basis Theorem).
+While Proposition~\ref{prop_Nullstellensatz0} could be generalized to other theories, the Nullstennensatz rests on some exquisitely algebraic phenomenon. In fact, model theory has no general tools to deal with large set of parameters
+Algebra comes to our aid with the following lemma.
+The reader may wish to correlate it with Hilbert's Basis Theorem.
 
 \begin{lemma}\label{lem_basisthm}
-  Let $A\subseteq M\models T_{\rm id}$ and let $p(x)\subseteq\atL(A)$, where $x$ is finite, be closed under  logical consequences. 
+  Let $A\subseteq M\models T_{\rm id}$.
+  Let $p(x)\subseteq\atL(A)$, where $x$ is finite, be closed under  logical consequences. 
   Then $\psi(x)\proves p(x)$, for some $\psi(x)$ conjunction of formulas in $p(x)$.
 \end{lemma}
 
@@ -754,26 +753,27 @@ We prefer to derive it from the following lemma, which has a simpler proof (thou
 
   Let $\psi(x,y)\in\atL(A)$ have minimal degree (in $y$) among the formulas in $p(x,y)$ such that $\psi(x)\notproves\psi(x,y)$.
   Let $n$ be the degree of $\psi(x,y)$, which is non zero, because $\psi(x)\notproves\psi(x,y)$.
-  So we may assume $\psi(x,y)$ has the form 
+  So we may write
   
-  \ceq{\hfill t_n(x)\cdot y^n + t'(x,y)}{=}{0,}
+  \ceq{\hfill \psi(x,y)}{=}{\Big(t_n(x)\cdot y^n + t'(x,y)=0\Big),}
 
-  $t'(x,y)$ is a polynomial of degree $<n$. 
+  where $t'(x,y)$ is a polynomial of degree $<n$. 
   %
   We claim that
 
   \ceq{\ssf1\hfill\psi(x)\wedge\psi(x,y)}{\vdash}{p(x,y)}
 
-  Suppose not and let $\phi(x,y)\in p(x,y)$ be a counter example to \ssf1 of minimal degree.  
+  Suppose not for a contradiction.
+  Pick among the formulas in $p(x,y)$ that are a counter example to \ssf1, one  of minimal degree, say $\phi(x,y)$.  
   By the minimaly of $n$, the degree of $\phi(x,y)$ is $n+i$ for some $i\ge0$. 
-  Hence $\phi(x,y)$ is of the form 
+  Hence we my write 
   
-  \ceq{\hfill s_{n+i}(x)\cdot y^{n+i}+s'(x,y)}{=}{0,}
+  \ceq{\hfill \phi(x,y)}{=}{\Big(s_{n+i}(x)\cdot y^{n+i}+s'(x,y) = 0\Big),}
   
   for some polynomial $s'(x,y)$ of degree $<n+i$.
   Clearly
 
-  \ceq{\ssf2.\hfill p(x,y)}{\proves}{s_{n+i}(x)\cdot t(x,y)\cdot y^{i} - t_n(x)\cdot s(x,y) = 0.}
+  \ceq{\ssf2.\hfill p(x,y)}{\proves}{\Big( s_{n+i}(x)\cdot t(x,y)\cdot y^{i} - t_n(x)\cdot s(x,y) =0\Big).}
   
   It is also clear that the polynomial in \ssf2 has degree $<n+i$.
   This contradicts the minimality of the degree of $\phi(x,y)$.
@@ -781,9 +781,8 @@ We prefer to derive it from the following lemma, which has a simpler proof (thou
 \end{proof}
 
 \begin{void_thm}[Hilbert's Nullstellensatz (model theoretic version)]\label{thm_Nullstellensatz}
-  Let $N\models T_{\rm acf}$. Let $p(x)\subseteq\atL(N)$, where $x$ is a finite tuple.
-  %
-  Then
+  Let $N\models T_{\rm acf}$. 
+  For every type $p(x)\subseteq\atL(N)$, where $x$ is a finite tuple, we have
 
   \ceq{\hfill\ccl\, p(x)}{=}{\Big\{\phi(x)\in\atL(N)\ :\ N\models\A x\,[ p(x)\imp\phi(x)]\Big\}.}
 \end{void_thm}
