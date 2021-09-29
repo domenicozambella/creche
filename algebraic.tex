@@ -325,7 +325,7 @@ Then by   Remark~\ref{oss_liberi_qf} we may choose ${\mr c}$ to be any element o
 Such an element exists because $N$ has rank at least $\lambda$.
 \end{proof}
 
-Below few important consequences of this lemma.
+Below a few important consequences of this lemma.
 
 \begin{corollary}\label{corol_acfUltraOmog}
 Work in the category of models of $T_{\rm tfag}$ with partial embeddings as morphisms. Then the following are equivalent
@@ -622,7 +622,7 @@ Then by  Remark~\ref{oss_liberi_cr} we may choose ${\mr c}$ to be any element of
 This exists because $N$ has transcendence degree $\ \ge\lambda$.
 \end{proof}
 
-Below few important consequences of this lemma.
+Below a few important consequences of this lemma.
 
 \begin{corollary}\label{corol_acfUltraOmog}
 Work in the category of models of $T_{\rm id}$ with partial embeddings as morphisms. Then the following are equivalent
@@ -690,18 +690,18 @@ Fix a tuple of variables \emph{$x$\/} and a subset \emph{$A$} of an integral dom
 % Types $p(x)\subseteq L_{\rm eq}(A)$ are called equational types.
 % %
 % These corresponds to possibly infinite systems of polynomial equations with coefficients in $\<A\>_M$.
-In this section we are interested in formulas in $L_{\rm at}(A)$ hence we redefine accordingly the symbol of closure under logical consequences
+In this section we are interested in formulas in $L_{\rm at}(A)$, hence we redefine the symbol of closure under logical consequence accordingly
 
 \ceq{\hfill\emph{$\ccl\,p(x)$}}{=}{\Big\{\phi(x)\in\atL(A)\ :\ p(x)\, \proves\, \phi(x)\Big\}.}
 
-Recall that we work under the assumptions made in Notation~\ref{notation1}.
+Recall that we work under the assumptions in Notation~\ref{notation1}.
 %
-In particular, in this section we work over the theory $T_{\rm id}\cup\Diag\<A\>_M$ and the symbol $\vdash$ has to be interpreted accordingly.
+In particular, in this section we work over the theory $T_{\rm id}\cup\Diag\<A\>_M$, and the symbol $\vdash$ has to be interpreted accordingly.
 
-In general, the notion of closure under logical consequences is elusive.
+In general, the notion of closure under logical consequence is elusive.
 %
-Hence Propositions~\ref{prop_Nullstellensatz0} and~\ref{thm_Nullstellensatz} are useful because they give a model theoretical characterization of $\ccl\, p(x)$.
-Corollary~\ref{prop_chiusura_radicale} gives an algebraic charactisation.
+In this respect Propositions~\ref{prop_Nullstellensatz0} and~\ref{thm_Nullstellensatz} are useful, as they give a model theoretic characterization of $\ccl\, p(x)$.
+Corollary~\ref{prop_chiusura_radicale} gives an algebraic characterization.
 
 \begin{proposition}\label{prop_Nullstellensatz0}
   Let $A\subseteq M\models T_{\rm id}$ and let $p(x)\subseteq\atL(A)$.
@@ -725,28 +725,28 @@ The cardinality of $N$ is sufficiently large if $|L(A)|<|N|$ and $|x|\le |N|$; n
   %
   Therefore $N\models p(ha)\wedge\neg\phi(ha)$.
   %
-  So, $\phi(x)$ does not belong to the set on the r.h.s.
+  So $\phi(x)$ does not belong to the set on the r.h.s.
 \end{proof}
 
-In the poposition above we could replace $\atL$ by $\atpmL$.
+In the proposition above we could replace $\atL$ by $\atpmL$.
 But here we are interesed in a strenghening, the Nullstennensatz, that requires positive formulas.
 
-Hilbert's Nullstennensatz extends the validity of the proposition above to the case $A=M=N$ (assuming $x$ finite). 
-While Proposition~\ref{prop_Nullstellensatz0} could be generalized to other theories, the Nullstennensatz rests on some exquisitely algebraic phenomenon. In fact, model theory has no general tools to deal with large set of parameters
+Hilbert's Nullstellensatz extends the validity of the proposition above to the case $A=M=N$ (assuming $x$ finite). 
+While Proposition~\ref{prop_Nullstellensatz0} could be generalized to other theories, the Nullstellensatz rests on an exquisitely algebraic phenomenon. In fact, model theory has no general tools to deal with large sets of parameters
 Algebra comes to our aid with the following lemma.
-The reader may wish to correlate it with Hilbert's Basis Theorem.
+Which the reader may wish to compare with Hilbert's Basis Theorem.
 
 \begin{lemma}\label{lem_basisthm}
   Let $A\subseteq M\models T_{\rm id}$.
-  Let $p(x)\subseteq\atL(A)$, where $x$ is finite, be closed under  logical consequences. 
+  Let $p(x)\subseteq\atL(A)$, where $x$ is finite, be closed under  logical consequence. 
   Then $\psi(x)\proves p(x)$, for some $\psi(x)$ conjunction of formulas in $p(x)$.
 \end{lemma}
 
 \begin{proof}
   By induction on the length of $x$.
   If $x$ is the empty tuple, the lemma is trivial.
-  Now, let $x$ be finite tuple and let $y$ be a single variable.
-  Let $p(x,y)\subseteq\atL(A)$ be closed under logical consequences.
+  Now, let $x$ be a finite tuple and let $y$ be a single variable.
+  Let $p(x,y)\subseteq\atL(A)$ be closed under logical consequence.
   Write $p(x)$ for the set of formulas $\phi(x)\in\atL(A)$ such that $p(x,y)\proves\phi(x)$.
   Assume as induction hypothesis that there is a conjunction of formulas in $p(x)$, say $\psi(x)$, such that $\psi(x)\proves p(x)$.
   We prove the lemma with $x,y$ for $x$.
@@ -764,7 +764,7 @@ The reader may wish to correlate it with Hilbert's Basis Theorem.
   \ceq{\ssf1\hfill\psi(x)\wedge\psi(x,y)}{\vdash}{p(x,y)}
 
   Suppose not for a contradiction.
-  Pick among the formulas in $p(x,y)$ that are a counter example to \ssf1, one  of minimal degree, say $\phi(x,y)$.  
+  Pick among the formulas in $p(x,y)$ that are a counterexample to \ssf1, one  of minimal degree, say $\phi(x,y)$.  
   By the minimaly of $n$, the degree of $\phi(x,y)$ is $n+i$ for some $i\ge0$. 
   Hence we my write 
   
@@ -792,26 +792,26 @@ The reader may wish to correlate it with Hilbert's Basis Theorem.
   
   \ceq{}{=}{\Big\{\phi(x)\in\atL(N)\ :\ N'\models\A x\,[ p(x)\imp\phi(x)]\Big\}.}
   
-  Note that we can substiture $p(x)$ by $\ccl\,p(x)$, simply by logic.
-  Then, by Lemma~\ref{lem_basisthm}, we can replace $\ccl\,p(x)$ with an equivalent formula $\psi(x)$
+  Since $p(x)$ and $\ccl\,p(x)$ are logically equivalent, we can replace one by the other.
+  Then, by Lemma~\ref{lem_basisthm}, we can replace $\ccl\,p(x)$ by an equivalent formula $\psi(x)$
   
   \ceq{}{=}{\Big\{\phi(x)\in\atL(N)\ :\ N'\models\A x\,[\psi(x)\imp\phi(x)]\Big\}.}
   
-  Now, by elementarity, we can replace back $N$
+  Now, by elementarity, we replace $N$ back
 
   \ceq{}{=}{\Big\{\phi(x)\in\atL(N)\ :\ N\models\A x\,[\psi(x)\imp\phi(x)]\Big\}.}
 
-  Finally, we replace back $p(x)$ and obtan the desired equality.
+  Finally, we replace $p(x)$ back and obtain the desired equality.
 \end{proof}
 
-In the remaining of the section, we show how to translate the model theoretic version of the Nullstellensatz into a more common algebraic formulation.
+In the rest of this section, we show how to translate the model theoretic version of the Nullstellensatz into a more common algebraic formulation.
 
 Let $A[x]$ be the ring of polynomials with variables in $x$ and coefficients in $\<A\>_M$.
 %
 We identify $\atL(A)$ and $A[x]$ in the obvious way.
 %
 A type $p(x)\subseteq\atL(A)$ is identified with a set $\P_p\subseteq A[x]$.
-Conversely, for any subset $\P\subseteq A[x]$ we write $p_\P(x)$ for the type associated.
+Conversely, for any subset $\P\subseteq A[x]$ we write $p_\P(x)$ for the associated type.
 
 We would like to characterize $\ccl\,p(x)$ in algebraic terms.
 The following is a preliminary result.
@@ -827,8 +827,8 @@ The following is a preliminary result.
 \end{proposition}
 
 \begin{proof}
-  \ssf1$\IMP$\ssf2 \ Recall that our definition of prime type requres these to be closed under logical consequences. 
-  Therefore to prove that $\P_p$ is an ideal, it suffices to note that the following hold for every pair of polynomials $t(x)$ and $s(x)$
+  \ssf1$\IMP$\ssf2 \ Recall that, by our definition, a prime type is closed under logical consequence. 
+  Therefore to prove that $\P_p$ is an ideal, it suffices to note that the following entailments hold for every pair of polynomials $t(x)$ and $s(x)$
 
   \ceq{\hfill t(x)=0}{\proves}{s(x)t(x) = 0}
 
@@ -844,14 +844,14 @@ The following is a preliminary result.
   
   If $p(x)$ is a prime type, $p(x)\proves t(x)=0$ or $p(x)\proves s(x)=0$.
   %
-  As $p(x)$ is closed under logical consequences, $t(x)\in\P_p$ or $s(x)\in\P_p$.
+  As $p(x)$ is closed under logical consequence, $t(x)\in\P_p$ or $s(x)\in\P_p$.
 
   \ssf2$\IMP$\ssf1 \ First, we prove that $p(x)$ is closed under logical consequence.
   Equivalently, we assume that $t(x)=0\notin p(x)$ and prove that $p(x)\wedge t(x)\neq0$ is consistent.
   As $\P_p$ is a prime ideal, $A[x]/\P_p$ is integral domain.
-  We denote by $x+\P_p$ the quivalence class of the polynomial $x\in A[x]$.
-  Then  $x+\P_p$ satisfy exactly the formulas in $p(x)$. 
-  Hence it witnesses the concistency of $p(x)\wedge t(x)\neq0$ in $A[x]/\P_p$.
+  We denote by $x+\P_p$ the equivalence class of the polynomial $x\in A[x]$.
+  Then  $x+\P_p$ satisfies exactly the formulas in $p(x)$. 
+  Hence it witnesses the consistency of $p(x)\wedge t(x)\neq0$ in $A[x]/\P_p$.
 
   We now prove that $p(x)$ is prime.
   Let $t_i(x)$ be polynomials such that
@@ -862,7 +862,7 @@ The following is a preliminary result.
 
   \ceq{\hfill p(x)}{\proves}{\prod^n_{i=1} t_i(x)\ =\ 0}
 
-  Since $p(x)$ is closed under logical consequences, and $\P_p$ is a prime ideal, $t_i(x)\in\P_p$ for some $i$.
+  Since $p(x)$ is closed under logical consequence, and $\P_p$ is a prime ideal, $t_i(x)\in\P_p$ for some $i$.
   %
   Hence $p(x)$ contains the equation $t_i(x)=0$.
   %
@@ -890,8 +890,8 @@ The following is a preliminary result.
   Then $q(x)$ is prime and $\phi(x)\notin q(x)$.
 \end{proof}
 
-For any subset $\P\subseteq A[x]$ we write \emph{$\sqrt{\P}$\/} for the intersection of all prime ideal containing $\P$.
-In words this is called the radical ideal generared by $\P$.
+For any subset $\P\subseteq A[x]$ we write \emph{$\sqrt{\P}$\/} for the intersection of all prime ideals containing $\P$.
+This is called the radical ideal generated by $\P$.
 From Propositions~\ref{prop_tipi_e_ideali_primi} and~\ref{prop_chiusura-radicale} we obtain the following algebraic characterization of $\ccl\,p(x)$.
 
 \begin{corollary}\label{prop_chiusura_radicale}
@@ -901,11 +901,11 @@ From Propositions~\ref{prop_tipi_e_ideali_primi} and~\ref{prop_chiusura-radicale
   Equivalently, $\ccl\,p_\P(x)=p_{\sqrt{\P}}$ for all subset $\P\subseteq A[x]$.\QED
 \end{corollary}
 
-We are ready to translate the Nullstellensatz in a language more familiar to algebrists.
+We are now ready to translate the Nullstellensatz into a language more familiar to algebraists.
 Fix $N\models T_{\rm acf}$.
 Let $\P\subseteq N[x]$.
-The algebraic varaity associated to $\P$, often denoted by \emph{$V(\P)$\/} is the set $p_\P(N)$.
-Vice versa, given $A\subseteq N$, let \emph{$\I(A)$\/} be the set of polynomials in $N[x]$ that vanish at all points in $A$.
+The algebraic variety associated to $\P$, often denoted by \emph{$V(\P)$,} is the set $p_\P(N)$.
+Viceversa, given $A\subseteq N$, let \emph{$\I(A)$\/} be the set of polynomials in $N[x]$ that vanish at all points in $A$.
 Clearly, $\I(A)$ is an ideal of $N[x]$.
 
 \begin{void_thm}[Hilbert's Nullstellensatz (standard version)]\label{thm_Nullstellensatz2}
@@ -917,7 +917,7 @@ Clearly, $\I(A)$ is an ideal of $N[x]$.
 \begin{proof}
   Note that $V(\P)=p_\P(N)$.
   Hence $p_{\I}(x)$, where $\I=\I(V(\P))$, is the set of formulas $\phi(x)\in\atL(N)$ such that $V(\P)\subseteq\phi(N)$.
-  In other words, $p_{\I}(x)$ is the set those formulas such that $N\models\A x[p_\P(x)\imp\phi(x)]$.
+  In other words, $p_{\I}(x)$ is the set containing those formulas such that $N\models\A x[p_\P(x)\imp\phi(x)]$.
   Hence from the model theoretic version of the Nullstellensatz we obtain $p_{\I}(x)=\ccl\,p_\P(x)$, that in turn coincides with $p_{\I}(x)=p_{\sqrt{\P}}(x)$ by the corollary above.
 \end{proof}
 

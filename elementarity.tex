@@ -386,7 +386,6 @@ Suppose $\RR$ has a proper elementary extension \emph{$\nsR$.} The existence of 
 
 It is easy to verify that $\nsR$ is an ordered field. This is because the operations sum and product are in the language, and so is the order relation. The property of being an ordered field can be expressed via a set of sentences  that are true in $\RR$, and hence also in $\nsR$.
 
-
 A hyperreal $c$ is said to be \emph{infinitesimal} if $|c|<\epsilon$ for every positive standard $\epsilon$. A hyperreal $c$ is \emph{infinite} if $k<|c|$ for every standard $k$; the hyperreal $c$ if \emph{finite} otherwise. Hence if $c$ is infinite, then $c^{-1}$ is infinitesimal.
 Clearly, all standard reals are finite, and $0$ is the only infinitesimal standard real.
 
@@ -644,6 +643,15 @@ Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
 \end{itemize}
 \end{exercise}
 
+
+\begin{exercise}
+  Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
+  \begin{itemize}
+  \item[1.]  $X$ is bounded and closed in the usual topology on $\RR$;
+  \item[2.]  for every $b\in \ns X$ there is an $a\in X$ such that $a\approx b$.\QED 
+  \end{itemize}
+\end{exercise}
+
 \begin{exercise}
   For which sets $X \subseteq \RR$ does the following hold?
   \begin{itemize}
@@ -654,6 +662,10 @@ Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
 \begin{exercise}
 Prove that $|\RR|\;\le\;|\nsQ|$, that is, that the cardinality of $\nsQ$ is at least that of the continuum.
 (Hint: define an injective function $f:\RR\to\nsQ$ by choosing a nonstandard rational in the monad of every standard real.) \QED
+\end{exercise}
+
+\begin{exercise} 
+  Prove that every proper elementary extension of $\QQ$ in the language of rings plus a relation symbol for every subset of $\QQ$ has infinities and infinitesimals.\QED
 \end{exercise}
 
 
@@ -719,13 +731,13 @@ If $h:M\imp N$ is an isomorphism then for every $\phi(x)\in L$
 In particular, if $h$ is an $A$-isomorphism then $M\equiv_A N$.
 \end{theorem}
 
-\begin{proof}We proceed by induction of the syntax of $\phi(x)$.
+\begin{proof}We proceed by induction on the syntax of $\phi(x)$.
 When $\phi(x)$ is atomic \# holds by \ssf{3} above.
 Induction for the Boolean connectives is straightforward so we only need to consider the existential quantifier.
 Assume as induction hypothesis that
 
 
-\hspace*{18ex}\llap{$M\models \phi(a,b)$}\parbox{7ex}{\hfil$\IFF$}\parbox{15ex}{$N\models \phi(ha,hb)$} for every tupla $a\in M^{|x|}$ and $b\in M$.
+\hspace*{18ex}\llap{$M\models \phi(a,b)$}\parbox{7ex}{\hfil$\IFF$}\parbox{15ex}{$N\models \phi(ha,hb)$} for every $a\in M^{|x|}$ and $b\in M$.
 
 We prove that \# holds for the formula $\E y\,\phi(x,y)$.
 
