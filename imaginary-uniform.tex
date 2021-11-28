@@ -1,0 +1,134 @@
+
+\section{Uniform elimination of imaginaries}
+
+\def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{35ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+
+Sometimes in the literature elimination of imaginaries is confused with uniform elimination of imaginaries, see e.g.~\cite{TZ}*{Definition 8.4.2}.
+Theorem~\ref{thm_ei_unif} below shows that the difference is immaterial.
+This section is more technical and could be skipped at a first reading.
+
+Let us rephrase the definition of elimination of imaginaries: for every formula $\phi({\mr x}\,;u)\in L$ and every tuple $c\in\U^{|u|}$ there is a formula $\sigma({\mr x}\,;{\gr z})\in L$ such that
+
+\ceq{\hfill\E^{=1} {\gr z}\;\A {\mr x}\ \bigg[\phi({\mr x}\,;c)}{\iff}{\sigma({\mr x}\,;{\gr z})\bigg].}
+
+A priori, the formula $\sigma({\mr x}\,;{\gr z})$ may depend on $c$ in a very wild manner.
+We say that $T$ has \emph{uniform elimination of imaginaries\/} if for every $\phi({\mr x}\,;u)$ there are a formula $\sigma({\mr x}\,;{\gr z})$ and a formula $\rho({\gr z})$ such that 
+
+\ceq{\ssf{uei}\hfill\A u\;\E^{=1} {\gr z}\;\bigg[\rho({\gr z})\ \wedge\ \A{\mr x}\ \big[\phi({\mr x}\,;u)}{\iff}{\sigma({\mr x}\,;{\gr z})\big]\bigg].}
+
+The role of the formula $\rho({\gr z})$ above is mysterious.
+It is clarified by the following propositions.
+In fact, uniform elimination of imaginaries is equivalent to a very natural property which in words says: every definable equivalence relation is the kernel of a definable function.
+Recall that the kernel of the function $f$ is the relation $fa=fb$.
+
+Uniform elimination of imaginaries is convenient when dealing with interpretations of structure inside other structures.
+Let us consider a simple concrete example.
+Suppose $\U$ is a group and let $\Hh$ be a definable normal subgroup of $\U$.
+The elements of the quotient structure $\U/\Hh$ are equivalence classes of a definable equivalence relation.
+If there is uniform elimination of imaginaries we can identify $\U/\Hh$ with an actual definable subset of $\G$ (the range of the function $f$ above).
+Moreover, the group operation of $\G$ are definable functions.
+As working in $\U/\Hh$ may be notationally cumbersome, $\G$ may offer a convenient alternative.
+
+\begin{proposition}\label{prop_uei_standard}
+The following are equivalent
+\begin{itemize}
+\item[1.] $T$ has uniform elimination of imaginaries;
+\end{itemize}
+\begin{itemize}
+\item[2.] for every $\phi({\mr x}\,;u)$ such that  $\A u\;\E{\mr x}\;\phi({\mr x}\,;u)$ there is a formula $\sigma({\mr x}\,;{\gr z})$ such that 
+\end{itemize}
+
+\ceq{\hfill\A u\;\E^{=1} {\gr z}\;\A{\mr x}\ \bigg[\phi({\mr x}\,;u)}{\iff}{\sigma({\mr x}\,;{\gr z})\bigg];}
+
+\begin{itemize}
+\item[3.] for every equivalence formula $\epsilon({\mr x}\,;{\mr u})\in L$ there is given by $\sigma({\mr x}\,;{\gr z})\in L$ such that
+\end{itemize}
+
+
+\ceq{\hfill\A{\mr u}\;\E^{=1} {\gr z}\;\A {\mr x}\ \bigg[\epsilon({\mr x}\,;{\mr u})}{\iff}{\sigma({\mr x}\,;{\gr z})\bigg].}
+
+\end{proposition}
+
+Note that the definable function $f{\mr u}={\gr z}$ mentioned above is defined by the formula 
+
+\ceq{\hfill\theta({\mr u}\,;{\gr z})\medrel{=}\A {\mr x}\ \bigg[\,\epsilon({\mr x}\,;{\mr u})}{\iff}{\sigma({\mr x}\,;{\gr z})\bigg].}
+
+\begin{proof}
+\ssf{1}$\IMP$\ssf{2}.
+If $\A u\;\E{\mr x}\;\phi({\mr x}\,;u)$ we can rewrite \ssf{uei} as 
+
+\ceq{\hfill\A u\;\E^{=1} {\gr z}\;\A{\mr x}\ \bigg[\phi({\mr x}\,;u)}{\iff}{\rho({\gr z})\wedge\sigma({\mr x}\,;{\gr z})\bigg].}
+
+\ssf{2}$\IMP$\ssf{3}.
+Clear.
+
+\ssf{3}$\IMP$\ssf{1}.
+Apply \ssf{3} to the equivalence formula
+
+\ceq{\hfill\epsilon(u\,;v)\medrel{=}\A{\mr x}\ \bigg[\phi({\mr x}\,;u)}{\iff}{\phi({\mr x}\,;v)\bigg]}
+
+Let $\theta(u\,;{\gr z})$ be defined as above.
+The reader may check that \ssf{uei} holds substituting for $\delta({\gr z})$ the formula $\E u\;\theta(u\,;{\gr z})$ and and for $\sigma({\mr x}\,;{\gr z})$ the formula $\E u\;\big[\phi({\mr x}\,;u)\wedge\theta(u\,;{\gr z})\big]$.
+\end{proof}
+
+By the following theorem, uniformity comes almost for free.
+
+%%%%%%%%%%%%%%
+\begin{theorem}\label{thm_ei_unif} The following are equivalent
+\begin{itemize}
+\item[1.] $T$ has uniform elimination of imaginaries;
+\item[2.] $\dcl\0$ contains at least two elements and $T$ has elimination of imaginaries.
+\end{itemize}
+\end{theorem}
+
+%\def\ceq#1#2#3{\parbox[t]{35ex}{$\displaystyle #1$}\parbox[t]{5ex}{$\displaystyle\hfil #2$}{$\displaystyle #3$}}
+
+\begin{proof}\ssf{1}$\IMP$\ssf{2}.
+Let $\phi({\mr x},u)$ be the formula $u_1=u_2$.
+From \ssf{1} we obtain a formula $\sigma({\mr x}\,;{\gr z})\in L$ such that 
+
+\ceq{\hfill\A u_1,u_2\;\E^{=1} {\gr z}\;\bigg[\rho({\gr z})\ \wedge\ \A x\ \big[u_1=u_2}{\iff}{\sigma({\mr x}\,;{\gr z})\big]\bigg].}
+
+Therefore the formulas $\E^{=1} {\gr z}\,\big[\rho({\gr z})\wedge\A {\mr x}\,\sigma({\mr x}\,;{\gr z})\big]$ and $\E^{=1} {\gr z}\,\big[\rho({\gr z})\wedge\A {\mr x}\neg\sigma({\mr x}\,;{\gr z})\big]$ are both true.
+The witnesses of $\E^{=1} {\gr z}$ in these two formulas are two distinct elements of $\dcl\0$.
+
+\ssf{2}$\IMP$\ssf{1}.
+Assume \ssf{2} and fix a formula formula $\phi({\mr x}\,;u)$ such that $\phi({\mr x},a)$ is consistent for every $a\in\U^{|u|}$.
+We prove \ssf{2} of Proposition~\ref{prop_uei_standard}.
+
+Let $p(u)$ be the type that contains the formulas
+
+\ceq{\hfill\neg\,\E^{=1}{\gr z}\,\A {\mr x}\ \bigg[\phi({\mr x}\,;u)}{\iff}{\sigma({\mr x};{\gr z})\bigg],}
+
+where $\sigma({\mr x};{\gr z})$ ranges over all formulas in $L$.
+By elimination of imaginaries $p(u)$ is not consistent.
+Therefore, by compactness, there are some formulas $\sigma_i({\mr x},{\gr z})$ such that
+
+\ceq{\sharp\hfill\A u\;\bigvee^n_{i=0}\E^{=1}{\gr z}\;\A {\mr x}\;\bigg[\phi({\mr x}\,;u)}{\iff}{\sigma_i({\mr x}\,;{\gr z})\bigg].}
+
+To prove the theorem we need to move the disjunction in front of the $\sigma_i({\mr x}\,;{\gr z})$.
+
+We can assume that if  $\sigma_i({\mr x}\,;{\gr b})\iff\sigma_i'({\mr x}\,;{\gr b'})$ for some $\<{\gr b},i\>\neq\<{\gr b'},i'\>$ then $\sigma_i({\mr x}\,;{\gr b})$ is inconsistent.
+Otherwise we can substitute the formula $\sigma_i({\mr x}\,;{\gr z})$ with  
+
+
+\hfil$\displaystyle\sigma_i({\mr x}\,;{\gr z}) \;\wedge\; \bigwedge_{j\le i}\neg\E{\gr y}\neq{\gr b}\,\A {\mr x}\,\bigg[\sigma_j({\mr x}\,;{\gr y})\iff\sigma_i({\mr x}\,;{\gr z})\bigg]$.
+
+
+As $\phi({\mr x},a)$ is consistent for every $a$, the substitution does not break the validity of $\,\sharp$.
+
+Fix some distinct $\0$-definable tuples $d_0,\dots, d_n$ of the same length (these are easy to obtain from two $\0$-definable elements).
+We claim that from $\,\sharp\,$ it follows that
+
+\ceq{\hfill\A u\;\E^{=1}{\gr z},y\;\A {\mr x}\;\Bigg[\vphantom{\bigvee^n_{i=0}}\phi({\mr x}\,;u)}{\iff}{\bigvee^n_{i=1}\bigg[\sigma_i({\mr x}\,;{\gr z})\;\wedge\; y=d_i\bigg]\Bigg].}
+
+(The tuple ${\gr z},y$ plays the role of ${\gr z}$.)  We fix some $a$ and check that the formula below has a unique solution
+
+\ceq{\flat\hfill\A {\mr x}\;\Bigg[\vphantom{\bigvee^n_{i=0}}\phi({\mr x}\,;a)}{\iff}{\bigvee^n_{i=1}\bigg[\sigma_i({\mr x}\,;{\gr z})\;\wedge\; y=d_i\bigg]\Bigg].}
+
+Existence follows immediately from $\,\sharp$.
+As for uniqueness, note that if ${\gr b},d_i$ and ${\gr b'},d_{i'}$ are two distinct solution of $\,\flat\,$ then $\sigma_i({\mr x}\,;{\gr b})\iff\sigma_{i'}({\mr x}\,;{\gr b'})$ for some $\<{\gr b},i\>\neq\<{\gr b'},i'\>$.
+By what assumed on $\sigma_i({\mr x}\,;{\gr z})$, we obtain that $\phi({\mr x}\,;a)$ is inconsistent.
+A contradiction which proves the theorem.
+\end{proof}

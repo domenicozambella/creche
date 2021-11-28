@@ -374,7 +374,7 @@ The theory of rings contains the following axioms
 \item[r3] $(x+y)\mdot z\ =\ x\mdot z + y\mdot z$,
 \item[r4] $z\mdot (x+y)\ =\ z\mdot x + z\mdot y$.
 \end{itemize}
-?
+
 All the rings we consider are \emph{commutative\/} 
 
 \begin{itemize}
@@ -766,17 +766,20 @@ Which the reader may wish to compare with Hilbert's Basis Theorem.
   Suppose not for a contradiction.
   Pick among the formulas in $p(x,y)$ that are a counterexample to \ssf1, one  of minimal degree, say $\phi(x,y)$.  
   By the minimaly of $n$, the degree of $\phi(x,y)$ is $n+i$ for some $i\ge0$. 
-  Hence we my write 
+  Hence we may write 
   
   \ceq{\hfill \phi(x,y)}{=}{\Big(s_{n+i}(x)\cdot y^{n+i}+s'(x,y) = 0\Big),}
   
   for some polynomial $s'(x,y)$ of degree $<n+i$.
-  Clearly
+  From $p(x,y)\proves\phi(x,y)$ we obtain
 
-  \ceq{\ssf2.\hfill p(x,y)}{\proves}{\Big( s_{n+i}(x)\cdot t(x,y)\cdot y^{i} - t_n(x)\cdot s(x,y) =0\Big).}
+  \ceq{\hfill p(x,y)}{\proves}{\Big( s_{n+i}(x)\cdot t_n(x)\cdot y^{n+i} + t_n(x)\cdot s'(x,y) =0\Big).}
   
-  It is also clear that the polynomial in \ssf2 has degree $<n+i$.
-  This contradicts the minimality of the degree of $\phi(x,y)$.
+  Now, using that $p(x,y)\proves\psi(x,y)$
+
+  \ceq{\ssf2.\hfill p(x,y)}{\proves}{\Big( -s_{n+i}(x)\cdot t'(x,y)\cdot y^{i} + t_n(x)\cdot s'(x,y) =0\Big).}
+  
+  But the polynomial in \ssf2 has degree $<n+i$ and this contradicts the minimality of the degree of $\phi(x,y)$.
   A contradicion that proves the proposition.
 \end{proof}
 

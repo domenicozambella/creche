@@ -50,7 +50,6 @@ Equivalently, we say that  $\grD$ is approximated from below if for every finite
 The dual notion of \emph{approximation from above\/} is defined as expected (and coincides with $\neg\grD$ being approximated by $\neg\phi({\mr x}\,;{\gr z})$ from below).\QED
 \end{definition} 
 
-
 The following proposition is clear by compactness.
 
 \begin{proposition}\label{prop_approx=external}
@@ -184,7 +183,9 @@ The sets externally definable by $p({\mr x})$ are always closed under Boolean op
 % Expand the language with a symbol for $\E z_{\restriction I}\,\grD$ for every finite $I\subseteq\lambda$. 
 % Then the theory of $\U$ in the expanded language has positive $\Delta$-quantifier elimination, for $\Delta=L\cup\big\{\E z_{\restriction I}\,\grD: I\subseteq\lambda\textrm{ finite}\big\}$, see Section~\hyperref[eliminazionequantificatoricriterio]{\ref*{elimination}.\ref*{eliminazionequantificatoricriterio}}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ladders and definability}
 
 
@@ -214,7 +215,7 @@ The following easy exercise shows that stability is sort of chain condition.
 
 %Suppose $\phi({\mr x}\,;{\gr z})$ is unstable and let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be a ladder sequence. By padding redundant variables, we can read $\phi({\mr x}\,;{\gr z})$ as a formula $\phi({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$. Then $\phi({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$ defines the order of the sequence $\<{\mr a_i}\,{\gr b_i} : i<\omega\>$. For this reason it is also common to say that $\phi({\mr x}\,;{\gr z})$ has the \emph{order property}, this simply means that it is unstable. 
 
-The following theorem claims what is arguably one of the most important properties of stable formulas: any set externally definable by a stable formula is definable (by a related formula).
+The following theorem claims what is arguably one of the most important properties of stable formulas: any set that is externally definable by a stable formula is definable (by a related formula).
 
 \begin{theorem}\label{thm_def_stable_formula}
 Any $\grD\subseteq\U^{|{\gr z}|}$ approximated by a stable formula is definable.
@@ -422,7 +423,8 @@ We now turn to Lascar invariance. Quite interestingly when $T$ is stable this re
  
  \ssf{1}$\IMP$\ssf{3} The sets ${\gr\D_{p,\phi}}$ are externally definable therefore, by Theorem~\ref{thm_def_stable_formula2}, they are definable (over $\U$).
  As $p({\mr x})$ is Lascar invariant over $A$, so are the sets ${\gr\D_{p,\phi}}$.
- Hence they belong to $\acl^\eq\!A$ by Theorem~\ref{thm_Galois_alg=alg}.
+ By stability, ${\gr\D_{p,\phi}}$ is definable.
+ Hence they belong to $\acl^\eq\!A$ by Corollary~\ref{coroll_defble_Lascar_inv}.
 \end{proof}
 % 
 % \begin{proposition}\label{prop_type_over_dcl} Let $T$ be stable and let $p({\mr x})\in S(\U)$ be Lascar invariant over $A$. Then for every formula $\phi({\mr x}\,;{\gr z})\in L$ the set ${\gr\D_{p,\phi}}$ belongs to $\dcl^\eq(A,c)$ for every $c\models p_{\restriction A}(x)$.

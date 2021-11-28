@@ -120,7 +120,7 @@ So, $\grD$ is invariant over $A$ when $\oorbit(\grD/A)=\big\{\grD\big\}$. We say
 
 For definable sets Lascar invariance reduces to definablity over the algebraic closure.
 
-\begin{corollary}
+\begin{corollary}\label{coroll_defble_Lascar_inv}
 For every definable set $\grD$ the following are equivalent
   \begin{itemize}
     \item[1.] $\grD$ is Lascar invariant over $A$;
@@ -157,11 +157,11 @@ The following are equivalent
 Let $p({\mr x})\in S(\U)$ be global type; we say that $p$ is \emph{Lascar invariant\/} over $A$ if the sets ${\gr\D_{p,\phi}}$ for $\phi({\mr x}\,;{\gr z})\in L$ all Lascar invariant over $A$. (The sets ${\gr\D_{p,\phi}}$ are defined in Section~\hyperref[invariant_sets]{~\ref*{invariant}.\ref*{invariant_sets}}.)
 
 \begin{proposition}\label{prop_Lascar_indiscernibles}
-  Let $p({\mr x})\in S(\U)$ be a global type. Then the following are equivalent
+  Let $p({\mr x})\in S(\U)$ be a global type and ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ be an arbtrary $A$-indiscernible sequence. Then the following are equivalent
   \begin{itemize}
     \item[1.] $p({\mr x})$ is Lascar invariant over $A$;
-    \item[2.] every $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ is also $A,{\mr a}\jj$indiscernible for every ${\mr a}\models p_{\restriction A,{\gr\bar c}}({\mr x})$;
-    \item[3.] every $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ is indiscernible over any ${\mr a}\models p_{\restriction{\gr\bar c}}({\mr x})$.
+    \item[2.] ${\gr\bar c}$ is indiscernible over $A,{\mr a}$ for every ${\mr a}\models p_{\restriction A,{\gr\bar c}}({\mr x})$;
+    \item[3.] ${\gr\bar c}$ is indiscernible over any ${\mr a}\models p_{\restriction{\gr\bar c}}({\mr x})$;
   \end{itemize}
   For convenience all tuples ${\gr c_i}$ have length $|{\gr z}|=\omega$.
 \end{proposition}
@@ -185,7 +185,7 @@ Let $p({\mr x})\in S(\U)$ be global type; we say that $p$ is \emph{Lascar invari
 \end{proof}
 
 \begin{exercise}\label{ex_Lstp_indiscernibles}
-  Pcerove that the equivalence relation ${\gr a}\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}_A{\gr b}$ is the transitive closure of the relation: there is a sequence $\<{\gr c_i}:i<\omega\>$ indiscernible over $A$ such that ${\gr c_0}={\gr a}$ and ${\gr c_1}={\gr b}$. Hint: apply Theorem~\ref{thm_Lascar_indiscernibles}.\QED
+  Prove that the equivalence relation ${\gr a}\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}_A{\gr b}$ is the transitive closure of the relation: there is a sequence $\<{\gr c_i}:i<\omega\>$ indiscernible over $A$ such that ${\gr c_0}={\gr a}$ and ${\gr c_1}={\gr b}$. Hint: apply Theorem~\ref{thm_Lascar_indiscernibles}.\QED
 \end{exercise}
 
 
