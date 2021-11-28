@@ -3,7 +3,7 @@
 from re import *
 import os
 
-with open('creche.toc', 'r') as f:
+with open('aux/creche.toc', 'r') as f:
     toc = f.read()
     f.closed
 
@@ -34,6 +34,9 @@ toc = p.sub('&iuml;', toc)
 
 p = compile('\\\\IeC\s\{\\\\\'e\}')
 toc = p.sub('&eacute;', toc)
+
+p = compile('\\\\L o\\\\\'{s}')
+toc = p.sub('Los', toc)
 
 
 with open('README.md', 'r') as f:

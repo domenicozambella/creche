@@ -17,20 +17,21 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
 *  **Theories and elementarity**
    * Logical consequences
    * Elementary equivalence
+   * A nonstandard example
    * Embeddings and isomorphisms
    * Quotient structures
    * Completeness
    * The Tarski-Vaught test
-   * Downward L&ouml;wenheim-Skolem
+   * Downward Löwenheim-Skolem
    * Elementary chains
 *  **Ultraproducts**
    * Filters and ultrafilters
    * Direct products
-   * &#321;o&#347;'s Theorem
+   * Los's Theorem
 *  **Compactness**
    * Compactness via syntax
    * Compactness via ultraproducts
-   * Upward L&ouml;wenheim-Skolem
+   * Compactness for types
    * Finite axiomatizability
 *  **Types and morphisms**
    * Semilattices and filters
@@ -76,11 +77,11 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
 *  **Imaginaries**
    * Many-sorted structures
    * The eq-expansion
-   * The definable closure in the eq-expansion
-   * The algebraic closure in the eq-expansion
+   * The eq-definable closure
+   * The eq-algebraic closure
    * Elimination of imaginaries
+   * Examples
    * Imaginaries: the true story
-   * Uniform elimination of imaginaries
 *  **Invariant sets**
    * Invariant sets and types
    * Invariance from a dual perspective
@@ -96,6 +97,7 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
 *  **Lascar invariant sets**
    * Expansions
    * Lascar strong types
+   * Coheirs over sets
    * The Lascar graph and Newelski's theorem
    * Kim-Pillay types
    * Notes and references
@@ -107,3 +109,4 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
 *  **Vapnik-Chervonenkis theory**
    * Vapnik-Chervonenkis dimension
    * Honest definitions
+\contentsline {chapter}{References**
