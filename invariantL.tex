@@ -157,15 +157,16 @@ The following are equivalent
 Let $p({\mr x})\in S(\U)$ be global type; we say that $p$ is \emph{Lascar invariant\/} over $A$ if the sets ${\gr\D_{p,\phi}}$ for $\phi({\mr x}\,;{\gr z})\in L$ all Lascar invariant over $A$. (The sets ${\gr\D_{p,\phi}}$ are defined in Section~\hyperref[invariant_sets]{~\ref*{invariant}.\ref*{invariant_sets}}.)
 
 \begin{proposition}\label{prop_Lascar_indiscernibles}
-  Let $p({\mr x})\in S(\U)$ be a global type and ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ be an arbtrary $A$-indiscernible sequence. Then the following are equivalent
+  Let $p({\mr x})\in S(\U)$ be a global type.
+  Then the following are equivalent
   \begin{itemize}
     \item[1.] $p({\mr x})$ is Lascar invariant over $A$;
-    \item[2.] ${\gr\bar c}$ is indiscernible over $A,{\mr a}$ for every ${\mr a}\models p_{\restriction A,{\gr\bar c}}({\mr x})$;
-    \item[3.] ${\gr\bar c}$ is indiscernible over any ${\mr a}\models p_{\restriction{\gr\bar c}}({\mr x})$;
+    \item[2.] every $A$-indiscernible sequence ${\gr\bar c}$ is indiscernible over $A,{\mr a}$ for every ${\mr a}\models p_{\restriction A,{\gr\bar c}}({\mr x})$;
+    \item[3.] every $A$-indiscernible sequence ${\gr\bar c}$ is indiscernible over ${\mr a}$ for every ${\mr a}\models p_{\restriction {\gr\bar c}}({\mr x})$.
   \end{itemize}
   For convenience all tuples ${\gr c_i}$ have length $|{\gr z}|=\omega$.
 \end{proposition}
-\begin{proof} We prove \ssf{1}$\IFF$\ssf{3}. Equivalence  \ssf{1}$\IFF$\ssf{2} can be proved similarly because the Lascar invariance of $p({\mr x})$ easily implies the Lascar invariance of the sets ${\gr\D_{p,\phi}}$ for all $\phi({\mr x}\,;{\gr z})\in L(A)$.
+\begin{proof} We prove \ssf{1}$\IFF$\ssf{3}. Equivalence  \ssf{1}$\IFF$\ssf{2} can be proved similarly.
 
   \def\ceq#1#2#3{\parbox[t]{30ex}{$\displaystyle #1$}\parbox[t]{5ex}{$\displaystyle\hfil #2$}{$\displaystyle #3$}}
   \ssf{3}$\IMP$\ssf{1}\quad If $p({\mr x})$ is not Lascar invariant over $A$ then ${\gr c_0}\in{\gr\D_{p,\phi}}\niff {\gr c_1}\in{\gr\D_{p,\phi}}$ for some $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ and some $\phi({\mr x}\,;{\gr z})\in L$. Then $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr c_0})\niff \phi({\mr x}\,;{\gr c_1})$. Hence, ${\gr\bar c}$ is not indiscernible over any realization of $p({\mr x})_{\restriction{\gr c_0},{\gr c_1}}$ 
@@ -224,13 +225,16 @@ It is inspired by the analogy with extensions bases for forking, see e.g.~\cite{
   The following are equivalent
   \begin{itemize}
     \item[1.] $A$ is a coheir extension base;
-    \item[2.] for all $\phi({\mr x}), \psi({\mr x})\in L(\U)$ if $\phi({\mr x})\vee\psi({\mr x})$ is almost satisfiable in $A$, then $\phi({\mr x})$ or $\psi({\mr x})$ is almost satisfied in $A$. 
+    \item[2.] if $\psi({\mr x})\in L(\U)$ is almost statisfied in $A$, then for all $\phi({\mr x})\in L(\U)$ either $\psi({\mr x})\wedge\phi({\mr x})$ or $\psi({\mr x})\wedge\neg\phi({\mr x})$ is almost satisfied in $A$. 
   \end{itemize}  
 \end{proposition}
   
 \begin{proof} 
-  \ssf1$\IMP$\ssf2 Assume \ssf1. If $\phi({\mr x})\vee\psi({\mr x})$ is almost satisfiable in $A$, then it is contained in a global type $p({\mr x})$ that is almost satisfiable in $A$. 
-  Then by the completeness of $p({\mr x})$ either $\phi({\mr x})$ or $\psi({\mr x})$ is in $p(x)$ and, consequently, is almost satisfied in $A$.
+  \ssf1$\IMP$\ssf2 Assume \ssf1. If $p({\mr x})\in S(\U)$ is almost satisfiable in $A$, then 
+  
+  
+  $\phi({\mr x})\vee\psi({\mr x})$ is almost satisfiable in $A$, then it is contained in a global type $p({\mr x})$ that is almost satisfiable in $A$. 
+  Then by the completeness of $p({\mr x})$ either $\phi({\mr x})$ or $\psi({\mr x})$ is in $p(({\mr x})$ and, consequently, is almost satisfied in $A$.
   
   \ssf2$\IMP$\ssf1 Assume \ssf2 and repeat the proof of Proposition~\ref{prop_exisntence_coheirs}.
 \end{proof}
@@ -273,7 +277,7 @@ In Chapter~\ref{external} we will see that for some important class of theories,
   \item[2.] If $p(x)$ contains ${\rm cyc}(a, b, x)$,
   let $a<M<b$ and pick $a'$ such that $a<a'<M$. 
   As $a, a' \equiv_M b,a$, also  ${\rm cyc}(b, a, x)$ is in $p(x)$.
-  A contradiction.\QED
+  A contradiction. (???)\QED
   \end{itemize}
 \end{example}
 
@@ -403,7 +407,7 @@ Negate \ssf{2} and choose inductively for every $n<\omega$ a formula $\psi_n(x)\
 Finally we can prove Newelski's theorem on the diameter of Lascar types.
 
 
-\begin{theorem}[(Newelski)]
+\begin{theorem}[ (Newelski)]
 For every ${\gr a}\in\U^{|{\gr z}|}$ the following are equivalent
 \begin{itemize}
  \item[1.] $\Ll({\gr a}/A)$ is type-definable;

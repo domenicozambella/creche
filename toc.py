@@ -36,7 +36,7 @@ p = compile('\\\\IeC\s\{\\\\\'e\}')
 toc = p.sub('&eacute;', toc)
 
 p = compile('\\\\L o\\\\\'{s}')
-toc = p.sub('Los', toc)
+toc = p.sub('Łoś', toc)
 
 
 with open('README.md', 'r') as f:

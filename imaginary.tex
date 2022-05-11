@@ -67,30 +67,29 @@ In Section~\ref{imaginaries_long} below we compare our definition with the stand
 %This will also explain the symbol used.
 
 Given a language $L$, we define a many-sorted language \emph{$L^{\eq}$\/} which has a sort for each partitioned formula $\sigma({\mr x}\,;{\gr z})\in L$ and a sort \emph{$0$\/} which we call the \emph{home sort}.
-(Partitioned formulas have been introduced in Definition~\ref{def_partitioned_fla}.) 
-
+(Partitioned formulas have been introduced in Definition~\ref{def_partitioned_fla}.)
 For legibility, we pretend that all formulas $\sigma$ depend on the same variables. 
 So we assume that ${\mr x}\,;{\gr z}$ are infinite tuples.
-Hence, with the notation of the previous section $L_{\rm srt}=\{0\}\cup L_{{\mr x}\,;{\gr z}}$.
+Hence, with the notation of the previous section $L_{\rm srt}=\{0\}\cup L_{{\mr x}\,;{\gr z}}$. 
 
-The home sort is also called the \emph{first-order sort\/} and
-all other sorts are called \emph{second-order}.
-First of all, $L^\eq$ contains all the relations and functions of the first order language $L$.
-The many-sorted arity of a relation $r$ is $\<0^{n_r}\>$, where $n_r$ is the arity of $r$ in $L$.
-Similarly, the many-sorted arity of a function $f$ is $\<0^{1+n_f}\>$, where $n_f$ is the arity of $f$ in $L$.
-Moreover, $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$.
-These relation symbols have arity \smash{$\big\<0^{|{\mr x_\sigma}|},\sigma({\mr x}\,;{\gr z})\big\>$}, where ${\mr x_\sigma}$ are the variables in ${\mr x}$ that actually occur in $\sigma$. 
-As there is no risk of ambiguity, in what follows we omit $\sigma$ from the subscripts.
+The home sort is also called \emph{first-order sort,}
+the other sorts are called \emph{second-order.}
 
-In \emph{$\U^{\eq}$\/} the domain of the home sort is $\U$.
+Let \emph{$\U^{\eq}$\/} be the many-sorted structure that has $\U$ as domain of the home sort.
 The domain for the sort $\sigma({\mr x}\,;{\gr z})$ contains 
 the definable sets ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ as ${\gr b}$ ranges over $\U^{|{\gr z}|}$.
-The symbols in $L$ have the same interpretation as in the one-sorted case, and $\in$ is interpreted as set membership.
-We write \emph{$T^{\eq}$\/} for $\Th(\U^\eq)$.
 
+The language of $\U^\eq$ is denoted by $L^\eq$.
+It contains all the relations and functions of the first order language $L$ with the same interpretation as in the one-sorted case.  
+Moreover $L^\eq$ contains a relation symbol $\in_{\sigma({\mr x}\,;{\gr z})}$ for each sort $\sigma({\mr x}\,;{\gr z})$.
+These relation symbols have arity \smash{$\big\<0^{|{\mr x_\sigma}|},\sigma({\mr x}\,;{\gr z})\big\>$}, where ${\mr x_\sigma}$ are the variables in ${\mr x}$ that actually occur in $\sigma$.
+These relations are interpreted as set membership.
+As there is no risk of ambiguity, in what follows we omit $\sigma$ from the subscripts.
+
+We write \emph{$T^{\eq}$\/} for $\Th(\U^\eq)$.
 As usual \emph{$L^\eq$\/} also denotes the set of formulas constructed in this language and, if $A\subseteq\U^\eq$, we write  \emph{$L^\eq(A)$\/} for the language and the set of formulas that use elements of $A$ as parameters.
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We write \emph{$L(A)$\/} for the set of formulas in $L^\eq(A)$ that contain no second-order variables, neither free nor quantified (when $A\subseteq\U^\eq$, it may contain second-order parameters).
+\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}We write \emph{$L(A)$\/} for the set of formulas in $L^\eq(A)$ that contain no second-order variables, neither free nor quantified (when $A\subseteq\U^\eq$, it may contain second-order parameters).
 
 We use the symbol ${\vl\X}$ to denote a generic second-order variable.
 

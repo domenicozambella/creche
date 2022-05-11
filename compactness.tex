@@ -150,7 +150,7 @@ Every finitely consistent theory is consistent.
 \begin{proof}
 Let  $T$ be a finitely consistent theory. 
 
-We claim that the structure $N/F$ which we define below is a model of $T$. Let $I$ be the set of consistent sentences $I$ in the language $L$.
+We claim that the structure $N/F$ which we define below is a model of $T$. Let $I$ be the set of consistent sentences $\xi\in L$.
 For every $\xi\in I$ pick some $M_\xi\models\xi$.
 For any sentence $\phi\in L$ we define
 
@@ -178,7 +178,7 @@ If $T\proves\phi$ then there is some finite $S\subseteq T$ such that $S\proves\p
 \end{corollary}
 
 \begin{proof}
-Suppose $S\notproves\phi$ for every finite $S\subseteq T$. Then for every finite $S\subseteq T$ there is a model $M\models S\cup\{\neg\phi\}$. In other words, $T\cup\{\neg\phi\}$ is finitely consistent. By compactness $T\cup\{\neg\phi\}$ hence $T\notproves \phi$.
+Suppose $S\notproves\phi$ for every finite $S\subseteq T$. Then for every finite $S\subseteq T$ there is a model $M\models S\cup\{\neg\phi\}$. In other words, $T\cup\{\neg\phi\}$ is finitely consistent. By compactness $T\cup\{\neg\phi\}$ is consistent, hence $T\notproves \phi$.
 \end{proof}
 
 \begin{exercise}
@@ -277,13 +277,13 @@ If $L$ is empty, then every structure is a model.
 The \emph{theory of infinite sets\/} is the set of sentences that hold in every infinite structure.
 
 \begin{example} 
-The theory of infinite sets is not finitely axiomatizable.
-Define
+The theory of infinite sets
 
-\ceq{\hfill T_{\infty}}{=}{\big\{\E^{\ge n}x\;(x=x)\big\}\ :\ n\in\omega\big\}}
+\ceq{\hfill T_{\infty}}{=}{\big\{\E^{\ge n}x\;(x=x)\ :\ n\in\omega\big\}}
 
+is not finitely axiomatizable.
 Every infinite set is a model of $T_{\infty}$ and, vice versa, every model of $T_{\infty}$ is is an infinite set.
-Then $\ccl(T_{\infty})$ is the theory of infinite sets. Suppose for a contradiction that $T_{\infty}$ is finitely axiomatizable. By Proposition~\ref{finaxsub}, $\E^{\ge n}x (x=x)\proves T_{\infty}$ for some $n$. Any set of cardinality $n+1$ proves that this is not the case.\QED
+Then $\ccl(T_{\infty})$ is the theory of infinite sets. Suppose for a contradiction that $T_{\infty}$ is finitely axiomatizable. By Proposition~\ref{finaxsub}, $\E^{\ge n}x\, (x{=}x)\proves T_{\infty}$ for some $n$. Any set of cardinality $n+1$ proves that this is not the case.\QED
 \end{example}
 
 The following is a less trivial example.

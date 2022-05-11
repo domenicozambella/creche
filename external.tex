@@ -85,7 +85,7 @@ In Definition~\ref{def_approx}, the sort $\phi({\mr x}\,;{\gr z})$ is fixed (oth
 For every $\grD$ the following are equivalent
 \begin{itemize}
 \item[1.] $\grD$ is approximable;
-\item[2.] for every $C\subseteq\U$ of cardinality $\le|T|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi({\gr\U})=_C\grD$.
+\item[2.] for every $C\subseteq\U$ of cardinality $\le|L|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi({\gr\U})=_C\grD$.
 \end{itemize}
 \end{proposition}
 
@@ -93,7 +93,7 @@ For every $\grD$ the following are equivalent
 To prove \ssf{2}$\IMP$\ssf{1} assume \ssf{2} and negate \ssf{1} for a contradiction.
 For each formula $\psi({\mr x}\,;{\gr z})\in L$ choose a finite set $B$ such that $\psi({\mr b}\,;{\gr\U})\neq_B\grD$ for every ${\mr b}\in\U^{|{\mr x}|}$.
 Let $C$ be the union of all these finite sets.
-Clearly $|C|\le|T|$.
+Clearly $|C|\le|L|$.
 By \ssf{2} there are a formula $\phi({\mr x}\,;{\gr z})$ and a tuple ${\mr c}$ such that $\phi({\mr c}\,;{\gr\U})=_C\grD$, contradicting the definition of $C$.
 \end{proof}
 
@@ -317,197 +317,6 @@ hence $\phi_1({\mr x_1}\,;{\gr z})$ is unstable.
 This last lemma concludes the proof of Theorem~\ref{thm_def_stable_formula}. 
 
 
-\begin{theorem}\label{thm_def_stable_formula2}
-  The following are equivalent
-  \begin{itemize}
-    \item[1.] $\phi({\mr x}\,;{\gr z})$ is stable;
-    \item[2.] every subset of $\U^{|{\gr z}|}$ that is externally definable by $\phi({\mr x}\,;{\gr z})$ is definable;
-    \item[3.] there are $\le\kappa$ subsets of $\U^{|{\gr z}|}$ that are externally definable by $\phi({\mr x}\,;{\gr z})$;
-    \item[4.] there are $<2^\kappa$ subsets of $\U^{|{\gr z}|}$ that are externally definable by $\phi({\mr x}\,;{\gr z})$.
-  \end{itemize}
-\end{theorem}
-
-\begin{proof}
-\ssf{1}$\IMP$\ssf{2} is clear by Proposition~\ref{prop_approx=external} and Theorem~\ref{thm_def_stable_formula}.
-
-\ssf{2}$\IMP$\ssf{3}$\IMP$\ssf{4} are obvious.
-
-\ssf{4}$\IMP$\ssf{1} is proved by contraposition.
-Suppose that $\phi({\mr x}\,;{\gr z})$ is not stable.
-By compactness there is a ladder sequence  $\<{\mr a_i}\,;{\gr b_i} : i\in I\>$ where $I,<_I$ a dense linear order of cardinality $\kappa$ with $2^\kappa$ cuts, where by \textit{cut\/} we mean a subset $c\subseteq I$ that is closed downward.
-For every such $c\subseteq I$ we pick a global type
-
-\ceq{\hfill p_c({\mr x} ) }{\supseteq}{\big\{\phi({\mr x}\,;{\gr b_i})\iff i\in c\ :\ i\in I\big\}.}
-
-Clearly sets ${\gr\D_{p_c,\,\phi} }$ are all distinct.
-\end{proof}
-
-% \begin{exercise}\label{ex_harrington}
-% \def\grB{{\gr{\EuScript B}}}
-% \def\mrA{{\mr{\EuScript A}}}
-% The following is a version of Harrington's mysterious 
-% Lemma (cfr.~\cite[Lemma 8.3.4]{TZ}).
-% Let $\phi({\mr x}\,;{\gr z})\in L$ be a stable formula and suppose $\grB\subseteq\U^{|{\gr z}|}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\mr x}\,;{\gr z})^*$, respectively.
-% Then at least one of the conditions \ssf{1} and \ssf{2} below occurs
-
-% \begin{itemize}
-% \item[1.]
-% \ssf{a.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\phantom{*}}\wedge\ {\mr x}\in{\mrA}$ approximates $\grB$ and\\
-% \ssf{b.}\kern2ex$\phi({\mr x}\,;{\gr z})^*\wedge\ {\gr z}\in{\grB}$ approximates $\mrA$.
-
-% \item[2.]
-% \ssf{a.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\phantom{*}}\wedge\ {\mr x}\notin{\mrA}$ approximates $\grB$ and\\
-% \ssf{b.}\kern2ex$\phi({\mr x}\,;{\gr z})^*\wedge\ {\gr z}\notin{\grB}$ approximates $\mrA$.
-
-% \end{itemize}
-% Hint: Note that at least one of \ssf{1a} or \ssf{2a} occurs.
-% Hence it suffices to prove that \ssf{1a}$\IMP$\ssf{1b} and \ssf{2a}$\IMP$\ssf{2b}. The two implications are essentially equivalent.
-% \begin{proof}
-% Note that at least one of \ssf{1a} or \ssf{2a} occurs.
-% Hence it suffices to prove that \ssf{1a}$\IMP$\ssf{1b} and \ssf{2a}$\IMP$\ssf{2b}.
-% We only prove the first.
-% The second follows because $\neg\grB$ and $\neg\mrA$ are approximated by $\neg\phi({\mr x}\,;{\gr z})$ and  $\neg\phi({\mr x}\,;{\gr z})^*$, respectively.
-
-% Assume \ssf{1a} and negate \ssf{1b} for a contradiction.
-% Then \ssf{2b} holds.
-% Pick ${\mr a_0}$ arbitrarily, then recursively find ${\gr b_i}\notin\grB$ and  ${\mr a_i}\in\mrA$ such that
-
-% {\def\medrel#1{\parbox[t]{12ex}{$\displaystyle\kern2ex #1$}}
-
-% \ceq{\hfill\phi(\U\,;{\gr b_i})}{ =_{{\mr a_0},\dots,{\mr a_{i-1}}}}{\mrA} 
-
-% \ceq{\hfill\phi({\mr a_i}\,;\U)}{ =_{{\gr b_0},\dots,{\gr b_i}}}{\grB}
-% }
-
-% Then
-
-% {\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\kern2ex #1$}}
-
-% \ceq{\hfill i< j}{\IMP}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}
-
-% \ceq{\hfill j\le i}{\IMP}{\neg\phi({\mr a_i}\,;{\gr b_j})}
-
-% }
-
-% Which contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
-% \end{proof}
-% \end{exercise}
-
-
-
-
-\section{Stable theories}
-\label{stable_theories}
-
-We say that $T$ is a \emph{stable theory\/} if every formula is stable. By Theorem~\ref{thm_def_stable_formula2} this is equivalent to requiring that all externally definable sets are definable.
-
-If $p({\mr x})\in S(\U)$ is a global type, a \emph{canonical base\/} of $p({\mr x})$ is a definably closed set $\emph{$\Cb(p)$}\subseteq \U^\eq$ such that an automorphism $f\in\Aut(\U)$ fixes $p({\mr x})$ if and only if it fixes $\Cb(p)$ pointwise. When they exist, canonical bases are unique, see Exercise~\ref{ex_Cb}.
-
-Clearly, all definable types (Definition~\ref{def_defble_type}) have a canonical base, namely
-
-\ceq{\hfill\Cb(p)}{=}{{\dcl}^\eq\Big(\big\{{\gr\D_{p,\phi}}\ :\ \phi({\mr x}\,;{\gr z})\in L\big\}\Big).}
-
-Therefore if $T$ is stable, all global types have a canonical base.
-
-We now turn to Lascar invariance. Quite interestingly when $T$ is stable this reduces to a more manageable kind of invariance.
-
-\begin{proposition}\label{prop_type_over_acl2} Let $T$ be stable and let $p({\mr x})\in S(\U)$. Then the following are equivalent
-\begin{itemize}
-\item[1.] $p({\mr x})$ is Lascar invariant over $A$;
-\item[2.] $p({\mr x})$ is definable over $\acl^\eq\!A$;
-\item[3.] ${\gr\D_{p,\phi}}\in \acl^\eq\!A$ for all $\phi({\mr x}\,;{\gr z})\in L$.
-\end{itemize}
-\end{proposition}
-\begin{proof}
- \ssf{3}$\IMP$\ssf{2}$\IMP$\ssf{1} are clear (stability is not required).
- 
- \ssf{1}$\IMP$\ssf{3} The sets ${\gr\D_{p,\phi}}$ are externally definable therefore, by Theorem~\ref{thm_def_stable_formula2}, they are definable (over $\U$).
- As $p({\mr x})$ is Lascar invariant over $A$, so are the sets ${\gr\D_{p,\phi}}$.
- By stability, ${\gr\D_{p,\phi}}$ is definable.
- Hence they belong to $\acl^\eq\!A$ by Corollary~\ref{coroll_defble_Lascar_inv}.
-\end{proof}
-% 
-% \begin{proposition}\label{prop_type_over_dcl} Let $T$ be stable and let $p({\mr x})\in S(\U)$ be Lascar invariant over $A$. Then for every formula $\phi({\mr x}\,;{\gr z})\in L$ the set ${\gr\D_{p,\phi}}$ belongs to $\dcl^\eq(A,c)$ for every $c\models p_{\restriction A}(x)$.
-% \end{proposition}
-% \begin{proof}
-% Without loss of generality we can assume $p({\mr x})\in S(\U^\eq)$. 
-% \end{proof}
-
-A type $q({\mr x})\subseteq L(A)$ is \emph{stationary\/} if it has a unique global extension that is Lascar invariant over $A$.
-The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
-
-\begin{proposition}\label{prop_type_over_acl_stationary} If $T$ is stable then every type $q({\mr x})\in S\big(\acl^\eq\!A\big)$ is stationary.
-\end{proposition}
-
-\begin{proof}
-Let $p_i({\mr x})\in S(\U^\eq)$, for $i=1,2$, be two global types that extend $q({\mr x})$ and are invariant over $\acl^\eq\!A$.
-To prove that $p_1({\mr x}) =p_2({\mr x})$, it suffices to show that for every formula $\phi({\mr x}\,;{\gr z})\in L$
-
-\ceq{\#\hfill {\gr\D_{p_1,\,\phi}}}{=}{{\gr\D_{p_2,\,\phi}}}
-
-Note that, by Proposition~\ref{prop_type_over_acl2} both sets belong to  $\acl^\eq\!A$.
-Clearly, for $i=1,2$, the formula $\A{\gr z}\,\big[\phi({\mr x}\,;{\gr z})\iff {\gr z}\in {\gr\D_{p_i,\,\phi}}\big]$ belongs to $p_i({\mr x})$.
-Then both formulas belong to $q({\mr x})$ and $\#$ follows.
-\end{proof}
-
-\begin{corollary}
-If $T$ is stable then the following are equivalent
-\begin{itemize}
-\item[1.] ${\mr a}\equivL_A{\mr b}$, see Definition~\ref{def_Lascar_type};
-\item[2.] ${\mr a}\equivSh_A{\mr b}$, see Definition~\ref{def_Sh_strong_type}.
-\end{itemize}
-\end{corollary}
-\begin{proof}\ssf{1}$\IMP$\ssf{2}.
-  This is left as an exercise to the reader (stability is not required).
-
-  \ssf{2}$\IMP$\ssf{1}.
-  Assume ${\mr a}\equivSh_A{\mr b}$.
-  By Proposition~\ref{prop_Shelah_strong_types} this is equivalent to ${\mr a}\equiv_{\acl^\eq\!A}{\mr b}$.
-  Let $q({\mr x})=\tp({\mr a}/{\acl}^\eq\!A)=\tp({\mr b}/{\acl}^\eq\!A)$. Let $p({\mr x})\in S(\U^\eq)$ be the unique global type that is invariant over $\acl^\eq\! A$ and extends $q({\mr x})$ which we obtain from by Proposition~\ref{prop_type_over_acl_stationary}.
-  Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be such that ${\mr c_i}\models p{\restriction \acl^\eq(A),\,{\mr a},\,{\mr b},\,{\mr c_{\restriction i}}}$.
-  Then ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lstp_indiscernibles}.
-\end{proof}
-
-We end this section with a characterization of stability which is not directly related with the properties discussed above. 
-
-\begin{proposition} The following are equivalent
-\begin{itemize}
-\item[1.] $T$ is stable;
-\item[2.] every $A$-indiscernible sequence is totally $A$-indiscernible.
-\end{itemize}
-\end{proposition}
-
-\begin{proof}
-\ssf{2}$\IMP$\ssf{1}. Assume $\neg$\ssf{1} and let $\phi({\mr x}\,;{\gr z})$ be an unstable formula witnessed by the ladder sequence $\<{\mr a_i}\,;{\gr b_i}:i<\omega\>$. Let $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ be 
-indiscernible sequence that models the EM-type of $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$. This is not totally indiscernible because $\phi({\mr a'_i}\,;{\gr b'_j})$ if and if $i< j$.
-
-\ssf{1}$\IMP$\ssf{2}. Assume $\neg$\ssf{2} and let $\<a_i : i<\omega\>$ be an $A$-indiscernible sequence, which is not totally $A$-in\-dis\-cern\-ible. Then there is a formula $\phi(x, y)\in L(A)$ and some $i<j$ such that $\phi(a_i , a_j )\wedge\neg\phi(a_j , a_i) $. By indiscernibility  $\phi(a_i, a_j)\vee a_i=a_j$ holds if and only if $i\le j$. Hence $\phi(x\,; y)\vee x=y$ is not stable.
-\end{proof}
-
-\begin{exercise}\label{ex_stable_orderproperty}
-Prove that the following are equivalent
-\begin{itemize}
-\item[1.] $T$ is stable;
-\item[2.] there is an infinite set $A\subseteq\U^{|{\mr x}|}$ and a formula  $\psi({\mr x}\,;{\mr y})$ such that $A$ is linearly ordered by the relation ${\mr a}<{\mr b}\iff\psi({\mr a}\,;{\mr b})$.
-\end{itemize}
-Hint: suppose $\phi({\mr x}\,;{\gr z})$ is unstable and let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be an infinite ladder sequence, then $A=\{{\mr a_i}\,{\gr b_i} : i<\omega\}$ is linearly ordered.\QED
-\end{exercise}
-
-
-\begin{exercise}
-Prove that if every formula $\phi({\mr x}\,;{\gr z})\in L$ with $|{\mr x}|=1$ is stable then $T$ is stable. Hint: by compactness, if all sets approximable by $\phi({\mr x}\,;y,{\gr z})$ are definable, so are the sets approximable by $\phi({\mr x},y\,;{\gr z})$.\QED
-\end{exercise}
-
-
-\begin{exercise}
-Prove that strongly minimal theories are stable.\QED
-\end{exercise}
-
-
-\begin{exercise}\label{ex_Cb}
-Let $p({\mr x})\in S(\U)$. Prove that there is at most one definably closed set $A\subseteq\U^\eq$ such that $\Aut(\U/A)$ is the set of automorphisms that fix $p({\mr x})$.\QED
-\end{exercise}
-
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
@@ -515,13 +324,93 @@ Let $p({\mr x})\in S(\U)$. Prove that there is at most one definably closed set 
 %%%%%%%%%%%%%%%%%%%%%%
 \section{Stability and the number of types}
 
+
+
 The following proposition highlights the connection between stability and the cardinality of types. 
+
+
+\begin{theorem}\label{thm_def_stable_formula2}
+   The following are equivalent
+   \begin{itemize}
+     \item[1.] $\phi({\mr x}\,;{\gr z})$ is stable;
+     \item[2.] every subset of $\U^{|{\gr z}|}$ that is externally definable by $\phi({\mr x}\,;{\gr z})$ is definable;
+     \item[3.] there are $\le\kappa$ subsets of $\U^{|{\gr z}|}$ that are externally definable by $\phi({\mr x}\,;{\gr z})$;
+     \item[4.] there are $<2^\kappa$ subsets of $\U^{|{\gr z}|}$ that are externally definable by $\phi({\mr x}\,;{\gr z})$.
+   \end{itemize}
+ \end{theorem}
+ 
+ \begin{proof}
+ \ssf{1}$\IMP$\ssf{2} is clear by Proposition~\ref{prop_approx=external} and Theorem~\ref{thm_def_stable_formula}.
+ 
+ \ssf{2}$\IMP$\ssf{3}$\IMP$\ssf{4} are obvious.
+ 
+ \ssf{4}$\IMP$\ssf{1} is proved by contraposition.
+ Suppose that $\phi({\mr x}\,;{\gr z})$ is not stable.
+ By compactness there is a ladder sequence  $\<{\mr a_i}\,;{\gr b_i} : i\in I\>$ where $I,<_I$ a dense linear order of cardinality $\kappa$ with $2^\kappa$ cuts, where by \textit{cut\/} we mean a subset $c\subseteq I$ that is closed downward.
+ For every such $c\subseteq I$ we pick a global type
+ 
+ \ceq{\hfill p_c({\mr x} ) }{\supseteq}{\big\{\phi({\mr x}\,;{\gr b_i})\iff i\in c\ :\ i\in I\big\}.}
+ 
+ Clearly sets ${\gr\D_{p_c,\,\phi} }$ are all distinct.
+ \end{proof}
+ 
+ % \begin{exercise}\label{ex_harrington}
+ % \def\grB{{\gr{\EuScript B}}}
+ % \def\mrA{{\mr{\EuScript A}}}
+ % The following is a version of Harrington's mysterious 
+ % Lemma (cfr.~\cite[Lemma 8.3.4]{TZ}).
+ % Let $\phi({\mr x}\,;{\gr z})\in L$ be a stable formula and suppose $\grB\subseteq\U^{|{\gr z}|}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\mr x}\,;{\gr z})^*$, respectively.
+ % Then at least one of the conditions \ssf{1} and \ssf{2} below occurs
+ 
+ % \begin{itemize}
+ % \item[1.]
+ % \ssf{a.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\phantom{*}}\wedge\ {\mr x}\in{\mrA}$ approximates $\grB$ and\\
+ % \ssf{b.}\kern2ex$\phi({\mr x}\,;{\gr z})^*\wedge\ {\gr z}\in{\grB}$ approximates $\mrA$.
+ 
+ % \item[2.]
+ % \ssf{a.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\phantom{*}}\wedge\ {\mr x}\notin{\mrA}$ approximates $\grB$ and\\
+ % \ssf{b.}\kern2ex$\phi({\mr x}\,;{\gr z})^*\wedge\ {\gr z}\notin{\grB}$ approximates $\mrA$.
+ 
+ % \end{itemize}
+ % Hint: Note that at least one of \ssf{1a} or \ssf{2a} occurs.
+ % Hence it suffices to prove that \ssf{1a}$\IMP$\ssf{1b} and \ssf{2a}$\IMP$\ssf{2b}. The two implications are essentially equivalent.
+ % \begin{proof}
+ % Note that at least one of \ssf{1a} or \ssf{2a} occurs.
+ % Hence it suffices to prove that \ssf{1a}$\IMP$\ssf{1b} and \ssf{2a}$\IMP$\ssf{2b}.
+ % We only prove the first.
+ % The second follows because $\neg\grB$ and $\neg\mrA$ are approximated by $\neg\phi({\mr x}\,;{\gr z})$ and  $\neg\phi({\mr x}\,;{\gr z})^*$, respectively.
+ 
+ % Assume \ssf{1a} and negate \ssf{1b} for a contradiction.
+ % Then \ssf{2b} holds.
+ % Pick ${\mr a_0}$ arbitrarily, then recursively find ${\gr b_i}\notin\grB$ and  ${\mr a_i}\in\mrA$ such that
+ 
+ % {\def\medrel#1{\parbox[t]{12ex}{$\displaystyle\kern2ex #1$}}
+ 
+ % \ceq{\hfill\phi(\U\,;{\gr b_i})}{ =_{{\mr a_0},\dots,{\mr a_{i-1}}}}{\mrA} 
+ 
+ % \ceq{\hfill\phi({\mr a_i}\,;\U)}{ =_{{\gr b_0},\dots,{\gr b_i}}}{\grB}
+ % }
+ 
+ % Then
+ 
+ % {\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\kern2ex #1$}}
+ 
+ % \ceq{\hfill i< j}{\IMP}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}
+ 
+ % \ceq{\hfill j\le i}{\IMP}{\neg\phi({\mr a_i}\,;{\gr b_j})}
+ 
+ % }
+ 
+ % Which contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
+ % \end{proof}
+ % \end{exercise}
+ 
+ 
+
 
 Binary trees of formulas have been introduced in Definition~\ref{def_tree_formulas}.
 Here we restrict to trees of a particular form.
-Namely, $\<\psi_s:s\in 2^{<\omega}\>$  where $\psi_\0=\top$ and for $s\in 2^{<\omega}$ and $i\in 2$ we have $\psi_{s^\frown i}({\mr x})=\neg^{i+1}\phi({\mr x}\,;{\gr b_s})$.
-
-In general, we write \emph{$\neg^i$\/} for $\neg\!\stackrel{i\ \rm times}{\dots\dots\dots}\!\neg$.
+Namely, $\<\psi_s:s\in 2^{<\omega}\>$  where $\psi_\0=\top$ and for $s\in 2^{<\omega}$ and $i\in 2$ we have $\psi_{s^\frown i}({\mr x})=\phi({\mr x}\,;{\gr b_s})^i$.
 
 % Set the overall layout of the tree
 \tikzstyle{level 1}=[level distance=3.5cm, sibling distance=2.5cm]
@@ -612,7 +501,7 @@ When a binary tree of this form exists, we say that $\phi({\mr x}\,;{\gr z})$ ha
 
 \begin{proof}
   \ssf{1}$\IMP$\ssf{2}.
-  From $\ssf{1}$, by compactness, there is a ladder sequence  $\<{\mr a_s}\,;{\gr b_s} : s\in2^{<\omega}\>$, where $2^{<\omega}$ is ordered lexicografically.
+  By $\ssf{1}$ and compactness, there is a ladder sequence  $\<{\mr a_s}\,;{\gr b_s} : s\in2^{<\omega}\>$, where $2^{<\omega}$ is ordered lexicografically.
   We claim that for every $r\in2^\omega$ the type $p_r({\mr x})=\big\{\phi({\mr x}\,;{\gr b_s})\iff r<s : s\in2^{<\omega}\big\}$ is consistent. 
   In fact, $\phi({\mr a_{r\restriction n}}\,;{\gr b_s})$ holds for all $s\in2^{<n}$.
   Then consistency follows by compactness.
@@ -645,6 +534,31 @@ The following are equivalent
   The corollary follows immediately from Lemma~\ref{lem_bin_tree} and Theorem~\ref{thm_count_types}.
 \end{proof}
 
+We use binary trees to prove the following theorem. Its corollary is a major result for 
+
+\begin{theorem}
+   Let $\phi(x\,;z)\in L$ be stable.
+   Then for every $A$ and $b$ either $\phi(x\,;b)$ or $\neg\phi(x\,;b)$ is almost satified in $A$.
+\end{theorem} 
+
+\begin{proof}
+Suppose not. Then there are two models containing $A$, the first omitting $\phi(x\,;b)$, the second omitting $\neg\phi(x\,;b)$.
+It is easy to see that we can expand these models to two subtructures $\V_0$ and $\V_1$ that are $A$-isomorphic to $\U$ and such that $\phi(\V_0\,;b)=\neg\phi(\V_1\,;b)=\0$.
+In other words, $\phi(\V_i\,;b)^i=\V_i$, for $i=0,1$.
+
+Rename $\V_\0=\U$ and $b_\0=b$.
+Inductively, given $s\in 2^n$ and $b_s\in\V_s$, pick two strucures $\V_{s^\frown i}\subseteq\V_s$ that are $A$-isomorphic copies of $V_s$ such that $\phi(\V_{s^\frown 0}\,;b_s)=\neg\phi(\V_{s^\frown 1}\,;b_s)=\0$.
+Finally, let $b_{s^\frown i}$ be the images of $b_s$ under the isomorphisms $\V_s\to\V_{s^\frown i}$.
+
+In this way we obtain a binary tree as above.
+We only have to show that every branch is consistent.
+This because $\phi(\V_{s^\frown i}\,;b_s)^i=\V_{s^\frown i}$ and $\V_s\preceq\V_r$ for every $r\subseteq s$.
+\end{proof}
+
+\begin{corollary}
+   Every consistent $q(x)\subseteq L(A)$ has a global extension $p(x)\in S(\U)$ that is Lascar invariant over $A$. 
+\end{corollary}
+
 % \begin{theorem}
 % The following are equivalent
 % \begin{itemize}
@@ -667,5 +581,117 @@ The following are equivalent
 % \ssf{1}$\IMP$\ssf{3}.
 % Proposition~\ref{thm_count_types} implies that $|S(A)|\le |A|^{|L|}$. Therefore, when $|L|<\cf(A)$, we obtain $|S(A)|\le |A|$.
 % \end{proof}
+
+
+\section{Stable theories}
+\label{stable_theories}
+
+We say that $T$ is a \emph{stable theory\/} if every formula is stable. By Theorem~\ref{thm_def_stable_formula2} this is equivalent to requiring that all externally definable sets are definable.
+
+If $p({\mr x})\in S(\U)$ is a global type, a \emph{canonical base\/} of $p({\mr x})$ is a definably closed set $\emph{$\Cb(p)$}\subseteq \U^\eq$ such that an automorphism $f\in\Aut(\U)$ fixes $p({\mr x})$ if and only if it fixes $\Cb(p)$ pointwise. When they exist, canonical bases are unique, see Exercise~\ref{ex_Cb}.
+
+Clearly, all definable types (Definition~\ref{def_defble_type}) have a canonical base, namely
+
+\ceq{\hfill\Cb(p)}{=}{{\dcl}^\eq\Big(\big\{{\gr\D_{p,\phi}}\ :\ \phi({\mr x}\,;{\gr z})\in L\big\}\Big).}
+
+Therefore if $T$ is stable, all global types have a canonical base.
+
+We now turn to Lascar invariance. Quite interestingly when $T$ is stable this reduces to a more manageable kind of invariance.
+
+\begin{proposition}\label{prop_type_over_acl2} Let $T$ be stable and let $p({\mr x})\in S(\U)$. Then the following are equivalent
+\begin{itemize}
+\item[1.] $p({\mr x})$ is Lascar invariant over $A$;
+\item[2.] ${\gr\D_{p,\phi}}\in \acl^\eq\!A$ for all $\phi({\mr x}\,;{\gr z})\in L$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+ \ssf{2}$\IMP$\ssf{1} are clear (stability is not required).
+ 
+ \ssf{1}$\IMP$\ssf{2} The sets ${\gr\D_{p,\phi}}$ are externally definable therefore, by Theorem~\ref{thm_def_stable_formula2}, they are definable (over $\U$).
+ As $p({\mr x})$ is Lascar invariant over $A$, so are the sets ${\gr\D_{p,\phi}}$.
+ By stability, ${\gr\D_{p,\phi}}$ is definable.
+ Hence they belong to $\acl^\eq\!A$ by Corollary~\ref{coroll_defble_Lascar_inv}.
+\end{proof}
+% 
+% \begin{proposition}\label{prop_type_over_dcl} Let $T$ be stable and let $p({\mr x})\in S(\U)$ be Lascar invariant over $A$. Then for every formula $\phi({\mr x}\,;{\gr z})\in L$ the set ${\gr\D_{p,\phi}}$ belongs to $\dcl^\eq(A,c)$ for every $c\models p_{\restriction A}(x)$.
+% \end{proposition}
+% \begin{proof}
+% Without loss of generality we can assume $p({\mr x})\in S(\U^\eq)$. 
+% \end{proof}
+
+A type $q({\mr x})\subseteq L(A)$ is \emph{stationary\/} if it has a unique global extension that is Lascar invariant over $A$.
+The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
+
+\begin{proposition}\label{prop_type_over_acl_stationary} If $T$ is stable then every type $q({\mr x})\in S\big(\acl^\eq\!A\big)$ is stationary.
+\end{proposition}
+
+\begin{proof}
+Let $p_i({\mr x})\in S(\U^\eq)$, for $i=1,2$, be two global types that extend $q({\mr x})$ and are invariant over $\acl^\eq\!A$.
+To prove that $p_1({\mr x}) =p_2({\mr x})$, it suffices to show that for every formula $\phi({\mr x}\,;{\gr z})\in L$
+
+\ceq{\#\hfill {\gr\D_{p_1,\,\phi}}}{=}{{\gr\D_{p_2,\,\phi}}}
+
+Note that, by Proposition~\ref{prop_type_over_acl2} both sets belong to  $\acl^\eq\!A$.
+Clearly, for $i=1,2$, the formula $\A{\gr z}\,\big[\phi({\mr x}\,;{\gr z})\iff {\gr z}\in {\gr\D_{p_i,\,\phi}}\big]$ belongs to $p_i({\mr x})$.
+Then both formulas belong to $q({\mr x})$ and $\#$ follows.
+\end{proof}
+
+\begin{corollary}
+If $T$ is stable then the following are equivalent
+\begin{itemize}
+\item[1.] ${\mr a}\equivL_A{\mr b}$, see Definition~\ref{def_Lascar_type};
+\item[2.] ${\mr a}\equivSh_A{\mr b}$, see Definition~\ref{def_Sh_strong_type}.
+\end{itemize}
+\end{corollary}
+\begin{proof}\ssf{1}$\IMP$\ssf{2}.
+  This is left as an exercise to the reader (stability is not required).
+
+  \ssf{2}$\IMP$\ssf{1}.
+  Assume ${\mr a}\equivSh_A{\mr b}$.
+  By Proposition~\ref{prop_Shelah_strong_types} this is equivalent to ${\mr a}\equiv_{\acl^\eq\!A}{\mr b}$.
+  Let $q({\mr x})=\tp({\mr a}/{\acl}^\eq\!A)=\tp({\mr b}/{\acl}^\eq\!A)$. Let $p({\mr x})\in S(\U^\eq)$ be the unique global type that is invariant over $\acl^\eq\! A$ and extends $q({\mr x})$ which we obtain from by Proposition~\ref{prop_type_over_acl_stationary}.
+  Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be such that ${\mr c_i}\models p{\restriction \acl^\eq(A),\,{\mr a},\,{\mr b},\,{\mr c_{\restriction i}}}$.
+  Then ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lstp_indiscernibles}.
+\end{proof}
+
+We end this section with a characterization of stability which is not directly related with the properties discussed above. 
+
+\begin{proposition} The following are equivalent
+\begin{itemize}
+\item[1.] $T$ is stable;
+\item[2.] every $A$-indiscernible sequence is totally $A$-indiscernible.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+\ssf{2}$\IMP$\ssf{1}. Assume $\neg$\ssf{1} and let $\phi({\mr x}\,;{\gr z})$ be an unstable formula witnessed by the ladder sequence $\<{\mr a_i}\,;{\gr b_i}:i<\omega\>$. Let $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ be 
+indiscernible sequence that models the EM-type of $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$. This is not totally indiscernible because $\phi({\mr a'_i}\,;{\gr b'_j})$ if and if $i< j$.
+
+\ssf{1}$\IMP$\ssf{2}. Assume $\neg$\ssf{2} and let $\<a_i : i<\omega\>$ be an $A$-indiscernible sequence, which is not totally $A$-in\-dis\-cern\-ible. Then there is a formula $\phi(x, y)\in L(A)$ and some $i<j$ such that $\phi(a_i , a_j )\wedge\neg\phi(a_j , a_i) $. By indiscernibility  $\phi(a_i, a_j)\vee a_i=a_j$ holds if and only if $i\le j$. Hence $\phi(x\,; y)\vee x=y$ is not stable.
+\end{proof}
+
+\begin{exercise}\label{ex_stable_orderproperty}
+Prove that the following are equivalent
+\begin{itemize}
+\item[1.] $T$ is stable;
+\item[2.] there is an infinite set $A\subseteq\U^{|{\mr x}|}$ and a formula  $\psi({\mr x}\,;{\mr y})$ such that $A$ is linearly ordered by the relation ${\mr a}<{\mr b}\iff\psi({\mr a}\,;{\mr b})$.
+\end{itemize}
+Hint: suppose $\phi({\mr x}\,;{\gr z})$ is unstable and let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be an infinite ladder sequence, then $A=\{{\mr a_i}\,{\gr b_i} : i<\omega\}$ is linearly ordered.\QED
+\end{exercise}
+
+
+\begin{exercise}
+Prove that if every formula $\phi({\mr x}\,;{\gr z})\in L$ with $|{\mr x}|=1$ is stable then $T$ is stable. Hint: by compactness, if all sets approximable by $\phi({\mr x}\,;y,{\gr z})$ are definable, so are the sets approximable by $\phi({\mr x},y\,;{\gr z})$.\QED
+\end{exercise}
+
+
+\begin{exercise}
+Prove that strongly minimal theories are stable.\QED
+\end{exercise}
+
+
+\begin{exercise}\label{ex_Cb}
+Let $p({\mr x})\in S(\U)$. Prove that there is at most one definably closed set $A\subseteq\U^\eq$ such that $\Aut(\U/A)$ is the set of automorphisms that fix $p({\mr x})$.\QED
+\end{exercise}
 
 \end{document}
