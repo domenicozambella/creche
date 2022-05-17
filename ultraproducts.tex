@@ -179,7 +179,7 @@ We write $N'/F\pmodels\phi(\hat a)$ for $N'/F\models\phi([\hat a]_F)$, though a 
 The structure $N'/F$ is called the \emph{reduced product\/} of the structures $\<M_i:i\in I\>$ or, when $M_i=M$ for all $i\in I$, the \emph{reduced power\/} of $M$. When $F$ is an ultrafilter we say \emph{ultraproduct}, respectively \emph{ultrapower}.
 
 \begin{exercise}
-  Prove that if $M_i=M$ for all $i\in I$ then $N/F=N'/F$. More generally, prove that $N/F=N'/F$ if, for every $r\in L_{\rm rel}$, if $r^{M_i}=\0$ for some $i$ then $r^{M_i}=\0$ for all $i$.\QED
+  Prove that if $M_i=M$ for all $i\in I$ then $N/F=N'/F$. More generally, prove that $N/F=N'/F$ if, for every $r\in L_{\rm rel}$, either $r^{M_i}\neq\0$ for all $i$ or $r^{M_i}=\0$ for all $i$.\QED
 \end{exercise}
 
 The following proposition is almost tautological.
@@ -199,7 +199,7 @@ Note that it is a special case of \L o\v{s}'s Theorem below (but it is does not 
 \begin{proof}
   \ssf{1}$\IMP$\ssf{2} 
   Assume \ssf{1}.
-  Then, by \ssf{2*} of Definition~\ref{def_pseudostructure}, there is a $\hat b\sim t^{N'}(\hat a)$ such that $N'\models r\,\hat b$.
+  Then, by \ssf{2*} of Definition~\ref{def_pseudostructure}, there is a $\hat b\sim t^N(\hat a)$ such that $N'\models r\,\hat b$.
   Therefore $\{i:M_i\models r\,\hat bi\}$ is in $F$.
   But $\hat b\sim t(\hat a)$ means that $\big\{i\, :\, \hat bi= t(\hat ai)\big\}$ is in $F$, hence \ssf{2} follows.
 
@@ -209,7 +209,7 @@ Note that it is a special case of \L o\v{s}'s Theorem below (but it is does not 
 \begin{void_thm}[\L o\'{s}'s Theorem]\label{thm_los}
 Let $\phi(x)\in L$ and let $F$ be an ultrafilter on $I$. Then for every $\hat a\in N^{|x|}$ the following are equivalent:
 \begin{itemize}
-\item[1.] $N/F\ \pmodels\ \phi(\hat a)$\hfill (see  Definition~\ref{def_pseudostructure});
+\item[1.] $N'/F\ \pmodels\ \phi(\hat a)$\hfill (see  Definition~\ref{def_pseudostructure});
 \item[2.] $\big\{\,i\ :\ M_i\models \phi(\hat a i)\,\big\}\ \in\ F$.
 \end{itemize}
 \end{void_thm}
@@ -221,7 +221,7 @@ If $\phi(x)$ is of the form $r\,t(x)$ for some tuple of terms $t(x)$ and $r\in L
 
 We prove the inductive step for the connectives $\neg$, $\wedge$, and the quantifier $\E$. We begin with $\neg$. This is the only place in the proof where the assumption that $F$ is an \textit{ultra\kern.2ex}filter is required. By the inductive hypothesis,
 
-\ceq{\hfill N/F\ \pmodels\ \neg\phi\big(\hat a\big)}%
+\ceq{\hfill N'/F\ \pmodels\ \neg\phi\big(\hat a\big)}%
 {\IFF}%
 {\big\{i\ :\ M_i\; \models\; \phi(\hat a i)\;\big\}\ \notin\ F}
 
@@ -232,7 +232,7 @@ So, as $F$ is an \textit{ultra\kern.2ex}filter
 
 Now consider $\wedge$. Assume inductively that the equivalence \ssf{1}$\IFF$\ssf{2} holds for $\phi(x)$ and $\psi(x)$. Then
 
-\ceq{\hfill N/F\ \pmodels\ \phi\big(\hat a\big)\wedge\psi\big(\hat a\big)}%
+\ceq{\hfill N'/F\ \pmodels\ \phi\big(\hat a\big)\wedge\psi\big(\hat a\big)}%
 {\IFF}%
 {\big\{i\,:\, M_i\models\phi(\hat a i)\big\}\,\in\, F\ \ {\rm and}\ \ \big\{i\, :\, M_i\models\psi(\hat a i)\big\}\, \in\, F\,.}
 
@@ -242,9 +242,9 @@ As filters are closed under intersection, we obtain
 
 Finally, consider $\E y$.  Assume inductively that the equivalence \ssf{1}$\IFF$\ssf{2} holds for $\phi(x,y)$. Then
 
-\ceq{\hfill N/F\ \pmodels\ \E y\,\phi\big(\hat a,y\big)}%
+\ceq{\hfill N'/F\ \pmodels\ \E y\,\phi\big(\hat a,y\big)}%
 {\IFF}%
-{N/F\ \pmodels\  \phi\big(\hat a,\hat b\big)}\hfill for some $\hat b\in N$\phantom{.}
+{N'/F\ \pmodels\  \phi\big(\hat a,\hat b\big)}\hfill for some $\hat b\in N$\phantom{.}
 
 \ceq{}{\IFF}%
 {\big\{i\ :\ M_i\; \models\; \phi(\hat a i,\hat b i)\;\big\}\ \in\ F}\hfill for some $\hat b\in N$.
@@ -260,13 +260,12 @@ The $\IMP$ direction is trivial. For $\PMI$, we choose as $\hat b$ a sequence th
 Let \emph{$a^I$\/} denote the element of $M^I$ that has constant value $a$. The following is an immediate consequence of \L o\'{s}'s theorem.
 
 \begin{corollary}\label{ultrapotenzeelementari}
-For every $a\in M$
+Let $N=M^I$. For every $a\in M$
 
-\ceq{\hfill M^I/F\ \pmodels\ \phi(a^I)}%
+\ceq{\hfill N/F\ \pmodels\ \phi(a^I)}%
 {\IFF}%
 {M\ \models\ \phi(a)\,.}\QED
 \end{corollary}
-
 
 We often identify $M$ with its image under the embedding $h:a\mapsto [a^I]_F$, and say that $M^I/F$ is an elementary extension of $M$.
 
