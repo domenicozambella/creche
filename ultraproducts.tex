@@ -156,28 +156,41 @@ A consequence of Proposition~\ref{proposizioneprodottidiretti} is that a direct 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\L o\'{s}'s Theorem}
-Assume the notation of the previous sections. In particular, $\<M_i:i\in I\>$ is a sequence of structures and $N$ is the direct product of this sequence. 
+Assume the notation of the previous sections.
+In particular, $\<M_i:i\in I\>$ is a sequence of structures and $N$ is the direct product of this sequence. 
 
 Let $F$ be a filter on $I$. We define the following congruence on $N$ (see Definition~\ref{def_congruence}):
 
 \ceq{\hfill\emph{$\hat a\sim_F\hat c$}}{\IFF}{\big\{\, i\in I\ :\ \hat ai=\hat ci\,\big\}\in F\,.}
 
 %It is easy to verify that $\sim_F$ is indeed an equivalence relation: reflexivity 
-To check that $\sim_F$ is indeed a congruence, first we need to check that it is an equivalence relation. Reflexivity and symmetry are immediate, and transitivity follows from \ssf{f2} in Section~\ref{ultrafiltri}. Then we check that $\sim_F$ is compatible with the functions of $L$, that is, that \ssf{c1} of Definition~\ref{def_congruence} is satisfied. This follows from~\ssf{f1} in Section~\ref{ultrafiltri}. 
+To check that $\sim_F$ is indeed a congruence, first we need to check that it is an equivalence relation. Reflexivity and symmetry are immediate, and transitivity follows from \ssf{f2} in Section~\ref{ultrafiltri}. Then we check that $\sim_F$ is compatible with the functions of $L$, that is, that \ssf{c1} of Definition~\ref{def_congruence} is satisfied. This follows from~\ssf{f1} in Section~\ref{ultrafiltri}.
 
-For brevity, we write $N/F$ for $N/{\sim}_F$ and $[\hat a]_F$ for $[\hat a]_{\sim_F}$.
-We write $N/F\pmodels\phi(\hat a)$ for $N/F\models\phi([\hat a]_F)$, though a more formal interpretation of $\,\pmodels\,$ is given in Definition~\ref{def_pseudostructure}.
+We will not work directly with $N$ but with a structure $N'$ with the same domain as $N$ and with the following interpretation of the relation symbols
 
-The structure $N/F$ is called the \emph{reduced product\/} of the structures $\<M_i:i\in I\>$ or, when $M_i=M$ for all $i\in I$, the \emph{reduced power\/} of $M$. When $F$ is an ultrafilter we say \emph{ultraproduct}, respectively \emph{ultrapower}.
+\ceq{\hfill\hat a\in r^{N'}}{\IFF}{\big\{\, i\in I\ :\ \hat a i\in r^{M_i}\,\big\}\in F\,.}
 
-It is worth highlighting the following proposition which is a special case of \L o\v{s}'s Theorem below (but it is does not require $F$ to be an \textit{ultra\kern.2ex}filter).
+The interpretation of the function symbols is the same as in $N$.
+Therefore the relation $\sim_F$ is a congruence also for $N'$.
+For brevity, we write $N'/F$ for $N'/{\sim}_F$ and $[\hat a]_F$ for $[\hat a]_{\sim_F}$.
+We write $N'/F\pmodels\phi(\hat a)$ for $N'/F\models\phi([\hat a]_F)$, though a more formal interpretation of $\,\pmodels\,$ is given in Definition~\ref{def_pseudostructure}.
+
+
+The structure $N'/F$ is called the \emph{reduced product\/} of the structures $\<M_i:i\in I\>$ or, when $M_i=M$ for all $i\in I$, the \emph{reduced power\/} of $M$. When $F$ is an ultrafilter we say \emph{ultraproduct}, respectively \emph{ultrapower}.
+
+\begin{exercise}
+  Prove that if $M_i=M$ for all $i\in I$ then $N/F=N'/F$. More generally, prove that $N/F=N'/F$ if, for every $r\in L_{\rm rel}$, if $r^{M_i}=\0$ for some $i$ then $r^{M_i}=\0$ for all $i$.\QED
+\end{exercise}
+
+The following proposition is almost tautological.
+Note that it is a special case of \L o\v{s}'s Theorem below (but it is does not require $F$ to be an \textit{ultra\kern.2ex}filter).
 
 \begin{proposition}\label{prop_eq_ultra}
   Let $r\in L_{\rm rel}$.
-  Let $t(x)$ be tuple of terms of length $n_r$, the arity of $r$. 
+  Let $t(x)$ be tuple of terms of length $n_r$, the arity of $r$.
   Then for every $\hat a\in N^{|x|}$ and every filter $F$ the following are equivalent
   \begin{itemize}
-  \item[1.] $N/F\,\pmodels r\,t(\hat a)$;
+  \item[1.] $N'/F\,\pmodels r\,t(\hat a)$;
 
   \item[2.] $\big\{i\; :\ M_i\,\models r\,t(\hat ai)\,\big\}\,\in\, F$.
   \end{itemize}
@@ -186,12 +199,12 @@ It is worth highlighting the following proposition which is a special case of \L
 \begin{proof}
   \ssf{1}$\IMP$\ssf{2} 
   Assume \ssf{1}.
-  Then, by \ssf{2*} of Definition~\ref{def_pseudostructure}, there is a $\hat b\sim t^N(\hat a)$ such that $N\models r\,\hat b$.
-  Therefore $M_i\models r\,\hat bi$ for all $i\in I$.
-  But $\hat b\sim t(\hat a)$ means that $\big\{i\, :\, \hat bi= t(\hat ai)\big\}$ is in $F$ and \ssf{2} follows.
+  Then, by \ssf{2*} of Definition~\ref{def_pseudostructure}, there is a $\hat b\sim t^{N'}(\hat a)$ such that $N'\models r\,\hat b$.
+  Therefore $\{i:M_i\models r\,\hat bi\}$ is in $F$.
+  But $\hat b\sim t(\hat a)$ means that $\big\{i\, :\, \hat bi= t(\hat ai)\big\}$ is in $F$, hence \ssf{2} follows.
 
   \ssf{2}$\IMP$\ssf{1} 
-  Assume \ssf{2}. 
+  Assume \ssf{2}.
   Then, in particular, $M_i\models r\,t(\hat ai)$ for some $i\in I$.
   Pick one of such $i$, say $i_0$.
   Now let $\hat b\in N$ be as follows
@@ -201,13 +214,13 @@ It is worth highlighting the following proposition which is a special case of \L
   {\left\{
     \begin{array}{ll}
       t(\hat ai)   &{\rm if}\ M_i\models r\,t(\hat ai)\\
-      t(\hat ai_0) &{\rm otherwise.}\\
+      c_i &\textrm{for some (any) }c_i\in M_i\\
     \end{array}
   \right.}
 
-  Then $\hat b\sim t(\hat ai)$.
-  By construction, $M_i\models r\,\hat bi$ for all $i\in I$.
-  Therefore \ssf{1} follows from \ssf{2*} of Definition~\ref{def_pseudostructure}.
+  Then $\hat b\sim t(\hat a)$.
+  By construction, $\{i:M_i\models r\,\hat bi\}$ is in $F$.
+  Therefore \ssf{1} follows.
 \end{proof}
 
 \begin{void_thm}[\L o\'{s}'s Theorem]\label{thm_los}
