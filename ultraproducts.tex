@@ -203,24 +203,7 @@ Note that it is a special case of \L o\v{s}'s Theorem below (but it is does not 
   Therefore $\{i:M_i\models r\,\hat bi\}$ is in $F$.
   But $\hat b\sim t(\hat a)$ means that $\big\{i\, :\, \hat bi= t(\hat ai)\big\}$ is in $F$, hence \ssf{2} follows.
 
-  \ssf{2}$\IMP$\ssf{1} 
-  Assume \ssf{2}.
-  Then, in particular, $M_i\models r\,t(\hat ai)$ for some $i\in I$.
-  Pick one of such $i$, say $i_0$.
-  Now let $\hat b\in N$ be as follows
-
-  \ceq{\hfill\hat bi}
-  {=}
-  {\left\{
-    \begin{array}{ll}
-      t(\hat ai)   &{\rm if}\ M_i\models r\,t(\hat ai)\\
-      c_i &\textrm{for some (any) }c_i\in M_i\\
-    \end{array}
-  \right.}
-
-  Then $\hat b\sim t(\hat a)$.
-  By construction, $\{i:M_i\models r\,\hat bi\}$ is in $F$.
-  Therefore \ssf{1} follows.
+  \ssf{2}$\IMP$\ssf{1} Is clear.
 \end{proof}
 
 \begin{void_thm}[\L o\'{s}'s Theorem]\label{thm_los}
@@ -287,7 +270,7 @@ For every $a\in M$
 
 We often identify $M$ with its image under the embedding $h:a\mapsto [a^I]_F$, and say that $M^I/F$ is an elementary extension of $M$.
 
-The following corollary is an immediate consequence of the compactness theorem that we prove in the next chapter. The construction in the proof uses ultrapowers.
+The following corollary is an immediate consequence of the compactness theorem that we prove in the next chapter but here we give a direct proof.
 
 \begin{corollary}
 Every infinite structure has a proper elementary extension.
@@ -304,7 +287,7 @@ So, by \L o\v{s} Theorem, we have $M^\omega\!/F\ \pmodels\ \hat d\neq a^I$ for e
 \begin{exercise}
 Consider $\NN$ as a structure in the language of strict orders. 
 Let $F$ be a non-principal ultrafilter on $\omega$.
-Prove that in $\NN^\omega$ there is a sequence $\<\hat a_i: i\in\omega\>$ such that $\NN^\omega\!/F\,\models\,[\hat a_{i+1}]_F<[\hat a_i]_F$.\QED 
+Prove that in $\NN^\omega$ there is a sequence $\<\hat a_i: i\in\omega\>$ such that $\NN^\omega\!/F\,\pmodels\,\hat a_{i+1}<\hat a_i$.\QED 
 \end{exercise}
 
 \begin{exercise}
