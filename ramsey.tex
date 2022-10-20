@@ -1,7 +1,6 @@
 % !TEX root = creche.tex
 \documentclass[creche.tex]{subfiles}
 \begin{document}
-
 \chapter{Ramsey theory}
 \label{ramsey}
 
@@ -302,7 +301,7 @@ The quotient map $\mrG\to\mrG/{\equiv_A}$ is almost a homeomorphism.
 
 
 \begin{proposition}\label{prop_orbits_main}
-Assume $\cnonfork_{\!A}$ is $1$-stationary,
+Assume $\cnonfork_{\!A}$ is stationary,
 see Definition~\ref{def_coheir_stationary}.
 Fix ${\mr a}\cnonfork_{\!A}{\mr b}$ arbitrarily.
 Then ${\mr a'}{\cdot}{\mr b'}\equiv_A{\mr a}{\cdot}{\mr b}$ for every 
@@ -325,13 +324,13 @@ the l.h.s.\@ contains ${\mr a}\cdot_{\!A}\{{\mr b}\}$.
 By extension (Lemma~\ref{lem_coheir_independence}), there is ${\mr a'}\in{\mr a}_A$ such that ${\mr a'}\cnonfork_{\!A}{\mr b}$.
 We claim that ${\mr a'}{\cdot}{\mr b}\in({\mr a}{\cdot}{\mr b})_A$.
 Both ${\mr a}$ and ${\mr a'}$ satisfy ${\mr a}\equiv_A{\mr x}\cnonfork_{\!A}{\mr b}$.
-By $1$-stationarity,
+By stationarity,
 ${\mr a}\equiv_{A,\,{\mr b}}{\mr a'}$.
 Hence ${\mr a}{\cdot}{\mr b}\equiv_A{\mr a'}{\cdot}{\mr b}$.
 \end{proof}
 
 \begin{corollary}[ (associativity)]\label{corol_orbits_associative}
-Let $M$ be a model and assume $\cnonfork_{\!M}$ is $1$-stationary.
+Let $M$ be a model and assume $\cnonfork_{\!M}$ is stationary.
 Then for every $M$-invariant sets $\mrA$,
 $\mrB$ and  $\mrC$.
 
@@ -352,7 +351,7 @@ But inclusion between orbits amounts to equality.
 \end{proof}
 
 \begin{lemma}\label{lem_Hindman}
-Let $M$ be a model and assume $\cnonfork_{\!M}$ is $1$-stationary.
+Let $M$ be a model and assume $\cnonfork_{\!M}$ is stationary.
 If $\mrA$ is minimal among the
 idempotent sets that are
 type-definable over $M$, then $\mrA={\mr b}_M$ for some (any) ${\mr b}\in\mrA$.
@@ -458,7 +457,7 @@ with a symbol for $\cpaw$ and one for each subset of $G$.
 Let $\mrG$ be a saturated elementary superstucture of $G$.
 %
 As observed in Remark~\ref{rk_coheir_stationary}, 
-the language makes $\cnonfork_G$ trivially $1$-stationary.
+the language makes $\cnonfork_G$ trivially stationary.
 
 We write ${\mr\G'}$ for the type-definable set $\{{\mr x} : G\cpaw{\mr x}\}$,
 which is non empty because $G$ is $\cpaw$-covered.
@@ -547,7 +546,7 @@ Therefore, by Corollary~\ref{corol_idempotent} there is some ${\mr c}\in\mrA\cdo
 \end{proof}
 
 \begin{proposition}\label{prop_minimal_existence2}
-Let $M$ be a model and assume $\cnonfork_{\!M}$ is $1$-stationary.
+Let $M$ be a model and assume $\cnonfork_{\!M}$ is stationary.
 Let $\mrA$ be idempotent and type-definable over $M$.
 Let ${\mr c}_M$ be idempotent and such that 
 ${\mr c}\cdot_M\mrA,\ \mrA\cdot_M{\mr c}\subseteq\mrA$.
@@ -574,13 +573,11 @@ As ${\mr g}\in\mrA\cdot_M{\mr c}$, from the left-minimality of ${\mr c}_M$ we ob
 Hence ${\mr c}_M={\mr c}\cdot_M{\mr g}$, by the idempotency of ${\mr g}_M$.
 Therefore ${\mr c}_M={\mr g}_M$, which proves \ssf{2}.
 \end{proof}
-% \excludecomment{grigio}
-% \begin{grigio}
 
 The following is a technical lemma that is required in the proof of the main theorem.
 
 \begin{proposition}\label{prop_HJ_tecnical}
-Let $M$ be a model and assume $\cnonfork_{\!M}$ is $1$-stationary.
+Let $M$ be a model and assume $\cnonfork_{\!M}$ is stationary.
 Let $\sigma:\mrG\to\mrG$ be a semigroup homomorphism definable over $M$.
 Then 
 \begin{itemize}
@@ -619,8 +616,6 @@ Hence the set on l.h.s.\@ is contained in the following\smallskip
 which is in turn contained in the set on the r.h.s.
 \end{proof}
 
-% \end{grigio}
-
 Let $\mrG$ be a semigroup.
 A \emph{nice subsemigroup\/} of $\mrG$ is a subsemigroup $\mrC$ with the property that if ${\mr a}{\cdot}{\mr b}\in\mrC$ then both ${\mr a},{\mr b}\in \mrC$.
 
@@ -638,7 +633,7 @@ there is an $a\in G\sm C$ such that $\{\sigma\,a:\sigma\in\Sigma\}$ is monochrom
 Let $G\preceq\mrG$.
 Here $\mrG$ is a monster model in a language that expands the natural one with a symbol for all subsets of $G$.
 As observed in Remark~\ref{rk_coheir_stationary}, 
-this makes $\nonforkc_G$ trivially $1$-stationary.
+this makes $\nonforkc_G$ trivially stationary.
 Let $\mrC$ be the definable set such that $C=G\cap\mrC$.
 By elementarity, $\mrC$ is a nice subsemigroup of $\mrG$.
 The language contains also symbols for 

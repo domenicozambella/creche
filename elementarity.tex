@@ -1,8 +1,10 @@
 % !TEX root = creche.tex
 \documentclass[creche.tex]{subfiles}
+\begin{document}
 \chapter{Theories and elementarity}
 \label{teorie}
 
+  
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox{15ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
@@ -28,7 +30,6 @@
 % 
 % If $p$ is a finite set, say $p=\{\phi_1,\dots,\phi_n\}$ we write $\ccl(\phi_1,\dots,\phi_n)$ for $\ccl(p)$.
 % If $p=\ccl(p)$ we say that $p$ is \emph{closed under logical consequences}.
-
 
 A \emph{theory\/} is a set $T\subseteq L$ of sentences.
 We write \emph{$M\models T$\/} if $M\models\phi$ for every $\phi\in T$.
@@ -182,57 +183,6 @@ Prove that $\Th(\Mod(T))=\ccl(T)$.\QED
 \end{exercise}
 
 
-
-\begin{comment}
-
-% \begin{exercise}
-% Siano $T$ e $S$ teorie di linguaggio $L$.
-Qual'is la relazione tra le seguenti affermazioni? (Si noti che qualcuna is sempre vera, qualcuna sempre falsa.)\smallskip
-% 
-% \begin{minipage}[t]{.3\textwidth}
-% \begin{itemize}
-%  \item $T\proves S\proves T$
-%  \item $\top\proves T$
-%  \item $\ccl(T)\subseteq\ccl(S)$
-%  \item $\ccl(S)\subseteq\ccl(T)$
-%  \item $\ccl(T)=\ccl(S)$
-%  \item $\ccl(T)=\0$
-%  \item $\ccl(T)=L$
-%  \item $T=\0$
-%  \item $T=L$
-% \end{itemize}
-% \end{minipage}
-% \hfill
-% \begin{minipage}[t]{.3\textwidth}
-% \begin{itemize}
-%  \item $T\proves S$
-%  \item $S\proves T$
-%  \item $\bot\in\ccl(T)$
-%  \item $\top\in\ccl(T)$
-%  \item $T\subseteq\ccl(\0)$
-%  \item $T\subseteq\ccl(\bot)$
-% \item $\top\proves\bot$
-%  \item $\bot\proves T$
-%  \item $\top\proves T$
-% \end{itemize}
-% \end{minipage}
-% \hfill
-% \begin{minipage}[t]{.3\textwidth}
-% \begin{itemize}
-%  \item $T\proves\top$
-%  \item $T\proves\bot$
-%  \item $T=S$
-%  \item $T\subseteq S$
-%  \item $S\subseteq T$
-%  \item $\Mod(T)=\Mod(S)$
-%  \item $\Mod(T)\subseteq\Mod(S)$
-%  \item $\Mod(S)\subseteq\Mod(T)$
-%  \item $\Mod(T)=\0$
-% \QED
-% \end{itemize}
-% \end{minipage}
-% \end{exercise}
-\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -831,7 +781,6 @@ Prove that $M\preceq\QQ^+$.
 Hint: use the fundamental theorem of arithmetic and reason as in Example~\ref{expl_ordini_elem}.\QED
 \end{exercise}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1261,14 +1210,10 @@ Prove there is a countable model $K$ such that $A\subseteq K\preceq N$ and $K\ca
 Hint: adapt the construction used to prove the downward L\"owenheim-Skolem Theorem.\QED
 \end{exercise}
 
-
 \begin{exercise}
   The language contains only $<$, the relation of strict order.
   Prove that there is a countable ordinal $\alpha$ that is an elemenrary substructure of $\omega_1$, the first uncountable ordinal.\QED
 \end{exercise}
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1283,8 +1228,6 @@ Hint: adapt the construction used to prove the downward L\"owenheim-Skolem Theor
 \parbox{19ex}{\hfill$\displaystyle #1$}%
 \parbox{5ex}{\hfil$#2$}%
 \parbox[t]{15ex}{$\displaystyle #3$}}
-
-
 
 An \emph{elementary chain\/} is a chain $\<M_i:i<\lambda\>$ of structures such that $M_i\preceq M_j$ for every $i<j<\lambda$.
 The \emph{union\/} (or \emph{limit\/}) of the chain is the structure with as domain the set $\bigcup_{i<\lambda}M_i$ and as relations and functions the union of the relations and functions of $M_i$.
@@ -1345,3 +1288,6 @@ Hint: construct two countable chains of countable models such that $K_i\cap M\su
 The required model is $K=\bigcup_{i\in\omega}K_i$.
 In fact it is easy to check that $K\cap M=\bigcup_{i\in\omega}M_i$.\QED
 \end{exercise}
+
+
+\end{document}

@@ -1,5 +1,6 @@
 % !TEX root = creche.tex
 \documentclass[creche.tex]{subfiles}
+\begin{document}
 \chapter{Some algebraic structures}
 \label{algebraic}
 
@@ -737,8 +738,8 @@ Algebra comes to our aid with the following lemma.
 Which the reader may wish to compare with Hilbert's Basis Theorem.
 
 \begin{lemma}\label{lem_basisthm}
-  Let $A\subseteq M\models T_{\rm id}$.
-  Let $p(x)\subseteq\atL(A)$, where $x$ is finite, be closed under  logical consequence. 
+  Let $M\models T_{\rm id}$.
+  Let $p(x)\subseteq\atL(M)$, where $x$ is finite, be closed under  logical consequence. 
   Then $\psi(x)\proves p(x)$, for some $\psi(x)$ conjunction of formulas in $p(x)$.
 \end{lemma}
 
@@ -746,12 +747,12 @@ Which the reader may wish to compare with Hilbert's Basis Theorem.
   By induction on the length of $x$.
   If $x$ is the empty tuple, the lemma is trivial.
   Now, let $x$ be a finite tuple and let $y$ be a single variable.
-  Let $p(x,y)\subseteq\atL(A)$ be closed under logical consequence.
-  Write $p(x)$ for the set of formulas $\phi(x)\in\atL(A)$ such that $p(x,y)\proves\phi(x)$.
+  Let $p(x,y)\subseteq\atL(M)$ be closed under logical consequence.
+  Write $p(x)$ for the set of formulas $\phi(x)\in\atL(M)$ such that $p(x,y)\proves\phi(x)$.
   Assume as induction hypothesis that there is a conjunction of formulas in $p(x)$, say $\psi(x)$, such that $\psi(x)\proves p(x)$.
   We prove the lemma with $x,y$ for $x$.
 
-  Let $\psi(x,y)\in\atL(A)$ have minimal degree (in $y$) among the formulas in $p(x,y)$ such that $\psi(x)\notproves\psi(x,y)$.
+  Let $\psi(x,y)\in\atL(M)$ have minimal degree (in $y$) among the formulas in $p(x,y)$ such that $\psi(x)\notproves\psi(x,y)$.
   Let $n$ be the degree of $\psi(x,y)$, which is non zero, because $\psi(x)\notproves\psi(x,y)$.
   So we may write
   
@@ -945,3 +946,5 @@ Clearly, $\I(A)$ is an ideal of $N[x]$.
 % \end{itemize}
 % \end{exercise}
 
+
+\end{document}

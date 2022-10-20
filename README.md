@@ -27,7 +27,7 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
 *  **Ultraproducts**
    * Filters and ultrafilters
    * Direct products
-   * Los's Theorem
+   * Łoś's Theorem
 *  **Compactness**
    * Compactness via syntax
    * Compactness via ultraproducts
@@ -43,7 +43,7 @@ Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
    * Random graphs
    * Notes and references
 *  **Rich models**
-   * Rich models.
+   * Models and morphisms
    * The theory of rich models and quantifier elimination
    * Weaker notions of universality and homogeneity
    * The amalgamation property
