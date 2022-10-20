@@ -2,7 +2,7 @@
 
 Lecture notes for an introductory (under)graduate course
 
-Printable output in file [`creche.pdf`](../../raw/master/PDF/creche.pdf)
+Printable output in file [`PDF/creche.pdf`](../../raw/master/PDF/creche.pdf)
 
 ## Table of contents
 
