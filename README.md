@@ -1,8 +1,8 @@
-# [A Cr&egrave;che Course in Model Theory](../../raw/master/creche.pdf)
+# [A Cr&egrave;che Course in Model Theory](../../raw/master/PDF/creche.pdf)
 
 Lecture notes for an introductory (under)graduate course
 
-Printable output in file [`creche.pdf`](../../raw/master/creche.pdf)
+Printable output in file [`creche.pdf`](../../raw/master/PDF/creche.pdf)
 
 ## Table of contents
 
