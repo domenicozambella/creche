@@ -61,7 +61,7 @@ There are also arbitrarily many function and relation symbols of sort $\<0^n\>$ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The eq-expansion}\label{immaginari}
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Warning: the structure $\U^\eq$ and the theory $T^\eq$ defined below do not coincide with the standard ones introduced by Shelah.
+\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}Warning: the structure $\U^\eq$ and the theory $T^\eq$ defined below do not coincide with the standard ones introduced by Shelah.
 As the difference is merely cosmetic, introducing new notation would be overkill and we prefer to abuse the existing terminology.
 In Section~\ref{imaginaries_long} below we compare our definition with the standard one.
 %This will also explain the symbol used.
@@ -363,7 +363,7 @@ Therefore, by Proposition~\ref{thm_set_alg=feq}, the set ${\vl\D}$ is union of e
 Then $\neg\epsilon({\mr a}\,;{\mr b})$ and $\neg$\ssf{1} follows.
 \end{proof}
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We write \emph{$\S({\gr a}/A)$\/} for the intersection of all definable sets that contain $a$ and are algebraic over $A$.
+\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}We write \emph{$\S({\gr a}/A)$\/} for the intersection of all definable sets that contain $a$ and are algebraic over $A$.
 By the proposition above $\S({\gr a}/A)=\big\{{\gr b}\,:\,{\gr b}\,\equivSh_A {\gr a}\big\}=\O({\gr a}/\acl^\eq A)$.
 
 
@@ -426,7 +426,7 @@ We leave this to the reader as an exercise.
 We say that two tuples $a$ and $b$ of elements of $\U^\eq$ are \emph{interdefinable\/} if $\dcl^\eq(a)=\dcl^\eq(b)$.
 By Theorem~\ref{thm_Galois_def=def} this is equivalent to saying that $\Aut(\U/a)=\Aut(\U/b)$, that is, the automorphisms that fix $a$ fix also $b$, and vice versa.
 
-\begin{theorem}\label{elimimd}
+\begin{theorem}\label{thm_elimimd}
 The following are equivalent
 \begin{itemize}
 \item[1.] $T$ has weak elimination of imaginaries;
@@ -475,7 +475,7 @@ By $\,\sharp\,$ and the definition of $\psi({\gr z}\,;{\vl\X})$ we obtain ${\vl\
 There are a notions of elimination of imaginaries that are weaker than weak elimination.
 For instance, we say that $T$ has \emph{geometric elimination of imaginaries\/} if for every $A\subseteq\U$
 
-\ceq{\hfill{\acl}^\eq\{{\vl\Aa}\}}{=}{{\acl}^\eq\big(\acl\{{\vl\Aa}\}\big)}
+\ceq{\hfill {\vl\Aa} }{\in}{{\acl}^\eq\big(\acl\{{\vl\Aa}\}\big)}
 
 This will not  be applied in these notes, but see Exercises~\ref{ex_est} and~\ref{ex_wei=est+gei}.
 
@@ -490,7 +490,7 @@ The following are equivalent
 
 \begin{proof}
 Implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3} are immediate.
-Implication \ssf{3}$\IMP$\ssf{1} is identical to the homologous implication in Theorem~\ref{elimimd}, just substitute algebraic with definable.
+Implication \ssf{3}$\IMP$\ssf{1} is identical to the homologous implication in Theorem~\ref{thm_elimimd}, just substitute algebraic with definable.
 \end{proof}
 
 
@@ -547,7 +547,7 @@ $\sharp$\qquad for every $A\subseteq\U^\eq$, every consistent $\phi({\gr z})\in 
 \begin{proof}
 Let ${\vl\Aa}\in\U^\eq$ be a definable set of sort $\sigma({\mr x}\,;{\gr z})$.
 Then $\A{\mr x}\ \big[{\mr x}\in{\vl\Aa}\iff\sigma({\mr x}\,;{\gr z})\big]$ is consistent and, by $\,\sharp\,$ it  it has a solution in $\acl\{{\vl\Aa}\}$.
-Hence weak elimination follows from Theorem~\ref{elimimd}.
+Hence weak elimination follows from Theorem~\ref{thm_elimimd}.
 \end{proof}
 
 \begin{theorem}\label{elimimsm} 
@@ -567,7 +567,7 @@ The theories $T^p_{\rm acf}$ have elimination of imaginaries.
 
 \begin{proof}
 By Theorem~\ref{elimimsm} we know that $T^p_{\rm acf}$ has weak elimination of imaginaries.
-Therefore, by Theorem~\ref{elimimd} it suffices to prove that every finite set ${\vl\Aa}$ is interdefinable with a tuple.
+Therefore, by Theorem~\ref{thm_elimimd} it suffices to prove that every finite set ${\vl\Aa}$ is interdefinable with a tuple.
 Let ${\vl\Aa}=\big\{{\gr a_1},\dots,{\gr a_n}\big\}$ where each ${\gr a_i}$ is a tuple ${\mr a_{i,1}},\dots,{\mr a_{i,m}}$ of elements of $\U$.
 Given ${\vl\Aa}$ we define the term
 
@@ -593,7 +593,11 @@ The rest of this section is dedicated to the proof that the theory of the random
 \begin{proof}
   Let $\D\subseteq\U^{|x|}$ be a definable set, and pick a finite set $A\subseteq\U$ of minimal size over which $\D$ is definable. 
   Now, let $f$ be an automorphism that fixes $\D$. Then $\D$ is definable over $A\cap f[A]$, so by minimality of $|A|$ we have $A= f[A]$. 
-  Hence $\D$ is interdefinable with $A$.
+  Now let $a$ be an enumeration of $A$.
+  By the above, $a$ has a finite orbit under $\Aut(\U/\{\D\})$.
+  Hence $A\subseteq\acl\{\D\}$.
+  Therefore $\D\in\dcl^\eq\big(\acl\{\D\}\big)$
+  The lemma follows by applying Theorem~\ref{thm_elimimd}.
 \end{proof}
 
 \begin{lemma}\label{lem_type_amalgamation}
@@ -610,7 +614,6 @@ The rest of this section is dedicated to the proof that the theory of the random
   By induction on the length of $a$ and $b$. 
   The claim is trivial if this length is $0$ so, assume they have length $n+1$ and that there are $c_0,\dots,c_{n-1}\notin A, B,\range a,\range b$ such that $a_{\restriction n}\equiv_A c_0,\dots,c_{n-1}\,\equiv_B b_{\restriction n}$.
 
-  
   We assume that $\range a\cap\range b=\0$ otherwise we replace $b$ with any tuple $b'\equiv_Bb$ that is disjoint of $\range a$.
 
   Now, let $A'=A\cup\{a_0,\dots,a_{n-1}\}$ and $B'=B\cup\{b_0,\dots,b_{n-1}\}$.
@@ -641,7 +644,6 @@ The rest of this section is dedicated to the proof that the theory of the random
 \begin{proof}
   We prove {\natural} of Lemma~\ref{lem_suff_wei}.
   Suppose not and pick $a,b\in\U^{|x|}$ such that $a\equiv_{A\cap B}b$ and $a\in\D\niff b\in\D$.
-
 
   Note that $\D$ is definable over $f[A]$ for every $f\in\Aut(\U/B)$ and the same holds swapping $A$ and $B$.
   Therefore we can replace $A$ and $B$ with suitable $f[A]$ and $g[B]$ that are disjoint of $\range a$ and $\range b$, rispectively (for simplicity we are assuming that $a$ and $b$ do not contain elements in $A\cap B$).

@@ -501,20 +501,33 @@ When a binary tree of this form exists, we say that $\phi({\mr x}\,;{\gr z})$ ha
 
 \begin{proof}
   \ssf{1}$\IMP$\ssf{2}.
-  By $\ssf{1}$ and compactness, there is a ladder sequence  $\<{\mr a_s}\,;{\gr b_s} : s\in2^{<\omega}\>$, where $2^{<\omega}$ is ordered lexicografically.
-  We claim that for every $r\in2^\omega$ the type $p_r({\mr x})=\big\{\phi({\mr x}\,;{\gr b_s})\iff r<s : s\in2^{<\omega}\big\}$ is consistent. 
-  In fact, $\phi({\mr a_{r\restriction n}}\,;{\gr b_s})$ holds for all $s\in2^{<n}$.
-  Then consistency follows by compactness.
+  We show that if there is a ladder of length $m=2^n$, say $a_1,\dots,a_{m-1}$ and $b_0,\dots,b_{m-1}$, then there is a branching tree $\bar a'$ of height $n$.
+  
+  The branching tree $\bar b'=\<b'_r\, :\, r\in{}^{<n}2\>$ is defined as follows
 
-  For $s\in2^{<\omega}$ let $\psi_s({\mr x})$ be as above with ${\gr b_{s^\frown1}}$ for ${\gr b_s}$.
-  We claim that $\<\psi_s({\mr x}):s\in 2^{<\omega}\>$ is a binary tree.
-  We need to prove that the branches are consistent.
-  It suffices to show that $\psi_{r\restriction (n+1)}({\mr x})\in p_r$.
+  \quad $a'_r=b_h$\quad  where $h$ is obtained reading $r^\frown1^\frown0^{n-|r|-1}$ as an $n$-digit binary number.
 
-  First, suppose that $r(n)=0$. 
-  Then $\psi_{r\restriction (n+1)}({\mr x})=\phi({\mr x}\,;{\gr b_{r\restriction n^\frown1}})$ belongs to $p_r({\mr x})$ because $r<r{\restriction} n^\frown1$.
-  Otherwise $r(n)=1$. 
-  Then $\psi_{r\restriction (n+1)}({\mr x})=\neg\phi({\mr x}\,;{\gr b_{r\restriction(n+1)}})$ belongs to $p_r({\mr x})$ because $r\not< r{\restriction}(n+1)$.
+  To verify \ssf{2r} we define for $s\in{}^n2$ 
+  
+  \quad $a'_s=b_k$\quad  where $k$ is obtained reading $s$ as an $n$-digit binary number.
+
+  Then it is easy to verify that for all pairs $r\subset s\in{}^n2$
+
+  \ceq{\hfill\phi(b'_r\,;a'_s)}
+  {\IFF}
+  {\phi(a_h\,;b_k)}\hfill where $h$ and $k$ are like above
+
+  \ceq{}
+  {\IFF}
+  {h\le k}
+
+  \ceq{}
+  {\IFF}
+  {r^\frown1^\frown0^{n-|r|-1}\ \le\ s}\hfill  as $n$-digit binary numbers
+
+  \ceq{}
+  {\IFF}
+  {r^\frown1\ \subseteq\ s}
 
   \ssf{2}$\IMP$\ssf{1}. From $\ssf{2}$, by compactess, there is a binary tree of height $\kappa$. 
   Hence there are $2^\kappa$ sets that are externally definable by $\phi({\mr x}\,;{\gr z})$.
