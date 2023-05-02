@@ -40,14 +40,14 @@ We may write $\pmDelta$ for $\{\neg\}\Delta$.\QED%Note that $\ssf{C}_1\ssf{C}_2\
 
 
 
-Recall that \emph{$\Delta$-morphism\/} is a map $k:M\imp N$ that preserves the truth of formulas in $\Delta$. It is immediate that $\Delta$-morphism are automatically $\{\mathord\wedge\mathord\vee\}\Delta$-morphisms. As $\Delta$ is closed under renaming of variables, $\{\E\}\Delta$-morphism are $\{\E\mathord\wedge\mathord\vee\}\Delta$-morphisms and similarly $\{\A\}\Delta$-morphism are $\{\A\mathord\wedge\mathord\vee\}\Delta$-morphisms.
+Recall that \emph{$\Delta$-morphism\/} is a map $k:M\imp N$ that preserves the truth of formulas in $\Delta$. It is immediate that $\Delta$-morphism are automatically $\{\mathord\wedge\mathord\vee\}\Delta$-morphisms. Similarly $\{\E\wedge\}\Delta$-morphism are $\{\E\mathord\wedge\mathord\vee\}\Delta$-morphisms and similarly $\{\A\vee\}\Delta$-morphism are $\{\A\mathord\wedge\mathord\vee\}\Delta$-morphisms.
 
 Below we use the following proposition without further reference.
 \def\.{\kern0.2ex}
 \begin{proposition}\label{prop_pokj}
 Fix $M\models T$ and ${\mr b}\in M^{|{\mr x}|}$. Let $q({\mr x})=\Deltatp_M({\mr b})$. Then for every $\phi({\mr x})\in L$ the following are equivalent
 \begin{itemize}
-\item[1.] $N\models\phi(k\.{\mr b})$ for every $k:M\imp N\models T$ that is a $\Delta$-morphism defined in ${\mr b}$;
+\item[1.] $N\models\phi(k\.{\mr b})$ for every $\Delta$-morphism $k:M\imp N\models T$ that is defined in ${\mr b}$;
 \item[1$'$.] $N\models\phi({\mr c})$ for every $N\models T$ such that $N,{\mr c}\Rrightarrow_\Delta  M,{\mr b}$.
 \item[2.] $T\ \proves\  q({\mr x})\imp\phi({\mr x})$.
 \end{itemize}
@@ -56,7 +56,7 @@ Fix $M\models T$ and ${\mr b}\in M^{|{\mr x}|}$. Let $q({\mr x})=\Deltatp_M({\mr
 
 \ssf{2}$\IMP$\ssf{1}\quad Immediate.  
 
-\ssf{1}$\IMP$\ssf{2}\quad Negate \ssf{2}, then there are $N\models T$ and ${\mr c}\in N^{|{\mr x}|}$ such that $q({\mr c})\wedge\neg\phi({\mr c})$. Therefore the map $k:M\to N$, where $k=\{\<{\mr b},{\mr c}\>\}$, contradicts \ssf{1}.
+\ssf{1}$\IMP$\ssf{2}\quad Negate \ssf{2}, then there are $N\models T$ and ${\mr c}\in N^{|{\mr x}|}$ such that $N\models q({\mr c})\wedge\neg\phi({\mr c})$. Therefore the map $k:M\to N$, where $k=\{\<{\mr b},{\mr c}\>\}$, contradicts \ssf{1}.
 \end{proof}
 
 The following is sometimes referred to as the Lyndon-Robinson Lemma.
@@ -115,18 +115,18 @@ In the rest of these section we ...
 \begin{proposition}\label{prop_EDelta_estensione}
 Let $N$ be $\lambda$-saturated and let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
 \begin{itemize}
-\item[1.] $k:M\imp N$ is a $\{\E\}\Delta$-morphism;
-\item[2.] for every ${\mr b}\in M$ some $\{\E\}\Delta$-morphism $h:M\imp N$ defined in ${\mr b}$ extends $k$;
+\item[1.] $k:M\imp N$ is a $\{\E\wedge\}\Delta$-morphism;
+\item[2.] for every ${\mr b}\in M$ some $\{\E\wedge\}\Delta$-morphism $h:M\imp N$ defined in ${\mr b}$ extends $k$;
 \item[3.] for every ${\mr\bar b}\in M^{\omega}$ some $\Delta$-morphism $h:M\imp N$ defined in ${\mr\bar b}$ extends $k$.
 \end{itemize}
 \end{proposition}
 
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}\quad Let ${\gr a}$ enumerate $\dom k$. Define $p({\mr x}\,;{\gr z})=\{\E\}\Deltatp_M ({\mr b}\,;{\gr a})$. By \ssf{1}, $p({\mr x}\,;k{\gr a})$ is finitely consistent in $N$. By saturation there is a ${\mr c}\in N$ that realizes $p({\mr x}\,;k{\gr a})$. Therefore, $h:M\to N$ where $h=k\cup\{\<{\mr b},{\mr c}\>\}$, witnesses \ssf{2}.
+\ssf{1}$\IMP$\ssf{2}\quad Let ${\gr a}$ enumerate $\dom k$. Define $p({\mr x}\,;{\gr z})=\{\E\wedge\}\Deltatp_M ({\mr b}\,;{\gr a})$. By \ssf{1}, $p({\mr x}\,;k{\gr a})$ is finitely consistent in $N$. By saturation there is a ${\mr c}\in N$ that realizes $p({\mr x}\,;k{\gr a})$. Therefore, $h:M\to N$ where $h=k\cup\{\<{\mr b},{\mr c}\>\}$, witnesses \ssf{2}.
 
 \ssf{2}$\IMP$\ssf{3}\quad Iterate $\omega$-times the extension in \ssf{2}. 
 
-\ssf{3}$\IMP$\ssf{1}\quad Let ${\gr a}$ enumerate $\dom k$ and let $|{\gr z}|=|{\gr a}|$. Formulas in $\{\E\}\Delta$ with free variables among ${\gr z}$ are of the form  $\E {\mr\bar x}\, \phi ({\mr\bar x}\,;{\gr z})$ where $\phi({\mr\bar x}\,;{\gr z})$ is in $\Delta$ and ${\mr\bar x}$ is some fixed tuple of length $\omega$. Assume $M\models\E{\mr\bar x}\,\phi({\mr\bar x}\,;{\gr a})$ and let ${\mr\bar b}$ be such that $M\models\phi({\mr\bar b}\,;{\gr a})$. By \ssf{3}, we can extend $k$ to some $\Delta$-morphism $h:M\to N$ defined in ${\mr\bar b}$. Then $N\models\phi(h{\mr\bar b}\,;h{\gr a})$ and therefore $N\models\E {\mr\bar x}\,\phi({\mr\bar x}\,;k{\gr a})$.
+\ssf{3}$\IMP$\ssf{1}\quad Let ${\gr a}$ enumerate $\dom k$ and let $|{\gr z}|=|{\gr a}|$. Formulas in $\{\E\wedge\}\Delta$ with free variables among ${\gr z}$ are of the form  $\E {\mr\bar x}\, \phi ({\mr\bar x}\,;{\gr z})$ where $\phi({\mr\bar x}\,;{\gr z})$ is in $\Delta$ and ${\mr\bar x}$ is some fixed tuple of length $\omega$. Assume $M\models\E{\mr\bar x}\,\phi({\mr\bar x}\,;{\gr a})$ and let ${\mr\bar b}$ be such that $M\models\phi({\mr\bar b}\,;{\gr a})$. By \ssf{3}, we can extend $k$ to some $\Delta$-morphism $h:M\to N$ defined in ${\mr\bar b}$. Then $N\models\phi(h{\mr\bar b}\,;h{\gr a})$ and therefore $N\models\E {\mr\bar x}\,\phi({\mr\bar x}\,;k{\gr a})$.
 \end{proof}
 
 Iterating the lemma above we obtain the following.
@@ -134,8 +134,8 @@ Iterating the lemma above we obtain the following.
 \begin{corollary}\label{corol_EDelta_estensione}
 Let $N$ be $\lambda$-saturated and let $|M|\le\lambda$. Let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
 \begin{itemize}
-\item[1.] $k:M\imp N$ is a $\{\E\}\Delta$-morphism;
-\item[2.] $k:M\imp N$ extends to an $\{\E\}\Delta$-embedding;
+\item[1.] $k:M\imp N$ is a $\{\E\wedge\}\Delta$-morphism;
+\item[2.] $k:M\imp N$ extends to an $\{\E\wedge\}\Delta$-embedding;
 \item[3.] $k:M\imp N$ extends to an $\Delta$-embedding.\QED
 \end{itemize}
 \end{corollary}
@@ -152,31 +152,31 @@ For every $\phi(x)\in L$ the following are equivalent
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2}\quad Immediate. 
 
-\ssf{2}$\IMP$\ssf{1}\quad Negate \ssf{1}. By the Lyndon-Robinson Lemma~\ref{lem_qfdefinability} there is a $\{\E\}\Delta$-morphism $k:M\to N$ between models of $T$ that does not preserve $\phi(x)$. We can assume that $N$ is $\lambda$-saturated for some sufficiently large $\lambda$. By Corollary~\ref{corol_EDelta_estensione} there is a $\Delta$-embedding $h:M\hookrightarrow N$ that extends $k$ and contradicts \ssf{2}.
+\ssf{2}$\IMP$\ssf{1}\quad Negate \ssf{1}. By the Lyndon-Robinson Lemma~\ref{lem_qfdefinability} there is a $\{\E\wedge\}\Delta$-morphism $k:M\to N$ between models of $T$ that does not preserve $\phi(x)$. We can assume that $N$ is $\lambda$-saturated for some sufficiently large $\lambda$. By Corollary~\ref{corol_EDelta_estensione} there is a $\Delta$-embedding $h:M\hookrightarrow N$ that extends $k$ and contradicts \ssf{2}.
 \end{proof}
 
-A dual version of the results above is obtained replacing embeddings by epimorphisms, i.e.\@ surjective (partial) homomorphisms, and $\{\E\}$ by $\{\A\}$. If $\Delta$ contains the formula $x=y$ and is closed under negation, then $k:M\imp N$ is a $\Delta$-morphism if and only is $k^{-1}:N\imp M$ is a $\Delta$-morphism. In this case the dual version follows from what proved above. Without these assumptions the results need a similar but independent proof. 
+A dual version of the results above is obtained replacing embeddings by epimorphisms, i.e.\@ surjective (partial) homomorphisms, and $\{\E\wedge\}$ by $\{\A\vee\}$. If $\Delta$ contains the formula $x=y$ and is closed under negation, then $k:M\imp N$ is a $\Delta$-morphism if and only is $k^{-1}:N\imp M$ is a $\Delta$-morphism. In this case the dual version follows from what proved above. Without these assumptions the results need a similar but independent proof. 
 
 
 \begin{proposition}\label{prop_ADelta_estensione}
 Let $M$ be $\lambda$-saturated and let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
 \begin{itemize}
-\item[1.] $k:M\imp N$ is a $\{\A\}\Delta$-morphism;
-\item[2.] for every $c\in N$ some $\{\A\}\Delta$-morphism $h:M\imp N$ extends $k$ and $c\in\range h$;
+\item[1.] $k:M\imp N$ is a $\{\A\vee\}\Delta$-morphism;
+\item[2.] for every $c\in N$ some $\{\A\vee\}\Delta$-morphism $h:M\imp N$ extends $k$ and $c\in\range h$;
 \item[3.] for every $c\in N^{\omega}$ some $\Delta$-morphism $h:M\imp N$ extends $k$ and $c\in(\range h)^{\omega}$.
 \end{itemize}
 \end{proposition}
 
 We write \emph{$\neg\Delta$} for the set containing the negation of the formulas in $\Delta$. Warning: do not confuse $\neg\Delta$ with $\{\neg\}\Delta$.
 
-\begin{proof} Left as an exercise for the reader. Hint: to prove implication \ssf{1}$\IMP$\ssf{2} define $p(x,y)=\neg\{\A\}\Deltatp_N (ka,c)$, where $a$ is a tuple that enumerates $\dom k$. From \ssf{1} obtain that $p(a,y)$ is finitely consistent in $M$. Then proceed as in the proof of Proposition~\ref{prop_EDelta_estensione}.
+\begin{proof} Left as an exercise for the reader. Hint: to prove implication \ssf{1}$\IMP$\ssf{2} define $p(x,y)=\neg\{\A\vee\}\Deltatp_N (ka,c)$, where $a$ is a tuple that enumerates $\dom k$. From \ssf{1} obtain that $p(a,y)$ is finitely consistent in $M$. Then proceed as in the proof of Proposition~\ref{prop_EDelta_estensione}.
 \end{proof}
 
 \begin{corollary}\label{corol_ADelta_estensione}
 Let $M$ be $\lambda$-saturated and let $|N|\le\lambda$. Let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
 \begin{itemize}
-\item[1.] $k:M\imp N$ is a $\{\A\}\Delta$-morphism;
-\item[2.] $k:M\imp N$ extends to an $\{\A\}\Delta$-epimorphism;
+\item[1.] $k:M\imp N$ is a $\{\A\vee\}\Delta$-morphism;
+\item[2.] $k:M\imp N$ extends to an $\{\A\vee\}\Delta$-epimorphism;
 \item[3.] $k:M\imp N$ extends to an $\Delta$-epimorphism.\QED
 \end{itemize}
 \end{corollary}
@@ -225,7 +225,7 @@ The following is a consequence of Lemma~\ref{lem_qfdefinability}.
 The following are equivalent
 \begin{itemize}
 \item[1.] $T$ has positive $\Delta$-elimination of quantifiers;
-\item[2.] every $\Delta$-morphism between models of $T$ is both a $\{\E\}\Delta$ and a $\{\A\}\Delta$-morphism.
+\item[2.] every $\Delta$-morphism between models of $T$ is both a $\{\E\wedge\}\Delta$ and a $\{\A\vee\}\Delta$-morphism.
 \end{itemize}
 \end{corollary}
 \begin{proof}
@@ -291,7 +291,7 @@ For a counter example consider the empty theory in the language with a single un
 
 We say that $T$ is \emph{model-complete\/} if every embedding $h:M\hookrightarrow N$ between models of $T$ is an elementary embedding. The terminology, introduced by Abraham Robinson, is inspired by the fact that $T$ is model-complete if and only if $T\cup\Diag(M)$ is a complete theory, in the language $L(M)$, for every $M\models T$. 
 
-To stress positivity in the next proposition, we generalize the definition as follows. We say that $T$ is \emph{$\Delta$-model-complete\/} if every $\Delta$-embedding $h:M\hookrightarrow N$ between models of $T$ is a $\{\A\E\}\Delta$-embedding. 
+To stress positivity in the next proposition, we generalize the definition as follows. We say that $T$ is \emph{$\Delta$-model-complete\/} if every $\Delta$-embedding $h:M\hookrightarrow N$ between models of $T$ is a $\{\A\E\wedge\vee\}\Delta$-embedding. 
 
 Model-completeness is equivalent to a property akin to quantifier elimination.
 
@@ -299,7 +299,7 @@ Model-completeness is equivalent to a property akin to quantifier elimination.
 The following are equivalent
 \begin{itemize}
 \item[1.] $T$ is $\Delta$-model-complete;
-\item[2.] $T$ has $\{\E\}\Delta$-elimination of quantifiers.
+\item[2.] $T$ has $\{\E\wedge\}\Delta$-elimination of quantifiers.
 \end{itemize}
 \end{proposition}
 
