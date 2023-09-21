@@ -46,14 +46,13 @@ Then, if $\psi({\gr z})\in L(A)$ is consistent, $\psi({\gr z})$ has a solution $
 We construct a sequence of formulas $\<\psi_i({\gr z}):i<\omega\>$ such that any realization~${\gr a}$ of the type $\big\{\psi_i({\gr z}):i<\omega\big\}$ is the required solution of $\psi({\gr z})$.
 
 Let $\<\xi_i({\mr x}\,;{\gr z}):i<\omega\>$ be an enumeration of $L_{{\mr x}\,;{\gr z}}(A)$.
-Take $\psi_0({\gr z})= \psi({\gr z})$.
-At stage $i+1$:
+Set $\psi_0({\gr z})= \psi({\gr z})$ and define $\psi_{i+1}({\gr z})$ inductively as follows:
 \begin{itemize}
    \item if $\xi_i({\mr x}\,;{\gr z})\wedge\psi_i({\gr z})$ is inconsistent, let $\psi_{i+1}({\gr z})=\psi_i({\gr z})$;
-   \item otherwise, pick some $\phi({\mr x})\in p$ such that $\displaystyle\psi_i({\gr z}) \wedge \E{\mr x}\,\big[\xi_i({\mr x}\,;{\gr z})\wedge\neg\phi({\mr x})\big]$ is consistent and let this conjunction be $\psi_{i+1}({\gr z})$.
+   \item otherwise, let $\displaystyle\psi_{i+1}({\gr z})=\psi_i({\gr z}) \wedge \E{\mr x}\,\big[\xi_i({\mr x}\,;{\gr z})\wedge\neg\phi({\mr x})\big]$ for some (any) $\phi({\mr x})\in p$ that makes $\psi_{i+1}({\gr z})$ is consistent.
 \end{itemize}
-This guarantees that $\xi_i({\mr x}\,;{\gr a})$ for any ${\gr a}\models\psi_{i+1}({\gr z})$ does not isolate $p({\mr x})$.
-The proof is complete if we can show that it is always possible to find the formula $\phi({\mr x})$ required above.
+Note that if ${\gr a}\models\psi_{i+1}({\gr z})$ then $\xi_i({\mr x}\,;{\gr a})$ does not isolate $p({\mr x})$.
+Therefore the proof is complete if we can show that it is always possible to find the formula $\phi({\mr x})$ required above.
 
 Suppose for a contradiction that no formula makes $\psi_{i+1}({\gr z})$ consistent, that is, 
 
@@ -104,14 +103,14 @@ Each element of $\U_F$ defines a bijection between $\U_X$ and $\U_Y$.
 
 Note that for any two elements $a,b\in\U_Y$, there is an automorphism of $\U$ that fixes $\U_X\cup\U_Y\sm\{a,b\}$ and swaps $a$ and $b$.
 
-Now, let $Y_1\subseteq\U_Y$ be countable.
-Let $c\in\U_Y\sm Y_1$ and let $p(y)=\tp(c/X,Y_1)$.
-We claim that $p(y)$ is realized in every model containing $X,Y_1$.
-In fact, by the remark above $p(\U)=\U_Y\sm Y_1$.
+Now, let $Y_0\subseteq\U_Y$ be countable.
+Let $c\in\U_Y\sm Y_0$ and let $p(y)=\tp(c/X,Y_0)$.
+We claim that $p(y)$ is realized in every model containing $X,Y_0$.
+In fact, by the remark above $p(\U)=\U_Y\sm Y_0$.
 But every model containing $X$ also contains uncountably many elements of $\U_Y$, hence it contains a conjugate of $c$ which therefore realizes $p(y)$.
 We also claim that $p(y)$ is not isolated.
 Suppose for a contradiction there is a consistent formula $\phi(y)$ such that $\phi(y)\imp p(y)$.
-Then $\phi(y)$ has a solution in $\U_Y\sm Y_1$.
+Then $\phi(y)$ has a solution in $\U_Y\sm Y_0$.
 By the remark above, this implies that $\phi(\U)$ is a cofinite subset of $\U_Y$ and this contradicts $\phi(\U)\subseteq p(\U)$.\QED
 \end{example}
 
@@ -140,25 +139,30 @@ Hint: Use the base of the topology as predicates of a first-order language.\QED
 
 \begin{exercise} 
   Let $A\subseteq B$ and $p(x)\subseteq L(A)$. 
-  Suppose that $\tp(a/B)$ is isolated for every $a\models p(x)$.
-  Prove that $p(x)$ is isolated over $A$.\QED
-  % 
+  Suppose that $\tp(a/B)$ is isolated (over $B$) for every $a\models p(x)$.
+  Prove that $p(x)$ is isolated (over $A$).\QED
   % \def\ceq#1#2#3{\parbox[b]{15ex}{$\displaystyle #1$}\parbox[b]{6ex}{\hfil$#2$}$\displaystyle #3$}
   % Hint. 
-  % In general when $B\subseteq A$
-  %
-  % \ceq{\hfill p(x)}{\iff}{\bigvee\Big\{q(x)\in S(A)\ :\ q(x){\rm\ consistent\ with\ } p(x)\Big\}}
-  %
-  % If all these types $q(x)$ are isolated, by compactness there are finitely many of them.
-  % Let $\phi_1(x)\dots,\phi_n(x)\in L(A)$ be the the formulas that isolate these types.
-  % Then 
-  % 
+  
+  % \ceq{\hfill p(x)}{\iff}{\bigvee\Big\{q(x)\in S(B)\ :\ q(x){\rm\ consistent\ with\ } p(x)\Big\}}
+  
+  % As all these types $q(x)$ are isolated, 
+  
+  
+  % \ceq{\hfill p(x)}{\iff}{\bigvee\Big\{\phi(x)\in L(B)\ :\ \phi(x){\rm\ complete\ formula\ consistent\ with\ } p(x)\Big\}}
+  
+  
+  % By compactness, for some $\phi_1(x)\dots,\phi_n(x)\in L(A)$ 
+  
   % \ceq{\hfill p(x)}{\iff}{\bigvee^n_{i=1}\phi_i(x)}
-  %
+  
+  % (compactness yields $\imp$, while $\pmi$ is clear by the completeness of $\phi_i(x)$).
   % Again by compactness, there is a formula $\psi(x)\in p$ such that
-  %
+  
   % \ceq{\hfill\psi(x)}{\iff}{\bigvee^n_{i=1}\phi_i(x)}
   \end{exercise}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -168,7 +172,6 @@ Hint: Use the base of the topology as predicates of a first-order language.\QED
 
 We say that $M$ is \emph{prime over $A$\/} if $A\subseteq M$ and for every $N$ containing $A$ there is an elementary embedding $h:M\to N$ that fixes $A$.
 When $A$ is empty we simply say that $M$ is \emph{prime}.
-
 
 There is no syntactic analogue of primeness.
 The closest notion, which works well for countable models in a countable language, is atomicity.
@@ -196,8 +199,7 @@ Then the following are equivalent
 \end{proposition}
 \begin{proof}
 Let $p({\mr x},{\gr z})=\tp ({\mr b},{\gr a}/A)$.
-Then  $p({\mr x},{\gr a})=\tp({\mr b}/A,{\gr a})$.
-Note also that $\E{\mr x}\,p({\mr x},{\gr z})=\tp({\gr a}/A)$.
+Then $p({\mr x},{\gr a})=\tp({\mr b}/A,{\gr a})$ and $\E{\mr x}\,p({\mr x},{\gr z})\iff\tp({\gr a}/A)$.
 
 
 \ssf{1}$\IMP$\ssf{2}\quad Let $\phi({\mr x},{\gr z})\in p$ be such that $\phi({\mr x},{\gr z})\imp p({\mr x},{\gr z})$.
@@ -396,7 +398,7 @@ For this reason, the term $0$-stable is sometimes used for small.
 
 
 \begin{proposition}
-No $T$ is small over an uncountable set and if $T$ is small (over $\0$) then it is small over any finite $A$.
+If $T$ is small (over $\0$) then it is small over any finite $A$.
 \end{proposition}
 
 \begin{proof}
@@ -549,14 +551,17 @@ Suppose $L(A)$ is countable.
 The following are equivalent\nobreak
 \begin{itemize}   
 \item[1.] $T$ is small over $A$;
-\item[2.] there exists a countable saturated model containing $A$; (???!!!)
+\item[2.] there exists a countable saturated model containing $A$;
 \item[3.] there is no binary tree of formulas in $L_{\mr x}(A)$ for any finite ${\mr x}$.
 \end{itemize}
 \end{proposition}
 \begin{proof}\ssf{1}$\IMP$\ssf{2}\quad There is a countable model $M$ containing $A$ that is weakly saturated (see Proposition~\ref{prop_w_saturation}).
 There is a countable homogeneous model $N$ containing $M$ (see Exercise~\ref{saturo=universaledebolmenteomogeneo}).
 Clearly $N$ is also weakly saturated.
-Then it is saturated by Corollary~\ref{saturo=universaledebolmenteomogeneo} .
+Then it is saturated by Corollary~\ref{saturo=universaledebolmenteomogeneo}.
+
+For a direct argument: construct a countable chain of countable models $M_i$ such that $M_{i+1}$ realized all types in $S_{\mr x}(A,B)$ for every finite $B\subseteq M_i$ and ${\mr x}$.
+The union of the chain is the requires saturated model.
 
 
 \ssf{2}$\IMP$\ssf{3}\quad Clear.
@@ -580,14 +585,10 @@ Clearly neither $\phi({\mr x})\wedge\psi({\mr x})$ nor $\phi({\mr x})\wedge\neg\
 This allows to construct a tree of formulas in $L_{\mr x}(A)$ and prove that $T$ is not small over $A$.
 \end{proof}
 
-\begin{exercise}\label{ex_binary_tree_canonical}
-Suppose $\Delta$ is countable and closed under negation.
-Prove that if there is a binary tree of formulas  then there is a binary tree such that $\phi_{s0}=\neg\phi_{s1}$ and $\phi_{\0}=\top$.\QED
-\end{exercise}
-
-\begin{exercise}
-Prove that if $T$ is small over $A$, then $T$ is small over $A,a$ for every finite tuple $a$.\QED
-\end{exercise}
+% \begin{exercise}\label{ex_binary_tree_canonical}
+% Suppose $\Delta$ is countable and closed under negation.
+% Prove that if there is a binary tree of formulas  then there is a binary tree such that $\phi_{s0}=\neg\phi_{s1}$ and $\phi_{\0}=\top$.\QED
+% \end{exercise}
 
 \begin{exercise}
 Let $|{\mr x}|=1$.
