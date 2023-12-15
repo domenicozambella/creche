@@ -206,7 +206,7 @@ The following easy exercise shows that stability is sort of chain condition.
    Prove that the following are equivalent
    \begin{itemize}
    \item[1.]  $\phi({\mr x}\,;{\gr z})$ has a ladder sequence of length $n$;
-   \item[2.] there a set ${\gr B}$ such that $\phi({\mr a_0}\,;{\gr B})\subset\dots\subset\phi({\mr a_n}\,;{\gr B})$ for some $\<{\mr a_i} : i<n\>$.\QED
+   \item[2.] there a set ${\gr B}$ such that $\phi({\mr a_0}\,;{\gr B})\supset\dots\supset\phi({\mr a_n}\,;{\gr B})$ for some $\<{\mr a_i} : i<n\>$.\QED
    \end{itemize}
 \end{exercise}
 
@@ -225,10 +225,10 @@ More precisely, if $\phi({\mr x}\,;{\gr z})$ is a stable formula that approximat
 \end{theorem}
 
 \begin{proof}
-The theorem follows immediately from the the three lemmas below.
+The theorem follows immediately from the three lemmas below.
 \end{proof}
 
-Below, in Theorem~\ref{thm_def_stable_formula2}, we proves the converse of teh theorem above:  if every set approxiamted by $\phi({\mr x}\,;{\gr z})$ is definable then  $\phi({\mr x}\,;{\gr z})$ is stable.
+Below, in Theorem~\ref{thm_def_stable_formula2}, we proves the converse of the theorem above:  if every set approxiamted by $\phi({\mr x}\,;{\gr z})$ is definable then  $\phi({\mr x}\,;{\gr z})$ is stable.
 
 \begin{remark}\label{rem_sability_no_compactness}
 The conclusion of Theorem~\ref{thm_def_stable_formula} is often stated in the following  apparently more general form:
@@ -534,9 +534,9 @@ When a binary tree of this form exists, we say that $\phi({\mr x}\,;{\gr z})$ ha
   {\IFF}
   {r^\frown1\ \subseteq\ s}
 
-  \ssf{2}$\IMP$\ssf{1}. From $\ssf{2}$, by compactess, there is a binary tree of height $\kappa$. 
+  \ssf{2}$\IMP$\ssf{1}. From $\ssf{2}$, by compactness, there is a binary tree of height $\kappa$. 
   Hence there are $2^\kappa$ sets that are externally definable by $\phi({\mr x}\,;{\gr z})$.
-  Therefore, by Therorem~\ref{thm_def_stable_formula2}, $\phi({\mr x}\,;{\gr z})$ is not stable.
+  Therefore, by Theorem~\ref{thm_def_stable_formula2}, $\phi({\mr x}\,;{\gr z})$ is not stable.
 \end{proof}
 
 \begin{corollary}\label{corol_count_types}
@@ -556,16 +556,16 @@ We use binary trees to prove the following theorem. Its corollary is a major res
 
 \begin{theorem}
    Let $\phi(x\,;z)\in L$ be stable.
-   Then for every $A$ and $b$ either $\phi(x\,;b)$ or $\neg\phi(x\,;b)$ is almost satified in $A$.
+   Then for every $A$ and $b$ either $\phi(x\,;b)$ or $\neg\phi(x\,;b)$ is almost satisfied in $A$.
 \end{theorem} 
 
 \begin{proof}
 Suppose not. Then there are two models containing $A$, the first omitting $\phi(x\,;b)$, the second omitting $\neg\phi(x\,;b)$.
-It is easy to see that we can expand these models to two subtructures $\V_0$ and $\V_1$ that are $A$-isomorphic to $\U$ and such that $\phi(\V_0\,;b)=\neg\phi(\V_1\,;b)=\0$.
+It is easy to see that we can expand these models to two substructures $\V_0$ and $\V_1$ that are $A$-isomorphic to $\U$ and such that $\phi(\V_0\,;b)=\neg\phi(\V_1\,;b)=\0$.
 In other words, $\phi(\V_i\,;b)^i=\V_i$, for $i=0,1$.
 
 Rename $\V_\0=\U$ and $b_\0=b$.
-Inductively, given $s\in 2^n$ and $b_s\in\V_s$, pick two strucures $\V_{s^\frown i}\subseteq\V_s$ that are $A$-isomorphic copies of $V_s$ such that $\phi(\V_{s^\frown 0}\,;b_s)=\neg\phi(\V_{s^\frown 1}\,;b_s)=\0$.
+Inductively, given $s\in 2^n$ and $b_s\in\V_s$, pick two structures $\V_{s^\frown i}\subseteq\V_s$ that are $A$-isomorphic copies of $V_s$ such that $\phi(\V_{s^\frown 0}\,;b_s)=\neg\phi(\V_{s^\frown 1}\,;b_s)=\0$.
 Finally, let $b_{s^\frown i}$ be the images of $b_s$ under the isomorphisms $\V_s\to\V_{s^\frown i}$.
 
 In this way we obtain a binary tree as above.
@@ -672,6 +672,24 @@ If $T$ is stable then the following are equivalent
   Then ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lstp_indiscernibles}.
 \end{proof}
 
+\begin{theorem}
+  If $T$ is stable then for every $M,{\mr a},{\gr b}$ 
+
+  \ceq{\hfill{\mr a}\cnonfork_M{\gr b}}{\IFF}{{\gr b}\cnonfork_M{\mr a}}
+\end{theorem}
+
+\begin{proof}
+  Assume ${\mr a}\cnonfork_M{\gr b}$ and $\phi({\mr a},{\gr b})$ for some $\phi({\mr x},{\gr z})\in L(M)$.
+  We prove that $\phi({\mr a},{\gr z})$ is satisfied in $M$.
+  Let ${\gr\V}$ be as in Proposition~\ref{prop_saturate_heir}.
+  By stability, there is $\psi({\gr z})\in L({\gr\V})$ such that $\psi({\gr\V})=\phi({\mr a},{\gr\V})$.
+  Recall that, by non-splitting as in Lemma~\ref{lem_coheir_independence}, if ${\gr b'}\equiv_M{\gr b''}$ are in ${\gr\V}$ then ${\gr b'}\equiv_{M,a}{\gr b''}$.
+  Then $\psi({\gr\V})$ is invariant under $\Aut({\gr\V}/M)$
+  Then, up to equivalence, $\psi({\gr z})\in L(M)$.
+  Therefore $\psi({\gr z})$ is satisfied in $M$
+  and so is $\phi({\mr a},{\gr z})$.
+\end{proof}
+
 We end this section with a characterization of stability which is not directly related with the properties discussed above. 
 
 \begin{proposition} The following are equivalent
@@ -697,11 +715,9 @@ Prove that the following are equivalent
 Hint: suppose $\phi({\mr x}\,;{\gr z})$ is unstable and let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be an infinite ladder sequence, then $A=\{{\mr a_i}\,{\gr b_i} : i<\omega\}$ is linearly ordered.\QED
 \end{exercise}
 
-
 \begin{exercise}
 Prove that if every formula $\phi({\mr x}\,;{\gr z})\in L$ with $|{\mr x}|=1$ is stable then $T$ is stable. Hint: by compactness, if all sets approximable by $\phi({\mr x}\,;y,{\gr z})$ are definable, so are the sets approximable by $\phi({\mr x},y\,;{\gr z})$.\QED
 \end{exercise}
-
 
 \begin{exercise}
 Prove that strongly minimal theories are stable.\QED
@@ -712,4 +728,8 @@ Prove that strongly minimal theories are stable.\QED
 Let $p({\mr x})\in S(\U)$. Prove that there is at most one definably closed set $A\subseteq\U^\eq$ such that $\Aut(\U/A)$ is the set of automorphisms that fix $p({\mr x})$.\QED
 \end{exercise}
 
+
+\begin{exercise}
+  Prove that if ${\mr a}\cnonfork_M{\gr b}\IFF{\gr b}\cnonfork_M{\mr a}$ holds for every $M,{\mr a},{\gr b}$ then $T$ is stable.\QED
+\end{exercise}
 \end{document}
