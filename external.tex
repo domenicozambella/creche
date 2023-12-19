@@ -692,6 +692,49 @@ If $T$ is stable then the following are equivalent
 
 We end this section with a characterization of stability which is not directly related with the properties discussed above. 
 
+\begin{theorem}[ (Pierre Simon)]
+  If every $\phi(x\,;z)\in L(\U)$, where $|x|=|y|=1$ is stable then $T$ is stable.
+\end{theorem} 
+
+\begin{proof}
+  Suppose $\phi(x\,;y,z)\in L(\U)$ is not stable.
+  We prove that there is a formula $\psi(x\,;y)\in L(\U)$ that is not stable.
+  Let $\<a_i\,;b_i,c_i\ :\ i\in\QQ\>$ is a sequence of indiscernibles such that 
+
+  \ceq{\hfill i< j}{\IFF}{\phi(a_i\,;b_j,c_j)}\hfill for all $i,j\in\QQ$.
+
+  Let $\QQ^*=\QQ\sm\{0\}$.
+  Assume first that the sequence $\<a_i\ :\ i\in\QQ^*\>$ is indiscernible over $c_0$.
+  Then for every $k\in\QQ^*$ the type below is consistent
+
+  \ceq{\hfill p_k(y)}{=}{\{\phi(a_i\;y,c_0)\iff i<k\ \ :\ i\in\QQ^*\sm\{k\}\}.}
+
+  In fact, by indiscernibility, $b_0$ witnesses the consistency of all finite subsets of $p_k(y)$.
+  Let $b'_k\models p_k(y)$.
+  Then
+
+  \ceq{\hfill i< k}{\IFF}{\phi(a_i\,;b'_k,c_0)}\hfill for all $i,j\in\QQ^*, i\neq j$
+
+  From this the instability of $\psi(x\,;y)=\phi(x\,;y,c_0)$ follows easily.
+
+  Now, assume instead that $\<a_i\ :\ i\in\QQ^*\>$ is not indiscernible over $c_0$.
+  Note that the sequences $\<a_i\ :\ i<0\>$ and $\<a_i\ :\ i>0\>$ are mutually indiscernible over $c_0$.
+  Then there is a maximal $n$ such that
+
+  \ceq{\hfill a_{\restriction\{-1,\dots,-n\}}}{\equiv_{c_0}}{a_{\restriction\{1,\dots,n\}}.}
+
+  Let $A=a\restriction\{\pm1,\dots,\pm n\}$.
+  By maximality, $a_i\nequiv_{c_0,A}a_j$ for every $-1<i<0<j<1$.
+  Let $\psi(x\;y)$ be a formula such that $\psi(a_i\,;c_0)$ and $\neg\psi(a_j\,;c_0)$.
+  We claim that for every $k\in(-1,0)\cup(0,1)$ the type below is consistent
+
+  \ceq{\hfill q_k(z)}{=}{\{\psi(a_i\;y)\iff i<k\ \ :\ i\in (-1,0)\cup(0,1)\}.}
+
+  In fact as $\<a_i\ :\ i\in(-1,0)\cup(0,1)\>$ is indiscernible over $A$, all finite subsets of $q_k(z)$ are realized by $c_0$.
+  Finally let $c'_k\models p_k(z)$.
+  Then $\<a_i,c'_i\ :\ i\in(-1,0)\cup(0,1)\>$ witness the instability of $\psi(x\;z)$.
+\end{proof}
+
 \begin{proposition} The following are equivalent
 \begin{itemize}
 \item[1.] $T$ is stable;
