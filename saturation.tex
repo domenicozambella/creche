@@ -66,7 +66,8 @@ Assume $|L|<\lambda$ where $\lambda$ is such that $\lambda^{<\lambda}=\lambda$. 
 \end{theorem}
 
 \begin{proof}
-Without loss of generality, we can assume that $M$ has cardinality $\lambda$. We construct an elementary chain $\<M_i : i<\lambda\>$ of models of cardinality $\lambda$. The chain starts with $M$ and is the union at limit stages. Given $M_i$ we choose as $M_{i+1}$ any model of cardinality $\lambda$ that realizes all types $p(x)\subseteq L(A)$ for all $A\subseteq M_i$ of cardinality $<\lambda$. The required $M_{i+1}$ exists because there are at most $2^{|L(A)|}\le\lambda^{<\lambda}=\lambda$ such types and there are $\lambda^{<\lambda}=\lambda$ sets $A$.
+We can assume that $M$ has cardinality $\lambda$. We construct an elementary chain $\<M_i : i<\lambda\>$ of models of cardinality $\lambda$. The chain starts with $M$ and is the union at limit stages. Given $M_i$ we choose as $M_{i+1}$ any model of cardinality $\lambda$ that realizes all types $p(x)\subseteq L(A)$ for all $A\subseteq M_i$ of cardinality $<\lambda$. 
+The required $M_{i+1}$ exists because for any given $A$ there are at most $2^{|L(A)|}\le\lambda^{<\lambda}=\lambda$ such types and there are $2^{<\lambda}=\lambda$ sets $A$.
 
 Let $N$ be the union of the chain. We check that $N$ is the required extension. Let $p(x)\subseteq L(A)$ for some $A\subseteq N$ of cardinality $<\lambda$. As $\lambda^{<\lambda}=\lambda$ implies in particular that $\lambda$ is a regular cardinal, $A\subseteq M_i$ for some $i<\lambda$. Then $M_{i+1}$ realizes $p(x)$, and so does $N$, by elementarity.
 \end{proof}
