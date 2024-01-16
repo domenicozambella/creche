@@ -7,7 +7,7 @@
 \def\medrel#1{\parbox{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[b]{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
-The first two section introduce saturation and homogeneity and Section~\ref{monster} presents the notation we shall use in the following chapters when working inside a monster model.
+The first two sections introduce saturation and homogeneity and Section~\ref{monster} presents the notation we shall use in the following chapters when working inside a monster model.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -46,7 +46,7 @@ $|{\gr z}|=\omega$. It suffices to consider types of the form $p({\mr x}\,;{\gr\
 Let $\<X_i:i<\omega\>$ be a strictly decreasing chain of elements of the ultrafilter such that  $X_{i+1}\subseteq\big\{j\;:\;M\models\E{\mr x}\;\phi_i({\mr x},{\gr\hat cj})\big\}$. Let ${\mr\hat a}\in M^\omega$ be such that  $\phi_i({\mr\hat aj},{\gr\hat cj})$ holds for every $j\in X_i\sm X_{i+1}$. Then ${\mr\hat a}$ realizes $p({\mr x})$.\QED
 \end{exercise}
 
-We shall see that some theories have saturated models that are relatively small in size.
+We shall see that some theories have saturated models of small size.
 However, the existence of saturated models of arbitrary theories is problematic.
 The following theorem states the existence of a saturated model of cardinality $\lambda$ whenever $|L|<\lambda=\lambda^{<\lambda}$.
 The existence of cardinals of this kind is independent of ZFC.
@@ -78,7 +78,6 @@ The reader who did not read Section~\hyperref[rich]{\ref*{fraisse}.\ref*{rich}} 
 \item[2$'$] for every ${\mr b}\in M$,  every elementary map $k:M\to N$ of cardinality $<\lambda$ has an extension defined on $b$;
 \end{itemize}
 \end{remark}
-
 
 \begin{theorem}\label{saturo->ricco}
 Assume $|L|\le\lambda$ and let $N$ be an infinite structure. Let $\M$ be the category (see Section~\hyperref[rich]{\ref*{fraisse}.\ref*{rich}}) that consists of models of a complete theory $T$ and elementary maps between these. Then the following are equivalent
@@ -211,15 +210,20 @@ Let $|L|\le\lambda$. The following are equivalent\nobreak
 
 
 \begin{exercise}\label{ex_omega_homogeneous_same_card}
-Let $M$ be an arbitrary structure of cardinality larger than $|L|$. Prove that $M$ has an $\omega\mbox{-}$homogeneous elementary extension of the same cardinality.\QED 
+Let $M$ be an arbitrary structure of cardinality larger than $|L|$.
+Prove that $M$ has an $\omega\mbox{-}$homogeneous elementary extension of the same cardinality.\QED 
 \end{exercise}
 
 \begin{exercise}
-Let $M$ and $N$ be elementarily homogeneous structures of the same cardinality $\lambda$. Suppose that $M\models\E x\, p(x)\,\IFF\,N\models\E x\, p(x)$ for every $p(x)\subseteq L$ such that $|x|<\lambda$. Prove that the two structures are isomorphic.\QED 
+Let $M$ and $N$ be elementarily homogeneous structures of the same cardinality $\lambda$. 
+Suppose that $M\models\E x\, p(x)\,\IFF\,N\models\E x\, p(x)$ for every $p(x)\subseteq L$ such that $|x|<\lambda$.
+Prove that the two structures are isomorphic.\QED 
 \end{exercise}
 
 \begin{exercise}\label{vaughtesempio}
-Let $L$ be a language that extends that of strict linear orders with the constants $\{c_i: i\in\omega\}$. Let $T$ be the theory that extends $T_{\rm dlo}$ with the axioms $c_i<c_{i+1}$ for every  $i\in\omega$. Prove that $T$ has elimination of quantifiers and is complete (it can be deduced from what is known of $T_{\rm dlo}$). Exhibit a countable saturated model and a countable model that is not homogeneous.\QED 
+Let $L$ be a language that extends that of strict linear orders with the constants $\{c_i: i\in\omega\}$.
+Let $T$ be the theory that extends $T_{\rm dlo}$ with the axioms $c_i<c_{i+1}$ for every  $i\in\omega$. Prove that $T$ has elimination of quantifiers and is complete (it can be deduced from what is known of $T_{\rm dlo}$). 
+Exhibit a countable saturated model and a countable model that is not homogeneous.\QED 
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -258,7 +262,6 @@ Some terms acquire a slightly different meaning when working inside a monster mo
    \setlength{\leftmargin}{\labelwidth+\labelsep}
    \let\makelabel\labellalunga}}{
    \end{list}}
-
 
 \begin{litemize}{{\bf type-definable sets}}
 \item[\emph{truth}] we say that $\phi(x)$ holds if $\U\models\A x\,\phi(x)$ and similarly for other expressions such as $p(x)\imp\neg q(x)$ or $\E y\,p(x,y)$ etc., which are neither first-order formulas nor types;
@@ -465,7 +468,7 @@ Prove that $\RR,1\notmodels\E y\;q(x,y)$, as claimed before Proposition~\ref{pro
 \begin{exercise}\label{cadinalitafinitasaturazione}
 Let $p(x)\subseteq L(A)$, with $|x|<\omega$. 
 Prove that if $p(\U)$ is infinite then it has cardinality $\kappa$. 
-Show that this may not be true if $x$ is an infinite tuple.\QED 
+Show that this is not true if $x$ has length $\omega$.\QED 
 \end{exercise}
 
 \begin{exercise}\label{cadinalitafinitasaturazioneinsiemi}
@@ -477,8 +480,17 @@ Does the claim remain true with a type $p(x,y)\subseteq L(A)$ for $\phi(x,y)$?\Q
 Let $\phi(x\,;y)\in L(\U)$. Prove that the following are equivalent
 \begin{itemize}
 \item[1.] there is a sequence $\<a_i\,:\,i\in\omega\>$ such that $\phi(\U\,;a_i)\subset\phi(\U\,;a_{i+1})$ for every $i<\omega$;
-\item[2.] there is a sequence $\<a_i\,:\,i\in\omega\>$ such that $\phi(\U\,;a_{i+1})\subset\phi(\U\,;a_i)$ for every $i<\omega$.\QED  
+\item[2.] there is a sequence $\<a_i\,:\,i\in\omega\>$ such that $\phi(\U\,;a_{i+1})\subset\phi(\U\,;a_i)$ for every $i<\omega$.\QED
 \end{itemize}
 \end{exercise}
 
+\begin{exercise}
+  Let $L$ be a countable language containing $L_{\rm gr}$ and assume $\U$ is a group.
+  Let $p(x)\subseteq L$ define a subgroup of $\U$.
+  Prove that there are some formulas $\phi_n(x)\in L$ such that 
+  \begin{itemize}
+    \item[1.] $p(x)\ \iff\ \{\phi_n(x):n<\omega\}$
+    \item[2.] $\phi_{n+1}(x)\wedge\phi_{n+1}(y)\ \imp\ \phi_n(x\cdot y)$.\QED
+  \end{itemize}  
+\end{exercise}
 \end{document}

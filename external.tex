@@ -322,6 +322,56 @@ This last lemma concludes the proof of Theorem~\ref{thm_def_stable_formula}.
   Prove that $\phi(x\,;y)$ is unstable.\QED
 \end{exercise}
 
+
+\begin{exercise}\label{ex_harrington}
+  \def\grB{{\gr{\EuScript B}}}
+  \def\mrA{{\mr{\EuScript A}}}
+  Prove the following claim (a version of Harrington's mysterious Lemma cfr.~\cite[Lemma 8.3.4]{TZ}).
+  Let $\phi({\mr x}\,;{\gr z})\in L$ be a stable formula and suppose $\grB\subseteq\U^{|{\gr z}|}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\mr x}\,;{\gr z})^*$, respectively.
+  Then at least one of the conditions \ssf{1} and \ssf{2} below occurs
+  
+  \begin{itemize}
+  \item[1.]
+  \ssf{a.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\phantom{*}}\wedge\ {\mr x}\in{\mrA}$ approximates $\grB$ and\\
+  \ssf{b.}\kern2ex$\phi({\mr x}\,;{\gr z})^*\wedge\ {\gr z}\in{\grB}$ approximates $\mrA$.
+  
+  \item[2.]
+  \ssf{a.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\phantom{*}}\wedge\ {\mr x}\notin{\mrA}$ approximates $\grB$ and\\
+  \ssf{b.}\kern2ex$\phi({\mr x}\,;{\gr z})^*\wedge\ {\gr z}\notin{\grB}$ approximates $\mrA$.\QED
+  \end{itemize}
+  % Hint: Note that at least one of \ssf{1a} or \ssf{2a} occurs.
+  % Hence it suffices to prove that \ssf{1a}$\IMP$\ssf{1b} and \ssf{2a}$\IMP$\ssf{2b}. The two implications are essentially equivalent.
+  % \begin{proof}
+  % Note that at least one of \ssf{1a} or \ssf{2a} occurs.
+  % Hence it suffices to prove that \ssf{1a}$\IMP$\ssf{1b} and \ssf{2a}$\IMP$\ssf{2b}.
+  % We only prove the first.
+  % The second follows because $\neg\grB$ and $\neg\mrA$ are approximated by $\neg\phi({\mr x}\,;{\gr z})$ and  $\neg\phi({\mr x}\,;{\gr z})^*$, respectively.
+  
+  % Assume \ssf{1a} and negate \ssf{1b} for a contradiction.
+  % Then \ssf{2b} holds.
+  % Pick ${\mr a_0}$ arbitrarily, then recursively find ${\gr b_i}\notin\grB$ and  ${\mr a_i}\in\mrA$ such that
+  
+  % {\def\medrel#1{\parbox[t]{12ex}{$\displaystyle\kern2ex #1$}}
+  
+  % \ceq{\hfill\phi(\U\,;{\gr b_i})}{ =_{{\mr a_0},\dots,{\mr a_{i-1}}}}{\mrA} 
+  
+  % \ceq{\hfill\phi({\mr a_i}\,;\U)}{ =_{{\gr b_0},\dots,{\gr b_i}}}{\grB}
+  % }
+  
+  % Then
+  
+  % {\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\kern2ex #1$}}
+  
+  % \ceq{\hfill i< j}{\IMP}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}
+  
+  % \ceq{\hfill j\le i}{\IMP}{\neg\phi({\mr a_i}\,;{\gr b_j})}
+  
+  % }
+  
+  % Which contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
+  % \end{proof}
+  \end{exercise} 
+
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
@@ -358,59 +408,6 @@ The following proposition highlights the connection between stability and the ca
  
  Clearly sets ${\gr\D_{p_c,\,\phi} }$ are all distinct.
  \end{proof}
- 
- % \begin{exercise}\label{ex_harrington}
- % \def\grB{{\gr{\EuScript B}}}
- % \def\mrA{{\mr{\EuScript A}}}
- % The following is a version of Harrington's mysterious 
- % Lemma (cfr.~\cite[Lemma 8.3.4]{TZ}).
- % Let $\phi({\mr x}\,;{\gr z})\in L$ be a stable formula and suppose $\grB\subseteq\U^{|{\gr z}|}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\mr x}\,;{\gr z})^*$, respectively.
- % Then at least one of the conditions \ssf{1} and \ssf{2} below occurs
- 
- % \begin{itemize}
- % \item[1.]
- % \ssf{a.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\phantom{*}}\wedge\ {\mr x}\in{\mrA}$ approximates $\grB$ and\\
- % \ssf{b.}\kern2ex$\phi({\mr x}\,;{\gr z})^*\wedge\ {\gr z}\in{\grB}$ approximates $\mrA$.
- 
- % \item[2.]
- % \ssf{a.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\phantom{*}}\wedge\ {\mr x}\notin{\mrA}$ approximates $\grB$ and\\
- % \ssf{b.}\kern2ex$\phi({\mr x}\,;{\gr z})^*\wedge\ {\gr z}\notin{\grB}$ approximates $\mrA$.
- 
- % \end{itemize}
- % Hint: Note that at least one of \ssf{1a} or \ssf{2a} occurs.
- % Hence it suffices to prove that \ssf{1a}$\IMP$\ssf{1b} and \ssf{2a}$\IMP$\ssf{2b}. The two implications are essentially equivalent.
- % \begin{proof}
- % Note that at least one of \ssf{1a} or \ssf{2a} occurs.
- % Hence it suffices to prove that \ssf{1a}$\IMP$\ssf{1b} and \ssf{2a}$\IMP$\ssf{2b}.
- % We only prove the first.
- % The second follows because $\neg\grB$ and $\neg\mrA$ are approximated by $\neg\phi({\mr x}\,;{\gr z})$ and  $\neg\phi({\mr x}\,;{\gr z})^*$, respectively.
- 
- % Assume \ssf{1a} and negate \ssf{1b} for a contradiction.
- % Then \ssf{2b} holds.
- % Pick ${\mr a_0}$ arbitrarily, then recursively find ${\gr b_i}\notin\grB$ and  ${\mr a_i}\in\mrA$ such that
- 
- % {\def\medrel#1{\parbox[t]{12ex}{$\displaystyle\kern2ex #1$}}
- 
- % \ceq{\hfill\phi(\U\,;{\gr b_i})}{ =_{{\mr a_0},\dots,{\mr a_{i-1}}}}{\mrA} 
- 
- % \ceq{\hfill\phi({\mr a_i}\,;\U)}{ =_{{\gr b_0},\dots,{\gr b_i}}}{\grB}
- % }
- 
- % Then
- 
- % {\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\kern2ex #1$}}
- 
- % \ceq{\hfill i< j}{\IMP}{\phantom{\neg}\phi({\mr a_i}\,;{\gr b_j})}
- 
- % \ceq{\hfill j\le i}{\IMP}{\neg\phi({\mr a_i}\,;{\gr b_j})}
- 
- % }
- 
- % Which contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
- % \end{proof}
- % \end{exercise}
- 
- 
 
 
 Binary trees of formulas have been introduced in Definition~\ref{def_tree_formulas}.
