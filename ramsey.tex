@@ -189,23 +189,27 @@ Prove that there is a sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ such that ${
 
 \begin{exercise}\label{ex_symmetry_ind}
   Let $\<{\mr c_i}:i<\omega\>$ be an indiscernible sequence.
-  Prove that there is an indiscernible sequence $\<{\mr d_i}:i<\omega\>$ such that ${\mr d_0}{\mr d_1}= {\mr c_1}{\mr c_0}$.\QED
+  Prove that there is an indiscernible sequence $\<{\mr d_i}:i<\omega\>$ such that ${\mr d_0},{\mr d_1}= {\mr c_1},{\mr c_0}$.\QED
 \end{exercise}
 
+\begin{exercise}
+  Let $\<\D_i:i<\omega\>$ be an $A$-indiscernible sequence in $\U^\eq$.
+  Prove that there is an $A$-indiscernible sequence $\<b_i:i<\omega\>$ and a formula $\phi(x\,;z)\in L$ such that $\D_i=\phi(\U\,;b_i)$.\QED
+\end{exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
 \section{Idempotent orbits in semigroups}\label{semigroups}
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{22ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 In this and the following sections we focus on semigroups definable in a first-order structure.
-For a lighter notation, we identify our semigroup with \emph{$\mrG$},
-which here denotes the domain of a sort in a many-sorted monster model.
-The language contains, among others,
-the symbol \emph{$\ \cdot\ $} which is interpreted as a binary associative operation on $\mrG$.
+For a lighter notation, we assume that the semigroup operation \emph{$\ \cdot\ $} is among the symbols of $L$ and that the whole monster model is a semigroup.
 
-We fix a set of parameters $A$,
-not necessarily all of the same sort.
-For any two sets $\mrA,\mrB\subseteq\mrG$ we define
+We fix a set of parameters $A$.
+For any two sets $\mrA,\mrB\subseteq\U$ we define
 
 \ceq{\hfill\emph{$\mrA\cdot_{\!A}\mrB$}}
 {=}
@@ -214,7 +218,7 @@ For any two sets $\mrA,\mrB\subseteq\mrG$ we define
 {\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\cnonfork_{\!A}{\mr b}\Big\}}
 
 In this and the next section we abbreviate $\O({\mr a}/A)$, 
-the orbit of ${\mr a}$ under $\Aut(\mrG/A)$, 
+the orbit of ${\mr a}$ under $\Aut(\U/A)$, 
 with \emph{${\mr a}_A$}.
 We write \emph{${\mr a}\cdot_{\!A}\mrB$} for $\O({\mr a}/A)\cdot_{\!A}\mrB$.
 Similarly for \emph{$\mrA\cdot_{\!A}{\mr b}$} 
@@ -225,30 +229,14 @@ If $\mrA$ is type definable over $A$ then so is $\mrA\cdot_A{\mr b}$
 for any ${\mr b}$.
 \end{proposition}
 \begin{proof}
-The set  $\mrA\cdot_A{\mr b}$ is the union of $\mrA\cdot_A\{{\mr c}\}$ 
-as ${\mr c}$ ranges in ${\mr b}_A$.
-%$
-The set $\mrA\cdot_A\{{\mr c}\}$ is type definable, say by the 
-the type $\E{\mr y}\, p({\mr x}, {\mr y},{\mr c})$ where
+  Let $p({\mr y})=\tp({\mr b}/A)$.
+  Then $\mrA\cdot_A{\mr b}$ is defined by the type $q({\mr z})$, where
 
-\ceq{\hfill p({\mr x}, {\mr y},  {\mr c})}
-{=}
-{{\mr y}\cnonfork_{\!A}{\mr c}
-\ \ \wedge\ \ 
-{\mr y}{\cdot}{\mr c}\equiv_A{\mr x}
-\ \ \wedge\ \ 
-{\mr y}\in\mrA}
-
-Note that if $f$ is any $A$-automorphism, then 
-$\E{\mr y}\, p({\mr x}, {\mr y},f{\mr c})$ defines $\mrA\cdot_A\{f{\mr c}\}$.
-%
-Therefore if $q({\mr z})=\tp({\mr b}/A)$ then 
-$\E{\mr y},{\mr z}\, \big[q({\mr z})\cup p({\mr x}, {\mr y},{\mr z})\big]$ 
-defines $\mrA\cdot_A {\mr b}$.
+  \ceq{\hfill q({\mr z})}{=}{\E {\mr x},{\mr y}\ \big[ {\mr z}={\mr x}{\cdot}{\mr y}\ \wedge\ {\mr x}\in\mrA\ \wedge\ {\mr y}\cnonfork_A p\big]}.
 \end{proof}
 
 By the invariance of $\cnonfork_{\!A}$,
-for every $f\in\Aut(\mrG/A)$ we have 
+for every $f\in\Aut(\U/A)$ we have 
 $f[\mrA\cdot_{\!A}\mrB]=f[\mrA]\cdot_{\!A}f[\mrB]$
 %
 Therefore, when $\mrA$ and $\mrB$ are invariant over $A$,
@@ -301,7 +289,7 @@ We check that if $\mrA$ is idempotent so is $\mrA\cdot_{\!A}\mrB$
 
 We show that, under the assumption of stationarity,
 the operation $\cdot_{\!A}$ is associative.
-The quotient map $\mrG\to\mrG/{\equiv_A}$ is almost a homeomorphism.
+The quotient map $\U\to\U/{\equiv_A}$ is almost a homeomorphism.
 
 
 \begin{proposition}\label{prop_orbits_main}
@@ -402,7 +390,7 @@ with the proof of Ramsey's theorem to obtain Hindman's theorem in a straightforw
 % Though this theorem is not explicitely stated in Newelski's papers, 
 % our proof may be deduced from his work (though the generalization to semigroups may require some work).
 
-Let ${\mr\bar a}$ be a tuple of elements of $\mrG$ of length $\le\omega$.
+Let ${\mr\bar a}$ be a tuple of elements of $\U$ of length $\le\omega$.
 We write $\fp\,{\mr\bar a}$ for the set of finite products of elements 
 of ${\mr\bar a}$ taken in increasing order. 
 Namely, 
@@ -411,7 +399,7 @@ Namely,
 {=}
 {\Big\{{\mr a_{i_0}}\kern-0.5ex\cdot\dots\cdot{\mr a_{i_k}}\ :\quad i_0<\dots<i_k<|{\mr\bar a}|,\ \ k<|{\mr\bar a}|\Big\}}. 
 
-% Let ${\mr\bar a}$ be a tuple of elements of $\mrG$ of length $\le\omega$. 
+% Let ${\mr\bar a}$ be a tuple of elements of $\U$ of length $\le\omega$. 
 % For any $n\le|{\mr\bar a}|$ we write $\fp_n\,{\mr\bar a}$ for the set of 
 % finite products of $\le n$ elements of ${\mr\bar a}$ taken in increasing order.
 % Namely,
@@ -420,15 +408,15 @@ Namely,
 % 
 % When $n=|{\mr\bar a}|$ we write \emph{$\fp\,{\mr\bar a}$}. 
 \bigskip
-Let \emph{$\cpaw$\/} be a relation on $\mrG$.
-Let $\mrA,\mrC\subseteq\mrG$.
+Let \emph{$\cpaw$\/} be a relation on $\U$.
+Let $\mrA,\mrC\subseteq\U$.
 We say that $\mrA$ is \emph{$\cpaw$-covered by $\mrC$\/} 
 if for every ${\mr a_1},\dots,{\mr a_n}\in\mrA$ there are infinitely many ${\mr c}\in\mrC$ such that ${\mr a_i}\cpaw{\mr c}$ for all $i$.
 When $\mrA=\mrC$ we simply sat that $\mrA$ is \emph{$\cpaw$-covered}.
 We say that $\mrA$ is \emph{\cpawdot-closed\/} 
 if ${\mr a}\cpaw{\mr b}\cpaw{\mr c}$ implies ${\mr a}\cpaw{\mr b}{\cdot}{\mr c}$ 
 for all ${\mr a},{\mr b},{\mr c}\in\mrA$.
-A \emph{$\cpaw$-chain\/} in $\mrG$ is a tuple ${\mr\bar a}\in\mrG^{\le\omega}$ such that ${\mr a_i}\cpaw{\mr a_{i+1}}$.
+A \emph{$\cpaw$-chain\/} in $\U$ is a tuple ${\mr\bar a}\in\U^{\le\omega}$ such that ${\mr a_i}\cpaw{\mr a_{i+1}}$.
 
 The requirements on  $\cpaw$ are hardly restrictive.
 For example, on a free semigroup we can take the preorder relation given by the length of the words.
@@ -458,7 +446,7 @@ We interpret $G$ as a structure in a language
 that extends the natural language of semigroups
 with a symbol for $\cpaw$ and one for each subset of $G$.
 %
-Let $\mrG$ be a saturated elementary superstucture of $G$.
+Let $\U$ be a saturated elementary superstucture of $G$.
 %
 As observed in Remark~\ref{rk_coheir_stationary}, 
 the language makes $\cnonfork_G$ trivially stationary.
@@ -477,7 +465,7 @@ Therefore, from the \cpawdot-closure of $\cpaw$ we infer ${\mr a}{\cdot}{\mr b}\
 Let ${\mr g}$ be an element of ${\mr\G'}$ with idempotent orbit 
 as given by Corollary~\ref{corol_idempotent}.
 %
-Let $p({\mr x})\in S(\mrG)$ be a global coheir of $\tp({\mr g}/G)$.
+Let $p({\mr x})\in S(\U)$ be a global coheir of $\tp({\mr g}/G)$.
 %
 Let ${\mr\bar g}$ a coheir sequence of $p({\mr x})$, that is,
 
@@ -582,7 +570,7 @@ The following is a technical lemma that is required in the proof of the main the
 
 \begin{proposition}\label{prop_HJ_tecnical}
 Let $M$ be a model and assume $\cnonfork_{\!M}$ is stationary.
-Let $\sigma:\mrG\to\mrG$ be a semigroup homomorphism definable over $M$.
+Let $\sigma:\U\to\U$ be a semigroup homomorphism definable over $M$.
 Then 
 \begin{itemize}
 \item[1.] $\sigma\big[{\mr a}_M\big]=(\sigma\,{\mr a})_M$
@@ -620,8 +608,8 @@ Hence the set on l.h.s.\@ is contained in the following\smallskip
 which is in turn contained in the set on the r.h.s.
 \end{proof}
 
-Let $\mrG$ be a semigroup.
-A \emph{nice subsemigroup\/} of $\mrG$ is a subsemigroup $\mrC$ with the property that if ${\mr a}{\cdot}{\mr b}\in\mrC$ then both ${\mr a},{\mr b}\in \mrC$.
+Let $\U$ be a semigroup.
+A \emph{nice subsemigroup\/} of $\U$ is a subsemigroup $\mrC$ with the property that if ${\mr a}{\cdot}{\mr b}\in\mrC$ then both ${\mr a},{\mr b}\in \mrC$.
 
 \theoremstyle{mio}
 \newtheorem{HalesJewett}[thm]{Hales-Jewett Theorem}
@@ -634,25 +622,25 @@ there is an $a\in G\sm C$ such that $\{\sigma\,a:\sigma\in\Sigma\}$ is monochrom
 \end{HalesJewett}
 
 \begin{proof}
-Let $G\preceq\mrG$.
-Here $\mrG$ is a monster model in a language that expands the natural one with a symbol for all subsets of $G$.
+Let $G\preceq\U$.
+Here $\U$ is a monster model in a language that expands the natural one with a symbol for all subsets of $G$.
 As observed in Remark~\ref{rk_coheir_stationary}, 
 this makes $\cnonfork_G$ trivially stationary.
 Let $\mrC$ be the definable set such that $C=G\cap\mrC$.
-By elementarity, $\mrC$ is a nice subsemigroup of $\mrG$.
+By elementarity, $\mrC$ is a nice subsemigroup of $\U$.
 The language contains also symbols for 
-the retractions $\sigma:\mrG\to\mrC$.
+the retractions $\sigma:\U\to\mrC$.
 
 By Proposition~\ref{prop_minimal_existence1}, there is a left-minimal ${\mr c}\in\mrC$.
 As $\mrC\cdot_M{\mr c}$ is clearly idempotent, we can further require that ${\mr c}$ has idempotent orbit.
 
-By nicety, $\mrG\sm\mrC$ satisfy the assumptions of 
+By nicety, $\U\sm\mrC$ satisfy the assumptions of 
 Proposition~\ref{prop_minimal_existence2}.
 %
 Hence, by the first claim of that proposition, there is an idempotent
-${\mr g}\in{\mr c}\cdot_G(\mrG\sm\mrC)\cdot_G{\mr c}$.
+${\mr g}\in{\mr c}\cdot_G(\U\sm\mrC)\cdot_G{\mr c}$.
 %
-In particular, ${\mr g}\in\mrG\sm\mrC$.
+In particular, ${\mr g}\in\U\sm\mrC$.
 %
 Now apply the second claim of Proposition~\ref{prop_HJ_tecnical},
 with $\mrC$ for $\mrA$, to  obtain 
