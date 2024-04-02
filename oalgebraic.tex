@@ -1,5 +1,6 @@
 % !TEX root = creche.tex
 \documentclass[creche.tex]{subfiles}
+\begin{document}
 \chapter{Ordered algebraic structures}
 \label{oalgebraic}
 
@@ -42,11 +43,10 @@ We base our study of $T_{\rm odag}$ on what we know about models of $T_{\rm dag}
 For this reason we split $L_{\rm at}$ into equations and inequalities.
 %
 We use the notation \emph{$L_{\rm at,=}$\/} and \emph{$L_{\rm at,<}$\/} respectively.
-%
-The sets $L_{\rm at^\pm,=}$ and $L_{\rm at^\pm,<}$ are defined similarly.
 
-For $p(x)\subseteq\atpmL(A)$ we write $p_{=}(x)$ and $p_{<}(x)$ for the intersection of $p(x)$ with $L_{\rm at^\pm,=}$ and $L_{\rm at^\pm,<}$ respectively.
-%
+When $p(x)\subseteq\atL(A)$ we write $p_{=}(x)$ and $p_{<}(x)$ for the intersection of $p(x)$ with $L_{\rm at,=}$ and $L_{\rm at,<}$ respectively.
+Note that, by the linearity of the order, the types $\attp(b/A)$ and $\atpmtp(b/A)$ are equivalent.
+
 If $p_{=}(x)$ is trivial, as defined in Notation~\ref{notation1}, then we say that $p(x)$ is \emph{equationally trivial.}
 In this case $\proves p(x)\iff p_<(x)$.
 
@@ -67,7 +67,7 @@ The main difference is that now it is no longer true that all independent elemen
 \begin{proposition}\label{prop_oag_tipi_princ_comp}
   Let $A\subseteq M\models T_{\rm oag}$.
   %
-  Let $p({\mr x})=\atpmtp({\mr b}/A)$, where ${\mr b} \in M$.
+  Let $p({\mr x})=\attp({\mr b}/A)$, where ${\mr b} \in M$.
   %
   Then one of the following holds   
   \begin{itemize}
@@ -87,20 +87,22 @@ The main difference is that now it is no longer true that all independent elemen
   \begin{itemize}
   \item[a.] $\proves\   n{\mr x}={\gr a}\imp{\gr c}<m{\mr x}$;
   \item[b.] $\proves\   n{\mr x}={\gr a}\imp m{\mr x}<{\gr c}$;
-  \item[c.] $\proves\   n{\mr x}={\gr a}\imp m{\mr x}\not<{\gr c}\not<m{\mr x}$.
+  \item[c.] $\proves\   n{\mr x}={\gr a}\imp m{\mr x}={\gr c}$.
   \end{itemize}
   Suppose for a contradiction that neither \ssf{a} nor \ssf{b} holds and fix models $N_1$, $N_2$ and some $b_i\in N_i$ such that
   \begin{itemize}
   \item[a$'$.] $N_1\models n{\mr b_1}={\gr a}$ \ and \ $N_1\models {\gr c}\not<m{\mr b_1}$;
-  \item[b$'$.] $N_2\models n{\mr b_2}={\gr a}$ \ and \ $N_2\models m{\mr b_2}\not< {\gr c}$.
+  \item[b$'$.] $N_2\models n{\mr b_2}={\gr a}$ \ and \ $N_2\models m{\mr b_2}\not< {\gr c}$;
+  \item[b$'$.] $N_3\models n{\mr b_3}={\gr a}$ \ and \ $N_3\models m{\mr b_3}\not< {\gr c}$.
   %
-  \end{itemize} 
+  \end{itemize}
   From \ssf{a$'$} we infer that $N_1\models n{\gr c}\not<m{\gr a}$.
   %
   From \ssf{b$'$} we infer $N_2\models m{\gr a}\not<n{\gr c}$.
   %
-  Therefore $n{\gr c}=m{\gr a}$ holds in $\<A\>_M$ and all its superstructures.
-  Hence \ssf{c} follows easily.
+  From \ssf{c$'$} we infer $N_3\models m{\gr a}\neq{\gr c}$. 
+  But this three formulas also hold in $\<A\>_M$.
+  A contradiction.
 \end{proof}
 
 As Remark~\ref{rk_oag_ind} suggests, infinite rank alone is not sufficient to guarantee richness.
@@ -237,18 +239,18 @@ The theory of \emph{ordered integral domains,} $T_{\rm oid}$ contains $T_{\rm oi
 It follows immediately that ordered integral domains have characteristic $0$.
 
 As in the previous section, we split $L_{\rm at}$ into equations $L_{\rm at,=}$ and inequalities $L_{\rm at,<}$.
-The same we do for $L_{\rm at^\pm}$.
-For $p(x)\subseteq\atpmL(A)$ we write $p_{=}(x)$ and $p_{<}(x)$ for their intersection with $L_{\rm at^\pm,=}$ and $L_{\rm at^\pm,<}$, respectively.
+Note that, by the linearity of the order, the types $\attp(b/A)$ and $\atpmtp(b/A)$ are equivalent.
 
-If $p_{=}(x)$ is trivial, as defined in Notation~\ref{notation1}, then we say that $p(x)$ is \emph{transcendental\/} over $A$.
+If $p_{=}(x)$ is trivial, as defined in Notation~\ref{notation1}, then we say that $p(x)$ is \emph{equationally trivial.}
+In this case $\proves p(x)\iff p_<(x)$.
+If $\attp({\mr b}/A)$ equationally trivial, we say that $b$ is \emph{transcendental\/} over $A$.
 %
-Otherwise we say that it is  \emph{algebraic\/} over $A$.
-
+Otherwise we say that it is \emph{algebraic\/} over $A$.
 
 \begin{proposition}\label{prop_di_tipi princ_comp}
   Let $A\subseteq M\models T_{\rm oid}$.
   %
-  For ${\mr b}\in M$ let $p({\mr x})=\atpmtp({\mr b}/A)$.
+  For ${\mr b}\in M$ let $p({\mr x})=\attp({\mr b}/A)$.
   %
   Then one of the following holds 
   \begin{itemize}
@@ -262,34 +264,24 @@ Otherwise we say that it is  \emph{algebraic\/} over $A$.
   %
   Then $\ \proves\phi({\mr x})\imp p_{=}({\mr x})$.
   Hence it remains to be proved that $\ \proves\phi({\mr x})\imp p_{<}({\mr x})$.
-  We need to prove that for every ${\gr a},{\gr c}\in\<A\>_M$ one of the following holds
+  We need to prove that for every ${\gr a}\in A^{|{\gr z}|}$ and every polynomial $t({\mr x}\,;{\gr z})$ one of the following holds
   \begin{itemize}
-  \item[a.] $\proves\   \phi({\mr x})\imp {\gr c}<{\gr a}{\mr x}$;
-  \item[b.] $\proves\   \phi({\mr x})\imp {\gr a}{\mr x}<{\gr c}$;
-  \item[c.] $\proves\   \phi({\mr x})\imp {\gr a}{\mr x}\not<{\gr c}\not<{\gr a}{\mr x}$.
+  \item[a.] $\proves\   \phi({\mr x})\imp t({\mr x}\,;{\gr z})>0$;
+  \item[b.] $\proves\   \phi({\mr x})\imp t({\mr x}\,;{\gr a})<0$;
+  \item[c.] $\proves\   \phi({\mr x})\imp t({\mr x}\,;{\gr a})=0$.
   \end{itemize}
   
   Suppose not for a contradiction. 
   %
-  Then there are two models $\<A\>_M\subseteq N_i\models T_{\rm oid}$, some ${\mr b_i}\in N_i$, a polynomial $t({\mr x}\,;{\gr z})$ and some ${\gr a}\in\big(\<A\>_M\big)^{|{\gr z}|}$ such that 
+  Then there are three models $\<A\>_M\subseteq N_i\models T_{\rm oid}$, some ${\mr b_i}\in N_i$ such that 
   \begin{itemize}
   \item[a$'$.] $N_1\models \phi({\mr b_1})$ \ and \ $N_1\models t({\mr b_1}\,;{\gr a})>0$;
-  \item[b$'$.] $N_2\models \phi({\mr b_2})$ \ and \ $N_2\models t({\mr b_2}\,;{\gr a}) < 0$.
-  %
-  
+  \item[b$'$.] $N_2\models \phi({\mr b_2})$ \ and \ $N_2\models t({\mr b_2}\,;{\gr a}) < 0$;
+  \item[c$'$.] $N_3\models \phi({\mr b_3})$ \ and \ $N_3\models t({\mr b_3}\,;{\gr a}) = 0$.
   \end{itemize} 
-  From \ssf{a$'$} and \# above we infer that $N_1\models m{\gr a}\not<n{\gr c}$.
-  %
-  From \ssf{b$'$} we infer $N_1\models m{\gr a}<n{\gr c}$.
-  %
-  But $m{\gr a}<n{\gr c}$ is a formula with parameters in $\<A\>_M$, so it should have the same truth value in all superstructures of $\<A\>_M$, a contradiction.
-
-
-
-  
-  %As $\phi({\mr x})$ are finitely many solution there are some $a,c\in\<A\>_M$ such that ${\mr b}$ is the only solution of $\phi({\mr x})$ in the interval $[a,c]$.
-  
-  
 \end{proof}
 
 
+
+
+\end{document}
