@@ -650,15 +650,16 @@ This because $\phi(\V_{s^\frown i}\,;b_s)^i=\V_{s^\frown i}$ and $\V_s\preceq\V_
 % \ssf{1}$\IMP$\ssf{3}.
 % Proposition~\ref{thm_count_types} implies that $|S(A)|\le |A|^{|L|}$. Therefore, when $|L|<\cf(A)$, we obtain $|S(A)|\le |A|$.
 % \end{proof}
-
-
-\section{Stable theories}
-\label{stable_theories}
+\section{Stationarity}
 
 \def\ceq#1#2#3{\parbox{20ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 We say that $T$ is a \emph{stable theory\/} if every formula is stable.
 By Theorem~\ref{thm_def_stable_formula2} this is equivalent to requiring that all externally definable sets are definable.
+
+Most theorem in this section have a formulation that only requires the stability of a fixed formula $\phi({\mr x},{\gr z})\in L$.
+This is sametime called \textit{local\/} stability.
+For simplicity, here we assume that all formulas are stable.
 
 \begin{theorem}\label{thm_symmetry}
   ($T$ stable) For every $M,{\mr a},{\gr b}$ 
@@ -802,7 +803,33 @@ The following are equivalent
   As $q({\mr x})$ is Lascar invariant over $A$, by stationarity it coincides with $p({\mr x})$.
 \end{proof}
 
-We end this section with a characterization of stability which is not directly related with the properties discussed above. 
+
+\begin{exercise}\label{ex_harrington}
+  This is a (local) version of Corollary~\ref{corol_harrington}. 
+  Prove that in Theorem~\ref{corol_harrington} it suffices to require that $\phi(x\,;z)$ is stable.\QED
+\end{exercise}
+
+\begin{exercise}\label{ex_Cb}
+  Let $p({\mr x})\in S(\U)$. Prove that there is at most one definably closed set $A\subseteq\U^\eq$ such that $\Aut(\U/A)$ is the set of automorphisms that fix $p({\mr x})$.\QED
+  \end{exercise}
+  
+  
+  \begin{exercise}
+    Prove that if ${\mr a}\cnonfork_M{\gr b}\IFF{\gr b}\cnonfork_M{\mr a}$ holds for every $M,{\mr a},{\gr b}$ then $T$ is stable.\QED
+  \end{exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Stable theories}
+\label{stable_theories}
+
+
+\begin{proposition}
+  If every formula $\phi(x\,;y)\in L$, where $|y|=1$, is stable then $T$ is stable.
+\end{proposition}
 
 \begin{theorem}[ (Pierre Simon)]
   If every formula $\phi(x\,;y)\in L(\U)$, where $|x|=|y|=1$, is stable then $T$ is stable.
@@ -847,51 +874,32 @@ We end this section with a characterization of stability which is not directly r
   Then $\<a_i,c'_i\ :\ i\in(-1,0)\cup(0,1)\>$ witness the instability of $\psi(x\;z)$.
 \end{proof}
 
-\begin{comment}
-\begin{proposition} The following are equivalent
-\begin{itemize}
-\item[1.] $T$ is stable;
-\item[2.] every $A$-indiscernible sequence is totally $A$-indiscernible.
-\end{itemize}
-\end{proposition}
-
-\begin{proof}
-\ssf{2}$\IMP$\ssf{1}. Assume $\neg$\ssf{1} and let $\phi({\mr x}\,;{\gr z})$ be an unstable formula witnessed by the ladder sequence $\<{\mr a_i}\,;{\gr b_i}:i<\omega\>$. Let $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ be 
-indiscernible sequence that models the EM-type of $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$. This is not totally indiscernible because $\phi({\mr a'_i}\,;{\gr b'_j})$ if and if $i< j$.
-
-\ssf{1}$\IMP$\ssf{2}. Assume $\neg$\ssf{2} and let $\<a_i : i<\omega\>$ be an $A$-indiscernible sequence, which is not totally $A$-in\-dis\-cern\-ible. Then there is a formula $\phi(x, y)\in L(A)$ and some $i<j$ such that $\phi(a_i , a_j )\wedge\neg\phi(a_j , a_i) $. By indiscernibility  $\phi(a_i, a_j)\vee a_i=a_j$ holds if and only if $i\le j$. Hence $\phi(x\,; y)\vee x=y$ is not stable.
-\end{proof}
-\end{comment}
-
-\begin{exercise}\label{ex_harrington}
-  This is a (local) version of Corollary~\ref{corol_harrington}. 
-  Prove that in Theorem~\ref{corol_harrington} it suffices to require that $\phi(x\,;z)$ is stable.\QED
+\begin{exercise} 
+  A sequence $\<a_i:i<\omega\>$ is totally indiscernible if $a_1,\dots,a_n\equiv a_{i_1},\dots,a_{i_n}$ for every distinct $i_1,\dots,i_n$.
+  The following are equivalent
+  \begin{itemize}
+  \item[1.] $T$ is stable;
+  \item[2.] every indiscernible sequence is totally indiscernible.\QED
+  \end{itemize}
 \end{exercise}
 
 \begin{exercise}\label{ex_stable_orderproperty}
 Prove that the following are equivalent
 \begin{itemize}
-\item[1.] $T$ is stable;
-\item[2.] there is an infinite set $A\subseteq\U^{|{\mr x}|}$ and a formula  $\psi({\mr x}\,;{\mr y})$ such that $A$ is linearly ordered by the relation ${\mr a}<{\mr b}\iff\psi({\mr a}\,;{\mr b})$.
+\item[1.] $T$ is unstable;
+\item[2.] there is an infinite set $A\subseteq\U^n$ and a formula  $\psi(x\,;y)$, with $|x|=|y|=n$ such that $A$ is linearly ordered by the relation $a<b\iff\psi(a\,;b)$.\QED
 \end{itemize}
-Hint: suppose $\phi({\mr x}\,;{\gr z})$ is unstable and let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be an infinite ladder sequence, then $A=\{{\mr a_i}\,{\gr b_i} : i<\omega\}$ is linearly ordered.\QED
-\end{exercise}
-
-\begin{exercise}
-Prove that if every formula $\phi({\mr x}\,;{\gr z})\in L$ with $|{\mr x}|=1$ is stable then $T$ is stable. Hint: by compactness, if all sets approximable by $\phi({\mr x}\,;y,{\gr z})$ are definable, so are the sets approximable by $\phi({\mr x},y\,;{\gr z})$.\QED
 \end{exercise}
 
 \begin{exercise}
 Prove that strongly minimal theories are stable.\QED
 \end{exercise}
 
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+\section{Stable groups}
+In this section $\U$ is a group; the group operations are in the language.
 
-\begin{exercise}\label{ex_Cb}
-Let $p({\mr x})\in S(\U)$. Prove that there is at most one definably closed set $A\subseteq\U^\eq$ such that $\Aut(\U/A)$ is the set of automorphisms that fix $p({\mr x})$.\QED
-\end{exercise}
-
-
-\begin{exercise}
-  Prove that if ${\mr a}\cnonfork_M{\gr b}\IFF{\gr b}\cnonfork_M{\mr a}$ holds for every $M,{\mr a},{\gr b}$ then $T$ is stable.\QED
-\end{exercise}
+A set $\X\subseteq\U$ is generic if there are some finitely many $g_1,\dots,g_n\in\U$ such that the sets $g_i\X$ cover $\U$.
 \end{document}

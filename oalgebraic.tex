@@ -261,23 +261,21 @@ Otherwise we say that it is \emph{algebraic\/} over $A$.
 
 \begin{proof}
   Let $\phi({\mr x})$ be as in the proof of Proposition~\ref{prop_di_tipi_princ_comp}.
-  %
   Then $\ \proves\phi({\mr x})\imp p_{=}({\mr x})$.
-  Hence it remains to be proved that $\ \proves\phi({\mr x})\imp p_{<}({\mr x})$.
-  We need to prove that for every ${\gr a}\in A^{|{\gr z}|}$ and every polynomial $t({\mr x}\,;{\gr z})$ one of the following holds
+  %
+  Let ${\mr a},{\mr c}\in\<A\>_M$ be such that ${\mr b}$ is the unique element in $\<A\>_M$ satisfying ${\mr a}<{\mr x}<{\mr c}$ and $\phi({\mr x})$.
+  We prove that for every polynomial $t({\mr x})$ with parameters in $\<A\>_M$ such that $\proves\ \phi({\mr x})\imp t({\mr x})\neq0$ one of the following holds
   \begin{itemize}
-  \item[a.] $\proves\   \phi({\mr x})\imp t({\mr x}\,;{\gr z})>0$;
-  \item[b.] $\proves\   \phi({\mr x})\imp t({\mr x}\,;{\gr a})<0$;
-  \item[c.] $\proves\   \phi({\mr x})\imp t({\mr x}\,;{\gr a})=0$.
+  \item[a.] $\proves\   {\mr a}<{\mr x}<{\mr c}\ \wedge\ \phi({\mr x})\imp t({\mr x})>0$;
+  \item[b.] $\proves\   {\mr a}<{\mr x}<{\mr c}\ \wedge\ \phi({\mr x})\imp t({\mr x})<0$.
   \end{itemize}
   
   Suppose not for a contradiction. 
   %
-  Then there are three models $\<A\>_M\subseteq N_i\models T_{\rm oid}$, some ${\mr b_i}\in N_i$ such that 
+  Then there are three models $\<A\>_M\subseteq N_i\models T_{\rm oid}$, some ${\mr b_i}\in N_i$ such that $N_i\models{\mr a}<{\mr b_i}<{\mr c}$
   \begin{itemize}
-  \item[a$'$.] $N_1\models \phi({\mr b_1})$ \ and \ $N_1\models t({\mr b_1}\,;{\gr a})>0$;
-  \item[b$'$.] $N_2\models \phi({\mr b_2})$ \ and \ $N_2\models t({\mr b_2}\,;{\gr a}) < 0$;
-  \item[c$'$.] $N_3\models \phi({\mr b_3})$ \ and \ $N_3\models t({\mr b_3}\,;{\gr a}) = 0$.
+  \item[a$'$.] $N_1\models \phi({\mr b_1})$ \ and \ $N_1\models t({\mr b_1})>0$;
+  \item[b$'$.] $N_2\models \phi({\mr b_2})$ \ and \ $N_2\models t({\mr b_2}) < 0$.
   \end{itemize} 
 \end{proof}
 
