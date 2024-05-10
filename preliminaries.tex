@@ -6,6 +6,50 @@ This chapter introduces the syntax and semantic of first order logic. We assume 
 The definitions of terms and formulas we give in Section~\ref{terminidef} and~\ref{sintassformule} are more formal than is required in subsequent chapters. Our main objective is to convince the reader that a rigorous definition of language and truth is possible. However, the actual details of such a definition are not relevant for our purposes.
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Tuples}
+
+A \emph{sequence\/} is a function  $a:I\to A$ whose domain is a linear order $I,<_I$.
+We may use the notation \emph{$a=\<a_i: i\in I\>$} for sequences.
+A \emph{tuple\/} is a sequence whose domain is an ordinal, say $\alpha$, then we write  $a=\<a_i: i<\alpha\>$.
+When $\alpha$ is finite, we may also write \emph{$a=a_0,\dots,a_{\alpha-1}$}
+The domain of the tuple $a$, the ordinal $\alpha$, is denoted by \emph{$|a|$\/} and is called the \emph{length\/} of $a$.
+If $a$ is surjective, it is said to be an \emph{enumeration\/}\index{enumeration} of $A$.
+
+If $J\subseteq I$ is a subset of the domain of the sequence $a=\<a_i: i\in I\>$, we write  \emph{$a_{\restriction J}$} for the restriction of $a$ to $J$.
+When $J$ is well ordered by $<_I$, e.g.\@ when $a$ is a tuple or when $J$ is finite, we identify $a_{\restriction J}$ with a tuple.
+This is the tuple $\<a_{j_k}: k<\beta\>$ where $\<j_k:k<\beta\>$ is the unique increasing enumeration on $J$.
+
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Sometimes (i.e.\@ not always) we may overline tuples or sequences as mnemonic.
+When a tuple $\bar c$ is introduced, we write $c_i$ for the $i$-th element of $\bar c$.
+and $c_{\restriction J}$ for the restriction of $\bar c$ to $J\subseteq |\bar c|$.
+Note that the bar is dropped for ease of notation.
+
+The set of tuples of elements of length $\alpha$ is denoted by \emph{$A^\alpha$}.
+The set of tuples of length $<\alpha$ is denoted by \emph{$A^{<\alpha}$}.
+For instance, \emph{$A^{<\omega}$\/} is the set of all finite tuples of elements of $A$.
+When $\alpha$ is finite we do not distinguish between $A^\alpha$ and the $\alpha$-th Cartesian power of $A$.
+In particular, we do not distinguish between $A^1$ and $A$.
+
+If $a,b\in A^{\alpha}$ and $h$ is a function defined on $A$, we write $h(a)=b$ for $h(a_i)=b_i$.
+We often do not distinguish between the pair $\<a,b\>$ and the tuple of pairs $\<a_i,b_i\>$.
+The context will resolve the ambiguity.
+
+Note that there is a unique tuple of length $0$, the empty set $\0$, which in this context is called \emph{empty tuple\/}\index{empty tuple}.
+Recall that by definition \emph{$A^{0}$\/}$=\{\0\}$ for every set $A$.
+Therefore, even when $A$ is empty, $A^{0}$ contains the empty string.
+
+We often concatenate tuples.
+If $a$ and $b$ are tuples, we write \emph{$a\,b$\/} or, equivalently,\ \emph{$a,b$\/}. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Structures}
 
 A \emph{(first order) language $L$\/}\index{language!(first order)}\index{0L@$L$}  (also called \emph{signature\/}\index{signature}) is a triple that consists of
@@ -59,49 +103,6 @@ The languages in Examples~\ref{LgaLgmLau} and \ref{linguaggio_spazi_vettoriali},
 \begin{example}\label{expl_graph1}
 The \emph{language of strict orders\/}\index{language!strict orders} only contains a binary relation symbol, usually denoted By~$<$. The \emph{language of graphs\/}\index{language!graphs}, too, only contains a binary relation symbol (for which there is no standard notation).\QED
 \end{example}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Tuples}
-
-A \emph{sequence\/} is a function  $a:I\to A$ whose domain is a linear order $I,<_I$.
-We may use the notation \emph{$a=\<a_i: i\in I\>$} for sequences.
-A \emph{tuple\/} is a sequence whose domain is an ordinal, say $\alpha$, then we write  $a=\<a_i: i<\alpha\>$.
-When $\alpha$ is finite, we may also write \emph{$a=a_0,\dots,a_{\alpha-1}$}
-The domain of the tuple $a$, the ordinal $\alpha$, is denoted by \emph{$|a|$\/} and is called the \emph{length\/} of $a$.
-If $a$ is surjective, it is said to be an \emph{enumeration\/}\index{enumeration} of $A$.
-
-If $J\subseteq I$ is a subset of the domain of the sequence $a=\<a_i: i\in I\>$, we write  \emph{$a_{\restriction J}$} for the restriction of $a$ to $J$.
-When $J$ is well ordered by $<_I$, e.g.\@ when $a$ is a tuple or when $J$ is finite, we identify $a_{\restriction J}$ with a tuple.
-This is the tuple $\<a_{j_k}: k<\beta\>$ where $\<j_k:k<\beta\>$ is the unique increasing enumeration on $J$.
-
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Sometimes (i.e.\@ not always) we may overline tuples or sequences as mnemonic.
-When a tuple $\bar c$ is introduced, we write $c_i$ for the $i$-th element of $\bar c$.
-and $c_{\restriction J}$ for the restriction of $\bar c$ to $J\subseteq |\bar c|$.
-Note that the bar is dropped for ease of notation.
-
-The set of tuples of elements of length $\alpha$ is denoted by \emph{$A^\alpha$}.
-The set of tuples of length $<\alpha$ is denoted by \emph{$A^{<\alpha}$}.
-For instance, \emph{$A^{<\omega}$\/} is the set of all finite tuples of elements of $A$.
-When $\alpha$ is finite we do not distinguish between $A^\alpha$ and the $\alpha$-th Cartesian power of $A$.
-In particular, we do not distinguish between $A^1$ and $A$.
-
-If $a,b\in A^{\alpha}$ and $h$ is a function defined on $A$, we write $h(a)=b$ for $h(a_i)=b_i$.
-We often do not distinguish between the pair $\<a,b\>$ and the tuple of pairs $\<a_i,b_i\>$.
-The context will resolve the ambiguity.
-
-Note that there is a unique tuple of length $0$, the empty set $\0$, which in this context is called \emph{empty tuple\/}\index{empty tuple}.
-Recall that by definition \emph{$A^{0}$\/}$=\{\0\}$ for every set $A$.
-Therefore, even when $A$ is empty, $A^{0}$ contains the empty string.
-
-
-We often concatenate tuples.
-If $a$ and $b$ are tuples, we write \emph{$a\,b$\/} or, equivalently,\ \emph{$a,b$\/}. 
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
