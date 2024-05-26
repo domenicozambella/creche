@@ -348,23 +348,23 @@ The proof of \ssf{5} is left to the reader.
 \end{proof}
 
 \begin{proposition}\label{prop_saturate_heir}
-  Let ${\mr a}\cnonfork_M{\gr b}$ then there is ${\gr\V}\preceq\U$ such that ${\gr b}\in{\gr\V}\simeq\U$ and ${\mr a}\cnonfork_M{\gr\V}$.
+  Let ${\mr a}\cnonfork_M{\gr b}$ then there is $\V\preceq\U$ that is isomorphic to $\U$ and such that ${\gr b}\in\V^{\gr z}$ and ${\mr a}\cnonfork_M\V$.
 \end{proposition}
 
 \begin{proof}
   Let $c$ be an enumeration of $\U$.
-  Let $p({\gr z})=\tp(c/M,{\gr b})$.
-  We can take ${\gr\V}$ to be the structure enumerated by the realization of the following type 
+  Let $p(z)=\tp(c/M,{\gr b})$.
+  We can take $\V$ to be the structure enumerated by the realization of the following type 
 
-  \ceq{\hfill p({\gr z})}{\cup}{\Big\{\neg\phi({\mr a},{\gr z})\ :\ \phi({\mr x},{\gr z})\in L(M),\ p({\gr z})\imp\phi(M,{\gr z})=\0\Big\}.}
+  \ceq{\hfill p(z)}{\cup}{\Big\{\neg\phi({\mr a},z)\ :\ \phi({\mr x},z)\in L(M),\ p(z)\imp\phi(M,z)=\0\Big\}.}
 
   We only need to prove consistency.
   If inconsistent, then 
 
-  \ceq{\hfill\theta({\gr z})}{\imp}{\bigvee_{i=1}^n\phi_i({\mr a},{\gr z})}
+  \ceq{\hfill\theta(z)}{\imp}{\bigvee_{i=1}^n\phi_i({\mr a},z)}
   
-for some $\theta({\gr z})\in p$ and some $\phi_i({\mr x},{\gr z})$ such that $p({\gr z})\imp\phi_i(M,{\gr z})=\0$.
-We obtain a contradiction because by elementarity we can replace ${\mr a}$ by some ${\mr a'}\in M$.
+for some $\theta(z)\in p$ and some $\phi_i({\mr x},z)$ such that $p(z)\imp\phi_i(M,z)=\0$.
+We obtain a contradiction because by elementarity we can replace ${\mr a}$ by some ${\mr a'}\in M^{\mr x}$.
 \end{proof}
 
 %Transitivity has dual version that holds under stronger assumptions.

@@ -419,9 +419,7 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
 \section{Stability and the number of types}
 
 
-
 The following proposition highlights the connection between stability and the cardinality of types. 
-
 
 \begin{theorem}\label{thm_def_stable_formula2}
    The following are equivalent
@@ -658,25 +656,30 @@ We say that $T$ is a \emph{stable theory\/} if every formula is stable.
 By Theorem~\ref{thm_def_stable_formula2} this is equivalent to requiring that all externally definable sets are definable.
 
 Most theorem in this section have a formulation that only requires the stability of a fixed formula $\phi({\mr x},{\gr z})\in L$.
-This is sametime called \textit{local\/} stability.
+This is sometimes called \textit{local\/} stability.
 For simplicity, here we assume that all formulas are stable.
 
 \begin{theorem}\label{thm_symmetry}
-  ($T$ stable) For every $M,{\mr a},{\gr b}$ 
+  Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
+  For every $M,{\mr a},{\gr b}$ 
 
-  \ceq{\hfill{\mr a}\cnonfork_M{\gr b}}{\IFF}{{\gr b}\cnonfork_M{\mr a}}
+  \ceq{\hfill\phi(M^{\mr x}\,;{\gr b})\neq\varnothing}{\IFF}{\phi({\mr a}\,;M^{\gr z})\neq\varnothing}
 \end{theorem}
 
+Note that this proves that, when $T$ is stable  
+
+\ceq{\hfill{\mr a}\cnonfork_M{\gr b}}{\IFF}{{\gr b}\cnonfork_M{\mr a}}
+
 \begin{proof}
-  Assume ${\mr a}\cnonfork_M{\gr b}$ and $\phi({\mr a},{\gr b})$ for some $\phi({\mr x},{\gr z})\in L(M)$.
-  We prove that $\phi({\mr a},{\gr z})$ is satisfied in $M$.
+  Assume $\phi(M^{\mr x}\,;{\gr b})\neq\varnothing$.
   Let ${\gr\V}$ be as in Proposition~\ref{prop_saturate_heir}.
   By stability, there is $\psi({\gr z})\in L({\gr\V})$ such that $\psi({\gr\V})=\phi({\mr a},{\gr\V})$.
-  Recall that by Lemma~\ref{lem_coheir_independence}, non-splitting, if ${\gr b'}\equiv_M{\gr b''}$ are in ${\gr\V}$ then ${\gr b'}\equiv_{M,a}{\gr b''}$.
+  Recall that by Lemma~\ref{lem_coheir_independence} (non-splitting) if ${\gr b'}\equiv_M{\gr b''}$ are in ${\gr\V}$ then ${\gr b'}\equiv_{M,a}{\gr b''}$.
   Then $\psi({\gr\V})$ is invariant under $\Aut({\gr\V}/M)$.
   Then, up to equivalence, $\psi({\gr z})\in L(M)$.
   Therefore $\psi({\gr z})$ is satisfied in $M$
   and so is $\phi({\mr a},{\gr z})$.
+  This prove one direction and, by symmetry, the theorem.
 \end{proof}
 
 We deduce a version of Harrington's mysterious Lemma cfr.~\cite[Lemma 8.3.4]{TZ}.
@@ -783,7 +786,7 @@ The following are equivalent
   By Proposition~\ref{prop_Shelah_strong_types} this is equivalent to ${\mr a}\equiv_{\acl^\eq\!A}{\mr b}$.
   Let $q({\mr x})=\tp({\mr a}/{\acl}^\eq\!A)=\tp({\mr b}/{\acl}^\eq\!A)$. Let $p({\mr x})\in S(\U^\eq)$ be the unique global type that is invariant over $\acl^\eq\!A$ and extends $q({\mr x})$ which we obtain from by Proposition~\ref{prop_type_over_acl_stationary}.
   Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be such that ${\mr c_i}\models p({\mr x}){\restriction}\acl^\eq(A),\,{\mr a},\,{\mr b},\,{\mr c_{\restriction i}}$.
-  Then ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lstp_indiscernibles}.
+  Then ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lntp_indiscernibles}.
 \end{proof}
 
 \begin{proposition}
@@ -803,6 +806,39 @@ The following are equivalent
   As $q({\mr x})$ is Lascar invariant over $A$, by stationarity it coincides with $p({\mr x})$.
 \end{proof}
 
+The following property of definability seems to go in the reverse directions.
+This has an application in ...
+
+\begin{proposition}
+  Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
+  Let $M$ and ${\mr a}\in\U^{\mr x}$ be arbitrary.
+  Then, for some ${\mr a_1}\equiv_M\dots\equiv_M{\mr a_n}$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;\U^{\gr z})$ is definable over $M$.
+\end{proposition}
+
+\begin{proof}
+  Let $\V\preceq\U$ be isomorphic to $\U$.
+  By Theorem~\ref{thm_def_stable_formula} with $\V$ for $\U$, there are ${\mr a_1},\dots,{\mr a_n}$ as above such that $\phi({\mr a}\,;\V^{\gr z})$ is a positive Bolean combination of the sets $\phi({\mr a_i},;\V^{\gr z})$.
+  Let $\theta({\mr a_1},\dots,{\mr a_n}\,;\V^{\gr z})=\phi({\mr a}\,;\V^{\gr z})$ be such a Boolean combination.
+  Now, by Proposition~\ref{prop_saturate_heir}. we can chose $\V$ such that ${\mr a}\nonfork_M\V$.
+  By non-splitting, i.e.\@ reasoning as in Theorem~\ref{thm_symmetry}, there is a formula $\psi({\gr z})\in L(M)$ such that $\psi(\V^{\gr z})=\phi({\mr a}\,;\V^{\gr z})$. 
+  Finally, by elementarity, we obtain that $\psi(\U^{\gr z})=\theta({\mr a_1},\dots,{\mr a_n}\,;\U^{\gr z})$.
+\end{proof}
+
+\begin{proposition}
+  ($T$ stable) \ 
+  Let $\phi({\mr x}\,;{\gr z})\in L(\U)$.
+  Let $A$ and ${\mr a}\in\U^{\mr x}$ be arbitrary.
+  Then, for some ${\mr a_1}\equiv_A\dots\equiv_A{\mr a_n}$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;\U^{\gr z})$ is definable over $A$.
+\end{proposition}
+
+\begin{proof}
+  Let $\V\preceq\U$ be isomorphic to $\U$.
+  There are ${\mr a_1},\dots,{\mr a_n}$ as above such that $\phi({\mr a}\,;\V^{\gr z})$ is a positive Boolean combination of the sets $\phi({\mr a_i},;\V^{\gr z})$.
+  Let $\theta({\mr a_1},\dots,{\mr a_n}\,;\V^{\gr z})=\phi({\mr a}\,;\V^{\gr z})$ be such a Boolean combination.
+  By Theorem~\ref{}, we can choose $\V$ containing $A$ and such that every formula $\phi({\mr x})\in\tp({\mr a}/\V)$ is satisfied in every model containing $A$.
+  It follows that ${\gr b}\equiv_{A,a}{\gr b'}$ for every ${\gr b}\equiv_A{\gr b'}$ in $\V$.
+  Then 
+\end{proof}
 
 \begin{exercise}\label{ex_harrington}
   This is a (local) version of Corollary~\ref{corol_harrington}. 
