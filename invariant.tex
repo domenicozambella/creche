@@ -353,17 +353,17 @@ The proof of \ssf{5} is left to the reader.
 
 \begin{proof}
   Let $c$ be an enumeration of $\U$.
-  Let $p(z)=\tp(c/M,{\gr b})$.
-  We can take $\V$ to be the structure enumerated by the realization of the following type 
+  Let $p(w,{\gr z})=\tp(c,{\gr b}/M)$.
+  We can take $\V$ to be the structure enumerated by the tuple that realizes symultaneously $p(w,{\gr b}) $ and the following type 
 
-  \ceq{\hfill p(z)}{\cup}{\Big\{\neg\phi({\mr a},z)\ :\ \phi({\mr x},z)\in L(M),\ p(z)\imp\phi(M,z)=\0\Big\}.}
+  \ceq{\hfill\Big\{\neg\phi({\mr a},w,{\gr b})}{:}{\phi({\mr x},w,{\gr z})\in L(M),\ \ p(w,{\gr b})\imp\phi(M,w,{\gr b})=\0\Big\}.}
 
   We only need to prove consistency.
   If inconsistent, then 
 
-  \ceq{\hfill\theta(z)}{\imp}{\bigvee_{i=1}^n\phi_i({\mr a},z)}
+  \ceq{\hfill\theta(w,{\gr b})}{\imp}{\bigvee_{i=1}^n\phi_i({\mr a},w,{\gr b})}
   
-for some $\theta(z)\in p$ and some $\phi_i({\mr x},z)$ such that $p(z)\imp\phi_i(M,z)=\0$.
+for some $\theta(w,{\gr b})\in p$ and some $\phi_i({\mr x},w,{\gr b})$ such that $p(w,{\gr b})\imp\phi_i(M,w,{\gr b})=\0$.
 We obtain a contradiction because by elementarity we can replace ${\mr a}$ by some ${\mr a'}\in M^{\mr x}$.
 \end{proof}
 
@@ -384,7 +384,7 @@ We say \emph{$n$-stationary\/} if this is restricted to $|{\mr a}|=n$.\QED
 %
 An application of stationarity is given in Section~\hyperref[stable_theories]{\ref*{ramsey}.\ref*{semigroups}}.
 
-Stationarity is often ensured by the following property, which will receive due attention in Section~\hyperref[stable_theories]{\ref*{external}.\ref*{stable_theories}}. Recall that for $\D,\C\subseteq\U$ we write $\D=_A\C$ for $\D\cap A=\C\cap A$.
+Stationarity is often ensured by the following property, which will receive due attention in Section~\hyperref[stable_theories]{\ref*{stability}.\ref*{stable_theories}}. Recall that for $\D,\C\subseteq\U$ we write $\D=_A\C$ for $\D\cap A=\C\cap A$.
 
 \begin{proposition}
 Let ${\mr x}$ be a tuple of variables of length $n$.

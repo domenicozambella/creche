@@ -1,25 +1,21 @@
 % !TEX root = creche.tex
 \documentclass[creche.tex]{subfiles}
 \begin{document}
-\chapter{Externally definable sets}
-\label{external}
+\chapter{Stability}
+\label{stability}
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
-
-
 In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa>|L|$.
 The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Approximable sets}
-\label{approximable}
+\section{Externally definable sets}
+\label{externally}
 
 \def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
@@ -648,7 +644,7 @@ This because $\phi(\V_{s^\frown i}\,;b_s)^i=\V_{s^\frown i}$ and $\V_s\preceq\V_
 % \ssf{1}$\IMP$\ssf{3}.
 % Proposition~\ref{thm_count_types} implies that $|S(A)|\le |A|^{|L|}$. Therefore, when $|L|<\cf(A)$, we obtain $|S(A)|\le |A|$.
 % \end{proof}
-\section{Stationarity}
+\section{Stationarity and symmetry}
 
 \def\ceq#1#2#3{\parbox{20ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
@@ -806,13 +802,14 @@ The following are equivalent
   As $q({\mr x})$ is Lascar invariant over $A$, by stationarity it coincides with $p({\mr x})$.
 \end{proof}
 
-The following property of definability seems to go in the reverse directions.
+The following theorem deals with a property of definability that go in the dual direction.
 This has an application in ...
+We first prove a special case of the theorem case that is simpler.
 
 \begin{proposition}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
   Let $M$ and ${\mr a}\in\U^{\mr x}$ be arbitrary.
-  Then, for some ${\mr a_1}\equiv_M\dots\equiv_M{\mr a_n}$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;\U^{\gr z})$ is definable over $M$.
+  Then, for some ${\mr a_1}\equiv_M\dots\equiv_M{\mr a_n}\equiv_M{\mr a}$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;\U^{\gr z})$ is definable over $M$.
 \end{proposition}
 
 \begin{proof}
@@ -824,20 +821,23 @@ This has an application in ...
   Finally, by elementarity, we obtain that $\psi(\U^{\gr z})=\theta({\mr a_1},\dots,{\mr a_n}\,;\U^{\gr z})$.
 \end{proof}
 
-\begin{proposition}
+\begin{theorem}
   ($T$ stable) \ 
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$.
   Let $A$ and ${\mr a}\in\U^{\mr x}$ be arbitrary.
-  Then, for some ${\mr a_1}\equiv_A\dots\equiv_A{\mr a_n}$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;\U^{\gr z})$ is definable over $A$.
-\end{proposition}
+  Then, for some ${\mr a_1}\equiv_A\dots\equiv_A{\mr a_n}\equiv_A{\mr a}$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;\U^{\gr z})$ is definable over $A$.
+\end{theorem}
+
+The stability $\phi({\mr x}\,;{\gr z})$ is sufficient for the theorem to hold, but the proof is simpler when the whole theory is stable.
 
 \begin{proof}
   Let $\V\preceq\U$ be isomorphic to $\U$.
   There are ${\mr a_1},\dots,{\mr a_n}$ as above such that $\phi({\mr a}\,;\V^{\gr z})$ is a positive Boolean combination of the sets $\phi({\mr a_i},;\V^{\gr z})$.
-  Let $\theta({\mr a_1},\dots,{\mr a_n}\,;\V^{\gr z})=\phi({\mr a}\,;\V^{\gr z})$ be such a Boolean combination.
-  By Theorem~\ref{}, we can choose $\V$ containing $A$ and such that every formula $\phi({\mr x})\in\tp({\mr a}/\V)$ is satisfied in every model containing $A$.
-  It follows that ${\gr b}\equiv_{A,a}{\gr b'}$ for every ${\gr b}\equiv_A{\gr b'}$ in $\V$.
-  Then 
+  Let $\theta({\mr a_1},\dots,{\mr a_n}\,;\V^{\gr z})$ be such a Boolean combination.
+  By Corollary~\ref{corol_stable_coheir_over_models}, we can choose $\V$ containing $A$ and such that every formula $\phi({\mr x})\in\tp({\mr a}/\V)$ is satisfied in every model containing $A$.
+  It follows that for every $M$ containing $A$ and ${\gr b}\equiv_M{\gr b'}$ in $\V$ we have ${\gr b}\equiv_{M,a}{\gr b'}$.
+  Then $\theta({\mr a_1},\dots,{\mr a_n}\,;\V^{\gr z})$ is definable over every model containing $A$.
+  We conclude that there is a formula $\psi(z)\in L(\acl^\eq A)$ equivalent to $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr z})$ in $\V$ and, by elementarity, in $\U$.
 \end{proof}
 
 \begin{exercise}\label{ex_harrington}

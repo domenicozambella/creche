@@ -7,11 +7,13 @@
 \def\medrel#1{\parbox[b]{6ex}{\hfil$#1$}}
 \def\ceq#1#2#3{\parbox[b]{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle #3$}
 
-The main result in this chapter is Corollary~\ref{coroll_Nullstellensatz}, the elimination of quantifiers in algebraically closed fields, which in algebra is called Chevalley's Theorem on constructible sets.
+The main result in this chapter is the elimination of quantifiers in algebraically closed fields, Corollary~\ref{corol_QE_acf}.
+In commutative algebra this is called Chevalley's Theorem on constructible sets.
 %
-From it we derive Hilbert's Nullstellensatz~\ref{coroll_Nullstellensatz}.
+From it we derive Hilbert's Nullstellensatz.
+First we state the theorem the model theoretic language, Theorem~\ref{thm_Nullstellensatz1}, then we tranlate it in the traditional algebraic setting, Theorem~\ref{thm_Nullstellensatz2}.
 %
-Finally, we isolate the model theoretic properties of those types that correspond to the algebraic notions of prime and radical ideal of polynomials.
+To obtain the latter theorem we introduce the model theoretic objects that correspond to prime and radical ideals of polynomials.
 
 %At the cost of a few repetitions the first three sections of the chapter are not a prerequisite for the rest.
 
@@ -644,7 +646,7 @@ As proved above, $M$ is rich and therefore elementarily equivalent to any $\lamb
 This proves $\ssf{1}\IMP\ssf{2}$.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{corol_QE_acf}
 The theory $T_{\rm acf}$ has elimination of quantifiers.
 \end{corollary}
 
@@ -784,7 +786,7 @@ Which the reader may wish to compare with Hilbert's Basis Theorem.
   A contradicion that proves the proposition.
 \end{proof}
 
-\begin{void_thm}[Hilbert's Nullstellensatz (model theoretic version)]\label{thm_Nullstellensatz}
+\begin{void_thm}[Hilbert's Nullstellensatz (model theoretic version)]\label{thm_Nullstellensatz1}
   Let $N\models T_{\rm acf}$. 
   For every type $p(x)\subseteq\atL(N)$, where $x$ is a finite tuple, we have
 
