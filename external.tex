@@ -415,7 +415,7 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
 \section{Stability and the number of types}
 
 
-The following proposition highlights the connection between stability and the cardinality of types. 
+The following proposition highlights the connection between the stability of and  $\phi({\mr x}\,;{\gr z})$ and the cardinality of $S_\phi(\U)$, equivalently the number of subsets externally definable by $\\phi({\mr x}\,;{\gr z})$. 
 
 \begin{theorem}\label{thm_def_stable_formula2}
    The following are equivalent
@@ -445,7 +445,7 @@ The following proposition highlights the connection between stability and the ca
 
 Binary trees of formulas have been introduced in Definition~\ref{def_tree_formulas}.
 Here we restrict to trees of a particular form.
-Namely, $\<\psi_s:s\in 2^{<\omega}\>$  where $\psi_\0=\top$ and for $s\in 2^{<\omega}$ and $i\in 2$ we have $\psi_{s^\frown i}({\mr x})=\phi({\mr x}\,;{\gr b_s})^i$.
+Namely, $\<\psi_s:s\in 2^{<\omega}\>$  where $\psi_\0=\top$ and for $s\in 2^{<\omega}$ and $i\in 2$ we have $\psi_{s^\frown 0}({\mr x})=\neg\phi({\mr x}\,;{\gr b_s})$ and $\psi_{s^\frown 1}({\mr x})=\phi({\mr x}\,;{\gr b_s})$.
 
 % Set the overall layout of the tree
 \tikzstyle{level 1}=[level distance=3.5cm, sibling distance=2.5cm]
@@ -464,28 +464,28 @@ Namely, $\<\psi_s:s\in 2^{<\omega}\>$  where $\psi_\0=\top$ and for $s\in 2^{<\o
 \begin{tikzpicture}[grow=right]
 \node[bag0] {{$\top$}}
     child {
-        node[bag] {$\phi(x;b_{\0}\!)$}      
+        node[bag] {\llap{$\neg$}$\phi(x;b_{\0}\!)$}      
             child {
-                node[bag] {$\phi(x;b_0\!)$}
+                node[bag] {\llap{$\neg$}$\phi(x;b_0\!)$}
                     child {
-                       node[bag] {\footnotesize$\phi(x;b_{00})$\rlap{$\ \cdots$}}
+                       node[bag] {\footnotesize\llap{$\neg$}$\phi(x;b_{00})$\rlap{$\ \cdots$}}
                        edge from parent
                     }    
                     child {
-                       node[bag] {\footnotesize$\llap{$\neg$}\phi(x;b_{00})$\rlap{$\ \cdots$}}
+                       node[bag] {\footnotesize$\phi(x;b_{00})$\rlap{$\ \cdots$}}
                        edge from parent
                     }  
                  edge from parent
             }
             child {
-                node[bag] {\llap{$\neg$}$\phi(x;b_0\!)$}
+                node[bag] {$\phi(x;b_0\!)$}
                 edge from parent
                     child {
-                       node[bag] {\footnotesize$\phi(x;b_{01})$\rlap{$\ \cdots$}}
+                       node[bag] {\footnotesize\llap{$\neg$}$\phi(x;b_{01})$\rlap{$\ \cdots$}}
                        edge from parent
                     }    
                     child {
-                       node[bag] {\footnotesize\llap{$\neg$}$\phi(x;b_{01})$\rlap{$\ \cdots$}}
+                       node[bag] {\footnotesize$\phi(x;b_{01})$\rlap{$\ \cdots$}}
                        edge from parent
                     }  
                  edge from parent
@@ -493,28 +493,28 @@ Namely, $\<\psi_s:s\in 2^{<\omega}\>$  where $\psi_\0=\top$ and for $s\in 2^{<\o
        edge from parent 
     }
     child {
-        node[bag] {\llap{$\neg$}$\phi(x;b_{\0}\!)$}         
+        node[bag] {$\phi(x;b_{\0}\!)$}         
             child {
-                node[bag] {$\phi(x;b_1\!)$}
+                node[bag] {\llap{$\neg$}$\phi(x;b_1\!)$}
                     child {
-                       node[bag] {\footnotesize$\phi(x;b_{10})$\rlap{$\ \cdots$}}
+                       node[bag] {\footnotesize\llap{$\neg$}$\phi(x;b_{10})$\rlap{$\ \cdots$}}
                        edge from parent
                     }    
                     child {
-                       node[bag] {\footnotesize\llap{$\neg$}$\phi(x;b_{10})$\rlap{$\ \cdots$}}
+                       node[bag] {\footnotesize$\phi(x;b_{10})$\rlap{$\ \cdots$}}
                        edge from parent
                     }  
                  edge from parent
             }
             child {
-                node[bag] {\llap{$\neg$}$\phi(x;b_1\!)$}
+                node[bag] {$\phi(x;b_1\!)$}
                 edge from parent
                     child {
-                       node[bag] {\footnotesize$\phi(x;b_{11})$\rlap{$\ \cdots$}}
+                       node[bag] {\footnotesize\llap{$\neg$}$\phi(x;b_{11})$\rlap{$\ \cdots$}}
                        edge from parent
                     }    
                     child {
-                       node[bag] {\footnotesize\llap{$\neg$}$\phi(x;b_{11})$\rlap{$\ \cdots$}}
+                       node[bag] {\footnotesize$\phi(x;b_{11})$\rlap{$\ \cdots$}}
                        edge from parent
                     }  
                  edge from parent
@@ -541,7 +541,7 @@ When a binary tree of this form exists, we say that $\phi({\mr x}\,;{\gr z})$ ha
   By Theorem~\ref{thm_def_stable_formula2} there are $2^\kappa$ sets externally definable by $\phi({\mr x}\,;{\gr z})$.
   Then there is ${\gr b_\0}\in{\U^z}$ such that there are $2^\kappa$ sets ${\gr\D}$ externally definable by $\phi({\mr x}\,;{\gr z})$ and such that ${\gr b_\0}\in{\gr\D}$ and $2^\kappa$ sets such that ${\gr b_\0}\notin{\gr\D}$.
 
-  Assume inductively that ${\gr b}:2^n\to{\gr\U^z}$ is such that for all $s\in2^n$ and $r\in2^{n+1}$ there are $2^\kappa$ sets ${\gr\D}$ externally definable by $\phi({\mr x}\,;{\gr z})$ and such that ${\gr b_{s\restriction i}}\in{\ge\D}\iff r(i)$.
+  Assume inductively that ${\gr b}:2^n\to{\gr\U^z}$ is such that for all $s\in2^n$ and $r\in2^{n+1}$ there are $2^\kappa$ sets ${\gr\D}$ externally definable by $\phi({\mr x}\,;{\gr z})$ and such that ${\gr b_{s\restriction i}}\in\D\iff r(i)=1$.
   Reasoning as above we can extend ${\gr b}$ to a map ${\gr b'}:2^{n+1}\to{\gr\U^z}$ with the same property.
 
   % We show that if there is a ladder of length $m=2^n$, say $a_1,\dots,a_{m-1}$ and $b_0,\dots,b_{m-1}$, then there is a branching tree $\bar a'$ of height $n$.
@@ -591,24 +591,32 @@ The following are equivalent
 \end{proof}
 
 We use binary trees to prove the following theorem.
+We say that a formula $\phi(x)\in L(\U)$ is strongly almost satisfied in $A$ if the conjunction of finitely many $A$-conjugates of $\phi(x)$ is almost satisfied in $A$.
 
 \begin{theorem}\label{thm_ziegler}
    Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
-   Then for every $A$ and ${\gr b}$ either $\phi({\mr x}\,;{\gr b})$ or $\neg\phi({\mr x}\,;{\gr b})$ is almost satisfied in $A$.
+   Let $\psi({\mr x})\in L(\U)$ be strongly almost satisfied in $A$. 
+   Then for every ${\gr b}$ either $\psi({\mr x})\wedge\phi({\mr x}\,;{\gr b})$ or $\psi({\mr x})\wedge\neg\phi({\mr x}\,;{\gr b})$ is almost satisfied in $A$.
 \end{theorem} 
 
 \begin{proof}
-Suppose not. Then there are two models containing $A$, the first omitting $\phi({\mr x}\,;{\gr b})$, the second omitting $\neg\phi({\mr x}\,;{\gr b})$.
-It is easy to see that we can expand these models to two substructures $\V_0$ and $\V_1$ that are $A$-isomorphic to $\U$ and such that $\phi(\V_0^{\mr x}\,;{\gr b})=\neg\phi(\V_1^{\mr x}\,;{\gr b})=\0$.
-In other words, $\phi(\V_i^{\mr x}\,;{\gr b})^i=\V_i^{\mr x}$, for $i=0,1$.
+Suppose not. Then there are two models containing $A$, the first omitting $\psi({\mr x})\wedge\phi({\mr x}\,;{\gr b})$, the second omitting $\psi({\mr x})\wedge\neg\phi({\mr x}\,;{\gr b})$.
+It is easy to see that we can expand these models to two substructures $\V_0$ and $\V_1$ that are $A$-isomorphic to $\U$ and such that $\psi(\V_0)\subseteq\neg\phi(\V_0\,;{\gr b})$ and $\psi(\V_1)\subseteq\phi(\V_1\,;{\gr b})$.
 
-Rename $\V_\0=\U$ and ${\gr b_\0}={\gr b}$.
-Inductively, given $s\in 2^n$ and ${\gr b_s}\in\V_s^{\mr x}$, pick two structures $\V_{s^\frown i}\preceq\V_s$ that are $A$-isomorphic copies of $V_s$ such that $\phi(\V_{s^\frown 0}^{\mr x}\,;{\gr b_s})=\neg\phi(\V_{s^\frown 1}^{\mr x}\,;{\gr b_s})=\0$.
-Finally, let ${\gr b_{s^\frown i}}$ be the images of ${\gr b_s}$ under the isomorphisms that map $\V_s\to\V_{s^\frown i}$.
+Let $f_i:\U\to\V_i$ be the $A$-isomorphisms mentioned above. 
+Let $\V_\0=\U$ and ${\gr b_\0}={\gr b}$.
+Also, write $\psi({\mr x},c_\0)$ for $\psi({\mr x})$, where $c_\0$ are all the parameters in the formula.
+Define inductively for every $s\in 2^{<\omega}$ 
 
-In this way we obtain a binary tree as above.
-We only have to show that every branch is consistent.
-This because $\phi(\V_{s^\frown i}\,;b_s)^i=\V_{s^\frown i}$ and $\V_s\preceq\V_r$ for every $r\subseteq s$.
+\hfil$\V_{s^\frown i}=f_i[\V_s]$\hfil ${\gr b_{s\frown i}}=f_i({\gr b_s})$ \hfil $c_{s\frown i}=f_i (c_s)$.
+
+Then from the inclusion above we obtain
+
+\hfil$\psi(\V_{s\frown0},c_s)\subseteq\neg\phi(\V_{s\frown0}\,;{\gr b_s})$ \ \ and \ \  $\psi(\V_{s\frown1},c_s)\subseteq\phi(\V_{s\frown1}\,;{\gr b_s})$.
+
+Note that  $\psi({\mr x},c_s)$ is almost satisfiable, $\psi(\V_{s\frown i},c_s)$ is nonempty.
+Any element of $\psi(\V_{s\frown i},c_s)$ is a solution of $\phi(x\,;{\gr b_r})$ for any $r\subseteq s$.
+This proves that $\<\phi(x\,;{\gr b_r})\ :\  s\in2^{<\omega}\>$ is a binary tree, contradicting the stability of  $\phi(x\,;{\gr bz})$.
 \end{proof}
 
 \begin{corollary}\label{corol_stable_coheir_over_models}

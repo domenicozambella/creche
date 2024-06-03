@@ -412,7 +412,7 @@ Below we identify $S_{\mr x}(A)$ with $\U^{|{\mr x}|}/\mathord\equiv_A$
 Let $\Delta$ be a set of formulas (we mainly use $\Delta=L_{\mr x}(A)$ in this section).
 A \emph{binary tree of formulas in $\Delta$\/} is a sequence $\<\phi_s\ :\ s\in2^{<\lambda}\>$ of formulas in $\Delta\cup\{\top\}$ such that\nobreak
 \begin{itemize}
-\item[1.] for each $s\in 2^\lambda$ the type $p_s\ =\ \big\{\phi_{s\restriction n}\ :\ n<|s|\big\}$ is consistent;
+\item[1.] for each $s\in 2^\lambda$ the type $p_s\ =\ \big\{\phi_r\ :\ r\subset s\big\}$ is consistent;
 \item[2.] $p_s\cup p_r$ is inconsistent for any two distinct $s,r\in 2^\lambda$.
 \end{itemize}
 (Condition \ssf{2} is usually obtained by taking $\phi_{s0}\iff\neg\phi_{s1}$ for every $s$.) We call $\lambda$ the height of the tree.
@@ -516,7 +516,7 @@ formulas in $\Delta$ by induction.
 Begin with $\phi_\0=\top$.
 For $s\in 2^{<\omega}$ define
 
-\ceq{\hfill p_s}{=}{\big\{\phi_{s\restriction n}\ :\ n\le|s|\big\}.}
+\ceq{\hfill p_s}{=}{\big\{\phi_r\ :\ r\subseteq s\big\}.}
 
 Assume inductively that $p_s$ has uncountably many extensions in $S(\Delta)$.
 This will guarantee the consistency of the branches.

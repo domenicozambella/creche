@@ -220,7 +220,7 @@ It is inspired by the analogy with extensions bases for forking, see e.g.~\cite{
   The following are equivalent
   \begin{itemize}
     \item[1.] $A$ is a coheir extension base;
-    \item[2.] if $\psi({\mr x})\in L(\U)$ is almost statisfied in $A$, then for all $\phi({\mr x})\in L(\U)$ either $\psi({\mr x})\wedge\phi({\mr x})$ or $\psi({\mr x})\wedge\neg\phi({\mr x})$ is almost satisfied in $A$. 
+    \item[2.] for every $\psi({\mr x}),\phi({\mr x})\in L(\U)$, if $\psi({\mr x})\vee\phi({\mr x})$ is almost statisfied in $A$, then $\psi({\mr x})$ or $\phi({\mr x})$ is almost satisfied in $A$. 
   \end{itemize}  
 \end{proposition}
   
@@ -254,9 +254,9 @@ In Chapter~\ref{external} we will see that for some important class of theories,
 
   The picture to keep in mind is that of a circle, where ${\rm cyc}(a, b, c)$ holds if we encounter $a,b,c$ in that order when going clockwise.
 
-  We will implicitly use in what follows that $T$ has elimination of quantifiers.
+  We will implicitly use that $T$ has elimination of quantifiers.
   Let $p(x)\in S(\U)$.
-  We claim that $p(x)$ is not Lascar invariant over the emty set.
+  We claim that $p(x)$ is not Lascar invariant over the empty set.
   Suppose it is, for a contradiction.
   We can find $a<b$ in $\U$ such that either ${\rm cyc}(a, x, b)$ or ${\rm cyc}(a, b, x)$ is in $p(x)$.
   We show that both these possibilities are contradictory.
@@ -282,6 +282,12 @@ In Chapter~\ref{external} we will see that for some important class of theories,
   Prove that for every $a\in\U^x$ there is a structure $\V\preceq\U$ isomophic to $\U$ over $A$ such that $a\cnonfork_M\V$ for every $A\subseteq M\preceq\V$.\QED
 \end{exercise}
 
+
+\begin{exercise}
+  Let $\phi(x)\in L(\U)$ be satisfied in every model containing $A$.  
+  Let $M\supseteq A$.  
+  Prove that $\phi(x)$ is contained in some global type finitely satisfied in $M$.\QED
+\end{exercise}
 % \begin{exercise}
 % Let $\lambda>|L(A)|$ be such that saturated models of cardinality $\lambda$ exist. Prove that if $\phi({\mr x})$ is satisfied in every saturated model $N\supseteq A$ of cardinality $\lambda$, then it is almost satisfied in $A$.
 % \end{exercise}
