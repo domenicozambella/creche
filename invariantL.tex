@@ -200,19 +200,27 @@ Ideally, we would like to prove here a similar existence property for Lascar inv
 But this is not possible in general.
 In fact, in Example~\ref{ex_circ_order}, we preset a theory that has no global Lascar invariant type.
 
-We say that $\phi({\mr x})\in L(\U)$ is \emph{almost satisfiable\/} in $A$ if it is satisfiable in every model containing $A$.
-A type $p({\mr x})\subseteq L(\U)$ is \emph{almost (finitely) satisfiable\/} in $A$ if every conjunction of formulas in $p({\mr x})$ is almost satisfiable in $A$. 
+% We say that $\phi({\mr x})\in L(\U)$ is \emph{almost satisfiable\/} in $A$ if it is satisfiable in every model containing $A$.
+% A type $p({\mr x})\subseteq L(\U)$ is \emph{almost (finitely) satisfiable\/} in $A$ if every conjunction of formulas in $p({\mr x})$ is almost satisfiable in $A$. 
 
-A global type $p({\mr x})\in S(\U)$ that is almost satisfiable in $A$, is called a \emph{global coheir\/} of $p_{\restriction A}({\mr x})$. 
+A global type $p({\mr x})\in S(\U)$ that is finitely satisfiable in every model containing $A$, is called a \emph{global coheir\/} of $p_{\restriction A}({\mr x})$. 
 Note that when $A$ is a model we obtain the same notion defined in Section~\hyperref[coheirs]{\ref*{invariant}.\ref*{coheirs}}.
 
-The following is immediate.
-
 \begin{proposition}
-Every type $p({\mr x})\subseteq L(\U)$ that is almost satisfiable in $A$ is Lascar invariant over $A$.\QED
+Every type $p({\mr x})\subseteq L(\U)$ that is finitely satisfiable in every $Msupseteq A$ is Lascar invariant over $A$.\QED
 \end{proposition}
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We say that $A$ is a \emph{coheir extension base\/} if every type that is almost satisfiable in $A$ has an extension to a global one.
+\begin{proof}
+  Let $\<{\gr c_i}:i<\omega\>$ be an $A\mbox{-}$indiscernible sequence.
+  Suppose for a contradiction that ${\gr c_0}\in\gr\D_{p,\phi}\niff{\gr c_1}\in\gr\D_{p,\phi}$ for some $\phi({\mr x}\,;{\gr z})\in L$.
+  Then $\phi({\mr x}\,;{\gr c_0})\niff\phi({\mr x}\,;{\gr c_1})\ \in p$.
+  Let $M\supseteq A$ be such that $\<{\gr c_i}:i<\omega\>$ is indiscernible over $M$.
+  As $p({\mr x})$ is finitely satisfiable in $M$, for some ${\mr a}\in M^{\mr x}$ we have $\phi({\mr a}\,;{\gr c_0})\niff\phi({\mr a}\,;{\gr c_1})$.
+  This contradicts indiscernibility ovet $M$.
+\end{proof}
+
+
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We say that $A$ is a \emph{coheir extension base\/} if every type that is finitely satisfiable in every $M\supseteq A$ has an extension to a global onewith the same property.
 The terminology is not standard.
 It is inspired by the analogy with extensions bases for forking, see e.g.~\cite{Simon}.  
 
@@ -220,7 +228,7 @@ It is inspired by the analogy with extensions bases for forking, see e.g.~\cite{
   The following are equivalent
   \begin{itemize}
     \item[1.] $A$ is a coheir extension base;
-    \item[2.] for every $\psi({\mr x}),\phi({\mr x})\in L(\U)$, if $\psi({\mr x})\vee\phi({\mr x})$ is almost statisfied in $A$, then $\psi({\mr x})$ or $\phi({\mr x})$ is almost satisfied in $A$. 
+    \item[2.] for every $\psi({\mr x}),\phi({\mr x})\in L(\U)$, if $\psi({\mr x})\vee\phi({\mr x})$ is finitely statisfied in every $M\supseteq A$, then $\psi({\mr x})$ or $\phi({\mr x})$ is finitely statisfied in every $M\supseteq A$. 
   \end{itemize}  
 \end{proposition}
   
