@@ -206,21 +206,21 @@ In fact, in Example~\ref{ex_circ_order}, we preset a theory that has no global L
 A global type $p({\mr x})\in S(\U)$ that is finitely satisfiable in every model containing $A$, is called a \emph{global coheir\/} of $p_{\restriction A}({\mr x})$. 
 Note that when $A$ is a model we obtain the same notion defined in Section~\hyperref[coheirs]{\ref*{invariant}.\ref*{coheirs}}.
 
-\begin{proposition}
-Every type $p({\mr x})\subseteq L(\U)$ that is finitely satisfiable in every $Msupseteq A$ is Lascar invariant over $A$.\QED
+\begin{proposition} 
+  Let $\phi({\mr x}\,;{\gr z})\in L$.
+  Every type $p({\mr x})\in S_\phi(\U)$ that is finitely satisfiable in every $M\supseteq A$ is Lascar invariant over $A$.
 \end{proposition}
 
 \begin{proof}
   Let $\<{\gr c_i}:i<\omega\>$ be an $A\mbox{-}$indiscernible sequence.
-  Suppose for a contradiction that ${\gr c_0}\in\gr\D_{p,\phi}\niff{\gr c_1}\in\gr\D_{p,\phi}$ for some $\phi({\mr x}\,;{\gr z})\in L$.
+  Suppose for a contradiction that ${\gr c_0}\in\gr\D_{p,\phi}\niff{\gr c_1}\in\gr\D_{p,\phi}$
   Then $\phi({\mr x}\,;{\gr c_0})\niff\phi({\mr x}\,;{\gr c_1})\ \in p$.
   Let $M\supseteq A$ be such that $\<{\gr c_i}:i<\omega\>$ is indiscernible over $M$.
   As $p({\mr x})$ is finitely satisfiable in $M$, for some ${\mr a}\in M^{\mr x}$ we have $\phi({\mr a}\,;{\gr c_0})\niff\phi({\mr a}\,;{\gr c_1})$.
-  This contradicts indiscernibility ovet $M$.
+  This contradicts indiscernibility over $M$.
 \end{proof}
 
-
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We say that $A$ is a \emph{coheir extension base\/} if every type that is finitely satisfiable in every $M\supseteq A$ has an extension to a global onewith the same property.
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We say that $A$ is a \emph{coheir extension base\/} if every type that is finitely satisfiable in every $M\supseteq A$ has an extension to a global one with the same property.
 The terminology is not standard.
 It is inspired by the analogy with extensions bases for forking, see e.g.~\cite{Simon}.  
 
@@ -252,7 +252,7 @@ The following example shows that some theories may have no other extension bases
   The third case is symmetric.\QED
 \end{example}
 
-In Chapter~\ref{external} we will see that for some important class of theories, \textit{stable theories}, all sets are coheir extension bases.
+In Chapter~\ref{stability} we will see that for some important class of theories, \textit{stable theories}, all sets are coheir extension bases.
 
 \begin{example}\label{ex_circ_order}
   We present a theory without global types that are Lascar invariant over the empty set.
@@ -276,7 +276,7 @@ In Chapter~\ref{external} we will see that for some important class of theories,
   \item[2.] If $p(x)$ contains ${\rm cyc}(a, b, x)$,
   let $a<M<b$ and pick $a'$ such that $a<a'<M$. 
   As $a, a' \equiv_M b,a$, also  ${\rm cyc}(b, a, x)$ is in $p(x)$.
-  A contradiction. (???)\QED
+  A contradiction.\QED
   \end{itemize}
 \end{example}
 

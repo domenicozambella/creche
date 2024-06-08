@@ -175,14 +175,14 @@ Any $\bar a\models p(\bar x)$ enumerates a model $A$-isomorphic to $N$.\QED
 Let $\phi(x)\in L(\U)$ and fix an arbitrary set $A$.
 Prove that the following are equivalent
 \begin{itemize}
-\item[1.] there is some model $M$ containing $A$ and such that $M\cap\phi(\U)=\0$;
-\item[2.] there is no consistent formula $\psi(z_1,\dots,z_n)\in L(A)$ such that
+\item[1.] $\phi(M)\neq\0$ for every model $M$ containing $A$;
+\item[2.] there is a consistent formula $\psi(z_1,\dots,z_n)\in L(A)$ such that
 
 \hfil$\displaystyle\psi(z_1,\dots,z_n)\imp\bigvee^n_{i=1}\phi(z_i)$.
 \end{itemize}
-Hint: let $\bar c$ be an enumeration of $N^{|x|}$, where $N$ is any model containing $A$.
+Hint: let $\bar c$ be an enumeration of $M^{|x|}$, where $M$ is any model containing $A$.
 Let $p(\bar z)=\tp(\bar c/A)$.
-Prove that \ssf{2} implies the consistency of $p(\bar z)\,\cup\, \big\{\neg\phi(z_i)\, :\, i<|\bar z|\big\}$ and deduce the existence of the required $M$.\QED
+Note that \ssf{1} implies that $p(\bar z)\,\cup\, \big\{\neg\phi(z_i)\, :\, i<|\bar z|\big\}$ is inconsistent.\QED
 \end{exercise}
 
 \begin{exercise}
