@@ -415,7 +415,7 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
 \section{Stability and the number of types}
 
 
-The following proposition highlights the connection between the stability of and  $\phi({\mr x}\,;{\gr z})$ and the cardinality of $S_\phi(\U)$, equivalently the number of subsets externally definable by $\phi({\mr x}\,;{\gr z})$. 
+The following proposition highlights the connection between the stability of and  $\phi({\mr x}\,;{\gr z})$ and the cardinality of $S_\phi(\U)$, equivalently the number of sets externally definable by $\phi({\mr x}\,;{\gr z})$. 
 
 \begin{theorem}\label{thm_def_stable_formula2}
    The following are equivalent
@@ -701,7 +701,7 @@ We begin with a fundamental theorem.
   Let $\phi({\mr x}\,;{\gr z})\in L(M)$ be stable.
   For every ${\mr a},{\gr b}$ such that ${\mr a}\cnonfork_M{\gr b}$
 
-  \ceq{\hfill\phi({\mr M}\,;{\gr b})\neq\varnothing}{\IMP}{\phi({\mr a}\,;{\gr M})\neq\varnothing}
+  \ceq{\hfill\phi({\mr a}\,;{\gr b})}{\IMP}{\phi({\mr a}\,;{\gr M})\neq\0}
 \end{theorem}
 
 Note that the theorem proves that, when $T$ is stable, 
@@ -709,12 +709,33 @@ Note that the theorem proves that, when $T$ is stable,
 \ceq{\hfill{\mr a}\cnonfork_M{\gr b}}{\IMP}{{\gr b}\cnonfork_M{\mr a}}
 
 \begin{proof}
-  Assume $\phi({\mr M}\,;{\gr b})\neq\varnothing$.
-  Let $\V$ be as in Proposition~\ref{prop_saturate_heir}.
+  Assume $\phi({\mr a}\,;{\gr b})$.
+  Let $\V\preceq\U$ be isomorphic to $\U$ over $M$ and such that ${\gr b}\in\V^{\gr z}$ and ${\mr a}\cnonfork_M\V$. Such $\V$ exists by Proposition~\ref{prop_saturate_heir}.
   By stability, there is $\psi({\gr z})\in L(\V)$ such that $\psi({\gr\V})=\phi({\mr a},{\gr\V})$.
-  Recall that by Lemma~\ref{lem_coheir_independence} (non-splitting) if ${\gr b'}\equiv_M{\gr b''}$ are in $\V$ then ${\gr b'}\equiv_{M, {\mr a}}{\gr b''}$.
+  Recall that by Lemma~\ref{lem_coheir_independence} (non-splitting) if ${\gr b'}\equiv_M{\gr b''}$ are in $\V$ then ${\gr b'}\equiv_{M,\kern.2ex{\mr a}}{\gr b''}$.
   Then $\psi({\gr\V})$ is invariant under $\Aut(\V/M)$, so we can assume that $\psi({\gr z})\in L(M)$.
   Therefore $\psi({\gr z})$ is satisfied in $M$ and so is $\phi({\mr a},{\gr z})$.
+\end{proof}
+
+We deduce a version of Harrington's mysterious Lemma cfr.~\cite[Lemma 8.3.4]{TZ}.
+
+\begin{corollary}\label{corol_harrington0}
+  Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
+  Let ${\mr a}\in{\mr\U^x}$ and ${\gr b}\in{\gr\U^z}$.
+  Let $\theta({\mr x}),\psi({\gr z})\in L(M)$ be such that $\theta({\gr M})=\phi({\mr a}\,;{\gr M})$ and $\psi({\mr M})=\phi({\mr M}\,;{\gr b})$ (these exist by stability).
+  Then $\theta({\gr b})\iff\psi({\mr a})$.
+\end{corollary}
+
+\begin{proof}
+  We can assume that ${\mr a}\cnonfork_M{\gr b}$.
+  First, assume $\phi({\mr a}\,;{\gr b})$.
+  Then $\psi({\mr a})$ otherwise, by ${\mr a}\cnonfork_M{\gr b}$, we would contradict $\psi({\mr M})=\phi({\mr M}\,;{\gr b})$.
+  We claim that $\theta({\gr b})$.
+  Suppose not.
+  Then $\phi({\mr a}\,;{\gr b})\wedge\neg\theta({\gr b})$.
+  As $\phi({\mr x}\,;{\gr z})\wedge\neg\theta({\gr z})$ is stable, Theorem~\ref{thm_symmetry} yelds $\phi({\mr a}\,;{\gr M})\sm\theta({\gr M})\neq\varnothing$ which contradicts  $\theta({\gr M})=\phi({\mr a}\,;{\gr M)}$.
+  Assuming $\neg\phi({\mr a}\,;{\gr b})$ we obtain $\neg\psi({\mr a})$ and $\neg\theta({\gr b})$ by a symilar argument.
+  Then $\theta({\gr b})\iff\psi({\mr a})$ as required.
 \end{proof}
 
 Now we show that under the assumption of stability Lascar invariance reduces to a tamer form of invariance.
@@ -731,39 +752,44 @@ Now we show that under the assumption of stability Lascar invariance reduces to 
   \end{itemize}
 \end{proposition}
 \begin{proof}
-  \ssf{2}$\IMP$\ssf{3}$\IMP$\ssf{4} (and even \ssf{1}$\IMP$\ssf{3}) are clear -- stability is not required for these implications.
+  \ssf{2}$\IMP$\ssf{3}$\IMP$\ssf{4} (and even \ssf{1}$\IMP$\ssf{3}) are clear~--~stability is not required.
 
-  \ssf{1}$\IMP$\ssf{2} First, for simplicity, we prove that any $\phi({\mr x}\,;{\gr b})\in p$ is satisfied in any $M\supseteq A$.
-  Let $\psi({\gr z})\in L(\acl^\eq\!A)$ be a formula defining ${\gr\D_{p,\phi}}$.
+  \ssf{1}$\IMP$\ssf{2}
   Let $M\supseteq A$ be given.
-  Pick any ${\mr a}\models p({\mr x}){\restriction} M$ such that ${\gr b}\cnonfork{\mr a}$.
-  As $\phi({\mr a}\,;{\gr M})=\psi({\gr M})$ and $\psi({\gr M})\neq\0$, from Theorem~\ref{thm_symmetry} we obtain $\phi({\mr M}\,;{\gr b})\neq\0$.
-  The same argument extends easily to the conjunction of formulas of the form $\phi({\mr x}\,;{\gr b})$ and negation thereof (use that the complement and the Cartesian products of sets in $\acl^\eq\!A$ is again $\acl^\eq\!A$).
+  First, for simplicity, we prove that any $\phi({\mr x}\,;{\gr b})\in p$ is satisfied in $M$.
+  Let $\psi({\gr z})\in L(\acl^\eq\!A)$ be a formula defining ${\gr\D_{p,\phi}}$.
+  Pick any ${\mr a}\models p({\mr x}){\restriction} M$ such that ${\gr b}\cnonfork_M{\mr a}$.
+  As $\phi({\mr a}\,;{\gr M})=\psi({\gr M})$ we have that $\phi({\mr a}\,;{\gr b})=\psi({\gr b})$.
+  But $\psi({\gr b})$ holds because $\phi({\mr x}\,;{\gr b})\in p$, hence $\phi({\mr a}\,;{\gr b})$ and, from Theorem~\ref{thm_symmetry} we obtain $\phi({\mr M}\,;{\gr b})\neq\0$.
+  The same argument extends easily to the conjunction of formulas of the form $\phi({\mr x}\,;{\gr b})$ and negation thereof (use that the complement and the Cartesian product of sets in $\acl^\eq\!A$ is again $\acl^\eq\!A$).
  
-  \ssf{3}$\IMP$\ssf{1} By Theorem~\ref{thm_def_stable_formula2} the sets ${\gr\D_{p,\phi}}$ are externally definable, therefore they are definable (over $\U$).
+  \ssf{3}$\IMP$\ssf{1} By Theorem~\ref{thm_def_stable_formula2} the sets ${\gr\D_{p,\phi}}$ are definable (over $\U$).
   As $p({\mr x})$ is Lascar invariant over $A$, so are the sets ${\gr\D_{p,\phi}}$.
   Hence they belong to $\acl^\eq\!A$ by Corollary~\ref{coroll_defble_Lascar_inv}.
 \end{proof}
 
-We deduce a version of Harrington's mysterious Lemma cfr.~\cite[Lemma 8.3.4]{TZ}.
+A type $q({\mr x})\subseteq L(A)$ is \emph{stationary\/} if it has a unique global extension that is Lascar invariant over $A$.
+The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary (the actual statement is a local version of this property).
 
-\begin{corollary}\label{corol_harrington0}
+\begin{theorem}[ (Stationarity)]\label{thm_stationarity}
   Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
-  Let ${\mr a}\in{\mr\U^x}$ and ${\gr b}\in{\gr\U^z}$.
-  Let $\theta({\mr x}),\psi({\gr z})\in L(M)$ be such that $\theta({\gr M})=\phi({\mr a}\,;{\gr M)}$ and $\psi({\mr M})=\phi({\mr M}\,;{\gr b})$ (these exist by stability).
-  Then $\theta({\gr b})\iff\psi({\mr a})$.
-\end{corollary}
+  Let $q({\mr x})\in S\big(\acl^\eq\!A\big)$.
+  Then there is a unique global $\phi$-type $p({\mr x})\in S_\phi(\U)$ that is invariant over $\acl^\eq A$ and consistent with $q({\mr x})$.
+\end{theorem}
 
 \begin{proof}
-  We can assume that ${\mr a}\cnonfork_M{\gr b}$.
-  First, assume $\phi({\mr a}\,;{\gr b})$.
-  Then $\psi({\mr a})$ otherwise, by ${\mr a}\cnonfork_M{\gr b}$, we would contradict $\psi({\mr M})=\phi({\mr M}\,;{\gr b})$.
-  We claim that $\theta({\gr b})$.
-  Suppose not.
-  Then $\phi({\mr M}\,;{\gr b})\wedge\neg\theta({\gr b})\neq\varnothing$.
-  As $\phi({\mr x}\,;{\gr z})\wedge\neg\theta({\gr z})$ is stable, from Theorem~\ref{thm_symmetry} we obtain  $\phi({\mr a}\,;{\gr M})\wedge\neg\theta({\gr M})\neq\varnothing$ which contradicts  $\theta({\gr M})=\phi({\mr a}\,;{\gr M)}$.
-  Assuming $\neg\phi({\mr a}\,;{\gr b})$ with a symilar argument we obtain $\neg\psi({\mr a})$ and $\neg\theta({\gr b})$.
-  Then $\theta({\gr b})\iff\psi({\mr a})$ as required.
+  Existence follows from Corollary~\ref{corol_stable_coheir_over_models}.
+  Let $q_i({\mr x})\in S(\U^\eq)$, for $i=1,2$, be two global $\phi$-types that extend $q({\mr x})$ and are invariant over $\acl^\eq\!A$.
+  Let $p(\gr z)\in S_\phi(\U)$ be invariant over $\acl^\eq\!A$ and consistent with $\tp(b/\acl^\eq\!A)$.
+  Let $\theta({\mr x})\in L(\acl^\eq\!A)$ be the formula ${\mr x}\in{\mr\D_{p,\phi^{\rm op}}}$.
+  Let $\psi_i({\gr z})\in L(\acl^\eq\!A)$ be the formula ${\gr z}\in{\gr\D_{q_i,\phi}}$.
+  We claim that $\psi_1({\gr b})\iff\psi_2({\gr b})$, for any ${\gr b}\in\U^{\gr z}$.
+  Let $M$ be any model containing $A$.
+  Let ${\gr b'}\models p({\gr z}){\restriction}M$ and ${\mr a_i}\models q_i({\mr x}){\restriction}M$.
+  Then $\theta({\mr M})=\phi({\mr M}\,;{\gr b'})$ and $\psi_i({\gr M})=\phi({\mr a_i}\,;{\gr M})$.
+  By Corollary~\ref{corol_harrington0} $\psi_i({\gr b'})\iff\theta({\mr a_i})$.
+  As ${\mr a_1}\equiv_{\acl^\eq\!A}{\mr a_2}$ we obtain $\psi_1({\gr b'})\iff\psi_2({\gr b'})$.
+  As ${\gr b}\equiv_{\acl^\eq\!A}{\gr b'}$, the claim follows and with it the theorem.
 \end{proof}
 
 If $p({\mr x})\in S(\U)$ is a global type, a \emph{canonical base\/} of $p({\mr x})$ is a definably closed set $\emph{$\Cb(p)$}\subseteq \U^\eq$ such that an automorphism $f\in\Aut(\U)$ fixes $p({\mr x})$ if and only if it fixes $\Cb(p)$ pointwise. When they exist, canonical bases are unique, see Exercise~\ref{ex_Cb}.
@@ -779,39 +805,6 @@ Therefore if $T$ is stable, all global types have a canonical base.
 % Without loss of generality we can assume $p({\mr x})\in S(\U^\eq)$. 
 % \end{proof}
 
-A type $q({\mr x})\subseteq L(A)$ is \emph{stationary\/} if it has a unique global extension that is Lascar invariant over $A$.
-The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
-The actual statement is slightly more involved as it is a local version.
-
-\begin{theorem}[ (Stationarity)]\label{thm_stationarity}
-  Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
-  Let $p_i({\mr x})\in S_\phi(\U)$, for $i=1,2$, be Lascar invariant over $A$.
-  Let $q_i({\mr x})$ be the types containing the logical consequences in of $p_i({\mr x})$ that are in $L(\acl^\eq\!A)$.
-  Then $q_1=q_2$ implies $p_1=p_2$.
-\end{theorem}
-
-\begin{proof}
-  We prove that ${\gr\D_{p_1,\phi}}={\gr\D_{p_2,\phi}}$.
-  Let $\psi_i({\gr z})\in L(\acl^\eq\!A)$ be the formulas that say ${\gr z}\in{\gr\D_{p_i,\phi}}$.
-  Let ${\gr b}\in{\gr\U^z}$ be arbitrary.
-  Let $M$ be any model containing $A$.
-  Let ${\mr a_i}\models p_i({\mr x}){\restriction} M$ be such that ${\mr a_i}\cnonfork_M{\gr b}$.
-  Then $\psi_i({\gr M})=\phi({\mr a_i}\,;{\gr M})$.
-  Apply Theorem~\ref{thm_symmetry} to the formulas $\psi_i({\gr z})\iff\phi({\mr x}\,;{\gr z})$ and conclude that the formulas $\psi_i({\gr b})\iff\phi({\mr x}\,;{\gr b})$ holds for every tuple in $M^{\mr x}$.
-  It follows that $\psi_1({\gr b})\iff\psi_2({\gr b})$.
-\end{proof}
-
-\begin{proposition}\label{prop_type_over_acl_stationary} 
-  ($T$ stable) Every type $q({\mr x})\in S\big(\acl^\eq\!A\big)$ is stationary.
-\end{proposition}
-
-\begin{proof}
-Let $q_i({\mr x})\in S(\U^\eq)$, for $i=1,2$, be two global types that extend $q({\mr x})$ and are invariant over $\acl^\eq\!A$.
-Let $\V$ be a sufficiently saturated elementary extension of $\U$. 
-Let ${\mr a_i}\in{\mr\V^x}$ realize $q_i({\mr x})$.
-We prove that $q_1({\mr x}) =q_2({\mr x})$ by showing that for every $\phi({\mr x}\,;{\gr z})\in L$ the two sets ${\gr\B_i}=\phi({\mr a_i}\,;{\gr\U^z})$ are equal.
-\end{proof}
-
 \begin{corollary}
 ($T$ stable) 
 The following are equivalent
@@ -826,27 +819,27 @@ The following are equivalent
   \ssf{2}$\IMP$\ssf{1}.
   Assume ${\mr a}\equivSh_A{\mr b}$.
   By Proposition~\ref{prop_Shelah_strong_types} this is equivalent to ${\mr a}\equiv_{\acl^\eq\!A}{\mr b}$.
-  Let $q({\mr x})=\tp({\mr a}/{\acl}^\eq\!A)=\tp({\mr b}/{\acl}^\eq\!A)$. Let $p({\mr x})\in S(\U^\eq)$ be the unique global type that is invariant over $\acl^\eq\!A$ and extends $q({\mr x})$ which we obtain from by Proposition~\ref{prop_type_over_acl_stationary}.
+  Let $q({\mr x})=\tp({\mr a}/{\acl}^\eq\!A)=\tp({\mr b}/{\acl}^\eq\!A)$. Let $p({\mr x})\in S(\U^\eq)$ be the unique global type that is invariant over $\acl^\eq\!A$ and extends $q({\mr x})$ which we obtain from by Theorem~\ref{thm_stationarity}.
   Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be such that ${\mr c_i}\models p({\mr x}){\restriction}\acl^\eq(A),\,{\mr a},\,{\mr b},\,{\mr c_{\restriction i}}$.
-  Then ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lntp_indiscernibles}.
+  Then ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lstp_indiscernibles}.
 \end{proof}
 
-\begin{proposition}
-  ($T$ stable)
-  Let $p({\mr x})\in S(\U)$.
-  Then the following are equivalent
-  \begin{itemize}
-  \item[1.] $p({\mr x})\in S(\U)$ invariant over $\acl^\eq\!A$;
-  \item[2.] $p({\mr x})$ is almost finitely satisfiable in $A$. 
-  \end{itemize}
-\end{proposition}
-\begin{proof}
-  (\ssf2$\IMP$\ssf1) As \ssf2 implies that $p({\mr x})$ is Lascar invariant over $A$, \ssf1 follows from Proposition~\ref{prop_type_over_acl2}
+% \begin{proposition}
+%   ($T$ stable)
+%   Let $p({\mr x})\in S(\U)$.
+%   Then the following are equivalent
+%   \begin{itemize}
+%   \item[1.] $p({\mr x})\in S(\U)$ invariant over $\acl^\eq\!A$;
+%   \item[2.] $p({\mr x})$ is almost finitely satisfiable in $A$. 
+%   \end{itemize}
+% \end{proposition}
+% \begin{proof}
+%   (\ssf2$\IMP$\ssf1) As \ssf2 implies that $p({\mr x})$ is Lascar invariant over $A$, \ssf1 follows from Proposition~\ref{prop_type_over_acl2}
 
-  (\ssf1$\IMP$\ssf2) Let $M\supseteq A$. 
-  By Corollary~\ref{corol_stable_coheir_over_models}, there exists a global type $q({\mr x})$ that extends $p({\mr x})\restriction\acl^\eq\!A$ and is almost finitely satisfied in $A$.
-  As $q({\mr x})$ is Lascar invariant over $A$, by stationarity it coincides with $p({\mr x})$.
-\end{proof}
+%   (\ssf1$\IMP$\ssf2) Let $M\supseteq A$. 
+%   By Corollary~\ref{corol_stable_coheir_over_models}, there exists a global type $q({\mr x})$ that extends $p({\mr x})\restriction\acl^\eq\!A$ and is almost finitely satisfied in $A$.
+%   As $q({\mr x})$ is Lascar invariant over $A$, by stationarity it coincides with $p({\mr x})$.
+% \end{proof}
 
 The following theorem presents a property of definability that seems to go in the opposite direction.
 This has an application in ...
@@ -855,35 +848,38 @@ We first prove a special case of the theorem case that is simpler.
 \begin{proposition}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
   Let $M$ and ${\mr a}\in\U^{\mr x}$ be arbitrary.
-  Then, for some ${\mr a_1}\equiv_M\dots\equiv_M{\mr a_n}\equiv_M{\mr a}$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;\U^{\gr z})$ is definable over $M$.
+  Then, for some ${\mr a_1}\equiv_M\dots\equiv_M{\mr a_n}\equiv_M{\mr a}$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;{\gr\U})$ is definable over $M$.
 \end{proposition}
 
 \begin{proof}
   Let $\V\preceq\U$ be isomorphic to $\U$.
-  By Theorem~\ref{thm_def_stable_formula} with $\V$ for $\U$, there are ${\mr a_1},\dots,{\mr a_n}$ as above such that $\phi({\mr a}\,;\V^{\gr z})$ is a positive Bolean combination of the sets $\phi({\mr a_i},;\V^{\gr z})$.
-  Let $\theta({\mr a_1},\dots,{\mr a_n}\,;\V^{\gr z})=\phi({\mr a}\,;\V^{\gr z})$ be such a Boolean combination.
+  By Theorem~\ref{thm_def_stable_formula} with $\V$ for $\U$, there are ${\mr a_1},\dots,{\mr a_n}$ as above such that $\phi({\mr a}\,;{\gr\V})$ is a positive Bolean combination of the sets $\phi({\mr a_i},;{\gr\V})$.
+  Let $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr\V})$ be such a Boolean combination.
   Now, by Proposition~\ref{prop_saturate_heir}. we can chose $\V$ such that ${\mr a}\nonfork_M\V$.
-  By non-splitting, i.e.\@ reasoning as in Theorem~\ref{thm_symmetry}, there is a formula $\psi({\gr z})\in L(M)$ such that $\psi(\V^{\gr z})=\phi({\mr a}\,;\V^{\gr z})$.
-  Finally, by elementarity, we obtain that $\psi(\U^{\gr z})=\theta({\mr a_1},\dots,{\mr a_n}\,;\U^{\gr z})$.
+  By non-splitting, i.e.\@ reasoning as in Theorem~\ref{thm_symmetry}, there is a formula $\psi({\gr z})\in L(M)$ such that $\psi({\gr\V})=\phi({\mr a}\,;{\gr\V})$.
+  Finally, by elementarity, we obtain that $\psi({\gr\U})=\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr\U})$.
 \end{proof}
 
 \begin{theorem}
-  ($T$ stable) \ 
-  Let $\phi({\mr x}\,;{\gr z})\in L(\U)$.
+  Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
   Let $A$ and ${\mr a}\in\U^{\mr x}$ be arbitrary.
-  Then, for some ${\mr a_1}\equiv_A\dots\equiv_A{\mr a_n}\equiv_A{\mr a}$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;\U^{\gr z})$ is definable over $A$.
+  Then, for some ${\mr a_1}\equiv_A\dots\equiv_A{\mr a_n}\equiv_A{\mr a}$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;{\gr\U})$ is definable over $A$.
 \end{theorem}
 
-The stability $\phi({\mr x}\,;{\gr z})$ is sufficient for the theorem to hold, but the proof is simpler when the whole theory is stable.
-
 \begin{proof}
-  Let $\V\preceq\U$ be isomorphic to $\U$.
-  There are ${\mr a_1},\dots,{\mr a_n}$ as above such that $\phi({\mr a}\,;\V^{\gr z})$ is a positive Boolean combination of the sets $\phi({\mr a_i},;\V^{\gr z})$.
-  Let $\theta({\mr a_1},\dots,{\mr a_n}\,;\V^{\gr z})$ be such a Boolean combination.
-  By Corollary~\ref{corol_stable_coheir_over_models}, we can choose $\V$ containing $A$ and such that every formula $\phi({\mr x})\in\tp({\mr a}/\V)$ is satisfied in every model containing $A$.
-  It follows that for every $M$ containing $A$ and ${\gr b}\equiv_M{\gr b'}$ in $\V$ we have ${\gr b}\equiv_{M,a}{\gr b'}$.
-  Then $\theta({\mr a_1},\dots,{\mr a_n}\,;\V^{\gr z})$ is definable over every model containing $A$.
-  We conclude that there is a formula $\psi({\mr z})\in L(\acl^\eq A)$ equivalent to $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr z})$ in $\V$ and, by elementarity, in $\U$.
+    Let $q({\mr x})=\tp({\mr a}/A)$.
+    By Corollary~\ref{corol_stable_coheir_over_models} there is a type $p({\mr x})\in S_\phi(\U)$ consistent with $q({\mr x})$ and invariant over $\acl^\eq\!A$.
+    By Theorem~\ref{thm_def_stable_formula} there are ${\mr a_1},\dots,{\mr a_n}\models q({\mr x})$ such that ${\gr\D_{p,\phi}}$ is a positive Bolean combination of the sets $\phi({\mr a_i},;{\gr\U})$.
+    Let $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr\U})$ be such a Boolean combination.
+    By Proposition~\ref{prop_type_over_acl2} ${\gr\D_{p,\phi}}\in\acl^\eq\!A$.
+    This completes the proof if $A=\acl^\eq\!A$.
+    For the general case, reason as follows.
+    Let $f_1,\dots,f_n\in\Aut(\U/A)$ be such that the sets $f_i{\gr\D_{p,\phi}}$ span the whole orbit of ${\gr\D_{p,\phi}}$ over $A$.
+    Clearly,
+
+    \ceq{\hfill\bigcup_{i=1}^n f_i{\gr\D_{p,\phi}}}{=}{\bigvee_{i=1}^n\theta(f_i{\mr a_1},\dots,f_i{\mr a_n}\,;{\gr\U})}
+
+   As the set on the l.h.s.\@ is definable over $A$, the formula on the r.h.s.\@ is the required positive Boolean combination.
 \end{proof}
 
 \begin{exercise}\label{ex_Cb}
@@ -891,9 +887,6 @@ The stability $\phi({\mr x}\,;{\gr z})$ is sufficient for the theorem to hold, b
   \end{exercise}
   
   
-  \begin{exercise}
-    Prove that if ${\mr a}\cnonfork_M{\gr b}\IFF{\gr b}\cnonfork_M{\mr a}$ holds for every $M,{\mr a},{\gr b}$ then $T$ is stable.\QED
-  \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
