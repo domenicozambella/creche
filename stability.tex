@@ -415,7 +415,7 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
 \section{Stability and the number of types}
 
 
-The following proposition highlights the connection between the stability of and  $\phi({\mr x}\,;{\gr z})$ and the cardinality of $S_\phi(\U)$, equivalently the number of sets externally definable by $\phi({\mr x}\,;{\gr z})$. 
+The following proposition highlights the connection between the stability of $\phi({\mr x}\,;{\gr z})$ and the cardinality of $S_\phi(\U)$, equivalently the number of sets externally definable by $\phi({\mr x}\,;{\gr z})$. 
 
 \begin{theorem}\label{thm_def_stable_formula2}
    The following are equivalent
@@ -428,18 +428,17 @@ The following proposition highlights the connection between the stability of and
  \end{theorem}
  
  \begin{proof}
- \ssf{1}$\IMP$\ssf{2} is clear by Proposition~\ref{prop_approx=external} and Theorem~\ref{thm_def_stable_formula}.
+ \ssf{1}$\IMP$\ssf{2} Clear by Proposition~\ref{prop_approx=external} and Theorem~\ref{thm_def_stable_formula}.
  
- \ssf{2}$\IMP$\ssf{3}$\IMP$\ssf{4} are obvious.
+ \ssf{2}$\IMP$\ssf{3}$\IMP$\ssf{4} Obvious.
  
- \ssf{4}$\IMP$\ssf{1} is proved by contraposition.
- Suppose that $\phi({\mr x}\,;{\gr z})$ is not stable.
+ \ssf{4}$\IMP$\ssf{1} Suppose that $\phi({\mr x}\,;{\gr z})$ is not stable.
  By compactness there is a ladder sequence  $\<{\mr a_i}\,;{\gr b_i} : i\in I\>$ where $I,<_I$ a dense linear order of cardinality $\kappa$ with $2^\kappa$ cuts, where by \textit{cut\/} we mean a subset $c\subseteq I$ that is closed downward.
  For every such $c\subseteq I$ we pick a global type
  
  \ceq{\hfill p_c({\mr x} ) }{\supseteq}{\big\{\phi({\mr x}\,;{\gr b_i})\iff i\in c\ :\ i\in I\big\}.}
  
- Clearly sets ${\gr\D_{p_c,\,\phi} }$ are all distinct.
+ Clearly the sets ${\gr\D_{p_c,\,\phi} }$ are all distinct.
  \end{proof}
 
 
@@ -604,7 +603,7 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 \begin{proof}
   Negate the theorem. 
   Then there are two models containing $A$, the first omitting $\phi({\mr x}\,;{\gr b})$, the second omitting $\psi({\mr x}\,;{\gr b})$.
-  It is easy to see that we can expand these models to two substructures $\V_0$ and $\V_1$ that are $A$-isomorphic to $\U$ and such that $\V_0=\neg\phi(\V_0\,;{\gr b})$ and $\V_1=\neg\psi(\V_1\,;{\gr b})$.
+  It is easy to see that we can expand these models to two substructures $\V_0$ and $\V_1$ that are $A$-isomorphic to $\U$ and such that $\V_0=\neg\phi({\mr\V_0}\,;{\gr b})$ and $\V_1=\neg\psi({\mr\V_1}\,;{\gr b})$.
 
   Let $f_i:\U\to\V_i$ be the $A$-isomorphisms mentioned above. 
   Let $\V_\0=\U$ and ${\gr b_\0}={\gr b}$.
@@ -614,7 +613,7 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 
   Then from the inclusion above we obtain
 
-  \#\hfil$\V_{s\frown0}\subseteq\neg\phi(\V_{s\frown0}\,;{\gr b_s})$ \ \ and \ \  $\V_{s\frown1}\subseteq\neg\psi(\V_{s\frown1}\,;{\gr b_s})$.
+  \#\hfil$\V_{s\frown0}^{{\mr x}}\subseteq\neg\phi({\mr\V_{s\frown0}}\,;{\gr b_s})$ \ \ and \ \  $\V_{s\frown1}^{{\mr x}}\subseteq\neg\psi({\mr\V_{s\frown1}}\,;{\gr b_s})$.
 
   We prove that the branches of the tree $\<\phi({\mr x}\,;{\gr b_s})\ :\  s\in2^{<\omega}\>$ are (finitely) consistent. 
   By Theorem~\ref{thm_count_types}, this contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
@@ -623,12 +622,12 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
   \ceq{\#\#\hfill\theta({\mr x})}{\imp}{\phi({\mr x}\,;{\gr b})\vee\psi({\mr x}\,;{\gr b})}
   
   Let $s\in2^n$ be given.
-  Let ${\mr a}\in\theta(\V_s)$ be arbitrary. We claim that ${\mr a}$ witnesses the concistency of  $\{\phi^{s_i}({\mr x}\,;{\gr b_{s\restriction i}})\ :\ i<n\}$.
-  As $\V_s\preceq\V_{s\restriction i}$, we have that ${\mr a}\in\theta(\V_{s\restriction i})$.
+  Let ${\mr a}\in\theta({\mr\V_s})$ be arbitrary. We claim that ${\mr a}$ witnesses the concistency of  $\{\phi^{s_i}({\mr x}\,;{\gr b_{s\restriction i}})\ :\ i<n\}$.
+  As $\V_s\preceq\V_{s\restriction i}$, we have that ${\mr a}\in\theta({\mr\V_{s\restriction i}})$.
   We prove that $\phi^{s_i}({\mr a}\,;{\gr b_{s\restriction i}})$.
-  If $s_i=0$ then from \# we obtain $\V_{s\restriction(i+1)}\subseteq\phi^0(\V_{s\restriction(i+1)}\,;{\gr b_{s\restriction i}})$ and $\phi^0({\mr a}\,;{\gr b_{s\restriction i}})$ follows by elementarity.
-  If $s_i=1$, from the second inclusion in \# we obtain $\V_{s\restriction(i+1)}\subseteq\neg\psi(\V_{s\restriction(i+1)}\,;{\gr b_{s\restriction i}})$.
-  Therefore, from $\theta({\mr a})$ and \#\#, we obtain that $\V_{s\restriction(i+1)}\subseteq\phi(\V_{s\restriction(i+1)}\,;{\gr b_{s\restriction i}})$ and $\phi^1({\mr a}\,;{\gr b_{s\restriction i}})$ follows.
+  If $s_i=0$ then from \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi^0({\mr\V_{s\restriction(i+1)}}\,;{\gr b_{s\restriction i}})$ and $\phi^0({\mr a}\,;{\gr b_{s\restriction i}})$ follows by elementarity.
+  If $s_i=1$, from the second inclusion in \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\neg\psi({\mr\V_{s\restriction(i+1)}}\,;{\gr b_{s\restriction i}})$.
+  Therefore, from $\theta({\mr a})$ and \#\#, we obtain that $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi({\mr\V_{s\restriction(i+1)}}\,;{\gr b_{s\restriction i}})$ and $\phi^1({\mr a}\,;{\gr b_{s\restriction i}})$ follows.
 
   We are left with proving that the provisional assumption is redundant.
   By Exercise~\ref{ex_almost_satisfied} there is a formula $\theta({\mr\bar x})\in L(A)$ such that
@@ -642,7 +641,7 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
   \ceq{\hfill\psi'({\mr\bar x}\,;{\gr b})}{=}{\bigvee_{i=1}^n\psi({\mr x_i}\,;{\gr b})}
 
   Note that $\phi'({\mr\bar x}\,;{\gr z})$ is a stable formula.
-  Therefore we can apply what proved above to the formulas $\phi'({\mr\bar x}\,;{\gr b})$ and $\psi'({\mr\bar x}\,;{\gr b})$ and note that these formulas are satisfied in every model $M\supseteq A$ if and only if $\phi({\mr x}\,;{\gr b})$, respectively $\psi({\mr x}\,;{\gr b})$ are.
+  Therefore we can apply what proved above to the formulas $\phi'({\mr\bar x}\,;{\gr b})$ and $\psi'({\mr\bar x}\,;{\gr b})$ and note that these formulas are satisfied in every model $M\supseteq A$ if and only if $\phi({\mr x}\,;{\gr b})$, respectively $\psi({\mr x}\,;{\gr b})$, are.
 \end{proof}
 
 \begin{corollary}\label{corol_stable_coheir_over_models}
@@ -780,7 +779,7 @@ The following proposition says that in a stable theory with elimination of imagi
 \begin{proof}
   Existence follows from Corollary~\ref{corol_stable_coheir_over_models}.
   Let $q_i({\mr x})\in S(\U^\eq)$, for $i=1,2$, be two global $\phi$-types that extend $q({\mr x})$ and are invariant over $\acl^\eq\!A$.
-  Let $p(\gr z)\in S_\phi(\U)$ be invariant over $\acl^\eq\!A$ and consistent with $\tp(b/\acl^\eq\!A)$.
+  Let $p({\gr z})\in S_\phi(\U)$ be invariant over $\acl^\eq\!A$ and consistent with $\tp({\gr b}/\acl^\eq\!A)$.
   Let $\theta({\mr x})\in L(\acl^\eq\!A)$ be the formula ${\mr x}\in{\mr\D_{p,\phi^{\rm op}}}$.
   Let $\psi_i({\gr z})\in L(\acl^\eq\!A)$ be the formula ${\gr z}\in{\gr\D_{q_i,\phi}}$.
   We claim that $\psi_1({\gr b})\iff\psi_2({\gr b})$, for any ${\gr b}\in\U^{\gr z}$.
@@ -896,11 +895,6 @@ We first prove a special case of the theorem case that is simpler.
 \section{Stable theories}
 \label{stable_theories}
 
-
-\begin{proposition}
-  If every formula $\phi(x\,;y)\in L$, where $|y|=1$, is stable then $T$ is stable.
-\end{proposition}
-
 \begin{theorem}[ (Pierre Simon)]
   If every formula $\phi(x\,;y)\in L(\U)$, where $|x|=|y|=1$, is stable then $T$ is stable.
 \end{theorem} 
@@ -944,9 +938,13 @@ We first prove a special case of the theorem case that is simpler.
   Then $\<a_i,c'_i\ :\ i\in(-1,0)\cup(0,1)\>$ witness the instability of $\psi(x\;z)$.
 \end{proof}
 
+\begin{exercise}
+  Prove that if every formula $\phi(x\,;z)\in L$, where $|x|=1$, is stable then $T$ is stable.\QED
+\end{exercise}
+
 \begin{exercise} 
   A sequence $\<a_i:i<\omega\>$ is totally indiscernible if $a_1,\dots,a_n\equiv a_{i_1},\dots,a_{i_n}$ for every distinct $i_1,\dots,i_n$.
-  The following are equivalent
+  Prove that the following are equivalent
   \begin{itemize}
   \item[1.] $T$ is stable;
   \item[2.] every indiscernible sequence is totally indiscernible.\QED
@@ -969,7 +967,94 @@ Prove that strongly minimal theories are stable.\QED
 %%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%
 \section{Stable groups}
-In this section $\U$ is a group; the group operations are in the language.
 
-A set $\X\subseteq\U$ is generic if there are some finitely many $g_1,\dots,g_n\in\U$ such that the sets $g_i\X$ cover $\U$.
+In this section $\U$ has two type-definable sets $\G$ and $\S$ where $\G$ is a group that acts from the left on $\S$.
+The group operations and the group action are definable.
+We use the symbol $\,\cdot\,$ for both the group multiplication and the group action.
+
+We say tha the set $\X\subseteq\S$ is relatively definable if it is the intersection of a definable set with $\S$.
+
+We say that $\X\subseteq\S$ is generic if there are some finitely many $g_1,\dots,g_n\in\U$ such that the sets $g_i\X$ cover $\U$.
+
+Let $\D\subseteq\S$ be a relatively definable set.
+Let $L'$ be a two-sorted language.
+The sorts are called $\G$ and $\S$.
+There is only one binary relation symbol $r(x,y)$ that has sort $\G\times\S$.
+We write $\langle\G, \S\, \D\rangle$ for the $L'$-structure that has domain $\langle\G, \S\rangle$ and interpretes $r(x,y)$ as follows 
+
+\ceq{\hfill\langle\G,\S, \D\rangle\models r(g,a)}{\Leftrightarrow}{a\in g\cdot\D}
+
+Note that $\D$ is definable in $\langle\G,\S, \D\rangle$ by the formula $r(1,y)$.
+The action of $\G$ on $\U$ defined by left multiplication on $\G$ and $\S$ is an $L'$-automorphisms.
+Therefore we may identify $\G$ with a common subgroup of the groups $L'\mbox{-Aut}\U,{\D})$ as $\D$ ranges over the definable subsets of $\S$.
+
+\begin{fact}
+  The structure $\langle\G,\S, \D\rangle$ is saturated.
+\end{fact}
+
+\begin{proof}
+  First note that the sets defined by $r(x,y)$ and by $\neg r(x,y)$ in $\langle\G,\S, \D\rangle$ are a type-definable subsets of $\U$.
+  It follows that the sets defined by $L'$-formulas are type-definables subsets of $\U$.
+  Therefore the saturation of $\langle\G,\S, \D\rangle$ follows from the saturation of $\U$.
+\end{proof}
+
+%A set $\EuScript X\subseteq\U$ is generic if there are some finitely many $g_1,\dots,g_n\in\U$ such that the sets $g_i\EuScript X$ cover $\U$.
+
+\begin{fact}\label{fact_generic_G_L}
+Let $\D\subseteq\S$ be a definable set.
+Write $G_{\D}$ for $L'$-$\Aut(\G,\S,{\D})$.
+Then the following are equivalent
+\begin{itemize}
+  \item[1.] $\D$ is $G_{\D}$-generic;
+  \item[2.] $\D$ is $\G$-generic.
+\end{itemize}
+\end{fact}
+
+\begin{proof}
+  The equivalence follows from the fact that the orbits of $\D$ under the action of $G_{\D}$ and $\G$ coincide.
+  In fact, for $f\in L'\mbox{-Aut}(\G,\S,\D)$ let $g=f1$.
+  Then $f{\D}=g\cdot\D$.
+\end{proof}
+
+\begin{fact}
+  Assume $\S=\G$, where $\G$ acts on itself by translation. 
+  Let $\mu$ be S1 and invariant under $\G$-translation.
+  If $\D\subseteq\G$ is $\mu$-wide then $\D\cdot\D^{-1}$ is $\G$-generic.
+\end{fact}
+
+\begin{proof}
+  Let $A\subseteq\G$ be maximal such that $a\cdot\D\cap b\cdot\D=\varnothing$ for every distinct $a,b \in A$.
+  By maximality for every $b\in\G$ there is an $a\in A$ such that $b\cdot\D\cap a\cdot\D\neq\varnothing$.
+  That is, there are $d_1,d_2\in\D$ such that $b=a\cdot d_2\cdot d_1^{-1}$.
+  This shows that the $A$-translates of $\D\cdot\D^{-1}$ cover $\G$.
+  It suffices to prove that $A$ is finite.
+  Suppose not, then we can find a indiscernible sequence $\langle a_i:i<\omega\rangle$ such that $a_0\cdot\D\cap a_1\cdot\D=\varnothing$.
+  Then $a_0\cdot\D$ is not wide and, by tranlation invariance, $\D$ is not wide, contrary to our assumption.
+\end{proof}
+
+\begin{theorem}
+  Let $\D\subseteq\S$ be a definable set.
+  Assume that $r(x,y)$ is stable in $\langle\G,\S,\D\rangle$.
+  Assume also that $\G$ acts transitively on $\S$, i.e.\@ there is a unique $\G$-orbit.
+  Then either $\D$ or $\S\smallsetminus\D$ is $\G$-generic.
+\end{theorem}
+
+\begin{proof}
+  Assume $\S\smallsetminus\D$ is not $\G$-generic.
+  We claim that $\D$ is $\G$-generic.
+  By Fact~\ref{fact_generic_G_L} $\S\smallsetminus\D$ is not $G_{\D}$-generic.
+  By Fact~\ref{fact_ig} there is a global $G_{\D}$-invariant type $p(x)$ containing $r(x,1)$.
+  By stability, there is a positive Boolean combination of sets in the $G_{\D}$-orbit of $\D$ that is $L'$-definable over $\varnothing$.
+  By the transitivity of the action, $\S$ is the only set that is $L'$-definable over $\varnothing$.
+  Therefore some disjunction of sets in the $G_{\D}$-orbit of $\D$ cover $\S$.
+  As the $G_{\D}$-orbit and the $\G$-orbit of $\D$ coincide, the claim follows.
+\end{proof}
+
+Let $p(x)$ be a global type containing $x\in\S$ we define
+
+\ceq{\hfill g\cdot p(x)}{=}{\big\{\varphi(g^{-1}\cdot x)\ :\ \varphi(x)\in p\big\}}
+
+and
+
+\ceq{\hfill{\rm Stab}(p)}{=}{\big\{g\in\G\ :\ g\cdot p(x)=p(x)\big\}.}
 \end{document}
