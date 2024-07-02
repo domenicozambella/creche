@@ -29,8 +29,8 @@ When a tuple $\bar c$ is introduced, we write $c_i$ for the $i$-th element of $\
 and $c_{\restriction J}$ for the restriction of $\bar c$ to $J\subseteq |\bar c|$.
 Note that the bar is dropped for ease of notation.
 
-The set of tuples of elements of length $\alpha$ is denoted by \emph{$A^\alpha$}.
-The set of tuples of length $<\alpha$ is denoted by \emph{$A^{<\alpha}$}.
+The set of tuples of elements of length $\alpha$ is denoted by \emph{$A^\alpha$.}
+The set of tuples of length $<\alpha$ is denoted by \emph{$A^{<\alpha}$.}
 For instance, \emph{$A^{<\omega}$\/} is the set of all finite tuples of elements of $A$.
 When $\alpha$ is finite we do not distinguish between $A^\alpha$ and the $\alpha$-th Cartesian power of $A$.
 In particular, we do not distinguish between $A^1$ and $A$.
@@ -39,12 +39,12 @@ If $a,b\in A^{\alpha}$ and $h$ is a function defined on $A$, we write $h(a)=b$ f
 We often do not distinguish between the pair $\<a,b\>$ and the tuple of pairs $\<a_i,b_i\>$.
 The context will resolve the ambiguity.
 
-Note that there is a unique tuple of length $0$, the empty set $\0$, which in this context is called \emph{empty tuple\/}\index{empty tuple}.
+Note that there is a unique tuple of length $0$, the empty set $\0$, which in this context is called \emph{empty tuple.}
 Recall that by definition \emph{$A^{0}$\/}$=\{\0\}$ for every set $A$.
 Therefore, even when $A$ is empty, $A^{0}$ contains the empty string.
 
 We often concatenate tuples.
-If $a$ and $b$ are tuples, we write \emph{$a\,b$\/} or, equivalently,\ \emph{$a,b$\/}. 
+If $a$ and $b$ are tuples, we write \emph{$a\,b$\/} for the concatenation or, when emphasis is required, \emph{$a^\frown b$.} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -57,7 +57,7 @@ A \emph{(first order) language $L$\/}\index{language!(first order)}\index{0L@$L$
 \begin{itemize}
 \item[1.] a set \emph{$L_{\rm fun}$}\index{0Lfun@$L_{\rm fun}$} whose elements are called \emph{function symbols}\index{symbol!function};
 \item[2.] a set \emph{$L_{\rm rel}$\/}\index{0Lrel@$L_{\rm rel}$} whose elements are called \emph{relation symbols}\index{symbol!relation};
-\item[3.] a function that assigns to every $f\in L_{\rm fun}$, respectively $r\in L_{\rm rel}$, non-negative integers $n_f$ and $n_r$ that we call \emph{arity\/}\index{arity} of the function, respectively relation, symbol. We say that $f$ is an \emph{$n_f$-ary} function symbol, and similarly for $r$. A $0$-ary function symbol is also called a \emph{constant\/}\index{constant}.
+\item[3.] a function that assigns to every $f\in L_{\rm fun}$, respectively $r\in L_{\rm rel}$, non-negative integers $n_f$ and $n_r$ that we call \emph{arity\/}\index{arity} of the function, respectively relation, symbol. We say that $f$ is an \emph{$n_f$-ary} function symbol, and similarly for $r$. A $0$-ary function symbol is also called a \emph{constant.}
 \end{itemize}
 
 Warning: it is customary to use the symbol \emph{$L$} to denote both the language and the set of formulas (to be defined below) associated to it. We denote by \emph{$|L|$} the cardinality of $L_{\rm fun}\cup L_{\rm rel}\cup\omega$. Note that, by definition, $|L|$ is always infinite. 
@@ -67,15 +67,15 @@ A \emph{(first order) structure\/}\index{structure} $M$ of signature $L$ (for sh
 \begin{itemize}
 \item[1.] a set that we call the \emph{domain\/}\index{domain!(of a structure)} or \emph{support}\index{support!(of a structure)} and denote by the same symbol $M$ used for the structure as a whole;
 \item[2.] a function that assigns to every $f\in L_{\rm fun}$ a total map \emph{$f^M$ $: M^{n_f}\to M$}\index{0fM@$f^M$};
-\item[3.] a function that assigns to every  $r\in L_{\rm rel}$ a relation \emph{$r^M\subseteq M^{n_r}$}\index{0rM@$r^M$}.
+\item[3.] a function that assigns to every  $r\in L_{\rm rel}$ a relation \emph{$r^M\subseteq M^{n_r}$.}\index{0rM@$r^M$}
 \end{itemize}
- We call $f^M$, respectively $r^M$, the \emph{interpretation\/}\index{interpretation} of $f$, respectively $r$, in $M$.
- 
+We call $f^M$, respectively $r^M$, the \emph{interpretation\/}\index{interpretation} of $f$, respectively $r$, in $M$.
+
 Recall that, by definition, $M^0=\{\0\}$\index{function!0-ary}. Therefore the interpretation of a constant $c$ is a function that maps the unique element of $M^0$ to an element of $M$. We identify \emph{$c^M$\/} with $c^M(\0)$.
 
 We may use the word \emph{model\/} as a synonym for structure. But beware that, in some contexts, the word is used to denote a particular kind of structure.  
 
-If $M$ is an $L$-structure and $A\subseteq M$ is any subset, we write \emph{$L(A)$\/}\index{0LA@$L(A)$, $L(M)$} for  the language obtained by  adding to $L_{\rm fun}$ the elements of $A$ as constants. In this context, the elements of $A$ are called \emph{parameters}\index{parameter}. There is a canonical expansion of $M$ to an $L(A)$-structure that is obtained by setting $a^M=a$ for every $a\in A$.
+If $M$ is an $L$-structure and $A\subseteq M$ is any subset, we write \emph{$L(A)$\/}\index{0LA@$L(A)$, $L(M)$} for  the language obtained by  adding to $L_{\rm fun}$ the elements of $A$ as constants. In this context, the elements of $A$ are called \emph{parameters.}\index{parameter} There is a canonical expansion of $M$ to an $L(A)$-structure that is obtained by setting $a^M=a$ for every $a\in A$.
 
 \begin{example}\label{LgaLgmLau}
 The \emph{language of additive groups\/}\index{language!of additive groups} consists of the following function symbols:\nobreak
@@ -86,7 +86,7 @@ The \emph{language of additive groups\/}\index{language!of additive groups} cons
 \end{itemize}
 In the \emph{language of multiplicative groups\/}\index{language!of multiplicative groups\/} the three symbols above are replaced by $1$,~${}^{-1}$, and $\cdot$ respectively. Any group is a structure in either of these two signatures with the obvious interpretation. Needless to say, not all structures with these signatures are groups. 
 
-The \emph{language of (unitary) rings\/} contains all the function symbols above except \ ${}^{-1}$. The  \emph{language of ordered rings\/} also contains the binary relation symbol $<$.\QED
+The \emph{language of (unitary) rings\/} contains all the symbols above except \ ${}^{-1}$. The  \emph{language of ordered rings\/} also contains the binary relation symbol $<$.
 \end{example}
 
 The following example is less straightforward. The reason for the choice of the language of vector spaces will become clear in Example~\ref{ex_substructure} below.
@@ -94,8 +94,8 @@ The following example is less straightforward. The reason for the choice of the 
 \begin{example}\label{linguaggio_spazi_vettoriali}
 Let $F$ be a field. The \emph{language of vector spaces over $F$\/}\index{language!vector spaces}, which we denote by $L_F$, extends that of additive groups by a unary function symbol $k$ for every $k\in F$. 
 
-Recall that a vector space over $F$ is an abelian group $M$ together with a function $\mu:F\times M\imp M$ satisfying some properties (that we assume well-known, see Example~\ref{ex_ax_vect_sp}).
- To view a vector space over $F$ as an $L_F$-structure, we interpret the group symbols in the obvious way and each $k\in F$ as the function $\mu(k,\mbox{-})$.\QED
+Recall that a vector space over $F$ is an abelian group $M$ together with a function $\mu:F\times M\imp M$ satisfying some properties (that we assume to be well-known, see Example~\ref{ex_ax_vect_sp}).
+To view a vector space over $F$ as an $L_F$-structure, we interpret the group symbols in the obvious way and each $k\in F$ as the function $\mu(k,\mbox{-})$.\QED
 \end{example}
 
 The languages in Examples~\ref{LgaLgmLau} and \ref{linguaggio_spazi_vettoriali}, with the exception of that of ordered rings, are \emph{functional languages}\index{language!functional}, that is, $L_{\rm rel}=\0$. In what follows, we consider two important examples of \emph{relational languages\/}\index{language!relational\/}, that is, languages where $L_{\rm fun}=\0$.
@@ -110,30 +110,30 @@ The \emph{language of strict orders\/}\index{language!strict orders} only contai
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Terms}\label{terminidef}
-Let \emph{$V$\/} be an infinite set whose elements we call \emph{variables}\index{variable}. We use the letters $x$, $y$, $z$, etc.\@ to denote variables or tuples of variables. We rarely refer to $V$ explicitly, and we always assume that $V$ is large enough for our needs.
+Let \emph{$V$\/} be an infinite set whose elements we call \emph{variables.}\index{variable} We use the letters $x$, $y$, $z$, etc.\@ to denote variables or tuples of variables. We rarely refer to $V$ explicitly, and we always assume that $V$ is large enough for our needs.
 
 We fix a signature $L$ for the whole section.
 
 \begin{definition}\label{deftermine} 
-A \emph{term\/}\index{term} is a finite sequence of elements of $L_{\rm fun}\cup V$ that are obtained inductively as follows:
+A \emph{term\/}\index{term} is a finite sequence of elements of $L_{\rm fun}\cup V$ that are obtained inductively as follows
 \begin{itemize}
 \item[o.] every variable, intended as a tuple of length $1$, is a term;
-\item[i.] if $f\in L_{\rm fun}$ and $t$ is a tuple obtained by concatenating $n_f$ terms, then $f\kern0.1ex t$ is a term. We write $f\kern0.1ex t$ for the tuple obtained by prefixing $t$ by $f$.
+\item[i.] if $f\in L_{\rm fun}$ and $t_1,\dots,t_{n_f}$ are terms, then $f\kern0.1ex t_1,\dots,t_{n_f}$ is a term.
 \end{itemize}
 We say \emph{$L$-term\/} when we need to specify the language $L$.\QED
 \end{definition}
 
-Note that any constant $f$, intended as a tuple of length $1$, is a term (by \ssf{i}, the term $f$ is obtained concatenating $n_f=0$ terms and prefixing by $f$). Terms that do not contain variables are called \emph{closed terms}\index{term!closed}.
+Note that any constant $f$, intended as a tuple of length $1$, is a term (by \ssf{i}, the term $f$ is obtained concatenating $n_f=0$ terms and prefixing by $f$). Terms that do not contain variables are called \emph{closed terms.}\index{term!closed}
 
-The intended meaning of, for instance, the term ${+}\,{+}\,x\,y\,z$ is $(x\,{+}\,y)\,{+}\,z$. The first expression uses \emph{prefix notation\/}\index{prefix notation}; the second uses \emph{infix notation}\index{infix notation}. When convenient, we informally use infix notation and add parentheses to improve legibility and avoid ambiguity.
+The intended meaning of, for instance, the term ${+}\,{+}\,x\,y\,z$ is $(x\,{+}\,y)\,{+}\,z$. The first expression uses \emph{prefix notation\/}\index{prefix notation}; the second uses \emph{infix notation.}\index{infix notation} When convenient, we informally use infix notation and add parentheses to improve legibility and avoid ambiguity.
 
 The following lemma shows that prefix notation allows to write terms unambiguously without using parentheses.
 
-\begin{lemma}[ (unique legibility of terms)]\label{lemmaterminileggibilita}
+\begin{lemma}[ (Unique legibility of terms)]\label{lemmaterminileggibilita}
 Let $a$ be a sequence of terms. Suppose $a$ can be obtained both by concatenating the terms $t_1,\dots,t_n$ and by concatenating the terms $s_1,\dots,s_m$. Then $n=m$ and $s_i=t_i$.
 \end{lemma}
 \begin{proof}
-By induction on $|a|$. If $|a|=0$ than $n=m=0$ and there is nothing to prove. Suppose the claim holds for tuples of length $k$ and let $a=a_1,\dots,a_{k+1}$. Then $a_1$ is the first element of both  $t_1$ and $s_1$. If $a_1$ is a variable, say $x$, then $t_1$ and $s_1$ are the term $x$ and $n=m=1$. Otherwise $a_1$ is a function symbol, say $f$. Then $t_1=f\,\bar t$ and $s_1=f\,\bar s$, where $\bar t$ and $\bar s$ are obtained by concatenating the terms $t'_1, \dots, t'_p$ and $s'_1, \dots, s'_p$.  Now apply the induction hypothesis to $a_2,\dots,a_{k+1}$ and to the terms $t'_1, \dots,t'_p,t_2,\dots,t_n$ and $s'_1,\dots,s'_p,s_2,\dots,s_m$.
+By induction on $|a|$. If $|a|=0$ than $n=m=0$ and there is nothing to prove. Suppose the claim holds for tuples of length $k$ and let $a=a_1,\dots,a_{k+1}$. Then $a_1$ is the first element of both  $t_1$ and $s_1$. If $a_1$ is a variable, say $x$, then $t_1$ and $s_1$ are the term $x$ and $n=m=1$. Otherwise $a_1$ is a function symbol, say $f$. Then $t_1=f\,\bar t$ and $s_1=f\,\bar s$, where $\bar t$ and $\bar s$ are obtained by concatenating the terms $t'_1, \dots, t'_p$ and $s'_1, \dots, s'_p$.  Now apply the induction hypothesis to $a_2,\dots,a_{k+1}$ and to the terms $\bar t\, t_2\dots t_n$ and $\bar s\,s_2\dots s_m$.
 \end{proof}
 
 If $x=x_1,\dots,x_n$ is a tuple of distinct variables and $s=s_1,\dots,s_n$ is a tuple of terms, we write \emph{$t[x/s]$\/}\index{0txs@$t[x/s]$} for the sequence obtained by replacing $x$ by $s$ coordinatewise. Proving that $t[x/s]$ is indeed a term is a tedious task that can be safely skipped.
@@ -143,15 +143,16 @@ If $t$ is a term and $x_1,\dots,x_n$ are (tuples of) variables, we write \emph{$
 Finally, we define the interpretation of a term in a structure $M$. We begin with closed terms. These are interpreted as $0$-ary functions, i.e.\@ as elements of the structure.
 
 \begin{definition}\label{defterminiinterpretazione}
-Let $t$ be a closed $L(M)$ term. The \emph{interpretation of $t$}\index{interpretation!of a closed term}, denoted by \emph{$t^M$}\index{0tM@$t^M$}, is defined by induction of the syntax of $t$ as follows.
+Let $t$ be a closed $L(M)$ term. 
+The \emph{interpretation of $t$}\index{interpretation!of a closed term}, denoted by \emph{$t^M$,}\index{0tM@$t^M$} is defined by induction on the syntax of $t$ as follows
 
 \begin{itemize}
-\item[i.] if $t=f\,\bar t$, where $f\in L_{\rm fun}$ and $\bar t$ is a tuple obtained by concatenating the terms $t_1,\dots,t_{n_f}$, then $t^M=f^M(t^M_1, \dots, t^M_{n_f})$.
+\item[i.] if $t=f\,t_1\dots t_{n_f}$, where $f\in L_{\rm fun}$, then $t^M=f^M(t^M_1, \dots, t^M_{n_f})$.
 \end{itemize}
-Note that in \ssf{i} we have used Lemma~\ref{lemmaterminileggibilita} in an essential way. In fact this ensures that the sequence $\bar t$ uniquely determines the terms $t_1, \dots, t_{n_f}$.\QED
+Note that in \ssf{i} we have used Lemma~\ref{lemmaterminileggibilita} in an essential way. In fact this ensures that the sequence $t_1,\dots,t_{n_f}$ uniquely determines the terms $t_1^M, \dots, t_{n_f}^M$.\QED
 \end{definition}
 
-The inductive definition above is based on the case $n_f=0$, that is, the case where $f$ a constant, or a parameter.  When $t=c$, a constant, $\bar t$ is the empty tuple, and so $t^M=c^M(\0)$, which we abbreviate as $c^M$. In particular, if $t=a$, a parameter, then $t^M=a^M=a$.
+The inductive definition above is based on the case $n_f=0$, that is, the case where $f$ a constant, or a parameter.  When $t=c$, a constant, $t_1\dots t_{n_f}$ is the empty tuple, and so $t^M=c^M(\0)$, which we abbreviate as $c^M$. In particular, if $t=a$, a parameter, then $t^M=a^M=a$.
 
 Now we generalize the interpretation to all (not necessarily closed) terms. If $t(x)$ is a term, we define \emph{$t^M\!(x) :\,M^{|x|}\to\, M$}\index{0tMx@$t^M(x)$} to be the function that maps $a$ to $t(a)^M$.
 
@@ -192,7 +193,7 @@ then there is a unique substructure $M\subseteq N$ with domain $A$, namely, the 
 \end{itemize}
 It is usual to confuse subsets of $N$ that satisfy \ssf{1} with the unuque substructure they support.
 
-It is immediate to verify that the intersection of an arbitrary family of substructures of $N$ is a substructure of $N$. Therefore, for any given $A\subseteq N$ we may define the \emph{substructure of $N$ generated $A$\/}\index{substructure!generated by a set} as the intersection of all substructures of $N$ that contain $A$. We write \emph{$\<A\>_N$}\index{0AN@$\<A\>_N$}. The following easy proposition gives more concrete representation of $\<A\>_N$
+It is immediate to verify that the intersection of an arbitrary family of substructures of $N$ is a substructure of $N$. Therefore, for any given $A\subseteq N$ we may define the \emph{substructure of $N$ generated $A$\/}\index{substructure!generated by a set} as the intersection of all substructures of $N$ that contain $A$. We write \emph{$\<A\>_N$.}\index{0AN@$\<A\>_N$} The following easy proposition gives more concrete representation of $\<A\>_N$
 %
 \begin{lemma}\label{strutturagenerata}
 The following hold for every $A\subseteq N$
@@ -205,10 +206,11 @@ The following hold for every $A\subseteq N$
 
 \ceq{}{}{\displaystyle\hphantom{\bigcup_{n\in\omega} A_n,}}\kern2ex\ceq{\hfill A_{n+1}}{=}{A_n\ \cup\ \Big\{ f^N(a) \ :\  f\in L_{\rm fun},\  a\in A_n^{n_f}\Big\}.}\QED
 
+\end{lemma}
+
 \begin{example}\label{ex_substructure}
 Let $L$ be the language of groups. Let $N$ be a group, which we consider as an $L$-structure in the natural way. Then the substructures of $N$ are exactly the subgroups of $N$ and $\<A\>_N$ is the group generated by $A\subseteq N$. A similar claim is true when $L_F$ is the signature of vector spaces over some fixed field $F$. The choice of the language is more or less fixed if we want that the algebraic and the model theoretic notion of substructure coincide.\QED
 \end{example}
-\end{lemma}
 
 \section{Formulas}\label{sintassformule}
 
@@ -247,26 +249,26 @@ We use \emph{$L$\/} to denote both the language and the set of formulas. We writ
 
 The proof of the following is similar to the analogous lemma for terms.
 
-\begin{lemma}[ (unique legibility of formulas)]
+\begin{lemma}[ (Unique legibility of formulas)]
 \label{lemmaformuleleggibilita}
 Let $a$ be a sequence of formulas. Suppose $a$ can be obtained both by the concatenation of the formulas $\phi_1,\dots,\phi_n$ or by the concatenation of the formulas $\psi_1,\dots,\psi_m$. Then $n=m$ and $\phi_i=\psi_i$.\QED
 \end{lemma}
 
 
-A formula is \emph{closed\/} if all its variables occur under the scope of a quantifier. Closed formulas are also called \emph{sentences}\index{sentence}. We will do without a formal definition of \textit{occurs under the scope of a quantifier\/} which is too lengthy. An example suffices: all occurrences of $x$ are under the scope a quantifiers in the formula $\E x\,\phi$. These occurrences are called \emph{bonded}. The formula $x{\doteq}y\wedge\E x\,\phi$ has \emph{free\/} (i.e., not bond) occurrences of $x$ and $y$.
+A formula is \emph{closed\/} if all its variables occur under the scope of a quantifier. Closed formulas are also called \emph{sentences.}\index{sentence} We will do without a formal definition of \textit{occurs under the scope of a quantifier\/} which is too lengthy. An example suffices: all occurrences of $x$ are under the scope a quantifiers in the formula $\E x\,\phi$. These occurrences are called \emph{bounded.} The formula $x{\doteq}y\wedge\E x\,\phi$ has \emph{free\/} (i.e., not bound) occurrences of $x$ and $y$.
 
 Let $x$ is a tuple of variables and $t$ is a tuple of terms such that $|x|=|t|$. We write $\phi[x/t]$ for the formula obtained substituting $t$ for all free occurrences of $x$, coordinatewise.  
 
 We write $\phi(x)$ to declare that the free variables in the formula $\phi$ are all among those of the tuple $x$. In this case we write $\phi(t)$ for $\phi[x/t]$.
 
-We will often use without explicit mention the following useful syntactic decomposition of formulas with parameters.
+We will often use without explicit mention the following useful syntactic decomposition of formulas with parameters which we state without proof.
 
 
 \begin{lemma}\label{rappresentazione formule con parametri}
 For every formula $\phi(x)\in L(A)$ there is a formula $\psi(x\,;z)\in L$ and a tuple of parameters $a\in A^{|z|}$ such that $\phi(x)=\psi(x\,;a)$.\QED
 \end{lemma}
 
-Just as a term $t(x)$ is a name for a function $t(x)^M:M^{|x|}\to M$, a formula $\phi(x)$ is a name for a subset \emph{$\phi(x)^M$\/}$\subseteq M^{|x|}$ which we call \emph{the subset of $M$ defined by $\phi(x)$}. It is also very common to write \emph{$\phi(M)$} for the set defined by $\phi(x)$. In general sets of the form $\phi(M)$ for some $\phi(x)\in M$ are called \emph{definable}.
+Just as a term $t(x)$ is a name for a function $t(x)^M:M^{|x|}\to M$, a formula $\phi(x)$ is a name for a subset $\phi(x)^M\subseteq M^{|x|}$ which we call \emph{the subset of $M$ defined by $\phi(x)$.} It is also very common to write \emph{$\phi(M)$} for the set defined by $\phi(x)$. In general sets of the form $\phi(M)$ for some $\phi(x)\in M$ are called \emph{definable.}
 
 
 \begin{definition}[of truth]\label{defverita} For every formula $\phi$ with variables among those of the tuple $x$ we define \emph{$\phi(x)^M$\/} by induction as follows
@@ -286,7 +288,10 @@ Just as a term $t(x)$ is a name for a function $t(x)^M:M^{|x|}\to M$, a formula 
 Condition \ssf{i2} assumes that $\xi$ and $\psi$ are uniquely determined by $\vee\,\xi\,\psi$. This is a guaranteed by the unique legibility o formulas, Lemma~\ref{lemmaformuleleggibilita}. Analogously, \ssf{o1} e \ssf{o2} assume Lemma~\ref{lemmaterminileggibilita}. 
 \end{definition}
 
-The case when $x$ is the empty tuple is far from trivial. Note that $\phi(\0)^M$ is a subset of $M^0=\{\0\}$. Then there are two possibilities either $\{\0\}$ or $\0$. We will read them as two \emph{truth values}: \emph{True\/} and \emph{False}, respectively. If $\phi^M=\{\0\}$ we say that \emph{$\phi$ is true in $M$}, if $\phi^M=\0$, we say that \emph{$\phi$ is false $M$}. We write \emph{$M\models\phi$}, respectively \emph{$M\notmodels\phi$}. Or we may say that \emph{$M$ models $\phi$}, respectively \emph{$M$ does not model $\phi$}. It is immediate to verify at
+The case when $x$ is the empty tuple is far from trivial. Note that $\phi(\0)^M$ is a subset of $M^0=\{\0\}$. Then there are two possibilities either $\{\0\}$ or $\0$.
+We will read them as two \emph{truth values}: \emph{True\/} and \emph{False}, respectively. If $\phi^M=\{\0\}$ we say that \emph{$\phi$ is true in $M$}, if $\phi^M=\0$, we say that \emph{$\phi$ is false $M$} and we write \emph{$M\models\phi$}, respectively \emph{$M\notmodels\phi$.}
+In words we may say that \emph{$M$ models $\phi$}, respectively \emph{$M$ does not model $\phi$.}
+It is immediate to verify that
 
 \hfil$\phi(M)=\big\{a\in M^{|x|}: M\models\phi(a)\big\}$.
 
@@ -295,10 +300,10 @@ Note that usually, we say \textit{formula\/} when, strictly speaking, we mean  \
 In some contexts we also want to distinguish between two sorts of variables that play different roles. Some are placeholder for parameters, some are used to define a set. In the the first chapters this distinction is only a clue for the reader, in the last chapters it is an essential part of the definitions.
 
 \begin{definition}\label{def_partitioned_fla}
-A \emph{partitioned formula\/}  (strictly speaking, we should say a \emph{$2$-partitioned\/} formula) is a triple $\phi({\mr x}\,;{\gr z})$ consisting of a formula and two tuples of variables such that the variables occurring in $\phi$ are all among ${\mr x},{\gr z}$.\QED
+A \emph{partitioned formula\/} is a triple $\phi({\mr x}\,;{\gr z})$ consisting of a formula and two tuples of variables such that the variables occurring in $\phi$ are all among ${\mr x},{\gr z}$.\QED
 \end{definition}
 
-We use a semicolon to separate the two tuples of variables. Typically, ${\gr z}$ is the placeholder for parameters and ${\mr x}$ runs over the elements of the set defined by the formula.
+We use a semicolon to separate the two tuples of variables. Typically, ${\gr z}$ is the placeholder for parameters and ${\mr x}$ runs over the model.
 
 
 \section{Yet more notation}\label{Altriconnettivi}
@@ -332,7 +337,7 @@ The semantic of conjunction and disjunction is associative. Then for any finite 
 \hfil \emph{$\displaystyle\bigwedge_{i\in I}\phi_i$}\hfil \emph{$\displaystyle\bigvee_{i\in I}\phi_i$}\bigskip
 
 
-When $x=x_1,\dots,x_n$ is a tuple of variables we write \emph{$\E x\,\phi$\/} or \emph{$\E x_1,\dots,x_n\,\phi$\/} for $\E x_1\dots\E x_n\,\phi$.  With first order sentences we are able to say that $\phi(M)$ has at least $n$ elements (also, no more than, or exactly $n$). It is convenient to use the following abbreviations.
+When $x=x_1,\dots,x_n$ is a tuple of variables we write \emph{$\E x\,\phi$\/} or \emph{$\E x_1,\dots,x_n\,\phi$\/} for $\E x_1\dots\E x_n\,\phi$.  Thesre is a first order sentences that say that $\phi(M)$ has at least $n$ elements (also, no more than, or exactly $n$). It is convenient to use the following abbreviations.
 
 \ceq{\hfill\emph{$\E^{\ge n}x\;\phi(x)$}}{stands for}{\E x_1,\dots, x_n\,\Big[\bigwedge_{1\le i\le n}\phi(x_i)\ \ \wedge\ \bigwedge_{1\le i<j\le n} x_i\dot\neq x_j\Big].}
 
@@ -343,7 +348,7 @@ When $x=x_1,\dots,x_n$ is a tuple of variables we write \emph{$\E x\,\phi$\/} or
 \smallskip
 
 
-\begin{exercise}
+\begin{exercise}\label{ex_fam_insiemi}
 Let $M$ be an $L$-structure and let $\psi(y), \phi(x,y)\in L$. For each of the following conditions, write a sentence true in $M$ exactly when
 \begin{itemize}
 \item[a.] $\psi(M)\ \in\ \big\{\phi(a,M): a\in M\big\}$;
@@ -356,11 +361,11 @@ Let $M$ be an $L$-structure and let $\psi(y), \phi(x,y)\in L$. For each of the f
 Let $M$ be a structure in a signature that contains a symbol $r$ for a binary relation.
 Write a sentence $\phi$ such that 
 \begin{itemize} 
-\item[a.] $M\models\phi$ if and only if there is an $A\subseteq M$ such that $r^M\ \subseteq\ A\times\neg A$.
+\item[a.] $M\models\phi$ if and only if there is $A\subseteq M$ such that $r^M\ \subseteq\ A\times\neg A$.
 \end{itemize}
 Remark: $\phi$ assert an asymmetric version of the property below
 \begin{itemize} 
-\item[b.] $M\models\psi$ if and only if there is an $A\subseteq M$ such that $r^M\ \subseteq\ (A\times \neg A)\;\cup\;(\neg A\times A)$.
+\item[b.] $M\models\psi$ if and only if there is $A\subseteq M$ such that $r^M\ \subseteq\ (A\times \neg A)\;\cup\;(\neg A\times A)$.
 \end{itemize}
 Assume $M$ is a graph, what required in \ssf{b} is equivalent to saying that $M$ is a \textit{bipartite graph}, or equivalently that it has \textit{chromatic number $2$\/} i.e., we can color the vertices with $2$ colors so that no two adjacent vertices share the same color.\QED
 \end{exercise}

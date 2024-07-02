@@ -10,11 +10,13 @@
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amsrefs}
+\usepackage{tcolorbox}
 \usepackage{titlesec}
 \usepackage{titletoc}
 \usepackage{dsfont}
 \usepackage{euscript}
 \usepackage{fourier-orns}
+\usepackage{datetime2} 
 %\usepackage{pxfonts}
 %\usepackage{newpxtext}
 %\usepackage{tgpagella}
@@ -45,7 +47,7 @@ diagrams={>=latex}
 
 \newcommand{\mylabel}[1]{{\ssf{#1}}\hfill}
 \renewenvironment{itemize}
-  {\begin{list}{$\triangleright$}{%
+  {\begin{list}{}{%
    \setlength{\parskip}{0mm}
    \setlength{\topsep}{.4\baselineskip}
    \setlength{\rightmargin}{0mm}
@@ -57,8 +59,9 @@ diagrams={>=latex}
    \setlength{\partopsep}{0mm}
    \setlength{\labelsep}{1ex}
    \setlength{\leftmargin}{\labelwidth+\labelsep}
-   \let\makelabel\mylabel}}{%
-   \end{list}\vspace*{-\parskip}}
+   \let\makelabel\mylabel
+   }}
+   {\end{list}}
 
 %\def\emph#1{\textcolor{blue}{\boldmath\textbf{#1}}}
 
@@ -66,7 +69,7 @@ diagrams={>=latex}
 % \def\emph#1{\fcolorbox{white}{gray!50}{\vphantom{Iq}#1}}
 %\def\emph#1{\textcolor{blue}{\textbf{\boldmath #1}}}
 
-\def\jj{\mbox{-}}
+
 \def\E{\exists}
 \def\A{\forall}
 \def\mdot{\mathord\cdot}
@@ -124,7 +127,7 @@ diagrams={>=latex}
 
 \def\nonforkc{\mathbin{\raise1.8ex\rlap{\kern1.1ex\rule{0.6ex}{0.1ex}}\rlap{\kern1.1ex\rule{0.1ex}{1.9ex}}\raise-0.3ex\hbox{$\smile$} } }
 
-
+\def\QED{}
 \def\cpaw{\mathbin{\ooalign{\kern-0.4ex$-$\hidewidth\cr$<$}}}
 \def\cpawdot{\ooalign{$\kern1.2ex\cdot$\cr$\cpaw$\cr}}
 \def\cev#1{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}}
@@ -148,7 +151,6 @@ diagrams={>=latex}
 \def\equivKP{\stackrel{\smash{\scalebox{.5}{\rm KP}}}{\equiv}}
 \def\equivSh{\stackrel{\smash{\scalebox{.5}{\rm Sh}}}{\equiv}}
 \def\dIFF{\IFF\hskip-2.2ex\smash{\raisebox{1.3ex}{\tiny def}}}
-\def\deq{\mathrel{=\hskip-1.9ex\smash{\raisebox{1.2ex}{\tiny def}}}}
 \def\swedge{\mathbin{\raisebox{.2ex}{$\scriptscriptstyle\mathbin\wedge$}}}
 \def\svee{\mathbin{\raisebox{.2ex}{$\scriptscriptstyle\mathbin\vee$}}}
 
@@ -192,7 +194,6 @@ diagrams={>=latex}
 \def\ssf#1{\textsf{\small #1}}
 
 
-
 \titlecontents{section}
 [3.8em] % ie, 1.5em (chapter) + 2.3em
 {\vskip-1ex}
@@ -213,12 +214,12 @@ diagrams={>=latex}
 \titlespacing*{\chapter}{0em}{.5ex plus .2ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing*{\section}{-9.7ex}{3ex plus .5ex minus .5ex}{1ex plus .2ex minus .2ex}
 
-\renewcommand*\thesection{\arabic{section}}
+% \renewcommand*\thesection{\arabic{section}}
 
 \newtheoremstyle{mio}% name
      {2\parskip}%      Space above
-     {\parskip}%      Space below
-     {\sl}%         Body font
+     {\parskip}%       Space below
+     {}%         Body font
      {}%         Indent amount (empty = no indent, \parindent = para indent)
      {\bfseries}% Thm head font
      {}%        Punctuation after thm head
@@ -226,51 +227,53 @@ diagrams={>=latex}
            %   \newline = linebreak
      {\llap{\thmnumber{#2}\hskip2mm}\thmname{#1}\thmnote{\bfseries{}#3}}% Thm head spec (can be left empty, meaning `normal')
 
-\newtheoremstyle{liscio}% name
-     {2\parskip}%      Space above
-     {0mm}%      Space below
-     {}%         Body font
-     {}%         Indent amount (empty = no indent, \parindent = para indent)
-     {\bfseries}% Thm head font
-     {}%        Punctuation after thm head
-     {1.5ex}%     Space after thm head: " " = normal interword space;
-           %   \newline = linebreak
-     {\llap{\thmnumber{#2}\hskip2mm}\thmname{#1}\thmnote{\bfseries{}#3}}% Thm head spec (can be left empty, meaning `normal')
-
-
-
 \newcounter{thm}[chapter]
 
-\renewcommand{\thethm}{\thechapter.\arabic{thm}}
+% \renewcommand{\thethm}{\thechapter.\arabic{thm}}
 
+\tcbset{
+  mythm/.style={
+    colback=black!5!white,
+    colframe=white!50!black,
+    extrude right by=1ex,
+    extrude left by=6.5ex,
+    top=0.7ex,
+    bottom=1ex,
+    right=1ex,
+    left=6.5ex,
+    boxsep=0pt,
+    parbox=false
+  },
+}
 \theoremstyle{mio}
-\newtheorem{theorem}[thm]{Theorem}
-\newtheorem{corollary}[thm]{Corollary}
-\newtheorem{proposition}[thm]{Proposition}
-\newtheorem{lemma}[thm]{Lemma}
-\newtheorem{fact}[thm]{Fact}
-\newtheorem{definition}[thm]{Definition}
-\newtheorem{assumption}[thm]{Assumption}
-\newtheorem{void_thm}[thm]{}
-\theoremstyle{liscio}
-\newtheorem{void_def}[thm]{}
-\newtheorem{remark}[thm]{Remark}
-\newtheorem{notation}[thm]{Notation}
-\newtheorem{note}[thm]{Note}
+\newtheorem{theorem}[thm]{Theorem}\tcolorboxenvironment{theorem}{mythm}
+\newtheorem{corollary}[thm]{Corollary}\tcolorboxenvironment{corollary}{mythm}
+\newtheorem{proposition}[thm]{Proposition}\tcolorboxenvironment{proposition}{mythm}
+\newtheorem{lemma}[thm]{Lemma}\tcolorboxenvironment{lemma}{mythm}
+\newtheorem{fact}[thm]{Fact}\tcolorboxenvironment{fact}{mythm}
+\newtheorem{definition}[thm]{Definition}\tcolorboxenvironment{definition}{mythm}
+\newtheorem{assumption}[thm]{Assumption}\tcolorboxenvironment{assumption}{mythm}
+\newtheorem{void}[thm]{}\tcolorboxenvironment{void}{mythm}
+\newtheorem{remark}[thm]{Remark}\tcolorboxenvironment{remark}{mythm}
+\newtheorem{notation}[thm]{Notation}\tcolorboxenvironment{notation}{mythm}
+\newtheorem{note}[thm]{Note}\tcolorboxenvironment{note}{mythm}
 \newtheorem{exercise}[thm]{Exercise}
-\newtheorem{example}[thm]{Example}
-\setlength{\partopsep}{0mm}
-\setlength{\topsep}{0mm}
+\newtheorem{example}[thm]{Example}\tcolorboxenvironment{example}{mythm}
 
-\def\QED{\noindent\nolinebreak[4]\hfill\rlap{\ \ $\Box$}\medskip}
-\renewenvironment{proof}[1][Proof]%
-{\begin{trivlist}\item[\hskip\labelsep {\bf #1}]}
-{\QED\end{trivlist}}
-
-\newenvironment{void}[1][]%
-{\begin{trivlist}\item[\hskip\labelsep {\bf #1}]}
-{\QED\end{trivlist}}
-
+\makeatletter
+\providecommand{\proofNameStyle}{\bfseries}
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \vspace*{-\baselineskip}
+  \trivlist
+  \item[\hskip\labelsep
+        \proofNameStyle
+    #1\@addpunct{.}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
 
 
 \pagestyle{plain}
@@ -297,10 +300,29 @@ diagrams={>=latex}
 \def\grD{{\gr\D}}
 \def\grV{{\gr\V}}
 
-
 \renewcommand*{\emph}[1]{%
-\smash{\tikz[baseline]\node[rectangle, fill=blue!10, rounded corners, inner xsep=0.2ex, inner ysep=0.2ex, anchor=base, minimum height = 2.7ex]{#1};}}
+\smash{\tikz[baseline]\node[rectangle, fill=red!15!yellow!50!white, rounded corners, inner xsep=0.2ex, inner ysep=0.2ex, anchor=base, minimum height = 2.7ex]{#1};}}
 
+%%%%%%% GETCOMMIT
+\newcommand\dotGitHEAD{}
+\newcommand\branch{}
+\newcommand\commit{}
+\makeatletter
+\let\myfilehandle\@inputcheck\makeatother
+
+\openin\myfilehandle=.git/HEAD\relax
+
+\begingroup\endlinechar-1
+  \global\read\myfilehandle to \dotGitHEAD
+\endgroup
+\closein\myfilehandle
+
+\newcommand\GetBranch{}
+\def\GetBranch ref: refs/heads/#1\relax{\renewcommand{\branch}{#1}}
+
+\expandafter\GetBranch\dotGitHEAD\relax
+\makeatother
+%%%%%%% END GETCOMMIT
 
 \begin{document}
 \raggedbottom
@@ -310,29 +332,30 @@ A Cr\`eche Course in Model Theory\\[3ex]%
 Domenico Zambella\\
 Università di Torino\\
 ORCID:~\href{https://orcid.org/0000-0003-1141-2898}{0000-0003-1141-2898}\\[1ex]
-\monthname\ \the\year}}
+\texttt{Branch:\ \branch\ \DTMnow}}}
 \tableofcontents
-\subfile{preface}
+% \subfile{preface}
 \subfile{preliminaries}
 \subfile{elementarity}
 \subfile{ultraproducts}
-\subfile{compactness}
-\subfile{types}
-\subfile{relational}
-\subfile{rich}
-\subfile{algebraic}
-% \subfile{oalgebraic}
-\subfile{saturation}
-\subfile{elimination}
-\subfile{geometry}
-\subfile{countable}
-\subfile{imaginary}
-\subfile{invariant}
-\subfile{ramsey}
-\subfile{invariantL}
-\subfile{stability}
-\subfile{vc}
-% \subfile{pseudofinite}
-% \subfile{measures}
-\subfile{references}
+% \subfile{compactness}
+% \subfile{types}
+% \subfile{relational}
+% \subfile{rich}
+% \subfile{algebraic}
+% % \subfile{oalgebraic}
+% \subfile{saturation}
+% \subfile{elimination}
+% \subfile{geometry}
+% \subfile{countable}
+% \subfile{imaginary}
+% \subfile{invariant}
+% \subfile{ramsey}
+% \subfile{invariantL}
+% \subfile{stability}
+% \subfile{vc}
+% % \subfile{pseudofinite}
+% % \subfile{measures}
+\subfile{esame}
+% \subfile{references}
 \end{document}
