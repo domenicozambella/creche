@@ -1,6 +1,4 @@
 % !TEX root = creche.tex
-\documentclass[creche.tex]{subfiles}
-\begin{document}
 \chapter{Ordered algebraic structures}
 \label{oalgebraic}
 
@@ -241,9 +239,9 @@ It follows immediately that ordered integral domains have characteristic $0$.
 As in the previous section, we split $L_{\rm at}$ into equations $L_{\rm at,=}$ and inequalities $L_{\rm at,<}$.
 Note that, by the linearity of the order, the types $\attp(b/A)$ and $\atpmtp(b/A)$ are equivalent.
 
-If $p_{=}(x)$ is trivial, as defined in Notation~\ref{notation1}, then we say that $p(x)$ is \emph{equationally trivial.}
+The type $p(x)$ is \emph{equationally trivial\/} if $p_{=}(x)$ is trivial, as defined in Notation~\ref{notation1}. 
 In this case $\proves p(x)\iff p_<(x)$.
-If $\attp({\mr b}/A)$ equationally trivial, we say that $b$ is \emph{transcendental\/} over $A$.
+If $\attp({\mr b}/A)$ equationally trivial, we say that ${\rm b}$ is \emph{transcendental\/} over $A$.
 %
 Otherwise we say that it is \emph{algebraic\/} over $A$.
 
@@ -260,10 +258,10 @@ Otherwise we say that it is \emph{algebraic\/} over $A$.
 \end{proposition}
 
 \begin{proof}
-  Let $\phi({\mr x})$ be as in the proof of Proposition~\ref{prop_di_tipi_princ_comp}.
+  Negate \ss1 and let $\phi({\mr x})$ be as in the proof of Proposition~\ref{prop_di_tipi_princ_comp}.
   Then $\ \proves\phi({\mr x})\imp p_{=}({\mr x})$.
   %
-  Let ${\mr a},{\mr c}\in\<A\>_M$ be such that ${\mr b}$ is the unique element in $\<A\>_M$ satisfying ${\mr a}<{\mr x}<{\mr c}$ and $\phi({\mr x})$.
+  Let ${\mr a},{\mr c}\in\<A\>_M$ be such that ${\mr a}<{\mr b}<{\mr c}$ is the unique element in $\<A\>_M$ satisfying ${\mr a}<{\mr x}<{\mr c}$ and $\phi({\mr x})$.
   We prove that for every polynomial $t({\mr x})$ with parameters in $\<A\>_M$ such that $\proves\ \phi({\mr x})\imp t({\mr x})\neq0$ one of the following holds
   \begin{itemize}
   \item[a.] $\proves\   {\mr a}<{\mr x}<{\mr c}\ \wedge\ \phi({\mr x})\imp t({\mr x})>0$;
@@ -278,8 +276,3 @@ Otherwise we say that it is \emph{algebraic\/} over $A$.
   \item[b$'$.] $N_2\models \phi({\mr b_2})$ \ and \ $N_2\models t({\mr b_2}) < 0$.
   \end{itemize} 
 \end{proof}
-
-
-
-
-\end{document}

@@ -176,10 +176,9 @@ Let $L$ be the empty language The \emph{theory of infinite sets\/} is axiomatize
 Prove that $\ccl(\phi\vee \psi)=\ccl(\phi)\cap\ccl(\psi)$.
 \end{exercise}
 
-\begin{exercise}\label{modus ponens}
-Prove that $T\cup\{\phi\}\proves\psi$ then $T\proves\phi\imp\psi$.
-\end{exercise}
-
+% \begin{exercise}\label{modus ponens}
+% Prove that $T\cup\{\phi\}\proves\psi$ then $T\proves\phi\imp\psi$.
+% \end{exercise}
 
 \begin{exercise}
 Prove that $\Th(\Mod(T))=\ccl(T)$.
@@ -197,12 +196,12 @@ Prove that $\Th(\Mod(T))=\ccl(T)$.
 The following is a fundamental notion in model theory.
 
 \begin{definition}\label{def_el_eq}
-We say that $M$ and $N$ are \emph{elementarily equivalent} if
+We say that $M$ and $N$ are \emph{elementarily equivalent\/} if
 \begin{itemize}
 \item[ee.] $N\models\phi\ \ \IFF\ \ M\models \phi$,\hspace{4ex} for every sentence $\phi\in L$.
 \end{itemize}
 In this case we write \emph{$M\equiv N$.}
-More generally, we write \emph{$M\equiv_A N$\/} and say that $M$ and $N$ are elementarily equivalent \emph{over $A$} if the following hold
+More generally, we write \emph{$M\equiv_A N$\/} and say that $M$ and $N$ are elementarily equivalent \emph{over $A$\/} if the following hold
 \begin{itemize}
 \item[a.] $A\subseteq M\cap N$
 \item[ee'.] equivalence \ssf{ee} above holds for every sentence $\phi\in L(A)$.
@@ -267,12 +266,14 @@ We show that if $G$ is simple and $H\preceq G$ then also $H$ is simple.
 Recall that $G$ is simple if all its normal subgroups are trivial, equivalently, if for every $a\in G\sm \{1\}$ the set $\big\{gag^{-1}\,:\,g\in G\big\}$ generates the whole group $G$.
 
 
-Assume $H$ is not simple. Then there are $a,b\in H$ such that $b$ is not the product of elements of $\big\{hah^{-1}\,:\,h\in H\big\}$. Then for every $n$ 
+Assume $H$ is not simple.
+Then there are $a,b\in H$ such that $b$ is not the product of elements of $\big\{hah^{-1}\,:\,h\in H\big\}$.
+Then for every $n$ 
 
 \hfil$H\ \models\ \neg\E x_1,\dots,x_n\ \ \big(b\ \ =\ \ x_1ax_1^{-1}\cdot\cdot\cdot\ x_nax_n^{-1}\big)$
 
 By elementarity the same hold in $G$.
-Hence $G$ is not simple. 
+Hence $G$ is not simple.
 \end{example}
 
 % \begin{exercise}
@@ -321,11 +322,14 @@ Hint: in $\ZZ^n$ there are at most $2^n$ elements that are not congruent modulo 
 \def\ns{{}^*\kern-.2ex}
 \def\st{{\rm st}}
 
-This section concerns an example that is useful to look at in some detail to get some familiarity with the notion of elementary substructure. The example is culturally interesting, because it formalises rigorously the notions of infinity and infinitesimal, which were used in Newton and Leibniz's time to develop real analysis. These notions were not well defined - in fact, they were inconsistent.
+This section concerns an example that is useful to look at in some detail to get some familiarity with the notion of elementary substructure.
+The example is culturally interesting, because it formalises rigorously the notions of infinity and infinitesimal, which were used in Newton and Leibniz's time to develop real analysis.
+These notions were not well defined - in fact, they were inconsistent.
 
 It was only in the mid 19th century that mathematicians of Weiertsrass' generation developed the notion of limit, thus providing rigorous grounds for the development of analysis.
 
-Nonstandard analysis was developed by Abraham Robinson in the 1950s. Robinson found a way to formalise the ideas of infinity and infinitesimals through the concept of elementary extension. 
+Nonstandard analysis was developed by Abraham Robinson in the 1950s.
+Robinson found a way to formalise the ideas of infinity and infinitesimals through the concept of elementary extension.
 
 The notation that follows will be used throughout this section.
 
@@ -338,11 +342,16 @@ The \emph{standard model of real analysis} is $\RR$ with the natural interpretat
 This is not an abuse of notation: in this case, elements and interpretations coincide.
 
 Suppose $\RR$ has a proper elementary extension \emph{$\nsR$.} The existence of such an extension will be proved later.
- The interpretations of the symbols $f$ and $X$ in \emph{$\nsR$} will be denoted by  \emph{$\ns f$} and \emph{$\ns X$,} respectively. The elements of $\nsR$ are called \emph{hyperreals,} the elements of  $\RR$ are called \emph{standard (hyper)reals,} those in $\nsR\sm\RR$ are called  \emph{nonstandard (hyper)reals.}
+ The interpretations of the symbols $f$ and $X$ in \emph{$\nsR$} will be denoted by  \emph{$\ns f$} and \emph{$\ns X$,} respectively.
+The elements of $\nsR$ are called \emph{hyperreals,} the elements of  $\RR$ are called \emph{standard (hyper)reals,} those in $\nsR\sm\RR$ are called  \emph{nonstandard (hyper)reals.}
 
-It is easy to verify that $\nsR$ is an ordered field. This is because the operations sum and product are in the language, and so is the order relation. The property of being an ordered field can be expressed via a set of sentences  that are true in $\RR$, and hence also in $\nsR$.
+It is easy to verify that $\nsR$ is an ordered field.
+This is because the operations sum and product are in the language, and so is the order relation.
+The property of being an ordered field can be expressed via a set of sentences  that are true in $\RR$, and hence also in $\nsR$.
 
-A hyperreal $c$ is said to be \emph{infinitesimal} if $|c|<\epsilon$ for every positive standard $\epsilon$. A hyperreal $c$ is \emph{infinite} if $k<|c|$ for every standard $k$; the hyperreal $c$ if \emph{finite} otherwise. Hence if $c$ is infinite, then $c^{-1}$ is infinitesimal.
+A hyperreal $c$ is said to be \emph{infinitesimal} if $|c|<\epsilon$ for every positive standard $\epsilon$.
+A hyperreal $c$ is \emph{infinite} if $k<|c|$ for every standard $k$; the hyperreal $c$ if \emph{finite} otherwise.
+Hence if $c$ is infinite, then $c^{-1}$ is infinitesimal.
 Clearly, all standard reals are finite, and $0$ is the only infinitesimal standard real.
 
 The proof of the following lemma is left to the reader.
@@ -362,7 +371,7 @@ If $c\in\nsR$ in infinite then $c^{-1}$ is infinitesimal and if $c$ is a nonzero
 Then the first claim follows from the second one.
 Let $c$ be finite.
 The set $\big\{ a\in\RR: c<a\big\}$ is a nonempty set of (standard) reals that is bounded from below.
-Let $b\in\RR$ the least upper bound. 
+Let $b\in\RR$ the least upper bound.
 We show that $b-c$ is a infinitesimal.
 Assume for a contradiction that $\epsilon < |b-c|$ for some standard positive $\epsilon$.
 Then $c<b-\epsilon$, or $b+\epsilon< c$, depending on whether $c<b$ or $b<c$.
@@ -374,10 +383,14 @@ Then $b-b'$ is also infinitesimal.
 As $0$ is the only standard infinitesimal $b=b'$.
 \end{proof}
 
-The existence of infinite non standard hyperreals shows that $\nsR$ is not archimedean: standard integers are not cofinal in $\nsR$. However, by elementarity, the nonstandard integers $\nsN$ are cofinal in $\nsR$: from the perspective of an inhabitant of $\nsR$, the latter is a normal archimedean field.
+The existence of infinite non standard hyperreals shows that $\nsR$ is not archimedean: standard integers are not cofinal in $\nsR$.
+However, by elementarity, the nonstandard integers $\nsN$ are cofinal in $\nsR$: from the perspective of an inhabitant of $\nsR$, the latter is a normal archimedean field.
 
 
-Dedekind completeness is another fundamental property of $\RR$ that does not hold in~$\nsR$. An ordered set is \emph{Dedekind complete} if every subset that is bounded above has a least upper bound. Then $\nsR$ is not Dedekind complete: the set of infinitesimals is bounded (both above and below), but, by Lemma~\ref{prodottosommainfinitesimi}, it does not have a least upper bound. It follows that Dedekind completeness is \textit{not\/} a first-order property. 
+Dedekind completeness is another fundamental property of $\RR$ that does not hold in~$\nsR$.
+An ordered set is \emph{Dedekind complete} if every subset that is bounded above has a least upper bound.
+Then $\nsR$ is not Dedekind complete: the set of infinitesimals is bounded (both above and below), but, by Lemma~\ref{prodottosommainfinitesimi}, it does not have a least upper bound.
+It follows that Dedekind completeness is \textit{not\/} a first-order property.
 
 However, it sometimes happens that properties that hold of all sets in the standard model hold in $\nsR$ for definable sets only.
 
@@ -385,7 +398,8 @@ However, it sometimes happens that properties that hold of all sets in the stand
 % The lemma concerns parameter-definable sets in $\nsR$, otherwise the proof would be immediate.
 
 % \begin{proof}  Let $x$ be a single variable, $a$ a tuple of parameters in $\nsR$ and let $\phi(z,x)$ be a pure formula.
-%  We want to show that if  $\phi(a,\nsR)$ is bounded above then it has a least upper bound. The following formula $\psi(z,y)$ says that $y$ is an upper bound for the set defined by $\phi(z,x)$, where $z$ is a tuple of parameters:
+%  We want to show that if  $\phi(a,\nsR)$ is bounded above then it has a least upper bound.
+The following formula $\psi(z,y)$ says that $y$ is an upper bound for the set defined by $\phi(z,x)$, where $z$ is a tuple of parameters:
 
 % \hfil $\psi(z,y)\ \ =\ \  \A x\ \big[\phi(z,x)\imp x\le y\big]$.
 
@@ -435,50 +449,48 @@ $\ns f(c)\approx l$ for every for every $c\approx a\neq c$.
 
 \begin{proof}
 We prove part \ssf{d} and we leave the other parts as an exercise.
-For $\IMP$, assume that the left-hand side of the equivalence \ssf{d} holds and we write it as a first-order sentence:
 
-\begin{itemize}
-\item[1.]\hspace*{9ex}$\A\,\epsilon>0\ \E\,\delta>0\ \A x\ \Big[0<|x-a|<\delta\ \ \imp\ \ |fx-l|<\epsilon\Big]$.
-\end{itemize}
-
-By assumption, the formula \ssf{1} holds in $\RR$, or, equivalently, in $\nsR$. In what follows, we use certain abbreviations which we assume the reader can translate into first-order formulas. For consistency with standard notation in analysis, we use the Greek letters $\epsilon$ and $\delta$ as variables. The symbols $\dot\epsilon$ e $\dot\delta$ denote parameters.
+$\IMP$.
+The left-hand side of the equivalence \ssf{d} asserts
 
 
-We now check that $\ns f(c)\approx l$ holds for every $c\approx a\neq c$, that is, $|\ns fc-l|<\dot\epsilon$ for every positive standard $\dot\epsilon$.
-Fix a standard positive $\dot\epsilon$ and let $\dot\delta \in \RR$ be a standard real obtained from \ssf{1}.
+\ceq{\ssf1\hfill\RR}{\models}{\A\,\epsilon>0\ \E\,\delta>0\ \A x\ \Big[0<|x-a|<\delta\ \ \imp\ \ |fx-l|<\epsilon\Big].}
+
+For consistency with standard notation in analysis, we use the Greek letters $\epsilon$ and $\delta$ as variables.
+The symbols $\dot\epsilon$ e $\dot\delta$ denote parameters either in $\RR$ or in $\nsR$.
+
+Pick $c\neq a\approx c$ arbitrarily.
+We now check that $\ns f(c)\approx l$, that is, $|\ns fc-l|<\dot\epsilon$ for every positive standard $\dot\epsilon$.
+Pick $\dot\epsilon\in\RR^+$ arbitralily and let $\dot\delta\in\RR$ be given by \ssf{1}.
 By elementarity, we have
 
+\ceq{\hfill\ns\RR}{\models}{\phantom{\A\,\epsilon>0\ \E\,\delta>0}\ \A x\ \Big[0<|x-a|<\dot\delta\ \ \imp\ \ |fx-l|<\dot\epsilon\Big].}
 
-\begin{itemize}
-\item[]\hspace*{9ex}$\phantom{\A\,\epsilon>0\ \E\,\delta>0}\llap{$\nsR\;\models$}\ \A x\ \Big[0<|x-a|<\dot\delta\ \ \imp\ \ |fx-l|<\dot\epsilon\Big]$,
-\end{itemize}
+In particular
 
-where $\dot\epsilon$ and $\dot\delta$ are now parameters.
-If  $a\approx c\neq a$, then $0<|c-a|<\dot\delta$ certainly holds (because $\dot\delta$ is standard).
-Hence \ssf{1} gives $|\ns fc-l|<\dot\epsilon$.
+\ceq{\hfill\ns\RR}{\models}{\phantom{\A\,\epsilon>0\ \E\,\delta>0\ \A x\ \Big[}0<|c-a|<\dot\delta\ \ \imp\ \ |fc-l|<\dot\epsilon.}
+
+As $0<|c-a|<\dot\delta$ certainly holds (because $\dot\delta$ is standard) $|\ns fc-l|<\dot\epsilon$ follows.
 
 
-For $\PMI$, assume that \ssf{1} is false, that is, assume that, in $\RR$,
+$\PMI$.
+Assume that \ssf{1} is false, that is,
 
-\begin{itemize}
-\item[2.]\hspace*{9ex}$\E\,\epsilon>0\ \A\,\delta>0\ \E x\ \Big[0<|x-a|<\delta\ \ \wedge\ \ \epsilon\le |fx-l|\Big]$,
-\end{itemize}
+\ceq{\ssf2\hfill\RR}{\models}{\E\,\epsilon>0\ \A\,\delta>0\ \E x\ \Big[0<|x-a|<\delta\ \ \wedge\ \ \epsilon\le|fx-l|\Big].}
 
-We want to show that $\ns f(c)\not\approx l$ for some $c\neq a$ infinitely close to $a$.
-Fix a witness $\dot\epsilon$ of this formula in $\RR$ --- so $\dot\epsilon$ is a standard real.
-Now, by elementarity we have
+We want to show that $\ns f(c)\not\approx l$ for some $c\neq a$.
+Let $\dot\epsilon\in\RR$ witness \ssf2.
+By elementarity we have
 
-\begin{itemize}
-\item[]\hspace*{9ex}$\phantom{\E\,\epsilon>0}\llap{$\nsR\;\models$}\ \A\,\delta>0\ \E x\ \Big[0<|x-a|<\delta\ \ \wedge\ \ \dot\epsilon\le |fx-l|\Big]$.
-\end{itemize}
+\ceq{\hfill\ns\RR}{\models}{\phantom{\E\,\epsilon>0}\ \A\,\delta>0\ \E x\ \Big[0<|x-a|<\delta\ \ \wedge\ \ \dot\epsilon\le|fx-l|\Big].}
 
-Let $\dot\delta$ be an arbitrary infinitesimal. Then 
+Let $\dot\delta$ be an arbitrary infinitesimal.
+Then 
 
-\begin{itemize}
-\item[]\hspace*{9ex}$\phantom{\E\,\epsilon>0\ \A\,\delta>0}\llap{$\nsR\;\models$}\ \E x\ \Big[0<|x-a|<\dot\delta\ \ \wedge\ \ \dot\epsilon\le |fx-l|\Big]$.
-\end{itemize}
+\ceq{\hfill\ns\RR}{\models}{\phantom{\E\,\epsilon>0\ \A\,\delta>0}\ \E x\ \Big[0<|x-a|<\dot\delta\ \ \wedge\ \ \dot\epsilon\le|fx-l|\Big].}
 
-Any $c$ that witnesses the truth of this formula in $\nsR$ is such that $c\approx a\neq c$ and, simultaneously, $\epsilon\le |\ns fc-l|$. But $\dot\epsilon$ was chosen to be standard, so $\ns fc\not\approx l$.
+Any $c$ that witnesses the above formula is such that $c\approx a\neq c$ and, simultaneously, $\epsilon\le |\ns fc-l|$.
+But $\dot\epsilon$ is standard, hence $\ns fc\not\approx l$.
 \end{proof}
 
 
@@ -502,55 +514,41 @@ In Corollary~\ref{continuo}, it is important to restrict \ssf{c} to \textit{fini
 \end{proposition}
 
 \begin{proof}
-We prove \ssf{a}$\IMP$\ssf{b}.
-Recall that $f$ is uniformly continuous if
+\ssf{a}$\IMP$\ssf{b}.
+Assume \ssf{a}, then
 
-\begin{itemize}
-\item[1.]\hspace*{9ex}$\RR\ \models\ \A\,\epsilon>0\ \E\,\delta>0\ \A x, y\ \Big[|x-y|<\delta\ \ \imp\ \ |fx-fy|<\epsilon\Big]$.
-\end{itemize}
+\ceq{\ssf1\hfill\RR}{\models}{\A\,\epsilon>0\ \E\,\delta>0\ \A x, y\ \Big[|x-y|<\delta\ \ \imp\ \ |fx-fy|<\epsilon\Big].}
 
-Assume \ssf{a} and let $a\approx b$.
-We wnat to show that $|\ns f(a)-\ns f(b)|<\dot\epsilon$ for every positive standard $\dot\epsilon$. 
-Given a standard positive $\dot\epsilon$, let $\dot\delta$ be a standard real obtained from the validity of \ssf{1} in $\RR$.
+Let $a\approx b$.
+We want to show that $|\ns f(a)-\ns f(b)|<\dot\epsilon$ for every positive standard $\dot\epsilon$.
+Given a standard positive $\dot\epsilon$, let $\dot\delta$ be a standard real obtained from \ssf{1}.
 Now elementarity gives
 
-\begin{itemize}
-\item[2.]\hspace*{9ex}$\phantom{\RR\ \models\ \A\,\epsilon>0\ \E\,\delta>0}\llap{$\nsR\;\models$}\ \A x, y\ \Big[|x-y|<\dot\delta\ \ \imp\ \ |fx-fy|<\dot\epsilon\Big]$.
-\end{itemize}
+\ceq{\ssf2\hfill\RR}{\models}{\phantom{\A\,\epsilon>0\ \E\,\delta>0}\ \A x, y\ \Big[|x-y|<\dot\delta\ \ \imp\ \ |fx-fy|<\dot\epsilon\Big].}
 
-In particular,
+Hence, in particular,
 
-\begin{itemize}
-\item[]\hspace*{9ex}$\phantom{\RR\ \models\ \A\,\epsilon>0\ \E\,\delta>0\ \A x, y}\llap{$\nsR\;\models$}\ \phantom{\Big[}|a-b|<\dot\delta\ \ \imp\ \ |fa-fb|<\dot\epsilon$.
-\end{itemize}
+\ceq{\hfill\ns\RR}{\models}{\phantom{\A\,\epsilon>0\ \E\,\delta>0\ \A x, y\ \Big[}|a-b|<\dot\delta\ \ \imp\ \ |fa-fb|<\dot\epsilon.}
 
-Since $a\approx b$, we have $|a-b|<\dot\delta$ for any standard $\dot\delta$.
+Since $a\approx b$ andd $\dot\delta$ is standard, $|a-b|<\dot\delta$ is true.
 Therefore $|\ns f(a)-\ns f(b)|<\dot\epsilon$.
 
-To prove \ssf{b}\,$\IMP$\,\ssf{a} we negate \ssf{a}
+\ssf{b}$\IMP$\ssf{a}.
+Negate \ssf{a}
 
-\begin{itemize}
-\item[3.]\hspace*{9ex}$\RR\ \models\ \E\,\epsilon>0\ \A\,\delta>0\ \E x, y\ \Big[|x-y|<\delta\ \ \wedge\ \ \epsilon\le|fx-fy|\Big]$.
-\end{itemize}
+\ceq{\ssf3\hfill\RR}{\models}{\E\,\epsilon>0\ \A\,\delta>0\ \E x, y\ \Big[|x-y|<\delta\ \ \wedge\ \ \epsilon\le|fx-fy|\Big]}
 
 We want  $a\approx b$ such that $\dot\epsilon\le|\ns f(a)-\ns f(b)|$ for some positive standard $\dot\epsilon$.
-Let $\dot\epsilon$ be a standard real that witnesses the truth of \ssf{3} in $\RR$.
+Let $\dot\epsilon$ be a standard real that witnesses \ssf{3}.
 Elementarity gives
 
-\begin{itemize}
-\item[]\hspace*{9ex}$\phantom{\RR\ \models\ \E\,\epsilon>0}\llap{$\nsR\ \models$}\ \A\,\delta>0\ \E x, y\ \Big[|x-y|<\delta\ \ \wedge\ \ \dot\epsilon\le|fx-fy|\Big]$.
-\end{itemize}
+\ceq{\hfill\ns\RR}{\models}{\phantom{\E\,\epsilon>0}\ \A\,\delta>0\ \E x, y\ \Big[|x-y|<\delta\ \ \wedge\ \ \dot\epsilon\le|fx-fy|\Big].}
 
-So we can fix an arbitrary infinitesimal $\dot\delta>0$ and get $a,b\in\nsR$ such that
+Pick an arbitrary infinitesimal $\dot\delta>0$ and let $a,b\in\nsR$ be given by the formula above
 
+\ceq{\hfill\ns\RR}{\models}{\phantom{\E\,\epsilon>0\ \A\,\delta>0\ \E x, y\ \Big[}|a-b|<\delta\ \ \wedge\ \ \dot\epsilon\le|fa-fb|.}
 
-\begin{itemize}
-\item[]\hspace*{9ex}$\phantom{\RR\ \models\ \E\,\epsilon>0\ \A\,\delta>0\ \E x, y\ \Big[}\llap{$\nsR\ \models\ $}|a-b|<\dot\delta\ \ \wedge\ \ \dot\epsilon\le|fa-fb|$.
-\end{itemize}
-
-Since $\dot\delta$ is infinitesimal, we have $a\approx b$, as required. %to negate \ssf{b}.
-\end{proof}
-
+Since $\dot\delta$ is infinitesimal, we have $a\approx b$, as required.
 
 The following proposition is an immediate consequence of Proposition~\ref{prop_fattolimitinonstandard}.
 
@@ -604,7 +602,7 @@ Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
   Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
   \begin{itemize}
   \item[1.]  $X$ is bounded and closed in the usual topology on $\RR$;
-  \item[2.]  for every $b\in \ns X$ there is an $a\in X$ such that $a\approx b$. 
+  \item[2.]  for every $b\in \ns X$ there is an $a\in X$ such that $a\approx b$.
   \end{itemize}
 \end{exercise}
 
@@ -657,20 +655,20 @@ An surjective embedding is an \emph{isomorphism} or, when domain and codomain co
 
 Condition \ssf{1} above and the assumption that $h$ is injective can be summarized in the following
 
-\ceq{\ssf{1'.}\hfill M\models r(a)}{\IFF}{N\models r(ha)}\hfill for every $r\in L_{\rm rel}\cup\{\doteq\}$ and every $a\in M^{n_r}$.
+\ceq{\ssf{1$'$.}\hfill M\models r(a)}{\IFF}{N\models r(ha)}\hfill for every $r\in L_{\rm rel}\cup\{\doteq\}$ and every $a\in M^{n_r}$.
 
 Note also that, by straightforward induction on syntax, from \ssf{2} we obtain
 
-\ceq{\ssf{2'}\hfill h\,t^M(a)}{=}{t^N(h\,a)}\hfill for every term $t(x)$ and every  $a\in M^{|x|}$.
+\ceq{\ssf{2$'$}\hfill h\,t^M(a)}{=}{t^N(h\,a)}\hfill for every term $t(x)$ and every  $a\in M^{|x|}$.
 
-Combining these two properties and a straightforward induction on the syntax give 
+Combining \ssf{1$'$} and \ssf{2$'$} we obtain by straightforward induction on the syntax
 
 \ceq{\ssf{3.}\hfill M\models\phi(a)}{\IFF}{N\models\phi(ha)}\hfill for every $\phi(x)\in L_{\rm qf}$ and every $a\in M^{|x|}$.
 
 Recall that we write $L_{\rm qf}$ for the set of quantifier-free formulas.
-It is worth noting that when $M\subseteq N$ and $h=\id_M$ then \ssf{3} becomes  
+It is worth noting that when $M\subseteq N$ and $h=\id_M$ then \ssf{3} becomes 
 
-\ceq{\ssf{3'}\hfill M\models \phi(a)}{\IFF}{N\models \phi(a)}\hfill for every $\phi(x)\in L_{\rm qf}$ and for every $a\in M^{|x|}$.
+\ceq{\ssf{3$'$}\hfill M\models \phi(a)}{\IFF}{N\models \phi(a)}\hfill for every $\phi(x)\in L_{\rm qf}$ and for every $a\in M^{|x|}$.
 
 In words this is summarized by saying that the truth of quantifier-free formulas is preserved under sub- and superstructure.
 
@@ -710,7 +708,7 @@ We prove that the equivalence in the theorem holds for the formula $\E y\,\phi(x
 
 
 \begin{corollary}\label{corol_def_set_invariant}
-If $h:M\imp N$ is an isomorphism then for every $\phi(x)\in L$. 
+If $h:M\imp N$ is an isomorphism then for every $\phi(x)\in L$.
 
 \ceq{\hfill h\big[\phi(M)\big]}{=}{\phi(N)}
 \end{corollary}
@@ -719,14 +717,15 @@ We can now give a few very simple examples of elementarily equivalent structures
 
 \begin{example}\label{expl_ordini_elem}
 Let $L$ be the language of strict orders.
-Consider intervals of $\RR$ (or in $\QQ$) as structures in the natural way.
+Consider the intervals of $\RR$ as structures in the natural way.
 The intervals $[0,1]$ and $[0,2]$ are isomorphic, hence $[0,1]\equiv[0,2]$ follows from Theorem~\ref{isomorfoeleq}.
 Clearly, $[0,1]$ is a substructure of $[0,2]$.
-However $[0,1]\npreceq [0,2]$, in fact the formula $\A  x\,(x\mathord\le1)$ holds in $[0,1]$ but is false in $[0,2]$. This shows that $M\subseteq N$ and $M\equiv N$ does not imply $M\preceq M$.
+However $[0,1]\npreceq [0,2]$, in fact the formula $\A  x\,(x\le1)$ holds in $[0,1]$ but is false in $[0,2]$.
+This shows that $M\subseteq N$ and $M\equiv N$ does not imply $M\preceq M$.
 
 Now we prove that $(0,1)\preceq (0,2)$.
-By Exercise~\ref{ex_finitanaturaeqel} above, it suffices to verify that $(0,1)\equiv_B  (0,2)$ for every finite $B\subseteq(0,1)$.
-This follows again by Theorem~\ref{isomorfoeleq} as $(0,1)$ and $(0,2)$ are $B$-isomorphic for every finite $B\subseteq(0,1)$.
+By Exercise~\ref{ex_finitanaturaeqel} it suffices to verify that for every finite $B\subseteq(0,1)$ we have $(0,1)\equiv_B  (0,2)$.
+This follows again from Theorem~\ref{isomorfoeleq} as $(0,1)$ and $(0,2)$ are $B$-isomorphic for every finite $B\subseteq(0,1)$.
 \end{example}
 
 % \begin{exercise}\label{eximmersioni}
@@ -845,10 +844,12 @@ where $\pi:a\mapsto [a]_E$ is the projection map.
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Quotients clutter the notation with brackets.
 To avoid the mess, we prefer to reason in $N$ and tweak the satisfaction relation.
 Warning: this is not standard (though it is what everyone informally does).
+In a nutshell, we are going to define the satisfaction relation $N/E\pmodels\phi(a)$ as an abbreviation of $N/E\models\phi([a]_E)$.
+Below we spell out this in details for the readers that feel it necessary.
 
 Recall that in model theory, equality is not treated as a all other predicates.
 In fact, the interpretation of equality is fixed to always be the identity relation.
-In a few contexts is convinient to allow any congruence to interprete equality. 
+In a few contexts is convinient to allow any congruence to interprete equality.
 This allows to work in $N$ while thinking of $N/E$.
 
 %So, we replace equality with $\mathrel{E}$ and adapt the interpretation of relation symbols according to \ssf{c3} above.
@@ -893,8 +894,6 @@ Then the following are equivalent for every $\phi(x)\in L$
 \ceq{\ssf{2.}\hfill N/E}{\models}{\phi\big([a]_E\big).}
 \end{proposition}
 
-
-
 % \begin{proof}
 % First note that \ssf{c1} and \ssf{c2} above generalize to terms
 % 
@@ -902,11 +901,10 @@ Then the following are equivalent for every $\phi(x)\in L$
 % 
 % \ceq{\ssf{c2'.}\hfill t^{N/E}[a]_E}{=}{\big[t^N a\big]_E\,.}
 % 
-% So if $\phi(x)$ is atomic, say it is the formula $rt(x)$ for $r\in L_{\rm rel}\cup\{=\}$ and $t(x)$ is a tuple of terms, then the equivalence \ssf{1}$\IFF$\ssf{2} follows from Definition~\ref{def_pseudostructure}. For general $\phi(x)$ the equivalence is proved by straightforward induction on the syntax.
+% So if $\phi(x)$ is atomic, say it is the formula $rt(x)$ for $r\in L_{\rm rel}\cup\{=\}$ and $t(x)$ is a tuple of terms, then the equivalence \ssf{1}$\IFF$\ssf{2} follows from Definition~\ref{def_pseudostructure}.
+% For general $\phi(x)$ the equivalence is proved by straightforward induction on the syntax.
 
 % \end{proof}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%
@@ -1020,7 +1018,7 @@ The following are equivalent
 %Quali implicazioni tra le clausole del fatto~\ref{fattoconsistenzasensolato} sopravvivono se omettiamo l'ipotesi `$T$ consistent'?
 %\end{exercise}
 
-\begin{exercise}
+\begin{exercise}\label{ex_max_cons_compl}
 Prove that the following are equivalent
 \begin{itemize}
 \item[a.] $T$ is complete;
@@ -1031,8 +1029,8 @@ By contrast prove that the following are \textit{not\/} equivalent
 \item[a.] $T$ is maximally consistent;
 \item[b.] for every sentence $\phi$, o $\phi\in T$ o  $\neg\phi\in T$ but not both.
 \end{itemize}
-Hint: consider the theory containing all sentences where the symbol $\neg$ occurs an even number of times.
-This theory is not consistent as it contains $\bot$.
+% Hint: consider the theory containing all sentences where the symbol $\neg$ occurs an even number of times.
+% This theory is not consistent as it contains $\bot$.
 \end{exercise}
 
 \begin{exercise}\label{ex_2max_cons_ext}
@@ -1073,7 +1071,7 @@ $N\models\E x\,\phi(x)\ \ \IMP\ \ N\models\phi(b)$ for some $b\in A$.
 \parbox{15ex}{$\displaystyle #3$}}
 
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}
+\ssf{1}$\IMP$\ssf{2}.
 
 \ceq{\hfill N\models\E x\,\phi(x)}%
 {\IMP}%
@@ -1087,7 +1085,8 @@ $N\models\E x\,\phi(x)\ \ \IMP\ \ N\models\phi(b)$ for some $b\in A$.
 {\IMP}%
 {N\models\phi(b)} for some $b\in A$.
 
-\ssf{2}$\IMP$\ssf{1} Firstly, note that $A$ is the domain of a substructure of $N$, that is, $f^Na\in A$ for every $f\in L_{\rm fun}$ and every $a \in A^{n_f}$.
+\ssf{2}$\IMP$\ssf{1}.
+Firstly, note that $A$ is the domain of a substructure of $N$, that is, $f^Na\in A$ for every $f\in L_{\rm fun}$ and every $a \in A^{n_f}$.
 In fact, this follows from \ssf{2} with $fa=x$ for $\phi(x)$.
 
 Write $M$ for the substructure of $N$ with domain $A$.
@@ -1098,7 +1097,8 @@ By induction on the syntax we prove that for every $\xi(x)\in L$
 {N\models\xi(a)} for every $a\in M^{|x|}$.
 
 If $\xi(x)$ is atomic the claim follows from $M\subseteq N$ and the remarks underneath Definition~\ref{isomorfismodef}.
-The case of Boolean connectives is straightforward, so only the existential quantifier requires a proof. So, let $\xi(x)$ be the formula $\E y\,\psi(x,y)$ and assume the induction hypothesis holds for $\psi(x,y)$
+The case of Boolean connectives is straightforward, so only the existential quantifier requires a proof.
+So, let $\xi(x)$ be the formula $\E y\,\psi(x,y)$ and assume the induction hypothesis holds for $\psi(x,y)$
 
 \ceq{\hfill M\models\E y\,\psi(a,y)}%
 {\IFF}%
@@ -1177,23 +1177,24 @@ We need to enumerate formulas with care if we want to complete the construction 
 % 
 % We use Tarski-Vaught test to prove $M\preceq N$.
 % Let $\phi(x)\in L(M)$ be consistent in $N$.
-% Then $\phi(x)\in L(A_j)$ for some $j$. Say, $\phi(x)$ is the $k$-th formula in the enumeration above.
+% Then $\phi(x)\in L(A_j)$ for some $j$.
+Say, $\phi(x)$ is the $k$-th formula in the enumeration above.
 % As $\pi$ is a bijection, there is an $i$ such that $\pi_1(i)=j$ and $\pi_2(i)=k$.
 % Hence a witness of $\phi(x)$ is enumerated in $M$ at stage $i+1$.
 % \end{void_thm}
 
-
+\vskip\parskip
 \begin{proof}[Second proof of the downward L\"owenheim-Skolem Theorem]
-  \label{diym_II_thm_lowenheimskolemallingiu}\rm
-  From set theory we know that there is a bijection $\pi:\lambda^2\to\lambda$ such that $j,k\le\pi(j,k)$ for all $j,k<\lambda$.
-  Suppose we have defined the sets $A_j$ for every $j\le i$ and let $\<\phi^j_k(x)\;:\;k<\lambda\>$ be an enumeration of the consistent formulas of $L(A_j)$.
+  \label{diym_II_thm_lowenheimskolemallingiu}
+  Let $\pi:\lambda^2\to\lambda$ be a bijection such that $j,k\le\pi(j,k)$ for all $j,k<\lambda$.
+  Suppose we have defined the sets $A_j$ for every $j\le i$ and let $\<\phi_{j,k}(x)\;:\;k<\lambda\>$ be an enumeration of the consistent formulas of $L(A_j)$.
   Let $j,k\le i$ be such that $\pi(j,k)=i$.
-  Let $b$ be a solution of the formula $\phi^j_k(x)$ and define $A_{i+1}=A_i\cup\{b\}$.
+  Let $b$ be a solution of the formula $\phi_{j,k}(x)$ and define $A_{i+1}=A_i\cup\{b\}$.
 
   We use Tarski-Vaught test to prove $M\preceq N$.
   Let $\phi(x)\in L(M)$ be consistent in $N$.
   Then $\phi(x)\in L(A_j)$ for some $j$.
-  Then $\phi(x)=\phi^j_k$ for some $k$.
+  Then $\phi(x)=\phi_{j,k}$ for some $k$.
   Hence a witness of $\phi(x)$ is enumerated in $M$ at stage $\pi(j,k)+1$.
 \end{proof}
 
@@ -1211,7 +1212,7 @@ Hint: adapt the construction used to prove the downward L\"owenheim-Skolem Theor
 
 \begin{exercise}\label{ex_elem_sub_of_omega1}
   The language contains only $<$, the relation of strict order.
-  Prove that there is a countable ordinal $\alpha$ that is an elemenrary substructure of $\omega_1$, the first uncountable ordinal.
+  Prove that there is a countable ordinal $\alpha$ that is an elementary substructure of $\omega_1$, the first uncountable ordinal.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

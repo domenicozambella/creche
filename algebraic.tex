@@ -1,6 +1,4 @@
 % !TEX root = creche.tex
-\documentclass[creche.tex]{subfiles}
-\begin{document}
 \chapter{Some algebraic structures}
 \label{algebraic}
 
@@ -30,7 +28,7 @@ In this chapter, whenever some $A\subseteq M\models T$ are fixed, by \textit{mod
 %
 The notions of \textit{logical consequence}, \textit{consistency}, \textit{completeness}, etc.\@ are modified accordingly, and we write $\,\proves\,$ for $T\cup\Diag\<A\>_M\proves\,$.
 
-We say that a type $p({\mr x})$ is \emph{trivial\/} if $\,\proves p({\mr x})$.\QED
+We say that a type $p({\mr x})$ is \emph{trivial\/} if $\,\proves p({\mr x})$.
 \end{notation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -74,7 +72,7 @@ The following immediate proposition implies in particular that  $L_{{\rm ter},{\
 
   \ceq{\hfill\medrel{\proves}\phi({\mr x})}{\iff}{\sum_{i<\alpha}n_ix_i\ =\ c}.
 
-  where $n=\<n_i:i<\alpha\>$ and  ${\mr x}=\<x_i:i<\alpha\>$.\QED
+  where $n=\<n_i:i<\alpha\>$ and  ${\mr x}=\<x_i:i<\alpha\>$.
 \end{proposition}
 
 \begin{proof}
@@ -92,14 +90,14 @@ The following immediate proposition implies in particular that  $L_{{\rm ter},{\
   %
   The \emph{rank\/} of $M$ is the least cardinality of a subset $A\subseteq M$ such that all elements in $M$ are dependent from $A$.
   %
-  We denote it by \emph{$\rank(M)$}.\QED
+  We denote it by \emph{$\rank(M)$}.
 \end{definition}  
 
 Note that when $M$ is a vector space the condition $\<A\>_M\cap\<c\>_M=\big\{0\big\}$ is equivalent to saying that $c$ is not a linear combination of vectors in $A$.
 %
 Then $\rank M$ coincides with the dimension of $M$.
 %
-In fact, what we do here for abelian groups could be easily generalized to $D\jj$modules, where $D$ is any integral domain, and in particular to vector spaces.
+In fact, what we do here for abelian groups could be easily generalized to $D$-modules, where $D$ is any integral domain, and in particular to vector spaces.
 %
 In practice, it is more convenient to use the following syntactic characterization of independence.
 
@@ -154,7 +152,7 @@ An element $c$ of an abelian group is a \emph{torsion element} if $nc=0$ for som
   %
   This proves $M,{\mr b},{\gr a}\,\Rrightarrow_{\rm at}N, {\mr c},k{\gr a}$.
   
-  As the same assumptions apply to $k^{-1}:N\to M$, we also have $M,{\mr b},{\gr a}\,\Lleftarrow_{\rm at}N, {\mr c},k{\gr a}$.\QED 
+  As the same assumptions apply to $k^{-1}:N\to M$, we also have $M,{\mr b},{\gr a}\,\Lleftarrow_{\rm at}N, {\mr c},k{\gr a}$. 
 \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -241,7 +239,7 @@ But $m{\gr a}=n{\gr c}$ is a formula with parameters in $\<A\>_M$, so it should 
 
 
 
-%\begin{definition} Let $A\subseteq M\models T_{\rm tfag}$. We say that an element $c\in M$ is \emph{independent from $A$\/} if the type $p({\mr x})=\attp_M(c/A)$ is trivial, that is, $N\models \A x\,p({\mr x})$ for every $\<A\>_M\subseteq N\models T_{\rm tfag}$.\QED\end{definition}  
+%\begin{definition} Let $A\subseteq M\models T_{\rm tfag}$. We say that an element $c\in M$ is \emph{independent from $A$\/} if the type $p({\mr x})=\attp_M(c/A)$ is trivial, that is, $N\models \A x\,p({\mr x})$ for every $\<A\>_M\subseteq N\models T_{\rm tfag}$.\end{definition}  
 
 % \begin{proposition}\label{prop_independent_ag}
 % Let $k:M\to N$ be a partial isomorphism between models of $T_{\rm tfag}$. Let $b\in M$ and $c\in N$ be independent from $\dom k$, respectively $\range k$. Then  $k\cup\big\{\<b,c\>\big\}:M\to N$ is partial isomorphism.
@@ -254,7 +252,7 @@ But $m{\gr a}=n{\gr c}$ is a formula with parameters in $\<A\>_M$, so it should 
 
 
 % \begin{exercise}\label{ex_ol+grf_tipi_princ_comp}
-% Let $T$ be one of the theories $T_{\rm lo}$ or $T_{\rm graph}$. Let $A\subseteq M\models T$ be finite. For $b\in M$ let $p({\mr x})=\atpmtp_M(b/A)$. Prove that $\phi({\mr x})\imp p({\mr x})$ for some $\phi({\mr x})$, conjunction of formulas in $p({\mr x})$. Find a counterexample with $A$ infinite.\QED
+% Let $T$ be one of the theories $T_{\rm lo}$ or $T_{\rm graph}$. Let $A\subseteq M\models T$ be finite. For $b\in M$ let $p({\mr x})=\atpmtp_M(b/A)$. Prove that $\phi({\mr x})\imp p({\mr x})$ for some $\phi({\mr x})$, conjunction of formulas in $p({\mr x})$. Find a counterexample with $A$ infinite.
 % \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -293,7 +291,7 @@ Prove a converse of Proposition~\ref{prop_md_cons_sodd}.
 %
 Let $A\subseteq N\models T_{\rm ag}$ and let ${\mr x}$ be a single variable.
 %
-Prove that if $N\models\E{\mr x} \,\phi({\mr x})$ for every consistent $\phi({\mr x})\in L_{\rm at}(A)$, then $N\models T_{\rm dag}$.\QED
+Prove that if $N\models\E{\mr x} \,\phi({\mr x})$ for every consistent $\phi({\mr x})\in L_{\rm at}(A)$, then $N\models T_{\rm dag}$.
 \end{exercise}
 
 We are ready to prove that divisible abelian groups of infinite rank are $\omega$-rich.
@@ -353,7 +351,7 @@ If $M\preceq M'$ and $M\preceq N'$ are elementary superstructures of uncountable
 \end{proof}
 
 \begin{exercise}
-Prove that every model of $T_{\rm dag}$ is $\omega\jj$ultrahomogeneous (independently of cardinality and rank).\QED
+Prove that every model of $T_{\rm dag}$ is $\omega$-ultrahomogeneous (independently of cardinality and rank).
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -418,7 +416,7 @@ Let  $A\subseteq M\models T_{\rm cr}$ and let ${\mr x}$ be a single variable.
 %
 Then for every formula $\phi({\mr x})\in L_{\rm at}(A)$ there is a unique $n<\omega$ and a unique tuple $\<{\gr a_i}:i\le n\>$ of elements of $\<A\>_M$ such that ${\gr a_n}\neq0$ and 
 
-\ceq{}{\proves}{\phi({\mr x})\ \iff\ \sum_{i\le n}{\gr a_i}{\mr x}^i\ =\ 0}.\QED
+\ceq{}{\proves}{\phi({\mr x})\ \iff\ \sum_{i\le n}{\gr a_i}{\mr x}^i\ =\ 0}.
 \end{proposition}
 
 The integer $n$ in the proposition above is called the \emph{degree of $\phi(x)$}.
@@ -430,11 +428,11 @@ The integer $n$ in the proposition above is called the \emph{degree of $\phi(x)$
 %
   Otherwise we say that ${\mr b}$ is \emph{algebraic over $A$}.
 %
-  The \emph{transcendence degree\/} of $M$ is the least cardinality of a subset $A\subseteq M$ such that all the elements of $M$ are algebraic over $A$.\QED
+  The \emph{transcendence degree\/} of $M$ is the least cardinality of a subset $A\subseteq M$ such that all the elements of $M$ are algebraic over $A$.
 \end{definition}  
 
 \begin{remark}\label{oss_liberi_cr}
-Remark~\ref{oss_liberi_qf} holds here with `independent' replaced by `transcendental' and $T_{\rm ag}$ replaced by $T_{\rm cr}$.\QED
+Remark~\ref{oss_liberi_qf} holds here with `independent' replaced by `transcendental' and $T_{\rm ag}$ replaced by $T_{\rm cr}$.
 \end{remark}
 
 \section{Integral domains}
@@ -661,7 +659,7 @@ Hence $k:M\to N$ is also elementary.
 \end{proof}
 
 \begin{corollary}
-The theories $T^p_{\rm acf}$ are complete and uncountably categorical (i.e.\@ $\lambda$-categorical for every uncountable $\lambda$)
+The theories $T^p_{\rm acf}$ are complete and uncountably categorical (i.e.\@ $\lambda$-cate\-gori\-cal for every uncountable $\lambda$)
 \end{corollary}
 \begin{proof}
 Two models of $T^p_{\rm acf}$ belong to the same connected component.
@@ -670,7 +668,7 @@ Then, as every uncountable model of $T^p_{\rm acf}$ is rich, uncountable categor
 \end{proof}
 
 \begin{exercise}
-Prove that every model of $T_{\rm acf}$ is $\omega\jj$ultrahomogeneous (independently of cardinality and transcendence degree).\QED
+Prove that every model of $T_{\rm acf}$ is $\omega$-ultrahomogeneous (independently of cardinality and transcendence degree).
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -703,7 +701,7 @@ In particular, in this section we work over the theory $T_{\rm id}\cup\Diag\<A\>
 
 In general, the notion of closure under logical consequence is elusive.
 %
-In this respect Propositions~\ref{prop_Nullstellensatz0} and~\ref{thm_Nullstellensatz} are useful, as they give a model theoretic characterization of $\ccl\, p(x)$.
+In this respect Propositions~\ref{prop_Nullstellensatz0} and~\ref{thm_Nullstellensatz1} are useful, as they give a model theoretic characterization of $\ccl\, p(x)$.
 Corollary~\ref{corol_chiusura_radicale} gives an algebraic characterization.
 
 \begin{proposition}\label{prop_Nullstellensatz0}
@@ -735,7 +733,8 @@ In the proposition above we could replace $\atL$ by $\atpmL$.
 But here we are interesed in a strenghening, the Nullstennensatz, that requires positive formulas.
 
 Hilbert's Nullstellensatz extends the validity of the proposition above to the case $A=M=N$ (assuming $x$ finite). 
-While Proposition~\ref{prop_Nullstellensatz0} could be generalized to other theories, the Nullstellensatz rests on an exquisitely algebraic phenomenon. In fact, model theory has no general tools to deal with large sets of parameters
+While Proposition~\ref{prop_Nullstellensatz0} could be generalized to other theories, the Nullstellensatz rests on an exquisitely algebraic phenomenon.
+In fact, model theory has no general tools to deal with large sets of parameters.
 Algebra comes to our aid with the following lemma.
 Which the reader may wish to compare with Hilbert's Basis Theorem.
 
@@ -786,12 +785,12 @@ Which the reader may wish to compare with Hilbert's Basis Theorem.
   A contradicion that proves the proposition.
 \end{proof}
 
-\begin{void_thm}[Hilbert's Nullstellensatz (model theoretic version)]\label{thm_Nullstellensatz1}
+\begin{void}[Hilbert's Nullstellensatz (model theoretic version)]\label{thm_Nullstellensatz1}
   Let $N\models T_{\rm acf}$. 
   For every type $p(x)\subseteq\atL(N)$, where $x$ is a finite tuple, we have
 
   \ceq{\hfill\ccl\, p(x)}{=}{\Big\{\phi(x)\in\atL(N)\ :\ N\models\A x\,[ p(x)\imp\phi(x)]\Big\}.}
-\end{void_thm}
+\end{void}
 
 \begin{proof}
   By Proposition~\ref{prop_Nullstellensatz0}, the equality above holds if we replace $N$ by a sufficiently large elementay extension $N'$, i.e.
@@ -901,10 +900,10 @@ This is called the radical ideal generated by $\P$.
 From Propositions~\ref{prop_tipi_e_ideali_primi} and~\ref{prop_chiusura-radicale} we obtain the following algebraic characterization of $\ccl\,p(x)$.
 
 \begin{corollary}\label{corol_chiusura_radicale}
-  Let $A\subseteq M\models T_{\rm id}$ and let $p(x)\subseteq\atL(A)$.
-  %
-  Then $\P_{\ccl\,p(x)}=\sqrt{\P_p}$.
-  Equivalently, $\ccl\,p_\P(x)=p_{\sqrt{\P}}$ for all subset $\P\subseteq A[x]$.\QED
+  Let $A\subseteq M\models T_{\rm id}$.
+  Then $\P_{\ccl\,p(x)}=\sqrt{\P_p}$ for every $p(x)\subseteq\atL(A)$.
+
+  Equivalently, $\ccl\,p_\P(x)=p_{\sqrt{\P}}$ for every $\P\subseteq A[x]$.
 \end{corollary}
 
 We are now ready to translate the Nullstellensatz into a language more familiar to algebraists.
@@ -914,11 +913,11 @@ The algebraic variety associated to $\P$, often denoted by \emph{$V(\P)$,} is th
 Viceversa, given $A\subseteq N$, let \emph{$\I(A)$\/} be the set of polynomials in $N[x]$ that vanish at all points in $A$.
 Clearly, $\I(A)$ is an ideal of $N[x]$.
 
-\begin{void_thm}[Hilbert's Nullstellensatz (standard version)]\label{thm_Nullstellensatz2}
+\begin{void}[Hilbert's Nullstellensatz (standard version)]\label{thm_Nullstellensatz2}
   Let $N\models T_{\rm acf}$. 
   Let $\P\subseteq N[x]$ where $x$ is a finite tuple.
   Then $\I\big(V(\P)\big)=\sqrt{\P}$.
-\end{void_thm}
+\end{void}
 
 \begin{proof}
   Note that $V(\P)=p_\P(N)$.
@@ -935,7 +934,7 @@ Clearly, $\I(A)$ is an ideal of $N[x]$.
 %   \item[1.] $p$ is a proper ideal;
 %   \item[2.] $p(x)$ has a solution in $N$.
 %   \end{itemize}
-%   The claim is a model theoretic translation of is what is kown as the weak Nullstellensatz.\QED
+%   The claim is a model theoretic translation of is what is kown as the weak Nullstellensatz.
 % \end{exercise}
 
 % \begin{exercise}\label{ex_fingen_principal}
@@ -944,9 +943,6 @@ Clearly, $\I(A)$ is an ideal of $N[x]$.
 % Prove that the following are equivalent
 %   \begin{itemize}
 %   \item[1.] $p(x)$ is a principal type;
-%   \item[2.] the ideal generated by $p$ is finitely generated.\QED
+%   \item[2.] the ideal generated by $p$ is finitely generated.
 % \end{itemize}
 % \end{exercise}
-
-
-\end{document}

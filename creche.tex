@@ -194,6 +194,13 @@ diagrams={>=latex}
 \def\ssf#1{\textsf{\small #1}}
 
 
+\titlecontents{chapter}
+[0ex] % ie, 1.5em (chapter) + 2.3em
+{\vskip-1ex\bfseries}
+{\contentslabel{1.2em}}
+{\hspace*{-2.3em}}
+{\titlerule*[1pc]{}}
+
 \titlecontents{section}
 [3.8em] % ie, 1.5em (chapter) + 2.3em
 {\vskip-1ex}
@@ -229,7 +236,7 @@ diagrams={>=latex}
 
 \newcounter{thm}[chapter]
 
-% \renewcommand{\thethm}{\thechapter.\arabic{thm}}
+\renewcommand{\thethm}{\thechapter.\arabic{thm}}
 
 \tcbset{
   mythm/.style={
@@ -327,6 +334,7 @@ diagrams={>=latex}
 \begin{document}
 \raggedbottom
 \renewcommand{\contentsname}{%
+\addcontentsline{toc}{chapter}{Table of contents\\[-1.5ex]}
 A Cr\`eche Course in Model Theory\\[3ex]%
 \parbox{\textwidth}{\normalfont\normalsize
 Domenico Zambella\\
@@ -337,13 +345,13 @@ ORCID:~\href{https://orcid.org/0000-0003-1141-2898}{0000-0003-1141-2898}\\[1ex]
 % \subfile{preface}
 \subfile{preliminaries}
 \subfile{elementarity}
+\subfile{types}
 \subfile{ultraproducts}
-% \subfile{compactness}
-% \subfile{types}
-% \subfile{relational}
-% \subfile{rich}
-% \subfile{algebraic}
-% % \subfile{oalgebraic}
+\subfile{compactness}
+\subfile{relational}
+\subfile{rich}
+\subfile{algebraic}
+\subfile{oalgebraic}
 % \subfile{saturation}
 % \subfile{elimination}
 % \subfile{geometry}

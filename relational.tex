@@ -1,16 +1,14 @@
 % !TEX root = creche.tex
-\documentclass[creche.tex]{subfiles}
-\begin{document}
 \chapter{Some relational structures}
 \label{relational}
 
 \def\ceq#1#2#3{\parbox[b]{20ex}{$\displaystyle #1$}\parbox[b]{4ex}{\hfil$#2$}$\displaystyle #3$}
 
-In the first section we prove that theory of \textit{dense linear orders without endpoints\/} is \textit{$\omega\jj$cate\-gorical}.
+In the first section we prove that theory of dense linear orders without endpoints is $\omega$-cate\-gorical.
 That is, any two such countable orders are isomorphic.
 This is an easy classical result of Cantor.
 In this chapter we examine Cantor's construction (a so-called \textit{back-and-forth\/} construction) in great detail.
-In the second section we apply the same technique to prove that the theory of the \textit{random graph\/} is $\omega\mbox{-}$categorical.
+In the second section we apply the same technique to prove that the theory of the random graph\ is $\omega$-categorical.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -20,7 +18,7 @@ In the second section we apply the same technique to prove that the theory of th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Dense linear orders}
 \label{dlo}
-The \emph{language of strict orders}, which in this section we denote by $L$, contains only a binary relation symbol $<$.
+The \emph{language of strict orders,} which in this section we denote by $L$, contains only a binary relation symbol $<$.
 A structure $M$ of signature $L$ is a \emph{strict order\/} if it models (the universal closure of) the following formulas
 \begin{itemize}
 \item[1.] $x \not< x$\hfill irreflexive;
@@ -61,7 +59,7 @@ Recall that in the language of strict orders an injective map $k:M\to N$ is a pa
 
 \ceq{\hfill M\models a<b}{\IFF}{N\models ka<kb}\hfill for every $a,b\in\dom k$.
 
-(When $M,N\models T_{\rm lo}$ the direction $\IMP$ suffices.)
+When $M,N\models T_{\rm lo}$ the direction $\IMP$ suffices.
 
 \begin{lemma}\label{lem_ordinericco}
 Fix $M\models T_{\rm lo}$ and $N\models T_{\rm dlo}$.
@@ -104,12 +102,8 @@ It is immediate to verify that $h:M\hookrightarrow N$ is the required embedding.
 \end{proof}
 
 
-\begin{exercise}\label{ex_ricco->dlo}
-Prove that the extension Lemma~\ref{lem_ordinericco} characterizes models of $T_{\rm dlo}$ among models of $T_{\rm lo}$.
-That is, if $N$ is a model of $T_{\rm lo}$ such that the conclusion of Lemma~\ref{lem_ordinericco} holds, then $M\models  T_{\rm dlo}$.\QED
-\end{exercise}
 
-%We say that a theory is \emph{$\omega\jj$categorical\/} if it has a unique countable model up to isomorphism.
+%We say that a theory is \emph{$\omega$-categorical\/} if it has a unique countable model up to isomorphism.
 
 We are now ready to prove that any two countable models of $T_{\rm dlo}$ are isomorphic which is a classical result of Cantor's.
 Actually what we prove is slightly more general than that.
@@ -124,6 +118,7 @@ It is important to note that it does not mention linear orders at all.
 It only uses the extension Lemma~\ref{lem_ordinericco}.
 The same construction can be applied in many other contexts where an extension lemma holds (cfr.\@ Theorem~\ref{thm_riccozigzag}).
 
+\vskip\parskip
 \begin{proof}
 Let $\<a_i:i<\omega\>$ and $\<b_i:i<\omega\>$ be enumerations of $M$ and $N$ respectively.
 We define by induction a chain of finite partial isomorphisms $g_i:M\imp N$ such that $a_i\in\dom g_{i+1}$ and $b_i\in\range g_{i+1}$.
@@ -141,18 +136,18 @@ Now apply the same lemma to extend $\big(g_{i+^1\!\!/\!_2}\big)^{-1}:N\to M$ to 
 \end{proof}
 
 Let $\lambda$ be an infinite cardinal.
-We say that a theory is \emph{$\lambda\jj$categorical\/} if any two models of $T$ of cardinality $\lambda$ are isomorphic.
+We say that a theory is \emph{$\lambda$-categorical\/} if any two models of $T$ of cardinality $\lambda$ are isomorphic.
 From Theorem~\ref{thm_zigzagcantor}, taking $k=\0$, we obtain the following.
 
 \begin{corollary}
-The theory $T_{\rm dlo}$ is $\omega\jj$categorical.\QED
+The theory $T_{\rm dlo}$ is $\omega$-categorical.
 \end{corollary}
 
 We also obtain that $T_{\rm dlo}$ is a complete theory.
 This is consequence of the following general fact.
 
 \begin{proposition}\label{thm_categorical->complete}
-If $T$ has no finite models and is $\lambda\jj$categorical for some $\lambda\ge|L|$, then $T$ is complete.
+If $T$ has no finite models and is $\lambda$-categorical for some $\lambda\ge|L|$, then $T$ is complete.
 \end{proposition}
 
 \begin{proof}
@@ -161,12 +156,17 @@ Applying the upward and/or downward L\"owenheim-Skolem theorem, we may assume th
 Hence $M\simeq N$ and in particular $M\equiv N$.
 \end{proof}
 
-\begin{exercise}
-Prove that $T_{\rm dlo}$ is not $\lambda$-categorical for any uncountable $\lambda$.\QED
+\begin{exercise}\label{ex_ricco->dlo}
+    Prove that the extension Lemma~\ref{lem_ordinericco} characterizes models of $T_{\rm dlo}$ among models of $T_{\rm lo}$.
+    That is, if $N$ is a model of $T_{\rm lo}$ such that the conclusion of Lemma~\ref{lem_ordinericco} holds, then $M\models  T_{\rm dlo}$.
 \end{exercise}
 
 \begin{exercise}
-Prove that, in the language of strict orders, $\QQ\preceq\RR$.\QED
+Prove that $T_{\rm dlo}$ is not $\lambda$-categorical for any uncountable $\lambda$.
+\end{exercise}
+
+\begin{exercise}
+Prove that, in the language of strict orders, $\QQ\preceq\RR$.
 \end{exercise}
 
 \begin{exercise}\label{VaughtEsempio3modelli}
@@ -174,16 +174,17 @@ Let $L$ be the language of strict orders expanded with countably many constants 
 Let $T$ be the theory that extends $T_{\rm dlo}$ by the axioms $c_i<c_{i+1}$ for all $i$.
 Prove that $T$ is complete.
 Find three non isomorphic countable models of this theory.
-For a suitably chosen model $N$ of $T$, prove the statement in Lemma~\ref{lem_ordinericco}, where $M$ any model of $T$.\QED
+For a suitably chosen model $N$ of $T$, prove the statement in Lemma~\ref{lem_ordinericco}, where $M$ any model of $T$.
 \end{exercise}
 
 
 \begin{exercise}\label{categorica->completa}
 Show that in Theorem~\ref{thm_categorical->complete} the assumption $\lambda\ge|L|$ is necessary.
-(Hint: let $\nu$ be an uncountable cardinal.
+Hint: let $\nu$ be an uncountable cardinal.
 The language contains only the ordinals $i<\nu$ as constants.
 The theory $T$ says that there are infinitely many elements and either $i=0$ for every $i<\nu$, or $i\neq j$ for every $i<j<\nu$.
-Prove that $T$ is $\omega\jj$categorical but incomplete.)\QED
+Prove that $T$ is incomplete.
+Prove that $T$ has countable models and that these are all isomorphic.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -248,8 +249,8 @@ Some readers may doubt that $T_{\rm rg}$ is consistent.
 There exists a random graph.
 \end{proposition}
 \begin{proof}
-The domain of $N$ is the set of natural numbers.
-Let $N\models r(n,m)$ hold if the $n\jj$th prime number divides $m$ or, conversely, the $m\jj$th prime number divides $n$.
+The domain of is the set of natural numbers.
+Let $r(n,m)$ hold if the $n$-th prime number divides $m$ or, conversely, the $m$-th prime number divides $n$.
 \end{proof}
 
 The same proof as that of Corollary~\ref{coroll_ordinericco} gives the following.
@@ -257,31 +258,31 @@ The same proof as that of Corollary~\ref{coroll_ordinericco} gives the following
 \begin{corollary}\label{coroll_graforicco}
 Let $M\models T_{\rm gph}$ be countable and let $N\models T_{\rm rg}$.
 Let $k:M\imp N$ be a finite partial isomorphism.
-Then there is a (total) embedding $h:M\hookrightarrow N$ that extends $k$.\QED
+Then there is a (total) embedding $h:M\hookrightarrow N$ that extends $k$.
 \end{corollary}
 
 The proof of Theorem~\ref{thm_zigzagcantor} gives the following theorem and its corollary.
 
 \begin{theorem}\label{gaomegacat}
-Every finite partial isomorphism $k:M\imp N$ between countable models of $T_{\rm rg}$ extends to an isomorphism $g:M\isomap N$.\QED
+Every finite partial isomorphism $k:M\imp N$ between countable models of $T_{\rm rg}$ extends to an isomorphism $g:M\isomap N$.
 \end{theorem}
 
 \begin{corollary}
-The theory $T_{\rm rg}$ is $\omega\jj$categorical (and therefore complete).\QED
+The theory $T_{\rm rg}$ is $\omega$-categorical (and therefore complete).
 \end{corollary}
 
 \begin{exercise}
 Let $a,b,c\in N\models T_{\rm rg}$.
-Prove that $r(a,N)=r(b,N)\cap r(c,N)$ occurs only in the trivial case $a=b=c$.\QED
+Prove that $r(a,N)=r(b,N)\cap r(c,N)$ occurs only in the trivial case $a=b=c$.
 \end{exercise}
 
 \begin{exercise}
 Let $N\models T_{\rm rg}$ prove that for every $b\in N$ the set $r(b,N)$ is a random graph.
-Is every random graph $M\subseteq N$ of the form $\phi(N)$ for some $\phi(x)\in L(N)$~?\QED
+Is every random graph $M\subseteq N$ of the form $\phi(N)$ for some $\phi(x)\in L(N)$~?
 \end{exercise}
 
 % \begin{exercise}
-% Let $A\subseteq N\models  T_{\rm rg}$. What are the possible cardinalities of $\big\{b:r(b,N){=}A\big\}$~?\QED
+% Let $A\subseteq N\models  T_{\rm rg}$. What are the possible cardinalities of $\big\{b:r(b,N){=}A\big\}$~?
 % \end{exercise}
 
 \begin{exercise}\label{unionedisgiunta}
@@ -290,32 +291,32 @@ That is, $N=N_1\sqcup N_2$ and $r^N= r^{N_1}\sqcup r^{N_2}$, where  $\sqcup$ den
 Prove that $N$ is not a random graph.
 Show that $N_1$ is not definable without parameters.
 Write a first order formula $\psi(x,y)$ true if $x$ and $y$ belong to the same connected component of $N$.
-Axiomatize the class of graphs that are free union of two random graphs.\QED
+Axiomatize the class of graphs that are free union of two random graphs.
 \end{exercise}
 
 % \begin{exercise}\label{N1N2}
-% Siano $N_1$ ed $N_2$ due grafi aleatori numerabili. Sia $N$ un grafo che ha per dominio l'unione disgiunta di $N_1$ ed $N_2$ e come archi quelli di $N_1$ pi\`u quelli di $N_2$ pi\`u quelli che congiungono tutti i vertici di $N_1$ con tutti i vertici di $N_2$. Si dimostri concisamente che $N$ non \`e un grafo aleatorio. Esiste un immersione di $N$ in un grafo aleatorio? Mostrare che l'insieme $N_1$ \`e definibile con parametri in $N$ ma non \`e definibile senza parametri.\QED %Suggerimento: \`e simile all'esercizio~\ref{unionedisgiunta} per quanto visto all'esercizio~\ref{grafocomplementare}.
+% Siano $N_1$ ed $N_2$ due grafi aleatori numerabili. Sia $N$ un grafo che ha per dominio l'unione disgiunta di $N_1$ ed $N_2$ e come archi quelli di $N_1$ pi\`u quelli di $N_2$ pi\`u quelli che congiungono tutti i vertici di $N_1$ con tutti i vertici di $N_2$. Si dimostri concisamente che $N$ non \`e un grafo aleatorio. Esiste un immersione di $N$ in un grafo aleatorio? Mostrare che l'insieme $N_1$ \`e definibile con parametri in $N$ ma non \`e definibile senza parametri. %Suggerimento: \`e simile all'esercizio~\ref{unionedisgiunta} per quanto visto all'esercizio~\ref{grafocomplementare}.
 % \end{exercise}
 %
 % %$\E x,y\; \Big[ r(x,b)\wedge r(y,b)\wedge \neg\E z\,\big[z\neq b\wedge r(x,z)\wedge r(x,z)\big]\Big]$
 %
 % \begin{exercise}
-% Siano $N_1$ ed $N_2$ due grafi aleatori numerabili e sia $c\in N_2$. Sia $N$ un grafo che ha per dominio l'unione disgiunta di $N_1$ ed $N_2$ e come archi quelli di $N_1$ pi\`u quelli di $N_2$ pi\`u quelli che congiungono tutti i vertici di $N_1$ con $c$. Si dimostri concisamente che $N$ non \`e un grafo aleatorio. \`E l'insieme $N_1$ definibile con una formula pura? Si dimostri che due qualsiasi di questi grafi sono tra loro isomorfi.\QED
+% Siano $N_1$ ed $N_2$ due grafi aleatori numerabili e sia $c\in N_2$. Sia $N$ un grafo che ha per dominio l'unione disgiunta di $N_1$ ed $N_2$ e come archi quelli di $N_1$ pi\`u quelli di $N_2$ pi\`u quelli che congiungono tutti i vertici di $N_1$ con $c$. Si dimostri concisamente che $N$ non \`e un grafo aleatorio. \`E l'insieme $N_1$ definibile con una formula pura? Si dimostri che due qualsiasi di questi grafi sono tra loro isomorfi.
 % \end{exercise}
 %
 % \begin{exercise}
-% Sia $T$ la teoria definita nell'esercizio~\ref{unionedisgiunta2} e sia $N\models T$. Si dimostri che per ogni grafo numerabile $M$, ogni mappa finita $k:M\to N$ che preserva la verit\`a delle formule esistenziali ha un'estensione ad una mappa totale $h:M\to N$ che preserva la verit\`a le formule esistenziali.\QED
+% Sia $T$ la teoria definita nell'esercizio~\ref{unionedisgiunta2} e sia $N\models T$. Si dimostri che per ogni grafo numerabile $M$, ogni mappa finita $k:M\to N$ che preserva la verit\`a delle formule esistenziali ha un'estensione ad una mappa totale $h:M\to N$ che preserva la verit\`a le formule esistenziali.
 % \end{exercise}
 
 \begin{exercise}
-Prove that $T_{\rm rg}$ is not $\lambda\jj$categorical for any uncountable $\lambda$.
+Prove that $T_{\rm rg}$ is not $\lambda$-categorical for any uncountable $\lambda$.
 Hint: prove that there is a random graph $N$ of cardinality $\lambda$ where every vertex is adjacent to $<\lambda$ vertices.
-Compare it with its complement graph (the graph that has edges between pairs that are non adjacent in $N$).\QED
+Compare it with its complement graph (the graph that has edges between pairs that are non adjacent in $N$).
 \end{exercise}
 
 \begin{exercise}
 Prove that $T_{\rm rg}$ is not finitely axiomatizable.
-Hint: given a random graph $N$ and a set $P$ of cardinality $n+1$ show that you can add edges to $M\sqcup P$ and make it satisfy axiom \ssf{r$_n$} but not \ssf{r$_{n+1}$}.\QED
+Hint: given a random graph $N$ and a set $P$ of cardinality $n+1$ show that you can add edges to $M\sqcup P$ and make it satisfy axiom \ssf{r$_n$} but not \ssf{r$_{n+1}$}.
 \end{exercise}
 
 \begin{exercise}[ (Peter J.~Cameron)]
@@ -324,21 +325,18 @@ Prove that for every infinite countable graph $M$ the following are equivalent
 \item[1.] $M$ is either random, complete, or empty (i.e.\@ $r^M=M^2$ or $r^M=\0$);
 \item[2.] if $M_1,M_2\subseteq M$ are such that $M_1\sqcup M_2=M$, then $M_1\simeq M$ or $M_2\simeq M$.
 \end{itemize}
-Hint: for \ssf{2}$\IMP$\ssf{1} first show that if $r(a,M)=\0$ for some $a\in M$ then the graph is null and if $\{b\}\cup r(b,M)=M$ for some $b$, then the graph is complete.
+Hint: \ssf{2}$\IMP$\ssf{1}. Assume \ssf2 and show that if $r(a,M)=\0$ for some $a\in M$ then the graph is null; if $\{b\}\cup r(b,M)=M$ for some $b$, then the graph is complete.
 Clearly, \ssf{2} implies that any finite partition of $M$ contains an element isomorphic to $M$.
-Then the claim above generalizes as follows: if there is a finite $A$ such that $\bigcap_{a\in A}r(a, M)=\0$ then $M$ is the empty graph and if there is a finite $B$ such that $\bigcup_{b\in B}r(b,M)=M$ then $M$ is the complete graph.
+Then the claim above generalizes as follows: if there is a finite $A$ such that $\bigcap_{a\in A}r(a, M)=\0$ then $M$ is the empty graph and if there is a finite $B$ such that $B\cup\bigcup_{b\in B}r(b,M)=M$ then $M$ is the complete graph.
 
 Suppose $M$ is not a random graph.
 Fix some finite, disjoint $A$ and $B$ such that no $c$ satisfies both $r(A,c)= A$ and $r(B,c)=\0$.
-Let $M_1=\{c:r(A,c)\neq A\}$ and $M_2=\neg M_1$.
+Let $M_1=\{c:r(A,c)\neq A\}$ and $M_2=M\sm M_1$.
 Now note that 
 
-\hfill$\displaystyle\bigcap_{a\in A}r(a, M_1)=\0$\hfill and\hfill $\displaystyle\bigcup_{b\in B}r(b, M_2)=M_2$.\QED
+\hfil$\displaystyle\bigcap_{a\in A}r(a, M_1)=\0$\hfil and\hfil $\displaystyle\bigcup_{b\in B}r(b, M_2)=M_2$.
 \end{exercise}
 
 \section{Notes and references}
 
 We refer the reader to~\cite{Cameron} for a well-written accessible survey on the amazing model theoretic properties of the random graph.
-
-  
-\end{document}

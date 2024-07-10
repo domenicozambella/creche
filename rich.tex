@@ -1,6 +1,4 @@
 % !TEX root = creche.tex
-\documentclass[creche.tex]{subfiles}
-\begin{document}
 \chapter{Rich models}
 \label{fraisse} 
 
@@ -412,7 +410,7 @@ M \arrow[ur, "f_1" above] \arrow[dr, "f_1" below] &  & N \\
 \end{tikzcd}
 
 As we assume that morphisms are invertible, we may express the amalgamation property in a more concise form.
-Namely, for every morphism $k:M\to N$ there is morphism  $g:M'\to N'$ such that the following diagram commutes
+Namely, for every morphism $k:M\to N$ there are $N'\supseteq N$ and a morphism  $g:M\to N'$ such that the following diagram commutes
 
 \hfil\begin{tikzcd}[row sep=tiny]
 & N  \arrow[dr, hook, "\kern2ex{\rm id}_N" above] & \\
@@ -467,7 +465,7 @@ For the next theorem to hold we need the following property:
 \begin{definition}
 We say that $\M$ is \emph{closed under union of $\le$-chains\/} if
 \begin{itemize}
-\item[c8.] if $\<M_i:i<\lambda\>$ is a $\le$-chain,  then \smash{$\displaystyle M_i\le\bigcup_{j<\lambda}M_j$} \ for all $i<\lambda$.\QED
+\item[c8.] if $\<M_i:i<\lambda\>$ is a $\le$-chain,  then $\displaystyle M_i\le\bigcup_{j<\lambda}M_j$ \ for all $i<\lambda$.\QED
 \end{itemize}
 \end{definition}
 
@@ -591,6 +589,3 @@ In this case the required $c$ is any witness of $M\models \E x\, p_{a,b}(x)$ wit
 
 We sum up: $\Mod(T)$ contains countable models that not rich, hence $T$ is not $\omega$-categorical; still, by Theorem~\ref{thm_morphism_rich_elementary}, $T$ is complete and has elimination of quantifiers.
 \end{comment}
-
-  
-\end{document}
