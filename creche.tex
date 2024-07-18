@@ -28,12 +28,12 @@
 \usepackage{graphicx}
 % \usepackage{tikz}
 % \usetikzlibrary{tikzmark}
+
 \usepackage{tikz-cd}
 \tikzcdset{
 arrow style=tikz,
 diagrams={>=latex}
 }
-
 
 \linespread{1.1}
 \setlength{\parindent}{0ex}
@@ -44,31 +44,23 @@ diagrams={>=latex}
 \DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [1.10] pzcmi7t}{}
 \DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
 
-
 \newcommand{\mylabel}[1]{{\ssf{#1}}\hfill}
 \renewenvironment{itemize}
   {\begin{list}{}{%
    \setlength{\parskip}{0mm}
-   \setlength{\topsep}{.4\baselineskip}
+   \setlength{\topsep}{.3\baselineskip}
    \setlength{\rightmargin}{0mm}
    \setlength{\listparindent}{0mm}
    \setlength{\itemindent}{0mm}
-   \setlength{\labelwidth}{3ex}
-   \setlength{\itemsep}{.4\baselineskip}
+   \setlength{\labelwidth}{2ex}
+   \setlength{\itemsep}{.3\baselineskip}
    \setlength{\parsep}{0mm}
    \setlength{\partopsep}{0mm}
    \setlength{\labelsep}{1ex}
    \setlength{\leftmargin}{\labelwidth+\labelsep}
    \let\makelabel\mylabel
    }}
-   {\end{list}}
-
-%\def\emph#1{\textcolor{blue}{\boldmath\textbf{#1}}}
-
-% \setlength{\fboxsep}{0.3mm}
-% \def\emph#1{\fcolorbox{white}{gray!50}{\vphantom{Iq}#1}}
-%\def\emph#1{\textcolor{blue}{\textbf{\boldmath #1}}}
-
+   {\vspace*{-\itemsep}\end{list}}
 
 \def\E{\exists}
 \def\A{\forall}
@@ -157,7 +149,6 @@ diagrams={>=latex}
 \def\bigsum{\mathop{\mbox{\large$\displaystyle\sum$}}}
 \def\bigint{\mathop{\mbox{\large$\displaystyle\int$}}}
 
-
 %\def\hookdoubleheadrightarrow{\hookrightarrow\mathrel{\mspace{-15mu}}\rightarrow}
 
 \def\isomap{\mathrel{\rlap{\kern0.7ex\raisebox{.7ex}{\scriptsize$\kern.2ex\sim$}}\rightarrow}}
@@ -193,7 +184,6 @@ diagrams={>=latex}
 \def\epsilon{\varepsilon}
 \def\ssf#1{\textsf{\small #1}}
 
-
 \titlecontents{chapter}
 [0ex] % ie, 1.5em (chapter) + 2.3em
 {\vskip-1ex\bfseries}
@@ -204,10 +194,9 @@ diagrams={>=latex}
 \titlecontents{section}
 [3.8em] % ie, 1.5em (chapter) + 2.3em
 {\vskip-1ex}
-{\contentslabel{1.5em}}
+{\contentslabel{2.2em}}
 {\hspace*{-2.3em}}
 {\titlerule*[1pc]{}\contentspage}
-
 
 \titleformat
 {\chapter} % command
@@ -224,15 +213,15 @@ diagrams={>=latex}
 % \renewcommand*\thesection{\arabic{section}}
 
 \newtheoremstyle{mio}% name
-     {2\parskip}%      Space above
-     {\parskip}%       Space below
+     {2\parskip}     % Space above
+     {2\parskip}     % Space below
      {}%         Body font
      {}%         Indent amount (empty = no indent, \parindent = para indent)
      {\bfseries}% Thm head font
      {}%        Punctuation after thm head
      {1ex}%     Space after thm head: " " = normal interword space;
            %   \newline = linebreak
-     {\llap{\thmnumber{#2}\hskip2mm}\thmname{#1}\thmnote{\bfseries{}#3}}% Thm head spec (can be left empty, meaning `normal')
+     {\llap{\thmnumber{#2}\hskip0.9ex}\thmname{#1}\thmnote{\bfseries{}#3}}% Thm head spec (can be left empty, meaning `normal')
 
 \newcounter{thm}[chapter]
 
@@ -244,12 +233,16 @@ diagrams={>=latex}
     colframe=white!50!black,
     extrude right by=1ex,
     extrude left by=6.5ex,
+    % before=\par\noindent,
+    % after=\par\noindent,
     top=0.7ex,
-    bottom=1ex,
+    bottom=1.5ex,
     right=1ex,
     left=6.5ex,
     boxsep=0pt,
-    parbox=false
+    parbox=false,
+    before skip=\baselineskip,
+    after skip=\baselineskip,
   },
 }
 \theoremstyle{mio}
@@ -271,8 +264,8 @@ diagrams={>=latex}
 \providecommand{\proofNameStyle}{\bfseries}
 \renewenvironment{proof}[1][\proofname]{\par
   \pushQED{\qed}%
-  \normalfont \topsep6\p@\@plus6\p@\relax
-  \vspace*{-\baselineskip}
+  \normalfont% \topsep6\p@\@plus6\p@\relax
+  % \vspace*{-\baselineskip}
   \trivlist
   \item[\hskip\labelsep
         \proofNameStyle
@@ -281,7 +274,6 @@ diagrams={>=latex}
   \popQED\endtrivlist\@endpefalse
 }
 \makeatother
-
 
 \pagestyle{plain}
 
@@ -308,7 +300,17 @@ diagrams={>=latex}
 \def\grV{{\gr\V}}
 
 \renewcommand*{\emph}[1]{%
-\smash{\tikz[baseline]\node[rectangle, fill=red!15!yellow!50!white, rounded corners, inner xsep=0.2ex, inner ysep=0.2ex, anchor=base, minimum height = 2.7ex]{#1};}}
+\kern-0.3ex
+\smash{\tikz[baseline]\node[rectangle, fill=red!25!yellow!50!white, rounded corners, inner xsep=0.5ex, inner ysep=0.2ex, anchor=base, minimum height = 2.7ex]{#1};}\kern-0.5ex
+}
+
+% \renewcommand*{\emph}[1]{%
+%    \tikz[baseline,%
+%       decoration={random steps,amplitude=1pt,segment length=15pt},%
+%       outer sep=-15pt, inner sep = 0pt%
+%     ]%
+%    \node[decorate,rectangle,fill=navcolor,anchor=text]{#1\xspace};%
+% }%
 
 %%%%%%% GETCOMMIT
 \newcommand\dotGitHEAD{}
@@ -351,17 +353,17 @@ ORCID:~\href{https://orcid.org/0000-0003-1141-2898}{0000-0003-1141-2898}\\[1ex]
 \subfile{relational}
 \subfile{rich}
 \subfile{algebraic}
-\subfile{oalgebraic}
-% \subfile{saturation}
-% \subfile{elimination}
-% \subfile{geometry}
-% \subfile{countable}
-% \subfile{imaginary}
-% \subfile{invariant}
-% \subfile{ramsey}
-% \subfile{invariantL}
-% \subfile{stability}
-% \subfile{vc}
+% \subfile{oalgebraic}
+\subfile{saturation}
+\subfile{elimination}
+\subfile{geometry}
+\subfile{countable}
+\subfile{imaginary}
+\subfile{invariant}
+\subfile{ramsey}
+\subfile{invariantL}
+\subfile{stability}
+\subfile{vc}
 % % \subfile{pseudofinite}
 % % \subfile{measures}
 \subfile{esame}

@@ -1,6 +1,5 @@
 % !TEX root = creche.tex
 \chapter{Preliminaries and notation}\label{termini}
-%\setcounter{page}{1}
 This chapter introduces the syntax and semantic of first order logic.
 
 The definitions of terms and formulas we give in Section~\ref{terms} and~\ref{sintassformule} are more formal than required here.
@@ -59,8 +58,8 @@ If $a$ and $b$ are tuples, we write \emph{$a\,b$\/} for the concatenation or, wh
 A \emph{language $L$\/}\index{language!(first order)}\index{0L@$L$} (also called \emph{signature\/}\index{signature}) is a triple that consists of
 
 \begin{itemize}
-\item[1.] a set \emph{$L_{\rm fun}$}\index{0Lfun@$L_{\rm fun}$} whose elements are called \emph{function symbols;}\index{symbol!function}
-\item[2.] a set \emph{$L_{\rm rel}$\/}\index{0Lrel@$L_{\rm rel}$} whose elements are called \emph{relation symbols;}\index{symbol!relation}
+\item[1.] a set \emph{$L_{\rm fun}$}\index{0Lfun@$L_{\rm fun}$} whose elements are called \emph{function symbols}\index{symbol!function}
+\item[2.] a set \emph{$L_{\rm rel}$\/}\index{0Lrel@$L_{\rm rel}$} whose elements are called \emph{relation symbols}\index{symbol!relation}
 \item[3.] a function that assigns to every $f\in L_{\rm fun}$, respectively $r\in L_{\rm rel}$, non-negative integers $n_f$ and $n_r$ that we call \emph{arity\/}\index{arity} of the function, respectively relation, symbol.
 We say that $f$ is an \emph{$n_f$-ary} function symbol, and similarly for $r$.
 A $0$-ary function symbol is also called a \emph{constant.}
@@ -73,8 +72,8 @@ Note that, by definition, $|L|$ is always infinite.
 A \emph{structure\/}\index{structure} $M$ of signature $L$ (for short \emph{$L$-structure}) consists of
 
 \begin{itemize}
-\item[1.] a set called the \emph{domain\/}\index{domain!(of a structure)} or \emph{support}\index{support!(of a structure)} of the structure and is denoteed by the same symbol $M$ used for the whole structure;
-\item[2.] a function that assigns to every $f\in L_{\rm fun}$ a total map \emph{$f^M$ $: M^{n_f}\to M$;}\index{0fM@$f^M$}
+\item[1.] a set called the \emph{domain\/}\index{domain!(of a structure)} or \emph{support}\index{support!(of a structure)} of the structure and is denoteed by the same symbol $M$ used for the whole structure
+\item[2.] a function that assigns to every $f\in L_{\rm fun}$ a total map \emph{$f^M$ $: M^{n_f}\to M$}\index{0fM@$f^M$}
 \item[3.] a function that assigns to every  $r\in L_{\rm rel}$ a relation \emph{$r^M\subseteq M^{n_r}$.}\index{0rM@$r^M$}
 \end{itemize}
 We call $f^M$ and $r^M$, the \emph{interpretation\/}\index{interpretation} of $f$, respectively $r$, in $M$.
@@ -133,7 +132,7 @@ We fix a signature $L$ for the whole section.
 \begin{definition}\label{deftermine} 
 A \emph{term\/}\index{term} is a finite sequence of elements of $L_{\rm fun}\cup V$ that are obtained inductively as follows
 \begin{itemize}
-\item[o.] every variable, intended as a tuple of length $1$, is a term;
+\item[o.] every variable, intended as a tuple of length $1$, is a term
 \item[i.] if $f\in L_{\rm fun}$ and $t_1,\dots,t_{n_f}$ are terms, then $f\kern0.1ex t_1,\dots,t_{n_f}$ is a term.
 \end{itemize}
 We say \emph{$L$-term\/} when we need to specify the language $L$.
@@ -208,7 +207,7 @@ If a set $A\subseteq N$ is such that
 \end{itemize}
 then there is a unique substructure $M\subseteq N$ with domain $A$, namely, the structure with the following interpretation
 \begin{itemize}
-\item[2.] $f^M\ =\ f^N\restriction A^{n_f}$ (which is a good definition by assumption \ssf1);
+\item[2.] $f^M\ =\ f^N\restriction A^{n_f}$ (which is a good definition by assumption \ssf1)
 \item[3.] $r^M\ =\ r^N\cap A^{n_r}$.
 \end{itemize}
 It is usual to confuse subsets of $N$ that satisfy \ssf{1} with the unique substructure they support.
@@ -261,12 +260,11 @@ However, in practice we always we use the infix notation: $t\doteq s$, \ $\phi\v
 A \emph{formula\/}\index{formula} is any finite sequence is obtained with the following inductive procedure
 
 \begin{itemize}
-\item[o.] if $r\in L_{\rm rel}\cup \{\doteq\}$ and $t$ is a tuple obtained concatenating $n_r$ terms then $r\,t$ is a formula. Formulas of this form are called \emph{atomic;}\index{formula!atomic}
+\item[o.] if $r\in L_{\rm rel}\cup \{\doteq\}$ and $t$ is a tuple obtained concatenating $n_r$ terms then $r\,t$ is a formula. Formulas of this form are called \emph{atomic}\index{formula!atomic}
 
 \item[i.] if $\phi$ e $\psi$ are formulas then the following are formulas: $\bot$, \ ${\neg}\,\phi$, \ ${\vee}\,\phi\,\psi$, \ and $\E x\,\phi$, for any $x\in V$.
 \end{itemize}
 \end{definition}
-
 
 We use \emph{$L$\/} to denote both the language and the set of formulas.
 We write \emph{$L_{\rm at}$\/} for the set of atomic formulas and \emph{$L_{\rm qf}$\/} for the set of \emph{quantifier-free formulas\/} i.e.\@ formulas where $\E$ does not occur.
@@ -281,7 +279,8 @@ Then $n=m$ and $\phi_i=\psi_i$.
 \end{lemma}
 
 A formula is \emph{closed\/} if all its variables occur under the scope of a quantifier.
-Closed formulas are also called \emph{sentences.}\index{sentence} We will do without a formal definition of \textit{occurs under the scope of a quantifier\/} which is too lengthy. An example suffices: all occurrences of $x$ are under the scope a quantifiers in the formula $\E x\,\phi$.
+Closed formulas are also called \emph{sentences.}\index{sentence}
+We will do without a formal definition of \textit{occurs under the scope of a quantifier\/} which is too lengthy. An example suffices: all occurrences of $x$ are under the scope a quantifiers in the formula $\E x\,\phi$.
 These occurrences are called \emph{bounded.}
 The formula $x{\doteq}y\wedge\E x\,\phi$ has \emph{free\/} (i.e., not bound) occurrences of $x$ and $y$.
 
@@ -294,7 +293,7 @@ In this case we write $\phi(t)$ for $\phi[x/t]$.
 We often use without explicit mention the following useful syntactic decomposition of formulas with parameters which we state without proof.
 
 \begin{lemma}\label{rappresentazione formule con parametri}
-For every formula $\phi(x)\in L(A)$ there is a formula $\psi(x\,;z)\in L$ and a tuple of parameters $a\in A^{|z|}$ such that $\phi(x)=\psi(x\,;a)$.
+For every formula $\phi(x)\in L(A)$ there is a formula $\psi(x\,;z)\in L$ and a tuple of parameters $a\in A^z$ such that $\phi(x)=\psi(x\,;a)$.
 \end{lemma}
 
 Just as a term $t(x)$ is a name for a function $t(x)^M:M^{x}\to M$, a formula $\phi(x)$ is a name for a subset $\phi(x)^M\subseteq M^{x}$ which we call \emph{the subset of $M$ defined by $\phi(x)$.}
@@ -366,7 +365,7 @@ We say that $\A x\,\phi(x)$ and $\E x\,\phi(x)$ are the \emph{universal}, respec
 
 The semantic of conjunction and disjunction is associative. Then for any finite set of formulas $\{\phi_i:i\in I\}$ we can write without ambiguities 
 
-\hfil \emph{$\displaystyle\bigwedge_{i\in I}\phi_i$}\hfil \emph{$\displaystyle\bigvee_{i\in I}\phi_i$}\bigskip
+\hfil \emph{\kern1ex$\displaystyle\bigwedge_{i\in I}^{\,}\phi_i$}\hfil \emph{$\displaystyle\kern1ex\bigvee_{i\in I}^{\,}\phi_i$}\bigskip
 
 When $x=x_1,\dots,x_n$ is a tuple of variables we write \emph{$\E x\,\phi$\/} or \emph{$\E x_1,\dots,x_n\,\phi$\/} for $\E x_1\dots\E x_n\,\phi$.
 There is a first order sentences that say that $\phi(M)$ has at least $n$ elements (also, no more than, or exactly $n$). It is convenient to use the following abbreviations.
@@ -383,8 +382,8 @@ There is a first order sentences that say that $\phi(M)$ has at least $n$ elemen
 \begin{exercise}\label{ex_fam_insiemi}
 Let $M$ be an $L$-structure and let $\psi(y), \phi(x,y)\in L$. For each of the following conditions, write a sentence true in $M$ exactly when
 \begin{itemize}
-\item[a.] $\psi(M)\ \in\ \big\{\phi(a,M): a\in M\big\}$;
-\item[b.] $\big\{\phi(a,M): a\in M\big\}$ contains at least two sets;
+\item[a.] $\psi(M)\ \in\ \big\{\phi(a,M): a\in M\big\}$
+\item[b.] $\big\{\phi(a,M): a\in M\big\}$ contains at least two sets
 \item[c.] $\big\{\phi(a,M): a\in M\big\}$ contains only sets that are pairwise disjoint.
 \end{itemize}
 \end{exercise}

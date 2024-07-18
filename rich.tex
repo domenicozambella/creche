@@ -7,7 +7,7 @@
 We introduce \textit{Fra\"iss\'e limits}, also known as \textit{homogeneous-universal\/} or \textit{generic\/} structures, which here we call \textit{rich\/} models, after Poizat.
 Rich models generalize the examples in Chapters~\ref{relational} and the many more to come.
 
-\textit{Elimination of quantifiers} is briefly discussed at the end of Section~\ref{rich}.
+Elimination of quantifiers is briefly discussed at the end of Section~\ref{rich}.
 For the time being we identify  quantifier elimination with the property that says that all partial isomorphisms are elementary maps.
 Proofs are easier with this notion in mind.
 The equivalence of this property with its syntactic counterpart is only proved in Chapter~\ref{elimination}, when the reader is more familiar with arguments of compactness.
@@ -37,12 +37,12 @@ In the general case we need to make some assumptions on $\M$.
 
 \begin{definition}\label{def_com_c}For ease of reference we list together all properties required below
 \begin{itemize} 
-\item[c1.] the (partial) identity map $\id_A:M\to M$ is a morphism, for any $A\subseteq M$;
-\item[c2.] if $k':M\to N$ is a morphism for every finite $k'\subseteq k$, then $k:M\to N$ is a morphism.
-\item[c3.] morphisms are invertible maps and the inverse of a morphism is a morphism;
-\item[c4.] morphisms preserve the truth of $\atL$\,-formulas;
-\item[c5.] if $M$ is a model and $N\equiv M$, then also $N$ is a model;
-\item[c6.] every elementary map between models is a morphism.\QED
+\item[c1.] the (partial) identity map $\id_A:M\to M$ is a morphism, for any $A\subseteq M$
+\item[c2.] if $k':M\to N$ is a morphism for every finite $k'\subseteq k$, then $k:M\to N$ is a morphism
+\item[c3.] morphisms are invertible maps and the inverse of a morphism is a morphism
+\item[c4.] morphisms preserve the truth of $\atL$\,-formulas
+\item[c5.] if $M$ is a model and $N\equiv M$, then also $N$ is a model
+\item[c6.] every elementary map between models is a morphism.
 \end{itemize}
 \end{definition}
 
@@ -65,7 +65,7 @@ These generalizations are not very common and will not be considered here.
 Assume that $\M$ satisfies \ssf{c1}-\ssf{c3} of Definition~\ref{def_com_c}.
 We say that a model $N$ is \emph{$\lambda$-rich\/} if for every model $M$, every ${\mr b}\in M$ and every morphism $k:M\imp N$ of cardinality $<\lambda$ there is a ${\mr c}\in N$ such that $k\cup\{\<{\mr b},{\mr c}\>\}:M\to N$ is a morphism.
 We say that $N$ is \emph{rich\/} if it is $\lambda$-rich for $\lambda=|N|$.
-When $\M_{\rm ob}=\Mod(T_0)$ for some theory $T_0$ and $\M_{\rm hom}$ is clear from the context, we say \emph{rich model of $T_0$}.\QED
+When $\M_{\rm ob}=\Mod(T_0)$ for some theory $T_0$ and $\M_{\rm hom}$ is clear from the context, we say \emph{rich model of $T_0$.}
 \end{definition}
 
 Rich models are also called \textit{Fra\"iss\'e limits} or \textit{homogeneous-universal\/} for a reason that will soon be clear; they are also called \textit{generic}.
@@ -81,12 +81,11 @@ We say that a model $N$ is \emph{$\lambda$-homogeneous\/} if every $k:N\to N$ of
 Note that the larger $\M_{\rm hom}$, the stronger notion of homogeneity.
 When  $\M_{\rm hom}$ contains all partial isomorphisms between models (the largest class of morphisms considered here), it is common to say \emph{$\lambda$-ultra\-homo\-geneous\/} for $\lambda$-homogeneous.
 
-As above, when $\lambda=|N|$ we say \emph{universal}, \emph{homogeneous} and \emph{ultrahomogeneous}.\QED
+As above, when $\lambda=|N|$ we say \emph{universal}, \emph{homogeneous} and \emph{ultrahomogeneous}.
 \end{definition}
 
-
-In Section~\hyperref[dlo]{\ref*{relational}.\ref*{dlo}} we implicitly used $\M_{\rm ob}=\Mod(T_{\rm lo})$ and partial isomorphisms as $\M_{\rm hom}$.
-In Section~\hyperref[randomgraph]{\ref*{relational}.\ref*{randomgraph}} we used $\M_{\rm ob}=\Mod(T_{\rm gph})$ and again partial isomorphisms as $\M_{\rm hom}$.
+In Section~\ref{dlo} we implicitly used $\M_{\rm ob}=\Mod(T_{\rm lo})$ and partial isomorphisms as $\M_{\rm hom}$.
+In Section~\ref{randomgraph} we used $\M_{\rm ob}=\Mod(T_{\rm gph})$ and again partial isomorphisms as $\M_{\rm hom}$.
 Corollary~\ref{coroll_ordinericco} proves that every model of $T_{\rm dlo}$ is $\omega$-rich.
 Corollary~\ref{coroll_graforicco} claims the analogous fact for $T_{\rm rg}$.
 
@@ -96,12 +95,12 @@ In the following we frequently work under the following assumption (even when no
 Assume  $|L|\le\lambda$ and suppose that $\M$ satisfies \ssf{c1-c6} of Definition~\ref{def_com_c}
 \end{assumption} 
  
-The assumption on the cardinality of $L$ is necessary to apply the downward L\"owenheim-Skolem Theorem when required.
+The assumption on the cardinality of $L$ is necessary to apply the downward L\"owen\-heim-Skolem Theorem when required.
 
 \begin{proposition}\label{prop_6.1}
 (Assume~\ref{ass_c1-6})  \  The following are equivalent
 \begin{itemize}
-\item[1.] $N$ is a $\lambda$-rich model;
+\item[1.] $N$ is a $\lambda$-rich model
 \item[2.] for every model $M$ of cardinality $\le\lambda$ and every morphism $k:M\imp N$ of cardinality, say $<\lambda$ there is a embedding $h:M\hookrightarrow N$ that extends $k$.
 \end{itemize}
 \end{proposition}
@@ -128,22 +127,21 @@ As for uncountable $\lambda$, we only need to extend the construction through li
 By \ssf{c7} we can simply take the union.
 \end{proof}
 
-
 \begin{corollary}\label{coroll_riccozigzag}
-(Assume~\ref{ass_c1-6})  All rich models of cardinality $\lambda$ in the same connected component are isomorphic.\QED
+(Assume~\ref{ass_c1-6})  All rich models of cardinality $\lambda$ in the same connected component are isomorphic.
 \end{corollary}
 
 It is obvious that rich models are universal.
 By Theorem~\ref{thm_riccozigzag}, rich models they are ho\-mo\-ge\-ne\-ous.
 These two notions are weaker than richness.
-For instance, when $\M$ is as in Section~\hyperref[randomgraph]{\ref*{relational}.\ref*{randomgraph}}, the countable graph with no edge is trivially ultrahomogeneous but it is not universal and a fortiori not rich.
+For instance, when $\M$ is as in Section~\ref{randomgraph}, the countable graph with no edge is trivially ultrahomogeneous but it is not universal and a fortiori not rich.
 On the other hand if we add to a countable random graph an isolated point we obtain a universal graph which is not ultrahomogeneous.
 However, when taken together, these two properties are equivalent to richness.
 
 \begin{theorem}\label{ricco<->universaleomogeneo}
 (Assume~\ref{ass_c1-6}) \ The following are equivalent:
 \begin{itemize}
-\item[1.] $N$ is rich;
+\item[1.] $N$ is rich
 \item[2.] $N$ is homogeneous and universal.
 \end{itemize}
 \end{theorem}
@@ -158,11 +156,6 @@ It is immediate that $h\circ f:M\hookrightarrow N$ is the required extension of 
 \end{proof}
 
 
-\begin{exercise}
-Let $N$ be the structure obtained by adding to a countable random graph an isolated point.
-Show that $N$ is homogeneous if morphisms are elementary maps but it is not if morphisms are simply partial isomorphisms.\QED
-\end{exercise}
-
 A consequence of Theorem~\ref{thm_riccozigzag} is that morphisms between rich models of the same cardinality are elementary maps.
 However, the theorem gives no information when the models have different cardinality nor when they are merely $\lambda$-rich.
 This case is dealt with by next theorem, arguably the main result of this section.
@@ -170,8 +163,13 @@ This case is dealt with by next theorem, arguably the main result of this sectio
 To test the theorem below in a simple case we propose the following exercise.
 
 \begin{exercise}
+Let $N$ be the structure obtained by adding to a countable random graph an isolated point.
+Show that $N$ is homogeneous if morphisms are elementary maps but it is not if morphisms are simply partial isomorphisms.
+\end{exercise}
+
+\begin{exercise}\label{ex_DLO_RG_QE}
 Every partial isomorphism $k:M\to N$ between models of $T_{\rm dlo}$ (or models of  $T_{\rm rg}$) is an elementary map.
-Hint: use downward Löwenheim-Skolem and Theorem~\ref{thm_zigzagcantor}.\QED
+Hint: use downward Löwenheim-Skolem and Theorem~\ref{thm_zigzagcantor}.
 \end{exercise}
 
 \section{The theory of rich models, and quantifier elimination}
@@ -200,7 +198,7 @@ We define a chain of functions $\<h_i:i{<}\lambda\>$ such that $h_i:M\to N$ are 
 
 \hfil  $\displaystyle h\ \ =\ \ \bigcup_{i<\lambda}h_i$,\hfil $\displaystyle M'\ =\ \dom h$,\hfil $\displaystyle N'\ =\ \range h$.
 
-We interweave the usual back-and-forth-argument with the Löwenheim-Skolem construction~\ref{diym_II_lowenheimskolemallingiu} in order to obtain $M'\preceq M$ and  $N'\preceq N$.
+We interweave the usual back-and-forth-argument with the construction in Löwenheim-Skolem Theorem~\ref{thm_lowenheimskolemallingiu} in order to obtain $M'\preceq M$ and  $N'\preceq N$.
 
 The chains start with $h_0=k$.
 At limit stages we take the union.
@@ -213,7 +211,7 @@ Finally, as in the proof of Theorem~\ref{thm_zigzagcantor}, we extend $h_{i+^1\!
 
 In the end we obtain $M'\preceq M$ if all formulas $\phi(x)\in L(M')$ are considered.
 A similar consideration holds for $N'$.
-This is achieved using the same dovetail enumeration as in our second proof the downward Löwenheim-Skolem Theorem~\ref{diym_II_lowenheimskolemallingiu}.
+This is achieved using the same dovetail enumeration as in our second proof the downward Löwenheim-Skolem Theorem~\ref{thm_lowenheimskolemallingiu}.
 \end{proof}
 
 Assume for simplicity that $\M$ is connected.
@@ -226,15 +224,14 @@ It is interesting to ask if the converse is true: if $T_1$ is the theory of the 
     (Assume~\ref{ass_c1-6})  \  Assume $\M$ is connected.
     Let $T_1$ be the theory of the rich models of $\M$.
     If every model of $T_1$ is $\lambda$-rich then $T_1$ is $\lambda$-categorical.
-    (This is a conseguence of Corollary~\ref{coroll_riccozigzag})\QED
+    (This is a conseguence of Corollary~\ref{coroll_riccozigzag})
 \end{remark}
 
 A very interesting interesting variant of the question asked above is considered in Theorem~\ref{thm_ricchezza_saturazione_QE} where it is related to an important phenomenon that we now indroduce.
-
 First, to have a concrete example at hand, we instantiate Theorem~\ref{thm_morphism_rich_elementary} with the two categories used in Chapter~\ref{relational}.
 
 \begin{corollary}\label{coroll_tutteleimmersionisonoelementari_QE}
-Partial isomorphisms between models of $T_{\rm dlo}$ and between models of $T_{\rm rg}$ are elementary maps.\QED
+Partial isomorphisms between models of $T_{\rm dlo}$ and between models of $T_{\rm rg}$ are elementary maps.
 \end{corollary}
 
 When partial isomorphism between models of a given theory $T$ coincide with elementary maps, it is always by a fundamental reason.
@@ -250,8 +247,8 @@ Here we report without proof the following theorem.
 \begin{theorem}\label{thm_tutteleimmersionisonoelementari_QE}
 The following are equivalent
 \begin{itemize}
-\item[1.] $T$ has elimination of quantifiers;
-\item[2.] every partial isomorphism between models of $T$ is an elementary map.\QED
+\item[1.] $T$ has elimination of quantifiers
+\item[2.] every partial isomorphism between models of $T$ is an elementary map.
 \end{itemize}
 \end{theorem}
 
@@ -274,11 +271,11 @@ Let $q(x)$ be the type $\big\{\neg r_n(x):n\in\omega\big\}$.
 There are models of $T_1$ that do not realize $q(x)$, hence $T_1$ is not $\omega$-categorical.
 It is easy to verify that the following are equivalent.
 \begin{itemize}
- \item[1.] $N$ is an $\omega$-rich model;
+ \item[1.] $N$ is an $\omega$-rich model
  \item[2.] $N\models T_1$ and  $q(N)$ is infinite.
 \end{itemize}
 The reader may use Theorem~\ref{thm_morphism_rich_elementary} and Compactness Theorem for Types~\ref{thm_compattezzatipi} to prove that $T_1$ is complete and has elimination of quantifiers.
-It is also easy to verify that every uncountable model of $T_1$ is rich and consequently that $T_1$ is uncountably categorical.\QED
+It is also easy to verify that every uncountable model of $T_1$ is rich and consequently that $T_1$ is uncountably categorical.
 \end{example}
 
 \begin{exercise}\label{ex_finiti_colori}
@@ -288,46 +285,46 @@ If so, let $T_1$ be the set of sentences that hold in all rich model.
 Does $T_1$ has elimination of quantifiers?
 Is $T_1$ $\omega$-categorical? 
 Answer the questions above when we add to the language a constant $0$.
-Answer the questions above when we drop the axioms $\neg\E x\, \big[r_n(x)\wedge r_m(x)\big]$.\QED
+Answer the questions above when we drop the axioms $\neg\E x\, \big[r_n(x)\wedge r_m(x)\big]$.
 \end{exercise}
 
 \begin{exercise}
 The language contains only the binary relations $<$ and $e$.
 The theory $T_0$ says that $<$ is a strict linear order and that $e$ is an equivalence relation.
 Let $\M$ consists of models of $T_0$ and partial isomorphisms.
-Do rich models exist? Can we axiomatize their theory? If so, does it have elimination of quantifiers? Is it $\lambda$-categorical for some $\lambda$?\QED
+Do rich models exist? Can we axiomatize their theory? If so, does it have elimination of quantifiers? Is it $\lambda$-categorical for some $\lambda$?
 \end{exercise}
 
 \begin{exercise} 
 The language contains only two binary relations.
 The theory $T_0$ says that they are equivalence relations.
 Let $\M$ consists of models of $T_0$ and partial isomorphisms.
-Do rich models exist? Can we axiomatize their theory? If so, does it have elimination of quantifiers? Is it $\lambda$-categorical for some $\lambda$?\QED
+Do rich models exist? Can we axiomatize their theory? If so, does it have elimination of quantifiers? Is it $\lambda$-categorical for some $\lambda$?
 \end{exercise}
 
 \begin{exercise}
 In the language of graphs let $T_0$ say that there are no cycles (equivalently, there is at most one path between any two nodes).
 In combinatorics these graphs are called \textit{forests}, and their connected components are called \textit{trees}.
 Let $\M$ consists of models of $T_0$ and partial isomorphisms.
-Do rich models exist? Can we axiomatize their theory? If so, does it have elimination of quantifiers? Is it $\lambda$-categorical for some $\lambda$?\QED
+Do rich models exist? Can we axiomatize their theory? If so, does it have elimination of quantifiers? Is it $\lambda$-categorical for some $\lambda$?
 \end{exercise}
 
 \begin{exercise}
 Assuming Theorem~\ref{thm_tutteleimmersionisonoelementari_QE}, prove that the following are equivalent
 \begin{itemize}
-    \item[1.] $T$ has elimination of quantifiers;
-    \item[2.] every \textit{finite\/} partial isomorphism between models $T$ is an elementary map.\QED
+    \item[1.] $T$ has elimination of quantifiers
+    \item[2.] every \textit{finite\/} partial isomorphism between models $T$ is an elementary map.
 \end{itemize}
 \end{exercise}
 
 \begin{exercise}
     A \emph{back-and-forth system\/} between to models $M$ and $N$ is a nonempty set $\P$ of finite functions $k$ such that
     \begin{itemize}
-        \item[0.] $k:M\to N$ is a partial embedding;
-        \item[1a.] for every $b\in M$ there is $h\in\P$ such that $k\subseteq h$ and $b\in\dom h$;
+        \item[0.] $k:M\to N$ is a partial embedding
+        \item[1a.] for every $b\in M$ there is $h\in\P$ such that $k\subseteq h$ and $b\in\dom h$
         \item[1b.] for every $c\in N$ there is $h\in\P$ such that $k\subseteq h$ and $c\in\range h$.
     \end{itemize}
-    Prove that if $L$ is countable and there is a back-and-forth system between $M$ and $N$ then there are $M'\preceq M$ and $N'\preceq N$ such that $M'\simeq N'$.\QED
+    Prove that if $L$ is countable and there is a back-and-forth system between $M$ and $N$ then there are $M'\preceq M$ and $N'\preceq N$ such that $M'\simeq N'$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -342,17 +339,12 @@ This section is more technical and could be skipped at a first reading.
 
 \begin{definition}
 We say that a structure $N$ is \emph{weakly $\lambda$-homogeneous\/} if for every ${\mr b}\in N$ every morphism $k:N\imp N$ of cardinality $<\lambda$ extends to one defined in ${\mr b}$.
-The term \emph{back-and-forth $\lambda$-homogeneous\/} is also used.\QED
+The term \emph{back-and-forth $\lambda$-homogeneous\/} is also used.
 \end{definition}
 
-The following easy exercise on back-and-forth is required in the sequel.
-
-\begin{exercise}\label{omogeneo=debolmenteaomogeneo}
-(Assume~\ref{ass_c1-6}) \ Prove that any weakly $\lambda$-ho\-mo\-ge\-ne\-ous structure of cardinality $\lambda$ is homogeneous.\QED
-\end{exercise}
 
 % \begin{definition}\label{def_weakly_universal}
-% We say that a structure $N$ is \emph{weakly $\lambda$-universal\/} if for every model $M$ in the connected component of $N$ and every $A\subseteq M$ of cardinality $<\lambda$ there is a morphism $k:M\to N$ such that $A\subseteq\dom k$.\QED
+% We say that a structure $N$ is \emph{weakly $\lambda$-universal\/} if for every model $M$ in the connected component of $N$ and every $A\subseteq M$ of cardinality $<\lambda$ there is a morphism $k:M\to N$ such that $A\subseteq\dom k$.
 % \end{definition}
 
 \begin{lemma}\label{debolmenteomogeneoandirivieni}
@@ -382,7 +374,7 @@ Define $A_{i+1}=A_i\cup\big\{{\gr a},\ h_{i+1}{\mr b},\  h_{i+1}^{-1}{\mr b}\big
 \begin{theorem}\label{ricco=universaledebolmenteomogeneo}
 (Assume~\ref{ass_c1-6})  \  For every model $N$ the following are equivalent
 \begin{itemize}
-\item[1.] $N$ is $\lambda$-rich;
+\item[1.] $N$ is $\lambda$-rich
 \item[2.] $N$ is $\lambda$-universal and weakly $\lambda$-homogeneous.
 \end{itemize}
 \end{theorem}
@@ -396,6 +388,15 @@ The map $f\circ k^{-1}:N\imp N$ has cardinality $<\lambda$ and, by Lemma~\ref{de
 Then $h\circ f:M\imp N$ extends $k$ and is defined on $b$.
 \end{proof}
 
+
+\begin{exercise}\label{omogeneo=debolmenteaomogeneo}
+  (Assume~\ref{ass_c1-6}) \ Prove that any weakly $\lambda$-ho\-mo\-ge\-ne\-ous structure of cardinality $\lambda$ is homogeneous.
+  \end{exercise}
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The amalgamation property}
 
 In this section we discuss conditions that ensure the existence of rich models.
@@ -410,22 +411,19 @@ M \arrow[ur, "f_1" above] \arrow[dr, "f_1" below] &  & N \\
 \end{tikzcd}
 
 As we assume that morphisms are invertible, we may express the amalgamation property in a more concise form.
-Namely, for every morphism $k:M\to N$ there are $N'\supseteq N$ and a morphism  $g:M\to N'$ such that the following diagram commutes
+It is convenient to use the following notation.
+We write \emph{$M\le N$\/} if $M\subseteq N$ and $\id_M:M\hookrightarrow N$ is a morphism.
+We say that $k:M\to N$ \emph{extends to\/} $g:M\to N'$ if $k\subseteq h$ and  $N\le N'$ namely, if the following diagram commutes
 
 \hfil\begin{tikzcd}[row sep=tiny]
 & N  \arrow[dr, hook, "\kern2ex{\rm id}_N" above] & \\
 M \arrow[ur, "k\kern1ex" above] \arrow[rr, hook, "g" below] &  & N' \\
 \end{tikzcd}
 
-It is convenient to use the following terminology.
-We write \emph{$M\le N$\/} for $M\subseteq N$ and $\id_M:M\hookrightarrow N$ is a morphism.
-We say that $k:M\to N$ \emph{extends to\/} $g:M'\to N'$ if $k\subseteq h$, $M\le M'$, and  $N\le N'$.
-
-
 \begin{proposition}\label{prop_amalgamation_def}
 Assume \ssf{c3}, then the following are equivalent
 \begin{itemize}
-\item[1.] $\M$ has the amalgamation property;
+\item[1.] $\M$ has the amalgamation property
 \item[2.] every morphism $k:M\to N$ extends to an embedding $g : M\hookrightarrow N'$.
 \end{itemize}
 \end{proposition}
@@ -443,29 +441,29 @@ M \arrow[ur, "\kern1ex k" above, near start] \arrow[dr, "\id_M" below, near star
 M \arrow[ur, "\kern1ex k" above, near start] \arrow[rr, hook, "g_2" below] &  & N' \\
 \end{tikzcd}
 
-Up to isomorphism we can assume $g_2=\id_M$, i.e.\@ that $N\le N'$.
+Up to isomorphism we can assume $g_1=\id_N$, i.e.\@ that $N\le N'$.
 Hence $g_2:M\hookrightarrow N'$ is the required extension of $k:M\to N$.
 
 \ssf{2}$\IMP$\ssf{1} Let  $f_1:M\to M_1$ and $f_2:M\to M_2$ be given.
-Let $k=f_2\circ f_1^{-1}:M_1\to M_2$ and let  $g:M_1\hookrightarrow N'$ be the extension ensured by \ssf{2}.
+Let $k=f_2\circ f_1^{-1}:M_1\to M_2$ and let  $g:M_1\hookrightarrow N$ be the extension ensured by \ssf{2}.
 Then we obtain
 
 \hfil\begin{tikzcd}[row sep=normal, column sep=large]
 & M_1  \arrow[dd, "f_2\circ f_1^{-1}"] \arrow[dr, hook, "\kern1ex g" above] & \\
-M \arrow[ur, "f_1\kern1ex" above] \arrow[dr, "f_2\kern1ex" below] &  & N' \\
-& M_2  \arrow[ur, hook, "\kern3ex\id_{M_2}\rule{0ex}{1.5ex}" below] & \\
+M \arrow[ur, "f_1\kern1ex" above] \arrow[dr, "f_2\kern1ex" below] &  & N \\
+& M_2  \arrow[ur, hook, "\kern3ex\id_{M_2}\rule{0ex}{1.5ex}" below] %& \\
 \end{tikzcd}
 
 as required.
 \end{proof}
 
 We say that $\<M_i:i<\lambda\>$ is a \emph{$\le$-chain\/} if $M_i\le M_j$ for all $i<j<\lambda$.
-For the next theorem to hold we need the following property:
+For the next theorem to hold we need the following property
 
 \begin{definition}
 We say that $\M$ is \emph{closed under union of $\le$-chains\/} if
 \begin{itemize}
-\item[c8.] if $\<M_i:i<\lambda\>$ is a $\le$-chain,  then $\displaystyle M_i\le\bigcup_{j<\lambda}M_j$ \ for all $i<\lambda$.\QED
+\item[c8.] if $\<M_i:i<\lambda\>$ is a $\le$-chain,  then $\displaystyle M_i\le\bigcup_{j<\lambda}M_j$ \ for all $i<\lambda$.
 \end{itemize}
 \end{definition}
 
@@ -510,7 +508,7 @@ Let $k:M\to N$ be an elementary map.
 Let ${\gr a}$ enumerate $\dom k$ and let ${\mr b}$ enumerate $M$.
 Let $p({\mr x}\,;{\gr z})=\tp_M({\mr b}\,;{\gr a})$.
 The type $p({\mr x}\,;{\gr a})$ is consisent in $M$, in particular, it is finitely consistent and, by elementarity,  $p({\mr x}\,;k{\gr a})$ is finitely consistent in $N$.
-By the compactness theorem, there is $N'\succeq N$ such that $N'\models p({\mr c}\,;k{\gr a})$ for some ${\mr c}\in N'^{|{\mr x}|}$ .
+By the compactness theorem, there is $N'\succeq N$ such that $N'\models p({\mr c}\,;k{\gr a})$ for some ${\mr c}\in N'^{\mr x}$.
 Hence $g=\{\<{\mr b},{\mr c}\>\}:M\to N'$ is the required elementary map that extends $k:M\to N$.
 \end{proof}
 % \section{Notes and references}

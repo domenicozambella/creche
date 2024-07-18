@@ -70,7 +70,7 @@ Let ${\mathcal C}$ be a class of structures.
 Let $\Th({\mathcal C}) = \big\{\varphi\ |\ M\models \varphi\ \mathrm{for\ all}\ M \in {\mathcal C}\big\}$ be the theory of ${\mathcal C}$. 
 Prove the following are equivalent
 \begin{itemize}
-\item[1.] $N\models\Th({\mathcal C})$; 
+\item[1.] $N\models\Th({\mathcal C})$
 \item[2.] $N$ is elementarily equivalent to an ultraproduct of elements of ${\mathcal C}$.
 \end{itemize}
 \end{exercise}
@@ -94,9 +94,7 @@ We say that $p(x)$ is \emph{consistent in $M$\/} if it has a solution in $M$.
 In this case we may write \emph{$M\models\E x\,p(x)$.}
 We say that $p(x)$ is \emph{consistent\/} if it is realized in some model.
 
-We say that a type $p(x)$ is \emph{finitely consistent\/} if all its finite subsets are consistent.
-If its finite subsets are all consistent in the same model $M$, we say that $p(x)$ is finitely consistent \emph{in $M$.}
-
+We say that a type $p(x)\subseteq L$ is \emph{finitely consistent\/} if all its finite subsets are consistent.
 The following fact is an immediate consequence of the compactness theorem.
 
 \begin{fact}\label{fact_compattezzatipi}
@@ -111,6 +109,7 @@ Every finitely consistent type $p({\mr x})\subseteq L$ is consistent.
   Then $N,{\mr c^{N'}}\models p({\mr x})$.
 \end{proof}
 
+If all finite subsets of a type $p(x)\subseteq L(M)$ are consistent in the very same model $M$, we say that $p(x)$ is finitely consistent \emph{in $M$.}
 The following theorem shows that the notion of finite concistency \textit{in a model}, which is trivial
 for theories, is instead very interesting for types.
 % The theory $\Th(M/M)$ is called the \emph{elementary diagram of $M$.}
@@ -125,8 +124,9 @@ Before that, we recall an important particular case of Proposition~\ref{oss_Delt
     Then, for every model $N$ realizing $q(z)$, there is an elementary embedding $h:M\to N$. 
 \end{lemma}
 
- We call $q(z)$ the \emph{elementary diagram of $M$} though, stricticly speaking, the elementary diagram of $M$ is theory $\Th(M/M)$.
+ We call $q(z)$ the \emph{elementary diagram of $M$} though, stricticly speaking, the elementary diagram of $M$ is theory $\Th(M/M)=q(c)$.
 
+\vspace*{-\parskip}
 \begin{proof}
     Let $N,a\models q(z)$.
     Let $h:M\to N$ map $c\mapsto a$.
@@ -145,10 +145,10 @@ Before that, we recall an important particular case of Proposition~\ref{oss_Delt
   Clearly, $p({\mr x}\,;{\gr z})\cup q({\gr z})$ is finitely consistent.
   Then, by Fact~\ref{fact_compattezzatipi}, it is realized in some model $N'$ by some ${\mr c'},{\gr a'}\in (N')^{{\mr x},{\gr z}}$.
   Let $h:M\to N'$ map ${\gr a}\mapsto {\gr a'}$.
-  By Proposition~\ref{}, $h$ is an elementary map.
+  By Lemma~\ref{lem_el_diag}, this is an elementary embedding.
   Note that $h{\mr c}={\mr c'}$.
   By Exercise~\ref{ex_elmap}, $h[M]$ is an isomorphic copy of $M$ and is an elementary substructure of $N'$.
-  By construction $N',hc\models p({\mr x}\,;h{\gr a})$.
+  By construction $N',h{\mr c}\models p({\mr x}\,;h{\gr a})$.
 
   We may conclude that there is a structure $N$ (an isomorphic copy of $N'$) that extends elementarily $M$ and realizes $p({\mr x}\,;{\gr a})$.
 \end{proof}
@@ -162,9 +162,16 @@ Every infinite structure has arbitrarily large elementary extensions.
 \begin{proof}
 Let $x=\<x_i:i<\lambda\>$ be a tuple of distinct variables, where $\lambda$ is an arbitrary cardinal.
 The type $p(x)=\big\{x_i\neq x_j: i<j<\lambda\big\}$ is finitely consistent in every infinite structure and every structure that realises $p$ has cardinality $\ge\lambda$.
-Hence the claim follows from Theorem~\ref{thm_compattezzatipi2}.
+Hence the claim follows from Theorem~\ref{thm_compattezzatipi}.
 \end{proof}
 
+\begin{exercise}\label{ex_fin_cons_in_M}
+  Prove that for every type $p(x)\subseteq L(M)$ the following are equivalent
+  \begin{itemize}
+    \item[1] $p(x)$ is finitely consistent in $M$
+    \item[2] $p(x)\cup\Th(M/M)$ is finitely consistent.
+  \end{itemize}
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -213,7 +220,7 @@ An easy proof by induction shows that $t^M=t$ for all closed terms $t$.
 Finally, let \emph{$E$} be the relation on $M$ that holds when $a{\doteq}b\in T$. 
 
 \begin{lemma}
-The relation $E$ is a congruence on $M$ (as defined in Section~\hyperref[quotient]{\ref*{teorie}.\ref*{quotient}}).
+The relation $E$ is a congruence on $M$ (as defined in Section~\ref{quotient}).
 \end{lemma}
 
 \begin{proof}

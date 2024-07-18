@@ -7,7 +7,7 @@
 
 In these notes we only use ultraproducts to prove the compactness theorem.
 Since a syntactic proof of the compactness theorem is also given, this chapter is, strictly speaking, not required.
-However, the importance of ultraproducts transcends its application to model theory.
+However, the importance of ultraproducts transcends their application to model theory.
 
 
 % \section{Filters and ultrafilters}\label{ultrafiltri}
@@ -160,7 +160,7 @@ The interpretation of $r\in L_{\rm rel}$ is the product of the relations $r^{M_i
 The following proposition is immediate.
 
 \begin{proposition}\label{proposizioneprodottidiretti}
-If $\doteq, \wedge, \A$, $\E$ are the only logical symbol that occur in $\phi(x)\in L$, then for every $\hat a\in N^{|x|}$
+If $\doteq, \wedge, \A$, $\E$ are the only logical symbol that occur in $\phi(x)\in L$, then for every $\hat a\in N^{x}$
 
 \ceq{\sharp\hfill N\models \phi(\hat a)}
 {\IFF}
@@ -229,9 +229,9 @@ Note that it is a special case of \L o\v{s}'s Theorem below (but it is does not 
 \begin{proposition}\label{prop_eq_ultra}
   Let $r\in L_{\rm rel}$.
   Let $t(x)$ be tuple of terms of length $n_r$, the arity of $r$.
-  Then for every $\hat a\in N^{|x|}$ and every filter $F$ the following are equivalent
+  Then for every $\hat a\in N^{x}$ and every filter $F$ the following are equivalent
   \begin{itemize}
-  \item[1.] $N/F\,\pmodels r\,t(\hat a)$;
+  \item[1.] $N/F\,\pmodels r\,t(\hat a)$
 
   \item[2.] $\big\{i\; :\ M_i\,\models r\,t(\hat ai)\,\big\}\,\in\, F$.
   \end{itemize}
@@ -250,9 +250,9 @@ Is clear.
 
 \begin{void}[\L o\'{s}'s Theorem]\label{thm_los}
 Let $\phi(x)\in L$ and let $F$ be an ultrafilter on $I$.
-Then for every $\hat a\in N^{|x|}$ the following are equivalent:
+Then for every $\hat a\in N^{x}$ the following are equivalent:
 \begin{itemize}
-\item[1.] $N/F\ \pmodels\ \phi(\hat a)$\hfill (see  Definition~\ref{def_pseudostructure});
+\item[1.] $N/F\ \pmodels\ \phi(\hat a)$\hfill (see  Definition~\ref{def_pseudostructure})
 \item[2.] $\big\{\,i\ :\ M_i\models \phi(\hat a i)\,\big\}\ \in\ F$.
 \end{itemize}
 \end{void}
@@ -354,10 +354,10 @@ For $i\in I$, let $\ZZ_i$ denote the additive group of integers modulo $i$, and 
 Prove that, if $F$ is a non-principal ultrafilter on $I$,
 
 \begin{itemize}
-\item[1.] for some $F$, $N/F$ does not contain any element of finite order;
-\item[2.] for some $F$, $N/F$ has some elements of order $2$;
-\item[3.] for all $F$, $N/F$ contains an element of infinite order;
-\item[4.] for some $F$, $N/F\models \A x\,\E y\ my=x$ for every integer $m>0$;
+\item[1.] for some $F$, $N/F$ does not contain any element of finite order
+\item[2.] for some $F$, $N/F$ has some elements of order $2$
+\item[3.] for all $F$, $N/F$ contains an element of infinite order
+\item[4.] for some $F$, $N/F\models \A x\,\E y\ my=x$ for every integer $m>0$
 \item[5.] for some $F$, $N/F$ contains an element $\hat a$ such that $N/F\models \A x\ mx\neq\hat a$ for every positive integer $m$.
 \end{itemize}
 \begin{comment}

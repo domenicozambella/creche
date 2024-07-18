@@ -1,6 +1,4 @@
 % !TEX root = creche.tex
-\documentclass[creche.tex]{subfiles}
-\begin{document}
 \chapter{Saturation and homogeneity}
 \label{saturation}
  
@@ -25,26 +23,8 @@ We write $S(A)$ for the union of $S_{\mr x}(A)$ as ${\mr x}$ ranges over all tup
 The following remark will be used in the sequel without explicit reference.
 
 \begin{remark}
-Let $k:M\imp N$ be an elementary map and let ${\gr a}$ be an enumeration of $\dom k$. Let $p({\mr x}\,;{\gr z})\subseteq L$. If $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$, then $p({\mr x}\,;k\,{\gr a})$ is finitely consistent in $N$. (We can drop \textit{finitely} in the antecedent but not in the consequent.)\QED
+Let $k:M\imp N$ be an elementary map and let ${\gr a}$ be an enumeration of $\dom k$. Let $p({\mr x}\,;{\gr z})\subseteq L$. If $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$, then $p({\mr x}\,;k\,{\gr a})$ is finitely consistent in $N$. (We can drop \textit{finitely} in the antecedent but not in the consequent.)
 \end{remark}
-
-\begin{definition}\label{def_saturation}
-Let ${\mr x}$ be a single variable and let $\lambda$ be an infinite cardinal. We say that a structure $N$ is \emph{$\lambda$-saturated} if it realizes every type $p({\mr x})$ such that
-\begin{itemize}
-\item[1.] $p({\mr x})\subseteq L(A)$ for some $A\subseteq N$ of cardinality $<\lambda$;
-\item[2.] $p({\mr x})$ is finitely consistent in $N$.
-\end{itemize}
-We say that $N$ is \emph{saturated\/} if it is $\lambda$-saturated and $|N|=\lambda$.
-\end{definition}
-
-\begin{exercise}
-Suppose $|L|\le\omega$ and let $M$ be an infinite structure. Then for every non-principal ultrafilter $F$ on $\omega$ the structure $M^\omega/F$ is a $\omega_1$-saturated elementary superstructure of $M$.
-
-Hint: the notation is as in Chapter~\ref{ultraprodotti}. Let $|{\mr x}|=1$ and 
-$|{\gr z}|=\omega$. It suffices to consider types of the form $p({\mr x}\,;{\gr\hat c})$ where $p({\mr x}\,;{\gr z})=\big\{\phi_i({\mr x}\,;{\gr z}):i<\omega\big\}\subseteq L$ and ${\gr\hat c}\in(M^\omega)^{|{\gr z}|}$. Without loss of generality we can also assume that $\phi_{i+1}({\mr x}\,;{\gr z})\imp\phi_i({\mr x}\,;{\gr z})$, and that all formulas $\phi_i({\mr x}\,;{\gr\hat c})$ are consistent in $M^\omega$. 
-
-Let $\<X_i:i<\omega\>$ be a strictly decreasing chain of elements of the ultrafilter such that  $X_{i+1}\subseteq\big\{j\;:\;M\models\E{\mr x}\;\phi_i({\mr x},{\gr\hat cj})\big\}$. Let ${\mr\hat a}\in M^\omega$ be such that  $\phi_i({\mr\hat aj},{\gr\hat cj})$ holds for every $j\in X_i\sm X_{i+1}$. Then ${\mr\hat a}$ realizes $p({\mr x})$.\QED
-\end{exercise}
 
 We shall see that some theories have saturated models of small size.
 However, the existence of saturated models of arbitrary theories is problematic.
@@ -73,27 +53,28 @@ Let $N$ be the union of the chain. We check that $N$ is the required extension. 
 \end{proof}
 
 \begin{remark}
-The reader who did not read Section~\hyperref[rich]{\ref*{fraisse}.\ref*{rich}} may replace \ssf{2} in the theorem below with the following (and forget about $\M$).
+The reader who did not read Section~\ref{rich} may replace \ssf{2} in the theorem below with the following (and forget about $\M$).
 \begin{itemize}
 \item[2$'$] for every ${\mr b}\in M$,  every elementary map $k:M\to N$ of cardinality $<\lambda$ has an extension defined on $b$;
 \end{itemize}
 \end{remark}
 
 \begin{theorem}\label{saturo->ricco}
-Assume $|L|\le\lambda$ and let $N$ be an infinite structure. Let $\M$ be the category (see Section~\hyperref[rich]{\ref*{fraisse}.\ref*{rich}}) that consists of models of a complete theory $T$ and elementary maps between these. Then the following are equivalent
+Assume $|L|\le\lambda$ and let $N$ be an infinite structure. Let $\M$ be the category (see Section~\ref{rich}) that consists of models of a complete theory $T$ and elementary maps between these. Then the following are equivalent
 \begin{itemize}
-\item[1] $N$ is a $\lambda$-saturated structure;
-\item[2] $N$ is a $\lambda$-rich model;
-\item[3] $N$ realizes all types $p({\gr z})\subseteq L(A)$, with $|{\gr z}|\le\lambda$ and $|A|<\lambda$, finitely consistent in $N$.
+\item[1] $N$ is a $\lambda$-saturated structure
+\item[2] $N$ is a $\lambda$-rich model
+\item[3] $N$ realizes all finitely consistent types $p({\gr z})\subseteq L(A)$, with $|{\gr z}|\le\lambda$ and $|A|<\lambda$.
 \end{itemize}
 \end{theorem}
 
-Note that it is the completeness of $T$ which makes the category $\M$ connected.
+Note that it is the completeness of $T$ which makes $\M$ connected.
 
+\vspace*{-\parskip}
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2}. Let $k:M\imp N$ be an elementary map of cardinality $<\lambda$. It suffices to show that for every ${\mr b}\in M$ there is a ${\mr c}\in N$ such that $k\cup\big\{\<{\mr b},{\mr c}\>\big\}:M\to N$ is an elementary map. Let ${\gr a}$ be an enumeration of $\dom k$ and define $p({\mr x}\,;{\gr z})=\tp_M({\mr b}\,;{\gr a})$. As $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$ then $p({\mr x}\,;k\,{\gr a})$ is finitely consistent in $N$. The required ${\mr c}$ is any element of $N$ such that $N\models p({\mr c}\,;k\,{\gr a})$. Such a ${\mr c}$ exists by saturation because $|{\gr a}|<\lambda$.
 
-\ssf{2}$\IMP$\ssf{3}. Let $p({\gr z})$ be as in \ssf{3}. By the compactness theorem $N\preceq K\models p({\gr a})$ for some model $K$ and ${\gr a}\in K^{|{\gr z}|}$. By the downward  L\"owenheim-Skolem theorem there is a model $A,{\gr a}\subseteq M\preceq K$ of cardinality $\le\lambda$. (Here we use $|L|,|A|,|{\gr z}|\le\lambda$.) By \ssf{2}, there is an elementary embedding $h:M\hookrightarrow N$ that extends $\id_A$. (Here we use $|A|<\lambda$.) Finally, as $M\models p({\gr a})$,  elementarity yields $N\models p(h\,{\gr a})$.
+\ssf{2}$\IMP$\ssf{3}. Let $p({\gr z})$ be as in \ssf{3}. By the compactness theorem $N\preceq K\models p({\gr a})$ for some model $K$ and ${\gr a}\in K^{\gr z}$. By the downward  L\"owenheim-Skolem theorem there is a model $A,{\gr a}\subseteq M\preceq K$ of cardinality $\le\lambda$. (Here we use $|L|,|A|,|{\gr z}|\le\lambda$.) By \ssf{2}, there is an elementary embedding $h:M\hookrightarrow N$ that extends $\id_A$. (Here we use $|A|<\lambda$.) Finally, as $M\models p({\gr a})$,  elementarity yields $N\models p(h\,{\gr a})$.
 
 \ssf{3}$\IMP$\ssf{1}.  Trivial. 
 \end{proof}
@@ -101,7 +82,7 @@ Note that it is the completeness of $T$ which makes the category $\M$ connected.
 Two saturated structures of the same cardinality are isomorphic as soon as they are elementarily equivalent (i.e.\@ as soon as $\0:M\to N$ is an elementary map.) In fact, from Theorems~\ref{saturo->ricco} and~\ref{thm_riccozigzag} we obtain the following (reference to Theorems~\ref{thm_riccozigzag} may be avoided with an easy back-and-forth construction).
 
 \begin{corollary}
-Every elementary map $k:M\to N$ of cardinality $<\lambda$ between saturated models of the same cardinality $\lambda$ extends to an isomorphism.\QED
+Every elementary map $k:M\to N$ of cardinality $<\lambda$ between saturated models of the same cardinality $\lambda$ extends to an isomorphism.
 \end{corollary}
 
 As it turns out, we already have many examples of saturated structures.
@@ -109,9 +90,9 @@ As it turns out, we already have many examples of saturated structures.
 \begin{corollary}
 The following models are $\omega\mbox{-}$saturated
 \begin{itemize}
-\item[1] models of $T_{\rm dlo}$;
-\item[2] models of $T_{\rm rg}$;
-\item[3] models of $T_{\rm dag}$ with infinite rank;
+\item[1] models of $T_{\rm dlo}$
+\item[2] models of $T_{\rm rg}$
+\item[3] models of $T_{\rm dag}$ with infinite rank
 \item[4] models of $T_{\rm acf}$ with infinite degree of transcendence.
 \end{itemize}
 Countable models of $T_{\rm dlo}$ and $T_{\rm rg}$ and uncountable models of $T_{\rm dag}$ or $T_{\rm acf}$ are saturated. 
@@ -125,7 +106,7 @@ The following is a useful test for quantifier elimination.
 \begin{theorem}\label{thm_ricchezza_saturazione_QE}
 Assume $|L|\le\lambda$. Consider the category that consists of models of some theory $T_0$ and partial isomorphism. Suppose $\lambda\mbox{-}$rich models exist and denote by $T_1$ their theory. Then the following are equivalent
 \begin{itemize}
-\item[1.] every $\lambda\mbox{-}$saturated model of $T_1$ is $\lambda\mbox{-}$rich;
+\item[1.] every $\lambda\mbox{-}$saturated model of $T_1$ is $\lambda\mbox{-}$rich
 \item[2.] $T_1$ has elimination of quantifiers.
 \end{itemize}
 \end{theorem}
@@ -136,8 +117,34 @@ Assume $|L|\le\lambda$. Consider the category that consists of models of some th
 \ssf{1}$\IMP$\ssf{2}. Let $k:M\to N$ be a finite partial isomorphism between models of $T$. We claim that it is an elementary map. Let $M'\succeq M$ and $N'\succeq N$ are $\lambda$-saturated models. As these are $\lambda$-rich, $k:M'\to N'$ is elementary by Theorem~\ref{thm_morphism_rich_elementary}.
 \end{proof}
 
+\begin{definition}\label{def_saturation}
+  Let ${\mr x}$ be a single variable and let $\lambda$ be an infinite cardinal. We say that a structure $N$ is \emph{$\lambda$-saturated} if it realizes every type $p({\mr x})$ such that
+  \begin{itemize}
+  \item[1.] $p({\mr x})\subseteq L(A)$ for some $A\subseteq N$ of cardinality $<\lambda$
+  \item[2.] $p({\mr x})$ is finitely consistent in $N$.
+  \end{itemize}
+  We say that $N$ is \emph{saturated\/} if it is $\lambda$-saturated and $|N|=\lambda$.
+  \end{definition}
+  
 \begin{exercise}
-  Let $L = \{<\}$ and let $N$ be a $\omega_1$-saturated extension of $\QQ$. Prove that there is an embedding $f:\RR \to  N$. Is it elementary? Can it be an isomorphism?\QED
+  Suppose $|L|\le\omega$ and let $M$ be an infinite structure. Then for every non-principal ultrafilter $F$ on $\omega$ the structure $M^\omega/F$ is a $\omega_1$-saturated elementary superstructure of $M$.
+
+  Hint: the notation is as in Chapter~\ref{ultraprodotti}. Let $|{\mr x}|=1$ and 
+  $|{\gr z}|=\omega$. It suffices to consider types of the form $p({\mr x}\,;{\gr\hat c})$ where $p({\mr x}\,;{\gr z})=\big\{\phi_i({\mr x}\,;{\gr z}):i<\omega\big\}\subseteq L$ and ${\gr\hat c}\in(M^\omega)^{\gr z}$. Without loss of generality we can also assume that $\phi_{i+1}({\mr x}\,;{\gr z})\imp\phi_i({\mr x}\,;{\gr z})$, and that all formulas $\phi_i({\mr x}\,;{\gr\hat c})$ are consistent in $M^\omega$. 
+
+  Let $\<X_i:i<\omega\>$ be a strictly decreasing chain of elements of the ultrafilter such that  $X_{i+1}\subseteq\big\{j\;:\;M\models\E{\mr x}\;\phi_i({\mr x},{\gr\hat cj})\big\}$. Let ${\mr\hat a}\in M^\omega$ be such that  $\phi_i({\mr\hat aj},{\gr\hat cj})$ holds for every $j\in X_i\sm X_{i+1}$. Then ${\mr\hat a}$ realizes $p({\mr x})$.
+\end{exercise}
+  
+\begin{exercise}
+  Let $L = \{<\}$ and let $N$ be a $\omega_1$-saturated extension of $\QQ$.
+  Prove that there is an embedding $f:\RR \to  N$.
+  Is it elementary?
+  Is it an isomorphism?
+\end{exercise}
+
+\begin{exercise}
+  Let $L = \{<\}$ and let $N$ be a saturated extension of $\QQ$.
+  Prove that there $2^{|N|}$ Dedekind cuts of $N$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -153,7 +160,7 @@ However, one often omits to specify \textit{elementary}. We repeat Definition~\r
 A structure $N$ is \emph{(elementarily) $\lambda$-universal\/} if every $M\equiv N$ of cardinality $\le\lambda$ there is an elementary embedding $h:M\hookrightarrow N$.
 We say  \emph{universal\/}  if it is $\lambda$-universal and of cardinality $\lambda$.
 
-We say that $N$ is \emph{(elementarily) $\lambda$-homogeneous\/} if every elementary map $k:N\to N$ of cardinality $<\lambda$ extends to an automorphism. We say that $N$ is \emph{homogeneous\/} if it is $\lambda$-homogeneous and of cardinality $\lambda$.\QED
+We say that $N$ is \emph{(elementarily) $\lambda$-homogeneous\/} if every elementary map $k:N\to N$ of cardinality $<\lambda$ extends to an automorphism. We say that $N$ is \emph{homogeneous\/} if it is $\lambda$-homogeneous and of cardinality $\lambda$.
 \end{definition}
 
 As saturated structures are rich, the following theorem is an instance of Theorem~\ref{ricco<->universaleomogeneo}.
@@ -161,22 +168,22 @@ As saturated structures are rich, the following theorem is an instance of Theore
 \begin{theorem}\label{thm_saturo_omogeneouniversale}
 For every structure $N$ of cardinality $\ge|L|$ the following are equivalent\nobreak
 \begin{itemize}
-\item[1.] $N$ is saturated;
-\item[2.] $N$ is elementarily universal and homogeneous.\QED
+\item[1.] $N$ is saturated
+\item[2.] $N$ is elementarily universal and homogeneous.
 \end{itemize}
 \end{theorem}
 
 Given $A\subseteq N$ we denote by \emph{$\Aut(N/A)$\/} the group of \emph{$A\mbox{-}$automorphisms\/} of $N$. That is the group of automorphisms that fix $A$ point-wise.
 Let $a$ be a tuple of elements of $N$. The \emph{orbit of $a$ over $A$ in $N$} is the set
 
-\ceq{\hfill\emph{$O_N(a/A)$}}{=}{\Big\{fa\;:\; f\in\Aut(N/A)\Big\}}
+\ceq{\hfill\emph{$O_N(a/A)$}}{=}{\Big\{fa\;:\; f\in\Aut(N/A)\Big\}.}
 
 When the model $N$ is clear from the context we omit the subscript.
 
 Orbits in a homogeneous structure are particularly interesting. The following proposition is immediate but its importance cannot be overestimated.
 
 \begin{proposition}\label{omogeneitaorbitetipi}
-Let $N$ be a $\lambda\mbox{-}$homogeneous structure. Let $A\subseteq N$ have cardinality $<\lambda$ and let ${\mr a}\in N^{<\lambda}$. Then $O_N({\mr a}/A)=p(N)$, where $p({\mr x})=\tp_N({\mr a}/A)$.\QED
+Let $N$ be a $\lambda\mbox{-}$homogeneous structure. Let $A\subseteq N$ have cardinality $<\lambda$ and let ${\mr a}\in N^{<\lambda}$. Then $O_N({\mr a}/A)=p(N)$, where $p({\mr x})=\tp_N({\mr a}/A)$.
 \end{proposition}
 
 
@@ -185,7 +192,7 @@ Finally, we want to extend the equivalence in Theorem~\ref{thm_saturo_omogeneoun
 When the morphisms of the underlying category are the elementary maps, it is usual to replace the notion of $\lambda\mbox{-}$universal (cfr.\@ Definition~\ref{def_omogenea_universale}) with the following.
 
 \begin{definition}\label{def_w_saturation}
-  We say that $N$ is \emph{weakly $\lambda\mbox{-}$saturated\/} if $N$ realizes every type $p(x)\subseteq L$, where $|x|\le\lambda$, that is finitely consistent in $N$.\QED
+  We say that $N$ is \emph{weakly $\lambda\mbox{-}$saturated\/} if $N$ realizes every type $p(x)\subseteq L$, where $|x|\le\lambda$, that is finitely consistent in $N$.
 \end{definition}
 
 In fact, by the L\"owenheim-Skolem theorem the two notions are equivalent.
@@ -193,8 +200,8 @@ In fact, by the L\"owenheim-Skolem theorem the two notions are equivalent.
 \begin{proposition}\label{prop_w_saturation}
 The following are equivalent
 \begin{itemize}
-\item[1.] $N$ weakly $\lambda\mbox{-}$saturated;
-\item[2.] $N$ is $\lambda$-universal.\QED
+\item[1.] $N$ weakly $\lambda\mbox{-}$saturated
+\item[2.] $N$ is $\lambda$-universal.
 \end{itemize}
 \end{proposition}
 
@@ -203,27 +210,26 @@ The following is an instance of Theorem~\ref{ricco=universaledebolmenteomogeneo}
 \begin{corollary}\label{saturo=universaledebolmenteomogeneo}
 Let $|L|\le\lambda$. The following are equivalent\nobreak
 \begin{itemize}
-\item[1.] $N$ is $\lambda\mbox{-}$saturated;
-\item[2.] $N$ is weakly $\lambda\mbox{-}$saturated and weakly $\lambda\mbox{-}$homogeneous.\QED
+\item[1.] $N$ is $\lambda\mbox{-}$saturated
+\item[2.] $N$ is weakly $\lambda\mbox{-}$saturated and weakly $\lambda\mbox{-}$homogeneous.
 \end{itemize}
 \end{corollary}
 
-
 \begin{exercise}\label{ex_omega_homogeneous_same_card}
 Let $M$ be an arbitrary structure of cardinality larger than $|L|$.
-Prove that $M$ has an $\omega\mbox{-}$homogeneous elementary extension of the same cardinality.\QED 
+Prove that $M$ has an $\omega\mbox{-}$homogeneous elementary extension of the same cardinality. 
 \end{exercise}
 
 \begin{exercise}
 Let $M$ and $N$ be elementarily homogeneous structures of the same cardinality $\lambda$. 
-Suppose that $M\models\E x\, p(x)\,\IFF\,N\models\E x\, p(x)$ for every $p(x)\subseteq L$ such that $|x|<\lambda$.
-Prove that the two structures are isomorphic.\QED 
+Suppose that $M\models\E x\, p(x)\,\IFF\,N\models\E x\, p(x)$ for every $p(x)\subseteq L$ such that $|x|<\lambda$
+Prove that the two structures are isomorphic. 
 \end{exercise}
 
 \begin{exercise}\label{vaughtesempio}
 Let $L$ be a language that extends that of strict linear orders with the constants $\{c_i: i\in\omega\}$.
 Let $T$ be the theory that extends $T_{\rm dlo}$ with the axioms $c_i<c_{i+1}$ for every  $i\in\omega$. Prove that $T$ has elimination of quantifiers and is complete (it can be deduced from what is known of $T_{\rm dlo}$). 
-Exhibit a countable saturated model and a countable model that is not homogeneous.\QED 
+Exhibit a countable saturated model and a countable model that is not homogeneous. 
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -231,9 +237,7 @@ Exhibit a countable saturated model and a countable model that is not homogeneou
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The monster model}\label{monster}
-
 \label{compattezzasaturazione}
-
 
 In this section we present some notation and terminology frequently adopted when dealing with a complete theory $T$.
 We fix a saturated structure $\U$ of cardinality larger than $|L|$.
@@ -279,12 +283,12 @@ Some terms acquire a slightly different meaning when working inside a monster mo
 \end{litemize}
 
 Let $x$ be a tuple of variables. For any fixed $A\subseteq \U$ we introduce a topology on $\U^{|x|}$ that we call the \emph{topology induced by $A$} or, for short, \emph{$A\mbox{-}$topology}. 
-(This is non standard terminology, not to be confused with the \textit{logic\/} $A\mbox{-}$topology in Section~\hyperref[invariant]{\ref*{invariant}.\ref*{KPtypes}}.)
+(This is non standard terminology, not to be confused with the \textit{logic\/} $A\mbox{-}$topology in Section~\ref{KPtypes}.)
 The closed sets of the $A\mbox{-}$topology are those of the form $p(\U)$ where $p(x)\subseteq L(A)$ is a type over $A$.
 
 For $\phi(x)\in L(A)$ the sets of the form $\phi(\U)$ are clopen in this topology (and vice versa by Proposition~\ref{prop_normality}). They form both a base of closed sets and base of open sets, which makes these topologies \textit{zero-dimensional}. By saturation, the topology induced by $A$ is compact. Actually, saturation is equivalent to the compactness of all these topologies as $A$ ranges over the sets of small cardinality.
 
-These topologies are never T$_0$ as any pair of tuples $a\equiv_A b$ have exactly the same neighborhoods. Such pairs always exist by cardinality reasons. However it is immediate that the topology induced on the quotient $\U^{|x|}/\!\equiv_A$ is Hausdorff (this is the so-called \textit{Kolmogorov quotient}). Indeed, this quotient corresponds to $S_x(A)$ with the topology introduced in Section~\hyperref[frammenti]{\ref{types}.\ref*{frammenti}}.
+These topologies are never T$_0$ as any pair of tuples $a\equiv_A b$ have exactly the same neighborhoods. Such pairs always exist by cardinality reasons. However it is immediate that the topology induced on the quotient $\U^{|x|}/\!\equiv_A$ is Hausdorff (this is the so-called \textit{Kolmogorov quotient}). Indeed, this quotient corresponds to $S_x(A)$ with the topology introduced in Section~\ref{frammenti}.
 
 The following proposition is an immediate consequence of compactness. When $A=B$ it says that the topology induced by $A$ is \textit{normal}: any two closed sets are separated by open sets. It could be called \emph{mutual normality\/} (not a standard name) because the two closed sets belong to different topologies and the separating sets are each found in the corresponding topology.
 
@@ -301,14 +305,14 @@ The assumptions say that $p(x)\cup q(x)$ is inconsistent (i.e. not realized in $
 
 \begin{remark}\label{rem_normality}There are many forms in which the proposition above can be applied. For instance, assuming for brevity that $p(x)$ and $q(x)$ are closed under conjunctions,
 \begin{itemize}
-\item[a.] if $p(x)\iff\neg q(x)$ then $p(x)\iff\phi(x)$ for some $\phi(x)\in p(x)$;\smallskip
-\item[b.] if $\displaystyle p(x)\iff\psi(x)$ for some $\psi(x)\in L(\U)$ then $p(x)\iff\phi(x)$ for some $\phi(x)\in p$;\smallskip
-\item[c.] if $\displaystyle p(x)\imp\psi(x)$ for some $\psi(x)\in L(\U)$ then $\phi(x)\imp\psi(x)$ for some $\phi(x)\in p$;\smallskip
-\item[d.] if $\displaystyle p(x)\imp\bigvee_{\psi\in\Psi}\psi(x)$, where $|\Psi|<\kappa$,  then \smash{$\displaystyle p(x)\imp\bigvee^{n}_{i=1}\psi_i(x)$} for some $\psi_i\in\Psi$.\QED
+\item[a.] if $p(x)\iff\neg q(x)$ then $p(x)\iff\phi(x)$ for some $\phi(x)\in p(x)$\smallskip
+\item[b.] if $\displaystyle p(x)\iff\psi(x)$ for some $\psi(x)\in L(\U)$ then $p(x)\iff\phi(x)$ for some $\phi(x)\in p$\smallskip
+\item[c.] if $\displaystyle p(x)\imp\psi(x)$ for some $\psi(x)\in L(\U)$ then $\phi(x)\imp\psi(x)$ for some $\phi(x)\in p$\smallskip
+\item[d.] if $\displaystyle p(x)\imp\bigvee_{\psi\in\Psi}\psi(x)$, where $|\Psi|<\kappa$,  then \smash{$\displaystyle p(x)\imp\bigvee^{n}_{i=1}\psi_i(x)$} for some $\psi_i\in\Psi$.
 \end{itemize}
 \end{remark}
 
-\begin{remark}A definable set has the form $\phi({\mr\U}\,;{\gr b})$ for some formula $\phi({\mr x}\,;{\gr z})\in L$ and some ${\gr b}\in\U^{|{\gr z}|}$.
+\begin{remark}A definable set has the form $\phi({\mr\U}\,;{\gr b})$ for some formula $\phi({\mr x}\,;{\gr z})\in L$ and some ${\gr b}\in\U^{\gr z}$.
 If $f\in\Aut(\U)$ then 
 
 \ceq{\hfill f\big[\phi({\mr\U}\,;{\gr b})\big]}{=}{\big\{f{\mr a}\ :\ \phi({\mr a}\,;{\gr b}),\phantom{ff}\ {\mr a}\in\U^{|{\mr x}|}\big\}}
@@ -318,7 +322,7 @@ If $f\in\Aut(\U)$ then
 \ceq{ }{=}{\phi({\mr\U}\,;f{\gr b}).}
 
 Hence automorphisms act on definable sets in a very natural way. 
-Their action on type-definable sets is similar.\QED
+Their action on type-definable sets is similar.
 \end{remark}
 
 We say that a set ${\mr\D}\subseteq\U^{|{\mr x}|}$ is \emph{invariant over $A$\/} if $f[{\mr\D}]={\mr\D}$ for every $f\in\Aut(\U/A)$ or, equivalently, if $\orbit({\mr a}/A)\subseteq {\mr\D}$ for every ${\mr a}\in {\mr\D}$.
@@ -328,18 +332,20 @@ By homogeneity this is equivalent to requiring that
 
 for every $q({\mr x})=\tp({\mr a}/A)$ and ${\mr a}\in {\mr\D}$.
 
-Proposition~\ref{prop_inv_types} below is an important fact about invariant type-definable sets. It may clarify the proof to consider first the particular case of definable sets.
+Proposition~\ref{prop_inv_types} below is an important fact about invariant type-definable sets.
+It may clarify the proof to consider first the particular case of definable sets.
 
 \begin{proposition}\label{prop_inv_def}
 For every $\phi({\mr x})\in L(\U)$ the following are equivalent
 \begin{itemize}
- \item[1.] $\phi({\mr x})$ is equivalent to some formula $\psi({\mr x})\in L(A)$;
+ \item[1.] $\phi({\mr x})$ is equivalent to some formula $\psi({\mr x})\in L(A)$
  \item[2.] $\phi({\mr\U})$ is invariant over $A$.
 \end{itemize}
 \end{proposition}
 
-We give two proofs of this theorem as they are both instructive. 
+We give two proofs of this theorem as they are both instructive.
 
+\vspace*{-\parskip}
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2} Obvious.
 
@@ -376,30 +382,23 @@ By compactness there is a formula $\theta({\gr z})\in p$ such that
 Hence  $\phi({\mr\U}\,;{\gr b})$ is defined by the formula $\E {\gr z}\,\big[\theta({\gr z})\wedge\phi({\mr x}\,;{\gr z})\big]$, which is a formula in $L(A)$ as required.
 \end{proof}
 
-\begin{exercise}\label{ex_qe_in_U}
-Let $\phi({\mr x})\in L$. Prove that the following are equivalent
-\begin{itemize}
- \item[1.] $\phi({\mr x})$ is equivalent to some $\psi({\mr x})\in L_{\rm qf}$;
- \item[2.] $\phi({\mr a})\iff \phi(f{\mr a})$ for every partial isomorphism $f:\U\to\U$ and ${\mr a}\in(\dom f)^{|{\mr x}|}$.
-\end{itemize}
-Use the result to prove Theorem~\ref{thm_tutteleimmersionisonoelementari_QE} for $T$ complete.\QED
-\end{exercise}
 
 \begin{proposition}\label{prop_inv_types}
 Let $p({\mr x})\subseteq L(B)$.
 Then the following are equivalent
 \begin{itemize}
- \item[1.] $p({\mr x})$ is equivalent to some type $q({\mr x})\subseteq L(A)$;
+ \item[1.] $p({\mr x})$ is equivalent to some type $q({\mr x})\subseteq L(A)$
  \item[2.] $p({\mr\U})$ is invariant over $A$.
 \end{itemize}
 \end{proposition}
 
 We give two proofs of this theorem.  The second one requires Proposition~\ref{prop_E_type} below.
 
+\vspace*{-\parskip}
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2}\quad Obvious. 
 
-\ssf{2}$\IMP$\ssf{1}\quad It suffices to show that for every formula $\psi({\mr x})\in p({\mr x})$ there is a formula $\phi({\mr x})\in L(A)$ such that $p({\mr x})\imp\phi({\mr x})\imp\psi({\mr x})$. Fix $\psi({\mr x})\in p({\mr x})$. By invariance, any $q({\mr x})\in S(A)$ consistent with $p({\mr x})$ implies $p({\mr x})$, hence
+\ssf{2}$\IMP$\ssf{1}\quad It suffices to show that for every formula $\psi({\mr x})\in p({\mr x})$ there is a formula $\theta({\mr x})\in L(A)$ such that $p({\mr x})\imp\theta({\mr x})\imp\psi({\mr x})$. Fix $\psi({\mr x})\in p({\mr x})$. By invariance, any $q({\mr x})\in S(A)$ consistent with $p({\mr x})$ implies $p({\mr x})$, hence
 
 \ceq{\hfill p({\mr x})}{\imp}{\bigvee_{q({\mr x})\imp \psi({\mr x})} q({\mr x})}\medrel{\imp}$\psi({\mr x})$
 
@@ -407,15 +406,14 @@ where $q({\mr x})$ above range over all types in $S_{\mr x}(A)$. By compactness 
 
 \ceq{\hfill p({\mr x})}{\imp}{\bigvee_{\theta({\mr x})\imp \psi({\mr x})} \theta({\mr x})}\medrel{\imp}$\psi({\mr x})$
 
-where $\theta({\mr x})$ ranges over all formulas in $L(A)$. Applying mutual normality (Proposition~\ref{prop_normality}) to the first implication we obtain a finite number of formulas $\theta_i({\mr x})$ such that 
+where $\theta({\mr x})$ ranges over all formulas in $L(A)$.
+Applying mutual normality (Proposition~\ref{prop_normality}) to the first implication we obtain a finite number of formulas $\theta_i({\mr x})\in L(A)$ such that 
 
 \ceq{\hfill p({\mr x})}
 {\imp}
-{\bigvee^n_{i=1} \theta_i({\mr x})}
+{\smash{\bigvee^n_{i=1} \theta_i({\mr x})}}
 \medrel{\imp}
 $\psi({\mr x}).$
-
-This completes the proof.
 \end{proof}
 
 The following easy proposition is very useful.
@@ -445,9 +443,10 @@ The theorem holds also when ${\mr x}$ and ${\gr z}$ have length $\kappa$.
 
   \ceq{\hfill q({\mr x})}{=}{\big\{ \E {\gr z}\,\phi({\mr x}\,;{\gr z})\ :\ \phi({\mr x}\,;{\gr z}) \textrm{ conjunction of formulas in } p({\mr x}\,;{\gr z}) \big\}.}
 \end{proof}
+
 As an application we give a second proof of the proposition above.
 
-\begin{proof}[Second proof of Proposition~\ref{prop_inv_types}] \ssf{2}$\IMP$\ssf{1}\quad  Write $p({\mr x})$ as the type $q({\mr x}\,;{\gr b})$ for some $q({\mr x}\,;{\gr z})\subseteq L$ and some ${\gr b}\in\U^{|{\gr z}|}$.
+\begin{proof}[Second proof of Proposition~\ref{prop_inv_types}] \ssf{2}$\IMP$\ssf{1}\quad  Write $p({\mr x})$ as the type $q({\mr x}\,;{\gr b})$ for some $q({\mr x}\,;{\gr z})\subseteq L$ and some ${\gr b}\in\U^{\gr z}$.
 Let $s({\gr z})=\tp({\gr b}/A)$.
 By invariance and homogeneity the types $q({\mr x}\,;f{\gr b})$ for $f\in\Aut(\U/A)$ are all equivalent.
 Therefore
@@ -461,26 +460,35 @@ Therefore
 Hence, by Proposition~\ref{prop_E_type}, $p({\mr x})$ is equivalent to a type over $A$.
 \end{proof}
 
+\begin{exercise}\label{ex_qe_in_U}
+  Let $\phi({\mr x})\in L$. Prove that the following are equivalent
+  \begin{itemize}
+   \item[1.] $\phi({\mr x})$ is equivalent to some $\psi({\mr x})\in L_{\rm qf}$
+   \item[2.] $\phi({\mr a})\iff \phi(f{\mr a})$ for every partial isomorphism $f:\U\to\U$ and ${\mr a}\in(\dom f)^{|{\mr x}|}$.
+  \end{itemize}
+  Use the result to prove Theorem~\ref{thm_tutteleimmersionisonoelementari_QE} for $T$ complete.
+  \end{exercise}
+
 \begin{exercise}\label{ex_E_type}
-Prove that $\RR,1\notmodels\E y\;q(x,y)$, as claimed before Proposition~\ref{prop_E_type}.\QED
+Prove that $\RR,1\notmodels\E y\;q(x,y)$, as claimed before Proposition~\ref{prop_E_type}.
 \end{exercise}
 
 \begin{exercise}\label{cadinalitafinitasaturazione}
 Let $p(x)\subseteq L(A)$, with $|x|<\omega$. 
 Prove that if $p(\U)$ is infinite then it has cardinality $\kappa$. 
-Show that this is not true if $x$ has length $\omega$.\QED 
+Show that this is not true if $x$ has length $\omega$. 
 \end{exercise}
 
 \begin{exercise}\label{cadinalitafinitasaturazioneinsiemi}
 Let $\phi(x,y)\in L(\U)$. Prove that if the set $\big\{\phi(a,\U)\ :\ a\in\U^{|x|}\big\}$ is infinite then it has cardinality $\kappa$.
-Does the claim remain true with a type $p(x,y)\subseteq L(A)$ for $\phi(x,y)$?\QED 
+Does the claim remain true with a type $p(x,y)\subseteq L(A)$ for $\phi(x,y)$? 
 \end{exercise}
 
 \begin{exercise} 
 Let $\phi(x\,;y)\in L(\U)$. Prove that the following are equivalent
 \begin{itemize}
-\item[1.] there is a sequence $\<a_i\,:\,i\in\omega\>$ such that $\phi(\U\,;a_i)\subset\phi(\U\,;a_{i+1})$ for every $i<\omega$;
-\item[2.] there is a sequence $\<a_i\,:\,i\in\omega\>$ such that $\phi(\U\,;a_{i+1})\subset\phi(\U\,;a_i)$ for every $i<\omega$.\QED
+\item[1.] there is a sequence $\<a_i\,:\,i\in\omega\>$ such that $\phi(\U\,;a_i)\subset\phi(\U\,;a_{i+1})$ for every $i<\omega$
+\item[2.] there is a sequence $\<a_i\,:\,i\in\omega\>$ such that $\phi(\U\,;a_{i+1})\subset\phi(\U\,;a_i)$ for every $i<\omega$.
 \end{itemize}
 \end{exercise}
 
@@ -490,7 +498,6 @@ Let $\phi(x\,;y)\in L(\U)$. Prove that the following are equivalent
   Prove that there are some formulas $\phi_n(x)\in L$ such that 
   \begin{itemize}
     \item[1.] $p(x)\ \iff\ \{\phi_n(x):n<\omega\}$
-    \item[2.] $\phi_{n+1}(x)\wedge\phi_{n+1}(y)\ \imp\ \phi_n(x\cdot y)$.\QED
+    \item[2.] $\phi_{n+1}(x)\wedge\phi_{n+1}(y)\ \imp\ \phi_n(x\cdot y)$.
   \end{itemize}  
 \end{exercise}
-\end{document}

@@ -1,7 +1,4 @@
 % !TEX root = creche.tex
-\documentclass[creche.tex]{subfiles}
-\begin{document}
-
 \chapter{Lascar invariant sets}
 \label{invariantL}
 
@@ -14,7 +11,7 @@
 \def\gr{\color{green}}
 
 In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
-The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
+The notation and implicit assumptions are as in Section~\ref{monster}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,16 +34,16 @@ The following fact is immediate
   Let $G$ and $\X$ as above be given.
   The following are equivalent
   \begin{itemize}
-    \item[1.] $\D$ is not generic;
-    \item[2.] $\neg\D$ is fip.\QED
+    \item[1.] $\D$ is not generic
+    \item[2.] $\neg\D$ is fip.
   \end{itemize}
 \end{fact}
 
 \begin{theorem}\label{thm_generic_invariant}
   For every global type $p(x)$ that contains $x\in\X$ the following are equivalent 
   \begin{itemize}
-    \item[1.] $p(x)$ is invariant;
-    \item[2.] $p(x)\proves x\in\D$ for every generic set $\D$;
+    \item[1.] $p(x)$ is invariant
+    \item[2.] $p(x)\proves x\in\D$ for every generic set $\D$
     \item[3.] $p(x)\proves x\in\D$ for every 2-generic set $\D$.
   \end{itemize}
 \end{theorem}
@@ -68,7 +65,7 @@ The following fact is immediate
   Let $\phi(x\,;z)\in L(\U)$.
   The local version of Theorem~\ref{thm_generic_invariant} reads as follows.
   If $p(x)\in S_\phi(\U)$ if is finitely consistent with $\X$ then the 1-3 are equivalent when $\D$ ranges over the Boolean combinations of the sets $\phi(\U\,;b)$ with $b\in\U^z$.
-  The proof is virtually identical.\QED
+  The proof is virtually identical.
 \end{remark}
 
 Theorem~\ref{thm_generic_invariant} gives a condition for a global type to be invariant.
@@ -77,8 +74,8 @@ The following theorem gives a condition for a formula to be contained in an inva
 \begin{theorem}\label{thm_generic_invariant2}
   For every definable set $\D\subseteq\U^x$ the following are equivalent 
   \begin{itemize}
-    \item[1.] $p(x)\proves x\in\D$ for some global invariant type $p(x)$ finitely consistent with $\X$;
-    \item[2.] every finite cover of $\D$ by definable sets contains a 2-fip set;
+    \item[1.] $p(x)\proves x\in\D$ for some global invariant type $p(x)$ finitely consistent with $\X$
+    \item[2.] every finite cover of $\D$ by definable sets contains a 2-fip set
     \item[3.] every finite cover of $\D$ by definable sets contains a fip set.
   \end{itemize}
 \end{theorem}
@@ -117,42 +114,57 @@ We assume that $\mu(x)$ is closed under conjunction and logical consequences.
 
 This section is only marginally required in the present chapter so it can be postponed with minor consequences.
 
-We will find it convenient to expand the language $L$ with a predicate for a given $\grD\subseteq\U^{|{\gr z}|}$. We denote by $\<\U,\grD\>$ the corresponding expansion of $\U$. Generally, we write \emph{$L({\gr\X})$} for the expanded language but, if the intended interpretation of ${\gr\X}$ is only going to be $\grD$, we may write \emph{$L(\grD)$} and abbreviate $\<\U\,;\grD\>\models\phi({\gr\X})$ as $\phi(\grD)$. 
+We will find it convenient to expand the language $L$ with a predicate for a given $\grD\subseteq\U^{\gr z}$.
+We denote by $\<\U,\grD\>$ the corresponding expansion of $\U$.
+Generally, we write \emph{$L({\gr\X})$} for the expanded language but, when the intended interpretation of ${\gr\X}$ is only going to be $\grD$, we may write \emph{$L(\grD)$} and abbreviate $\<\U\,;\grD\>\models\phi({\gr\X})$ as $\phi(\grD)$. 
 
 
 %As usual, $L({\gr\X})$ and $L(\grD)$ denotes also the set of formulas in that language, and we write  $L(A\,;{\gr\X})$ and $L(A\,;\grD)$ for the set of formulas with parameters from $A$.
 
 \begin{remark}
-The definitions above are straightforward when ${\gr z}$ finite tuple. When ${\gr z}$ is an infinite tuple the intuition stays the same but a more involved definition is required. In fact, first-order logic does not allow infinitary predicates. We think of $L({\gr\X})$ for a two sorted language. The \textit{home sort}, denoted by $0$, and the ${\gr z}\jj$\textit{sort}, denoted by ${\gr z}$. The expansion $\<\U,\grD\>$ has domain $\U$ for the home sort, and $\U^{|{\gr z}|}$ for the ${\gr z}\jj$sort. Besides the symbols of $L$, there is a function symbol $\pi_i$ for every $i<|{\gr z}|$ which is interpreted as the projection to the $i\jj$coordinate. These functions have arity $\<{\gr z},0\>$ (see Section~\hyperref[many-sorted]{\ref*{imaginary}.\ref*{many-sorted}} for the notation). There is also a predicate of sort $\<{\gr z}\>$ interpreted as $\grD$.\QED
+The definitions above are straightforward when ${\gr z}$ finite tuple.
+When ${\gr z}$ is an infinite tuple the intuition stays the same but a more involved definition is required.
+In fact, first-order logic does not allow infinitary predicates.
+We think of $L({\gr\X})$ for a two sorted language.
+The \textit{home sort}, denoted by $0$, and the ${\gr z}$-\textit{sort}, denoted by ${\gr z}$.
+The expansion $\<\U,\grD\>$ has domain $\U$ for the home sort, and $\U^{\gr z}$ for the ${\gr z}$-sort.
+Besides the symbols of $L$, there is a function symbol $\pi_i$ for every $i<|{\gr z}|$ which is interpreted as the projection to the $i$-coordinate.
+These functions have sort $\<{\gr z},0\>$ (see Section~\ref{many-sorted} for the notation).
+There is also a predicate of sort $\<{\gr z}\>$ interpreted as $\grD$.
 \end{remark}
 
-What said above is adapted to define the expansion  \emph{$L({\gr\X_i}:i<\lambda)$}, where ${\gr\X_i}$ are predicates of arity $|{\gr z_i}|$. Again, when the sets ${\gr\D_i}\subseteq\U^{|{\gr z_i}|}$ are the only intended interpretation of  ${\gr\X_i}$, we may write \emph{$L({\gr\D_i}:i<\lambda)$}.
+What said above is adapted to define the expansion  \emph{$L({\gr\X_i}:i<\lambda)$,} where ${\gr\X_i}$ are predicates of sort ${\gr z_i}$.
+Again, when the sets ${\gr\D_i}\subseteq\U^{\gr z_i}$ are the only intended interpretation of  ${\gr\X_i}$, we write \emph{$L({\gr\D_i}:i<\lambda)$.}
 
 \begin{definition}\label{def_ins_sat}
-  If $\grC,\grD\subseteq\U^{|{\gr z}|}$ we abbreviate $\<\U,\grC\>\equiv_A\<\U,\grD\>$ as $\grC\equiv_A\grD$. We also say that $\grD$ is \emph{saturated\/} if so is the model $\<\U\,;\grD\>$.\QED
+  If $\grC,\grD\subseteq\U^{\gr z}$ we abbreviate $\<\U,\grC\>\equiv_A\<\U,\grD\>$ as $\grC\equiv_A\grD$.
+We also say that $\grD$ is \emph{saturated\/} if so is the model $\<\U\,;\grD\>$.
 \end{definition}
 
 \begin{remark}\label{rem_el_sat}
-For every $\grD\subseteq\U^{|{\gr z}|}$ there is a saturated $\grC\equiv\grD$. In fact, it suffices to find a saturated model $\<\U',{\gr\D'}\>\equiv\<\U,{\gr\D}\>$ of cardinality $\kappa$. By saturation, there is an isomorphism $f:\U'\to\U$. Therefore $f[{\gr\D'}]$ is the required set $\grC$.\QED
+For every $\grD\subseteq\U^{\gr z}$ there is a saturated $\grC\equiv\grD$.
+In fact, it suffices to find a saturated model $\<\U',{\gr\D'}\>\equiv\<\U,{\gr\D}\>$ of cardinality $\kappa$.
+By saturation, there is an isomorphism $f:\U'\to\U$.
+Therefore $f[{\gr\D'}]$ is the required set $\grC$.
 \end{remark}
 
-\begin{exercise}
-Prove that if $\grD\subseteq\U^{|{\gr z}|}$ is saturated and invariant over $A$ than it is definable over $A$.\QED
-\end{exercise} 
-
 \begin{proposition}\label{prop_indiscernible_L(A,D)}
-If $\grD\subseteq\U^{|{\gr z}|}$ is invariant over $A$ then every $A\jj$indiscernible sequence is indiscernible in the language $L(A\,;\grD)$.
+  If $\grD\subseteq\U^{\gr z}$ is invariant over $A$ then every $A$-indiscernible sequence is indiscernible in the language $L(A\,;\grD)$.
 \end{proposition}
 
 \begin{proof}
-Let $\bar c=\<c_i:i\in I\>$ be an $A\jj$indiscernible sequence. For every $I_0,I_1\in I^{[n]}$ there is an $f\in\Aut(\U/A)$ such that $fc_{\restriction I_0}=c_{\restriction I_1}$, Hence 
+  Let $\bar c=\<c_i:i\in I\>$ be an $A$-indiscernible sequence.
+  For every $I_0,I_1\in I^{[n]}$ there is an $f\in\Aut(\U/A)$ such that $fc_{\restriction I_0}=c_{\restriction I_1}$, Hence 
 
-\ceq{\hfill \phi\big(c_{\restriction I_0}\,;\grD\big)}{\iff}{\phi\big(fc_{\restriction I_0}\,;f[\grD]\big)\medrel{\iff}\phi\big(c_{\restriction I_1}\,;\grD\big)}.
+  \ceq{\hfill \phi\big(c_{\restriction I_0}\,;\grD\big)}{\iff}{\phi\big(fc_{\restriction I_0}\,;f[\grD]\big)\medrel{\iff}\phi\big(c_{\restriction I_1}\,;\grD\big)}.
 \end{proof}
 
+\begin{exercise}
+  Prove that if $\grD\subseteq\U^{\gr z}$ is saturated and invariant over $A$ than it is definable over $A$.
+\end{exercise} 
 
 \begin{exercise}
-Prove that if $\grC\subseteq\U^{|{\gr z}|}$ is type-definable over $B$ then $\equiv_{A,B}$ implies $\equiv_{A\,;\grC}$.\QED
+  Prove that if $\grC\subseteq\U^{\gr z}$ is type-definable over $B$ then $\equiv_{A,B}$ implies $\equiv_{A\,;\grC}$.
 \end{exercise} 
 
 
@@ -167,46 +179,64 @@ Prove that if $\grC\subseteq\U^{|{\gr z}|}$ is type-definable over $B$ then $\eq
 \def\equivL{\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}}
 
 
-Let $\grD\subseteq\U^{|{\gr z}|}$, where ${\gr z}$ is a tuple of length $<\kappa$. The \emph{orbit of $\grD$ over $A$\/} is the set
+Let $\grD\subseteq\U^{\gr z}$, where ${\gr z}$ is a tuple of length $<\kappa$.
+The \emph{orbit of $\grD$ over $A$\/} is the set
 
 \ceq{\hfill\emph{$\oorbit(\grD/A)$}}{=}{\Big\{f[\grD]\ :\ f\in\Aut(\U/A)\Big\}}
 
-So, $\grD$ is invariant over $A$ when $\oorbit(\grD/A)=\big\{\grD\big\}$. We say that $\grD$ is \emph{Lascar invariant\/} over $A$ if it is invariant over every model $M\supseteq A$. Recall that this means that if ${\gr a}\equiv_M{\gr c}$ for some model $M$ containing $A$ then ${\gr a}\in\grD\iff{\gr c}\in\grD$.
+So, $\grD$ is invariant over $A$ when $\oorbit(\grD/A)=\big\{\grD\big\}$.
+We say that $\grD$ is \emph{Lascar invariant\/} over $A$ if it is invariant over every model $M\supseteq A$.
+Recall that this means that if ${\gr a}\equiv_M{\gr c}$ for some model $M$ containing $A$ then ${\gr a}\in\grD\iff{\gr c}\in\grD$.
 
 
 \begin{proposition}\label{prop_numero_quasi_invarianti}
-  Let $\lambda=|L_{\gr z}(A)|$. There are at most $2^{2^{\lambda}}$ sets $\grD\subseteq\U^{|{\gr z}|}$ that are Lascar invariant over $A$.
+  Let $\lambda=|L_{\gr z}(A)|$.
+There are at most $2^{2^{\lambda}}$ sets $\grD\subseteq\U^{\gr z}$ that are Lascar invariant over $A$.
 \end{proposition}
 
 \begin{proof}
-  Let $N$ be a model containing $A$ of cardinality $\le\lambda$. Every set that is Lascar invariant over $A$ is invariant over $N$. As $|L_{\gr z}(N)|=\lambda$ the bound follows from Proposition~\ref{prop_numberIS}.
+  Let $N$ be a model containing $A$ of cardinality $\le\lambda$.
+Every set that is Lascar invariant over $A$ is invariant over $N$.
+As $|L_{\gr z}(N)|=\lambda$ the bound follows from Proposition~\ref{prop_numberIS}.
 \end{proof}
 
 \begin{theorem}\label{thm_Lascar_indiscernibles}
   For every $\grD$ and every $A\subseteq M$ the following are equivalent
   \begin{itemize}
-    \item[1.] $\grD$ is Lascar invariant over $A$;
-    \item[2.] every set in $\oorbit(\grD/A)$ is $M\mbox{-}$invariant;
-    \item[3.] $\oorbit(\grD/A)$ has cardinality $\le 2^{2^{|L(A)|}}$;
-    \item[4.] $\oorbit(\grD/A)$ has cardinality $<\kappa$;
+    \item[1.] $\grD$ is Lascar invariant over $A$
+    \item[2.] every set in $\oorbit(\grD/A)$ is $M\mbox{-}$invariant
+    \item[3.] $\oorbit(\grD/A)$ has cardinality $\le 2^{2^{|L(A)|}}$
+    \item[4.] $\oorbit(\grD/A)$ has cardinality $<\kappa$
     \item[5.] ${\gr c_0}\in\grD\iff{\gr c_1}\in\grD$ for every $A\mbox{-}$indiscernible sequence $\<{\gr c_i}:i<\omega\>$.
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
-  \ssf{1}$\IMP$\ssf{2}.\quad This implication is clear because all sets in $o(\grD/A)$ are Lascar invariant over $A$. 
+  \ssf{1}$\IMP$\ssf{2}. This implication is clear because all sets in $o(\grD/A)$ are Lascar invariant over $A$. 
   
-  \ssf{2}$\IMP$\ssf{3}.\quad When $|M|\le|L(A)|$ the implication follows from the bounds discussed in Section~\hyperref[invariant_sets]{\ref*{invariant}.\ref*{invariant_sets}}. We temporary add this assumption on $M$. Once the proof of the proposition is completed, is easily seen to be redundant (by \ssf{4} and Proposition~\ref{prop_numero_quasi_invarianti}). 
+  \ssf{2}$\IMP$\ssf{3}. When $|M|\le|L(A)|$ the implication follows from the bounds discussed in Section~\ref{invariant_sets}.
+We temporary add this assumption on $M$.
+Once the proof of the proposition is completed, is easily seen to be redundant (by \ssf{4} and Proposition~\ref{prop_numero_quasi_invarianti}). 
   
-  \ssf{3}$\IMP$\ssf{4}.\quad This implication holds because $\kappa$ is a strong limit cardinal.
+  \ssf{3}$\IMP$\ssf{4}. This implication holds because $\kappa$ is a strong limit cardinal.
 
-  \ssf{4}$\IMP$\ssf{5}.\quad Assume $\neg$\ssf{5}. Then we can find an  $A\mbox{-}$indiscernible sequence $\<{\gr c_i}:i<\kappa\>$ such that ${\gr c_0}\in\grD\niff {\gr c_1}\in\grD$. Define
+  \ssf{4}$\IMP$\ssf{5}. Assume $\neg$\ssf{5}.
+Then we can find an $A\mbox{-}$indiscernible sequence $\<{\gr c_i}:i<\kappa\>$ such that ${\gr c_0}\in\grD\niff {\gr c_1}\in\grD$.
+Define
 
   \ceq{\hfill E({\gr u}\,;{\gr v})}{\IFF}{{\gr u}\in\grC\iff {\gr v}\in\grC}\ \ \ for every $\grC\in o(\grD/A)$.
 
-  Then $E({\gr u}\,;{\gr v})$ is an $A\mbox{-}$invariant equivalence relation. As $\neg E({\gr c_0}\,;{\gr c_1})$, by Proposition~\ref{prop_indiscernible_L(A,D)}, indiscernibility over $A$ implies that $\neg E({\gr c_i\,},{\gr c_j})$ for every $i<j<\kappa$. Then $E({\gr u}\,;{\gr v})$ has $\kappa$ equivalence classes. As $\kappa$ is inaccessible, this implies $\neg$\ssf{4}.
+  Then $E({\gr u}\,;{\gr v})$ is an $A\mbox{-}$invariant equivalence relation.
+As $\neg E({\gr c_0}\,;{\gr c_1})$, by Proposition~\ref{prop_indiscernible_L(A,D)}, indiscernibility over $A$ implies that $\neg E({\gr c_i\,},{\gr c_j})$ for every $i<j<\kappa$.
+Then $E({\gr u}\,;{\gr v})$ has $\kappa$ equivalence classes.
+As $\kappa$ is inaccessible, this implies $\neg$\ssf{4}.
 
-  \ssf{5}$\IMP$\ssf{1}.\quad Fix any ${\gr a}\equiv_N{\gr b}$ where $A\subseteq N$. It suffices to prove that ${\gr a}\in\grD\iff{\gr b}\in\grD$. Let $p({\gr z})\in S(\U)$ be a global coheir of $\tp({\gr a}/N)=\tp({\gr b}/N)$. Let ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ be a Morley sequence of $p({\gr z})$ over $N,{\gr a},{\gr b}$. Then both ${\gr a},{\gr\bar c}$ and ${\gr b},{\gr\bar c}$ are $A\mbox{-}$indiscernible sequences. Therefore, from \ssf{5} we obtain ${\gr a}\in\grD\iff{\gr c_0}\in\grD\iff{\gr b}\in\grD$. 
+  \ssf{5}$\IMP$\ssf{1}. Fix any ${\gr a}\equiv_N{\gr b}$ where $A\subseteq N$.
+It suffices to prove that ${\gr a}\in\grD\iff{\gr b}\in\grD$.
+Let $p({\gr z})\in S(\U)$ be a global coheir of $\tp({\gr a}/N)=\tp({\gr b}/N)$.
+Let ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ be a Morley sequence of $p({\gr z})$ over $N,{\gr a},{\gr b}$.
+Then both ${\gr a},{\gr\bar c}$ and ${\gr b},{\gr\bar c}$ are $A\mbox{-}$indiscernible sequences.
+Therefore, from \ssf{5} we obtain ${\gr a}\in\grD\iff{\gr c_0}\in\grD\iff{\gr b}\in\grD$. 
 \end{proof}
 
 For definable sets Lascar invariance reduces to definablity over the algebraic closure.
@@ -214,66 +244,88 @@ For definable sets Lascar invariance reduces to definablity over the algebraic c
 \begin{corollary}\label{coroll_defble_Lascar_inv}
 For every definable set $\grD$ the following are equivalent
   \begin{itemize}
-    \item[1.] $\grD$ is Lascar invariant over $A$;
+    \item[1.] $\grD$ is Lascar invariant over $A$
     \item[2.] $\grD$ is definable over every model containing $A$
-    \item[3.] $\grD\in\acl^\eq(A)$.\QED
+    \item[3.] $\grD\in\acl^\eq(A)$.
   \end{itemize}
 \end{corollary}
 
-The following corollary easily follows from Theorem~\ref{thm_Lascar_indiscernibles} and Proposition~\ref{prop_indiscernible_L(A,D)}. As an exercise the reader may wish to prove it using Proposition~\ref{prop_indiscernibles_set_model}.
+The following corollary easily follows from Theorem~\ref{thm_Lascar_indiscernibles} and Proposition~\ref{prop_indiscernible_L(A,D)}.
+As an exercise the reader may wish to prove it using Proposition~\ref{prop_indiscernibles_set_model}.
  
 \begin{corollary}
 The following are equivalent
 \begin{itemize}
-\item[1.] $\grD$ is Lascar invariant over $A$;
-\item[2.] every sequence of $A$-indiscernibles is $L(A\,;\grD)$-indiscernible.\QED
+\item[1.] $\grD$ is Lascar invariant over $A$
+\item[2.] every sequence of $A$-indiscernibles is $L(A\,;\grD)$-indiscernible.
 \end{itemize}
 \end{corollary}
 
-\noindent\llap{\textcolor{red}{\Large\danger}
-\kern1.5ex}Given a tuple ${\gr a}\in\U^{|{\gr z}|}$, we write \emph{$\Ll({\gr a}/A)$\/} for the intersection of all sets containing ${\gr a}$ that are Lascar invariant over $A$. Clearly $\Ll({\gr a}/A)$ is Lascar invariant over $A$. The symbol $\Ll({\gr a}/A)$ is not standard.
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}%
+Given a tuple ${\gr a}\in\U^{\gr z}$, we write \emph{$\Ll({\gr a}/A)$\/} for the intersection of all sets containing ${\gr a}$ that are Lascar invariant over $A$.
+Clearly $\Ll({\gr a}/A)$ is Lascar invariant over $A$.
+The symbol $\Ll({\gr a}/A)$ is not standard.
 
-\begin{definition}\label{def_Lascar_type}We write \emph{${\gr a}\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}_A{\gr b}$\/} and say that ${\gr a}$ and ${\gr b}$ have the same \emph{Lascar strong type\/} over $A$ if the equivalence ${\gr a}\in\grD\iff{\gr b}\in\grD$ holds for every set $\grD$ that is Lascar invariant over $A$ or, in other words, if $\Ll({\gr a}/A)=\Ll({\gr b}/A)$. The notation ${\rm L{\jj}stp}({\gr a}/A)={\rm L{\jj}stp}({\gr b}/A)$ and ${\gr a}E_{_{L/A}}{\gr b}$ are also common in the the literature.\QED
+\begin{definition}\label{def_Lascar_type}We write \emph{${\gr a}\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}_A{\gr b}$\/} and say that ${\gr a}$ and ${\gr b}$ have the same \emph{Lascar strong type\/} over $A$ if the equivalence ${\gr a}\in\grD\iff{\gr b}\in\grD$ holds for every set $\grD$ that is Lascar invariant over $A$ or, in other words, if $\Ll({\gr a}/A)=\Ll({\gr b}/A)$.
+The notation $\mbox{L-stp}({\gr a}/A)=\mbox{L-stp}({\gr b}/A)$ and ${\gr a}E_{_{L/A}}{\gr b}$ are also common in the the literature.
 \end{definition}
 
 \begin{proposition}
-  The relation $\equivL_A$ is the finest equivalence relation with $<\kappa$ classes that is invariant over $A$.\QED
+  The relation $\equivL_A$ is the finest equivalence relation with $<\kappa$ classes that is invariant over $A$.
 \end{proposition}
 
 \begin{proof}
-  Clearly $\equivL_A$ is an equivalence relation invariant over $A$. Each equivalence class is Lascar invariant over $A$, hence the number of equivalence classes is bounded by the number of Lascar invariant sets over $A$. To see that $\equivL_A$ is the finest of such equivalences. Suppose $\grD$ is an equivalence class of an $A$-invariant equivalence relation with $<\kappa$ classes. Then $\oorbit(\grD/A)$ has also cardinality $<\kappa$. Then $\grD$ is Lascar invariant and as such it is union of classes of the relation $\equivL_A$. 
+  Clearly $\equivL_A$ is an equivalence relation invariant over $A$.
+Each equivalence class is Lascar invariant over $A$, hence the number of equivalence classes is bounded by the number of Lascar invariant sets over $A$.
+To see that $\equivL_A$ is the finest of such equivalences.
+Suppose $\grD$ is an equivalence class of an $A$-invariant equivalence relation with $<\kappa$ classes.
+Then $\oorbit(\grD/A)$ has also cardinality $<\kappa$.
+Then $\grD$ is Lascar invariant and as such it is union of classes of the relation $\equivL_A$. 
 \end{proof}
 
 
-Let $p({\mr x})\in S(\U)$ be global type; we say that $p$ is \emph{Lascar invariant\/} over $A$ if the sets ${\gr\D_{p,\phi}}$ for $\phi({\mr x}\,;{\gr z})\in L$ all Lascar invariant over $A$. (The sets ${\gr\D_{p,\phi}}$ are defined in Section~\hyperref[invariant_sets]{~\ref*{invariant}.\ref*{invariant_sets}}.)
+Let $p({\mr x})\in S(\U)$ be global type.
+We say that $p$ is \emph{Lascar invariant\/} over $A$ if the sets ${\gr\D_{p,\phi}}$, where $\phi({\mr x}\,;{\gr z})\in L$, are all Lascar invariant over $A$.
+The sets ${\gr\D_{p,\phi}}$ are defined in Section~\ref{invariant_sets}.
 
 \begin{proposition}\label{prop_Lascar_indiscernibles}
   Let $p({\mr x})\in S(\U)$ be a global type.
   Then the following are equivalent
   \begin{itemize}
-    \item[1.] $p({\mr x})$ is Lascar invariant over $A$;
-    \item[2.] every $A$-indiscernible sequence ${\gr\bar c}$ is indiscernible over $A,{\mr a}$ for every ${\mr a}\models p_{\restriction A,{\gr\bar c}}({\mr x})$;
+    \item[1.] $p({\mr x})$ is Lascar invariant over $A$
+    \item[2.] every $A$-indiscernible sequence ${\gr\bar c}$ is indiscernible over $A,{\mr a}$ for every ${\mr a}\models p_{\restriction A,{\gr\bar c}}({\mr x})$
     \item[3.] every $A$-indiscernible sequence ${\gr\bar c}$ is indiscernible over ${\mr a}$ for every ${\mr a}\models p_{\restriction {\gr\bar c}}({\mr x})$.
   \end{itemize}
   For convenience the tuples ${\gr c_i}$ have length $|{\gr z}|=\omega$.
 \end{proposition}
-\begin{proof} We prove \ssf{1}$\IFF$\ssf{3}. Equivalence  \ssf{1}$\IFF$\ssf{2} can be proved similarly.
+\begin{proof} We prove \ssf{1}$\IFF$\ssf{3}, equivalence \ssf{1}$\IFF$\ssf{2} is proved similarly.
 
   \def\ceq#1#2#3{\parbox[t]{30ex}{$\displaystyle #1$}\parbox[t]{5ex}{$\displaystyle\hfil #2$}{$\displaystyle #3$}}
-  \ssf{3}$\IMP$\ssf{1}\quad If $p({\mr x})$ is not Lascar invariant over $A$ then ${\gr c_0}\in{\gr\D_{p,\phi}}\niff {\gr c_1}\in{\gr\D_{p,\phi}}$ for some $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ and some $\phi({\mr x}\,;{\gr z})\in L$. Then $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr c_0})\niff \phi({\mr x}\,;{\gr c_1})$. Hence, ${\gr\bar c}$ is not indiscernible over any realization of $p({\mr x})_{\restriction{\gr c_0},{\gr c_1}}$ 
+
+  \ssf{3}$\IMP$\ssf{1}.
+If $p({\mr x})$ is not Lascar invariant over $A$ then ${\gr c_0}\in{\gr\D_{p,\phi}}\niff {\gr c_1}\in{\gr\D_{p,\phi}}$ for some $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ and some $\phi({\mr x}\,;{\gr z})\in L$.
+Then $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr c_0})\niff \phi({\mr x}\,;{\gr c_1})$.
+Hence, ${\gr\bar c}$ is not indiscernible over any realization of $p({\mr x})_{\restriction{\gr c_0},{\gr c_1}}$ 
   
-  \ssf{1}$\IMP$\ssf{3}\quad Assume \ssf{1} and fix an $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ and some ${\mr a}\models p_{\restriction{\gr\bar c}}$. We need to prove that for every formula $\phi({\mr x}\,;{\gr z'})\in L$, where ${\gr z'}={\gr z_1},\dots,{\gr z_n}$,
+  \ssf{1}$\IMP$\ssf{3}.
+Assume \ssf{1} and fix an $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ and some ${\mr a}\models p_{\restriction{\gr\bar c}}$.
+  We need to prove that for every formula $\phi({\mr x}\,;{\gr z'})\in L$, where ${\gr z'}={\gr z_1},\dots,{\gr z_n}$,
 
   \ceq{\hfill\phi({\mr a}\,;{\gr c_{0}},\dots,{\gr c_{n-1}})}{\iff}{\phi({\mr a}\,;{\gr c_{i_1}},\dots,{\gr c_{i_{n-1}}}).}
 
-  holds for every $i_0<\dots<i_{n-1}<\omega$. Suppose not and let $m$ be any integer larger than $i_{n-1}$. Then the following equivalences cannot both be true
+  holds for every $i_0<\dots<i_{n-1}<\omega$.
+Suppose not and let $m$ be any integer larger than $i_{n-1}$.
+Then the following equivalences cannot both be true
 
-  \ceq{\hfill\phi({\mr a}\,;{\gr c_m},\dots,{\gr c_{m+n-1}})}{\iff}{\phi({\mr a}\,;{\gr c_0},\dots,{\gr c_{n-1}});}
+  \ceq{\hfill\phi({\mr a}\,;{\gr c_m},\dots,{\gr c_{m+n-1}})}{\iff}{\phi({\mr a}\,;{\gr c_0},\dots,{\gr c_{n-1}})}
 
 
   \ceq{\hfill\phi({\mr a}\,;{\gr c_m},\dots,{\gr c_{m+n-1}})}{\iff}{\phi({\mr a}\,;{\gr c_{i_0}},\dots,{\gr c_{i_{n-1}}}).}
 
-  If the first is false, define ${\gr c'_k}={\gr c_{km}},\dots,{\gr c_{km+n-1}}$ for all $k<\omega$. Otherwise, do this only for positive $k$ and set ${\gr c'_0}={\gr c_{i_0}},\dots,{\gr c_{i_{n-1}}}$. In either cases $\<{\gr c'_k}:k<\omega\>$ is a sequence of $A\jj$in\-dis\-cern\-i\-bles and ${\gr c'_0}\in{\gr\D_{p,\phi}}\niff {\gr c'_1}\in{\gr\D_{p,\phi}}$. This contradicts \ssf{1}.
+  If the first is false, define ${\gr c'_k}={\gr c_{km}},\dots,{\gr c_{km+n-1}}$ for all $k<\omega$.
+Otherwise, do this only for positive $k$ and set ${\gr c'_0}={\gr c_{i_0}},\dots,{\gr c_{i_{n-1}}}$.
+In either cases $\<{\gr c'_k}:k<\omega\>$ is a sequence of $A$-in\-dis\-cern\-i\-bles and ${\gr c'_0}\in{\gr\D_{p,\phi}}\niff {\gr c'_1}\in{\gr\D_{p,\phi}}$.
+This contradicts \ssf{1}.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -284,9 +336,9 @@ Let $p({\mr x})\in S(\U)$ be global type; we say that $p$ is \emph{Lascar invari
 \section{Coheirs over sets}\label{coheirs_sets}
 
 In this section we consider a property that implies the existence of global Lascar invariant types and has simple syntactic characterization.
-It is a natural generalization to a set of the notion of finite satisfiability over a model that we introduced in Section~\hyperref[coheirs]{\ref*{invariant}.\ref*{coheirs}}.
+It is a natural generalization to a set of the notion of finite satisfiability over a model that we introduced in Section~\ref{coheirs}.
 
-In Section~\hyperref[coheirs]{\ref*{invariant}.\ref*{coheirs}} finite satisfiability over a model has been used to prove that every consistent type over a model has a global extension to a type that is invariant over that model. 
+In Section~\ref{coheirs} finite satisfiability over a model has been used to prove that every consistent type over a model has a global extension to a type that is invariant over that model. 
 Ideally, we would like to prove here a similar existence property for Lascar invariance over a set.
 But this is not possible in general.
 In fact, in Example~\ref{ex_circ_order}, we preset a theory that has no global Lascar invariant type.
@@ -295,7 +347,7 @@ In fact, in Example~\ref{ex_circ_order}, we preset a theory that has no global L
 % A type $p({\mr x})\subseteq L(\U)$ is \emph{almost (finitely) satisfiable\/} in $A$ if every conjunction of formulas in $p({\mr x})$ is almost satisfiable in $A$. 
 
 A global type $p({\mr x})\in S(\U)$ that is finitely satisfiable in every model containing $A$, is called a \emph{global coheir\/} of $p_{\restriction A}({\mr x})$. 
-Note that when $A$ is a model we obtain the same notion defined in Section~\hyperref[coheirs]{\ref*{invariant}.\ref*{coheirs}}.
+Note that when $A$ is a model we obtain the same notion defined in Section~\ref{coheirs}.
 
 \begin{proposition} 
   Let $\phi({\mr x}\,;{\gr z})\in L$.
@@ -314,20 +366,20 @@ Note that when $A$ is a model we obtain the same notion defined in Section~\hype
 \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}%
 We say that $A$ is a \emph{coheir extension base\/} if every type that is finitely satisfiable in every $M\supseteq A$ has an extension to a global type with the same property.
 The terminology is not standard.
-It is inspired by the analogy with extensions bases for forking, see e.g.~\cite{Simon}.  
+It is inspired by the analogy with extensions bases for forking, see e.g.~\cite{Simon}.
 
 \begin{proposition}\label{prop_exisntence_coheirs_over_sets}
   The following are equivalent
   \begin{itemize}
-    \item[1.] $A$ is a coheir extension base;
+    \item[1.] $A$ is a coheir extension base
     \item[2.] for every $\psi({\mr x}),\phi({\mr x})\in L(\U)$, if $\psi({\mr x})\vee\phi({\mr x})$ is finitely statisfied in every $M\supseteq A$, then $\psi({\mr x})$ or $\phi({\mr x})$ is finitely statisfied in every $M\supseteq A$. 
   \end{itemize}  
 \end{proposition}
   
 \begin{proof} 
-  \ssf1$\IMP$\ssf2 Clear.
+  \ssf1$\IMP$\ssf2. Clear.
   
-  \ssf2$\IMP$\ssf1 Assume \ssf2 and repeat the proof of Proposition~\ref{prop_exisntence_coheirs}.
+  \ssf2$\IMP$\ssf1. Assume \ssf2 and repeat the proof of Proposition~\ref{prop_exisntence_coheirs}.
 \end{proof}
   
 Trivially, every model is an extension base for coheirs.
@@ -341,7 +393,7 @@ The following example shows that some theories may have no other extension bases
   In the first case let $b\in(a,c)$. 
   Then every model containing $A$ intersects $(a,b)\cup (b,c)$, but there are both models that omit $(a,b)$ and models that omit $(b,c)$.
   In the second case let $b<a$ and consider $(-\infty,b)\cup (b,a)$.
-  The third case is symmetric.\QED
+  The third case is symmetric.
 \end{example}
 
 In Chapter~\ref{stability} we will see that for some important class of theories, \textit{stable theories}, all sets are coheir extension bases.
@@ -368,25 +420,25 @@ In Chapter~\ref{stability} we will see that for some important class of theories
   \item[2.] If $p(x)$ contains ${\rm cyc}(a, b, x)$,
   let $a<M<b$ and pick $a'$ such that $a<a'<M$. 
   As $a, a' \equiv_M b,a$, also  ${\rm cyc}(b, a, x)$ is in $p(x)$.
-  A contradiction.\QED
+  A contradiction.
   \end{itemize}
 \end{example}
 
 \begin{exercise}
   Let $A$ be a coheir extension base.
-  Prove that for every $b\in\U^z$ there is a structure $\V\preceq\U$ isomophic to $\U$ over $A$ such that $\V\cnonfork_Mb$ for every $A\subseteq M\preceq\V$.\QED
+  Prove that for every $b\in\U^z$ there is a structure $\V\preceq\U$ isomophic to $\U$ over $A$ such that $\V\cnonfork_Mb$ for every $A\subseteq M\preceq\V$.
 \end{exercise}
 
 \begin{exercise}
   Let $A$ be a coheir extension base.
-  Prove that for every $a\in\U^x$ there is a structure $\V\preceq\U$ isomophic to $\U$ over $A$ such that $a\cnonfork_M\V$ for every $A\subseteq M\preceq\V$.\QED
+  Prove that for every $a\in\U^x$ there is a structure $\V\preceq\U$ isomophic to $\U$ over $A$ such that $a\cnonfork_M\V$ for every $A\subseteq M\preceq\V$.
 \end{exercise}
 
 
 \begin{exercise}
-  Let $\phi(x)\in L(\U)$ be satisfied in every model containing $A$.  
+  Let $\phi(x)\in L(\U)$ be satisfied in every model containing $A$.
   Let $M\supseteq A$.  
-  Prove that $\phi(x)$ is contained in some global type finitely satisfied in $M$.\QED
+  Prove that $\phi(x)$ is contained in some global type finitely satisfied in $M$.
 \end{exercise}
 % \begin{exercise}
 % Let $\lambda>|L(A)|$ be such that saturated models of cardinality $\lambda$ exist. Prove that if $\phi({\mr x})$ is satisfied in every saturated model $N\supseteq A$ of cardinality $\lambda$, then it is almost satisfied in $A$.
@@ -400,70 +452,85 @@ In Chapter~\ref{stability} we will see that for some important class of theories
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Lascar graph and Newelski's theorem}\label{newelski}
 
-Here we study Lascar strong types from a different viewpoint. The \emph{Lascar graph\/} over $A$ has an arc between all pairs ${\gr a},{\gr b}\in \U^{|{\gr z}|}$ such that  ${\gr a}\equiv_M{\gr b}$ for some model $M$ containing $A$. We write \emph{$d_A({\gr a},{\gr b})$\/} for the distance between ${\gr a}$ and ${\gr b}$ in the Lascar graph over $A$. Let us spell this out: $d_A({\gr a},{\gr b})\le n$ if there is a sequence ${\gr a_0},\dots,{\gr a_n}$ such that ${\gr a}={\gr a_0}$, ${\gr b}={\gr a_n}$, and ${\gr a_i}\equiv_{M_i}{\gr a_{i+1}}$ for some models $M_i$ containing $A$. We write \emph{$d_A({\gr a},{\gr b})<\infty$\/} if ${\gr a}$ and ${\gr b}$ are in the same connected component of the Lascar graph over $A$.
+Here we study Lascar strong types from a different viewpoint.
+The \emph{Lascar graph\/} over $A$ has an arc between all pairs ${\gr a},{\gr b}\in \U^{\gr z}$ such that  ${\gr a}\equiv_M{\gr b}$ for some model $M$ containing $A$.
+We write \emph{$d_A({\gr a},{\gr b})$\/} for the distance between ${\gr a}$ and ${\gr b}$ in the Lascar graph over $A$.
+Let us spell this out: $d_A({\gr a},{\gr b})\le n$ if there is a sequence ${\gr a_0},\dots,{\gr a_n}$ such that ${\gr a}={\gr a_0}$, ${\gr b}={\gr a_n}$, and ${\gr a_i}\equiv_{M_i}{\gr a_{i+1}}$ for some models $M_i$ containing $A$.
+We write \emph{$d_A({\gr a},{\gr b})<\infty$\/} if ${\gr a}$ and ${\gr b}$ are in the same connected component of the Lascar graph over $A$.
 
-\begin{proposition}\label{tipoforteLascarediametro} For every ${\gr a}\in\U^{|{\gr z}|}$
+\begin{proposition}\label{tipoforteLascarediametro} For every ${\gr a}\in\U^{\gr z}$
 
 \ceq{\hfill\Ll({\gr a}/A)}{=}{\big\{{\gr c}\ :\ d_A({\gr a},{\gr c})<\infty\big\}.}
 \end{proposition}
 
 
 \begin{proof}
-To prove inclusion $\supseteq$ it suffices to show that every Lascar $A\jj$invariant set containing ${\gr a}$ contains the set on the r.h.s. Let $\grD$ be Lascar $A\jj$invariant, and let ${\gr b}\in\grD$. Then $\grD$ contains also every ${\gr c}$ such that ${\gr b}\equiv_M{\gr c}$ for some model $M$ containing $A$. That is, $\grD$ contains every ${\gr c}$ such that $d_A({\gr b},{\gr c})\le 1$. It follows that $\grD$ contains every ${\gr c}$ such that $d_A({\gr a},{\gr c})<\infty$. 
+To prove inclusion $\supseteq$ it suffices to show that every Lascar $A$-invariant set containing ${\gr a}$ contains the set on the r.h.s.
+Let $\grD$ be Lascar $A$-invariant, and let ${\gr b}\in\grD$.
+Then $\grD$ contains also every ${\gr c}$ such that ${\gr b}\equiv_M{\gr c}$ for some model $M$ containing $A$.
+That is, $\grD$ contains every ${\gr c}$ such that $d_A({\gr b},{\gr c})\le 1$.
+It follows that $\grD$ contains every ${\gr c}$ such that $d_A({\gr a},{\gr c})<\infty$. 
 
-To prove inclusion $\subseteq$ we prove the set on the r.h.s.\@ is Lascar $A\jj$invariant. Suppose the sequence ${\gr a_0},\dots,{\gr a_n}$, where ${\gr a_0}={\gr a}$ and ${\gr a_n}={\gr c}$, witnesses $d_A({\gr a},{\gr c})\le n$ and suppose that ${\gr c}\equiv_M{\gr b}$ for some $M$ containing $A$, then the sequence ${\gr a_0},\dots,{\gr a_n},{\gr b}$ witnesses $d_A({\gr a},{\gr b})\le n+1$.
+To prove inclusion $\subseteq$ we prove the set on the r.h.s.\@ is Lascar $A$-invariant.
+Suppose the sequence ${\gr a_0},\dots,{\gr a_n}$, where ${\gr a_0}={\gr a}$ and ${\gr a_n}={\gr c}$, witnesses $d_A({\gr a},{\gr c})\le n$ and suppose that ${\gr c}\equiv_M{\gr b}$ for some $M$ containing $A$, then the sequence ${\gr a_0},\dots,{\gr a_n},{\gr b}$ witnesses $d_A({\gr a},{\gr b})\le n+1$.
 \end{proof}
 
-We write \emph{Aut\kern.15ex{f}\kern.15ex$(\U/A)$\/} for the subgroup of $\Aut(\U/A)$ that is generated by the automorphisms that fix point-wise some model $M$ containing $A$. (The ``f'' in the symbol stands for \textit{fort\/}, the French word for \textit{strong}.) It is easy to verify that $\Autf(\U/A)$ is a normal subgroup of $\Aut(\U/A)$. The following is a corollary of Proposition~\ref{tipoforteLascarediametro}. 
+We write \emph{Aut\kern.15ex{f}\kern.15ex$(\U/A)$\/} for the subgroup of $\Aut(\U/A)$ that is generated by the automorphisms that fix point-wise some model $M$ containing $A$.
+(The ``f'' in the symbol stands for \textit{fort\/}, the French word for \textit{strong}.) It is easy to verify that $\Autf(\U/A)$ is a normal subgroup of $\Aut(\U/A)$.
+The following is a corollary of Proposition~\ref{tipoforteLascarediametro}. 
 
 \begin{corollary}
 The following are equivalent
 \begin{itemize}
  \item[1.] ${\gr a}\equivL_A{\gr b}$
- \item[2.] ${\gr a}=f{\gr b}$\ \ for some $f\in\Autf(\U/A)$.\QED
+ \item[2.] ${\gr a}=f{\gr b}$\ \ for some $f\in\Autf(\U/A)$.
 \end{itemize}
 \end{corollary}
 
 % \begin{corollary}
-% Let $\Ll=\Ll({\gr a}/A)$ then the sets in $o(\Ll/A)$ is a partition of $\U^{|{\gr z}|}$.
+% Let $\Ll=\Ll({\gr a}/A)$ then the sets in $o(\Ll/A)$ is a partition of $\U^{\gr z}$.
 % \end{corollary}
 % \begin{proof}
 % We claim that $f[\Ll]=\Ll$ for every $f\in\Aut(\U/A)$ such that $f{\gr a}\in\Ll$. To prove the claim assume $d({\gr a},f{\gr a})<\infty$. It suffices to show $\Ll\subseteq f[\Ll]$. If ${\gr b}\in\Ll$ then  $d({\gr a},{\gr b})<\infty$ so from Proposition~\ref{prop_Lascar_distance_type_def} we obtain $d(f{\gr a},f{\gr b})<\infty$ and therefore $d({\gr a},f{\gr b})<\infty$. Now the corollary follows because $\Ll=\Ll({\gr b}/A)$ for any ${\gr b}\in\Ll$.
 % \end{proof}
 % 
 % \begin{corollary}
-% Let $p({\gr z})\in S(A,{\gr a})$, then $p({\gr\U})\subseteq\Ll({\gr a}/A)$.\QED
+% Let $p({\gr z})\in S(A,{\gr a})$, then $p({\gr\U})\subseteq\Ll({\gr a}/A)$.
 % \end{corollary}
 
-
-\begin{exercise}\label{ex_Lstp_indiscernibles}
-  Prove that the equivalence relation ${\gr a}\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}_A{\gr b}$ is the transitive closure of the relation: there is a sequence $\<{\gr c_i}:i<\omega\>$ indiscernible over $A$ such that ${\gr c_0}={\gr a}$ and ${\gr c_1}={\gr b}$. Hint: use Exercise~\ref{ex_symmetry_ind} to prove symmetry, then reason as in Proposition~\ref{tipoforteLascarediametro}.\QED
-\end{exercise}
-
-It may not be immediately obvious that the relation $d_A({\gr z},{\gr y})\le n$ is type-definable. 
+It may not be immediately obvious that the relation $d_A({\gr z},{\gr y})\le n$ is type-definable.
 
 \begin{proposition}\label{prop_Lascar_distance_type_def}
-For every $n<\omega$ there is a type $p_n({\gr z},{\gr y})\subseteq L(A)$ equivalent to $d_A({\gr z},{\gr y})\le n$.  
+There is a type $p_n({\gr z},{\gr y})\subseteq L(A)$ equivalent to $d_A({\gr z},{\gr y})\le n$.  
 \end{proposition}
 \begin{proof}
-It suffices to prove the proposition with $n=1$. Let $\lambda=|L(A)|$ and fix a tuple of distinct variables $w=\<w_i:i<\lambda\>$, then $p_1({\gr z},{\gr y})\;=\;\E w\;p(w,{\gr z},{\gr y})$ where
+It suffices to prove the proposition with $n=1$.
+Let $\lambda=|L(A)|$ and fix a tuple of distinct variables $w=\<w_i:i<\lambda\>$, then $p_1({\gr z},{\gr y})\;=\;\E w\;p(w,{\gr z},{\gr y})$ where
 
 \ceq{\hfill p(w,{\gr z},{\gr y})}{=}{q(w)\ \cup\ \Big\{\phi({\gr z},w)\iff\phi({\gr y},w)\ :\ \phi({\gr z},w)\in L(A)\Big\}}
 
 and $q(w)\subseteq L(A)$ is a consistent type with the property that all its realizations enumerate a model containing $A$.
 
-It remains to verify that such a type exist. Let $\<\psi_i(x,w_{\restriction i}):i<\lambda\>$ be an enumeration of the formulas in $L_{x,w}(A)$, where $x$ is a single variable. Let 
+It remains to verify that such a type exist.
+Let $\<\psi_i(x,w_{\restriction i}):i<\lambda\>$ be an enumeration of the formulas in $L_{x,w}(A)$, where $x$ is a single variable.
+Let 
 
 \ceq{\hfill q(w)}{=}{\Big\{\E x\;\psi_i(x,w_{\restriction i})\;\imp\;\psi_i(w_i,w_{\restriction i})\ :\ i<\lambda\Big\}.}
 
-Any realization of $q(w)$ satisfy the Tarski-Vaught test therefore it enumerates a model containing $A$. Vice versa it is clear that we can realize $q(w)$ in any model containing $A$.
+Any realization of $q(w)$ satisfy the Tarski-Vaught test therefore it enumerates a model containing $A$.
+Vice versa it is clear that we can realize $q(w)$ in any model containing $A$.
 \end{proof}
 
 We conclude this section with a theorem of Ludomir Newelski. 
 
-The following notions apply generally to any group $G$ acting on some set ${\gr\X}$ and to any set $\grD\subseteq {\gr\X}$. Below we always have $G=\Autf(\U/A)$ and ${\gr\X}=\U^{|{\gr z}|}$.  We say that $\grD$ \emph{is drifting\/} if for every finitely many $f_1,\dots,f_n\in G$ there is a $g\in G$ such that $g[\grD]$ is disjoint from all the $f_i[\grD]$. We say that $\grD$ \emph{is quasi-invariant\/} if for every finitely many $f_1,\dots,f_n\in G$ the sets  $f_i[\grD]$ have non-empty intersection. We say that a \emph{formula\/} or a \emph{type is drifting\/} or quasi-invariant if the set it defines is.
+The following notions apply generally to any group $G$ acting on some set ${\gr\X}$ and to any set $\grD\subseteq {\gr\X}$.
+Below we always have $G=\Autf(\U/A)$ and ${\gr\X}=\U^{\gr z}$.
+We say that $\grD$ \emph{is drifting\/} if for every finitely many $f_1,\dots,f_n\in G$ there is a $g\in G$ such that $g[\grD]$ is disjoint from all the $f_i[\grD]$.
+We say that $\grD$ \emph{is quasi-invariant\/} if for every finitely many $f_1,\dots,f_n\in G$ the sets  $f_i[\grD]$ have non-empty intersection.
+We say that a \emph{formula\/} or a \emph{type is drifting\/} or quasi-invariant if the set it defines is.
 
-The union of drifting sets need not be drifting. However, by the following lemma it cannot be quasi-invariant.
+The union of drifting sets need not be drifting.
+However, by the following lemma it cannot be quasi-invariant.
 
 \begin{lemma}\label{lem_newelski}
 The union of finitely many drifting sets in not quasi-invariant.
@@ -474,11 +541,15 @@ The union of finitely many drifting sets in not quasi-invariant.
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\noindent\parbox[t]{30ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-It is convenient to prove an apparently more general claim. If ${\gr\D_1},\dots,{\gr\D_n}$ are all drifting and ${\gr\Ll}$ is such that for some finite $F\subseteq G$\medskip 
+It is convenient to prove an apparently more general claim.
+If ${\gr\D_1},\dots,{\gr\D_n}$ are all drifting and ${\gr\Ll}$ is such that for some finite $F\subseteq G$\medskip 
 
 \ceq{\sharp\hfill{\gr\Ll}}{\subseteq}{\bigcup_{f\in F}f[{\gr\D_1}\cup\dots\cup{\gr\D_n}],} 
 
-then ${\gr\Ll}$ is not quasi-invariant. The claim is vacuously true for $n=0$. Now, assume $n$ is positive and that the claim holds for $n-1$. Define $\grC={\gr\D_1}\cup\dots\cup{\gr\D_{n-1}}$ and rewrite $\sharp$ as follows
+then ${\gr\Ll}$ is not quasi-invariant.
+The claim is vacuously true for $n=0$.
+Now, assume $n$ is positive and that the claim holds for $n-1$.
+Define $\grC={\gr\D_1}\cup\dots\cup{\gr\D_{n-1}}$ and rewrite $\sharp$ as follows
 
 \ceq{\hfill{\gr\Ll}}{\subseteq}{\bigcup_{f\in F}f[\grC]\ \cup\ \bigcup_{h\in F}h[{\gr\D_n}]}
 
@@ -495,34 +566,34 @@ So, from $\sharp$ we obtain\medskip
 \ceq{\hfill{\gr\Ll}\cap\bigcap_{h\in F}h g^{-1}[{\gr\Ll}]}{\subseteq}{\bigcup_{f\in F}f[\grC]\ \cup\ \bigcup_{h\in F}\bigcup_{f\in F}hg^{-1}f[\grC].}\smallskip
 
 
-\noindent By the induction hypothesis, the set on the r.h.s.\@ is not quasi-invariant. Hence neither is ${\gr\Ll}$, proving the claim and with it the lemma.
+\noindent By the induction hypothesis, the set on the r.h.s.\@ is not quasi-invariant.
+Hence neither is ${\gr\Ll}$, proving the claim and with it the lemma.
 \end{proof}
 
-The following is a consequence of Baire's category theorem. We sketch a proof for the convenience of the reader.
+% The following is a consequence of Baire's category theorem.
+% We sketch a proof for the convenience of the reader.
 
 
-\begin{lemma}\label{Baire}
-Let $p(x)\subseteq L(B)$ and $p_n(x)\subseteq L(A)$, for $n<\omega$, be consistent types such that\smallskip
+% \begin{lemma}\label{Baire}
+% Let $p(x)\subseteq L(B)$ and $p_n(x)\subseteq L(A)$, for $n<\omega$, be such that\smallskip
 
-\ceq{\ssf{1.}\hfill p(x)}{\imp}{\bigvee_{n<\omega}p_n(x)}
+% \ceq{\ssf{1.}\hfill p(x)}{\imp}{\bigvee_{n<\omega}p_n(x)}
 
-\noindent Then there is an $n<\omega$ and a formula $\phi(x)\in L(A)$ consistent with $p(x)$ such that \smallskip
+% \noindent Then there is an $n<\omega$ and a formula $\phi(x)\in L(A)$ consistent with $p(x)$ such that \smallskip
 
-\ceq{\ssf{2.}\hfill p(x)\wedge\phi(x)}{\imp}{p_n(x)}
-\end{lemma}
-\begin{proof}
-Negate \ssf{2} and choose inductively for every $n<\omega$ a formula $\psi_n(x)\in p_n(x)$ such that $p(x)\wedge\neg\psi_0(x)\wedge\dots\wedge\neg\psi_n(x)$ is consistent. By compactness, this contradicts \ssf{1}.
-\end{proof}
-
-
+% \ceq{\ssf{2.}\hfill p(x)\wedge\phi(x)}{\imp}{p_n(x)}
+% \end{lemma}
+% \begin{proof}
+% Negate \ssf{2} and choose inductively for every $n<\omega$ a formula $\psi_n(x)\in p_n(x)$ such that $p(x)\wedge\neg\psi_0(x)\wedge\dots\wedge\neg\psi_n(x)$ is consistent.
+% By compactness, this contradicts \ssf{1}.
+% \end{proof}
 
 Finally we can prove Newelski's theorem on the diameter of Lascar types.
 
-
 \begin{theorem}[ (Newelski)]
-For every ${\gr a}\in\U^{|{\gr z}|}$ the following are equivalent
+For every ${\gr a}\in\U^{\gr z}$ the following are equivalent
 \begin{itemize}
- \item[1.] $\Ll({\gr a}/A)$ is type-definable;
+ \item[1.] $\Ll({\gr a}/A)$ is type-definable
  \item[2.] $\Ll({\gr a}/A)\ =\ \big\{{\gr c}\ :\ d_A({\gr a},{\gr c})<n\big\}$ for some $n<\omega$.
 \end{itemize}
 \end{theorem}
@@ -532,19 +603,28 @@ For every ${\gr a}\in\U^{|{\gr z}|}$ the following are equivalent
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\noindent\parbox[t]{18ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-Implications \ssf{2}$\IMP$\ssf{1} holds by Proposition~\ref{prop_Lascar_distance_type_def}. We prove  \ssf{1}$\IMP$\ssf{2}. Suppose $\Ll({\gr a}/A)$ is type-definable, say by the type $l({\gr z})$. Let $p({\gr z},{\gr y})$ be some consistent type (to be defined below) such that and $p({\gr z},{\gr y})\imp l({\gr z})\wedge l({\gr y})$. Then, in particular\smallskip
+Implications \ssf{2}$\IMP$\ssf{1} holds by Proposition~\ref{prop_Lascar_distance_type_def}.
+We prove  \ssf{1}$\IMP$\ssf{2}.
+Suppose $\Ll({\gr a}/A)$ is type-definable, say by the type $l({\gr z})$.
+Let $p({\gr z},{\gr y})$ be some consistent type (to be defined below) such that and $p({\gr z},{\gr y})\imp l({\gr z})\wedge l({\gr y})$.
+Then, in particular\smallskip
 
 \ceq{\hfill p({\gr z},{\gr y})}{\imp}{\bigvee_{n<\omega}d_A({\gr z},{\gr y})<n.}
 
-By Proposition~\ref{prop_Lascar_distance_type_def} and Lemma~\ref{Baire}, there is some $n<\omega$ and some $\phi({\gr z},{\gr y})\in L(A)$  consistent with $p({\gr z},{\gr y})$ such that\smallskip
+By Proposition~\ref{prop_Lascar_distance_type_def} and Exercise~\ref{ex_Baire}, there is some $n<\omega$ and some $\phi({\gr z},{\gr y})\in L(A)$  consistent with $p({\gr z},{\gr y})$ such that\smallskip
 
 \ceq{\sharp_1\hfill p({\gr z},{\gr y})\wedge\phi({\gr z},{\gr y})}{\imp}{d_A({\gr z},{\gr y})<n}.\smallskip
 
 \noindent Below we define $p({\gr z},{\gr y})$ so that for every $\psi({\gr z},{\gr y})\in L(A)$\smallskip
 
-\ceq{\sharp_2\hfill p({\gr z},{\gr a})\wedge\psi({\gr z},{\gr a})}{}{}\hfill is non-drifting whenever it is consistent. \smallskip
+\ceq{\sharp_2\hfill p({\gr z},{\gr a})\wedge\psi({\gr z},{\gr a})}{}{}\hfill is non-drifting whenever it is consistent.\smallskip
 
-\noindent Drifting and quasi-invariance are relative to the action of $\Autf(\U/A)$ on $\U^{|{\gr z}|}$. Then, in particular, $p({\gr z},{\gr a})\wedge\phi({\gr z},{\gr a})$ is non-drifting and the theorem follows. In fact, by non-drifting, there are some ${\gr a_0},\dots, {\gr a_k}\in\Ll({\gr a}/A)$ such that every set $p(\U,{\gr c})\cap\phi(\U,{\gr c})$ for ${\gr c}\in\Ll({\gr a}/A)$ intersects some $p(\U, {\gr a_i})\cap\phi(\U,{\gr a_i})$. Let $m$ be such that $d_A({\gr a_i},{\gr a_j})\le m$ for every $i,j\le k$. From $\sharp_1$ we obtain that $d_A({\gr a},{\gr c})\le m+2n$. As ${\gr c}\in\Ll({\gr a}/A)$ is arbitrary, the theorem follows.
+\noindent Drifting and quasi-invariance are relative to the action of $\Autf(\U/A)$ on $\U^{\gr z}$.
+Then, in particular, $p({\gr z},{\gr a})\wedge\phi({\gr z},{\gr a})$ is non-drifting and the theorem follows.
+In fact, by non-drifting, there are some ${\gr a_0},\dots, {\gr a_k}\in\Ll({\gr a}/A)$ such that every set $p(\U,{\gr c})\cap\phi(\U,{\gr c})$ for ${\gr c}\in\Ll({\gr a}/A)$ intersects some $p(\U, {\gr a_i})\cap\phi(\U,{\gr a_i})$.
+Let $m$ be such that $d_A({\gr a_i},{\gr a_j})\le m$ for every $i,j\le k$.
+From $\sharp_1$ we obtain that $d_A({\gr a},{\gr c})\le m+2n$.
+As ${\gr c}\in\Ll({\gr a}/A)$ is arbitrary, the theorem follows.
 
 The required type $p({\gr z},{\gr y})$ is union of a chain of types $p_\alpha({\gr z},{\gr y})$ defined as follows\smallskip
 
@@ -554,19 +634,30 @@ The required type $p({\gr z},{\gr y})$ is union of a chain of types $p_\alpha({\
 
 \ceq{\hfill p_{\alpha}({\gr z},{\gr y})}{=}{\bigcup_{n<\alpha}p_{n}({\gr z},{\gr y})}\quad for limit $\alpha$.
 
-\noindent Clearly, the chain stabilizes at some stage $\le|L(A)|$ yielding a type which satisfies $\sharp_2$. So we only need to prove consistency. We prove that $p_\alpha({\gr z},{\gr a})$ is quasi-invariant (so, in particular, consistent). Suppose that $p_n({\gr z},{\gr a})$ is quasi-invariant for every $n<\alpha$ but, for a contradiction, $p_\alpha({\gr z},{\gr a})$ is not. Then for some $f_1,\dots,f_k\in\Autf(\U/A)$
+\noindent Clearly, the chain stabilizes at some stage $\le|L(A)|$ yielding a type which satisfies $\sharp_2$.
+So we only need to prove consistency.
+We prove that $p_\alpha({\gr z},{\gr a})$ is quasi-invariant (so, in particular, consistent).
+Suppose that $p_n({\gr z},{\gr a})$ is quasi-invariant for every $n<\alpha$ but, for a contradiction, $p_\alpha({\gr z},{\gr a})$ is not.
+Then for some $f_1,\dots,f_k\in\Autf(\U/A)$
 
 \ceq{\hfill p_\alpha({\gr z},{\gr a})}{\cup}{\bigcup^k_{i=1}p_\alpha({\gr z},f_i{\gr a})}
 
-\noindent is inconsistent. By compactness there is some $n<\alpha$ and some $\psi_i({\gr z},{\gr y})$ as in $\sharp_3$ such that
+\noindent is inconsistent.
+By compactness there is some $n<\alpha$ and some $\psi_i({\gr z},{\gr y})$ as in $\sharp_3$ such that
 
 \ceq{\hfill p_n({\gr z},{\gr a})}{\imp}{\neg\bigwedge^m_{j=1}\bigwedge^k_{i=1}\neg\psi_j({\gr z},f_i{\gr a})}
 
-As $p_n({\gr z},{\gr a})$ is quasi-invariant, from Lemma~\ref{lem_newelski} we obtain that $p_n({\gr z},f_i{\gr a})\wedge\psi_j({\gr z},f_i{\gr a})$ is non-drifting for some $i,j$. Clearly we can replace $f_i{\gr a}$ with ${\gr a}$, then this contradicts the construction of $p_\alpha({\gr z},{\gr y})$ and proves the theorem.
+As $p_n({\gr z},{\gr a})$ is quasi-invariant, from Lemma~\ref{lem_newelski} we obtain that $p_n({\gr z},f_i{\gr a})\wedge\psi_j({\gr z},f_i{\gr a})$ is non-drifting for some $i,j$.
+Clearly we can replace $f_i{\gr a}$ with ${\gr a}$, then this contradicts the construction of $p_\alpha({\gr z},{\gr y})$ and proves the theorem.
 \end{proof}
 
+\begin{exercise}\label{ex_Lstp_indiscernibles}
+  Prove that the equivalence relation ${\gr a}\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}_A{\gr b}$ is the transitive closure of the relation: there is a sequence $\<{\gr c_i}:i<\omega\>$ indiscernible over $A$ such that ${\gr c_0}={\gr a}$ and ${\gr c_1}={\gr b}$.
+Hint: use Exercise~\ref{ex_symmetry_ind} to prove symmetry, then reason as in Proposition~\ref{tipoforteLascarediametro}.
+\end{exercise}
+
 \begin{exercise}
-Let ${\gr\Ll}$ be quasi-invariant and let $\grD$ be drifting, prove that  ${\gr\Ll}\sm\grD$ is quasi-invariant.\QED
+Let ${\gr\Ll}$ be quasi-invariant and let $\grD$ be drifting, prove that ${\gr\Ll}\sm\grD$ is quasi-invariant.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -576,8 +667,14 @@ Let ${\gr\Ll}$ be quasi-invariant and let $\grD$ be drifting, prove that  ${\gr\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Kim-Pillay types}\label{KPtypes}
 
-
-Given a tuple ${\gr a}\in\U^{|{\gr z}|}$, we write \emph{$\K({\gr a}/A)$\/} for the intersection of all type-definable sets containing ${\gr a}$ that are Lascar invariant over $A$. Or, more concisely, the intersection of all sets that are type-definable over every model containing $A$. We call $\K({\gr a}/A)$ the \emph{Kim-Pillay strong type\/} over $A$. Clearly $\K({\gr a}/A)$ is Lascar invariant over $A$.  It also easy to see that $\K({\gr a}/A)$ is type-definable. In fact, by invariance, we can assume that all types in the intersection above are over $M$, for any fixed model containing $A$. Hence $\K({\gr a}/A)$ is the minimal type-definable set containing ${\gr a}$ and closed under the relation $\equivL_A$. It follows that if ${\gr b}\in\K({\gr a}/A)$ then $\K({\gr b}/A)\subseteq\K({\gr a}/A)$.
+Given a tuple ${\gr a}\in\U^{\gr z}$, we write \emph{$\K({\gr a}/A)$\/} for the intersection of all type-definable sets containing ${\gr a}$ that are Lascar invariant over $A$.
+Or, more concisely, the intersection of all sets that are type-definable over every model containing $A$.
+We call $\K({\gr a}/A)$ the \emph{Kim-Pillay strong type\/} over $A$.
+Clearly $\K({\gr a}/A)$ is Lascar invariant over $A$.
+It also easy to see that $\K({\gr a}/A)$ is type-definable.
+In fact, by invariance, we can assume that all types in the intersection above are over $M$, for any fixed model containing $A$.
+Hence $\K({\gr a}/A)$ is the minimal type-definable set containing ${\gr a}$ and closed under the relation $\equivL_A$.
+It follows that if ${\gr b}\in\K({\gr a}/A)$ then $\K({\gr b}/A)\subseteq\K({\gr a}/A)$.
 
 To summarize, we recall that we have defined a whole hierarchy of strong types obtained from the intersection of different sets with various sots of invariance
 
@@ -585,30 +682,47 @@ To summarize, we recall that we have defined a whole hierarchy of strong types o
 
 Recall that $\S({\gr a}/A)$ was defined after Proposition~\ref{prop_Shelah_strong_types}.
 
-
-
-If $\K({\gr a}/A)=\K({\gr b}/A)$, we say that ${\gr a}$ and ${\gr b}$ have the same  \emph{Kim-Pillay strong type\/} over $A$. We abbreviate this by \emph{${\gr a}\stackrel{\smash{\scalebox{.5}{\rm KP}}}{\equiv}_A{\gr b}$}. In other words, we write ${\gr a}\equivKP_A{\gr b}$ when ${\gr a}\in\grD\iff{\gr b}\in\grD$ for every type-definable set $\grD$ that is Lascar invariant over $A$.
+If $\K({\gr a}/A)=\K({\gr b}/A)$, we say that ${\gr a}$ and ${\gr b}$ have the same \emph{Kim-Pillay strong type\/} over $A$.
+We abbreviate this by \emph{${\gr a}\stackrel{\smash{\scalebox{.5}{\rm KP}}}{\equiv}_A{\gr b}$.}
+In other words, we write ${\gr a}\equivKP_A{\gr b}$ when ${\gr a}\in\grD\iff{\gr b}\in\grD$ for every type-definable set $\grD$ that is Lascar invariant over $A$.
 
 %We say that ${\gr a}$ and ${\gr b}$ have the same \emph{Kim-Pillay strong type over $A$\/} if $\K({\gr a}/A)=\K({\gr b}/A)$ or, in other words, when ${\gr a}\in\grD\iff{\gr b}\in\grD$ for every type-definable set $\grD$ that is Lascar invariant over $A$. We write \emph{$a\stackrel{\smash{\scalebox{.5}{\rm KP}}}{\equiv}_Ab$}.
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Warning: the symbol $\K({\gr a}/A)$ is not standard. The symbol ${\gr a}\equivKP_A{\gr b}$ is not unusual, but some author write ${\rm KP{\jj}stp}({\gr a}/A)={\rm KP{\jj}stp}({\gr b}/A)$ or ${\gr a}\mathrel{E_{_{{\rm KP}/A}}}{\gr b}$.
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}%
+Warning: the symbol $\K({\gr a}/A)$ is not standard.
+The symbol ${\gr a}\equivKP_A{\gr b}$ is not unusual, but some author write $\mbox{KP-stp}({\gr a}/A)=\mbox{KP-stp}({\gr b}/A)$ or ${\gr a}\mathrel{E_{_{{\rm KP}/A}}}{\gr b}$.
 
 \begin{proposition}\label{prop_bardotto}
-  Fix some ${\gr a}\in\U^{|{\gr z}|}$ and some $A\subseteq\U$. Then there is a type $e({\gr z}\,;{\gr w})\subseteq L(A)$ such that $\K({\gr b}/A)=e(\U\,;{\gr b})$ for all ${\gr b}\in\orbit({\gr a}/A)$ and $e({\gr z}\,;{\gr w})$ defines an equivalence relation on $\orbit({\gr a}/A)$.
+  Fix some ${\gr a}\in\U^{\gr z}$ and some $A\subseteq\U$.
+Then there is a type $e({\gr z}\,;{\gr w})\subseteq L(A)$ such that $\K({\gr b}/A)=e(\U\,;{\gr b})$ for all ${\gr b}\in\orbit({\gr a}/A)$ and $e({\gr z}\,;{\gr w})$ defines an equivalence relation on $\orbit({\gr a}/A)$.
 \end{proposition}
 
 \begin{proof}
-  Notice that $\K({\gr a}/A)$ is type-definable over $A,{\gr a}$. In fact, if $f\in\Aut(\U/A,{\gr a})$ and $\grD$ is a set containing ${\gr a}$ that is type-definable and Lascar invariant over $A$, then so is $f[\grD]$.  Therefore $\K({\gr a}/A)$ is invariant over $A,{\gr a}$. As $\K({\gr a}/A)$ is type-definable, invariance implies that it is type-definable over $A,{\gr a}$. Let $e({\gr z}\,;{\gr w})\subseteq L(A)$ be such that $\K({\gr a}/A)=e(\U\,;{\gr a})$. 
+  Notice that $\K({\gr a}/A)$ is type-definable over $A,{\gr a}$.
+In fact, if $f\in\Aut(\U/A,{\gr a})$ and $\grD$ is a set containing ${\gr a}$ that is type-definable and Lascar invariant over $A$, then so is $f[\grD]$.
+Therefore $\K({\gr a}/A)$ is invariant over $A,{\gr a}$.
+As $\K({\gr a}/A)$ is type-definable, invariance implies that it is type-definable over $A,{\gr a}$.
+Let $e({\gr z}\,;{\gr w})\subseteq L(A)$ be such that $\K({\gr a}/A)=e(\U\,;{\gr a})$. 
   
-  We prove that $\K({\gr b}/A)=e(\U\,;{\gr b})$ for all ${\gr b}\in\orbit({\gr a}/A)$. Let $f\in\Aut(\U/A)$ be such that $f{\gr a}={\gr b}$. If $\grD$ is a type-definable Lascar invariant over $A$, then so is $f[\grD]$. Therefore, $f$ is a bijection between type-definable sets that are Lascar invariant over $A$ and contain ${\gr a}$ and analogous sets containing ${\gr b}$. Then $f[\K({\gr a}/A)]=\K({\gr b}/A)$ and $\K({\gr b}/A)=e(\U\,;{\gr b})$ follows.
+  We prove that $\K({\gr b}/A)=e(\U\,;{\gr b})$ for all ${\gr b}\in\orbit({\gr a}/A)$.
+Let $f\in\Aut(\U/A)$ be such that $f{\gr a}={\gr b}$.
+If $\grD$ is a type-definable Lascar invariant over $A$, then so is $f[\grD]$.
+Therefore, $f$ is a bijection between type-definable sets that are Lascar invariant over $A$ and contain ${\gr a}$ and analogous sets containing ${\gr b}$.
+Then $f[\K({\gr a}/A)]=\K({\gr b}/A)$ and $\K({\gr b}/A)=e(\U\,;{\gr b})$ follows.
   
-  We prove that $e({\gr b}\,;\U)\cap \orbit({\gr a}/A)$ is Lascar invariant over $A$. Let $f\in\Autf(\U/A)$ and ${\gr c}\in\orbit({\gr a}/A)$. Then $e({\gr b}\,;f{\gr c})$ is equivalent to  $e(f^{-1}{\gr b}\,;{\gr c})$ which in turn is equivalent to $e({\gr b}\,;{\gr c})$, by the invariance of $e(\U\,;{\gr c})$. 
+  We prove that $e({\gr b}\,;\U)\cap \orbit({\gr a}/A)$ is Lascar invariant over $A$.
+Let $f\in\Autf(\U/A)$ and ${\gr c}\in\orbit({\gr a}/A)$.
+Then $e({\gr b}\,;f{\gr c})$ is equivalent to  $e(f^{-1}{\gr b}\,;{\gr c})$ which in turn is equivalent to $e({\gr b}\,;{\gr c})$, by the invariance of $e(\U\,;{\gr c})$. 
   
-  Finally we are ready to prove that $e({\gr z}\,;{\gr w})$ defines a symmetric relation on $\orbit({\gr a}/A)$. From what proved above, $e({\gr b}\,;\U)\cap \orbit({\gr a}/A)$ is a type-definable Lascar invariant set containing ${\gr b}$ and therefore it contains $\K({\gr b}/A)$. We conclude that for all ${\gr b},{\gr c}\in\orbit({\gr a}/A)$
+  Finally we are ready to prove that $e({\gr z}\,;{\gr w})$ defines a symmetric relation on $\orbit({\gr a}/A)$.
+From what proved above, $e({\gr b}\,;\U)\cap \orbit({\gr a}/A)$ is a type-definable Lascar invariant set containing ${\gr b}$ and therefore it contains $\K({\gr b}/A)$.
+We conclude that for all ${\gr b},{\gr c}\in\orbit({\gr a}/A)$
   
   \ceq{\hfill e({\gr c}\,;{\gr b})}{\iff}{{\gr c}\in e(\U\,;{\gr b})}\medrel{\iff}${\gr c}\in\K({\gr b}/A)$\medrel{\imp}$e({\gr b}\,;{\gr c})$
   
-  Reflexivity is clear; we prove transitivity. As remarked above, $\K({\gr b}/A)\subseteq\K({\gr c}/A)$, for all ${\gr b}\in\K({\gr c}/A)$ or equivalently $e({\gr b}\,;{\gr c})$. Hence if $e({\gr b}\,;{\gr c})$ then
+  Reflexivity is clear; we prove transitivity.
+As remarked above, $\K({\gr b}/A)\subseteq\K({\gr c}/A)$, for all ${\gr b}\in\K({\gr c}/A)$ or equivalently $e({\gr b}\,;{\gr c})$.
+Hence if $e({\gr b}\,;{\gr c})$ then
   
   \ceq{\hfill e({\gr d}\,;{\gr b})}{\imp}{{\gr d}\in\K({\gr b}/A)}\medrel{\iff}${\gr d}\in\K({\gr c}/A)$\medrel{\imp}$e({\gr d}\,;{\gr c})$.
   
@@ -616,44 +730,54 @@ If $\K({\gr a}/A)=\K({\gr b}/A)$, we say that ${\gr a}$ and ${\gr b}$ have the s
 \end{proof}
 
 \begin{corollary}\label{corol_KP_simmetry}
-For every ${\gr a},{\gr b}\in\U^{|{\gr z}|}$ and $A\subseteq\U$ the following are equivalent
+For every ${\gr a},{\gr b}\in\U^{\gr z}$ and $A\subseteq\U$ the following are equivalent
 \begin{itemize}
-\item[1.] ${\gr a}\in\K({\gr b}/A)$;
-\item[2.] ${\gr b}\in\K({\gr a}/A)$;
-\item[3.] $\K({\gr a}/A)=\K({\gr b}/A)$.\QED
+\item[1.] ${\gr a}\in\K({\gr b}/A)$
+\item[2.] ${\gr b}\in\K({\gr a}/A)$
+\item[3.] $\K({\gr a}/A)=\K({\gr b}/A)$.
 \end{itemize}
 \end{corollary}
 
 The following useful lemma is the key ingredient in the proof of Theorem~\ref{thm_Krupinski}.
 
 \begin{lemma}\label{lem_beq_global}
-Let $p({\gr z})\subseteq L(A)$ and let $e({\gr z}\,;{\gr w})\subseteq L(A)$ define a bounded equivalence relation on $p(\U)$. Then there is a type $e'({\gr z}\,;{\gr w})\subseteq L(A)$ which defines a bounded equivalence relation (on $\U$) and refines $e({\gr z}\,;{\gr w})$ on  $p(\U)$.
+Let $p({\gr z})\subseteq L(A)$ and let $e({\gr z}\,;{\gr w})\subseteq L(A)$ define a bounded equivalence relation on $p(\U)$.
+Then there is a type $e'({\gr z}\,;{\gr w})\subseteq L(A)$ which defines a bounded equivalence relation (on $\U$) and refines $e({\gr z}\,;{\gr w})$ on  $p(\U)$.
 \end{lemma}
 \begin{proof} 
-Let $\grC=\<\grC_i:i<\lambda\>$ enumerate the partition of $p(\U)$ induced by $e({\gr z}\,;{\gr w})$. Note that each $\grC_i$ is type-definable over $A,{\gr a}$ for any ${\gr a}\in\grC_i$. If $x=\<{\gr x_i}:i<\lambda\>$, we write $x\in\grC$ for the type that is the conjunction of ${\gr x_i}\in\grC_i$ for $i<\lambda$. 
+Let $\grC=\<\grC_i:i<\lambda\>$ enumerate the partition of $p(\U)$ induced by $e({\gr z}\,;{\gr w})$.
+Note that each $\grC_i$ is type-definable over $A,{\gr a}$ for any ${\gr a}\in\grC_i$.
+If $x=\<{\gr x_i}:i<\lambda\>$, we write $x\in\grC$ for the type that is the conjunction of ${\gr x_i}\in\grC_i$ for $i<\lambda$. 
 
 We claim that the required type is 
 
-\ceq{\hfill e'({\gr a}\,;{\gr b})}{\deq}{\E x'\in\grC\ \E  x''\in\grC \quad {\gr a},x'\equiv_A{\gr b},x''}
+\ceq{\hfill e'({\gr a}\,;{\gr b})}{=}{\E x'\in\grC\ \E  x''\in\grC \quad {\gr a},x'\equiv_A{\gr b},x''}
 
-As the type above is invariant over $A$, we can assume that $e'({\gr a}\,;{\gr b})$ is type-definable over $A$. Moreover, it is clearly a reflexive and symmetric relation, so we only check it is transitive. Suppose ${\gr a},x'\equiv_A{\gr b},x''$ and  ${\gr b},y'\equiv_A{\gr c},y''$ for some $x',x'',y',y''\in \grC$. Let $z$ be such that ${\gr a},x',z\equiv_A{\gr b},x'',y'$ then   $z\in\grC$ and ${\gr a},z\equiv_A{\gr c},y''$.
+As the type above is invariant over $A$, we can assume that $e'({\gr a}\,;{\gr b})$ is type-definable over $A$.
+Moreover, it is clearly a reflexive and symmetric relation, so we only check it is transitive.
+Suppose ${\gr a},x'\equiv_A{\gr b},x''$ and  ${\gr b},y'\equiv_A{\gr c},y''$ for some $x',x'',y',y''\in \grC$.
+Let $z$ be such that ${\gr a},x',z\equiv_A{\gr b},x'',y'$ then   $z\in\grC$ and ${\gr a},z\equiv_A{\gr c},y''$.
 
-The relation $e'({\gr a}\,;{\gr b})$ clearly refines the equivalence defined by $e({\gr z}\,;{\gr w})$ when restricted to  to $p(\U)$. To prove that it is bounded fix some $c\in\grC$ and note that $e'({\gr a}\,;{\gr b})$  is refined by ${\gr a}\equiv_{A,c}{\gr b}$, which is bounded. 
+The relation $e'({\gr a}\,;{\gr b})$ clearly refines the equivalence defined by $e({\gr z}\,;{\gr w})$ when restricted to  to $p(\U)$.
+To prove that it is bounded fix some $c\in\grC$ and note that $e'({\gr a}\,;{\gr b})$  is refined by ${\gr a}\equiv_{A,c}{\gr b}$, which is bounded. 
 \end{proof}
 
 Finally, we have the following.
 
 \begin{theorem}\label{thm_Krupinski}
-Denote by $e_A(z\,;w)$ be the finest bounded equivalence relation on $\U^{|{\gr z}|}$ that is type-definable over $A$. Then for every ${\gr a}, {\gr b}\in\U^{|{\gr z}|}$ the following are equivalent
+Denote by $e_A(z\,;w)$ be the finest bounded equivalence relation on $\U^{\gr z}$ that is type-definable over $A$.
+Then for every ${\gr a}, {\gr b}\in\U^{\gr z}$ the following are equivalent
  \begin{itemize}
 \item[1.] ${\gr a}\equivKP{\gr b}$
-\item[2.] $e_A({\gr a}\,;{\gr b})$.\QED
+\item[2.] $e_A({\gr a}\,;{\gr b})$.
 \end{itemize} 
 \end{theorem}
 \begin{proof} 
-  As  ${\gr a}\equivKP{\gr b}$ is equivalent to ${\gr a}\in\K({\gr b}/A)$, it suffices to prove that $e_A(\U\,;{\gr b})=\K({\gr b}/A)$ for every ${\gr b}\in\U^{|{\gr z}|}$. 
+  As  ${\gr a}\equivKP{\gr b}$ is equivalent to ${\gr a}\in\K({\gr b}/A)$, it suffices to prove that $e_A(\U\,;{\gr b})=\K({\gr b}/A)$ for every ${\gr b}\in\U^{\gr z}$. 
  
-  $\subseteq$\quad The orbit of $e_A(\U\,;{\gr b})$ under $\Aut(\U/A)$ has cardinality $<\kappa$. Hence, by Theorem~\ref{thm_Lascar_indiscernibles}, it is  Lascar invariant over $A$. As $\K({\gr b}/A)$ is the least of such sets, $\K({\gr b}/A)\subseteq e_A(\U\,;{\gr b})$.
+  $\subseteq$\quad The orbit of $e_A(\U\,;{\gr b})$ under $\Aut(\U/A)$ has cardinality $<\kappa$.
+Hence, by Theorem~\ref{thm_Lascar_indiscernibles}, it is  Lascar invariant over $A$.
+As $\K({\gr b}/A)$ is the least of such sets, $\K({\gr b}/A)\subseteq e_A(\U\,;{\gr b})$.
   
   $\supseteq$\quad Let $e({\gr z}\,;{\gr w})$ be the type-definable equivalence relation given by Proposition~\ref{prop_bardotto}. 
   The orbit of $\K({\gr b}/A)$ under $\Aut(\U/A)$ has cardinality $<\kappa$. 
@@ -662,22 +786,28 @@ Denote by $e_A(z\,;w)$ be the finest bounded equivalence relation on $\U^{|{\gr 
   As $e'({\gr z}\,;{\gr w})$ is refined by $e_A({\gr z}\,;{\gr w})$, we obtain $e_A(\U\,;{\gr b})\subseteq e(\U\,;{\gr b})=\K({\gr b}/A)$.
 \end{proof}
 
-The \emph{logic $A$-topology}, or simply the  \emph{logic topology} when $A$ is empty, is the topology on $\U^{|{\gr z}|}$ whose closed sets are the type-definable Lascar $A$-invariant sets. It is clearly a compact topology. Its Kolmogorov quotient, that is $\U^{|{\gr z}|}/\equivKP$, is Hausdorff.
+The \emph{logic $A$-topology,} or simply the \emph{logic topology\/} when $A$ is empty, is the topology on $\U^{\gr z}$ whose closed sets are the type-definable Lascar $A$-invariant sets.
+It is clearly a compact topology.
+Its Kolmogorov quotient, that is $\U^{\gr z}/\equivKP$, is Hausdorff.
 
 \begin{exercise}
-Prove that the clopen sets in the logic $A\jj$topology are exactly the sets that are definable over $\acl^\eq A$.\QED
+Prove that the clopen sets in the logic $A$-topology are exactly the sets that are definable over $\acl^\eq A$.
 \end{exercise}
 
 \section{Notes and references}
 
-The original proof of Newelski theorem is rather long and complex. A simplified proof (due essetially to Newelski) appears in Rodrigo Pel\'aez's thesis~\cite{Pelaez}*{Section 3.3}. The proof here is a streamlined version of the latter taken from~\cite{Z16}.
+The original proof of Newelski theorem is rather long and complex.
+A simplified proof (due essetially to Newelski) appears in Rodrigo Pel\'aez's thesis~\cite{Pelaez}*{Section 3.3}.
+The proof here is a streamlined version of the latter taken from~\cite{Z16}.
 
 \begin{comment}
 
 
 \section{Ziegler's example}
 
-The language $L$ consists of a binary relation symbol $<$ and, for every positive integer $n$, a binary relation denoted by $|x-y|<n$. Consider the structure with domain $\QQ$ and the relation symbols interpreted in the natural way. Let $T$ be the theory of this structure.
+The language $L$ consists of a binary relation symbol $<$ and, for every positive integer $n$, a binary relation denoted by $|x-y|<n$.
+Consider the structure with domain $\QQ$ and the relation symbols interpreted in the natural way.
+Let $T$ be the theory of this structure.
 
 \begin{proposition}
 The theory $T$ has elimination of quantifiers.
@@ -712,14 +842,20 @@ Write $r(x,y)$ for $x=y\vee y<_xf(x)\vee x<_yf(y)$
 
 
 \section{Externally definable sets}
-The set $\grD\cap A^{|{\gr z}|}$ is called the \emph{trace\/} of $\grD$ over $A$. For every formula $\psi({\gr z})\in L(\U)$ we define \emph{$\psi(A)$\/} $=$ $\psi({\gr\U})\cap A^{|{\gr z}|}$, that is, the trace on $A$ of the definable set $\psi({\gr\U})=\big\{{\gr a}\in\U^{|{\gr z}|}:\psi({\gr a})\big\}$. 
+The set $\grD\cap A^{\gr z}$ is called the \emph{trace\/} of $\grD$ over $A$.
+For every formula $\psi({\gr z})\in L(\U)$ we define \emph{$\psi(A)$\/} $=$ $\psi({\gr\U})\cap A^{\gr z}$, that is, the trace on $A$ of the definable set $\psi({\gr\U})=\big\{{\gr a}\in\U^{\gr z}:\psi({\gr a})\big\}$. 
 
-A set $\grD$ is called \emph{externally definable\/} if there are a global type $p({\mr x})\in S(\U)$ and a formula $\phi({\mr x}\,;{\gr z})$ such that $\grD=\grD_{p,\phi}$. Equivalently, a set $\grD$ is externally definable if it is the trace on $\U^{|{\gr z}|}$ of a set which is definable in some elementary extension of $\U$. This explains the terminology.
+A set $\grD$ is called \emph{externally definable\/} if there are a global type $p({\mr x})\in S(\U)$ and a formula $\phi({\mr x}\,;{\gr z})$ such that $\grD=\grD_{p,\phi}$.
+Equivalently, a set $\grD$ is externally definable if it is the trace on $\U^{\gr z}$ of a set which is definable in some elementary extension of $\U$.
+This explains the terminology.
 
 We prefer to deal with external definability in a different, though equivalent, way. 
 
 \begin{definition}\label{def_epprox}
-We say that $\grD$ is \emph{approximable\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for all finite $B\subseteq\U^{|{\gr z}|}$ there is a ${\mr b}\in\U^{|{\mr x}|}$ such that $\phi({\mr b}\,;B)=\grD\cap B$. We may call the formula $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grD$. If in addition we have that $\phi({\mr b}\,;{\gr\U})\subseteq\grD$, we say that  $\grD$ is \emph{approximable from below}. If  $\grD\subseteq\phi({\mr b}\,;{\gr\U})$ we say that  $\grD$ is \emph{approximable from above}.\QED
+We say that $\grD$ is \emph{approximable\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for all finite $B\subseteq\U^{\gr z}$ there is a ${\mr b}\in\U^{|{\mr x}|}$ such that $\phi({\mr b}\,;B)=\grD\cap B$.
+We may call the formula $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grD$.
+If in addition we have that $\phi({\mr b}\,;{\gr\U})\subseteq\grD$, we say that  $\grD$ is \emph{approximable from below}.
+If  $\grD\subseteq\phi({\mr b}\,;{\gr\U})$ we say that  $\grD$ is \emph{approximable from above}.
 \end{definition} 
 
 The following proposition is clear by compactness.
@@ -728,37 +864,46 @@ The following proposition is clear by compactness.
 For every $\grD$ the following are equivalent:
 \begin{itemize}
 \item[1.] $\grD$ is approximable;
-\item[2.] $\grD$ is externally definable.\QED 
+\item[2.] $\grD$ is externally definable. 
 \end{itemize}
 \end{proposition}
 
 \begin{example}
-Let $T$ be the theory a dense linear orders without endpoints and let $\grD\subseteq\U$ be an interval. Then $\grD$ is approximable both from below and from above by the formula \mbox{$x_1<z<x_2$}.  Now let $T$ be the theory of the random graph. Then every $\grD\subseteq\U$ is approximable and, when $\grD$ has small cardinality, it is approximable from above but not from below.\QED
+Let $T$ be the theory a dense linear orders without endpoints and let $\grD\subseteq\U$ be an interval.
+Then $\grD$ is approximable both from below and from above by the formula \mbox{$x_1<z<x_2$}.
+Now let $T$ be the theory of the random graph.
+Then every $\grD\subseteq\U$ is approximable and, when $\grD$ has small cardinality, it is approximable from above but not from below.
 \end{example}
 
-In Definition~\ref{def_epprox}, the sort $\phi({\mr x}\,;{\gr z})$ is fixed (otherwise any set would be approximable). This requirement of uniformity may be dropped if the sets $B$ are allowed to be large enough.
+In Definition~\ref{def_epprox}, the sort $\phi({\mr x}\,;{\gr z})$ is fixed (otherwise any set would be approximable).
+This requirement of uniformity may be dropped if the sets $B$ are allowed to be large enough.
 
 \begin{proposition}\label{lem_approx_nonunif}
 For every $\grD$ the following are equivalent:
 \begin{itemize}
 \item[1.] $\grD$ is approximable;
-\item[2.] for every $B\subseteq\U^{|{\gr z}|}$ of cardinality $\le|L|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi(B)=\grD\cap B^{|{\gr z}|}$.
+\item[2.] for every $B\subseteq\U^{\gr z}$ of cardinality $\le|L|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi(B)=\grD\cap B^{\gr z}$.
 \end{itemize}
 Similarly, the following are equivalent:
 \begin{itemize}
 \item[3.] $\grD$ is approximable from below;
-\item[4.]  for every $B\subseteq\grD$ of cardinality $\le|L|$ there is $\psi({\gr z})\in L(\U)$ such that $B^{|{\gr z}|}\subseteq \psi({\gr\U})\subseteq\grD$.
+\item[4.]  for every $B\subseteq\grD$ of cardinality $\le|L|$ there is $\psi({\gr z})\in L(\U)$ such that $B^{\gr z}\subseteq \psi({\gr\U})\subseteq\grD$.
 \end{itemize}
 \end{proposition}
 
 \begin{proof}
-To prove \ssf{2}$\IMP$\ssf{1}, for a contradiction assume \ssf{2} and $\neg$\ssf{1}. For each formula $\psi({\mr x}\,;{\gr z})\in L$ choose a finite set $B$ such that $\psi({\mr b}\,;B)\neq\grD\cap B$ for every ${\mr b}\in\U^{|{\mr x}|}$. Let $C$ be the union of all these finite sets. Clearly $|C|\le|T|$.  By \ssf{2} there are a formula $\phi({\mr x}\,;{\gr z})$ and a tuple ${\mr c}$ such that $\phi({\mr c}\,;C)=\grD\cap C$, contradicting the definition of $C$.
+To prove \ssf{2}$\IMP$\ssf{1}, for a contradiction assume \ssf{2} and $\neg$\ssf{1}.
+For each formula $\psi({\mr x}\,;{\gr z})\in L$ choose a finite set $B$ such that $\psi({\mr b}\,;B)\neq\grD\cap B$ for every ${\mr b}\in\U^{|{\mr x}|}$.
+Let $C$ be the union of all these finite sets.
+Clearly $|C|\le|T|$.
+By \ssf{2} there are a formula $\phi({\mr x}\,;{\gr z})$ and a tuple ${\mr c}$ such that $\phi({\mr c}\,;C)=\grD\cap C$, contradicting the definition of $C$.
 
 The implication \ssf{1}$\IMP$\ssf{2} is obtained by compactness and the equivalence \ssf{3}$\IFF$\ssf{4} is proved similarly. 
 \end{proof}
 
 \begin{proposition}\label{prop_approx_el_eq}
-If $\grD$ is approximable of sort $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$. The same holds for approximability from below and from above.
+If $\grD$ is approximable of sort $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$.
+The same holds for approximability from below and from above.
 \end{proposition}
 
 \begin{proof}
@@ -766,7 +911,8 @@ If the set $\grD$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for every $n
 
 \hfil$\displaystyle\A {\gr z_1},\dots,{\gr z_n}\;\E x\ \bigwedge^n_{i=1}\big[\phi({\mr x}\,;{\gr z_i})\ \iff\ {\gr z_i}\in\grD\big]$. 
 
-So the same holds for any $\grC\equiv\grD$. As for approximability from below, add the conjunct $\A {\gr z}\,\big[\phi({\mr x}\,;{\gr z})\imp {\gr z}\in\grD\big]$ to the formula above, and similarly for approximability from above.
+So the same holds for any $\grC\equiv\grD$.
+As for approximability from below, add the conjunct $\A {\gr z}\,\big[\phi({\mr x}\,;{\gr z})\imp {\gr z}\in\grD\big]$ to the formula above, and similarly for approximability from above.
 \end{proof}
 
 
@@ -774,17 +920,24 @@ So the same holds for any $\grC\equiv\grD$. As for approximability from below, a
 
 
 
-Let $x$ be a possibly infinite tuple of variables and let $p(x)\subseteq L(\U)$. We can identify $p$ with the following family of sets
+Let $x$ be a possibly infinite tuple of variables and let $p(x)\subseteq L(\U)$.
+We can identify $p$ with the following family of sets
 
 \ceq{\hfill\grD_{p,\phi}}{=}{\big\{a\in\U^{|z|}\ :\ \phi(x,a)\in p\big\}}
 
 as $\phi(x;z)$ ranges over pure formulas (the tuple $x$ is fixed while $z$ varies with $\phi$).
 
-Given $A\subseteq\U$ and $\grD\subseteq\U^{|z|}$ we call $D=\grD\cap A^{|z|}$ the \emph{trace\/} of $\grD$ on $A$. For $\psi(z)\in L(\U)$ we write \emph{$\psi(A)$\/} for $\psi(\U)\cap A^{|z|}$, the trace of $\psi(\U)$ on $A$.
+Given $A\subseteq\U$ and $\grD\subseteq\U^{|z|}$ we call $D=\grD\cap A^{|z|}$ the \emph{trace\/} of $\grD$ on $A$.
+For $\psi(z)\in L(\U)$ we write \emph{$\psi(A)$\/} for $\psi(\U)\cap A^{|z|}$, the trace of $\psi(\U)$ on $A$.
 
-Let $p(x)\in S(\U)$ be a global type and let $\phi(x;z)$ be a pure formula. Sets of the form $\grD_{p,\phi}$ are called \emph{externally definable sets\/} as they may be seen as the trace on $\U$ of a set definable in an elementary extension of $\U$. We now give an equivalent description of externally definable sets.
+Let $p(x)\in S(\U)$ be a global type and let $\phi(x;z)$ be a pure formula.
+Sets of the form $\grD_{p,\phi}$ are called \emph{externally definable sets\/} as they may be seen as the trace on $\U$ of a set definable in an elementary extension of $\U$.
+We now give an equivalent description of externally definable sets.
 
-We say that $\grD\subseteq\U^{|z|}$ is an \emph{approximable set\/} if for some formula  $\phi(x;z)$, for every finite set $B\subseteq\U^{|z|}$ there exists a $b\in\U^{|x|}$ such that $\phi(b;B)=\grD\cap B$. We may say that $\phi(x;z)$ approximates $\grD$. We say that $\grD$ is approximable \emph{in\/} $A$ if we can further require that $b\in A^{|x|}$. Terminology in this paragraph is not standard.
+We say that $\grD\subseteq\U^{|z|}$ is an \emph{approximable set\/} if for some formula  $\phi(x;z)$, for every finite set $B\subseteq\U^{|z|}$ there exists a $b\in\U^{|x|}$ such that $\phi(b;B)=\grD\cap B$.
+We may say that $\phi(x;z)$ approximates $\grD$.
+We say that $\grD$ is approximable \emph{in\/} $A$ if we can further require that $b\in A^{|x|}$.
+Terminology in this paragraph is not standard.
 
 The following is immediate by compactness.
 
@@ -792,11 +945,12 @@ The following is immediate by compactness.
 For every $\grD\subseteq\U^{|z|}$ the following are equivalent:
 \begin{itemize}
 \item[1.] $\grD$ is approximable;
-\item[2.] $\grD$ is externally definable.\QED 
+\item[2.] $\grD$ is externally definable. 
 \end{itemize}
 \end{proposition}
 
-In the definition of approximable we fixed a sort $\phi(x;z)$ otherwise every set would be trivially approximable. We leave to the reader to check that, if we require $\grD$ to be approximable on sufficiently large sets, uniformity follows.
+In the definition of approximable we fixed a sort $\phi(x;z)$ otherwise every set would be trivially approximable.
+We leave to the reader to check that, if we require $\grD$ to be approximable on sufficiently large sets, uniformity follows.
 
 \begin{proposition}\label{lem_approx_nonunif}
 For every $\grD\subseteq\U^{|z|}$ the following are equivalent
@@ -806,7 +960,9 @@ For every $\grD\subseteq\U^{|z|}$ the following are equivalent
 \end{itemize}
 \end{proposition}
 
-We say that a type $p(x)\subseteq L(\U)$ is \emph{finitely satisfiable in\/} $A$ if $\psi(A)\neq\0$ for every $\psi(x)\in p$. Notice that by elementarity every type $p(x)\subseteq L(M)$ is finitely satisfiable in $M$, for any model $M$. The following is clear:
+We say that a type $p(x)\subseteq L(\U)$ is \emph{finitely satisfiable in\/} $A$ if $\psi(A)\neq\0$ for every $\psi(x)\in p$.
+Notice that by elementarity every type $p(x)\subseteq L(M)$ is finitely satisfiable in $M$, for any model $M$.
+The following is clear:
 
 \begin{proposition}\label{lem_approx_from=external_fin_sat}
 For every $\grD\subseteq\U^{|z|}$ the following are equivalent:
@@ -821,7 +977,9 @@ Let  $\grD\subseteq\U^{|z|}$ be approximable in $A$, than it is invariant over $
 \end{proposition}
 
 \begin{proof}
-Suppose $\grD$ is not invariant, say $a\in\grD$ and $fa\notin\grD$ for some $f\in\Aut(\U/A)$. Let $\phi(x;z)$ be the formula that approximates $\grD$ in $A$. Then there is a $b\in A^{|x|}$ such that  $\phi(b;a)\wedge\neg\phi(b;f\!a)$ a contradiction.
+Suppose $\grD$ is not invariant, say $a\in\grD$ and $fa\notin\grD$ for some $f\in\Aut(\U/A)$.
+Let $\phi(x;z)$ be the formula that approximates $\grD$ in $A$.
+Then there is a $b\in A^{|x|}$ such that  $\phi(b;a)\wedge\neg\phi(b;f\!a)$ a contradiction.
 \end{proof}
 
 Of course, a similar fact holds for global types.
@@ -834,27 +992,34 @@ Of course, a similar fact holds for global types.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Il prodotto di tipi}\label{tipi_prodotto}
 
-La seguente proposizione mostra che possiamo ragionevolmente parlare di tipo delle di Morley di $p$. Questo paragrafo \`e dedicato alla descrizione sintattica di questo tipo.
+La seguente proposizione mostra che possiamo ragionevolmente parlare di tipo delle di Morley di $p$.
+Questo paragrafo \`e dedicato alla descrizione sintattica di questo tipo.
 
 \begin{proposition}\label{prop_tiposequenzaMorley}
-Sia $p\in S_x(\U)$ un tipo globale $A\jj$invariante e supponiamo che $a$ e $b$ siano due sequenze di Morley di $p$ su $A$. Allora $a\equiv_A c$. 
+Sia $p\in S_x(\U)$ un tipo globale $A$-invariante e supponiamo che $a$ e $b$ siano due sequenze di Morley di $p$ su $A$.
+Allora $a\equiv_A c$. 
 \end{proposition}
 \begin{proof}
 %Possiamo assumere che $a=\<a_i:i<\omega\>$ e $\bar c=\<c_i:i<\omega\>$ abbiano lunghezza $\omega$. 
-Per indiscernibilit\`a, \`e sufficiente mostrare che $a_{\restriction i}\equiv_Ac_{\restriction i}$ per ogni $i<\omega$. Ragioniamo per induzione, assumiamo l'equivalenza come ipotesi induttiva, fissiamo una formula $\phi(\bar x_{\restriction i},{\gr x})\in L(A)$ e dimostriamo che 
+Per indiscernibilit\`a, \`e sufficiente mostrare che $a_{\restriction i}\equiv_Ac_{\restriction i}$ per ogni $i<\omega$.
+Ragioniamo per induzione, assumiamo l'equivalenza come ipotesi induttiva, fissiamo una formula $\phi(\bar x_{\restriction i},{\gr x})\in L(A)$ e dimostriamo che 
 
 \ceq{\hfill \phi(a_{\restriction i},{\gr a_i})}{\iff}{\phi(c_{\restriction i},{\gr c_i})} 
 
-Se $\phi(a_{\restriction i},{\gr a_i})$ allora $\phi(a_{\restriction i},{\gr x})\in p$. Per l'ipotesi induttiva e per l'invarianza di $p$ otteniamo che anche  $\phi(c_{\restriction i},{\gr x})\in p$ e di qui $\phi(c_{\restriction i},{\gr c_i})$. L'equivalenza segue per simmetria.
+Se $\phi(a_{\restriction i},{\gr a_i})$ allora $\phi(a_{\restriction i},{\gr x})\in p$.
+Per l'ipotesi induttiva e per l'invarianza di $p$ otteniamo che anche  $\phi(c_{\restriction i},{\gr x})\in p$ e di qui $\phi(c_{\restriction i},{\gr c_i})$.
+L'equivalenza segue per simmetria.
 \end{proof}
 
 Per poter semplificare la definizione~\ref{def_prodotto_tipi} abbiamo bisogno del seguente lemma tecnico:
 
 \begin{lemma}\label{lemma_prodotto}
-Dati $p(x), q(y)\in S(\U)$, e due insiemi $A_i$, per $i=0,1$ su cui $q(y)$ \`e invariante, fissiamo $\phi(x,y)\in L(A_0\cap A_1)$ e delle tuple $a_i,b_i$ tali che $a_i\models p_{\restriction A_i}$ e $b_i\models q_{\restriction A_i,a_i}$. Allora $\phi(a_0,b_0)\iff\phi(a_1,b_1)$.
+Dati $p(x), q(y)\in S(\U)$, e due insiemi $A_i$, per $i=0,1$ su cui $q(y)$ \`e invariante, fissiamo $\phi(x,y)\in L(A_0\cap A_1)$ e delle tuple $a_i,b_i$ tali che $a_i\models p_{\restriction A_i}$ e $b_i\models q_{\restriction A_i,a_i}$.
+Allora $\phi(a_0,b_0)\iff\phi(a_1,b_1)$.
 \end{lemma}
 \begin{proof}
-Supponiamo per cominciare che $A_0=A_1$ e denotiamo questo insieme con $A$. Assumiamo $\phi(a_0,b_0)$ e quindi, per la completezza di $q$, che $\phi(a_0,y)\in q$. Per la completezza di $p$  abbiamo che $a_0\equiv_Aa_1$. Quindi, per l'invarianza di $q$ otteniamo $\phi(a_1,y)\in q$ e da questo segue $\phi(a_1,b_1)$.
+Supponiamo per cominciare che $A_0=A_1$ e denotiamo questo insieme con $A$.
+Assumiamo $\phi(a_0,b_0)$ e quindi, per la completezza di $q$, che $\phi(a_0,y)\in q$. Per la completezza di $p$  abbiamo che $a_0\equiv_Aa_1$. Quindi, per l'invarianza di $q$ otteniamo $\phi(a_1,y)\in q$ e da questo segue $\phi(a_1,b_1)$.
 
 Per concludere, consideriamo il caso $A_0\neq A_1$. Sia $A=A_0\cup A_1$ e fissiamo $a_2\models  p_{\restriction A}$ e $b_2\models q_{\restriction A,a_2}(y)$. Per quanto sopra dimostrato otteniamo $\phi(a_0,b_0)\iff\phi(a_2,b_2)$ ed anche $\phi(a_2,b_2)\iff\phi(a_1,b_1)$.
 \end{proof}
@@ -868,7 +1033,7 @@ Dati $p(x),q(y)\in S(\U)$ dove $q(y)$ \`e un tipo invariante, definiamo il prodo
 
 \ceq{\hfill\mbox{\emph{$p(x)\otimes q(y)$}}}{=}{\Big\{\phi(x,y)\ :\ \textrm{esistono } a,b\ \models\ \phi(x,y)\ \wedge\ p_{\restriction A}(x)\ \wedge\ q_{\restriction A,a}(y)\Big\}}
 
-L'insieme $A$ nella definizione \`e uno qualsiasi che contiene i parametri di $\phi(x,y)$ e su cui $q(y)$ \`e invariante. Il lemma~\ref{lemma_prodotto} assicura che la definizione non dipende dal particolare insieme scelto.\QED
+L'insieme $A$ nella definizione \`e uno qualsiasi che contiene i parametri di $\phi(x,y)$ e su cui $q(y)$ \`e invariante. Il lemma~\ref{lemma_prodotto} assicura che la definizione non dipende dal particolare insieme scelto.
 \end{definition}
 
 Il lemma~\ref{lemma_prodotto} ha anche la seguente importante conseguenza:
@@ -883,7 +1048,7 @@ Sia $\phi(x,y)\in L(\U)$. Fissiamo un insieme $A$ contenente i parametri di $\ph
 
 
 \begin{corollary}
-Se $p(x),q(y)\in S(\U)$ sono tipi globali $A\jj$invarianti, allora anche $p(x)\otimes q(y)$ \`e $A\jj$invariante.
+Se $p(x),q(y)\in S(\U)$ sono tipi globali $A$-invarianti, allora anche $p(x)\otimes q(y)$ \`e $A$-invariante.
 \end{corollary}
 
 \begin{proof}
@@ -910,7 +1075,7 @@ Dato $p(x)\in S(\U)$ un tipo globale invariante. Sia $\<x_i:i<\omega\>$ una sequ
 La seguente proposizione giustifica la definizione di $p^{(\omega)}$, la dimostrazione \`e immediata.
 
 \begin{proposition}\label{prop_p^omega_Morley}
-Sia $p(x)\in S(\U)$ un tipo globale $A\jj$invariante. Allora le seguenti affermazioni sono equivalenti
+Sia $p(x)\in S(\U)$ un tipo globale $A$-invariante. Allora le seguenti affermazioni sono equivalenti
 \begin{itemize}
 \item[1.]$\<c_i:i<\omega\>$ \`e una sequenze di Morley di $p$ su $A$;
 \item[2.] $\<c_i:i<\omega\>\models p^{(\omega)}|_A$
@@ -931,4 +1096,3 @@ Sia $p(x)\in S(\U)$ un tipo globale invariante ed $A$ un insieme arbitrario. All
 
 %\ceq{\hfill p(x)\otimes q(y)}{=}{\Bigg\{\phi(x,y)\ :\ \parbox{50ex}{$\phi(x,y)\in L(A)\textrm{ per un } A \textrm{ contenente su cui }q(y)\textrm{ \`e invariante e }\\\phi(b,c) \textrm{ per qualche } a\models p_{\restriction A}(x)\textrm{ e }\ b\models q_{\restriction A,a}(y)$}\Bigg\}}
 \end{comment}
-\end{document}

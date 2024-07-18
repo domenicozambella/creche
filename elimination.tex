@@ -45,10 +45,10 @@ Recall that \emph{$\Delta$-morphism\/} is a map $k:M\imp N$ that preserves the t
 Below we use the following proposition without further reference.
 \def\.{\kern0.2ex}
 \begin{proposition}\label{prop_pokj}
-Fix $M\models T$ and ${\mr b}\in M^{|{\mr x}|}$. Let $q({\mr x})=\Deltatp_M({\mr b})$. Then for every $\phi({\mr x})\in L$ the following are equivalent
+Fix $M\models T$ and ${\mr b}\in M^{\mr x}$. Let $q({\mr x})=\Deltatp_M({\mr b})$. Then for every $\phi({\mr x})\in L$ the following are equivalent
 \begin{itemize}
-\item[1.] $N\models\phi(k\.{\mr b})$ for every $\Delta$-morphism $k:M\imp N\models T$ that is defined in ${\mr b}$;
-\item[1$'$.] $N\models\phi({\mr c})$ for every $N\models T$ such that $N,{\mr c}\Rrightarrow_\Delta  M,{\mr b}$.
+\item[1.] $N\models\phi(k\.{\mr b})$ for every $\Delta$-morphism $k:M\imp N\models T$ that is defined in ${\mr b}$
+\item[1$'$.] $N\models\phi({\mr c})$ for every $N\models T$ such that $N,{\mr c}\Rrightarrow_\Delta  M,{\mr b}$
 \item[2.] $T\ \proves\  q({\mr x})\imp\phi({\mr x})$.
 \end{itemize}
 \end{proposition}
@@ -56,7 +56,7 @@ Fix $M\models T$ and ${\mr b}\in M^{|{\mr x}|}$. Let $q({\mr x})=\Deltatp_M({\mr
 
 \ssf{2}$\IMP$\ssf{1}\quad Immediate.  
 
-\ssf{1}$\IMP$\ssf{2}\quad Negate \ssf{2}, then there are $N\models T$ and ${\mr c}\in N^{|{\mr x}|}$ such that $N\models q({\mr c})\wedge\neg\phi({\mr c})$. Therefore the map $k:M\to N$, where $k=\{\<{\mr b},{\mr c}\>\}$, contradicts \ssf{1}.
+\ssf{1}$\IMP$\ssf{2}\quad Negate \ssf{2}, then there are $N\models T$ and ${\mr c}\in N^{\mr x}$ such that $N\models q({\mr c})\wedge\neg\phi({\mr c})$. Therefore the map $k:M\to N$, where $k=\{\<{\mr b},{\mr c}\>\}$, contradicts \ssf{1}.
 \end{proof}
 
 The following is sometimes referred to as the Lyndon-Robinson Lemma.
@@ -64,7 +64,7 @@ The following is sometimes referred to as the Lyndon-Robinson Lemma.
 \begin{lemma}\label{lem_qfdefinability}
 For every $\phi({\mr x})\in L$ the following are equivalent
 \begin{itemize}
-\item[1.] $\phi({\mr x})$ is equivalent over $T$ to a formula in $\{\mathord\wedge\mathord\vee\}\Delta$;
+\item[1.] $\phi({\mr x})$ is equivalent over $T$ to a formula in $\{\mathord\wedge\mathord\vee\}\Delta$
 \item[2.] $\phi({\mr x})$ is preserved by $\Delta$-morphisms between models of $T$.
 %\item[2'.] $M\models\phi(a)\IMP N\models\phi(b)$ for every $M,a\Rrightarrow_\Delta N,b$ con $M$ ed $N$ modelli di $T$.
 \end{itemize}
@@ -76,7 +76,7 @@ For every $\phi({\mr x})\in L$ the following are equivalent
 \ceq{\#\hfill T}{\proves}{\phi({\mr x})\ \ \iff\ \ \bigvee\big\{\,p({\mr x})\subseteq\Delta\ :\ T\proves p({\mr x})\imp\phi({\mr x})\,\big\}.}
 
 The implication $\pmi$ is clear.
-To verify the implication $\imp$, let $M\models T$ and let ${\mr b}\in M^{|{\mr x}|}$ be such that $M\models\phi({\mr b})$.
+To verify the implication $\imp$, let $M\models T$ and let ${\mr b}\in M^{\mr x}$ be such that $M\models\phi({\mr b})$.
 From \ssf{2} it follows that $\phi({\mr x})$ satisfies \ssf{1} of Proposition~\ref{prop_pokj}.
 Therefore $T\proves q({\mr x})\imp\phi({\mr x})$ for $q({\mr x})=\Deltatp({\mr b})$.
 Hence $q({\mr x})$ is one of the types that occur in the disjuction in $\#$ which therefore is satisfied by ${\mr b}$.
@@ -93,7 +93,7 @@ The following exercise is immediate but it is arguably the most important result
 \begin{exercise}\label{ex_prove_thm_EQ}
 Prove Theorem~\ref{thm_tutteleimmersionisonoelementari_QE}, that is, that for every theory $T$ the following are equivalent
 \begin{itemize}
-\item[1.] $T$ has elimination of quantifiers;
+\item[1.] $T$ has elimination of quantifiers
 \item[2.] every partial isomorphism between models of $T$ is an elementary map.\QED
 \end{itemize}
 \end{exercise}
@@ -115,8 +115,8 @@ In the rest of these section we ...
 \begin{proposition}\label{prop_EDelta_estensione}
 Let $N$ be $\lambda$-saturated and let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
 \begin{itemize}
-\item[1.] $k:M\imp N$ is a $\{\E\wedge\}\Delta$-morphism;
-\item[2.] for every ${\mr b}\in M$ some $\{\E\wedge\}\Delta$-morphism $h:M\imp N$ defined in ${\mr b}$ extends $k$;
+\item[1.] $k:M\imp N$ is a $\{\E\wedge\}\Delta$-morphism
+\item[2.] for every ${\mr b}\in M$ some $\{\E\wedge\}\Delta$-morphism $h:M\imp N$ defined in ${\mr b}$ extends $k$
 \item[3.] for every ${\mr\bar b}\in M^{\omega}$ some $\Delta$-morphism $h:M\imp N$ defined in ${\mr\bar b}$ extends $k$.
 \end{itemize}
 \end{proposition}
@@ -134,8 +134,8 @@ Iterating the lemma above we obtain the following.
 \begin{corollary}\label{corol_EDelta_estensione}
 Let $N$ be $\lambda$-saturated and let $|M|\le\lambda$. Let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
 \begin{itemize}
-\item[1.] $k:M\imp N$ is a $\{\E\wedge\}\Delta$-morphism;
-\item[2.] $k:M\imp N$ extends to an $\{\E\wedge\}\Delta$-embedding;
+\item[1.] $k:M\imp N$ is a $\{\E\wedge\}\Delta$-morphism
+\item[2.] $k:M\imp N$ extends to an $\{\E\wedge\}\Delta$-embedding
 \item[3.] $k:M\imp N$ extends to an $\Delta$-embedding.\QED
 \end{itemize}
 \end{corollary}
@@ -161,8 +161,8 @@ A dual version of the results above is obtained replacing embeddings by epimorph
 \begin{proposition}\label{prop_ADelta_estensione}
 Let $M$ be $\lambda$-saturated and let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
 \begin{itemize}
-\item[1.] $k:M\imp N$ is a $\{\A\vee\}\Delta$-morphism;
-\item[2.] for every $c\in N$ some $\{\A\vee\}\Delta$-morphism $h:M\imp N$ extends $k$ and $c\in\range h$;
+\item[1.] $k:M\imp N$ is a $\{\A\vee\}\Delta$-morphism
+\item[2.] for every $c\in N$ some $\{\A\vee\}\Delta$-morphism $h:M\imp N$ extends $k$ and $c\in\range h$
 \item[3.] for every $c\in N^{\omega}$ some $\Delta$-morphism $h:M\imp N$ extends $k$ and $c\in(\range h)^{\omega}$.
 \end{itemize}
 \end{proposition}
@@ -175,8 +175,8 @@ We write \emph{$\neg\Delta$} for the set containing the negation of the formulas
 \begin{corollary}\label{corol_ADelta_estensione}
 Let $M$ be $\lambda$-saturated and let $|N|\le\lambda$. Let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
 \begin{itemize}
-\item[1.] $k:M\imp N$ is a $\{\A\vee\}\Delta$-morphism;
-\item[2.] $k:M\imp N$ extends to an $\{\A\vee\}\Delta$-epimorphism;
+\item[1.] $k:M\imp N$ is a $\{\A\vee\}\Delta$-morphism
+\item[2.] $k:M\imp N$ extends to an $\{\A\vee\}\Delta$-epimorphism
 \item[3.] $k:M\imp N$ extends to an $\Delta$-epimorphism.\QED
 \end{itemize}
 \end{corollary}
@@ -186,7 +186,7 @@ Finally we obtain the following.
 \begin{theorem}
 The following are equivalent
 \begin{itemize}
-\item[1.] $\phi(x)$ is equivalent to a formula in $\{\A{\wedge}{\vee}\}\Delta$;
+\item[1.] $\phi(x)$ is equivalent to a formula in $\{\A{\wedge}{\vee}\}\Delta$
 \item[2.] every $\Delta$-epimorphism between models of $T$ preserves $\phi(x)$.\QED
 \end{itemize}
 \end{theorem}
@@ -211,7 +211,7 @@ Quantifier elimination is often used to prove that a theory is complete because 
 \begin{remark}
 If $T$ has elimination of quantifiers then the following are equivalent 
 \begin{itemize}
-\item[1.] $T$ decides all quantifier free sentences;
+\item[1.] $T$ decides all quantifier free sentences
 \item[2.] $T$ is complete.
 \end{itemize}
 Hence a theory with quantifier elimination is complete if it decides the characteristic, see Definition~\ref{rmk_characteristic}).\QED
@@ -224,8 +224,8 @@ The following is a consequence of Lemma~\ref{lem_qfdefinability}.
 \begin{corollary}\label{corol_QE}
 The following are equivalent
 \begin{itemize}
-\item[1.] $T$ has positive $\Delta$-elimination of quantifiers;
-\item[2.] every $\Delta$-morphism between models of $T$ is both a $\{\E\wedge\}\Delta$ and a $\{\A\vee\}\Delta$-morphism.
+\item[1.] $T$ has positive $\Delta$-elimination of quantifiers
+\item[2.] every $\Delta$-morphism between models of $T$ is an $\{\E\wedge\}\Delta$ and a $\{\A\vee\}\Delta$-morphism.
 \end{itemize}
 \end{corollary}
 \begin{proof}
@@ -239,7 +239,7 @@ Condition \ssf{2} of the corollary above may be difficult to verify directly. Th
 \begin{corollary}\label{corol_QE_back_and_forth}
 Let $|L|\le\lambda$. The following are equivalent
 \begin{itemize}
-\item[1.] $T$ has positive $\Delta$-elimination of quantifiers;
+\item[1.] $T$ has positive $\Delta$-elimination of quantifiers
 \item[2.] for every finite $\Delta$-morphism $k:M\imp N$ between $\lambda$-saturated models of $T$
 \begin{itemize}                                                                                               \item[a.] for every $b\in M$ some $\Delta$-morphism $h:M\imp N$ extends $k$ and $b\in\dom h$;                                                                                \item[b.] for every $c\in N$ some $\Delta$-morphism $h:M\imp N$ extends $k$ and $c\in\range h$.\noindent\nolinebreak[4]\hfill\rlap{\ \ $\Box$}                                                                   \end{itemize}
 \end{itemize}
@@ -256,9 +256,9 @@ Consider $\RR$ as a structure in the language of real vector spaces expanded wit
 \end{exercise}
 
 \begin{exercise}\label{ex_discrete_lo}
-Let $T$ be the theory of \emph{discrete linear orders}, that is, $T$ extends the theory of linear orders $T_{\rm lo}$  (see Section~\hyperref[dlo]{\ref*{relational}.\ref*{dlo}}) with the following two of axioms
+Let $T$ be the theory of \emph{discrete linear orders}, that is, $T$ extends the theory of linear orders $T_{\rm lo}$  (see Section~\ref{dlo}) with the following two of axioms
 \begin{itemize}
-\item[dis$\uparrow$.] $\E z\ \big[x<z\ \wedge\ \neg\E y\ x<y<z\big]$;
+\item[dis$\uparrow$.] $\E z\ \big[x<z\ \wedge\ \neg\E y\ x<y<z\big]$
 \item[dis$\downarrow$.] $\E z\ \big[ z<x\ \wedge\ \neg\E y\ z<y<x\big]$.
 \end{itemize}
 Let $\Delta$ be the set of formulas that contains (all alphabetic variants of) the formulas $x<_ny:=\E^{\ge n}z\ (x\mathord<z\mathord< y)$ and their negations, for all positive integers $n$. Prove that the theory of discrete linear orders has $\Delta$-elimination of quantifiers. Prove that the structure $\QQ\times\ZZ$ ordered with the lexicographic order 
@@ -298,7 +298,7 @@ Model-completeness is equivalent to a property akin to quantifier elimination.
 \begin{proposition}
 The following are equivalent
 \begin{itemize}
-\item[1.] $T$ is $\Delta$-model-complete;
+\item[1.] $T$ is $\Delta$-model-complete
 \item[2.] $T$ has $\{\E\wedge\}\Delta$-elimination of quantifiers.
 \end{itemize}
 \end{proposition}
@@ -317,7 +317,7 @@ The difference between quantifier elimination and model-completeness subtle. It 
 \begin{proposition}
 Assume $T$ is model-complete. Let $\M$ be the category that consists of models of $T$ and partial isomorphisms. Then the following are equivalent
 \begin{itemize}
-\item[1.] $\M$ has the amalgamation property;
+\item[1.] $\M$ has the amalgamation property
 \item[2.] $T$ has elimination of quantifiers.
 \end{itemize}
 \end{proposition}

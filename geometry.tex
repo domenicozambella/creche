@@ -5,7 +5,7 @@
 \def\ceq#1#2#3{\parbox{35ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa$ larger than $|L|$.
-The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
+The notation and implicit assumptions are as in Section~\ref{monster}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -13,9 +13,9 @@ The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Algebraic and definable elements}\label{acl}
 
-Let ${\mr a}\in\U$ and let $\Aa\subseteq\U$ be some set of parameters (of arbitrary cardinality).
-We say that ${\mr a}$ is \emph{algebraic over $\Aa$\/} if $\phi({\mr a})\wedge\E^{=k}{\mr x}\;\phi({\mr x})$ holds for a formula $\phi({\mr x})\in L(\Aa)$ and  some positive integer $k$.
-In particular, when $k=1$ we say that ${\mr a}$ is \emph{definable over $\Aa$}.
+Let $a\in\U$ and let $\Aa\subseteq\U$ be some set of parameters (of arbitrary cardinality).
+We say that $a$ is \emph{algebraic over $\Aa$\/} if $\phi(a)\wedge\E^{=k}x\;\phi(x)$ holds for a formula $\phi(x)\in L(\Aa)$ and  some positive integer $k$.
+In particular, when $k=1$ we say that $a$ is \emph{definable over $\Aa$}.
 We write \emph{acl$(\Aa)$} for the \emph{algebraic closure of $\Aa$}, that is, the set of all the elements that are algebraic over $\Aa$.
 If $\Aa=\acl(\Aa)$, we say that $\Aa$ is \emph{algebraically closed}.
 The \emph{definable closure of $\Aa$\/} is defined similarly and is denoted by \emph{dcl$(\Aa)$}.
@@ -24,50 +24,42 @@ Let $x$ be a finite tuple of variables.
 Formulas $\phi(x)\in L(A)$, or types $p(x)\subseteq L(A)$, with finitely many solutions are called \emph{algebraic}.
 
 \begin{proposition}\label{prop_tipialgebrici}
-For every $A\subseteq\U$ and every type $p(x)\subseteq L(A)$, where $|x|<\omega$, the following are equivalent
+For every $A\subseteq\U$ and every type $p(x)\subseteq L(A)$, where $x$ is finite, the following are equivalent
 \begin{itemize} 
-\item[1] $\E^{\le n}x\; p(x)$;
-\item[2] $\E^{\le n}x\;\phi(x)$ for some $\phi(x)$ which is a conjunction of formulas in $p(x)$.
+\item[1.] $\E^{\le n}x\; p(x)$
+\item[2.] $\E^{\le n}x\;\phi(x)$ for some $\phi(x)$ which is a conjunction of formulas in $p(x)$.
 \end{itemize}
 \end{proposition}
-\begin{proof} The non trivial implication is \ssf{1}$\IMP$\ssf{2}.
-Let $\{a_1,\dots,a_n\}$ be all the solutions of $p(x)$.
+\begin{proof} Only \ssf{1}$\IMP$\ssf{2} requires a proof.
+Let $\{a_1,\dots,a_n\}=p(\U)$.
 Then 
 
-\ceq{\hfill p(x)}{\iff}{\bigvee^n_{i=1}a_i=x}
+\ceq{\hfill p(x)}{\imp}{\bigvee^n_{i=1}a_i=x}
 
-Then \ssf{2} follows by compactness (cfr.\@ Remark~\hyperref[rem_normality]{\ref*{rem_normality}.\ssf{b}}).
+and \ssf{2} follows by compactness.
 \end{proof}
 
-\begin{exercise}
-For every $a\in\U^{|x|}$ and $A\subseteq\U$, the following are equivalent
-\begin{itemize}
-\item[1.] $a$ is solution of some algebraic formula  $\phi(x)\in L(A)$;
-\item[2.] $a=a_1,\dots,a_n$ for some $a_1,\dots,a_n\in\acl(A)$.\QED
-\end{itemize}
-\end{exercise}
-
 \begin{theorem}\label{thm_dgalois}
-For every $A\subseteq\U$ and every ${\mr a}\in\U$ the following are equivalent
+For every $A\subseteq\U$ and every $a\in\U$ the following are equivalent
 \begin{itemize}
-\item[1] ${\mr a}\in\dcl(A)$;
-\item[2] $\orbit({\mr a}/A)=\big\{{\mr a}\big\}$.
+\item[1.] $a\in\dcl(A)$
+\item[2.] $\orbit(a/A)=\big\{a\big\}$.
 \end{itemize}
 \end{theorem}
 
 \begin{proof} 
-Implication \ssf{1}$\IMP$\ssf{2} is obvious.
-As for  \ssf{2}$\IMP$\ssf{1}, recall that $\orbit({\mr a}/A)$ is the set of realizations of $\tp({\mr a}/A)$, 
-then the theorem follows from Proposition~\ref{prop_tipialgebrici}.
+Only \ssf{2}$\IMP$\ssf{1} requires a proof.
+Recall that $\orbit(a/A)$ coincides with the set of realizations of $\tp(a/A)$. 
+Then the theorem follows from Proposition~\ref{prop_tipialgebrici}.
 \end{proof}
 
 %%%%%%%%
 \begin{theorem}\label{thm_fmgalois}
-For every $A\subseteq\U$ and every ${\mr a}\in\U$ the following are equivalent
+For every $A\subseteq\U$ and every $a\in\U$ the following are equivalent
 \begin{itemize}
-\item[1] ${\mr a}\in\acl(A)$;
-\item[2] $\orbit({\mr a}/A)$ is finite;
-\item[3] ${\mr a}$ belongs to every model containing $A$.
+\item[1.] $a\in\acl(A)$
+\item[2.] $\orbit(a/A)$ is finite
+\item[3.] $a$ belongs to every model containing $A$.
 \end{itemize}
 \end{theorem}
 
@@ -76,25 +68,25 @@ This is proved as in Theorem~\ref{thm_dgalois}.
 
 \ssf{1}$\IMP$\ssf{3}.
 Assume \ssf{1}.
-Then there is a formula $\phi({\mr x})\subseteq L(A)$ such that $\phi({\mr a})\wedge\E^{=k}{\mr x}\;\phi({\mr x})$ for some $k$.
-By elementarity $\E^{=k}{\mr x}\;\phi({\mr x})$ holds in every model $M$ containing $A$.
-Again by elementarity, the $k$ solutions of $\phi({\mr x})$ in $M$ are solutions in $\U$, therefore ${\mr a}$ is one of these.
+Then there is a formula $\phi(x)\subseteq L(A)$ such that $\phi(a)\wedge\E^{=k}x\;\phi(x)$ for some $k$.
+By elementarity $\E^{=k}x\;\phi(x)$ holds in every model $M$ containing $A$.
+Again by elementarity, the $k$ solutions of $\phi(x)$ in $M$ are solutions in $\U$, therefore $a$ is one of these.
 
 \ssf{3}$\IMP$\ssf{2}.
-Assume $\orbit({\mr a}/A)$ is infinite and fix any model $M$ containing $A$.
-By Exercise~\ref{cadinalitafinitasaturazione}, $\orbit({\mr a}/A)$  has cardinality $\kappa$, hence $\orbit({\mr a}/A)\nsubseteq M$.
-Pick any $f\in\Aut(\U/A)$ such that $f{\mr a}\notin M$.
-Then ${\mr a}\notin f^{-1}[M]$, so $f^{-1}[M]$ is a model that contradicts \ssf{3}.
+Assume $\orbit(a/A)$ is infinite and fix any model $M$ containing $A$.
+By Exercise~\ref{cadinalitafinitasaturazione}, $\orbit(a/A)$  has cardinality $\kappa$, hence $\orbit(a/A)\nsubseteq M$.
+Pick any $f\in\Aut(\U/A)$ such that $fa\notin M$.
+Then $a\notin f^{-1}[M]$, so $f^{-1}[M]$ is a model that contradicts \ssf{3}.
 \end{proof}
 
 \begin{corollary}\label{fmacl123} 
-For every $A\subseteq\U$ and every ${\mr a}\in\U$
+For every $A\subseteq\U$ and every $a\in\U$
 \begin{itemize}
-\item[1]  if ${\mr a}\in\acl A$ then ${\mr a}\in\acl B$ for some finite $B\subseteq A$;\hfill\emph{finite character}
-\item[2]  $A\subseteq \acl A$;\hfill\emph{extensivity}
-\item[3]  if $A\subseteq B$ then $\acl A\subseteq \acl B$;\hfill\emph{monotonicity}
-\item[4]  $\acl A=\acl(\acl A)$;\hfill\emph{idempotency}
-\item[5]  $\displaystyle\acl A=\bigcap_{A\subseteq M}M$.
+\item[1.]  if $a\in\acl A$ then $a\in\acl B$ for some finite $B\subseteq A$\hfill\emph{finite character}
+\item[2.]  $A\subseteq \acl A$\hfill\emph{extensivity}
+\item[3.]  if $A\subseteq B$ then $\acl A\subseteq \acl B$\hfill\emph{monotonicity}
+\item[4.]  $\acl A=\acl(\acl A)$\hfill\emph{idempotency}
+\item[5.]  $\displaystyle\acl A=\bigcap_{A\subseteq M}M$.
 \end{itemize} 
 \end{corollary}
 
@@ -110,7 +102,7 @@ If $f\in\Aut(\U)$ then $f\big[\acl(A)\big]=\acl\big(f[A]\big)$ for every $A\subs
 
 \begin{proof}
 We prove $f\big[\acl(A)\big]\subseteq\acl\big(f[A]\big)$.
-Fix ${\mr a}\in\acl(A)$ and let $\phi({\mr x}\,;{\gr z})\in L$ and ${\gr b}\in A^{|{\gr z}|}$ be such that 
+Fix ${\mr a}\in\acl(A)$ and let $\phi({\mr x}\,;{\gr z})\in L$ and ${\gr b}\in A^{\gr z}$ be such that 
 $\phi({\mr x}\,;{\gr b})$ is algebraic formula satisfied by ${\mr a}$.
 By elementarity, $\phi({\mr x}\,;f{\gr b})$ is algebraic and satisfied by $f{\mr a}$.
 Therefore  $f{\mr a}$ is algebraic over $f[A]$, which proves the inclusion.
@@ -118,10 +110,18 @@ Therefore  $f{\mr a}$ is algebraic over $f[A]$, which proves the inclusion.
 The converse inclusion is obtained by substituting  $f^{-1}$ for $f$ and $f[A]$ for $A$.
 \end{proof}
 
+\begin{exercise}
+  For every $a\in\U^{x}$ and $A\subseteq\U$, the following are equivalent
+  \begin{itemize}
+  \item[1.] $a$ is solution of some algebraic formula  $\phi(x)\in L(A)$
+  \item[2.] $a=a_1,\dots,a_n$ for some $a_1,\dots,a_n\in\acl(A)$.
+  \end{itemize}
+  \end{exercise}
+  
 \begin{exercise}\label{pofu}
 Let $\phi({\gr z})\in L(A)$ be a consistent formula.
 Prove that, if ${\mr a}\in\acl(A,{\gr b})$ for every ${\gr b}\models\phi({\gr z})$, then ${\mr a}\in\acl(A)$.
-Prove the same claim with a type $p({\gr z})\subseteq L(A)$ for $\phi({\gr z})$.\QED
+Prove the same claim with a type $p({\gr z})\subseteq L(A)$ for $\phi({\gr z})$.
 \end{exercise}
 
 \begin{exercise}\label{ex_isosub}
@@ -129,7 +129,7 @@ Let $a\in\U\sm\acl\0$.
 Prove that $\U$ is isomorphic to some $\V\preceq \U$ such that $a\notin\V$.
 Hint: let $\bar c$ be an enumeration of $\U$ and let $p(\bar u)=\tp(\bar c)$ prove that 
 $p(\bar u)\cup\big\{ u_i\neq a :i<|\bar u|\big\}$ is realized in $\U$ and 
-that any realization yields the required substructure of $\U$.\QED
+that any realization yields the required substructure of $\U$.
 \end{exercise}
 
 \begin{exercise}\label{pofu2}
@@ -138,7 +138,7 @@ Prove that if $C\cap M\neq\0$ for every model $M$ containing $A$, then $C\cap\ac
 Hint: by induction on the cardinality of $C$.
 Suppose there is a $c\in C\sm\acl(A)$, then there is $\V\simeq\U$ such that 
 $A\subseteq\V\preceq\U$ and $c\notin\V$, see Exercise~\ref{ex_isosub}.
-Apply the induction hypothesis to $C'=C\cap\V$ with $\V$ for $\U$.\QED
+Apply the induction hypothesis to $C'=C\cap\V$ with $\V$ for $\U$.
 \end{exercise}
 
 \begin{exercise}\label{ex_acl_intersezioe_2_modelli}
@@ -168,21 +168,21 @@ Consider the type
 \ :\ 
 b\in N\sm\acl(A),\ \ \psi(y,x)\in L(A),\ \ n<\omega\Big\}$
 
-Any $\bar a\models p(\bar x)$ enumerates a model $A$-isomorphic to $N$.\QED
+Any $\bar a\models p(\bar x)$ enumerates a model $A$-isomorphic to $N$.
 \end{exercise}
 
 \begin{exercise}\label{ex_almost_satisfied}
 Let $\phi(x)\in L(\U)$ and fix an arbitrary set $A$.
 Prove that the following are equivalent
 \begin{itemize}
-\item[1.] $\phi(M)\neq\0$ for every model $M$ containing $A$;
+\item[1.] $\phi(M)\neq\0$ for every model $M$ containing $A$
 \item[2.] there is a consistent formula $\psi(z_1,\dots,z_n)\in L(A)$ such that
 
 \hfil$\displaystyle\psi(z_1,\dots,z_n)\imp\bigvee^n_{i=1}\phi(z_i)$.
 \end{itemize}
-Hint: let $\bar c$ be an enumeration of $M^{|x|}$, where $M$ is any model containing $A$.
+Hint: let $\bar c$ be an enumeration of $M^x$, where $M$ is any model containing $A$.
 Let $p(\bar z)=\tp(\bar c/A)$.
-Note that \ssf{1} implies that $p(\bar z)\,\cup\, \big\{\neg\phi(z_i)\, :\, i<|\bar z|\big\}$ is inconsistent.\QED
+Note that \ssf{1} implies that $p(\bar z)\,\cup\, \big\{\neg\phi(z_i)\, :\, i<|\bar z|\big\}$ is inconsistent.
 \end{exercise}
 
 \begin{exercise}
@@ -217,8 +217,8 @@ We show that the semantic notion matches the syntactic one.
 \begin{proposition}\label{prop_fmequivalenzadefinizioni}
 The following are equivalent
 \begin{itemize}
-\item[1.] $\Th(M)$ is a strongly minimal theory;
-\item[2.] $M$ is a strongly minimal structure; 
+\item[1.] $\Th(M)$ is a strongly minimal theory
+\item[2.] $M$ is a strongly minimal structure
 \item[3.] $M$ has an elementary extension which is minimal and $\omega$-saturated.
 \end{itemize}
 \end{proposition}
@@ -248,8 +248,8 @@ By quantifier elimination, $T_{\rm acf}$ and $T_{\rm dag}$ are strongly minimal 
 Let $T$ be a complete theory without finite models.
 Prove that the following are equivalent
 \begin{itemize}
-\item[1.] $M$ is minimal;
-\item[2.] ${\mr a}\equiv_M{\mr b}$ for every ${\mr a}, {\mr b}\in \U\sm M$.\QED
+\item[1.] $M$ is minimal
+\item[2.] $a\equiv_M b$ for every $a, b\in \U\sm M$.
 \end{itemize}
 \end{exercise}
 
@@ -319,8 +319,8 @@ Hence $B$ is not an independent set.
 \begin{corollary}\label{basemassimale}
 ($T$ strongly minimal.) For every $B\subseteq C$ the following are equivalent
 \begin{itemize}
-\item[1.] $B$ is a basis of $C$.
-\item[2.] $B$ is a maximally independent subset of $C$.\QED
+\item[1.] $B$ is a basis of $C$
+\item[2.] $B$ is a maximally independent subset of $C$.
 \end{itemize}
 \end{corollary}
 
@@ -328,8 +328,8 @@ Finally we prove the main theorem about basis.
 
 \begin{theorem} ($T$ strongly minimal.) Fix some arbitrary set $C$. Then
   \begin{itemize}
-  \item[1] every independent set $B\subseteq C$ can be extended to a basis of $C$;
-  \item[2] all bases of $C$ have the same cardinality.
+  \item[1.] every independent set $B\subseteq C$ can be extended to a basis of $C$
+  \item[2.] all bases of $C$ have the same cardinality.
   \end{itemize}
 \end{theorem}
 
@@ -353,12 +353,13 @@ Finally we prove the main theorem about basis.
   Choose $B$ such that $|B\sm A|$ is minimal among the bases of cardinality $\ge n$.
   As $|A|<|B|$, there is a $b\in B\sm A$.
   Let $B'$ be a maximal indipendent subset of $(B\sm b),A$ containing $B\sm b$.
-  By Corollary~\ref{basemassimale}, $B'$ is a base of $(B\sm b),A$, hence also of $C$.
+  By Corollary~\ref{basemassimale}, $B'$ is a base of $(B\sm b),A$, hence it is also a base of $C$.
   As $|B'\sm A|<|B\sm A|$, this is a contradiction.
 \end{proof}
 
 \begin{proposition}\label{prop_mappetraindipendenti}
-  ($T$ strongly minimal.) Let $k$ be an elementary map.
+  ($T$ strongly minimal) 
+  Let $k$ be an elementary map.
   Then $k\cup\big\{\<{\mr b},{\mr c}\>\big\}$ is also an elementary map for every ${\mr b}\notin\acl(\dom k)$ and ${\mr c}\notin\acl(\range k)$.
 \end{proposition}
 \begin{proof}
@@ -370,7 +371,7 @@ Finally we prove the main theorem about basis.
 \end{proof}
 
 \begin{corollary}\label{corol_mappetraindipendenti} 
-  ($T$ strongly minimal.) Every bijection between independent sets is an elementary map.\QED
+  ($T$ strongly minimal.) Every bijection between independent sets is an elementary map.
 \end{corollary}
 
 Finally we show that dimension classifies models of $T$.
@@ -398,7 +399,7 @@ Finally we show that dimension classifies models of $T$.
 \begin{proposition}
   ($T$ strongly minimal.) For every model $N$ of cardinality $\ge|L|$ the following are equivalent
   \begin{itemize}
-  \item[1.] $N$ is saturated;
+  \item[1.] $N$ is saturated
   \item[2.] $\dim N=|N|$.
   \end{itemize}
 \end{proposition}
@@ -421,15 +422,15 @@ Finally we show that dimension classifies models of $T$.
 \end{proof}
 
 \begin{exercise}\label{ex_infinite_acl}
-  ($T$ strongly minimal.) Prove that every infinite algebraically closed set is a model.\QED
+  ($T$ strongly minimal.) Prove that every infinite algebraically closed set is a model.
 \end{exercise}
 
 \begin{exercise}
-  ($T$ strongly minimal, $L$ countable.) Prove that every model is homogeneous.\QED 
+  ($T$ strongly minimal, $L$ countable.) Prove that every model is homogeneous. 
 \end{exercise}
 
 \begin{exercise}
-  ($T$ strongly minimal.) Prove that if $\dim N=\dim M+1$ then there is no model $K$ such that $M\prec K\prec N$.\QED 
+  ($T$ strongly minimal.) Prove that if $\dim N=\dim M+1$ then there is no model $K$ such that $M\prec K\prec N$. 
 \end{exercise}
 
 
@@ -465,7 +466,7 @@ The definitions and theorems above can be relativized to some arbitrary set of p
 Prove that $\dim(AB)-\dim A=\dim_A B$ holds for every $A$ and $B$.\EX
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\PARAGRAPH{Bases and isomorphisms.\label{Bases and isomorphisms}} Here we prove that when $T$ is strongly minimal any bijection between algebraically independent sets is an elementary map. Recall E{\mr x}ercise~\ref{e{\mr x}tension to acl} above (which holds in every theory $T$): if $F$ is an automorphism and $F[B]=C$ then $F[\acl B]=\acl C$. So two models of a strongly minimal theory with the same dimension are isomorphic. \Proposition Let $T$ be a strongly minimal theory. If $B$ and $C$ are two $A$--independent sets of the same cardinality then every bijection between $B$ and $C$ is an $A$--elementary map. \Proof We have to prove that $\phi(\bb)\iff\phi(\cc)$ for every $A$--formula $\phi(\{\mr x}{\mr x})$, every $\bb\sbs B$ and every $\cc\sbs C$. This is proved by induction on the arity of $\bb$ and $\cc$. So, assume the claim is true for $\bb$ and $\cc$ and prove it for the tuples $\bb\,b'$ and $\cc\,c'$ where $b'\in B\sm\bb$ and $c'\in C\sm\cc$ are arbitrary. Let $\phi(\{\mr x}{\mr x}\,y)$ be an $A$--formula and let $d\in B\sm\bb$  be arbitrary. By induction hypothesis $\phi(\bb\,y)$ is algebraic if and only if $\phi(\cc\,y)$ is algebraic. In the first case, by the $A$--independence of $B$ and $C$, we have that  $\neg\phi(\bb\,b')$ and $\neg\phi(\cc\,c')$. In the second case $\phi(\bb\,b')$ and $\phi(\cc\,c')$.\QED
+\PARAGRAPH{Bases and isomorphisms.\label{Bases and isomorphisms}} Here we prove that when $T$ is strongly minimal any bijection between algebraically independent sets is an elementary map. Recall E{\mr x}ercise~\ref{e{\mr x}tension to acl} above (which holds in every theory $T$): if $F$ is an automorphism and $F[B]=C$ then $F[\acl B]=\acl C$. So two models of a strongly minimal theory with the same dimension are isomorphic. \Proposition Let $T$ be a strongly minimal theory. If $B$ and $C$ are two $A$--independent sets of the same cardinality then every bijection between $B$ and $C$ is an $A$--elementary map. \Proof We have to prove that $\phi(\bb)\iff\phi(\cc)$ for every $A$--formula $\phi(\{\mr x}{\mr x})$, every $\bb\sbs B$ and every $\cc\sbs C$. This is proved by induction on the arity of $\bb$ and $\cc$. So, assume the claim is true for $\bb$ and $\cc$ and prove it for the tuples $\bb\,b'$ and $\cc\,c'$ where $b'\in B\sm\bb$ and $c'\in C\sm\cc$ are arbitrary. Let $\phi(\{\mr x}{\mr x}\,y)$ be an $A$--formula and let $d\in B\sm\bb$  be arbitrary. By induction hypothesis $\phi(\bb\,y)$ is algebraic if and only if $\phi(\cc\,y)$ is algebraic. In the first case, by the $A$--independence of $B$ and $C$, we have that  $\neg\phi(\bb\,b')$ and $\neg\phi(\cc\,c')$. In the second case $\phi(\bb\,b')$ and $\phi(\cc\,c')$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \PARAGRAPH{A toy version of Morley and Baldwin-Lachlan's theorems\label{A toy version of the Morley and Baldwin-Lachlan theorems}.}\inde{\mr x}{Morley theorem}\inde{\mr x}{Baldwin-Lachlan theorem}  We have the following corollary: two models of a strongly minimal theory $T$ are isomorphic if and only if they have the same dimension. In particular, by what observed in~\ref{An observation} above, $T$ is categorical in every cardinal $\lambda>|L|$. The same conclusion, but assuming only that $T$ is categorical in some $\mu>|L|$, is a celebrated theorem of Michael Morley (for countable languages) and of Saharon Shelah (for arbitrary languages). Morley's theorem will be proved in Chapter~\ref{} below. The proof we give (due to John Baldwin and Alistar Lachlan) uses essentially the results in this section. Now, suppose $L$ is countable and reason again under the hypothesis that $T$ is strongly minimal. Note that if $M$ has finite dimension $n$ then for every $b\not\in M$ the set $\acl(M+b)$ is a model of dimension $n+1$ and hence non-isomorphic to $M$. So either all countable models of $T$ have infinite dimension so they are all isomorphic and $T$ is countably categorical, or there are infinitely many non-isomorphic countable models. The same conclusion can be obtained simply assuming that $T$ is categorical in some uncountable cardinal. This is the famous theorem of Baldwin and Lachlan.\STOP
@@ -498,7 +499,7 @@ The following is one of the most important properties of the relation of indepen
 
 \hfil $\displaystyle C\nonfork_AB\ \ \IFF\ \ \dim_A C=\dim_A BC-\dim_A B$,\medskip
 
-hence they are equivalent.\QED
+hence they are equivalent.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \PARAGRAPH{Independence and finite satisfiability.\label{Independence and finite satisfiability}}%
@@ -510,7 +511,7 @@ The following characterization of independence is used in the ne{\mr x}t section
 \end{itemizeshort}
 \Proof We prove \casebo{\mr x}{$1\IMP2$} by induction on $\dim_M(\bb)$. If this is $0$, then $\bb\sbs M$ and there is nothing to prove. Now assume as induction hypothesis that the claim holds for $\bb$ and fi{\mr x} $b$ such that $\dim_{M}(\bb\,b)=\dim_{M}\bb+1$. By hypothesis,  $\dim_{M\aa}(\bb\,b)=\dim_{M\aa}\bb+1$ so $\phi(\aa\,\bb\,b)$ implies that $\phi(\aa\,\bb\,\UU)$ is coinfinite. Then $\phi(\aa\,\bb\,\UU)$ contains some $b'\in M$. Now apply the induction hypothesis to the formula $\phi(\aa\,\bb\,b')$.
 \p
-We show that (2) implies $\bb\nonfork_M \aa$, then  \casebo{\mr x}{$2\IMP1$} follows by symmetry.  We reason by induction on $\dim_M\aa$. Suppose the claim is true for $\aa$ and prove it for $\aa\,a'$ where $\dim_{M}(\aa\,a)=\dim_{M}\aa+1$. We need to show that $\dim_{M\bb}(\aa\,a)=\dim_{M\bb}\aa+1$. Suppose not, then $a\in\acl_{M,\bb}\aa$, so there is an $M$--formula such that $\psi(\bb\,\aa\,a)\wedge\E^{<n}y\,\psi(\bb\,\aa\,y)$. By (2) we can replace $\bb$ with dome $\bb'\sbs M$ and obtain that $a\in\acl_{M}\aa$ a contradiction.\QED
+We show that (2) implies $\bb\nonfork_M \aa$, then  \casebo{\mr x}{$2\IMP1$} follows by symmetry.  We reason by induction on $\dim_M\aa$. Suppose the claim is true for $\aa$ and prove it for $\aa\,a'$ where $\dim_{M}(\aa\,a)=\dim_{M}\aa+1$. We need to show that $\dim_{M\bb}(\aa\,a)=\dim_{M\bb}\aa+1$. Suppose not, then $a\in\acl_{M,\bb}\aa$, so there is an $M$--formula such that $\psi(\bb\,\aa\,a)\wedge\E^{<n}y\,\psi(\bb\,\aa\,y)$. By (2) we can replace $\bb$ with dome $\bb'\sbs M$ and obtain that $a\in\acl_{M}\aa$ a contradiction.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -548,7 +549,7 @@ This proposition is an easy corollary of a general fact about Morley rank which 
 
 \hfil $\phi(b\,c)\wedge\E^{=n}y\,\phi(b\,y)$\medskip  
 
-for some $n$. Choose these formulas so that $n$ is minimal. We claim that $\phi({\mr x}\,y)$ is a planar curve. To prove the claim, we fi{\mr x} a saturated model model $N$ such that $b\,c\nonfork_MN$, which e{\mr x}ists by exercise~\ref{esercizio} above. We fi{\mr x} also an arbitrary $M$--formula $\psi(\zz\, {\mr x}\,y)$ and an arbitrary $\dd\sbs N$. We need to prove that either $\phi({\mr x}\,y)\imp\psi(\dd\,{\mr x}\,y)$ or $\phi({\mr x}\,y)\imp\neg\psi(\dd\,{\mr x}\,y)$ holds for every ${\mr x},y\notin N$. We assume $\psi(\dd\,b\,c)$, the same argument apply when $\neg\psi(\dd\,b\,c)$. It cannot be that $\E y\,\big[\phi(b\,y)\wedge\neg\psi(\dd\,b\,y)\big]$ otherwise we could replace $\dd$ with some $\dd'\sbs M$ and contradict the minimality of $n$. So it must be that $\A y\,\big[\phi(b\,y)\imp\psi(\dd\,b\,y)\big]$ and since $b\notin N$ then $\A y\,\big[\phi({\mr x}\,y)\imp\psi(\dd\,{\mr x}\,y)\big]$ holds for every ${\mr x}\notin N$.\QED 
+for some $n$. Choose these formulas so that $n$ is minimal. We claim that $\phi({\mr x}\,y)$ is a planar curve. To prove the claim, we fi{\mr x} a saturated model model $N$ such that $b\,c\nonfork_MN$, which e{\mr x}ists by exercise~\ref{esercizio} above. We fi{\mr x} also an arbitrary $M$--formula $\psi(\zz\, {\mr x}\,y)$ and an arbitrary $\dd\sbs N$. We need to prove that either $\phi({\mr x}\,y)\imp\psi(\dd\,{\mr x}\,y)$ or $\phi({\mr x}\,y)\imp\neg\psi(\dd\,{\mr x}\,y)$ holds for every ${\mr x},y\notin N$. We assume $\psi(\dd\,b\,c)$, the same argument apply when $\neg\psi(\dd\,b\,c)$. It cannot be that $\E y\,\big[\phi(b\,y)\wedge\neg\psi(\dd\,b\,y)\big]$ otherwise we could replace $\dd$ with some $\dd'\sbs M$ and contradict the minimality of $n$. So it must be that $\A y\,\big[\phi(b\,y)\imp\psi(\dd\,b\,y)\big]$ and since $b\notin N$ then $\A y\,\big[\phi({\mr x}\,y)\imp\psi(\dd\,{\mr x}\,y)\big]$ holds for every ${\mr x}\notin N$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LINEARITY
 \PARAGRAPH{Linearity.\label{Linearity def}}%
@@ -557,14 +558,14 @@ We say that \new{$T$ is linear\/} if every planar curve is similar to a planar c
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \PARAGRAPH{A lemma.}%
 \Proposition Let $T$ be linear (and recall that in this section we always assume $\acl\0$ infinite). Then every planar curve over $A$ is similar to a planar curve that is over some tuple $\aa\sbs\acl A$ of dimension $\le1$.
-\Proof Let $\psi({\mr x}\,y)$ be a planar curve over $A$ that is similar to $\phi(\aa\,{\mr x}\,y)$ for some $\aa$ of dimension $\le1$. Say, $\psi({\mr x}\,y)$ and $\phi(\aa\,{\mr x}\,y)$ coincide up to $n$ points. Let $\theta(\zz)$ be the formula witnessing that $\aa$ has dimension $\le1$. The first-order $A$--formula saying $\theta(\zz)$ and that $\psi({\mr x}\,y)$ and $\phi(\zz\,{\mr x}\,y)$ coincide up to $n$ points is consistent. So it has a solution $\aa'\sbs\acl A$ (which is a model by the assumption that $\acl\0$ is infinite).\QED
+\Proof Let $\psi({\mr x}\,y)$ be a planar curve over $A$ that is similar to $\phi(\aa\,{\mr x}\,y)$ for some $\aa$ of dimension $\le1$. Say, $\psi({\mr x}\,y)$ and $\phi(\aa\,{\mr x}\,y)$ coincide up to $n$ points. Let $\theta(\zz)$ be the formula witnessing that $\aa$ has dimension $\le1$. The first-order $A$--formula saying $\theta(\zz)$ and that $\psi({\mr x}\,y)$ and $\phi(\zz\,{\mr x}\,y)$ coincide up to $n$ points is consistent. So it has a solution $\aa'\sbs\acl A$ (which is a model by the assumption that $\acl\0$ is infinite).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \PARAGRAPH{Locally linear \ifft linear.\label{local linearity}}%
 Localizing the notion of linearity to a set of parameter $E$ does not yield anything new.
 \Proposition Let $E$ be set of parameters. Suppose that every planar curve is similar to a planar curve over $E\aa$ for some $\aa$ such that $\dim_E\aa\le 1$. Then $T$ be linear. 
-\Proof Let $\psi(\cc\,{\mr x}\,y)$ be a planar curve, where $\cc$ are all the parameters occurring in the formula. Fi{\mr x} some $\bb\equiv\cc$ such that $\bb\nonfork_\0 E$. Let $\phi(\ee\,\aa\,{\mr x}\,y)$ be a planar curve similar to $\psi(\bb\,{\mr x}\,y)$, say equal up to $n$ points, for some $\ee\sbs E$ and some $\aa$ such that $\dim_{\ee}\aa\le 1$. There is a first-order formula $\theta(\ee\,\bb)$ saying that $\phi(\ee\,\zz\,{\mr x}\,y)$ is equal to $\psi(\bb\,{\mr x}\,y)$ up to $n$ points for some $\zz$ such that $\dim_{\ee}\zz\le 1$. By Proposition~\ref{Independence and finite satisfiability} above, there is $\ee'\sbs\acl\0$ such that $\theta(\ee'\,\bb)$. Let $\aa'$ witness $\E \zz$ in  $\theta(\ee'\,\bb)$. Then $\phi(\ee'\,\aa'\,{\mr x}\,y)$ is a formula over $\aa'$, where $\dim\aa'\le1$, and is similar to $\psi(\bb\,{\mr x}\,y)$. Finally, by homogeneity, we map automorphically $\cc$ to $\bb$. The image $\aa''$ of $\aa'$ under this automorphism gives the required planar curve $\phi(\ee'\,\aa'\,{\mr x}\,y)$.\QED
+\Proof Let $\psi(\cc\,{\mr x}\,y)$ be a planar curve, where $\cc$ are all the parameters occurring in the formula. Fi{\mr x} some $\bb\equiv\cc$ such that $\bb\nonfork_\0 E$. Let $\phi(\ee\,\aa\,{\mr x}\,y)$ be a planar curve similar to $\psi(\bb\,{\mr x}\,y)$, say equal up to $n$ points, for some $\ee\sbs E$ and some $\aa$ such that $\dim_{\ee}\aa\le 1$. There is a first-order formula $\theta(\ee\,\bb)$ saying that $\phi(\ee\,\zz\,{\mr x}\,y)$ is equal to $\psi(\bb\,{\mr x}\,y)$ up to $n$ points for some $\zz$ such that $\dim_{\ee}\zz\le 1$. By Proposition~\ref{Independence and finite satisfiability} above, there is $\ee'\sbs\acl\0$ such that $\theta(\ee'\,\bb)$. Let $\aa'$ witness $\E \zz$ in  $\theta(\ee'\,\bb)$. Then $\phi(\ee'\,\aa'\,{\mr x}\,y)$ is a formula over $\aa'$, where $\dim\aa'\le1$, and is similar to $\psi(\bb\,{\mr x}\,y)$. Finally, by homogeneity, we map automorphically $\cc$ to $\bb$. The image $\aa''$ of $\aa'$ under this automorphism gives the required planar curve $\phi(\ee'\,\aa'\,{\mr x}\,y)$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -605,7 +606,7 @@ Finally we prove \casebo{\mr x}{$3\IMP1$} so assume (3). We prove ($\#$) by indu
 
 \hfil$\dim(ABc)\ \ =\ \ \dim A\ +\ \dim(Bc)\ -\ \dim(A\cap\acl(Bc)\big)$\smallskip
 
-We consider two cases: $c\in\acl(AB)$ and $c\notin\acl(AB)$. In the first case we need to show that $A\cap\acl(Bc)$ contains an element not in $A\cap B$. From  $c\in\acl(AB)$ and the induction hypothesis we get some $a\in A$ and some $b\in B$ such that $c\in\acl(a\,b)$. To avoid triviality we assume $b\notin\acl\0$ so, by e{\mr x}change, we get $a\in\acl(b\,c)$. So $a\notin A\cap B$, otherwise $c\in B$. In the second case it suffices to show that $A\cap\acl(Bc)=A\cap B$. So observe that if $a\in\acl(Bc)\sm\acl B$ then, by e{\mr x}change, $c\in\acl(Ba)$. So $a\notin A$.\QED 
+We consider two cases: $c\in\acl(AB)$ and $c\notin\acl(AB)$. In the first case we need to show that $A\cap\acl(Bc)$ contains an element not in $A\cap B$. From  $c\in\acl(AB)$ and the induction hypothesis we get some $a\in A$ and some $b\in B$ such that $c\in\acl(a\,b)$. To avoid triviality we assume $b\notin\acl\0$ so, by e{\mr x}change, we get $a\in\acl(b\,c)$. So $a\notin A\cap B$, otherwise $c\in B$. In the second case it suffices to show that $A\cap\acl(Bc)=A\cap B$. So observe that if $a\in\acl(Bc)\sm\acl B$ then, by e{\mr x}change, $c\in\acl(Ba)$. So $a\notin A$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \PARAGRAPH{Locally modular \ifft linear.} 
@@ -623,7 +624,7 @@ We now prove that $e\notin\acl\aa$ by showing that $a'\notin\acl e$. As $c\,b$ b
 \p
 We also have that $c\notin\acl\aa$, so there is a automorphism mapping $c$ to $e$ over $\aa$. Let $a$ be the image of $b$ under this automorphism. We claim that this $a$ is the required element of $\acl_e A$. Observe that since $b\in\acl(c\,\aa)$, then $a\in\acl_e\aa\sbs\acl_e A$. So we only have to check that $c\in\acl_e(a\,b)$. This follows from symmetry if we can show that $a\in \acl_e(c\,b)$ and $a\notin\acl_e b$. The first is clear since $\acl_e\aa\sbs \acl_e(c\,b)$. For the second observe that $b\notin\acl_e a$ and that $a\in\acl_e \0$,  so $a\notin\acl_e b$ follows by symmetry.
 \p
-The implication \casebo{\mr x}{$2\IMP3$} does not need a proof so only the implication \casebo{\mr x}{$3\IMP1$} is left. The argument is clearer if we assume that $T$ is modular. Let $\phi(\aa\,{\mr x}\,y)$ be a planar curve and let $c\,b$ be a pair in the curve not in $\acl\aa$. Replacing $A$ with $\acl\aa$ and $\acl(c\,b)$ for $B$ in ($\#\#$) of~\ref{Modularity def} we obtain that the dimension of $c\,b$ over $\acl(c\,b)\cap\acl\aa$ is $1$. Since $\acl(c\,b)\cap\acl\aa$ has dimension 1 and is a model, the claim follows from Proposition~\ref{Planar curves} above. In general, i.e.\@ when $T$ is simply locally modular, we need just to fi{\mr x} a set $E$ containing the the parameters that make $T$ modular and in any case infinite. Then the argument above yields that $T$ is linear over $E$ so, by~\ref{local linearity} above, linear.\QED
+The implication \casebo{\mr x}{$2\IMP3$} does not need a proof so only the implication \casebo{\mr x}{$3\IMP1$} is left. The argument is clearer if we assume that $T$ is modular. Let $\phi(\aa\,{\mr x}\,y)$ be a planar curve and let $c\,b$ be a pair in the curve not in $\acl\aa$. Replacing $A$ with $\acl\aa$ and $\acl(c\,b)$ for $B$ in ($\#\#$) of~\ref{Modularity def} we obtain that the dimension of $c\,b$ over $\acl(c\,b)\cap\acl\aa$ is $1$. Since $\acl(c\,b)\cap\acl\aa$ has dimension 1 and is a model, the claim follows from Proposition~\ref{Planar curves} above. In general, i.e.\@ when $T$ is simply locally modular, we need just to fi{\mr x} a set $E$ containing the the parameters that make $T$ modular and in any case infinite. Then the argument above yields that $T$ is linear over $E$ so, by~\ref{local linearity} above, linear.
 
 
  

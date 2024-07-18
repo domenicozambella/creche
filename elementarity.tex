@@ -2,19 +2,18 @@
 \chapter{Theories and elementarity}
 \label{teorie}
 
-  
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox{15ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 \section{Logical consequences}\label{conseguenzelogiche}
 % 
 % Let $p\subseteq L_{x}$ a set of formulas with free variables among $x$.
-% Let $a\in M^{|x|}$ for some model $M$.
+% Let $a\in M^x$ for some model $M$.
 % We write \emph{$M,a\models p$ if $M\models\phi(a)$ for every $\phi(x)\in p$.
 % If $q\subseteq L_{x}$ we write \emph{$p\proves q$\/}
 % 
 % \begin{itemize}
-% \item[] $M,a\models p\ \ \IMP\ \ M,a\models q$\hfill for every $M$ and every $a\in M^{|x|}$.
+% \item[] $M,a\models p\ \ \IMP\ \ M,a\models q$\hfill for every $M$ and every $a\in M^x$.
 % \end{itemize}
 % 
 % In words, we say that $q$ is a \emph{logical consequence\/}  of $p$ or that $q$ \emph{follows from\/} $p$.
@@ -73,8 +72,8 @@ To sum up
 Let $L$ be the language of multiplicative groups.
 Let $T_{\rm g}$ be the set containing the universal closure of following three formulas
 \begin{itemize}
-\item[1.]\ \  $(x\cdot y)\cdot z\ =\ x\cdot(y\cdot z)$;
-\item[2.]\ \  $ x\cdot x^{-1}\ =\ x^{-1}\cdot x\ =\ 1$;
+\item[1.]\ \  $(x\cdot y)\cdot z\ =\ x\cdot(y\cdot z)$
+\item[2.]\ \  $ x\cdot x^{-1}\ =\ x^{-1}\cdot x\ =\ 1$
 \item[3.]\ \  $x\cdot 1\ =\ 1\cdot x\ =x$.
 \end{itemize}
 Then $T_{\rm g}$ axiomatizes the theory of groups, i.e.\@ $\Th(\K)$ for $\K$ the class of all groups.
@@ -111,9 +110,9 @@ In the next example we list a few algebraic theories with straightforward axioma
 \begin{example}
 We write $T_{\rm ag}$ for the theory of abelian groups which contains the universal closure of following
 \begin{itemize}
-\item[a1.] $(x+y) +z\ =\ y+(x+z)$;
-\item[a2.] $x+(-x)\ =\ 0$;
-\item[a3.] $x+0\ = \ x$;
+\item[a1.] $(x+y) +z\ =\ y+(x+z)$
+\item[a2.] $x+(-x)\ =\ 0$
+\item[a3.] $x+0\ = \ x$
 \item[a4.] $x+y\ =\ y+x$.
 \end{itemize}
 \end{example}
@@ -121,9 +120,9 @@ We write $T_{\rm ag}$ for the theory of abelian groups which contains the univer
 \begin{example}
 The theory $T_{\rm r}$ of (unitary) rings extends $T_{\rm ag}$ with
 \begin{itemize}
-\item[a5.] $(x\cdot  y)\cdot  z\  =\ x\cdot (y\cdot  z)$;
-\item[a6.] $1\cdot  x\ =\ x\cdot  1\ =\ x$;
-\item[a7.] $(x+y)\cdot  z\ =\ x\cdot  z + y\cdot  z$;
+\item[a5.] $(x\cdot  y)\cdot  z\  =\ x\cdot (y\cdot  z)$
+\item[a6.] $1\cdot  x\ =\ x\cdot  1\ =\ x$
+\item[a7.] $(x+y)\cdot  z\ =\ x\cdot  z + y\cdot  z$
 \item[a8.] $z\cdot  (x+y)\ =\ z\cdot  x + z\cdot  y$.
 \end{itemize}
 The theory of commutative rings $T_{\rm cg}$ contains also \ssf{com} of examples~\ref{Tg}.
@@ -132,7 +131,7 @@ The theory of commutative rings $T_{\rm cg}$ contains also \ssf{com} of examples
 \begin{example}
 The theory of ordered rings $T_{\rm or}$ extends $T_{\rm cr}$ with
 \begin{itemize}
-\item[o1.] $x<z\ \imp\ x+y<z+y$;
+\item[o1.] $x<z\ \imp\ x+y<z+y$
 \item[o2.] $0<x \wedge 0<z\ \imp\ 0<x\cdot z$.
 \end{itemize}
 \end{example}
@@ -160,7 +159,7 @@ Recall from Example~\ref{expl_graph1} that we represent a graph with a symmetric
 Therefore \emph{theory of graphs\/} contains the following two axioms
 
 \begin{itemize}
-\item[1.] $\neg r(x,x)$;
+\item[1.] $\neg r(x,x)$
 \item[2.] $r(x,y)\imp r(y,x)$.
 \end{itemize}
 \end{example}
@@ -246,17 +245,17 @@ The following proposition is immediate
 \begin{proposition}\label{equivalentielementareequivaleza}
 For every pair of structures $M$ and $N$ and every $A\subseteq M\cap N$ the following are equivalent
 \begin{itemize}
-\item[a.] $M\equiv_A N$;
-\item[b.] $\Th(M/A)=\Th(N/A)$;
-\item[c.] \parbox{27ex}{$M\models\phi(a)\ \ \IFF\ \ N\models \phi(a)$}  for every $\phi(x)\in L$ and every $a\in A^{|x|}$.
-\item[d.]  \parbox{27ex}{$\phi(M) \cap A^{|x|}\ =\ \phi(N) \cap A^{|x|}$} for every $\phi(x)\in L$.
+\item[a.] $M\equiv_A N$
+\item[b.] $\Th(M/A)=\Th(N/A)$
+\item[c.] \parbox{27ex}{$M\models\phi(a)\ \ \IFF\ \ N\models \phi(a)$}  for every $\phi(x)\in L$ and every $a\in A^x$.
+\item[d.]  \parbox{27ex}{$\phi(M) \cap A^x\ =\ \phi(N) \cap A^x$} for every $\phi(x)\in L$.
 \end{itemize}
 \end{proposition}
 
 If we restate \ssf{a} and \ssf{c} of the proposition above when $A=M$ we obtain that the following are equivalent
 \begin{itemize}
-\item[a'.] $M\preceq N$;
-\item[d'.] \parbox{26ex}{$\phi(M)\ =\ \phi(N) \cap M^{|x|}$} for every $\phi(x)\in L$.
+\item[a'.] $M\preceq N$
+\item[d'.] \parbox{26ex}{$\phi(M)\ =\ \phi(N) \cap M^x$} for every $\phi(x)\in L$.
 \end{itemize}
 Note that \ssf{c'} extends to all definable sets what Definition~\ref{sottostrutturadef} requires for a few basic definable sets.
 
@@ -293,7 +292,7 @@ Prove that $\phi(M)$ is finite if and only if $\phi(N)$ is finite and in this ca
 
 \begin{exercise}\label{ex_finite_fam_sets}
 Let $M\preceq N$ and let $\phi(x,z)\in L$.
-Suppose there are finitely many sets of the form $\phi(a,N)$ for some $a\in N^{|x|}$.
+Suppose there are finitely many sets of the form $\phi(a,N)$ for some $a\in N^x$.
 Prove that all these sets are definable over $M$.
 \end{exercise}
 
@@ -335,7 +334,7 @@ The notation that follows will be used throughout this section.
 
 The language we use contains
 \begin{itemize}
-\item[1.] $X$, a relation symbol of arity $n$, for every $n\in\omega$ and every $X\subseteq \RR^n$;
+\item[1.] $X$, a relation symbol of arity $n$, for every $n\in\omega$ and every $X\subseteq \RR^n$
 \item[2.] $f$, a function symbol of arity $n$, for every $n\in\omega$ and every  $f:\RR^n\imp\RR$.
 \end{itemize}
 The \emph{standard model of real analysis} is $\RR$ with the natural interpretation of the symbols in our language, so we use the same symbol for an element of the language and its interpretation in $\RR$.
@@ -343,7 +342,7 @@ This is not an abuse of notation: in this case, elements and interpretations coi
 
 Suppose $\RR$ has a proper elementary extension \emph{$\nsR$.} The existence of such an extension will be proved later.
  The interpretations of the symbols $f$ and $X$ in \emph{$\nsR$} will be denoted by  \emph{$\ns f$} and \emph{$\ns X$,} respectively.
-The elements of $\nsR$ are called \emph{hyperreals,} the elements of  $\RR$ are called \emph{standard (hyper)reals,} those in $\nsR\sm\RR$ are called  \emph{nonstandard (hyper)reals.}
+The elements of $\nsR$ are called \emph{hyperreals,} the elements of  $\RR$ are called \emph{standard (hyper)reals,} those in $\nsR\sm\RR$ are called \emph{nonstandard (hyper)reals.}
 
 It is easy to verify that $\nsR$ is an ordered field.
 This is because the operations sum and product are in the language, and so is the order relation.
@@ -389,17 +388,15 @@ However, by elementarity, the nonstandard integers $\nsN$ are cofinal in $\nsR$:
 
 Dedekind completeness is another fundamental property of $\RR$ that does not hold in~$\nsR$.
 An ordered set is \emph{Dedekind complete} if every subset that is bounded above has a least upper bound.
-Then $\nsR$ is not Dedekind complete: the set of infinitesimals is bounded (both above and below), but, by Lemma~\ref{prodottosommainfinitesimi}, it does not have a least upper bound.
+Then $\nsR$ is not Dedekind complete, e.g.\@ the set of infinitesimals does not have a least upper bound.
+However, it is easy to verify that all bounded definable subsets of $\nsR$ have a least upper bound.
 It follows that Dedekind completeness is \textit{not\/} a first-order property.
-
-However, it sometimes happens that properties that hold of all sets in the standard model hold in $\nsR$ for definable sets only.
-
  
 % The lemma concerns parameter-definable sets in $\nsR$, otherwise the proof would be immediate.
 
 % \begin{proof}  Let $x$ be a single variable, $a$ a tuple of parameters in $\nsR$ and let $\phi(z,x)$ be a pure formula.
 %  We want to show that if  $\phi(a,\nsR)$ is bounded above then it has a least upper bound.
-The following formula $\psi(z,y)$ says that $y$ is an upper bound for the set defined by $\phi(z,x)$, where $z$ is a tuple of parameters:
+% The following formula $\psi(z,y)$ says that $y$ is an upper bound for the set defined by $\phi(z,x)$, where $z$ is a tuple of parameters:
 
 % \hfil $\psi(z,y)\ \ =\ \  \A x\ \big[\phi(z,x)\imp x\le y\big]$.
 
@@ -498,7 +495,7 @@ The following corollary is immediate.
 
 \begin{corollary} \label{continuo} For every $f:\RR\to\RR$ the following are equivalent
 \begin{itemize}
-\item[a.] $f$ is continuous;
+\item[a.] $f$ is continuous
 \item[b.] $\ns f(a)\approx \ns f(c)$ for every pair of finite hyperreals such that $c\approx a$.
 \end{itemize}
 \end{corollary}
@@ -508,7 +505,7 @@ In Corollary~\ref{continuo}, it is important to restrict \ssf{c} to \textit{fini
 \begin{proposition}\label{prop_unif_cont}
    For every $f:\RR\to\RR$, the following are equivalent
 \begin{itemize}
-\item[a.] $f$ is uniformly continuous;
+\item[a.] $f$ is uniformly continuous
 \item[b.] $\ns f(a)\approx\ns  f(b)$ for every pair of hyperreals such that $a\approx b$.
 \end{itemize}
 \end{proposition}
@@ -555,7 +552,7 @@ The following proposition is an immediate consequence of Proposition~\ref{prop_f
 \begin{proposition}
 For every unary function $f$ and every standard $a$, the following are equivalent.
 \begin{itemize}
-\item[a.] $f$ is differentiable in $a$;
+\item[a.] $f$ is differentiable in $a$
 \item[b.] ${\rm st}\left(\displaystyle\frac{f(a)-f(a+h)}{h}\right)$ exists and is constant for all infinitesimal $h\neq0$.
 \end{itemize}
 \end{proposition}
@@ -576,7 +573,7 @@ Prove that if the function $f:\RR\to\RR$ is injective, then  $\ns f a$ is nonsta
 \begin{exercise}
 Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
 \begin{itemize}
-\item[1.]  $X$ is a finite set;
+\item[1.]  $X$ is a finite set
 \item[2.]  $\ns X=X$.
 \end{itemize}
 \end{exercise}
@@ -584,7 +581,7 @@ Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
 \begin{exercise}\label{ex_open_nstd}
 Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
 \begin{itemize}
-\item[1.]  $X$ is an open set in the usual topology on $\RR$;
+\item[1.]  $X$ is an open set in the usual topology on $\RR$
 \item[2.]  $b\approx a\in X \ \ \IMP\ \ b\in\ns X$ for every $b\in\nsR$.
 \end{itemize}
 \end{exercise}
@@ -592,7 +589,7 @@ Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
 \begin{exercise}\label{ex_closed_nstd}
 Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
 \begin{itemize}
-\item[1.]  $X$ is closed in the usual topology on $\RR$;
+\item[1.]  $X$ is closed in the usual topology on $\RR$
 \item[2.]  $a\in\ns X \ \ \IMP\ \ \st\, a\in X$ for every finite $a\in\nsR$.
 \end{itemize}
 \end{exercise}
@@ -601,7 +598,7 @@ Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
 \begin{exercise}\label{ex_bclosed_nstd}
   Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
   \begin{itemize}
-  \item[1.]  $X$ is bounded and closed in the usual topology on $\RR$;
+  \item[1.]  $X$ is bounded and closed in the usual topology on $\RR$
   \item[2.]  for every $b\in \ns X$ there is an $a\in X$ such that $a\approx b$.
   \end{itemize}
 \end{exercise}
@@ -635,10 +632,10 @@ Prove that $|\RR|\;\le\;|\nsQ|$, that is, that the cardinality of $\nsQ$ is at l
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Embeddings and isomorphisms}\label{Embeddings and isomorphisms}
 
-
 \def\ceq#1#2#3{\parbox[b]{18ex}{$\displaystyle #1$}\parbox[b]{6ex}{\hfil$#2$}$\displaystyle #3$}
 
 Here we prove that isomorphic structures are elementarily equivalent and a few related results.
+The following definition generalizes the notion of substructure (and will be further generalized in Section~\ref{morphisms}).
 
 \begin{definition}\label{isomorfismodef}
 An \emph{embedding\/} of $M$ into $N$ is an injective total map $h:M\hookrightarrow N$ such that
@@ -659,16 +656,16 @@ Condition \ssf{1} above and the assumption that $h$ is injective can be summariz
 
 Note also that, by straightforward induction on syntax, from \ssf{2} we obtain
 
-\ceq{\ssf{2$'$}\hfill h\,t^M(a)}{=}{t^N(h\,a)}\hfill for every term $t(x)$ and every  $a\in M^{|x|}$.
+\ceq{\ssf{2$'$}\hfill h\,t^M(a)}{=}{t^N(h\,a)}\hfill for every term $t(x)$ and every  $a\in M^x$.
 
 Combining \ssf{1$'$} and \ssf{2$'$} we obtain by straightforward induction on the syntax
 
-\ceq{\ssf{3.}\hfill M\models\phi(a)}{\IFF}{N\models\phi(ha)}\hfill for every $\phi(x)\in L_{\rm qf}$ and every $a\in M^{|x|}$.
+\ceq{\ssf{3.}\hfill M\models\phi(a)}{\IFF}{N\models\phi(ha)}\hfill for every $\phi(x)\in L_{\rm qf}$ and every $a\in M^x$.
 
 Recall that we write $L_{\rm qf}$ for the set of quantifier-free formulas.
 It is worth noting that when $M\subseteq N$ and $h=\id_M$ then \ssf{3} becomes 
 
-\ceq{\ssf{3$'$}\hfill M\models \phi(a)}{\IFF}{N\models \phi(a)}\hfill for every $\phi(x)\in L_{\rm qf}$ and for every $a\in M^{|x|}$.
+\ceq{\ssf{3$'$}\hfill M\models \phi(a)}{\IFF}{N\models \phi(a)}\hfill for every $\phi(x)\in L_{\rm qf}$ and for every $a\in M^x$.
 
 In words this is summarized by saying that the truth of quantifier-free formulas is preserved under sub- and superstructure.
 
@@ -679,7 +676,7 @@ An isomorphism that fixes $A$ is also called an \emph{$A$-isomorphism.}
 \begin{theorem}\label{isomorfoeleq}
 If $h:M\imp N$ is an isomorphism then for every $\phi(x)\in L$
 
-\ceq{\hfill M\models \phi(a)}{\IFF}{N\models \phi(ha)} for every $a\in M^{|x|}$
+\ceq{\hfill M\models \phi(a)}{\IFF}{N\models \phi(ha)} for every $a\in M^x$
 
 In particular, if $h$ is an $A$-isomorphism then $M\equiv_A N$.
 \end{theorem}
@@ -691,7 +688,7 @@ In particular, if $h$ is an $A$-isomorphism then $M\equiv_A N$.
   Assume as induction hypothesis that
 
 
-  \ceq{\hfill M\models \phi(a,b)}{\IFF}{N\models \phi(ha,hb)} for every $a\in M^{|x|}$ and $b\in M$.
+  \ceq{\hfill M\models \phi(a,b)}{\IFF}{N\models \phi(ha,hb)} for every $a\in M^x$ and $b\in M$.
 
 We prove that the equivalence in the theorem holds for the formula $\E y\,\phi(x,y)$.
 
@@ -753,7 +750,7 @@ Let $L$ be the empty language.
 Let $A,D\subseteq M$.
 Prove that the following are equivalent
 \begin{itemize}
- \item[1.] $D$ is definable over $A$;
+ \item[1.] $D$ is definable over $A$
  \item[2.] either $D$ is finite and $D\subseteq A$, or $\neg D$ is finite and $\neg D\subseteq A$.
 \end{itemize}
 Hint: as structures are plain sets, every bijection $f:M\to M$ is an automorphism.
@@ -762,7 +759,7 @@ Hint: as structures are plain sets, every bijection $f:M\to M$ is an automorphis
 \begin{exercise}\label{dlorlkurb}
 Prove that if $\phi(x)$ is an existential formula and $h:M\hookrightarrow N$ is an embedding then
 
-\ceq{\hfill M\models \phi(a)}{\IMP}{N\models \phi(ha)}\hfill for every $a\in M^{|x|}$.
+\ceq{\hfill M\models \phi(a)}{\IMP}{N\models \phi(ha)}\hfill for every $a\in M^x$.
 
 Recall that existential formulas as those of the form $\E y\,\psi(x,y)$ for $\psi(x,y)\in L_{\rm qf}$.
 Note that Theorem~\ref{thm_embeddings_preservation_E} proves that the property above characterizes existential formulas.
@@ -820,7 +817,6 @@ When $\mathrel{E}$ is a congruence on $N$ we write \emph{$N/E$\/} for the a stru
 We call $N/E$ the \emph{quotient structure.}
 \end{definition}
 
-
 By \ssf{c1} the quotiont structure is well defined.
 The reader will recognize it as a familiar notion by the following proposition (which is not required in the following and requires the notion of homomorphism, see Definition~\ref{def_homomorphism}.
 Recall that the \emph{kernel\/} of a total map $h:N\to M$ is the equivalence relation $\mathrel{E}$ such that
@@ -841,11 +837,11 @@ Then there is an isomorphism $k$ that makes the following diagram commute
 where $\pi:a\mapsto [a]_E$ is the projection map.
 \end{proposition}
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}Quotients clutter the notation with brackets.
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}%
+Quotients clutter the notation with brackets.
 To avoid the mess, we prefer to reason in $N$ and tweak the satisfaction relation.
-Warning: this is not standard (though it is what everyone informally does).
+Warning: though this is what everyone informally does, it is rarely spelled out so, feel free to reguard the following as a pedantry.
 In a nutshell, we are going to define the satisfaction relation $N/E\pmodels\phi(a)$ as an abbreviation of $N/E\models\phi([a]_E)$.
-Below we spell out this in details for the readers that feel it necessary.
 
 Recall that in model theory, equality is not treated as a all other predicates.
 In fact, the interpretation of equality is fixed to always be the identity relation.
@@ -924,8 +920,8 @@ Concrete examples will be given in the next chapters as it is not easy to prove 
 \begin{proposition}\label{fattoconsistenzasen4sostretto}
 The following are equivalent
 \begin{itemize}
-\item[a.] $T$ is maximally consistent;
-\item[b.] $T=\Th(M)$ for some structure $M$;
+\item[a.] $T$ is maximally consistent
+\item[b.] $T=\Th(M)$ for some structure $M$
 \item[c.] $T$ is consistent and $\phi\in T$ or $\neg\phi\in T$ for every sentence $\phi$.
 \end{itemize}
 \end{proposition}
@@ -943,10 +939,10 @@ The proof of the proposition below is is left as an exercise for the reader.
 \begin{proposition}\label{fattoconsistenzasensolato}
 The following are equivalent
 \begin{itemize}
-\item[a.] $T$ is complete;
-\item[b.] there is a unique maximally consistent theory $S$ such that $T\subseteq S$;
-\item[c.] $T$ is consistent and $T\proves\Th(M)$ for every $M\models T$;
-\item[d.] $T$ is consistent and either $T\proves\phi$ or $T\proves\neg\phi$ for every sentence $\phi$;
+\item[a.] $T$ is complete
+\item[b.] there is a unique maximally consistent theory $S$ such that $T\subseteq S$
+\item[c.] $T$ is consistent and $T\proves\Th(M)$ for every $M\models T$
+\item[d.] $T$ is consistent and either $T\proves\phi$ or $T\proves\neg\phi$ for every sentence $\phi$
 \item[e.] $T$ is consistent and $M\equiv N$ for every pair of models of $T$.
 \end{itemize}
 \end{proposition}
@@ -1021,12 +1017,12 @@ The following are equivalent
 \begin{exercise}\label{ex_max_cons_compl}
 Prove that the following are equivalent
 \begin{itemize}
-\item[a.] $T$ is complete;
+\item[a.] $T$ is complete
 \item[b.] for every sentence $\phi$, o $T\proves\phi$ o  $T\proves\neg\phi$ but not both.
 \end{itemize}
 By contrast prove that the following are \textit{not\/} equivalent
 \begin{itemize}
-\item[a.] $T$ is maximally consistent;
+\item[a.] $T$ is maximally consistent
 \item[b.] for every sentence $\phi$, o $\phi\in T$ o  $\neg\phi\in T$ but not both.
 \end{itemize}
 % Hint: consider the theory containing all sentences where the symbol $\neg$ occurs an even number of times.
@@ -1058,7 +1054,7 @@ The following lemma comes to our rescue with a property equivalent to $M\preceq 
 \begin{lemma}[ (Tarski-Vaught test)]\label{lem_TarskiVaught}%
 For every $A\subseteq N$ the following are equivalent
 \begin{itemize}
-\item[1.] $A$ is the domain of a structure $M\preceq N$;
+\item[1.] $A$ is the domain of a structure $M\preceq N$
 \item[2.] for every formula $\phi(x)\in L(A)$, with $|x|=1$,\smallskip
 
 $N\models\E x\,\phi(x)\ \ \IMP\ \ N\models\phi(b)$ for some $b\in A$.
@@ -1094,7 +1090,7 @@ By induction on the syntax we prove that for every $\xi(x)\in L$
 
 \ceq{\hfill M\models\xi(a)}%
 {\IFF}%
-{N\models\xi(a)} for every $a\in M^{|x|}$.
+{N\models\xi(a)} for every $a\in M^x$.
 
 If $\xi(x)$ is atomic the claim follows from $M\subseteq N$ and the remarks underneath Definition~\ref{isomorfismodef}.
 The case of Boolean connectives is straightforward, so only the existential quantifier requires a proof.
@@ -1178,14 +1174,12 @@ We need to enumerate formulas with care if we want to complete the construction 
 % We use Tarski-Vaught test to prove $M\preceq N$.
 % Let $\phi(x)\in L(M)$ be consistent in $N$.
 % Then $\phi(x)\in L(A_j)$ for some $j$.
-Say, $\phi(x)$ is the $k$-th formula in the enumeration above.
+% Say, $\phi(x)$ is the $k$-th formula in the enumeration above.
 % As $\pi$ is a bijection, there is an $i$ such that $\pi_1(i)=j$ and $\pi_2(i)=k$.
 % Hence a witness of $\phi(x)$ is enumerated in $M$ at stage $i+1$.
 % \end{void_thm}
 
-\vskip\parskip
 \begin{proof}[Second proof of the downward L\"owenheim-Skolem Theorem]
-  \label{diym_II_thm_lowenheimskolemallingiu}
   Let $\pi:\lambda^2\to\lambda$ be a bijection such that $j,k\le\pi(j,k)$ for all $j,k<\lambda$.
   Suppose we have defined the sets $A_j$ for every $j\le i$ and let $\<\phi_{j,k}(x)\;:\;k<\lambda\>$ be an enumeration of the consistent formulas of $L(A_j)$.
   Let $j,k\le i$ be such that $\pi(j,k)=i$.
@@ -1248,7 +1242,7 @@ Then $M_i\preceq N$ for every $i$.
 \begin{proof}
 By induction on the syntax of $\phi(x)\in L$ we prove
 
-\ceq{M_i\models\phi(a)}{\IFF}{N\models\phi(a)} for every $i<\lambda$ and every $a\in M_i^{|x|}$
+\ceq{M_i\models\phi(a)}{\IFF}{N\models\phi(a)} for every $i<\lambda$ and every $a\in M_i^x$
 
 As remarked in \ssf{3'} of Section~\ref{Embeddings and isomorphisms}, the claim holds for quantifier-free formulas.
 Induction for Boolean connectives is straightforward so we only need to consider the existential quantifier

@@ -1,6 +1,4 @@
 % !TEX root = creche.tex
-\documentclass[creche.tex]{subfiles}
-\begin{document}
 \chapter{Stability}
 \label{stability}
 
@@ -8,7 +6,7 @@
 \def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa>|L|$.
-The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*{saturation}.\ref*{monster}}.
+The notation and implicit assumptions are as in Section~\ref{monster}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -19,14 +17,14 @@ The notation and implicit assumptions are as in Section~\hyperref[monster]{\ref*
 
 \def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
-Let $\grC,\grD\subseteq\U^{|{\gr z}|}$.
-The set $\grD\cap A^{|{\gr z}|}$ is called the \emph{trace\/} of $\grD$ over $A$.
+Let $\grC,\grD\subseteq\U^{\gr z}$.
+The set $\grD\cap A^{\gr z}$ is called the \emph{trace\/} of $\grD$ over $A$.
 We write $\grC=_A\grD$ if  $\grC$ and $\grD$ have the same trace on $A$.
 
 Let $p({\mr x})\subseteq L(\U)$ be a consistent type.
-Recall from Section~\hyperref[invariant_sets]{\ref*{invariant}.\ref*{invariant_sets}} that for every formula $\phi({\mr x}\,;{\gr z})\in L$ we define
+Recall from Section~\ref{invariant_sets} that for every formula $\phi({\mr x}\,;{\gr z})\in L$ we define
 
-\ceq{\hfill\emph{$\gr\D_{p,\phi}$}}{=}{\Big\{{\gr a}\in\U^{|{\gr z}|}\ :\ \phi({\mr x}\,;{\gr a})\in p\Big\}.}
+\ceq{\hfill\emph{$\gr\D_{p,\phi}$}}{=}{\Big\{{\gr a}\in\U^{\gr z}\ :\ \phi({\mr x}\,;{\gr a})\in p\Big\}.}
 
 We say that $\grD$ is \emph{externally definable\/} if it is of the form ${\gr\D_{p,\phi}}$ for a type $p(x)$ in $S(\U)$ or $S_\phi(\U)$.
 We say that $\grD$ is externally definable \emph{by $p({\mr x})$ and $\phi({\mr x}\,;{\gr z})$}.
@@ -51,7 +49,7 @@ The following proposition is clear by compactness.
 \begin{proposition}\label{prop_approx=external}
    For every $\grD$ the following are equivalent
    \begin{itemize}
-   \item[1.] $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$;
+   \item[1.] $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$
    \item[2.] $\grD$ is externally definable by $\phi({\mr x}\,;{\gr z})$.\QED
    \end{itemize}
 \end{proposition}
@@ -80,7 +78,7 @@ In Definition~\ref{def_approx}, the sort $\phi({\mr x}\,;{\gr z})$ is fixed (oth
 \begin{proposition}\label{lem_approx_nonunif}
 For every $\grD$ the following are equivalent
 \begin{itemize}
-\item[1.] $\grD$ is approximable;
+\item[1.] $\grD$ is approximable
 \item[2.] for every $C\subseteq\U$ of cardinality $\le|L|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi({\gr\U})=_C\grD$.
 \end{itemize}
 \end{proposition}
@@ -96,7 +94,7 @@ By \ssf{2} there are a formula $\phi({\mr x}\,;{\gr z})$ and a tuple ${\mr c}$ s
 
 
 \begin{remark}\label{prop_approx_el_eq}
-If $\grD\subseteq\U^{|{\gr z}|}$ is approximated by $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\hyperref[expansions]{\ref*{invariantL}.\ref*{expansions}} for the notation.
+If $\grD\subseteq\U^{\gr z}$ is approximated by $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\ref{expansions} for the notation.
 In fact, if the set $\grD$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for every $n$
 
 \hfil$\displaystyle\A {\gr z_1},\dots,{\gr z_n}\;\E {\mr x}\ \bigwedge^n_{i=1}\big[\phi({\mr x}\,;{\gr z_i})\ \iff\ {\gr z_i}\in{\gr \D}\big]$.
@@ -116,13 +114,13 @@ From the following easy observation of Chernikov and Simon~\cite{CS} we obtain a
 % Let $B\subseteq\U$ be finite. 
 % We want ${\mr a}\in\U^{|{\mr x}|}$ such that 
 % 
-% \ceq{\ssf{a.}\hfill \E w\ \big({\gr b}\,w\in\C\big)}{\iff}{\E w\,\phi({\mr a}\,;{\gr b}\,w)}\hfill for every ${\gr b}\in B^{|{\gr z}|}$
+% \ceq{\ssf{a.}\hfill \E w\ \big({\gr b}\,w\in\C\big)}{\iff}{\E w\,\phi({\mr a}\,;{\gr b}\,w)}\hfill for every ${\gr b}\in B^{\gr z}$
 % 
 % \ceq{\ssf{b.}\hfill \A {\gr z}\;\Big[\E w\,\phi({\mr a}\,;{\gr z}\,w)}{\imp}{\E w\ \big({\gr z}\,w\in\C\big)\Big]}
 % 
 % Let $C\subseteq\U$ be a finite set such that 
 % 
-% \ceq{\ssf{c.}\hfill \E w\in C^{|w|}\ \big({\gr b}\,w\in\C\big)}{\iff}{\E w\ \big({\gr b}\,w\in\C\big)}\hfill for every ${\gr b}\in B^{|{\gr z}|}$
+% \ceq{\ssf{c.}\hfill \E w\in C^{|w|}\ \big({\gr b}\,w\in\C\big)}{\iff}{\E w\ \big({\gr b}\,w\in\C\big)}\hfill for every ${\gr b}\in B^{\gr z}$
 % 
 % As $\C$ is approximable from below, there is an ${\mr a}$ such that
 % 
@@ -174,7 +172,7 @@ If $p\in S_{{\mr x}}(\U)$ is honestly definable then the family of sets external
 The sets externally definable by $p({\mr x})$ are always closed under Boolean operations. By the proposition above, they are closed under quantifiers. 
 \end{proof}
 
-% Let ${\gr z}=\<z_i:i<\lambda\>$ and let $\grD\subseteq\U^{|{\gr z}|}$. 
+% Let ${\gr z}=\<z_i:i<\lambda\>$ and let $\grD\subseteq\U^{\gr z}$. 
 % For $I\subseteq\lambda$ we write $\E z_{\restriction I}\,\grD$ for the projection of $\grD$ to the $\lambda\sm I$ coordinates, i.e.\@ the set $\{b_{\restriction\lambda\sm I}: {\gr b}\in\grD\}$. 
 % Expand the language with a symbol for $\E z_{\restriction I}\,\grD$ for every finite $I\subseteq\lambda$. 
 % Then the theory of $\U$ in the expanded language has positive $\Delta$-quantifier elimination, for $\Delta=L\cup\big\{\E z_{\restriction I}\,\grD: I\subseteq\lambda\textrm{ finite}\big\}$, see Section~\hyperref[eliminazionequantificatoricriterio]{\ref*{elimination}.\ref*{eliminazionequantificatoricriterio}}.
@@ -200,7 +198,7 @@ Note that by compactness if a formulas admits ladder sequences of unbounded fini
 \begin{exercise}
    Prove that the following are equivalent
    \begin{itemize}
-   \item[1.]  $\phi({\mr x}\,;{\gr z})$ has a a ladder sequence of length $\omega$;
+   \item[1.]  $\phi({\mr x}\,;{\gr z})$ has a a ladder sequence of length $\omega$
    \item[2.] there are set ${\mr A}$ and a sequnce $\<{\gr b_i} : i<\omega\>$ such that $\phi({\mr A}\,;{\gr b_i})\subset\phi({\mr A}\,;{\gr b_{i+1}})$ for every $i<\omega$.\QED
    \end{itemize}
 \end{exercise}
@@ -211,7 +209,7 @@ We can also required that the ladder is an indiscernible sequence.
   Let $\phi({\mr x}\,;{\gr z})\in L(A)$.
   Then the following are equivalent
   \begin{itemize}
-    \item[1.] $\phi({\mr x}\,;{\gr z})$ is stable;
+    \item[1.] $\phi({\mr x}\,;{\gr z})$ is stable
     \item[2.] $\phi({\mr a_0}\,;{\gr b_1})\imp\phi({\mr a_1}\,;{\gr b_0})$ for every $A$-indiscernible sequence $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
   \end{itemize}
 \end{theorem}
@@ -245,7 +243,7 @@ We can also required that the ladder is an indiscernible sequence.
 The following theorem claims what is arguably one of the most important properties of stable formulas: any set that is externally definable by a stable formula is definable (by a related formula).
 
 \begin{theorem}\label{thm_def_stable_formula}
-Any $\grD\subseteq\U^{|{\gr z}|}$ approximated by a stable formula is definable.
+Any $\grD\subseteq\U^{\gr z}$ approximated by a stable formula is definable.
 More precisely, if $\phi({\mr x}\,;{\gr z})$ is a stable formula that approximates $\grD$ then there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in\U^{|{\mr x}|}$ such that 
 
 \ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\phi({\mr a_{i,j}}\,;{\gr z})}
@@ -299,10 +297,10 @@ Suppose that ${\mr a_0},\dots,{\mr a_{n-1}}$ and ${\gr b_0},\dots,{\gr b_{n-1}}\
 We first define ${\mr a_n}$, then ${\gr b_n}$. 
 Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that 
 
-\hfil${\gr C}\ \subseteq\ \phi({\mr a_n}\,;{\gr\U})\ \subseteq\ \U^{|{\gr z}|}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
+\hfil${\gr C}\ \subseteq\ \phi({\mr a_n}\,;{\gr\U})\ \subseteq\ \U^{\gr z}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
 
 This ${\mr a_n}$ exists, because $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$.
-(Apply Definition~\ref{def_approx} with any $B$ such that ${\gr C}\cup\{{\gr b_0},\dots,{\gr b_{n-1}}\}\subseteq B^{|{\gr z}|}$.)
+(Apply Definition~\ref{def_approx} with any $B$ such that ${\gr C}\cup\{{\gr b_0},\dots,{\gr b_{n-1}}\}\subseteq B^{\gr z}$.)
 Then, if possible, let ${\gr b_n}$ such that
 
 \ceq{\hfill{\gr b_n}}{\in}{\bigcap^n_{i=0}\phi({\mr a_i},{\gr\U})\sm\grD}
@@ -318,7 +316,7 @@ Hence the required parameters are ${\mr a_1},\dots,{\mr a_n}={\mr a_{n+1}}=\dots
 % \begin{proof}
 % It suffices to prove that if $\phi_1({\mr x_1}\,;{\gr z})\wedge\phi_2({\mr x_2}\,;{\gr z})$ is unstable then one of the formulas $\phi_n({\mr x_i}\,;{\gr z})$ is unstable. For simplicity, we use that instability implies the existence of an infinite ladder (this uses compactness, apparently contradicting Remark~\ref{rem_sability_no_compactness}). We leave to the reader to adapt the argument so that compactness is not required.
 
-% Let ${\mr a^1_i},{\mr a^2_i}\in\U^{|{\mr x}|}$ and ${\gr b_i}\in\U^{|{\gr z}|}$ be such that 
+% Let ${\mr a^1_i},{\mr a^2_i}\in\U^{|{\mr x}|}$ and ${\gr b_i}\in\U^{\gr z}$ be such that 
 
 % \ceq{\hfill i\le j}{\IFF}{\phantom{\neg}\phi_1({\mr a^1_i}\,;{\gr b_j})\wedge\phi_2({\mr a^2_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
 
@@ -335,7 +333,7 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
 
 \begin{remark}\label{rem_sability_no_compactness}
   Theorem~\ref{thm_def_stable_formula} is often casted in the following  apparently more general form.
-  Let $\mrA\subseteq\U^{|{\mr x}|}$ and $\grB\subseteq\U^{|{\gr z}|}$.
+  Let $\mrA\subseteq\U^{|{\mr x}|}$ and $\grB\subseteq\U^{\gr z}$.
   We say that $\phi({\mr x}\,;{\gr z})$ is stable between $\mrA$ and $\grB$ if for some $n$ no ladder of length $n$ exists with ${\mr a_i}\in\mrA$ and ${\gr b_i}\in\grB$.
 
   Let $\grD\subseteq\grB$ be approximable by $\phi({\mr x}\,;{\gr z})\wedge {\mr x}\in\mrA$.
@@ -357,7 +355,7 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
 
 % \begin{exercise}\label{ex_harrington}
 %   Prove the following claim (a version of Harrington's mysterious Lemma cfr.~\cite[Lemma 8.3.4]{TZ}).
-%   Let $\phi({\mr x}\,;{\gr z})\in L$ be a stable formula and suppose $\grB\subseteq\U^{|{\gr z}|}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\mr x}\,;{\gr z})^{\rm op}$, respectively.
+%   Let $\phi({\mr x}\,;{\gr z})\in L$ be a stable formula and suppose $\grB\subseteq\U^{\gr z}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\mr x}\,;{\gr z})^{\rm op}$, respectively.
 %   Then at least one of the conditions \ssf{1} and \ssf{2} below occurs
   
 %   \begin{itemize}
@@ -420,10 +418,10 @@ The following proposition highlights the connection between the stability of $\p
 \begin{theorem}\label{thm_def_stable_formula2}
    The following are equivalent
    \begin{itemize}
-     \item[1.] $\phi({\mr x}\,;{\gr z})$ is stable;
-     \item[2.] every subset of $\U^{|{\gr z}|}$ that is externally definable by $\phi({\mr x}\,;{\gr z})$ is definable;
-     \item[3.] there are $\le\kappa$ subsets of $\U^{|{\gr z}|}$ that are externally definable by $\phi({\mr x}\,;{\gr z})$;
-     \item[4.] there are $<2^\kappa$ subsets of $\U^{|{\gr z}|}$ that are externally definable by $\phi({\mr x}\,;{\gr z})$.
+     \item[1.] $\phi({\mr x}\,;{\gr z})$ is stable
+     \item[2.] every subset of $\U^{\gr z}$ that is externally definable by $\phi({\mr x}\,;{\gr z})$ is definable
+     \item[3.] there are $\le\kappa$ subsets of $\U^{\gr z}$ that are externally definable by $\phi({\mr x}\,;{\gr z})$
+     \item[4.] there are $<2^\kappa$ subsets of $\U^{\gr z}$ that are externally definable by $\phi({\mr x}\,;{\gr z})$.
    \end{itemize}
  \end{theorem}
  
@@ -530,7 +528,7 @@ When a binary tree of this form exists, we say that $\phi({\mr x}\,;{\gr z})$ ha
 \begin{theorem}\label{thm_count_types}
   The following are equivalent
   \begin{itemize}
-  \item[1.] $\phi({\mr x}\,;{\gr z})$ is unstable;
+  \item[1.] $\phi({\mr x}\,;{\gr z})$ is unstable
   \item[2.] $\phi({\mr x}\,;{\gr z})$ has the binary tree property.
   \end{itemize}
 \end{theorem}
@@ -581,8 +579,8 @@ When a binary tree of this form exists, we say that $\phi({\mr x}\,;{\gr z})$ ha
 \begin{corollary}\label{corol_count_types}
 The following are equivalent
 \begin{itemize}
-\item[1.] $\phi({\mr x}\,;{\gr z})$ is a stable formula;
-\item[2.] $\big|S_{\phi}(A)\big|\le|A|$ for all countable sets $A$;
+\item[1.] $\phi({\mr x}\,;{\gr z})$ is a stable formula
+\item[2.] $\big|S_{\phi}(A)\big|\le|A|$ for all countable sets $A$
 \item[3.] $\big|S_{\phi}(A)\big|<2^{|A|}$ for all countable sets $A$.
 \end{itemize}
 \end{corollary}
@@ -666,8 +664,8 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 % \begin{theorem}
 % The following are equivalent
 % \begin{itemize}
-% \item[1.] $T$ is stable;
-% \item[2.] $|S(A)|\le|A|$ for some infinite cardinal $\lambda$, and all sets $A$ of cardinality $\le\lambda$;
+% \item[1.] $T$ is stable
+% \item[2.] $|S(A)|\le|A|$ for some infinite cardinal $\lambda$, and all sets $A$ of cardinality $\le\lambda$
 % \item[3.] $|S(A)|\le|A|$ for every set $A$ such that $|L|<\cf(A)$.
 % \end{itemize}
 % \end{theorem}
@@ -686,6 +684,7 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 % Proposition~\ref{thm_count_types} implies that $|S(A)|\le |A|^{|L|}$. Therefore, when $|L|<\cf(A)$, we obtain $|S(A)|\le |A|$.
 % \end{proof}
 \section{Stationarity and symmetry}
+\label{stationarity}
 
 \def\ceq#1#2#3{\parbox{20ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
@@ -744,9 +743,9 @@ Now we show that under the assumption of stability Lascar invariance reduces to 
   Let $p({\mr x})\in S_\phi(\U)$. 
   Then the following are equivalent
   \begin{itemize}
-  \item[1.] ${\gr\D_{p,\phi}}\in \acl^\eq\!A$;
-  \item[2.] $p({\mr x})$ is finitely satisfied in every $M\supseteq A$;
-  \item[3.] $p({\mr x})$ is invariant over $\acl^\eq\!A$;
+  \item[1.] ${\gr\D_{p,\phi}}\in \acl^\eq\!A$
+  \item[2.] $p({\mr x})$ is finitely satisfied in every $M\supseteq A$
+  \item[3.] $p({\mr x})$ is invariant over $\acl^\eq\!A$
   \item[4.] $p({\mr x})$ is Lascar invariant over $A$.
   \end{itemize}
 \end{proposition}
@@ -808,7 +807,7 @@ Therefore if $T$ is stable, all global types have a canonical base.
 ($T$ stable) 
 The following are equivalent
 \begin{itemize}
-\item[1.] ${\mr a}\equivL_A{\mr b}$, see Definition~\ref{def_Lascar_type};
+\item[1.] ${\mr a}\equivL_A{\mr b}$, see Definition~\ref{def_Lascar_type}
 \item[2.] ${\mr a}\equivSh_A{\mr b}$, see Definition~\ref{def_Sh_strong_type}.
 \end{itemize}
 \end{corollary}
@@ -828,7 +827,7 @@ The following are equivalent
 %   Let $p({\mr x})\in S(\U)$.
 %   Then the following are equivalent
 %   \begin{itemize}
-%   \item[1.] $p({\mr x})\in S(\U)$ invariant over $\acl^\eq\!A$;
+%   \item[1.] $p({\mr x})\in S(\U)$ invariant over $\acl^\eq\!A$
 %   \item[2.] $p({\mr x})$ is almost finitely satisfiable in $A$. 
 %   \end{itemize}
 % \end{proposition}
@@ -946,7 +945,7 @@ We first prove a special case of the theorem case that is simpler.
   A sequence $\<a_i:i<\omega\>$ is totally indiscernible if $a_1,\dots,a_n\equiv a_{i_1},\dots,a_{i_n}$ for every distinct $i_1,\dots,i_n$.
   Prove that the following are equivalent
   \begin{itemize}
-  \item[1.] $T$ is stable;
+  \item[1.] $T$ is stable
   \item[2.] every indiscernible sequence is totally indiscernible.\QED
   \end{itemize}
 \end{exercise}
@@ -954,7 +953,7 @@ We first prove a special case of the theorem case that is simpler.
 \begin{exercise}\label{ex_stable_orderproperty}
 Prove that the following are equivalent
 \begin{itemize}
-\item[1.] $T$ is unstable;
+\item[1.] $T$ is unstable
 \item[2.] there is an infinite set $A\subseteq\U^n$ and a formula  $\psi(x\,;y)$, with $|x|=|y|=n$ such that $A$ is linearly ordered by the relation $a<b\iff\psi(a\,;b)$.\QED
 \end{itemize}
 \end{exercise}
@@ -1005,7 +1004,7 @@ Let $\D\subseteq\S$ be a definable set.
 Write $G_{\D}$ for $L'$-$\Aut(\G,\S,{\D})$.
 Then the following are equivalent
 \begin{itemize}
-  \item[1.] $\D$ is $G_{\D}$-generic;
+  \item[1.] $\D$ is $G_{\D}$-generic
   \item[2.] $\D$ is $\G$-generic.
 \end{itemize}
 \end{fact}
@@ -1057,4 +1056,3 @@ Let $p(x)$ be a global type containing $x\in\S$ we define
 and
 
 \ceq{\hfill{\rm Stab}(p)}{=}{\big\{g\in\G\ :\ g\cdot p(x)=p(x)\big\}.}
-\end{document}
