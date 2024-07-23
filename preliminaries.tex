@@ -54,9 +54,10 @@ If $a$ and $b$ are tuples, we write \emph{$a\,b$\/} for the concatenation or, wh
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Structures}
+Finally, we are really going to get started.
 
+\begin{definition}
 A \emph{language $L$\/}\index{language!(first order)}\index{0L@$L$} (also called \emph{signature\/}\index{signature}) is a triple that consists of
-
 \begin{itemize}
 \item[1.] a set \emph{$L_{\rm fun}$}\index{0Lfun@$L_{\rm fun}$} whose elements are called \emph{function symbols}\index{symbol!function}
 \item[2.] a set \emph{$L_{\rm rel}$\/}\index{0Lrel@$L_{\rm rel}$} whose elements are called \emph{relation symbols}\index{symbol!relation}
@@ -64,11 +65,13 @@ A \emph{language $L$\/}\index{language!(first order)}\index{0L@$L$} (also called
 We say that $f$ is an \emph{$n_f$-ary} function symbol, and similarly for $r$.
 A $0$-ary function symbol is also called a \emph{constant.}
 \end{itemize}
+\end{definition}
 
 Warning: it is customary to use the symbol \emph{$L$} to denote both the language and the set of formulas associated to it (to be defined below).
 We denote by \emph{$|L|$} the cardinality of $L_{\rm fun}\cup L_{\rm rel}\cup\omega$.
 Note that, by definition, $|L|$ is always infinite.
 
+\begin{definition}
 A \emph{structure\/}\index{structure} $M$ of signature $L$ (for short \emph{$L$-structure}) consists of
 
 \begin{itemize}
@@ -77,13 +80,14 @@ A \emph{structure\/}\index{structure} $M$ of signature $L$ (for short \emph{$L$-
 \item[3.] a function that assigns to every  $r\in L_{\rm rel}$ a relation \emph{$r^M\subseteq M^{n_r}$.}\index{0rM@$r^M$}
 \end{itemize}
 We call $f^M$ and $r^M$, the \emph{interpretation\/}\index{interpretation} of $f$, respectively $r$, in $M$.
+\end{definition}
 
 Recall that, by definition, $M^0=\{\0\}$\index{function!0-ary}.
 Therefore the interpretation of a constant $c$ is a function that maps the unique element of $M^0$ to an element of $M$.
 We identify \emph{$c^M$\/} with $c^M(\0)$.
 
 We may use the word \emph{model\/} as a synonym for structure.
-But beware that, in some contexts, the word is used to denote a particular kind of structure.
+But beware that, in some contexts, the word model is used to denote a particular kind of structure.
 
 If $M$ is an $L$-structure and $A\subseteq M$ is any subset, we write \emph{$L(A)$\/}\index{0LA@$L(A)$, $L(M)$} for the language obtained by  adding to $L_{\rm fun}$ the elements of $A$ as constants.
 In this context, the elements of $A$ are called \emph{parameters.}\index{parameter} 
@@ -98,23 +102,26 @@ The \emph{language of additive groups\/}\index{language!of additive groups} cons
 \end{itemize}
 In the \emph{language of multiplicative groups\/}\index{language!of multiplicative groups\/} the three symbols above are replaced by $1$,~${}^{-1}$, and $\cdot$ respectively. Any group is a structure in either of these two signatures with the obvious interpretation. Needless to say, not all structures with these signatures are groups.
 
-The \emph{language of (unitary) rings\/} contains all the symbols above except \ ${}^{-1}$. The  \emph{language of ordered rings\/} also contains the binary relation symbol $<$.
+The \emph{language of (unitary) rings\/} contains all the symbols above except ${}^{-1}$.
+The  \emph{language of ordered rings\/} also contains the binary relation symbol $<$.
 \end{example}
 
 The following example is less straightforward. The reason for the choice of the language of vector spaces will become clear in Example~\ref{ex_substructure} below.
 
 \begin{example}\label{linguaggio_spazi_vettoriali}
-Let $F$ be a field. The \emph{language of vector spaces over $F$,}\index{language!vector spaces} which we denote by $L_F$, extends that of additive groups by a unary function symbol $k$ for every $k\in F$. 
+Let $F$ be a field. The \emph{language of vector spaces over $F$,}\index{language!vector spaces} which we denote by $L_F$, extends that of additive groups by a unary function symbol $k$ for every $k\in F$.
 
-Recall that a vector space over $F$ is an abelian group $M$ together with a function $\mu:F\times M\imp M$ satisfying some properties (that we assume to be well-known, see Example~\ref{ex_ax_vect_sp}).
+Recall that a vector space over $F$ is an abelian group $M$ together with a function $\mu:F\times M\imp M$ satisfying some well-known properties.
 To view a vector space over $F$ as an $L_F$-structure, we interpret the group symbols in the obvious way and each $k\in F$ as the function $\mu(k,\mbox{-})$.
+See Example~\ref{ex_ax_vect_sp}.
 \end{example}
 
-The languages in Examples~\ref{LgaLgmLau} and \ref{linguaggio_spazi_vettoriali}, with the exception of that of ordered rings, are \emph{functional languages;}\index{language!functional} that is, $L_{\rm rel}=\0$. In what follows, we consider two important examples of \emph{relational languages,}\index{language!relational} that is, languages where $L_{\rm fun}=\0$.
+The languages in Examples~\ref{LgaLgmLau} and \ref{linguaggio_spazi_vettoriali}, with the exception of that of ordered rings, are \emph{functional languages;}\index{language!functional} that is, $L_{\rm rel}=\0$. The following example mention two important examples of \emph{relational languages,}\index{language!relational} that is, languages where $L_{\rm fun}=\0$.
 
 \begin{example}\label{expl_graph1}
-The \emph{language of strict orders\/}\index{language!strict orders} only contains a binary relation symbol, usually denoted by~$<$.
-The \emph{language of graphs,}\index{language!graphs} too, only contains a binary relation symbol~$r(\mbox{-},\mbox{-})$.
+The \emph{language of strict orders\/}\index{language!strict orders} contains a binary relation symbol, which is usually denoted by~$<$.
+The \emph{language of graphs,}\index{language!graphs} contains a binary relation symbol~$r(\mbox{-},\mbox{-})$.
+See Chapter~\ref{relational}.
 \end{example}
 
 

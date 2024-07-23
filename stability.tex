@@ -37,7 +37,7 @@ The latter interpretation explains the terminology.
 This is not the most common approach.
 
 \begin{definition}\label{def_approx}
-We say that $\grD$ is \emph{approximated\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite $B$ there is a tuple ${\mr a}\in\U^{|{\mr x}|}$ such that $\phi({\mr a}\,;{\gr\U})=_B\grD$.
+We say that $\grD$ is \emph{approximated\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite $B$ there is a tuple ${\mr a}\in\U^{\mr x}$ such that $\phi({\mr a}\,;{\gr B})=\grD\cap B^{\gr z}$.
 We call $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grD$.
 If in addition $\phi({\mr a}\,;{\gr\U})\subseteq\grD$, we say that  $\grD$ is \emph{approximated from below}.
 Equivalently, we say that  $\grD$ is approximated from below if for every finite ${\gr B}\subseteq\grD$ there is a tuple ${\mr a}\in\U^{|{\mr x}|}$ such that  ${\gr B}\subseteq\phi({\mr a}\,;{\gr\U})\subseteq\grD$.
@@ -79,7 +79,7 @@ In Definition~\ref{def_approx}, the sort $\phi({\mr x}\,;{\gr z})$ is fixed (oth
 For every $\grD$ the following are equivalent
 \begin{itemize}
 \item[1.] $\grD$ is approximable
-\item[2.] for every $C\subseteq\U$ of cardinality $\le|L|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi({\gr\U})=_C\grD$.
+\item[2.] for every $C\subseteq\U$ of cardinality $\le|L|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi({\gr C})=\grD\cap C^{\gr z}$.
 \end{itemize}
 \end{proposition}
 
@@ -88,10 +88,8 @@ To prove \ssf{2}$\IMP$\ssf{1} assume \ssf{2} and negate \ssf{1} for a contradict
 For each formula $\psi({\mr x}\,;{\gr z})\in L$ choose a finite set $B$ such that $\psi({\mr b}\,;{\gr\U})\neq_B\grD$ for every ${\mr b}\in\U^{|{\mr x}|}$.
 Let $C$ be the union of all these finite sets.
 Clearly $|C|\le|L|$.
-By \ssf{2} there are a formula $\phi({\mr x}\,;{\gr z})$ and a tuple ${\mr c}$ such that $\phi({\mr c}\,;{\gr\U})=_C\grD$, contradicting the definition of $C$.
+By \ssf{2} there are a formula $\phi({\mr x}\,;{\gr z})$ and a tuple ${\mr c}$ such that $\phi({\mr c}\,;{\gr C})=\grD\cap C^{\gr z}$, contradicting the definition of $C$.
 \end{proof}
-
-
 
 \begin{remark}\label{prop_approx_el_eq}
 If $\grD\subseteq\U^{\gr z}$ is approximated by $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\ref{expansions} for the notation.
