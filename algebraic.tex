@@ -28,7 +28,7 @@ In this chapter, whenever some $A\subseteq M\models T$ are fixed, by \textit{mod
 %
 The notions of \textit{logical consequence}, \textit{consistency}, \textit{completeness}, etc.\@ are modified accordingly, and we write $\,\proves\,$ for $T\cup\Diag\<A\>_M\proves\,$.
 
-We say that a type $p({\mr x})$ is \emph{trivial\/} if $\,\proves p({\mr x})$.
+We say that a type $p(x)$ is \emph{trivial\/} if $\,\proves p(x)$.
 \end{notation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -47,38 +47,38 @@ The theory \emph{$T_{\rm ag}$} of \emph{abelian groups\/} is axiomatized by the 
 \item[a3] $x+0\ = \ 0+x\ = \ x$
 \item[a4] $x+y\ =\ y+x$.
 \end{itemize}
-Let ${\mr x}$ be a tuple of variables of length $\alpha$, an ordinal.
+Let $x$ be a tuple of variables of length $\alpha$, an ordinal.
 %
-We write $L_{{\rm ter},{\mr x}}$ for the set of terms $t({\mr x})$ with free variables among ${\mr x}$.
+We write $L_{{\rm ter},x}$ for the set of terms $t(x)$ with free variables among $x$.
 %
 On this set we define the equivalence relation
 
-\ceq{\hfill \emph{$t({\mr x})\sim s({\mr x})$}}%
+\ceq{\hfill \emph{$t(x)\sim s(x)$}}%
 {=}%
-{T_{\rm ag}\proves t({\mr x})=s({\mr x}).}
+{T_{\rm ag}\proves t(x)=s(x).}
 
-We define the group operations on $L_{{\rm ter},{\mr x}}/\mathord{\sim}$ in the obvious way.
+We define the group operations on $L_{{\rm ter},x}/\mathord{\sim}$ in the obvious way.
 %
 We denote by $\ZZ^{\oplus\alpha}$ the set of tuples of integers of length $\alpha$ that are almost always $0$.
 %
 The group operations on $\ZZ^{\oplus\alpha}$ are defined coordinate-wise.
 %
-The following immediate proposition implies in particular that  $L_{{\rm ter},{\mr x}}/\mathord{\sim}$ is isomorphic to $\ZZ^{\oplus\alpha}$.
+The following immediate proposition implies in particular that  $L_{{\rm ter},x}/\mathord{\sim}$ is isomorphic to $\ZZ^{\oplus\alpha}$.
 
 \begin{proposition}\label{corol_formacanonicaterminimoduli}
   Let $A\subseteq M\models T_{\rm ag}$.
   %
-  Then for every formula $\phi({\mr x})\in L_{\rm at}(A)$ there are $n\in\ZZ^{\oplus\alpha}$ and $c\in\<A\>_M$ such that 
+  Then for every formula $\phi(x)\in L_{\rm at}(A)$ there are $n\in\ZZ^{\oplus\alpha}$ and $c\in\<A\>_M$ such that 
 
-  \ceq{\hfill\medrel{\proves}\phi({\mr x})}{\iff}{\sum_{i<\alpha}n_ix_i\ =\ c}
+  \ceq{\hfill\medrel{\proves}\phi(x)}{\iff}{\sum_{i<\alpha}n_ix_i\ =\ c}
 
-  where $n=\<n_i:i<\alpha\>$ and  ${\mr x}=\<x_i:i<\alpha\>$.
+  where $n=\<n_i:i<\alpha\>$ and  $x=\<x_i:i<\alpha\>$.
 \end{proposition}
 
 \begin{proof}
-  Up to equivalence over $T_{\rm ag}$ the formula $\phi({\mr x})$ has the form $s({\mr x})=t({\gr a})$ for some parameter-free terms $s({\mr x})$ and $t({\gr z})$.
+  Up to equivalence over $T_{\rm ag}$ the formula $\phi(x)$ has the form $s(x)=t({\gr a})$ for some parameter-free terms $s(x)$ and $t({\gr z})$.
   %
-  Over $\Diag\,\<A\>_M$, we can replace $t({\gr a})$ with a single  $c\in \<A\>_M$ and write $s({\mr x})$ as the linear combination shown above.
+  Over $\Diag\,\<A\>_M$, we can replace $t({\gr a})$ with a single  $c\in \<A\>_M$ and write $s(x)$ as the linear combination shown above.
 \end{proof}
 
 \begin{definition}\label{def_rank_independece_ag}
@@ -106,29 +106,28 @@ An element $c$ of an abelian group is a \emph{torsion element} if $nc=0$ for som
 \begin{proposition}\label{prop_trivial_type_in_ag}
   Let $A\subseteq M\models T_{\rm ag}$.
   %
-  Suppose that ${\mr c}\in M$ is not a torsion element.
+  Suppose that $c\in M$ is not a torsion element.
   %
   Then the following are equivalent
   \begin{itemize}
   \item[1.] $c$ is independent from $A$
-  \item[2.] $p({\mr x})=\attp_M({\mr c}/A)$ is trivial (see Notation~\ref{notation1}).
+  \item[2.] $p(x)=\attp_M(c/A)$ is trivial (see Notation~\ref{notation1}).
   \end{itemize}
 \end{proposition}
 \begin{proof}
-  \ssf{1}$\IMP$\ssf{2}\quad By Proposition~\ref{corol_formacanonicaterminimoduli}, formulas in $p({\mr x})$ may be assumed to have the form $n{\mr x}=a$ for some integer $n$ and some $a\in\<A\>_M$.
+  \ssf{1}$\IMP$\ssf{2}\quad By Proposition~\ref{corol_formacanonicaterminimoduli}, formulas in $p(x)$ may be assumed to have the form $nx=a$ for some integer $n$ and some $a\in\<A\>_M$.
   %
-  As this formula is satisfied by ${\mr c}$ then $a\in\<A\>_M\cap\<{\mr c}\>_M$.
+  As this formula is satisfied by $c$ then $a\in\<A\>_M\cap\<c\>_M$.
   %
   Hence $a=0$.
   %
-  As ${\mr c}$ is not a torsion element, $n=0$ and the equation is trivial.
+  As $c$ is not a torsion element, $n=0$ and the equation is trivial.
 
-  \ssf{2}$\IMP$\ssf{1}\quad If $\<A\>_M\cap\<{\mr c}\>_M\neq\big\{0\big\}$ then $n{\mr c}=a$ for some $a\in\<A\>_M\sm\{0\}$ and some $n\in\ZZ\sm\{0\}$.
+  \ssf{2}$\IMP$\ssf{1}\quad If $\<A\>_M\cap\<c\>_M\neq\big\{0\big\}$ then $nc=a$ for some $a\in\<A\>_M\sm\{0\}$ and some $n\in\ZZ\sm\{0\}$.
   %
-  Then ${\mr c}$ satisfies the equation $n{\mr x}=a$.
+  Then $c$ satisfies the equation $nx=a$.
   %
   This equation is nontrivial (e.g., in $M$ it is not satisfied by $2c$).
-
 \end{proof}
 
 \begin{remark}\label{oss_liberi_qf}
@@ -194,16 +193,16 @@ Then $\rank M=|M|$.
 \begin{proposition}\label{prop_tfag_tipi_princ_comp}
 Let $A\subseteq M\models T_{\rm tfag}$.
 %
- Let $p({\mr x})=\atpmtp({\mr b}/A)$, where ${\mr b} \in M$.
+ Let $p(x)=\atpmtp({\mr b}/A)$, where ${\mr b} \in M$.
 %
 Then one of the following holds   
 \begin{itemize}
 \item[1.] ${\mr b}$ is independent from $A$
-\item[2.] $M\models\phi({\mr b})$ for some $\phi({\mr x})\in L_{\rm at}(A)$ such that $\ \proves\ \phi({\mr x})\imp p({\mr x})$.
+\item[2.] $M\models\phi({\mr b})$ for some $\phi(x)\in L_{\rm at}(A)$ such that $\ \proves\ \phi(x)\imp p(x)$.
 \end{itemize}
 \end{proposition}
 
-Note the similarity with Example~\ref{ex_infiniti_colori}, where the independent type is $q({\mr x})$ and the isolating formulas are the $r_i({\mr x})$.
+Note the similarity with Example~\ref{ex_infiniti_colori}, where the independent type is $q(x)$ and the isolating formulas are the $r_i(x)$.
 
 It is important to observe that the set $A$ above may be infinite.
 %
@@ -217,7 +216,7 @@ It suffices to show that $\phi({\mr x})$ implies a complete $L_{\rm at^\pm}(A)$-
 %
 Clearly this type must be $p({\mr x})$.
 %
-Let $\phi({\mr x})$ have the form $n{\mr x}=a$ for some $n\in\ZZ\sm\{0\}$ and ${\gr a}\in\<A\>_M\sm\{0\}$.
+Let $\phi({\mr x})$ have the form $nx={\gr a}$ for some $n\in\ZZ\sm\{0\}$ and ${\gr a}\in\<A\>_M\sm\{0\}$.
 %
 We show that for every $m\in\ZZ$ and every ${\gr c}\in\<A\>_M$ one of the following holds
 \begin{itemize}
@@ -240,7 +239,7 @@ But $m{\gr a}=n{\gr c}$ is a formula with parameters in $\<A\>_M$, so it should 
 
 
 
-%\begin{definition} Let $A\subseteq M\models T_{\rm tfag}$. We say that an element $c\in M$ is \emph{independent from $A$\/} if the type $p({\mr x})=\attp_M(c/A)$ is trivial, that is, $N\models \A x\,p({\mr x})$ for every $\<A\>_M\subseteq N\models T_{\rm tfag}$.\end{definition}  
+%\begin{definition} Let $A\subseteq M\models T_{\rm tfag}$. We say that an element $c\in M$ is \emph{independent from $A$\/} if the type $p(x)=\attp_M(c/A)$ is trivial, that is, $N\models \A x\,p(x)$ for every $\<A\>_M\subseteq N\models T_{\rm tfag}$.\end{definition}  
 
 % \begin{proposition}\label{prop_independent_ag}
 % Let $k:M\to N$ be a partial isomorphism between models of $T_{\rm tfag}$. Let $b\in M$ and $c\in N$ be independent from $\dom k$, respectively $\range k$. Then  $k\cup\big\{\<b,c\>\big\}:M\to N$ is partial isomorphism.
@@ -253,7 +252,7 @@ But $m{\gr a}=n{\gr c}$ is a formula with parameters in $\<A\>_M$, so it should 
 
 
 % \begin{exercise}\label{ex_ol+grf_tipi_princ_comp}
-% Let $T$ be one of the theories $T_{\rm lo}$ or $T_{\rm graph}$. Let $A\subseteq M\models T$ be finite. For $b\in M$ let $p({\mr x})=\atpmtp_M(b/A)$. Prove that $\phi({\mr x})\imp p({\mr x})$ for some $\phi({\mr x})$, conjunction of formulas in $p({\mr x})$. Find a counterexample with $A$ infinite.
+% Let $T$ be one of the theories $T_{\rm lo}$ or $T_{\rm graph}$. Let $A\subseteq M\models T$ be finite. For $b\in M$ let $p(x)=\atpmtp_M(b/A)$. Prove that $\phi(x)\imp p(x)$ for some $\phi(x)$, conjunction of formulas in $p(x)$. Find a counterexample with $A$ infinite.
 % \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -289,9 +288,9 @@ If $n\neq0$ then by consistency ${\gr a}\neq0$, hence a solution exist in $N$ by
 \begin{exercise}
 Prove a converse of Proposition~\ref{prop_md_cons_sodd}.
 %
-Let $A\subseteq N\models T_{\rm ag}$ and let ${\mr x}$ be a single variable.
+Let $A\subseteq N\models T_{\rm ag}$ and let $x$ be a single variable.
 %
-Prove that if $N\models\E{\mr x} \,\phi({\mr x})$ for every consistent $\phi({\mr x})\in L_{\rm at}(A)$, then $N\models T_{\rm dag}$.
+Prove that if $N\models\E x \,\phi(x)$ for every consistent $\phi(x)\in L_{\rm at}(A)$, then $N\models T_{\rm dag}$.
 \end{exercise}
 
 We are ready to prove that divisible abelian groups of infinite rank are $\omega$-rich.
@@ -390,33 +389,33 @@ So it is important to remember that $\Diag\<A\>_M$ is not trivial even when $A=\
 %
 In fact, $\Diag\<\0\>_M$ determines the characteristic of the models.
 
-Let  $A\subseteq M\models T_{\rm cr}$ and let ${\mr x}$ be a tuple of variables.
+Let  $A\subseteq M\models T_{\rm cr}$ and let $x$ be a tuple of variables.
 %
-We write $L_{{\rm ter},{\mr x}}(A)$ for the set of terms $t({\mr x})$ with free variables among ${\mr x}$ and parameters in $A$.
+We write $L_{{\rm ter},x}(A)$ for the set of terms $t(x)$ with free variables among $x$ and parameters in $A$.
 %
 On this set we define the equivalence relation
 
-\ceq{\hfill \emph{$t({\mr x})\sim s({\mr x})$}}%
+\ceq{\hfill \emph{$t(x)\sim s(x)$}}%
 {\IFF}%
-{\proves \ t({\mr x})=s({\mr x}).}
+{\proves \ t(x)=s(x).}
 
-On $L_{{\rm ter},{\mr x}}(A)/\mathord{\sim}$ we define the ring operations in the obvious way so that $L_{{\rm ter},{\mr x}}(A)/\mathord{\sim}$ is a commutative ring.
+On $L_{{\rm ter},x}(A)/\mathord{\sim}$ we define the ring operations in the obvious way so that $L_{{\rm ter},x}(A)/\mathord{\sim}$ is a commutative ring.
 %
-We denote by $A[{\mr x}]$ the set of polynomials with variables among ${\mr x}$ and parameters in $\<A\>_M$.
+We denote by $A[x]$ the set of polynomials with variables among $x$ and parameters in $\<A\>_M$.
 %
-The ring operations on $A[{\mr x}]$ are defined as usual.
+The ring operations on $A[x]$ are defined as usual.
 %
-The following proposition (which is clear, but tedious to prove) implies in particular that $L_{{\rm ter},{\mr x}}(A)/\mathord{\sim}$ is isomorphic to $A[{\mr x}]$.
+The following proposition (which is clear, but tedious to prove) implies in particular that $L_{{\rm ter},x}(A)/\mathord{\sim}$ is isomorphic to $A[x]$.
 %
-For simplicity we state it only for $|{\mr x}|=1$.
+For simplicity we state it only for $|x|=1$.
 
 \begin{proposition}
 \label{prop_formacanonicaterminiau}
-Let  $A\subseteq M\models T_{\rm cr}$ and let ${\mr x}$ be a single variable.
+Let  $A\subseteq M\models T_{\rm cr}$ and let $x$ be a single variable.
 %
-Then for every formula $\phi({\mr x})\in L_{\rm at}(A)$ there is a unique $n<\omega$ and a unique tuple $\<{\gr a_i}:i\le n\>$ of elements of $\<A\>_M$ such that ${\gr a_n}\neq0$ and 
+Then for every formula $\phi(x)\in L_{\rm at}(A)$ there is a unique $n<\omega$ and a unique tuple $\<a_i:i\le n\>$ of elements of $\<A\>_M$ such that $a_n\neq0$ and 
 
-\ceq{}{\proves}{\phi({\mr x})\ \iff\ \sum_{i\le n}{\gr a_i}{\mr x}^i\ =\ 0}.
+\ceq{}{\proves}{\phi(x)\ \iff\ \sum_{i\le n}a_ix^i\ =\ 0}.
 \end{proposition}
 
 The integer $n$ in the proposition above is called the \emph{degree of $\phi(x)$}.
@@ -424,9 +423,9 @@ The integer $n$ in the proposition above is called the \emph{degree of $\phi(x)$
 \begin{definition}\label{def_id_trans_alg}
    Let $A\subseteq M\models T_{\rm cr}$.
 %
- An element ${\mr b}\in M$ is \emph{transcendental over $A$\/} if the type $p({\mr x})=\attp_M({\mr b}/A)$ is tr We say that aivial (see Notation~\ref{note_tipi_diagramma} and ~\ref{notation1}).
+ An element $b\in M$ is \emph{transcendental over $A$\/} if the type $p(x)=\attp_M(b/A)$ is tr We say that aivial (see Notation~\ref{note_tipi_diagramma} and ~\ref{notation1}).
 %
-  Otherwise we say that ${\mr b}$ is \emph{algebraic over $A$}.
+  Otherwise we say that $b$ is \emph{algebraic over $A$}.
 %
   The \emph{transcendence degree\/} of $M$ is the least cardinality of a subset $A\subseteq M$ such that all the elements of $M$ are algebraic over $A$.
 \end{definition}  
@@ -564,7 +563,7 @@ So, substructures of fields are merely integral domains.
 The theory of \emph{algebraically closed field}, which we denote by \emph{$T_{\rm acf}$}, also contains the following axioms for every positive integer $n$
 
 \begin{itemize}
-\item[ac.] $\E {\mr x}\ \big( {\mr x}^{n} + {\gr z_{n-1}} {\mr x}^{n-1} + \dots + {\gr z_1}  {\mr x} + {\gr z_0}\ \ =\ \ 0\big)$.
+\item[ac.] $\E {\mr x}\ \big( {\mr x^{n}} + {\gr z_{n-1}} {\mr x^{n-1}} + \dots + {\gr z_1}  {\mr x} + {\gr z_0}\ \ =\ \ 0\big)$.
 \end{itemize}
 
 The theory \emph{$T^p_{\rm acf}$} is defined in analogy to $T^p_{\rm id}$ in the previous section.
@@ -582,7 +581,7 @@ The claim in the proposition holds more generally for all $\phi({\mr x})\in L_{\
 This follows from Lemma~\ref{lem_acf_ricco_nonnumer} whose proof uses the proposition.
 
 \begin{proof}
-Up to equivalence $\phi({\mr x})$ has the form ${\gr a_n}{\mr x}^n + \dots + {\gr a_1} {\mr x} + {\gr a_0}=0$ for some ${\gr a_i}\in\<A\>_N$.
+Up to equivalence $\phi({\mr x})$ has the form ${\gr a_n}{\mr x^n} + \dots + {\gr a_1} {\mr x} + {\gr a_0}=0$ for some ${\gr a_i}\in\<A\>_N$.
 %
 Choose $n$ minimal.
 %

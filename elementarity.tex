@@ -248,14 +248,14 @@ For every pair of structures $M$ and $N$ and every $A\subseteq M\cap N$ the foll
 \item[a.] $M\equiv_A N$
 \item[b.] $\Th(M/A)=\Th(N/A)$
 \item[c.] \parbox{27ex}{$M\models\phi(a)\ \ \IFF\ \ N\models \phi(a)$}  for every $\phi(x)\in L$ and every $a\in A^x$.
-\item[d.]  \parbox{27ex}{$\phi(M^{\mr x}) \cap A^x\ =\ \phi(N) \cap A^x$} for every $\phi(x)\in L$.
+\item[d.]  \parbox{27ex}{$\phi(M^x) \cap A^x\ =\ \phi(N) \cap A^x$} for every $\phi(x)\in L$.
 \end{itemize}
 \end{proposition}
 
 If we restate \ssf{a} and \ssf{c} of the proposition above when $A=M$ we obtain that the following are equivalent
 \begin{itemize}
 \item[a'.] $M\preceq N$
-\item[d'.] \parbox{26ex}{$\phi(M^{\mr x})\ =\ \phi(N) \cap M^x$} for every $\phi(x)\in L$.
+\item[d'.] \parbox{26ex}{$\phi(M^x)\ =\ \phi(N) \cap M^x$} for every $\phi(x)\in L$.
 \end{itemize}
 Note that \ssf{c'} extends to all definable sets what Definition~\ref{sottostrutturadef} requires for a few basic definable sets.
 
@@ -287,7 +287,7 @@ Prove that $M\equiv_A N$ if and only if $M\equiv_B N$ for every finite $B\subset
 
 \begin{exercise}\label{ex_finite_elemenrary}
 Let $M\preceq N$ and let $\phi(x)\in L(M)$.
-Prove that $\phi(M^{\mr x})$ is finite if and only if $\phi(N)$ is finite and in this case $\phi(N)=\phi(M^{\mr x})$.
+Prove that $\phi(M^x)$ is finite if and only if $\phi(N)$ is finite and in this case $\phi(N)=\phi(M^x)$.
 \end{exercise}
 
 \begin{exercise}\label{ex_finite_fam_sets}
@@ -707,7 +707,7 @@ We prove that the equivalence in the theorem holds for the formula $\E y\,\phi(x
 \begin{corollary}\label{corol_def_set_invariant}
 If $h:M\imp N$ is an isomorphism then for every $\phi(x)\in L$.
 
-\ceq{\hfill h\big[\phi(M^{\mr x})\big]}{=}{\phi(N)}
+\ceq{\hfill h\big[\phi(M^x)\big]}{=}{\phi(N^x)}
 \end{corollary}
 
 We can now give a few very simple examples of elementarily equivalent structures.
@@ -768,7 +768,7 @@ Note that Theorem~\ref{thm_embeddings_preservation_E} proves that the property a
 
 \begin{exercise}\label{ex_Z_odd_existential}
 Let $M$ be the model with domain $\ZZ$ in the language of additive groups which is interpreted in the natural way.
-Prove that there is no existential formula $\phi(x)$ such that $\phi(M^{\mr x})$ is the set of odd integers.
+Prove that there is no existential formula $\phi(x)$ such that $\phi(M^x)$ is the set of odd integers.
 Hint: use Exercise~\ref{dlorlkurb}.
 \end{exercise}
 

@@ -778,16 +778,19 @@ The following proposition says that in a stable theory with elimination of imagi
 
 \begin{proof}
   Existence follows from Corollary~\ref{corol_stable_coheir_over_models}.
-  Let $q_i({\mr x})\in S(\U^\eq)$, for $i=1,2$, be two global $\phi$-types that extend $q({\mr x})$ and are invariant over $\acl^\eq\!A$.
+  Let $q_i({\mr x})\in S(\U^\eq)$, for $i=1,2$, be two types that extend $q({\mr x})$ and are invariant over $\acl^\eq\!A$.
+  We need to prove that ${\gr\D_{q_1,\phi}}={\gr\D_{q_2,\phi}}$.
+  Let $\psi_i({\gr z})\in L(\acl^\eq\!A)$ define ${\gr\D_{q_i,\phi}}$.
+  These formulas exist by stability.
+  We claim that $\psi_1({\gr b})\iff\psi_2({\gr b})$, for all ${\gr b}\in\U^{\gr z}$.
   Let $p({\gr z})\in S_\phi(\U)$ be invariant over $\acl^\eq\!A$ and consistent with $\tp({\gr b}/\acl^\eq\!A)$.
-  Let $\theta({\mr x})\in L(\acl^\eq\!A)$ be the formula ${\mr x}\in{\mr\D_{p,\phi^{\rm op}}}$.
-  Let $\psi_i({\gr z})\in L(\acl^\eq\!A)$ be the formula ${\gr z}\in{\gr\D_{q_i,\phi}}$.
-  We claim that $\psi_1({\gr b})\iff\psi_2({\gr b})$, for any ${\gr b}\in\U^{\gr z}$.
+  Let $\theta({\mr x})\in L(\acl^\eq\!A)$ define ${\mr\D_{p,\phi^{\rm op}}}$.
+  Again this exists by stability.
   Let $M$ be any model containing $A$.
   Let ${\gr b'}\models p({\gr z}){\restriction}M$ and ${\mr a_i}\models q_i({\mr x}){\restriction}M$.
   Then $\theta(M^{\mr x})=\phi(M^{\mr x}\,;{\gr b'})$ and $\psi_i(M^{\gr z})=\phi({\mr a_i}\,;M^{\gr z})$.
-  By Corollary~\ref{corol_harrington0} $\psi_i({\gr b'})\iff\theta({\mr a_i})$.
-  As ${\mr a_1}\equiv_{\acl^\eq\!A}{\mr a_2}$ we obtain $\psi_1({\gr b'})\iff\psi_2({\gr b'})$.
+  Corollary~\ref{corol_harrington0} yelds $\psi_i({\gr b'})\iff\theta({\mr a_i})$.
+  As ${\mr a_1}\equiv_{\acl^\eq\!A}{\mr a_2}$, we obtain $\psi_1({\gr b'})\iff\psi_2({\gr b'})$.
   As ${\gr b}\equiv_{\acl^\eq\!A}{\gr b'}$, the claim follows and with it the theorem.
 \end{proof}
 
@@ -889,9 +892,7 @@ We first prove a special case of the theorem which has a simpler proof.
 \begin{exercise}\label{ex_Cb}
   Let $p({\mr x})\in S(\U)$.
   Prove that there is at most one definably closed set $A\subseteq\U^\eq$ such that $\Aut(\U/A)$ is the set of automorphisms that fix $p({\mr x})$.
-  \end{exercise}
-  
-  
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%

@@ -98,15 +98,15 @@ We say that a type $p(x)\subseteq L$ is \emph{finitely consistent\/} if all its 
 The following fact is an immediate consequence of the compactness theorem.
 
 \begin{fact}\label{fact_compattezzatipi}
-Every finitely consistent type $p({\mr x})\subseteq L$ is consistent.
+Every finitely consistent type $p(x)\subseteq L$ is consistent.
 \end{fact}
 
   \begin{proof}
-  Let $L'$ be the expansion of $L$ obtained by adding the fresh symbols ${\mr c}$, a tuple of constants of the same length as ${\mr x}$.
-  Then $p({\mr c})$ is a finitely consistent theory in the language $L'$. By the compactness theorem there is an $L'$-structure $N'\models p({\mr c})$.
+  Let $L'$ be the expansion of $L$ obtained by adding the fresh symbols $c$, a tuple of constants of the same length as $x$.
+  Then $p(c)$ is a finitely consistent theory in the language $L'$. By the compactness theorem there is an $L'$-structure $N'\models p(c)$.
   Let $N$ be the reduct of $N'$ to $L$, that is, the $L$-structure with the same domain and the same interpretation as $N'$ on the symbols of $L$.
-  Note that, though the constants ${\mr c}$ are not in $L$, the elements of the tuple ${\mr c^{N'}}$ remain in $N$.
-  Then $N,{\mr c^{N'}}\models p({\mr x})$.
+  Note that, though the constants $c$ are not in $L$, the elements of the tuple $c^{N'}$ remain in $N$.
+  Then $N,c^{N'}\models p(x)$.
 \end{proof}
 
 If all finite subsets of a type $p(x)\subseteq L(M)$ are consistent in the very same model $M$, we say that $p(x)$ is finitely consistent \emph{in $M$.}
@@ -139,7 +139,7 @@ Before that, we recall an important particular case of Proposition~\ref{oss_Delt
 \end{void}
 
 \begin{proof}
-  Let $a$ be an enumeration of $M$.
+  Let ${\gr a}$ be an enumeration of $M$.
   It is convenient to write $p({\mr x})$ as $p({\mr x}\,;{\gr a})$ where $p({\mr x}\,;{\gr z})\subseteq L$.
   Let $q({\gr z})=\tp_M({\gr a})$.
   Clearly, $p({\mr x}\,;{\gr z})\cup q({\gr z})$ is finitely consistent.
