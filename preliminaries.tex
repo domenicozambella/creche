@@ -304,7 +304,7 @@ For every formula $\phi(x)\in L(A)$ there is a formula $\psi(x\,;z)\in L$ and a 
 \end{lemma}
 
 Just as a term $t(x)$ is a name for a function $t(x)^M:M^{x}\to M$, a formula $\phi(x)$ is a name for a subset $\phi(x)^M\subseteq M^{x}$ which we call \emph{the subset of $M$ defined by $\phi(x)$.}
-It is also very common to write \emph{$\phi(M)$} for the set defined by $\phi(x)$. In general sets of the form $\phi(M)$ for some $\phi(x)\in M$ are called \emph{definable.}
+It is also very common to write \emph{$\phi(M^{\mr x})$} for the set defined by $\phi(x)$. In general sets of the form $\phi(M^{\mr x})$ for some $\phi(x)\in M$ are called \emph{definable.}
 
 \begin{definition}[ of truth]\label{defverita} For every formula $\phi$ with variables among those of the tuple $x$ we define \emph{$\phi(x)^M$\/} by induction as follows
 \begin{itemize}
@@ -329,7 +329,7 @@ We will read them as two \emph{truth values}: \emph{True\/} and \emph{False}, re
 In words we may say that \emph{$M$ models $\phi$}, respectively \emph{$M$ does not model $\phi$.}
 It is immediate to verify that
 
-\hfil$\phi(M)=\big\{a\in M^{x}: M\models\phi(a)\big\}$.
+\hfil$\phi(M^{\mr x})=\big\{a\in M^{x}: M\models\phi(a)\big\}$.
 
 Note that usually, we say \textit{formula\/} when, strictly speaking, we mean  \textit{pair\/} that consists of a formula and a tuple of variables. Such pairs are interpreted in definable sets (cfr.\@  Definition~\ref{defverita}). In fact, if the tuple of variables were not given, the arity of the corresponding set is not determined.
 
@@ -375,7 +375,7 @@ The semantic of conjunction and disjunction is associative. Then for any finite 
 \hfil \emph{\kern1ex$\displaystyle\bigwedge_{i\in I}^{\,}\phi_i$}\hfil \emph{$\displaystyle\kern1ex\bigvee_{i\in I}^{\,}\phi_i$}\bigskip
 
 When $x=x_1,\dots,x_n$ is a tuple of variables we write \emph{$\E x\,\phi$\/} or \emph{$\E x_1,\dots,x_n\,\phi$\/} for $\E x_1\dots\E x_n\,\phi$.
-There is a first order sentences that say that $\phi(M)$ has at least $n$ elements (also, no more than, or exactly $n$). It is convenient to use the following abbreviations.
+There is a first order sentences that say that $\phi(M^{\mr x})$ has at least $n$ elements (also, no more than, or exactly $n$). It is convenient to use the following abbreviations.
 
 \ceq{\hfill\emph{$\E^{\ge n}x\;\phi(x)$}}{stands for}{\E x_1,\dots, x_n\,\Big[\bigwedge_{1\le i\le n}\phi(x_i)\ \ \wedge\ \bigwedge_{1\le i<j\le n} x_i\dot\neq x_j\Big].}
 
@@ -389,9 +389,9 @@ There is a first order sentences that say that $\phi(M)$ has at least $n$ elemen
 \begin{exercise}\label{ex_fam_insiemi}
 Let $M$ be an $L$-structure and let $\psi(y), \phi(x,y)\in L$. For each of the following conditions, write a sentence true in $M$ exactly when
 \begin{itemize}
-\item[a.] $\psi(M)\ \in\ \big\{\phi(a,M): a\in M\big\}$
-\item[b.] $\big\{\phi(a,M): a\in M\big\}$ contains at least two sets
-\item[c.] $\big\{\phi(a,M): a\in M\big\}$ contains only sets that are pairwise disjoint.
+\item[a.] $\psi(M^y)\ \in\ \big\{\phi(a,M^y): a\in M^x\big\}$
+\item[b.] $\big\{\phi(a,M^y): a\in M^x\big\}$ contains at least two sets
+\item[c.] $\big\{\phi(a,M^y): a\in M^x\big\}$ contains only sets that are pairwise disjoint.
 \end{itemize}
 \end{exercise}
 

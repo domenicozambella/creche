@@ -114,7 +114,7 @@ Saturated sets have been defined in Definition~\ref{def_ins_sat}.
 
 \begin{lemma}\label{lem_honest}
 Let $\grC$ be saturated set approximable by a formula with finite VC-dimension and let $A$ be a set of parameters.
-Then every global $A$-invariant type $p({\gr z})$ contains a formula $\psi({\gr z})$ such that either $\psi({\gr\U})\subseteq\grC$ or $\psi({\gr\U})\subseteq\neg\grC$.
+Then every global $A$-invariant type $p({\gr z})$ contains a formula $\psi({\gr z})$ such that either $\psi(\U^{\gr z})\subseteq\grC$ or $\psi(\U^{\gr z})\subseteq\neg\grC$.
 Moreover, we can require that $\psi({\gr z})\in L(N)$, for any sufficiently saturated model $N$.
 \end{lemma}
 
@@ -142,7 +142,7 @@ As for the second claim note that we can pick ${\gr b_i}\in N^{\gr z}$ as soon a
   Let $M$ be a model containing $A$.
   Let $c$ enumerate some $|M|^+$-saturated model containing $M$.
   For every ${\gr b}\cnonfork_Mc$ the type $\tp({\gr b}/c)$ extends to a global coheir over $M$. 
-  By the lemma above, there is a formula $\psi_{\gr b}({\gr z})\in\tp({\gr b}/c)$ such that either $\psi_{\gr b}({\gr\U})\subseteq\grC$ or $\psi_{\gr b}({\gr\U})\subseteq\neg\grC$, depending on whether ${\gr b}\in\grC$ or ${\gr b}\notin\grC$.
+  By the lemma above, there is a formula $\psi_{\gr b}({\gr z})\in\tp({\gr b}/c)$ such that either $\psi_{\gr b}(\U^{\gr z})\subseteq\grC$ or $\psi_{\gr b}(\U^{\gr z})\subseteq\neg\grC$, depending on whether ${\gr b}\in\grC$ or ${\gr b}\notin\grC$.
   Hence
 
   \ceq{\hfill {\gr z}\cnonfork_Mc}{\imp}{\bigvee\Big\{\psi_{\gr b}({\gr z})\ :\ {\gr b}\cnonfork_Mc\Big\}.}
@@ -155,7 +155,7 @@ As for the second claim note that we can pick ${\gr b_i}\in N^{\gr z}$ as soon a
   
   \ceq{\hfill \phi({\gr z})}{\imp}{\bigvee^n_{i=1}\psi_{\gr b_i}({\gr z}).}
 
-  Let $\grD=\phi({\gr\U})$.
+  Let $\grD=\phi(\U^{\gr z})$.
   Let $\psi({\gr z})$ is the disjunction of those $\psi_{\gr b_i}({\gr z})$ such that ${\gr b_i}\in \grC$.
   Then  $\grD\cap\grC$ is defined by $\phi({\gr z})\wedge\psi({\gr z})$.
 
@@ -187,7 +187,7 @@ If $T$ is nip then $\U^{\rm Sh}$ has $L$-elimination of quantifiers. (I.e.\@ eve
 % \begin{proposition}
 %   Choose a positive integer $q_\psi$ for each formula $\psi\in L$. 
 %   Let $\phi({\mr x}\,;{\gr z})\in L$ be given.
-%   Then there are finitely may formulas $\psi_j(y\,;{\gr z})$, for $j<n$, such that for every set $\grD$ that is approximable by $\phi({\mr x}\,;{\gr z})$ there is a $j<n$ such that for every $B$ of cardinality \smash{$<q_{\psi_j}$} there is a $d\in B^{|y|}$ such that $\grD=_B\psi_j(d\,;{\gr\U})\subseteq\grD$.
+%   Then there are finitely may formulas $\psi_j(y\,;{\gr z})$, for $j<n$, such that for every set $\grD$ that is approximable by $\phi({\mr x}\,;{\gr z})$ there is a $j<n$ such that for every $B$ of cardinality \smash{$<q_{\psi_j}$} there is a $d\in B^{|y|}$ such that $\grD=_B\psi_j(d\,;\U^{\gr z})\subseteq\grD$.
 % \end{proposition}
 
 % \begin{proof}

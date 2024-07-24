@@ -404,7 +404,7 @@ The following are equivalent
 % \end{proof}
 % 
 % \begin{corollary}
-% Let $p({\gr z})\in S(A,{\gr a})$, then $p({\gr\U})\subseteq\Ll({\gr a}/A)$.
+% Let $p({\gr z})\in S(A,{\gr a})$, then $p(\U^{\gr z})\subseteq\Ll({\gr a}/A)$.
 % \end{corollary}
 
 It may not be immediately obvious that the relation $d_A({\gr z},{\gr y})\le n$ is type-definable.
@@ -752,7 +752,7 @@ Write $r(x,y)$ for $x=y\vee y<_xf(x)\vee x<_yf(y)$
 
 \section{Externally definable sets}
 The set $\grD\cap A^{\gr z}$ is called the \emph{trace\/} of $\grD$ over $A$.
-For every formula $\psi({\gr z})\in L(\U)$ we define \emph{$\psi(A)$\/} $=$ $\psi({\gr\U})\cap A^{\gr z}$, that is, the trace on $A$ of the definable set $\psi({\gr\U})=\big\{{\gr a}\in\U^{\gr z}:\psi({\gr a})\big\}$. 
+For every formula $\psi({\gr z})\in L(\U)$ we define \emph{$\psi(A)$\/} $=$ $\psi(\U^{\gr z})\cap A^{\gr z}$, that is, the trace on $A$ of the definable set $\psi(\U^{\gr z})=\big\{{\gr a}\in\U^{\gr z}:\psi({\gr a})\big\}$. 
 
 A set $\grD$ is called \emph{externally definable\/} if there are a global type $p({\mr x})\in S(\U)$ and a formula $\phi({\mr x}\,;{\gr z})$ such that $\grD=\grD_{p,\phi}$.
 Equivalently, a set $\grD$ is externally definable if it is the trace on $\U^{\gr z}$ of a set which is definable in some elementary extension of $\U$.
@@ -763,8 +763,8 @@ We prefer to deal with external definability in a different, though equivalent, 
 \begin{definition}\label{def_epprox}
 We say that $\grD$ is \emph{approximable\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for all finite $B\subseteq\U^{\gr z}$ there is a ${\mr b}\in\U^{|{\mr x}|}$ such that $\phi({\mr b}\,;B)=\grD\cap B$.
 We may call the formula $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grD$.
-If in addition we have that $\phi({\mr b}\,;{\gr\U})\subseteq\grD$, we say that  $\grD$ is \emph{approximable from below}.
-If  $\grD\subseteq\phi({\mr b}\,;{\gr\U})$ we say that  $\grD$ is \emph{approximable from above}.
+If in addition we have that $\phi({\mr b}\,;\U^{\gr z})\subseteq\grD$, we say that  $\grD$ is \emph{approximable from below}.
+If  $\grD\subseteq\phi({\mr b}\,;\U^{\gr z})$ we say that  $\grD$ is \emph{approximable from above}.
 \end{definition} 
 
 The following proposition is clear by compactness.
@@ -796,7 +796,7 @@ For every $\grD$ the following are equivalent:
 Similarly, the following are equivalent:
 \begin{itemize}
 \item[3.] $\grD$ is approximable from below;
-\item[4.]  for every $B\subseteq\grD$ of cardinality $\le|L|$ there is $\psi({\gr z})\in L(\U)$ such that $B^{\gr z}\subseteq \psi({\gr\U})\subseteq\grD$.
+\item[4.]  for every $B\subseteq\grD$ of cardinality $\le|L|$ there is $\psi({\gr z})\in L(\U)$ such that $B^{\gr z}\subseteq \psi(\U^{\gr z})\subseteq\grD$.
 \end{itemize}
 \end{proposition}
 

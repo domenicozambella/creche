@@ -30,18 +30,19 @@ We say that $\grD$ is \emph{externally definable\/} if it is of the form ${\gr\D
 We say that $\grD$ is externally definable \emph{by $p({\mr x})$ and $\phi({\mr x}\,;{\gr z})$}.
 
 Equivalently, a set $\grD$ is externally definable if it is the trace over $\U$ of a set which is definable in some elementary extension of $\U$.
-More precisely, $\grD$ is the trace on $\U$ of a set of the form $\phi({\mr ^{*\kern-.3ex}b}\,;{\gr ^{*\kern-.2ex}\U})$ where $ ^{*\kern-.2ex}\U$ is elementary extension of $\U$ and ${\mr  ^{*\kern-.3ex}b}\in {}^{*\kern-.2ex}\U^{|{\mr x}|}$.
+More precisely, $\grD$ is the trace on $\U$ of a set of the form $\phi({\mr ^{*\kern-.3ex}b}\,;{\gr ^{*\kern-.2ex}\U})$ where $ ^{*\kern-.2ex}\U$ is elementary extension of $\U$ and ${\mr  ^{*\kern-.3ex}b}\in {}^{*\kern-.2ex}\U^{\mr x}$.
 The latter interpretation explains the terminology.
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}We prefer to deal with external definability in a different, though equivalent, way.
+\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}%
+We prefer to deal with external definability in a different, though equivalent, way.
 This is not the most common approach.
 
 \begin{definition}\label{def_approx}
 We say that $\grD$ is \emph{approximated\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite $B$ there is a tuple ${\mr a}\in\U^{\mr x}$ such that $\phi({\mr a}\,;{\gr B})=\grD\cap B^{\gr z}$.
 We call $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grD$.
-If in addition $\phi({\mr a}\,;{\gr\U})\subseteq\grD$, we say that  $\grD$ is \emph{approximated from below}.
-Equivalently, we say that  $\grD$ is approximated from below if for every finite ${\gr B}\subseteq\grD$ there is a tuple ${\mr a}\in\U^{|{\mr x}|}$ such that  ${\gr B}\subseteq\phi({\mr a}\,;{\gr\U})\subseteq\grD$.
-The dual notion of \emph{approximation from above\/} is defined as expected (and coincides with $\neg\grD$ being approximated by $\neg\phi({\mr x}\,;{\gr z})$ from below).\QED
+If in addition $\phi({\mr a}\,;\U^{\gr z})\subseteq\grD$, we say that  $\grD$ is \emph{approximated from below}.
+Equivalently, we say that  $\grD$ is approximated from below if for every finite ${\gr B}\subseteq\grD$ there is a tuple ${\mr a}\in\U^{\mr x}$ such that  ${\gr B}\subseteq\phi({\mr a}\,;\U^{\gr z})\subseteq\grD$.
+The dual notion of \emph{approximation from above\/} is defined as expected (and coincides with $\neg\grD$ being approximated by $\neg\phi({\mr x}\,;{\gr z})$ from below).
 \end{definition} 
 
 The following proposition is clear by compactness.
@@ -50,7 +51,7 @@ The following proposition is clear by compactness.
    For every $\grD$ the following are equivalent
    \begin{itemize}
    \item[1.] $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$
-   \item[2.] $\grD$ is externally definable by $\phi({\mr x}\,;{\gr z})$.\QED
+   \item[2.] $\grD$ is externally definable by $\phi({\mr x}\,;{\gr z})$.
    \end{itemize}
 \end{proposition}
 
@@ -70,7 +71,7 @@ Sets may be approximable by different formulas.
 For instance, if $T=T_{\rm dlo}$, then $\D=\{z\in\U:a\le z\le b\}$ is approximable both from below and from above by the formula $x_1<z<x_2$ though it is not definable by this formula.
 
 Now, let $T=T_{\rm rg}$.
-Then every $\D\subseteq\U$ is approximable and, when $\D$ has small infinite cardinality, it is approximable from above but not from below.\QED
+Then every $\D\subseteq\U$ is approximable and, when $\D$ has small infinite cardinality, it is approximable from above but not from below.
 \end{example}
 
 In Definition~\ref{def_approx}, the sort $\phi({\mr x}\,;{\gr z})$ is fixed (otherwise any set would be approximable) but this requirement of uniformity may be dropped if we allow $B$ to have larger cardinality.
@@ -85,7 +86,7 @@ For every $\grD$ the following are equivalent
 
 \begin{proof}
 To prove \ssf{2}$\IMP$\ssf{1} assume \ssf{2} and negate \ssf{1} for a contradiction.
-For each formula $\psi({\mr x}\,;{\gr z})\in L$ choose a finite set $B$ such that $\psi({\mr b}\,;{\gr\U})\neq_B\grD$ for every ${\mr b}\in\U^{|{\mr x}|}$.
+For each formula $\psi({\mr x}\,;{\gr z})\in L$ choose a finite set $B$ such that $\psi({\mr b}\,;\U^{\gr z})\neq_B\grD$ for every ${\mr b}\in\U^{\mr x}$.
 Let $C$ be the union of all these finite sets.
 Clearly $|C|\le|L|$.
 By \ssf{2} there are a formula $\phi({\mr x}\,;{\gr z})$ and a tuple ${\mr c}$ such that $\phi({\mr c}\,;{\gr C})=\grD\cap C^{\gr z}$, contradicting the definition of $C$.
@@ -99,7 +100,7 @@ In fact, if the set $\grD$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for
 
 
 So the same holds for any $\grC\equiv\grD$.
-A similar remark apply to approximability from below and from above (e.g.\@ for approximability from below, add the conjunct $\A {\gr z}\,\big[\phi({\mr x}\,;{\gr z})\imp {\gr z}\in\grD\big]$ to the formula above).\QED
+A similar remark apply to approximability from below and from above (e.g.\@ for approximability from below, add the conjunct $\A {\gr z}\,\big[\phi({\mr x}\,;{\gr z})\imp {\gr z}\in\grD\big]$ to the formula above).
 \end{remark}
 
 From the following easy observation of Chernikov and Simon~\cite{CS} we obtain an interesting (and misterious) quantifier elimination result originally due to Shelah, see Corollary~\ref{corol_sh_exp_qe} below.
@@ -110,7 +111,7 @@ From the following easy observation of Chernikov and Simon~\cite{CS} we obtain a
 % 
 % \begin{proof}
 % Let $B\subseteq\U$ be finite. 
-% We want ${\mr a}\in\U^{|{\mr x}|}$ such that 
+% We want ${\mr a}\in\U^{\mr x}$ such that 
 % 
 % \ceq{\ssf{a.}\hfill \E w\ \big({\gr b}\,w\in\C\big)}{\iff}{\E w\,\phi({\mr a}\,;{\gr b}\,w)}\hfill for every ${\gr b}\in B^{\gr z}$
 % 
@@ -139,7 +140,7 @@ Then $\grD=\big\{{\gr z}:\E y\ \big(y\,{\gr z}\in\C\big)\big\}$ is approximated 
 \begin{proof}
 \def\vl{\gr}
 Let $B\subseteq\U$ be finite. 
-We want ${\mr a}\in\U^{|{\mr x}|}$ such that 
+We want ${\mr a}\in\U^{\mr x}$ such that 
 
 \ceq{\ssf{a.}\hfill \E y\ \big(y\,{\vl b}\in\C\big)}{\iff}{\E y\,\phi({\mr a}\,;y\,{\vl b})}\hfill for every ${\vl b}\in B^{|{\vl z}|}$
 
@@ -197,7 +198,7 @@ Note that by compactness if a formulas admits ladder sequences of unbounded fini
    Prove that the following are equivalent
    \begin{itemize}
    \item[1.]  $\phi({\mr x}\,;{\gr z})$ has a a ladder sequence of length $\omega$
-   \item[2.] there are set ${\mr A}$ and a sequnce $\<{\gr b_i} : i<\omega\>$ such that $\phi({\mr A}\,;{\gr b_i})\subset\phi({\mr A}\,;{\gr b_{i+1}})$ for every $i<\omega$.\QED
+   \item[2.] there are set ${\mr A}$ and a sequnce $\<{\gr b_i} : i<\omega\>$ such that $\phi({\mr A}\,;{\gr b_i})\subset\phi({\mr A}\,;{\gr b_{i+1}})$ for every $i<\omega$.
    \end{itemize}
 \end{exercise}
 
@@ -242,7 +243,7 @@ The following theorem claims what is arguably one of the most important properti
 
 \begin{theorem}\label{thm_def_stable_formula}
 Any $\grD\subseteq\U^{\gr z}$ approximated by a stable formula is definable.
-More precisely, if $\phi({\mr x}\,;{\gr z})$ is a stable formula that approximates $\grD$ then there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in\U^{|{\mr x}|}$ such that 
+More precisely, if $\phi({\mr x}\,;{\gr z})$ is a stable formula that approximates $\grD$ then there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in\U^{\mr x}$ such that 
 
 \ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\phi({\mr a_{i,j}}\,;{\gr z})}
 \end{theorem}
@@ -258,7 +259,7 @@ If $\grD$ is approximated from below by a stable formula $\phi({\mr x}\,;{\gr z}
 
 \ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=0}\phi({\mr a_i}\,;{\gr z})}
 
-for some ${\mr a_0},\dots,{\mr a_n}\in\U^{|{\mr x}|}$. 
+for some ${\mr a_0},\dots,{\mr a_n}\in\U^{\mr x}$. 
 \end{lemma}
 
 \begin{proof}
@@ -266,11 +267,11 @@ The elements ${\mr a_0},\dots,{\mr a_n}$ are defined recursively together with s
 
 Suppose ${\gr b_0},\dots,{\gr b_{n-1}}$ have been defined (this assumption is empty if $n=0$).
 We first define ${\mr a_n}$, then ${\gr b_n}$. 
-Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that ${\gr b_0},\dots,{\gr b_{n-1}}\in\phi({\mr a_n}\,;{\gr\U})\subseteq\grD$.
+Choose ${\mr a_n}\in\U^{\mr x}$ such that ${\gr b_0},\dots,{\gr b_{n-1}}\in\phi({\mr a_n}\,;\U^{\gr z})\subseteq\grD$.
 This is possible because $\grD$ is approximated from below.
 Now, if possible, choose ${\gr b_n}$ such that
 
-\ceq{\hfill{\gr b_n}}{\in}{\grD\sm\bigcup^n_{i=0}\phi({\mr a_i}\,;{\gr\U})}.
+\ceq{\hfill{\gr b_n}}{\in}{\grD\sm\bigcup^n_{i=0}\phi({\mr a_i}\,;\U^{\gr z})}.
 
 Then $\<{\mr a_i}\,;{\gr b_i} : i\le n\>$ is a ladder sequence. 
 By stability, for some $n$, the tuple ${\gr b_n}$ does not exist.
@@ -289,19 +290,19 @@ approximates $\grD$ from below.
 \begin{proof}
 Let $m$ be such that there is no ladder sequence for $\phi({\mr x}\,;{\gr z})$ of length greater then $m$.
 Let ${\gr C}\subseteq\grD$ be finite.
-We prove that there are some ${\mr a_0},\dots,{\mr a_m}$ such that ${\gr C}\subseteq\psi({\mr a_0},\dots,{\mr a_m}\,;{\gr\U})\subseteq\grD$.
+We prove that there are some ${\mr a_0},\dots,{\mr a_m}$ such that ${\gr C}\subseteq\psi({\mr a_0},\dots,{\mr a_m}\,;\U^{\gr z})\subseteq\grD$.
 As in the proof above, we define by recursion a ladder sequence for $\phi({\mr x}\,;{\gr z})$.
 Suppose that ${\mr a_0},\dots,{\mr a_{n-1}}$ and ${\gr b_0},\dots,{\gr b_{n-1}}\notin\grD$ have been defined.
 We first define ${\mr a_n}$, then ${\gr b_n}$. 
-Choose ${\mr a_n}\in\U^{|{\mr x}|}$ such that 
+Choose ${\mr a_n}\in\U^{\mr x}$ such that 
 
-\hfil${\gr C}\ \subseteq\ \phi({\mr a_n}\,;{\gr\U})\ \subseteq\ \U^{\gr z}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
+\hfil${\gr C}\ \subseteq\ \phi({\mr a_n}\,;\U^{\gr z})\ \subseteq\ \U^{\gr z}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
 
 This ${\mr a_n}$ exists, because $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$.
 (Apply Definition~\ref{def_approx} with any $B$ such that ${\gr C}\cup\{{\gr b_0},\dots,{\gr b_{n-1}}\}\subseteq B^{\gr z}$.)
 Then, if possible, let ${\gr b_n}$ such that
 
-\ceq{\hfill{\gr b_n}}{\in}{\bigcap^n_{i=0}\phi({\mr a_i},{\gr\U})\sm\grD}
+\ceq{\hfill{\gr b_n}}{\in}{\bigcap^n_{i=0}\phi({\mr a_i},\U^{\gr z})\sm\grD}
 
 This procedure has to stop at some $n\le m$.
 Hence the required parameters are ${\mr a_1},\dots,{\mr a_n}={\mr a_{n+1}}=\dots={\mr a_{m}}$.
@@ -314,7 +315,7 @@ Hence the required parameters are ${\mr a_1},\dots,{\mr a_n}={\mr a_{n+1}}=\dots
 % \begin{proof}
 % It suffices to prove that if $\phi_1({\mr x_1}\,;{\gr z})\wedge\phi_2({\mr x_2}\,;{\gr z})$ is unstable then one of the formulas $\phi_n({\mr x_i}\,;{\gr z})$ is unstable. For simplicity, we use that instability implies the existence of an infinite ladder (this uses compactness, apparently contradicting Remark~\ref{rem_sability_no_compactness}). We leave to the reader to adapt the argument so that compactness is not required.
 
-% Let ${\mr a^1_i},{\mr a^2_i}\in\U^{|{\mr x}|}$ and ${\gr b_i}\in\U^{\gr z}$ be such that 
+% Let ${\mr a^1_i},{\mr a^2_i}\in\U^{\mr x}$ and ${\gr b_i}\in\U^{\gr z}$ be such that 
 
 % \ceq{\hfill i\le j}{\IFF}{\phantom{\neg}\phi_1({\mr a^1_i}\,;{\gr b_j})\wedge\phi_2({\mr a^2_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
 
@@ -327,11 +328,11 @@ Hence the required parameters are ${\mr a_1},\dots,{\mr a_n}={\mr a_{n+1}}=\dots
 % hence $\phi_1({\mr x_1}\,;{\gr z})$ is unstable.
 % \end{proof}
 
-By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr z})$ is stable therefore this concludes the proof of Theorem~\ref{thm_def_stable_formula}.\QED 
+By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr z})$ is stable therefore this concludes the proof of Theorem~\ref{thm_def_stable_formula}. 
 
 \begin{remark}\label{rem_sability_no_compactness}
   Theorem~\ref{thm_def_stable_formula} is often casted in the following  apparently more general form.
-  Let $\mrA\subseteq\U^{|{\mr x}|}$ and $\grB\subseteq\U^{\gr z}$.
+  Let $\mrA\subseteq\U^{\mr x}$ and $\grB\subseteq\U^{\gr z}$.
   We say that $\phi({\mr x}\,;{\gr z})$ is stable between $\mrA$ and $\grB$ if for some $n$ no ladder of length $n$ exists with ${\mr a_i}\in\mrA$ and ${\gr b_i}\in\grB$.
 
   Let $\grD\subseteq\grB$ be approximable by $\phi({\mr x}\,;{\gr z})\wedge {\mr x}\in\mrA$.
@@ -341,19 +342,19 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
   
   The proof is essentially the same. 
   In fact, elementarity and saturation as only been used to prove that conjunctions of stable formulas is stable.
-  Exercise~\ref{ex_stability_conjunction} suggests a finitary proof of this fact.\QED
+  Exercise~\ref{ex_stability_conjunction} suggests a finitary proof of this fact.
 \end{remark} 
 
 \begin{exercise}
   Let $\phi(x,y)\in  L$, where $|x|=|y|=1$.
   Suppose there is an infinite set $A\subseteq\U$ such that $\phi(a,b)\niff\phi(b,a)$ for every two distinct $a,b\in A$.
-  Prove that $\phi(x\,;y)$ is unstable.\QED
+  Prove that $\phi(x\,;y)$ is unstable.
 \end{exercise}
 
 
 % \begin{exercise}\label{ex_harrington}
 %   Prove the following claim (a version of Harrington's mysterious Lemma cfr.~\cite[Lemma 8.3.4]{TZ}).
-%   Let $\phi({\mr x}\,;{\gr z})\in L$ be a stable formula and suppose $\grB\subseteq\U^{\gr z}$ and $\mrA\subseteq\U^{|{\mr x}|}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\mr x}\,;{\gr z})^{\rm op}$, respectively.
+%   Let $\phi({\mr x}\,;{\gr z})\in L$ be a stable formula and suppose $\grB\subseteq\U^{\gr z}$ and $\mrA\subseteq\U^{\mr x}$ are approximated by $\phi({\mr x}\,;{\gr z})$ and  $\phi({\mr x}\,;{\gr z})^{\rm op}$, respectively.
 %   Then at least one of the conditions \ssf{1} and \ssf{2} below occurs
   
 %   \begin{itemize}
@@ -363,7 +364,7 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
   
 %   \item[2.]
 %   \ssf{a.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\phantom{{\rm op}}}\wedge\ {\mr x}\notin{\mrA}$ approximates $\grB$ and\\
-%   \ssf{b.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\rm op}\wedge\ {\gr z}\notin{\grB}$ approximates $\mrA$.\QED
+%   \ssf{b.}\kern2ex$\phi({\mr x}\,;{\gr z})^{\rm op}\wedge\ {\gr z}\notin{\grB}$ approximates $\mrA$.
 %   \end{itemize}
 %   Hint: Note that at least one of \ssf{1a} or \ssf{2a} occurs.
 %   Hence it suffices to prove that \ssf{1a}$\IMP$\ssf{1b} and \ssf{2a}$\IMP$\ssf{2b}. The two implications are essentially equivalent.
@@ -400,7 +401,7 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
 
   \begin{exercise}\label{ex_stability_conjunction}
     Prove that if $\phi({\mr x}\,;{\gr z})$ and $\psi({\mr x}\,;{\gr z})$ are stable between $\mrA$ and $\grB$, then so is $\phi({\mr x}\,;{\gr z})\wedge\psi({\mr x}\,;{\gr z})$.
-    Hint: use the finite Ramsey theorem.\QED
+    Hint: use the finite Ramsey theorem.
   \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -643,13 +644,13 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 \begin{corollary}\label{corol_stable_coheir_over_models}
   Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
   Let $q({\mr x})\subseteq L(A)$ be a consistent type.
-  Then there is a global $\phi$-type $p({\mr x})\in S_{\phi}(\U)$ such that $q({\mr x})\cup p({\mr x})$ is finitely satisfied in every $M\supseteq A$.
+  Then there is a global $\phi$-type $p({\mr x})\in S_{\phi}(\U)$ such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
 \end{corollary}
 
 \begin{proof}
-  Let $p({\mr x})\subseteq L(\U)$ be maximal such that $q({\mr x})\cup p({\mr x})$ is finitely satisfied in every $M\supseteq A$.
+  Let $p({\mr x})\subseteq L(\U)$ be maximal such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
   We prove that $p({\mr x})$ is complete.
-  Suppose not that there a conjuction $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ of formulas in $q({\mr x})\cup p({\mr x})$ and a formula $\phi({\mr x}\,;{\gr b})$ such that 
+  Suppose not than there a conjuction $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ of formulas in $q({\mr x})\cup p({\mr x})$ and a formula $\phi({\mr x}\,;{\gr b})$ such that 
 
   \hfil$\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})\wedge\phi({\mr x}\,;{\gr b})$ \ \ and\ \   $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})\wedge\neg\phi({\mr x}\,;{\gr b})$ 
  
@@ -695,21 +696,23 @@ We begin with a fundamental theorem.
 
 \begin{theorem}[ (Symmetry)]\label{thm_symmetry}
   Let $\phi({\mr x}\,;{\gr z})\in L(M)$ be stable.
-  For every ${\mr a},{\gr b}$ such that ${\mr a}\cnonfork_M{\gr b}$
+  Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$ be such that ${\mr a}\cnonfork_M{\gr b}$.
+  Then
 
-  \ceq{\hfill\phi({\mr a}\,;{\gr b})}{\IMP}{\phi({\mr a}\,;{\gr M})\neq\0}
+  \ceq{\hfill\phi({\mr a}\,;{\gr b})}{\IMP}{\phi({\mr a}\,;M^{\gr z})\neq\0.}
 \end{theorem}
 
-Note that the theorem proves that, when $T$ is stable, 
+Note that from the theorem it follows that, when $T$ is stable
 
-\ceq{\hfill{\mr a}\cnonfork_M{\gr b}}{\IMP}{{\gr b}\cnonfork_M{\mr a}}
+\ceq{\hfill{\mr a}\cnonfork_M{\gr b}}{\IMP}{{\gr b}\cnonfork_M{\mr a}.}
 
+\vspace*{-\parskip}
 \begin{proof}
   Assume $\phi({\mr a}\,;{\gr b})$.
   Let $\V\preceq\U$ be isomorphic to $\U$ over $M$ and such that ${\gr b}\in\V^{\gr z}$ and ${\mr a}\cnonfork_M\V$. Such $\V$ exists by Proposition~\ref{prop_saturate_heir}.
-  By stability, there is $\psi({\gr z})\in L(\V)$ such that $\psi({\gr\V})=\phi({\mr a},{\gr\V})$.
+  By stability, there is $\psi({\gr z})\in L(\V)$ such that $\psi(\V^{\gr z})=\phi({\mr a},\V^{\gr z})$.
   Recall that by Lemma~\ref{lem_coheir_independence} (non-splitting) if ${\gr b'}\equiv_M{\gr b''}$ are in $\V$ then ${\gr b'}\equiv_{M,\kern.2ex{\mr a}}{\gr b''}$.
-  Then $\psi({\gr\V})$ is invariant under $\Aut(\V/M)$, so we can assume that $\psi({\gr z})\in L(M)$.
+  Then $\psi(\V^{\gr z})$ is invariant under $\Aut(\V/M)$, so we can assume that $\psi({\gr z})\in L(M)$.
   Therefore $\psi({\gr z})$ is satisfied in $M$ and so is $\phi({\mr a},{\gr z})$.
 \end{proof}
 
@@ -717,19 +720,19 @@ We deduce a version of Harrington's mysterious Lemma cfr.~\cite[Lemma 8.3.4]{TZ}
 
 \begin{corollary}\label{corol_harrington0}
   Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
-  Let ${\mr a}\in{\mr\U^x}$ and ${\gr b}\in{\gr\U^z}$.
-  Let $\theta({\mr x}),\psi({\gr z})\in L(M)$ be such that $\theta({\gr M})=\phi({\mr a}\,;{\gr M})$ and $\psi({\mr M})=\phi({\mr M}\,;{\gr b})$ (these exist by stability).
+  Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$.
+  Let $\theta({\mr x}),\psi({\gr z})\in L(M)$ be such that $\theta(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$ and $\psi(M^{\mr x})=\phi(M^{\mr x}\,;{\gr b})$ (these exist by stability).
   Then $\theta({\gr b})\iff\psi({\mr a})$.
 \end{corollary}
 
 \begin{proof}
   We can assume that ${\mr a}\cnonfork_M{\gr b}$.
   First, assume $\phi({\mr a}\,;{\gr b})$.
-  Then $\psi({\mr a})$ otherwise, by ${\mr a}\cnonfork_M{\gr b}$, we would contradict $\psi({\mr M})=\phi({\mr M}\,;{\gr b})$.
+  Then $\psi({\mr a})$ otherwise, by ${\mr a}\cnonfork_M{\gr b}$, we would contradict $\psi(M^{\mr x})=\phi(M^{\mr x}\,;{\gr b})$.
   We claim that $\theta({\gr b})$.
   Suppose not.
   Then $\phi({\mr a}\,;{\gr b})\wedge\neg\theta({\gr b})$.
-  As $\phi({\mr x}\,;{\gr z})\wedge\neg\theta({\gr z})$ is stable, Theorem~\ref{thm_symmetry} yelds $\phi({\mr a}\,;{\gr M})\sm\theta({\gr M})\neq\varnothing$ which contradicts  $\theta({\gr M})=\phi({\mr a}\,;{\gr M)}$.
+  As $\phi({\mr x}\,;{\gr z})\wedge\neg\theta({\gr z})$ is stable, Theorem~\ref{thm_symmetry} yelds $\phi({\mr a}\,;M^{\gr z})\sm\theta(M^{\gr z})\neq\varnothing$ which contradicts  $\theta(M^{\gr z})=\phi({\mr a}\,;{\gr M)}$.
   Assuming $\neg\phi({\mr a}\,;{\gr b})$ we obtain $\neg\psi({\mr a})$ and $\neg\theta({\gr b})$ by a symilar argument.
   Then $\theta({\gr b})\iff\psi({\mr a})$ as required.
 \end{proof}
@@ -755,13 +758,13 @@ Now we show that under the assumption of stability Lascar invariance reduces to 
   First, for simplicity, we prove that any $\phi({\mr x}\,;{\gr b})\in p$ is satisfied in $M$.
   Let $\psi({\gr z})\in L(\acl^\eq\!A)$ be a formula defining ${\gr\D_{p,\phi}}$.
   Pick any ${\mr a}\models p({\mr x}){\restriction} M$ such that ${\gr b}\cnonfork_M{\mr a}$.
-  As $\phi({\mr a}\,;{\gr M})=\psi({\gr M})$ we have that $\phi({\mr a}\,;{\gr b})=\psi({\gr b})$.
-  But $\psi({\gr b})$ holds because $\phi({\mr x}\,;{\gr b})\in p$, hence $\phi({\mr a}\,;{\gr b})$ and, from Theorem~\ref{thm_symmetry} we obtain $\phi({\mr M}\,;{\gr b})\neq\0$.
+  As $\phi({\mr a}\,;M^{\gr z})=\psi(M^{\gr z})$ we have that $\phi({\mr a}\,;{\gr b})=\psi({\gr b})$.
+  But $\psi({\gr b})$ holds because $\phi({\mr x}\,;{\gr b})\in p$, hence $\phi({\mr a}\,;{\gr b})$ and, from Theorem~\ref{thm_symmetry} we obtain $\phi(M^{\mr x}\,;{\gr b})\neq\0$.
   The same argument extends easily to the conjunction of formulas of the form $\phi({\mr x}\,;{\gr b})$ and negation thereof (use that the complement and the Cartesian product of sets in $\acl^\eq\!A$ is again $\acl^\eq\!A$).
  
   \ssf{3}$\IMP$\ssf{1} By Theorem~\ref{thm_def_stable_formula2} the sets ${\gr\D_{p,\phi}}$ are definable (over $\U$).
   As $p({\mr x})$ is Lascar invariant over $A$, so are the sets ${\gr\D_{p,\phi}}$.
-  Hence they belong to $\acl^\eq\!A$ by Corollary~\ref{coroll_defble_Lascar_inv}.
+  By Corollary~\ref{coroll_defble_Lascar_inv}, they belong to $\acl^\eq\!A$.
 \end{proof}
 
 A type $q({\mr x})\subseteq L(A)$ is \emph{stationary\/} if it has a unique global extension that is Lascar invariant over $A$.
@@ -770,7 +773,7 @@ The following proposition says that in a stable theory with elimination of imagi
 \begin{theorem}[ (Stationarity)]\label{thm_stationarity}
   Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
   Let $q({\mr x})\in S\big(\acl^\eq\!A\big)$.
-  Then there is a unique global $\phi$-type $p({\mr x})\in S_\phi(\U)$ that is invariant over $\acl^\eq A$ and consistent with $q({\mr x})$.
+  Then there is a unique type $p({\mr x})\in S_\phi(\U)$ that is invariant over $\acl^\eq A$ and consistent with $q({\mr x})$.
 \end{theorem}
 
 \begin{proof}
@@ -782,7 +785,7 @@ The following proposition says that in a stable theory with elimination of imagi
   We claim that $\psi_1({\gr b})\iff\psi_2({\gr b})$, for any ${\gr b}\in\U^{\gr z}$.
   Let $M$ be any model containing $A$.
   Let ${\gr b'}\models p({\gr z}){\restriction}M$ and ${\mr a_i}\models q_i({\mr x}){\restriction}M$.
-  Then $\theta({\mr M})=\phi({\mr M}\,;{\gr b'})$ and $\psi_i({\gr M})=\phi({\mr a_i}\,;{\gr M})$.
+  Then $\theta(M^{\mr x})=\phi(M^{\mr x}\,;{\gr b'})$ and $\psi_i(M^{\gr z})=\phi({\mr a_i}\,;M^{\gr z})$.
   By Corollary~\ref{corol_harrington0} $\psi_i({\gr b'})\iff\theta({\mr a_i})$.
   As ${\mr a_1}\equiv_{\acl^\eq\!A}{\mr a_2}$ we obtain $\psi_1({\gr b'})\iff\psi_2({\gr b'})$.
   As ${\gr b}\equiv_{\acl^\eq\!A}{\gr b'}$, the claim follows and with it the theorem.
@@ -793,7 +796,7 @@ Clearly, all definable types (Definition~\ref{def_defble_type}) have a canonical
 
 \ceq{\hfill\Cb(p)}{=}{{\dcl}^\eq\Big(\big\{{\gr\D_{p,\phi}}\ :\ \phi({\mr x}\,;{\gr z})\in L\big\}\Big).}
 
-Therefore if $T$ is stable, all global types have a canonical base.
+Therefore, when $T$ is stable all global types have a canonical base.
 
 % \begin{proposition}\label{prop_type_over_dcl} Let $T$ be stable and let $p({\mr x})\in S(\U)$ be Lascar invariant over $A$. Then for every formula $\phi({\mr x}\,;{\gr z})\in L$ the set ${\gr\D_{p,\phi}}$ belongs to $\dcl^\eq(A,c)$ for every $c\models p_{\restriction A}(x)$.
 % \end{proposition}
@@ -802,7 +805,7 @@ Therefore if $T$ is stable, all global types have a canonical base.
 % \end{proof}
 
 \begin{corollary}
-($T$ stable) 
+($T$ stable)
 The following are equivalent
 \begin{itemize}
 \item[1.] ${\mr a}\equivL_A{\mr b}$, see Definition~\ref{def_Lascar_type}
@@ -839,47 +842,53 @@ The following are equivalent
 
 The following theorem presents a property of definability that seems to go in the opposite direction.
 This has an application in ...
-We first prove a special case of the theorem case that is simpler.
+We first prove a special case of the theorem which has a simpler proof.
 
 \begin{proposition}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
   Let $M$ and ${\mr a}\in\U^{\mr x}$ be arbitrary.
-  Then, for some ${\mr a_1}\equiv_M\dots\equiv_M{\mr a_n}\equiv_M{\mr a}$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;{\gr\U})$ is definable over $M$.
+  Then, for some ${\mr a_1}\equiv_M\dots\equiv_M{\mr a_n}\equiv_M{\mr a}$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;\U^{\gr z})$ is definable over $M$.
 \end{proposition}
 
 \begin{proof}
-  Let $\V\preceq\U$ be isomorphic to $\U$.
-  By Theorem~\ref{thm_def_stable_formula} with $\V$ for $\U$, there are ${\mr a_1},\dots,{\mr a_n}$ as above such that $\phi({\mr a}\,;{\gr\V})$ is a positive Bolean combination of the sets $\phi({\mr a_i},;{\gr\V})$.
-  Let $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr\V})$ be such a Boolean combination.
-  Now, by Proposition~\ref{prop_saturate_heir}. we can chose $\V$ such that ${\mr a}\nonfork_M\V$.
-  By non-splitting, i.e.\@ reasoning as in Theorem~\ref{thm_symmetry}, there is a formula $\psi({\gr z})\in L(M)$ such that $\psi({\gr\V})=\phi({\mr a}\,;{\gr\V})$.
-  Finally, by elementarity, we obtain that $\psi({\gr\U})=\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr\U})$.
+  Let $\V\preceq\U$ be isomorphic to $\U$ over $M$.
+  By Theorem~\ref{thm_def_stable_formula} with $\V$ for $\U$, there are  some ${\mr a_1}\equiv_M\dots\equiv_M{\mr a_n}\equiv_M{\mr a}$, such that $\phi({\mr a}\,;\V^{\gr z})$ is a positive Bolean combination of the sets $\phi({\mr a_i}\,;\V^{\gr z})$.
+  Let $\theta({\mr a_1},\dots,{\mr a_n}\,;\V^{\gr z})$ be such a Boolean combination.
+  Now, by Proposition~\ref{prop_saturate_heir}, we can chose $\V$ such that ${\mr a}\nonfork_M\V$.
+  By non-splitting, i.e.\@ reasoning as in Theorem~\ref{thm_symmetry}, there is a formula $\psi({\gr z})\in L(M)$ such that $\psi(\V^{\gr z})=\phi({\mr a}\,;\V^{\gr z})$.
+  Finally, by elementarity, we obtain that $\psi(\U^{\gr z})=\theta({\mr a_1},\dots,{\mr a_n}\,;\U^{\gr z})$.
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}\label{thm_stability_definable_rovescio}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
   Let $A$ and ${\mr a}\in\U^{\mr x}$ be arbitrary.
-  Then, for some ${\mr a_1}\equiv_A\dots\equiv_A{\mr a_n}\equiv_A{\mr a}$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;{\gr\U})$ is definable over $A$.
+  Then, for some ${\mr a_1}\equiv_A\dots\equiv_A{\mr a_n}\equiv_A{\mr a}$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;\U^{\gr z})$ is definable over $A$.
 \end{theorem}
 
 \begin{proof}
     Let $q({\mr x})=\tp({\mr a}/A)$.
     By Corollary~\ref{corol_stable_coheir_over_models} there is a type $p({\mr x})\in S_\phi(\U)$ consistent with $q({\mr x})$ and invariant over $\acl^\eq\!A$.
-    By Theorem~\ref{thm_def_stable_formula} there are ${\mr a_1},\dots,{\mr a_n}\models q({\mr x})$ such that ${\gr\D_{p,\phi}}$ is a positive Bolean combination of the sets $\phi({\mr a_i},;{\gr\U})$.
-    Let $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr\U})$ be such a Boolean combination.
-    By Proposition~\ref{prop_type_over_acl2} ${\gr\D_{p,\phi}}\in\acl^\eq\!A$.
+    By Theorem~\ref{thm_def_stable_formula} there are some ${\mr a_1},\dots,{\mr a_n}\models q({\mr x})$ such that ${\gr\D_{p,\phi}}$ is a positive Bolean combination of the sets $\phi({\mr a_i}\,;\U^{\gr z})$.
+    Let $\theta({\mr a_1},\dots,{\mr a_n}\,;\U^{\gr z})$ be such a Boolean combination.
+    Finally, from Proposition~\ref{prop_type_over_acl2} we obtain ${\gr\D_{p,\phi}}\in\acl^\eq\!A$.
     This completes the proof if $A=\acl^\eq\!A$.
+
     For the general case, reason as follows.
     Let $f_1,\dots,f_n\in\Aut(\U/A)$ be such that the sets $f_i{\gr\D_{p,\phi}}$ span the whole orbit of ${\gr\D_{p,\phi}}$ over $A$.
     Clearly,
 
-    \ceq{\hfill\bigcup_{i=1}^n f_i{\gr\D_{p,\phi}}}{=}{\bigvee_{i=1}^n\theta(f_i{\mr a_1},\dots,f_i{\mr a_n}\,;{\gr\U})}
+    \ceq{\hfill\bigcup_{i=1}^n f_i{\gr\D_{p,\phi}}}{=}{\bigvee_{i=1}^n\theta(f_i{\mr a_1},\dots,f_i{\mr a_n}\,;\U^{\gr z}).}
 
    As the set on the l.h.s.\@ is definable over $A$, the formula on the r.h.s.\@ is the required positive Boolean combination.
 \end{proof}
 
+\begin{remark}
+    If $\phi({\mr a}\,;z)$ is persistent over $A$ then $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr z})$ is consistent and therefore it is satisfiable in every model $M\supseteq A$.
+\end{remark}
+
 \begin{exercise}\label{ex_Cb}
-  Let $p({\mr x})\in S(\U)$. Prove that there is at most one definably closed set $A\subseteq\U^\eq$ such that $\Aut(\U/A)$ is the set of automorphisms that fix $p({\mr x})$.\QED
+  Let $p({\mr x})\in S(\U)$.
+  Prove that there is at most one definably closed set $A\subseteq\U^\eq$ such that $\Aut(\U/A)$ is the set of automorphisms that fix $p({\mr x})$.
   \end{exercise}
   
   
@@ -936,7 +945,7 @@ We first prove a special case of the theorem case that is simpler.
 \end{proof}
 
 \begin{exercise}
-  Prove that if every formula $\phi(x\,;z)\in L$, where $|x|=1$, is stable then $T$ is stable.\QED
+  Prove that if every formula $\phi(x\,;z)\in L$, where $|x|=1$, is stable then $T$ is stable.
 \end{exercise}
 
 \begin{exercise} 
@@ -944,7 +953,7 @@ We first prove a special case of the theorem case that is simpler.
   Prove that the following are equivalent
   \begin{itemize}
   \item[1.] $T$ is stable
-  \item[2.] every indiscernible sequence is totally indiscernible.\QED
+  \item[2.] every indiscernible sequence is totally indiscernible.
   \end{itemize}
 \end{exercise}
 
@@ -952,12 +961,12 @@ We first prove a special case of the theorem case that is simpler.
 Prove that the following are equivalent
 \begin{itemize}
 \item[1.] $T$ is unstable
-\item[2.] there is an infinite set $A\subseteq\U^n$ and a formula  $\psi(x\,;y)$, with $|x|=|y|=n$ such that $A$ is linearly ordered by the relation $a<b\iff\psi(a\,;b)$.\QED
+\item[2.] there is an infinite set $A\subseteq\U^n$ and a formula  $\psi(x\,;y)$, with $|x|=|y|=n$ such that $A$ is linearly ordered by the relation $a<b\iff\psi(a\,;b)$.
 \end{itemize}
 \end{exercise}
 
 \begin{exercise}
-Prove that strongly minimal theories are stable.\QED
+Prove that strongly minimal theories are stable.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -965,41 +974,37 @@ Prove that strongly minimal theories are stable.\QED
 %%%%%%%%%%%%%%%%%%%%%%%
 \section{Stable groups}
 
-In this section $\U$ has two type-definable sets $\G$ and $\S$ where $\G$ is a group that acts from the left on $\S$.
+In this section $\U$ has two type-definable sets $\grG\subseteq\U^{\gr z}$ and $\mrX\subseteq\U^{\mr x}$ where $\grG$ is a group that acts from the left on $\mrX$.
 The group operations and the group action are definable.
 We use the symbol $\,\cdot\,$ for both the group multiplication and the group action.
 
-We say tha the set $\X\subseteq\S$ is relatively definable if it is the intersection of a definable set with $\S$.
-
-We say that $\X\subseteq\S$ is generic if there are some finitely many $g_1,\dots,g_n\in\U$ such that the sets $g_i\X$ cover $\U$.
-
-Let $\D\subseteq\S$ be a relatively definable set.
+Let $\D\subseteq\X$ be a relatively definable set.
 Let $L'$ be a two-sorted language.
-The sorts are called $\G$ and $\S$.
-There is only one binary relation symbol $r(x,y)$ that has sort $\G\times\S$.
-We write $\langle\G, \S\, \D\rangle$ for the $L'$-structure that has domain $\langle\G, \S\rangle$ and interpretes $r(x,y)$ as follows 
+The sorts are called $\G$ and $\X$.
+There is only one binary relation symbol $r(x,y)$ that has sort $\G\times\X$.
+We write $\langle\G, \X\, \D\rangle$ for the $L'$-structure that has domain $\langle\G, \X\rangle$ and interpretes $r(x,y)$ as follows 
 
-\ceq{\hfill\langle\G,\S, \D\rangle\models r(g,a)}{\Leftrightarrow}{a\in g\cdot\D}
+\ceq{\hfill\langle\G,\X, \D\rangle\models r(g,a)}{\Leftrightarrow}{a\in g\cdot\D}
 
-Note that $\D$ is definable in $\langle\G,\S, \D\rangle$ by the formula $r(1,y)$.
-The action of $\G$ on $\U$ defined by left multiplication on $\G$ and $\S$ is an $L'$-automorphisms.
-Therefore we may identify $\G$ with a common subgroup of the groups $L'\mbox{-Aut}\U,{\D})$ as $\D$ ranges over the definable subsets of $\S$.
+Note that $\D$ is definable in $\langle\G,\X, \D\rangle$ by the formula $r(1,y)$.
+The action of $\G$ on $\U$ defined by left multiplication on $\G$ and $\X$ is an $L'$-automorphisms.
+Therefore we may identify $\G$ with a common subgroup of the groups $L'\mbox{-Aut}\U,{\D})$ as $\D$ ranges over the definable subsets of $\X$.
 
 \begin{fact}
-  The structure $\langle\G,\S, \D\rangle$ is saturated.
+  The structure $\langle\G,\X, \D\rangle$ is saturated.
 \end{fact}
 
 \begin{proof}
-  First note that the sets defined by $r(x,y)$ and by $\neg r(x,y)$ in $\langle\G,\S, \D\rangle$ are a type-definable subsets of $\U$.
+  First note that the sets defined by $r(x,y)$ and by $\neg r(x,y)$ in $\langle\G,\X, \D\rangle$ are a type-definable subsets of $\U$.
   It follows that the sets defined by $L'$-formulas are type-definables subsets of $\U$.
-  Therefore the saturation of $\langle\G,\S, \D\rangle$ follows from the saturation of $\U$.
+  Therefore the saturation of $\langle\G,\X, \D\rangle$ follows from the saturation of $\U$.
 \end{proof}
 
 %A set $\EuScript X\subseteq\U$ is generic if there are some finitely many $g_1,\dots,g_n\in\U$ such that the sets $g_i\EuScript X$ cover $\U$.
 
 \begin{fact}\label{fact_generic_G_L}
-Let $\D\subseteq\S$ be a definable set.
-Write $G_{\D}$ for $L'$-$\Aut(\G,\S,{\D})$.
+Let $\D\subseteq\X$ be a definable set.
+Write $G_{\D}$ for $L'$-$\Aut(\G,\X,{\D})$.
 Then the following are equivalent
 \begin{itemize}
   \item[1.] $\D$ is $G_{\D}$-generic
@@ -1009,12 +1014,12 @@ Then the following are equivalent
 
 \begin{proof}
   The equivalence follows from the fact that the orbits of $\D$ under the action of $G_{\D}$ and $\G$ coincide.
-  In fact, for $f\in L'\mbox{-Aut}(\G,\S,\D)$ let $g=f1$.
+  In fact, for $f\in L'\mbox{-Aut}(\G,\X,\D)$ let $g=f1$.
   Then $f{\D}=g\cdot\D$.
 \end{proof}
 
 \begin{fact}
-  Assume $\S=\G$, where $\G$ acts on itself by translation. 
+  Assume $\X=\G$, where $\G$ acts on itself by translation. 
   Let $\mu$ be S1 and invariant under $\G$-translation.
   If $\D\subseteq\G$ is $\mu$-wide then $\D\cdot\D^{-1}$ is $\G$-generic.
 \end{fact}
@@ -1030,24 +1035,23 @@ Then the following are equivalent
 \end{proof}
 
 \begin{theorem}
-  Let $\D\subseteq\S$ be a definable set.
-  Assume that $r(x,y)$ is stable in $\langle\G,\S,\D\rangle$.
-  Assume also that $\G$ acts transitively on $\S$, i.e.\@ there is a unique $\G$-orbit.
-  Then either $\D$ or $\S\smallsetminus\D$ is $\G$-generic.
+  Let $\mrD$ be a definable set.
+  Assume that $\phi({\mr x}\,;{\gr z})={\mr x}\in{\gr z}\cdot\mrD$ is stable.
+  Then for every ${\mr a}\in\mrX$ either $\D$ or $\G\cdot{\mr a}\smallsetminus\D$ is $\G$-generic in $\G\cdot{\mr a}$.
 \end{theorem}
 
 \begin{proof}
-  Assume $\S\smallsetminus\D$ is not $\G$-generic.
-  We claim that $\D$ is $\G$-generic.
-  By Fact~\ref{fact_generic_G_L} $\S\smallsetminus\D$ is not $G_{\D}$-generic.
-  By Fact~\ref{fact_ig} there is a global $G_{\D}$-invariant type $p(x)$ containing $r(x,1)$.
-  By stability, there is a positive Boolean combination of sets in the $G_{\D}$-orbit of $\D$ that is $L'$-definable over $\varnothing$.
-  By the transitivity of the action, $\S$ is the only set that is $L'$-definable over $\varnothing$.
-  Therefore some disjunction of sets in the $G_{\D}$-orbit of $\D$ cover $\S$.
+  Assume $\G\cdot{\mr a}\smallsetminus\D$ is not generic.
+  Then $\D$ is persistent.
+  We prove that $\D$ is generic.
+  By Theorem~\ref{thm_generic_invariant2} there is a invariant type $p(x)\in S_\phi(\U)$ containing $x\in\D$.
+  By Theorem~\ref{thm_stability_definable_rovescio}, there is a positive Boolean combination of sets in the $G_{\D}$-orbit of $\D$ that is $L'$-definable over $\varnothing$.
+  By the transitivity of the action, $\X$ is the only set that is $L'$-definable over $\varnothing$.
+  Therefore some disjunction of sets in the $G_{\D}$-orbit of $\D$ cover $\X$.
   As the $G_{\D}$-orbit and the $\G$-orbit of $\D$ coincide, the claim follows.
 \end{proof}
 
-Let $p(x)$ be a global type containing $x\in\S$ we define
+Let $p(x)$ be a global type containing $x\in\X$ we define
 
 \ceq{\hfill g\cdot p(x)}{=}{\big\{\varphi(g^{-1}\cdot x)\ :\ \varphi(x)\in p\big\}}
 
