@@ -38,10 +38,10 @@ We prefer to deal with external definability in a different, though equivalent, 
 This is not the most common approach.
 
 \begin{definition}\label{def_approx}
-We say that $\grD$ is \emph{approximated\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite $B$ there is a tuple ${\mr a}\in\U^{\mr x}$ such that $\phi({\mr a}\,;{\gr B})=\grD\cap B^{\gr z}$.
+We say that $\grD$ is \emph{approximated\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite $B$ there is a tuple ${\mr a}\in\U^{\mr x}$ such that $\phi({\mr a}\,;B^{\gr z})=\grD\cap B^{\gr z}$.
 We call $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grD$.
 If in addition $\phi({\mr a}\,;\U^{\gr z})\subseteq\grD$, we say that  $\grD$ is \emph{approximated from below}.
-Equivalently, we say that  $\grD$ is approximated from below if for every finite ${\gr B}\subseteq\grD$ there is a tuple ${\mr a}\in\U^{\mr x}$ such that  ${\gr B}\subseteq\phi({\mr a}\,;\U^{\gr z})\subseteq\grD$.
+Equivalently, we say that  $\grD$ is approximated from below if for every finite $B^{\gr z}\subseteq\grD$ there is a tuple ${\mr a}\in\U^{\mr x}$ such that  $B^{\gr z}\subseteq\phi({\mr a}\,;\U^{\gr z})\subseteq\grD$.
 The dual notion of \emph{approximation from above\/} is defined as expected (and coincides with $\neg\grD$ being approximated by $\neg\phi({\mr x}\,;{\gr z})$ from below).
 \end{definition} 
 
@@ -58,12 +58,9 @@ The following proposition is clear by compactness.
 The rest of this section is only required in Chapter~\ref{vc}.
 
 Approximability from below is an adaptation to our context of the notion of \textit{having an honest definition} in \cite{CS}.
-
-\begin{definition}\label{def_defble_type}
-We say that the global type $p\in S_{{\mr x}}(\U)$ is \emph{honestly definable\/} if for every $\phi({\mr x}\,;{\gr z})\in L$ the set ${\gr\D_{p,\phi}}$ is approximated from below (by some formula).
-We say that $p$ is \emph{definable\/} if the sets ${\gr\D_{p,\phi}}$ are all definable (over $\U$).
-Note that the terminology is misleading: honestly definable is weaker than definable.
-\end{definition}
+% We say that the global type $p\in S_{{\mr x}}(\U)$ is \textit{honestly definable\/} if for every $\phi({\mr x}\,;{\gr z})\in L$ the set ${\gr\D_{p,\phi}}$ is approximated from below (by some formula).
+% We say that $p$ is \emph{definable\/} if the sets ${\gr\D_{p,\phi}}$ are all definable (over $\U$).
+% Note that the terminology is misleading: honestly definable is weaker than definable.
 
 \begin{example}
 Every definable set is trivially approximable.
@@ -80,7 +77,7 @@ In Definition~\ref{def_approx}, the sort $\phi({\mr x}\,;{\gr z})$ is fixed (oth
 For every $\grD$ the following are equivalent
 \begin{itemize}
 \item[1.] $\grD$ is approximable
-\item[2.] for every $C\subseteq\U$ of cardinality $\le|L|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi({\gr C})=\grD\cap C^{\gr z}$.
+\item[2.] for every $C$ of cardinality $\le|L|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi(C^{\gr z})=\grD\cap C^{\gr z}$.
 \end{itemize}
 \end{proposition}
 
@@ -89,7 +86,7 @@ To prove \ssf{2}$\IMP$\ssf{1} assume \ssf{2} and negate \ssf{1} for a contradict
 For each formula $\psi({\mr x}\,;{\gr z})\in L$ choose a finite set $B$ such that $\psi({\mr b}\,;\U^{\gr z})\neq_B\grD$ for every ${\mr b}\in\U^{\mr x}$.
 Let $C$ be the union of all these finite sets.
 Clearly $|C|\le|L|$.
-By \ssf{2} there are a formula $\phi({\mr x}\,;{\gr z})$ and a tuple ${\mr c}$ such that $\phi({\mr c}\,;{\gr C})=\grD\cap C^{\gr z}$, contradicting the definition of $C$.
+By \ssf{2} there are a formula $\phi({\mr x}\,;{\gr z})$ and a tuple ${\mr c}$ such that $\phi({\mr c}\,;C^{\gr z})=\grD\cap C^{\gr z}$, contradicting the definition of $C$.
 \end{proof}
 
 \begin{remark}\label{prop_approx_el_eq}
@@ -133,28 +130,27 @@ From the following easy observation of Chernikov and Simon~\cite{CS} we obtain a
 % \end{proof}
 
 \begin{proposition}\label{prop_sh_exp_qe}
-Let $\C\subseteq\U^{|y\,{\gr z}|}$ be approximated from below by the formula $\phi({\mr x}\,;y\,{\gr z})$.
+Let $\C\subseteq\U^{y\,{\gr z}}$ be approximated from below by the formula $\phi({\mr x}\,;y\,{\gr z})$.
 Then $\grD=\big\{{\gr z}:\E y\ \big(y\,{\gr z}\in\C\big)\big\}$ is approximated from below by the formula $\E y\,\phi({\mr x}\,;y\,{\gr z})$.
 \end{proposition}
 
 \begin{proof}
-\def\vl{\gr}
 Let $B\subseteq\U$ be finite. 
 We want ${\mr a}\in\U^{\mr x}$ such that 
 
-\ceq{\ssf{a.}\hfill \E y\ \big(y\,{\vl b}\in\C\big)}{\iff}{\E y\,\phi({\mr a}\,;y\,{\vl b})}\hfill for every ${\vl b}\in B^{|{\vl z}|}$
+\ceq{\ssf{a.}\hfill \E y\ \big(y\,{\gr b}\in\C\big)}{\iff}{\E y\,\phi({\mr a}\,;y\,{\gr b})}\hfill for every ${\gr b}\in B^{\gr z}$
 
-\ceq{\ssf{b.}\hfill \A {\vl z}\;\Big[\E y\,\phi({\mr a}\,;y\,{\vl z})}{\imp}{\E y\ \big(y\,{\vl z}\in\C\big)\Big]}
+\ceq{\ssf{b.}\hfill \A {\gr z}\;\Big[\E y\,\phi({\mr a}\,;y\,{\gr z})}{\imp}{\E y\ \big(y\,{\gr z}\in\C\big)\Big]}
 
 Let $D\subseteq\U$ be a finite set such that 
 
-\ceq{\ssf{c.}\hfill \E y\in D^{|y|}\ \big(y\,{\vl b}\in\C\big)}{\iff}{\E y\ \big(y\,{\vl b}\in\C\big)}\hfill for every ${\vl b}\in B^{|{\vl z}|}$
+\ceq{\ssf{c.}\hfill \E y\in D^y\ \big(y\,{\gr b}\in\C\big)}{\iff}{\E y\ \big(y\,{\gr b}\in\C\big)}\hfill for every ${\gr b}\in B^{\gr z}$
 
 As $\C$ is approximable from below, there is an ${\mr a}$ such that
 
-\ceq{\ssf{a'.}\hfill d\,{\vl b}\in\C}{\iff}{\phi({\mr a}\,;d\,{\vl b})}\hfill for every $d\,{\vl b}\in \big(D\cup B\big)^{|y\,{\vl z}|}$
+\ceq{\ssf{a'.}\hfill d\,{\gr b}\in\C}{\iff}{\phi({\mr a}\,;d\,{\gr b})}\hfill for every $d\,{\gr b}\in \big(D\cup B\big)^{y\,{\gr z}}$
 
-\ceq{\ssf{b'.}\hfill \A y\,{\vl z}\ \Big[\phi({\mr a}\,;y\,{\vl z})}{\imp}{y\,{\vl z}\in\C\Big]}
+\ceq{\ssf{b'.}\hfill \A y\,{\gr z}\ \Big[\phi({\mr a}\,;y\,{\gr z})}{\imp}{y\,{\gr z}\in\C\Big]}
 
 We obtain \ssf{b} from \ssf{b'} simply by logic. 
 Implication $\imp$ in \ssf{a} follows from \ssf{a'} and \ssf{c}. 
@@ -227,7 +223,7 @@ We can also required that the ladder is an indiscernible sequence.
 
 \begin{lemma}\label{lem_stab_Boole}
   Every Boolean combination of stable formulas is stable.
-  Moreover, if $\phi({\mr x}\,;{\gr z})$ then  $\phi({\mr x}\,;{\gr z})^{\rm op}$ and $\phi({\mr x},{\mr x'}\,;{\gr z},{\gr z'})$ are also stable formula (in the latter ${\mr x'}$ and ${\gr z'}$ are dummy variables).
+  Moreover, if $\phi({\mr x}\,;{\gr z})$ then  $\phi({\mr x}\,;{\gr z})^{\rm op}$ and $\phi({\mr x},x'\,;{\gr z},z')$ are also stable formula (in the latter $x'$ and $z'$ are dummy variables).
 \end{lemma}
 
 \begin{proof}
@@ -243,7 +239,7 @@ The following theorem claims what is arguably one of the most important properti
 
 \begin{theorem}\label{thm_def_stable_formula}
 Any $\grD\subseteq\U^{\gr z}$ approximated by a stable formula is definable.
-More precisely, if $\phi({\mr x}\,;{\gr z})$ is a stable formula that approximates $\grD$ then there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in\U^{\mr x}$ such that 
+Precisely, if $\phi({\mr x}\,;{\gr z})$ is a stable formula that approximates $\grD$ then there are ${\mr a_{i,j}}\in\U^{\mr x}$ such that 
 
 \ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\phi({\mr a_{i,j}}\,;{\gr z})}
 \end{theorem}
@@ -289,17 +285,17 @@ approximates $\grD$ from below.
 
 \begin{proof}
 Let $m$ be such that there is no ladder sequence for $\phi({\mr x}\,;{\gr z})$ of length greater then $m$.
-Let ${\gr C}\subseteq\grD$ be finite.
-We prove that there are some ${\mr a_0},\dots,{\mr a_m}$ such that ${\gr C}\subseteq\psi({\mr a_0},\dots,{\mr a_m}\,;\U^{\gr z})\subseteq\grD$.
+Let $C^{\gr z}\subseteq\grD$ be finite.
+We prove that there are some ${\mr a_0},\dots,{\mr a_m}$ such that $C^{\gr z}\subseteq\psi({\mr a_0},\dots,{\mr a_m}\,;\U^{\gr z})\subseteq\grD$.
 As in the proof above, we define by recursion a ladder sequence for $\phi({\mr x}\,;{\gr z})$.
 Suppose that ${\mr a_0},\dots,{\mr a_{n-1}}$ and ${\gr b_0},\dots,{\gr b_{n-1}}\notin\grD$ have been defined.
 We first define ${\mr a_n}$, then ${\gr b_n}$. 
 Choose ${\mr a_n}\in\U^{\mr x}$ such that 
 
-\hfil${\gr C}\ \subseteq\ \phi({\mr a_n}\,;\U^{\gr z})\ \subseteq\ \U^{\gr z}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
+\hfil$C^{\gr z}\ \subseteq\ \phi({\mr a_n}\,;\U^{\gr z})\ \subseteq\ \U^{\gr z}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
 
 This ${\mr a_n}$ exists, because $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$.
-(Apply Definition~\ref{def_approx} with any $B$ such that ${\gr C}\cup\{{\gr b_0},\dots,{\gr b_{n-1}}\}\subseteq B^{\gr z}$.)
+(Apply Definition~\ref{def_approx} with any $B$ such that $C^{\gr z}\cup\{{\gr b_0},\dots,{\gr b_{n-1}}\}\subseteq B^{\gr z}$.)
 Then, if possible, let ${\gr b_n}$ such that
 
 \ceq{\hfill{\gr b_n}}{\in}{\bigcap^n_{i=0}\phi({\mr a_i},\U^{\gr z})\sm\grD}
@@ -588,7 +584,7 @@ The following are equivalent
   The corollary follows immediately from Lemma~\ref{lem_bin_tree} and Theorem~\ref{thm_count_types}.
 \end{proof}
 
-We use binary trees to prove the following fundamental lemma (attributed by Harnik and Harrington to Martin Ziegler).
+We use binary trees to prove the following fundamental lemma (attributed by Harnik and Harrington~\cite{HH}to Martin Ziegler).
 
 \begin{lemma}\label{lem_ziegler}
    Let $\phi({\mr x}\,;{\gr z}),\psi({\mr x}\,;{\gr z}) \in L(A)$.
@@ -871,10 +867,9 @@ We first prove a special case of the theorem which has a simpler proof.
 \begin{proof}
     Let $q({\mr x})=\tp({\mr a}/A)$.
     By Corollary~\ref{corol_stable_coheir_over_models} there is a type $p({\mr x})\in S_\phi(\U)$ consistent with $q({\mr x})$ and invariant over $\acl^\eq\!A$.
-    By Theorem~\ref{thm_def_stable_formula} there are some ${\mr a_1},\dots,{\mr a_n}\models q({\mr x})$ such that ${\gr\D_{p,\phi}}$ is a positive Bolean combination of the sets $\phi({\mr a_i}\,;\U^{\gr z})$.
+    By Theorem~\ref{thm_def_stable_formula} there are some ${\mr a_1},\dots,{\mr a_n}\models q({\mr x})$ such that ${\gr z}\in{\gr\D_{p,\phi}}$ is equivalent to a positive Bolean combination of the formulas $\phi({\mr a_i}\,;{\gr z})$.
     Let $\theta({\mr a_1},\dots,{\mr a_n}\,;\U^{\gr z})$ be such a Boolean combination.
-    Finally, from Proposition~\ref{prop_type_over_acl2} we obtain ${\gr\D_{p,\phi}}\in\acl^\eq\!A$.
-    This completes the proof if $A=\acl^\eq\!A$.
+    When $A=\acl^\eq\!A$, this is the required formula as ${\gr\D_{p,\phi}}\in\acl^\eq\!A$ by Proposition~\ref{prop_type_over_acl2}.
 
     For the general case, reason as follows.
     Let $f_1,\dots,f_n\in\Aut(\U/A)$ be such that the sets $f_i{\gr\D_{p,\phi}}$ span the whole orbit of ${\gr\D_{p,\phi}}$ over $A$.
@@ -888,6 +883,12 @@ We first prove a special case of the theorem which has a simpler proof.
 \begin{remark}
     If $\phi({\mr a}\,;z)$ is persistent over $A$ then $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr z})$ is consistent and therefore it is satisfiable in every model $M\supseteq A$.
 \end{remark}
+
+\begin{corollary}
+  Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
+  Let $p({\mr x})\in S_\phi(A)$.
+  Then either $\phi({\mr x}\,;{\gr z})$ or $\neg\phi({\mr x}\,;{\gr z})$ is Lascar generic over $A$.
+\end{corollary}
 
 \begin{exercise}\label{ex_Cb}
   Let $p({\mr x})\in S(\U)$.
@@ -1059,3 +1060,48 @@ Let $p(x)$ be a global type containing $x\in\X$ we define
 and
 
 \ceq{\hfill{\rm Stab}(p)}{=}{\big\{g\in\G\ :\ g\cdot p(x)=p(x)\big\}.}
+
+
+
+\section{Notes and references}
+\begin{biblist}[]\normalsize
+\bib{CS}{article}{
+  author={Chernikov, Artem},
+  author={Simon, Pierre},
+  title={Externally definable sets and dependent pairs},
+  note={\href{https://arxiv.org/abs/1007.4468}{ArXiv:1007.4468}},
+  journal={Israel J. Math.},
+  volume={194},
+  date={2013},
+  number={1},
+  pages={409--425},
+  %note={},
+  %issn={0021-2172},
+  %doi={10.1007/s11856-012-0061-9},
+}\smallskip
+  \bib{HH}{article}{
+   author={Harnik, Victor},
+   author={Harrington, Leo},
+   title={Fundamentals of forking},
+   journal={Ann. Pure Appl. Logic},
+   volume={26},
+   date={1984},
+   number={3},
+   pages={245--286},
+  %  issn={0168-0072},
+  %  review={\MR{0747686}},
+  %  doi={10.1016/0168-0072(84)90005-8},
+}\smallskip
+\bib{TZ}{book}{
+  author={Tent, Katrin},
+  author={Ziegler, Martin},
+  title={A course in model theory},
+  series={Lecture Notes in Logic},
+  volume={40},
+  publisher={Association for Symbolic Logic, Cambridge University Press},
+  date={2012},
+  pages={x+248},
+  %isbn={978-0-521-76324-0},
+  %doi={10.1017/CBO9781139015417},
+}\smallskip
+\end{biblist}

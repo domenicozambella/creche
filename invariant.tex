@@ -14,7 +14,7 @@ We use the same notation and make the same implicit assumptions as in Section~\r
 \section{Invariant sets and types}\label{invariant_sets}
 
 Let $G$ be a group that acts on $\U^{\gr z}$.
-In this chapter we only consider $G=\Aut(\U/A)$, but for later applcation we introduce a more general notation. 
+In this chapter we only consider $G=\Aut(\U/A)$, but for later applcation we introduce a more general notation.
 Let $\grD\subseteq\U^{\gr z}$.
 We say that $\grD$ is an \emph{invariant\/} under the action of $G$, or \emph{$G$-invariant,} if it is fixed setwise by $G$.
 That is, $g\grD=\grD$ for every $g\in G$.
@@ -119,20 +119,20 @@ Note that \ssf{it3} applies to complete types but not to $\phi$-types.
 \section{Invariance of types from the dual perspective}
 
 In the previous sections the invariance of $p({\mr x})$ has been definend using the sets ${\gr\D_{p,\phi}}$.
-Here examine invariance using the definable sets that are implied by $p({\mr x})$.
+Here we examine invariance using the formulas in $p({\mr x})$.
 
 Let $G$ be a group that acts on $\U^{\mr x}$ and $\U^{\gr z}$.
 Let $\phi({\mr x}\,;{\gr z})\in L$ be such that $\phi({\mr\U}\,;\U^{\gr z})$ is invariant under the action of $G$.
-Note that this assumpion is redundant when $G$ acts by automorphisms -- the generality is only required in Section~\ref{}.
+Note that this assumpion is redundant when $G$ acts by automorphisms.% -- the generality is only required in Section~\ref{}.
 % The terms invariant, orbit, and the few other indroduced below all refer to the action of $G$ on $\U$.
 Let $\mrX\subseteq\U^{\mr x}$ be a set that is type-definable over some small set of parameters and invariant.
-At the first reading one may assume that $\mrX=\U^{\mr x}$ as, again, more generality is required only in Section~\ref{}.
+At the first reading one may assume that $\mrX=\U^{\mr x}$.% as, again, more generality is required only in Section~\ref{}.
 
 A set $\mrD\subseteq\U^{\mr x}$ is \emph{$G$-generic\/} in $\mrX$ if finitely many $G$-translations of $\mrD$ cover $\mrX$; we say \emph{$n$-$G$-generic\/} if $\le n$ translates suffices.
 Dually, we say that $\mrD$ is \emph{$G$-persistent\/} in $\mrX$ if the intersection of any finitely many $G$-translations of $\mrD$ has a solution in $\mrX$; we say \emph{$n$-$G$-persistent\/} when the request is limited to $\le n$ translates.
 We may drop reference to $G$ and $\mrX$ when these are clear from the context.
 
-The properties above may be attributed to formulas (as these are identified with the set they define).
+The same properties may be attributed to formulas (as these are identified with the set they define).
 When the properties above are attributed to a type, it is understood that every conjunction of formulas in the type has the property.
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
@@ -180,16 +180,19 @@ Therefore $p({\mr x})\in S_\phi(\U)$ is invariant if
 \end{theorem}
 
 \begin{proof}
-  \ssf1$\IMP$\ssf2. Let ${\mr\D_1},\dots,{\mr\D_n}$ be translations of $\mrD$ that cover $\mrX$.
+  \ssf1$\IMP$\ssf2.
+  Let ${\mr\D_1},\dots,{\mr\D_n}$ be translations of $\mrD$ that cover $\mrX$.
   If $p({\mr x})\not\proves {\mr x}\in\mrD$, by the remark above
 
   \ceq{\hfill p({\mr x})}{\proves}{{\mr x}\notin\bigcup_{i=1}^n\mrD.}
 
   This contradicts the consistency of $p({\mr x})$ in $\mrX$.
 
-  \ssf2$\IMP$\ssf3. Trivial.
+  \ssf2$\IMP$\ssf3.
+  Trivial.
   
-  \ssf3$\IMP$\ssf4. Let $\mrD$ be defined by a conjunction of formulas in $p({\mr x})$.
+  \ssf3$\IMP$\ssf4.
+  Let $\mrD$ be defined by a conjunction of formulas in $p({\mr x})$.
   If $\mrD$ is not 2-persistent then, by Fact~\ref{fact_fip}, $\neg\mrD$ is 2-generic contradicting the consistency of $p({\mr x})$.
 
   \ssf4$\IMP$\ssf1.
@@ -199,9 +202,11 @@ Therefore $p({\mr x})\in S_\phi(\U)$ is invariant if
   If $p({\mr x})$ is not invariant then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g{\gr b})$ for some $g\in G$.
   Clearly $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g{\gr b})$ is not 2-persistent as it is inconsistent with its $g$-translation.
 
-  \ssf5$\IMP$\ssf2.  Trivial.
+  \ssf5$\IMP$\ssf2.
+  Trivial.
 
-  \ssf2$\IMP$\ssf5.  By the same argument as in \ssf3$\IMP$\ssf4.
+  \ssf2$\IMP$\ssf5.
+  By the same argument as in \ssf3$\IMP$\ssf4.
 \end{proof}
 
 % \begin{corollary}
@@ -213,7 +218,7 @@ Therefore $p({\mr x})\in S_\phi(\U)$ is invariant if
 
 Theorem~\ref{thm_generic_invariant} gives a condition for a global $\phi$-type to be invariant.
 The following theorem gives a condition for the existence of invariant types.
-Ideally, we would like to prove that every persistent formula extends to invariant/persistent type. 
+Ideally, we would like to prove that every persistent formula extends to invariant/persistent type.
 Unfortunately this is not true and we need a stronger property which we might call \textit{hereditary persistency\/} 
 or, with the terminology of the authors mentioned above, \textit{quasi-non-forking}.
 
@@ -229,14 +234,16 @@ or, with the terminology of the authors mentioned above, \textit{quasi-non-forki
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  Suppose ${\mr\C_1},\dots,{\mr\C_n}$ cover $\mrD\cap\mrX$ and pick $p({\mr x})$ as in \ssf1. 
+  Suppose ${\mr\C_1},\dots,{\mr\C_n}$ cover $\mrD\cap\mrX$ and pick $p({\mr x})$ as in \ssf1.
   By completeness, $p({\mr x})\proves {\mr x}\in{\mr\C_i}$ for some $i$.
   Then, by Theorem~\ref{thm_generic_invariant}, $\neg{\mr\C_i}$ is not generic.
   Therefore, by Fact~\ref{fact_fip}, ${\mr\C_i}$ is persistent.
   
-  \ssf2$\IMP$\ssf3. Trivial
+  \ssf2$\IMP$\ssf3.
+  Trivial.
 
-  \ssf3$\IMP$\ssf1. Let $p({\mr x})$ be maximal among the types that contain ${\mr x}\in\mrD$ and are such that $\theta({\mr\U})$ satisfies \ssf3 for every $\theta({\mr x})\in p$.
+  \ssf3$\IMP$\ssf1.
+  Let $p({\mr x})$ be maximal among the types that contain ${\mr x}\in\mrD$ and are such that $\theta({\mr\U})$ satisfies \ssf3 for every $\theta({\mr x})\in p$.
   We claim that $p$ is a complete type.
   Suppose for a contradiction that $\theta({\mr x}),\neg\theta({\mr x})\notin p$.
   By maximality there is some $\psi({\mr x})\in p$ and some ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi({\mr\U})\cap\theta({\mr\U})$ and $\psi({\mr\U})\smallsetminus\theta({\mr\U})$ and are such that no ${\mr\C_i}$ is persistent.
@@ -282,13 +289,14 @@ If for a contradiction $p({\mr x})$ contains neither $\psi({\mr x})$ nor $\neg\p
 This contradicts the finite satisfiability of $p({\mr x})$.
 \end{proof}
 
-In most cases we work with types that are finitely satisfiable over a model. The reason is explained by the next proposition, which is clear by elementarity.
+In most cases we work with types that are finitely satisfiable over a model.
+The reason is explained by the next proposition, which is clear by elementarity.
 
 \begin{proposition}\label{prop_coher_over_model}
-    Every consistent type over a model is finitely satisfiable in that model, that is, whenever $p({\mr x})\subseteq L(M)$ is consistent, $p({\mr x})$ is finitely satisfiable in $M$. 
+    Every consistent type over a model is finitely satisfiable in that model, that is, whenever $p({\mr x})\subseteq L(M)$ is consistent, $p({\mr x})$ is finitely satisfiable in $M$.
 \end{proposition}
 
-\begin{definition}\label{def_choeir_uno} A type $p({\mr x}) \subseteq L(\U)$ that is finitely satisfiable in $M$ is said to be a \emph{coheir\/} of $p_{\restriction M}({\mr x})$. 
+\begin{definition}\label{def_choeir_uno} A type $p({\mr x}) \subseteq L(\U)$ that is finitely satisfiable in $M$ is said to be a \emph{coheir\/} of $p_{\restriction M}({\mr x})$.
 \end{definition}
 
 %A type that extends $p({\mr x})$ and is finitely satisfied in $M$ is called a \emph{coheir\/} of $p({\mr x})$ over~$M$.
@@ -324,7 +332,7 @@ We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is 
   for the union of the types ${\mr x}\cnonfork_M{\gr b}$ and 
   $\tp({\mr a}/M)$.
 \end{definition}
- The tuples ${\mr a}$ realizing ${\mr x}\cnonfork_M{\gr b}$ are exactly those such that ${\mr a}\cnonfork_M{\gr b}$. Note that $\tp({\mr a}/M,{\gr b})$ is a coheir of $\tp({\mr a}/M)$ according to Definition~\ref{def_choeir_uno}, so the terminology is consistent.
+ The tuples ${\mr a}$ realizing ${\mr x}\cnonfork_M{\gr b}$ are exactly those such that ${\mr a}\cnonfork_M{\gr b}$.Note that $\tp({\mr a}/M,{\gr b})$ is a coheir of $\tp({\mr a}/M)$ according to Definition~\ref{def_choeir_uno}, so the terminology is consistent.
 
 We think of  ${\mr a}\cnonfork_M{\gr b}$ as saying that 
 ${\mr a}$ is \emph{independent\/} from ${\gr b}$ over $M$.
@@ -333,7 +341,7 @@ ${\mr a}$ is \emph{independent\/} from ${\gr b}$ over $M$.
 %
 In general %it is not symmetric, that is 
 ${\mr b}\cnonfork_M{\gr a}$ is not 
-equivalent to ${\gr a}\cnonfork_M{\mr b}$. 
+equivalent to ${\gr a}\cnonfork_M{\mr b}$.
 %(symmetry is equivalent to stability).
 
 We shall use, sometimes without explicit reference, the following easy lemma.
@@ -362,7 +370,8 @@ We shall use, sometimes without explicit reference, the following easy lemma.
 
 Properties \ssf{1}-\ssf{3} follow immediately from Definition~\ref{def_coheir_idepencence}.
 We prove \ssf{4}.
-Assume ${\mr a}\cnonfork_M{\gr b}$, that is,  $\tp({\mr a}/M,{\gr b})$ is finitely satisfiable in $M$. By Proposition~\ref{prop_exisntence_coheirs} $\tp({\mr a}/M,{\gr b})$ extends to a global type $p({\mr x})$ that is finitely satisfiable in $M$.
+Assume ${\mr a}\cnonfork_M{\gr b}$, that is,  $\tp({\mr a}/M,{\gr b})$ is finitely satisfiable in $M$.
+By Proposition~\ref{prop_exisntence_coheirs} $\tp({\mr a}/M,{\gr b})$ extends to a global type $p({\mr x})$ that is finitely satisfiable in $M$.
 Then any ${\mr a'}\models p_{\restriction M,\,{\gr b},\,c}({\mr x})$ proves the lemma.
 The proof of \ssf{5} is left to the reader.
 \end{proof}
@@ -395,14 +404,14 @@ Its consistency is guaranteed by the fact that $M$ is a model (see Proposition~\
 %
 However, in general it need not be a complete type over $M,{\gr b}$.
 %
-In fact, its completeness is a strong property.
+In fact, its completeness of this type is a property with important consequences.
 
-\begin{definition}\label{def_coheir_stationary} We say that $\cnonfork_M$ is \emph{stationary\/} if ${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$ is a complete type over $M,{\gr b}$ for all finite tuples ${\gr b}$ and ${\mr a}$. 
+\begin{definition}\label{def_coheir_stationary} We say that $\cnonfork_M$ is \emph{stationary\/} if ${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$ is a complete type over $M,{\gr b}$ for all finite tuples ${\gr b}$ and ${\mr a}$.
 We say \emph{$n$-stationary\/} if we limit the request to tuples ${\mr a}$ of length $n$.
 \end{definition}
 
 An application of stationarity is given in Section~\ref{semigroups}.
-Stationarity is often ensured by the following property, which will receive due attention in Section~\ref{stable_theories}. 
+Stationarity is often ensured by the following property, which will receive due attention in Section~\ref{stable_theories}.
 
 \begin{proposition}
 Let ${\mr x}$ be a tuple of variables of length $n$.
@@ -410,11 +419,9 @@ If for every $\phi({\mr x})\in L(\U)$ there is a formula $\psi({\mr x})\in L(M)$
 \end{proposition}
 
 \begin{proof}
-Let  ${\gr b}\in\U^{\gr z}$ and ${\mr a_1},{\mr a_2}\in\U^{\mr x}$ 
-be such that ${\mr a_i}\cnonfork_M{\gr b}$ and ${\mr a_1}\equiv_M{\mr a_2}$.
+Let ${\gr b}\in\U^{\gr z}$ and ${\mr a_1},{\mr a_2}\in\U^{\mr x}$ be such that ${\mr a_i}\cnonfork_M{\gr b}$ and ${\mr a_1}\equiv_M{\mr a_2}$.
 We claim that ${\mr a_1}\equiv_{M,\,{\gr b}}{\mr a_2}$.
-We need to prove that $\phi({\mr a_1}\,;{\gr b})\iff\phi({\mr a_2}\,;{\gr b})$ 
-for every  $\phi({\mr x}\,;{\gr z})\in L(M)$.
+We need to prove that $\phi({\mr a_1}\,;{\gr b})\iff\phi({\mr a_2}\,;{\gr b})$ for every  $\phi({\mr x}\,;{\gr z})\in L(M)$.
 Let $\psi({\mr x})\in L(M)$ be such that $\phi({\mr\U}\,;{\gr b})=\psi({\mr \U})$.
 From ${\mr a_i}\cnonfork_M{\gr b}$ we obtain that  $\phi({\mr a_i}\,;{\gr b})\iff\psi({\mr a_i})$.
 Finally, the claim follows because ${\mr a_1}\equiv_M{\mr a_2}$.
@@ -432,7 +439,7 @@ Finally, the claim follows because ${\mr a_1}\equiv_M{\mr a_2}$.
 % 
 % \ceq{\hfill{\gr\D_{p,\phi}}\cap M^{\gr z}\neq\0}{\IFF}{{\gr\D_{p,\phi}}\neq\0}  for every formula $\phi({\mr x}\,;{\gr z})\in L$.
 
-%Every type over a model has an extension to a global coheir. 
+%Every type over a model has an extension to a global coheir.
 %A satisfactory generalization of this notions to types over sets should guarantee this existence.
 %Unfortunately, this is not possible in general and the definition Section~\hyperref[coheirs_sets]{\ref*{invariantL}.\ref*{coheirs_sets}} is as good as it gets.
 
@@ -443,7 +450,7 @@ Finally, the claim follows because ${\mr a_1}\equiv_M{\mr a_2}$.
 % This simple observation will help in the proof of Theorem~\ref{thm_Hindman}.
 % For a natural example, let $T=T_{\rm dlo}$ and let $M\subseteq\U$ have the order type of $\RR$.
 % By quantifier elimination every definable subset of $\U$ is a union of finitely many intervals.
-% By Dedekind completeness, the trace on $M$ of any interval of $\U$ coincides with that of an $M$-definable interval. 
+% By Dedekind completeness, the trace on $M$ of any interval of $\U$ coincides with that of an $M$-definable interval.
 % \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -460,7 +467,7 @@ We say that ${\mr\bar c}=\<{\mr c_i}:i<\alpha\>$ is a \emph{Morley sequence\/} o
 
 \ceq{\ssf{Ms.}\hfill {\mr c_i}}{\models}{p_{\restriction  A,\,{\mr c_{\restriction i}}}({\mr x})}.
 
-When $p({\mr x})$ is finitely satisfiable in $A$, we say that ${\mr\bar c}$ is a \emph{coheir sequence\/} of $p({\mr x})$ over $A$. 
+When $p({\mr x})$ is finitely satisfiable in $A$, we say that ${\mr\bar c}$ is a \emph{coheir sequence\/} of $p({\mr x})$ over $A$.
 
 When we say that ${\mr\bar c}$ is a coheir sequence over $A$ (with no explicit reference to a global type), we mean that \textit{there is\/} a type $p({\mr x})\in S(\U)$ that is finitely satisfiable in $A$ such that ${\mr\bar c}$ is a \emph{coheir sequence\/} of $p({\mr x})$.
 
@@ -479,7 +486,8 @@ The following are equivalent
 Assume \ssf{1} and let $p({\mr x})\in S(\U)$ be a global type that is finitely satisfiable in $M$ and such that ${\mr c_i}\models p_{\restriction M,{\mr c_{\restriction i}}}({\mr x})$.
 The requirement ${\mr c_{n+1}}\equiv_{M,{\mr c_{\restriction n}}} {\mr c_n}$ is clear.
 Now, suppose $\phi({\mr c_{n+1}})$ for some $\phi({\mr x})\in L(M,{\mr c_{\restriction n+1}})$.
-Then $\phi({\mr x})$ belongs to $p({\mr x})$, so $\phi({\mr\U})\cap M^{\mr x}\neq\0$ because $p({\mr x})$ is finitely satisfiable in $M$. This proves ${\mr c_n}\cnonfork_M{\mr c_{\restriction n}}$.
+Then $\phi({\mr x})$ belongs to $p({\mr x})$, so $\phi({\mr\U})\cap M^{\mr x}\neq\0$ because $p({\mr x})$ is finitely satisfiable in $M$.
+This proves ${\mr c_n}\cnonfork_M{\mr c_{\restriction n}}$.
 
 \ssf{2}$\IMP$\ssf{1}.
 Let $q({\mr x})=\{\phi({\mr x})\in L(M, {\mr\bar c})\,:\, \phi({\mr c_n}) \textrm{ holds for cofinitely many } n\}$.
@@ -542,7 +550,8 @@ We prove by induction on $n<\omega$ that
 
 \ceq{\sharp\hfill {\mr c_{\restriction n}}}{\ \equiv_A}{\mr c_{\restriction I_0}}\ \ \ for every $I_0\subseteq\alpha$ of cardinality $n$.
 
-For $n=0$ the claim is trivial. We assume inductively that $\,\sharp\,$ above is true and prove that
+For $n=0$ the claim is trivial.
+We assume inductively that $\,\sharp\,$ above is true and prove that
 
 \ceq{\hfill {\mr c_{\restriction n}},{\mr c_n}}{\equiv_A}{{\mr c_{\restriction I_0}},{\mr c_i}}\ \ \ for every $I_0<i<\alpha$.
 
@@ -559,19 +568,19 @@ The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({
 \end{proof}
 
 %Let $I,<_I$ and $J,<_J$ be two infinite linear orders and let $a$ and $b$ be an $I$-sequence, respectively a $J$-sequence
-%Note that the expression $a\equiv_A b$ is meaningless unless there is a unique isomorphism between $I,<_I$ and $J,<_J$. However it always make sense, even for non isomorphic orders, when $a$ and $b$ are indiscernibles over $A$. In fact, we agree that \emph{$a\equiv_A b$\/} means $a_{\restriction I_0}\equiv_A b_{\restriction J_0}$ for every finite $I_0\subseteq I$ and $J_0\subseteq J$ of equal cardinality.% That being said, the following proposition is immediate.
+%Note that the expression $a\equiv_A b$ is meaningless unless there is a unique isomorphism between $I,<_I$ and $J,<_J$.However it always make sense, even for non isomorphic orders, when $a$ and $b$ are indiscernibles over $A$.In fact, we agree that \emph{$a\equiv_A b$\/} means $a_{\restriction I_0}\equiv_A b_{\restriction J_0}$ for every finite $I_0\subseteq I$ and $J_0\subseteq J$ of equal cardinality.% That being said, the following proposition is immediate.
 
 
 % \begin{proposition}\label{prop_embedding_indsc_seq}
 % Let $J,<_J$ be an infinite linear orders of cardinality $<\kappa$ and let $a$ be an $A$-in\-dis\-cern\-i\-ble $J$-sequence.
 
-% Let $I,<_I$ be another infinite linear order, and $b$ and  $A$-in\-dis\-cern\-i\-ble $I$-sequence such that $a\equiv_Ab$. Let $f:J\to I$ be an embedding of linear orders. Then $h(a_i)=b_{f(i)}$ for some $h\in\Aut(\U/A)$.
+% Let $I,<_I$ be another infinite linear order, and $b$ and  $A$-in\-dis\-cern\-i\-ble $I$-sequence such that $a\equiv_Ab$.Let $f:J\to I$ be an embedding of linear orders.Then $h(a_i)=b_{f(i)}$ for some $h\in\Aut(\U/A)$.
 % \end{proposition}
 
 
 % 
 % \begin{exercise}
-% Let $c=\<{\mr c_i}:i<\alpha \>$ be a constant sequence, i.e.\@ ${\mr c_0}={\mr c_i}$ for all $i$. Prove that $c$ is a Morley sequence over $A$ if and only if ${\mr c_0}\in(\dcl A)^{\mr x}$ and that $c$ is a coheir sequence over $A$ if and only if  ${\mr c_0}\in A^{\mr x}$. 
+% Let $c=\<{\mr c_i}:i<\alpha \>$ be a constant sequence, i.e.\@ ${\mr c_0}={\mr c_i}$ for all $i$.Prove that $c$ is a Morley sequence over $A$ if and only if ${\mr c_0}\in(\dcl A)^{\mr x}$ and that $c$ is a coheir sequence over $A$ if and only if  ${\mr c_0}\in A^{\mr x}$.
 % \end{exercise}
 
 
@@ -585,3 +594,8 @@ The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({
 % 
 % \end{exercise}
 
+
+\begin{exercise}
+  Let $\bar a$ be a sequence such that $a_{\restriction I_0}\equiv a_{\restriction I_1}$ for every $I_0,I_1$ such that $I_0<I_1$.
+  Prove that $\bar a$ is a sequence of indiscernibles.
+  \end{exercise}

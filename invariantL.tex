@@ -160,7 +160,7 @@ For every definable set $\grD$ the following are equivalent
 \end{corollary}
 
 The following corollary easily follows from Theorem~\ref{thm_Lascar_indiscernibles} and Proposition~\ref{prop_indiscernible_L(A,D)}.
-As an exercise the reader may wish to prove it using Proposition~\ref{prop_indiscernibles_set_model}.
+As an exercise the reader may prove it using Proposition~\ref{prop_indiscernibles_set_model}.
  
 \begin{corollary}
 The following are equivalent
@@ -207,34 +207,24 @@ The sets ${\gr\D_{p,\phi}}$ are defined in Section~\ref{invariant_sets}.
   \end{itemize}
   For convenience the tuples ${\gr c_i}$ have length $|{\gr z}|=\omega$.
 \end{proposition}
-\begin{proof} We prove \ssf{1}$\IFF$\ssf{3}, equivalence \ssf{1}$\IFF$\ssf{2} is proved similarly.
+\begin{proof} \ssf{1}$\IMP$\ssf{2}.
+Assume \ssf{1} and fix an $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ and some ${\mr a}\models p_{\restriction{\gr\bar c}}$.
+  We need to prove that for every formula $\phi({\mr x}\,;{\gr z_1},\dots,{\gr z_n})\in L(A)$
 
-  \def\ceq#1#2#3{\parbox[t]{30ex}{$\displaystyle #1$}\parbox[t]{5ex}{$\displaystyle\hfil #2$}{$\displaystyle #3$}}
+  \ceq{\hfill\phi({\mr a}\,;{\gr c_{\restriction I_0}})}{\iff}{\phi({\mr a}\,;{\gr c_{I_1}}).}
+
+  holds for every $I_0,I_1\subseteq\omega$ of cardinality $n$.
+  Without loss of generality we can assume that $I_0<I_1$.
+  Define $I_n$ for $n>1$ arbitrarily such that $I_n<I_{n+1}$.
+  Then the sequence ${\gr c'_n}={\gr c_{\restriction I_n}}$ is a sequence of $A$-in\-dis\-cern\-i\-bles and ${\gr c'_0}\in{\gr\D_{p,\phi}}\niff {\gr c'_1}\in{\gr\D_{p,\phi}}$.
+  By Theorem~\ref{thm_Lascar_indiscernibles} this contradicts \ssf{1}.
+  
+  \ssf{2}$\IMP$\ssf{3} is trivial.
 
   \ssf{3}$\IMP$\ssf{1}.
-If $p({\mr x})$ is not Lascar invariant over $A$ then ${\gr c_0}\in{\gr\D_{p,\phi}}\niff {\gr c_1}\in{\gr\D_{p,\phi}}$ for some $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ and some $\phi({\mr x}\,;{\gr z})\in L$.
-Then $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr c_0})\niff \phi({\mr x}\,;{\gr c_1})$.
-Hence, ${\gr\bar c}$ is not indiscernible over any realization of $p({\mr x})_{\restriction{\gr c_0},{\gr c_1}}$ 
-  
-  \ssf{1}$\IMP$\ssf{3}.
-Assume \ssf{1} and fix an $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ and some ${\mr a}\models p_{\restriction{\gr\bar c}}$.
-  We need to prove that for every formula $\phi({\mr x}\,;{\gr z'})\in L$, where ${\gr z'}={\gr z_1},\dots,{\gr z_n}$,
-
-  \ceq{\hfill\phi({\mr a}\,;{\gr c_{0}},\dots,{\gr c_{n-1}})}{\iff}{\phi({\mr a}\,;{\gr c_{i_1}},\dots,{\gr c_{i_{n-1}}}).}
-
-  holds for every $i_0<\dots<i_{n-1}<\omega$.
-Suppose not and let $m$ be any integer larger than $i_{n-1}$.
-Then the following equivalences cannot both be true
-
-  \ceq{\hfill\phi({\mr a}\,;{\gr c_m},\dots,{\gr c_{m+n-1}})}{\iff}{\phi({\mr a}\,;{\gr c_0},\dots,{\gr c_{n-1}})}
-
-
-  \ceq{\hfill\phi({\mr a}\,;{\gr c_m},\dots,{\gr c_{m+n-1}})}{\iff}{\phi({\mr a}\,;{\gr c_{i_0}},\dots,{\gr c_{i_{n-1}}}).}
-
-  If the first is false, define ${\gr c'_k}={\gr c_{km}},\dots,{\gr c_{km+n-1}}$ for all $k<\omega$.
-Otherwise, do this only for positive $k$ and set ${\gr c'_0}={\gr c_{i_0}},\dots,{\gr c_{i_{n-1}}}$.
-In either cases $\<{\gr c'_k}:k<\omega\>$ is a sequence of $A$-in\-dis\-cern\-i\-bles and ${\gr c'_0}\in{\gr\D_{p,\phi}}\niff {\gr c'_1}\in{\gr\D_{p,\phi}}$.
-This contradicts \ssf{1}.
+  If $p({\mr x})$ is not Lascar invariant over $A$ then ${\gr c_0}\in{\gr\D_{p,\phi}}\niff {\gr c_1}\in{\gr\D_{p,\phi}}$ for some $A$-indiscernible sequence ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ and some $\phi({\mr x}\,;{\gr z})\in L$.
+  Then $p({\mr x})$ contains the formula $\phi({\mr x}\,;{\gr c_0})\niff \phi({\mr x}\,;{\gr c_1})$.
+  Hence, ${\gr\bar c}$ is not indiscernible over any realization of $p({\mr x})_{\restriction{\gr c_0},{\gr c_1}}$.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
