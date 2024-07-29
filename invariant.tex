@@ -38,10 +38,10 @@ In the latter case $\Delta$-types are called \emph{$\phi$-types.}
 We denote by \emph{$S_\phi(\Aa)$\/} the set of maximal $\phi$-types with parameters in $\Aa$.
 Typically, $\Aa$ is either $\U$ or some small set $A\subseteq\U$.
 Types in \emph{$S_{\phi}(\U)$\/} are called \emph{global $\phi$-types.} 
-They may be identified with subsets of $\Aa^{\gr z}$.
-Namely, $p({\mr x})\in S_\phi(\Aa)$ is identified with
+% They may be identified with subsets of $\U^{\gr z}$.
+% Namely, $p({\mr x})\in S_\phi(\Aa)$ is identified with
    
-\ceq{\hfill\grD}{=}{\Big\{{\gr b}\in\Aa^{\gr z}\ :\ \phi({\mr x}\,;{\gr b})\in p\Big\}.}
+% \ceq{\hfill\grD}{=}{\Big\{{\gr b}\in\Aa^{\gr z}\ :\ \phi({\mr x}\,;{\gr b})\in p\Big\}.}
 
 % \begin{proposition}
 % Suppose $M$ realizes every consistent type $p({\gr z})\subseteq L(A)$.
@@ -64,8 +64,7 @@ This is possible because adding or erasing dummy variables to the tuple of ${\gr
 A $\phi$-type $p({\mr x})$ can be identified with the set ${\gr\D_{p,\phi}}$.
 Therefore any type $p({\mr x})\subseteq L(\U)$ can be identified with the collection of the sets ${\gr\D_{p,\phi}}$, where $\phi({\mr x}\,;{\gr z})$ ranges over $L$.
 
-Let $p({\mr x})\subseteq L(\U)$ be a consistent type.
-We say that $p({\mr x})$ is an \emph{invariant\/} under the action of $G$ if, for every formula $\phi({\mr x}\,;{\gr z})\in L$ 
+We say that $p({\mr x})\subseteq L(\U)$ is \emph{invariant\/} under the action of $G$, or \emph{$G$-invariant,} if for every formula $\phi({\mr x}\,;{\gr z})\in L$ 
 
 \ceq{\ssf{it1.}\hfill\phi({\mr x}\,;{\gr a})\in p}{\IFF}{\phi({\mr x}\,;g{\gr a})\in p}\hfill for every ${\gr a}\in\U^{\gr z}$ and every $g\in G$.
 
@@ -122,10 +121,12 @@ In the previous sections the invariance of $p({\mr x})$ has been definend using 
 Here we examine invariance using the formulas in $p({\mr x})$.
 
 Let $G$ be a group that acts on $\U^{\mr x}$ and $\U^{\gr z}$.
-Let $\phi({\mr x}\,;{\gr z})\in L$ be such that $\phi({\mr\U}\,;\U^{\gr z})$ is invariant under the action of $G$.
-Note that this assumpion is redundant when $G$ acts by automorphisms.% -- the generality is only required in Section~\ref{}.
+Let $\phi({\mr x}\,;{\gr z})\in L$ be such that $\phi(\U^{\mr x}\,;\U^{\gr z})$ is invariant under the action of $G$.
+Note that this assumpion is redundant when $G$ acts by automorphisms.
+
+% -- the generality is only required in Section~\ref{}.
 % The terms invariant, orbit, and the few other indroduced below all refer to the action of $G$ on $\U$.
-Let $\mrX\subseteq\U^{\mr x}$ be a set that is type-definable over some small set of parameters and invariant.
+Let $\mrX\subseteq\U^{\mr x}$ be a set that is type-definable over some small set of parameters and $G$-invariant.
 At the first reading one may assume that $\mrX=\U^{\mr x}$.% as, again, more generality is required only in Section~\ref{}.
 
 A set $\mrD\subseteq\U^{\mr x}$ is \emph{$G$-generic\/} in $\mrX$ if finitely many $G$-translations of $\mrD$ cover $\mrX$; we say \emph{$n$-$G$-generic\/} if $\le n$ translates suffices.
@@ -133,7 +134,7 @@ Dually, we say that $\mrD$ is \emph{$G$-persistent\/} in $\mrX$ if the intersect
 We may drop reference to $G$ and $\mrX$ when these are clear from the context.
 
 The same properties may be attributed to formulas (as these are identified with the set they define).
-When the properties above are attributed to a type, it is understood that every conjunction of formulas in the type has the property.
+When the properties above are attributed to a type $p({\mr x})$, it is understood that it holds for every $\phi({\mr x})$ that is a conjunction of formulas in $p({\mr x})$.
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 The terminology above is non-standard.
@@ -157,23 +158,24 @@ Their terminology has good motivations, but it is a mouthful.
   \end{itemize} 
 \end{proof}
 
-A \emph{$\phi$-formula\/} is a formula $\theta({\mr x}\,;{\gr\bar z})$, where ${\gr\bar z}={\gr z_1},\dots,{\gr z_n}$, that is a Boolean combination of formuas of the form $\phi({\mr x}\,;{\gr z_i})$.
-A set is \emph{$\phi$-definable\/} if it is of the form $\theta({\mr\U}\,;{\gr\bar b})$ for some $\phi$-formula $\theta({\mr x}\,;{\gr\bar z})$ and ${\gr\bar b}={\gr b_1},\dots,{\gr b_n}$.
-
-Our assumptions on $\phi$ ensure that $g[\theta({\mr\U}\,;{\gr\bar b})]=\theta({\mr\U}\,;g{\gr\bar b})$ for every $g\in G$.
-Clearly global $\phi$-types decide all $\phi$-formulas.
-Therefore $p({\mr x})\in S_\phi(\U)$ is invariant if 
+A \emph{$\phi$-formula\/} is a formula the form $\theta({\mr\U}\,;{\gr\bar b})$ for some ${\gr\bar b}\in\U^{\gr\bar z}$ and $\theta({\mr x}\,;{\gr\bar z})$ a Boolean combination of formulas $\phi({\mr x}\,;{\gr z_i})$, where ${\gr\bar z}={\gr z_1},\dots,{\gr z_n}$.
+A set is \emph{$\phi$-definable\/} if it is definable by a $\phi$-formula.
+We write \emph{$L_\phi(\U)$\/} for the set of $\phi$-formulas.
+Recall that we are working under the assumption that the action of $G$ preserves the truth of $\phi({\mr x}\,;{\gr z})$.
+This ensures that the action of $G$ maps $\phi$-definable sets into  $\phi$-definable sets.
+In particular $g[\theta({\mr\U}\,;{\gr\bar b})]=\theta({\mr\U}\,;g{\gr\bar b})$ for every $g\in G$.
+Therefore $p({\mr x})\subseteq L_\phi(\U)$ is invariant if 
 
 \ceq{\hfill p({\mr x})\proves{\mr x}\in\mrD}{\IFF}{p({\mr x})\proves{\mr x}\in g\mrD}\hfill for every $\phi$-definable $\mrD\subseteq\U^{\mr x}$ and $g\in G$.
 
 \begin{theorem}\label{thm_generic_invariant}
   Let $G$,  $\mrX$, and $\phi({\mr x}\,;{\gr z})\in L$ be given.
-  Let $p({\mr x})\in S_\phi(\U)$ be finitely consistent in $\mrX$.
+  Let $p({\mr x})\subseteq L_\phi(\U)$ be finitely consistent in $\mrX$.
   Then the following are equivalent 
   \begin{itemize}
     \item[1.] $p({\mr x})$ is invariant
-    \item[2.] $p({\mr x})\proves{\mr x}\in\mrD$ for every generic $\phi$-definable set $\mrD$
-    \item[3.] $p({\mr x})\proves{\mr x}\in\mrD$ for every 2-generic $\phi$-definable set $\mrD$
+    \item[2.] $p({\mr x})$ is finitely consistent in $\mrD$ for every generic $\phi$-definable set $\mrD$
+    \item[3.] $p({\mr x})$ is finitely consistent in $\mrD$ for every 2-generic $\phi$-definable set $\mrD$
     \item[4.] $p({\mr x})$ is 2-persistent
     \item[5.] $p({\mr x})$ is persistent.
   \end{itemize}
@@ -181,10 +183,10 @@ Therefore $p({\mr x})\in S_\phi(\U)$ is invariant if
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  Let ${\mr\D_1},\dots,{\mr\D_n}$ be translations of $\mrD$ that cover $\mrX$.
-  If $p({\mr x})\not\proves {\mr x}\in\mrD$, by the remark above
+  Let $g_1{\mr\D},\dots,g_n{\mr\D}$ be translations of $\mrD$ that cover $\mrX$.
+  If $p({\mr x})\proves {\mr x}\notin\mrD$, by the reark above
 
-  \ceq{\hfill p({\mr x})}{\proves}{{\mr x}\notin\bigcup_{i=1}^n\mrD.}
+  \ceq{\hfill p({\mr x})}{\proves}{{\mr x}\ \notin\ \bigcup_{i=1}^ng_i\mrD.}
 
   This contradicts the consistency of $p({\mr x})$ in $\mrX$.
 
@@ -193,7 +195,8 @@ Therefore $p({\mr x})\in S_\phi(\U)$ is invariant if
   
   \ssf3$\IMP$\ssf4.
   Let $\mrD$ be defined by a conjunction of formulas in $p({\mr x})$.
-  If $\mrD$ is not 2-persistent then, by Fact~\ref{fact_fip}, $\neg\mrD$ is 2-generic contradicting the consistency of $p({\mr x})$.
+  If $\mrD$ is not 2-persistent then, by Fact~\ref{fact_fip}, $\neg\mrD$ is 2-generic. 
+  By \ssf3 $p({\mr x})$ is finitely consistent in   $\neg\mrD$, a contradiction..
 
   \ssf4$\IMP$\ssf1.
   % uppose $p({\mr x})$ is not $(n+2)$-persistent and let $n$ be minimal.
@@ -216,9 +219,9 @@ Therefore $p({\mr x})\in S_\phi(\U)$ is invariant if
 %   Then $\neg\mrD$ is not generic.
 % \end{corollary}
 
-Theorem~\ref{thm_generic_invariant} gives a condition for a global $\phi$-type to be invariant.
-The following theorem gives a condition for the existence of invariant types.
-Ideally, we would like to prove that every persistent formula extends to invariant/persistent type.
+Theorem~\ref{thm_generic_invariant} gives a condition for a $\phi$-type to be invariant.
+The following theorem gives a condition for the existence of global invariant $\phi$-types.
+Ideally, we would like to prove that every persistent $\phi$-type extends to invariant/persistent type.
 Unfortunately this is not true and we need a stronger property which we might call \textit{hereditary persistency\/} 
 or, with the terminology of the authors mentioned above, \textit{quasi-non-forking}.
 
@@ -307,7 +310,7 @@ We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is 
 \begin{definition}\label{def_coheir_idepencence} 
   For every ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$ we define
 
-  \noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}
+  \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}
   %
   \ceq{\hfill\emph{${\mr a}\cnonfork_M{\gr b}$}}
   {\IFF}

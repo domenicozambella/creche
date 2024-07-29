@@ -118,7 +118,7 @@ We write $T_{\rm ag}$ for the theory of abelian groups which contains the univer
 \end{example}
 
 \begin{example}
-The theory $T_{\rm r}$ of (unitary) rings extends $T_{\rm ag}$ with
+The theory $T_{\rm r}$ of (unitary) \emph{rings} extends $T_{\rm ag}$ with
 \begin{itemize}
 \item[a5.] $(x\cdot  y)\cdot  z\  =\ x\cdot (y\cdot  z)$
 \item[a6.] $1\cdot  x\ =\ x\cdot  1\ =\ x$
@@ -129,7 +129,7 @@ The theory of commutative rings $T_{\rm cg}$ contains also \ssf{com} of examples
 \end{example}
 
 \begin{example}
-The theory of ordered rings $T_{\rm or}$ extends $T_{\rm cr}$ with
+The theory of \emph{ordered rings} $T_{\rm or}$ extends $T_{\rm cr}$ with
 \begin{itemize}
 \item[o1.] $x<z\ \imp\ x+y<z+y$
 \item[o2.] $0<x \wedge 0<z\ \imp\ 0<x\cdot z$.
@@ -248,14 +248,14 @@ For every pair of structures $M$ and $N$ and every $A\subseteq M\cap N$ the foll
 \item[a.] $M\equiv_A N$
 \item[b.] $\Th(M/A)=\Th(N/A)$
 \item[c.] \parbox{27ex}{$M\models\phi(a)\ \ \IFF\ \ N\models \phi(a)$}  for every $\phi(x)\in L$ and every $a\in A^x$.
-\item[d.]  \parbox{27ex}{$\phi(M^x) \cap A^x\ =\ \phi(N) \cap A^x$} for every $\phi(x)\in L$.
+\item[d.]  \parbox{27ex}{$\phi(M^x) \cap A^x\ =\ \phi(N^x) \cap A^x$} for every $\phi(x)\in L$.
 \end{itemize}
 \end{proposition}
 
 If we restate \ssf{a} and \ssf{c} of the proposition above when $A=M$ we obtain that the following are equivalent
 \begin{itemize}
 \item[a'.] $M\preceq N$
-\item[d'.] \parbox{26ex}{$\phi(M^x)\ =\ \phi(N) \cap M^x$} for every $\phi(x)\in L$.
+\item[d'.] \parbox{26ex}{$\phi(M^x)\ =\ \phi(N^x) \cap M^x$} for every $\phi(x)\in L$.
 \end{itemize}
 Note that \ssf{c'} extends to all definable sets what Definition~\ref{sottostrutturadef} requires for a few basic definable sets.
 
@@ -412,7 +412,7 @@ It follows that Dedekind completeness is \textit{not\/} a first-order property.
 We define the following equivalence relation on $\nsR$: we write \emph{$a\approx b$\/} if $|a-b|$ is infinitesimal.
 The fact that this is an equivalence relation follows from Fact~\ref{prodottosommainfinitesimi}.
 The equivalence class of $c$ is called \emph{monad.}
-By Lemma~\ref{lem_esistenzainfinite} if $c$ is a finite hyperreal, there is a unique real in the monad of $c$.
+By Lemma~\ref{lem_esistenzainfinitesimi} if $c$ is a finite hyperreal, there is a unique real in the monad of $c$.
 
 Hyperreals that are not finite are said to be \emph{infinite.}
 If $c$ is finite, the unique standard real in the monad of $c$ is called \emph{standard part\/} of $c$ and it is denoted by \emph{$\st(c)$.}
@@ -837,7 +837,7 @@ Then there is an isomorphism $k$ that makes the following diagram commute
 where $\pi:a\mapsto [a]_E$ is the projection map.
 \end{proposition}
 
-\noindent\llap{\textcolor{red}{\Large\danger}\kern1.5ex}%
+\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}%
 Quotients clutter the notation with brackets.
 To avoid the mess, we prefer to reason in $N$ and tweak the satisfaction relation.
 Warning: though this is what everyone informally does, it is rarely spelled out so, feel free to reguard the following as a pedantry.
@@ -934,7 +934,7 @@ Implication \ssf{b}$\IMP$\ssf{c} is immediate.
  As for \ssf{c}$\IMP$\ssf{a} note that if $T\cup\{\phi\}$ is consistent then $\neg\phi\not\in T$ therefore $\phi\in T$ follows from \ssf{c}.
 \end{proof}
 
-The proof of the proposition below is is left as an exercise for the reader.
+The proof of the proposition below is left as an exercise for the reader.
 
 \begin{proposition}\label{fattoconsistenzasensolato}
 The following are equivalent

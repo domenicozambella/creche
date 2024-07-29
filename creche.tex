@@ -306,6 +306,11 @@ diagrams={>=latex}
 \smash{\tikz[baseline]\node[rectangle, fill=red!25!yellow!50!white, rounded corners, inner xsep=0.5ex, inner ysep=0.2ex, anchor=base, minimum height = 2.7ex]{#1};}\kern-0.5ex
 }
 
+\renewcommand*{\emph}[1]{%
+\kern-0.3ex
+\smash{\tikz[baseline]\node[rectangle, fill=black!20!yellow!50!white, rounded corners, inner xsep=0.5ex, inner ysep=0.2ex, anchor=base, minimum height = 2.7ex]{#1};}\kern-0.5ex
+}
+
 % \renewcommand*{\emph}[1]{%
 %    \tikz[baseline,%
 %       decoration={random steps,amplitude=1pt,segment length=15pt},%
