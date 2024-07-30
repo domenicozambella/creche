@@ -29,15 +29,16 @@ Yet in other words, if
 
 The definition of invariant type is less straightforward.
 We need to introduce some notation.
-We are mainly interested in $\Delta$-types where either $\Delta=L(\Aa)$ for some $\Aa\subseteq\U$ or 
+Let $\phi({\mr x}\,;{\gr z})\in L$.
+A \emph{$\phi$-formula\/} is a formula the form $\theta({\mr x}\,;{\gr\bar b})$ for some $\theta({\mr x}\,;{\gr\bar z})$ that is a Boolean combination of the formulas $\phi({\mr x}\,;{\gr z_i})$, where ${\gr\bar z}={\gr z_1},\dots,{\gr z_n}$, and some ${\gr\bar b}\in\U^{\gr\bar z}$.
+A \emph{$\phi$-definable\/} set is a set  $\theta({\mr\U}\,;{\gr\bar b})$ definable by a $\phi$-formula.
+We write $L_\phi(\Aa)$ for the set of $\phi$-formulas with parameters in $\Aa$.
 
-\ceq{\hfill\Delta}{=}{\Big\{\phi({\mr x}\,;{\gr b}),\ \neg\phi({\mr x}\,;{\gr b})\ :\ {\gr b}\in\Aa^{\gr z}\Big\}} 
-
-for a given $\phi({\mr x}\,;{\gr z})\in L$.
+We are mainly concerned in $\Delta$-types where $\Delta$ is either $L(\Aa)$ or $L_\phi(\Aa)$.
 In the latter case $\Delta$-types are called \emph{$\phi$-types.}
 We denote by \emph{$S_\phi(\Aa)$\/} the set of maximal $\phi$-types with parameters in $\Aa$.
 Typically, $\Aa$ is either $\U$ or some small set $A\subseteq\U$.
-Types in \emph{$S_{\phi}(\U)$\/} are called \emph{global $\phi$-types.} 
+Types in \emph{$S_{\phi}(\U)$\/} are called \emph{global $\phi$-types.}
 % They may be identified with subsets of $\U^{\gr z}$.
 % Namely, $p({\mr x})\in S_\phi(\Aa)$ is identified with
    
@@ -123,23 +124,29 @@ Here we examine invariance using the formulas in $p({\mr x})$.
 Let $G$ be a group that acts on $\U^{\mr x}$ and $\U^{\gr z}$.
 Let $\phi({\mr x}\,;{\gr z})\in L$ be such that $\phi(\U^{\mr x}\,;\U^{\gr z})$ is invariant under the action of $G$.
 Note that this assumpion is redundant when $G$ acts by automorphisms.
+This assumption ensures that the action of $G$ maps $\phi$-definable sets into $\phi$-definable sets.
+In particular $g[\theta({\mr\U}\,;{\gr\bar b})]=\theta({\mr\U}\,;g{\gr\bar b})$ for every $g\in G$.
+Therefore $p({\mr x})\subseteq L_\phi(\U)$ is invariant if
+
+\ceq{\hfill p({\mr x})\proves{\mr x}\in\mrD}{\IFF}{p({\mr x})\proves{\mr x}\in g\mrD}\hfill for every $\phi$-definable $\mrD\subseteq\U^{\mr x}$ and $g\in G$.
 
 % -- the generality is only required in Section~\ref{}.
 % The terms invariant, orbit, and the few other indroduced below all refer to the action of $G$ on $\U$.
-Let $\mrX\subseteq\U^{\mr x}$ be a set that is type-definable over some small set of parameters and $G$-invariant.
+Let $\mrX\subseteq\U^{\mr x}$ be a $G$-invariant set.
 At the first reading one may assume that $\mrX=\U^{\mr x}$.% as, again, more generality is required only in Section~\ref{}.
+
+\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
+The terminology below non-standard.
+In the literature some distinguished authors write \textit{quasi-non-dividing\/} for \textit{persistent}.
+Their terminology has good motivations, but it is a mouthful.
 
 A set $\mrD\subseteq\U^{\mr x}$ is \emph{$G$-generic\/} in $\mrX$ if finitely many $G$-translations of $\mrD$ cover $\mrX$; we say \emph{$n$-$G$-generic\/} if $\le n$ translates suffices.
 Dually, we say that $\mrD$ is \emph{$G$-persistent\/} in $\mrX$ if the intersection of any finitely many $G$-translations of $\mrD$ has a solution in $\mrX$; we say \emph{$n$-$G$-persistent\/} when the request is limited to $\le n$ translates.
 We may drop reference to $G$ and $\mrX$ when these are clear from the context.
 
 The same properties may be attributed to formulas (as these are identified with the set they define).
-When the properties above are attributed to a type $p({\mr x})$, it is understood that it holds for every $\phi({\mr x})$ that is a conjunction of formulas in $p({\mr x})$.
-
-\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
-The terminology above is non-standard.
-In the leterature some distinguished authors write \textit{quasi-non-dividing\/} for \textit{persistent}.
-Their terminology has good motivations, but it is a mouthful.
+When the properties above are attributed to a type $p({\mr x})$, it is understood that they holdsfor every $\phi({\mr x})$ that is a conjunction of formulas in $p({\mr x})$.
+See Exercise~\ref{ex_persistent_types} for an alternative characterization when $p({\mr x})$ is a small.
 
 \begin{fact}\label{fact_fip}
   Let $G$ and $\mrX$ be given.
@@ -158,20 +165,10 @@ Their terminology has good motivations, but it is a mouthful.
   \end{itemize} 
 \end{proof}
 
-A \emph{$\phi$-formula\/} is a formula the form $\theta({\mr\U}\,;{\gr\bar b})$ for some ${\gr\bar b}\in\U^{\gr\bar z}$ and $\theta({\mr x}\,;{\gr\bar z})$ a Boolean combination of formulas $\phi({\mr x}\,;{\gr z_i})$, where ${\gr\bar z}={\gr z_1},\dots,{\gr z_n}$.
-A set is \emph{$\phi$-definable\/} if it is definable by a $\phi$-formula.
-We write \emph{$L_\phi(\U)$\/} for the set of $\phi$-formulas.
-Recall that we are working under the assumption that the action of $G$ preserves the truth of $\phi({\mr x}\,;{\gr z})$.
-This ensures that the action of $G$ maps $\phi$-definable sets into  $\phi$-definable sets.
-In particular $g[\theta({\mr\U}\,;{\gr\bar b})]=\theta({\mr\U}\,;g{\gr\bar b})$ for every $g\in G$.
-Therefore $p({\mr x})\subseteq L_\phi(\U)$ is invariant if 
-
-\ceq{\hfill p({\mr x})\proves{\mr x}\in\mrD}{\IFF}{p({\mr x})\proves{\mr x}\in g\mrD}\hfill for every $\phi$-definable $\mrD\subseteq\U^{\mr x}$ and $g\in G$.
-
 \begin{theorem}\label{thm_generic_invariant}
   Let $G$,  $\mrX$, and $\phi({\mr x}\,;{\gr z})\in L$ be given.
   Let $p({\mr x})\subseteq L_\phi(\U)$ be finitely consistent in $\mrX$.
-  Then the following are equivalent 
+  Then the following are equivalent
   \begin{itemize}
     \item[1.] $p({\mr x})$ is invariant
     \item[2.] $p({\mr x})$ is finitely consistent in $\mrD$ for every generic $\phi$-definable set $\mrD$
@@ -258,6 +255,24 @@ or, with the terminology of the authors mentioned above, \textit{quasi-non-forki
   As $\neg\mrB$ is not 2-persistent by Fact~\ref{fact_fip}, this contradics \ssf3.
 \end{proof}
 
+A set $\mrD\subseteq\U^{\mr x}$ is \emph{strongly generic\/} if the intersection of any initely many translations of $\mrD$ is generic.
+Dually, we say that $\mrD$ is \emph{weakly persistent\/} if the union of some finitely many translations of $\mrD$ is peristent.
+Again, the same properties may be attributed to formulas.
+
+\begin{theorem}\label{thm_generic_invariant}
+  Let $G$,  $\mrX$, and $\phi({\mr x}\,;{\gr z})\in L$ be given.
+  Let $\psi({\mr x})$ be a generic formula.
+  Then the type containing $\psi({\mr x})$ and all strongly generic formulas $\phi({\mr x})\in L_\phi(\U)$ is finitely consistent in $\mrX$.
+\end{theorem}
+
+\begin{exercise}\label{ex_persistent_types}
+  Let $G$,  $\X$, and $\phi(x,;z)\in L$ be given.
+  For every $p(x)\subseteq L_\phi(A)$ following are equivalent
+  \begin{itemize}
+    \item[1.] $p(x)$ is persistent
+    \item[2.] $p(\U^x)$ is persistent.
+  \end{itemize}
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
