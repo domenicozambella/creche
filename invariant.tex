@@ -98,19 +98,21 @@ Clearly $|S_{\gr z}(A)|\le 2^\lambda$.
 
 The invariance of types can be rephrased in a similar way
 
-\ceq{\ssf{it2.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\Big(\phi({\mr x}\,;{\gr a})\in p\,\IFF\,\phi({\mr x}\,;{\gr b})\in p\Big)}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$
+\ceq{\ssf{it2.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\Big(\phi({\mr x}\,;{\gr a})\in p\,\IFF\,\phi({\mr x}\,;{\gr b})\in p\Big)}\hfill for every $\phi({\mr x}\,;{\gr z})\in L$ and ${\gr a},{\gr b}\in\U^{\gr z}$.
 
 % In words we say that $p({\mr x})\subseteq L(\U)$ \emph{does not split\/} over $A$.
 
-If $p(x)$ in a global $\phi$-types types \ssf{it2} is equivalent to
+If $p(x)$ is a global $\phi$-types types \ssf{it2} is equivalent to
 
-\ceq{\ssf{it2$^\prime$.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{p({\mr x})\,\proves\,\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})}
+\ceq{\ssf{it2$^\prime$.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{p({\mr x})\,\proves\,\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$.
 
-Finally, the following is another very useful characterization of invariance over $A$ of a global type $p({\mr x})\in S(\U)$ that follows easily from \ssf{it2}
+Finally, we note the following is useful characterization of \ssf{it2$'$}
 
-\ceq{\ssf{it3.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\equiv_{A,\,{\mr c}}{\gr b}}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$.
+\ceq{\ssf{it3.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{\phi({\mr c}\,;{\gr a})\iff\phi({\mr c}\,;{\gr b})}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$.
 
-Note that \ssf{it3} applies to complete types but not to $\phi$-types.
+This, when $p({\mr x})\in S(\U)$, can be rephrased as
+
+\ceq{\ssf{it3'.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\equiv_{A,\,{\mr c}}{\gr b}}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$.
 
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
@@ -135,14 +137,14 @@ Therefore $p({\mr x})\subseteq L_\phi(\U)$ is invariant if
 Let $\mrX\subseteq\U^{\mr x}$ be a $G$-invariant set.
 At the first reading one may assume that $\mrX=\U^{\mr x}$.% as, again, more generality is required only in Section~\ref{}.
 
-\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
-The terminology below non-standard.
-In the literature some distinguished authors write \textit{quasi-non-dividing\/} for \textit{persistent}.
-Their terminology has good motivations, but it is a mouthful.
-
 A set $\mrD\subseteq\U^{\mr x}$ is \emph{$G$-generic\/} in $\mrX$ if finitely many $G$-translations of $\mrD$ cover $\mrX$; we say \emph{$n$-$G$-generic\/} if $\le n$ translates suffices.
 Dually, we say that $\mrD$ is \emph{$G$-persistent\/} in $\mrX$ if the intersection of any finitely many $G$-translations of $\mrD$ has a solution in $\mrX$; we say \emph{$n$-$G$-persistent\/} when the request is limited to $\le n$ translates.
 We may drop reference to $G$ and $\mrX$ when these are clear from the context.
+
+\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
+The terminology above non-standard.
+Some authors~\cite{CK} write \textit{quasi-non-dividing\/} for \textit{persistent}.
+Their terminology has good motivations, but it is a mouthful.
 
 The same properties may be attributed to formulas (as these are identified with the set they define).
 When the properties above are attributed to a type $p({\mr x})$, it is understood that they holdsfor every $\phi({\mr x})$ that is a conjunction of formulas in $p({\mr x})$.
@@ -227,14 +229,14 @@ or, with the terminology of the authors mentioned above, \textit{quasi-non-forki
   Then for every $\phi$-definable set $\mrD\subseteq\U^{\mr x}$ the following are equivalent 
   \begin{itemize}
     \item[1.] $p({\mr x})\proves{\mr x}\in\mrD$ for some invariant type $p({\mr x})\in S_\phi(\U)$ finitely consistent in $\mrX$
-    \item[2.] every finite cover of $\mrD\cap\mrX$ by $\phi$-definable sets contains a persistent set
-    \item[3.] every finite cover of $\mrD\cap\mrX$ by $\phi$-definable sets contains a 2-persistent set.
+    \item[2.] every finite cover of $\mrD$ by $\phi$-definable sets contains a persistent set
+    \item[3.] every finite cover of $\mrD$ by $\phi$-definable sets contains a 2-persistent set.
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  Suppose ${\mr\C_1},\dots,{\mr\C_n}$ cover $\mrD\cap\mrX$ and pick $p({\mr x})$ as in \ssf1.
+  Suppose ${\mr\C_1},\dots,{\mr\C_n}$ cover $\mrD$ and pick $p({\mr x})$ as in \ssf1.
   By completeness, $p({\mr x})\proves {\mr x}\in{\mr\C_i}$ for some $i$.
   Then, by Theorem~\ref{thm_generic_invariant}, $\neg{\mr\C_i}$ is not generic.
   Therefore, by Fact~\ref{fact_fip}, ${\mr\C_i}$ is persistent.
@@ -255,14 +257,18 @@ or, with the terminology of the authors mentioned above, \textit{quasi-non-forki
   As $\neg\mrB$ is not 2-persistent by Fact~\ref{fact_fip}, this contradics \ssf3.
 \end{proof}
 
-A set $\mrD\subseteq\U^{\mr x}$ is \emph{strongly generic\/} if the intersection of any initely many translations of $\mrD$ is generic.
+A set $\mrD\subseteq\U^{\mr x}$ is \emph{strongly generic\/} if the intersection of any finitely many translations of $\mrD$ is generic.
 Dually, we say that $\mrD$ is \emph{weakly persistent\/} if the union of some finitely many translations of $\mrD$ is peristent.
 Again, the same properties may be attributed to formulas.
 
 \begin{theorem}\label{thm_generic_invariant}
-  Let $G$,  $\mrX$, and $\phi({\mr x}\,;{\gr z})\in L$ be given.
-  Let $\psi({\mr x})$ be a generic formula.
-  Then the type containing $\psi({\mr x})$ and all strongly generic formulas $\phi({\mr x})\in L_\phi(\U)$ is finitely consistent in $\mrX$.
+  Let $G$, $\mrX$, and $\phi({\mr x}\,;{\gr z})\in L$ be given.
+  Let $p({\mr x})$ be the type containing $\theta({\mr x})$ and all strongly generic formulas $\theta({\mr x})\in L_\phi(\U)$.
+  Then $p({\mr x})$ is finitely consistent in every generic set $\mrD$.
+
+  \begin{proof}
+    
+  \end{proof}
 \end{theorem}
 
 \begin{exercise}\label{ex_persistent_types}
@@ -617,3 +623,26 @@ The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({
   Let $\bar a$ be a sequence such that $a_{\restriction I_0}\equiv a_{\restriction I_1}$ for every $I_0,I_1$ such that $I_0<I_1$.
   Prove that $\bar a$ is a sequence of indiscernibles.
   \end{exercise}
+
+
+  \section{Notes and references}
+
+  
+  \begin{biblist}[]\normalsize
+    \bib{CK}{article}{
+   author={Chernikov, Artem},
+   author={Kaplan, Itay},
+   title={Forking and dividing in ${\rm NTP}_2$ theories},
+   journal={J. Symbolic Logic},
+   volume={77},
+   date={2012},
+  %  number={1},
+   pages={1--20},
+  %  issn={0022-4812},
+  %  review={\MR{2951626}},
+  %  doi={10.2178/jsl/1327068688},
+}
+    
+  \end{biblist}
+
+  
