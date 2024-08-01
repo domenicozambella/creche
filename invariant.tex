@@ -120,17 +120,20 @@ This, when $p({\mr x})\in S(\U)$, can be rephrased as
 %%%%%%%%%%%%%%%%%%%%%%
 \section{Invariance of types from the dual perspective}
 
+
 In the previous sections the invariance of $p({\mr x})$ has been definend using the sets ${\gr\D_{p,\phi}}$.
 Here we examine invariance using the formulas in $p({\mr x})$.
 
 Let $G$ be a group that acts on $\U^{\mr x}$ and $\U^{\gr z}$.
 Let $\phi({\mr x}\,;{\gr z})\in L$ be such that $\phi(\U^{\mr x}\,;\U^{\gr z})$ is invariant under the action of $G$.
-Note that this assumpion is redundant when $G$ acts by automorphisms.
-This assumption ensures that the action of $G$ maps $\phi$-definable sets into $\phi$-definable sets.
-In particular $g[\theta({\mr\U}\,;{\gr\bar b})]=\theta({\mr\U}\,;g{\gr\bar b})$ for every $g\in G$.
+Under this assumption the action of $G$ maps $\phi$-definable sets into $\phi$-definable sets.
+In particular, $g[\theta({\mr\U}\,;{\gr\bar b})]=\theta({\mr\U}\,;g{\gr\bar b})$ for every $g\in G$.
 Therefore $p({\mr x})\subseteq L_\phi(\U)$ is invariant if
 
 \ceq{\hfill p({\mr x})\proves{\mr x}\in\mrD}{\IFF}{p({\mr x})\proves{\mr x}\in g\mrD}\hfill for every $\phi$-definable $\mrD\subseteq\U^{\mr x}$ and $g\in G$.
+
+Note that when $G$ acts by automorphisms $\phi(\U^{\mr x}\,;\U^{\gr z})$ is invariant for all $\phi({\mr x}\,;{\gr z})\in L$.
+Therefore when $G$ acts by automorphisms there results below are not limited to $\phi$-types and $\phi$-formulas but holds also for types and formulas.
 
 % -- the generality is only required in Section~\ref{}.
 % The terms invariant, orbit, and the few other indroduced below all refer to the action of $G$ on $\U$.
@@ -169,12 +172,12 @@ See Exercise~\ref{ex_persistent_types} for an alternative characterization when 
 
 \begin{theorem}\label{thm_generic_invariant}
   Let $G$,  $\mrX$, and $\phi({\mr x}\,;{\gr z})\in L$ be given.
-  Let $p({\mr x})\subseteq L_\phi(\U)$ be finitely consistent in $\mrX$.
+  Let $p({\mr x})\in S_\phi(\U)$ be finitely consistent in $\mrX$.
   Then the following are equivalent
   \begin{itemize}
     \item[1.] $p({\mr x})$ is invariant
-    \item[2.] $p({\mr x})$ is finitely consistent in $\mrD$ for every generic $\phi$-definable set $\mrD$
-    \item[3.] $p({\mr x})$ is finitely consistent in $\mrD$ for every 2-generic $\phi$-definable set $\mrD$
+    \item[2.] $p({\mr x})\proves{\mr x}\in\mrD$ for every generic $\phi$-definable set $\mrD$
+    \item[3.] $p({\mr x})\proves{\mr x}\in\mrD$ for every 2-generic $\phi$-definable set $\mrD$
     \item[4.] $p({\mr x})$ is 2-persistent
     \item[5.] $p({\mr x})$ is persistent.
   \end{itemize}
@@ -183,7 +186,9 @@ See Exercise~\ref{ex_persistent_types} for an alternative characterization when 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
   Let $g_1{\mr\D},\dots,g_n{\mr\D}$ be translations of $\mrD$ that cover $\mrX$.
-  If $p({\mr x})\proves {\mr x}\notin\mrD$, by the reark above
+  Negate \ssf2.
+  By completeness, $p({\mr x})\proves {\mr x}\notin\mrD$.
+  Hence, from invariance we obtain
 
   \ceq{\hfill p({\mr x})}{\proves}{{\mr x}\ \notin\ \bigcup_{i=1}^ng_i\mrD.}
 
@@ -195,7 +200,7 @@ See Exercise~\ref{ex_persistent_types} for an alternative characterization when 
   \ssf3$\IMP$\ssf4.
   Let $\mrD$ be defined by a conjunction of formulas in $p({\mr x})$.
   If $\mrD$ is not 2-persistent then, by Fact~\ref{fact_fip}, $\neg\mrD$ is 2-generic. 
-  By \ssf3 $p({\mr x})$ is finitely consistent in   $\neg\mrD$, a contradiction..
+  By \ssf3 $p({\mr x})$ is finitely consistent in   $\neg\mrD$, a contradiction.
 
   \ssf4$\IMP$\ssf1.
   % uppose $p({\mr x})$ is not $(n+2)$-persistent and let $n$ be minimal.
@@ -218,9 +223,9 @@ See Exercise~\ref{ex_persistent_types} for an alternative characterization when 
 %   Then $\neg\mrD$ is not generic.
 % \end{corollary}
 
-Theorem~\ref{thm_generic_invariant} gives a condition for a $\phi$-type to be invariant.
+Theorem~\ref{thm_generic_invariant} gives a condition for a global $\phi$-type to be invariant.
 The following theorem gives a condition for the existence of global invariant $\phi$-types.
-Ideally, we would like to prove that every persistent $\phi$-type extends to invariant/persistent type.
+Ideally, we would like to prove that every persistent $\phi$-type extends to global persistent type.
 Unfortunately this is not true and we need a stronger property which we might call \textit{hereditary persistency\/} 
 or, with the terminology of the authors mentioned above, \textit{quasi-non-forking}.
 
@@ -251,28 +256,66 @@ or, with the terminology of the authors mentioned above, \textit{quasi-non-forki
   By maximality there is some $\psi({\mr x})\in p$ and some ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi({\mr\U})\cap\theta({\mr\U})$ and $\psi({\mr\U})\smallsetminus\theta({\mr\U})$ and are such that no ${\mr\C_i}$ is persistent.
   This is a contradiction because ${\mr\C_1},\dots,{\mr\C_n}$ cover $\psi({\mr\U})$ which satisfies \ssf3.
   It is only left to show that $p({\mr x})$ is finitely consitent in $\mrX$ and invariant.
-  Finite consistency is clear.
+  Finite consistency follows from percistency.
   Negate invariance.
-  Then, by Theorem~\ref{thm_generic_invariant} and completeness, $p({\mr x})\proves {\mr x}\in\neg\mrB$ for some 2-generic set $\mrB$.
-  As $\neg\mrB$ is not 2-persistent by Fact~\ref{fact_fip}, this contradics \ssf3.
+  Then, by Theorem~\ref{thm_generic_invariant} and completeness, $p({\mr x})\proves {\mr x}\in\neg\mrB$ for some generic definable set $\mrB$.
+  As $\neg\mrB$ is not persistent by Fact~\ref{fact_fip}, this contradics \ssf3.
 \end{proof}
+
+Unfortunatelly, genericy is not preserved under intersection.
+For that, we need press the concept to the next level of complicacy.
 
 A set $\mrD\subseteq\U^{\mr x}$ is \emph{strongly generic\/} if the intersection of any finitely many translations of $\mrD$ is generic.
 Dually, we say that $\mrD$ is \emph{weakly persistent\/} if the union of some finitely many translations of $\mrD$ is peristent.
 Again, the same properties may be attributed to formulas.
 
-\begin{theorem}\label{thm_generic_invariant}
-  Let $G$, $\mrX$, and $\phi({\mr x}\,;{\gr z})\in L$ be given.
-  Let $p({\mr x})$ be the type containing $\theta({\mr x})$ and all strongly generic formulas $\theta({\mr x})\in L_\phi(\U)$.
-  Then $p({\mr x})$ is finitely consistent in every generic set $\mrD$.
 
-  \begin{proof}
-    
-  \end{proof}
+% \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+% \def\ceq#1#2#3{\parbox[t]{30ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+
+
+\begin{theorem}\label{thm_generic_invariant}
+  Let $G$ and $\mrX$ be given.
+  Then the intersection of finitely many stronly generic sets is strongly generic.
 \end{theorem}
 
+\begin{proof}
+  As the theorem does not mention definability, we may assume that all sets mentioned below are subsets of $\mrX$.
+  Let ${\mr\D}$ and ${\mr\C}$ be strongly generic and let $K\subseteq G$ be finite.
+  It suffices to prove that 
+  
+  \ceq{\hfill\mrB}{=}{\bigcap_{k\in K}k\,({\mr\C}\cap{\mr\D})}
+
+  is generic. 
+  Clearly $\mrB={\mr\C'}\cap{\mr\D'}$, where
+  
+  \ceq{\hfill{\mr\C'}}{=}{\bigcap_{k\in K}k\,{\mr\C}}
+  
+  \ceq{\hfill{\mr\D'}}{=}{\bigcap_{k\in K}k\,{\mr\D}.}
+
+ 
+  Note that ${\mr\C'}$ and ${\mr\D'}$ are both strongly generic.
+  In particular
+  
+  \ceq{\hfill\mrX}{=}{\bigcup_{h\in H}h\,\mr\D'.}
+
+  for some finite $H\subseteq G$.
+  As, trivially
+
+  \ceq{\hfill\bigcup_{h\in H}h\,\mrB}{=}{\bigcup_{h\in H}\Big[h\,{\mr\C'}\ \cap\ h\,{\mr\D'}\Big]}
+
+  we conclude that
+  
+  \ceq{\hfill\bigcup_{h\in H}h\,\mrB}{\supseteq}{\bigcap_{h\in H}h\,{\mr\C'}}
+
+  The set on the r.h.s.\@ is strongly generic.
+  Therefore also the set on the l.h.s.\@ is generic.
+  The genericity of $\mrB$ follows.
+\end{proof}
+
+
 \begin{exercise}\label{ex_persistent_types}
-  Let $G$,  $\X$, and $\phi(x,;z)\in L$ be given.
+  Let $G$, $\X$, and $\phi(x,;z)\in L$ be given.
   For every $p(x)\subseteq L_\phi(A)$ following are equivalent
   \begin{itemize}
     \item[1.] $p(x)$ is persistent
@@ -288,6 +331,10 @@ Again, the same properties may be attributed to formulas.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Heirs and coheirs}
 \label{coheirs}
+
+
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{16ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 The easiest way to obtain types that are invariant over a model $M$ is via types that are finitely satisfiable in $M$.
 We say that a type $p({\mr x})$ is \emph{finitely satisfiable\/} in $A$ if every conjunction of formulas in $p({\mr x})$ has a solution in $A^{\mr x}$.
