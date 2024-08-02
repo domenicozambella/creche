@@ -11,7 +11,7 @@ We use the same notation and make the same implicit assumptions as in Section~\r
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Invariant sets and types}\label{invariant_sets}
+\section{Invariance under a group action}\label{invariant_sets}
 
 Let $G$ be a group that acts on $\U^{\gr z}$.
 In this chapter we only consider $G=\Aut(\U/A)$, but for later applcation we introduce a more general notation.
@@ -118,7 +118,7 @@ This, when $p({\mr x})\in S(\U)$, can be rephrased as
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
-\section{Invariance of types from the dual perspective}
+\section{Invariance of types from the dual perspective}\label{dual_perspective}
 
 
 In the previous sections the invariance of $p({\mr x})$ has been definend using the sets ${\gr\D_{p,\phi}}$.
@@ -126,7 +126,6 @@ Here we examine invariance using the formulas in $p({\mr x})$.
 
 Let $G$ be a group that acts on $\U^{\mr x}$ and $\U^{\gr z}$.
 Let $\phi({\mr x}\,;{\gr z})\in L$ be such that $\phi(\U^{\mr x}\,;\U^{\gr z})$ is invariant under the action of $G$.
-Under this assumption the action of $G$ maps $\phi$-definable sets into $\phi$-definable sets.
 In particular, $g[\theta({\mr\U}\,;{\gr\bar b})]=\theta({\mr\U}\,;g{\gr\bar b})$ for every $g\in G$.
 Therefore $p({\mr x})\subseteq L_\phi(\U)$ is invariant if
 
@@ -146,7 +145,7 @@ We may drop reference to $G$ and $\mrX$ when these are clear from the context.
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 The terminology above non-standard.
-Some authors~\cite{CK} write \textit{quasi-non-dividing\/} for \textit{persistent}.
+In~\cite{CK} the authors write \textit{quasi-non-dividing\/} for \textit{persistent}.
 Their terminology has good motivations, but it is a mouthful.
 
 The same properties may be attributed to formulas (as these are identified with the set they define).
@@ -154,7 +153,7 @@ When the properties above are attributed to a type $p({\mr x})$, it is understoo
 See Exercise~\ref{ex_persistent_types} for an alternative characterization when $p({\mr x})$ is a small.
 
 \begin{fact}\label{fact_fip}
-  Let $G$ and $\mrX$ be given.
+  Let $G$ and $\mrX$ be as above.
   The following are equivalent
   \begin{itemize}
     \item[1.] $\mrD$ is not $n$-generic in $\mrX$
@@ -171,7 +170,7 @@ See Exercise~\ref{ex_persistent_types} for an alternative characterization when 
 \end{proof}
 
 \begin{theorem}\label{thm_generic_invariant}
-  Let $G$,  $\mrX$, and $\phi({\mr x}\,;{\gr z})\in L$ be given.
+  Let $G$, $\mrX$, and $\phi({\mr x}\,;{\gr z})\in L$ be as above.
   Let $p({\mr x})\in S_\phi(\U)$ be finitely consistent in $\mrX$.
   Then the following are equivalent
   \begin{itemize}
@@ -216,24 +215,18 @@ See Exercise~\ref{ex_persistent_types} for an alternative characterization when 
   By the same argument as in \ssf3$\IMP$\ssf4.
 \end{proof}
 
-% \begin{corollary}
-%   Let $G$,  $\mrX$, and $\phi({\mr x}\,;{\gr z})\in L$ be given.
-%   Assume there exists an invariant type $p({\mr x})\in S_\phi(\U)$ finitely consistent in $\mrX$.
-%   Let $\mrD$ is a generic $\phi$-definable set.
-%   Then $\neg\mrD$ is not generic.
-% \end{corollary}
-
 Theorem~\ref{thm_generic_invariant} gives a condition for a global $\phi$-type to be invariant.
 The following theorem gives a condition for the existence of global invariant $\phi$-types.
 Ideally, we would like to prove that every persistent $\phi$-type extends to global persistent type.
-Unfortunately this is not true and we need a stronger property which we might call \textit{hereditary persistency\/} 
-or, with the terminology of the authors mentioned above, \textit{quasi-non-forking}.
+Unfortunately this is not true -- we need a stronger property: \ssf2 of Theorem~\ref{thm_generic_invariant2}.
+In~\cite{CK} this is called \textit{quasi-non-forking}.
 
 \begin{theorem}\label{thm_generic_invariant2}
-  Let $G$,  $\mrX$, and $\phi({\mr x}\,;{\gr z})\in L$ be given.
-  Then for every $\phi$-definable set $\mrD\subseteq\U^{\mr x}$ the following are equivalent 
+  Let $G$, $\mrX$, and $\phi({\mr x}\,;{\gr z})\in L$ be as above.
+  Let $\mrD\subseteq\U^{\mr x}$ be a $\phi$-definable set.
+  Then the following are equivalent 
   \begin{itemize}
-    \item[1.] $p({\mr x})\proves{\mr x}\in\mrD$ for some invariant type $p({\mr x})\in S_\phi(\U)$ finitely consistent in $\mrX$
+    \item[1.] there is an invariant type $p({\mr x})\in S_\phi(\U)$ finitely consistent in $\mrX\cap\mrD$
     \item[2.] every finite cover of $\mrD$ by $\phi$-definable sets contains a persistent set
     \item[3.] every finite cover of $\mrD$ by $\phi$-definable sets contains a 2-persistent set.
   \end{itemize}
@@ -250,10 +243,10 @@ or, with the terminology of the authors mentioned above, \textit{quasi-non-forki
   Trivial.
 
   \ssf3$\IMP$\ssf1.
-  Let $p({\mr x})$ be maximal among the types that contain ${\mr x}\in\mrD$ and are such that $\theta({\mr\U})$ satisfies \ssf3 for every $\theta({\mr x})\in p$.
-  We claim that $p$ is a complete type.
+  Let $p({\mr x})$ be maximal among the $\phi$-types that contain ${\mr x}\in\mrD$ and are such that $\theta({\mr\U})$ satisfies \ssf3 for every $\theta({\mr x})$ that is conjunction of formulas in $p({\mr x})$.
+  We claim that $p$ is a complete $\phi$-type.
   Suppose for a contradiction that $\theta({\mr x}),\neg\theta({\mr x})\notin p$.
-  By maximality there is some $\psi({\mr x})\in p$ and some ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi({\mr\U})\cap\theta({\mr\U})$ and $\psi({\mr\U})\smallsetminus\theta({\mr\U})$ and are such that no ${\mr\C_i}$ is persistent.
+  By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$ and some ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi({\mr\U})\cap\theta({\mr\U})$ and $\psi({\mr\U})\smallsetminus\theta({\mr\U})$ and such that no ${\mr\C_i}$ is persistent.
   This is a contradiction because ${\mr\C_1},\dots,{\mr\C_n}$ cover $\psi({\mr\U})$ which satisfies \ssf3.
   It is only left to show that $p({\mr x})$ is finitely consitent in $\mrX$ and invariant.
   Finite consistency follows from percistency.
@@ -263,21 +256,17 @@ or, with the terminology of the authors mentioned above, \textit{quasi-non-forki
 \end{proof}
 
 Unfortunatelly, genericy is not preserved under intersection.
-For that, we need press the concept to the next level of complicacy.
+For that, we need press the concept to the next level of complexity.
+This is required in Section~\ref{newelski}.
 
 A set $\mrD\subseteq\U^{\mr x}$ is \emph{strongly generic\/} if the intersection of any finitely many translations of $\mrD$ is generic.
 Dually, we say that $\mrD$ is \emph{weakly persistent\/} if the union of some finitely many translations of $\mrD$ is peristent.
 Again, the same properties may be attributed to formulas.
 
-
-% \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
-% \def\ceq#1#2#3{\parbox[t]{30ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
-
-
-\begin{theorem}\label{thm_generic_invariant}
-  Let $G$ and $\mrX$ be given.
+\begin{lemma}\label{lem_strongly_generic}
+  Let $G$ and $\mrX$ be as above.
   Then the intersection of finitely many stronly generic sets is strongly generic.
-\end{theorem}
+\end{lemma}
 
 \begin{proof}
   As the theorem does not mention definability, we may assume that all sets mentioned below are subsets of $\mrX$.
@@ -290,16 +279,10 @@ Again, the same properties may be attributed to formulas.
   Clearly $\mrB={\mr\C'}\cap{\mr\D'}$, where
   
   \ceq{\hfill{\mr\C'}}{=}{\bigcap_{k\in K}k\,{\mr\C}}
-  
-  \ceq{\hfill{\mr\D'}}{=}{\bigcap_{k\in K}k\,{\mr\D}.}
+  \ceq{\hfill{\rm and}\hfill{\mr\D'}}{=}{\bigcap_{k\in K}k\,{\mr\D}.}
 
- 
   Note that ${\mr\C'}$ and ${\mr\D'}$ are both strongly generic.
-  In particular
-  
-  \ceq{\hfill\mrX}{=}{\bigcup_{h\in H}h\,\mr\D'.}
-
-  for some finite $H\subseteq G$.
+  In particular \smash{$\displaystyle\mrX=\bigcup_{h\in H}h\,\mr\D'$} for some finite $H\subseteq G$.
   As, trivially
 
   \ceq{\hfill\bigcup_{h\in H}h\,\mrB}{=}{\bigcup_{h\in H}\Big[h\,{\mr\C'}\ \cap\ h\,{\mr\D'}\Big]}
@@ -308,11 +291,10 @@ Again, the same properties may be attributed to formulas.
   
   \ceq{\hfill\bigcup_{h\in H}h\,\mrB}{\supseteq}{\bigcap_{h\in H}h\,{\mr\C'}}
 
-  The set on the r.h.s.\@ is strongly generic.
+  The set on the r.h.s.\@ is (strongly) generic.
   Therefore also the set on the l.h.s.\@ is generic.
   The genericity of $\mrB$ follows.
 \end{proof}
-
 
 \begin{exercise}\label{ex_persistent_types}
   Let $G$, $\X$, and $\phi(x,;z)\in L$ be given.
@@ -332,7 +314,6 @@ Again, the same properties may be attributed to formulas.
 \section{Heirs and coheirs}
 \label{coheirs}
 
-
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{16ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
@@ -340,7 +321,7 @@ The easiest way to obtain types that are invariant over a model $M$ is via types
 We say that a type $p({\mr x})$ is \emph{finitely satisfiable\/} in $A$ if every conjunction of formulas in $p({\mr x})$ has a solution in $A^{\mr x}$.
 
 \begin{proposition}\label{prop_coeredi_quasiinvarienti}
-Every type $p({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $A$ is invariant over $A$.
+  Every type $p({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $A$ is invariant over $A$.
 \end{proposition}
 
 \begin{proof}
@@ -350,27 +331,25 @@ Every type $p({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $A$ is in
 \end{proof}
 
 \begin{proposition}\label{prop_exisntence_coheirs}
-Every type $q({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $A$ has an extension to a global type that is finitely satisfiable in $A$.
+  Every type $q({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $A$ has an extension to a global type that is finitely satisfiable in $A$.
 \end{proposition}
 
 \begin{proof} 
-Let $p({\mr x})\subseteq L(\U)$ be maximal among the types that contain $q({\mr x})$ and are finitely satisfiable in $A$.
-We prove that $p({\mr x})$ is complete.
-If for a contradiction $p({\mr x})$ contains neither $\psi({\mr x})$ nor $\neg\psi({\mr x})$, then  neither $p({\mr x})\cup\big\{\psi({\mr x})\big\}$ nor $p({\mr x})\cup\big\{\neg\psi({\mr x})\big\}$ are finitely satisfiable in $A$.
-This contradicts the finite satisfiability of $p({\mr x})$.
+  Let $p({\mr x})\subseteq L(\U)$ be maximal among the types that contain $q({\mr x})$ and are finitely satisfiable in $A$.
+  We prove that $p({\mr x})$ is complete.
+  If for a contradiction $p({\mr x})$ contains neither $\psi({\mr x})$ nor $\neg\psi({\mr x})$, then  neither $p({\mr x})\cup\big\{\psi({\mr x})\big\}$ nor $p({\mr x})\cup\big\{\neg\psi({\mr x})\big\}$ are finitely satisfiable in $A$.
+  This contradicts the finite satisfiability of $p({\mr x})$.
 \end{proof}
 
 In most cases we work with types that are finitely satisfiable over a model.
 The reason is explained by the next proposition, which is clear by elementarity.
 
 \begin{proposition}\label{prop_coher_over_model}
-    Every consistent type over a model is finitely satisfiable in that model, that is, whenever $p({\mr x})\subseteq L(M)$ is consistent, $p({\mr x})$ is finitely satisfiable in $M$.
+  Every consistent type over a model is finitely satisfiable in that model, that is, whenever $p({\mr x})\subseteq L(M)$ is consistent, $p({\mr x})$ is finitely satisfiable in $M$.
 \end{proposition}
 
 \begin{definition}\label{def_choeir_uno} A type $p({\mr x}) \subseteq L(\U)$ that is finitely satisfiable in $M$ is said to be a \emph{coheir\/} of $p_{\restriction M}({\mr x})$.
 \end{definition}
-
-%A type that extends $p({\mr x})$ and is finitely satisfied in $M$ is called a \emph{coheir\/} of $p({\mr x})$ over~$M$.
 
 In many cases it is useful to focus on elements instead of types.
 We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is finitely satisfied in $M$.
@@ -386,8 +365,6 @@ We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is 
   \textrm{ for all }\phi({\mr x}\,;{\gr z})\in L(M) 
   \textrm{ such that }\phi({\mr a}\,;{\gr b})}.
 
-  %We call this the \emph{coheir-heir} relation.
-  %
   We say that $\tp({\mr a}/M,{\gr b})$ is a \emph{coheir} of $\tp({\mr a}/M)$, or, equivalently, that $\tp({\mr b}/M,{\gr a})$ is a \emph{heir} of $\tp({\mr b}/M)$.
   We define the type
 
@@ -398,12 +375,12 @@ We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is 
   \phi({\mr x}\,;{\gr b})\in L(M)
   \textrm{ and } \phi(M^{\mr x}\,;{\gr b})=\0\Big\}.}
 
-    % 
   We will write \emph{${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$} 
   for the union of the types ${\mr x}\cnonfork_M{\gr b}$ and 
   $\tp({\mr a}/M)$.
 \end{definition}
- The tuples ${\mr a}$ realizing ${\mr x}\cnonfork_M{\gr b}$ are exactly those such that ${\mr a}\cnonfork_M{\gr b}$.Note that $\tp({\mr a}/M,{\gr b})$ is a coheir of $\tp({\mr a}/M)$ according to Definition~\ref{def_choeir_uno}, so the terminology is consistent.
+ The tuples ${\mr a}$ realizing ${\mr x}\cnonfork_M{\gr b}$ are exactly those such that ${\mr a}\cnonfork_M{\gr b}$.
+ Note that $\tp({\mr a}/M,{\gr b})$ is a coheir of $\tp({\mr a}/M)$ according to Definition~\ref{def_choeir_uno}, so the terminology is consistent.
 
 We think of  ${\mr a}\cnonfork_M{\gr b}$ as saying that 
 ${\mr a}$ is \emph{independent\/} from ${\gr b}$ over $M$.

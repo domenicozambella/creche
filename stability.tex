@@ -584,7 +584,7 @@ The following are equivalent
   The corollary follows immediately from Lemma~\ref{lem_bin_tree} and Theorem~\ref{thm_count_types}.
 \end{proof}
 
-We use binary trees to prove the following fundamental lemma (attributed by Harnik and Harrington~\cite{HH}to Martin Ziegler).
+We use binary trees to prove the following fundamental lemma (attributed by Harnik and Harrington~\cite{HH} to Martin Ziegler).
 
 \begin{lemma}\label{lem_ziegler}
    Let $\phi({\mr x}\,;{\gr z}),\psi({\mr x}\,;{\gr z}) \in L(A)$.
@@ -728,7 +728,7 @@ We deduce a version of Harrington's mysterious Lemma cfr.~\cite[Lemma 8.3.4]{TZ}
   We claim that $\theta({\gr b})$.
   Suppose not.
   Then $\phi({\mr a}\,;{\gr b})\wedge\neg\theta({\gr b})$.
-  As $\phi({\mr x}\,;{\gr z})\wedge\neg\theta({\gr z})$ is stable, Theorem~\ref{thm_symmetry} yelds $\phi({\mr a}\,;M^{\gr z})\sm\theta(M^{\gr z})\neq\varnothing$ which contradicts  $\theta(M^{\gr z})=\phi({\mr a}\,;{\gr M)}$.
+  As $\phi({\mr x}\,;{\gr z})\wedge\neg\theta({\gr z})$ is stable, from Theorem~\ref{thm_symmetry} we obtain $\phi({\mr a}\,;M^{\gr z})\sm\theta(M^{\gr z})\neq\varnothing$ which contradicts  $\theta(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$.
   Assuming $\neg\phi({\mr a}\,;{\gr b})$ we obtain $\neg\psi({\mr a})$ and $\neg\theta({\gr b})$ by a symilar argument.
   Then $\theta({\gr b})\iff\psi({\mr a})$ as required.
 \end{proof}
@@ -865,28 +865,37 @@ We first prove a special case of the theorem which has a simpler proof.
 \end{theorem}
 
 \begin{proof}
-    Let $q({\mr x})=\tp({\mr a}/A)$.
-    By Corollary~\ref{corol_stable_coheir_over_models} there is a type $p({\mr x})\in S_\phi(\U)$ consistent with $q({\mr x})$ and invariant over $\acl^\eq\!A$.
-    By Theorem~\ref{thm_def_stable_formula} there are some ${\mr a_1},\dots,{\mr a_n}\models q({\mr x})$ such that ${\gr z}\in{\gr\D_{p,\phi}}$ is equivalent to a positive Bolean combination of the formulas $\phi({\mr a_i}\,;{\gr z})$.
-    Let $\theta({\mr a_1},\dots,{\mr a_n}\,;\U^{\gr z})$ be such a Boolean combination.
-    When $A=\acl^\eq\!A$, this is the required formula as ${\gr\D_{p,\phi}}\in\acl^\eq\!A$ by Proposition~\ref{prop_type_over_acl2}.
+  Let $q({\mr x})=\tp({\mr a}/A)$.
+  By Corollary~\ref{corol_stable_coheir_over_models} there is a type $p({\mr x})\in S_\phi(\U)$ consistent with $q({\mr x})$ and invariant over $\acl^\eq\!A$.
+  By Theorem~\ref{thm_def_stable_formula} there are some ${\mr a_1},\dots,{\mr a_n}\models q({\mr x})$ such that ${\gr z}\in{\gr\D_{p,\phi}}$ is equivalent to a positive Bolean combination of the formulas $\phi({\mr a_i}\,;{\gr z})$.
+  Let $\theta({\mr a_1},\dots,{\mr a_n}\,;\U^{\gr z})$ be such a Boolean combination.
+  When $A=\acl^\eq\!A$, this is the required formula as ${\gr\D_{p,\phi}}\in\acl^\eq\!A$ by Proposition~\ref{prop_type_over_acl2}.
 
-    For the general case, reason as follows.
-    Let $f_1,\dots,f_n\in\Aut(\U/A)$ be such that the sets $f_i{\gr\D_{p,\phi}}$ span the whole orbit of ${\gr\D_{p,\phi}}$ over $A$.
-    Clearly,
+  For the general case, reason as follows.
+  Let $f_1,\dots,f_n\in\Aut(\U/A)$ be such that the sets $f_i{\gr\D_{p,\phi}}$ span the whole orbit of ${\gr\D_{p,\phi}}$ over $A$.
+  Clearly,
 
-    \ceq{\hfill\bigcup_{i=1}^n f_i{\gr\D_{p,\phi}}}{=}{\bigvee_{i=1}^n\theta(f_i{\mr a_1},\dots,f_i{\mr a_n}\,;\U^{\gr z}).}
+  \ceq{\hfill\bigcup_{i=1}^n f_i{\gr\D_{p,\phi}}}{=}{\bigvee_{i=1}^n\theta(f_i{\mr a_1},\dots,f_i{\mr a_n}\,;\U^{\gr z}).}
 
-   As the set on the l.h.s.\@ is definable over $A$, the formula on the r.h.s.\@ is the required positive Boolean combination.
+  The set on the l.h.s.\@ is invariant (hence definable) over $A$.
+  Therefore the formula on the r.h.s.\@ is the required positive Boolean combination.
 \end{proof}
-
-\begin{remark}
-    If $\phi({\mr a}\,;z)$ is persistent over $A$ then $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr z})$ is consistent and therefore it is satisfiable in every model $M\supseteq A$.
-\end{remark}
 
 \begin{corollary}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
-  Let $p({\mr x})\in S_\phi(A)$.
+  Let $A$ and ${\mr a}\in\U^{\mr x}$ be arbitrary.
+  Then the following are equivalent
+  \begin{itemize}
+    \item[1.] $\phi({\mr a}\,;\U^{\gr z})$ is persistent over $A$
+    \item[2.] $\phi({\mr a}\,;\U^{\gr z})$ is finitely satisfied in every $M\supseteq A$.
+  \end{itemize}
+\end{corollary}
+\begin{proof}
+  If $\phi({\mr a}\,;{\gr z})$ is persistent over $A$ then the formula $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr z})$ in the proof of Theorem~\ref{thm_stability_definable_rovescio} is consistent. By elementarity $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr z})$ is is satisfiable in every model $M\supseteq A$, hence so is $\phi({\mr a}\,;\U^{\gr z})$.
+\end{proof}
+
+\begin{corollary}
+  Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
   Then either $\phi({\mr x}\,;{\gr z})$ or $\neg\phi({\mr x}\,;{\gr z})$ is Lascar generic over $A$.
 \end{corollary}
 
