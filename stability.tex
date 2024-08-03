@@ -712,12 +712,13 @@ Note that from the theorem it follows that, when $T$ is stable
   Therefore $\psi({\gr z})$ is satisfied in $M$ and so is $\phi({\mr a},{\gr z})$.
 \end{proof}
 
-We deduce a version of Harrington's mysterious Lemma cfr.~\cite[Lemma 8.3.4]{TZ}.
+We deduce a version of Harrington's mysterious Lemma cfr.~\cite{TZ}*{Lemma 8.3.4}.
 
 \begin{corollary}\label{corol_harrington0}
   Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
   Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$.
-  Let $\theta({\mr x}),\psi({\gr z})\in L(M)$ be such that $\theta(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$ and $\psi(M^{\mr x})=\phi(M^{\mr x}\,;{\gr b})$ (these exist by stability).
+  Let $\theta({\mr x}),\psi({\gr z})\in L(M)$ be such that $\theta(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$ and $\psi(M^{\mr x})=\phi(M^{\mr x}\,;{\gr b})$.
+  Such formulas exist by stability.
   Then $\theta({\gr b})\iff\psi({\mr a})$.
 \end{corollary}
 
@@ -790,12 +791,12 @@ The following proposition says that in a stable theory with elimination of imagi
   As ${\gr b}\equiv_{\acl^\eq\!A}{\gr b'}$, the claim follows and with it the theorem.
 \end{proof}
 
-If $p({\mr x})\in S(\U)$ is a global type, a \emph{canonical base\/} of $p({\mr x})$ is a definably closed set $\emph{$\Cb(p)$}\subseteq \U^\eq$ such that an automorphism $f\in\Aut(\U)$ fixes $p({\mr x})$ if and only if it fixes $\Cb(p)$ pointwise. When they exist, canonical bases are unique, see Exercise~\ref{ex_Cb}.
-Clearly, all definable types (Definition~\ref{def_defble_type}) have a canonical base, namely
+% If $p({\mr x})\in S(\U)$ is a global type, a \emph{canonical base\/} of $p({\mr x})$ is a definably closed set $\emph{$\Cb(p)$}\subseteq \U^\eq$ such that an automorphism $f\in\Aut(\U)$ fixes $p({\mr x})$ if and only if it fixes $\Cb(p)$ pointwise. When they exist, canonical bases are unique, see Exercise~\ref{ex_Cb}.
+% Clearly, all definable types (Definition~\ref{def_defble_type}) have a canonical base, namely
 
-\ceq{\hfill\Cb(p)}{=}{{\dcl}^\eq\Big(\big\{{\gr\D_{p,\phi}}\ :\ \phi({\mr x}\,;{\gr z})\in L\big\}\Big).}
+% \ceq{\hfill\Cb(p)}{=}{{\dcl}^\eq\Big(\big\{{\gr\D_{p,\phi}}\ :\ \phi({\mr x}\,;{\gr z})\in L\big\}\Big).}
 
-Therefore, when $T$ is stable all global types have a canonical base.
+% Therefore, when $T$ is stable all global types have a canonical base.
 
 % \begin{proposition}\label{prop_type_over_dcl} Let $T$ be stable and let $p({\mr x})\in S(\U)$ be Lascar invariant over $A$. Then for every formula $\phi({\mr x}\,;{\gr z})\in L$ the set ${\gr\D_{p,\phi}}$ belongs to $\dcl^\eq(A,c)$ for every $c\models p_{\restriction A}(x)$.
 % \end{proposition}
@@ -840,8 +841,9 @@ The following are equivalent
 % \end{proof}
 
 The following theorem presents a property of definability that seems to go in the opposite direction.
-This has an application in ...
-We first prove a special case of the theorem which has a simpler proof.
+It has an application in the proof of Corollaries~\ref{corol_persistent_finsat} and~\ref{corol_stable_generic}
+We first prove a special case of the theorem.
+It is not required in the following but it has a simple intuitive proof.
 
 \begin{proposition}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
@@ -881,7 +883,7 @@ We first prove a special case of the theorem which has a simpler proof.
   Therefore the formula on the r.h.s.\@ is the required positive Boolean combination.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{corol_persistent_finsat}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
   Let $A$ and ${\mr a}\in\U^{\mr x}$ be arbitrary.
   Then the following are equivalent
@@ -894,15 +896,24 @@ We first prove a special case of the theorem which has a simpler proof.
   If $\phi({\mr a}\,;{\gr z})$ is persistent over $A$ then the formula $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr z})$ in the proof of Theorem~\ref{thm_stability_definable_rovescio} is consistent. By elementarity $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr z})$ is is satisfiable in every model $M\supseteq A$, hence so is $\phi({\mr a}\,;\U^{\gr z})$.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{corol_stable_generic}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
-  Then either $\phi({\mr x}\,;{\gr z})$ or $\neg\phi({\mr x}\,;{\gr z})$ is Lascar generic over $A$.
+  Let $q({\mr x})\in S(\acl^\eq\!A)$.
+  Then for every $\phi$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is generic in $q(\U^{\mr x})$ under the action of $\Aut(\U/\!\acl^\eq\!A)$.
 \end{corollary}
 
-\begin{exercise}\label{ex_Cb}
-  Let $p({\mr x})\in S(\U)$.
-  Prove that there is at most one definably closed set $A\subseteq\U^\eq$ such that $\Aut(\U/A)$ is the set of automorphisms that fix $p({\mr x})$.
-\end{exercise}
+\begin{proof}
+  If neither $\mrD$ nor $\neg\mrD$ is generic, by Fact~\ref{fact_fip} they are both persistent.
+  Let $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be the formula that defines $\mrD$.
+  As $\theta({\mr x}\,;{\gr z_1},\dots,{\gr z_n})$ is stable, by Corollary~\ref{corol_persistent_finsat} with the role of the two variable reversed, both $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ and its negation are finitely satisfied in every model $M\supseteq A$.
+  Then there are two distinct global $\phi$-types $p_i({\mr x})$ consistent with $q({\mr x})$ and finitely satisfied in every $M\supseteq A$.
+  This contradicts stationarity, see Theorem~\ref{thm_stationarity} and Proposition~\ref{prop_type_over_acl2}.
+\end{proof}
+
+% \begin{exercise}\label{ex_Cb}
+%   Let $p({\mr x})\in S(\U)$.
+%   Prove that there is at most one definably closed set $A\subseteq\U^\eq$ such that $\Aut(\U/A)$ is the set of automorphisms that fix $p({\mr x})$.
+% \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
