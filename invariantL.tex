@@ -69,11 +69,11 @@ Therefore $f[{\gr\D'}]$ is the required set $\grC$.
 \end{proof}
 
 \begin{exercise}
-  Prove that if $\grD\subseteq\U^{\gr z}$ is saturated and invariant over $A$ than it is definable over $A$.
+  Prove that if $\C\subseteq\U^z$ is type-definable over $B$ then $\equiv_{A,B}$ implies $\equiv_{A\,;\C}$.
 \end{exercise} 
 
 \begin{exercise}
-  Prove that if $\grC\subseteq\U^{\gr z}$ is type-definable over $B$ then $\equiv_{A,B}$ implies $\equiv_{A\,;\grC}$.
+  Prove that if $\grD\subseteq\U^z$ is saturated and invariant over $A$ than it is definable over $A$.
 \end{exercise} 
 
 
@@ -343,13 +343,17 @@ In Chapter~\ref{stability} we will see that for some important class of theories
 % Let $\lambda>|L(A)|$ be such that saturated models of cardinality $\lambda$ exist. Prove that if $\phi({\mr x})$ is satisfied in every saturated model $N\supseteq A$ of cardinality $\lambda$, then it is almost satisfied in $A$.
 % \end{exercise}
 
-
+\begin{exercise}
+  Let $\phi(x\,;z)\in L$.
+  Let $p(x)\in\phi(\U)$ be finitely satisfied in every $M\supseteq A$.
+  Prove that if $\D_{p,\phi}$ is saturated, see definition~\ref{def_ins_sat}, then it is in $\acl^\eq\!A$.
+\end{exercise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The Lascar graphm}\label{lascar_graph}
+\section{The Lascar graph}\label{lascar_graph}
 
 Here we study Lascar strong types from a different viewpoint.
 The \emph{Lascar graph\/} over $A$ has an arc between all pairs ${\gr a},{\gr b}\in \U^{\gr z}$ such that  ${\gr a}\equiv_M{\gr b}$ for some model $M$ containing $A$.
@@ -421,34 +425,52 @@ Vice versa it is clear that we can realize $q(w)$ in any model containing $A$.
 \end{proof}
 
 \begin{exercise}\label{ex_Lstp_indiscernibles}
-  Prove that the equivalence relation ${\gr a}\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}_A{\gr b}$ is the transitive closure of the relation: there is a sequence $\<{\gr c_i}:i<\omega\>$ indiscernible over $A$ such that ${\gr c_0}={\gr a}$ and ${\gr c_1}={\gr b}$.
+  Prove that the equivalence relation $a\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}_Ab$ is the transitive closure of the relation: there is a sequence $\<{\gr c_i}:i<\omega\>$ indiscernible over $A$ such that $c_0=a$ and $c_1=b$.
   Hint: use Exercise~\ref{ex_symmetry_ind} to prove symmetry, then reason as in Proposition~\ref{tipoforteLascarediametro}.
 \end{exercise}
 
-\begin{exercise}
-  Let ${\gr\Ll}$ be quasi-invariant and let $\grD$ be drifting, prove that ${\gr\Ll}\sm\grD$ is quasi-invariant.
-\end{exercise}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The diameter of the Lascar graph}\label{newelski}
+\section{The diameter of a Lascar type}\label{newelski}
 
 Section~\ref{dual_perspective}
 
 Let $G$ be a subgroup of $\Aut(\U)$.
-Assume $G$ is the union of a countable chain $\<G_n:n\in\omega\>$ of symmetric subsets of $G$.
-A subset of $G$ is symmetric if it contains the unit element and it is closed under inverse.
-Let $\mrX\subseteq^{\mr x}$ be $G$-invariant.
-We assume that the relations $\{\<{\mr a},{\mr b}\>\in{\mr\X^2}\ :\ {\mr a}\in G_n{\mr b}\}$ are $G$-invariant and type-definable.
-That is, they equal $p_n({\mr\X},{\mr\X})$ for some types $p_n({\mr x},{\mr y})$.
+Assume $G$ is the union of a countable chain of sets $\<G_n:n\in\omega\>$ with the following properties
+\begin{itemize}
+  \item[1.] every $G_n$ is symmetric i.e.\@ it contains the unit and is closed under inverse
+  \item[2.] every $G_n$ is conjugancy invariant i.e.\@ $g\,G_ng^{-1}=G_n$ for every $g\in G$
+  \item[3.] $G_nG_m\subseteq  G_{n+m}$ for every $n,m\in\omega$.
+\end{itemize}
 
+Let $\mrX\subseteq\U^{\mr x}$ be a set on which $G$ acts transitively i.e., $G\,{\mr a}=\mrX$ for every ${\mr a}\in\mrX$.
+We define a discrete metric on $\mrX$. 
+For ${\mr a},{\mr b}\in\mrX$ let $d({\mr a},{\mr b})$ be the minimal $n$ such that ${\mr a}\in G_n{\mr b}$.
+This defines a metric by \ssf1 and \ssf3.
+By \ssf2, this metric in $G$-invariant.
+The \emph{diameter\/} of a set $\mrC\subseteq\mrX$ is the supremum of $d({\mr a},{\mr b})$ for ${\mr a},{\mr b}\in\mrC$.
 
+If there is a weakly persistent set with finite diameter then $\mrX$ has finite diamenter.
 
+\begin{example}
+  Let $G=\Autf(\U/A)$. 
+  Then ${\mr x}\in G_n{\mr a}$ is equivalent to $d({\mr x},{\mr a})<n$.
+\end{example}
 
+\begin{theorem}
+  For every $p({\mr x})\subseteq L(\U)$, the diameter of $p(\mrX)$ is finite.
+\end{theorem}
+
+\begin{proof}
+  Let $q({\mr x})$ be maximal strongly generic type.
+\end{proof}
+
+% \ceq{\hfill p_n({\mr\X},{\mr\X})}{=}{\{\<{\mr a},{\mr b}\>\in{\mr\X^2}\ :\ {\mr a}\in G_n{\mr b}\}}
+
+% Below we write ${\mr x}\in G_n{\mr y}$ for the type $p_n({\mr x},{\mr y})$ and ${\mr x}\in G\,{\mr y}$ for the disjunction of all these types (n.b.\@ an infinite disjunction of types need not be a type).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -488,33 +510,33 @@ Then there is a type $e({\gr z}\,;{\gr w})\subseteq L(A)$ such that $\K({\gr b}/
 
 \begin{proof}
   Notice that $\K({\gr a}/A)$ is type-definable over $A,{\gr a}$.
-In fact, if $f\in\Aut(\U/A,{\gr a})$ and $\grD$ is a set containing ${\gr a}$ that is type-definable and Lascar invariant over $A$, then so is $f[\grD]$.
-Therefore $\K({\gr a}/A)$ is invariant over $A,{\gr a}$.
-As $\K({\gr a}/A)$ is type-definable, invariance implies that it is type-definable over $A,{\gr a}$.
-Let $e({\gr z}\,;{\gr w})\subseteq L(A)$ be such that $\K({\gr a}/A)=e(\U\,;{\gr a})$. 
-  
+  In fact, if $f\in\Aut(\U/A,{\gr a})$ and $\grD$ is a set containing ${\gr a}$ that is type-definable and Lascar invariant over $A$, then so is $f[\grD]$.
+  Therefore $\K({\gr a}/A)$ is invariant over $A,{\gr a}$.
+  As $\K({\gr a}/A)$ is type-definable, invariance implies that it is type-definable over $A,{\gr a}$.
+  Let $e({\gr z}\,;{\gr w})\subseteq L(A)$ be such that $\K({\gr a}/A)=e(\U\,;{\gr a})$. 
+    
   We prove that $\K({\gr b}/A)=e(\U\,;{\gr b})$ for all ${\gr b}\in\orbit({\gr a}/A)$.
-Let $f\in\Aut(\U/A)$ be such that $f{\gr a}={\gr b}$.
-If $\grD$ is a type-definable Lascar invariant over $A$, then so is $f[\grD]$.
-Therefore, $f$ is a bijection between type-definable sets that are Lascar invariant over $A$ and contain ${\gr a}$ and analogous sets containing ${\gr b}$.
-Then $f[\K({\gr a}/A)]=\K({\gr b}/A)$ and $\K({\gr b}/A)=e(\U\,;{\gr b})$ follows.
-  
+  Let $f\in\Aut(\U/A)$ be such that $f{\gr a}={\gr b}$.
+  If $\grD$ is a type-definable Lascar invariant over $A$, then so is $f[\grD]$.
+  Therefore, $f$ is a bijection between type-definable sets that are Lascar invariant over $A$ and contain ${\gr a}$ and analogous sets containing ${\gr b}$.
+  Then $f[\K({\gr a}/A)]=\K({\gr b}/A)$ and $\K({\gr b}/A)=e(\U\,;{\gr b})$ follows.
+    
   We prove that $e({\gr b}\,;\U)\cap \orbit({\gr a}/A)$ is Lascar invariant over $A$.
-Let $f\in\Autf(\U/A)$ and ${\gr c}\in\orbit({\gr a}/A)$.
-Then $e({\gr b}\,;f{\gr c})$ is equivalent to  $e(f^{-1}{\gr b}\,;{\gr c})$ which in turn is equivalent to $e({\gr b}\,;{\gr c})$, by the invariance of $e(\U\,;{\gr c})$. 
-  
+  Let $f\in\Autf(\U/A)$ and ${\gr c}\in\orbit({\gr a}/A)$.
+  Then $e({\gr b}\,;f{\gr c})$ is equivalent to  $e(f^{-1}{\gr b}\,;{\gr c})$ which in turn is equivalent to $e({\gr b}\,;{\gr c})$, by the invariance of $e(\U\,;{\gr c})$. 
+    
   Finally we are ready to prove that $e({\gr z}\,;{\gr w})$ defines a symmetric relation on $\orbit({\gr a}/A)$.
-From what proved above, $e({\gr b}\,;\U)\cap \orbit({\gr a}/A)$ is a type-definable Lascar invariant set containing ${\gr b}$ and therefore it contains $\K({\gr b}/A)$.
-We conclude that for all ${\gr b},{\gr c}\in\orbit({\gr a}/A)$
-  
+  From what proved above, $e({\gr b}\,;\U)\cap \orbit({\gr a}/A)$ is a type-definable Lascar invariant set containing ${\gr b}$ and therefore it contains $\K({\gr b}/A)$.
+  We conclude that for all ${\gr b},{\gr c}\in\orbit({\gr a}/A)$
+    
   \ceq{\hfill e({\gr c}\,;{\gr b})}{\iff}{{\gr c}\in e(\U\,;{\gr b})}\medrel{\iff}${\gr c}\in\K({\gr b}/A)$\medrel{\imp}$e({\gr b}\,;{\gr c})$
-  
+    
   Reflexivity is clear; we prove transitivity.
-As remarked above, $\K({\gr b}/A)\subseteq\K({\gr c}/A)$, for all ${\gr b}\in\K({\gr c}/A)$ or equivalently $e({\gr b}\,;{\gr c})$.
-Hence if $e({\gr b}\,;{\gr c})$ then
+  As remarked above, $\K({\gr b}/A)\subseteq\K({\gr c}/A)$, for all ${\gr b}\in\K({\gr c}/A)$ or equivalently $e({\gr b}\,;{\gr c})$.
+  Hence if $e({\gr b}\,;{\gr c})$ then
   
   \ceq{\hfill e({\gr d}\,;{\gr b})}{\imp}{{\gr d}\in\K({\gr b}/A)}\medrel{\iff}${\gr d}\in\K({\gr c}/A)$\medrel{\imp}$e({\gr d}\,;{\gr c})$.
-  
+    
   Which completes the proof.
 \end{proof}
 
@@ -588,6 +610,37 @@ Prove that the clopen sets in the logic $A$-topology are exactly the sets that a
 The original proof of Newelski theorem is rather long and complex.
 A simplified proof (due essetially to Newelski) appears in Rodrigo Pel\'aez's thesis~\cite{Pelaez}*{Section 3.3}.
 The proof here is a streamlined version of the latter taken from~\cite{Z16}.
+
+\begin{biblist}[]\normalsize
+  \bib{Simon}{book}{
+    author={Simon, Pierre},
+    title={\href{http://www.normalesup.org/~simon/NIP_guide.pdf}{A guide to NIP theories}},
+    series={Lecture Notes in Logic},
+    volume={44},
+    publisher={Association for Symbolic Logic, Cambridge University Press},
+    date={2015},
+  %   pages={vii+156},
+  %   isbn={978-1-107-05775-3},
+  %   review={\MR{3560428}},
+  %   doi={10.1017/CBO9781107415133},
+  }\smallskip
+  \bib{Z16}{article}{
+    author={Zambella, Domenico},
+    title={On the diameter of Lascar strong types after Ludomir Newelski},
+    conference={
+      title={A tribute to Albert Visser},
+    },
+    book={
+      % series={Tributes},
+      % volume={30},
+      publisher={Coll. Publ., [London]},
+    },
+    date={2016},
+    status={\href{https://arxiv.org/abs/1605.00218}{arXiv:1605.00218}},
+  %  pages={231--236},
+  %  review={\MR{3559880}},
+  }\smallskip
+\end{biblist}
 
 \begin{comment}
 

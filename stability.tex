@@ -596,7 +596,7 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 \begin{proof}
   Negate the theorem. 
   Then there are two models containing $A$, the first omitting $\phi({\mr x}\,;{\gr b})$, the second omitting $\psi({\mr x}\,;{\gr b})$.
-  It is easy to see that we can expand these models to two substructures $\V_0$ and $\V_1$ that are $A$-isomorphic to $\U$ and such that $\V_0=\neg\phi({\mr\V_0}\,;{\gr b})$ and $\V_1=\neg\psi({\mr\V_1}\,;{\gr b})$.
+  It is easy to see that we can expand these models to two substructures $\V_0$ and $\V_1$ that are $A$-isomorphic to $\U$ and such that $\V_0=\neg\phi(\V_0^{\mr x}\,;{\gr b})$ and $\V_1=\neg\psi(\V_1^{\mr x}\,;{\gr b})$.
 
   Let $f_i:\U\to\V_i$ be the $A$-isomorphisms mentioned above. 
   Let $\V_\0=\U$ and ${\gr b_\0}={\gr b}$.
@@ -606,7 +606,7 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 
   Then from the inclusion above we obtain
 
-  \#\hfil$\V_{s\frown0}^{{\mr x}}\subseteq\neg\phi({\mr\V_{s\frown0}}\,;{\gr b_s})$ \ \ and \ \  $\V_{s\frown1}^{{\mr x}}\subseteq\neg\psi({\mr\V_{s\frown1}}\,;{\gr b_s})$.
+  \#\hfil$\V_{s\frown0}^{{\mr x}}\subseteq\neg\phi(\V_{s\frown0}^{\rm x}\,;{\gr b_s})$ \ \ and \ \  $\V_{s\frown1}^{\mr x}\subseteq\neg\psi(\V_{s\frown1}^{\mr x}\,;{\gr b_s})$.
 
   We prove that the branches of the tree $\<\phi({\mr x}\,;{\gr b_s})\ :\  s\in2^{<\omega}\>$ are (finitely) consistent. 
   By Theorem~\ref{thm_count_types}, this contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
@@ -615,12 +615,12 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
   \ceq{\#\#\hfill\theta({\mr x})}{\imp}{\phi({\mr x}\,;{\gr b})\vee\psi({\mr x}\,;{\gr b})}
   
   Let $s\in2^n$ be given.
-  Let ${\mr a}\in\theta({\mr\V_s})$ be arbitrary. We claim that ${\mr a}$ witnesses the concistency of  $\{\phi^{s_i}({\mr x}\,;{\gr b_{s\restriction i}})\ :\ i<n\}$.
-  As $\V_s\preceq\V_{s\restriction i}$, we have that ${\mr a}\in\theta({\mr\V_{s\restriction i}})$.
+  Let ${\mr a}\in\theta(\V_s^{\mr x})$ be arbitrary. We claim that ${\mr a}$ witnesses the concistency of $\{\phi^{s_i}({\mr x}\,;{\gr b_{s\restriction i}})\ :\ i<n\}$.
+  As $\V_s\preceq\V_{s\restriction i}$, we have that ${\mr a}\in\theta(\V_{s\restriction i}^{\mr x})$.
   We prove that $\phi^{s_i}({\mr a}\,;{\gr b_{s\restriction i}})$.
-  If $s_i=0$ then from \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi^0({\mr\V_{s\restriction(i+1)}}\,;{\gr b_{s\restriction i}})$ and $\phi^0({\mr a}\,;{\gr b_{s\restriction i}})$ follows by elementarity.
-  If $s_i=1$, from the second inclusion in \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\neg\psi({\mr\V_{s\restriction(i+1)}}\,;{\gr b_{s\restriction i}})$.
-  Therefore, from $\theta({\mr a})$ and \#\#, we obtain that $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi({\mr\V_{s\restriction(i+1)}}\,;{\gr b_{s\restriction i}})$ and $\phi^1({\mr a}\,;{\gr b_{s\restriction i}})$ follows.
+  If $s_i=0$ then from \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi^0(\V_{s\restriction(i+1)}^{\mr x}\,;{\gr b_{s\restriction i}})$ and $\phi^0({\mr a}\,;{\gr b_{s\restriction i}})$ follows by elementarity.
+  If $s_i=1$, from the second inclusion in \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\neg\psi(\V_{s\restriction(i+1)}^{\mr x}\,;{\gr b_{s\restriction i}})$.
+  Therefore, from $\theta({\mr a})$ and \#\#, we obtain that $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi(\V_{s\restriction(i+1)}^{\mr x}\,;{\gr b_{s\restriction i}})$ and $\phi^1({\mr a}\,;{\gr b_{s\restriction i}})$ follows.
 
   We are left with proving that the provisional assumption is redundant.
   By Exercise~\ref{ex_almost_satisfied} there is a formula $\theta({\mr\bar x})\in L(A)$ such that

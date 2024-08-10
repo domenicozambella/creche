@@ -2,8 +2,8 @@
 \chapter{Invariant sets}
 \label{invariant}
 
-\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox[t]{16ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+\def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{14ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 In this chapter, $L$ is a signature, $T$ is a complete theory without finite models, and $\U$ is a saturated model of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
 We use the same notation and make the same implicit assumptions as in Section~\ref{monster}.
@@ -96,13 +96,14 @@ Then the number of $A$-invariant sets is at most $2^{|S_{\gr z}(A)|}$.
 Clearly $|S_{\gr z}(A)|\le 2^\lambda$.
 \end{proof} 
 
-The invariance of types can be rephrased in a similar way
+The invariance of types can be rephrased in a similar way.
+That is, $p({\mr x})$ is invariant over $A$ if 
 
-\ceq{\ssf{it2.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\Big(\phi({\mr x}\,;{\gr a})\in p\,\IFF\,\phi({\mr x}\,;{\gr b})\in p\Big)}\hfill for every $\phi({\mr x}\,;{\gr z})\in L$ and ${\gr a},{\gr b}\in\U^{\gr z}$.
+\ceq{\ssf{it2.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\Big(\phi({\mr x}\,;{\gr a})\in p\,\IFF\,\phi({\mr x}\,;{\gr b})\in p\Big)}\hfill for all $\phi({\mr x}\,;{\gr z})\in L$ and ${\gr a},{\gr b}\in\U^{\gr z}$.
 
 % In words we say that $p({\mr x})\subseteq L(\U)$ \emph{does not split\/} over $A$.
 
-If $p(x)$ is a global $\phi$-types types \ssf{it2} is equivalent to
+If $p({\mr x})$ is a global $\phi$-types types \ssf{it2} is equivalent to
 
 \ceq{\ssf{it2$^\prime$.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{p({\mr x})\,\proves\,\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$.
 
@@ -112,14 +113,13 @@ Finally, we note the following is useful characterization of \ssf{it2$'$}
 
 This, when $p({\mr x})\in S(\U)$, can be rephrased as
 
-\ceq{\ssf{it3'.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\equiv_{A,\,{\mr c}}{\gr b}}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$.
+\ceq{\ssf{it3$'$.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\equiv_{A,\,{\mr c}}{\gr b}}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$.
 
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
-\section{Invariance of types from the dual perspective}\label{dual_perspective}
-
+\section{Invariant types from the dual perspective}\label{dual_perspective}
 
 In the previous sections the invariance of $p({\mr x})$ has been definend using the sets ${\gr\D_{p,\phi}}$.
 Here we examine invariance using the formulas in $p({\mr x})$.
@@ -132,12 +132,11 @@ Therefore $p({\mr x})\subseteq L_\phi(\U)$ is invariant if
 \ceq{\hfill p({\mr x})\proves{\mr x}\in\mrD}{\IFF}{p({\mr x})\proves{\mr x}\in g\mrD}\hfill for every $\phi$-definable $\mrD\subseteq\U^{\mr x}$ and $g\in G$.
 
 Note that when $G$ acts by automorphisms $\phi(\U^{\mr x}\,;\U^{\gr z})$ is invariant for all $\phi({\mr x}\,;{\gr z})\in L$.
-Therefore when $G$ acts by automorphisms there results below are not limited to $\phi$-types and $\phi$-formulas but holds also for types and formulas.
+% Therefore when $G$ acts by automorphisms the results below that are stated for $\phi$-types and $\phi$-formulas but holds also for types and formulas.
 
-% -- the generality is only required in Section~\ref{}.
-% The terms invariant, orbit, and the few other indroduced below all refer to the action of $G$ on $\U$.
 Let $\mrX\subseteq\U^{\mr x}$ be a $G$-invariant set.
-At the first reading one may assume that $\mrX=\U^{\mr x}$.% as, again, more generality is required only in Section~\ref{}.
+At the first reading one may assume that $\mrX=\U^{\mr x}$.
+% as, again, more generality is required only in Section~\ref{}.
 
 A set $\mrD\subseteq\U^{\mr x}$ is \emph{$G$-generic\/} in $\mrX$ if finitely many $G$-translations of $\mrD$ cover $\mrX$; we say \emph{$n$-$G$-generic\/} if $\le n$ translates suffices.
 Dually, we say that $\mrD$ is \emph{$G$-persistent\/} in $\mrX$ if the intersection of any finitely many $G$-translations of $\mrD$ has a solution in $\mrX$; we say \emph{$n$-$G$-persistent\/} when the request is limited to $\le n$ translates.
@@ -164,8 +163,8 @@ See Exercise~\ref{ex_persistent_types} for an alternative characterization when 
 \begin{proof}
   Immediate by spelling out the definitions\smallskip
   \begin{itemize}
-    \item[1.] there are no ${\mr\D_1},\dots,{\mr\D_n}$ translations of $\mrD$ such that \smash{$\displaystyle\mrX\ \subseteq\ \bigcup_{i=1}^n{\mr\D_i}$}
-    \item[2.]  $\displaystyle\0\ \neq\ \mrX\,\cap\,\bigcap_{i=1}^n\neg{\mr\D_i}$ for every ${\mr\D_1},\dots,{\mr\D_n}$ translations of $\mrD$.\qedhere
+    \item[1.] there are no $g_1,\dots,g_n\in G$ such that \smash{$\displaystyle\mrX\ \subseteq\ \bigcup_{i=1}^n g_i{\mr\D}$}
+    \item[2.]  $\displaystyle\0\ \neq\ \mrX\,\cap\,\bigcap_{i=1}^n\neg g_i{\mr\D}$ for every $g_1,\dots,g_n\in G$.\qedhere
   \end{itemize} 
 \end{proof}
 
@@ -199,7 +198,7 @@ See Exercise~\ref{ex_persistent_types} for an alternative characterization when 
   \ssf3$\IMP$\ssf4.
   Let $\mrD$ be defined by a conjunction of formulas in $p({\mr x})$.
   If $\mrD$ is not 2-persistent then, by Fact~\ref{fact_fip}, $\neg\mrD$ is 2-generic. 
-  By \ssf3 $p({\mr x})$ is finitely consistent in   $\neg\mrD$, a contradiction.
+  By \ssf3, $p({\mr x})\proves{\mr x}\notin\mrD$, a contradiction.
 
   \ssf4$\IMP$\ssf1.
   % uppose $p({\mr x})$ is not $(n+2)$-persistent and let $n$ be minimal.
@@ -208,7 +207,7 @@ See Exercise~\ref{ex_persistent_types} for an alternative characterization when 
   If $p({\mr x})$ is not invariant then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g{\gr b})$ for some $g\in G$.
   Clearly $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g{\gr b})$ is not 2-persistent as it is inconsistent with its $g$-translation.
 
-  \ssf5$\IMP$\ssf2.
+  \ssf5$\IMP$\ssf4.
   Trivial.
 
   \ssf2$\IMP$\ssf5.
@@ -251,7 +250,7 @@ In~\cite{CK} this is called \textit{quasi-non-forking}.
   It is only left to show that $p({\mr x})$ is finitely consitent in $\mrX$ and invariant.
   Finite consistency follows from percistency.
   Negate invariance.
-  Then, by Theorem~\ref{thm_generic_invariant} and completeness, $p({\mr x})\proves {\mr x}\in\neg\mrB$ for some generic definable set $\mrB$.
+  Then, by Theorem~\ref{thm_generic_invariant} and completeness, $p({\mr x})\proves {\mr x}\notin\mrB$ for some generic definable set $\mrB$.
   As $\neg\mrB$ is not persistent by Fact~\ref{fact_fip}, this contradics \ssf3.
 \end{proof}
 
@@ -261,16 +260,16 @@ This is required in Section~\ref{newelski}.
 
 A set $\mrD\subseteq\U^{\mr x}$ is \emph{strongly generic\/} if the intersection of any finitely many translations of $\mrD$ is generic.
 Dually, we say that $\mrD$ is \emph{weakly persistent\/} if the union of some finitely many translations of $\mrD$ is peristent.
-Again, the same properties may be attributed to formulas.
+Again, the same properties may be attributed to formulas and types.
 
 \begin{lemma}\label{lem_strongly_generic}
   Let $G$ and $\mrX$ be as above.
-  Then the intersection of finitely many stronly generic sets is strongly generic.
+  Then the intersection of finitely many strongly generic sets is strongly generic.
 \end{lemma}
 
 \begin{proof}
   As the theorem does not mention definability, we may assume that all sets mentioned below are subsets of $\mrX$.
-  Let ${\mr\D}$ and ${\mr\C}$ be strongly generic and let $K\subseteq G$ be finite.
+  Let ${\mr\D}$ and ${\mr\C}$ be strongly generic and let $K\subseteq G$ be an arbitrary finite set.
   It suffices to prove that 
   
   \ceq{\hfill\mrB}{=}{\bigcap_{k\in K}k\,({\mr\C}\cap{\mr\D})}
@@ -295,6 +294,14 @@ Again, the same properties may be attributed to formulas.
   Therefore also the set on the l.h.s.\@ is generic.
   The genericity of $\mrB$ follows.
 \end{proof}
+
+\begin{example}
+  Show that generic sets are not closed under intersection (e.g.\@ try with the circular order).
+\end{example}
+
+\begin{example}
+  Where (in this section) the assumption that $\mrX$ is $G$-invariant is used?
+\end{example}
 
 \begin{exercise}\label{ex_persistent_types}
   Let $G$, $\X$, and $\phi(x,;z)\in L$ be given.
@@ -327,14 +334,14 @@ We say that a type $p({\mr x})$ is \emph{finitely satisfiable\/} in $A$ if every
 \begin{proof}
   Note that $p({\mr x})$ is $\Aut(\U/A)$-persistent, in fact the same ${\mr a}\in A^{\mr x}$ that satisfies $\phi({\mr x})$ also satisfies every $\Aut(\U/A)$-translate of $\phi({\mr x})$.
   Then the proposition follows from Theorem~\ref{thm_generic_invariant}.
-  (But a direct proof is also easy.)  
+  (But a direct proof is also easy.)
 \end{proof}
 
 \begin{proposition}\label{prop_exisntence_coheirs}
   Every type $q({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $A$ has an extension to a global type that is finitely satisfiable in $A$.
 \end{proposition}
 
-\begin{proof} 
+\begin{proof}
   Let $p({\mr x})\subseteq L(\U)$ be maximal among the types that contain $q({\mr x})$ and are finitely satisfiable in $A$.
   We prove that $p({\mr x})$ is complete.
   If for a contradiction $p({\mr x})$ contains neither $\psi({\mr x})$ nor $\neg\psi({\mr x})$, then  neither $p({\mr x})\cup\big\{\psi({\mr x})\big\}$ nor $p({\mr x})\cup\big\{\neg\psi({\mr x})\big\}$ are finitely satisfiable in $A$.
@@ -348,13 +355,14 @@ The reason is explained by the next proposition, which is clear by elementarity.
   Every consistent type over a model is finitely satisfiable in that model, that is, whenever $p({\mr x})\subseteq L(M)$ is consistent, $p({\mr x})$ is finitely satisfiable in $M$.
 \end{proposition}
 
-\begin{definition}\label{def_choeir_uno} A type $p({\mr x}) \subseteq L(\U)$ that is finitely satisfiable in $M$ is said to be a \emph{coheir\/} of $p_{\restriction M}({\mr x})$.
+\begin{definition}\label{def_choeir_uno}
+  A type $p({\mr x}) \subseteq L(\U)$ that is finitely satisfiable in $M$ is said to be a \emph{coheir\/} of $p_{\restriction M}({\mr x})$.
 \end{definition}
 
 In many cases it is useful to focus on elements instead of types.
 We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is finitely satisfied in $M$.
 
-\begin{definition}\label{def_coheir_idepencence} 
+\begin{definition}\label{def_coheir_idepencence}
   For every ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$ we define
 
   \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}
@@ -375,53 +383,46 @@ We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is 
   \phi({\mr x}\,;{\gr b})\in L(M)
   \textrm{ and } \phi(M^{\mr x}\,;{\gr b})=\0\Big\}.}
 
-  We will write \emph{${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$} 
-  for the union of the types ${\mr x}\cnonfork_M{\gr b}$ and 
-  $\tp({\mr a}/M)$.
+  We will write \emph{${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$} for the union of the types ${\mr x}\cnonfork_M{\gr b}$ and $\tp({\mr a}/M)$.
 \end{definition}
- The tuples ${\mr a}$ realizing ${\mr x}\cnonfork_M{\gr b}$ are exactly those such that ${\mr a}\cnonfork_M{\gr b}$.
- Note that $\tp({\mr a}/M,{\gr b})$ is a coheir of $\tp({\mr a}/M)$ according to Definition~\ref{def_choeir_uno}, so the terminology is consistent.
+
+The tuples ${\mr a}$ realizing ${\mr x}\cnonfork_M{\gr b}$ are exactly those such that ${\mr a}\cnonfork_M{\gr b}$.
+Note that $\tp({\mr a}/M,{\gr b})$ is a coheir of $\tp({\mr a}/M)$ according to Definition~\ref{def_choeir_uno}, so the terminology is consistent.
 
 We think of  ${\mr a}\cnonfork_M{\gr b}$ as saying that 
 ${\mr a}$ is \emph{independent\/} from ${\gr b}$ over $M$.
-%
-%This is a strong notion of independence.
-%
-In general %it is not symmetric, that is 
-${\mr b}\cnonfork_M{\gr a}$ is not 
-equivalent to ${\gr a}\cnonfork_M{\mr b}$.
-%(symmetry is equivalent to stability).
+This is a strong notion of independence.
+In general it is not symmetric, that is ${\mr b}\cnonfork_M{\gr a}$ is not equivalent to ${\gr a}\cnonfork_M{\mr b}$. In Chaper~\ref{stability} we will see that the symmetry of this repation is equivalent to stability.
 
-We shall use, sometimes without explicit reference, the following easy lemma.
+We will use the following easy lemma without explicit reference.
 
 \begin{lemma}\label{lem_coheir_independence}
-    The following properties hold for all $M,{\mr a},{\mr b}$, and $c$
-    \begin{itemize}
-    \item[1.] ${\mr a}\cnonfork_M{\gr b}\ \ \IMP\ \ f{\mr a}\cnonfork_Mf{\gr b}$ \ \ 
-              for every $f\in\Aut(\U/M)$\hfill \textit{invariance}
-    \item[2.] ${\mr a}\cnonfork_M{\gr b}\ \ \IFF\ \ {\mr a_0}\cnonfork_M{\gr b_0}$
-              \ for all finite ${\mr a_0}\subseteq{\mr a}$ and 
-              ${\gr b_0}\subseteq{\gr b}$ \hfill\textit{finite character}
-    \item[3.] ${\mr a}\cnonfork_Mc,{\gr b}$ \ and \ 
-              $c\cnonfork_M{\gr b}\ \ \IMP\ \ {\mr a},c\cnonfork_M{\gr b}$
-              \hfill\hfill\hfill\textit{transitivity}
-    \item[4.] ${\mr a}\cnonfork_M{\gr b}\ \ \IMP\ \ $ 
-              there exists ${\mr a'}\equiv_{M,\,{\gr b}}{\mr a}$ such that 
-              ${\mr a'}\cnonfork_M{\gr b},c$
-              \hspace{\stretch{20}}\textit{coheir extension}
-    \item[5.] ${\mr a}\cnonfork_M{\gr b_1},{\gr b_2}$ \ and \ 
-    ${\gr b_1}\equiv_M{\gr b_2}\ \ \IMP\ \ {\gr b_1}\equiv_{M,\,{\mr a}}{\gr b_2}$
-              \hspace{\stretch{20}}\textit{non-splitting}
-    \end{itemize}
-    \end{lemma}
+  The following properties hold for all $M,{\mr a},{\mr b}$, and $c$
+  \begin{itemize}
+  \item[1.] ${\mr a}\cnonfork_M{\gr b}\ \ \IMP\ \ f{\mr a}\cnonfork_Mf{\gr b}$ \ \ 
+            for every $f\in\Aut(\U/M)$\hfill \textit{invariance}
+  \item[2.] ${\mr a}\cnonfork_M{\gr b}\ \ \IFF\ \ {\mr a_0}\cnonfork_M{\gr b_0}$
+            \ for all finite ${\mr a_0}\subseteq{\mr a}$ and 
+            ${\gr b_0}\subseteq{\gr b}$ \hfill\textit{finite character}
+  \item[3.] ${\mr a}\cnonfork_Mc,{\gr b}$ \ and \ 
+            $c\cnonfork_M{\gr b}\ \ \IMP\ \ {\mr a},c\cnonfork_M{\gr b}$
+            \hfill\hfill\hfill\textit{transitivity}
+  \item[4.] ${\mr a}\cnonfork_M{\gr b}\ \ \IMP\ \ $ 
+            there exists ${\mr a'}\equiv_{M,\,{\gr b}}{\mr a}$ such that 
+            ${\mr a'}\cnonfork_M{\gr b},c$
+            \hspace{\stretch{20}}\textit{coheir extension}
+  \item[5.] ${\mr a}\cnonfork_M{\gr b_1},{\gr b_2}$ \ and \ 
+  ${\gr b_1}\equiv_M{\gr b_2}\ \ \IMP\ \ {\gr b_1}\equiv_{M,\,{\mr a}}{\gr b_2}$
+            \hspace{\stretch{20}}\textit{non-splitting}
+  \end{itemize}
+\end{lemma}
 \begin{proof}
-
-Properties \ssf{1}-\ssf{3} follow immediately from Definition~\ref{def_coheir_idepencence}.
-We prove \ssf{4}.
-Assume ${\mr a}\cnonfork_M{\gr b}$, that is,  $\tp({\mr a}/M,{\gr b})$ is finitely satisfiable in $M$.
-By Proposition~\ref{prop_exisntence_coheirs} $\tp({\mr a}/M,{\gr b})$ extends to a global type $p({\mr x})$ that is finitely satisfiable in $M$.
-Then any ${\mr a'}\models p_{\restriction M,\,{\gr b},\,c}({\mr x})$ proves the lemma.
-The proof of \ssf{5} is left to the reader.
+  Properties \ssf{1}-\ssf{3} follow immediately from Definition~\ref{def_coheir_idepencence}.
+  We prove \ssf{4}.
+  Assume ${\mr a}\cnonfork_M{\gr b}$, that is, $\tp({\mr a}/M,{\gr b})$ is finitely satisfiable in $M$.
+  By Proposition~\ref{prop_exisntence_coheirs} $\tp({\mr a}/M,{\gr b})$ extends to a global type $p({\mr x})$ that is finitely satisfiable in $M$.
+  Then any ${\mr a'}\models p_{\restriction M,\,{\gr b},\,c}({\mr x})$ proves the lemma.
+  The proof of \ssf{5} is left to the reader.
 \end{proof}
 
 \begin{proposition}\label{prop_saturate_heir}
@@ -440,8 +441,8 @@ The proof of \ssf{5} is left to the reader.
 
   \ceq{\hfill\theta(w,{\gr b})}{\imp}{\bigvee_{i=1}^n\phi_i({\mr a},w,{\gr b})}
   
-for some $\theta(w,{\gr b})\in p$ and some $\phi_i({\mr x},w,{\gr b})$ such that $p(w,{\gr b})\imp\phi_i(M,w,{\gr b})=\0$.
-We obtain a contradiction because by elementarity we can replace ${\mr a}$ by some ${\mr a'}\in M^{\mr x}$.
+  for some $\theta(w,{\gr b})\in p$ and some $\phi_i({\mr x},w,{\gr b})$ such that $p(w,{\gr b})\imp\phi_i(M,w,{\gr b})=\0$.
+  We obtain a contradiction because by elementarity we can replace ${\mr a}$ by some ${\mr a'}\in M^{\mr x}$.
 \end{proof}
 
 %Transitivity has dual version that holds under stronger assumptions.
