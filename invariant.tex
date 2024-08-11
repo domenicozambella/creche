@@ -295,13 +295,41 @@ Again, the same properties may be attributed to formulas and types.
   The genericity of $\mrB$ follows.
 \end{proof}
 
-\begin{example}
-  Show that generic sets are not closed under intersection (e.g.\@ try with the circular order).
-\end{example}
+\begin{corollary}\label{corol_str_gen}
+  Let $G$, $\mrX$, and $\phi({\mr x},;{\gr z})\in L$ be given.
+  Let 
+  
+  \ceq{\hfill q({\mr x})}{=}{\{\theta({\mr x})\in L_\phi(\U)\ :\ \theta({\mr x})\textrm{ strongly generic }\}.}
 
-\begin{example}
-  Where (in this section) the assumption that $\mrX$ is $G$-invariant is used?
-\end{example}
+  Then $q({\mr x})$ is finitely consistent in $\mrX$, strongly generic, and invariant.
+\end{corollary}
+
+\begin{proof}
+  Strong genericity is an immediate consequence of Lemma~\ref{lem_strongly_generic}.
+  Finite concistency follows from genericity.
+  As for invariance, note that any translate of a strongly generic formula is also strongly generic.
+\end{proof}
+
+\begin{remark}
+  Any finitely consistent type $p({\mr x})\subseteq L_\phi(\U)$ containing $q({\mr x})$ of Corollary~\ref{corol_str_gen} is weakly persistent.
+  In fact, concistency implies that for every $\theta({\mr x})\in p$ the formula $\neg\theta({\mr x})$ is not strongly generic.
+  Then $\theta({\mr x})$ is weakly persistent.
+\end{remark}
+
+\begin{exercise}
+  Let $G$, $\X$, and $\phi(x,;z)\in L$ be given.
+  Let $p(x)\subseteq L_\phi(\U)$ be generic, invariant and closed under conjunctions.
+  Prove that $p(x)$ is strongly generic.
+\end{exercise}
+
+\begin{exercise}
+  Show that generic sets are not closed under intersection.
+  Hint: try e.g.\@ with the cyclic order in Example~\ref{ex_cyclic_order}.
+\end{exercise}
+
+\begin{exercise}
+  Where in this section the assumption that $\mrX$ is $G$-invariant is used?
+\end{exercise}
 
 \begin{exercise}\label{ex_persistent_types}
   Let $G$, $\X$, and $\phi(x,;z)\in L$ be given.

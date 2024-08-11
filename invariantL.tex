@@ -297,11 +297,11 @@ The following example shows that some theories may have no other extension bases
 
 In Chapter~\ref{stability} we will see that for some important class of theories, \textit{stable theories}, all sets are coheir extension bases.
 
-\begin{example}\label{ex_circ_order}
+\begin{example}\label{ex_cyclic_order}
   We present a theory without global types that are Lascar invariant over the empty set.
-  Let $T$ be the theory of $\QQ$ with the cyclic order, i.e.\@ with a ternary predicate ${\rm cyc}(a, b, c)$ that  holds if
+  Let $T$ be the theory of $\QQ$ with the \emph{cyclic order,} i.e.\@ with a ternary predicate ${\rm cyc}(a, b, c)$ that  holds if
 
-  \hfil $(a < b < c)\ \vee\ (b < c < a)\ \vee\ (c < a < b)$.
+  \hfil $(a < b < c)\ \vee\ (c < a < b)\ \vee\ (b < c < a)$.
 
   The picture to keep in mind is that of a circle, where ${\rm cyc}(a, b, c)$ holds if we encounter $a,b,c$ in that order when going clockwise.
 
@@ -452,6 +452,14 @@ For ${\mr a},{\mr b}\in\mrX$ let $d({\mr a},{\mr b})$ be the minimal $n$ such th
 This defines a metric by \ssf1 and \ssf3.
 By \ssf2, this metric in $G$-invariant.
 The \emph{diameter\/} of a set $\mrC\subseteq\mrX$ is the supremum of $d({\mr a},{\mr b})$ for ${\mr a},{\mr b}\in\mrC$.
+
+Throughout this section we define
+
+
+\ceq{\hfill q({\mr x})}{=}{\{\theta({\mr x})\in L(A)\ :\ \theta({\mr x})\textrm{ strongly generic}\}.}
+
+By (the proof of) Corollary~\ref{corol_str_gen}, this type is finitely consistent in $\mrX$, strongly generic, and invariant.
+
 
 If there is a weakly persistent set with finite diameter then $\mrX$ has finite diamenter.
 
