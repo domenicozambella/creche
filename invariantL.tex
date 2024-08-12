@@ -453,15 +453,61 @@ This defines a metric by \ssf1 and \ssf3.
 By \ssf2, this metric in $G$-invariant.
 The \emph{diameter\/} of a set $\mrC\subseteq\mrX$ is the supremum of $d({\mr a},{\mr b})$ for ${\mr a},{\mr b}\in\mrC$.
 
-Throughout this section we define
+We are interested in sufficient conditions for $\mrX$ to have finite diameter.
 
+\begin{proposition}
+  If $\mrX$ has a weakly persistent subset with finite diameter, then $\mrX$ has finite diamenter.
+\end{proposition}
 
-\ceq{\hfill q({\mr x})}{=}{\{\theta({\mr x})\in L(A)\ :\ \theta({\mr x})\textrm{ strongly generic}\}.}
+\begin{proof}
+  Let $\mrC\subseteq\mrX$ be a weakly persistent set of diameter $n$.
+  Let $H\subseteq G$ be finite such that 
 
-By (the proof of) Corollary~\ref{corol_str_gen}, this type is finitely consistent in $\mrX$, strongly generic, and invariant.
+  \ceq{\hfill H\mrC}{=}{\bigcup_{h\in H}h\,\mrC}
 
+  is persistent.
+  We claim that $H\mrC$ has finite diameter.
+  Let ${\mr a}\in\mrC$ be arbitrary.
+  Let $m$ be larger than $d(h{\mr a}, k{\mr a})$ for all $h,k,\in H$.
+  Now, let $h{\mr b}$ and $k{\mr c}$, for some $h,k,\in H$ and ${\mr b},{\mr c}\in\mrC$, be two arbitrary elements of $H\mrC$.
+  As $h\mrC$ and $k\mrC$ have the same diameter of $\mrC$, 
 
-If there is a weakly persistent set with finite diameter then $\mrX$ has finite diamenter.
+  \ceq{\hfill d(h{\mr b},\, k{\mr c})}{\le}{d(h{\mr b},\,h{\mr a})\ +\ d(h{\mr a},\, k{\mr a})\ +\ d(k{\mr a},\,k{\mr c})}
+
+  \ceq{}{\le}{n+m+n.}
+
+  This proves that $H\mrC$ has finite diameter.
+  Therefore, without loss of generality, we may assume that $\mrC$ itself is persistent.
+  
+  By the transitivity of the action, any two elements of $\mrX$ are of the form $h{\mr a}$, $k{\mr a}$ for some $h,k\in G$ and some ${\mr a}\in\mrC$.
+  By percistency, there are ${\mr c}\in\mrC\cap h\mrC$ and ${\mr d}\in\mrC\cap k\mrC$.
+  Then 
+
+  \ceq{\hfill d(h{\mr a},\, k{\mr a})}{\le}{d(h{\mr a},\,{\mr c})\ +\ d({\mr c},\, {\mr d})\ +\ d({\mr d},\,k{\mr a})}
+
+  \ceq{}{\le}{n+n+n.}
+
+  Therefore the diameter of $\mrX$ does not exceed $3n$.
+\end{proof}
+
+\begin{theorem}
+  Suppose that $\mrX$ and the sets ${\mr\X_n}=G_n{\mr a}$, for some ${\mr a}\in\mrX$, are type-definable.
+  Then $\mrX$ has finite diameter.
+\end{theorem}
+
+\begin{proof}
+  It suffices to prove that ${\mr\X_n}$ is weakly persistent.
+  Define
+
+  \ceq{\hfill q({\mr x})}{=}{\{\theta({\mr x})\in L(\U)\ :\ \theta({\mr x})\textrm{ strongly generic}\}.}
+  
+  By Corollary~\ref{corol_q_w_pers}, it suffices to prove that that $q({\mr x})$ is finitely satisfied in $\mr\X_n$ for some $n$.
+  Suppose not. 
+  Let $\psi_n({\mr x})\in q$ be a formula that is not satisfied in $\mr\X_n$.
+  The type $\{\psi_n({\mr x}):n\in\omega\}$ is finitely satisfied in $\mrX$.
+  Then it has a realization in $\mrX$. 
+  TAs tis realization belongs to some ${\mr\X_n}$ this contradicts the definition of $\psi_n({\mr x})$. 
+\end{proof}
 
 \begin{example}
   Let $G=\Autf(\U/A)$. 

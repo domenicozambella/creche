@@ -310,11 +310,16 @@ Again, the same properties may be attributed to formulas and types.
   As for invariance, note that any translate of a strongly generic formula is also strongly generic.
 \end{proof}
 
-\begin{remark}
-  Any finitely consistent type $p({\mr x})\subseteq L_\phi(\U)$ containing $q({\mr x})$ of Corollary~\ref{corol_str_gen} is weakly persistent.
-  In fact, concistency implies that for every $\theta({\mr x})\in p$ the formula $\neg\theta({\mr x})$ is not strongly generic.
-  Then $\theta({\mr x})$ is weakly persistent.
-\end{remark}
+\begin{corollary}\label{corol_q_w_pers}
+  Let $\mrC\subseteq\mrX$ be $\phi$-type-definable and such that $q({\mr x})$ of Corollary~\ref{corol_str_gen} is finitely satisfied in $\mrC$.
+  Then $\mrC$ is weakly persistent.
+\end{corollary}
+
+\begin{proof}
+  Let $\theta({\mr x})\in L_\phi(\U)$ be such that ${\mr x}\in\mrC\proves\theta({\mr x})$.
+  As $q({\mr x})$ is consistent with $\theta({\mr x})$, iwe cannot have that $\neg\theta({\mr x})$ is strongly generic.
+  Therefore $\theta({\mr x})$ weakly persistent.
+\end{proof}
 
 \begin{exercise}
   Let $G$, $\X$, and $\phi(x,;z)\in L$ be given.
