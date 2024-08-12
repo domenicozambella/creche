@@ -145,11 +145,11 @@ We may drop reference to $G$ and $\mrX$ when these are clear from the context.
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 The terminology above non-standard.
 In~\cite{CK} the authors write \textit{quasi-non-dividing\/} for \textit{persistent}.
-Their terminology has good motivations, but it is a mouthful in this context.
+Their terminology has good motivations, but it would be a mouthful in our context.
 
 The same properties may be attributed to formulas (as these are identified with the set they define).
-When the properties above are attributed to a type $p({\mr x})$, it is understood that they holdsfor every $\phi({\mr x})$ that is a conjunction of formulas in $p({\mr x})$.
-See Exercise~\ref{ex_persistent_types} for an alternative characterization when $p({\mr x})$ is a small.
+When the properties above are attributed to a type $p({\mr x})$, it is understood that they holds for every $\phi({\mr x})$ that is a conjunction of formulas in $p({\mr x})$.
+See Exercise~\ref{ex_persistent_types} for an alternative characterization when $p({\mr x})$ is small.
 
 \begin{fact}\label{fact_fip}
   Let $G$ and $\mrX$ be as above.
@@ -170,7 +170,7 @@ See Exercise~\ref{ex_persistent_types} for an alternative characterization when 
 
 \begin{theorem}\label{thm_generic_invariant}
   Let $G$, $\mrX$, and $\phi({\mr x}\,;{\gr z})\in L$ be as above.
-  Let $p({\mr x})\in S_\phi(\U)$ be finitely consistent in $\mrX$.
+  Let $p({\mr x})\in S_\phi(\U)$ be finitely satisfiable in $\mrX$.
   Then the following are equivalent
   \begin{itemize}
     \item[1.] $p({\mr x})$ is invariant
@@ -190,7 +190,7 @@ See Exercise~\ref{ex_persistent_types} for an alternative characterization when 
 
   \ceq{\hfill p({\mr x})}{\proves}{{\mr x}\ \notin\ \bigcup_{i=1}^ng_i\mrD.}
 
-  This contradicts the consistency of $p({\mr x})$ in $\mrX$.
+  This contradicts the finite satisfiability of $p({\mr x})$ in $\mrX$.
 
   \ssf2$\IMP$\ssf3.
   Trivial.
@@ -225,7 +225,7 @@ In~\cite{CK} this is called \textit{quasi-non-forking}.
   Let $\mrD\subseteq\U^{\mr x}$ be a $\phi$-definable set.
   Then the following are equivalent 
   \begin{itemize}
-    \item[1.] there is an invariant type $p({\mr x})\in S_\phi(\U)$ finitely consistent in $\mrX\cap\mrD$
+    \item[1.] there is an invariant type $p({\mr x})\in S_\phi(\U)$ finitely satisfiable in $\mrX\cap\mrD$
     \item[2.] every finite cover of $\mrD$ by $\phi$-definable sets contains a persistent set
     \item[3.] every finite cover of $\mrD$ by $\phi$-definable sets contains a 2-persistent set.
   \end{itemize}
@@ -247,15 +247,15 @@ In~\cite{CK} this is called \textit{quasi-non-forking}.
   Suppose for a contradiction that $\theta({\mr x}),\neg\theta({\mr x})\notin p$.
   By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$ and some ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi({\mr\U})\cap\theta({\mr\U})$ and $\psi({\mr\U})\smallsetminus\theta({\mr\U})$ and such that no ${\mr\C_i}$ is persistent.
   This is a contradiction because ${\mr\C_1},\dots,{\mr\C_n}$ cover $\psi({\mr\U})$ which satisfies \ssf3.
-  It is only left to show that $p({\mr x})$ is finitely consitent in $\mrX$ and invariant.
-  Finite consistency follows from percistency.
+  It is only left to show that $p({\mr x})$ is finitely satisfiable in $\mrX$ and invariant.
+  Finite satisfiability follows from percistency.
   Negate invariance.
   Then, by Theorem~\ref{thm_generic_invariant} and completeness, $p({\mr x})\proves {\mr x}\notin\mrB$ for some generic definable set $\mrB$.
   As $\neg\mrB$ is not persistent by Fact~\ref{fact_fip}, this contradics \ssf3.
 \end{proof}
 
 Unfortunatelly, genericy is not preserved under intersection.
-For that, we need press the concept to the next level of complexity.
+For that, we need to press the concept to the next level of complexity.
 This is required in Section~\ref{newelski}.
 
 A set $\mrD\subseteq\U^{\mr x}$ is \emph{strongly generic\/} if the intersection of any finitely many translations of $\mrD$ is generic.
@@ -301,12 +301,12 @@ Again, the same properties may be attributed to formulas and types.
   
   \ceq{\hfill q({\mr x})}{=}{\{\theta({\mr x})\in L_\phi(\U)\ :\ \theta({\mr x})\textrm{ strongly generic }\}.}
 
-  Then $q({\mr x})$ is finitely consistent in $\mrX$, strongly generic, and invariant.
+  Then $q({\mr x})$ is finitely satisfiable in $\mrX$, strongly generic, and invariant.
 \end{corollary}
 
 \begin{proof}
   Strong genericity is an immediate consequence of Lemma~\ref{lem_strongly_generic}.
-  Finite concistency follows from genericity.
+  Finite satisfiability is a consequence of genericity, see Exercise~\ref{ex_gen_sat}.
   As for invariance, note that any translate of a strongly generic formula is also strongly generic.
 \end{proof}
 
@@ -316,15 +316,13 @@ Again, the same properties may be attributed to formulas and types.
 \end{corollary}
 
 \begin{proof}
-  Let $\theta({\mr x})\in L_\phi(\U)$ be such that ${\mr x}\in\mrC\proves\theta({\mr x})$.
-  As $q({\mr x})$ is consistent with $\theta({\mr x})$, iwe cannot have that $\neg\theta({\mr x})$ is strongly generic.
+  Let $\theta({\mr x})\in L_\phi(\U)$ be such that $\mrC\subseteq\theta(\mrU)$.
+  As $q({\mr x})$ is finitely satisfiable in $\theta(\mrU)$, we cannot have that $\neg\theta({\mr x})$ is strongly generic.
   Therefore $\theta({\mr x})$ weakly persistent.
 \end{proof}
 
-\begin{exercise}
-  Let $G$, $\X$, and $\phi(x,;z)\in L$ be given.
-  Let $p(x)\subseteq L_\phi(\U)$ be generic, invariant and closed under conjunctions.
-  Prove that $p(x)$ is strongly generic.
+\begin{exercise} 
+  Prove that generic, invariant types that are closed under conjunction are strongly generic.
 \end{exercise}
 
 \begin{exercise}
@@ -336,9 +334,13 @@ Again, the same properties may be attributed to formulas and types.
   Where in this section the assumption that $\mrX$ is $G$-invariant is used?
 \end{exercise}
 
+\begin{exercise}
+  Prove that every generic type is finitely satisfiable.
+\end{exercise}
+
 \begin{exercise}\label{ex_persistent_types}
   Let $G$, $\X$, and $\phi(x,;z)\in L$ be given.
-  For every $p(x)\subseteq L_\phi(A)$ following are equivalent
+  Prove that for every $p(x)\subseteq L_\phi(A)$ following are equivalent
   \begin{itemize}
     \item[1.] $p(x)$ is persistent
     \item[2.] $p(\U^x)$ is persistent.
