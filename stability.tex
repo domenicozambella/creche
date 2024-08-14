@@ -606,7 +606,7 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 
   Then from the inclusion above we obtain
 
-  \#\hfil$\V_{s\frown0}^{{\mr x}}\subseteq\neg\phi(\V_{s\frown0}^{\rm x}\,;{\gr b_s})$ \ \ and \ \  $\V_{s\frown1}^{\mr x}\subseteq\neg\psi(\V_{s\frown1}^{\mr x}\,;{\gr b_s})$.
+  \#\hfil$\V_{s\frown0}^{{\mr x}}\subseteq\neg\phi(\V_{s\frown0}^{\mr x}\,;{\gr b_s})$ \ \ and \ \  $\V_{s\frown1}^{\mr x}\subseteq\neg\psi(\V_{s\frown1}^{\mr x}\,;{\gr b_s})$.
 
   We prove that the branches of the tree $\<\phi({\mr x}\,;{\gr b_s})\ :\  s\in2^{<\omega}\>$ are (finitely) consistent. 
   By Theorem~\ref{thm_count_types}, this contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
@@ -639,16 +639,16 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 
 \begin{corollary}\label{corol_stable_coheir_over_models}
   Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
-  Let $q({\mr x})\subseteq L(A)$ be a consistent type.
-  Then there is a global $\phi$-type $p({\mr x})\in S_{\phi}(\U)$ such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
+  Let $q({\mr x})\subseteq L_\phi(\U)$ be finitely satisfiable in every $M\subseteq A$..
+  Then there is a global $\phi$-type $p({\mr x})\in S_{\phi}(\U)$ such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$, in particular invariant over $\acl^\eq\!A$.
 \end{corollary}
 
 \begin{proof}
-  Let $p({\mr x})\subseteq L(\U)$ be maximal such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
+  Let $p({\mr x})\subseteq L_\phi(\U)$ be maximal such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
   We prove that $p({\mr x})$ is complete.
-  Suppose not than there a conjuction $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ of formulas in $q({\mr x})\cup p({\mr x})$ and a formula $\phi({\mr x}\,;{\gr b})$ such that 
+  Suppose not than there are a conjuction $\alpha({\mr x})$ of formulas in $q({\mr x})$, a conjuction $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ of formulas in $p({\mr x})$, and a formula $\phi({\mr x}\,;{\gr b})$ such that 
 
-  \hfil$\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})\wedge\phi({\mr x}\,;{\gr b})$ \ \ and\ \   $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})\wedge\neg\phi({\mr x}\,;{\gr b})$ 
+  \hfil$\alpha({\mr x})\wedge\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})\wedge\phi({\mr x}\,;{\gr b})$ \ \ and\ \   $\alpha({\mr x})\wedge\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})\wedge\neg\phi({\mr x}\,;{\gr b})$ 
  
   are not satisfied in every $M\supseteq A$.
   The disjunction of the two formulas is satisfied in every $M\supseteq A$ by the definition of $p({\mr x})$.
@@ -809,7 +809,8 @@ The following proposition says that in a stable theory with elimination of imagi
 The following are equivalent
 \begin{itemize}
 \item[1.] ${\mr a}\equivL_A{\mr b}$, see Definition~\ref{def_Lascar_type}
-\item[2.] ${\mr a}\equivSh_A{\mr b}$, see Definition~\ref{def_Sh_strong_type}.
+\item[2.] ${\mr a}\equivSh_A{\mr b}$, see Definition~\ref{def_Sh_strong_type}
+% \item[3.] ${\mr a}\,\equiv_{\acl^\eq\! A}{\mr b}$.
 \end{itemize}
 \end{corollary}
 \begin{proof}\ssf{1}$\IMP$\ssf{2}.
@@ -863,11 +864,11 @@ It is not required in the following but it has a simple intuitive proof.
 \begin{theorem}\label{thm_stability_definable_rovescio}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
   Let $A$ and ${\mr a}\in\U^{\mr x}$ be arbitrary.
-  Then, for some ${\mr a_1}\equiv_A\dots\equiv_A{\mr a_n}\equiv_A{\mr a}$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;\U^{\gr z})$ is definable over $A$.
+  Then, for some ${\mr a_i}\equiv_{\acl^\eq\!A}{\mr a}$, where $i=1,\dots,n$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;\U^{\gr z})$ is definable over $A$.
 \end{theorem}
 
 \begin{proof}
-  Let $q({\mr x})=\tp({\mr a}/A)$.
+  Let $q({\mr x})=\tp({\mr a}/\acl^\eq\!A)$.
   By Corollary~\ref{corol_stable_coheir_over_models} there is a type $p({\mr x})\in S_\phi(\U)$ consistent with $q({\mr x})$ and invariant over $\acl^\eq\!A$.
   By Theorem~\ref{thm_def_stable_formula} there are some ${\mr a_1},\dots,{\mr a_n}\models q({\mr x})$ such that ${\gr z}\in{\gr\D_{p,\phi}}$ is equivalent to a positive Bolean combination of the formulas $\phi({\mr a_i}\,;{\gr z})$.
   Let $\theta({\mr a_1},\dots,{\mr a_n}\,;\U^{\gr z})$ be such a Boolean combination.
@@ -888,12 +889,18 @@ It is not required in the following but it has a simple intuitive proof.
   Let $A$ and ${\mr a}\in\U^{\mr x}$ be arbitrary.
   Then the following are equivalent
   \begin{itemize}
-    \item[1.] $\phi({\mr a}\,;\U^{\gr z})$ is persistent over $A$
-    \item[2.] $\phi({\mr a}\,;\U^{\gr z})$ is finitely satisfied in every $M\supseteq A$.
+    \item[1.] $\phi({\mr a}\,;{\gr z})$ is persistent in $\U^{\gr z}$ under the action of $\Autf(\U/A)$
+    \item[2.] $\phi({\mr a}\,;{\gr z})$ is satisfied in every $M\supseteq A$.
   \end{itemize}
 \end{corollary}
 \begin{proof}
-  If $\phi({\mr a}\,;{\gr z})$ is persistent over $A$ then the formula $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr z})$ in the proof of Theorem~\ref{thm_stability_definable_rovescio} is consistent. By elementarity $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr z})$ is is satisfiable in every model $M\supseteq A$, hence so is $\phi({\mr a}\,;\U^{\gr z})$.
+  \ssf1$\IMP$\ssf2.
+  If $\phi({\mr a}\,;{\gr z})$ is Lascar persistent over $A$, then the formula $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr z})$ in the proof of Theorem~\ref{thm_stability_definable_rovescio} is consistent.
+  By elementarity $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr z})$ is satisfiable in every model $M\supseteq A$, hence so is $\phi({\mr a}\,;{\gr z})$.
+  
+  \ssf2$\IMP$\ssf1.
+  From \ssf2 it follows that $\phi({\mr a}\,;{\gr z})$ is contained in a global type $p({\gr z})$ Lascar invariant over $A$.
+  Then $p({\gr z})$, and in particular $\phi({\mr a}\,;{\gr z})$, is Lascar persistent over $A$.
 \end{proof}
 
 \begin{corollary}\label{corol_stable_generic}

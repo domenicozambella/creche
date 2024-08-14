@@ -134,7 +134,7 @@ Therefore $p({\mr x})\subseteq L_\phi(\U)$ is invariant if
 Note that when $G$ acts by automorphisms $\phi(\U^{\mr x}\,;\U^{\gr z})$ is invariant for all $\phi({\mr x}\,;{\gr z})\in L$.
 % Therefore when $G$ acts by automorphisms the results below that are stated for $\phi$-types and $\phi$-formulas but holds also for types and formulas.
 
-Let $\mrX\subseteq\U^{\mr x}$ be a $G$-invariant set.
+Let $\mrX\subseteq\U^{\mr x}$ be a nonempty $G$-invariant set.
 At the first reading one may assume that $\mrX=\U^{\mr x}$.
 % as, again, more generality is required only in Section~\ref{}.
 
@@ -318,6 +318,11 @@ Again, the same properties may be attributed to formulas and types.
 \begin{proof}
   Let $\theta({\mr x})\in L_\phi(\U)$ be such that $\mrC\subseteq\theta(\mrU)$.
   As $q({\mr x})$ is finitely satisfiable in $\theta(\mrU)$, we cannot have that $\neg\theta({\mr x})$ is strongly generic.
+  Reasoning as for Fact~\ref{fact_fip} we prove that for every set $\mrD$ the following are equivalent
+  \begin{itemize}
+    \item[1.] $\mrD$ is not strongly $n$-generic in $\mrX$
+    \item[2.] $\neg\mrD$ is weakly $n$-persistent in $\mrX$.
+  \end{itemize}
   Therefore $\theta({\mr x})$ weakly persistent.
 \end{proof}
 
@@ -330,11 +335,11 @@ Again, the same properties may be attributed to formulas and types.
   Hint: try e.g.\@ with the cyclic order in Example~\ref{ex_cyclic_order}.
 \end{exercise}
 
-\begin{exercise}
-  Where in this section the assumption that $\mrX$ is $G$-invariant is used?
-\end{exercise}
+% \begin{exercise}
+%   Where in this section the assumption that $\mrX$ is $G$-invariant is used?
+% \end{exercise}
 
-\begin{exercise}
+\begin{exercise}\label{ex_gen_sat}
   Prove that every generic type is finitely satisfiable.
 \end{exercise}
 
