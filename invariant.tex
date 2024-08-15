@@ -28,10 +28,14 @@ Yet in other words, if
 % \ceq{\ssf{is2.}\hfill\phi({\mr a}\,;{\gr z})}{\iff}{\phi(g{\mr a}\,;{\gr z})}\hfill for every ${\mr a}\in\U^{\mr x}$ and every $g\in G$.
 
 The definition of invariant type is less straightforward.
+One may be tempted to require that all formula in the type define an invariant set~--~but this is to strong a requirement.
+Alternatively, one could require that the set defined by the type is invariant.
+This is closer in spirit to the definition below but, as stated, it is an empty requirement for types that are not realized in $\U$.
+
 We need to introduce some notation.
 Let $\phi({\mr x}\,;{\gr z})\in L$.
 A \emph{$\phi$-formula\/} is a formula the form $\theta({\mr x}\,;{\gr\bar b})$ for some $\theta({\mr x}\,;{\gr\bar z})$ that is a Boolean combination of the formulas $\phi({\mr x}\,;{\gr z_i})$, where ${\gr\bar z}={\gr z_1},\dots,{\gr z_n}$, and some ${\gr\bar b}\in\U^{\gr\bar z}$.
-A \emph{$\phi$-definable\/} set is a set  $\theta({\mr\U}\,;{\gr\bar b})$ definable by a $\phi$-formula.
+A \emph{$\phi$-definable\/} set is a set  $\theta(\U^{\mr x}\,;{\gr\bar b})$ definable by a $\phi$-formula.
 We write $L_\phi(\Aa)$ for the set of $\phi$-formulas with parameters in $\Aa$.
 
 We are mainly concerned in $\Delta$-types where $\Delta$ is either $L(\Aa)$ or $L_\phi(\Aa)$.
@@ -71,49 +75,6 @@ We say that $p({\mr x})\subseteq L(\U)$ is \emph{invariant\/} under the action o
 
 Hence $p({\mr x})$ is invariant exactly when all the sets $\gr\D_{p,\phi}$ are.
 
-%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%
-\section{Invariance over a set of parameters}
-
-We now consider the case $G=\Aut(\U/A)$.
-We say \emph{invariant over $A$\/} for invariant under the action of $\Aut(\U/A)$ and we write \emph{$A$-invariant\/} for $\Aut(\U/A)$-invariant.
-
-Note that by homogeneity \ssf{is1} con be restated as
-
-\ceq{\ssf{is3.}\hfill{\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\in\grD\iff{\gr b}\in\grD}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$.
-
-This gives a bound on the number of sets invariant over $A$.
-
-\begin{proposition}\label{prop_numberIS}
-Let $\lambda=|L_{\gr z}(A)|$.
-There are at most $2^{2^{\lambda}}$ sets $\grD\subseteq\U^{\gr z}$ that are invariant over $A$.
-\end{proposition}
-\begin{proof}
-By \ssf{is3}, sets that are invariant over $A$ are unions of equivalence classes of the relation $\equiv_A$, that is, unions of sets of the form $p(\U^{\gr z})$ where $p({\gr z})\in S\/(A)$.
-Then the number of $A$-invariant sets is at most $2^{|S_{\gr z}(A)|}$.
-Clearly $|S_{\gr z}(A)|\le 2^\lambda$.
-\end{proof} 
-
-The invariance of types can be rephrased in a similar way.
-That is, $p({\mr x})$ is invariant over $A$ if 
-
-\ceq{\ssf{it2.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\Big(\phi({\mr x}\,;{\gr a})\in p\,\IFF\,\phi({\mr x}\,;{\gr b})\in p\Big)}\hfill for all $\phi({\mr x}\,;{\gr z})\in L$ and ${\gr a},{\gr b}\in\U^{\gr z}$.
-
-% In words we say that $p({\mr x})\subseteq L(\U)$ \emph{does not split\/} over $A$.
-
-If $p({\mr x})$ is a global $\phi$-types types \ssf{it2} is equivalent to
-
-\ceq{\ssf{it2$^\prime$.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{p({\mr x})\,\proves\,\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$.
-
-Finally, we note the following is useful characterization of \ssf{it2$'$}
-
-\ceq{\ssf{it3.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{\phi({\mr c}\,;{\gr a})\iff\phi({\mr c}\,;{\gr b})}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$.
-
-This, when $p({\mr x})\in S(\U)$, can be rephrased as
-
-\ceq{\ssf{it3$'$.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\equiv_{A,\,{\mr c}}{\gr b}}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$.
 
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
@@ -121,25 +82,30 @@ This, when $p({\mr x})\in S(\U)$, can be rephrased as
 %%%%%%%%%%%%%%%%%%%%%%
 \section{Invariant types from the dual perspective}\label{dual_perspective}
 
-In the previous sections the invariance of $p({\mr x})$ has been definend using the sets ${\gr\D_{p,\phi}}$.
+In the previous section the invariance of $p({\mr x})$ has been definend using the sets ${\gr\D_{p,\phi}}$.
 Here we examine invariance using the formulas in $p({\mr x})$.
+In this section we  work under stronger assumptions on the action of $G$.
 
 Let $G$ be a group that acts on $\U^{\mr x}$ and $\U^{\gr z}$.
 Let $\phi({\mr x}\,;{\gr z})\in L$ be such that $\phi(\U^{\mr x}\,;\U^{\gr z})$ is invariant under the action of $G$.
-In particular, $g[\theta({\mr\U}\,;{\gr\bar b})]=\theta({\mr\U}\,;g{\gr\bar b})$ for every $g\in G$.
+It follows that the any tranlation of a $\phi$-definable set is $\phi$-definable.
+In particular, if $\theta({\mr x}\,;{\gr\bar z})$ is a $\phi$-formula and $g\in G$, then 
+
+\ceq{\hfill g[\theta(\U^{\mr x}\,;{\gr\bar b})]}{=}{\theta(\U^{\mr x}\,;g{\gr\bar b}).}
+
 Therefore $p({\mr x})\subseteq L_\phi(\U)$ is invariant if
 
 \ceq{\hfill p({\mr x})\proves{\mr x}\in\mrD}{\IFF}{p({\mr x})\proves{\mr x}\in g\mrD}\hfill for every $\phi$-definable $\mrD\subseteq\U^{\mr x}$ and $g\in G$.
 
 Note that when $G$ acts by automorphisms $\phi(\U^{\mr x}\,;\U^{\gr z})$ is invariant for all $\phi({\mr x}\,;{\gr z})\in L$.
-% Therefore when $G$ acts by automorphisms the results below that are stated for $\phi$-types and $\phi$-formulas but holds also for types and formulas.
+Therefore when $G$ acts by automorphisms the results in this section also also for types and formulas (i.e.\@ working with $L$ in place of $L_\phi$).
 
 Let $\mrX\subseteq\U^{\mr x}$ be a nonempty $G$-invariant set.
 At the first reading one may assume that $\mrX=\U^{\mr x}$.
 % as, again, more generality is required only in Section~\ref{}.
 
-A set $\mrD\subseteq\U^{\mr x}$ is \emph{$G$-generic\/} in $\mrX$ if finitely many $G$-translations of $\mrD$ cover $\mrX$; we say \emph{$n$-$G$-generic\/} if $\le n$ translates suffices.
-Dually, we say that $\mrD$ is \emph{$G$-persistent\/} in $\mrX$ if the intersection of any finitely many $G$-translations of $\mrD$ has a solution in $\mrX$; we say \emph{$n$-$G$-persistent\/} when the request is limited to $\le n$ translates.
+A set $\mrD\subseteq\U^{\mr x}$ is \emph{generic\/} in $\mrX$ under the action of $G$, \emph{$G$-generic\/} for short, if finitely many $G$-translates of $\mrD$ cover $\mrX$; we say \emph{$n$-$G$-generic\/} if $\le n$ translates suffices.
+Dually, we say that $\mrD$ is \emph{persistent\/} in $\mrX$ under the action of $G$, \emph{$G$-persistent\/} for short, if the intersection of any finitely many $G$-translates of $\mrD$ has a solution in $\mrX$; we say \emph{$n$-$G$-persistent\/} when the request is limited to $\le n$ translates.
 We may drop reference to $G$ and $\mrX$ when these are clear from the context.
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
@@ -148,7 +114,7 @@ In~\cite{CK} the authors write \textit{quasi-non-dividing\/} for \textit{persist
 Their terminology has good motivations, but it would be a mouthful in our context.
 
 The same properties may be attributed to formulas (as these are identified with the set they define).
-When the properties above are attributed to a type $p({\mr x})$, it is understood that they holds for every $\phi({\mr x})$ that is a conjunction of formulas in $p({\mr x})$.
+When the properties above are attributed to a type $p({\mr x})$, it is understood that they holds for every conjunction of formulas in $p({\mr x})$.
 See Exercise~\ref{ex_persistent_types} for an alternative characterization when $p({\mr x})$ is small.
 
 \begin{fact}\label{fact_fip}
@@ -255,8 +221,8 @@ In~\cite{CK} this is called \textit{quasi-non-forking}.
 \end{proof}
 
 Unfortunatelly, genericy is not preserved under intersection.
-For that, we need to press the concept to the next level of complexity.
-This is required in Section~\ref{newelski}.
+To obtain closure under intersection, we need to press the concept to the next level of complexity.
+This is only required in Section~\ref{newelski}.
 
 A set $\mrD\subseteq\U^{\mr x}$ is \emph{strongly generic\/} if the intersection of any finitely many translations of $\mrD$ is generic.
 Dually, we say that $\mrD$ is \emph{weakly persistent\/} if the union of some finitely many translations of $\mrD$ is peristent.
@@ -351,6 +317,52 @@ Again, the same properties may be attributed to formulas and types.
     \item[2.] $p(\U^x)$ is persistent.
   \end{itemize}
 \end{exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+\section{Invariance over a set of parameters}
+
+We now consider the case $G=\Aut(\U/A)$.
+We say \emph{invariant over $A$\/} for invariant under the action of $\Aut(\U/A)$.
+We may abbreviate this by writing \emph{$A$-invariant.}
+
+Note that by homogeneity \ssf{is1} in Section~\ref{invariant_sets} can  be restated as
+
+\ceq{\ssf{is2.}\hfill{\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\in\grD\iff{\gr b}\in\grD}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$.
+
+This allows us to bound the number of sets invariant over $A$.
+
+\begin{proposition}\label{prop_numberIS}
+Let $\lambda=|L_{\gr z}(A)|$.
+There are at most $2^{2^{\lambda}}$ sets $\grD\subseteq\U^{\gr z}$ that are invariant over $A$.
+\end{proposition}
+\begin{proof}
+By \ssf{is3}, sets that are invariant over $A$ are unions of equivalence classes of the relation $\equiv_A$, that is, unions of sets of the form $p(\U^{\gr z})$ where $p({\gr z})\in S\/(A)$.
+Then the number of $A$-invariant sets is at most $2^{|S_{\gr z}(A)|}$.
+Clearly $|S_{\gr z}(A)|\le 2^\lambda$.
+\end{proof} 
+
+The invariance of types can be rephrased in a similar way.
+That is, $p({\mr x})$ is invariant over $A$ if 
+
+\ceq{\ssf{it2.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\Big(\phi({\mr x}\,;{\gr a})\in p\,\IFF\,\phi({\mr x}\,;{\gr b})\in p\Big)}\hfill for all $\phi({\mr x}\,;{\gr z})\in L$ and ${\gr a},{\gr b}\in\U^{\gr z}$.
+
+% In words we say that $p({\mr x})\subseteq L(\U)$ \emph{does not split\/} over $A$.
+
+If $p({\mr x})$ is a global $\phi$-types types \ssf{it2} is equivalent to
+
+\ceq{\ssf{it2$^\prime$.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{p({\mr x})\,\proves\,\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$.
+
+Finally, we note the following is useful characterization of \ssf{it2$'$}
+
+\ceq{\ssf{it3.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{\phi({\mr c}\,;{\gr a})\iff\phi({\mr c}\,;{\gr b})}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$.
+
+When $p({\mr x})\in S(\U)$, this can be rephrased as
+
+\ceq{\ssf{it3$'$.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\equiv_{A,\,{\mr c}}{\gr b}}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
