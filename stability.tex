@@ -596,7 +596,7 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 \begin{proof}
   Negate the theorem. 
   Then there are two models containing $A$, the first omitting $\phi({\mr x}\,;{\gr b})$, the second omitting $\psi({\mr x}\,;{\gr b})$.
-  It is easy to see that we can expand these models to two substructures $\V_0$ and $\V_1$ that are $A$-isomorphic to $\U$ and such that $\V_0=\neg\phi(\V_0^{\mr x}\,;{\gr b})$ and $\V_1=\neg\psi(\V_1^{\mr x}\,;{\gr b})$.
+  It is easy to see that we can expand these models to two substructures $\V_0$ and $\V_1$ that are $A$-isomorphic to $\U$ and such that $\V_0=\neg\phi(\V_0^{\mr x};{\gr b})$ and $\V_1=\neg\psi(\V_1^{\mr x};{\gr b})$.
 
   Let $f_i:\U\to\V_i$ be the $A$-isomorphisms mentioned above. 
   Let $\V_\0=\U$ and ${\gr b_\0}={\gr b}$.
@@ -606,7 +606,7 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 
   Then from the inclusion above we obtain
 
-  \#\hfil$\V_{s\frown0}^{{\mr x}}\subseteq\neg\phi(\V_{s\frown0}^{\mr x}\,;{\gr b_s})$ \ \ and \ \  $\V_{s\frown1}^{\mr x}\subseteq\neg\psi(\V_{s\frown1}^{\mr x}\,;{\gr b_s})$.
+  \#\hfil$\V_{s\frown0}^{{\mr x}}\subseteq\neg\phi(\V_{s\frown0}^{\mr x};{\gr b_s})$ \ \ and \ \  $\V_{s\frown1}^{\mr x}\subseteq\neg\psi(\V_{s\frown1}^{\mr x};{\gr b_s})$.
 
   We prove that the branches of the tree $\<\phi({\mr x}\,;{\gr b_s})\ :\  s\in2^{<\omega}\>$ are (finitely) consistent. 
   By Theorem~\ref{thm_count_types}, this contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
@@ -618,9 +618,9 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
   Let ${\mr a}\in\theta(\V_s^{\mr x})$ be arbitrary. We claim that ${\mr a}$ witnesses the concistency of $\{\phi^{s_i}({\mr x}\,;{\gr b_{s\restriction i}})\ :\ i<n\}$.
   As $\V_s\preceq\V_{s\restriction i}$, we have that ${\mr a}\in\theta(\V_{s\restriction i}^{\mr x})$.
   We prove that $\phi^{s_i}({\mr a}\,;{\gr b_{s\restriction i}})$.
-  If $s_i=0$ then from \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi^0(\V_{s\restriction(i+1)}^{\mr x}\,;{\gr b_{s\restriction i}})$ and $\phi^0({\mr a}\,;{\gr b_{s\restriction i}})$ follows by elementarity.
-  If $s_i=1$, from the second inclusion in \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\neg\psi(\V_{s\restriction(i+1)}^{\mr x}\,;{\gr b_{s\restriction i}})$.
-  Therefore, from $\theta({\mr a})$ and \#\#, we obtain that $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi(\V_{s\restriction(i+1)}^{\mr x}\,;{\gr b_{s\restriction i}})$ and $\phi^1({\mr a}\,;{\gr b_{s\restriction i}})$ follows.
+  If $s_i=0$ then from \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi^0(\V_{s\restriction(i+1)}^{\mr x};{\gr b_{s\restriction i}})$ and $\phi^0({\mr a}\,;{\gr b_{s\restriction i}})$ follows by elementarity.
+  If $s_i=1$, from the second inclusion in \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\neg\psi(\V_{s\restriction(i+1)}^{\mr x};{\gr b_{s\restriction i}})$.
+  Therefore, from $\theta({\mr a})$ and \#\#, we obtain that $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi(\V_{s\restriction(i+1)}^{\mr x};{\gr b_{s\restriction i}})$ and $\phi^1({\mr a}\,;{\gr b_{s\restriction i}})$ follows.
 
   We are left with proving that the provisional assumption is redundant.
   By Exercise~\ref{ex_almost_satisfied} there is a formula $\theta({\mr\bar x})\in L(A)$ such that
@@ -717,7 +717,7 @@ We deduce a version of Harrington's mysterious Lemma cfr.~\cite{TZ}*{Lemma 8.3.4
 \begin{corollary}\label{corol_harrington0}
   Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
   Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$.
-  Let $\theta({\mr x}),\psi({\gr z})\in L(M)$ be such that $\theta(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$ and $\psi(M^{\mr x})=\phi(M^{\mr x}\,;{\gr b})$.
+  Let $\theta({\mr x}),\psi({\gr z})\in L(M)$ be such that $\theta(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$ and $\psi(M^{\mr x})=\phi(M^{\mr x};{\gr b})$.
   Such formulas exist by stability.
   Then $\theta({\gr b})\iff\psi({\mr a})$.
 \end{corollary}
@@ -725,7 +725,7 @@ We deduce a version of Harrington's mysterious Lemma cfr.~\cite{TZ}*{Lemma 8.3.4
 \begin{proof}
   We can assume that ${\mr a}\cnonfork_M{\gr b}$.
   First, assume $\phi({\mr a}\,;{\gr b})$.
-  Then $\psi({\mr a})$ otherwise, by ${\mr a}\cnonfork_M{\gr b}$, we would contradict $\psi(M^{\mr x})=\phi(M^{\mr x}\,;{\gr b})$.
+  Then $\psi({\mr a})$ otherwise, by ${\mr a}\cnonfork_M{\gr b}$, we would contradict $\psi(M^{\mr x})=\phi(M^{\mr x};{\gr b})$.
   We claim that $\theta({\gr b})$.
   Suppose not.
   Then $\phi({\mr a}\,;{\gr b})\wedge\neg\theta({\gr b})$.
@@ -756,7 +756,7 @@ Now we show that under the assumption of stability Lascar invariance reduces to 
   Let $\psi({\gr z})\in L(\acl^\eq\!A)$ be a formula defining ${\gr\D_{p,\phi}}$.
   Pick any ${\mr a}\models p({\mr x}){\restriction} M$ such that ${\gr b}\cnonfork_M{\mr a}$.
   As $\phi({\mr a}\,;M^{\gr z})=\psi(M^{\gr z})$ we have that $\phi({\mr a}\,;{\gr b})=\psi({\gr b})$.
-  But $\psi({\gr b})$ holds because $\phi({\mr x}\,;{\gr b})\in p$, hence $\phi({\mr a}\,;{\gr b})$ and, from Theorem~\ref{thm_symmetry} we obtain $\phi(M^{\mr x}\,;{\gr b})\neq\0$.
+  But $\psi({\gr b})$ holds because $\phi({\mr x}\,;{\gr b})\in p$, hence $\phi({\mr a}\,;{\gr b})$ and, from Theorem~\ref{thm_symmetry} we obtain $\phi(M^{\mr x};{\gr b})\neq\0$.
   The same argument extends easily to the conjunction of formulas of the form $\phi({\mr x}\,;{\gr b})$ and negation thereof (use that the complement and the Cartesian product of sets in $\acl^\eq\!A$ is again $\acl^\eq\!A$).
  
   \ssf{3}$\IMP$\ssf{1} By Theorem~\ref{thm_def_stable_formula2} the sets ${\gr\D_{p,\phi}}$ are definable (over $\U$).
@@ -785,7 +785,7 @@ The following proposition says that in a stable theory with elimination of imagi
   Again this exists by stability.
   Let $M$ be any model containing $A$.
   Let ${\gr b'}\models p({\gr z}){\restriction}M$ and ${\mr a_i}\models q_i({\mr x}){\restriction}M$.
-  Then $\theta(M^{\mr x})=\phi(M^{\mr x}\,;{\gr b'})$ and $\psi_i(M^{\gr z})=\phi({\mr a_i}\,;M^{\gr z})$.
+  Then $\theta(M^{\mr x})=\phi(M^{\mr x};{\gr b'})$ and $\psi_i(M^{\gr z})=\phi({\mr a_i}\,;M^{\gr z})$.
   Corollary~\ref{corol_harrington0} yelds $\psi_i({\gr b'})\iff\theta({\mr a_i})$.
   As ${\mr a_1}\equiv_{\acl^\eq\!A}{\mr a_2}$, we obtain $\psi_1({\gr b'})\iff\psi_2({\gr b'})$.
   As ${\gr b}\equiv_{\acl^\eq\!A}{\gr b'}$, the claim follows and with it the theorem.

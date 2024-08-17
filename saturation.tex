@@ -312,14 +312,14 @@ The assumptions say that $p(x)\cup q(x)$ is inconsistent (i.e. not realized in $
 \end{itemize}
 \end{remark}
 
-\begin{remark}A definable set has the form $\phi({\mr\U}\,;{\gr b})$ for some formula $\phi({\mr x}\,;{\gr z})\in L$ and some ${\gr b}\in\U^{\gr z}$.
+\begin{remark}A definable set has the form $\phi(\U^{\mr x};{\gr b})$ for some formula $\phi({\mr x}\,;{\gr z})\in L$ and some ${\gr b}\in\U^{\gr z}$.
 If $f\in\Aut(\U)$ then 
 
-\ceq{\hfill f\big[\phi({\mr\U}\,;{\gr b})\big]}{=}{\big\{f{\mr a}\ :\ \phi({\mr a}\,;{\gr b}),\phantom{ff}\ {\mr a}\in\U^{|{\mr x}|}\big\}}
+\ceq{\hfill f\big[\phi(\U^{\mr x};{\gr b})\big]}{=}{\big\{f{\mr a}\ :\ \phi({\mr a}\,;{\gr b}),\phantom{ff}\ {\mr a}\in\U^{|{\mr x}|}\big\}}
 
 \ceq{ }{=}{\big\{f{\mr a}\ :\ \phi(f{\mr a}\,;f{\gr b}),\ {\mr a}\in\U^{|{\mr x}|}\big\}}
 
-\ceq{ }{=}{\phi({\mr\U}\,;f{\gr b}).}
+\ceq{ }{=}{\phi(\U^{\mr x};f{\gr b}).}
 
 Hence automorphisms act on definable sets in a very natural way. 
 Their action on type-definable sets is similar.
@@ -339,7 +339,7 @@ It may clarify the proof to consider first the particular case of definable sets
 For every $\phi({\mr x})\in L(\U)$ the following are equivalent
 \begin{itemize}
  \item[1.] $\phi({\mr x})$ is equivalent to some formula $\psi({\mr x})\in L(A)$
- \item[2.] $\phi({\mr\U})$ is invariant over $A$.
+ \item[2.] $\phi(\U^{\mr x})$ is invariant over $A$.
 \end{itemize}
 \end{proposition}
 
@@ -369,9 +369,9 @@ for some formula $\theta_i({\mr x})\in L(A)$.
 
 \begin{proof}[Second proof of Proposition~\ref{prop_inv_def}] 
    \ssf{2}$\IMP$\ssf{1} 
-   Let $\phi({\mr\U}\,;{\gr b})$, where $\phi({\mr x}\,;{\gr z})\in L$, be a set invariant over $A$.
+   Let $\phi(\U^{\mr x};{\gr b})$, where $\phi({\mr x}\,;{\gr z})\in L$, be a set invariant over $A$.
    Let $p({\gr z})=\tp({\gr b}/A)$.
-   As $f[\phi({\mr\U}\,;{\gr b})]=\phi({\mr\U}\,;f{\gr b})$ for every $f\in\Aut(\U/A)$, homogeneity and invariance yield
+   As $f[\phi(\U^{\mr x};{\gr b})]=\phi(\U^{\mr x};f{\gr b})$ for every $f\in\Aut(\U/A)$, homogeneity and invariance yield
    
    \ceq{\hfill p({\gr z})}{\imp}{\A {\mr x}\ \big[\phi({\mr x}\,;{\gr z})\iff\phi({\mr x}\,;{\gr b})\big].}
 
@@ -379,7 +379,7 @@ By compactness there is a formula $\theta({\gr z})\in p$ such that
 
 \ceq{\hfill \theta({\gr z})}{\imp}{\A {\mr x}\ \big[\phi({\mr x}\,;{\gr z})\iff\phi({\mr x}\,;{\gr b})\big].}
 
-Hence  $\phi({\mr\U}\,;{\gr b})$ is defined by the formula $\E {\gr z}\,\big[\theta({\gr z})\wedge\phi({\mr x}\,;{\gr z})\big]$, which is a formula in $L(A)$ as required.
+Hence  $\phi(\U^{\mr x};{\gr b})$ is defined by the formula $\E {\gr z}\,\big[\theta({\gr z})\wedge\phi({\mr x}\,;{\gr z})\big]$, which is a formula in $L(A)$ as required.
 \end{proof}
 
 
@@ -388,7 +388,7 @@ Let $p({\mr x})\subseteq L(B)$.
 Then the following are equivalent
 \begin{itemize}
  \item[1.] $p({\mr x})$ is equivalent to some type $q({\mr x})\subseteq L(A)$
- \item[2.] $p({\mr\U})$ is invariant over $A$.
+ \item[2.] $p(\U^{\mr x})$ is invariant over $A$.
 \end{itemize}
 \end{proposition}
 

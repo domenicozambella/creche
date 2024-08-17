@@ -464,7 +464,7 @@ The \emph{diameter\/} of a set $\mrC\subseteq\mrX$ is the supremum of $d({\mr a}
 We are interested in sufficient conditions for $\mrX$ to have finite diameter.
 The notions introduced in Section~\ref{dual_perspective} offer some hints.
 
-\begin{proposition}
+\begin{proposition}\label{prop_wpers_finite_diameter}
   If $\mrX$ has a weakly persistent subset of finite diameter, then $\mrX$ itself has finite diamenter.
 \end{proposition}
 
@@ -505,17 +505,17 @@ The notions introduced in Section~\ref{dual_perspective} offer some hints.
 \end{theorem}
 
 \begin{proof}
-  It suffices to prove that ${\mr\X_n}$ is weakly persistent.
+  By Proposition~\ref{prop_wpers_finite_diameter}, it suffices to prove that ${\mr\X_n}$ is weakly persistent.
   Define
 
   \ceq{\hfill q({\mr x})}{=}{\{\theta({\mr x})\in L(\U)\ :\ \theta({\mr x})\textrm{ strongly generic}\}.}
   
-  By Corollary~\ref{corol_q_w_pers}, it suffices to prove that that $q({\mr x})$ is finitely satisfied in $\mr\X_n$ for some $n$.
-  Suppose not. 
+  By Corollary~\ref{corol_q_w_pers}, with $L$ for $L_\phi$, it suffices to prove that for some $n$ the type $q({\mr x})$ is finitely satisfied in $\mr\X_n$.
+  Suppose not.
   Let $\psi_n({\mr x})\in q$ be a formula that is not satisfied in $\mr\X_n$.
   The type $\{\psi_n({\mr x}):n\in\omega\}$ is finitely satisfied in $\mrX$.
   Then it has a realization in $\mrX$. 
-  As tis realization belongs to some ${\mr\X_n}$ this contradicts the definition of $\psi_n({\mr x})$. 
+  As this realization belongs to some ${\mr\X_n}$ this contradicts the definition of $\psi_n({\mr x})$. 
 \end{proof}
 
 % \ceq{\hfill p_n({\mr\X},{\mr\X})}{=}{\{\<{\mr a},{\mr b}\>\in{\mr\X^2}\ :\ {\mr a}\in G_n{\mr b}\}}
@@ -658,10 +658,30 @@ Prove that the clopen sets in the logic $A$-topology are exactly the sets that a
 \section{Notes and references}
 
 The original proof of Newelski theorem is rather long and complex.
-A simplified proof (due essetially to Newelski) appears in Rodrigo Pel\'aez's thesis~\cite{Pelaez}*{Section 3.3}.
+A simplified proof (also due, reportedly, to Newelski) appears in Rodrigo Pel\'aez's thesis~\cite{Pelaez}*{Section 3.3} and~\cite{Casanovas}*{Chapter 9}.
 The proof here is a streamlined version of the latter taken from~\cite{Z16}.
 
 \begin{biblist}[]\normalsize
+  \bib{Casanovas}{book}{
+    author={Casanovas, Enrique},
+    title={Simple theories and hyperimaginaries},
+    series={Lecture Notes in Logic},
+    volume={39},
+    publisher={Association for Symbolic Logic, Chicago, IL; Cambridge
+    University Press, Cambridge},
+    date={2011},
+    pages={xiv+169},
+    % isbn={978-0-521-11955-9},
+    % review={\MR{2814891}},
+    % doi={10.1017/CBO9781139003728},
+ }\smallskip
+\bib{Pelaez}{book}{
+  author={Pel\'aez, Rodrigo},
+  title={\href{http://www.ub.edu/modeltheory/documentos/ThesisRPP.pdf}{About the Lascar group}},
+  series={PhD Thesis},
+  publisher={Universitat de Barcelona, Departament de L\'ogica, Hist\'oria i Filosofia de la Ci\'encia},
+  date={2008},
+}\smallskip
   \bib{Simon}{book}{
     author={Simon, Pierre},
     title={\href{http://www.normalesup.org/~simon/NIP_guide.pdf}{A guide to NIP theories}},

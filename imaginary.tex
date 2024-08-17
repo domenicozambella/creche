@@ -75,7 +75,7 @@ the other sorts are called \emph{second-order.}
 
 Let \emph{$\U^{\eq}$\/} be the many-sorted structure that has $\U$ as domain of the home sort.
 The domain for the sort $\sigma({\mr x}\,;{\gr z})$ contains 
-the definable sets ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ as ${\gr b}$ ranges over $\U^{\gr z}$.
+the definable sets ${\vl\Aa}=\sigma(\U^{\mr x};{\gr b})$ as ${\gr b}$ ranges over $\U^{\gr z}$.
 
 The language of $\U^\eq$ is denoted by $L^\eq$.
 It contains all the relations and functions of the first order language $L$ with the same interpretation as in the one-sorted case.  
@@ -102,7 +102,7 @@ Then for every formula $\phi({\mr x}\,;{\vl\bar \X})\in L^\eq$ there is a formul
 
 \ceq{\hfill \phi({\mr x}\,;{\vl\bar\Aa})}{\iff}{\phi'({\mr x}\,;{\gr\bar b})}
 
-for every ${\vl\bar\Aa}={\vl\Aa_1},\dots,{\vl\Aa_n}$ and ${\gr\bar b}={\gr b_1},\dots,{\gr b_n}$ such that ${\vl\Aa_i}=\sigma({\mr\U}\,;{\gr b_i})$.
+for every ${\vl\bar\Aa}={\vl\Aa_1},\dots,{\vl\Aa_n}$ and ${\gr\bar b}={\gr b_1},\dots,{\gr b_n}$ such that ${\vl\Aa_i}=\sigma(\U^{\mr x};{\gr b_i})$.
 
 % For simplicity we are assuming that the tuples ${\gr z_i}$ do not have variables in common.
 \end{proposition}
@@ -137,11 +137,11 @@ Then for ${\vl\Aa}$ is definable in $L(B)$ if and only if $B\cap {\vl\Aa}\neq\0$
 But no element of ${\vl\Aa}$ is definable in $L(A)$.
 \end{remark}
 
-If $\V\preceq\U$ we write \emph{$\V^{\eq}$\/} for the substructure of $\U^\eq$ that has $\V$ as domain of the home sort and  the set of definable sets of the form $\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in \V^{\gr z}$ as domain of the sort $\sigma({\mr x}\,;{\gr z})$.
+If $\V\preceq\U$ we write \emph{$\V^{\eq}$\/} for the substructure of $\U^\eq$ that has $\V$ as domain of the home sort and  the set of definable sets of the form $\sigma(\U^{\mr x};{\gr b})$ for some ${\gr b}\in \V^{\gr z}$ as domain of the sort $\sigma({\mr x}\,;{\gr z})$.
 The following proposition claims that the elementary substructures of $\U^\eq$ are exactly those of the form $\V^\eq$ for some $\V\preceq\U$.
 
 \begin{proposition}
-The following are equivalent for every structure $\V^\dag$ of signature $L^\eq$
+The following are equivalent for every structure $\V^\dag$ of signature $L^\eq$\nobreak
 \begin{itemize}
 \item[1.] $\V^\dag\preceq\U^\eq$
 \item[2.] $\V^\dag=\V^\eq$ for some $\V\preceq\U$.
@@ -152,13 +152,13 @@ Implication \ssf{2}$\IMP$\ssf{1} is a direct consequence of Proposition~\ref{pro
 We prove \ssf{1}$\IMP$\ssf{2}.
 Let $\V$ be the domain of the home sort of $\V^\dag$.
 It is clear that $\V\preceq\U$.
-Let ${\vl\Aa}\in\V^\eq$ have sort $\sigma({\mr x}\,;{\gr z})$, say ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in\V^{\gr z}$.
+Let ${\vl\Aa}\in\V^\eq$ have sort $\sigma({\mr x}\,;{\gr z})$, say ${\vl\Aa}=\sigma(\U^{\mr x};{\gr b})$ for some ${\gr b}\in\V^{\gr z}$.
 As $\E^{=1}{\vl\X}\, \A{\mr x}\,\big[{\mr x}\in{\vl\X}\iff\sigma({\mr x}\,;{\gr b})\big]$ holds in $\U^\eq$, by elementarity it holds in $\V^\dag$ and therefore ${\vl\Aa}\in\V^\dag$.
 This proves $\V^\eq\subseteq\V^\dag$.
 A similar argument proves the converse inclusion.
 Given ${\vl\Aa}\in\V^\dag$ of sort $\sigma({\mr x}\,;{\gr z})$, the formula $\A{\mr x}\,\big[{\mr x}\in{\vl\Aa}\iff\sigma({\mr x}\,;{\gr b})\big]$ holds in $\V^\dag$ for some ${\gr b}$ in the home sort.
 %
-By elementarity, ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in\V$.
+By elementarity, ${\vl\Aa}=\sigma(\U^{\mr x};{\gr b})$ for some ${\gr b}\in\V$.
 \end{proof}
 
 \begin{proposition}\label{prop_Ueq_saturated}
@@ -172,13 +172,13 @@ This already proves the proposition when ${\vl\X}$ is the empty tuple.
 Otherwise, let $q'({\mr u}\,;{\gr z})$ be obtained by replacing every formula $\phi({\mr u}\,;{\vl\X})$ in $q({\mr u}\,;{\vl\X})$ with the formula $\phi'({\mr u}\,;{\gr z})$ given in Proposition~\ref{prop_eqmild}.
 Then $q'({\mr u}\,;{\gr z})$ is finitely consistent in $\U$.
 Assume for clarity of notation that ${\vl\X}$ is a single variable of sort $\sigma({\mr x}\,;{\gr z})$.
-If ${\mr c}\,;{\gr b}\models q'({\mr u}\,;{\gr z})$, then  ${\mr c}\,;\sigma({\mr\U}\,;{\gr b})\models q({\mr u}\,;{\vl\X})$.
+If ${\mr c}\,;{\gr b}\models q'({\mr u}\,;{\gr z})$, then  ${\mr c}\,;\sigma(\U^{\mr x};{\gr b})\models q({\mr u}\,;{\vl\X})$.
 \end{proof}
 
 
 Automorphisms of a many-sorted structure are defined in the obvious way: sorts are preserved and so are functions and relations.
 Every automorphism $f:\U\imp\U$ extends to an automorphism $f:\U^\eq\imp\U^\eq$ as follows.
-If ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ we define $f{\vl\Aa}=\sigma({\mr\U}\,;f{\gr b})=f\big[{\vl\Aa}\big]$, which clearly preserves the sort and the relation $\in$.
+If ${\vl\Aa}=\sigma(\U^{\mr x};{\gr b})$ we define $f{\vl\Aa}=\sigma(\U^{\mr x};f{\gr b})=f\big[{\vl\Aa}\big]$, which clearly preserves the sort and the relation $\in$.
 Clearly, this extension is unique.
 
 The homogeneity of $\U^\eq$ follows by back-and-forth as in the one-sorted case.
@@ -220,7 +220,7 @@ Let $A\subseteq\U^\eq$ and let ${\vl\Aa}\in\U^\eq$ have sort $\sigma({\mr x}\,;{
 Then the following are equivalent
 \begin{itemize}
 \item[1.] ${\vl\Aa}\in\dcl^\eq(A)$
-\item[2.] ${\vl\Aa}=\psi({\mr\U})$ for some $\psi({\mr x})\in L(A)$.
+\item[2.] ${\vl\Aa}=\psi(\U^{\mr x})$ for some $\psi({\mr x})\in L(A)$.
 \end{itemize}
 \end{proposition}
 
@@ -254,13 +254,13 @@ Let $M$ be a model and let ${\vl\Aa}$ be an element of sort $\sigma({\mr x}\,;{\
 Then the following are equivalent
 \begin{itemize}
 \item[1.]  ${\vl\Aa}\in\dcl^\eq(M)$
-\item[2.]  ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ for some ${\gr b}\in M^{\gr z}$.
+\item[2.]  ${\vl\Aa}=\sigma(\U^{\mr x};{\gr b})$ for some ${\gr b}\in M^{\gr z}$.
 \end{itemize}
 In particular $M^\eq=\dcl^\eq(M)$.
 \end{proposition}
 
 \begin{proof}
-Assume \ssf{1} and let $\psi({\mr x})\in L(M)$ be such that ${\vl\Aa}=\psi({\mr\U})$.
+Assume \ssf{1} and let $\psi({\mr x})\in L(M)$ be such that ${\vl\Aa}=\psi(\U^{\mr x})$.
 Such a formula exists by Proposition~\ref{prop_def_def_set}.
 Then $\E{\gr z}\,\A{\mr x}\,\big[\psi({\mr x})\iff\sigma({\mr x}\,;{\gr z})\big]$ holds in $\U$.
 By elementarity it holds in $M$, therefore $\E{\gr z}$ has a witness in $M$.
@@ -351,12 +351,12 @@ Then the following are equivalent\nobreak
 \end{proposition}
 \begin{proof}
 \ssf{2}$\IMP$\ssf{1}\quad Assume $\neg$\ssf{1} and let $\epsilon({\mr x}\,;{\mr y})\in L(A)$ be a finite equivalence formula such that $\neg\epsilon({\mr a}\,;{\mr b})$.
-Let ${\vl\D}=\epsilon({\mr\U}\,;{\mr b})$, then  ${\mr b}\in{\vl\D}$ and ${\mr a}\notin{\vl\D}$.
+Let ${\vl\D}=\epsilon(\U^{\mr x};{\mr b})$, then  ${\mr b}\in{\vl\D}$ and ${\mr a}\notin{\vl\D}$.
 As $\epsilon({\mr x}\,;{\mr y})$ is an $A$-invariant finite equivalence formula, ${\vl\D}\in\acl^\eq(A)$, and $\neg$\ssf{2} follows.
 
 
 \ssf{1}$\IMP$\ssf{2}\quad Assume $\neg$\ssf{2} and let $\phi({\mr x})\in L\big(\acl^\eq(A)\big)$ be  such that $\phi({\mr a})\niff\phi({\mr b})$.
-Let ${\vl\D}=\phi({\mr\U})$, then ${\vl\D}\in\acl^\eq(A)$.
+Let ${\vl\D}=\phi(\U^{\mr x})$, then ${\vl\D}\in\acl^\eq(A)$.
 Therefore, by Proposition~\ref{thm_set_alg=feq}, the set ${\vl\D}$ is union of equivalence classes of some finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$.
 Then $\neg\epsilon({\mr a}\,;{\mr b})$ and $\neg$\ssf{1} follows.
 \end{proof}
@@ -366,8 +366,8 @@ By the proposition above $\S({\gr a}/A)=\big\{{\gr b}\,:\,{\gr b}\,\equivSh_A {\
 
 
 \begin{exercise}
-Let $p({\mr x})\subseteq L(A)$ and let $\phi({\mr x}\,;{\mr y})\in L(A)$ be a formula that defines, when restricted to $p({\mr\U})$, an equivalence relation with finitely many classes.
-Prove that there is a finite equivalence relation definable over $A$ that coincides with $\phi({\mr x}\,;{\mr y})$ on $p({\mr\U})$.
+Let $p({\mr x})\subseteq L(A)$ and let $\phi({\mr x}\,;{\mr y})\in L(A)$ be a formula that defines, when restricted to $p(\U^{\mr x})$, an equivalence relation with finitely many classes.
+Prove that there is a finite equivalence relation definable over $A$ that coincides with $\phi({\mr x}\,;{\mr y})$ on $p(\U^{\mr x})$.
 \end{exercise}
 
 \begin{exercise}\label{ex_feqthm_senza_eq}
@@ -377,7 +377,7 @@ Without using the $\eq$-expansion, prove that ${\vl\Aa}$ is union of classes of 
 
 \begin{exercise}
 Let $T$ be strongly minimal and let $\phi({\mr x}\,;{\gr z})\in L(A)$ with $|{\mr x}|=1$.
-For arbitrary ${\gr b}\in\U^{\gr z}$, prove that if the orbit of $\phi({\mr\U}\,; {\gr b})$ over $A$ is finite, then $\phi({\mr\U}\,; {\gr b})$ is definable over $\acl A$.
+For arbitrary ${\gr b}\in\U^{\gr z}$, prove that if the orbit of $\phi(\U^{\mr x}; {\gr b})$ over $A$ is finite, then $\phi(\U^{\mr x}; {\gr b})$ is definable over $\acl A$.
 
 Hint: you can use Theorem~\ref{thm_set_alg=feq}.
 \end{exercise}
@@ -495,7 +495,7 @@ Implication \ssf{3}$\IMP$\ssf{1} is identical to the homologous implication in T
 
 \begin{exercise}
   Let $T$ have elimination of imaginaries and $\phi({\mr x}\,;{\gr z})\in L(A)$.
-  For arbitrary ${\gr c}\in\U^{\gr z}$, prove that if the orbit of $\phi({\mr\U}\,; {\gr c})$ over $A$ is finite, then $\phi({\mr\U}\,; {\gr c})$ is definable over $\acl A$.
+  For arbitrary ${\gr c}\in\U^{\gr z}$, prove that if the orbit of $\phi(\U^{\mr x}; {\gr c})$ over $A$ is finite, then $\phi(\U^{\mr x}; {\gr c})$ is definable over $\acl A$.
   \end{exercise}
   
   
@@ -661,7 +661,7 @@ In fact, in $\U^\eq$ every definable subset of $\U^{\gr z}$ is the canonical par
 This allows us to deal with theories without elimination of imaginaries in the most straightforward way.
 
 The expansion to $\U^\eq$ that was originally introduced by Shelah (and still used everywhere else) is slightly different from the one introduced here.
-For a given set ${\vl\Aa}=\sigma({\mr\U}\,;{\gr b})$ Shelah considers the equivalence relation defined by the formula
+For a given set ${\vl\Aa}=\sigma(\U^{\mr x};{\gr b})$ Shelah considers the equivalence relation defined by the formula
 
 \ceq{\hfill \epsilon({\gr z}\,;{\gr z'})}{=}{\A{\mr x}\,\bigg[\sigma({\mr x}\,;{\gr z})\medrel{\iff}\sigma({\mr x}\,;{\gr z'})\bigg].}
 

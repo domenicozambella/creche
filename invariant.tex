@@ -14,35 +14,38 @@ We use the same notation and make the same implicit assumptions as in Section~\r
 \section{Invariance under a group action}\label{invariant_sets}
 
 Let $G$ be a group that acts on $\U^{\gr z}$.
-In this chapter we only consider $G=\Aut(\U/A)$, but for later applcation we introduce a more general notation.
+At first we wil only consider $G=\Aut(\U/A)$, but for later application we introduce a more general context.
 Let $\grD\subseteq\U^{\gr z}$.
-We say that $\grD$ is an \emph{invariant\/} under the action of $G$, or \emph{$G$-invariant,} if it is fixed setwise by $G$.
+We say that $\grD$ is \emph{invariant\/} under the action of $G$, or \emph{$G$-invariant,} if it is fixed setwise by $G$.
 That is, $g\grD=\grD$ for every $g\in G$.
 Yet in other words, if
 
 \ceq{\ssf{is1.}\hfill {\gr a}\in\grD}{\iff}{g{\gr a}\in\grD}\hfill for every ${\gr a}\in\U^{\gr z}$ and every $g\in G$.
 
-% Suppose that $\grD=\phi({\mr a}\,;\U^{\gr z})$ for some $\phi({\mr x}\,;{\gr z})\in L$ and that $\phi({\mr\U}\,;\U^{\gr z})$ is invariant (this is always the case when $G$ acts by automorphisms).
+A formula is invariant if the set it defines is such.
+
+% Suppose that $\grD=\phi({\mr a}\,;\U^{\gr z})$ for some $\phi({\mr x}\,;{\gr z})\in L$ and that $\phi(\U^{\mr x};\U^{\gr z})$ is invariant (this is always the case when $G$ acts by automorphisms).
 % Then \ssf{is1} is aquivalent to
 
 % \ceq{\ssf{is2.}\hfill\phi({\mr a}\,;{\gr z})}{\iff}{\phi(g{\mr a}\,;{\gr z})}\hfill for every ${\mr a}\in\U^{\mr x}$ and every $g\in G$.
 
 The definition of invariant type is less straightforward.
-One may be tempted to require that all formula in the type define an invariant set~--~but this is to strong a requirement.
+One is tempted to require that the formulas in the type are invariant~--~but this is too strong a demand.
 Alternatively, one could require that the set defined by the type is invariant.
-This is closer in spirit to the definition below but, as stated, it is an empty requirement for types that are not realized in $\U$.
+This is closer in spirit to the definition below but, as stated, it is meaninless for large types that are not realized in $\U$.
 
-We need to introduce some notation.
+We first introduce some notation.
 Let $\phi({\mr x}\,;{\gr z})\in L$.
 A \emph{$\phi$-formula\/} is a formula the form $\theta({\mr x}\,;{\gr\bar b})$ for some $\theta({\mr x}\,;{\gr\bar z})$ that is a Boolean combination of the formulas $\phi({\mr x}\,;{\gr z_i})$, where ${\gr\bar z}={\gr z_1},\dots,{\gr z_n}$, and some ${\gr\bar b}\in\U^{\gr\bar z}$.
-A \emph{$\phi$-definable\/} set is a set  $\theta(\U^{\mr x}\,;{\gr\bar b})$ definable by a $\phi$-formula.
-We write $L_\phi(\Aa)$ for the set of $\phi$-formulas with parameters in $\Aa$.
+A \emph{$\phi$-definable\/} set is a set  $\theta(\U^{\mr x};{\gr\bar b})$ definable by a $\phi$-formula.
+We write \emph{$L_\phi(\Aa)$\/} for the set of $\phi$-formulas with parameters in $\Aa$.
 
 We are mainly concerned in $\Delta$-types where $\Delta$ is either $L(\Aa)$ or $L_\phi(\Aa)$.
 In the latter case $\Delta$-types are called \emph{$\phi$-types.}
-We denote by \emph{$S_\phi(\Aa)$\/} the set of maximal $\phi$-types with parameters in $\Aa$.
+We denote by \emph{$S_\phi(\Aa)$\/} the set of complete $\phi$-types with parameters in $\Aa$.
 Typically, $\Aa$ is either $\U$ or some small set $A\subseteq\U$.
 Types in \emph{$S_{\phi}(\U)$\/} are called \emph{global $\phi$-types.}
+Note that whenever convenient we can assume that complete $\phi$-types only contain formula of the form $\phi({\mr x}\,;{\gr b})$ and $\neg\phi({\mr x}\,;{\gr b})$.
 % They may be identified with subsets of $\U^{\gr z}$.
 % Namely, $p({\mr x})\in S_\phi(\Aa)$ is identified with
    
@@ -63,11 +66,11 @@ For every formula $\phi({\mr x}\,;{\gr z})\in L$ we define
 
 \ceq{\hfill\emph{$\gr\D_{p,\phi}$}}{=}{\Big\{{\gr a}\in\U^{\gr z}\ :\ \phi({\mr x}\,;{\gr a})\in p\Big\}.}
 
-We can read the notation in two ways: either the tuple ${\gr z}$ has length $\omega$ and is the same for all formulas, or it is finite and depends on $\phi$.
-This is possible because adding or erasing dummy variables to the tuple of ${\gr z}$ does not change ${\gr\D_{p,\phi}}$ in any relevant way; in particular, invariance is preserved.
+% We can read the notation in two ways: either the tuple ${\gr z}$ has length $\omega$ and is the same for all formulas, or it is finite and depends on $\phi$.
+% This is possible because adding or erasing dummy variables to the tuple of ${\gr z}$ does not change ${\gr\D_{p,\phi}}$ in any relevant way; in particular, invariance is preserved.
 
-A $\phi$-type $p({\mr x})$ can be identified with the set ${\gr\D_{p,\phi}}$.
-Therefore any type $p({\mr x})\subseteq L(\U)$ can be identified with the collection of the sets ${\gr\D_{p,\phi}}$, where $\phi({\mr x}\,;{\gr z})$ ranges over $L$.
+A global $\phi$-type $p({\mr x})\in S_\phi(\U)$ can be identified with the set ${\gr\D_{p,\phi}}$.
+Therefore a global type $p({\mr x})\in S(\U)$ can be identified with the collection of the sets ${\gr\D_{p,\phi}}$, where $\phi({\mr x}\,;{\gr z})$ ranges over $L$.
 
 We say that $p({\mr x})\subseteq L(\U)$ is \emph{invariant\/} under the action of $G$, or \emph{$G$-invariant,} if for every formula $\phi({\mr x}\,;{\gr z})\in L$ 
 
@@ -80,24 +83,24 @@ Hence $p({\mr x})$ is invariant exactly when all the sets $\gr\D_{p,\phi}$ are.
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
-\section{Invariant types from the dual perspective}\label{dual_perspective}
+\section{Invariance from the dual perspective}\label{dual_perspective}
 
 In the previous section the invariance of $p({\mr x})$ has been definend using the sets ${\gr\D_{p,\phi}}$.
 Here we examine invariance using the formulas in $p({\mr x})$.
 In this section we  work under stronger assumptions on the action of $G$.
 
 Let $G$ be a group that acts on $\U^{\mr x}$ and $\U^{\gr z}$.
-Let $\phi({\mr x}\,;{\gr z})\in L$ be such that $\phi(\U^{\mr x}\,;\U^{\gr z})$ is invariant under the action of $G$.
+Let $\phi({\mr x}\,;{\gr z})\in L$ be such that $\phi(\U^{\mr x};\U^{\gr z})$ is invariant under the action of $G$.
 It follows that the any tranlation of a $\phi$-definable set is $\phi$-definable.
 In particular, if $\theta({\mr x}\,;{\gr\bar z})$ is a $\phi$-formula and $g\in G$, then 
 
-\ceq{\hfill g[\theta(\U^{\mr x}\,;{\gr\bar b})]}{=}{\theta(\U^{\mr x}\,;g{\gr\bar b}).}
+\ceq{\hfill g[\theta(\U^{\mr x};{\gr\bar b})]}{=}{\theta(\U^{\mr x};g{\gr\bar b}).}
 
 Therefore $p({\mr x})\subseteq L_\phi(\U)$ is invariant if
 
 \ceq{\hfill p({\mr x})\proves{\mr x}\in\mrD}{\IFF}{p({\mr x})\proves{\mr x}\in g\mrD}\hfill for every $\phi$-definable $\mrD\subseteq\U^{\mr x}$ and $g\in G$.
 
-Note that when $G$ acts by automorphisms $\phi(\U^{\mr x}\,;\U^{\gr z})$ is invariant for all $\phi({\mr x}\,;{\gr z})\in L$.
+Note that when $G$ acts by automorphisms $\phi(\U^{\mr x};\U^{\gr z})$ is invariant for all $\phi({\mr x}\,;{\gr z})\in L$.
 Therefore when $G$ acts by automorphisms the results in this section also also for types and formulas (i.e.\@ working with $L$ in place of $L_\phi$).
 
 Let $\mrX\subseteq\U^{\mr x}$ be a nonempty $G$-invariant set.
@@ -183,7 +186,7 @@ See Exercise~\ref{ex_persistent_types} for an alternative characterization when 
 Theorem~\ref{thm_generic_invariant} gives a condition for a global $\phi$-type to be invariant.
 The following theorem gives a condition for the existence of global invariant $\phi$-types.
 Ideally, we would like to prove that every persistent $\phi$-type extends to global persistent type.
-Unfortunately this is not true -- we need a stronger property: \ssf2 of Theorem~\ref{thm_generic_invariant2}.
+Unfortunately this is not true -- we need a stronger property, see \ssf2 of Theorem~\ref{thm_generic_invariant2}.
 In~\cite{CK} this is called \textit{quasi-non-forking}.
 
 \begin{theorem}\label{thm_generic_invariant2}
@@ -208,20 +211,18 @@ In~\cite{CK} this is called \textit{quasi-non-forking}.
   Trivial.
 
   \ssf3$\IMP$\ssf1.
-  Let $p({\mr x})$ be maximal among the $\phi$-types that contain ${\mr x}\in\mrD$ and are such that $\theta({\mr\U})$ satisfies \ssf3 for every $\theta({\mr x})$ that is conjunction of formulas in $p({\mr x})$.
+  Let $p({\mr x})$ be maximal among the $\phi$-types that contain ${\mr x}\in\mrD$ and are such that $\theta(\U^{\mr x})$ satisfies \ssf3 for every $\theta({\mr x})$ that is conjunction of formulas in $p({\mr x})$.
   We claim that $p$ is a complete $\phi$-type.
   Suppose for a contradiction that $\theta({\mr x}),\neg\theta({\mr x})\notin p$.
-  By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$ and some ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi({\mr\U})\cap\theta({\mr\U})$ and $\psi({\mr\U})\smallsetminus\theta({\mr\U})$ and such that no ${\mr\C_i}$ is persistent.
-  This is a contradiction because ${\mr\C_1},\dots,{\mr\C_n}$ cover $\psi({\mr\U})$ which satisfies \ssf3.
+  By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$ and some ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi(\U^{\mr x})\cap\theta(\U^{\mr x})$ and $\psi(\U^{\mr x})\smallsetminus\theta(\U^{\mr x})$ and such that no ${\mr\C_i}$ is persistent.
+  This is a contradiction because ${\mr\C_1},\dots,{\mr\C_n}$ cover $\psi(\U^{\mr x})$ which satisfies \ssf3.
   It is only left to show that $p({\mr x})$ is finitely satisfiable in $\mrX$ and invariant.
   Finite satisfiability follows from percistency.
-  Negate invariance.
-  Then, by Theorem~\ref{thm_generic_invariant} and completeness, $p({\mr x})\proves {\mr x}\notin\mrB$ for some generic definable set $\mrB$.
-  As $\neg\mrB$ is not persistent by Fact~\ref{fact_fip}, this contradics \ssf3.
+  From completeness and Theorem~\ref{thm_generic_invariant} we obtain invariance.
 \end{proof}
 
 Unfortunatelly, genericy is not preserved under intersection.
-To obtain closure under intersection, we need to press the concept to the next level of complexity.
+To obtain closure under intersection, we need to push the concept to a higher level of complexity.
 This is only required in Section~\ref{newelski}.
 
 A set $\mrD\subseteq\U^{\mr x}$ is \emph{strongly generic\/} if the intersection of any finitely many translations of $\mrD$ is generic.
@@ -262,7 +263,7 @@ Again, the same properties may be attributed to formulas and types.
 \end{proof}
 
 \begin{corollary}\label{corol_str_gen}
-  Let $G$, $\mrX$, and $\phi({\mr x},;{\gr z})\in L$ be given.
+  Let $G$, $\mrX$, and $\phi({\mr x}\,;{\gr z})\in L$ be as above.
   Let 
   
   \ceq{\hfill q({\mr x})}{=}{\{\theta({\mr x})\in L_\phi(\U)\ :\ \theta({\mr x})\textrm{ strongly generic }\}.}
@@ -277,19 +278,20 @@ Again, the same properties may be attributed to formulas and types.
 \end{proof}
 
 \begin{corollary}\label{corol_q_w_pers}
-  Let $\mrC\subseteq\mrX$ be $\phi$-type-definable and such that $q({\mr x})$ of Corollary~\ref{corol_str_gen} is finitely satisfied in $\mrC$.
-  Then $\mrC$ is weakly persistent.
+  Let $q({\mr x})$ be as in Corollary~\ref{corol_str_gen}.
+  Let $p({\mr x})\subseteq L(\U)$ be such that $p({\mr x})\cup q({\mr x})$ is finitely satisfied in $\mrX$.
+  Then $p({\mr x})$ is weakly persistent.
 \end{corollary}
 
 \begin{proof}
-  Let $\theta({\mr x})\in L_\phi(\U)$ be such that $\mrC\subseteq\theta(\mrU)$.
-  As $q({\mr x})$ is finitely satisfiable in $\theta(\mrU)$, we cannot have that $\neg\theta({\mr x})$ is strongly generic.
-  Reasoning as for Fact~\ref{fact_fip} we prove that for every set $\mrD$ the following are equivalent
+  Let $\theta({\mr x})\in p$.
+  As $q({\mr x})$ is finitely satisfiable in $\theta(\U^{\mr x})$, we cannot have that $\neg\theta({\mr x})$ is strongly generic.
+  Reasoning as for Fact~\ref{fact_fip} we obtain that for every set $\mrD$ the following are equivalent
   \begin{itemize}
-    \item[1.] $\mrD$ is not strongly $n$-generic in $\mrX$
-    \item[2.] $\neg\mrD$ is weakly $n$-persistent in $\mrX$.
+    \item[1.] $\mrD$ is not strongly generic in $\mrX$
+    \item[2.] $\neg\mrD$ is weakly persistent in $\mrX$.
   \end{itemize}
-  Therefore $\theta({\mr x})$ weakly persistent.
+  Taking $\neg\theta(\U^{\mr x})$ for $\mrD$, we conclude that $\theta({\mr x})$ weakly persistent.
 \end{proof}
 
 \begin{exercise} 
@@ -318,15 +320,17 @@ Again, the same properties may be attributed to formulas and types.
   \end{itemize}
 \end{exercise}
 
-%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Invariance over a set of parameters}
 
 We now consider the case $G=\Aut(\U/A)$.
 We say \emph{invariant over $A$\/} for invariant under the action of $\Aut(\U/A)$.
-We may abbreviate this by writing \emph{$A$-invariant.}
+We may further abbreviate this by \emph{$A$-invariant.}
 
 Note that by homogeneity \ssf{is1} in Section~\ref{invariant_sets} can  be restated as
 
@@ -339,9 +343,9 @@ Let $\lambda=|L_{\gr z}(A)|$.
 There are at most $2^{2^{\lambda}}$ sets $\grD\subseteq\U^{\gr z}$ that are invariant over $A$.
 \end{proposition}
 \begin{proof}
-By \ssf{is3}, sets that are invariant over $A$ are unions of equivalence classes of the relation $\equiv_A$, that is, unions of sets of the form $p(\U^{\gr z})$ where $p({\gr z})\in S\/(A)$.
-Then the number of $A$-invariant sets is at most $2^{|S_{\gr z}(A)|}$.
-Clearly $|S_{\gr z}(A)|\le 2^\lambda$.
+  By \ssf{is3}, sets that are invariant over $A$ are unions of equivalence classes of the relation $\equiv_A$, that is, unions of sets of the form $p(\U^{\gr z})$ where $p({\gr z})\in S\/(A)$.
+  Then the number of $A$-invariant sets is at most $2^{|S_{\gr z}(A)|}$.
+  Clearly $|S_{\gr z}(A)|\le 2^\lambda$.
 \end{proof} 
 
 The invariance of types can be rephrased in a similar way.
@@ -355,14 +359,13 @@ If $p({\mr x})$ is a global $\phi$-types types \ssf{it2} is equivalent to
 
 \ceq{\ssf{it2$^\prime$.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{p({\mr x})\,\proves\,\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$.
 
-Finally, we note the following is useful characterization of \ssf{it2$'$}
+Finally, note the following useful characterization of \ssf{it2$'$}
 
 \ceq{\ssf{it3.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{\phi({\mr c}\,;{\gr a})\iff\phi({\mr c}\,;{\gr b})}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$.
 
 When $p({\mr x})\in S(\U)$, this can be rephrased as
 
 \ceq{\ssf{it3$'$.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\equiv_{A,\,{\mr c}}{\gr b}}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$ and for all ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$.
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -385,8 +388,8 @@ We say that a type $p({\mr x})$ is \emph{finitely satisfiable\/} in $A$ if every
 
 \begin{proof}
   Note that $p({\mr x})$ is $\Aut(\U/A)$-persistent, in fact the same ${\mr a}\in A^{\mr x}$ that satisfies $\phi({\mr x})$ also satisfies every $\Aut(\U/A)$-translate of $\phi({\mr x})$.
-  Then the proposition follows from Theorem~\ref{thm_generic_invariant}.
-  (But a direct proof is also easy.)
+  Then the proposition follows from Theorem~\ref{thm_generic_invariant}. 
+    The reader is invited to give a direct proof as an exercise.
 \end{proof}
 
 \begin{proposition}\label{prop_exisntence_coheirs}
@@ -411,7 +414,7 @@ The reason is explained by the next proposition, which is clear by elementarity.
   A type $p({\mr x}) \subseteq L(\U)$ that is finitely satisfiable in $M$ is said to be a \emph{coheir\/} of $p_{\restriction M}({\mr x})$.
 \end{definition}
 
-In many cases it is useful to focus on elements instead of types.
+In many cases it is convenient to work with elements instead of their types.
 We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is finitely satisfied in $M$.
 
 \begin{definition}\label{def_coheir_idepencence}
@@ -425,7 +428,7 @@ We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is 
   \textrm{ for all }\phi({\mr x}\,;{\gr z})\in L(M) 
   \textrm{ such that }\phi({\mr a}\,;{\gr b})}.
 
-  We say that $\tp({\mr a}/M,{\gr b})$ is a \emph{coheir} of $\tp({\mr a}/M)$, or, equivalently, that $\tp({\mr b}/M,{\gr a})$ is a \emph{heir} of $\tp({\mr b}/M)$.
+  We say that $\tp({\mr a}/M,{\gr b})$ is a \emph{coheir} of $\tp({\mr a}/M)$ or, equivalently, that $\tp({\mr b}/M,{\gr a})$ is an \emph{heir} of $\tp({\mr b}/M)$.
   We define the type
 
   \ceq{\hfill\emph{${\mr x}\cnonfork_M{\gr b}$}}
@@ -433,7 +436,7 @@ We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is 
   {\Big\{\neg\phi({\mr x}\,;{\gr b})
   \ :\ 
   \phi({\mr x}\,;{\gr b})\in L(M)
-  \textrm{ and } \phi(M^{\mr x}\,;{\gr b})=\0\Big\}.}
+  \textrm{ and } \phi(M^{\mr x};{\gr b})=\0\Big\}.}
 
   We will write \emph{${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$} for the union of the types ${\mr x}\cnonfork_M{\gr b}$ and $\tp({\mr a}/M)$.
 \end{definition}
@@ -441,10 +444,10 @@ We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is 
 The tuples ${\mr a}$ realizing ${\mr x}\cnonfork_M{\gr b}$ are exactly those such that ${\mr a}\cnonfork_M{\gr b}$.
 Note that $\tp({\mr a}/M,{\gr b})$ is a coheir of $\tp({\mr a}/M)$ according to Definition~\ref{def_choeir_uno}, so the terminology is consistent.
 
-We think of  ${\mr a}\cnonfork_M{\gr b}$ as saying that 
+We may think of ${\mr a}\cnonfork_M{\gr b}$ as saying that 
 ${\mr a}$ is \emph{independent\/} from ${\gr b}$ over $M$.
 This is a strong notion of independence.
-In general it is not symmetric, that is ${\mr b}\cnonfork_M{\gr a}$ is not equivalent to ${\gr a}\cnonfork_M{\mr b}$. In Chaper~\ref{stability} we will see that the symmetry of this repation is equivalent to stability.
+In general it is not symmetric, that is ${\mr b}\cnonfork_M{\gr a}$ is not equivalent to ${\gr a}\cnonfork_M{\mr b}$. In Chaper~\ref{stability} we will see that symmetry is equivalent to stability.
 
 We will use the following easy lemma without explicit reference.
 
@@ -523,7 +526,7 @@ If for every $\phi({\mr x})\in L(\U)$ there is a formula $\psi({\mr x})\in L(M)$
 Let ${\gr b}\in\U^{\gr z}$ and ${\mr a_1},{\mr a_2}\in\U^{\mr x}$ be such that ${\mr a_i}\cnonfork_M{\gr b}$ and ${\mr a_1}\equiv_M{\mr a_2}$.
 We claim that ${\mr a_1}\equiv_{M,\,{\gr b}}{\mr a_2}$.
 We need to prove that $\phi({\mr a_1}\,;{\gr b})\iff\phi({\mr a_2}\,;{\gr b})$ for every  $\phi({\mr x}\,;{\gr z})\in L(M)$.
-Let $\psi({\mr x})\in L(M)$ be such that $\phi({\mr\U}\,;{\gr b})=\psi({\mr \U})$.
+Let $\psi({\mr x})\in L(M)$ be such that $\phi(\U^{\mr x};{\gr b})=\psi({\mr \U})$.
 From ${\mr a_i}\cnonfork_M{\gr b}$ we obtain that  $\phi({\mr a_i}\,;{\gr b})\iff\psi({\mr a_i})$.
 Finally, the claim follows because ${\mr a_1}\equiv_M{\mr a_2}$.
 \end{proof}
@@ -553,6 +556,13 @@ Finally, the claim follows because ${\mr a_1}\equiv_M{\mr a_2}$.
 % By quantifier elimination every definable subset of $\U$ is a union of finitely many intervals.
 % By Dedekind completeness, the trace on $M$ of any interval of $\U$ coincides with that of an $M$-definable interval.
 % \end{remark}
+
+\begin{exercise}
+  Let $T$ be strongly minimal.
+  Let $a\in\U$ and $b\in\U^z$.
+  Prove that $a\cnonfork_Mb$ if and only if $a\in M$, $b\in M^z$ or $a\notin\acl(M,b)$.
+  % When $a\in\U^x$ is a tuple, this generalizes to $\dim(M,a)<\dim(M,a,b)$.
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -587,7 +597,7 @@ The following are equivalent
 Assume \ssf{1} and let $p({\mr x})\in S(\U)$ be a global type that is finitely satisfiable in $M$ and such that ${\mr c_i}\models p_{\restriction M,{\mr c_{\restriction i}}}({\mr x})$.
 The requirement ${\mr c_{n+1}}\equiv_{M,{\mr c_{\restriction n}}} {\mr c_n}$ is clear.
 Now, suppose $\phi({\mr c_{n+1}})$ for some $\phi({\mr x})\in L(M,{\mr c_{\restriction n+1}})$.
-Then $\phi({\mr x})$ belongs to $p({\mr x})$, so $\phi({\mr\U})\cap M^{\mr x}\neq\0$ because $p({\mr x})$ is finitely satisfiable in $M$.
+Then $\phi({\mr x})$ belongs to $p({\mr x})$, so $\phi(\U^{\mr x})\cap M^{\mr x}\neq\0$ because $p({\mr x})$ is finitely satisfiable in $M$.
 This proves ${\mr c_n}\cnonfork_M{\mr c_{\restriction n}}$.
 
 \ssf{2}$\IMP$\ssf{1}.
