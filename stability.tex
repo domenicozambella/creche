@@ -776,7 +776,7 @@ The following proposition says that in a stable theory with elimination of imagi
 The theorem holds, with the same proof, assuming $q({\mr x})\in S_\phi\big(\acl^\eq\!A\big)$ and/or requiring $p({\mr x})\in S(\U)$.
 
 \begin{proof}
-  Existence follows from Corollary~\ref{corol_stable_coheir_over_models}.
+  Existence follows from Corollary~\ref{corol_stable_coheir_over_models} and Proposition~\ref{prop_type_over_acl2}.
   Let $p_i({\mr x})\in S_\phi(\U^\eq)$, for $i=1,2$, be two types that extend $q({\mr x})$ and are invariant over $\acl^\eq\!A$.
   We need to prove that ${\gr\D_{p_1,\phi}}={\gr\D_{p_2,\phi}}$.
   Let $\psi_i({\gr z})\in L(\acl^\eq\!A)$ define ${\gr\D_{p_i,\phi}}$.
@@ -904,8 +904,26 @@ We define \emph{Lascar persistent\/} similarly.
   By elementarity $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr z})$ is satisfiable in every model $M\supseteq A$, hence so is $\phi({\mr a}\,;{\gr z})$.
   
   \ssf2$\IMP$\ssf1.
-  From \ssf2 it follows that $\phi({\mr a}\,;{\gr z})$ is contained in a global type $p({\gr z})$ that is Lascar invariant over $A$.
+  From \ssf2 and Corollary~\ref{corol_stable_coheir_over_models} it follows that $\phi({\mr a}\,;{\gr z})$ is contained in a global type $p({\gr z})$ that is finitely satisfied in every $M\subseteq A$.
+  By Proposition~\ref{prop_type_over_acl2} $p({\gr z})$ is Lascar invariant over $A$.
   Then $p({\gr z})$, and in particular $\phi({\mr a}\,;{\gr z})$, is Lascar persistent over $A$.
+\end{proof}
+
+\begin{proposition}\label{prop_stable_genericiffpersistent}
+  Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
+  Let $q({\mr x})\in S(\acl^\eq\!A)$.
+  Then for every $\phi$-definable set $\mrD$, the following are equivalent
+  \begin{itemize}
+    \item[1.] $\mrD$ is generic in $q(\U^{\mr x})$.
+    \item[2.] $\mrD$ is persistent in $q(\U^{\mr x})$.
+  \end{itemize}
+\end{proposition}
+
+\begin{proof}
+  \ssf1$\IMP$\ssf2.
+  Let $p({\mr x})$ be a global $\phi$-type that is Lascar invariant over $A$.
+  This exists by Theorem.
+  By Theorem~\ref{thm_generic_invariant} $p({\mr x})\proves{\mr x}\in\mrD$.
 \end{proof}
 
 \begin{corollary}\label{corol_stable_generic}
