@@ -1,0 +1,491 @@
+% !TEX root = creche.tex
+\chapter{Actions of groups}
+\label{actions}
+
+\def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{17ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+
+In this chapter, $L$ is a signature, $T$ is a complete theory without finite models, and $\U$ is a saturated model of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
+We use the same notation and make the same implicit assumptions as in Section~\ref{monster}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The dual perspective on invariance}\label{dual_perspective}
+
+The notions of invariance introduceted in the previous chapters extend seemlessly to the action of a group $G$ on $\U^{\gr z}$.
+Let $\grD\subseteq\U^{\gr z}$.
+We say that $\grD$ is \emph{invariant\/} under the action of $G$, or \emph{$G$-invariant,} if it is fixed setwise by $G$.
+That is, $g\grD=\grD$ for every $g\in G$.
+Yet in other words, if
+
+\ceq{\ssf{is1.}\hfill {\gr a}\in\grD}{\iff}{g{\gr a}\in\grD}\hfill for every ${\gr a}\in\U^{\gr z}$ and every $g\in G$.
+
+A formula is invariant if the set it defines is invariant.
+We say that $p({\mr x})\subseteq L(\U)$ is \emph{invariant\/} under the action of $G$, or \emph{$G$-invariant,} if for every formula $\phi({\mr x}\,;{\gr z})\in L$ 
+
+\ceq{\ssf{it1.}\hfill\phi({\mr x}\,;{\gr a})\in p}{\IFF}{\phi({\mr x}\,;g{\gr a})\in p}\hfill for every ${\gr a}\in\U^{\gr z}$ and every $g\in G$.
+
+It should be clear that invariant under the action of $\Aut(\U/A)$ coincides with invariant over $A$ and Lascar invariant over $A$ coincides with invariant under the action of $\Autf(\U/A)$.
+
+Note that $p({\mr x})$ is invariant exactly when the sets $\gr\D_{p,\phi}\subseteq\U^{\gr z}$ are.
+In this section we want to discuss invariance using sets $\mrD\subseteq\U^{mr x}$.
+We need stronger assumptions on the action of $G$.
+
+\begin{assumption}\label{notation_GXphi}
+  Let $G$ be a group that acts on $\U^{\mr x}$ and on $\U^{\gr z}$.
+  Below $\phi({\mr x}\,;{\gr z})\in L$ is a given formula such that $\phi(\U^{\mr x};\U^{\gr z})$ is invariant under the action of $G$.
+  Finally, $\mrX\subseteq\U^{\mr x}$ is a nonempty $G$-invariant set.
+\end{assumption}
+
+An immediate consequence of the invariance of $\phi(\U^{\mr x};\U^{\gr z})$ is 
+that any $G$-tranlate of a $\phi$-definable set is $\phi$-definable.
+In particular, by reasoning as in Remark~\ref{rem_image_def_set} we obtain that for every $\phi$-formula $\theta({\mr x}\,;{\gr\bar z})$ and every $g\in G$
+
+\ceq{\hfill g[\theta(\U^{\mr x};{\gr\bar b})]}{=}{\theta(\U^{\mr x};g{\gr\bar b}).}
+
+Therefore $p({\mr x})\subseteq L_\phi(\U)$ is invariant if
+
+\ceq{\hfill p({\mr x})\proves{\mr x}\in\mrD}{\IFF}{p({\mr x})\proves{\mr x}\in g\mrD}\hfill for every $\phi$-definable $\mrD\subseteq\U^{\mr x}$ and $g\in G$.
+
+At the first reading the reader may assume that $G=\Aut(\U)$ and that $\mrX=\U^{\mr x}$.
+Note that when $G$ acts by automorphisms $\phi(\U^{\mr x};\U^{\gr z})$ is invariant for all $\phi({\mr x}\,;{\gr z})\in L$.
+Therefore when $G$ acts by automorphisms the results in this section holds when working with $L$ in place of $L_\phi$.
+
+A set $\mrD\subseteq\U^{\mr x}$ is \emph{generic\/} in $\mrX$ under the action of $G$, \emph{$G$-generic\/} for short, if finitely many $G$-translates of $\mrD$ cover $\mrX$; we say \emph{$n$-$G$-generic\/} if $\le n$ translates suffices.
+Dually, we say that $\mrD$ is \emph{persistent\/} in $\mrX$ under the action of $G$, \emph{$G$-persistent\/} for short, if the intersection of any finitely many $G$-translates of $\mrD$ has a solution in $\mrX$; we say \emph{$n$-$G$-persistent\/} when the request is limited to $\le n$ translates.
+We may drop reference to $G$ and $\mrX$ when these are clear from the context.
+
+The same properties may be attributed to formulas (as these are identified with the set they define).
+When these properties are attributed to a type $p({\mr x})$, we understand that they hold for the conjunctions of formulas in $p({\mr x})$.
+See Exercise~\ref{ex_persistent_types} for an alternative characterization when $p({\mr x})$ is small.
+
+\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
+The terminology above non-standard.
+In~\cite{CK} the authors write \textit{quasi-non-dividing\/} for \textit{persistent}.
+Their terminology has good motivations, but it would be a mouthful in our context.
+
+\begin{example}
+  If $p({\mr x})\subseteq L(\U)$ is finitely satisfiable in $A$ then $p({\mr x})$ is persistent under the action of $\Aut(\U/A)$.
+  In fact, the same ${\mr a}\in A^{\mr x}$ that satisfies $\phi({\mr x})$ also satisfies every $\Aut(\U/A)$-translate of $\phi({\mr x})$.
+\end{example}
+
+In this chapter many proofs require some juggling with negations.
+
+\begin{fact}\label{fact_fip}
+  (Assume~\ref{notation_GXphi})\ \  
+  The following are equivalent
+  \begin{itemize}
+    \item[1.] $\mrD$ is not $n$-generic in $\mrX$
+    \item[2.] $\neg\mrD$ is $n$-persistent in $\mrX$.
+  \end{itemize}
+\end{fact}
+
+\begin{proof}
+  Immediate by spelling out the definitions\smallskip
+  \begin{itemize}
+    \item[1.] there are no $g_1,\dots,g_n\in G$ such that \smash{$\displaystyle\mrX\ \subseteq\ \bigcup_{i=1}^n g_i{\mr\D}$}
+    \item[2.]  $\displaystyle\0\ \neq\ \mrX\,\cap\,\bigcap_{i=1}^n\neg g_i{\mr\D}$ for every $g_1,\dots,g_n\in G$.\qedhere
+  \end{itemize} 
+\end{proof}
+
+\begin{theorem}\label{thm_generic_invariant}
+  (Assume~\ref{notation_GXphi})\ \  
+  Let $p({\mr x})\in S_\phi(\U)$ be finitely satisfiable in $\mrX$.
+  Then the following are equivalent
+  \begin{itemize}
+    \item[1.] $p({\mr x})$ is invariant
+    \item[2.] $p({\mr x})\proves{\mr x}\in\mrD$ for every generic $\phi$-definable set $\mrD$
+    \item[5.] $p({\mr x})$ is persistent.
+  \end{itemize}
+\end{theorem}
+
+\begin{proof}
+  \ssf1$\IMP$\ssf2.
+  Let $g_1{\mr\D},\dots,g_n{\mr\D}$ be translations of $\mrD$ that cover $\mrX$.
+  Negate \ssf2.
+  By completeness, $p({\mr x})\proves {\mr x}\notin\mrD$.
+  Hence, from invariance we obtain
+
+  \ceq{\hfill p({\mr x})}{\proves}{{\mr x}\ \notin\ \bigcup_{i=1}^ng_i\mrD.}
+
+  This contradicts the finite satisfiability of $p({\mr x})$ in $\mrX$.
+  
+  \ssf2$\IMP$\ssf3.
+  Let $\mrD$ be defined by a conjunction of formulas in $p({\mr x})$.
+  If $\mrD$ is not persistent then, by Fact~\ref{fact_fip}, $\neg\mrD$ is generic. 
+  By \ssf2, $p({\mr x})\proves{\mr x}\notin\mrD$, a contradiction.
+
+  \ssf3$\IMP$\ssf1.
+  % uppose $p({\mr x})$ is not $(n+2)$-persistent and let $n$ be minimal.
+  % Let $g_1,\dots,g_{n+2}\in G$ and $\theta({\mr x})\,;{\gr\bar b}$ witness this.
+  % Then 
+  If $p({\mr x})$ is not invariant then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g{\gr b})$ for some $g\in G$.
+  Clearly $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g{\gr b})$ is not persistent as it is inconsistent with its $g$-translate.
+\end{proof}
+
+The theorem yields an immediate necessary condition for the existence of an invariant global $\phi$-type.
+
+\begin{corollary}
+  (Assume~\ref{notation_GXphi})\ \  
+  If there exists an invariant global $\phi$-type then for every $\phi$-definable set $\mrD$
+  \begin{itemize}
+    \item[1.] $\mrD$ and $\neg\mrD$ cannot be both generic
+    \item[2.] if $\mrD$ is generic than it is persistent.
+  \end{itemize}
+\end{corollary}
+
+\begin{proof}
+  By Fact~\ref{fact_fip}, \ssf1 and \ssf2 are equivalent; \ssf1 is an immediate consequenc of \ssf2 of Theorem~\ref{thm_generic_invariant}.
+\end{proof}
+
+The following theorem gives a necessary and sufficient condition for the  existence of global invariant $\phi$-type.
+Ideally, we would like to prove that every persistent $\phi$-type extends to a global persitent type.
+Unfortunately this is not true -- we need a stronger property.
+A $\phi$-definable set $\mrD$ is \emph{hereditarely persistent\/} if every finite cover of $\mrD$ by $\phi$-definable sets contains a persistent set.
+In~\cite{CK} this property is called \textit{quasi-non-forking,} but we persist in the unorthodoxy.
+A type is hereditarely persistent if every conjunction of formulas in the type is hereditarely persistent.
+
+\begin{theorem}\label{thm_generic_invariant2}
+  (Assume~\ref{notation_GXphi})\ \  
+  Let $q({\mr x})\subseteq L(\U)$.
+  Then the following are equivalent 
+  \begin{itemize}
+    \item[1.] $q({\mr x})$ extends to an invariant type $p({\mr x})\in S_\phi(\U)$ finitely satisfiable in $\mrX$
+    \item[2.] $q({\mr x})$ is hereditarely persistent.
+  \end{itemize}
+\end{theorem}
+
+\begin{proof}
+  \ssf1$\IMP$\ssf2.
+  Let $\theta({\mr x})$ be a conjunction of formulas in $q({\mr x})$.
+  Suppose ${\mr\C_1},\dots,{\mr\C_n}$ cover $\theta(\U^{\mr x})$ and pick $p({\mr x})$ as in \ssf1.
+  By completeness, $p({\mr x})\proves {\mr x}\in{\mr\C_i}$ for some $i$.
+  Then, by Theorem~\ref{thm_generic_invariant}, $\neg{\mr\C_i}$ is not generic.
+  Therefore, by Fact~\ref{fact_fip}, ${\mr\C_i}$ is persistent.
+
+  \ssf2$\IMP$\ssf1.
+  Let $p({\mr x})$ be maximal among the $\phi$-types that contain $q({\mr x})$ and are such that $\theta(\U^{\mr x})$ is hereditarely persistent for every $\theta({\mr x})$ that is conjunction of formulas in $p({\mr x})$.
+  We claim that $p$ is a complete $\phi$-type.
+  Suppose for a contradiction that $\theta({\mr x}),\neg\theta({\mr x})\notin p$.
+  By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$ and some ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi(\U^{\mr x})\cap\theta(\U^{\mr x})$ and $\psi(\U^{\mr x})\smallsetminus\theta(\U^{\mr x})$ and such that no ${\mr\C_i}$ is persistent.
+  As ${\mr\C_1},\dots,{\mr\C_n}$ cover $\psi(\U^{\mr x})$ this is a contradiction.
+  It is only left to show that $p({\mr x})$ is finitely satisfiable in $\mrX$ and invariant.
+  Finite satisfiability follows from persistency.
+  From completeness and Theorem~\ref{thm_generic_invariant} we obtain invariance.
+\end{proof}
+
+\begin{exercise}
+  Prove that if $p({\mr x})\in S(\U)$ is finitely satisfiable in every $M\supseteq A$ then it is persistent under the action of $\Autf(\U/A)$.
+  Is the same true for incomplete types?
+\end{exercise}
+
+\begin{exercise}
+  Let $p(x)\in S(\U)$ be persistent.
+  Prove that the following are equivalent
+  \begin{itemize}
+    \item[1.] $p(x)$ is invariant and finitely satisfiable in $\X$
+    \item[2.] $p(x)\proves x\in\D$ for every 2-generic definable set $\D$
+    \item[3.] $p(x)$ is 2-persistent.
+  \end{itemize}
+\end{exercise}
+
+\begin{exercise}
+  Let $\D\subseteq\U^x$ be $\phi$-definable.
+  Prove that the following are equivalent 
+  \begin{itemize}
+    \item[1.] there is an invariant type $p(x)\in S_\phi(\U)$ finitely satisfiable in $\X\cap\D$
+    \item[2.] every finite cover of $\D$ by $\phi$-definable sets contains a 2-persistent set.
+  \end{itemize}
+\end{exercise}
+
+\begin{exercise}\label{ex_gen_sat}
+  Let $p(x)\subseteq L_\phi(\U)$ be generic.
+  Prove that it is finitely satisfiable.
+\end{exercise}
+
+\begin{exercise}\label{ex_persistent_types}
+  Prove that for every $p(x)\subseteq L_\phi(A)$ following are equivalent
+  \begin{itemize}
+    \item[1.] $p(x)$ is persistent
+    \item[2.] $p(\U^x)$ is persistent.
+  \end{itemize}
+\end{exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Strong genericity}\label{strong_genericity}
+
+Unfortunatelly, genericy is not preserved under intersection.
+To obtain closure under intersection, we need to push the concept to a higher level of complexity.
+This is only required in Section~\ref{newelski}.
+
+A set $\mrD\subseteq\U^{\mr x}$ is \emph{strongly generic\/} if the intersection of any finitely many translations of $\mrD$ is generic.
+Dually, we say that $\mrD$ is \emph{weakly persistent\/} if the union of some finitely many translations of $\mrD$ is peristent.
+Again, the same properties may be attributed to formulas and types.
+
+\begin{lemma}\label{lem_strongly_generic}
+  (Assume~\ref{notation_GXphi})\ \  
+  Then the intersection of finitely many strongly generic sets is strongly generic.
+\end{lemma}
+
+\begin{proof}
+  As the theorem does not mention definability, we may assume that all sets mentioned below are subsets of $\mrX$.
+  Let ${\mr\D}$ and ${\mr\C}$ be strongly generic and let $K\subseteq G$ be an arbitrary finite set.
+  It suffices to prove that 
+  
+  \ceq{\hfill\mrB}{=}{\bigcap_{k\in K}k\,({\mr\C}\cap{\mr\D})}
+
+  is generic. 
+  Clearly $\mrB={\mr\C'}\cap{\mr\D'}$, where
+  
+  \ceq{\hfill{\mr\C'}}{=}{\bigcap_{k\in K}k\,{\mr\C}}
+  \ceq{\hfill{\rm and}\hfill{\mr\D'}}{=}{\bigcap_{k\in K}k\,{\mr\D}.}
+
+  Note that ${\mr\C'}$ and ${\mr\D'}$ are both strongly generic.
+  In particular \smash{$\displaystyle\mrX=\bigcup_{h\in H}h\,\mr\D'$} for some finite $H\subseteq G$.
+  As, trivially
+
+  \ceq{\hfill\bigcup_{h\in H}h\,\mrB}{=}{\bigcup_{h\in H}\Big[h\,{\mr\C'}\ \cap\ h\,{\mr\D'}\Big]}
+
+  we conclude that
+  
+  \ceq{\hfill\bigcup_{h\in H}h\,\mrB}{\supseteq}{\bigcap_{h\in H}h\,{\mr\C'}}
+
+  The set on the r.h.s.\@ is (strongly) generic.
+  Therefore also the set on the l.h.s.\@ is generic.
+  The genericity of $\mrB$ follows.
+\end{proof}
+
+\begin{corollary}\label{corol_str_gen}
+  (Assume~\ref{notation_GXphi})\ \  
+  Let $q({\mr x})=\{\theta({\mr x})\in L_\phi(\U)\,:\, \theta({\mr x})\textrm{ strongly generic}\}$.
+  Then $q({\mr x})$ is finitely satisfiable in $\mrX$, strongly generic, and invariant.
+\end{corollary}
+
+\begin{proof}
+  Strong genericity is an immediate consequence of Lemma~\ref{lem_strongly_generic}.
+  Finite satisfiability is a consequence of genericity, see Exercise~\ref{ex_gen_sat}.
+  As for invariance, note that any translate of a strongly generic formula is also strongly generic.
+\end{proof}
+
+\begin{corollary}\label{corol_q_w_pers}
+  (Assume~\ref{notation_GXphi})\ \  
+  Let $q({\mr x})$ be as in Corollary~\ref{corol_str_gen}.
+  Let $p({\mr x})\subseteq L(\U)$ be such that $p({\mr x})\cup q({\mr x})$ is finitely satisfied in $\mrX$.
+  Then $p({\mr x})$ is weakly persistent.
+\end{corollary}
+
+\begin{proof}
+  Let $\theta({\mr x})\in p$.
+  As $q({\mr x})$ is finitely satisfiable in $\theta(\U^{\mr x})$, we cannot have that $\neg\theta({\mr x})$ is strongly generic.
+  Reasoning as for Fact~\ref{fact_fip} we obtain that for every set $\mrD$ the following are equivalent
+  \begin{itemize}
+    \item[1.] $\mrD$ is not strongly generic in $\mrX$
+    \item[2.] $\neg\mrD$ is weakly persistent in $\mrX$.
+  \end{itemize}
+  By applying this equivalence with $\neg\theta(\U^{\mr x})$ for $\mrD$, we conclude that $\theta({\mr x})$ weakly persistent.
+\end{proof}
+
+Under suitable assumptions some of the notions introduced in this chapter may coincide.
+We will encounter some of these assumptions in following chapter, for the time being we prove the following theorem.
+
+\begin{theorem}
+  (Assume~\ref{notation_GXphi})\ \  
+  The following are equivalent
+  \begin{itemize}
+    \item[1.] persistent $\phi$-definable sets are hereditarely persistent
+    \item[2.] generic $\phi$-definable sets are strongly generic
+    \item[3.] weakly persisent $\phi$-definable sets are persistent.
+  \end{itemize}
+\end{theorem}
+
+\begin{proof}
+  \ssf1$\IMP$\ssf2.
+  It suffices to prove that generic sets are closed under intersection.
+  Let $\mrC$ and $\mrD$ be generic $\phi$-definable sets.
+  Suppose for a contradiction that $\mrC\cap\mrD$ is not generic.
+  By \ssf1 and Theorem~\ref{thm_generic_invariant2} there is an invariant global $\phi$-type $p({\mr x})$ containing ${\mr x}\in\neg\mrC\cup\neg\mrD$.
+  By completeness either $p({\mr x})\proves{\mr x}\in\neg\mrC$ or $p({\mr x})\proves{\mr x}\in\neg\mrD$.
+  This is a contradiction because by Theorem~\ref{thm_generic_invariant} $p({\mr x})\proves{\mr x}\in\mrC$ and $p({\mr x})\proves{\mr x}\in\mrD$.
+
+  \ssf2$\IFF$\ssf3. Clear.
+
+  \ssf3$\IMP$\ssf1.
+  Let $q({\mr x})=\{\theta({\mr x})\in L_\phi(\U)\,:\,\theta({\mr x})\textrm{ generic}\}$.
+  By \ssf2 this is the same type defined in Corollary~\ref{corol_q_w_pers}.
+  Therefore, any completion of $q({\mr x})$ is, by \ssf3, persistent.
+  Let $\mrD$ be a persistent $\phi$-definable set.
+  By Theorems~\ref{thm_generic_invariant} and~\ref{thm_generic_invariant2} it suffices to show that $\mrD$ is consistent with $q({\mr x})$.
+  Suppose not, then $q({\mr x})\proves {\mr x}\in\neg\mrD$.
+  By \ssf2 generic sets are closed under conjunction, therefore $\neg\mrD$ is generic.
+  This is a contradiction by Fact~\ref{fact_fip}.
+\end{proof}
+
+\begin{exercise}
+  Show that generic sets need not be closed under intersection.
+  Hint: try e.g.\@ with the cyclic order in Example~\ref{ex_cyclic_order}.
+\end{exercise}
+
+\begin{exercise}
+  Prove that the following are equivalent
+  \begin{itemize}
+    \item[1.] every persistent $\phi$-formula is hereditarely persistent
+    \item[2.] for every $\phi$-definable sets $\C$ and $\D$, if $\C$ is not generic then $\D\cup\C$ and $\neg\D\cup\C$ cannot be both generic.
+  \end{itemize}
+\end{exercise}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The diameter of a Lascar type}\label{newelski}
+
+The Lascar strong type $\Ll({\mr a}/A)$ is the union of a chain of type-definable sets of the form $\big\{{\mr x}\ :\ d_A({\mr a},{\mr x})\le n\big\}$.
+In this section we prove that $\Ll({\mr a}/A)$ is type-definable if and only this chain is finite.
+In other words, if the connected component of $a$ in the Lascar graph has finite diameter.
+It is convenient to address the problem in more general terms.
+
+Let $G$ be a normal subgroup of $\Aut(\U)$.
+Assume $G$ is the union of a countable chain of sets $\<G_n:n\in\omega\>$ with the following properties
+\begin{itemize}
+  \item[1.] every $G_n$ is symmetric i.e.\@ it contains the unit and is closed under inverse
+  \item[2.] every $G_n$ is conjugancy invariant i.e.\@ $g\,G_ng^{-1}=G_n$ for every $g\in G$
+  \item[3.] $G_nG_m\subseteq  G_{n+m}$ for every $n,m\in\omega$.
+\end{itemize}
+
+Let $\mrX\subseteq\U^{\mr x}$ be a set on which $G$ acts transitively i.e., $G\,{\mr a}=\mrX$ for every ${\mr a}\in\mrX$.
+We define a discrete metric on $\mrX$. 
+For ${\mr a},{\mr b}\in\mrX$ let $d({\mr a},{\mr b})$ be the minimal $n$ such that ${\mr a}\in G_n{\mr b}$.
+This defines a metric by \ssf1 and \ssf3.
+By \ssf2, this metric in $G$-invariant.
+The \emph{diameter\/} of a set $\mrC\subseteq\mrX$ is the supremum of $d({\mr a},{\mr b})$ for ${\mr a},{\mr b}\in\mrC$.
+
+\begin{example}
+  Let $G$ is $\Autf(\U/A)$ and $\mrX=\Ll({\mr a}/A)$.
+  If we let $G_1$ be the set of automorphisms that fix a model $M\supseteq A$ and $G_n=G_1^n$, then $d({\mr a},{\mr b})$ concides with the dinstance in the Lascar graph.
+\end{example} 
+
+We are interested in sufficient conditions for $\mrX$ to have finite diameter.
+The notions introduced in Section~\ref{strong_genericity} offer some hints.
+
+\begin{proposition}\label{prop_wpers_finite_diameter}
+  If $\mrX$ has a weakly persistent subset of finite diameter, then $\mrX$ itself has finite diamenter.
+\end{proposition}
+
+\begin{proof}
+  Let $\mrC\subseteq\mrX$ be a weakly persistent set of diameter $n$.
+  Let $H\subseteq G$ be finite such that 
+
+  \ceq{\hfill H\mrC}{=}{\bigcup_{h\in H}h\,\mrC}
+
+  is persistent.
+  We claim that $H\mrC$ has finite diameter.
+  Let ${\mr a}\in\mrC$ be arbitrary.
+  Let $m$ be larger than $d(h{\mr a}, k{\mr a})$ for all $h,k,\in H$.
+  Now, let $h{\mr b}$ and $k{\mr c}$, for some $h,k,\in H$ and ${\mr b},{\mr c}\in\mrC$, be two arbitrary elements of $H\mrC$.
+  As $h\mrC$ and $k\mrC$ have the same diameter of $\mrC$, 
+
+  \ceq{\hfill d(h{\mr b},\, k{\mr c})}{\le}{d(h{\mr b},\,h{\mr a})\ +\ d(h{\mr a},\, k{\mr a})\ +\ d(k{\mr a},\,k{\mr c})}
+
+  \ceq{}{\le}{n+m+n.}
+
+  This proves that $H\mrC$ has finite diameter.
+  Therefore, without loss of generality, we may assume that $\mrC$ itself is persistent.
+  
+  By the transitivity of the action, any two elements of $\mrX$ are of the form $h{\mr a}$, $k{\mr a}$ for some $h,k\in G$ and some ${\mr a}\in\mrC$.
+  By percistency, there are ${\mr c}\in\mrC\cap h\mrC$ and ${\mr d}\in\mrC\cap k\mrC$.
+  Then 
+
+  \ceq{\hfill d(h{\mr a},\, k{\mr a})}{\le}{d(h{\mr a},\,{\mr c})\ +\ d({\mr c},\, {\mr d})\ +\ d({\mr d},\,k{\mr a})}
+
+  \ceq{}{\le}{n+n+n.}
+
+  Therefore the diameter of $\mrX$ does not exceed $3n$.
+\end{proof}
+
+\begin{theorem}
+  Suppose that $\mrX$ and the sets ${\mr\X_n}=G_n{\mr a}$, for some ${\mr a}\in\mrX$, are type-definable.
+  Then $\mrX$ has finite diameter.
+\end{theorem}
+
+\begin{proof}
+  By Proposition~\ref{prop_wpers_finite_diameter}, it suffices to prove that ${\mr\X_n}$ is weakly persistent.
+  Define
+
+  \ceq{\hfill q({\mr x})}{=}{\{\theta({\mr x})\in L(\U)\ :\ \theta({\mr x})\textrm{ strongly generic}\}.}
+  
+  By Corollary~\ref{corol_q_w_pers}, with $L$ for $L_\phi$, it suffices to prove that for some $n$ the type $q({\mr x})$ is finitely satisfied in $\mr\X_n$.
+  Suppose not.
+  Let $\psi_n({\mr x})\in q$ be a formula that is not satisfied in $\mr\X_n$.
+  The type $\{\psi_n({\mr x}):n\in\omega\}$ is finitely satisfied in $\mrX$.
+  Then it has a realization in $\mrX$. 
+  As this realization belongs to some ${\mr\X_n}$ this contradicts the definition of $\psi_n({\mr x})$. 
+\end{proof}
+
+% \ceq{\hfill p_n({\mr\X},{\mr\X})}{=}{\{\<{\mr a},{\mr b}\>\in{\mr\X^2}\ :\ {\mr a}\in G_n{\mr b}\}}
+
+% Below we write ${\mr x}\in G_n{\mr y}$ for the type $p_n({\mr x},{\mr y})$ and ${\mr x}\in G\,{\mr y}$ for the disjunction of all these types (n.b.\@ an infinite disjunction of types need not be a type).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Definable groups}
+
+In this section $\grG\subseteq\U^{\gr z}$ is group that is type-definable over some set of parameters $A$.
+This group acts on a set $\mrX\subseteq\U^{\mr x}$ which is also type-definable over $A$.
+The group operations and the group action are definable.
+Clearly, $\grG$ also acts on itself by left multiplication.
+We use the symbol $\,\cdot\,$ for both the group multiplication and the group action.
+
+Let $\mrD=\psi(\U^{\mr x}\,;a)$ for some $\psi({\mr x}\,;y)\in L$ and $a\in\U^y$.
+We write $\phi({\mr x}\,;{\gr z})$ or ${\mr x}\in{\gr z}\cdot\mrD$ for the formula $\psi({\gr z^{-1}}\cdot{\mr x}\,;a)$.
+Note that $\phi(\U^{\mr x}\,;\U^{\gr z})$ is invariant under the action of $\grG$.
+
+% We define an immersion of 
+
+% \ceq{\hfill\sigma\ :\ \Aut(\U/A)}{\to}{\grG}\\
+% \ceq{\hfill f}{\mapsto}{f\gr1}
+
+% \begin{fact}
+%   Let $\mrD\subseteq\U^{\mr x}$ be definable over $A$.
+%   Let $\phi({\mr x}\,;{\gr z})$ be the formula ${\mr x}\in{\gr z}\cdot\mrD$.
+%   \begin{itemize}
+%     \item[1.] $\phi({\mr x}\,;{\gr 1})$ is $\grG$-generic
+%     \item[2.] $\mrD$ is generic over $A$.
+%   \end{itemize}
+% \end{fact}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Notes and references}
+
+  \begin{biblist}[]\normalsize
+    \bib{CK}{article}{
+   author={Chernikov, Artem},
+   author={Kaplan, Itay},
+   title={Forking and dividing in ${\rm NTP}_2$ theories},
+   journal={J. Symbolic Logic},
+   volume={77},
+   date={2012},
+  %  number={1},
+   pages={1--20},
+  %  issn={0022-4812},
+  %  review={\MR{2951626}},
+  %  doi={10.2178/jsl/1327068688},
+}
+    
+  \end{biblist}
+
+  

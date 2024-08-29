@@ -278,7 +278,7 @@ Some terms acquire a slightly different meaning when working inside a monster mo
 \item[\emph{formulas}] have parameters in $\U$ unless otherwise specified;
 \item[\emph{definable sets}] are sets of the form $\phi(\U)$ for some formula $\phi(x)\in L(\U)$; we may say $A$-definable if $\phi(x)\in L(A)$;
 \item[\emph{type-definable sets}] are sets of the form $p(\U)$ for some $p(x)\subseteq L(A)$ where, as the symbol suggests, $A$ has small cardinality;
-\item[\emph{types of tuples}] we write $\tp(a/A)$ for $\tp_\U(a/A)$ and $a\equiv_A b$ for $\U,a \equiv_A \U,b$; 
+\item[\emph{types of tuples}] are denoted by $\tp(a/A)=\tp_\U(a/A)$ and $a\equiv_A b$ abbreviates $\U,a \equiv_A \U,b$; 
 \item[\emph{orbits of tuples}] under the action of $\Aut(\U/A)$ are denoted by $\orbit(a/A)$.
 \end{litemize}
 
@@ -286,7 +286,10 @@ Let $x$ be a tuple of variables. For any fixed $A\subseteq \U$ we introduce a to
 (This is non standard terminology, not to be confused with the \textit{logic\/} $A\mbox{-}$topology in Section~\ref{KPtypes}.)
 The closed sets of the $A\mbox{-}$topology are those of the form $p(\U)$ where $p(x)\subseteq L(A)$ is a type over $A$.
 
-For $\phi(x)\in L(A)$ the sets of the form $\phi(\U)$ are clopen in this topology (and vice versa by Proposition~\ref{prop_normality}). They form both a base of closed sets and base of open sets, which makes these topologies \textit{zero-dimensional}. By saturation, the topology induced by $A$ is compact. Actually, saturation is equivalent to the compactness of all these topologies as $A$ ranges over the sets of small cardinality.
+For $\phi(x)\in L(A)$ the sets of the form $\phi(\U)$ are clopen in this topology (and vice versa by Proposition~\ref{prop_normality}).
+They form both a base of closed sets and base of open sets, which makes these topologies \textit{zero-dimensional}.
+By saturation, the topology induced by $A$ is compact.
+Actually, saturation is equivalent to the compactness of all these topologies as $A$ ranges over the sets of small cardinality.
 
 These topologies are never T$_0$ as any pair of tuples $a\equiv_A b$ have exactly the same neighborhoods. Such pairs always exist by cardinality reasons. However it is immediate that the topology induced on the quotient $\U^{|x|}/\!\equiv_A$ is Hausdorff (this is the so-called \textit{Kolmogorov quotient}). Indeed, this quotient corresponds to $S_x(A)$ with the topology introduced in Section~\ref{frammenti}.
 
@@ -294,7 +297,7 @@ The following proposition is an immediate consequence of compactness. When $A=B$
 
 %If $p$ is a type of formulas we write $\{\wedge\}p$ for the set of (finite) conjunctions of formulas in $p$. 
 
-\begin{proposition}[(mutual normality)]\label{prop_normality}
+\begin{proposition}[ (mutual normality)]\label{prop_normality}
 Let $p(x)\subseteq L(A)$ and $q(x)\subseteq L(B)$ be such that $p(x)\imp \neg q(x)$.
 Then there are a conjunction $\phi(x)$ of formulas in $p(x)$ and a conjunction $\psi(x)$ of formulas in $q(x)$ such that $\phi(x)\imp\neg\psi(x)$.
 \end{proposition}
@@ -312,17 +315,18 @@ The assumptions say that $p(x)\cup q(x)$ is inconsistent (i.e. not realized in $
 \end{itemize}
 \end{remark}
 
-\begin{remark}A definable set has the form $\phi(\U^{\mr x};{\gr b})$ for some formula $\phi({\mr x}\,;{\gr z})\in L$ and some ${\gr b}\in\U^{\gr z}$.
-If $f\in\Aut(\U)$ then 
+\begin{remark}\label{rem_image_def_set}
+  A definable set has the form $\phi(\U^{\mr x};{\gr b})$ for some formula $\phi({\mr x}\,;{\gr z})\in L$ and some ${\gr b}\in\U^{\gr z}$.
+  If $f\in\Aut(\U)$ then 
 
-\ceq{\hfill f\big[\phi(\U^{\mr x};{\gr b})\big]}{=}{\big\{f{\mr a}\ :\ \phi({\mr a}\,;{\gr b}),\phantom{ff}\ {\mr a}\in\U^{|{\mr x}|}\big\}}
+  \ceq{\hfill f\big[\phi(\U^{\mr x};{\gr b})\big]}{=}{\big\{f{\mr a}\ :\ \phi({\mr a}\,;{\gr b}),\phantom{ff}\ {\mr a}\in\U^{|{\mr x}|}\big\}}
 
-\ceq{ }{=}{\big\{f{\mr a}\ :\ \phi(f{\mr a}\,;f{\gr b}),\ {\mr a}\in\U^{|{\mr x}|}\big\}}
+  \ceq{ }{=}{\big\{f{\mr a}\ :\ \phi(f{\mr a}\,;f{\gr b}),\ {\mr a}\in\U^{|{\mr x}|}\big\}}
 
-\ceq{ }{=}{\phi(\U^{\mr x};f{\gr b}).}
+  \ceq{ }{=}{\phi(\U^{\mr x};f{\gr b}).}
 
-Hence automorphisms act on definable sets in a very natural way. 
-Their action on type-definable sets is similar.
+  Hence automorphisms act on definable sets in a very natural way. 
+  Their action on type-definable sets is similar.
 \end{remark}
 
 We say that a set ${\mr\D}\subseteq\U^{|{\mr x}|}$ is \emph{invariant over $A$\/} if $f[{\mr\D}]={\mr\D}$ for every $f\in\Aut(\U/A)$ or, equivalently, if $\orbit({\mr a}/A)\subseteq {\mr\D}$ for every ${\mr a}\in {\mr\D}$.
@@ -411,21 +415,12 @@ Applying mutual normality (Proposition~\ref{prop_normality}) to the first implic
 
 \ceq{\hfill p({\mr x})}
 {\imp}
-{\smash{\bigvee^n_{i=1} \theta_i({\mr x})}}
+{\bigvee^n_{i=1} \theta_i({\mr x})}
 \medrel{\imp}
 $\psi({\mr x}).$
 \end{proof}
 
 The following easy proposition is very useful.
-Its proof is left to the reader.
-Note that it would not hold without saturation.
-For a counter example consider $\RR$ as a structure in the language of strict orders and let $q(x,y)=\tp(0,1/A)$, where 
-
-\ceq{\hfill A}{=}{\Big\{1+\frac1{n+1}\ :\ n\in\omega\Big\}.} 
-
-By quantifier elimination, $0\equiv_{A}1$ but $\RR,1\notmodels\E y\;q(x,y)$.
-However, in any sufficiently saturated elementary extension of $\RR$, we have $1\models\E y\;q(x,y)$.
-
 
 \begin{proposition}\label{prop_E_type}
 Let $p({\mr x}\,;{\gr z})\subseteq L(A)$.
@@ -437,12 +432,21 @@ The theorem holds also when ${\mr x}$ and ${\gr z}$ have length $\kappa$.
 \end{proposition}
 
 \begin{proof}
-  It is easy to verify that the equivalence above holds if
+  It is easy to verify that the equivalence above holds with
   \def\medrel#1{\parbox{6ex}{$\displaystyle\hfil #1$}}
   \def\ceq#1#2#3{\parbox[b]{10ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
   \ceq{\hfill q({\mr x})}{=}{\big\{ \E {\gr z}\,\phi({\mr x}\,;{\gr z})\ :\ \phi({\mr x}\,;{\gr z}) \textrm{ conjunction of formulas in } p({\mr x}\,;{\gr z}) \big\}.}
 \end{proof}
+
+Note that the proposition would not hold without saturation.
+For a counter example consider $\RR$ as a structure in the language of strict orders and let $q(x,y)=\tp(0,1/A)$, where 
+
+\ceq{\hfill A}{=}{\Big\{1+\frac1{n+1}\ :\ n\in\omega\Big\}.} 
+
+By quantifier elimination, $0\equiv_{A}1$ but $\RR,1\notmodels\E y\;q(x,y)$.
+However, in any sufficiently saturated elementary extension of $\RR$, we have $1\models\E y\;q(x,y)$.
+
 
 As an application we give a second proof of the proposition above.
 
@@ -499,5 +503,14 @@ Let $\phi(x\,;y)\in L(\U)$. Prove that the following are equivalent
   \begin{itemize}
     \item[1.] $p(x)\ \iff\ \{\phi_n(x):n<\omega\}$
     \item[2.] $\phi_{n+1}(x)\wedge\phi_{n+1}(y)\ \imp\ \phi_n(x\cdot y)$.
+  \end{itemize}  
+\end{exercise}
+
+\begin{exercise}
+  Let $\phi(x\,;z)\in L$ and $a\in\U^z$.
+  Prove that the following are equivalent
+  \begin{itemize}
+    \item[1.] the type $\{\phi(x\,;fa)\,:\,f\in\Aut(\U)\}$ is realized (in $\U$)
+    \item[2.] there is a formula $\psi(z)\in L$ such that $\E x\A z\,[\psi(z)\imp\phi(x\,;z)]$.
   \end{itemize}  
 \end{exercise}
