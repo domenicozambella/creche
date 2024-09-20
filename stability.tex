@@ -5,6 +5,8 @@
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
+Chapter under revision.
+
 In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa>|L|$.
 The notation and implicit assumptions are as in Section~\ref{monster}.
 
@@ -1027,92 +1029,92 @@ Prove that strongly minimal theories are stable.
 %%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%
-\section{Stable groups}
+% \section{Stable groups}
 
-In this section $\U$ has two type-definable sets $\grG\subseteq\U^{\gr z}$ and $\mrX\subseteq\U^{\mr x}$ where $\grG$ is a group that acts from the left on $\mrX$.
-The group operations and the group action are definable.
-We use the symbol $\,\cdot\,$ for both the group multiplication and the group action.
+% In this section $\U$ has two type-definable sets $\grG\subseteq\U^{\gr z}$ and $\mrX\subseteq\U^{\mr x}$ where $\grG$ is a group that acts from the left on $\mrX$.
+% The group operations and the group action are definable.
+% We use the symbol $\,\cdot\,$ for both the group multiplication and the group action.
 
-Let $\D\subseteq\X$ be a relatively definable set.
-Let $L'$ be a two-sorted language.
-The sorts are called $\G$ and $\X$.
-There is only one binary relation symbol $r(x,y)$ that has sort $\G\times\X$.
-We write $\langle\G, \X\, \D\rangle$ for the $L'$-structure that has domain $\langle\G, \X\rangle$ and interpretes $r(x,y)$ as follows 
+% Let $\D\subseteq\X$ be a relatively definable set.
+% Let $L'$ be a two-sorted language.
+% The sorts are called $\G$ and $\X$.
+% There is only one binary relation symbol $r(x,y)$ that has sort $\G\times\X$.
+% We write $\langle\G, \X\, \D\rangle$ for the $L'$-structure that has domain $\langle\G, \X\rangle$ and interpretes $r(x,y)$ as follows 
 
-\ceq{\hfill\langle\G,\X, \D\rangle\models r(g,a)}{\Leftrightarrow}{a\in g\cdot\D}
+% \ceq{\hfill\langle\G,\X, \D\rangle\models r(g,a)}{\Leftrightarrow}{a\in g\cdot\D}
 
-Note that $\D$ is definable in $\langle\G,\X, \D\rangle$ by the formula $r(1,y)$.
-The action of $\G$ on $\U$ defined by left multiplication on $\G$ and $\X$ is an $L'$-automorphisms.
-Therefore we may identify $\G$ with a common subgroup of the groups $L'\mbox{-Aut}\U,{\D})$ as $\D$ ranges over the definable subsets of $\X$.
+% Note that $\D$ is definable in $\langle\G,\X, \D\rangle$ by the formula $r(1,y)$.
+% The action of $\G$ on $\U$ defined by left multiplication on $\G$ and $\X$ is an $L'$-automorphisms.
+% Therefore we may identify $\G$ with a common subgroup of the groups $L'\mbox{-Aut}\U,{\D})$ as $\D$ ranges over the definable subsets of $\X$.
 
-\begin{fact}
-  The structure $\langle\G,\X, \D\rangle$ is saturated.
-\end{fact}
+% \begin{fact}
+%   The structure $\langle\G,\X, \D\rangle$ is saturated.
+% \end{fact}
 
-\begin{proof}
-  First note that the sets defined by $r(x,y)$ and by $\neg r(x,y)$ in $\langle\G,\X, \D\rangle$ are a type-definable subsets of $\U$.
-  It follows that the sets defined by $L'$-formulas are type-definables subsets of $\U$.
-  Therefore the saturation of $\langle\G,\X, \D\rangle$ follows from the saturation of $\U$.
-\end{proof}
+% \begin{proof}
+%   First note that the sets defined by $r(x,y)$ and by $\neg r(x,y)$ in $\langle\G,\X, \D\rangle$ are a type-definable subsets of $\U$.
+%   It follows that the sets defined by $L'$-formulas are type-definables subsets of $\U$.
+%   Therefore the saturation of $\langle\G,\X, \D\rangle$ follows from the saturation of $\U$.
+% \end{proof}
 
-%A set $\EuScript X\subseteq\U$ is generic if there are some finitely many $g_1,\dots,g_n\in\U$ such that the sets $g_i\EuScript X$ cover $\U$.
+% %A set $\EuScript X\subseteq\U$ is generic if there are some finitely many $g_1,\dots,g_n\in\U$ such that the sets $g_i\EuScript X$ cover $\U$.
 
-\begin{fact}\label{fact_generic_G_L}
-Let $\D\subseteq\X$ be a definable set.
-Write $G_{\D}$ for $L'$-$\Aut(\G,\X,{\D})$.
-Then the following are equivalent
-\begin{itemize}
-  \item[1.] $\D$ is $G_{\D}$-generic
-  \item[2.] $\D$ is $\G$-generic.
-\end{itemize}
-\end{fact}
+% \begin{fact}\label{fact_generic_G_L}
+% Let $\D\subseteq\X$ be a definable set.
+% Write $G_{\D}$ for $L'$-$\Aut(\G,\X,{\D})$.
+% Then the following are equivalent
+% \begin{itemize}
+%   \item[1.] $\D$ is $G_{\D}$-generic
+%   \item[2.] $\D$ is $\G$-generic.
+% \end{itemize}
+% \end{fact}
 
-\begin{proof}
-  The equivalence follows from the fact that the orbits of $\D$ under the action of $G_{\D}$ and $\G$ coincide.
-  In fact, for $f\in L'\mbox{-Aut}(\G,\X,\D)$ let $g=f1$.
-  Then $f{\D}=g\cdot\D$.
-\end{proof}
+% \begin{proof}
+%   The equivalence follows from the fact that the orbits of $\D$ under the action of $G_{\D}$ and $\G$ coincide.
+%   In fact, for $f\in L'\mbox{-Aut}(\G,\X,\D)$ let $g=f1$.
+%   Then $f{\D}=g\cdot\D$.
+% \end{proof}
 
-\begin{fact}
-  Assume $\X=\G$, where $\G$ acts on itself by translation. 
-  Let $\mu$ be S1 and invariant under $\G$-translation.
-  If $\D\subseteq\G$ is $\mu$-wide then $\D\cdot\D^{-1}$ is $\G$-generic.
-\end{fact}
+% \begin{fact}
+%   Assume $\X=\G$, where $\G$ acts on itself by translation. 
+%   Let $\mu$ be S1 and invariant under $\G$-translation.
+%   If $\D\subseteq\G$ is $\mu$-wide then $\D\cdot\D^{-1}$ is $\G$-generic.
+% \end{fact}
 
-\begin{proof}
-  Let $A\subseteq\G$ be maximal such that $a\cdot\D\cap b\cdot\D=\varnothing$ for every distinct $a,b \in A$.
-  By maximality for every $b\in\G$ there is an $a\in A$ such that $b\cdot\D\cap a\cdot\D\neq\varnothing$.
-  That is, there are $d_1,d_2\in\D$ such that $b=a\cdot d_2\cdot d_1^{-1}$.
-  This shows that the $A$-translates of $\D\cdot\D^{-1}$ cover $\G$.
-  It suffices to prove that $A$ is finite.
-  Suppose not, then we can find a indiscernible sequence $\langle a_i:i<\omega\rangle$ such that $a_0\cdot\D\cap a_1\cdot\D=\varnothing$.
-  Then $a_0\cdot\D$ is not wide and, by tranlation invariance, $\D$ is not wide, contrary to our assumption.
-\end{proof}
+% \begin{proof}
+%   Let $A\subseteq\G$ be maximal such that $a\cdot\D\cap b\cdot\D=\varnothing$ for every distinct $a,b \in A$.
+%   By maximality for every $b\in\G$ there is an $a\in A$ such that $b\cdot\D\cap a\cdot\D\neq\varnothing$.
+%   That is, there are $d_1,d_2\in\D$ such that $b=a\cdot d_2\cdot d_1^{-1}$.
+%   This shows that the $A$-translates of $\D\cdot\D^{-1}$ cover $\G$.
+%   It suffices to prove that $A$ is finite.
+%   Suppose not, then we can find a indiscernible sequence $\langle a_i:i<\omega\rangle$ such that $a_0\cdot\D\cap a_1\cdot\D=\varnothing$.
+%   Then $a_0\cdot\D$ is not wide and, by tranlation invariance, $\D$ is not wide, contrary to our assumption.
+% \end{proof}
 
-\begin{theorem}
-  Let $\mrD$ be a definable set.
-  Assume that $\phi({\mr x}\,;{\gr z})={\mr x}\in{\gr z}\cdot\mrD$ is stable.
-  Then for every ${\mr a}\in\mrX$ either $\D$ or $\G\cdot{\mr a}\smallsetminus\D$ is $\G$-generic in $\G\cdot{\mr a}$.
-\end{theorem}
+% \begin{theorem}
+%   Let $\mrD$ be a definable set.
+%   Assume that $\phi({\mr x}\,;{\gr z})={\mr x}\in{\gr z}\cdot\mrD$ is stable.
+%   Then for every ${\mr a}\in\mrX$ either $\D$ or $\G\cdot{\mr a}\smallsetminus\D$ is $\G$-generic in $\G\cdot{\mr a}$.
+% \end{theorem}
 
-\begin{proof}
-  Assume $\G\cdot{\mr a}\smallsetminus\D$ is not generic.
-  Then $\D$ is persistent.
-  We prove that $\D$ is generic.
-  By Theorem~\ref{thm_generic_invariant2} there is a invariant type $p(x)\in S_\phi(\U)$ containing $x\in\D$.
-  By Theorem~\ref{thm_stability_definable_rovescio}, there is a positive Boolean combination of sets in the $G_{\D}$-orbit of $\D$ that is $L'$-definable over $\varnothing$.
-  By the transitivity of the action, $\X$ is the only set that is $L'$-definable over $\varnothing$.
-  Therefore some disjunction of sets in the $G_{\D}$-orbit of $\D$ cover $\X$.
-  As the $G_{\D}$-orbit and the $\G$-orbit of $\D$ coincide, the claim follows.
-\end{proof}
+% \begin{proof}
+%   Assume $\G\cdot{\mr a}\smallsetminus\D$ is not generic.
+%   Then $\D$ is persistent.
+%   We prove that $\D$ is generic.
+%   By Theorem~\ref{thm_generic_invariant2} there is a invariant type $p(x)\in S_\phi(\U)$ containing $x\in\D$.
+%   By Theorem~\ref{thm_stability_definable_rovescio}, there is a positive Boolean combination of sets in the $G_{\D}$-orbit of $\D$ that is $L'$-definable over $\varnothing$.
+%   By the transitivity of the action, $\X$ is the only set that is $L'$-definable over $\varnothing$.
+%   Therefore some disjunction of sets in the $G_{\D}$-orbit of $\D$ cover $\X$.
+%   As the $G_{\D}$-orbit and the $\G$-orbit of $\D$ coincide, the claim follows.
+% \end{proof}
 
-Let $p(x)$ be a global type containing $x\in\X$ we define
+% Let $p(x)$ be a global type containing $x\in\X$ we define
 
-\ceq{\hfill g\cdot p(x)}{=}{\big\{\varphi(g^{-1}\cdot x)\ :\ \varphi(x)\in p\big\}}
+% \ceq{\hfill g\cdot p(x)}{=}{\big\{\varphi(g^{-1}\cdot x)\ :\ \varphi(x)\in p\big\}}
 
-and
+% and
 
-\ceq{\hfill{\rm Stab}(p)}{=}{\big\{g\in\G\ :\ g\cdot p(x)=p(x)\big\}.}
+% \ceq{\hfill{\rm Stab}(p)}{=}{\big\{g\in\G\ :\ g\cdot p(x)=p(x)\big\}.}
 
 
 
