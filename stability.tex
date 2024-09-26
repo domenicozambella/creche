@@ -5,6 +5,7 @@
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
+\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 Chapter under revision.
 
 In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa>|L|$.
@@ -133,12 +134,12 @@ From the following easy observation of Chernikov and Simon~\cite{CS} we obtain a
 
 \begin{proposition}\label{prop_sh_exp_qe}
 Let $\C\subseteq\U^{y\,{\gr z}}$ be approximated from below by the formula $\phi({\mr x}\,;y\,{\gr z})$.
-Then $\grD=\big\{{\gr z}:\E y\ \big(y\,{\gr z}\in\C\big)\big\}$ is approximated from below by the formula $\E y\,\phi({\mr x}\,;y\,{\gr z})$.
+Then $\grD=\big\{{\gr z}:\E y\ \big(y\,{\gr z}\in\C\big)\big\}$ is approximated from below by $\E y\,\phi({\mr x}\,;y\,{\gr z})$.
 \end{proposition}
 
 \begin{proof}
-Let $B\subseteq\U$ be finite. 
-We want ${\mr a}\in\U^{\mr x}$ such that 
+Let $B\subseteq\U$ be finite.
+We want ${\mr a}\in\U^{\mr x}$ such that
 
 \ceq{\ssf{a.}\hfill \E y\ \big(y\,{\gr b}\in\C\big)}{\iff}{\E y\,\phi({\mr a}\,;y\,{\gr b})}\hfill for every ${\gr b}\in B^{\gr z}$
 
@@ -150,16 +151,14 @@ Let $D\subseteq\U$ be a finite set such that
 
 As $\C$ is approximable from below, there is an ${\mr a}$ such that
 
-\ceq{\ssf{a'.}\hfill d\,{\gr b}\in\C}{\iff}{\phi({\mr a}\,;d\,{\gr b})}\hfill for every $d\,{\gr b}\in \big(D\cup B\big)^{y\,{\gr z}}$
+\ceq{\ssf{a$'$.}\hfill d\,{\gr b}\in\C}{\iff}{\phi({\mr a}\,;d\,{\gr b})}\hfill for every $d\,{\gr b}\in \big(D\cup B\big)^{y\,{\gr z}}$
 
-\ceq{\ssf{b'.}\hfill \A y\,{\gr z}\ \Big[\phi({\mr a}\,;y\,{\gr z})}{\imp}{y\,{\gr z}\in\C\Big]}
+\ceq{\ssf{b$'$.}\hfill \A y\,{\gr z}\ \Big[\phi({\mr a}\,;y\,{\gr z})}{\imp}{y\,{\gr z}\in\C\Big]}
 
-We obtain \ssf{b} from \ssf{b'} simply by logic. 
-Implication $\imp$ in \ssf{a} follows from \ssf{a'} and \ssf{c}. 
+We obtain \ssf{b} from \ssf{b$'$} simply by logic. 
+Implication $\imp$ in \ssf{a} follows from \ssf{a$'$} and \ssf{c}. 
 Implication $\pmi$ follows from \ssf{b}.
 \end{proof}
-
-
 
 \begin{corollary}
 If $p\in S_{{\mr x}}(\U)$ is honestly definable then the family of sets externally definable by $p$ is closed under quantifiers and Boolean combinations. 
@@ -182,57 +181,61 @@ The sets externally definable by $p({\mr x})$ are always closed under Boolean op
 
 %Here we write \emph{$\phi({\mr x}\,;{\gr z})^*$\/} for the partitioned formula where the order of the two tuples is inverted (i.e.\@ it is the opposite of what displayed).
 
-Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be a partitioned formula (these have been introduced in Definition~\ref{def_partitioned_fla}).
-We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$ is a \emph{ladder sequence\/} for $\phi({\mr x}\,;{\gr z})$ if for every $i<j<\alpha$
+Let $\R\subseteq\U^{\mr x}\times\U^{\gr z}$ be a binary relation invariant over $A$.
+We denote by $\R({\mr x}\,;{\gr z})$ the preditate associated to $\R$.
+We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$ is a \emph{ladder\/} of length $\alpha$ for $\R({\mr x}\,;{\gr z})$ if for every $i<j<\alpha$
 
 
-\ceq{\hfill\phi({\mr a_i}\,;{\gr b_j})}{\wedge}{\neg\phi({\mr a_j}\,;{\gr b_i})}
+\ceq{\hfill\R({\mr a_i}\,;{\gr b_j})}{\wedge}{\neg\R({\mr a_j}\,;{\gr b_i})}
 
-We say that the formula $\phi({\mr x}\,;{\gr z})$ is \emph{stable\/} if for some finite $n$ all ladders have length at most $n$. Otherwise we say it is \emph{unstable} or that it has the \emph{order property}.
+We say that $\R({\mr x}\,;{\gr z})$ is \emph{stable\/} if there is no ladder of length $\omega$. Otherwise we say it is \emph{unstable} or that it has the \emph{order property}.
+We will mainly deal with relations that are definable or type-definable.
+We will say that a formula or a type is stable accordingly.
+The proof of the following easy fact is left to the reader.
 
-Note that by compactness if a formulas admits ladder sequences of unbounded finite length, then it admits an infinite one.
+\begin{fact}\label{}
+  The following are equivalent for every $p({\mr x}\,;{\gr z})\subseteq L(A)$
+  \begin{itemize}
+    \item [1.] $p({\mr x}\,;{\gr z})$ is stable
+    \item [1.] for some finite $n$, there is no ladder of length $n$ for $p({\mr x}\,;{\gr z})$
+    \item [2.] there is $q({\mr x}\,;{\gr z})\subseteq L(A)$ equivalent to $p({\mr x}\,;{\gr z})$ containing only stable formulas.
+  \end{itemize}
+\end{fact}
 
-\begin{exercise}
-   Prove that the following are equivalent
-   \begin{itemize}
-   \item[1.]  $\phi({\mr x}\,;{\gr z})$ has a a ladder sequence of length $\omega$
-   \item[2.] there are set ${\mr A}$ and a sequnce $\<{\gr b_i} : i<\omega\>$ such that $\phi({\mr A}\,;{\gr b_i})\subset\phi({\mr A}\,;{\gr b_{i+1}})$ for every $i<\omega$.
-   \end{itemize}
-\end{exercise}
-
-We can also required that the ladder is an indiscernible sequence. 
+We can required that the ladder is an indiscernible sequence. 
 
 \begin{theorem}\label{thm_sability_indiscernibility}
-  Let $\phi({\mr x}\,;{\gr z})\in L(A)$.
+  Let $\R({\mr x}\,;{\gr z})$ be invariant over $A$.
   Then the following are equivalent
   \begin{itemize}
-    \item[1.] $\phi({\mr x}\,;{\gr z})$ is stable
-    \item[2.] $\phi({\mr a_0}\,;{\gr b_1})\imp\phi({\mr a_1}\,;{\gr b_0})$ for every $A$-indiscernible sequence $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
+    \item[1.] $\R({\mr x}\,;{\gr z})$ is stable
+    \item[2.] $\R({\mr a_0}\,;{\gr b_1})\imp\R({\mr a_1}\,;{\gr b_0})$ for every $A$-indiscernible sequence $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
-  (2$\IMP$1) \ Assume $\phi({\mr x}\,;{\gr z})$ is unstable.
-  By compactness, there is a ladder sequence $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
+  (2$\IMP$1) \ Assume $\R({\mr x}\,;{\gr z})$ is unstable and that this is witnessed by $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
   Let $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ be a sequence of $A$-indiscernibles with the same EM-type as $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
-  Then $\phi({\mr a'_0}\,;{\gr b'_1})$ and $\neg\phi({\mr a'_1}\,;{\gr b'_0})$.
+  By invariance $\R({\mr a'_0}\,;{\gr b'_1})$ and $\neg\R({\mr a'_1}\,;{\gr b'_0})$.
 
   (2$\IMP$1) Immediate by indiscernibility.
 \end{proof}
-%It is clear that $\phi({\mr x}\,;{\gr z})$ is stable if and only if $\phi({\mr x}\,;{\gr z})^*$ is stable.
+%It is clear that $p({\mr x}\,;{\gr z})$ is stable if and only if $p({\mr x}\,;{\gr z})^*$ is stable.
 
-%Suppose $\phi({\mr x}\,;{\gr z})$ is unstable and let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be a ladder sequence. By padding redundant variables, we can read $\phi({\mr x}\,;{\gr z})$ as a formula $\phi({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$. Then $\phi({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$ defines the order of the sequence $\<{\mr a_i}\,{\gr b_i} : i<\omega\>$. For this reason it is also common to say that $\phi({\mr x}\,;{\gr z})$ has the \emph{order property}, this simply means that it is unstable. 
+%Suppose $p({\mr x}\,;{\gr z})$ is unstable and let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be a ladder sequence. By padding redundant variables, we can read $p({\mr x}\,;{\gr z})$ as a formula $p({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$. Then $p({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$ defines the order of the sequence $\<{\mr a_i}\,{\gr b_i} : i<\omega\>$. For this reason it is also common to say that $p({\mr x}\,;{\gr z})$ has the \emph{order property}, this simply means that it is unstable. 
 
 \begin{lemma}\label{lem_stab_Boole}
-  Every Boolean combination of stable formulas is stable.
-  Moreover, if $\phi({\mr x}\,;{\gr z})$ then  $\phi({\mr x}\,;{\gr z})^{\rm op}$ and $\phi({\mr x},x'\,;{\gr z},z')$ are also stable formula (in the latter $x'$ and $z'$ are dummy variables).
+  Every Boolean combination of stable relations is stable.
+  Moreover, if $\R({\mr x}\,;{\gr z})$ then  $\R^{-1}({\mr x}\,;{\gr z})$ and $\R({\mr x},x'\,;{\gr z},z')$ are also stable formula (in the latter $x'$ and $z'$ are dummy variables).
 \end{lemma}
 
 \begin{proof}
   It suffices to consider conjunction and negation.
-  Let $\phi({\mr x}\,;{\gr z}),\psi({\mr x}\,;{\gr z})\in L(\U)$ be stable formulas.
-  By Theorem~\ref{thm_sability_indiscernibility}, it is immediate that $\phi({\mr x}\,;{\gr z})\wedge\psi({\mr x}\,;{\gr z})$ is stable.
-  As for negation, notice that if $\<{\mr a_i}\,;{\gr b_i} : i<n\>$ is a ladder sequence for $\phi({\mr x}\,;{\gr z})$ then  $\<{\mr a_{n-i}}\,;{\gr b_{n-i}} : i<n\>$ is a ladder sequence for $\neg\phi({\mr x}\,;{\gr z})$.
+  Let $\R_i({\mr x}\,;{\gr z})$, for $i=1,2$,  be stable relations that are invariant over $A$.
+  By Theorem~\ref{thm_sability_indiscernibility}, it is immediate that $\R_1({\mr x}\,;{\gr z})\wedge\R_2({\mr x}\,;{\gr z})$ is stable.
+  As for negation, let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be a ladder for $\R({\mr x}\,;{\gr z})$ that is indiscernible over $A$.
+  By Exercise~\ref{ex_symmetry_ind}, there is a $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ of $A$-indiscernibles such that ${\mr a'_0},{\gr b'_0}={\mr a_1}{\gr b_1}$ and ${\mr a'_1},{\gr b'_1}={\mr a_0}{\gr b_0}$.
+  This sequence witnesses the instability of $\neg\R({\mr x}\,;{\gr z})$.
 
   The second claim is immediate.
 \end{proof}
@@ -344,6 +347,14 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
 \end{remark} 
 
 \begin{exercise}
+  Prove Fact~\ref{fact_stability_compactness}.
+\end{exercise}
+
+\begin{exercise}
+  Prove that if $p({\mr x}\,;{\gr z})$ admits ladder sequences of arbitrary finite length, then it admits a ladder sequence of infinite length.
+\end{exercise}
+
+\begin{exercise}
   Let $\phi(x,y)\in  L$, where $|x|=|y|=1$.
   Suppose there is an infinite set $A\subseteq\U$ such that $\phi(a,b)\niff\phi(b,a)$ for every two distinct $a,b\in A$.
   Prove that $\phi(x\,;y)$ is unstable.
@@ -398,8 +409,7 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
 %   \end{exercise} 
 
   \begin{exercise}\label{ex_stability_conjunction}
-    Prove that if $\phi({\mr x}\,;{\gr z})$ and $\psi({\mr x}\,;{\gr z})$ are stable between $\mrA$ and $\grB$, then so is $\phi({\mr x}\,;{\gr z})\wedge\psi({\mr x}\,;{\gr z})$.
-    Hint: use the finite Ramsey theorem.
+    Prove that if $p({\mr x}\,;{\gr z})$ and $q({\mr x}\,;{\gr z})$ are stable between $\mrA$ and $\grB$, then so is $p({\mr x}\,;{\gr z})\cup q({\mr x}\,;{\gr z})$.
   \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -642,7 +652,7 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 \begin{corollary}\label{corol_stable_coheir_over_models}
   Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
   Let $q({\mr x})\subseteq L(\U)$ be finitely satisfiable in every $M\supseteq A$.
-  Then there is a global $\phi$-type $p({\mr x})\in S_{\phi}(\U)$ such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
+  Then there is a type $p({\mr x})\in S_{\phi}(\U)$ such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
 \end{corollary}
 
 \begin{proof}
@@ -680,7 +690,7 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 % \ssf{1}$\IMP$\ssf{3}.
 % Proposition~\ref{thm_count_types} implies that $|S(A)|\le |A|^{|L|}$. Therefore, when $|L|<\cf(A)$, we obtain $|S(A)|\le |A|$.
 % \end{proof}
-\section{Stationarity and symmetry}
+\section{Symmetry and stationarity}
 \label{stationarity}
 
 \def\ceq#1#2#3{\parbox{20ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
@@ -743,7 +753,7 @@ Now we show that under the assumption of stability Lascar invariance reduces to 
   Let $p({\mr x})\in S_\phi(\U)$. 
   Then the following are equivalent
   \begin{itemize}
-  \item[1.] ${\gr\D_{p,\phi}}\in \acl^\eq\!A$
+  \item[1.] ${\gr\D_{p,\phi}}\in \acl^\eq\!A$ -- recall that, by stability, ${\gr\D_{p,\phi}}\in\U^\eq$
   \item[2.] $p({\mr x})$ is finitely satisfied in every $M\supseteq A$
   \item[3.] $p({\mr x})$ is invariant over $\acl^\eq\!A$
   \item[4.] $p({\mr x})$ is Lascar invariant over $A$.
@@ -852,97 +862,131 @@ It is not required in the following but it has a simple intuitive proof.
 
 \begin{proposition}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
-  Let $M$ and ${\mr a}\in\U^{\mr x}$ be arbitrary.
-  Then, for some ${\mr a_1}\equiv_M\dots\equiv_M{\mr a_n}\equiv_M{\mr a}$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;\U^{\gr z})$ is definable over $M$.
+  Let $M$ and ${\gr b}\in\U^{\gr z}$ be arbitrary.
+  Then, for some ${\gr b_i}\equiv_M{\gr b}$, where $i=1,\dots,n$, some positive Boolean combination of the sets $\phi(\U^{\mr x}\,;{\gr b_i})$ is definable over $M$.
 \end{proposition}
 
 \begin{proof}
   Let $\V\preceq\U$ be isomorphic to $\U$ over $M$.
-  By Theorem~\ref{thm_def_stable_formula} with $\V$ for $\U$, there are  some ${\mr a_1}\equiv_M\dots\equiv_M{\mr a_n}\equiv_M{\mr a}$, such that $\phi({\mr a}\,;\V^{\gr z})$ is a positive Bolean combination of the sets $\phi({\mr a_i}\,;\V^{\gr z})$.
-  Let $\theta({\mr a_1},\dots,{\mr a_n}\,;\V^{\gr z})$ be such a Boolean combination.
-  Now, by Proposition~\ref{prop_saturate_heir}, we can chose $\V$ such that ${\mr a}\nonfork_M\V$.
-  By non-splitting, i.e.\@ reasoning as in Theorem~\ref{thm_symmetry}, there is a formula $\psi({\gr z})\in L(M)$ such that $\psi(\V^{\gr z})=\phi({\mr a}\,;\V^{\gr z})$.
-  Finally, by elementarity, we obtain that $\psi(\U^{\gr z})=\theta({\mr a_1},\dots,{\mr a_n}\,;\U^{\gr z})$.
+  By Theorem~\ref{thm_def_stable_formula} with $\V$ for $\U$ and the role of the two sorts reversed, there are  some  ${\gr b_i}\equiv_M{\gr b}$ in $\V$, such that $\phi(\V^{\mr x}\,;{\gr b})$ is a positive Bolean combination of the sets $\phi(\V^{\mr x}\,;{\gr b_i})$.
+  Let $\theta(\V^{\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be such a Boolean combination.
+  Now, by Proposition~\ref{prop_saturate_heir}, we can choose $\V$ such that ${\gr b}\cnonfork_M\V$.
+  By non-splitting, i.e.\@ reasoning as in Theorem~\ref{thm_symmetry}, there is a formula $\psi({\mr x})\in L(M)$ such that $\psi(\V^{\mr x})=\phi(\V^{\mr x}\,;{\gr b})$.
+  Finally, by elementarity, we obtain that $\psi(\U^{\mr x})=\theta(\U^{\mr x}\,;{\gr b_1},\dots,{\gr b_n})$.
 \end{proof}
 
 \begin{theorem}\label{thm_stability_definable_rovescio}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
-  Let $A$ and ${\mr a}\in\U^{\mr x}$ be arbitrary.
-  Then, for some ${\mr a_i}\equiv_{\acl^\eq\!A}{\mr a}$, where $i=1,\dots,n$, some positive Boolean combination of the sets $\phi({\mr a_i}\,;\U^{\gr z})$ is definable over $A$.
+  Let $A$ and ${\gr b}\in\U^{\gr z}$ be arbitrary.
+  Then, for some ${\gr b_i}\equiv_{\acl^\eq\!A}{\gr b}$, where $i=1,\dots,n$, some positive Boolean combination of the sets $\phi(\U^{\mr x}\,;{\gr b_i})$ is definable over $A$.
 \end{theorem}
 
 \begin{proof}
-  Let $q({\mr x})=\tp({\mr a}/\acl^\eq\!A)$.
-  By Corollary~\ref{corol_stable_coheir_over_models} there is a type $p({\mr x})\in S_\phi(\U)$ consistent with $q({\mr x})$ and invariant over $\acl^\eq\!A$.
-  By Theorem~\ref{thm_def_stable_formula} there are some ${\mr a_1},\dots,{\mr a_n}\models q({\mr x})$ such that ${\gr z}\in{\gr\D_{p,\phi}}$ is equivalent to a positive Bolean combination of the formulas $\phi({\mr a_i}\,;{\gr z})$.
-  Let $\theta({\mr a_1},\dots,{\mr a_n}\,;\U^{\gr z})$ be such a Boolean combination.
-  When $A=\acl^\eq\!A$, this is the required formula as ${\gr\D_{p,\phi}}\in\acl^\eq\!A$ by Proposition~\ref{prop_type_over_acl2}.
+  Let $q({\gr z})=\tp({\gr b}/\acl^\eq\!A)$.
+  By Corollary~\ref{corol_stable_coheir_over_models} there is a type $p({\gr z})\in S_\phi(\U)$ consistent with $q({\gr z})$ and invariant over $\acl^\eq\!A$.
+  By Theorem~\ref{thm_def_stable_formula}, with the role of the two tuples of variables reversed, there are some ${\gr b_1},\dots,{\gr b_n}\models q({\gr z})$ such that ${\mr\D_{p,\phi^{\rm op}}}$ is equivalent to a positive Bolean combination of the sets $\phi(\U^{\mr x}\,;{\gr b_i})$.
+  Let $\theta(\U^{\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be such a Boolean combination.
+  When $A=\acl^\eq\!A$, this is the required formula as ${\mr\D_{p,\phi^{\rm op}}}\in\acl^\eq\!A$ by Proposition~\ref{prop_type_over_acl2}.
 
   For the general case, reason as follows.
-  Let $f_1,\dots,f_n\in\Aut(\U/A)$ be such that the sets $f_i{\gr\D_{p,\phi}}$ span the whole orbit of ${\gr\D_{p,\phi}}$ over $A$.
+  Let $f_1,\dots,f_m\in\Aut(\U/A)$ be such that the sets $f_i{\mr\D_{p,\phi^{\rm op}}}$ span the whole orbit of ${\mr\D_{p,\phi^{\rm op}}}$ over $A$.
   Clearly,
 
-  \ceq{\hfill\bigcup_{i=1}^n f_i{\gr\D_{p,\phi}}}{=}{\bigvee_{i=1}^n\theta(f_i{\mr a_1},\dots,f_i{\mr a_n}\,;\U^{\gr z}).}
+  \ceq{\hfill\bigcup_{i=1}^m f_i{\mr\D_{p,\phi^{\rm op}}}}{=}{\bigvee_{i=1}^m\theta(\U^{\mr x}\,;f_i{\gr b_1},\dots,f_i{\gr b_n}).}
 
   The set on the l.h.s.\@ is invariant (hence definable) over $A$.
   Therefore the formula on the r.h.s.\@ is the required positive Boolean combination.
 \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The action of the Lascar group}
+
+We adopt the notation and terminology of Chapter~\ref{actions} with $G=\Autf(\U/A)$, $\grZ=\U^{\gr z}$, and $\Delta=\{\phi({\mr x}\,;{\gr z})\}$.
+The set $\mrX$ will specified in the context.
 We say \emph{Lascar generic\/} over $A$ for generic under the action of $\Autf(\U/A)$.
 We define \emph{Lascar persistent\/} similarly.
 
 \begin{corollary}\label{corol_persistent_finsat}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
-  Let $A$ and ${\mr a}\in\U^{\mr x}$ be arbitrary.
-  Then the following are equivalent
+  Let $\mrX=\U^{\mr x}$.
+  Let $\mrD$ be a $B_\phi(\U)$-definable set.
+  Then the following are equivalent 
   \begin{itemize}
-    \item[1.] $\phi({\mr a}\,;{\gr z})$ is Lascar persistent over $A$ in $\U^{\gr z}$
-    \item[2.] $\phi({\mr a}\,;{\gr z})$ is satisfied in every $M\supseteq A$.
+    \item[1.] $\mrD$ is Lascar persistent over $A$
+    \item[2.] $\mrD$ intersects every $M\supseteq A$.
   \end{itemize}
 \end{corollary}
 \begin{proof}
+  As Boolean combinations of stable formulas are stable, we can assume that $\mrD$ is defined by the formula $\phi({\mr x}\,;{\gr b})$.
+
   \ssf1$\IMP$\ssf2.
-  If $\phi({\mr a}\,;{\gr z})$ is Lascar persistent over $A$, then the formula $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr z})$ in the proof of Theorem~\ref{thm_stability_definable_rovescio} is consistent.
-  By elementarity $\theta({\mr a_1},\dots,{\mr a_n}\,;{\gr z})$ is satisfiable in every model $M\supseteq A$, hence so is $\phi({\mr a}\,;{\gr z})$.
+  If $\mrD$ is Lascar persistent, the formula $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ in the proof of Theorem~\ref{thm_stability_definable_rovescio} is consistent.
+  By elementarity $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ is satisfiable in every model $M\supseteq A$, hence so is $\phi({\mr x}\,;{\gr b})$.
   
   \ssf2$\IMP$\ssf1.
-  From \ssf2 and Corollary~\ref{corol_stable_coheir_over_models} it follows that $\phi({\mr a}\,;{\gr z})$ is contained in a global type $p({\gr z})$ that is finitely satisfied in every $M\subseteq A$.
-  By Proposition~\ref{prop_type_over_acl2} $p({\gr z})$ is Lascar invariant over $A$.
-  Then $p({\gr z})$, and in particular $\phi({\mr a}\,;{\gr z})$, is Lascar persistent over $A$.
+  From \ssf2 and Corollary~\ref{corol_stable_coheir_over_models} it follows that $\phi({\mr x}\,;{\gr b})$ is contained in a global type $p({\mr x})$ that is finitely satisfied in every $M\supseteq A$.
+  By Proposition~\ref{prop_type_over_acl2} $p({\mr x})$ is Lascar invariant.
+  Then, by Theorem~\ref{thm_generic_invariant}, $p({\mr x})$ and in particular $\phi({\mr x}\,;{\gr b})$ is Lascar persistent.
+\end{proof}
+
+\begin{proposition}
+  Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
+  Let $\mrX=\U^{\mr x}$.
+  Then the equivalent conditions of Theorem~\ref{thm_coalesce} are satisfied.
+\end{proposition}
+
+\begin{proof}
+  Let $\mrD$ be a $B_\phi(\U)$-definable set that is weakly Lascar persistent.
+  Pick a finite $H\subseteq\Autf(\U/A)$ such that $\cup\,H\,\mrD$ is Lascar persistent.
+  We prove that $\mrD$ is Lascar persistent.
+  By Corollary~\ref{corol_persistent_finsat} the set $\cup\,H\,\mrD$ intersects every $M\supseteq A$.
+  Then, by Corollary~\ref{corol_stable_coheir_over_models} there is a Lascar invariant type $p({\mr x})\in S_\phi(\U)$ containing the formula that defines $\cup\,H\,\mrD$.
+  By completeness and invariance ${\mr x}\in\mrD$ is in $p({\mr x})$.
+  Then $\mrD$ is persistent.
 \end{proof}
 
 \begin{proposition}\label{prop_stable_genericiffpersistent}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
   Let $q({\mr x})\in S(\acl^\eq\!A)$.
-  Then for every $\phi$-definable set $\mrD$, the following are equivalent
+  Let $\mrX=q(\U^{\mr x})$.
+  Then for every $B_\phi(\U)$-definable set $\mrD$, the following are equivalent
   \begin{itemize}
-    \item[1.] $\mrD$ is Lascar generic over $A$ in $q(\U^{\mr x})$.
-    \item[2.] $\mrD$ is Lascar persistent over $A$ in $q(\U^{\mr x})$.
+    \item[1.] $\mrD$ is Lascar generic over $A$.
+    \item[2.] $\mrD$ is Lascar persistent over $A$.
   \end{itemize}
 \end{proposition}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  Let $p({\mr x})$ be a global $\phi$-type that is Lascar invariant over $A$.
-  This exists by Theorem.
-  Then $p({\mr x})\proves{\mr x}\in\mrD$ follows from \ssf1 by Theorem~\ref{thm_generic_invariant}.
+  By Theorem~\ref{thm_stationarity} there is a type $p({\mr x})\in S_\phi(\U)$ consistent with $q({\mr x})$ that is Lascar invariant.
+  By Theorem~\ref{thm_generic_invariant} $p({\mr x})$ Lascar persistent.
+  Therefore, by Corollary~\ref{corol_def_mu}, it is Lascar generic.
 
   \ssf2$\IMP$\ssf1.
-  
+  Assume $\mrD$ is not Lascar generic.
+  Then $\neg\mrD$ is Lascar persistent.
+  Assume for a contradiction that also $\mrD$ is Lascar persistent.
+  Let $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be the $B_\phi(\U)$-formula that defines $\mrD$.
+  As $\theta({\mr x}\,;{\gr z_1},\dots,{\gr z_n})$ is stable, by Corollary~\ref{corol_persistent_finsat} both $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ and its negation are finitely satisfied in every model $M\supseteq A$.
+  Then there are two distinct types $p_i({\mr x})\in S_\phi(\U)$ finitely consistent with $q({\mr x})$ and finitely satisfied in every $M\supseteq A$.
+  This contradicts stationarity, see Theorem~\ref{thm_stationarity} and Proposition~\ref{prop_type_over_acl2}.
 \end{proof}
 
 \begin{corollary}\label{corol_stable_generic}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
   Let $q({\mr x})\in S(\acl^\eq\!A)$.
-  Then for every $\phi$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is Lascar generic over $A$ in $q(\U^{\mr x})$.
+  Let $\mrX=q(\U^{\mr x})$.
+  Then for every $B_\phi(\U)$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is Lascar generic over $A$.
 \end{corollary}
 
 \begin{proof}
-  If neither $\mrD$ nor $\neg\mrD$ is generic, by Fact~\ref{fact_fip} they are both persistent.
-  Let $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be the formula that defines $\mrD$.
-  As $\theta({\mr x}\,;{\gr z_1},\dots,{\gr z_n})$ is stable, by Corollary~\ref{corol_persistent_finsat}, with the role of the two tuples of variables reversed, both $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ and its negation are finitely satisfied in every model $M\supseteq A$.
-  Then there are two distinct global $\phi$-types $p_i({\mr x})$ consistent with $q({\mr x})$ and finitely satisfied in every $M\supseteq A$.
-  This contradicts stationarity, see Theorem~\ref{thm_stationarity} and Proposition~\ref{prop_type_over_acl2}.
+  By Theorem~\ref{thm_stationarity} there is a type $p({\mr x})\in S_\phi(\U)$ finitely consistent with $q({\mr x})$ that is Lascar invariant and therefore persistent.
+  Hence, by Corollary~\ref{corol_def_mu}, $\mrD$ and $\neg\mrD$ are not both generic.
+  If neither $\mrD$ nor $\neg\mrD$ is generic, then they are both persintent and, by Proposition~\ref{prop_stable_genericiffpersistent}, generic.
+  But, as just remarked, this is not possible.
 \end{proof}
 
 % \begin{exercise}\label{ex_Cb}

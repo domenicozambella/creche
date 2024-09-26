@@ -5,6 +5,7 @@
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{17ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
+\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 Chapter under revision.
 
 In this chapter, $L$ is a signature, $T$ is a complete theory without finite models, and $\U$ is a saturated model of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
@@ -24,14 +25,14 @@ Yet in other words, if
 
 \ceq{\ssf{is1.}\hfill {\gr a}\in\grD}{\iff}{g{\gr a}\in\grD}\hfill for every ${\gr a}\in\U^{\gr z}$ and every $g\in G$.
 
-A formula is invariant if the set it defines is invariant.
+A formula is $G$-invariant if the set it defines is $G$-invariant.
 We say that $p({\mr x})\subseteq L(\U)$ is \emph{invariant\/} under the action of $G$, or \emph{$G$-invariant,} if for every formula $\phi({\mr x}\,;{\gr z})\in L$ 
 
 \ceq{\ssf{it1.}\hfill\phi({\mr x}\,;{\gr a})\in p}{\IFF}{\phi({\mr x}\,;g{\gr a})\in p}\hfill for every ${\gr a}\in\U^{\gr z}$ and every $g\in G$.
 
 It should be clear that invariant under the action of $\Aut(\U/A)$ coincides with invariant over $A$ and Lascar invariant over $A$ coincides with invariant under the action of $\Autf(\U/A)$.
 
-Note that $p({\mr x})$ is invariant exactly when the sets $\gr\D_{p,\phi}\subseteq\U^{\gr z}$ are.
+Note that $p({\mr x})$ is $G$-invariant exactly when the sets $\gr\D_{p,\phi}\subseteq\U^{\gr z}$ are.
 In this section we want to discuss invariance using sets $\mrD\subseteq\U^{\mr x}$.
 We need stronger assumptions on the action of $G$.
 But first we introduce a more flexible framework.
@@ -54,13 +55,13 @@ In particular, by reasoning as in Remark~\ref{rem_image_def_set} we obtain that 
 
 \ceq{\hfill g[\theta(\mrX\,;{\gr\bar b})]}{=}{\theta(\mrX\,;g{\gr\bar b}).}
 
-Therefore $p({\mr x})\subseteq L_{\pmDelta}(\grZ)$ is invariant if
+Therefore $p({\mr x})\subseteq L_{\pmDelta}(\grZ)$ is $G$-invariant if
 
 \ceq{\hfill p({\mr x})\proves{\mr x}\in\mrD}{\IFF}{p({\mr x})\proves{\mr x}\in g\mrD}\hfill for every $B_\Delta({\grZ})$-definable $\mrD\subseteq\mrX$ and $g\in G$.
 
 At the first reading the reader may assume that $G=\Aut(\U)$, $\mrX=\U^{\mr x}$, $\grZ=\U^{\gr z}$ and $\Delta=L_{{\mr x}\,;{\gr z}}$, where $|{\gr z}|=\omega$.
 Then $L_{\pmDelta}(\grZ)=L_{\mr x}(\U)$ and  $S_\Delta(\grZ)=S_{\mr x}(\U)$. 
-% Note that when $G$ acts by automorphisms $\phi(\U^{\mr x};\U^{\gr z})$ is invariant for all $\phi({\mr x}\,;{\gr z})\in L$.
+% Note that when $G$ acts by automorphisms $\phi(\U^{\mr x};\U^{\gr z})$ is $G$-invariant for all $\phi({\mr x}\,;{\gr z})\in L$.
 
 A set $\mrD\subseteq\mrX$ is \emph{generic\/} under the action of $G$, or \emph{$G$-generic\/} for short, if finitely many $G$-translates of $\mrD$ cover $\mrX$; we say \emph{$n$-$G$-generic\/} if $\le n$ translates suffices.
 Dually, we say that $\mrD$ is \emph{persistent\/} under the action of $G$, or \emph{$G$-persistent\/} for short, if the intersection of any finitely many $G$-translates of $\mrD$ is nonempty; we say \emph{$n$-$G$-persistent\/} when the request is limited to $\le n$ translates.
@@ -74,7 +75,7 @@ See Exercise~\ref{ex_persistent_types} for an alternative characterization when 
 The terminology above non-standard.
 In~\cite{CK} the authors write \textit{quasi-non-dividing\/} for \textit{persistent\/} when $G=\Aut(\U/A)$.
 Their terminology has good motivations, but it would be a mouthful if adapted to our context.
-In topological dynamics similar notions have been introduced with different terminolog: \textit{syndetic\/} corresponds to \textit{generic\/} and \textit{thick\/} corresponds to \textit{persistent.}.
+In topological dynamics similar notions have been introduced with different terminology: \textit{syndetic\/} corresponds to \textit{generic\/} and \textit{thick\/} corresponds to \textit{persistent.}
 
 \begin{example}
   If $p({\mr x})\subseteq L(\U)$ is finitely satisfiable in $A$ then $p({\mr x})$ is $G$-persistent (in any $\mrX\supseteq A^{\mr x}$) under the action of $\Aut(\U/A)$.
@@ -83,7 +84,7 @@ In topological dynamics similar notions have been introduced with different term
 
 Notation: for $\mrD\subseteq\U^{\mr x}$ and $H\subseteq G$ we write $H\,\mrD$ for $\{h\mrD: h\in H\}$.
 
-In this notes many proofs require some juggling with negations.
+In this notes many proofs require some juggling with negations as epitomized by the following fact.
 
 \begin{fact}\label{fact_fip}
   (Assume~\ref{notation_GXphi})\ \  
@@ -95,7 +96,7 @@ In this notes many proofs require some juggling with negations.
 \end{fact}
 
 \begin{proof}
-  Immediate by spelling out the definitions\smallskip
+  Immediate by spelling out the definitions
   \begin{itemize}
     \item[1.] there are no finite $H\subseteq G$ such that $\mrX\ \subseteq\ \cup\, H\,{\mr\D}$.
     \item[2.]  $\0\ \neq\ \mrX\,\cap\,\big(\cap\, H\neg{\mr\D}\big)$ for every finite $H\subseteq G$.\qedhere
@@ -107,7 +108,7 @@ In this notes many proofs require some juggling with negations.
   Let $p({\mr x})\in S_\Delta(\grZ)$ be finitely satisfiable in $\mrX$.
   Then the following are equivalent
   \begin{itemize}
-    \item[1.] $p({\mr x})$ is invariant
+    \item[1.] $p({\mr x})$ is $G$-invariant
     \item[2.] $p({\mr x})\proves{\mr x}\in\mrD$ for every $G$-generic $B_\Delta({\grZ})$-definable set $\mrD$
     \item[5.] $p({\mr x})$ is $G$-persistent.
   \end{itemize}
@@ -129,15 +130,15 @@ In this notes many proofs require some juggling with negations.
   % uppose $p({\mr x})$ is not $(n+2)$-persistent and let $n$ be minimal.
   % Let $g_1,\dots,g_{n+2}\in G$ and $\theta({\mr x})\,;{\gr\bar b}$ witness this.
   % Then 
-  If $p({\mr x})$ is not invariant then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g{\gr b})$ for some $g\in G$.
+  If $p({\mr x})$ is not $G$-invariant then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g{\gr b})$ for some $g\in G$.
   Clearly $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g{\gr b})$ is not $G$-persistent as it is inconsistent with its $g$-translate.
 \end{proof}
 
-The theorem yields an immediate necessary condition for the existence of an invariant global $B_\Delta({\grZ})$-type.
+The theorem yields an immediate necessary condition for the existence of an $G$-invariant global $B_\Delta({\grZ})$-type.
 
 \begin{corollary}\label{corol_def_mu}
   (Assume~\ref{notation_GXphi})\ \  
-  If there exists an invariant global $B_\Delta({\grZ})$-type then for every $B_\Delta({\grZ})$-definable set $\mrD$
+  If there exists an $G$-invariant global $B_\Delta({\grZ})$-type then for every $B_\Delta({\grZ})$-definable set $\mrD$
   \begin{itemize}
     \item[1.] $\mrD$ and $\neg\mrD$ cannot be both $G$-generic
     \item[2.] if $\mrD$ is $G$-generic than it is $G$-persistent
@@ -149,10 +150,10 @@ The theorem yields an immediate necessary condition for the existence of an inva
   The three claims are equivalent; \ssf1 is an immediate consequenc of \ssf2 of Theorem~\ref{thm_generic_invariant}.
 \end{proof}
 
-The following theorem gives a necessary and sufficient condition for the  existence of global invariant $B_\Delta({\grZ})$-type.
-Ideally, we would like to prove that every $G$-persistent $B_\Delta({\grZ})$-type extends to a global persitent type.
+The following theorem gives a necessary and sufficient condition for the  existence of global $G$-invariant $B_\Delta({\grZ})$-type.
+Ideally, we would like to have that every $G$-persistent $B_\Delta({\grZ})$-type extends to a global persitent type.
 Unfortunately this is not true -- we need a stronger property.
-A $B_\Delta({\grZ})$-definable set $\mrD$ is \emph{hereditarely $G$-persistent\/} if every finite cover of $\mrD$ by $B_\Delta({\grZ})$-definable sets contains a $G$-persistent set.
+A $B_\Delta({\grZ})$-definable set $\mrD$ is \emph{hereditarely\/} $G$-persistent if every finite cover of $\mrD$ by $B_\Delta({\grZ})$-definable sets contains a $G$-persistent set.
 In~\cite{CK} a similar property is called \textit{quasi-non-forking,} but we persist in the unorthodoxy.
 A type is hereditarely $G$-persistent if every conjunction of formulas in the type is hereditarely $G$-persistent.
 
@@ -161,7 +162,7 @@ A type is hereditarely $G$-persistent if every conjunction of formulas in the ty
   Let $q({\mr x})\subseteq L(\U)$.
   Then the following are equivalent 
   \begin{itemize}
-    \item[1.] $q({\mr x})$ extends to an invariant type $p({\mr x})\in S_\Delta(\grZ)$ finitely satisfiable in $\mrX$
+    \item[1.] $q({\mr x})$ extends to a $G$-invariant type $p({\mr x})\in S_\Delta(\grZ)$ finitely satisfiable in $\mrX$
     \item[2.] $q({\mr x})$ is hereditarely $G$-persistent.
   \end{itemize}
 \end{theorem}
@@ -180,46 +181,54 @@ A type is hereditarely $G$-persistent if every conjunction of formulas in the ty
   Suppose for a contradiction that $\theta({\mr x}),\neg\theta({\mr x})\notin p$.
   By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$ and some ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi(\U^{\mr x})\cap\theta(\U^{\mr x})$ and $\psi(\U^{\mr x})\smallsetminus\theta(\U^{\mr x})$ and such that no ${\mr\C_i}$ is $G$-persistent.
   As ${\mr\C_1},\dots,{\mr\C_n}$ cover $\psi(\U^{\mr x})$ this is a contradiction.
-  It is only left to show that $p({\mr x})$ is finitely satisfiable in $\mrX$ and invariant.
+  It is only left to show that $p({\mr x})$ is finitely satisfiable in $\mrX$ and $G$-invariant.
   Finite satisfiability follows from persistency.
   From completeness and Theorem~\ref{thm_generic_invariant} we obtain invariance.
 \end{proof}
 
 \begin{exercise}
-  Prove that if $p({\mr x})\in S(\U)$ is finitely satisfiable in every $M\supseteq A$ then it is $G$-persistent under the action of $\Autf(\U/A)$.
+  Prove that if $p(x)\in S(\U)$ is finitely satisfiable in every $M\supseteq A$ then it is persistent under the action of $\Autf(\U/A)$.
   Is the same true for incomplete types?
 \end{exercise}
 
 \begin{exercise}
-  Let $p(x)\in S(\U)$ be $G$-persistent.
+  (Assume~\ref{notation_GXphi})\ \  
+  Let $p(x)\in S_\Delta(\U)$ be $G$-persistent.
   Prove that the following are equivalent
   \begin{itemize}
-    \item[1.] $p(x)$ is invariant and finitely satisfiable in $\X$
+    \item[1.] $p(x)$ is $G$-invariant and finitely satisfiable in $\X$
     \item[2.] $p(x)\proves x\in\D$ for every 2-$G$-generic definable set $\D$
     \item[3.] $p(x)$ is 2-$G$-persistent.
   \end{itemize}
 \end{exercise}
 
 \begin{exercise}
-  Let $\D\subseteq\U^x$ be $B_\Delta({\grZ})$-definable.
-  Prove that the following are equivalent 
+  (Assume~\ref{notation_GXphi})\ \  
+  Prove that the following are equivalent for every $B_\Delta({\Z})$-definable set $\D\subseteq\U^x$
   \begin{itemize}
-    \item[1.] there is an invariant type $p(x)\in S_\Delta(\grZ)$ finitely satisfiable in $\X\cap\D$
-    \item[2.] every finite cover of $\D$ by $B_\Delta({\grZ})$-definable sets contains a 2-$G$-persistent set.
+    \item[1.] there is a $G$-invariant type $p(x)\in S_\Delta(\Z)$ finitely satisfiable in $\X\cap\D$
+    \item[2.] every finite cover of $\D$ by $B_\Delta({\Z})$-definable sets contains a 2-$G$-persistent set.
   \end{itemize}
 \end{exercise}
 
 \begin{exercise}\label{ex_gen_sat}
-  Let $p(x)\subseteq L_\phi(\U)$ be $G$-generic.
-  Prove that it is finitely satisfiable.
+  (Assume~\ref{notation_GXphi})\ \  
+  Let $p(x)\subseteq B_\Delta(\Z)$ be $G$-generic.
+  Prove that it is finitely satisfiable in $\X$.
 \end{exercise}
 
 \begin{exercise}\label{ex_persistent_types}
-  Prove that for every $p(x)\subseteq L_\phi(A)$ following are equivalent
+  (Assume~\ref{notation_GXphi})\ \  
+  Prove that for $p(x)\subseteq B_\Delta(A)$ following are equivalent
   \begin{itemize}
     \item[1.] $p(x)$ is $G$-persistent
     \item[2.] $p(\U^x)$ is $G$-persistent.
   \end{itemize}
+\end{exercise}
+
+\begin{exercise}
+  Give an example of a persistent set that is not hereditarely persistent.
+  Hint: find inspiration in Example~\ref{ex_cyclic_order}.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -241,7 +250,7 @@ Again, the same properties may be attributed to formulas and types.
 
 \begin{lemma}\label{lem_strongly_generic}
   (Assume~\ref{notation_GXphi})\ \  
-  The intersection of strongly $G$-generic sets is strongly $G$-generic.
+  The intersection of two strongly $G$-generic sets is strongly $G$-generic.
 \end{lemma}
 
 \begin{proof}
@@ -268,8 +277,8 @@ Again, the same properties may be attributed to formulas and types.
 
 \begin{corollary}\label{corol_str_gen}
   (Assume~\ref{notation_GXphi})\ \  
-  Let ${}^{\rm s}\kern-.3ex\gamma_G({\mr x})=\{\theta({\mr x})\in L_\phi(\U)\,:\, \theta({\mr x})\textrm{ strongly $G$-generic}\}$.
-  Then $q({\mr x})$ is finitely satisfiable in $\mrX$, strongly $G$-generic, and invariant.
+  Let ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})=\{\theta({\mr x})\in L_\phi(\U)\,:\, \theta({\mr x})\textrm{ strongly $G$-generic}\}$.
+  Then ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ is finitely satisfiable in $\mrX$, strongly $G$-generic, and $G$-invariant.
 \end{corollary}
 
 \begin{proof}
@@ -280,28 +289,21 @@ Again, the same properties may be attributed to formulas and types.
 
 \begin{corollary}\label{corol_q_w_pers}
   (Assume~\ref{notation_GXphi})\ \  
-  Let ${}^{\rm s}\kern-.3ex({\mr x})$ be as in Corollary~\ref{corol_str_gen}.
-  Let $p({\mr x})\subseteq L(\U)$ be such that ${}^{\rm s}\kern-.3ex\gamma({\mr x})\cup q({\mr x})$ is finitely satisfied in $\mrX$.
+  Let ${}^{\rm s}\kern-.2ex\gamma({\mr x})$ be as in Corollary~\ref{corol_str_gen}.
+  Let $p({\mr x})\subseteq L(\U)$ be such that ${}^{\rm s}\kern-.2ex\gamma({\mr x})\cup p({\mr x})$ is finitely satisfied in $\mrX$.
   Then $p({\mr x})$ is weakly $G$-persistent.
 \end{corollary}
 
 \begin{proof}
   Let $\theta({\mr x})\in p$.
-  As ${}^{\rm s}\kern-.3ex({\mr x})$ is finitely satisfiable in $\theta(\U^{\mr x})$, we cannot have that $\neg\theta({\mr x})$ is strongly $G$-generic.
+  As ${}^{\rm s}\kern-.2ex\gamma({\mr x})$ is finitely satisfiable in $\theta(\U^{\mr x})$, we cannot have that $\neg\theta({\mr x})$ is strongly $G$-generic.
   From Fact~\ref{fact_fip}, we obtain that $\neg\theta(\U^{\mr x})$ non strongly $G$-generic is equivalent to $\theta({\mr x})$ weakly $G$-persistent.
 \end{proof}
 
 \begin{exercise}
+  (Assume~\ref{notation_GXphi})\ \  
   Show that $G$-generic sets need not be closed under intersection.
-  Hint: try e.g.\@ with the cyclic order in Example~\ref{ex_cyclic_order}.
-\end{exercise}
-
-\begin{exercise}
-  Prove that the following are equivalent
-  \begin{itemize}
-    \item[1.] every $G$-persistent $\phi$-formula is hereditarely $G$-persistent
-    \item[2.] for every $B_\Delta({\grZ})$-definable sets $\C$ and $\D$, if $\C$ is not $G$-generic then $\D\cup\C$ and $\neg\D\cup\C$ cannot be both $G$-generic.
-  \end{itemize}
+  Hint: find inspiration in Example~\ref{ex_cyclic_order}.
 \end{exercise}
 
 
@@ -312,13 +314,13 @@ Again, the same properties may be attributed to formulas and types.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The diameter of a Lascar type}\label{newelski}
 
-
+As an application we prove an interesting property of the Lascar types.
 Recall that $\Ll({\mr a}/A)$, the Lascar strong type of ${\mr a}\in\U^{\mr x}$, is the union of a chain of type-definable sets of the form $\big\{{\mr x}\ :\ d_A({\mr a},{\mr x})\le n\big\}$.
 In this section we prove that $\Ll({\mr a}/A)$ is type-definable (if and) only this chain is finite.
 In other words, only if the connected component of ${\mr a}$ in the Lascar graph has finite diameter.
-It is convenient to address the problem in more general terms.
 
-Assume $G\trianglelefteq\Aut(\U)$.
+It is convenient to address the problem in more general terms.
+We work under Assumption~\ref{notation_GXphi} with $\Delta=L_{{\mr x}{\gr z}}$ and $G\trianglelefteq\Aut(\U)$.
 Let $K\subseteq G$ be a set of generators that is
 \begin{itemize}
   \item[1.] symmetric i.e.\@ it contains the unit and is closed under inverse
@@ -385,7 +387,7 @@ The notions introduced in Section~\ref{strong_genericity} offer some hint.
 
 % Below we write ${\mr x}\in K^n{\mr y}$ for the type $p_n({\mr x},{\mr y})$ and ${\mr x}\in G\,{\mr y}$ for the disjunction of all these types (n.b.\@ an infinite disjunction of types need not be a type).
 
-\begin{example}
+\begin{example}\label{ex_newelski}
   Let $K\subseteq\Aut(\U/A)$ be the set of automorphisms that fix a model containing $A$.
   Then the group $G$  generated by $K$ is $\Autf(\U/A)$ and $G\cdot{\mr a}=\mrX$ is $\Ll({\mr a}/A)$.
   Then $d({\mr a},{\mr b})$ concides with the dinstance in the Lascar graph.
@@ -400,7 +402,7 @@ The notions introduced in Section~\ref{strong_genericity} offer some hint.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{A simpler landscape}
 
-Under suitable assumptions (e.g.\@ the sability of $\phi({\mr x}\,;{\gr z})$) some of the notions introduced in this chapter coalesce and we are left with cleaner theory.
+Under suitable assumptions -- e.g.\@ the sability of $\phi({\mr x}\,;{\gr z})$, see Chapter~\ref{stability} -- some of the notions introduced in this chapter coalesce and we are left with cleaner theory.
 We prove the following theorem.
 
 \begin{theorem}\label{thm_coalesce}
@@ -419,7 +421,7 @@ We prove the following theorem.
   It suffices to prove that $G$-generic sets are closed under intersection.
   Let $\mrC$ and $\mrD$ be $G$-generic $B_\Delta({\grZ})$-definable sets.
   Suppose for a contradiction that $\mrC\cap\mrD$ is not $G$-generic.
-  By \ssf1 and Theorem~\ref{thm_generic_invariant2} there is an invariant global $B_\Delta({\grZ})$-type $p({\mr x})$ containing ${\mr x}\in\neg\mrC\cup\neg\mrD$.
+  By \ssf1 and Theorem~\ref{thm_generic_invariant2} there is a invariant global $B_\Delta({\grZ})$-type $p({\mr x})$ containing ${\mr x}\in\neg\mrC\cup\neg\mrD$.
   By completeness either $p({\mr x})\proves{\mr x}\in\neg\mrC$ or $p({\mr x})\proves{\mr x}\in\neg\mrD$.
   This is a contradiction because by Theorem~\ref{thm_generic_invariant} $p({\mr x})\proves{\mr x}\in\mrC$ and $p({\mr x})\proves{\mr x}\in\mrD$.
 
@@ -468,13 +470,13 @@ We use the symbol $\,\cdot\,$ for both the group multiplication and the group ac
 Clearly, $\grZ$ also acts on itself by left multiplication.
 
 In this section we deal with the actions of two groups: $G=\grZ$ and $\Aut(\U/A)$.
-Generic and persistent only refer to the action of $G$.
-We will be explicit about invariance.
+% Generic and persistent only refer to the action of $G$.
+% We will be explicit about invariance.
 
 Let $\psi({\mr x}\,;y)\in L(A)$.
 We write $\phi({\mr x}\,;{\gr z}\,;y)$ for the formula $\psi({\gr z^{-1}}\cdot{\mr x}\,;y)$.
 In this section $\Delta$ contains the formulas $\phi({\mr x}\,;{\gr z}\,;a)$ where $a$ ranges over some given $\Y\subseteq\U^y$ that is invariant over $A$.
-Note that $\phi(\mrX\,;\grZ\,;a)$ is invariant for every $a$.
+Note that $\phi(\mrX\,;\grZ\,;a)$ is $G$-invariant for every $a$.
 
 Let ${\gr 1}$ be the identity of $\grZ$ which, for simplicity, we think as a constant of $L$.
 Clearly, $\phi(\mrX\,;{\gr g}\,;a)={\gr g}\cdot\phi(\mrX\,;{\gr 1}\,;a)$.
@@ -520,12 +522,11 @@ An immediate consequence of this fact is that the automorphisms in $\Aut(\U/A)$ 
 
 \begin{proof}
   We may assume that $p({\mr x})$ only contain the formulas $\phi({\mr x}\,;{\gr b})$ for $\phi({\mr x}\,;{\gr z})\in\Delta$ or negations thereof.
-  As $p({\mr x})$ is invariant, $\phi({\mr x}\,;{\gr g}\,;a)\in p\Leftrightarrow\phi({\mr x}\,;{\gr 1}\,;a)\in p$.
+  As $p({\mr x})$ is $G$-invariant, $\phi({\mr x}\,;{\gr g}\,;a)\in p\Leftrightarrow\phi({\mr x}\,;{\gr 1}\,;a)\in p$.
   Then, as $\phi({\mr x}\,;{\gr 1}\,;a)\iff\phi({\mr x}\,;{\gr 1}\,;fa)$ for every $f\in\Aut(\U/A)$, invariance over $A$ follows.
 \end{proof}
 
 % The set $\mrD$ is $\Delta$-definable, namely it is definable by the formula $\phi({\mr x}\,;{\gr 1})$ where ${\gr 1}$ is the identity of $\mrG$.
-
 
 % We define an immersion of 
 
@@ -548,20 +549,73 @@ An immediate consequence of this fact is that the automorphisms in $\Aut(\U/A)$ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notes and references}
 
+In Example~\ref{ex_newelski} we prove a theorem of Newelski's~\cite{Newelski}.
+The original proof is rather long and complex.
+A simplified proof (also due, reportedly, to Newelski) appears in Rodrigo Pel\'aez's thesis~\cite{Pelaez}*{Section 3.3} and~\cite{Casanovas}*{Chapter 9}.
+The proof here is a streamlined and generalized version of the latter -- inspired by~\cite{Z16}.
+
   \begin{biblist}[]\normalsize
+    \bib{Casanovas}{book}{
+      author={Casanovas, Enrique},
+      title={Simple theories and hyperimaginaries},
+      series={Lecture Notes in Logic},
+      volume={39},
+      publisher={Cambridge
+      University Press},
+      date={2011},
+      % pages={xiv+169},
+      % isbn={978-0-521-11955-9},
+      % review={\MR{2814891}},
+      % doi={10.1017/CBO9781139003728},
+   }\smallskip
     \bib{CK}{article}{
    author={Chernikov, Artem},
    author={Kaplan, Itay},
    title={Forking and dividing in ${\rm NTP}_2$ theories},
    journal={J. Symbolic Logic},
-   volume={77},
+  %  volume={77},
    date={2012},
   %  number={1},
-   pages={1--20},
+  %  pages={1--20},
   %  issn={0022-4812},
   %  review={\MR{2951626}},
   %  doi={10.2178/jsl/1327068688},
-}
+}\smallskip
+\bib{Newelski}{article}{
+   author={Newelski, Ludomir},
+   title={The diameter of a Lascar strong type},
+   journal={Fund. Math.},
+  %  volume={176},
+   date={2003},
+  %  number={2},
+  %  pages={157--170},
+  %  issn={0016-2736},
+  %  review={\MR{1971306}},
+  %  doi={10.4064/fm176-2-4},
+}\smallskip
+\bib{Pelaez}{book}{
+  author={Pel\'aez, Rodrigo},
+  title={\href{http://www.ub.edu/modeltheory/documentos/ThesisRPP.pdf}{About the Lascar group}},
+  series={PhD Thesis},
+  publisher={Universitat de Barcelona, Departament de L\'ogica, Hist\'oria i Filosofia de la Ci\'encia},
+  date={2008},
+}\smallskip
+\bib{Z16}{article}{
+  author={Zambella, Domenico},
+  title={On the diameter of Lascar strong types after Ludomir Newelski},
+  conference={
+    title={A tribute to Albert Visser},
+  },
+  book={
+    % series={Tributes},
+    % volume={30},
+    publisher={Coll. Publ., [London]},
+  },
+  date={2016},
+  status={\href{https://arxiv.org/abs/1605.00218}{arXiv:1605.00218}},
+%  pages={231--236},
+%  review={\MR{3559880}},
+}\smallskip
   \end{biblist}
 
   
