@@ -677,16 +677,16 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 \def\ceq#1#2#3{\parbox{20ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 We say that $T$ is a \emph{stable theory\/} if every formula is stable.
-Most theorems in this section have a formulation that only requires the stability of a given formula $\phi({\mr x},{\gr z})\in L$.
+Most theorems in this section have a formulation that only requires the stability of a given formula $\phi({\mr x}\,;{\gr z})\in L$.
 This is sometimes called \textit{local\/} stability.
-When the global case does not trivially follows from the local one, we use a set $\Delta\subseteq L_{{\mr x}\,;{\gr z}}$.
+When the global case does not trivially follows from the local one, we use a set $\Delta\subseteq L_{{\mr x}\,{\gr z}}$.
 We say that that $\Delta$ is stable if all formulas in $\Delta$ are stable.
-When $|{\mr x}|=|{\gr z}|=\omega$ and $\Delta=L_{{\mr x}\,;{\gr z}}$ the stability of $\Delta$ is tantamount to the stability of $T$.
+When $|{\mr x}|=|{\gr z}|=\omega$ and $\Delta=L_{{\mr x}\,{\gr z}}$ the stability of $\Delta$ is tantamount to the stability of $T$.
 
 The following corollary of Theorem~\ref{lem_ziegler} is a fundamental tool.
 
 \begin{corollary}\label{corol_stable_coheir_over_models}
-  Let  $\Delta\subseteq L_{{\mr x}\,;{\gr z}}$ be stable.
+  Let  $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Let $q({\mr x})\subseteq L(\U)$ be finitely satisfiable in every $M\supseteq A$.
   Then there is a type $p({\mr x})\in S_\Delta(\U)$ such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
 \end{corollary}
@@ -732,21 +732,21 @@ We deduce a version of Harrington's mysterious Lemma cfr.~\cite{TZ}*{Lemma 8.3.4
 \begin{corollary}\label{corol_harrington0}
   Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
   Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$.
-  Let $\theta({\mr x}),\psi({\gr z})\in L(M)$ be such that $\theta(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$ and $\psi(M^{\mr x})=\phi(M^{\mr x};{\gr b})$.
+  Let $\theta({\mr x}),\psi({\gr z})\in L(M)$ be such that $\theta(M^{\mr x})=\phi(M^{\mr x};{\gr b})$ and $\psi(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$.
   Such formulas exist by stability.
-  Then $\theta({\gr b})\iff\psi({\mr a})$.
+  Then $\theta({\mr a})\iff\psi({\gr b})$.
 \end{corollary}
 
 \begin{proof}
   We can assume that ${\mr a}\cnonfork_M{\gr b}$.
   First, assume $\phi({\mr a}\,;{\gr b})$.
-  Then $\psi({\mr a})$ otherwise, by ${\mr a}\cnonfork_M{\gr b}$, we would contradict $\psi(M^{\mr x})=\phi(M^{\mr x};{\gr b})$.
-  We claim that $\theta({\gr b})$.
+  Then $\theta({\mr a})$ otherwise, by ${\mr a}\cnonfork_M{\gr b}$, we would contradict $\theta(M^{\mr x})=\phi(M^{\mr x};{\gr b})$.
+  We claim that $\psi({\gr b})$.
   Suppose not.
-  Then $\phi({\mr a}\,;{\gr b})\wedge\neg\theta({\gr b})$.
-  As $\phi({\mr x}\,;{\gr z})\wedge\neg\theta({\gr z})$ is stable, from Theorem~\ref{thm_symmetry} we obtain $\phi({\mr a}\,;M^{\gr z})\sm\theta(M^{\gr z})\neq\varnothing$ which contradicts  $\theta(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$.
-  Assuming $\neg\phi({\mr a}\,;{\gr b})$ we obtain $\neg\psi({\mr a})$ and $\neg\theta({\gr b})$ by a symilar argument.
-  Then $\theta({\gr b})\iff\psi({\mr a})$ as required.
+  Then $\phi({\mr a}\,;{\gr b})\wedge\neg\psi({\gr b})$.
+  As $\phi({\mr x}\,;{\gr z})\wedge\neg\psi({\gr z})$ is stable, from Theorem~\ref{thm_symmetry} we obtain $\phi({\mr a}\,;M^{\gr z})\sm\theta(M^{\gr z})\neq\varnothing$ which contradicts  $\psi(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$.
+  Assuming $\neg\phi({\mr a}\,;{\gr b})$ we obtain $\neg\theta({\mr a})$ and $\neg\psi({\gr b})$ by a symilar argument.
+  Then $\theta({\mr a})\iff\psi({\gr b})$ as required.
 \end{proof}
 
 Now we show that under the assumption of stability Lascar invariance reduces to a tamer form of invariance.
@@ -783,7 +783,7 @@ A type $q({\mr x})\subseteq L(A)$ is \emph{stationary\/} if it has a unique glob
 The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary (the actual statement is a local version of this property).
 
 \begin{theorem}[ (Stationarity)]\label{thm_stationarity}
-  Let $\Delta\subseteq L_{{\mr x}\,;{\gr z}}$ be stable.
+  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Let $q({\mr x})\in S\big(\acl^\eq\!A\big)$.
   Then there is a unique type $p({\mr x})\in S_\Delta(\U)$ that is invariant over $\acl^\eq A$ and consistent with $q({\mr x})$.
 \end{theorem}
@@ -862,7 +862,7 @@ It has an application in the proof of Corollary~\ref{corol_persistent_finsat}.
 \begin{theorem}\label{thm_stability_definable_rovescio1}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
   Let $M$ and ${\gr b}\in\U^{\gr z}$ be arbitrary.
-  Then, for some ${\gr b_i}\equiv_M{\gr b}$, where $i=1,\dots,n$, some positive Boolean combination of the sets $\phi(\U^{\mr x}\,;{\gr b_i})$ is definable over $M$.
+  Then, for some ${\gr b_i}\equiv_M{\gr b}$, where $i=1,\dots,n$, some positive Boolean combination of the sets $\phi(\U^{\mr x};{\gr b_i})$ is definable over $M$.
 \end{theorem}
 
 \begin{proof}
@@ -871,7 +871,7 @@ It has an application in the proof of Corollary~\ref{corol_persistent_finsat}.
   Let $\theta(\V^{\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be such a Boolean combination.
   Now, by Proposition~\ref{prop_saturate_heir}, we can choose $\V$ such that ${\gr b}\cnonfork_M\V$.
   By non-splitting, i.e.\@ reasoning as in Theorem~\ref{thm_symmetry}, there is a formula $\psi({\mr x})\in L(M)$ such that $\psi(\V^{\mr x})=\phi(\V^{\mr x}\,;{\gr b})$.
-  Finally, by elementarity, we obtain that $\psi(\U^{\mr x})=\theta(\U^{\mr x}\,;{\gr b_1},\dots,{\gr b_n})$.
+  Finally, by elementarity, we obtain that $\psi(\U^{\mr x})=\theta(\U^{\mr x};{\gr b_1},\dots,{\gr b_n})$.
 \end{proof}
 
 A more general version of the theorem holds which requires a different proof.
@@ -879,21 +879,21 @@ A more general version of the theorem holds which requires a different proof.
 \begin{theorem}\label{thm_stability_definable_rovescio2}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
   Let $A$ and ${\gr b}\in\U^{\gr z}$ be arbitrary.
-  Then, for some ${\gr b_i}\equiv_{\acl^\eq\!A}{\gr b}$, where $i=1,\dots,n$, some positive Boolean combination of the sets $\phi(\U^{\mr x}\,;{\gr b_i})$ is definable over $A$.
+  Then, for some ${\gr b_i}\equiv_{\acl^\eq\!A}{\gr b}$, where $i=1,\dots,n$, some positive Boolean combination of the sets $\phi(\U^{\mr x};{\gr b_i})$ is definable over $A$.
 \end{theorem}
 
 \begin{proof}
   Let $q({\gr z})=\tp({\gr b}/\acl^\eq\!A)$.
   By Corollary~\ref{corol_stable_coheir_over_models} there is a type $p({\gr z})\in S_\phi(\U)$ consistent with $q({\gr z})$ and invariant over $\acl^\eq\!A$.
-  By Theorem~\ref{thm_def_stable_formula}, with the role of the two reversed reversed, there are some ${\gr b_1},\dots,{\gr b_n}\models q({\gr z})$ such that ${\mr\D_{p,\phi^{\rm op}}}$ is equivalent to a positive Bolean combination of the sets $\phi(\U^{\mr x}\,;{\gr b_i})$.
-  Let $\theta(\U^{\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be such a Boolean combination.
-  As ${\mr\D_{p,\phi^{\rm op}}}\in\acl^\eq\!A$ by Proposition~\ref{prop_type_over_acl2}, this prove the theorem When $A=\acl^\eq\!A$.
+  By Theorem~\ref{thm_def_stable_formula}, with the role of the two sorts reversed, there are some ${\gr b_1},\dots,{\gr b_n}\models q({\gr z})$ such that ${\mr\D_{p,\phi^{\rm op}}}$ is equivalent to a positive Bolean combination of the sets $\phi(\U^{\mr x};{\gr b_i})$.
+  Let $\theta(\U^{\mr x};{\gr b_1},\dots,{\gr b_n})$ be such a Boolean combination.
+  As ${\mr\D_{p,\phi^{\rm op}}}\in\acl^\eq\!A$ by Proposition~\ref{prop_type_over_acl2}, this prove the theorem when $A=\acl^\eq\!A$.
 
   For the general case, reason as follows.
   Let $f_1,\dots,f_m\in\Aut(\U/A)$ be such that the sets $f_i{\mr\D_{p,\phi^{\rm op}}}$ span the whole orbit of ${\mr\D_{p,\phi^{\rm op}}}$ over $A$.
-  Clearly,
+  Clearly
 
-  \ceq{\hfill\bigcup_{i=1}^m f_i{\mr\D_{p,\phi^{\rm op}}}}{=}{\bigvee_{i=1}^m\theta(\U^{\mr x}\,;f_i{\gr b_1},\dots,f_i{\gr b_n}).}
+  \ceq{\hfill\bigcup_{i=1}^m f_i{\mr\D_{p,\phi^{\rm op}}}}{=}{\bigvee_{i=1}^m\theta(\U^{\mr x};f_i{\gr b_1},\dots,f_i{\gr b_n}).}
 
   The set on the l.h.s.\@ is invariant (hence definable) over $A$.
   Therefore the formula on the r.h.s.\@ is the required positive Boolean combination.
@@ -905,19 +905,19 @@ A more general version of the theorem holds which requires a different proof.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The action of the Lascar group}
 
-We adopt the notation and terminology of Chapter~\ref{actions} with $G=\Autf(\U/A)$, $\grZ=\U^{\gr z}$, and $\Delta\subseteq L_{{\mr x}\,;{\gr z}}$.
+We adopt the notation and terminology of Chapter~\ref{actions} with $G=\Autf(\U/A)$ and $\grZ=\U^{\gr z}$.
 The set $\mrX$ will specified in the context.
 We say \emph{Lascar generic\/} over $A$ for generic under the action of $\Autf(\U/A)$.
 We define \emph{Lascar persistent\/} similarly.
 
 \begin{corollary}\label{corol_persistent_finsat}
-  Let $\Delta\subseteq L_{{\mr x}\,;{\gr z}}$ be stable.
+  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Let $\mrX= q(\U^{\mr x})$ for some $q({\mr x})\subseteq L(\acl^\eq\!A)$.
   Let $\mrD$ be a $B_\Delta(\U)$-definable set.
   Then the following are equivalent 
   \begin{itemize}
     \item[1.] $\mrD$ is Lascar persistent over $A$
-    \item[2.] $\{{\mr x}\in\mrD\}\cup q({\mr x})$ is finitely satisfied in $M\supseteq A$.
+    \item[2.] $\{{\mr x}\in\mrD\}\cup q({\mr x})$ is finitely satisfied every in $M\supseteq A$.
   \end{itemize}
 \end{corollary}
 \begin{proof}
@@ -939,8 +939,8 @@ We define \emph{Lascar persistent\/} similarly.
 \end{proof}
 
 \begin{proposition}
-  Let $\Delta\subseteq L_{{\mr x}\,;{\gr z}}$ be stable.
-  Let $\mrX=\U^{\mr x}$.
+  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
+  Let $\mrX= q(\U^{\mr x})$ for some $q({\mr x})\subseteq L(\acl^\eq\!A)$.
   Then the equivalent conditions of Theorem~\ref{thm_coalesce} are satisfied.
 \end{proposition}
 
@@ -948,14 +948,14 @@ We define \emph{Lascar persistent\/} similarly.
   Let $\mrD$ be a $B_\Delta(\U)$-definable set that is weakly Lascar persistent.
   Pick a finite $H\subseteq\Autf(\U/A)$ such that $\cup\,H\,\mrD$ is Lascar persistent.
   We prove that $\mrD$ is Lascar persistent.
-  By Corollary~\ref{corol_persistent_finsat} the set $\cup\,H\,\mrD$ intersects every $M\supseteq A$.
-  Then, by Corollary~\ref{corol_stable_coheir_over_models} there is a Lascar invariant type $p({\mr x})\in S_\Delta(\U)$ containing the formula that defines $\cup\,H\,\mrD$.
+  By Corollary~\ref{corol_persistent_finsat}, the type $\{{\mr x}\in\cup\,H\,\mrD\}\cup q({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
+  Then, by Corollary~\ref{corol_stable_coheir_over_models} there is a Lascar invariant type $p({\mr x})\in S_\Delta(\U)$ containing ${\mr x}\in\cup\,H\,\mrD$ and finitely consistent with $q({\mr x})$.
   By completeness and invariance ${\mr x}\in\mrD$ is in $p({\mr x})$.
-  Then $\mrD$ is persistent.
+  Then $\mrD$ is persistent by Theorem~\ref{thm_generic_invariant}.
 \end{proof}
 
 \begin{proposition}\label{prop_stable_genericiffpersistent}
-  Let $\Delta\subseteq L_{{\mr x}\,;{\gr z}}$ be stable.
+  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Let $\mrX=q(\U^{\mr x})$ for some $q({\mr x})\in S(\acl^\eq\!A)$.
   Then for every $B_\Delta(\U)$-definable set $\mrD$, the following are equivalent
   \begin{itemize}
@@ -976,11 +976,11 @@ We define \emph{Lascar persistent\/} similarly.
   Let $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be the $B_\Delta(\U)$-formula that defines $\mrD$.
   As $\theta({\mr x}\,;{\gr z_1},\dots,{\gr z_n})$ is stable, by Corollary~\ref{corol_persistent_finsat} both $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ and its negation are finitely satisfied in every model $M\supseteq A$.
   Then there are two distinct types $p_i({\mr x})\in S_\Delta(\U)$ finitely consistent with $q({\mr x})$ and finitely satisfied in every $M\supseteq A$.
-  This contradicts stationarity, see Theorem~\ref{thm_stationarity} and Proposition~\ref{prop_type_over_acl2}.
+  This contradicts stationarity, see Proposition~\ref{prop_type_over_acl2} and Theorem~\ref{thm_stationarity}.
 \end{proof}
 
 \begin{corollary}\label{corol_stable_generic}
-  Let $\Delta\subseteq L_{{\mr x}\,;{\gr z}}$ be stable.
+  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Let $\mrX=q(\U^{\mr x})$ for some $q({\mr x})\in S(\acl^\eq\!A)$.
   Then for every $B_\Delta(\U)$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is Lascar generic over $A$.
 \end{corollary}
@@ -988,14 +988,19 @@ We define \emph{Lascar persistent\/} similarly.
 \begin{proof}
   By Theorem~\ref{thm_stationarity} there is a type $p({\mr x})\in S_\Delta(\U)$ finitely consistent with $q({\mr x})$ that is Lascar invariant and therefore persistent.
   Hence, by Corollary~\ref{corol_def_mu}, $\mrD$ and $\neg\mrD$ are not both generic.
-  If neither $\mrD$ nor $\neg\mrD$ is generic, then they are both persintent and, by Proposition~\ref{prop_stable_genericiffpersistent}, generic.
-  But, as just remarked, this is not possible.
+  If $\mrD$ is not generic then $\neg\mrD$ is persistent and, by Proposition~\ref{prop_stable_genericiffpersistent}, generic.
 \end{proof}
 
 % \begin{exercise}\label{ex_Cb}
 %   Let $p({\mr x})\in S(\U)$.
 %   Prove that there is at most one definably closed set $A\subseteq\U^\eq$ such that $\Aut(\U/A)$ is the set of automorphisms that fix $p({\mr x})$.
 % \end{exercise}
+
+\section{Stable groups}
+
+In this section we adopt the setting of Section~\ref{definablegroups}, that is, $G=\grZ$~--~with the same definablity conditions.
+Here we also assume that the action is transitive and that the formula $\phi({\mr x}\,{\gr z})$ defined in Section~\ref{definablegroups} is stable.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%

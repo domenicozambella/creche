@@ -461,7 +461,7 @@ We prove the following theorem.
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Definable groups}
+\section{Definable groups}\label{definablegroups}
 
 In this section we work as always under Assumption~\ref{notation_GXphi} but we further specify $G$ and $\Delta$.
 We set $G=\grZ$ and require that $\grZ$ and $\mrX$ are type-definable over $A$.
@@ -470,16 +470,17 @@ We use the symbol $\,\cdot\,$ for both the group multiplication and the group ac
 Clearly, $\grZ$ also acts on itself by left multiplication.
 
 In this section we deal with the actions of two groups: $G=\grZ$ and $\Aut(\U/A)$.
+As usual, $A$-invariant means invariant under the action of $\Aut(\U/A)$.
 % Generic and persistent only refer to the action of $G$.
 % We will be explicit about invariance.
 
-Let $\psi({\mr x}\,;y)\in L(A)$.
-We write $\phi({\mr x}\,;{\gr z}\,;y)$ for the formula $\psi({\gr z^{-1}}\cdot{\mr x}\,;y)$.
-In this section $\Delta$ contains the formulas $\phi({\mr x}\,;{\gr z}\,;a)$ where $a$ ranges over some given $\Y\subseteq\U^y$ that is invariant over $A$.
-Note that $\phi(\mrX\,;\grZ\,;a)$ is $G$-invariant for every $a$.
+Let $\psi({\mr x})\in L(A)$.
+We write $\phi({\mr x}\,;{\gr z})$ for the formula $\psi({\gr z^{-1}}\cdot{\mr x})$.
+In this section $\Delta$ contains the formula $\phi({\mr x}\,;{\gr z})$.
+Note that $\phi(\mrX\,;\grZ)$ is $G$-invariant.
 
 Let ${\gr 1}$ be the identity of $\grZ$ which, for simplicity, we think as a constant of $L$.
-Clearly, $\phi(\mrX\,;{\gr g}\,;a)={\gr g}\cdot\phi(\mrX\,;{\gr 1}\,;a)$.
+Clearly, $\phi(\mrX\,;{\gr g})={\gr g}\cdot\phi(\mrX\,;{\gr 1})$.
 
 \begin{assumption}\label{notation_3}
   Let $G$, $\mrX$, $\grZ$ and $\Delta$ be as described above.
@@ -488,20 +489,20 @@ Clearly, $\phi(\mrX\,;{\gr g}\,;a)={\gr g}\cdot\phi(\mrX\,;{\gr 1}\,;a)$.
 
 \begin{fact}
   (Assume~\ref{notation_3})\ \ 
-  Let $\theta({\mr x}\,;{\gr\bar z}\,;\bar y)$ be a Bolean combination of $\phi({\mr x}\,;{\gr z_i}\,;y_i)$, where $i=1,\dots,n$. 
-  Then there is a formulas $\psi({\gr\bar z}\,;\bar y)\in L(A)$ such that, for every $\bar a\in\Y^n$ and every ${\gr\bar g}\in\grZ^n$
+  Let $\theta({\mr x}\,;{\gr\bar z})$ be a Bolean combination of the formulas $\phi({\mr x}\,;{\gr z_i})$, where $i=1,\dots,n$. 
+  Then there is a formula $\psi({\gr\bar z})\in L(A)$ such that, for every  ${\gr\bar g}\in{\gr\Z^n}$
 
-  \ceq{\hfill\psi({\gr\bar g}\,;\bar a)}{\IFF}{\theta({\mr x}\,;{\gr\bar g}\,;\bar a)\textrm{ is generic}.}
+  \ceq{\hfill\psi({\gr\bar g})}{\IFF}{\theta({\mr x}\,;{\gr\bar g})\textrm{ is $G$-generic}.}
 
   In other words, the type $\gamma_G({\mr x})$ is definable.
 \end{fact}
 
 \begin{proof}
   % As $\phi({\mr x}\,;{\gr g}\,;a)$ is generic/persistent if and only if $\phi({\mr x}\,;{\gr 1}\,;a)$ is, we can replace ${\gr g}$ by ${\gr 1}$.
-  By compactness, there is an $m$ such that for every $\bar a\in\Y^n$ and every ${\gr\bar g}\in\grZ^n$ if $\theta({\mr x}\,;{\gr\bar g}\,;\bar a)$ is generic then it is also $m$-generic.
+  By compactness, there is an $m$ such that for every ${\gr\bar g}\in{\gr\Z^n}$ if $\theta({\mr x}\,;{\gr\bar g})$ is generic then it is also $m$-generic.
   Then
 
-  \ceq{\hfill\psi({\gr\bar z}\,;\bar y)}{=}{\E{\gr u_1},\dots,{\gr u_m}\ \A{\mr x}\bigvee_{i=1}^m\theta({\mr x}\;;\,{\gr u_i}{\cdot}{\gr\bar z}\;;\,\bar y)}
+  \ceq{\hfill\psi({\gr\bar z})}{=}{\E{\gr u_1},\dots,{\gr u_m}\ \A{\mr x}\bigvee_{i=1}^m\theta({\mr x}\;;\,{\gr u_i}{\cdot}{\gr\bar z})}
 \end{proof}
 
 An immediate consequence of this fact is that the automorphisms in $\Aut(\U/A)$ map generic/persistent $\Delta$-definable sets to generic/persistent sets of the same form.
@@ -516,14 +517,14 @@ An immediate consequence of this fact is that the automorphisms in $\Aut(\U/A)$ 
 % The same is true for generic/persistent types $p({\mr x})\in S_\Delta(\grZ)$ in fact, up to equivalence, we may assume that they contain only formulas of the form $\phi({\mr x}\,;{\gr g}\,;a)$ and negation thereof.
 
 \begin{fact} 
-  Let $p({\mr x})\in S_\Delta(\grZ)$ be persistent -- equivalently, $G$-invariant.
+  Let $p({\mr x})\in S_\Delta(\grZ)$ be $G$-persistent -- equivalently, $G$-invariant.
   Then $p({\mr x})$ is invariant over $A$.
 \end{fact}
 
 \begin{proof}
   We may assume that $p({\mr x})$ only contain the formulas $\phi({\mr x}\,;{\gr b})$ for $\phi({\mr x}\,;{\gr z})\in\Delta$ or negations thereof.
-  As $p({\mr x})$ is $G$-invariant, $\phi({\mr x}\,;{\gr g}\,;a)\in p\Leftrightarrow\phi({\mr x}\,;{\gr 1}\,;a)\in p$.
-  Then, as $\phi({\mr x}\,;{\gr 1}\,;a)\iff\phi({\mr x}\,;{\gr 1}\,;fa)$ for every $f\in\Aut(\U/A)$, invariance over $A$ follows.
+  As $p({\mr x})$ is $G$-invariant, $\phi({\mr x}\,;{\gr g})\in p\Leftrightarrow\phi({\mr x}\,;{\gr 1})\in p$.
+  Then the $A$-invariance of $p({\mr x})$ follows from the $A$-invariance of $\phi({\mr x}\,;{\gr 1})$.
 \end{proof}
 
 % The set $\mrD$ is $\Delta$-definable, namely it is definable by the formula $\phi({\mr x}\,;{\gr 1})$ where ${\gr 1}$ is the identity of $\mrG$.
