@@ -299,13 +299,13 @@ The following proposition is proved with virtually the same proof as Theorem~\re
 For every $A\subseteq\U^\eq$ and every $a\in\U^\eq$ the following are equivalent
 \begin{itemize}
 \item[1.] $\O(a/A)$ is finite
-\item[2.] $a\in\acl^\eq(A)$
+\item[2.] $a\in\acl^\eq\!A$
 \item[3.] $a\in M^\eq$ for every model such that $A\subseteq M^\eq$.
 \end{itemize}
 \end{theorem}
 
 It is worthwile to spell out the equivalence \ssf2$\IFF$\ssf3 of the theorem above when $a$ is a definable set ${\vl\Aa}$.
-Namely, ${\vl\Aa}\in\acl^\eq(A)$ if and only if ${\vl\Aa}$ is definable over every model containing $A$.
+Namely, ${\vl\Aa}\in\acl^\eq\!A$ if and only if ${\vl\Aa}$ is definable over every model containing $A$.
 
 We say \emph{finite equivalence relation\/} for an equivalence relation with finitely many classes.
 A \emph{finite equivalence formula\/} or \emph{type\/} is a formula, respectively a type, that defines a finite equivalence relation.
@@ -316,7 +316,7 @@ Theorem~\ref{thm_set_alg=feq} belows proves that sets algebraic over $A$ are uni
 Let $A\subseteq\U^\eq$ and let ${\vl\Aa}\in\U^\eq$ be an element of sort $\sigma({\mr x}\,;{\gr z})$.
 Then the following are equivalent
 \begin{itemize}
-\item[1.] ${\vl\Aa}\in\acl^\eq(A)$
+\item[1.] ${\vl\Aa}\in\acl^\eq\!A$
 \item[2.] for some finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$ and some ${\mr c_1},\dots,{\mr c_n}\in\U^{|{\mr y}|}$
 \end{itemize}
 
@@ -352,11 +352,11 @@ Then the following are equivalent\nobreak
 \begin{proof}
 \ssf{2}$\IMP$\ssf{1}\quad Assume $\neg$\ssf{1} and let $\epsilon({\mr x}\,;{\mr y})\in L(A)$ be a finite equivalence formula such that $\neg\epsilon({\mr a}\,;{\mr b})$.
 Let ${\vl\D}=\epsilon(\U^{\mr x};{\mr b})$, then  ${\mr b}\in{\vl\D}$ and ${\mr a}\notin{\vl\D}$.
-As $\epsilon({\mr x}\,;{\mr y})$ is an $A$-invariant finite equivalence formula, ${\vl\D}\in\acl^\eq(A)$, and $\neg$\ssf{2} follows.
+As $\epsilon({\mr x}\,;{\mr y})$ is an $A$-invariant finite equivalence formula, ${\vl\D}\in\acl^\eq\!A$, and $\neg$\ssf{2} follows.
 
 
-\ssf{1}$\IMP$\ssf{2}\quad Assume $\neg$\ssf{2} and let $\phi({\mr x})\in L\big(\acl^\eq(A)\big)$ be  such that $\phi({\mr a})\niff\phi({\mr b})$.
-Let ${\vl\D}=\phi(\U^{\mr x})$, then ${\vl\D}\in\acl^\eq(A)$.
+\ssf{1}$\IMP$\ssf{2}\quad Assume $\neg$\ssf{2} and let $\phi({\mr x})\in L\big(\acl^\eq\!A\big)$ be  such that $\phi({\mr a})\niff\phi({\mr b})$.
+Let ${\vl\D}=\phi(\U^{\mr x})$, then ${\vl\D}\in\acl^\eq\!A$.
 Therefore, by Proposition~\ref{thm_set_alg=feq}, the set ${\vl\D}$ is union of equivalence classes of some finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$.
 Then $\neg\epsilon({\mr a}\,;{\mr b})$ and $\neg$\ssf{1} follows.
 \end{proof}
@@ -552,7 +552,7 @@ Then, if $\acl\0$ is infinite, $T$ has weak elimination of imaginaries.
 \end{theorem}
 
 \begin{proof}
-%We prove condition $\,\sharp\,$ of lemma~\ref{tvtestimmaginari}. Let $A\subseteq\U^\eq$ and let $\phi({\gr z})\in L(A)$ be some consistent formula. Proceed by induction on the length of ${\gr z}$. If ${\gr z}$ is the empty tuple $\,\sharp\,$ holds trivially. Now, consider the formula $\phi({\gr z}\,;{\mr x})$  where $|{\mr x}|=1$. By induction hypothesis $\E{\mr x}\,\phi({\gr z}\,;{\mr x})$ has a solution ${\gr c}$ in $\acl(A)$. Now, $\phi({\gr c}\,;{\mr x})$ is either an algebraic formula, then it has a solution in $\acl\big(\acl(A)\big)=\acl(A)$ or it is co-algebraic, then it has a solution in $\acl(A)$ which is infinite by hypothesis.
+%We prove condition $\,\sharp\,$ of lemma~\ref{tvtestimmaginari}. Let $A\subseteq\U^\eq$ and let $\phi({\gr z})\in L(A)$ be some consistent formula. Proceed by induction on the length of ${\gr z}$. If ${\gr z}$ is the empty tuple $\,\sharp\,$ holds trivially. Now, consider the formula $\phi({\gr z}\,;{\mr x})$  where $|{\mr x}|=1$. By induction hypothesis $\E{\mr x}\,\phi({\gr z}\,;{\mr x})$ has a solution ${\gr c}$ in $\acl A$. Now, $\phi({\gr c}\,;{\mr x})$ is either an algebraic formula, then it has a solution in $\acl\big(\acl A\big)=\acl A$ or it is co-algebraic, then it has a solution in $\acl A$ which is infinite by hypothesis.
 If $\acl\0$ is infinite, $\acl A$ is a model for every $A$ (cfr.\@ Exercise~\ref{ex_infinite_acl}) so condition $\,\sharp\,$ of lemma~\ref{tvtestimmaginari} holds by elementarity and the theorem follows.
 \end{proof}
 

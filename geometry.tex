@@ -42,7 +42,7 @@ and \ssf{2} follows by compactness.
 \begin{theorem}\label{thm_dgalois}
 For every $A\subseteq\U$ and every $a\in\U$ the following are equivalent
 \begin{itemize}
-\item[1.] $a\in\dcl(A)$
+\item[1.] $a\in\dcl A$
 \item[2.] $\orbit(a/A)=\big\{a\big\}$.
 \end{itemize}
 \end{theorem}
@@ -57,7 +57,7 @@ Then the theorem follows from Proposition~\ref{prop_tipialgebrici}.
 \begin{theorem}\label{thm_fmgalois}
 For every $A\subseteq\U$ and every $a\in\U$ the following are equivalent
 \begin{itemize}
-\item[1.] $a\in\acl(A)$
+\item[1.] $a\in\acl A$
 \item[2.] $\orbit(a/A)$ is finite
 \item[3.] $a$ belongs to every model containing $A$.
 \end{itemize}
@@ -97,12 +97,12 @@ Properties \ssf{1}-\ssf{3} are obvious, \ssf{4} follows from \ssf{5} which in tu
 \end{proof}
 
 \begin{proposition}\label{prop_estensionemappechiusuraalgebrica}
-If $f\in\Aut(\U)$ then $f\big[\acl(A)\big]=\acl\big(f[A]\big)$ for every $A\subseteq\U$.
+If $f\in\Aut(\U)$ then $f\big[\acl A\big]=\acl\big(f[A]\big)$ for every $A\subseteq\U$.
 \end{proposition}
 
 \begin{proof}
-We prove $f\big[\acl(A)\big]\subseteq\acl\big(f[A]\big)$.
-Fix ${\mr a}\in\acl(A)$ and let $\phi({\mr x}\,;{\gr z})\in L$ and ${\gr b}\in A^{\gr z}$ be such that 
+We prove $f\big[\acl A\big]\subseteq\acl\big(f[A]\big)$.
+Fix ${\mr a}\in\acl A$ and let $\phi({\mr x}\,;{\gr z})\in L$ and ${\gr b}\in A^{\gr z}$ be such that 
 $\phi({\mr x}\,;{\gr b})$ is algebraic formula satisfied by ${\mr a}$.
 By elementarity, $\phi({\mr x}\,;f{\gr b})$ is algebraic and satisfied by $f{\mr a}$.
 Therefore  $f{\mr a}$ is algebraic over $f[A]$, which proves the inclusion.
@@ -114,13 +114,13 @@ The converse inclusion is obtained by substituting  $f^{-1}$ for $f$ and $f[A]$ 
   For every $a\in\U^{x}$ and $A\subseteq\U$, the following are equivalent
   \begin{itemize}
   \item[1.] $a$ is solution of some algebraic formula  $\phi(x)\in L(A)$
-  \item[2.] $a=a_1,\dots,a_n$ for some $a_1,\dots,a_n\in\acl(A)$.
+  \item[2.] $a=a_1,\dots,a_n$ for some $a_1,\dots,a_n\in\acl A$.
   \end{itemize}
   \end{exercise}
   
 \begin{exercise}\label{pofu}
   Let $\phi(z)\in L(A)$ be a consistent formula.
-  Prove that, if ${\mr a}\in\acl(A,b)$ for every $b\models\phi(z)$, then ${\mr a}\in\acl(A)$.
+  Prove that, if ${\mr a}\in\acl(A,b)$ for every $b\models\phi(z)$, then ${\mr a}\in\acl A$.
   Prove the same claim with a type $p(z)\subseteq L(A)$ for $\phi(z)$.
 \end{exercise}
 
@@ -134,24 +134,24 @@ that any realization yields the required substructure of $\U$.
 
 \begin{exercise}\label{pofu2}
 Let $C$ be a finite set.
-Prove that if $C\cap M\neq\0$ for every model $M$ containing $A$, then $C\cap\acl(A)\neq\0$.
+Prove that if $C\cap M\neq\0$ for every model $M$ containing $A$, then $C\cap\acl A\neq\0$.
 Hint: by induction on the cardinality of $C$.
-Suppose there is a $c\in C\sm\acl(A)$, then there is $\V\simeq\U$ such that 
+Suppose there is a $c\in C\sm\acl A$, then there is $\V\simeq\U$ such that 
 $A\subseteq\V\preceq\U$ and $c\notin\V$, see Exercise~\ref{ex_isosub}.
 Apply the induction hypothesis to $C'=C\cap\V$ with $\V$ for $\U$.
 \end{exercise}
 
 \begin{exercise}\label{ex_acl_intersezioe_2_modelli}
 Prove that for every $A\subseteq N$ there is an $M$ such that $\acl A\,=\,M\cap N$.
-Hint: add the requirement $\acl(A_i)\cap N\subseteq\acl(A)$ to the construction 
+Hint: add the requirement $\acl(A_i)\cap N\subseteq\acl A$ to the construction 
 used to prove the downward L\"owenheim-Skolem theorem.
 You need to prove that every consistent $\phi(x)\in L(A_i)$ has a solution $a$ such that 
-$\acl(A_i,a)\cap N\subseteq\acl(A)$.
+$\acl(A_i,a)\cap N\subseteq\acl A$.
 The required $a$ has to realize the type
 
 \hfil$\big\{\phi(x)\big\}\ \cup\ \Big\{\neg\big[\psi(b,x)\wedge\E^{\le n}y\,\psi(y,x)\big]
 \ :\ 
-b\in N\sm\acl(A),\ \ \psi(y,x)\in L(A_i),\ \ n<\omega\Big\}$
+b\in N\sm\acl A,\ \ \psi(y,x)\in L(A_i),\ \ n<\omega\Big\}$
 
 whose consistency need to be verified.
 \end{exercise}
@@ -166,7 +166,7 @@ Consider the type
 
 \hfil$p(x)\ \cup\ \Big\{\neg\big[\psi(b,\bar x)\wedge\E^{\le n}y\,\psi(y,\bar x)\big]
 \ :\ 
-b\in N\sm\acl(A),\ \ \psi(y,x)\in L(A),\ \ n<\omega\Big\}$
+b\in N\sm\acl A,\ \ \psi(y,x)\in L(A),\ \ n<\omega\Big\}$
 
 Any $\bar a\models p(\bar x)$ enumerates a model $A$-isomorphic to $N$.
 \end{exercise}
@@ -186,7 +186,7 @@ Note that \ssf{1} implies that $p(\bar z)\,\cup\, \big\{\neg\phi(z_i)\, :\, i<|\
 \end{exercise}
 
 \begin{exercise}
-  Let $T=T_{\rm rg}$. Prove that $\acl(A)=\dcl(A)$ for every set $A$.
+  Let $T=T_{\rm rg}$. Prove that $\acl A=\dcl A$ for every set $A$.
 \end{exercise} 
 
 

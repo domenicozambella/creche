@@ -692,7 +692,7 @@ The following corollary of Theorem~\ref{lem_ziegler} is a fundamental tool.
 \end{corollary}
 
 \begin{proof}
-  Let $p({\mr x})\subseteq L_{\pmDelta}(\U)$ be maximal such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
+  Let $p({\mr x})\subseteq \pmDelta(\U)$ be maximal such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
   We prove that $p({\mr x})$ is complete.
   Suppose not than there are a conjuction $\alpha({\mr x})$ of formulas in $q({\mr x})$, a conjuction $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ of formulas in $p({\mr x})$, and a formula $\phi({\mr x}\,;{\gr b})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$ such that 
 
@@ -784,26 +784,27 @@ The following proposition says that in a stable theory with elimination of imagi
 
 \begin{theorem}[ (Stationarity)]\label{thm_stationarity}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
-  Let $q({\mr x})\in S\big(\acl^\eq\!A\big)$.
-  Then there is a unique type $p({\mr x})\in S_\Delta(\U)$ that is invariant over $\acl^\eq A$ and consistent with $q({\mr x})$.
+  Let $q({\mr x})$ be a complete $\GDelta(\acl^\eq\!A)$-type.
+  Then there is a unique type $p({\mr x})\in S_\Delta(\U)$ containing $q({\mr x})$ that is invariant over $\acl^\eq A$.
 \end{theorem}
 
 \begin{proof}
   Existence follows from Corollary~\ref{corol_stable_coheir_over_models} and Proposition~\ref{prop_type_over_acl2}.
-  Suppose $p_i({\mr x})\in S_\Delta(\U^\eq)$, for $i=1,2$, are two types that extend $q({\mr x})$ and are invariant over $\acl^\eq\!A$.
+  Suppose $p_i({\mr x})\in S_\Delta(\U)$, for $i=1,2$, are two types that extend $q({\mr x})$ and are invariant over $\acl^\eq\!A$.
   It sufficies to prove that ${\gr\D_{p_1,\phi}}={\gr\D_{p_2,\phi}}$ for every $\phi({\mr x}\,;{\gr z})\in\Delta$.
   Let $\psi_i({\gr z})\in L(\acl^\eq\!A)$ define ${\gr\D_{p_i,\phi}}$.
   These formulas exist by stability.
   We claim that $\psi_1({\gr b})\iff\psi_2({\gr b})$, for all ${\gr b}\in\U^{\gr z}$.
-  Let $t({\gr z})\in S_\Delta(\U)$ be invariant over $\acl^\eq\!A$ and consistent with $\tp({\gr b}/\acl^\eq\!A)$.
+  Let $p'({\gr z})\in S_\Delta(\U)$ be invariant over $\acl^\eq\!A$ and consistent with $\tp({\gr b}/\acl^\eq\!A)$.
   Such a type exists, again, by Corollary~\ref{corol_stable_coheir_over_models} and Proposition~\ref{prop_type_over_acl2}.
-  Let $\theta({\mr x})\in L(\acl^\eq\!A)$ be the formula that defines ${\mr\D_{t,\phi^{\rm op}}}$.
-  Again this exists by stability.
+  By stability there is a formula $\theta({\mr x})\in\BDelta(\U)$ that defines ${\mr\D_{t,\phi^{\rm op}}}$.
+  But ${\mr\D_{t,\phi^{\rm op}}}$ is invariant over $\acl^\eq\!A$, then $\theta({\mr x})\in\GDelta(\acl^\eq\!A)$.
   Let $M$ be any model containing $A$.
-  Let ${\gr b'}\models t({\gr z}){\restriction}M$ and ${\mr a_i}\models p_i({\mr x}){\restriction}M$.
+  Let ${\gr b'}\models p'({\gr z}){\restriction}M$ and ${\mr a_i}\models p_i({\mr x}){\restriction}M$.
   Then $\theta(M^{\mr x})=\phi(M^{\mr x};{\gr b'})$ and $\psi_i(M^{\gr z})=\phi({\mr a_i}\,;M^{\gr z})$.
   Corollary~\ref{corol_harrington0} yelds $\psi_i({\gr b'})\iff\theta({\mr a_i})$.
-  As ${\mr a_1}\equiv_{\acl^\eq\!A}{\mr a_2}$, we obtain $\psi_1({\gr b'})\iff\psi_2({\gr b'})$.
+  As ${\mr a_1},{\mr a_2}\models q({\mr x})$, by completeness they both satisfy $\theta({\mr x})$. 
+  Hence we obtain $\psi_1({\gr b'})\iff\psi_2({\gr b'})$.
   As ${\gr b}\equiv_{\acl^\eq\!A}{\gr b'}$, the claim follows and with it the theorem.
 \end{proof}
 
@@ -835,7 +836,7 @@ The following are equivalent
   \ssf{2}$\IMP$\ssf{1}.
   Assume \ssf2 which, by Proposition~\ref{prop_Shelah_strong_types}, is equivalent to ${\mr a}\equiv_{\acl^\eq\!A}{\mr b}$.
   Write $q({\mr x})$ for $\tp({\mr a}/{\acl}^\eq\!A)=\tp({\mr b}/{\acl}^\eq\!A)$. Let $p({\mr x})\in S(\U^\eq)$ be the unique global type that is invariant over $\acl^\eq\!A$ and extends $q({\mr x})$ which we obtain from Theorem~\ref{thm_stationarity}.
-  Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be such that ${\mr c_i}\models p({\mr x}){\restriction}\acl^\eq(A),\,{\mr a},\,{\mr b},\,{\mr c_{\restriction i}}$.
+  Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be such that ${\mr c_i}\models p({\mr x}){\restriction}\acl^\eq\!A,\,{\mr a},\,{\mr b},\,{\mr c_{\restriction i}}$.
   Then ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lstp_indiscernibles}.
 \end{proof}
 
@@ -905,6 +906,9 @@ A more general version of the theorem holds which requires a different proof.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The action of the Lascar group}
 
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox{8ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
 We adopt the notation and terminology of Chapter~\ref{actions} with $G=\Autf(\U/A)$ and $\grZ=\U^{\gr z}$.
 The set $\mrX$ will specified in the context.
 We say \emph{Lascar generic\/} over $A$ for generic under the action of $\Autf(\U/A)$.
@@ -913,7 +917,7 @@ We define \emph{Lascar persistent\/} similarly.
 \begin{corollary}\label{corol_persistent_finsat}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Let $\mrX= q(\U^{\mr x})$ for some $q({\mr x})\subseteq L(\acl^\eq\!A)$.
-  Let $\mrD$ be a $B_\Delta(\U)$-definable set.
+  Let $\mrD$ be a $\BDelta(\U)$-definable set.
   Then the following are equivalent 
   \begin{itemize}
     \item[1.] $\mrD$ is Lascar persistent over $A$
@@ -938,16 +942,16 @@ We define \emph{Lascar persistent\/} similarly.
   Then, by Theorem~\ref{thm_generic_invariant}, $p({\mr x})$ and in particular $\phi({\mr x}\,;{\gr b})$ is Lascar persistent.
 \end{proof}
 
-\begin{proposition}
+\begin{proposition}\label{prop_stable_lanscape}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Let $\mrX= q(\U^{\mr x})$ for some $q({\mr x})\subseteq L(\acl^\eq\!A)$.
   Then the equivalent conditions of Theorem~\ref{thm_coalesce} are satisfied.
 \end{proposition}
 
 \begin{proof}
-  Let $\mrD$ be a $B_\Delta(\U)$-definable set that is weakly Lascar persistent.
-  Pick a finite $H\subseteq\Autf(\U/A)$ such that $\cup\,H\,\mrD$ is Lascar persistent.
+  Let $\mrD$ be a $\BDelta(\U)$-definable set that is weakly Lascar persistent.
   We prove that $\mrD$ is Lascar persistent.
+  Pick a finite $H\subseteq\Autf(\U/A)$ such that $\cup\,H\,\mrD$ is Lascar persistent.
   By Corollary~\ref{corol_persistent_finsat}, the type $\{{\mr x}\in\cup\,H\,\mrD\}\cup q({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
   Then, by Corollary~\ref{corol_stable_coheir_over_models} there is a Lascar invariant type $p({\mr x})\in S_\Delta(\U)$ containing ${\mr x}\in\cup\,H\,\mrD$ and finitely consistent with $q({\mr x})$.
   By completeness and invariance ${\mr x}\in\mrD$ is in $p({\mr x})$.
@@ -957,7 +961,7 @@ We define \emph{Lascar persistent\/} similarly.
 \begin{proposition}\label{prop_stable_genericiffpersistent}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Let $\mrX=q(\U^{\mr x})$ for some $q({\mr x})\in S(\acl^\eq\!A)$.
-  Then for every $B_\Delta(\U)$-definable set $\mrD$, the following are equivalent
+  Then for every $\BDelta(\U)$-definable set $\mrD$, the following are equivalent
   \begin{itemize}
     \item[1.] $\mrD$ is Lascar generic over $A$.
     \item[2.] $\mrD$ is Lascar persistent over $A$.
@@ -973,7 +977,7 @@ We define \emph{Lascar persistent\/} similarly.
   Assume $\mrD$ is not Lascar generic.
   Then $\neg\mrD$ is Lascar persistent.
   Assume for a contradiction that also $\mrD$ is Lascar persistent.
-  Let $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be the $B_\Delta(\U)$-formula that defines $\mrD$.
+  Let $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be the $\BDelta(\U)$-formula that defines $\mrD$.
   As $\theta({\mr x}\,;{\gr z_1},\dots,{\gr z_n})$ is stable, by Corollary~\ref{corol_persistent_finsat} both $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ and its negation are finitely satisfied in every model $M\supseteq A$.
   Then there are two distinct types $p_i({\mr x})\in S_\Delta(\U)$ finitely consistent with $q({\mr x})$ and finitely satisfied in every $M\supseteq A$.
   This contradicts stationarity, see Proposition~\ref{prop_type_over_acl2} and Theorem~\ref{thm_stationarity}.
@@ -982,7 +986,7 @@ We define \emph{Lascar persistent\/} similarly.
 \begin{corollary}\label{corol_stable_generic}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Let $\mrX=q(\U^{\mr x})$ for some $q({\mr x})\in S(\acl^\eq\!A)$.
-  Then for every $B_\Delta(\U)$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is Lascar generic over $A$.
+  Then for every $\BDelta(\U)$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is Lascar generic over $A$.
 \end{corollary}
 
 \begin{proof}
@@ -995,11 +999,114 @@ We define \emph{Lascar persistent\/} similarly.
 %   Let $p({\mr x})\in S(\U)$.
 %   Prove that there is at most one definably closed set $A\subseteq\U^\eq$ such that $\Aut(\U/A)$ is the set of automorphisms that fix $p({\mr x})$.
 % \end{exercise}
+\begin{theorem}
+  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable and finite.
+  Let $p({\mr x})$ be complete $\GDelta(A)$-type.
+  Let 
+  
+  \ceq{\hfill Q}{=}{\big\{q({\mr x})\subseteq\GDelta(\acl^\eq\!A)\ :\ q({\mr x})\supseteq p({\mr x})\textrm{ complete}\big\}}.
+  
+  Then
+  \begin{itemize}
+    \item [1.] $\Aut(\U/A)$ acts on $Q$ transistively, i.e.\@ any two types in $Q$ are conjugated over $A$
+    \item [2.] $Q$ is finite
+    \item [3.] for some finite equivalence relation $\varepsilon({\mr x}\,;{\mr y})\in\GDelta(A)$
+  \end{itemize}
+\end{theorem}
 
+
+\begin{proof}
+  1. 
+  (The hypotheses on $\Delta$ are not necessary.) 
+  We prove that any two types $q_1,q_2\in Q$ are realized be some $a_1\equiv_Aa_2$.
+  The claim follows beause any automorphism in $\Aut(\U/A)$ that takes $a_1$ to $a_2$ takes also $q_1$ in $q_2$.
+  It suffices to prove that every type $p'({\mr x})\in S(A)$ is consistent with every $q\in Q$.
+  Suppose not, then $p'({\mr x})\imp\neg\phi({\mr x})$ for some $\phi({\mr x})\in q$.
+  Let $\psi({\mr x})$ be the disjunction of all the (finitely many) conjugates of $\phi({\mr x})$ over $A$.
+  Then $p'({\mr x})\imp\neg\psi({\mr x})$.
+  But $\psi({\mr x})\in\BDelta(A)$ and is invariant over $A$.
+  Therefore $\psi({\mr x})\in\GDelta(A)$.
+  Then $\psi({\mr x})\in p$, a contradiction.
+  
+  2. Define 
+  
+  \ceq{\hfill P}{=}{\big\{p'({\mr x})\in S_\Delta(\U)\ :\ p'({\mr x})\cup p({\mr x})\textrm{ is consistent}\big\}}.
+
+  By Theorem~\ref{thm_stationarity} for every $q\in Q$ there is a unique $p'\in P$ consistent with $q$.
+  Therefore it suffices to prove that $P$ is finite.
+  Note that $\Aut(\U/A)$ acts transitively on $P$.
+  Therefore if we show that 
+
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stable groups}
 
-In this section we adopt the setting of Section~\ref{definablegroups}, that is, $G=\grZ$~--~with the same definablity conditions.
-Here we also assume that the action is transitive and that the formula $\phi({\mr x}\,{\gr z})$ defined in Section~\ref{definablegroups} is stable.
+In this section we adopt the setting of Section~\ref{definablegroups}.
+Here we also assume that the action is transitive, that is, $G\,{\mr a}=\mrX$ for some/any ${\mr a}\in\mrX$.
+We also assume that the formula $\phi({\mr x}\,;{\gr z})$ defined in Section~\ref{definablegroups} is stable.
+
+We remark that there is another group with a natural action on $\mrX$ and $\grZ$: the Lascar group $\Autf(\U/A)$.
+For obvious reasons, if $\phi({\mr x}\,;{\gr g})$ is Lascar generic then it is $G$-generic and if it is $G$-persistent then it is Lascar persistent.
+
+\begin{theorem}\label{thm_Ggeneric_persistent}
+  Let $\phi({\mr x}\,;{\gr z})$ be stable.
+  Then the following are equivalent
+  \begin{itemize}
+    \item [1.] $\phi({\mr x}\,;{\gr g})$ is Lascar persistent over $A$ for every ${\gr g}\in\grZ$
+    \item [2.] $\phi({\mr x}\,;{\gr 1})$ is $G$-generic.
+  \end{itemize}
+\end{theorem}
+
+\begin{proof}
+  \ssf1$\IMP$\ssf2.
+  Let ${\mr a}\in\mrX$ and ${\gr g}\in\grZ$ be such that $\phi({\mr a}\,;{\gr g})$.
+  Let $q({\mr x})=\tp({\mr a}/\acl^\eq\!A)$.
+  Assume \ssf1 then, by Proposition~\ref{prop_stable_genericiffpersistent}, $\phi({\mr x}\,;{\gr g})$ is Lascar generic relative to $q(\U^{\mr x})$, i.e.\@ with $q(\U^{\mr x})$ for $\mrX$.
+  A fortiori $\phi({\mr x}\,;{\gr g})$ is $G$-generic relative to $q(\U^{\mr x})$.
+  The same reasoning applies if we replace ${\mr a}$ and ${\gr g}$ with  ${\gr h}\,{\mr a}$ and ${\gr h}\,{\gr g}$ for any ${\gr h}\in\grZ$.
+  By the transitivity of the action, ${\gr h}\,{\mr a}$ ranges the whole of $\mrX$.
+  We conclude that there is a set $H\subseteq\grZ$ of cardinality $<2^{|L(A)|}$ such that $\bigcup_{h\in H}\phi(\mrX\,;{\gr h})$ covers $\mrX$.
+  By compactness we can assume $H$ finite, so $G$-genericity follows.
+
+  \ssf2$\IMP$\ssf1.
+  Consider the 2-sorted model $\U'=\big\<\mrX\,;\grZ\big\>$ whose signature $L'$ contains only a relation symbol $r'({\mr x}\,;{\gr z})$ that is interpreted as $\phi({\mr x}\,;{\gr z})$.
+  To each ${\gr h}\in\grZ$ we associate the $L'$-automorphism $h:\<{\mr a}\,;{\gr g}\>\mapsto\<{\gr h}\,{\mr a}\,;{\gr h}\,{\gr g}\>$.
+  As $\U'$ is a stable structure, there is a global $r'$-type $p'({\mr x})$ that is definable over $L'\mbox{-}\acl^\eq\!\0$.
+  Now, let ${\gr g}$ be given.
+  If $\phi({\mr x}\,;{\gr g})$ is $G$-generic, $p'({\mr x})\proves r'({\mr x}\,;{\gr h}\,{\gr g})$ for some ${\gr h}\in\grZ$.
+  Then $r'({\mr x}\,;{\gr g})\in{h^{-1}}p'$.
+  We claim that ${h^{-1}}p'({\mr x})$ is also definable over $L'\mbox{-}\acl^\eq\!\0$.
+  Indeed, it suffices to note that ${\gr\D_{{h^{-1}}p',r'}}={\gr h^{-1}}\,{\gr\D_{p',r'}}$ and that if 
+  ${\gr\D_{p',r'}}\in L'\mbox{-}\acl^\eq\!\0$ then also ${\gr h^{-1}}\,{\gr\D_{p,r'}}\in L'\mbox{-}\acl^\eq\!\0$.
+  Now let $p({\mr x})\in S_\phi(\U)$ a a type finitely satisfiable in ${\mr x}\in\mrX$ and containing ${h^{-1}}p'({\mr x})$ with $r'$ replaced by $\phi$.
+  Note that $\phi({\mr x}\,;{\gr g})\in p$ and that $p({\mr x})$ is Lascar invariant over $A$ because every automorphism of $\U$ over $A$ induces an $L'$-automorphism of $\U'$.
+  This shows that there is a Lascar invariant type, finitely satisfiable in $\mrX$, containing $\phi({\mr x}\,;{\gr g})$.
+  Then \ssf1 follows.
+  % \ssf3$\IMP$\ssf1.
+  % Let ${\gr g}$ be such that $\phi({\mr x}\,;{\gr g})$ is not Lascar persistent.
+  % Then $\neg\phi({\mr x}\,;{\gr g})$ is Lascar generic.
+  % Then it is also  $G$-generic.
+  % The $G$-genericity of $\neg\phi({\mr x}\,;{\gr 1})$ follows.
+\end{proof}
+
+\begin{corollary}
+  Let $\phi({\mr x}\,;{\gr z})$ be stable.
+  Then $\phi({\mr x}\,;{\gr 1})$ or $\neg\phi({\mr x}\,;{\gr 1})$ is $G$-generic.
+\end{corollary}
+
+\begin{proof}
+  Suppose $\phi({\mr x}\,;{\gr 1})$ is not $G$-generic.
+  Then $\phi({\mr x}\,;{\gr g})$ is not Lascar persistent for some ${\gr g}$.
+  Then $\neg\phi({\mr x}\,;{\gr g})$ is Lascar generic.
+  Then it is also $G$-generic.
+  The $G$-genericity of $\neg\phi({\mr x}\,;{\gr 1})$ follows.
+\end{proof}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%

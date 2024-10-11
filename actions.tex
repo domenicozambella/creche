@@ -37,48 +37,56 @@ In this section we want to discuss invariance using sets $\mrD\subseteq\U^{\mr x
 We need stronger assumptions on the action of $G$.
 But first we introduce a more flexible framework.
 
-In this chapter $\Delta\subseteq L_{{\mr x}\,{\gr z}}(\U)$, ${\mrX}\subseteq\U^{\mr x}$, and ${\grZ}\subseteq\U^{\gr z}$ are some arbitrary nonempty sets (at some point we will require that $\mrX$ and $\grZ$ are type-definable).
-We write $L_{\pmDelta}({\grZ})$ for the set of formulas of the form $\phi({\mr x}\,;{\gr b})$ or $\neg\phi({\mr x}\,;{\gr b})$  for some $\phi({\mr x}\,;{\gr z})\in\Delta$ and some ${\gr b}\in{\grZ}$.
-We write $B_\Delta({\grZ})$ for the set of Boolean combinations of formulas in $L_{\pmDelta}({\grZ})$.
-Such formulas are called $B_\Delta({\grZ})$-formulas.
-A $B_\Delta({\grZ})$-definable set is a set of the form $\theta(\U^{\mr x})$ for some $B_\Delta({\grZ})$-formula $\theta({\mr x})$.
-Subsets of $B_\Delta({\grZ})$ are called $B_\Delta({\grZ})$-types.
-We write $S_\Delta({\grZ})$ for the set of complete $B_\Delta({\grZ})$-types.
+In this chapter $\Delta\subseteq L_{{\mr x}\,{\gr z}}(\U)$, ${\mrX}\subseteq\U^{\mr x}$, and ${\grZ}\subseteq\U^{\gr z}$ are some arbitrary nonempty sets (for some arguments we require that $\mrX$ and $\grZ$ are type-definable).
+
+Let ${\gr\Aa}\subseteq\U^{\gr z}$.
+We write \emph{$\pmDelta({\gr\Aa})$\/} for the set of formulas of the form $\phi({\mr x}\,;{\gr b})$ or $\neg\phi({\mr x}\,;{\gr b})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$ and some ${\gr b}\in{\gr\Aa}$.
+We write $S_\Delta({\gr\Aa})$ for the set of complete $\pmDelta({\gr\Aa})$-types~--~needless to say, these are equivalent to complete $\BDelta({\gr\Aa})$-types.
+
+We write \emph{$\BDelta({\gr\Aa})$} for the set of Boolean combinations of formulas in $\pmDelta({\gr\Aa})$.
+% A $\BDelta(\Aa)$-definable set is a set of the form $\theta(\U^{\mr x})$ for some $\BDelta(\Aa)$-formula $\theta({\mr x})$.
+% Subsets of $\BDelta(\Aa)$ are called $\BDelta(\Aa)$-types.
+
+When $\Aa\subseteq\U$, we may use $\Aa$ for $\Aa^{\gr z}$ in the notation above.
+
+Finally, define \emph{$\GDelta(A)$\/} to be the set of formulas $\phi({\mr x})\in L(\U)$ that are equivalent to some formula in $\BDelta(A)$ or, equivalently, that are invariant over $A$.
+In the literature these formulas are called \textit{generalized\/} $\Delta$-formulas over $A$.
+Note that when $A$ is a model $\GDelta(A)$-formulas are equivalent to $\BDelta(A)$-formulas.
 
 \begin{assumption}\label{notation_GXphi}
   Let $G$ be a group that acts on $\mrX$ and on $\grZ$.
   We require that for every $\phi({\mr x}\,;{\gr z})\in\Delta$ the set $\phi(\mrX;\grZ)$ is invariant under the action of $G$.
 \end{assumption}
 
-An immediate consequence of Assumption~\ref{notation_GXphi} is that any $G$-translate of a $B_\Delta({\grZ})$-definable set is again $B_\Delta({\grZ})$-definable.
-In particular, by reasoning as in Remark~\ref{rem_image_def_set} we obtain that for every $B_\Delta({\grZ})$-formula $\theta({\mr x}\,;{\gr\bar b})$ and every $g\in G$
+An immediate consequence of Assumption~\ref{notation_GXphi} is that any $G$-translate of a $\BDelta({\grZ})$-definable set is again $\BDelta({\grZ})$-definable.
+In particular, by reasoning as in Remark~\ref{rem_image_def_set} we obtain that for every $\BDelta({\grZ})$-formula $\theta({\mr x}\,;{\gr\bar b})$ and every $g\in G$
 
-\ceq{\hfill g[\theta(\mrX\,;{\gr\bar b})]}{=}{\theta(\mrX\,;g{\gr\bar b}).}
+\ceq{\hfill g[\theta(\mrX\,;{\gr\bar b})]}{=}{\theta(\mrX\,;g\,{\gr\bar b}).}
 
-Therefore $p({\mr x})\subseteq L_{\pmDelta}(\grZ)$ is $G$-invariant if
+Therefore, a type $p({\mr x})\subseteq \pmDelta(\grZ)$ is $G$-invariant if
 
-\ceq{\hfill p({\mr x})\proves{\mr x}\in\mrD}{\IFF}{p({\mr x})\proves{\mr x}\in g\mrD}\hfill for every $B_\Delta({\grZ})$-definable $\mrD\subseteq\mrX$ and $g\in G$.
+\ceq{\hfill p({\mr x})\proves{\mr x}\in\mrD}{\IFF}{p({\mr x})\proves{\mr x}\in g\,\mrD}\hfill for every $\BDelta({\grZ})$-definable $\mrD\subseteq\mrX$ and $g\in G$.
 
 At the first reading the reader may assume that $G=\Aut(\U)$, $\mrX=\U^{\mr x}$, $\grZ=\U^{\gr z}$ and $\Delta=L_{{\mr x}\,;{\gr z}}$, where $|{\gr z}|=\omega$.
-Then $L_{\pmDelta}(\grZ)=L_{\mr x}(\U)$ and  $S_\Delta(\grZ)=S_{\mr x}(\U)$. 
+Then $\pmDelta(\grZ)=L_{\mr x}(\U)$ and  $S_\Delta(\grZ)=S_{\mr x}(\U)$. 
 % Note that when $G$ acts by automorphisms $\phi(\U^{\mr x};\U^{\gr z})$ is $G$-invariant for all $\phi({\mr x}\,;{\gr z})\in L$.
 
 A set $\mrD\subseteq\mrX$ is \emph{generic\/} under the action of $G$, or \emph{$G$-generic\/} for short, if finitely many $G$-translates of $\mrD$ cover $\mrX$; we say \emph{$n$-$G$-generic\/} if $\le n$ translates suffices.
 Dually, we say that $\mrD$ is \emph{persistent\/} under the action of $G$, or \emph{$G$-persistent\/} for short, if the intersection of any finitely many $G$-translates of $\mrD$ is nonempty; we say \emph{$n$-$G$-persistent\/} when the request is limited to $\le n$ translates.
-We may drop reference to $G$ when it is clear from the context.
+When $\mrX$ is not clear from the context, we say that these notions are \emph{relative\/} to $\mrX$.
 
 The same properties may be attributed to formulas (as these are identified with the set they define).
 When these properties are attributed to a type $p({\mr x})$, we understand that they hold for every conjunction of formulas in $p({\mr x})$.
 See Exercise~\ref{ex_persistent_types} for an alternative characterization when $p({\mr x})$ is small.
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
-The terminology above non-standard.
-In~\cite{CK} the authors write \textit{quasi-non-dividing\/} for \textit{persistent\/} when $G=\Aut(\U/A)$.
+The terminology above is non-standard.
+In~\cite{CK} the authors write \textit{quasi-non-dividing\/} for \textit{persistent\/} under the action of $\Aut(\U/A)$.
 Their terminology has good motivations, but it would be a mouthful if adapted to our context.
 In topological dynamics similar notions have been introduced with different terminology: \textit{syndetic\/} corresponds to \textit{generic\/} and \textit{thick\/} corresponds to \textit{persistent.}
 
 \begin{example}
-  If $p({\mr x})\subseteq L(\U)$ is finitely satisfiable in $A$ then $p({\mr x})$ is $G$-persistent (in any $\mrX\supseteq A^{\mr x}$) under the action of $\Aut(\U/A)$.
+  If $p({\mr x})\subseteq L(\U)$ is finitely satisfiable in $A$ then $p({\mr x})$ is persistent under the action of $\Aut(\U/A)$ relative to any $\mrX\supseteq A^{\mr x}$.
   In fact, the same ${\mr a}\in A^{\mr x}$ that satisfies $\phi({\mr x})$ also satisfies every $\Aut(\U/A)$-translate of $\phi({\mr x})$.
 \end{example}
 
@@ -109,16 +117,16 @@ In this notes many proofs require some juggling with negations as epitomized by 
   Then the following are equivalent
   \begin{itemize}
     \item[1.] $p({\mr x})$ is $G$-invariant
-    \item[2.] $p({\mr x})\proves{\mr x}\in\mrD$ for every $G$-generic $B_\Delta({\grZ})$-definable set $\mrD$
-    \item[5.] $p({\mr x})$ is $G$-persistent.
+    \item[2.] $p({\mr x})\proves{\mr x}\in\mrD$ for every $G$-generic $\BDelta({\grZ})$-definable set $\mrD$
+    \item[3.] $p({\mr x})$ is $G$-persistent.
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
   Let $H\subseteq G$ be finite such that $\mrX\subseteq\cup\,H\,\mrD$.
-  Then $p({\mr x})\proves {\mr x}\in\cup\,H\,\mrD$.
-  By completeness, $p({\mr x})\proves {\mr x}\in h\mrD$ for some $h\in H$.
+  By completeness and finite satisfiability, $p({\mr x})\proves {\mr x}\in\cup\,H\,\mrD$.
+  Again by completeness, $p({\mr x})\proves {\mr x}\in h\mrD$ for some $h\in H$.
   Finally, by invariance,  $p({\mr x})\proves{\mr x}\in\mrD$.
   
   \ssf2$\IMP$\ssf3.
@@ -131,30 +139,30 @@ In this notes many proofs require some juggling with negations as epitomized by 
   % Let $g_1,\dots,g_{n+2}\in G$ and $\theta({\mr x})\,;{\gr\bar b}$ witness this.
   % Then 
   If $p({\mr x})$ is not $G$-invariant then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g{\gr b})$ for some $g\in G$.
-  Clearly $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g{\gr b})$ is not $G$-persistent as it is inconsistent with its $g$-translate.
+  Clearly $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g{\gr b})$ is not $2$-$G$-persistent as it is inconsistent with its $g$-translate.
 \end{proof}
 
-The theorem yields an immediate necessary condition for the existence of an $G$-invariant global $B_\Delta({\grZ})$-type.
+The theorem yields a necessary condition for the existence of $G$-invariant global $\BDelta({\grZ})$-types.
 
 \begin{corollary}\label{corol_def_mu}
   (Assume~\ref{notation_GXphi})\ \  
-  If there exists an $G$-invariant global $B_\Delta({\grZ})$-type then for every $B_\Delta({\grZ})$-definable set $\mrD$
+  If there exists a $G$-invariant global type finitely satisfiable in $\mrX$ then for every $\BDelta({\grZ})$-definable set $\mrD$
   \begin{itemize}
-    \item[1.] $\mrD$ and $\neg\mrD$ cannot be both $G$-generic
-    \item[2.] if $\mrD$ is $G$-generic than it is $G$-persistent
-    \item[3.] the type $\gamma_G({\mr x})=\{\theta({\mr x})\in B_\Delta({\grZ}): \theta({\mr x})\textrm{ generic }\}$ is finitely satisfiable in $\mrX$.
+    \item[1.] $\mrD$ and $\neg\mrD$ are not both $G$-generic
+    \item[2.] if $\mrD$ is $G$-generic then it is $G$-persistent
+    \item[3.] the type $\gamma_G({\mr x})=\{\theta({\mr x})\in \BDelta({\grZ}): \theta({\mr x})\textrm{ is }G\textrm{-generic}\}$ is finitely satisfiable in $\mrX$.
   \end{itemize}
 \end{corollary}
 
 \begin{proof}
-  The three claims are equivalent; \ssf1 is an immediate consequenc of \ssf2 of Theorem~\ref{thm_generic_invariant}.
+  Clearly, \ssf1 and \ssf2 are equivalent, moreover \ssf1 and \ssf3 are immediate consequences of \ssf2 of Theorem~\ref{thm_generic_invariant}.
 \end{proof}
 
-The following theorem gives a necessary and sufficient condition for the  existence of global $G$-invariant $B_\Delta({\grZ})$-type.
-Ideally, we would like to have that every $G$-persistent $B_\Delta({\grZ})$-type extends to a global persitent type.
+The following theorem gives a necessary and sufficient condition for the  existence of global $G$-invariant $\BDelta({\grZ})$-type.
+Ideally, we would like to have that every $G$-persistent $\BDelta({\grZ})$-type extends to a global persitent type.
 Unfortunately this is not true -- we need a stronger property.
-A $B_\Delta({\grZ})$-definable set $\mrD$ is \emph{hereditarely\/} $G$-persistent if every finite cover of $\mrD$ by $B_\Delta({\grZ})$-definable sets contains a $G$-persistent set.
-In~\cite{CK} a similar property is called \textit{quasi-non-forking,} but we persist in the unorthodoxy.
+A set $\mrD$ is \emph{hereditarely\/} $G$-persistent if every finite cover of $\mrD$ by $\BDelta({\grZ})$-definable sets contains a $G$-persistent set.
+In~\cite{CK} a similar property is called \textit{quasi-non-forking.}
 A type is hereditarely $G$-persistent if every conjunction of formulas in the type is hereditarely $G$-persistent.
 
 \begin{theorem}\label{thm_generic_invariant2}
@@ -162,7 +170,7 @@ A type is hereditarely $G$-persistent if every conjunction of formulas in the ty
   Let $q({\mr x})\subseteq L(\U)$.
   Then the following are equivalent 
   \begin{itemize}
-    \item[1.] $q({\mr x})$ extends to a $G$-invariant type $p({\mr x})\in S_\Delta(\grZ)$ finitely satisfiable in $\mrX$
+    \item[1.] $q({\mr x})$ is consistent with a $G$-invariant type $p({\mr x})\in S_\Delta(\grZ)$ finitely satisfiable in $\mrX$
     \item[2.] $q({\mr x})$ is hereditarely $G$-persistent.
   \end{itemize}
 \end{theorem}
@@ -176,10 +184,10 @@ A type is hereditarely $G$-persistent if every conjunction of formulas in the ty
   Therefore, by Fact~\ref{fact_fip}, ${\mr\C_i}$ is $G$-persistent.
 
   \ssf2$\IMP$\ssf1.
-  Let $p({\mr x})$ be maximal among the $B_\Delta({\grZ})$-types that contain $q({\mr x})$ and are such that $\theta(\U^{\mr x})$ is hereditarely $G$-persistent for every $\theta({\mr x})$ that is conjunction of formulas in $p({\mr x})$.
-  We claim that $p$ is a complete $B_\Delta({\grZ})$-type.
+  Let $p({\mr x})$ be maximal among the $\BDelta({\grZ})$-types that are consistent with $q({\mr x})$ and are such that $\theta(\U^{\mr x})$ is hereditarely $G$-persistent for every $\theta({\mr x})$ that is conjunction of formulas in $p({\mr x})$.
+  We claim that $p({\mr x})$ is a complete $\BDelta({\grZ})$-type.
   Suppose for a contradiction that $\theta({\mr x}),\neg\theta({\mr x})\notin p$.
-  By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$ and some ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi(\U^{\mr x})\cap\theta(\U^{\mr x})$ and $\psi(\U^{\mr x})\smallsetminus\theta(\U^{\mr x})$ and such that no ${\mr\C_i}$ is $G$-persistent.
+  By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$, and some ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi(\U^{\mr x})\cap\theta(\U^{\mr x})$ and $\psi(\U^{\mr x})\smallsetminus\theta(\U^{\mr x})$ and such that no ${\mr\C_i}$ is $G$-persistent.
   As ${\mr\C_1},\dots,{\mr\C_n}$ cover $\psi(\U^{\mr x})$ this is a contradiction.
   It is only left to show that $p({\mr x})$ is finitely satisfiable in $\mrX$ and $G$-invariant.
   Finite satisfiability follows from persistency.
@@ -204,22 +212,22 @@ A type is hereditarely $G$-persistent if every conjunction of formulas in the ty
 
 \begin{exercise}
   (Assume~\ref{notation_GXphi})\ \  
-  Prove that the following are equivalent for every $B_\Delta({\Z})$-definable set $\D\subseteq\U^x$
+  Prove that the following are equivalent for every $\BDelta({\Z})$-definable set $\D\subseteq\U^x$
   \begin{itemize}
     \item[1.] there is a $G$-invariant type $p(x)\in S_\Delta(\Z)$ finitely satisfiable in $\X\cap\D$
-    \item[2.] every finite cover of $\D$ by $B_\Delta({\Z})$-definable sets contains a 2-$G$-persistent set.
+    \item[2.] every finite cover of $\D$ by $\BDelta({\Z})$-definable sets contains a 2-$G$-persistent set.
   \end{itemize}
 \end{exercise}
 
 \begin{exercise}\label{ex_gen_sat}
   (Assume~\ref{notation_GXphi})\ \  
-  Let $p(x)\subseteq B_\Delta(\Z)$ be $G$-generic.
+  Let $p(x)\subseteq \BDelta(\Z)$ be $G$-generic.
   Prove that it is finitely satisfiable in $\X$.
 \end{exercise}
 
 \begin{exercise}\label{ex_persistent_types}
   (Assume~\ref{notation_GXphi})\ \  
-  Prove that for $p(x)\subseteq B_\Delta(A)$ following are equivalent
+  Prove that for $p(x)\subseteq \BDelta(A)$ following are equivalent
   \begin{itemize}
     \item[1.] $p(x)$ is $G$-persistent
     \item[2.] $p(\U^x)$ is $G$-persistent.
@@ -240,9 +248,6 @@ A type is hereditarely $G$-persistent if every conjunction of formulas in the ty
 
 Unfortunatelly, $G$-genericy is not preserved under intersection.
 To obtain closure under intersection, we need to push the concept to a higher level of complexity.
-This is only required in Section~\ref{newelski}.
-
-
 
 A set $\mrD\subseteq\U^{\mr x}$ is \emph{strongly $G$-generic\/} if for every finite $H\subseteq G$ the set $\cap\,H\,\mrD$ is generic.
 Dually, we say that $\mrD$ is \emph{weakly $G$-persistent\/} if for some finite $H\subseteq G$ the set $\cup\,H\,\mrD$ is persistent.
@@ -402,26 +407,26 @@ The notions introduced in Section~\ref{strong_genericity} offer some hint.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{A simpler landscape}
 
-Under suitable assumptions -- e.g.\@ the sability of $\phi({\mr x}\,;{\gr z})$, see Chapter~\ref{stability} -- some of the notions introduced in this chapter coalesce and we are left with cleaner theory.
+Under suitable assumptions -- e.g.\@ the sability of $\Delta$, see Proposition~\ref{prop_stable_lanscape} -- some of the notions introduced in this chapter coalesce and we obtain a tamer landscape.
 We prove the following theorem.
 
 \begin{theorem}\label{thm_coalesce}
-  (Assume~\ref{notation_GXphi})\ \  
+  (Assume~\ref{notation_GXphi})\ \ 
   The following are equivalent
   \begin{itemize}
-    \item[1.] $G$-persistent $B_\Delta({\grZ})$-definable sets are hereditarely $G$-persistent
-    \item[2.] $G$-generic $B_\Delta({\grZ})$-definable sets are strongly $G$-generic
-    \item[3.] $G$-generic $B_\Delta({\grZ})$-definable sets are closed under intersection
-    \item[4.] weakly persisent $B_\Delta({\grZ})$-definable sets are $G$-persistent.
+    \item[1.] $G$-persistent $\BDelta({\grZ})$-definable sets are hereditarely $G$-persistent
+    \item[2.] $G$-generic $\BDelta({\grZ})$-definable sets are strongly $G$-generic
+    \item[3.] $G$-generic $\BDelta({\grZ})$-definable sets are closed under intersection
+    \item[4.] weakly persisent $\BDelta({\grZ})$-definable sets are $G$-persistent.
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
   It suffices to prove that $G$-generic sets are closed under intersection.
-  Let $\mrC$ and $\mrD$ be $G$-generic $B_\Delta({\grZ})$-definable sets.
+  Let $\mrC$ and $\mrD$ be $G$-generic $\BDelta({\grZ})$-definable sets.
   Suppose for a contradiction that $\mrC\cap\mrD$ is not $G$-generic.
-  By \ssf1 and Theorem~\ref{thm_generic_invariant2} there is a invariant global $B_\Delta({\grZ})$-type $p({\mr x})$ containing ${\mr x}\in\neg\mrC\cup\neg\mrD$.
+  By \ssf1 and Theorem~\ref{thm_generic_invariant2} there is a invariant global $\BDelta({\grZ})$-type $p({\mr x})$ containing ${\mr x}\in\neg\mrC\cup\neg\mrD$.
   By completeness either $p({\mr x})\proves{\mr x}\in\neg\mrC$ or $p({\mr x})\proves{\mr x}\in\neg\mrD$.
   This is a contradiction because by Theorem~\ref{thm_generic_invariant} $p({\mr x})\proves{\mr x}\in\mrC$ and $p({\mr x})\proves{\mr x}\in\mrD$.
 
@@ -431,7 +436,7 @@ We prove the following theorem.
   Let $q({\mr x})=\{\theta({\mr x})\in L_\phi(\U)\,:\,\theta({\mr x})\textrm{ $G$-generic}\}$.
   By \ssf2 this is the same type defined in Corollary~\ref{corol_q_w_pers}.
   Therefore, any completion of $q({\mr x})$ is, by \ssf4, $G$-persistent.
-  Let $\mrD$ be a $G$-persistent $B_\Delta({\grZ})$-definable set.
+  Let $\mrD$ be a $G$-persistent $\BDelta({\grZ})$-definable set.
   By Theorems~\ref{thm_generic_invariant} and~\ref{thm_generic_invariant2} it suffices to show that $\mrD$ is consistent with $q({\mr x})$.
   Suppose not, then $q({\mr x})\proves {\mr x}\in\neg\mrD$.
   Therefore, by \ssf3, $\neg\mrD$ is $G$-generic.
@@ -446,7 +451,7 @@ We prove the following theorem.
 \begin{remark}\label{rem_coalesce}
   (Assume~\ref{notation_2})\ \ 
   Note that the types $\gamma_G({\mr x})$ and  ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ defined in corollary~\ref{corol_def_mu} and~\ref{corol_q_w_pers} coincide.
-  Then the following are equivalent for every $p({\mr x})\in S_\Delta(\grZ)$
+  Then for every $p({\mr x})\in S_\Delta(\grZ)$ the following are equivalent
   \begin{itemize}
     \item[1.] $p({\mr x})$ is $G$-persistent (equivalently, $G$-invariant)
     \item[2.] $p({\mr x})$ extends $\gamma_G({\mr x})$.
@@ -464,8 +469,8 @@ We prove the following theorem.
 \section{Definable groups}\label{definablegroups}
 
 In this section we work as always under Assumption~\ref{notation_GXphi} but we further specify $G$ and $\Delta$.
-We set $G=\grZ$ and require that $\grZ$ and $\mrX$ are type-definable over $A$.
-We assume that the group operations and the group action are definable over $A$.
+We assume $G=\grZ$ and require that $\grZ$ and $\mrX$ are type-definable over $A$.
+We also assume that the group operations and the group action are definable over $A$.
 We use the symbol $\,\cdot\,$ for both the group multiplication and the group action.
 Clearly, $\grZ$ also acts on itself by left multiplication.
 
