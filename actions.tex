@@ -17,7 +17,7 @@ We use the same notation and make the same implicit assumptions as in Section~\r
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The dual perspective on invariance}\label{dual_perspective}
 
-The notions of invariance introduceted in the previous chapters extend seemlessly to the action of a group $G$ on $\U^{\gr z}$.
+The notions of invariance introduceted in Chapter~\ref{invariant} extend seemlessly to the action of a group $G$ on $\U^{\gr z}$.
 Let $\grD\subseteq\U^{\gr z}$.
 We say that $\grD$ is \emph{invariant\/} under the action of $G$, or \emph{$G$-invariant,} if it is fixed setwise by $G$.
 That is, $g\grD=\grD$ for every $g\in G$.
@@ -32,18 +32,17 @@ We say that $p({\mr x})\subseteq L(\U)$ is \emph{invariant\/} under the action o
 
 It should be clear that invariant under the action of $\Aut(\U/A)$ coincides with invariant over $A$ and Lascar invariant over $A$ coincides with invariant under the action of $\Autf(\U/A)$.
 
-Note that $p({\mr x})$ is $G$-invariant exactly when the sets $\gr\D_{p,\phi}\subseteq\U^{\gr z}$ are.
+Note that $p({\mr x})$ is $G$-invariant exactly when the sets ${\gr\D_{p,\phi}}\subseteq\U^{\gr z}$ are.
 In this section we want to discuss invariance using sets $\mrD\subseteq\U^{\mr x}$.
 We need stronger assumptions on the action of $G$.
 But first we introduce a more flexible framework.
 
-In this chapter $\Delta\subseteq L_{{\mr x}\,{\gr z}}(\U)$, ${\mrX}\subseteq\U^{\mr x}$, and ${\grZ}\subseteq\U^{\gr z}$ are some arbitrary nonempty sets (for some arguments we require that $\mrX$ and $\grZ$ are type-definable).
+In this chapter $\Delta\subseteq L_{{\mr x}\,{\gr z}}(\U)$.
+Let $\grZ\subseteq\U^{\gr z}$.
+We write \emph{$\pmDelta(\grZ)$\/} for the set of formulas of the form $\phi({\mr x}\,;{\gr b})$ or $\neg\phi({\mr x}\,;{\gr b})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$ and some ${\gr b}\in\grZ$.
+We write $S_\Delta(\grZ)$ for the set of complete $\pmDelta(\grZ)$-types~--~needless to say, these are equivalent to complete $\BDelta(\grZ)$-types.
 
-Let ${\gr\Aa}\subseteq\U^{\gr z}$.
-We write \emph{$\pmDelta({\gr\Aa})$\/} for the set of formulas of the form $\phi({\mr x}\,;{\gr b})$ or $\neg\phi({\mr x}\,;{\gr b})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$ and some ${\gr b}\in{\gr\Aa}$.
-We write $S_\Delta({\gr\Aa})$ for the set of complete $\pmDelta({\gr\Aa})$-types~--~needless to say, these are equivalent to complete $\BDelta({\gr\Aa})$-types.
-
-We write \emph{$\BDelta({\gr\Aa})$} for the set of Boolean combinations of formulas in $\pmDelta({\gr\Aa})$.
+We write \emph{$\BDelta(\grZ)$} for the set of Boolean combinations of formulas in $\pmDelta(\grZ)$.
 % A $\BDelta(\Aa)$-definable set is a set of the form $\theta(\U^{\mr x})$ for some $\BDelta(\Aa)$-formula $\theta({\mr x})$.
 % Subsets of $\BDelta(\Aa)$ are called $\BDelta(\Aa)$-types.
 
@@ -54,7 +53,7 @@ In the literature these formulas are called \textit{generalized\/} $\Delta$-form
 Note that when $A$ is a model $\GDelta(A)$-formulas are equivalent to $\BDelta(A)$-formulas.
 
 \begin{assumption}\label{notation_GXphi}
-  Let $G$ be a group that acts on $\mrX$ and on $\grZ$.
+  Let $G$ be a group that acts on some sets ${\mrX}\subseteq\U^{\mr x}$ and ${\grZ}\subseteq\U^{\gr z}$.
   We require that for every $\phi({\mr x}\,;{\gr z})\in\Delta$ the set $\phi(\mrX;\grZ)$ is invariant under the action of $G$.
 \end{assumption}
 
@@ -475,7 +474,7 @@ We use the symbol $\,\cdot\,$ for both the group multiplication and the group ac
 Clearly, $\grZ$ also acts on itself by left multiplication.
 
 In this section we deal with the actions of two groups: $G=\grZ$ and $\Aut(\U/A)$.
-As usual, $A$-invariant means invariant under the action of $\Aut(\U/A)$.
+As usual, invariant over $A$ means invariant under the action of $\Aut(\U/A)$.
 % Generic and persistent only refer to the action of $G$.
 % We will be explicit about invariance.
 
@@ -510,7 +509,7 @@ Clearly, $\phi(\mrX\,;{\gr g})={\gr g}\cdot\phi(\mrX\,;{\gr 1})$.
   \ceq{\hfill\psi({\gr\bar z})}{=}{\E{\gr u_1},\dots,{\gr u_m}\ \A{\mr x}\bigvee_{i=1}^m\theta({\mr x}\;;\,{\gr u_i}{\cdot}{\gr\bar z})}
 \end{proof}
 
-An immediate consequence of this fact is that the automorphisms in $\Aut(\U/A)$ map generic/persistent $\Delta$-definable sets to generic/persistent sets of the same form.
+An immediate consequence of this fact is that the automorphisms in $\Aut(\U/A)$ map generic/persistent $\BDelta(\grZ)$-definable sets to generic/persistent sets of the same form.
 
 % \begin{fact}
 %   (Assume~\ref{notation_3})\ \ 

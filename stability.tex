@@ -907,7 +907,7 @@ A more general version of the theorem holds which requires a different proof.
 \section{The action of the Lascar group}
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox{8ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+\def\ceq#1#2#3{\parbox{10ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 We adopt the notation and terminology of Chapter~\ref{actions} with $G=\Autf(\U/A)$ and $\grZ=\U^{\gr z}$.
 The set $\mrX$ will specified in the context.
@@ -999,44 +999,76 @@ We define \emph{Lascar persistent\/} similarly.
 %   Let $p({\mr x})\in S(\U)$.
 %   Prove that there is at most one definably closed set $A\subseteq\U^\eq$ such that $\Aut(\U/A)$ is the set of automorphisms that fix $p({\mr x})$.
 % \end{exercise}
-\begin{theorem}
-  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable and finite.
-  Let $p({\mr x})$ be complete $\GDelta(A)$-type.
+\begin{proposition}
+  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$.
+  Let $p_0({\mr x})$ be complete $\GDelta(A)$-type.
   Let 
   
-  \ceq{\hfill Q}{=}{\big\{q({\mr x})\subseteq\GDelta(\acl^\eq\!A)\ :\ q({\mr x})\supseteq p({\mr x})\textrm{ complete}\big\}}.
+  \ceq{\hfill Q}{=}{\big\{q({\mr x})\subseteq\GDelta(\acl^\eq\!A)\ :\ q({\mr x})\supseteq p_0({\mr x})\textrm{ and is complete}\big\}}.
   
-  Then
+  Then $\Aut(\U/A)$ acts on $Q$ transistively, i.e.\@ any two types in $Q$ are conjugated.
+\end{proposition}
+
+\begin{proof}
+  We prove that any two types $q_1,q_2\in Q$ are realized be some $a_1\equiv_Aa_2$.
+  The claim follows because any automorphism in $\Aut(\U/A)$ that takes $a_1$ to $a_2$ takes also $q_1$ in $q_2$.
+  It suffices to prove that every type $p({\mr x})\in S(A)$ is consistent with every $q\in Q$.
+  Suppose not, then $p({\mr x})\imp\neg\phi({\mr x})$ for some $\phi({\mr x})\in q$.
+  Let $\psi({\mr x})$ be the disjunction of all the (finitely many) conjugates of $\phi({\mr x})$ over $A$.
+  Then $p({\mr x})\imp\neg\psi({\mr x})$.
+  But $\psi({\mr x})\in\BDelta(\acl^\eq\!A)$ and is invariant over $A$.
+  Therefore $\psi({\mr x})\in\GDelta(A)$.
+  Then $\psi({\mr x})\in p$, a contradiction.
+\end{proof}
+
+\begin{theorem}
+  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable and finite.
+  Let $p_0({\mr x})$ be complete $\GDelta(A)$-type.
+  Let 
+  
+  \ceq{\hfill P}{=}{\big\{p({\mr x})\in S_\Delta(\U)\ :\ p({\mr x})\proves p_0({\mr x})\textrm{ and is Lascar invariant over }A\big\}}.
+  
+  Then the following hold
   \begin{itemize}
-    \item [1.] $\Aut(\U/A)$ acts on $Q$ transistively, i.e.\@ any two types in $Q$ are conjugated over $A$
-    \item [2.] $Q$ is finite
-    \item [3.] for some finite equivalence relation $\varepsilon({\mr x}\,;{\mr y})\in\GDelta(A)$
+    \item [1.] $\Aut(\U/A)$ acts on $P$ transistively.
+    \item [2.] $P$ is finite
+    \item [3.] there is a finite equivalence relation $\varepsilon({\mr x}\,;{\mr y})\in\GDelta(A)$ such that for all $p_1,p_2\in P$ 
+    
+    \ceq{\hfill p_1=p_2}{\IFF}{p_i({\mr x})\cup p_j({\mr y}) \textrm{ is consistent with }\epsilon({\mr x},{\mr y})}.
+    
   \end{itemize}
 \end{theorem}
 
-
 \begin{proof}
-  1. 
-  (The hypotheses on $\Delta$ are not necessary.) 
-  We prove that any two types $q_1,q_2\in Q$ are realized be some $a_1\equiv_Aa_2$.
-  The claim follows beause any automorphism in $\Aut(\U/A)$ that takes $a_1$ to $a_2$ takes also $q_1$ in $q_2$.
-  It suffices to prove that every type $p'({\mr x})\in S(A)$ is consistent with every $q\in Q$.
-  Suppose not, then $p'({\mr x})\imp\neg\phi({\mr x})$ for some $\phi({\mr x})\in q$.
-  Let $\psi({\mr x})$ be the disjunction of all the (finitely many) conjugates of $\phi({\mr x})$ over $A$.
-  Then $p'({\mr x})\imp\neg\psi({\mr x})$.
-  But $\psi({\mr x})\in\BDelta(A)$ and is invariant over $A$.
-  Therefore $\psi({\mr x})\in\GDelta(A)$.
-  Then $\psi({\mr x})\in p$, a contradiction.
-  
-  2. Define 
-  
-  \ceq{\hfill P}{=}{\big\{p'({\mr x})\in S_\Delta(\U)\ :\ p'({\mr x})\cup p({\mr x})\textrm{ is consistent}\big\}}.
+  \ssf1.
+  Let $p_i$, where $i=1,2$, be two elements of $P$.
+  Let $q_i({\mr x})$ be some complete $\GDelta(\acl^\eq\!A)$-type consistent with $p_i({\mr x})$.
+  By the proposition above $f\,q_1=q_2$ for some $f\in\Aut(\U/A)$.
+  Then $f\,p_1$ is consistent with $q_2$.
+  By stationarity $f\,p_1=p_2$.
 
-  By Theorem~\ref{thm_stationarity} for every $q\in Q$ there is a unique $p'\in P$ consistent with $q$.
-  Therefore it suffices to prove that $P$ is finite.
-  Note that $\Aut(\U/A)$ acts transitively on $P$.
-  Therefore if we show that 
+  \ssf2.
+  Identify a type $p({\mr x})\in S_\Delta(\U)$ with the sets $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$.
+  For any $f\in\Aut(\U/A)$, we have that ${\gr\D_{fp,\phi}}=f[{\gr\D_{p,\phi}}]$.
+  Therefore the orbit of $p({\mr x})$ corresponds to the orbit of $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$.
+  As $p\in P$ is Lascar invariant over $A$ the sets ${\gr\D_{p,\phi}}$ are in $\acl^\eq\!A$.
+  Hence have a finite orbit.
+  As $\Delta$ is finite the orbit of $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$ is finite, hence so is the orbit of $p$.
+  By \ssf1, $P$ is finite.
 
+  \ssf3. 
+  Let $p_1,\dots,p_n$ be an enumeration without repetitions of $P$.
+  Let $q_1({\mr x})$ be some complete $\GDelta(\acl^\eq\!A)$-type consistent with $p_1$.
+  By \ssf2 there are some $g_1,\dots,g_n\in\Aut(\U/A)$ be such that $p_i=g_ip_1$.
+  Let $q_i=g_iq_1$.
+  Clearly $q_i$ is a complete $\GDelta(\acl^\eq\!A)$-type consistent with $p_i$.
+  By stationarity the $q_i$ are mutually inconsistent.
+  Pick $n$ mutually inconsistent formulas $\theta_i({\mr x})\in q_i$ and define
+
+  \ceq{\hfill\epsilon({\mr x},{\mr y})}{=}{\bigwedge_{i=1}^n\big[\theta_i({\mr x})\iff\theta_i({\mr y})\big]}
+  
+  This shows that $p_i=p_j$ if and only if $p_i({\mr x})\cup p_j({\mr y})$ is consistent with $\epsilon({\mr x},{\mr y})$.
+  From the definition of $\epsilon({\mr x},{\mr y})$ we know that it belongs to $\GDelta(\acl^\eq\!A)$, but it is easily seen that $\epsilon({\mr x},{\mr y})$ is invariant over $A$, hence \ssf3 follows.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -1064,7 +1096,6 @@ For obvious reasons, if $\phi({\mr x}\,;{\gr g})$ is Lascar generic then it is $
 \end{theorem}
 
 \begin{proof}
-  \ssf1$\IMP$\ssf2.
   Let ${\mr a}\in\mrX$ and ${\gr g}\in\grZ$ be such that $\phi({\mr a}\,;{\gr g})$.
   Let $q({\mr x})=\tp({\mr a}/\acl^\eq\!A)$.
   Assume \ssf1 then, by Proposition~\ref{prop_stable_genericiffpersistent}, $\phi({\mr x}\,;{\gr g})$ is Lascar generic relative to $q(\U^{\mr x})$, i.e.\@ with $q(\U^{\mr x})$ for $\mrX$.
@@ -1072,18 +1103,18 @@ For obvious reasons, if $\phi({\mr x}\,;{\gr g})$ is Lascar generic then it is $
   The same reasoning applies if we replace ${\mr a}$ and ${\gr g}$ with  ${\gr h}\,{\mr a}$ and ${\gr h}\,{\gr g}$ for any ${\gr h}\in\grZ$.
   By the transitivity of the action, ${\gr h}\,{\mr a}$ ranges the whole of $\mrX$.
   We conclude that there is a set $H\subseteq\grZ$ of cardinality $<2^{|L(A)|}$ such that $\bigcup_{h\in H}\phi(\mrX\,;{\gr h})$ covers $\mrX$.
-  By compactness we can assume $H$ finite, so $G$-genericity follows.
+  By compactness, we can assume $H$ finite, so $G$-genericity follows.
 
   \ssf2$\IMP$\ssf1.
   Consider the 2-sorted model $\U'=\big\<\mrX\,;\grZ\big\>$ whose signature $L'$ contains only a relation symbol $r'({\mr x}\,;{\gr z})$ that is interpreted as $\phi({\mr x}\,;{\gr z})$.
   To each ${\gr h}\in\grZ$ we associate the $L'$-automorphism $h:\<{\mr a}\,;{\gr g}\>\mapsto\<{\gr h}\,{\mr a}\,;{\gr h}\,{\gr g}\>$.
-  As $\U'$ is a stable structure, there is a global $r'$-type $p'({\mr x})$ that is definable over $L'\mbox{-}\acl^\eq\!\0$.
+  As $\U'$ is a stable structure, there is a global $r'$-type $p'({\mr x})$ that is definable over $L'\mbox{-}\acl^\eq\0$.
   Now, let ${\gr g}$ be given.
   If $\phi({\mr x}\,;{\gr g})$ is $G$-generic, $p'({\mr x})\proves r'({\mr x}\,;{\gr h}\,{\gr g})$ for some ${\gr h}\in\grZ$.
   Then $r'({\mr x}\,;{\gr g})\in{h^{-1}}p'$.
-  We claim that ${h^{-1}}p'({\mr x})$ is also definable over $L'\mbox{-}\acl^\eq\!\0$.
-  Indeed, it suffices to note that ${\gr\D_{{h^{-1}}p',r'}}={\gr h^{-1}}\,{\gr\D_{p',r'}}$ and that if 
-  ${\gr\D_{p',r'}}\in L'\mbox{-}\acl^\eq\!\0$ then also ${\gr h^{-1}}\,{\gr\D_{p,r'}}\in L'\mbox{-}\acl^\eq\!\0$.
+  We claim that ${h^{-1}}p'({\mr x})$ is also definable over $L'\mbox{-}\acl^\eq\0$.
+  Indeed, it suffices to note that ${\gr\D_{{h^{-1}}p',r'}}=h^{-1}\,[{\gr\D_{p',r'}}]$ and that if 
+  ${\gr\D_{p',r'}}\in L'\mbox{-}\acl^\eq\0$ then also $h^{-1}\,{\gr\D_{p,r'}}\in L'\mbox{-}\acl^\eq\0$.
   Now let $p({\mr x})\in S_\phi(\U)$ a a type finitely satisfiable in ${\mr x}\in\mrX$ and containing ${h^{-1}}p'({\mr x})$ with $r'$ replaced by $\phi$.
   Note that $\phi({\mr x}\,;{\gr g})\in p$ and that $p({\mr x})$ is Lascar invariant over $A$ because every automorphism of $\U$ over $A$ induces an $L'$-automorphism of $\U'$.
   This shows that there is a Lascar invariant type, finitely satisfiable in $\mrX$, containing $\phi({\mr x}\,;{\gr g})$.
