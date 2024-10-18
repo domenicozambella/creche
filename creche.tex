@@ -107,8 +107,8 @@ diagrams={>=latex}
 \def\atpmtp{\mbox{\rm at$^{\scriptscriptstyle\pm}$-tp}}
 \def\Deltatp{\Delta\mbox{\rm -tp}}
 \def\pmDelta{\smash{\Delta\kern-.3ex\raisebox{1ex}{$\scriptscriptstyle\pm$}}\kern-.2ex}
-\def\BDelta{\smash{\Delta\kern-.4ex\raisebox{0.9ex}{\sf\tiny B}}\kern-.1ex}
-\def\GDelta{\smash{\Delta\kern-.4ex\raisebox{0.9ex}{\sf\tiny G}}\kern-.1ex}
+\def\BDelta{\smash{\Delta\kern-.3ex\raisebox{0.9ex}{\sf\tiny B}}\kern-.1ex}
+\def\GDelta{\smash{\Delta\kern-.3ex\raisebox{0.9ex}{\sf\tiny G}}\kern-.1ex}
 \def\pmDeltatp{\noindent\pmDelta\hskip-.3ex{\rm -tp}}
 \def\EMtp{\mbox{{\small EM}-tp}}
 
@@ -346,14 +346,14 @@ diagrams={>=latex}
 \begin{document}
 \raggedbottom
 \renewcommand{\contentsname}{%
-\addcontentsline{toc}{chapter}{Table of contents\\[-1.5ex]}
+% \addcontentsline{toc}{chapter}{Table of contents}
+{\normalfont\normalsize\texttt{Branch:\ \branch\ \DTMnow}}\\[3ex]%
 A Cr\`eche Course in Model Theory\\[3ex]%
 \parbox{\textwidth}{\normalfont\normalsize
 Domenico Zambella\\
 Università di Torino\\
 ORCID:~%\href{https://orcid.org/0000-0003-1141-2898}%
-{0000-0003-1141-2898}\\[1ex]
-\texttt{Branch:\ \branch\ \DTMnow}}}
+{0000-0003-1141-2898}\\[1ex]}}
 \tableofcontents
 % \subfile{preface}
 \subfile{preliminaries}
