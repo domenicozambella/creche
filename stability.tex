@@ -1077,29 +1077,37 @@ We define \emph{Lascar persistent\/} similarly.
 %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section{Stable groups}
+\section{Stable groups}\label{stable_groups}
 
 In this section we adopt the setting of Section~\ref{definablegroups}.
-Here we also assume that the action is transitive, that is, $G\,{\mr a}=\mrX$ for some/any ${\mr a}\in\mrX$.
-We also assume that the formula $\phi({\mr x}\,;{\gr z})$ defined in Section~\ref{definablegroups} is stable.
-
-We remark that there is another group with a natural action on $\mrX$ and $\grZ$: the Lascar group $\Autf(\U/A)$.
-It is immediate that the following implications holds for formulas of the form $\phi({\mr x}\,;{\gr g})$
-\begin{itemize}
-  \item [1.] $G$-persistent  $\IMP$ persistent over $A$
-  \item [2.] generic over $A$ $\IMP$ $G$-generic 
-\end{itemize}
+In particular, $\Delta$ is the set of formulas defined there.
 
 \begin{theorem}\label{thm_Ggeneric_persistent}
-  Let $\phi({\mr x}\,;{\gr z})$ be stable.
+  Let $\phi({\mr x}\,;{\gr z})\in\Delta$ be stable.
   Then the following are equivalent
   \begin{itemize}
     \item [1.] $\phi({\mr x}\,;{\gr g})$ is Lascar persistent over $A$ for every ${\gr g}\in\grZ$
-    \item [2.] $\phi({\mr x}\,;{\gr 1})$ is $G$-generic.
+    \item [2.] $\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic.
   \end{itemize}
 \end{theorem}
 
+% The imaginaries and the eq-expansion.
+% Finite equivalence relations and Shelah strong types.
+% Elimination of imaginaries.
+% Lascar invariance, Lascar strong types, strong automorphisms.
+% Group actions on a model, generic formulas and types.
+% Stable formulas.
+% The definability of externally definable sets.
+% The binary rank and the number of types.
+% Symmetry and stationarity.
+% The action of the Lascar group on stable formulas.
+% Stable groups.
+
 \begin{proof}
+  \ssf2$\IMP$\ssf1.
+  By Proposition~\ref{prop_generic_finsat}.
+
+  \ssf1$\IMP$\ssf2.
   Let ${\mr a}\in\mrX$ and ${\gr g}\in\grZ$ be such that $\phi({\mr a}\,;{\gr g})$.
   Let $q({\mr x})=\tp({\mr a}/\acl^\eq\!A)$.
   Assume \ssf1 then, by Proposition~\ref{prop_stable_genericiffpersistent}, $\phi({\mr x}\,;{\gr g})$ is Lascar generic relative to $q(\U^{\mr x})$, i.e.\@ with $q(\U^{\mr x})$ for $\mrX$.
@@ -1108,21 +1116,21 @@ It is immediate that the following implications holds for formulas of the form $
   By the transitivity of the action, ${\gr h}\,{\mr a}$ ranges the whole of $\mrX$.
   We conclude that there is a set $H\subseteq\grZ$ of cardinality $<2^{|L(A)|}$ such that $\bigcup_{h\in H}\phi(\mrX\,;{\gr h})$ covers $\mrX$.
   By compactness, we can assume $H$ finite, so $G$-genericity follows.
-
-  \ssf2$\IMP$\ssf1.
-  Consider the 2-sorted model $\U'=\big\<\mrX\,;\grZ\big\>$ whose signature $L'$ contains only a relation symbol $r'({\mr x}\,;{\gr z})$ that is interpreted as $\phi({\mr x}\,;{\gr z})$.
-  To each ${\gr h}\in\grZ$ we associate the $L'$-automorphism $h:\<{\mr a}\,;{\gr g}\>\mapsto\<{\gr h}\,{\mr a}\,;{\gr h}\,{\gr g}\>$.
-  As $\U'$ is a stable structure, there is a global $r'$-type $p'({\mr x})$ that is definable over $L'\mbox{-}\acl^\eq\0$.
-  Now, let ${\gr g}$ be given.
-  If $\phi({\mr x}\,;{\gr g})$ is $G$-generic, $p'({\mr x})\proves r'({\mr x}\,;{\gr h}\,{\gr g})$ for some ${\gr h}\in\grZ$.
-  Then $r'({\mr x}\,;{\gr g})\in{h^{-1}}p'$.
-  We claim that ${h^{-1}}p'({\mr x})$ is also definable over $L'\mbox{-}\acl^\eq\0$.
-  Indeed, it suffices to note that ${\gr\D_{{h^{-1}}p',r'}}=h^{-1}\,[{\gr\D_{p',r'}}]$ and that if 
-  ${\gr\D_{p',r'}}\in L'\mbox{-}\acl^\eq\0$ then also $h^{-1}\,{\gr\D_{p,r'}}\in L'\mbox{-}\acl^\eq\0$.
-  Now let $p({\mr x})\in S_\phi(\U)$ a a type finitely satisfiable in ${\mr x}\in\mrX$ and containing ${h^{-1}}p'({\mr x})$ with $r'$ replaced by $\phi$.
-  Note that $\phi({\mr x}\,;{\gr g})\in p$ and that $p({\mr x})$ is Lascar invariant over $A$ because every automorphism of $\U$ over $A$ induces an $L'$-automorphism of $\U'$.
-  This shows that there is a Lascar invariant type, finitely satisfiable in $\mrX$, containing $\phi({\mr x}\,;{\gr g})$.
-  Then \ssf1 follows.
+  % 
+  % \ssf2$\IMP$\ssf1.
+  % Consider the 2-sorted model $\U'=\big\<\mrX\,;\grZ\big\>$ whose signature $L'$ contains only a relation symbol $r'({\mr x}\,;{\gr z})$ that is interpreted as $\phi({\mr x}\,;{\gr z})$.
+  % To each ${\gr h}\in\grZ$ we associate the $L'$-automorphism $h:\<{\mr a}\,;{\gr g}\>\mapsto\<{\gr h}\,{\mr a}\,;{\gr h}\,{\gr g}\>$.
+  % As $\U'$ is a stable structure, there is a global $r'$-type $p'({\mr x})$ that is definable over $L'\mbox{-}\acl^\eq\0$.
+  % Now, let ${\gr g}$ be given.
+  % If $\phi({\mr x}\,;{\gr g})$ is $G$-generic, $p'({\mr x})\proves r'({\mr x}\,;{\gr h}\,{\gr g})$ for some ${\gr h}\in\grZ$.
+  % Then $r'({\mr x}\,;{\gr g})\in{h^{-1}}p'$.
+  % We claim that ${h^{-1}}p'({\mr x})$ is also definable over $L'\mbox{-}\acl^\eq\0$.
+  % Indeed, it suffices to note that ${\gr\D_{{h^{-1}}p',r'}}=h^{-1}\,[{\gr\D_{p',r'}}]$ and that if 
+  % ${\gr\D_{p',r'}}\in L'\mbox{-}\acl^\eq\0$ then also $h^{-1}\,{\gr\D_{p,r'}}\in L'\mbox{-}\acl^\eq\0$.
+  % Now let $p({\mr x})\in S_\phi(\U)$ a type finitely satisfiable in ${\mr x}\in\mrX$ and containing ${h^{-1}}p'({\mr x})$ with $r'$ replaced by $\phi$.
+  % Note that $\phi({\mr x}\,;{\gr g})\in p$ and that $p({\mr x})$ is Lascar invariant over $A$ because every automorphism of $\U$ over $A$ induces an $L'$-automorphism of $\U'$.
+  % This shows that there is a Lascar invariant type, finitely satisfiable in $\mrX$, containing $\phi({\mr x}\,;{\gr g})$.
+  % Then \ssf1 follows.
   % \ssf3$\IMP$\ssf1.
   % Let ${\gr g}$ be such that $\phi({\mr x}\,;{\gr g})$ is not Lascar persistent.
   % Then $\neg\phi({\mr x}\,;{\gr g})$ is Lascar generic.
@@ -1132,15 +1140,15 @@ It is immediate that the following implications holds for formulas of the form $
 
 \begin{corollary}
   Let $\phi({\mr x}\,;{\gr z})$ be stable.
-  Then $\phi({\mr x}\,;{\gr 1})$ or $\neg\phi({\mr x}\,;{\gr 1})$ is $G$-generic.
+  Then $\phi({\mr x}\,;{\gr 1})$ or $\neg\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic.
 \end{corollary}
 
 \begin{proof}
-  Suppose $\phi({\mr x}\,;{\gr 1})$ is not $G$-generic.
+  Suppose $\phi({\mr x}\,;{\gr 1})$ is not $\grZ$-generic.
   Then $\phi({\mr x}\,;{\gr g})$ is not Lascar persistent for some ${\gr g}$.
   Then $\neg\phi({\mr x}\,;{\gr g})$ is Lascar generic.
-  Then it is also $G$-generic.
-  The $G$-genericity of $\neg\phi({\mr x}\,;{\gr 1})$ follows.
+  A fortiori it is $\grZ$-generic.
+  The $\grZ$-genericity of $\neg\phi({\mr x}\,;{\gr 1})$ follows.
 \end{proof}
 
 

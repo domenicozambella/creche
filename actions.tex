@@ -501,90 +501,64 @@ We prove the following theorem.
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Definable groups}\label{definablegroups}
 
-In this section we work as always under Assumption~\ref{notation_GXphi}, but we further specify $G$ and $\Delta$.
-We assume $G=\grZ$ and require that $\grZ$ and $\mrX$ are type-definable over $A$.
-We also assume that the group operations and the group action are definable over $A$.
+In this section we continue to work under Assumption~\ref{notation_GXphi}, but we add some requirements.
+We require that $G=\grZ$.
+Furthermore, we assume that $\grZ$ and $\mrX$ are definable over some set of parameters $A$ and that the group operations and the group action are definable over $A$.
 We use the symbol $\,\cdot\,$ for both the group multiplication and the group action.
-Clearly, $\grZ$ also acts on itself by left multiplication.
 
-Let $\psi({\mr x})\in L(A)$.
-We write $\phi({\mr x}\,;{\gr z})$ for the formula $\psi({\gr z^{-1}}\cdot{\mr x})$.
-In this section $\Delta$ contains the formula $\phi({\mr x}\,;{\gr z})$.
-Note that $\phi(\mrX\,;\grZ)$ is $G$-invariant.
-
-Let ${\gr 1}$ be the identity of $\grZ$ which, for simplicity, we think as a constant of $L$.
+Let $\Psi\subseteq L_{\mr x}(\U)$ be some small set of formulas.
+In this section $\Delta$ contains formulas $\phi({\mr x}\,;{\gr z})$ of the form  $\psi({\gr z^{-1}}\cdot{\mr x})$ for $\psi({\mr x})\in\Psi$.
+Note that the sets $\phi(\mrX\,;\grZ)$ are $\grZ$-invariant.
+Write ${\gr 1}$ be the identity of $\grZ$.
 Clearly, $\phi(\mrX\,;{\gr g})={\gr g}\cdot\phi(\mrX\,;{\gr 1})$.
 
-In this section we deal with the actions of two groups: $G=\grZ$ and $\Aut(\U/A)$.
-As usual, invariant/persistent/generic over $A$ understand under the action of $\Aut(\U/A)$.
-% Generic and persistent only refer to the action of $G$.
-% We will be explicit about invariance.
-The following implications are evident for the formulas of the form $\phi({\mr x}\,;{\gr g})$
-\begin{itemize}
-  \item [1.] $G$-persistent  $\IMP$ persistent over $A$
-  \item [2.] generic over $A$ $\IMP$ $G$-generic 
-\end{itemize}
-
-\begin{assumption}\label{notation_3}
-  Let $G$, $\mrX$, $\grZ$ and $\Delta$ be as described above.
-  Note that these are compatible with Assumption~\ref{notation_GXphi}.
-\end{assumption}
-
 \begin{fact}
-  (Assume~\ref{notation_3})\ \ 
-  Let $\theta({\mr x}\,;{\gr\bar z})$ be a Bolean combination of the formulas $\phi({\mr x}\,;{\gr z_i})$, where $i=1,\dots,n$. 
-  Then there is a formula $\psi({\gr\bar z})\in L(A)$ such that, for every  ${\gr\bar g}\in{\gr\Z^n}$
-
-  \ceq{\hfill\psi({\gr\bar g})}{\IFF}{\theta({\mr x}\,;{\gr\bar g})\textrm{ is $G$-generic}.}
-
-  In other words, the type $\gamma_G({\mr x})$ is definable.
+  Let $\phi({\mr x}\,;{\gr z})\in\Delta$.
+  Let $M$ be any model containing $A$.
+  Then for every  ${\gr g}\in\grZ$ the following are equivalent
+  \begin{itemize}
+    \item [1.]  $\phi({\mr x}\,;{\gr g})$ is $\grZ$-generic
+    \item [2.]  $\phi({\mr x}\,;{\gr g})$ is generic under the action of $\grZ\cap M^{\gr z}$.
+  \end{itemize}
+  The same holds for persistency.
 \end{fact}
 
 \begin{proof}
-  % As $\phi({\mr x}\,;{\gr g}\,;a)$ is generic/persistent if and only if $\phi({\mr x}\,;{\gr 1}\,;a)$ is, we can replace ${\gr g}$ by ${\gr 1}$.
-  By compactness, there is an $m$ such that for every ${\gr\bar g}\in{\gr\Z^n}$ if $\theta({\mr x}\,;{\gr\bar g})$ is generic then it is also $m$-generic.
-  Then
+  We spell out the proof for genericity, for persistency the proof is similar.
 
-  \ceq{\hfill\psi({\gr\bar z})}{=}{\E{\gr u_1},\dots,{\gr u_m}\ \A{\mr x}\bigvee_{i=1}^m\theta({\mr x}\;;\,{\gr u_i}{\cdot}{\gr\bar z})}
+  \ssf1$\IMP$\ssf2.
+  As \ssf1 implies that $\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic, \ssf2 follows by elementarity.
+
+  \ssf2$\IMP$\ssf1.
+  Assume \ssf2.
+  By elementarity there is some ${\gr g'}\in\grZ\cap M^{\gr z}$ such $\phi({\mr x}\,;{\gr g'})$ is generic under the action of $\grZ\cap M^{\gr z}$ and, a fortiori, under the action of $\grZ$.
+  Then \ssf2 follows.
 \end{proof}
 
-An immediate consequence of this fact is that the automorphisms in $\Aut(\U/A)$ map generic/persistent $\BDelta(\grZ)$-definable sets to generic/persistent sets of the same form.
+The following easy proposition is interesting.
+Theorem~\ref{thm_Ggeneric_persistent} below will prove that, under the assumption of stability, also the converse holds.
 
-% \begin{fact}
-%   (Assume~\ref{notation_3})\ \ 
-%   Let $\theta({\mr x}\,;{\gr z})\in\pmDelta$.
-%   There is a formula $\sigma({\gr u}\,;{\gr v})\in L(\Y)$ such that for every $g,h\in G$
-
-%   \ceq{\hfill\sigma({\gr g}\,;{\gr h})}{\IFF}{\theta({\mr x}\,;{\gr g})\wedge\theta({\mr x}\,;{\gr h})\textrm{ is persistent}.}
-% \end{fact}
-% The same is true for generic/persistent types $p({\mr x})\in S_\Delta(\grZ)$ in fact, up to equivalence, we may assume that they contain only formulas of the form $\phi({\mr x}\,;{\gr g}\,;a)$ and negation thereof.
-
-\begin{fact} 
-  Let $p({\mr x})\in S_\Delta(\grZ)$ be $G$-persistent -- equivalently, $G$-invariant.
-  Then $p({\mr x})$ is invariant over $A$.
-\end{fact}
+\begin{proposition}\label{prop_generic_finsat}
+  Let $\phi({\mr x}\,;{\gr z})\in\Delta$.
+  If $\phi({\mr x}\,;{\gr g})$ is $\grZ$-generic then it is finitely satisfiable in every model containing $A$ so, in particular, it is Lascar persistent over $A$.
+\end{proposition}
 
 \begin{proof}
-  We may assume that $p({\mr x})$ only contain the formulas $\phi({\mr x}\,;{\gr b})$ for $\phi({\mr x}\,;{\gr z})\in\Delta$ or negations thereof.
-  As $p({\mr x})$ is $G$-invariant, $\phi({\mr x}\,;{\gr g})\in p\Leftrightarrow\phi({\mr x}\,;{\gr 1})\in p$.
-  Then the $A$-invariance of $p({\mr x})$ follows from the $A$-invariance of $\phi({\mr x}\,;{\gr 1})$.
+  Let $M$ be a model containing $A$.
+  Let $p({\mr x})\in S_\Delta(\grZ)$ be any type finitely satisfiable in $M$.
+  As $\phi({\mr x}\,;{\gr g})$ is $\grZ$-generic, it is also $\grZ\cap M^{\gr z}$ generic.
+  Then $p({\mr x})\proves\phi({\mr x}\,;{\gr h}{\cdot{}\gr g})$ for some ${\gr h}\in \grZ\cap M^{\gr z}$.
+  As $p({\mr x})$ is finitely satisfiable in $M$, there is an ${\mr a}\in\mrX\cap M^{\mr x}$ such that  $\phi({\mr a}\,;{\gr h}{\cdot}{\gr g})$.
+  Then $\phi({\gr h^{-1}}\!\cdot{\mr a}\,;{\gr g})$. 
+  As ${\gr h^{-1}}\!\cdot{\mr a}\in\mrX\cap M^{\mr x}$, the finite satisfiability of $\phi({\mr x}\,;{\gr g})$ follows.
+  The Lascar persistency follows because the genericity guarantees the satisfiability in $\mrX$.
 \end{proof}
 
-% The set $\mrD$ is $\Delta$-definable, namely it is definable by the formula $\phi({\mr x}\,;{\gr 1})$ where ${\gr 1}$ is the identity of $\mrG$.
+Consider the 2-sorted model $\U'=\big\<\mrX\,;\grZ\big\>$ whose signature $L'$ contains only a relation symbol for every formula $\phi({\mr x}\,;{\gr z})\in\Delta$ which we continue to indicate with $\phi({\mr x}\,;{\gr z})$.
+As $\mrX$ and $\grZ$ are assumed to be type-definable, $\U'$ is a saturated $L'$-structure.
 
-% We define an immersion of 
-
-% \ceq{\hfill\sigma\ :\ \Aut(\U/A)}{\to}{\grG}\\
-% \ceq{\hfill f}{\mapsto}{f\gr1}
-
-% \begin{fact}
-%   Let $\mrD\subseteq\U^{\mr x}$ be definable over $A$.
-%   Let $\phi({\mr x}\,;{\gr z})$ be the formula ${\mr x}\in{\gr z}\cdot\mrD$.
-%   \begin{itemize}
-%     \item[1.] $\phi({\mr x}\,;{\gr 1})$ is $\grG$-generic
-%     \item[2.] $\mrD$ is generic over $A$.
-%   \end{itemize}
-% \end{fact}
+To each ${\gr h}\in\grZ$ we associate the $L'$-automorphism $h:\<{\mr a}\,;{\gr g}\>\mapsto\<{\gr h}\,{\mr a}\,;{\gr h}\,{\gr g}\>$.
+Therefore $\grZ$ is, up to isomorphism, a subgroup of $L'\mbox{-}\Aut(\U')$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
