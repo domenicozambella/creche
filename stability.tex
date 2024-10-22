@@ -103,7 +103,7 @@ So the same holds for any $\grC\equiv\grD$.
 A similar remark apply to approximability from below and from above (e.g.\@ for approximability from below, add the conjunct $\A {\gr z}\,\big[\phi({\mr x}\,;{\gr z})\imp {\gr z}\in\grD\big]$ to the formula above).
 \end{remark}
 
-From the following easy observation of Chernikov and Simon~\cite{CS} we obtain an interesting (and misterious) quantifier elimination result originally due to Shelah, see Corollary~\ref{corol_sh_exp_qe} below.
+From the following easy observation of Chernikov and Simon~\cite{CS} we obtain an interesting (and mysterious) quantifier elimination result originally due to Shelah, see Corollary~\ref{corol_sh_exp_qe} below.
 
 % \begin{proposition}
 % Let $\C\subseteq\U^{|{\gr z},w|}$ be approximated from below by the formula $\phi({\mr x}\,;{\gr z},w)$. Then $\grD=\big\{{\gr z}:\E w\ \big({\gr z}\,w\in\C\big)\big\}$ is approximated from below by the formula $\E w\,\phi({\mr x}\,;{\gr z}\,w)$.
@@ -182,7 +182,7 @@ The sets externally definable by $p({\mr x})$ are always closed under Boolean op
 %Here we write \emph{$\phi({\mr x}\,;{\gr z})^*$\/} for the partitioned formula where the order of the two tuples is inverted (i.e.\@ it is the opposite of what displayed).
 
 Let $\R\subseteq\U^{\mr x}\times\U^{\gr z}$ be a binary relation invariant over $A$.
-We denote by $\R({\mr x}\,;{\gr z})$ the preditate associated to $\R$.
+We denote by $\R({\mr x}\,;{\gr z})$ the predicate associated to $\R$.
 We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$ is a \emph{ladder\/} of length $\alpha$ for $\R({\mr x}\,;{\gr z})$ if for every $i<j<\alpha$
 
 
@@ -202,7 +202,7 @@ The proof of the following easy fact is left to the reader.
   \end{itemize}
 \end{fact}
 
-We can required that the ladder is an indiscernible sequence. 
+We can require that the ladder is an indiscernible sequence. 
 
 \begin{theorem}\label{thm_sability_indiscernibility}
   Let $\R({\mr x}\,;{\gr z})$ be invariant over $A$.
@@ -679,11 +679,12 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 We say that $T$ is a \emph{stable theory\/} if every formula is stable.
 Most theorems in this section have a formulation that only requires the stability of a given formula $\phi({\mr x}\,;{\gr z})\in L$.
 This is sometimes called \textit{local\/} stability.
-When the global case does not trivially follows from the local one, we use a set $\Delta\subseteq L_{{\mr x}\,{\gr z}}$.
-We say that that $\Delta$ is stable if all formulas in $\Delta$ are stable.
+When the global case does not trivially follow from the local one, we use a set $\Delta\subseteq L_{{\mr x}\,{\gr z}}$.
+We say that $\Delta$ is stable if all formulas in $\Delta$ are stable.
 When $|{\mr x}|=|{\gr z}|=\omega$ and $\Delta=L_{{\mr x}\,{\gr z}}$ the stability of $\Delta$ is tantamount to the stability of $T$.
 
 The following corollary of Theorem~\ref{lem_ziegler} is a fundamental tool.
+It implies, in particular the existence of Lascar invariant types.
 
 \begin{corollary}\label{corol_stable_coheir_over_models}
   Let  $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
@@ -694,14 +695,14 @@ The following corollary of Theorem~\ref{lem_ziegler} is a fundamental tool.
 \begin{proof}
   Let $p({\mr x})\subseteq \pmDelta(\U)$ be maximal such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
   We prove that $p({\mr x})$ is complete.
-  Suppose not than there are a conjuction $\alpha({\mr x})$ of formulas in $q({\mr x})$, a conjuction $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ of formulas in $p({\mr x})$, and a formula $\phi({\mr x}\,;{\gr b})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$ such that 
+  Suppose not than there are a conjunction $\alpha({\mr x})$ of formulas in $q({\mr x})$, a conjunction $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ of formulas in $p({\mr x})$, and a formula $\phi({\mr x}\,;{\gr b})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$ such that 
 
   \hfil$\alpha({\mr x})\wedge\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})\wedge\phi({\mr x}\,;{\gr b})$ \ \ and\ \   $\alpha({\mr x})\wedge\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})\wedge\neg\phi({\mr x}\,;{\gr b})$ 
  
   are not satisfied in every $M\supseteq A$.
   The disjunction of the two formulas is satisfied in every $M\supseteq A$ by the definition of $p({\mr x})$.
   Moreover the formulas obtained replacing ${\gr b},{\gr b_1},\dots,{\gr b_n}$ by ${\gr z},{\gr z_1},\dots,{\gr z_n}$ are stable.
-  This contradict Theorem~\ref{lem_ziegler}
+  This contradicts Theorem~\ref{lem_ziegler}
 \end{proof}
 
 The following theorem shows that in stable theories the heir-coheir relation is symmetric.
@@ -732,7 +733,7 @@ We deduce a version of Harrington's mysterious Lemma cfr.~\cite{TZ}*{Lemma 8.3.4
 \begin{corollary}\label{corol_harrington0}
   Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
   Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$.
-  Let $\theta({\mr x}),\psi({\gr z})\in L(M)$ be such that $\theta(M^{\mr x})=\phi(M^{\mr x};{\gr b})$ and $\psi(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$.
+  Finally, let $\theta({\mr x}),\psi({\gr z})\in L(M)$ be such that $\theta(M^{\mr x})=\phi(M^{\mr x};{\gr b})$ and $\psi(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$.
   Such formulas exist by stability.
   Then $\theta({\mr a})\iff\psi({\gr b})$.
 \end{corollary}
@@ -1024,7 +1025,7 @@ We define \emph{Lascar persistent\/} similarly.
 \begin{theorem}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable and finite.
   Let $p_0({\mr x})$ be complete $\GDelta(A)$-type.
-  Let 
+  Finally, let 
   
   \ceq{\hfill P}{=}{\big\{p({\mr x})\in S_\Delta(\U)\ :\ p({\mr x})\proves p_0({\mr x})\textrm{ and is Lascar invariant over }A\big\}}.
   
@@ -1079,35 +1080,23 @@ We define \emph{Lascar persistent\/} similarly.
 %%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stable groups}\label{stable_groups}
 
-In this section we adopt the setting of Section~\ref{definablegroups}.
-In particular, $\Delta$ is the set of formulas defined there.
+We assume the hypotheses and the notation of Section~\ref{group_actions}.
 
 \begin{theorem}\label{thm_Ggeneric_persistent}
   Let $\phi({\mr x}\,;{\gr z})\in\Delta$ be stable.
+  Assume the action of $\grZ$ is transitive.
   Then the following are equivalent
   \begin{itemize}
-    \item [1.] $\phi({\mr x}\,;{\gr g})$ is Lascar persistent over $A$ for every ${\gr g}\in\grZ$
-    \item [2.] $\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic.
+    \item [1.] $\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic
+    \item [2.] $\phi({\mr x}\,;{\gr g})$ is Lascar (hereditarily) persistent over $A$ for every ${\gr g}\in\grZ$.
   \end{itemize}
 \end{theorem}
 
-% The imaginaries and the eq-expansion.
-% Finite equivalence relations and Shelah strong types.
-% Elimination of imaginaries.
-% Lascar invariance, Lascar strong types, strong automorphisms.
-% Group actions on a model, generic formulas and types.
-% Stable formulas.
-% The definability of externally definable sets.
-% The binary rank and the number of types.
-% Symmetry and stationarity.
-% The action of the Lascar group on stable formulas.
-% Stable groups.
-
-\begin{proof}
-  \ssf2$\IMP$\ssf1.
-  By Proposition~\ref{prop_generic_finsat}.
-
+\begin{proof} 
   \ssf1$\IMP$\ssf2.
+  By stability, there exist a type $p({\mr x})\in L'\mbox{-}S_\phi(\grZ)$ that is invariant under the action of $L'\mbox{-}\Autf(\U)$.
+
+  \ssf2$\IMP$\ssf1.
   Let ${\mr a}\in\mrX$ and ${\gr g}\in\grZ$ be such that $\phi({\mr a}\,;{\gr g})$.
   Let $q({\mr x})=\tp({\mr a}/\acl^\eq\!A)$.
   Assume \ssf1 then, by Proposition~\ref{prop_stable_genericiffpersistent}, $\phi({\mr x}\,;{\gr g})$ is Lascar generic relative to $q(\U^{\mr x})$, i.e.\@ with $q(\U^{\mr x})$ for $\mrX$.
@@ -1115,31 +1104,28 @@ In particular, $\Delta$ is the set of formulas defined there.
   The same reasoning applies if we replace ${\mr a}$ and ${\gr g}$ with  ${\gr h}\,{\mr a}$ and ${\gr h}\,{\gr g}$ for any ${\gr h}\in\grZ$.
   By the transitivity of the action, ${\gr h}\,{\mr a}$ ranges the whole of $\mrX$.
   We conclude that there is a set $H\subseteq\grZ$ of cardinality $<2^{|L(A)|}$ such that $\bigcup_{h\in H}\phi(\mrX\,;{\gr h})$ covers $\mrX$.
-  By compactness, we can assume $H$ finite, so $G$-genericity follows.
-  % 
-  % \ssf2$\IMP$\ssf1.
-  % Consider the 2-sorted model $\U'=\big\<\mrX\,;\grZ\big\>$ whose signature $L'$ contains only a relation symbol $r'({\mr x}\,;{\gr z})$ that is interpreted as $\phi({\mr x}\,;{\gr z})$.
-  % To each ${\gr h}\in\grZ$ we associate the $L'$-automorphism $h:\<{\mr a}\,;{\gr g}\>\mapsto\<{\gr h}\,{\mr a}\,;{\gr h}\,{\gr g}\>$.
-  % As $\U'$ is a stable structure, there is a global $r'$-type $p'({\mr x})$ that is definable over $L'\mbox{-}\acl^\eq\0$.
-  % Now, let ${\gr g}$ be given.
-  % If $\phi({\mr x}\,;{\gr g})$ is $G$-generic, $p'({\mr x})\proves r'({\mr x}\,;{\gr h}\,{\gr g})$ for some ${\gr h}\in\grZ$.
-  % Then $r'({\mr x}\,;{\gr g})\in{h^{-1}}p'$.
-  % We claim that ${h^{-1}}p'({\mr x})$ is also definable over $L'\mbox{-}\acl^\eq\0$.
-  % Indeed, it suffices to note that ${\gr\D_{{h^{-1}}p',r'}}=h^{-1}\,[{\gr\D_{p',r'}}]$ and that if 
-  % ${\gr\D_{p',r'}}\in L'\mbox{-}\acl^\eq\0$ then also $h^{-1}\,{\gr\D_{p,r'}}\in L'\mbox{-}\acl^\eq\0$.
-  % Now let $p({\mr x})\in S_\phi(\U)$ a type finitely satisfiable in ${\mr x}\in\mrX$ and containing ${h^{-1}}p'({\mr x})$ with $r'$ replaced by $\phi$.
-  % Note that $\phi({\mr x}\,;{\gr g})\in p$ and that $p({\mr x})$ is Lascar invariant over $A$ because every automorphism of $\U$ over $A$ induces an $L'$-automorphism of $\U'$.
-  % This shows that there is a Lascar invariant type, finitely satisfiable in $\mrX$, containing $\phi({\mr x}\,;{\gr g})$.
-  % Then \ssf1 follows.
+  By compactness, we can assume $H$ finite, so the $\grZ$-genericity follows.
+
+  % \ssf1$\IMP$\ssf2.
+  % Let ${\gr g}$ be given.
+  % By stability, there is a type $p({\mr x})\in L'\mbox{-}S(\grZ)$ that is invariant, and therefore definable, over $L'\mbox{-}\acl^\eq\0$.
+  % If $\phi({\mr x}\,;{\gr g})$ is $\grZ$-generic, $p({\mr x})\proves\phi({\mr x}\,;{\gr h}\,{\gr g})$ for some ${\gr h}\in\grZ$.
+  % Then $\phi({\mr x}\,;{\gr g})\in{\gr h^{-1}}p$.
+  % We claim that ${\gr h^{-1}}p({\mr x})$ is also definable over $L'\mbox{-}\acl^\eq\0$.
+  % Indeed, it suffices to note that ${\gr\D_{{h^{-1}}p,\phi}}={\gr h^{-1}}\,{\gr\D_{p,\phi}}$ and that if ${\gr\D_{p,\phi}}\in L'\mbox{-}\acl^\eq\0$ then also ${\gr h^{-1}}\,{\gr\D_{p,\phi}}\in L'\mbox{-}\acl^\eq\0$.
+  % Now read ${\gr h^{-1}}p({\mr x})$ as a type $q({\mr x})\in S_\Delta(\grZ)$ in the natural way.
+  % Note that $\phi({\mr x}\,;{\gr g})\in q$ and that $q({\mr x})$ is definable over $\acl^\eq\0$ since this is a superset of $L'\mbox{-}\acl^\eq\0$.
+  % This shows that there is Lascar invariant type containing $\phi({\mr x}\,;{\gr g})$.
+  % As the finite satisfiability in $\mrX$ is evident, \ssf1 follows.
   % \ssf3$\IMP$\ssf1.
   % Let ${\gr g}$ be such that $\phi({\mr x}\,;{\gr g})$ is not Lascar persistent.
   % Then $\neg\phi({\mr x}\,;{\gr g})$ is Lascar generic.
-  % Then it is also  $G$-generic.
-  % The $G$-genericity of $\neg\phi({\mr x}\,;{\gr 1})$ follows.
+  % Then it is also  $\grZ$-generic.
+  % The $\grZ$-genericity of $\neg\phi({\mr x}\,;{\gr 1})$ follows.
 \end{proof}
 
 \begin{corollary}
-  Let $\phi({\mr x}\,;{\gr z})$ be stable.
+  Let $\phi({\mr x}\,;{\gr z})\in\Delta$ be stable.
   Then $\phi({\mr x}\,;{\gr 1})$ or $\neg\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic.
 \end{corollary}
 
@@ -1228,98 +1214,11 @@ Prove that the following are equivalent
 Prove that strongly minimal theories are stable.
 \end{exercise}
 
-%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%
-% \section{Stable groups}
-
-% In this section $\U$ has two type-definable sets $\grG\subseteq\U^{\gr z}$ and $\mrX\subseteq\U^{\mr x}$ where $\grG$ is a group that acts from the left on $\mrX$.
-% The group operations and the group action are definable.
-% We use the symbol $\,\cdot\,$ for both the group multiplication and the group action.
-
-% Let $\D\subseteq\X$ be a relatively definable set.
-% Let $L'$ be a two-sorted language.
-% The sorts are called $\G$ and $\X$.
-% There is only one binary relation symbol $r(x,y)$ that has sort $\G\times\X$.
-% We write $\langle\G, \X\, \D\rangle$ for the $L'$-structure that has domain $\langle\G, \X\rangle$ and interpretes $r(x,y)$ as follows 
-
-% \ceq{\hfill\langle\G,\X, \D\rangle\models r(g,a)}{\Leftrightarrow}{a\in g\cdot\D}
-
-% Note that $\D$ is definable in $\langle\G,\X, \D\rangle$ by the formula $r(1,y)$.
-% The action of $\G$ on $\U$ defined by left multiplication on $\G$ and $\X$ is an $L'$-automorphisms.
-% Therefore we may identify $\G$ with a common subgroup of the groups $L'\mbox{-Aut}\U,{\D})$ as $\D$ ranges over the definable subsets of $\X$.
-
-% \begin{fact}
-%   The structure $\langle\G,\X, \D\rangle$ is saturated.
-% \end{fact}
-
-% \begin{proof}
-%   First note that the sets defined by $r(x,y)$ and by $\neg r(x,y)$ in $\langle\G,\X, \D\rangle$ are a type-definable subsets of $\U$.
-%   It follows that the sets defined by $L'$-formulas are type-definables subsets of $\U$.
-%   Therefore the saturation of $\langle\G,\X, \D\rangle$ follows from the saturation of $\U$.
-% \end{proof}
-
-% %A set $\EuScript X\subseteq\U$ is generic if there are some finitely many $g_1,\dots,g_n\in\U$ such that the sets $g_i\EuScript X$ cover $\U$.
-
-% \begin{fact}\label{fact_generic_G_L}
-% Let $\D\subseteq\X$ be a definable set.
-% Write $G_{\D}$ for $L'$-$\Aut(\G,\X,{\D})$.
-% Then the following are equivalent
-% \begin{itemize}
-%   \item[1.] $\D$ is $G_{\D}$-generic
-%   \item[2.] $\D$ is $\G$-generic.
-% \end{itemize}
-% \end{fact}
-
-% \begin{proof}
-%   The equivalence follows from the fact that the orbits of $\D$ under the action of $G_{\D}$ and $\G$ coincide.
-%   In fact, for $f\in L'\mbox{-Aut}(\G,\X,\D)$ let $g=f1$.
-%   Then $f{\D}=g\cdot\D$.
-% \end{proof}
-
-% \begin{fact}
-%   Assume $\X=\G$, where $\G$ acts on itself by translation. 
-%   Let $\mu$ be S1 and invariant under $\G$-translation.
-%   If $\D\subseteq\G$ is $\mu$-wide then $\D\cdot\D^{-1}$ is $\G$-generic.
-% \end{fact}
-
-% \begin{proof}
-%   Let $A\subseteq\G$ be maximal such that $a\cdot\D\cap b\cdot\D=\varnothing$ for every distinct $a,b \in A$.
-%   By maximality for every $b\in\G$ there is an $a\in A$ such that $b\cdot\D\cap a\cdot\D\neq\varnothing$.
-%   That is, there are $d_1,d_2\in\D$ such that $b=a\cdot d_2\cdot d_1^{-1}$.
-%   This shows that the $A$-translates of $\D\cdot\D^{-1}$ cover $\G$.
-%   It suffices to prove that $A$ is finite.
-%   Suppose not, then we can find a indiscernible sequence $\langle a_i:i<\omega\rangle$ such that $a_0\cdot\D\cap a_1\cdot\D=\varnothing$.
-%   Then $a_0\cdot\D$ is not wide and, by tranlation invariance, $\D$ is not wide, contrary to our assumption.
-% \end{proof}
-
-% \begin{theorem}
-%   Let $\mrD$ be a definable set.
-%   Assume that $\phi({\mr x}\,;{\gr z})={\mr x}\in{\gr z}\cdot\mrD$ is stable.
-%   Then for every ${\mr a}\in\mrX$ either $\D$ or $\G\cdot{\mr a}\smallsetminus\D$ is $\G$-generic in $\G\cdot{\mr a}$.
-% \end{theorem}
-
-% \begin{proof}
-%   Assume $\G\cdot{\mr a}\smallsetminus\D$ is not generic.
-%   Then $\D$ is persistent.
-%   We prove that $\D$ is generic.
-%   By Theorem~\ref{thm_generic_invariant2} there is a invariant type $p(x)\in S_\phi(\U)$ containing $x\in\D$.
-%   By Theorem~\ref{thm_stability_definable_rovescio}, there is a positive Boolean combination of sets in the $G_{\D}$-orbit of $\D$ that is $L'$-definable over $\varnothing$.
-%   By the transitivity of the action, $\X$ is the only set that is $L'$-definable over $\varnothing$.
-%   Therefore some disjunction of sets in the $G_{\D}$-orbit of $\D$ cover $\X$.
-%   As the $G_{\D}$-orbit and the $\G$-orbit of $\D$ coincide, the claim follows.
-% \end{proof}
-
-% Let $p(x)$ be a global type containing $x\in\X$ we define
-
-% \ceq{\hfill g\cdot p(x)}{=}{\big\{\varphi(g^{-1}\cdot x)\ :\ \varphi(x)\in p\big\}}
-
-% and
-
-% \ceq{\hfill{\rm Stab}(p)}{=}{\big\{g\in\G\ :\ g\cdot p(x)=p(x)\big\}.}
-
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notes and references}
 \begin{biblist}[]\normalsize
 \bib{CS}{article}{
