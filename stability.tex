@@ -450,7 +450,7 @@ The following proposition highlights the connection between the stability of $\p
 Binary trees of formulas have been introduced in Definition~\ref{def_tree_formulas}.
 Here we restrict to trees of a particular form.
 Namely, $\<\psi_s:s\in 2^{<\omega}\>$  where $\psi_\0=\top$ and for $s\in 2^{<\omega}$ and $i\in 2$ we have $\psi_{s^\frown 0}({\mr x})=\neg\phi({\mr x}\,;{\gr b_s})$ and $\psi_{s^\frown 1}({\mr x})=\phi({\mr x}\,;{\gr b_s})$.
-If we define $\phi^0=\neg\phi$ and $\phi^1=\phi$ the condition of concistency becomes for every $s\in 2^\omega$ the type $\{\phi^{s_n}({\mr x}\,;{\gr b_{s\restriction n}})\ :\ n<\omega\}$.
+If we define $\phi^0=\neg\phi$ and $\phi^1=\phi$ the condition of consistency becomes for every $s\in 2^\omega$ the type $\{\phi^{s_n}({\mr x}\,;{\gr b_{s\restriction n}})\ :\ n<\omega\}$.
 
 
 % Set the overall layout of the tree
@@ -530,7 +530,7 @@ If we define $\phi^0=\neg\phi$ and $\phi^1=\phi$ the condition of concistency be
 \end{tikzpicture}
 
 \medskip
-When a binary tree of this form exists, we say that $\phi({\mr x}\,;{\gr z})$ has the \emph{binary tree property}.
+When a tree of this form exists, we say that $\phi({\mr x}\,;{\gr z})$ has the \emph{binary tree property}.
 
 \begin{theorem}\label{thm_count_types}
   The following are equivalent
@@ -1000,15 +1000,17 @@ We define \emph{Lascar persistent\/} similarly.
 %   Let $p({\mr x})\in S(\U)$.
 %   Prove that there is at most one definably closed set $A\subseteq\U^\eq$ such that $\Aut(\U/A)$ is the set of automorphisms that fix $p({\mr x})$.
 % \end{exercise}
-\begin{proposition}
+The following lemma is applied in the theorem below (it does not require stability).
+
+\begin{lemma}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$.
   Let $p_0({\mr x})$ be complete $\GDelta(A)$-type.
-  Let 
+  Finally, let 
   
   \ceq{\hfill Q}{=}{\big\{q({\mr x})\subseteq\GDelta(\acl^\eq\!A)\ :\ q({\mr x})\supseteq p_0({\mr x})\textrm{ and is complete}\big\}}.
   
   Then $\Aut(\U/A)$ acts on $Q$ transistively, i.e.\@ any two types in $Q$ are conjugated.
-\end{proposition}
+\end{lemma}
 
 \begin{proof}
   We prove that any two types $q_1,q_2\in Q$ are realized be some $a_1\equiv_Aa_2$.
@@ -1022,7 +1024,7 @@ We define \emph{Lascar persistent\/} similarly.
   Then $\psi({\mr x})\in p$, a contradiction.
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}[ (Shelah's Finite Equivalence Relation Theorem)]\label{thm_FER}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable and finite.
   Let $p_0({\mr x})$ be complete $\GDelta(A)$-type.
   Finally, let 
@@ -1033,9 +1035,9 @@ We define \emph{Lascar persistent\/} similarly.
   \begin{itemize}
     \item [1.] $\Aut(\U/A)$ acts on $P$ transistively.
     \item [2.] $P$ is finite
-    \item [3.] there is a finite equivalence relation $\varepsilon({\mr x}\,;{\mr y})\in\GDelta(A)$ such that for all $p_1,p_2\in P$ 
+    \item [3.] there is a finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\GDelta(A)$ such that for all $p_i,p_j\in P$ 
     
-    \ceq{\hfill p_1=p_2}{\IFF}{p_i({\mr x})\cup p_j({\mr y}) \textrm{ is consistent with }\epsilon({\mr x},{\mr y})}.
+    \ceq{\hfill p_i=p_j}{\IFF}{p_i({\mr x})\cup p_j({\mr y}) \textrm{ is consistent with }\epsilon({\mr x},{\mr y})}.
     
   \end{itemize}
 \end{theorem}
@@ -1049,20 +1051,17 @@ We define \emph{Lascar persistent\/} similarly.
   By stationarity $f\,p_1=p_2$.
 
   \ssf2.
-  Identify a type $p({\mr x})\in S_\Delta(\U)$ with the sets $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$.
-  For any $f\in\Aut(\U/A)$, we have that ${\gr\D_{fp,\phi}}=f[{\gr\D_{p,\phi}}]$.
-  Therefore the orbit of $p({\mr x})$ corresponds to the orbit of $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$.
-  As $p\in P$ is Lascar invariant over $A$ the sets ${\gr\D_{p,\phi}}$ are in $\acl^\eq\!A$.
+  We may identify a type $p({\mr x})\in S_\Delta(\U)$ with the tuple $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$.
+  As ${\gr\D_{fp,\phi}}=f[{\gr\D_{p,\phi}}]$ for any $f\in\Aut(\U/A)$, the orbit of $p({\mr x})$ corresponds to the orbit of $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$.
+  As $p\in P$ is Lascar invariant over $A$, the sets ${\gr\D_{p,\phi}}$ are in $\acl^\eq\!A$.
   Hence have a finite orbit.
-  As $\Delta$ is finite the orbit of $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$ is finite, hence so is the orbit of $p$.
+  As $\Delta$ is finite the orbit of $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$ is finite, and so is the orbit of $p$.
   By \ssf1, $P$ is finite.
 
   \ssf3. 
   Let $p_1,\dots,p_n$ be an enumeration without repetitions of $P$.
   Let $q_1({\mr x})$ be some complete $\GDelta(\acl^\eq\!A)$-type consistent with $p_1$.
-  By \ssf2 there are some $g_1,\dots,g_n\in\Aut(\U/A)$ be such that $p_i=g_ip_1$.
-  Let $q_i=g_iq_1$.
-  Clearly $q_i$ is a complete $\GDelta(\acl^\eq\!A)$-type consistent with $p_i$.
+  It is easy to see that the orbit of $q_1({\mr x})$ under the action of $\Aut(\U/A)$ comprise complete $\GDelta(\acl^\eq\!A)$-types $q_1,\dots,q_n$ that are complete and consistent with $p_1,\dots,p_n$.
   By stationarity the $q_i$ are mutually inconsistent.
   Pick $n$ mutually inconsistent formulas $\theta_i({\mr x})\in q_i$ and define
 
@@ -1080,7 +1079,7 @@ We define \emph{Lascar persistent\/} similarly.
 %%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stable groups}\label{stable_groups}
 
-We assume the hypotheses and the notation of Section~\ref{group_actions}.
+We assume the hypotheses and the notation of Section~\ref{definablegroups}.
 
 \begin{theorem}\label{thm_Ggeneric_persistent}
   Let $\phi({\mr x}\,;{\gr z})\in\Delta$ be stable.
@@ -1095,17 +1094,17 @@ We assume the hypotheses and the notation of Section~\ref{group_actions}.
 \begin{proof} 
   \ssf1$\IMP$\ssf2.
   By stability, there exist a type $p({\mr x})\in L'\mbox{-}S_\phi(\grZ)$ that is invariant under the action of $L'\mbox{-}\Autf(\U)$.
+  Then we can apply Corollary~\ref{corol_Ggeneric_persistent}
 
   \ssf2$\IMP$\ssf1.
   Let ${\mr a}\in\mrX$ and ${\gr g}\in\grZ$ be such that $\phi({\mr a}\,;{\gr g})$.
   Let $q({\mr x})=\tp({\mr a}/\acl^\eq\!A)$.
-  Assume \ssf1 then, by Proposition~\ref{prop_stable_genericiffpersistent}, $\phi({\mr x}\,;{\gr g})$ is Lascar generic relative to $q(\U^{\mr x})$, i.e.\@ with $q(\U^{\mr x})$ for $\mrX$.
+  Assume \ssf2 then, by Proposition~\ref{prop_stable_genericiffpersistent}, $\phi({\mr x}\,;{\gr g})$ is Lascar generic relative to $q(\U^{\mr x})$, i.e.\@ with $q(\U^{\mr x})$ for $\mrX$.
   A fortiori $\phi({\mr x}\,;{\gr g})$ is $G$-generic relative to $q(\U^{\mr x})$.
   The same reasoning applies if we replace ${\mr a}$ and ${\gr g}$ with  ${\gr h}\,{\mr a}$ and ${\gr h}\,{\gr g}$ for any ${\gr h}\in\grZ$.
   By the transitivity of the action, ${\gr h}\,{\mr a}$ ranges the whole of $\mrX$.
   We conclude that there is a set $H\subseteq\grZ$ of cardinality $<2^{|L(A)|}$ such that $\bigcup_{h\in H}\phi(\mrX\,;{\gr h})$ covers $\mrX$.
   By compactness, we can assume $H$ finite, so the $\grZ$-genericity follows.
-
   % \ssf1$\IMP$\ssf2.
   % Let ${\gr g}$ be given.
   % By stability, there is a type $p({\mr x})\in L'\mbox{-}S(\grZ)$ that is invariant, and therefore definable, over $L'\mbox{-}\acl^\eq\0$.
@@ -1126,6 +1125,7 @@ We assume the hypotheses and the notation of Section~\ref{group_actions}.
 
 \begin{corollary}
   Let $\phi({\mr x}\,;{\gr z})\in\Delta$ be stable.
+  Assume the action of $\grZ$ is transitive.
   Then $\phi({\mr x}\,;{\gr 1})$ or $\neg\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic.
 \end{corollary}
 
@@ -1137,6 +1137,51 @@ We assume the hypotheses and the notation of Section~\ref{group_actions}.
   The $\grZ$-genericity of $\neg\phi({\mr x}\,;{\gr 1})$ follows.
 \end{proof}
 
+\begin{corollary}
+  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
+  Assume the action of $\grZ$ is transitive.
+  Let
+
+  \ceq{\hfill Q}{=}{\big\{q({\mr x})\in S_\Delta(\grZ)\ :\ q({\mr x})\textrm{ is }\grZ\textrm{-generic}\big\}}.
+  
+  Then the following hold
+  \begin{itemize}
+    \item [1.] $\grZ$ acts on $Q$ transitively
+    \item [2.] $Q$ is finite
+    \item [3.] there is a finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\GDelta(A)$ that if $\grZ$-invariant and such that for all $q_i,q_j\in Q$ 
+    
+    \ceq{\hfill q_i=q_j}{\IFF}{q_i({\mr x})\cup q_j({\mr y}) \textrm{ is consistent with }\epsilon({\mr x},{\mr y})}
+    \item [4.] $\phi({\mr x}\,;{\gr g})$ is generic if and only if $\phi({\mr x}\,;{\gr g})\in q$
+for some $q\in Q$.    
+  \end{itemize}
+\end{corollary}
+
+\begin{proof}
+  Apply Theorem~\ref{thm_FER} in $\U'$ with ${\mr x}={\mr x}$ for $p_0({\mr x})$.
+  Let $\epsilon({\mr x},{\mr y})\in L'$ and $P$ be as defined in the proof of that theorem.
+  As $\epsilon({\mr x},{\mr y})$ is invariant under the action of $L'\mbox{-}\Aut(\U')$ it is a fortiori $\grZ$-invariant.
+  As $\grZ$ acts transitively on the classes of $\epsilon({\mr x},{\mr y})$, it also acts transitively on $P$.
+
+
+
+\end{proof}
+
+Define 
+\def\Stab{{\rm Stab}}
+\ceq{\hfill\Stab_G(\mrD)}{=}{\{g\in G\ :\ g\cdot\mrD=\mrD\}}
+
+\begin{proposition}
+  The following are equivalent
+  \begin{itemize}
+    \item [1.] $\Stab_G(\mrD)$ has finite index in $G$
+    \item [2.] $\mrD$ has a finite $G$-orbit.
+  \end{itemize}
+\end{proposition}
+
+\begin{proposition}
+  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
+  $\grZ$ acts transitively on the set of 
+\end{proposition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
