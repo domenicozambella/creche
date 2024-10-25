@@ -494,7 +494,6 @@ We prove the following theorem.
   It is also worth mentioning that every positive Boolean combination of $G$-generic sets is $G$-generic.
 \end{remark}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -514,39 +513,39 @@ Write ${\gr 1}$ be the identity of $\grZ$.
 Clearly, $\phi(\mrX\,;{\gr g})={\gr g}\cdot\phi(\mrX\,;{\gr 1})$.
 
 The following auxiliary structure is useful.
-Let $\U'=\big\<\mrX\,;\grZ\big\>$ be a 2-sorted structure whose signature $L'$ contains only a relation symbol for every formula $\phi({\mr x}\,;{\gr z})\in\Delta$.
+Let $\UDelta=\big\<\mrX\,;\grZ\big\>$ be a 2-sorted structure whose signature $\LDelta$ contains only a relation symbol for every formula $\phi({\mr x}\,;{\gr z})\in\Delta$.
 As there is little risk of confusion, these relations symbols are also denoted by $\phi({\mr x}\,;{\gr z})$.
-As $\mrX$ and $\grZ$ are assumed to be definable, $\U'$ is a saturated $L'$-structure.
+As $\mrX$ and $\grZ$ are assumed to be definable, $\UDelta$ is a saturated $\LDelta$-structure.
 
-To each ${\gr h}\in\grZ$ we associate the $L'$-automorphism $\<{\mr a}\,;{\gr g}\>\mapsto\<{\gr h}\,{\mr a}\,;{\gr h}\,{\gr g}\>$.
-Therefore $\grZ$ is, up to isomorphism, a subgroup of $L'\mbox{-}\Aut(\U')$.
+To each ${\gr h}\in\grZ$ we associate the $\LDelta$-automorphism $\<{\mr a}\,;{\gr g}\>\mapsto\<{\gr h}\,{\mr a}\,;{\gr h}\,{\gr g}\>$.
+Therefore $\grZ$ is, up to isomorphism, a subgroup of $\Aut(\UDelta)$.
 Note that, for any ${\gr g}\in\grZ$ the orbit of $\phi(\mrX\,;{\gr h})$ under the action of $\grZ$ is $\{\phi(\mrX\,;{\gr g}) : {\gr h}\in\grZ\}$.
-Therefore the orbit under the action of $L'\mbox{-}\Aut(\U')$ is the same (it cannot be any larger).
-We conclude that the notions of genericity and persistency under the two actions coincide.
+Therefore the orbit under the action of $\Aut(\UDelta)$ is the same (it cannot be any larger).
+We conclude that the notions of genericity and persistency under the two actions coincide for formulas in $\pmDelta(\grZ)$.
 
 \begin{fact}\label{fact_Linvariance_action}
   Let $\phi({\mr x}\,;{\gr z})\in\Delta$.
-  Let $p({\mr x})\in L'\mbox{-}S_\phi(\grZ)$.
+  Let $p({\mr x})\in \LDelta\mbox{-}S_\phi(\grZ)$.
   Then the following are equivalent for any ${\gr g}\in\grZ$ 
   \begin{itemize}
-    \item [1.] $p({\mr x})$ is invariant under the action of $L'\mbox{-}\Autf(\U)$.
-    \item [2.] ${\gr g}\,p({\mr x})$ is invariant under the action of $L'\mbox{-}\Autf(\U)$
+    \item [1.] $p({\mr x})$ is invariant under the action of $\Autf(\UDelta)$.
+    \item [2.] ${\gr g}\,p({\mr x})$ is invariant under the action of $\Autf(\UDelta)$
   \end{itemize}
 \end{fact}
 
 \begin{proof}
   It suffices to prove \ssf1$\IMP$\ssf2.
-  Recall that \ssf1 is equivalent to requiring that the orbit of ${\gr\D_{p,\phi}}$ under the action of $L'\mbox{-}\Autf(\U)$ has small cardinality.
+  Recall that \ssf1 is equivalent to requiring that the orbit of ${\gr\D_{p,\phi}}$ under the action of $\Autf(\UDelta)$ has small cardinality.
   As ${\gr\D_{gp,\phi}}={\gr g}\,{\gr\D_{p,\phi}}$ the set ${\gr\D_{gp,\phi}}$ has the same orbit.
 \end{proof}
 
 \begin{corollary}\label{corol_Ggeneric_persistent}
   Let $\phi({\mr x}\,;{\gr z})\in\Delta$.
-  Assume the existence of a type $p({\mr x})\in L'\mbox{-}S_\phi(\grZ)$ that is invariant under the action of $L'\mbox{-}\Autf(\U)$.
+  Assume the existence of a type $p({\mr x})\in \LDelta\mbox{-}S_\phi(\grZ)$ that is invariant under the action of $\Autf(\UDelta)$.
   Then \ssf1$\IMP$\ssf2, where 
   \begin{itemize}
     \item [1.] $\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic
-    \item [2.] $\phi({\mr x}\,;{\gr g})$ is Lascar hereditarily persistent over $A$ for every ${\gr g}\in\grZ$.
+    \item [2.] $\phi({\mr x}\,;{\gr g})$ is hereditarily persistent under the action $\Autf(\UDelta)$ for every ${\gr g}\in\grZ$.
   \end{itemize}
 \end{corollary}
 
@@ -558,8 +557,8 @@ See Theorem~\ref{thm_Ggeneric_persistent}.\vspace*{-0.5\baselineskip}
   If $\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic, then so is $\phi({\mr x}\,;{\gr g})$.
   By completeness, $p({\mr x})\proves\phi({\mr x}\,;{\gr h}\,{\gr g})$ for some ${\gr h}\in\grZ$.
   Equivalently, $\phi({\mr x}\,;{\gr g})\in{\gr h^{-1}}p$.
-  By Fact~\ref{fact_Linvariance_action} also ${\gr h^{-1}}p({\mr x})$ is invariant under the action of $L'\mbox{-}\Autf(\U)$.
-  Therefore $\phi({\mr x}\,;{\gr g})$ is hereditarily persistent under the action of $L'\mbox{-}\Autf(\U)$ and, a fortiori, of $\Autf(\U/A)$.
+  By Fact~\ref{fact_Linvariance_action} also ${\gr h^{-1}}p({\mr x})$ is invariant under the action of $\Autf(\UDelta)$.
+  Therefore $\phi({\mr x}\,;{\gr g})$ is hereditarily persistent under the action of $\Autf(\UDelta)$.
 \end{proof}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1013,7 +1013,7 @@ The following lemma is applied in the theorem below (it does not require stabili
 \end{lemma}
 
 \begin{proof}
-  We prove that any two types $q_1,q_2\in Q$ are realized be some $a_1\equiv_Aa_2$.
+  We prove that any two types $q_1,q_2\in Q$ are realized be some $a_1\equiv_Aa_2$, respectively.
   The claim follows because any automorphism in $\Aut(\U/A)$ that takes $a_1$ to $a_2$ takes also $q_1$ in $q_2$.
   It suffices to prove that every type $p({\mr x})\in S(A)$ is consistent with every $q\in Q$.
   Suppose not, then $p({\mr x})\imp\neg\phi({\mr x})$ for some $\phi({\mr x})\in q$.
@@ -1024,7 +1024,7 @@ The following lemma is applied in the theorem below (it does not require stabili
   Then $\psi({\mr x})\in p$, a contradiction.
 \end{proof}
 
-\begin{theorem}[ (Shelah's Finite Equivalence Relation Theorem)]\label{thm_FER}
+\begin{theorem}[ (Finite Equivalence Relation Theorem)]\label{thm_FER}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable and finite.
   Let $p_0({\mr x})$ be complete $\GDelta(A)$-type.
   Finally, let 
@@ -1033,8 +1033,8 @@ The following lemma is applied in the theorem below (it does not require stabili
   
   Then the following hold
   \begin{itemize}
-    \item [1.] $\Aut(\U/A)$ acts on $P$ transistively.
-    \item [2.] $P$ is finite
+    \item [1.] $\Aut(\U/A)$ acts transistively on $P$
+    \item [2.] $P$ is finite, say $P=\{p_1,\dots,p_n\}$
     \item [3.] there is a finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\GDelta(A)$ such that for all $p_i,p_j\in P$ 
     
     \ceq{\hfill p_i=p_j}{\IFF}{p_i({\mr x})\cup p_j({\mr y}) \textrm{ is consistent with }\epsilon({\mr x},{\mr y})}.
@@ -1093,7 +1093,7 @@ We assume the hypotheses and the notation of Section~\ref{definablegroups}.
 
 \begin{proof} 
   \ssf1$\IMP$\ssf2.
-  By stability, there exist a type $p({\mr x})\in L'\mbox{-}S_\phi(\grZ)$ that is invariant under the action of $L'\mbox{-}\Autf(\U)$.
+  By stability, there exist a type $p({\mr x})\in\LDelta\mbox{-}S_\phi(\grZ)$ that is invariant under the action of $\Autf(\UDelta)$.
   Then we can apply Corollary~\ref{corol_Ggeneric_persistent}
 
   \ssf2$\IMP$\ssf1.
@@ -1123,7 +1123,7 @@ We assume the hypotheses and the notation of Section~\ref{definablegroups}.
   % The $\grZ$-genericity of $\neg\phi({\mr x}\,;{\gr 1})$ follows.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{corol_genericornotgeneric}
   Let $\phi({\mr x}\,;{\gr z})\in\Delta$ be stable.
   Assume the action of $\grZ$ is transitive.
   Then $\phi({\mr x}\,;{\gr 1})$ or $\neg\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic.
@@ -1138,7 +1138,7 @@ We assume the hypotheses and the notation of Section~\ref{definablegroups}.
 \end{proof}
 
 \begin{corollary}
-  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
+  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable and finite.
   Assume the action of $\grZ$ is transitive.
   Let
 
@@ -1146,37 +1146,45 @@ We assume the hypotheses and the notation of Section~\ref{definablegroups}.
   
   Then the following hold
   \begin{itemize}
-    \item [1.] $\grZ$ acts on $Q$ transitively
+    \item [1.] $\grZ$ acts transitively on $Q$
     \item [2.] $Q$ is finite
-    \item [3.] there is a finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\GDelta(A)$ that if $\grZ$-invariant and such that for all $q_i,q_j\in Q$ 
+    \item [3.] there is a $\grZ$-invariant finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\GDelta(A)$ such that
     
-    \ceq{\hfill q_i=q_j}{\IFF}{q_i({\mr x})\cup q_j({\mr y}) \textrm{ is consistent with }\epsilon({\mr x},{\mr y})}
-    \item [4.] $\phi({\mr x}\,;{\gr g})$ is generic if and only if $\phi({\mr x}\,;{\gr g})\in q$
-for some $q\in Q$.    
+    \ceq{\hfill q_i=q_j}{\IFF}{q_i({\mr x})\cup q_j({\mr y}) \textrm{ is consistent with }\epsilon({\mr x},{\mr y})} 
+
+    for every $q_i,q_j\in Q$.
   \end{itemize}
 \end{corollary}
 
 \begin{proof}
-  Apply Theorem~\ref{thm_FER} in $\U'$ with ${\mr x}={\mr x}$ for $p_0({\mr x})$.
-  Let $\epsilon({\mr x},{\mr y})\in L'$ and $P$ be as defined in the proof of that theorem.
-  As $\epsilon({\mr x},{\mr y})$ is invariant under the action of $L'\mbox{-}\Aut(\U')$ it is a fortiori $\grZ$-invariant.
+  Apply Theorem~\ref{thm_FER} in $\UDelta$ with ${\mr x}={\mr x}$ for $p_0({\mr x})$.
+  Let $\epsilon({\mr x},{\mr y})\in\LDelta$ and $P$ be as defined there.
+  As $\epsilon({\mr x},{\mr y})$ is invariant under the action of $\Aut(\UDelta)$ it is a fortiori $\grZ$-invariant.
   As $\grZ$ acts transitively on the classes of $\epsilon({\mr x},{\mr y})$, it also acts transitively on $P$.
 
+  We prove that $Q=\{p({\mr x}){\restriction}\pmDelta(\grZ)\, :\, p\in P\}$.
+  From this \ssf1 and \ssf2 follow immediately.
+  Let $q({\mr x})\in Q$. Note that by Theorem~\ref{thm_Ggeneric_persistent} all formulas in $q({\mr x})$ are Lascar persistent over $A$.
+  Then $q({\mr x})$ has an extension in $P$.
+  To prove the converse, we need to show that all formulas in $p({\mr x}){\restriction}\pmDelta(\grZ)$ are $\grZ$-generic.
+  Let $\phi({\mr x}\,;{\gr g})\in p$.
+  As $\grZ$ acts transitively on $P$, there is a finite $H\subseteq\grZ$ such that every types in $P$ contains a the formula $\phi({\mr x}\,;{\gr h}\cdot{\gr g})$ for some ${\gr h}\in H$.
+  Let $\psi({\mr x})$ be the disjunction of the $H$-translates of $\phi({\mr x}\,;{\gr g})$.
+  Clearly $\phi({\mr x}\,;{\gr g})$ is $\grZ$-generic if and only if $\psi({\mr x})$ is $\grZ$-generic.
+  If $\psi({\mr x})$ is not  $\grZ$-generic then, by Corollary~\ref{corol_genericornotgeneric}, $\neg\psi({\mr x})$ is $\grZ$-generic.
+  Therefore, reasonong as above $\neg\psi({\mr x})\in p'$ for some $p'\in P$.
+  A contradiction.
 
-
+  Let $q_1,\dots,q_n$ be as defined in the proof of \ssf3 of Theorem~\ref{thm_FER}.
+  Then each $q'\in Q$ is consistent with exactly one $q_i$.
+  Then \ssf3 is clear because the types $q_i({\mr x})$ define the equivalence classes of $\epsilon({\mr x}\,;{\mr y})$.
 \end{proof}
 
 Define 
-\def\Stab{{\rm Stab}}
-\ceq{\hfill\Stab_G(\mrD)}{=}{\{g\in G\ :\ g\cdot\mrD=\mrD\}}
 
-\begin{proposition}
-  The following are equivalent
-  \begin{itemize}
-    \item [1.] $\Stab_G(\mrD)$ has finite index in $G$
-    \item [2.] $\mrD$ has a finite $G$-orbit.
-  \end{itemize}
-\end{proposition}
+\ceq{\hfill\Stab_G(\grD)}{=}{\big\{g\in G\ :\ g\cdot\grD=\grD\big\}}
+
+\ceq{\hfill\Stab_{G,\Delta}(p)}{=}{\bigcap_{\phi\in\Delta}\Stab_G(\gr\D_{p,\phi})}
 
 \begin{proposition}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
