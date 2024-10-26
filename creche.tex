@@ -126,7 +126,6 @@ diagrams={>=latex}
 
 \def\nonforkc{\mathbin{\raise1.8ex\rlap{\kern1.1ex\rule{0.6ex}{0.1ex}}\rlap{\kern1.1ex\rule{0.1ex}{1.9ex}}\raise-0.3ex\hbox{$\smile$} } }
 
-\def\QED{}
 \def\cpaw{\mathbin{\ooalign{\kern-0.4ex$-$\hidewidth\cr$<$}}}
 \def\cpawdot{\ooalign{$\kern1.2ex\cdot$\cr$\cpaw$\cr}}
 \def\cev#1{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}}
@@ -351,7 +350,6 @@ diagrams={>=latex}
 \begin{document}
 \raggedbottom
 \renewcommand{\contentsname}{%
-% \addcontentsline{toc}{chapter}{Table of contents}
 {\normalfont\normalsize\texttt{Branch:\ \branch\ \DTMnow}}\\[3ex]%
 A Cr\`eche Course in Model Theory\\[3ex]%
 \parbox{\textwidth}{\normalfont\normalsize
@@ -359,6 +357,7 @@ Domenico Zambella\\
 Università di Torino\\
 ORCID:~%\href{https://orcid.org/0000-0003-1141-2898}%
 {0000-0003-1141-2898}\\[1ex]}}
+\addcontentsline{toc}{chapter}{\Large Table of contents\phantom{$\bigg\{\}$}}
 \tableofcontents
 % \subfile{preface}
 \subfile{preliminaries}

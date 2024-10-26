@@ -254,7 +254,7 @@ We say \emph{$n$-stationary\/} if we limit the request to tuples ${\mr a}$ of le
 An application of stationarity is given in Section~\ref{semigroups}.
 Stationarity is often ensured by the following property, which will receive due attention in Section~\ref{stable_theories}.
 
-\begin{proposition}
+\begin{proposition}\label{prop_stationarity}
 Let ${\mr x}$ be a tuple of variables of length $n$.
 If for every $\phi({\mr x})\in L(\U)$ there is a formula $\psi({\mr x})\in L(M)$ such that $\phi(M^{\mr x})=\psi(M^{\mr x})$ then $\cnonfork_M$ is $n$-stationary.
 \end{proposition}
@@ -284,15 +284,16 @@ Finally, the claim follows because ${\mr a_1}\equiv_M{\mr a_2}$.
 %A satisfactory generalization of this notions to types over sets should guarantee this existence.
 %Unfortunately, this is not possible in general and the definition Section~\hyperref[coheirs_sets]{\ref*{invariantL}.\ref*{coheirs_sets}} is as good as it gets.
 
-% \begin{remark}\label{rk_coheir_stationary}
-% %The stationarity of $\cnonfork_A$ over every set $A$, or just over every model, is equivalent to the stability of $T$, see Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}.
-% There are theories where the stationarity of $\cnonfork_M$ holds for some particular $M$.
-% For example, if every subset of $M^n$ is $M$-definable then $\cnonfork_M$ is clearly $n$-stationary.
-% This simple observation will help in the proof of Theorem~\ref{thm_Hindman}.
-% For a natural example, let $T=T_{\rm dlo}$ and let $M\subseteq\U$ have the order type of $\RR$.
-% By quantifier elimination every definable subset of $\U$ is a union of finitely many intervals.
-% By Dedekind completeness, the trace on $M$ of any interval of $\U$ coincides with that of an $M$-definable interval.
-% \end{remark}
+\begin{remark}\label{rk_coheir_stationary}
+%The stationarity of $\cnonfork_A$ over every set $A$, or just over every model, is equivalent to the stability of $T$, see Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}.
+There are theories where the stationarity of $\cnonfork_M$ holds for some particular $M$.
+For example, if every subset of $M^n$ is $M$-definable then $\cnonfork_M$ is $n$-stationary by Proposition~\ref{prop_stationarity}.
+This simple observation will help in the proof of Theorem~\ref{thm_Hindman}.
+For a natural example, let $T=T_{\rm dlo}$ and let $M\subseteq\U$ have the order type of $\RR$.
+By quantifier elimination every definable subset of $\U$ is a union of finitely many intervals.
+By Dedekind completeness, the trace on $M$ of any interval of $\U$ coincides with that of an $M$-definable interval.
+Therefore $\cnonfork_M$ is $1$-stationary.
+\end{remark}
 
 \begin{exercise}
   Let $T$ be strongly minimal.
