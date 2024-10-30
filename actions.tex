@@ -164,6 +164,25 @@ The converse implication holds for complete types.
   Clearly $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g{\gr b})$ is not $2$-$G$-persistent as it is inconsistent with its $g$-translate.
 \end{proof}
 
+\begin{corollary}\label{corol_gammaG_invaqriancer}
+  The following are equivalent for every $\BDelta(\grZ)$-definable set $\mrD$
+  \begin{itemize}
+    \item [1.] $\gamma_G({\mr x})\proves{\mr x}\in\mrD$
+    \item [2.] $p({\mr x})\proves{\mr x}\in\mrD$ for every $G$-persistent $p({\mr x})\in S_\Delta(\grZ)$.
+  \end{itemize}
+\end{corollary}
+
+\begin{proof}
+  \ssf1$\IMP$\ssf2.
+  This is an immediate consequence of Theorem~\ref{thm_generic_invariant}.
+
+  \ssf2$\IMP$\ssf1.
+  Suppose $\gamma_G({\mr x})\not\proves{\mr x}\in\mrD$.
+  Then there is a type $p({\mr x})\in S_\Delta(\grZ)$ consistent with $\gamma_G({\mr x})\cup\{{\mr x}\notin\mrD\}$.
+  By Corollary~\ref{corol_q_pers} $p({\mr x})$ is $G$-presistent.
+  Then $\neg\ssf2$.
+\end{proof}
+
 The theorem yields a necessary condition for the existence of $G$-invariant global $\BDelta({\grZ})$-types.
 
 \begin{corollary}\label{corol_def_mu}
@@ -193,7 +212,7 @@ A type is hereditarily $G$-persistent if every conjunction of formulas in the ty
   Let $\mrD$ be a $\BDelta(\grZ)$-definable set.
   Then the following are equivalent 
   \begin{itemize}
-    \item[1.] there exists a $G$-invariant type $p({\mr x})\in S_\Delta(\grZ)$ finitely satisfiable in $\mrX\cap\mrD$
+    \item[1.] there exists a $G$-persistent type $p({\mr x})\in S_\Delta(\grZ)$ containing ${\mr x}\in\mrD$
     \item[2.] $\mrD$ is hereditarily $G$-persistent.
   \end{itemize}
 \end{theorem}
@@ -215,24 +234,20 @@ A type is hereditarily $G$-persistent if every conjunction of formulas in the ty
   his follows from completeness and Theorem~\ref{thm_generic_invariant}.
 \end{proof}
 
-Let $p({\mr x})\subseteq\BDelta(\grZ)$ be $G$-invariant.
-We say that $p({\mr x})$ is \emph{$G$-prime\/} if for every $\BDelta(\grZ)$-definable set $\mrD$ and every $g\in G$ if $p({\mr x})\proves{\mr x}\in(\mrD\cup g\,\mrD)$ then $p({\mr x})\proves{\mr x}\in\mrD$.
+Let $q({\mr x})\subseteq\BDelta(\grZ)$ be $G$-invariant.
+We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\BDelta(\grZ)$-definable set $\mrD$ and every $g\in G$ if $q({\mr x})\proves{\mr x}\in(\mrD\cup g\,\mrD)$ then $q({\mr x})\proves{\mr x}\in\mrD$.
 
-\begin{proposition}
+\begin{proposition}\label{prop_gammaG_prime}
   %aaaaa
-  Then $\gamma_G({\mr x})$ is $G$-prime.
+  The type $\gamma_G({\mr x})$ is $G$-prime.
 \end{proposition}
 
 \begin{proof}
-  The following are equivalent for every $\BDelta(\grZ)$-definable set $\mrD$ 
-  \begin{itemize}
-    \item [1.] $\gamma_G({\mr x})\proves{\mr x}\in\mrD$
-    \item [2.] $p({\mr x})\proves{\mr x}\in\mrD$ for every $G$-persistent $p({\mr x})\in S_\Delta(\grZ)$.
-  \end{itemize}
-  Now, assume $\gamma_G({\mr x})\proves{\mr x}\in(\mrD\cup g\,\mrD)$ and pick a $G$-persistent $p({\mr x})\in S_\Delta(\grZ)$.
+  Assume that $\gamma_G({\mr x})\proves{\mr x}\in(\mrD\cup g\,\mrD)$.
+  Let $p({\mr x})\in S_\Delta(\grZ)$ be $G$-persistent.
   By completeness $p({\mr x})\proves{\mr x}\in\mrD$ or $p({\mr x})\proves{\mr x}\in g\,\mrD$.
   As $p({\mr x})$ is $G$-invariant, $p({\mr x})\proves{\mr x}\in\mrD$.
-  As $p({\mr x})$ is arbitrary, $\gamma_G({\mr x})\proves{\mr x}\in\mrD$ follows from the above equivalence.
+  As $p({\mr x})$ is arbitrary, $\gamma_G({\mr x})\proves{\mr x}\in\mrD$ follows from Corollary~\ref{corol_gammaG_invaqriancer}.
 \end{proof}
 
 \begin{exercise}
@@ -494,6 +509,37 @@ We prove the following theorem.
   It is also worth mentioning that every positive Boolean combination of $G$-generic sets is $G$-generic.
 \end{remark}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The action of normal subgroups}\label{normalsubgroups}
+
+Let $H\trianglelefteq G$.
+The following fact is an immediate consequence of normality.
+
+\begin{fact}
+  For every $\mrD\subseteq\U^{\mr x}$ and every $g\in G$
+  \begin{itemize}
+    \item [1.] if $\mrD$ is $H$-persistent then also $g\cdot\mrD$ is $H$-persistent
+    \item [2.] if $\mrD$ is $H$-generic then also $g\cdot\mrD$ is $H$-generic.
+  \end{itemize}
+\end{fact}
+
+By the fact, we can easili adapt the proof of Proposition~\ref{prop_gammaG_prime} to obtail the following.
+
+\begin{proposition}
+  The type $\gamma_H({\mr x})$ is $G$-invariant and $G$-prime.
+\end{proposition}
+
+% \begin{proof}
+%   By the above fact  guarantees that if $\mrD$ is $H$-generic then $g\cdot\mrD$ is also $H$-generic, for any $g\in G$.
+%   By normality, if $p({\mr x})\in S_\Delta(\grZ)$ is $H$-persistent then $g\cdot p({\mr x})$ is also $H$-persistent for every $g\in G$.
+% \end{proof}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -622,7 +668,7 @@ See Theorem~\ref{thm_Ggeneric_persistent}.\vspace*{-0.5\baselineskip}
 
 In Example~\ref{ex_newelski} we prove a theorem of Newelski's~\cite{Newelski}.
 The original proof is rather long and complex.
-A simplified proof (also due, reportedly, to Newelski) appears in Rodrigo Pel\'aez's thesis~\cite{Pelaez}*{Section 3.3} and~\cite{Casanovas}*{Chapter 9}.
+A simplified proof (also due, reportedly, to Newelski) appears in~\cite{Pelaez}*{Section 3.3} and~\cite{Casanovas}*{Chapter 9}.
 The proof here is a streamlined and generalized version of the latter -- inspired by~\cite{Z16}.
 
   \begin{biblist}[]\normalsize
