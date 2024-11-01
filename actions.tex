@@ -135,10 +135,10 @@ The converse implication holds for complete types.
 
 \begin{theorem}\label{thm_generic_invariant}
   %aaaaa
-  Let $p({\mr x})\in S_\Delta(\grZ)$ be finitely satisfiable in $\mrX$.
+  Let $p({\mr x})\in S_\Delta(\grZ)$.
   Then the following are equivalent
   \begin{itemize}
-    \item[1.] $p({\mr x})$ is $G$-invariant
+    \item[1.] $p({\mr x})$ is $G$-invariant and finitely satisfiable in $\mrX$
     \item[2.] $p({\mr x})\proves\gamma_G({\mr x})$
     \item[3.] $p({\mr x})$ is $G$-persistent.
   \end{itemize}
@@ -160,7 +160,9 @@ The converse implication holds for complete types.
   % uppose $p({\mr x})$ is not $(n+2)$-persistent and let $n$ be minimal.
   % Let $g_1,\dots,g_{n+2}\in G$ and $\theta({\mr x})\,;{\gr\bar b}$ witness this.
   % Then 
-  If $p({\mr x})$ is not $G$-invariant then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g{\gr b})$ for some $g\in G$.
+  First note that $G$-persistent types are finitely satisfiable in $\mrX$.
+  Now, suppose $p({\mr x})$ is not $G$-invariant.
+  Then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g{\gr b})$ for some $g\in G$.
   Clearly $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g{\gr b})$ is not $2$-$G$-persistent as it is inconsistent with its $g$-translate.
 \end{proof}
 
@@ -212,19 +214,26 @@ A type is hereditarily $G$-persistent if every conjunction of formulas in the ty
   Let $\mrD$ be a $\BDelta(\grZ)$-definable set.
   Then the following are equivalent 
   \begin{itemize}
-    \item[1.] there exists a $G$-persistent type $p({\mr x})\in S_\Delta(\grZ)$ containing ${\mr x}\in\mrD$
-    \item[2.] $\mrD$ is hereditarily $G$-persistent.
+    \item[1.] $\gamma_G({\mr x})$ is finitely satisfied in $\mrD\cap\mrX$
+    \item[2.] there exists a $G$-persistent type $p({\mr x})\in S_\Delta(\grZ)$ containing ${\mr x}\in\mrD$
+    \item[3.] $\mrD$ is hereditarily $G$-persistent.
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  Suppose ${\mr\C_1},\dots,{\mr\C_n}$ cover $\mrD$ and pick $p({\mr x})$ as in \ssf1.
+  By Corollary~\ref{corol_q_pers}, it suffices to pick any $p({\mr x})\in S_\Delta(\grZ)$ containing $\gamma_G({\mr x})$ and finitely satisfied in $\mrD\cap\mrX$.
+  
+  \ssf2$\IMP$\ssf1.
+  By Theorem~\ref{thm_generic_invariant}.
+
+  \ssf2$\IMP$\ssf3.
+  Suppose ${\mr\C_1},\dots,{\mr\C_n}$ cover $\mrD$ and pick $p({\mr x})$ as in \ssf2.
   By completeness, $p({\mr x})\proves {\mr x}\in{\mr\C_i}$ for some $i$.
   Then, by Theorem~\ref{thm_generic_invariant}, $\neg{\mr\C_i}$ is not $G$-generic.
   Therefore, by Fact~\ref{fact_fip}, ${\mr\C_i}$ is $G$-persistent.
 
-  \ssf2$\IMP$\ssf1.
+  \ssf3$\IMP$\ssf2.
   Let $p({\mr x})$ be maximal among the $\BDelta({\grZ})$-types that are finitely satisfiable in $\mrX\cap\mrD$ and are such that $\theta(\U^{\mr x})$ is hereditarily $G$-persistent for every $\theta({\mr x})$ that is conjunction of formulas in $p({\mr x})$.
   We claim that $p({\mr x})$ is a complete $\BDelta({\grZ})$-type.
   Suppose for a contradiction that $\theta({\mr x}),\neg\theta({\mr x})\notin p$.
@@ -232,22 +241,6 @@ A type is hereditarily $G$-persistent if every conjunction of formulas in the ty
   As ${\mr\C_1},\dots,{\mr\C_n}$ cover $\psi(\U^{\mr x})$ this is a contradiction.
   It is only left to show that $p({\mr x})$ is $G$-invariant.
   his follows from completeness and Theorem~\ref{thm_generic_invariant}.
-\end{proof}
-
-Let $q({\mr x})\subseteq\BDelta(\grZ)$ be $G$-invariant.
-We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\BDelta(\grZ)$-definable set $\mrD$ and every $g\in G$ if $q({\mr x})\proves{\mr x}\in(\mrD\cup g\,\mrD)$ then $q({\mr x})\proves{\mr x}\in\mrD$.
-
-\begin{proposition}\label{prop_gammaG_prime}
-  %aaaaa
-  The type $\gamma_G({\mr x})$ is $G$-prime.
-\end{proposition}
-
-\begin{proof}
-  Assume that $\gamma_G({\mr x})\proves{\mr x}\in(\mrD\cup g\,\mrD)$.
-  Let $p({\mr x})\in S_\Delta(\grZ)$ be $G$-persistent.
-  By completeness $p({\mr x})\proves{\mr x}\in\mrD$ or $p({\mr x})\proves{\mr x}\in g\,\mrD$.
-  As $p({\mr x})$ is $G$-invariant, $p({\mr x})\proves{\mr x}\in\mrD$.
-  As $p({\mr x})$ is arbitrary, $\gamma_G({\mr x})\proves{\mr x}\in\mrD$ follows from Corollary~\ref{corol_gammaG_invaqriancer}.
 \end{proof}
 
 \begin{exercise}
@@ -268,7 +261,8 @@ We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\BDelta(\grZ)$-defi
 
 \begin{exercise}
   %aaaaa
-  Prove that the following are equivalent for every $\BDelta({\Z})$-definable set $\D\subseteq\U^x$
+  Let $\D$ be a $\BDelta({\Z})$-definable set.
+  Prove that the following are equivalent 
   \begin{itemize}
     \item[1.] there is a $G$-invariant type $p(x)\in S_\Delta(\Z)$ finitely satisfiable in $\X\cap\D$
     \item[2.] every finite cover of $\D$ by $\BDelta({\Z})$-definable sets contains a 2-$G$-persistent set.
@@ -353,15 +347,15 @@ Define the following type
 
 \begin{corollary}\label{corol_q_w_pers}
   %aaaaa
-  Let $p({\mr x})\subseteq\BDelta(\grZ)$ be such that ${}^{\rm s}\kern-.2ex\gamma({\mr x})\cup p({\mr x})$ is finitely satisfiable in $\mrX$.
+  Let $p({\mr x})\subseteq L(\U)$ be such that ${}^{\rm s}\kern-.2ex\gamma({\mr x})\cup p({\mr x})$ is finitely satisfiable in $\mrX$.
   Then $p({\mr x})$ is weakly $G$-persistent.
 \end{corollary}
 
 \begin{proof}
   Similar to Corollary~\ref{corol_q_pers}.
-  Let $\theta({\mr x})\in p$.
-  As ${}^{\rm s}\kern-.2ex\gamma({\mr x})$ is finitely satisfiable in $\theta(\U^{\mr x})$, we cannot have that $\neg\theta({\mr x})$ is strongly $G$-generic.
-  From Fact~\ref{fact_fip}, we obtain that $\neg\theta(\U^{\mr x})$ non strongly $G$-generic is equivalent to $\theta({\mr x})$ weakly $G$-persistent.
+  Let $\theta({\mr x})$ be a conjunction of formulas in $p({\mr x})$.
+  As ${}^{\rm s}\kern-.2ex\gamma(\mrX)$ is finitely satisfiable in $\theta(\mrX)$, it cannot be that $\neg\theta({\mr x})$ is strongly $G$-generic.
+  From Fact~\ref{fact_fip}, we obtain that $\neg\theta({\mr x})$ not being strongly $G$-generic is equivalent to $\theta({\mr x})$  being weakly $G$-persistent.
 \end{proof}
 
 \begin{exercise}
@@ -369,7 +363,6 @@ Define the following type
   Show that $G$-generic sets need not be closed under intersection.
   Hint: find inspiration in Example~\ref{ex_cyclic_order}.
 \end{exercise}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -431,7 +424,7 @@ The notions introduced in Section~\ref{strong_genericity} offer some hint.
 \end{proof}
 
 \begin{theorem}\label{thm_newelski}
-  Suppose that $\mrX$ and the sets ${\mr\X_n}=K^n{\mr a}$, for some ${\mr a}\in\mrX$ that is $\BDelta(\grZ)$-type-definable.
+  Suppose that $\mrX$ and the sets ${\mr\X_n}=K^n{\mr a}$, for some ${\mr a}\in\mrX$, are type-definable.
   Then $\mrX$ has finite diameter.
 \end{theorem}
 
@@ -439,9 +432,9 @@ The notions introduced in Section~\ref{strong_genericity} offer some hint.
   By Proposition~\ref{prop_wpers_finite_diameter}, it suffices to prove that ${\mr\X_n}$ is weakly persistent.
   By Corollary~\ref{corol_q_w_pers} it suffices to show that for some $n$ the type ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ is finitely satisfied in ${\mr\X_n}$.
   Suppose not.
-  Let $\psi_n({\mr x})\in\gamma_G$ be a formula that is not satisfied in $\mr\X_n$.
-  The type $p({\mr x})=\{\psi_n({\mr x}):n\in\omega\}$ is finitely satisfied in $\mrX$.
-  Then $p({\mr x})$ has a realization in $\mrX$. 
+  Let $\psi_n({\mr x})\in{}^{\rm s}\kern-.2ex\gamma_G$ be a formula that is not satisfied in $\mr\X_n$.
+  Then the type $p({\mr x})=\{\psi_n({\mr x}):n\in\omega\}$ is finitely satisfied in $\mrX$.
+  From the type-definablity of $\mrX$ it follows that $p({\mr x})$ has a realization in $\mrX$.
   As this realization belongs to some ${\mr\X_n}$ we contradict the definition of $\psi_n({\mr x})$. 
 \end{proof}
 
@@ -518,27 +511,56 @@ We prove the following theorem.
 \section{The action of normal subgroups}\label{normalsubgroups}
 
 Let $H\trianglelefteq G$.
-The following fact is an immediate consequence of normality.
+The following is an immediate consequence of normality.
 
-\begin{fact}
+\begin{remark}\label{rem_invariance_normalsubg}
+\newlength{\ceqlength}
+\settowidth{\ceqlength}{p(x) is H-invariant\ }
+\def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{\ceqlength}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+%
   For every $\mrD\subseteq\U^{\mr x}$ and every $g\in G$
   \begin{itemize}
-    \item [1.] if $\mrD$ is $H$-persistent then also $g\cdot\mrD$ is $H$-persistent
-    \item [2.] if $\mrD$ is $H$-generic then also $g\cdot\mrD$ is $H$-generic.
+    \item [1.] \ceq{\hfill\mrD\textrm{ is }H\textrm{-persistent}}{\IFF}{g\cdot\mrD\textrm{ is }H\textrm{-persistent}}
+    \item [2.] \ceq{\hfill\mrD\textrm{ is }H\textrm{-generic}}{\IFF}{g\cdot\mrD\textrm{ is }H\textrm{-generic.}}
   \end{itemize}
-\end{fact}
+  In particular $\gamma_H({\mr x})$ is $G$-invariant.
+  It also follows that for any $p({\mr x})\in S_\Delta(\grZ)$
+  \begin{itemize}
+    \item [3.] \ceq{\hfill p({\mr x})\textrm{ is }H\textrm{-invariant}}{\IFF}{g\cdot p({\mr x})\textrm{ is }H\textrm{-invariant}.}
+  \end{itemize}
+\end{remark}
 
-By the fact, we can easili adapt the proof of Proposition~\ref{prop_gammaG_prime} to obtail the following.
+From what have seen in Section~\ref{dual_perspective}, if $\gamma_H({\mr x})$ is consistent, then $H$-generic sets are hereditarily $H$-persistent. 
+As it happens, we can slightly strengthen this fact.
 
-\begin{proposition}
-  The type $\gamma_H({\mr x})$ is $G$-invariant and $G$-prime.
+\begin{proposition}\label{prop_Ggeneric_Hpersistent}
+  Assume that $\gamma_H({\mr x})$ is consistent.
+  Then every $G$-generic set is hereditarily $H$-persistent.
 \end{proposition}
 
-% \begin{proof}
-%   By the above fact  guarantees that if $\mrD$ is $H$-generic then $g\cdot\mrD$ is also $H$-generic, for any $g\in G$.
-%   By normality, if $p({\mr x})\in S_\Delta(\grZ)$ is $H$-persistent then $g\cdot p({\mr x})$ is also $H$-persistent for every $g\in G$.
-% \end{proof}
+\begin{proof}  
+  If $\phi({\mr x}\,;{\gr b})$ is $G$-generic, then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;g\,{\gr b})$ for some $g\in G$.
+  Equivalently, $\phi({\mr x}\,;{\gr g})\in g^{-1}p$.
+  By Remark~\ref{rem_invariance_normalsubg} ${\gr h^{-1}}p({\mr x})$ is $H$-persistent and the proposition follows from Theorem~\ref{thm_generic_invariant2}.
+\end{proof}
 
+Let $q({\mr x})\subseteq\BDelta(\grZ)$ be $G$-invariant.
+We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\BDelta(\grZ)$-definable set $\mrD$ and every $g\in G$ if $q({\mr x})\proves{\mr x}\in(\mrD\cup g\,\mrD)$ then $q({\mr x})\proves{\mr x}\in\mrD$.
+
+\begin{proposition}
+  The type $\gamma_H({\mr x})$ is $G$-prime.
+\end{proposition}
+
+\begin{proof}
+  Assume that $\gamma_H({\mr x})\proves{\mr x}\in(\mrD\cup g\,\mrD)$.
+  Assume $\gamma_H({\mr x})$ otherwise the claim is trivial.
+  Let $p({\mr x})\in S_\Delta(\grZ)$ be $H$-persistent.
+  By completeness $p({\mr x})\proves{\mr x}\in\mrD$ or $p({\mr x})\proves{\mr x}\in g\,\mrD$.
+  If $p({\mr x})\proves{\mr x}\in\mrD$ we are done.
+  Otherwise $g^{-1}\cdot p({\mr x})\proves{\mr x}\in\mrD$.
+  As $g^{-1}\cdot p({\mr x})$ is an arbitrary global $H$-persistent type, $\gamma_G({\mr x})\proves{\mr x}\in\mrD$ follows from Corollary~\ref{corol_gammaG_invaqriancer}.
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -565,27 +587,12 @@ As $\mrX$ and $\grZ$ are assumed to be definable, $\UDelta$ is a saturated $\LDe
 
 To each ${\gr h}\in\grZ$ we associate the $\LDelta$-automorphism $\<{\mr a}\,;{\gr g}\>\mapsto\<{\gr h}\,{\mr a}\,;{\gr h}\,{\gr g}\>$.
 Therefore $\grZ$ is, up to isomorphism, a subgroup of $\Aut(\UDelta)$.
+It is easy to verify that is a normal subgroup.
 Note that, for any ${\gr g}\in\grZ$ the orbit of $\phi(\mrX\,;{\gr h})$ under the action of $\grZ$ is $\{\phi(\mrX\,;{\gr g}) : {\gr h}\in\grZ\}$.
 Therefore the orbit under the action of $\Aut(\UDelta)$ is the same (it cannot be any larger).
 We conclude that the notions of genericity and persistency under the two actions coincide for formulas in $\pmDelta(\grZ)$.
 
-\begin{fact}\label{fact_Linvariance_action}
-  Let $\phi({\mr x}\,;{\gr z})\in\Delta$.
-  Let $p({\mr x})\in \LDelta\mbox{-}S_\phi(\grZ)$.
-  Then the following are equivalent for any ${\gr g}\in\grZ$ 
-  \begin{itemize}
-    \item [1.] $p({\mr x})$ is invariant under the action of $\Autf(\UDelta)$.
-    \item [2.] ${\gr g}\,p({\mr x})$ is invariant under the action of $\Autf(\UDelta)$
-  \end{itemize}
-\end{fact}
-
-\begin{proof}
-  It suffices to prove \ssf1$\IMP$\ssf2.
-  Recall that \ssf1 is equivalent to requiring that the orbit of ${\gr\D_{p,\phi}}$ under the action of $\Autf(\UDelta)$ has small cardinality.
-  As ${\gr\D_{gp,\phi}}={\gr g}\,{\gr\D_{p,\phi}}$ the set ${\gr\D_{gp,\phi}}$ has the same orbit.
-\end{proof}
-
-\begin{corollary}\label{corol_Ggeneric_persistent}
+\begin{proposition}\label{prop_Ggeneric_persistent}
   Let $\phi({\mr x}\,;{\gr z})\in\Delta$.
   Assume the existence of a type $p({\mr x})\in \LDelta\mbox{-}S_\phi(\grZ)$ that is invariant under the action of $\Autf(\UDelta)$.
   Then \ssf1$\IMP$\ssf2, where 
@@ -593,7 +600,7 @@ We conclude that the notions of genericity and persistency under the two actions
     \item [1.] $\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic
     \item [2.] $\phi({\mr x}\,;{\gr g})$ is hereditarily persistent under the action $\Autf(\UDelta)$ for every ${\gr g}\in\grZ$.
   \end{itemize}
-\end{corollary}
+\end{proposition}
 
 We will prove that under the assumption of stability also the converse implication holds.
 See Theorem~\ref{thm_Ggeneric_persistent}.\vspace*{-0.5\baselineskip}
@@ -601,10 +608,7 @@ See Theorem~\ref{thm_Ggeneric_persistent}.\vspace*{-0.5\baselineskip}
 \begin{proof}
   Let ${\gr g}$ be given.
   If $\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic, then so is $\phi({\mr x}\,;{\gr g})$.
-  By completeness, $p({\mr x})\proves\phi({\mr x}\,;{\gr h}\,{\gr g})$ for some ${\gr h}\in\grZ$.
-  Equivalently, $\phi({\mr x}\,;{\gr g})\in{\gr h^{-1}}p$.
-  By Fact~\ref{fact_Linvariance_action} also ${\gr h^{-1}}p({\mr x})$ is invariant under the action of $\Autf(\UDelta)$.
-  Therefore $\phi({\mr x}\,;{\gr g})$ is hereditarily persistent under the action of $\Autf(\UDelta)$.
+  As, a fortiori, $\phi({\mr x}\,;{\gr g})$ is $G$-generic \ssf2 follows from Proposition~\ref{prop_Ggeneric_Hpersistent}.
 \end{proof}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%
