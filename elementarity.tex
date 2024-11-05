@@ -341,28 +341,28 @@ The \emph{standard model of real analysis} is $\RR$ with the natural interpretat
 This is not an abuse of notation: in this case, elements and interpretations coincide.
 
 Suppose $\RR$ has a proper elementary extension \emph{$\nsR$.} The existence of such an extension will be proved later.
- The interpretations of the symbols $f$ and $X$ in \emph{$\nsR$} will be denoted by  \emph{$\ns f$} and \emph{$\ns X$,} respectively.
-The elements of $\nsR$ are called \emph{hyperreals,} the elements of  $\RR$ are called \emph{standard (hyper)reals,} those in $\nsR\sm\RR$ are called \emph{nonstandard (hyper)reals.}
+The interpretations of the symbols $f$ and $X$ in \emph{$\nsR$} will be denoted by  \emph{$\ns f$} and \emph{$\ns X$,} respectively.
+The elements of $\nsR$ are called \emph{hyperreals,} the elements of $\RR$ are called \emph{standard (hyper)reals,} those in $\nsR\sm\RR$ are called \emph{nonstandard (hyper)reals.}
 
 It is easy to verify that $\nsR$ is an ordered field.
 This is because the operations sum and product are in the language, and so is the order relation.
 The property of being an ordered field can be expressed via a set of sentences  that are true in $\RR$, and hence also in $\nsR$.
 
-A hyperreal $c$ is said to be \emph{infinitesimal} if $|c|<\epsilon$ for every positive standard $\epsilon$.
-A hyperreal $c$ is \emph{infinite} if $k<|c|$ for every standard $k$; the hyperreal $c$ if \emph{finite} otherwise.
+A hyperreal $c$ is said to be \emph{infinitesimal\/} if $\nsR\models|c|<\epsilon$ for every positive standard $\epsilon$.
+A hyperreal $c$ is \emph{infinite\/} if $\nsR\models k<|c|$ for every standard $k$; it is \emph{finite\/} otherwise.
 Hence if $c$ is infinite, then $c^{-1}$ is infinitesimal.
-Clearly, all standard reals are finite, and $0$ is the only infinitesimal standard real.
+Clearly, all standard reals are finite, and $0$ is the only standard infinitesimal.
 
 The proof of the following lemma is left to the reader.
 
 \begin{fact}\label{prodottosommainfinitesimi}
-Infinitesimals are closed under sum, product and multiplication by standard reals.
+  Infinitesimals are closed under sum, product and multiplication by standard reals.
 \end{fact}
 
 We begin with an existence proof.
 
 \begin{lemma}\label{lem_esistenzainfinitesimi}
-  There are infinite nonstandard hyperreals and nonzero infinitesimals.
+  There are infinite hyperreals and nonzero infinitesimals.
   Moreover, for every finite hyperreal $c$ there is a unique standard $b$ such that $b-c$ is infinitesimal.
 \end{lemma}
 \begin{proof}
@@ -371,22 +371,27 @@ Then the first claim follows from the second one.
 Let $c$ be finite.
 The set $\big\{ a\in\RR: c<a\big\}$ is a nonempty set of (standard) reals that is bounded from below.
 Let $b\in\RR$ the least upper bound.
-We show that $b-c$ is a infinitesimal.
+We show that $b-c$ is an infinitesimal.
 Assume for a contradiction that $\epsilon < |b-c|$ for some standard positive $\epsilon$.
 Then $c<b-\epsilon$, or $b+\epsilon< c$, depending on whether $c<b$ or $b<c$.
 Both cases contradict that $b$ is an infimum.
 This proves the existence of $b$.
 
-To prove uniquenes, suppose that $b'\in\RR$ and $b'-c$ is also infinitesimal.
+To prove uniqueness, suppose that $b'\in\RR$ and $b'-c$ is also infinitesimal.
 Then $b-b'$ is also infinitesimal.
 As $0$ is the only standard infinitesimal $b=b'$.
 \end{proof}
 
-The existence of infinite non standard hyperreals shows that $\nsR$ is not archimedean: standard integers are not cofinal in $\nsR$.
-However, by elementarity, the nonstandard integers $\nsN$ are cofinal in $\nsR$: from the perspective of an inhabitant of $\nsR$, the latter is a normal archimedean field.
+We define the following equivalence relation on $\nsR$: we write \emph{$a\approx b$\/} if $|a-b|$ is infinitesimal.
+The fact that this is an equivalence relation follows from Fact~\ref{prodottosommainfinitesimi}.
+The equivalence class of $c$ is called the \emph{monad\/} of $c$.`'
+By Lemma~\ref{lem_esistenzainfinitesimi} if $c$ is a finite hyperreal, there is a unique real in the monad of $c$.
+If $c$ is finite, the unique standard real in the monad of $c$ is called \emph{standard part\/} of $c$ and is denoted by \emph{$\st(c)$.}
 
+The existence of infinite nonstandard hyperreals shows that $\nsR$ is not Archimedean: standard integers are not cofinal in $\nsR$.
+However, by elementarity, the nonstandard integers $\nsN$ are cofinal in $\nsR$: from the perspective of an inhabitant of $\nsR$, the latter is a normal Archimedean field.
 
-Dedekind completeness is another fundamental property of $\RR$ that does not hold in~$\nsR$.
+Dedekind's completeness is another fundamental property of $\RR$ that does not hold in~$\nsR$.
 An ordered set is \emph{Dedekind complete} if every subset that is bounded above has a least upper bound.
 Then $\nsR$ is not Dedekind complete, e.g.\@ the set of infinitesimals does not have a least upper bound.
 However, it is easy to verify that all bounded definable subsets of $\nsR$ have a least upper bound.
@@ -409,15 +414,7 @@ It follows that Dedekind completeness is \textit{not\/} a first-order property.
 % But this is a first order formula that holds in $\RR$, and therefore it holds in every elementary extension of $\RR$.
 % \end{proof}
 
-We define the following equivalence relation on $\nsR$: we write \emph{$a\approx b$\/} if $|a-b|$ is infinitesimal.
-The fact that this is an equivalence relation follows from Fact~\ref{prodottosommainfinitesimi}.
-The equivalence class of $c$ is called \emph{monad.}
-By Lemma~\ref{lem_esistenzainfinitesimi} if $c$ is a finite hyperreal, there is a unique real in the monad of $c$.
-
-Hyperreals that are not finite are said to be \emph{infinite.}
-If $c$ is finite, the unique standard real in the monad of $c$ is called \emph{standard part\/} of $c$ and it is denoted by \emph{$\st(c)$.}
-
-In the following lemma, the expressions on the left can be formalised as first-order sentences, and therefore they hold in $\RR$ if and only if they hold in $\nsR$.
+In the following lemma, the expressions on the left can be formalized as first-order sentences, and therefore they hold in $\RR$ if and only if they hold in $\nsR$.
 
 \begin{proposition}\label{prop_fattolimitinonstandard}
 For every $f:\RR\to\RR$, for every $a, l\in\RR$ the following equivalences hold.\nobreak
@@ -440,12 +437,12 @@ $\ns f(c)$ is positive and infinite for every $c\approx a\neq c$
 \item[d.]\parbox{7ex}{\hfil$\displaystyle\lim_{x\to a}$}
 \parbox{10ex}{$fx\;=\;l$}
 \parbox{5ex}{\hfil$\IFF$}
-$\ns f(c)\approx l$ for every for every $c\approx a\neq c$.
+$\ns f(c)\approx l$ for every $c\approx a\neq c$.
 \end{itemize}
 \end{proposition}
 
 \begin{proof}
-We prove part \ssf{d} and we leave the other parts as an exercise.
+We prove part \ssf{d} and leave the rest as an exercise for the reader.
 
 $\IMP$.
 The left-hand side of the equivalence \ssf{d} asserts
@@ -458,7 +455,7 @@ The symbols $\dot\epsilon$ e $\dot\delta$ denote parameters either in $\RR$ or i
 
 Pick $c\neq a\approx c$ arbitrarily.
 We now check that $\ns f(c)\approx l$, that is, $|\ns fc-l|<\dot\epsilon$ for every positive standard $\dot\epsilon$.
-Pick $\dot\epsilon\in\RR^+$ arbitralily and let $\dot\delta\in\RR$ be given by \ssf{1}.
+Pick $\dot\epsilon\in\RR^+$ arbitrarily and let $\dot\delta\in\RR$ be given by \ssf{1}.
 By elementarity, we have
 
 \ceq{\hfill\ns\RR}{\models}{\phantom{\A\,\epsilon>0\ \E\,\delta>0}\ \A x\ \Big[0<|x-a|<\dot\delta\ \ \imp\ \ |fx-l|<\dot\epsilon\Big].}
@@ -527,7 +524,7 @@ Hence, in particular,
 
 \ceq{\hfill\ns\RR}{\models}{\phantom{\A\,\epsilon>0\ \E\,\delta>0\ \A x, y\ \Big[}|a-b|<\dot\delta\ \ \imp\ \ |fa-fb|<\dot\epsilon.}
 
-Since $a\approx b$ andd $\dot\delta$ is standard, $|a-b|<\dot\delta$ is true.
+Since $a\approx b$ and $\dot\delta$ is standard, $|a-b|<\dot\delta$ is true.
 Therefore $|\ns f(a)-\ns f(b)|<\dot\epsilon$.
 
 \ssf{b}$\IMP$\ssf{a}.
@@ -567,7 +564,7 @@ For every unary function $f$ and every standard $a$, the following are equivalen
 \end{exercise}
 
 \begin{exercise}
-Prove that if the function $f:\RR\to\RR$ is injective, then  $\ns f a$ is nonstantard whenever $a$ is nonstandard.
+Prove that if the function $f:\RR\to\RR$ is injective, then $\ns f a$ is nonstandard whenever $a$ is nonstandard.
 \end{exercise}
 
 \begin{exercise}
@@ -647,7 +644,7 @@ An \emph{embedding\/} of $M$ into $N$ is an injective total map $h:M\hookrightar
 Note that when $c\in L_{\rm fun}$ is a constant \ssf{2} reads $h\,c^M=c^N$.
 Therefore $M\subseteq N$ if and only if $\id_M:M\imp N$ is an embedding.
 
-An surjective embedding is an \emph{isomorphism} or, when domain and codomain coincide, an \emph{automorphism}.
+A surjective embedding is an \emph{isomorphism} or, when domain and codomain coincide, an \emph{automorphism}.
 \end{definition}
 
 Condition \ssf{1} above and the assumption that $h$ is injective can be summarized in the following
@@ -684,15 +681,13 @@ In particular, if $h$ is an $A$-isomorphism then $M\equiv_A N$.
 \begin{proof}
   We proceed by induction on the syntax of $\phi(x)$.
   When $\phi(x)$ is atomic \# holds by \ssf{3} above.
-  Induction for the Boolean connectives is straightforward so we only need to consider the existential quantifier.
+  Induction for the Boolean connectives is straightforward, so we only need to consider the existential quantifier.
   Assume as induction hypothesis that
 
 
   \ceq{\hfill M\models \phi(a,b)}{\IFF}{N\models \phi(ha,hb)} for every $a\in M^x$ and $b\in M$.
 
 We prove that the equivalence in the theorem holds for the formula $\E y\,\phi(x,y)$.
-
-
 
 \ceq{\hfill M\ \models\ \E y\;\phi(a,y)}{\IFF}{M\models\phi(a,b)} for some $b\in M$
 

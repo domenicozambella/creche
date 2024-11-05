@@ -199,15 +199,16 @@ The theorem yields a necessary condition for the existence of $G$-invariant glob
 
 \begin{proof}
   Clearly, \ssf1 and \ssf2 are equivalent by Fact~\ref{fact_fip} and follow from \ssf3.
-  Finally, \ssf3 is an immediate consequences of \ssf2 of Theorem~\ref{thm_generic_invariant}.
+  Finally, \ssf3 is an immediate consequence of \ssf2 of Theorem~\ref{thm_generic_invariant}.
 \end{proof}
 
 The following theorem gives a necessary and sufficient condition for the  existence of global $G$-invariant $\BDelta({\grZ})$-type.
-Ideally, we would like to have that every $G$-persistent $\BDelta({\grZ})$-type extends to a global persitent type.
+Ideally, we would like to have that every $G$-persistent $\BDelta({\grZ})$-type extends to a global persistent type.
 Unfortunately this is not true in general (it requires stronger assumptions, see Section~\ref{tame_landscape}).
-A set $\mrD$ is \emph{hereditarily\/} $G$-persistent if every finite cover of $\mrD$ by $\BDelta({\grZ})$-definable sets contains a $G$-persistent set.
+A set $\mrD$ is \emph{$G$-wide\/} if every finite cover of $\mrD$ by $\BDelta({\grZ})$-definable sets contains a $G$-persistent set.
 In~\cite{CK} a similar property is called \textit{quasi-non-forking.}
-A type is hereditarily $G$-persistent if every conjunction of formulas in the type is hereditarily $G$-persistent.
+Our use of the term \textit{wide\/} is consistent with~\cite{Hr}, though we apply it to a narrow context.
+A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
 
 \begin{theorem}\label{thm_generic_invariant2}
   %aaaaa
@@ -216,7 +217,7 @@ A type is hereditarily $G$-persistent if every conjunction of formulas in the ty
   \begin{itemize}
     \item[1.] $\gamma_G({\mr x})$ is finitely satisfied in $\mrD\cap\mrX$
     \item[2.] there exists a $G$-persistent type $p({\mr x})\in S_\Delta(\grZ)$ containing ${\mr x}\in\mrD$
-    \item[3.] $\mrD$ is hereditarily $G$-persistent.
+    \item[3.] $\mrD$ is $G$-wide.
   \end{itemize}
 \end{theorem}
 
@@ -234,13 +235,30 @@ A type is hereditarily $G$-persistent if every conjunction of formulas in the ty
   Therefore, by Fact~\ref{fact_fip}, ${\mr\C_i}$ is $G$-persistent.
 
   \ssf3$\IMP$\ssf2.
-  Let $p({\mr x})$ be maximal among the $\BDelta({\grZ})$-types that are finitely satisfiable in $\mrX\cap\mrD$ and are such that $\theta(\U^{\mr x})$ is hereditarily $G$-persistent for every $\theta({\mr x})$ that is conjunction of formulas in $p({\mr x})$.
+  Let $p({\mr x})$ be maximal among the $\BDelta({\grZ})$-types that are finitely satisfiable in $\mrX\cap\mrD$ and are such that $\theta(\U^{\mr x})$ is $G$-wide for every $\theta({\mr x})$ that is conjunction of formulas in $p({\mr x})$.
   We claim that $p({\mr x})$ is a complete $\BDelta({\grZ})$-type.
   Suppose for a contradiction that $\theta({\mr x}),\neg\theta({\mr x})\notin p$.
   By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$, and some ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi(\U^{\mr x})\cap\theta(\U^{\mr x})$ and $\psi(\U^{\mr x})\smallsetminus\theta(\U^{\mr x})$ and such that no ${\mr\C_i}$ is $G$-persistent.
   As ${\mr\C_1},\dots,{\mr\C_n}$ cover $\psi(\U^{\mr x})$ this is a contradiction.
   It is only left to show that $p({\mr x})$ is $G$-invariant.
   his follows from completeness and Theorem~\ref{thm_generic_invariant}.
+\end{proof}
+
+Let $q({\mr x})\subseteq\BDelta(\grZ)$ be $G$-invariant.
+We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\BDelta(\grZ)$-definable set $\mrD$ and every $g\in G$ if $q({\mr x})\proves{\mr x}\in(\mrD\cup g\,\mrD)$ then $q({\mr x})\proves{\mr x}\in\mrD$.
+
+\begin{proposition}
+  The type $\gamma_G({\mr x})$ is $G$-prime.
+\end{proposition}
+
+\begin{proof}
+  Suppose $\gamma_G({\mr x})\proves{\mr x}\in(\mrD\cup g\,\mrD)$.
+  Assume that $\gamma_G({\mr x})$ is consistent, otherwise the claim is trivial.
+  Let $p({\mr x})\in S_\Delta(\grZ)$ be $G$-persistent.
+  We claim that $p({\mr x})\proves{\mr x}\in\mrD$.
+  The proposition follows from the claim by Corollary~\ref{corol_gammaG_invaqriancer}.
+  By completeness $p({\mr x})\proves{\mr x}\in\mrD$ or $p({\mr x})\proves{\mr x}\in g\,\mrD$.
+  If the latter occurs, $p({\mr x})\proves{\mr x}\in\mrD$ follows from invariance.
 \end{proof}
 
 \begin{exercise}
@@ -285,7 +303,7 @@ A type is hereditarily $G$-persistent if every conjunction of formulas in the ty
 \end{exercise}
 
 \begin{exercise}
-  Give an example of a persistent set that is not hereditarily persistent.
+  Give an example of a persistent set that is not wide.
   Hint: find inspiration in Example~\ref{ex_cyclic_order}.
 \end{exercise}
 
@@ -465,7 +483,7 @@ We prove the following theorem.
   %aaaaa
   The following are equivalent
   \begin{itemize}
-    \item[1.] $G$-persistent $\BDelta({\grZ})$-definable sets are hereditarily $G$-persistent
+    \item[1.] $G$-persistent $\BDelta({\grZ})$-definable sets are $G$-wide
     \item[2.] $G$-generic $\BDelta({\grZ})$-definable sets are closed under intersection 
     \item[3.] $G$-generic $\BDelta({\grZ})$-definable sets are strongly $G$-generic
     \item[4.] weakly persistent $\BDelta({\grZ})$-definable sets are $G$-persistent.
@@ -486,7 +504,7 @@ We prove the following theorem.
   \ssf4$\IMP$\ssf1.
   Note that, by \ssf3, the type ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ coincides with $\gamma_G({\mr x})$, in particular $\gamma_G({\mr x})$ is finitely satisfied in $\mrX$.
   Let $\mrD$ be a $G$-persistent $\BDelta({\grZ})$-definable set.
-  We show that$\gamma_G({\mr x})={}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ is finitely satisfiable in $\mrX\cap\mrD$.
+  We show that $\gamma_G({\mr x})={}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ is finitely satisfiable in $\mrX\cap\mrD$.
   Then, by \ssf4 and Corollary~\ref{corol_q_w_pers}, any global extension of $\gamma_G({\mr x})\cup\{{\mr x}\in\mrD\}$ witness \ssf2 of Theorems~\ref{thm_generic_invariant2}.
   Suppose not, then $\gamma_G({\mr x})\proves {\mr x}\notin\mrD$.
   Therefore $\neg\mrD$ is $G$-generic, contradicting the consistency of ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$.
@@ -525,41 +543,26 @@ The following is an immediate consequence of normality.
     \item [2.] \ceq{\hfill\mrD\textrm{ is }H\textrm{-generic}}{\IFF}{g\cdot\mrD\textrm{ is }H\textrm{-generic.}}
   \end{itemize}
   In particular $\gamma_H({\mr x})$ is $G$-invariant.
-  It also follows that for any $p({\mr x})\in S_\Delta(\grZ)$
-  \begin{itemize}
-    \item [3.] \ceq{\hfill p({\mr x})\textrm{ is }H\textrm{-invariant}}{\IFF}{g\cdot p({\mr x})\textrm{ is }H\textrm{-invariant}.}
-  \end{itemize}
+  % It also follows that for any $p({\mr x})\in S_\Delta(\grZ)$
+  % \begin{itemize}
+  %   \item [3.] \ceq{\hfill p({\mr x})\textrm{ is }H\textrm{-invariant}}{\IFF}{g\cdot p({\mr x})\textrm{ is }H\textrm{-invariant}.}
+  % \end{itemize}
 \end{remark}
 
-From what have seen in Section~\ref{dual_perspective}, if $\gamma_H({\mr x})$ is consistent, then $H$-generic sets are hereditarily $H$-persistent. 
+From what have seen in Section~\ref{dual_perspective}, if $\gamma_H({\mr x})$ is consistent, then $H$-generic sets are $H$-wide. 
 As it happens, we can slightly strengthen this fact.
 
 \begin{proposition}\label{prop_Ggeneric_Hpersistent}
   Assume that $\gamma_H({\mr x})$ is consistent.
-  Then every $G$-generic set is hereditarily $H$-persistent.
-\end{proposition}
-
-\begin{proof}  
-  If $\phi({\mr x}\,;{\gr b})$ is $G$-generic, then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;g\,{\gr b})$ for some $g\in G$.
-  Equivalently, $\phi({\mr x}\,;{\gr g})\in g^{-1}p$.
-  By Remark~\ref{rem_invariance_normalsubg} ${\gr h^{-1}}p({\mr x})$ is $H$-persistent and the proposition follows from Theorem~\ref{thm_generic_invariant2}.
-\end{proof}
-
-Let $q({\mr x})\subseteq\BDelta(\grZ)$ be $G$-invariant.
-We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\BDelta(\grZ)$-definable set $\mrD$ and every $g\in G$ if $q({\mr x})\proves{\mr x}\in(\mrD\cup g\,\mrD)$ then $q({\mr x})\proves{\mr x}\in\mrD$.
-
-\begin{proposition}
-  The type $\gamma_H({\mr x})$ is $G$-prime.
+  Then every $G$-generic set is $H$-wide.
 \end{proposition}
 
 \begin{proof}
-  Assume that $\gamma_H({\mr x})\proves{\mr x}\in(\mrD\cup g\,\mrD)$.
-  Assume $\gamma_H({\mr x})$ otherwise the claim is trivial.
-  Let $p({\mr x})\in S_\Delta(\grZ)$ be $H$-persistent.
-  By completeness $p({\mr x})\proves{\mr x}\in\mrD$ or $p({\mr x})\proves{\mr x}\in g\,\mrD$.
-  If $p({\mr x})\proves{\mr x}\in\mrD$ we are done.
-  Otherwise $g^{-1}\cdot p({\mr x})\proves{\mr x}\in\mrD$.
-  As $g^{-1}\cdot p({\mr x})$ is an arbitrary global $H$-persistent type, $\gamma_G({\mr x})\proves{\mr x}\in\mrD$ follows from Corollary~\ref{corol_gammaG_invaqriancer}.
+  Let $p({\mr x})\in S_\Delta(\grZ)$ be consistent with $\gamma_H({\mr x})$, therefore $H$-persistent.
+  If $\phi({\mr x}\,;{\gr b})$ is $G$-generic, then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;g\,{\gr b})$ for some $g\in G$.
+  Equivalently, $\phi({\mr x}\,;{\gr g})\in g^{-1}p$.
+  By Remark~\ref{rem_invariance_normalsubg} $g^{-1}p({\mr x})$ is $H$-persistent.
+  Then the proposition follows from Theorem~\ref{thm_generic_invariant2}.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -569,36 +572,40 @@ We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\BDelta(\grZ)$-defi
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Definable groups}\label{definablegroups}
 
-In this section we assume that $\grZ=G$.
-Furthermore, we assume that $\grZ$ and $\mrX$ are definable over some set of parameters $A$.
-The group operations and the group action are also assumed definable over $A$.
+In this section we assume that $\grZ$ and $\mrX$ are type-definable over some set of parameters $A$.
+Moreover we assume that $\grZ$ is a group that act on $\mrX$.
+The group operations and the group action are assumed definable over $A$.
 We use the symbol $\,\cdot\,$ for both the group multiplication and the group action.
 
 Let $\Psi\subseteq L_{\mr x}(\U)$ be some small set of formulas.
 In this section $\Delta$ contains formulas $\phi({\mr x}\,;{\gr z})$ of the form  $\psi({\gr z^{-1}}\cdot{\mr x})$ for $\psi({\mr x})\in\Psi$.
-Note that the sets $\phi(\mrX\,;\grZ)$ are $\grZ$-invariant.
-Write ${\gr 1}$ be the identity of $\grZ$.
+The sets $\phi(\mrX\,;\grZ)$ are $\grZ$-invariant.
+We write ${\gr 1}$ for the identity of $\grZ$.
 Clearly, $\phi(\mrX\,;{\gr g})={\gr g}\cdot\phi(\mrX\,;{\gr 1})$.
 
 The following auxiliary structure is useful.
-Let $\UDelta=\big\<\mrX\,;\grZ\big\>$ be a 2-sorted structure whose signature $\LDelta$ contains only a relation symbol for every formula $\phi({\mr x}\,;{\gr z})\in\Delta$.
+Let $\UDelta=\big\<\mrX\,;\grZ\big\>$ be a 2-sorted structure whose signature $\LDelta$ contains only relation symbols for every formula $\phi({\mr x}\,;{\gr z})\in\Delta$.
 As there is little risk of confusion, these relations symbols are also denoted by $\phi({\mr x}\,;{\gr z})$.
 As $\mrX$ and $\grZ$ are assumed to be definable, $\UDelta$ is a saturated $\LDelta$-structure.
 
+In this section $G=\Aut(\UDelta)$.
+
 To each ${\gr h}\in\grZ$ we associate the $\LDelta$-automorphism $\<{\mr a}\,;{\gr g}\>\mapsto\<{\gr h}\,{\mr a}\,;{\gr h}\,{\gr g}\>$.
-Therefore $\grZ$ is, up to isomorphism, a subgroup of $\Aut(\UDelta)$.
-It is easy to verify that is a normal subgroup.
-Note that, for any ${\gr g}\in\grZ$ the orbit of $\phi(\mrX\,;{\gr h})$ under the action of $\grZ$ is $\{\phi(\mrX\,;{\gr g}) : {\gr h}\in\grZ\}$.
-Therefore the orbit under the action of $\Aut(\UDelta)$ is the same (it cannot be any larger).
-We conclude that the notions of genericity and persistency under the two actions coincide for formulas in $\pmDelta(\grZ)$.
+Therefore $\grZ$ is, up to isomorphism, a subgroup of $G$.
+It is easy to verify that $\grZ$ is a normal.
+Note that, for any ${\gr g}\in\grZ$, the orbit of $\phi(\mrX\,;{\gr g})$ under the action of $\grZ$ is $\{\phi(\mrX\,;{\gr h}) : {\gr h}\in\grZ\}$.
+Therefore it coincides with the orbit under the action of $G$ (it cannot get any larger).
+We conclude that for formulas in $\pmDelta(\grZ)$ the notions of generic, persistent, and wide under the two actions coincide.
+
+We also consider the action of the group $\Autf(\UDelta)$, which we denote by $H$.
+This is also a normal subgroup of $G$.
 
 \begin{proposition}\label{prop_Ggeneric_persistent}
-  Let $\phi({\mr x}\,;{\gr z})\in\Delta$.
-  Assume the existence of a type $p({\mr x})\in \LDelta\mbox{-}S_\phi(\grZ)$ that is invariant under the action of $\Autf(\UDelta)$.
-  Then \ssf1$\IMP$\ssf2, where 
+  Assume that $\gamma_H({\mr x})$ is consistent.
+  Then \ssf1$\IMP$\ssf2 for every $\phi({\mr x}\,;{\gr z})\in\Delta$, where
   \begin{itemize}
     \item [1.] $\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic
-    \item [2.] $\phi({\mr x}\,;{\gr g})$ is hereditarily persistent under the action $\Autf(\UDelta)$ for every ${\gr g}\in\grZ$.
+    \item [2.] $\phi({\mr x}\,;{\gr g})$ is $H$-wide for every ${\gr g}\in\grZ$.
   \end{itemize}
 \end{proposition}
 
@@ -608,7 +615,8 @@ See Theorem~\ref{thm_Ggeneric_persistent}.\vspace*{-0.5\baselineskip}
 \begin{proof}
   Let ${\gr g}$ be given.
   If $\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic, then so is $\phi({\mr x}\,;{\gr g})$.
-  As, a fortiori, $\phi({\mr x}\,;{\gr g})$ is $G$-generic \ssf2 follows from Proposition~\ref{prop_Ggeneric_Hpersistent}.
+  Then $\phi({\mr x}\,;{\gr g})$ is, a fortiori, $G$-generic.
+  Therefore \ssf2 follows from Proposition~\ref{prop_Ggeneric_Hpersistent}.
 \end{proof}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -673,46 +681,58 @@ See Theorem~\ref{thm_Ggeneric_persistent}.\vspace*{-0.5\baselineskip}
 In Example~\ref{ex_newelski} we prove a theorem of Newelski's~\cite{Newelski}.
 The original proof is rather long and complex.
 A simplified proof (also due, reportedly, to Newelski) appears in~\cite{Pelaez}*{Section 3.3} and~\cite{Casanovas}*{Chapter 9}.
-The proof here is a streamlined and generalized version of the latter -- inspired by~\cite{Z16}.
+The proof here is a streamlined and generalized version of the latter~--~inspired by~\cite{Z16}.
 
-  \begin{biblist}[]\normalsize
-    \bib{Casanovas}{book}{
-      author={Casanovas, Enrique},
-      title={Simple theories and hyperimaginaries},
-      series={Lecture Notes in Logic},
-      volume={39},
-      publisher={Cambridge
-      University Press},
-      date={2011},
-      % pages={xiv+169},
-      % isbn={978-0-521-11955-9},
-      % review={\MR{2814891}},
-      % doi={10.1017/CBO9781139003728},
-   }\smallskip
-    \bib{CK}{article}{
-   author={Chernikov, Artem},
-   author={Kaplan, Itay},
-   title={Forking and dividing in ${\rm NTP}_2$ theories},
-   journal={J. Symbolic Logic},
-  %  volume={77},
-   date={2012},
-  %  number={1},
-  %  pages={1--20},
-  %  issn={0022-4812},
-  %  review={\MR{2951626}},
-  %  doi={10.2178/jsl/1327068688},
+\begin{biblist}[]\normalsize
+\bib{Casanovas}{book}{
+  author={Casanovas, Enrique},
+  title={Simple theories and hyperimaginaries},
+  series={Lecture Notes in Logic},
+  volume={39},
+  publisher={Cambridge
+  University Press},
+  date={2011},
+  % pages={xiv+169},
+  % isbn={978-0-521-11955-9},
+  % review={\MR{2814891}},
+  % doi={10.1017/CBO9781139003728},
+}\smallskip
+\bib{CK}{article}{
+  author={Chernikov, Artem},
+  author={Kaplan, Itay},
+  title={Forking and dividing in ${\rm NTP}_2$ theories},
+  journal={J. Symbolic Logic},
+%  volume={77},
+  date={2012},
+%  number={1},
+%  pages={1--20},
+%  issn={0022-4812},
+%  review={\MR{2951626}},
+%  doi={10.2178/jsl/1327068688},
+}\smallskip
+\bib{Hr}{article}{
+  label={Hr},
+  author={Hrushovski, Ehud},
+  title={Stable group theory and approximate subgroups},
+  journal={J. Amer. Math. Soc.},
+  volume={25},
+  date={2012},
+  number={1},
+  pages={189--243},
+  % issn={0894-0347},
+  % doi={10.1090/S0894-0347-2011-00708-S},
 }\smallskip
 \bib{Newelski}{article}{
-   author={Newelski, Ludomir},
-   title={The diameter of a Lascar strong type},
-   journal={Fund. Math.},
-  %  volume={176},
-   date={2003},
-  %  number={2},
-  %  pages={157--170},
-  %  issn={0016-2736},
-  %  review={\MR{1971306}},
-  %  doi={10.4064/fm176-2-4},
+  author={Newelski, Ludomir},
+  title={The diameter of a Lascar strong type},
+  journal={Fund. Math.},
+%  volume={176},
+  date={2003},
+%  number={2},
+%  pages={157--170},
+%  issn={0016-2736},
+%  review={\MR{1971306}},
+%  doi={10.4064/fm176-2-4},
 }\smallskip
 \bib{Pelaez}{book}{
   author={Pel\'aez, Rodrigo},
@@ -720,23 +740,23 @@ The proof here is a streamlined and generalized version of the latter -- inspire
   series={PhD Thesis},
   publisher={Universitat de Barcelona, Departament de L\'ogica, Hist\'oria i Filosofia de la Ci\'encia},
   date={2008},
-}\smallskip
+  }\smallskip
 \bib{Z16}{article}{
   author={Zambella, Domenico},
   title={On the diameter of Lascar strong types after Ludomir Newelski},
   conference={
-    title={A tribute to Albert Visser},
+  title={A tribute to Albert Visser},
   },
   book={
-    % series={Tributes},
-    % volume={30},
-    publisher={Coll. Publ., [London]},
+  % series={Tributes},
+  % volume={30},
+  publisher={Coll. Publ., [London]},
   },
   date={2016},
   status={\href{https://arxiv.org/abs/1605.00218}{arXiv:1605.00218}},
-%  pages={231--236},
-%  review={\MR{3559880}},
+  %  pages={231--236},
+  %  review={\MR{3559880}},
 }\smallskip
-  \end{biblist}
+\end{biblist}
 
   
