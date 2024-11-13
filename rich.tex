@@ -38,7 +38,7 @@ In the general case we need to make some assumptions on $\M$.
 \begin{definition}\label{def_com_c}For ease of reference we list together all properties required below
 \begin{itemize} 
 \item[c1.] the (partial) identity map $\id_A:M\to M$ is a morphism, for any $A\subseteq M$
-\item[c2.] if $k':M\to N$ is a morphism for every finite $k'\subseteq k$, then $k:M\to N$ is a morphism
+\item[c2.] if $k':M\to N$ is a morphism for all finite $k'\subseteq k$, then $k:M\to N$ is a morphism
 \item[c3.] morphisms are invertible maps and the inverse of a morphism is a morphism
 \item[c4.] morphisms preserve the truth of $\atL$\,-formulas
 \item[c5.] if $M$ is a model and $N\equiv M$, then also $N$ is a model
@@ -58,7 +58,7 @@ Note that it implies the following
 \end{itemize}
 
 Notably, the following two definitions require \ssf{c3}.
-The generalization to non injective morphisms is not straightforward (in fact, there are two generalizations: \textit{projective\/} and \textit{inductive\/}).
+The generalization to non-injective morphisms is not straightforward (in fact, there are two generalizations: \textit{projective\/} and \textit{inductive\/}).
 These generalizations are not very common and will not be considered here.
 
 \begin{definition}
@@ -107,11 +107,10 @@ The assumption on the cardinality of $L$ is necessary to apply the downward L\"o
 
 \begin{proof}
 Closure under union of chains of morphisms, which is ensured by \ssf{c7}, immediately yields \ssf{1}$\IMP$\ssf{2}.
-As for implication \ssf{2}$\IMP$\ssf{1} we only need to consider the case $\lambda<|M|$.
-Let $k:M\imp N$ be a morphism of cardinality $<\lambda$ and $b\in M$.
+For implication \ssf{2}$\IMP$\ssf{1} consider a morphism $k:M\imp N$ of cardinality $<\lambda$ and $b\in M$.
 By the downward L\"owenheim-Skolem theorem there is an  $M'\preceq M$ of cardinality $\lambda$ containing $\dom k \cup\{b\}$.
 Let $h:M'\hookrightarrow N$ be the embedding obtained from \ssf{2}.
-By \ssf{c4}, the map  $h:M\to N$ is a composition of morphisms, hence a morphism.
+By \ssf{c4}, the map $h:M\to N$ is a composition of morphisms, hence a morphism.
 \end{proof}
 
 The following theorem subsumes both Theorem~\ref{thm_zigzagcantor} and Theorem~\ref{gaomegacat}.
@@ -151,27 +150,25 @@ We use the characterization of richness given in Proposition~\ref{prop_6.1}.
 Let $k:M\imp N$ be a morphism such that $|k|<|N|$ and $|M|\le|N|$.
 As $N$ is universal, there is a total morphism \hbox{$f:M\hookrightarrow N$}.
 By \ssf{c3} the map $k\circ f^{-1}:N\imp N$ is a morphism of cardinality $<|N|$.
-By homogeneity it has an extension to an automorphism $h:N\isomap N$.
+By homogeneity, it has an extension to an automorphism $h:N\isomap N$.
 It is immediate that $h\circ f:M\hookrightarrow N$ is the required extension of $k$.
 \end{proof}
 
-
 A consequence of Theorem~\ref{thm_riccozigzag} is that morphisms between rich models of the same cardinality are elementary maps.
 However, the theorem gives no information when the models have different cardinality nor when they are merely $\lambda$-rich.
-This case is dealt with by next theorem, arguably the main result of this section.
-
-To test the theorem below in a simple case we propose the following exercise.
+This case is dealt with in Theorem~\ref{thm_morphism_rich_elementary}, arguably the main result of this section.
 
 \begin{exercise}
 Let $N$ be the structure obtained by adding to a countable random graph an isolated point.
-Show that $N$ is homogeneous if morphisms are elementary maps but it is not if morphisms are simply partial isomorphisms.
+Show that $N$ is homogeneous if morphisms are elementary maps, but that this is not true if morphisms are simply partial isomorphisms.
 \end{exercise}
 
-\begin{exercise}\label{ex_DLO_RG_QE}
-Every partial isomorphism $k:M\to N$ between models of $T_{\rm dlo}$ (or models of  $T_{\rm rg}$) is an elementary map.
-Hint: use downward Löwenheim-Skolem and Theorem~\ref{thm_zigzagcantor}.
+\begin{exercise}
+  Check that the following can be added to Proposition~\ref{prop_6.1}
+  \begin{itemize}
+    \item[3.] for every model $M$ of cardinality $<\lambda$ and every morphism $k:M\imp N$ of cardinality, say $<|M|$ there is an embedding $h:M\hookrightarrow N$ that extends $k$.
+  \end{itemize}
 \end{exercise}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -181,6 +178,7 @@ Hint: use downward Löwenheim-Skolem and Theorem~\ref{thm_zigzagcantor}.
 
 The \emph{theory of the rich models\/} of $\M$ is the set $T_1$ of sentences that hold in all models that are $\lambda$-rich for some $\lambda\ge|L|$.
 The theorem below proves that $T_1$ is complete as soon as $\M$ is connected.
+Note that the following theorem generalizes Corollary~\ref{corol_DLO_QE} and~\ref{corol_RG_QE}.
 
 \begin{theorem}\label{thm_morphism_rich_elementary}
 (Assume~\ref{ass_c1-6})  \  Every morphism between $\lambda$-rich models is elementary.
@@ -227,17 +225,17 @@ It is interesting to ask if the converse is true: if $T_1$ is the theory of the 
     (Assume~\ref{ass_c1-6})  \  Assume $\M$ is connected.
     Let $T_1$ be the theory of the rich models of $\M$.
     If every model of $T_1$ is $\lambda$-rich then $T_1$ is $\lambda$-categorical.
-    (This is a conseguence of Corollary~\ref{coroll_riccozigzag})
+    (This is a consequence of Corollary~\ref{coroll_riccozigzag})
 \end{remark}
 
-A very interesting interesting variant of the question asked above is considered in Theorem~\ref{thm_ricchezza_saturazione_QE} where it is related to an important phenomenon that we now indroduce.
-First, to have a concrete example at hand, we instantiate Theorem~\ref{thm_morphism_rich_elementary} with the two categories used in Chapter~\ref{relational}.
+A very interesting variant of the question asked above is considered in Theorem~\ref{thm_ricchezza_saturazione_QE} where it is related to an important phenomenon that we now introduce.
+% First, to have a concrete example at hand, we instantiate Theorem~\ref{thm_morphism_rich_elementary} with the two categories used in Chapter~\ref{relational}.
 
-\begin{corollary}\label{coroll_tutteleimmersionisonoelementari_QE}
-Partial isomorphisms between models of $T_{\rm dlo}$ and between models of $T_{\rm rg}$ are elementary maps.
-\end{corollary}
+% \begin{corollary}\label{coroll_tutteleimmersionisonoelementari_QE}
+% Partial embeddings between models of $T_{\rm dlo}$ and between models of $T_{\rm rg}$ are elementary maps.
+% \end{corollary}
 
-When partial isomorphisms between models of a given theory $T$ coincide with elementary maps, it is always by a fundamental reason.
+When partial embeddings between models of a given theory $T$ coincide with elementary maps, it is always by a fundamental reason.
 Let us introduce some terminology.
 Let $T$ be a consistent theory.
 We say that $T$ has (or admits) \emph{elimination of\/} \emph{quantifiers\/} if for every $\phi(x)\in L$ there is a quantifier-free formula $\psi(x)\in L_{\rm qf}$ such that 
@@ -258,7 +256,7 @@ The following are equivalent
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}This theorem will be proved only in Chapter~\ref{elimination}, see Exercise~\ref{ex_prove_thm_EQ} or Corollary~\ref{corol_QE}.
 %
 For the time being we do not need the syntactic version of elimination of quantifiers, so when saying that \textit{$T$ has quantifier elimination\/} we mean \ssf{2} of Theorem~\ref{thm_tutteleimmersionisonoelementari_QE}.
-For instance we rephrase Corollary~\ref{coroll_tutteleimmersionisonoelementari_QE} by saying that $T_{\rm dlo}$ and $T_{\rm rg}$ have elimination of quantifiers.
+For instance, we rephrase Corollary~\ref{coroll_tutteleimmersionisonoelementari_QE} by saying that $T_{\rm dlo}$ and $T_{\rm rg}$ have elimination of quantifiers.
 
 In the next chapter we introduce important examples of $\omega$-rich models that do not have an $\omega$-categorical theory.
 These are algebraic structures (groups, fields etc.) which are more complex than pure relational structures.
@@ -267,7 +265,7 @@ So, we conclude this section with an example of this phenomenon in an almost tri
 \begin{example}\label{ex_infiniti_colori}
 Let $L$ contain a unary predicate $r_n$ for every positive integer $n$.
 The theory $T_0$ contains the axioms $\neg\E x\, \big[r_n(x)\wedge r_m(x)\big]$ for $n\neq m$ and $\E^{\le n}x\,r_n(x)$ for every $n$.
-Work in the the category of models of $T_0$ and partial isomorphisms.
+Work in the category of models of $T_0$ and partial isomorphisms.
 Let $T_1$ be the theory that extends $T_0$ with the axioms $\E^{= n} x\, r_n(x)$ for every  $n$.
 Let $q(x)$ be the type $\big\{\neg r_n(x):n\in\omega\big\}$.
 There are models of $T_1$ that do not realize $q(x)$, hence $T_1$ is not $\omega$-categorical.
@@ -483,7 +481,7 @@ Then there is a rich model $N$ of cardinality $\lambda$.
 Let $N_0$ be any model of cardinality $\lambda$.
 At stage $i+1$, let $f:M\imp N_i$ be the least morphism (in a well-ordering that we specify below) such that $|f|\le|M|<\lambda$ and $f$ has no extension to an embedding $f':M\hookrightarrow N_i$.
 Apply the amalgamation property to obtain an total morphism $f':M\hookrightarrow N'$ that extends $f:M\imp N_i$.
-By the downword L\"owenheim-Skolem Theorem we may assume $|N'|=\lambda$.
+By the downward L\"owenheim-Skolem Theorem we may assume $|N'|=\lambda$.
 Let $N_{i+1}=N'$.
 At limit stages take the union.
 
@@ -509,7 +507,7 @@ Then $\M$ has the amalgamation property.
 Let $k:M\to N$ be an elementary map.
 Let ${\gr a}$ enumerate $\dom k$ and let ${\mr b}$ enumerate $M$.
 Let $p({\mr x}\,;{\gr z})=\tp_M({\mr b}\,;{\gr a})$.
-The type $p({\mr x}\,;{\gr a})$ is consisent in $M$, in particular, it is finitely consistent and, by elementarity,  $p({\mr x}\,;k{\gr a})$ is finitely consistent in $N$.
+The type $p({\mr x}\,;{\gr a})$ is consistent in $M$, in particular, it is finitely consistent and, by elementarity,  $p({\mr x}\,;k{\gr a})$ is finitely consistent in $N$.
 By the compactness theorem, there is $N'\succeq N$ such that $N'\models p({\mr c}\,;k{\gr a})$ for some ${\mr c}\in N'^{\mr x}$.
 Hence $g=\{\<{\mr b},{\mr c}\>\}:M\to N'$ is the required elementary map that extends $k:M\to N$.
 \end{proof}

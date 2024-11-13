@@ -179,13 +179,13 @@ By the proposition above, they are closed under quantifiers.
 
 %Here we write \emph{$\phi({\mr x}\,;{\gr z})^*$\/} for the partitioned formula where the order of the two tuples is inverted (i.e.\@ it is the opposite of what displayed).
 
-Let $\R\subseteq\U^{\mr x}\times\U^{\gr z}$ be a binary relation invariant over $A$.
-We denote by $\R({\mr x}\,;{\gr z})$ the predicate associated to $\R$.
-We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$ is a \emph{ladder\/} of length $\alpha$ for $\R({\mr x}\,;{\gr z})$ if for every $i<j<\alpha$
+Let $\pi\subseteq\U^{\mr x}\times\U^{\gr z}$ be a binary relation invariant over $A$.
+We denote by $\pi({\mr x}\,;{\gr z})$ the predicate associated to $\pi$.
+We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$ is a \emph{ladder\/} of length $\alpha$ for $\pi({\mr x}\,;{\gr z})$ if for every $i<j<\alpha$
 
-\ceq{\hfill\R({\mr a_i}\,;{\gr b_j})}{\wedge}{\neg\R({\mr a_j}\,;{\gr b_i}).}
+\ceq{\hfill\pi({\mr a_i}\,;{\gr b_j})}{\wedge}{\neg\pi({\mr a_j}\,;{\gr b_i}).}
 
-We say that $\R({\mr x}\,;{\gr z})$ is \emph{stable\/} if there is no ladder of length $\omega$.
+We say that $\pi({\mr x}\,;{\gr z})$ is \emph{stable\/} if there is no ladder of length $\omega$.
 Otherwise we say it is \emph{unstable} or that it has the \emph{order property}.
 We will mainly deal with relations that are definable or type-definable.
 We will say that a formula or a type is stable accordingly.
@@ -203,18 +203,18 @@ The proof of the following easy fact is left to the reader.
 We can require that the ladder is an indiscernible sequence. 
 
 \begin{theorem}\label{thm_sability_indiscernibility}
-  Let $\R({\mr x}\,;{\gr z})$ be invariant over $A$.
+  Let $\pi({\mr x}\,;{\gr z})$ be invariant over $A$.
   Then the following are equivalent
   \begin{itemize}
-    \item[1.] $\R({\mr x}\,;{\gr z})$ is stable
-    \item[2.] $\R({\mr a_0}\,;{\gr b_1})\imp\R({\mr a_1}\,;{\gr b_0})$ for every $A$-indiscernible sequence $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
+    \item[1.] $\pi({\mr x}\,;{\gr z})$ is stable
+    \item[2.] $\pi({\mr a_0}\,;{\gr b_1})\imp\pi({\mr a_1}\,;{\gr b_0})$ for every $A$-indiscernible sequence $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
-  (2$\IMP$1) \ Assume $\R({\mr x}\,;{\gr z})$ is unstable and that this is witnessed by the ladder $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
+  (2$\IMP$1) \ Assume $\pi({\mr x}\,;{\gr z})$ is unstable and that this is witnessed by the ladder $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
   Let $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ be a sequence of $A$-indiscernibles with the same EM-type as $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
-  By invariance $\R({\mr a'_0}\,;{\gr b'_1})$ and $\neg\R({\mr a'_1}\,;{\gr b'_0})$.
+  By invariance $\pi({\mr a'_0}\,;{\gr b'_1})$ and $\neg\pi({\mr a'_1}\,;{\gr b'_0})$.
 
   (2$\IMP$1) Immediate by indiscernibility.
 \end{proof}
@@ -224,16 +224,16 @@ We can require that the ladder is an indiscernible sequence.
 
 \begin{lemma}\label{lem_stab_Boole}
   Boolean combinations of stable relations are stable.
-  Moreover, if $\R({\mr x}\,;{\gr z})$ then  $\R^{-1}({\mr x}\,;{\gr z})$ and $\R({\mr x},x'\,;{\gr z},z')$ are also stable formula (in the latter $x'$ and $z'$ are dummy variables).
+  Moreover, if $\pi({\mr x}\,;{\gr z})$ then  $\pi^{-1}({\mr x}\,;{\gr z})$ and $\pi({\mr x},x'\,;{\gr z},z')$ are also stable formula (in the latter $x'$ and $z'$ are dummy variables).
 \end{lemma}
 
 \begin{proof}
   It suffices to consider conjunction and negation.
-  Let $\R_i({\mr x}\,;{\gr z})$, for $i=1,2$,  be stable relations that are invariant over $A$.
-  By Theorem~\ref{thm_sability_indiscernibility}, it is immediate that $\R_1({\mr x}\,;{\gr z})\wedge\R_2({\mr x}\,;{\gr z})$ is stable.
-  As for negation, let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be a ladder for $\R({\mr x}\,;{\gr z})$ that is indiscernible over $A$.
+  Let $\pi_i({\mr x}\,;{\gr z})$, for $i=1,2$,  be stable relations that are invariant over $A$.
+  By Theorem~\ref{thm_sability_indiscernibility}, it is immediate that $\pi_1({\mr x}\,;{\gr z})\wedge\pi_2({\mr x}\,;{\gr z})$ is stable.
+  As for negation, let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be a ladder for $\pi({\mr x}\,;{\gr z})$ that is indiscernible over $A$.
   By Exercise~\ref{ex_symmetry_ind}, there is a $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ of $A$-indiscernibles such that ${\mr a'_0},{\gr b'_0}={\mr a_1}{\gr b_1}$ and ${\mr a'_1},{\gr b'_1}={\mr a_0}{\gr b_0}$.
-  This sequence witnesses the instability of $\neg\R({\mr x}\,;{\gr z})$.
+  This sequence witnesses the instability of $\neg\pi({\mr x}\,;{\gr z})$.
 
   The second claim is immediate.
 \end{proof}

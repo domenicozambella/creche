@@ -21,7 +21,7 @@ In the second section we apply the same technique to prove that the theory of th
 The \emph{language of strict orders,} which in this section we denote by $L$, contains only a binary relation symbol $<$.
 A structure $M$ of signature $L$ is a \emph{strict order\/} if it models (the universal closure of) the following formulas
 \begin{itemize}
-\item[1.] $x \not< x$\hfill irreflexive;
+\item[1.] $x \not< x$\hfill irreflexive
 \item[2.] $x< z< y\ \imp\ x< y$\hfill transitive.
 \end{itemize}
 Note that the following is an immediate consequence of \ssf{1} and \ssf{2}.
@@ -34,7 +34,7 @@ We say that the order is \emph{total\/} or \emph{linear\/} if
 \end{itemize}
 An order is \emph{dense\/} if
 \begin{itemize}
-\item[nt.]  $\E x,y\ (x<y)$\hfill non trivial
+\item[nt.]  $\E x,y\ (x<y)$\hfill nontrivial
 \item[d.] $x<y\ \imp\ \E z\;(x<z<y)$\hfill dense.
 \end{itemize}
 We need to require the existence of two comparable elements, then \ssf{d} implies that dense orders are in fact infinite.
@@ -156,6 +156,19 @@ Applying the upward and/or downward L\"owenheim-Skolem theorem, we may assume th
 Hence $M\simeq N$ and in particular $M\equiv N$.
 \end{proof}
 
+The following corollary is also very important and will be siscusse3d in detail in Chapter~\ref{rich}.
+
+\begin{corollary}\label{corol_DLO_QE}
+  Every partial isomorphism $k:M\imp N$ between countable models of $T_{\rm dlo}$ is elementary.
+\end{corollary}
+
+\begin{proof}
+  We can assume $k:M\imp N$ is finite.
+  Then there are $M'\preceq M$ and  $N'\preceq N$ such that $\dom k\subseteq M'$ and $\range k\subseteq N'$.
+  By Theorem~\ref{thm_zigzagcantor}, $k$ extends to an isomorphism between $M'$ and $N'$.
+  Then $k$ is an elementary map between $M'$ and $N'$, and therefore also between $M$ and $N$.
+\end{proof}
+
 \begin{exercise}\label{ex_ricco->dlo}
     Prove that the extension Lemma~\ref{lem_ordinericco} characterizes models of $T_{\rm dlo}$ among models of $T_{\rm lo}$.
     That is, if $N$ is a model of $T_{\rm lo}$ such that the conclusion of Lemma~\ref{lem_ordinericco} holds, then $M\models  T_{\rm dlo}$.
@@ -173,7 +186,7 @@ Prove that, in the language of strict orders, $\QQ\preceq\RR$.
 Let $L$ be the language of strict orders expanded with countably many constants $\big\{c_i: i\in\omega\big\}$.
 Let $T$ be the theory that extends $T_{\rm dlo}$ by the axioms $c_i<c_{i+1}$ for all $i$.
 Prove that $T$ is complete.
-Find three non isomorphic countable models of this theory.
+Find three non-isomorphic countable models of this theory.
 For a suitably chosen model $N$ of $T$, prove the statement in Lemma~\ref{lem_ordinericco}, where $M$ any model of $T$.
 \end{exercise}
 
@@ -208,7 +221,7 @@ In words we may say that $a$ is adjacent to $b$.
 
 A \emph{random graph\/} is a graph that also satisfies the following axioms for every $n$
 \begin{itemize}
-\item[nt.] $\E x,y\ \ (x\neq y)$\hfill non trivial
+\item[nt.] $\E x,y\ \ (x\neq y)$\hfill nontrivial
 \item[r$_n$.] $\displaystyle\bigwedge^n_{i,j=1} x_i\neq y_j\ \ \imp\ \ \E z \bigwedge^n_{i=1} \big[r(x_i,z) \wedge \neg r(z,y_i) \wedge z\neq y_i\big]$\hfill for every $n\in\ZZ^+$.
 \end{itemize}
 
@@ -220,7 +233,7 @@ We explicitly required that $z\notin A^-$, by \ssf{1} it is clear that $z\notin 
 Strictly speaking, the axioms \ssf{r$_n$} do not mention the cases when $A^+$ or $A^-$ are empty.
 But as it is evident that random graphs are infinite, we can deal with them by adding redundant elements.
 
-The following is the analogous of Lemma~\ref{lem_ordinericco} for random graphs.
+The following is analogous to Lemma~\ref{lem_ordinericco}.
 Recall that in the language of graphs a map $k:M\to N$ is a partial isomorphism if it is injective and
 
 \ceq{\hfill M\models r(a,b)}{\IFF}{N\models r(ka,kb)}\hfill for every $a,b\in\dom k$.
@@ -253,7 +266,7 @@ The domain of is the set of natural numbers.
 Let $r(n,m)$ hold if the $n$-th prime number divides $m$ or, conversely, the $m$-th prime number divides $n$.
 \end{proof}
 
-The same proof as that of Corollary~\ref{coroll_ordinericco} gives the following.
+The same argument as in the proof of Corollary~\ref{coroll_ordinericco} gives the following.
 
 \begin{corollary}\label{coroll_graforicco}
 Let $M\models T_{\rm gph}$ be countable and let $N\models T_{\rm rg}$.
@@ -269,6 +282,12 @@ Every finite partial isomorphism $k:M\imp N$ between countable models of $T_{\rm
 
 \begin{corollary}\label{corol_RG_omegacat}
 The theory $T_{\rm rg}$ is $\omega$-categorical (and therefore complete).
+\end{corollary}
+
+The same argument as in the proof of Corollary~\ref{corol_DLO_QE} yields the following.
+
+\begin{corollary}\label{corol_RG_QE}
+  Every partial isomorphism $k:M\imp N$ between countable models of $T_{\rm rg}$ is elementary.
 \end{corollary}
 
 \begin{exercise}
@@ -311,7 +330,7 @@ Axiomatize the class of graphs that are free union of two random graphs.
 \begin{exercise}
 Prove that $T_{\rm rg}$ is not $\lambda$-categorical for any uncountable $\lambda$.
 Hint: prove that there is a random graph $N$ of cardinality $\lambda$ where every vertex is adjacent to $<\lambda$ vertices.
-Compare it with its complement graph (the graph that has edges between pairs that are non adjacent in $N$).
+Compare it with its complement graph (the graph that has edges between pairs that are non-adjacent in $N$).
 \end{exercise}
 
 \begin{exercise}
