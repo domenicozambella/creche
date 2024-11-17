@@ -215,6 +215,14 @@ A similar consideration holds for $N'$.
 This is achieved using the same dovetail enumeration as in our second proof the downward Löwenheim-Skolem Theorem~\ref{thm_lowenheimskolemallingiu}.
 \end{proof}
 
+The following is immediate.
+
+\begin{corollary}
+  (Assume~\ref{ass_c1-6})  \  Assume $\M$ is connected.
+  Let $T_1$ be the theory of the rich models of $\M$.
+  Then $T_1$ is complete.
+\end{corollary}
+
 Assume for simplicity that $\M$ is connected.
 Then all $\lambda$-rich models belong to $\Mod(T_1)$ for some complete theory $T_1$.
 It is interesting to ask if the converse is true: if $T_1$ is the theory of the $\lambda$-rich models of $\M$, do all models in $\Mod(T_1)$ are rich?
@@ -256,7 +264,7 @@ The following are equivalent
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}This theorem will be proved only in Chapter~\ref{elimination}, see Exercise~\ref{ex_prove_thm_EQ} or Corollary~\ref{corol_QE}.
 %
 For the time being we do not need the syntactic version of elimination of quantifiers, so when saying that \textit{$T$ has quantifier elimination\/} we mean \ssf{2} of Theorem~\ref{thm_tutteleimmersionisonoelementari_QE}.
-For instance, we rephrase Corollary~\ref{coroll_tutteleimmersionisonoelementari_QE} by saying that $T_{\rm dlo}$ and $T_{\rm rg}$ have elimination of quantifiers.
+For instance, we rephrase Corollary~\ref{corol_DLO_QE} and~\ref{corol_RG_QE} by saying that $T_{\rm dlo}$ and $T_{\rm rg}$ have elimination of quantifiers.
 
 In the next chapter we introduce important examples of $\omega$-rich models that do not have an $\omega$-categorical theory.
 These are algebraic structures (groups, fields etc.) which are more complex than pure relational structures.
@@ -480,7 +488,7 @@ Then there is a rich model $N$ of cardinality $\lambda$.
 \begin{proof} We construct $N$ as union of a $\le$-chain of models $\langle N_i:i < \lambda\rangle$ such that $|N_i| = \lambda$.
 Let $N_0$ be any model of cardinality $\lambda$.
 At stage $i+1$, let $f:M\imp N_i$ be the least morphism (in a well-ordering that we specify below) such that $|f|\le|M|<\lambda$ and $f$ has no extension to an embedding $f':M\hookrightarrow N_i$.
-Apply the amalgamation property to obtain an total morphism $f':M\hookrightarrow N'$ that extends $f:M\imp N_i$.
+Apply the amalgamation property to obtain a total morphism $f':M\hookrightarrow N'$ that extends $f:M\imp N_i$.
 By the downward L\"owenheim-Skolem Theorem we may assume $|N'|=\lambda$.
 Let $N_{i+1}=N'$.
 At limit stages take the union.

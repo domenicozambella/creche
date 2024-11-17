@@ -94,7 +94,7 @@ In topological dynamics similar notions have been introduced with different term
   In fact, the same ${\mr a}\in A^{\mr x}$ that satisfies $\phi({\mr x})$ also satisfies every $\Aut(\U/A)$-translate of $\phi({\mr x})$.
 \end{example}
 
-Notation: for $\mrD\subseteq\U^{\mr x}$ and $H\subseteq G$ we write $H\,\mrD$ for $\{h\mrD: h\in H\}$.
+Notation: for $\mrD\subseteq\U^{\mr x}$ and $H\subseteq G$ we write \emph{$H\,\mrD$\/} for $\{h\mrD: h\in H\}$.
 
 In this notes many proofs require some juggling with negations as epitomized by the following fact.
 
@@ -181,7 +181,7 @@ The converse implication holds for complete types.
   \ssf2$\IMP$\ssf1.
   Suppose $\gamma_G({\mr x})\not\proves{\mr x}\in\mrD$.
   Then there is a type $p({\mr x})\in S_\Delta(\grZ)$ consistent with $\gamma_G({\mr x})\cup\{{\mr x}\notin\mrD\}$.
-  By Corollary~\ref{corol_q_pers} $p({\mr x})$ is $G$-presistent.
+  By Corollary~\ref{corol_q_pers} $p({\mr x})$ is $G$-persistent.
   Then $\neg\ssf2$.
 \end{proof}
 
@@ -229,7 +229,8 @@ A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
   By Theorem~\ref{thm_generic_invariant}.
 
   \ssf2$\IMP$\ssf3.
-  Suppose ${\mr\C_1},\dots,{\mr\C_n}$ cover $\mrD$ and pick $p({\mr x})$ as in \ssf2.
+  Let ${\mr\C_1},\dots,{\mr\C_n}$ be $\BDelta({\grZ})$-definable sets that cover $\mrD$.
+  Pick $p({\mr x})$ as in \ssf2.
   By completeness, $p({\mr x})\proves {\mr x}\in{\mr\C_i}$ for some $i$.
   Then, by Theorem~\ref{thm_generic_invariant}, $\neg{\mr\C_i}$ is not $G$-generic.
   Therefore, by Fact~\ref{fact_fip}, ${\mr\C_i}$ is $G$-persistent.
@@ -238,7 +239,7 @@ A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
   Let $p({\mr x})$ be maximal among the $\BDelta({\grZ})$-types that are finitely satisfiable in $\mrX\cap\mrD$ and are such that $\theta(\U^{\mr x})$ is $G$-wide for every $\theta({\mr x})$ that is conjunction of formulas in $p({\mr x})$.
   We claim that $p({\mr x})$ is a complete $\BDelta({\grZ})$-type.
   Suppose for a contradiction that $\theta({\mr x}),\neg\theta({\mr x})\notin p$.
-  By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$, and some ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi(\U^{\mr x})\cap\theta(\U^{\mr x})$ and $\psi(\U^{\mr x})\smallsetminus\theta(\U^{\mr x})$ and such that no ${\mr\C_i}$ is $G$-persistent.
+  By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$, and some $\BDelta({\grZ})$-definable sets ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi(\U^{\mr x})\cap\theta(\U^{\mr x})$ and $\psi(\U^{\mr x})\smallsetminus\theta(\U^{\mr x})$ and such that no ${\mr\C_i}$ is $G$-persistent.
   As ${\mr\C_1},\dots,{\mr\C_n}$ cover $\psi(\U^{\mr x})$ this is a contradiction.
   It is only left to show that $p({\mr x})$ is $G$-invariant.
   This follows from completeness and Theorem~\ref{thm_generic_invariant}.
@@ -248,6 +249,20 @@ A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
   Let $\mrD$ be a $G$-wide $\BDelta(\grZ)$-definable set.
   Then $\mrD\cap g{\cdot}\mrD$ is $G$-wide for every $g\in G$.
 \end{corollary}
+
+\begin{proof}
+  Let $p({\mr x})\in S_\Delta(\grZ)$ be a $G$-persistent type such that $p({\mr x})\proves{\mr x}\in\mrD$.
+  By $G$-invariance $p({\mr x})\proves{\mr x}\in{\gr g}{\cdot}\mrD$. 
+\end{proof}
+
+\begin{fact}
+  Let $\mrD$ be a $\BDelta(\grZ)$-definable set.
+  The following are equivalent
+  \begin{itemize}
+    \item [1.] $\mrD$ is $G$-wide;
+    \item [2.] every finite cover of $\mrD$ by $\pmDelta({\grZ})$-definable sets contains a $G$-persistent set.
+  \end{itemize}
+\end{fact}
 
 Let $q({\mr x})\subseteq\BDelta(\grZ)$ be $G$-invariant.
 We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\BDelta(\grZ)$-definable set $\mrD$ and every $g\in G$ if $q({\mr x})\proves{\mr x}\in(\mrD\cup g{\cdot}\mrD)$ then $q({\mr x})\proves{\mr x}\in\mrD$.
@@ -322,7 +337,7 @@ We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\BDelta(\grZ)$-defi
 Unfortunately, $G$-genericy is not preserved under intersection.
 To obtain closure under intersection, we need to push the concept to a higher level of complexity.
 
-A set $\mrD\subseteq\U^{\mr x}$ is \emph{strongly $G$-generic\/} if for every finite $H\subseteq G$ the set $\cap\,H\,\mrD$ is generic.
+A set $\mrD\subseteq\U^{\mr x}$ is \emph{strongly $G$-generic\/} if for every finite $H\subseteq G$ the set $\cap\,H\,\mrD$ is generic (recall that $H\,\mrD$ stands for $\{h{\cdot}\mrD: h\in H\}$).
 Dually, we say that $\mrD$ is \emph{weakly $G$-persistent\/} if for some finite $H\subseteq G$ the set $\cup\,H\,\mrD$ is persistent.
 Again, the same properties may be attributed to formulas and types.
 
@@ -547,26 +562,27 @@ The following is an immediate consequence of normality.
   \ceq{\hfill\mrD\textrm{ is }H\textrm{-foo}}{\IFF}{g{\cdot}\mrD\textrm{ is }H\textrm{-foo},}
   
   where \textit{foo\/} can be replaced by \textit{generic,} \textit{invariant,} \textit{persistent,} \textit{wide.}
-  In particular $\gamma_H({\mr x})$ is $G$-invariant.
+  In particular, the type $\gamma_H({\mr x})$ is $G$-invariant.
   % It also follows that for any $p({\mr x})\in S_\Delta(\grZ)$
   % \begin{itemize}
   %   \item [3.] \ceq{\hfill p({\mr x})\textrm{ is }H\textrm{-invariant}}{\IFF}{g\cdot p({\mr x})\textrm{ is }H\textrm{-invariant}.}
   % \end{itemize}
 \end{remark}
 
-From what have seen in Section~\ref{dual_perspective}, if $\gamma_H({\mr x})$ is consistent, then $H$-generic sets are $H$-wide. 
+Recall that in Section~\ref{dual_perspective} we proved that if $\gamma_H({\mr x})$ is consistent, then $H$-generic sets are $H$-wide. 
 As it happens, we can slightly strengthen this fact.
 
 \begin{proposition}\label{prop_Ggeneric_Hpersistent}
   Assume that $\gamma_H({\mr x})$ is consistent.
-  Then every $G$-generic set is $H$-wide.
+  Let $\mrD$ be a $\BDelta(\grZ)$-definable set.
+  Then if $\mrD$ is $G$-generic it is also $H$-wide.
 \end{proposition}
 
 \begin{proof}
-  Let $p({\mr x})\in S_\Delta(\grZ)$ be consistent with $\gamma_H({\mr x})$, therefore $H$-persistent.
-  If $\phi({\mr x}\,;{\gr b})$ is $G$-generic, then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;g{\cdot}{\gr b})$ for some $g\in G$.
-  Equivalently, $\phi({\mr x}\,;{\gr g})\in g^{-1}p$.
-  By Remark~\ref{rem_invariance_normalsubg} $g^{-1}p({\mr x})$ is $H$-persistent.
+  Let $p({\mr x})\in S_\Delta(\grZ)$ be consistent with $\gamma_H({\mr x})$.
+  As $\mrD$ is $G$-generic, by completeness $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in G$.
+  Equivalently, $g^{-1}p\proves{\mr x}\in\mrD$.
+  As $p({\mr x})$ is $H$-persistent, by Remark~\ref{rem_invariance_normalsubg} $g^{-1}p({\mr x})$ is also $H$-persistent.
   Then the proposition follows from Theorem~\ref{thm_generic_invariant2}.
 \end{proof}
 
@@ -591,73 +607,105 @@ Clearly, $\phi(\mrX\,;{\gr g})={\gr g}\cdot\phi(\mrX\,;{\gr 1})$.
 The following auxiliary structure is useful.
 Let $\UDelta=\big\<\mrX\,;\grZ\big\>$ be a 2-sorted structure whose signature $\LDelta$ contains only relation symbols for every formula $\phi({\mr x}\,;{\gr z})\in\Delta$.
 As there is little risk of confusion, these relations symbols are also denoted by $\phi({\mr x}\,;{\gr z})$.
-As $\mrX$ and $\grZ$ are assumed to be definable, $\UDelta$ is a saturated $\LDelta$-structure.
+As $\mrX$ and $\grZ$ are assumed to be type-definable, $\UDelta$ is a saturated $\LDelta$-structure.
 
 In this section $G=\Aut(\UDelta)$. 
 
-It is worth noticing that automorphisms of $\UDelta$ do not preserve the group operations nor the group action.
+\begin{remark}\label{rem_H}
+  It is worth noticing that automorphisms of $\UDelta$ do not preserve the group operations nor the group action.
 However, if $\mrD=\phi(\mrX\,;{\gr 1})$ and ${\gr g}\in\grZ$, then $f({\gr g}){\cdot}\mrD=f[{\gr g}{\cdot}\mrD]$ for any $f\in\Aut(\UDelta)$.
+\end{remark}
 
 To each ${\gr h}\in\grZ$ we associate the $\LDelta$-automorphism $\<{\mr a}\,;{\gr g}\>\mapsto\<{\gr h}{\cdot}{\mr a}\,;{\gr h}{\cdot}{\gr g}\>$.
 Therefore $\grZ$ is, up to isomorphism, a subgroup of $G$.
 In fact, it is a normal subgroup.
 Note that, for any ${\gr g}\in\grZ$, the orbit of $\phi(\mrX\,;{\gr g})$ under the action of $\grZ$ is $\{\phi(\mrX\,;{\gr h}) : {\gr h}\in\grZ\}$.
 Therefore it coincides with the orbit under the action of $G$ (it cannot get any larger).
-We conclude that for formulas in $\pmDelta(\grZ)$ the notions of generic, persistent, and wide under the two actions coincide.
+We conclude that for formulas in $\pmDelta(\grZ)$ the notions of generic and persistent under the two actions coincide.
 
 We also consider the action of the group $\Autf(\UDelta)$, which we denote by \emph{$H$.}
 Recall that $H\trianglelefteq G$.
 
 \begin{proposition}\label{prop_Ggeneric_persistent}
+  Let $\mrD$  be a $\BDelta$-definable set.
   Assume that $\gamma_H({\mr x})$ is consistent.
-  Then \ssf1$\IMP$\ssf2 for every $\phi({\mr x}\,;{\gr z})\in\Delta$, where
+  Then \ssf1$\IMP$\ssf2 holds, where
   \begin{itemize}
-    \item [1.] $\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic
-    \item [2.] $\phi({\mr x}\,;{\gr g})$ is $H$-wide for every ${\gr g}\in\grZ$.
+    \item [1.] $\mrD$ is $\grZ$-generic
+    \item [2.] ${\gr g}{\cdot}\mrD$ is $H$-wide for every ${\gr g}\in\grZ$.
   \end{itemize}
 \end{proposition}
 
-We will prove that under the assumption of stability also the converse implication holds.
+We will revisit the proposition and its converse implication under the assumption of stability.
 See Theorem~\ref{thm_Ggeneric_persistent}.\vspace*{-0.5\baselineskip}
 %
 \begin{proof}
   Let ${\gr g}$ be given.
-  If $\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic, then so is $\phi({\mr x}\,;{\gr g})$.
-  Then $\phi({\mr x}\,;{\gr g})$ is, a fortiori, $G$-generic.
+  If $\mrD$ is $\grZ$-generic, then so is ${\gr g}{\cdot}\mrD$.
+  Then ${\gr g}{\cdot}\mrD$ is, a fortiori, $G$-generic.
   Therefore \ssf2 follows from Proposition~\ref{prop_Ggeneric_Hpersistent}.
 \end{proof}
 
+We write $({\gr g})_H$ for $\{f({\gr g})\ :\ f\in H\}$, the $H$-orbit of ${\gr g}$.
+
 \begin{fact}\label{fact_wideHcojugate}
-  Let $\mrD=\phi(\mrX\,;{\gr 1})$.
-  Let ${\gr h},{\gr h'}\in\grZ$ be such that ${\gr h'}=f({\gr h})$ for some $f\in H$.
-  Then for every ${\gr g}\in\grZ$ the following are equivalent
+  Let $\mrD=\phi(\mrX\,;{\gr 1})$ for some $\phi({\mr x}\,;{\gr z})\in\pmDelta$.
+  For $i=1,2$ let ${\gr h_i}\in({\gr g_i})_H$.
+  The following are equivalent
   \begin{itemize}
-    \item [1.] ${\gr g}{\cdot}\mrD\,\cap\,{\gr h}{\cdot}\mrD$ is $H$-wide
-    \item [2.] ${\gr g}{\cdot}\mrD\,\cap\,{\gr h'}{\cdot}\mrD$ is $H$-wide.
+    \item [1.] ${\gr g_1}{\cdot}\mrD\ \cap\ {\gr g_2}{\cdot}\mrD$ is $H$-wide
+    \item [2.] ${\gr h_1}{\cdot}\mrD\ \cap\ {\gr h_2}{\cdot}\mrD$ is $H$-wide.
   \end{itemize}
 \end{fact}
 
 \begin{proof}
-  Assume \ssf1 then by Corollary~\ref{corol_intersectionGwide} also ${\gr g}{\cdot}\mrD\,\cap\,{\gr h}{\cdot}\mrD\,\cap\, f[{\gr g}{\cdot}\mrD]\,\cap\, f[{\gr h}{\cdot}\mrD]$ is $H$-wide.
-  A fortiori ${\gr g}{\cdot}\mrD\,\cap\, f[{\gr h}{\cdot}\mrD]$ is $H$-wide.
-  As remarked above, ${\gr h'}{\cdot}\mrD=f[{\gr h}{\cdot}\mrD]$.
-  Then \ssf1$\IMP$\ssf2 follows and, by symmetry, also \ssf2$\IMP$\ssf1.
+  Let $f_i\in H$ be such that ${\gr h_i}\in f_i({\gr g_i})$.
+  Write $\mrC$ for the set in \ssf1.
+  If $\mrC$ is $H$-wide, by Corollary~\ref{corol_intersectionGwide} also $f_1[\mrC]\,\cap\,f_2[\mrC]$ is $H$-wide.
+  A fortiori $f_1[{\gr g_1}{\cdot}\mrD]\,\cap\,f_2[{\gr g_2}{\cdot}\mrD]$ is $H$-wide.
+  Then \ssf1$\IMP$\ssf2 follows from Remark~\ref{rem_H}.
+  By symmetry, this proves the equivalence.
 \end{proof}
-̀̀
-For any $\mrD\subseteq\mrX$, we define 
+%
+̀̀A formula $\psi({\mr x})\in L$ is \emph{symmetric\/} if $\psi({\gr g}\cdot{\mr x})\iff\psi({\gr g^{-1}}\cdot{\mr x})$ holds for every ${\gr g}\in\grZ$.
+We say that $\Psi\subseteq L_{\mr x}$ is symmetric if every formula in $\Psi$ is symmetric.
+When $\Psi$ is symmetric, the map $\iota:\<{\mr a}\,;{\gr g}\>\mapsto\<{\mr a}\,;{\gr g^{-1}}\>$ is an automorphism of $\U^\Delta$.
+As $H$ is normal and $\iota$ is an involution, $\iota\,H=H\,\iota$ and $H\cup\iota\,H$ is a subgroup of $G$.
+In particular, if $f\in H$ and ${\gr g}\in\grZ$ then $f({\gr g^{-1}})=f'({\gr g})^{\gr -1}$ for some $f'\in H$.
+We write \emph{$K$\/} for $H\cup\iota\,H$.
 
-\ceq{\hfill\emph{${\gr\St_H}(\mrD)$}}{=}{\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}\cdot\mrD \textrm{ is } H\textrm{-wide}\}}
+When $\Psi$ is symmetric, we can strengthen Fact~\ref{fact_wideHcojugate} as follows.
 
-\begin{fact}
-  Assume $\mrD=\phi(\mrX\,;{\gr 1})$ is $H$-wide.
-  Let ${\gr g},{\gr h}\in\grZ$ be such that ${\gr h}=f({\gr g})$ for some $f\in H$.
-  Then ${\gr g^{-1}}\cdot{\gr h}\in{\gr\St_H}(\mrD)$.
+\begin{fact}\label{fact_wideHcojugate_symm}
+  Let $\mrD=\phi(\mrX\,;{\gr 1})$ for some $\phi({\mr x}\,;{\gr z})\in\pmDelta$.
+  For $i=1,2$ let ${\gr h_i}\in({\gr g_i})_K$. 
+  Then \ssf1 and \ssf2 of Fact~\ref{fact_wideHcojugate} are equivalent
 \end{fact}
 
 \begin{proof}
-  We need to prove that ${\gr g}{\cdot}\mrD\,\cap\,{\gr h}{\cdot}\mrD$ is $H$-wide.
-  By Fact~\ref{fact_wideHcojugate} this is equivalent to proving that ${\gr g}{\cdot}\mrD$ is $H$-wide.
-  But this follows from Remark~\ref{rem_invariance_normalsubg}.
+  Let $f_i\in K$ be such that ${\gr h_i}\in f_i{\gr g_i})$.
+  By Remark~\ref{rem_invariance_normalsubg} it suffices to consider the case $f_1\in H$ and $f_2\in\iota\,H$.
+  Then $f_2({\gr g_2})=f_3({\gr g_2^{-1}})$.
+  By Fact~\ref{fact_wideHcojugate}, \ssf2 is equivalent to claiming that ${\gr g_1}{\cdot}\mrD\ \cap\ {\gr g_2^{-1}}{\cdot}\mrD$ is $H$-wide. 
+  By symmetry ${\gr g_2^{-1}}{\cdot}\mrD={\gr g_2}{\cdot}\mrD$, so the fact follows.
+\end{proof}
+
+
+For any $\grW\subseteq\grZ$, we write $\<\grW\>$ for the subgroup generated by $\grW$.
+
+\begin{proposition}
+  Assume $\Psi$ is symmetric.
+  Let $\mrD=\phi(\mrX\,;{\gr 1})$ for some $\phi({\mr x}\,;{\gr z})\in\pmDelta$.
+  Let ${\gr g}$ be such that $\mrD\cap{\gr g}{\cdot}\mrD$ is $H$-wide.
+  Then $\mrD\cap{\gr g'}{\cdot}\mrD$ is $H$-wide for every ${\gr g'}\in\<\,({\gr g})_{K}^2\>$.
+\end{proposition}
+
+\begin{proof}
+  Assume inductively that $\mrD\cap{\gr g'}{\cdot}\mrD$ is $H$-wide, where ${\gr g'}\in\<\,({\gr g})_{K}^2\>$.
+  Pick two arbitrary ${\gr a},{\gr b}\in({\gr g})_K$.
+  We claim that $\mrD\cap{\gr a}{\cdot}{\gr b}{\cdot}{\gr g'}{\cdot}\mrD$ is $H$-wide.
+  From the induction hypothesis it follows that ${\gr b}{\cdot}\mrD\cap{\gr b}{\cdot}{\gr g'}{\cdot}\mrD$ is $H$-wide.
+  By Fact~\ref{fact_wideHcojugate_symm}, ${\gr a^{-1}}{\cdot}\mrD\cap{\gr b}{\cdot}{\gr g'}{\cdot}\mrD$ is $H$-wide and the claim follows.
 \end{proof}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%
