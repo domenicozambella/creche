@@ -5,7 +5,7 @@
 \def\medrel#1{\parbox{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[b]{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
-The first two sections introduce saturation and homogeneity and Section~\ref{monster} presents the notation we shall use in the following chapters when working inside a monster model.
+In the first two sections we introduce saturation and homogeneity and Section~\ref{monster} presents the notation we shall use in the following chapters when working inside a monster model.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -26,13 +26,23 @@ The following remark will be used in the sequel without explicit reference.
 Let $k:M\imp N$ be an elementary map and let ${\gr a}$ be an enumeration of $\dom k$. Let $p({\mr x}\,;{\gr z})\subseteq L$. If $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$, then $p({\mr x}\,;k\,{\gr a})$ is finitely consistent in $N$. (We can drop \textit{finitely} in the antecedent but not in the consequent.)
 \end{remark}
 
+\begin{definition}\label{def_saturation}
+  Assume $|L|\le\lambda$.
+  Let ${\mr x}$ be a single variable.
+  We say that an infinite structure $N$ is \emph{$\lambda$-saturated} if it realizes every type $p({\mr x})$ such that
+  \begin{itemize}
+  \item[1.] $p({\mr x})\subseteq L(A)$ for some $A\subseteq N$ of cardinality $<\lambda$;
+  \item[2.] $p({\mr x})$ is finitely consistent in $N$.
+  \end{itemize}
+  We say that $N$ is \emph{saturated\/} if it is $\lambda$-saturated and $|N|=\lambda$.
+  \end{definition}
+  
 We shall see that some theories have saturated models of small size.
 However, the existence of saturated models of arbitrary theories is problematic.
 The following theorem states the existence of a saturated model of cardinality $\lambda$ whenever $|L|<\lambda=\lambda^{<\lambda}$.
 The existence of cardinals of this kind is independent of ZFC.
-If the generalized continuum hypothesis (GCH) holds, every successor cardinal is such that $\lambda=\lambda^{<\lambda}$.
-Without GCH, every inaccessible cardinal has this property.
-Both GCH and the existence of inaccessible cardinals are not generally accepted axioms.
+Every inaccessible cardinal has this property and, if the generalized continuum hypothesis (GCH) holds, every successor cardinal.
+Both the existence of inaccessible cardinals and GCH are not generally accepted axioms.
 
 Nevertheless, saturated models are widely used in model theory, without any worries about their existence.
 In fact, if consistency is an issue, they can be replaced by models that are both $\lambda$-saturated and $\lambda$-homogeneous (see next section) for some less problematic large cardinal $\lambda$.
@@ -60,7 +70,9 @@ The reader who did not read Section~\ref{rich} may replace \ssf{2} in the theore
 \end{remark}
 
 \begin{theorem}\label{saturo->ricco}
-Assume $|L|\le\lambda$ and let $N$ be an infinite structure. Let $\M$ be the category (see Section~\ref{rich}) that consists of models of a complete theory $T$ and elementary maps between these. Then the following are equivalent
+Assume $|L|\le\lambda$.
+Let $\M$ be the category (see Section~\ref{rich}) that consists of $L$-structures and elementary maps between these.
+Then for every model $N$ the following are equivalent
 \begin{itemize}
 \item[1] $N$ is a $\lambda$-saturated structure
 \item[2] $N$ is a $\lambda$-rich model
@@ -72,11 +84,24 @@ Note that it is the completeness of $T$ which makes $\M$ connected.
 
 \vspace*{-\parskip}
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}. Let $k:M\imp N$ be an elementary map of cardinality $<\lambda$. It suffices to show that for every ${\mr b}\in M$ there is a ${\mr c}\in N$ such that $k\cup\big\{\<{\mr b},{\mr c}\>\big\}:M\to N$ is an elementary map. Let ${\gr a}$ be an enumeration of $\dom k$ and define $p({\mr x}\,;{\gr z})=\tp_M({\mr b}\,;{\gr a})$. As $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$ then $p({\mr x}\,;k\,{\gr a})$ is finitely consistent in $N$. The required ${\mr c}$ is any element of $N$ such that $N\models p({\mr c}\,;k\,{\gr a})$. Such a ${\mr c}$ exists by saturation because $|{\gr a}|<\lambda$.
+\ssf{1}$\IMP$\ssf{2}.
+Let $k:M\imp N$ be an elementary map of cardinality $<\lambda$.
+It suffices to show that for every ${\mr b}\in M$ there is a ${\mr c}\in N$ such that $k\cup\big\{\<{\mr b},{\mr c}\>\big\}:M\to N$ is an elementary map.
+Let ${\gr a}$ be an enumeration of $\dom k$ and define $p({\mr x}\,;{\gr z})=\tp_M({\mr b}\,;{\gr a})$.
+As $p({\mr x}\,;{\gr a})$ is finitely consistent in $M$ then $p({\mr x}\,;k\,{\gr a})$ is finitely consistent in $N$.
+The required ${\mr c}$ is any element of $N$ such that $N\models p({\mr c}\,;k\,{\gr a})$. Such a ${\mr c}$ exists by saturation because $|{\gr a}|<\lambda$.
 
-\ssf{2}$\IMP$\ssf{3}. Let $p({\gr z})$ be as in \ssf{3}. By the compactness theorem $N\preceq K\models p({\gr a})$ for some model $K$ and ${\gr a}\in K^{\gr z}$. By the downward  L\"owenheim-Skolem theorem there is a model $A,{\gr a}\subseteq M\preceq K$ of cardinality $\le\lambda$. (Here we use $|L|,|A|,|{\gr z}|\le\lambda$.) By \ssf{2}, there is an elementary embedding $h:M\hookrightarrow N$ that extends $\id_A$. (Here we use $|A|<\lambda$.) Finally, as $M\models p({\gr a})$,  elementarity yields $N\models p(h\,{\gr a})$.
+\ssf{2}$\IMP$\ssf{3}.
+Let $p({\gr z})$ be as in \ssf{3}.
+By the compactness theorem $N\preceq K\models p({\gr a})$ for some model $K$ and ${\gr a}\in K^{\gr z}$.
+By the downward  L\"owenheim-Skolem theorem there is a model $A,{\gr a}\subseteq M\preceq K$ of cardinality $\le\lambda$.
+(Here we use $|L|,|A|,|{\gr z}|\le\lambda$.)
+By \ssf{2}, there is an elementary embedding $h:M\hookrightarrow N$ that extends $\id_A$.
+(Here we use $|A|<\lambda$.)
+Finally, as $M\models p({\gr a})$,  elementarity yields $N\models p(h\,{\gr a})$.
 
-\ssf{3}$\IMP$\ssf{1}.  Trivial. 
+\ssf{3}$\IMP$\ssf{1}.
+Trivial. 
 \end{proof}
 
 Two saturated structures of the same cardinality are isomorphic as soon as they are elementarily equivalent (i.e.\@ as soon as $\0:M\to N$ is an elementary map.) In fact, from Theorems~\ref{saturo->ricco} and~\ref{thm_riccozigzag} we obtain the following (reference to Theorems~\ref{thm_riccozigzag} may be avoided with an easy back-and-forth construction).
@@ -98,7 +123,8 @@ The following models are $\omega\mbox{-}$saturated
 Countable models of $T_{\rm dlo}$ and $T_{\rm rg}$ and uncountable models of $T_{\rm dag}$ or $T_{\rm acf}$ are saturated. 
 \end{corollary}
 \begin{proof}
-By quantifier elimination embeddings coincide with elementary embeddings. Then saturation is proved applying Theorem~\ref{saturo->ricco} and the extension lemmas proved in Chapter~\ref{relational} and~\ref{algebraic}.
+We proved that partial embeddings between models of these theories coincide with elementary embeddings -- that is, quantifier elimination.
+Then saturation is proved applying Theorem~\ref{saturo->ricco} and the extension lemmas proved in Chapter~\ref{relational} and~\ref{algebraic}.
 \end{proof}
 
 The following is a useful test for quantifier elimination.
@@ -117,15 +143,6 @@ Assume $|L|\le\lambda$. Consider the category that consists of models of some th
 \ssf{1}$\IMP$\ssf{2}. Let $k:M\to N$ be a finite partial isomorphism between models of $T$. We claim that it is an elementary map. Let $M'\succeq M$ and $N'\succeq N$ are $\lambda$-saturated models. As these are $\lambda$-rich, $k:M'\to N'$ is elementary by Theorem~\ref{thm_morphism_rich_elementary}.
 \end{proof}
 
-\begin{definition}\label{def_saturation}
-  Let ${\mr x}$ be a single variable and let $\lambda$ be an infinite cardinal. We say that a structure $N$ is \emph{$\lambda$-saturated} if it realizes every type $p({\mr x})$ such that
-  \begin{itemize}
-  \item[1.] $p({\mr x})\subseteq L(A)$ for some $A\subseteq N$ of cardinality $<\lambda$
-  \item[2.] $p({\mr x})$ is finitely consistent in $N$.
-  \end{itemize}
-  We say that $N$ is \emph{saturated\/} if it is $\lambda$-saturated and $|N|=\lambda$.
-  \end{definition}
-  
 \begin{exercise}
   Suppose $|L|\le\omega$ and let $M$ be an infinite structure. Then for every non-principal ultrafilter $F$ on $\omega$ the structure $M^\omega/F$ is a $\omega_1$-saturated elementary superstructure of $M$.
 
@@ -258,7 +275,7 @@ Some terms acquire a slightly different meaning when working inside a monster mo
    \setlength{\rightmargin}{0mm}
    \setlength{\listparindent}{0mm}
    \setlength{\itemindent}{0mm}
-   \setlength{\itemsep}{3mm}
+   \setlength{\itemsep}{1mm}
    \settowidth{\labelwidth}{#1}
    \setlength{\parsep}{0mm}
    \setlength{\partopsep}{0mm}
@@ -267,23 +284,26 @@ Some terms acquire a slightly different meaning when working inside a monster mo
    \let\makelabel\labellalunga}}{
    \end{list}}
 
-\begin{litemize}{{\bf type-definable sets}}
-\item[\emph{truth}] we say that $\phi(x)$ holds if $\U\models\A x\,\phi(x)$ and similarly for other expressions such as $p(x)\imp\neg q(x)$ or $\E y\,p(x,y)$ etc., which are neither first-order formulas nor types;
-\item[\emph{consistency}] we say that $\phi(x)$ is consistent if $\U\models\E x\,\phi(x)$; the consistency of a type $p(x)$ or expressions such as those above is defined similarly;
-\item[\emph{small/large}] cardinalities smaller than $\kappa$ are called small; 
-\item[\emph{models}] are elementary substructure of $\U$ of small cardinality they are denoted by the letters $M$ and $N$;
-\item[\emph{parameters}] are always in $\U$; the symbols $A$, $B$, $C$, etc.\@ denote sets of parameters of small cardinality; calligraphic letters as $\Aa$, $\B$, $\C$, etc.\@ are used for sets of arbitrary cardinality;
-\item[\emph{tuples}] have length $<\kappa$ unless otherwise specified;
-\item[\emph{global types}] are complete finitely consistent types over $\U$; the set of global types is denoted by $S(\U)$;
-\item[\emph{formulas}] have parameters in $\U$ unless otherwise specified;
-\item[\emph{definable sets}] are sets of the form $\phi(\U)$ for some formula $\phi(x)\in L(\U)$; we may say $A$-definable if $\phi(x)\in L(A)$;
-\item[\emph{type-definable sets}] are sets of the form $p(\U)$ for some $p(x)\subseteq L(A)$ where, as the symbol suggests, $A$ has small cardinality;
-\item[\emph{types of tuples}] are denoted by $\tp(a/A)=\tp_\U(a/A)$ and $a\equiv_A b$ abbreviates $\U,a \equiv_A \U,b$; 
+\begin{litemize}{type-definable}
+\item[\emph{truth}] is always evaluated in $\U$, and we say that $\phi(x)$ holds if $\U\models\A x\,\phi(x)$.
+%  and similarly for other expressions such as $p(x)\imp\neg q(x)$ or $\E y\,p(x,y)$ etc., which are neither first-order formulas nor types;
+\item[\emph{consistency}] we say that $\phi(x)$ is consistent if $\U\models\E x\,\phi(x)$.
+% ; the consistency of a type $p(x)$ or expressions such as those above is defined similarly;
+\item[\emph{small/large}] cardinalities smaller than $\kappa$ are called small. 
+\item[\emph{models}] are elementary substructure of $\U$ of small cardinality they are denoted by the letters $M$ and $N$.
+\item[\emph{parameters}] are always in $\U$; the symbols $A$, $B$, $C$, etc.\@ denote sets of parameters of small cardinality; calligraphic letters as $\Aa$, $\B$, $\C$, etc.\@ are used for sets of arbitrary cardinality.
+\item[\emph{tuples}] have length $<\kappa$ unless otherwise specified their type is denoted by $\tp(a/A)=\tp_\U(a/A)$ and $a\equiv_A b$ abbreviates $\U,a \equiv_A \U,b$.
+\item[\emph{small types}] are subsets of $L(\U)$ of small cardinality.
+We may use small types in expression such as $p(x)\imp\neg q(x)$, $\E y\,p(x,y)$, etc. with the obvious meaning though these are neither first-order formulas nor types.
+\item[\emph{global types}] are complete finitely consistent types over $\U$; the set of global types is denoted by $S(\U)$. If $p(x)$ is a global type we write $p(x)\proves\phi(x)$ if $\psi(x)\imp\phi(x)$ for some conjunction $\psi(x)$ of formulas in $p(x)$.
+\item[\emph{formulas}] have parameters in $\U$ unless otherwise specified.
+\item[\emph{definable}] sets are sets of the form $\phi(\U)$ for some formula $\phi(x)\in L(\U)$; we may say $A$-definable if $\phi(x)\in L(A)$.
+\item[\emph{type-definable}] sets are sets of the form $p(\U)$ for some small type $p(x)$.
 \item[\emph{orbits of tuples}] under the action of $\Aut(\U/A)$ are denoted by $\orbit(a/A)$.
 \end{litemize}
 
 Let $x$ be a tuple of variables. For any fixed $A\subseteq \U$ we introduce a topology on $\U^{|x|}$ that we call the \emph{topology induced by $A$} or, for short, \emph{$A\mbox{-}$topology}. 
-(This is non standard terminology, not to be confused with the \textit{logic\/} $A\mbox{-}$topology in Section~\ref{KPtypes}.)
+(This is nonstandard terminology, not to be confused with the \textit{logic\/} $A\mbox{-}$topology in Section~\ref{KPtypes}.)
 The closed sets of the $A\mbox{-}$topology are those of the form $p(\U)$ where $p(x)\subseteq L(A)$ is a type over $A$.
 
 For $\phi(x)\in L(A)$ the sets of the form $\phi(\U)$ are clopen in this topology (and vice versa by Proposition~\ref{prop_normality}).
@@ -386,7 +406,6 @@ By compactness there is a formula $\theta({\gr z})\in p$ such that
 Hence  $\phi(\U^{\mr x};{\gr b})$ is defined by the formula $\E {\gr z}\,\big[\theta({\gr z})\wedge\phi({\mr x}\,;{\gr z})\big]$, which is a formula in $L(A)$ as required.
 \end{proof}
 
-
 \begin{proposition}\label{prop_inv_types}
 Let $p({\mr x})\subseteq L(B)$.
 Then the following are equivalent
@@ -446,7 +465,6 @@ For a counter example consider $\RR$ as a structure in the language of strict or
 
 By quantifier elimination, $0\equiv_{A}1$ but $\RR,1\notmodels\E y\;q(x,y)$.
 However, in any sufficiently saturated elementary extension of $\RR$, we have $1\models\E y\;q(x,y)$.
-
 
 As an application we give a second proof of the proposition above.
 

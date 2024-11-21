@@ -21,7 +21,7 @@ Our only purpose is to illustrate a concrete (relatively speaking) application o
 \section{Ramsey's theorem from coheir sequences}
 \label{Ramsey}
 
-In this chapter we are interest in finite partitions.
+In this chapter we are interested in finite partitions.
 We may represent the partition of a set $X$ into $k$ subsets with a map $f:X\to [k]$.
 The elements of $[k]=\{1,\dots,k\}$ are also called \emph{colors},
 and the partition a \emph{coloring},
@@ -38,7 +38,7 @@ We say that $H\subseteq M$ is a \emph{monochromatic subgraph\/} if the subgraph 
 In combinatorics, monochromatic subgraphs are also called \emph{homogeneous sets.}
 
 The following is a very famous theorem which we prove here in an unusual (and overly convoluted)  way.
-Our purpose is to illustrade the method of proof of Theorem~\ref{thm_Hindman}.
+Our purpose is to illustrate the method of proof of Theorem~\ref{thm_Hindman}.
 In the latter the model theoretic overhead really pays off.
 
 \theoremstyle{mio}
@@ -123,7 +123,7 @@ then ${\mr\bar a}\equiv_A {\mr\bar c}$.
 \newtheorem{EhrenfeuchtMostowski}[thm]{Ehrenfeucht-Mostowski Theorem}
 \begin{EhrenfeuchtMostowski}\label{thm_EM}
 Let $I,<_I$ and $J,<_J$ be two infinite linear orders such that $|J|\le \kappa$.
-Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is an $J$-sequence of $A$-indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/A)\subseteq\EMtp({\mr\bar c}/A)$.
+Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is a $J$-sequence of $A$-indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/A)\subseteq\EMtp({\mr\bar c}/A)$.
 \end{EhrenfeuchtMostowski}
 
 \begin{proof}
@@ -166,10 +166,10 @@ Then ${\mr\bar a}$ is indiscernible over some model $M$ containing $A$.
 \end{proposition}
 
 \begin{proof}
-Fix an model $M$ containing $A$.
+Fix a model $M$ containing $A$.
 By Theorem~\ref{thm_EM} there is an $I$-sequence of $M$-indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/M)\subseteq\EMtp({\mr\bar c}/M)$.
 As ${\mr\bar a}$ is an $A$-indiscernible sequence ${\mr\bar a}\equiv_A{\mr\bar c}$.
-Therefore $h\,{\mr\bar c}={\mr\bar a}$ for some some $h\in\Aut(\U/A)$.
+Therefore $h\,{\mr\bar c}={\mr\bar a}$ for some $h\in\Aut(\U/A)$.
 Hence ${\mr\bar a}$ is indiscernible over $h[M]$.
 \end{proof}
 
@@ -206,117 +206,112 @@ Prove that there is a sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ such that ${
 In this and the following sections we focus on semigroups definable in a first-order structure.
 For a lighter notation, we assume that the semigroup operation \emph{$\ \cdot\ $} is among the symbols of $L$ and that the whole monster model is a semigroup.
 
-We fix a set of parameters $A$.
+In this section we work over a given model $M$.
 For any two sets $\mrA,\mrB\subseteq\U$ we define
 
-\ceq{\hfill\emph{$\mrA\cdot_{\!A}\mrB$}}
+\ceq{\hfill\emph{$\mrA\cdot_M\mrB$}}
 {=}
 {\Big\{ {\mr a}{\cdot}{\mr b}
 \ :\ 
-{\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\cnonfork_{\!A}{\mr b}\Big\}}
+{\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\cnonfork_M{\mr b}\Big\}}
 
-In this and the next section we abbreviate $\O({\mr a}/A)$, 
-the orbit of ${\mr a}$ under $\Aut(\U/A)$, 
-with \emph{${\mr a}_A$}.
-We write \emph{${\mr a}\cdot_{\!A}\mrB$} for $\O({\mr a}/A)\cdot_{\!A}\mrB$.
-Similarly for \emph{$\mrA\cdot_{\!A}{\mr b}$} 
-and \emph{${\mr a}\cdot_{\!A}{\mr b}$.}
+In this and the next section we abbreviate $\O({\mr a}/M)$, 
+the orbit of ${\mr a}$ under $\Aut(\U/M)$, 
+by \emph{$({\mr a})_M$}.
+We write \emph{$\mrA\cdot_M{\mr b}$} for $\mrA\cdot_M({\mr b})_M$ and \emph{${\mr a}\cdot_M{\mr b}$} for $({\mr a})_M\cdot_M({\mr b})_M$.
 
 \begin{proposition}\label{prop_typedef_Ab}
-If $\mrA$ is type definable over $A$ then so is $\mrA\cdot_A{\mr b}$ 
+If $\mrA$ is type definable over $A$ then so is $\mrA\cdot_M{\mr b}$ 
 for any ${\mr b}$.
 \end{proposition}
 \begin{proof}
-  Let $p({\mr y})=\tp({\mr b}/A)$.
-  Then $\mrA\cdot_A{\mr b}$ is defined by the type $q({\mr z})$, where
-
-  \ceq{\hfill q({\mr z})}{=}{\E {\mr x},{\mr y}\ \big[ {\mr z}={\mr x}{\cdot}{\mr y}\ \wedge\ {\mr x}\in\mrA\ \wedge\ {\mr y}\cnonfork_A p\big]}.
+  Let $p({\mr x}\,;{\mr z})$ the type in Exercise~\ref{ex_heir_type}.
+  Then the set $\mrA\cdot_M{\mr b}$ is defined by the type $q({\mr y})=\E {\mr x},{\mr z}\ \big[ {\mr y}={\mr x}{\cdot}{\mr z}\ \wedge\ {\mr x}\in\mrA \big]$.
 \end{proof}
 
-By the invariance of $\cnonfork_{\!A}$,
+By the invariance of $\cnonfork_M$,
 for every $f\in\Aut(\U/A)$ we have 
-$f[\mrA\cdot_{\!A}\mrB]=f[\mrA]\cdot_{\!A}f[\mrB]$
+$f[\mrA\cdot_M\mrB]=f[\mrA]\cdot_Mf[\mrB]$
 %
 Therefore, when $\mrA$ and $\mrB$ are invariant over $A$,
-also $\mrA\cdot_{\!A}\mrB$ is invariant over $A$.
+also $\mrA\cdot_M\mrB$ is invariant over $A$.
 Below we mainly deal with invariant sets.
 
 \begin{proposition}\label{prop_semi_associative}
 For every $A$-invariant sets $\mrA$, $\mrB$, and  $\mrC$.
 
-\ceq{\hfill\mrA\cdot_{\!A}\big(\mrB\cdot_{\!A}\mrC\big)}
+\ceq{\hfill\mrA\cdot_M\big(\mrB\cdot_M\mrC\big)}
 {\subseteq}
-{\big(\mrA\cdot_{\!A}\mrB\big)\cdot_{\!A}\mrC}
+{\big(\mrA\cdot_M\mrB\big)\cdot_M\mrC}
 \end{proposition}
 \begin{proof}
-Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ where ${\mr a}\cnonfork_{\!A}{\mr b}{\cdot}{\mr c}$ and ${\mr b}\cnonfork_{\!A}{\mr c}$.
+Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ where ${\mr a}\cnonfork_M{\mr b}{\cdot}{\mr c}$ and ${\mr b}\cnonfork_M{\mr c}$.
 By extension (Lemma~\ref{lem_coheir_independence}),
 there exists ${\mr a'}$ such that 
-${\mr a}\equiv_{A,\,{\mr b}{\cdot}{\mr c}}{\mr a'}\cnonfork_{\!A}{\mr b}{\cdot}{\mr c},\,{\mr a},\,{\mr b},\,{\mr c}$.
+${\mr a}\equiv_{A,\,{\mr b}{\cdot}{\mr c}}{\mr a'}\cnonfork_M{\mr b}{\cdot}{\mr c},\,{\mr a},\,{\mr b},\,{\mr c}$.
 By transitivity (again Lemma~\ref{lem_coheir_independence}),
-${\mr a'}{\cdot}{\mr b}\cnonfork_{\!A}{\mr c}$.
+${\mr a'}{\cdot}{\mr b}\cnonfork_M{\mr c}$.
 Therefore ${\mr a'}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.
 Finally, as ${\mr a'}\equiv_{A,\,{\mr b}{\cdot}{\mr c}}{\mr a}$,
 also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by $A$-invariance.
 \end{proof}
 
-Let $\mrA$ be a non empty set.
-When $\mrA\cdot_{\!A}\mrA\subseteq\mrA$, we say that it is \emph{idempotent\/} (over $A$).
+Let $\mrA$ be a nonempty set.
+When $\mrA\cdot_M\mrA\subseteq\mrA$, we say that $\mrA$ is \emph{idempotent.}
 
 \begin{corollary}\label{corol_min_idempotent}
 Assume $\mrB\subseteq\mrA$ are both $A$-invariant.
 Then if $\mrA$ is idempotent,
-also $\mrA\cdot_{\!A}\mrB$ is idempotent.
+also $\mrA\cdot_M\mrB$ is idempotent.
 % Similarly,
 % if $\mrA$ is a left-ideal,
-% also  $\mrA\cdot_{\!A}\mrB$ is a left-ideal.
+% also  $\mrA\cdot_M\mrB$ is a left-ideal.
 \end{corollary}
 \begin{proof}
-We check that if $\mrA$ is idempotent so is $\mrA\cdot_{\!A}\mrB$
+We check that if $\mrA$ is idempotent so is $\mrA\cdot_M\mrB$
 
-\ceq{\hfill\big(\mrA\cdot_{\!A}\mrB\big)\ \cdot_{\!A}\ \big(\mrA\cdot_{\!A}\mrB\big)}
+\ceq{\hfill\big(\mrA\cdot_M\mrB\big)\ \cdot_M\ \big(\mrA\cdot_M\mrB\big)}
     {\subseteq}
-    {\mrA\ \cdot_{\!A}\ \big(\mrA\cdot_{\!A}\mrB\big)}\hfill because $\mrA\cdot_{\!A}\mrB\subseteq\mrA$
+    {\mrA\ \cdot_M\ \big(\mrA\cdot_M\mrB\big)}\hfill because $\mrA\cdot_M\mrB\subseteq\mrA$
 
 \ceq{}
     {\subseteq}
-    {\big(\mrA\cdot_{\!A}\mrA\big)\cdot_{\!A}\mrB}\hfill by the lemma above
+    {\big(\mrA\cdot_M\mrA\big)\cdot_M\mrB}\hfill by the lemma above
 
-\ceq{}{\subseteq}{\mrA\cdot_{\!A}\mrB}
+\ceq{}{\subseteq}{\mrA\cdot_M\mrB}
 \end{proof}
 
 We show that, under the assumption of stationarity,
-the operation $\cdot_{\!A}$ is associative.
-The quotient map $\U\to\U/{\equiv_A}$ is almost a homeomorphism.
+the operation $\cdot_M$ is associative.
+The quotient map $\U\to\U/{\equiv_M}$ is almost a homomorphism.
 
 
 \begin{proposition}\label{prop_orbits_main}
-Assume $\cnonfork_{\!A}$ is stationary,
+Assume $\cnonfork_M$ is stationary,
 see Definition~\ref{def_coheir_stationary}.
-Fix ${\mr a}\cnonfork_{\!A}{\mr b}$ arbitrarily.
-Then ${\mr a'}{\cdot}{\mr b'}\equiv_A{\mr a}{\cdot}{\mr b}$ for every 
-${\mr a'}\equiv_A{\mr a}$ and  ${\mr b'}\equiv_A{\mr b}$ such that
-${\mr a'}\cnonfork_{\!A}{\mr b'}$.
-Or, in other words,
-
-\ceq{\hfill({\mr a}{\cdot}{\mr b})_A}{=}{{\mr a}\cdot_{\!A}{\mr b}.}
+Fix ${\mr a}\cnonfork_M{\mr b}$ arbitrarily.
+Then ${\mr a'}{\cdot}{\mr b'}\equiv_M{\mr a}{\cdot}{\mr b}$ for every 
+${\mr a'}\equiv_M{\mr a}$ and  ${\mr b'}\equiv_M{\mr b}$ such that
+${\mr a'}\cnonfork_M{\mr b'}$.
+Or, in other words, $({\mr a}{\cdot}{\mr b})_M={\mr a}\cdot_{\!A}{\mr b}$.
 \end{proposition}
+%
 \begin{proof} 
 We prove two inclusions,
 only the second one requires stationarity.
 
-$\subseteq$ \ As ${\mr a}\cnonfork_{\!A}{\mr b}$ holds by hypothesis,
-${\mr a}{\cdot}{\mr b}\in{\mr a}\cdot_{\!A}{\mr b}$.
+$\subseteq$ \ As ${\mr a}\cnonfork_M{\mr b}$ holds by hypothesis,
+${\mr a}{\cdot}{\mr b}\in{\mr a}\cdot_M{\mr b}$.
 The inclusion follows by invariance.
 
 $\supseteq$ \ By invariance it suffices to show that 
-the l.h.s.\@ contains ${\mr a}\cdot_{\!A}\{{\mr b}\}$.
-Let ${\mr a'}\in{\mr a}_A$ such that ${\mr a'}\cnonfork_{\!A}{\mr b}$.
-We claim that ${\mr a'}{\cdot}{\mr b}\in({\mr a}{\cdot}{\mr b})_A$.
-Both ${\mr a}$ and ${\mr a'}$ satisfy ${\mr a}\equiv_A{\mr x}\cnonfork_{\!A}{\mr b}$.
+the l.h.s.\@ contains $({\mr a})_M\cdot_M\{{\mr b}\}$.
+Let ${\mr a'}\in({\mr a})_M$ such that ${\mr a'}\cnonfork_M{\mr b}$.
+We claim that ${\mr a'}{\cdot}{\mr b}\in({\mr a}{\cdot}{\mr b})_M$.
+Both ${\mr a}$ and ${\mr a'}$ satisfy ${\mr a}\equiv_M{\mr x}\cnonfork_M{\mr b}$.
 By stationarity,
 ${\mr a}\equiv_{A,\,{\mr b}}{\mr a'}$.
-Hence ${\mr a}{\cdot}{\mr b}\equiv_A{\mr a'}{\cdot}{\mr b}$.
+Hence ${\mr a}{\cdot}{\mr b}\equiv_M{\mr a'}{\cdot}{\mr b}$.
 \end{proof}
 
 \begin{corollary}[ (associativity)]\label{corol_orbits_associative}
@@ -324,9 +319,9 @@ Let $M$ be a model and assume $\cnonfork_{\!M}$ is stationary.
 Then for every $M$-invariant sets $\mrA$,
 $\mrB$ and  $\mrC$.
 
-\ceq{\hfill\mrA\cdot_{\!M}\big(\mrB\cdot_{\!M}\mrC\big)}
+\ceq{\hfill\mrA\cdot_M\big(\mrB\cdot_M\mrC\big)}
 {=}
-{\big(\mrA\cdot_{\!M}\mrB\big)\cdot_{\!M}\mrC}
+{\big(\mrA\cdot_M\mrB\big)\cdot_M\mrC}
 \end{corollary}
 
 \begin{proof}
@@ -341,10 +336,10 @@ But inclusion between orbits amounts to equality.
 \end{proof}
 
 \begin{lemma}\label{lem_Hindman}
-Let $M$ be a model and assume $\cnonfork_{\!M}$ is stationary.
+Let $M$ be a model and assume $\cnonfork_M$ is stationary.
 If $\mrA$ is minimal among the
 idempotent sets that are
-type-definable over $M$, then $\mrA={\mr b}_M$ for some (any) ${\mr b}\in\mrA$.
+type-definable over $M$, then $\mrA=({\mr b})_M$ for some (any) ${\mr b}\in\mrA$.
 \end{lemma}
 
 \begin{proof}
@@ -357,23 +352,23 @@ type-definable over $M$ by Proposition~\ref{prop_typedef_Ab}.
 Therefore by minimality $\mrA\cdot_{\!M}{\mr b}=\mrA$.
 %
 Let ${\mr\Aa'}\subseteq\mrA$ contain those ${\mr a}$ such that 
-${\mr a}\cdot_{\!M}{\mr b}={\mr b}_M$.
+${\mr a}\cdot_{\!M}{\mr b}=({\mr b})_M$.
 %
-This set is non empty because ${\mr b}\in\mrA\cdot_{\!M}{\mr b}$.
+This set is nonempty because ${\mr b}\in\mrA\cdot_{\!M}{\mr b}$.
 %
 It is easy to verify that ${\mr\Aa'}$ is type-definable over $M,{\mr b}$.
 %
 As it is clearly invariant over $M$, it is type-definable over $M$.
 %
-By associativity it is idempotent.
+By associativity, it is idempotent.
 %
 Hence, by minimality, ${\mr\Aa'}=\mrA$.
 %
-Then ${\mr b}\in{\mr\Aa'}$, which implies ${\mr b}\cdot_{\!M}{\mr b}={\mr b}_M$.
+Then ${\mr b}\in{\mr\Aa'}$, which implies ${\mr b}\cdot_{\!M}{\mr b}=({\mr b})_M$.
 %
 That is, ${\mr b}$ has idempotent orbit.
 %
-Finally, by minimality, $\mrA={\mr b}_M$.
+Finally, by minimality, $\mrA=({\mr b})_M$.
 \end{proof}
 
 \begin{corollary}\label{corol_idempotent}
@@ -419,7 +414,7 @@ A \emph{$\cpaw$-chain\/} in $\U$ is a tuple ${\mr\bar a}\in\U^{\le\omega}$ such 
 The requirements on  $\cpaw$ are hardly restrictive.
 For example, on a free semigroup we can take the preorder relation given by the length of the words.
 %
-Or, on any semigroup $G$, we could take the trivial relation $G^2$ --the theorem below would remain non trivial.
+Or, on any semigroup $G$, we could take the trivial relation $G^2$ --the theorem below would remain nontrivial.
 
 \theoremstyle{mio}
 \newtheorem{Hindman}[thm]{Hindman's Theorem}
@@ -444,13 +439,13 @@ We interpret $G$ as a structure in a language
 that extends the natural language of semigroups
 with a symbol for $\cpaw$ and one for each subset of $G$.
 %
-Let $\U$ be a saturated elementary superstucture of $G$.
+Let $\U$ be a saturated elementary superstructure of $G$.
 %
 As observed in Remark~\ref{rk_coheir_stationary}, 
 the language makes $\cnonfork_G$ trivially stationary.
 
 We write ${\mr\G'}$ for the type-definable set $\{{\mr x} : G\cpaw{\mr x}\}$,
-which is non empty because $G$ is $\cpaw$-covered.
+which is nonempty because $G$ is $\cpaw$-covered.
 %
 We claim that ${\mr\G'}$ is idempotent.
 %
@@ -513,32 +508,32 @@ that implies the van der Waerden Theorem.
 
 We need a few definitions.
 We work with the same notation as Section~\ref{semigroups}.
-Let $\mrA$ be an idempotent set that is type-definable over $A$.
+Let $\mrA$ be an idempotent set that is type-definable over $M$.
 We say that an element ${\mr c}$ is \emph{left-minimal\/} (w.r.t.\@ $\mrA$) if 
-${\mr c}\in\mrA\cdot_{\!A}{\mr g}$ for every ${\mr g}\in\mrA\cdot_{\!A}{\mr c}$.
+${\mr c}\in\mrA\cdot_M{\mr g}$ for every ${\mr g}\in\mrA\cdot_M{\mr c}$.
 % In other words, ${\mr a}$ is left-minimal 
-% if $\mrW\cdot_{\!A}{\mr a}$, i.e.\@ the left-ideal generated by the orbit of ${\mr a}$, is minimal among the type-definable left-ideals.
+% if $\mrW\cdot_M{\mr a}$, i.e.\@ the left-ideal generated by the orbit of ${\mr a}$, is minimal among the type-definable left-ideals.
 % The ambient set $\mrW$ and the set of parameters $A$ are often implicit in the context.
 
 \begin{proposition}\label{prop_minimal_existence1}
 Let $\mrA$ be idempotent and type-definable over $A$.
 Let ${\mr a}$ be arbitrary.
-Then $\mrA\cdot_{\!A}{\mr a}$ contains a left-minimal element ${\mr c}$.
-When $\mrA\cdot_{\!A}{\mr a}\,\cap\mrA$ is non empty, we can also require that ${\mr c}$ has idempotent orbit.
+Then $\mrA\cdot_M{\mr a}$ contains a left-minimal element ${\mr c}$.
+When $\mrA\cdot_M{\mr a}\,\cap\mrA$ is nonempty, we can also require that ${\mr c}$ has idempotent orbit.
 \end{proposition}
 \begin{proof}
-If ${\mr b}\in\mrA\cdot_{\!A}{\mr a}$ then $\mrA\cdot_{\!A}{\mr b}\subseteq\mrA\cdot_{\!A}{\mr a}$.
-By compacteness we obtain ${\mr c'}\in\mrA\cdot_{\!A}{\mr a}$ such that $\mrA\cdot_{\!A}{\mr b}=\mrA\cdot_{\!A}{\mr c'}$ for every ${\mr b}\in\mrA\cdot_{\!A}{\mr c'}$.
-Hence every ${\mr c}\in\mrA\cdot_{\!A}{\mr c'}$ is left-minimal.
-Note that if ${\mr b}\in\mrA$ then by idempotency  $\mrA\cdot_{\!A}{\mr b}\subseteq\mrA$. Hence when $\mrA\cdot_{\!A}{\mr a}$ and $\mrA$ have non empty intersection, we can also require that ${\mr c'}\in\mrA$. 
-Then $\mrA\cdot_{\!A}{\mr c'}$ is idempotent. 
-Therefore, by Corollary~\ref{corol_idempotent} there is some ${\mr c}\in\mrA\cdot_{\!A}{\mr c'}$ with idempotent orbit.
+If ${\mr b}\in\mrA\cdot_M{\mr a}$ then $\mrA\cdot_M{\mr b}\subseteq\mrA\cdot_M{\mr a}$.
+By compactness we obtain ${\mr c'}\in\mrA\cdot_M{\mr a}$ such that $\mrA\cdot_M{\mr b}=\mrA\cdot_M{\mr c'}$ for every ${\mr b}\in\mrA\cdot_M{\mr c'}$.
+Hence every ${\mr c}\in\mrA\cdot_M{\mr c'}$ is left-minimal.
+Note that if ${\mr b}\in\mrA$ then by idempotency  $\mrA\cdot_M{\mr b}\subseteq\mrA$. Hence when $\mrA\cdot_M{\mr a}$ and $\mrA$ have nonempty intersection, we can also require that ${\mr c'}\in\mrA$. 
+Then $\mrA\cdot_M{\mr c'}$ is idempotent. 
+Therefore, by Corollary~\ref{corol_idempotent} there is some ${\mr c}\in\mrA\cdot_M{\mr c'}$ with idempotent orbit.
 \end{proof}
 
 \begin{proposition}\label{prop_minimal_existence2}
 Let $M$ be a model and assume $\cnonfork_{\!M}$ is stationary.
 Let $\mrA$ be idempotent and type-definable over $M$.
-Let ${\mr c}_M$ be idempotent and such that 
+Let $({\mr c})_M$ be idempotent and such that 
 ${\mr c}\cdot_M\mrA,\ \mrA\cdot_M{\mr c}\subseteq\mrA$.
 Then
 \begin{itemize}
@@ -549,19 +544,19 @@ Then
 
 Note, parenthetically, that the set in \ssf{1} may not be type-definable, 
 therefore Corollary~\ref{corol_idempotent} does not apply 
-directly and we need an indirect argument.
+directly, and we need an indirect argument.
 
 \begin{proof}\ssf{1.} \  
 From ${\mr c}\cdot_M\mrA\subseteq\mrA$ we obtain that $\mrA\cdot_M{\mr c}$ is idempotent.
 As it is  also type-definable, 
 by Corollary~\ref{corol_idempotent} it contains a ${\mr b}$ with idempotent orbit.
-Then ${\mr b}\cdot_M{\mr c}={\mr b}_M$, from which we obtain that ${\mr c}\cdot_M{\mr b}$ is idempotent and contained in ${\mr c}\cdot_M\mrA\cdot_M{\mr c}$.
+Then ${\mr b}\cdot_M{\mr c}=({\mr b})_M$, from which we obtain that ${\mr c}\cdot_M{\mr b}$ is idempotent and contained in ${\mr c}\cdot_M\mrA\cdot_M{\mr c}$.
 
-\ssf{2.} \ From ${\mr g}\in{\mr c}\cdot_M\mrA\cdot_M{\mr c}$ and the idempotency of ${\mr c}_M$ 
+\ssf{2.} \ From ${\mr g}\in{\mr c}\cdot_M\mrA\cdot_M{\mr c}$ and the idempotency of $({\mr c})_M$ 
 we obtain ${\mr g}_M={\mr c}\cdot_M{\mr g}$.
-As ${\mr g}\in\mrA\cdot_M{\mr c}$, from the left-minimality of ${\mr c}_M$ we obtain ${\mr c}\in\mrA\cdot_M{\mr g}$.
-Hence ${\mr c}_M={\mr c}\cdot_M{\mr g}$, by the idempotency of ${\mr g}_M$.
-Therefore ${\mr c}_M={\mr g}_M$, which proves \ssf{2}.
+As ${\mr g}\in\mrA\cdot_M{\mr c}$, from the left-minimality of $({\mr c})_M$ we obtain ${\mr c}\in\mrA\cdot_M{\mr g}$.
+Hence $({\mr c})_M={\mr c}\cdot_M{\mr g}$, by the idempotency of ${\mr g}_M$.
+Therefore $({\mr c})_M={\mr g}_M$, which proves \ssf{2}.
 \end{proof}
 
 The following is a technical lemma that is required in the proof of the main theorem.
@@ -571,7 +566,7 @@ Let $M$ be a model and assume $\cnonfork_{\!M}$ is stationary.
 Let $\sigma:\U\to\U$ be a semigroup homomorphism definable over $M$.
 Then 
 \begin{itemize}
-\item[1.] $\sigma\big[{\mr a}_M\big]=(\sigma\,{\mr a})_M$
+\item[1.] $\sigma\big[({\mr a})_M\big]=(\sigma\,{\mr a})_M$
 
 \item[2.]
 $\sigma\big[{\mr a}\cdot_M{\mr b}\big]=\sigma\,{\mr a}\cdot_M\sigma\,{\mr b}$.
@@ -585,7 +580,7 @@ $\E{\mr y}\,\big[\sigma\,{\mr y}={\mr x}\,\wedge\,{\mr y}\equiv_M{\mr a}\big]$
 is trivially realized by $\sigma\,{\mr a}$.
 By invariance it is equivalent to a type over $M$.
 Therefore it is realized by all elements of $(\sigma\,{\mr a})_M$.
-Hence all elements of $(\sigma\,{\mr a})_M$ are the image of some element in ${\mr a}_M$.
+Hence all elements of $(\sigma\,{\mr a})_M$ are the image of some element in $({\mr a})_M$.
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{39ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
@@ -601,11 +596,11 @@ We prove $\subseteq$.
 Note that ${\mr a'}\cnonfork_M{\mr b'}$ implies $\sigma\,{\mr a'}\cnonfork_M\sigma\,{\mr b'}$.
 Hence the set on l.h.s.\@ is contained in the following\smallskip
 
-\hfil$\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ \sigma\,{\mr a'}\cnonfork_M\sigma\,{\mr b'},\ {\mr a'}\equiv_M{\mr a},\  {\mr b'}\equiv_M{\mr b} \Big\}$.\smallskip
+\hfil$\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ \sigma\,{\mr a'}\cnonfork_M\sigma\,{\mr b'},\ {\mr a'}\equiv_M{\mr a},\  {\mr b'}\equiv_M{\mr b} \Big\}$\smallskip
 
 which is in turn contained in the set on the r.h.s.
 \end{proof}
-
+ 
 Let $\U$ be a semigroup.
 A \emph{nice subsemigroup\/} of $\U$ is a subsemigroup $\mrC$ with the property that if ${\mr a}{\cdot}{\mr b}\in\mrC$ then both ${\mr a},{\mr b}\in \mrC$.
 
@@ -662,7 +657,7 @@ Finally we show how the classical Hales-Jewett theorem follows from its abstract
 Let $C$ be an infinite semigroup.
 Fix a tuple of variables $x$ and let $F\subseteq C^{|x|}$ be a finite set.
 Fix also a finite coloring of $C$.
-Then there is a non constant term $t(x)$ 
+Then there is a non-constant term $t(x)$ 
 of the language of semigroups with parameters in $C$
 such that $\{ t(a): a\in F\}$ is monochromatic.
 \end{HalesJewett}
@@ -682,12 +677,12 @@ For $\Sigma$ a set of maps $\sigma:G\to C$ and $c\in C$ we define
 
 \ceq{\hfill\emph{$\Sigma^{-1}[c]$}}{=}{\bigcap_{\sigma\in\Sigma}\sigma^{-1}[c]}\smallskip
 
-Clearly, when the maps in $\Sigma$ are retractions, $\Sigma^{-1}[c]$ is non empty for all $c\in C$ because it contains at least $c$.
+Clearly, when the maps in $\Sigma$ are retractions, $\Sigma^{-1}[c]$ is nonempty for all $c\in C$ because it contains at least $c$.
 
 \begin{HalesJewett}[ (Yet another variant)]\label{thm_hom_HJ}
 Let $\Sigma$ be a finite set of homomorphisms $\sigma:G\to C$ 
 between infinite semigroups
-such that $\Sigma^{-1}[c]$ is non empty for all $c\in C$.
+such that $\Sigma^{-1}[c]$ is nonempty for all $c\in C$.
 Then, for every finite coloring of $C$, there is a $g\in G$ such that the set 
 $\{\sigma\,g\ :\ \sigma\in\Sigma\}$ is monochromatic.
 \end{HalesJewett}
@@ -718,11 +713,11 @@ The first application of the algebraic structure of $\beta G$
 (the Stone-\v{C}ech compactification of a semigroup $G$) 
 to Ramsey Theory is the celebrated Galvin-Glazer proof of Hindman's theorem. 
 Here we have used saturated models in place of Stone-\v{C}ech compactification.
-The idea to replace the semigroup $\beta G$  has been pioneered by Ludomir Newelsi
+The idea to replace the semigroup $\beta G$  has been pioneered by Ludomir Newelski
 in the study of applications of topological dynamics to model theory. 
 
 The original proof of the Hales-Jewett Theorem by Alfred Hales and Robert Jewett is combinatorial.
-An alternative proof, also combinatorial, has been given by Sheron Shelah.
+An alternative proof, also combinatorial, has been given by Saharon Shelah.
 Our proof is taken from~\cite{CZ}.
 
 \begin{biblist}[]\normalsize

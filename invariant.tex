@@ -165,7 +165,7 @@ We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is 
   \textrm{ for all }\phi({\mr x}\,;{\gr z})\in L(M) 
   \textrm{ such that }\phi({\mr a}\,;{\gr b})}.
 
-  We say that $\tp({\mr a}/M,{\gr b})$ is a \emph{coheir} of $\tp({\mr a}/M)$ or, equivalently, that $\tp({\mr b}/M,{\gr a})$ is an \emph{heir} of $\tp({\mr b}/M)$.
+  We say that $\tp({\mr a}/M,{\gr b})$ is a \emph{coheir} of $\tp({\mr a}/M)$ or, equivalently, that $\tp({\gr b}/M,{\mr a})$ is an \emph{heir} of $\tp({\gr b}/M)$.
   We define the type
 
   \ceq{\hfill\emph{${\mr x}\cnonfork_M{\gr b}$}}
@@ -184,7 +184,13 @@ Note that $\tp({\mr a}/M,{\gr b})$ is a coheir of $\tp({\mr a}/M)$ according to 
 We may think of ${\mr a}\cnonfork_M{\gr b}$ as saying that 
 ${\mr a}$ is \emph{independent\/} from ${\gr b}$ over $M$.
 This is a strong notion of independence.
-In general it is not symmetric, that is ${\mr b}\cnonfork_M{\gr a}$ is not equivalent to ${\gr a}\cnonfork_M{\mr b}$. In Chaper~\ref{stability} we will see that symmetry is equivalent to stability.
+In general it is not symmetric, that is, ${\mr b}\cnonfork_M{\gr a}$ is not equivalent to ${\gr a}\cnonfork_M{\mr b}$. In Chapter~\ref{stability} we will see that symmetry is equivalent to stability.
+
+\begin{remark}
+  In general there is no type that says ${\mr x}\cnonfork_M{\gr z}$.
+  However, for every ${\gr b}\in\U^{\gr z}$ there is a type $p({\mr x}\,;{\gr z})$ that says ${\mr x}\cnonfork_M{\gr z}\equiv_M{\gr b}$.
+  See Exercise~\ref{ex_heir_type}.
+\end{remark}
 
 We will use the following easy lemma without explicit reference.
 
@@ -294,6 +300,10 @@ By quantifier elimination every definable subset of $\U$ is a union of finitely 
 By Dedekind completeness, the trace on $M$ of any interval of $\U$ coincides with that of an $M$-definable interval.
 Therefore $\cnonfork_M$ is $1$-stationary.
 \end{remark}
+
+\begin{exercise}\label{ex_heir_type}
+  Show that for every $b\in\U^z$ there is a type $p(x\,;z)\subseteq(M)$ such that $a\cnonfork b'$ if and only if $a,b'\models p(x\,;z)$.
+\end{exercise}
 
 \begin{exercise}
   Let $T$ be strongly minimal.

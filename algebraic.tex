@@ -84,9 +84,9 @@ The following immediate proposition implies in particular that  $L_{{\rm ter},x}
 \begin{definition}\label{def_rank_independece_ag}
   Let $M\models T_{\rm ag}$.
   %
-  For $A\subseteq M$ and  $c\in M$, we say that  \emph{$c$ is independent from $A$\/} if $\<A\>_M\cap\<c\>_M=\big\{0\big\}$.
+  For $A\subseteq M$ and  $c\in M$, we say that  $c$ is \emph{independent\/} from $A$ if $\<A\>_M\cap\<c\>_M=\big\{0\big\}$.
   %
-  Otherwise we say that \emph{$c$ is dependent from $A$}.
+  Otherwise we say that $c$ is \emph{dependent\/} from $A$.
   %
   The \emph{rank\/} of $M$ is the least cardinality of a subset $A\subseteq M$ such that all elements in $M$ are dependent from $A$.
   %
@@ -101,33 +101,37 @@ In fact, what we do here for abelian groups could be easily generalized to $D$-m
 %
 In practice, it is more convenient to use the following syntactic characterization of independence.
 
-An element $c$ of an abelian group is a \emph{torsion element} if $nc=0$ for some positive integer.
+An element $c$ of an abelian group is a \emph{torsion element} if $n\,c=0$ for some positive integer.
 
 \begin{proposition}\label{prop_trivial_type_in_ag}
   Let $A\subseteq M\models T_{\rm ag}$.
   %
-  Suppose that $c\in M$ is not a torsion element.
+  Suppose that ${\mr c}\in M$ is not a torsion element.
   %
   Then the following are equivalent
   \begin{itemize}
-  \item[1.] $c$ is independent from $A$
-  \item[2.] $p(x)=\attp_M(c/A)$ is trivial (see Notation~\ref{notation1}).
+  \item[1.] ${\mr c}$ is independent from $A$
+  \item[2.] $p({\mr x})=\attp_M({\mr c}/A)$ is trivial (see Notation~\ref{notation1}).
   \end{itemize}
 \end{proposition}
 \begin{proof}
-  \ssf{1}$\IMP$\ssf{2}\quad By Proposition~\ref{corol_formacanonicaterminimoduli}, formulas in $p(x)$ may be assumed to have the form $nx=a$ for some integer $n$ and some $a\in\<A\>_M$.
+  \ssf{1}$\IMP$\ssf{2}.
+  By Proposition~\ref{corol_formacanonicaterminimoduli}, formulas in $p({\mr x})$ may be assumed to have the form $n\,{\mr x}={\gr a}$ for some integer $n$ and some ${\gr a}\in\<A\>_M$.
   %
-  As this formula is satisfied by $c$ then $a\in\<A\>_M\cap\<c\>_M$.
+  As this formula is satisfied by ${\mr c}$ then ${\gr a}\in\<A\>_M\cap\<{\mr c}\>_M$.
   %
-  Hence $a=0$.
+  Hence ${\gr a}=0$.
   %
-  As $c$ is not a torsion element, $n=0$ and the equation is trivial.
+  As ${\mr c}$ is not a torsion element, $n=0$, therefore the equation is trivial.
 
-  \ssf{2}$\IMP$\ssf{1}\quad If $\<A\>_M\cap\<c\>_M\neq\big\{0\big\}$ then $nc=a$ for some $a\in\<A\>_M\sm\{0\}$ and some $n\in\ZZ\sm\{0\}$.
+  \ssf{2}$\IMP$\ssf{1}.
+  Let ${\gr a}\in\<A\>_M\cap\<{\mr c}\>_M\neq\big\{0\big\}$.
   %
-  Then $c$ satisfies the equation $nx=a$.
+  Then $n\,{\mr c}={\gr a}$ for some $n\in\ZZ\sm\{0\}$.
   %
-  This equation is nontrivial (e.g., in $M$ it is not satisfied by $2c$).
+  Then ${\mr c}$ satisfies the equation $n{\mr x}={\gr a}$.
+  %
+  If this equation is trivial $n=0$ and ${\gr a}=0$.
 \end{proof}
 
 \begin{remark}\label{oss_liberi_qf}
@@ -193,12 +197,12 @@ Then $\rank M=|M|$.
 \begin{proposition}\label{prop_tfag_tipi_princ_comp}
 Let $A\subseteq M\models T_{\rm tfag}$.
 %
- Let $p(x)=\atpmtp({\mr b}/A)$, where ${\mr b} \in M$.
+ Let $p({\mr x})=\atpmtp({\mr b}/A)$, where ${\mr b} \in M$.
 %
 Then one of the following holds   
 \begin{itemize}
 \item[1.] ${\mr b}$ is independent from $A$
-\item[2.] $M\models\phi({\mr b})$ for some $\phi(x)\in L_{\rm at}(A)$ such that $\ \proves\ \phi(x)\imp p(x)$.
+\item[2.] $M\models\phi({\mr b})$ for some $\phi({\mr x})\in L_{\rm at}(A)$ such that $\ \proves\ \phi({\mr x})\imp p({\mr x})$.
 \end{itemize}
 \end{proposition}
 
@@ -210,13 +214,13 @@ This is essential to obtain Corollary~\ref{corol_acfUltraOmog1}, and it is one o
 
 \vspace*{-\parskip}
 \begin{proof}
-If ${\mr b}$ is dependent from $A$, then ${\mr b}$ satisfies a non trivial atomic formula $\phi({\mr x})$ which we claim is the formula required in \ssf{2}.
+If ${\mr b}$ is dependent from $A$, then ${\mr b}$ satisfies a nontrivial atomic formula $\phi({\mr x})$ which we claim is the formula required in \ssf{2}.
 %
 It suffices to show that $\phi({\mr x})$ implies a complete $L_{\rm at^\pm}(A)$-type.
 %
 Clearly this type must be $p({\mr x})$.
 %
-Let $\phi({\mr x})$ have the form $nx={\gr a}$ for some $n\in\ZZ\sm\{0\}$ and ${\gr a}\in\<A\>_M\sm\{0\}$.
+Let $\phi({\mr x})$ have the form $n{\mr x}={\gr a}$ for some $n\in\ZZ\sm\{0\}$ and ${\gr a}\in\<A\>_M\sm\{0\}$.
 %
 We show that for every $m\in\ZZ$ and every ${\gr c}\in\<A\>_M$ one of the following holds
 \begin{itemize}
@@ -285,20 +289,12 @@ If $n=0$, then ${\gr a}=0$ since $\phi({\mr x})$ is consistent, and the claim is
 If $n\neq0$ then by consistency ${\gr a}\neq0$, hence a solution exist in $N$ by axiom \ssf{div}.
 \end{proof}
 
-\begin{exercise}
-Prove a converse of Proposition~\ref{prop_md_cons_sodd}.
-%
-Let $A\subseteq N\models T_{\rm ag}$ and let $x$ be a single variable.
-%
-Prove that if $N\models\E x \,\phi(x)$ for every consistent $\phi(x)\in L_{\rm at}(A)$, then $N\models T_{\rm dag}$.
-\end{exercise}
-
 We are ready to prove that divisible abelian groups of infinite rank are $\omega$-rich.
 
 \begin{lemma}\label{lemma_modulo_divisibile_ricco_nonnumer}
-Let $k:M\imp N$ be a partial isomorphism of cardinality $<\lambda$, where $M\models T_{\rm tfag}$ and $N\models T_{\rm dag}$ is a model of rank $\ \ge\lambda$.
-%
-Then for every ${\mr b}\in M$ there is ${\mr c}\in N$ such that $k\cup\big\{\<{\mr b}\,;{\mr c}\>\big\}:M\imp N$ is a partial isomorphism.
+Let $M\models T_{\rm tfag}$.
+Let $N\models T_{\rm dag}$ be a model of rank $\ \ge\lambda$.
+Then for every  partial isomorphism $k:M\imp N$ of cardinality $<\lambda$ and every ${\mr b}\in M$ there is ${\mr c}\in N$ such that $k\cup\big\{\<{\mr b}\,;{\mr c}\>\big\}:M\imp N$ is a partial isomorphism.
 \end{lemma}
 
 \begin{proof}
@@ -343,12 +339,20 @@ The theory $T_{\rm dag}$ is uncountably categorical, complete, and has quantifie
 \end{corollary}
 
 \begin{proof}
-Categoricity and completeness ar immediate (the category presented in the corollary above is connected).
+Categoricity and completeness are immediate (the category presented in the corollary above is connected).
 %
 As for quantifier elimination, let $k:M\to N$ is a partial isomorphism between models of $T_{\rm dag}$.
 %
 If $M\preceq M'$ and $M\preceq N'$ are elementary superstructures of uncountable cardinality then $k:M'\to N'$ is elementary by Theorem~\ref{thm_morphism_rich_elementary} and this suffices to conclude that  $k:M\to N$ is elementary.
 \end{proof}
+
+\begin{exercise}
+  Prove a converse of Proposition~\ref{prop_md_cons_sodd}.
+  %
+  Let $A\subseteq N\models T_{\rm ag}$ and let $x$ be a single variable.
+  %
+  Prove that if $N\models\E x \,\phi(x)$ for every consistent $\phi(x)\in L_{\rm at}(A)$, then $N\models T_{\rm dag}$.
+  \end{exercise}
 
 \begin{exercise}
 Prove that every model of $T_{\rm dag}$ is $\omega$-ultrahomogeneous (independently of cardinality and rank).
@@ -424,7 +428,7 @@ The integer $n$ in the proposition above is called the \emph{degree of $\phi(x)$
 \begin{definition}\label{def_id_trans_alg}
    Let $A\subseteq M\models T_{\rm cr}$.
 %
- An element $b\in M$ is \emph{transcendental over $A$\/} if the type $p(x)=\attp_M(b/A)$ is tr We say that aivial (see Notation~\ref{note_tipi_diagramma} and ~\ref{notation1}).
+ An element $b\in M$ is \emph{transcendental over $A$\/} if the type $p(x)=\attp_M(b/A)$ is trivial (see Notation~\ref{note_tipi_diagramma} and ~\ref{notation1}).
 %
   Otherwise we say that $b$ is \emph{algebraic over $A$}.
 %
@@ -660,7 +664,7 @@ As $M'$ and $N'$ are rich, $k:M'\to N'$ is elementary by Theorem~\ref{thm_morphi
 Hence $k:M\to N$ is also elementary.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{corol_acf_completa}
 The theories $T^p_{\rm acf}$ are complete and uncountably categorical (i.e.\@ $\lambda$-cate\-gori\-cal for every uncountable $\lambda$).
 \end{corollary}
 \begin{proof}
