@@ -494,7 +494,7 @@ Assume $\cnonfork_{\!M}$ is stationary.
 Let $\mrA$ be idempotent and type-definable over $M$.
 Let ${\mr a}$ be arbitrary.
 Then $\mrA\cdot_M{\mr a}$ contains a left-minimal element ${\mr c}$.
-When $\mrA\cap(\mrA\cdot_M{\mr a})$ is nonempty, we can also require that ${\mr c}$ has idempotent orbit.
+When $\mrA\cap(\mrA\cdot_M{\mr a})$ is nonempty, we can also require ${\mr c}\in\mrA\cap(\mrA\cdot_M{\mr a})$ and that it has idempotent orbit.
 \end{proposition}
 \begin{proof}
 If ${\mr b}\in\mrA\cdot_M{\mr a}$ then $\mrA\cdot_M{\mr b}\subseteq\mrA\cdot_M{\mr a}$.
@@ -512,7 +512,7 @@ Therefore, by Corollary~\ref{corol_idempotent} there is some ${\mr c'}\in\mrA\cd
   Then
   \begin{itemize}
   \item[1.]  ${\mr c}\cdot_M\mrA\cdot_M{\mr c}$ contains some ${\mr g}$ with idempotent orbit
-  \item[2.] moreover if ${\mr c}$ is left-minimal, then ${\mr c}\equiv_M{\mr g}$ for every ${\mr g}$ as in \ssf{1}.
+  \item[2.] moreover if ${\mr c}$ is left-minimal, then every such ${\mr g}$ is in $({\mr c})_M$.
   \end{itemize} 
 \end{proposition}
 
@@ -574,11 +574,13 @@ Hence the set on l.h.s.\@ is contained in the following\smallskip
 which is in turn contained in the set on the r.h.s.
 \end{proof}
  
-Let $\U$ be a semigroup.
-A \emph{nice subsemigroup\/} of $\U$ is a subsemigroup $\mrC$ with the property that if ${\mr a}{\cdot}{\mr b}\in\mrC$ then both ${\mr a},{\mr b}\in \mrC$.
+The following theorem is an elegant rephrasing of the celebrated Hales-Jewett Theorem.
+
+Let $G$ be a semigroup.
+A subsemigroup $C$ is \emph{nice\/} if it has the property that if $a{\cdot}b\in C$ then $a,b\in C$.
 
 \begin{void}[Hales-Jewett Theorem (Koppelberg's formulation)]\label{thm_abstract_HJ}
-Let $G$ be an infinite semigroup and let $C\subset G$ be a nice subsemigroup.
+Let $G$ be a semigroup with an infinite nice subsemigroup $C$.
 Let $\Sigma$ be a finite set of retractions of $G$ onto $C$, that is, 
 homomorphisms $\sigma:G\to C$ such that $\sigma_{\restriction C}={\rm id}_C$.
 Then, for every finite coloring of $C$,
@@ -591,54 +593,44 @@ Here $\U$ is a monster model in a language that expands the natural one with a s
 As observed in Remark~\ref{rk_coheir_stationary}, 
 this makes $\cnonfork_G$ stationary.
 Let $\mrC$ be the definable set such that $C=G\cap\mrC$.
-By elementarity, $\mrC$ is a nice subsemigroup of $\U$.
 The language contains also symbols for 
 the retractions $\sigma:\U\to\mrC$.
 
-By Proposition~\ref{prop_minimal_existence1}, there is a left-minimal ${\mr c}\in\mrC$.
-As $\mrC\cdot_M{\mr c}$ is clearly idempotent, we can further require that ${\mr c}$ has idempotent orbit.
+By Proposition~\ref{prop_minimal_existence1} there is ${\mr c}\in\mrC$ that is left-minimal w.r.t.\@ $\mrC$ and has idempotent orbit.
+As $C$ is infinite, we can also require that ${\mr c}\notin G$.
 
-By nicety, $\U\sm\mrC$ satisfy the assumptions of 
-Proposition~\ref{prop_minimal_existence2}.
+By nicety $\U\sm\mrC$ is an idempotent such that ${\mr c}\cdot_G(\U\sm\mrC)\subseteq(\U\sm\mrC)$.
+Therefore we can apply the first claim in Proposition~\ref{prop_minimal_existence2} with $\U\sm\mrC$ for $\mrA$.
+This yields the existence of some  ${\mr g}\in{\mr c}\cdot_G(\U\sm\mrC)\cdot_G{\mr c}$ with idempotent orbit.
 %
-Hence, by the first claim of that proposition, there is an idempotent
-${\mr g}\in{\mr c}\cdot_G(\U\sm\mrC)\cdot_G{\mr c}$.
+(Incidentally, note that ${\mr c}$ is not left-minimal w.r.t.\@ $\U\sm\mrC$, so the second claim in Proposition~\ref{prop_minimal_existence2} does not apply.)
 %
-In particular, ${\mr g}\in\U\sm\mrC$.
-%
-Now apply the second claim of Proposition~\ref{prop_HJ_tecnical},
-with $\mrC$ for $\mrA$, to  obtain 
+Now, from the second claim of Proposition~\ref{prop_HJ_tecnical} we obtain that 
 $\sigma\,{\mr g}\in{\mr c}\cdot_G\mrC\cdot_G{\mr c}$ 
 for all $\sigma\in\Sigma$.
 %
-As $\sigma\,{\mr g}$ is also idempotent, we apply 
-Proposition~\ref{prop_minimal_existence2} to conclude that 
-$\sigma\,{\mr g}\equiv_G{\mr c}$.
+As these $\sigma\,{\mr g}$ have idempotent orbits, we apply the second claim Proposition~\ref{prop_minimal_existence2} with $\mrC$ for $\mrA$, to conclude that 
+$\sigma\,{\mr g}\equiv_G{\mr c}$ for every $\sigma\in\Sigma$.
 %
 In particular the set $\{\sigma\,{\mr g}:\sigma\in\Sigma\}$ is monochromatic.
 
-Though the element ${\mr g}$ above need not belong to $G\sm C$,
-by elementarity $G\sm C$ contains some $a$ with the same property and 
-this proves the theorem.
+Though ${\mr g}$ above need not belong to $G\sm C$, by elementarity $G\sm C$ contains some $a$ with the same property.
 \end{proof}
 
-Finally we show how the classical Hales-Jewett theorem follows from its abstract version.
+Finally we derive the classical Hales-Jewett Theorem from the above algebraic version.
 
 \begin{void}[Hales-Jewett Theorem (classical formulation)]\label{thm_HalesJewett}
-Let $C$ be an infinite semigroup.
-Fix a tuple of variables $x$ and let $F\subseteq C^{|x|}$ be a finite set.
-Fix also a finite coloring of $C$.
-Then there is a non-constant term $t(x)$ 
-of the language of semigroups with parameters in $C$
-such that $\{ t(a): a\in F\}$ is monochromatic.
+  Let $C$ be an infinite semigroup.
+  Let $F\subseteq C$ be a finite set.
+  Then, given any finite coloring of $C$, there is a non-constant term $t(x)$ in the language of semigroups with parameters in $C$ such that the set $\{ t(a)^C: a\in F\}$ is monochromatic ($x$ is a single variable and $t(a)^C$ is the evaluation of $t(a)$ in $C$).
 \end{void}
 
 \begin{proof}
-Let $G$ be the set of terms $t(x)$ in the language of semigroups 
-with parameters in $C$ and free variables in $x$.
-Then $G$ is a semigroup under the natural operation.
-For every $a\in C^{|x|}$ the map $\sigma_a:t(x)\mapsto t(a)$ is a retraction.
-Hence we can apply the theorem above.
+  Let $G$ be the set of the terms n the language of semigroups with parameters in $C$ where at most the variable $x$ occur.
+  Then $G$ is a semigroup under the natural operation and $C$ is a nice subgroup.
+  For every $a\in C$ the map $\sigma_a$ that takes $t(x)$ to $t(a)^C$.
+  These are a retraction of $G$ onto $C$.
+  Hence we can apply Theorem~\ref{thm_abstract_HJ}.
 \end{proof}
 
 \begin{exercise}\label{thm_hom_HJ}
@@ -678,18 +670,24 @@ $\{\sigma\,g\ :\ \sigma\in\Sigma\}$ is monochromatic.
   Prove that ${\mr c}\cdot_M\mrA\cdot_M{\mr c}\;/\equiv_M$ is a group with identity $({\mr c})_M$ and multiplication $\cdot_M$.
 \end{exercise}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notes and references}
 
 The first application of the algebraic structure of $\beta G$ 
 (the Stone-\v{C}ech compactification of a semigroup $G$) 
 to Ramsey Theory is the celebrated Galvin-Glazer proof of Hindman's theorem. 
 Here we have used saturated models in place of Stone-\v{C}ech compactification.
-The idea to replace the semigroup $\beta G$  has been pioneered by Ludomir Newelski
-in the study of applications of topological dynamics to model theory. 
+The idea to replace the semigroup $\beta G$ with types has been pioneered by Ludomir Newelski
+in the study of applications of topological dynamics to model theory.
+Our exposition follows~\cite{CZ}.
 
 The original proof of the Hales-Jewett Theorem by Alfred Hales and Robert Jewett is combinatorial.
 An alternative proof, also combinatorial, has been given by Saharon Shelah.
-Our proof is taken from~\cite{CZ}.
+The formulation with retractions is from~\cite{Koppelberg}.
 
 \begin{biblist}[]\normalsize
   \bib{CZ}{article}{
@@ -706,6 +704,16 @@ Our proof is taken from~\cite{CZ}.
   %  review={\MR{4404631}},
   %  doi={10.1017/jsl.2019.93},
 }\smallskip
+  \bib{Koppelberg}{article}{
+  author={Koppelberg, Sabine},
+  title={The Hales-Jewett theorem via retractions},
+  booktitle={Proceedings of the 18th Summer Conference on Topology and its Applications},
+  journal={Topology Proc.},
+  volume={28},
+  date={2004},
+  number={2},
+  pages={595--601},
+}
   \end{biblist}
 
 \begin{comment}
