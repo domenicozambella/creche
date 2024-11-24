@@ -207,7 +207,7 @@ In this and the following sections we focus on semigroups definable in a first-o
 For a lighter notation, we assume that the semigroup operation \emph{$\ \cdot\ $} is among the symbols of $L$ and that the whole monster model is a semigroup.
 
 In this section we work over a given model $M$.
-For any two sets $\mrA,\mrB\subseteq\U$ we define
+For any two sets $\mrA,\mrB\subseteq\U^{\mr x}$ we define
 
 \ceq{\hfill\emph{$\mrA\cdot_M\mrB$}}
 {=}
@@ -218,10 +218,10 @@ For any two sets $\mrA,\mrB\subseteq\U$ we define
 In this and the next section we abbreviate $\O({\mr a}/M)$, 
 the orbit of ${\mr a}$ under $\Aut(\U/M)$, 
 by \emph{$({\mr a})_M$}.
-We write \emph{$\mrA\cdot_M{\mr b}$} for $\mrA\cdot_M({\mr b})_M$ and \emph{${\mr a}\cdot_M{\mr b}$} for $({\mr a})_M\cdot_M({\mr b})_M$.
+We write \emph{$\mrA\cdot_M{\mr b}$} for $\mrA\cdot_M({\mr b})_M$ and \emph{${\mr a}\cdot_M{\mr b}$} for $({\mr a})_M\cdot_M{\mr b}$.
 
 \begin{proposition}\label{prop_typedef_Ab}
-If $\mrA$ is type definable over $A$ then so is $\mrA\cdot_M{\mr b}$ 
+If $\mrA$ is type definable over $M$ then so is $\mrA\cdot_M{\mr b}$ 
 for any ${\mr b}$.
 \end{proposition}
 \begin{proof}
@@ -229,16 +229,14 @@ for any ${\mr b}$.
   Then the set $\mrA\cdot_M{\mr b}$ is defined by the type $q({\mr y})=\E {\mr x},{\mr z}\ \big[ {\mr y}={\mr x}{\cdot}{\mr z}\ \wedge\ {\mr x}\in\mrA \big]$.
 \end{proof}
 
-By the invariance of $\cnonfork_M$,
-for every $f\in\Aut(\U/A)$ we have 
-$f[\mrA\cdot_M\mrB]=f[\mrA]\cdot_Mf[\mrB]$
+From the invariance of $\cnonfork_M$ it follows immediately that $f[\mrA\cdot_M\mrB]=f[\mrA]\cdot_Mf[\mrB]$ for every $f\in\Aut(\U/M)$.
 %
-Therefore, when $\mrA$ and $\mrB$ are invariant over $A$,
-also $\mrA\cdot_M\mrB$ is invariant over $A$.
-Below we mainly deal with invariant sets.
+Therefore, when $\mrA$ and $\mrB$ are invariant over $M$,
+also $\mrA\cdot_M\mrB$ is invariant over $M$.
+Below we are mostly concerned with sets that are type-definable, therefore invariant, over $M$.
 
 \begin{proposition}\label{prop_semi_associative}
-For every $A$-invariant sets $\mrA$, $\mrB$, and  $\mrC$.
+For every $M$-invariant sets $\mrA$, $\mrB$, and  $\mrC$.
 
 \ceq{\hfill\mrA\cdot_M\big(\mrB\cdot_M\mrC\big)}
 {\subseteq}
@@ -248,43 +246,17 @@ For every $A$-invariant sets $\mrA$, $\mrB$, and  $\mrC$.
 Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ where ${\mr a}\cnonfork_M{\mr b}{\cdot}{\mr c}$ and ${\mr b}\cnonfork_M{\mr c}$.
 By extension (Lemma~\ref{lem_coheir_independence}),
 there exists ${\mr a'}$ such that 
-${\mr a}\equiv_{A,\,{\mr b}{\cdot}{\mr c}}{\mr a'}\cnonfork_M{\mr b}{\cdot}{\mr c},\,{\mr a},\,{\mr b},\,{\mr c}$.
+${\mr a}\equiv_{M,\,{\mr b}{\cdot}{\mr c}}{\mr a'}\cnonfork_M{\mr b}{\cdot}{\mr c},\,{\mr a},\,{\mr b},\,{\mr c}$.
 By transitivity (again Lemma~\ref{lem_coheir_independence}),
 ${\mr a'}{\cdot}{\mr b}\cnonfork_M{\mr c}$.
 Therefore ${\mr a'}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.
-Finally, as ${\mr a'}\equiv_{A,\,{\mr b}{\cdot}{\mr c}}{\mr a}$,
-also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by $A$-invariance.
-\end{proof}
-
-Let $\mrA$ be a nonempty set.
-When $\mrA\cdot_M\mrA\subseteq\mrA$, we say that $\mrA$ is \emph{idempotent.}
-
-\begin{corollary}\label{corol_min_idempotent}
-Assume $\mrB\subseteq\mrA$ are both $A$-invariant.
-Then if $\mrA$ is idempotent,
-also $\mrA\cdot_M\mrB$ is idempotent.
-% Similarly,
-% if $\mrA$ is a left-ideal,
-% also  $\mrA\cdot_M\mrB$ is a left-ideal.
-\end{corollary}
-\begin{proof}
-We check that if $\mrA$ is idempotent so is $\mrA\cdot_M\mrB$
-
-\ceq{\hfill\big(\mrA\cdot_M\mrB\big)\ \cdot_M\ \big(\mrA\cdot_M\mrB\big)}
-    {\subseteq}
-    {\mrA\ \cdot_M\ \big(\mrA\cdot_M\mrB\big)}\hfill because $\mrA\cdot_M\mrB\subseteq\mrA$
-
-\ceq{}
-    {\subseteq}
-    {\big(\mrA\cdot_M\mrA\big)\cdot_M\mrB}\hfill by the lemma above
-
-\ceq{}{\subseteq}{\mrA\cdot_M\mrB}
+Finally, as ${\mr a'}\equiv_{M,\,{\mr b}{\cdot}{\mr c}}{\mr a}$,
+also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by $M$-invariance.
 \end{proof}
 
 We show that, under the assumption of stationarity,
 the operation $\cdot_M$ is associative.
-The quotient map $\U\to\U/{\equiv_M}$ is almost a homomorphism.
-
+The quotient map $\U^{\mr x}\to\U^{\mr x}/{\equiv_M}$ is comes close to being a semigroup homomorphism.
 
 \begin{proposition}\label{prop_orbits_main}
 Assume $\cnonfork_M$ is stationary,
@@ -293,29 +265,27 @@ Fix ${\mr a}\cnonfork_M{\mr b}$ arbitrarily.
 Then ${\mr a'}{\cdot}{\mr b'}\equiv_M{\mr a}{\cdot}{\mr b}$ for every 
 ${\mr a'}\equiv_M{\mr a}$ and  ${\mr b'}\equiv_M{\mr b}$ such that
 ${\mr a'}\cnonfork_M{\mr b'}$.
-Or, in other words, $({\mr a}{\cdot}{\mr b})_M={\mr a}\cdot_{\!A}{\mr b}$.
+Or, in other words, $({\mr a}{\cdot}{\mr b})_M={\mr a}\cdot_M{\mr b}$.
 \end{proposition}
 %
 \begin{proof} 
-We prove two inclusions,
-only the second one requires stationarity.
+We prove two inclusions, the second one requires stationarity.
 
 $\subseteq$ \ As ${\mr a}\cnonfork_M{\mr b}$ holds by hypothesis,
 ${\mr a}{\cdot}{\mr b}\in{\mr a}\cdot_M{\mr b}$.
 The inclusion follows by invariance.
 
-$\supseteq$ \ By invariance it suffices to show that 
-the l.h.s.\@ contains $({\mr a})_M\cdot_M\{{\mr b}\}$.
-Let ${\mr a'}\in({\mr a})_M$ such that ${\mr a'}\cnonfork_M{\mr b}$.
-We claim that ${\mr a'}{\cdot}{\mr b}\in({\mr a}{\cdot}{\mr b})_M$.
+$\supseteq$ \ By invariance it suffices to show that the l.h.s.\@ contains $({\mr a})_M\cdot_M\{{\mr b}\}$.
+Pick any ${\mr a'}\equiv_M{\mr a}_M$ such that ${\mr a'}\cnonfork_M{\mr b}$.
+We need to prove that ${\mr a'}{\cdot}{\mr b}\in({\mr a}{\cdot}{\mr b})_M$.
 Both ${\mr a}$ and ${\mr a'}$ satisfy ${\mr a}\equiv_M{\mr x}\cnonfork_M{\mr b}$.
 By stationarity,
-${\mr a}\equiv_{A,\,{\mr b}}{\mr a'}$.
+${\mr a}\equiv_{M,\,{\mr b}}{\mr a'}$.
 Hence ${\mr a}{\cdot}{\mr b}\equiv_M{\mr a'}{\cdot}{\mr b}$.
 \end{proof}
 
 \begin{corollary}[ (associativity)]\label{corol_orbits_associative}
-Let $M$ be a model and assume $\cnonfork_{\!M}$ is stationary.
+Assume $\cnonfork_{\!M}$ is stationary.
 Then for every $M$-invariant sets $\mrA$,
 $\mrB$ and  $\mrC$.
 
@@ -335,18 +305,21 @@ Proposition~\ref{prop_semi_associative} proves that inclusion $\subseteq$ holds 
 But inclusion between orbits amounts to equality.
 \end{proof}
 
+Let $\mrA$ be a nonempty set.
+When $\mrA\cdot_M\mrA\subseteq\mrA$, we say that $\mrA$ is \emph{idempotent.}
+Note that if  $\mrA$ is idempotent and $\mrB\subseteq\mrA$, then also $\mrA\cdot_M\mrB$ is idempotent.
+
 \begin{lemma}\label{lem_Hindman}
-Let $M$ be a model and assume $\cnonfork_M$ is stationary.
+Assume $\cnonfork_M$ is stationary.
 If $\mrA$ is minimal among the
 idempotent sets that are
 type-definable over $M$, then $\mrA=({\mr b})_M$ for some (any) ${\mr b}\in\mrA$.
 \end{lemma}
 
 \begin{proof}
-Fix arbitrarily some ${\mr b}\in\mrA$.
+Pick arbitrarily some ${\mr b}\in\mrA$.
 %
-By Corollary~\ref{corol_min_idempotent},
-the set $\mrA\cdot_{\!M}{\mr b}$ is contained in $\mrA$, idempotent and 
+The set $\mrA\cdot_{\!M}{\mr b}$ is contained in $\mrA$, idempotent and 
 type-definable over $M$ by Proposition~\ref{prop_typedef_Ab}.
 %
 Therefore by minimality $\mrA\cdot_{\!M}{\mr b}=\mrA$.
@@ -383,7 +356,7 @@ with the proof of Ramsey's theorem to obtain Hindman's theorem in a straightforw
 % Though this theorem is not explicitely stated in Newelski's papers, 
 % our proof may be deduced from his work (though the generalization to semigroups may require some work).
 
-Let ${\mr\bar a}$ be a tuple of elements of $\U$ of length $\le\omega$.
+Let ${\mr\bar a}$ be a tuple of elements of $\U^{\mr x}$ of length $\le\omega$.
 We write $\fp\,{\mr\bar a}$ for the set of finite products of elements 
 of ${\mr\bar a}$ taken in increasing order. 
 Namely, 
@@ -508,61 +481,61 @@ that implies the van der Waerden Theorem.
 
 We need a few definitions.
 We work with the same notation as Section~\ref{semigroups}.
-Let $\mrA$ be an idempotent set that is type-definable over $M$.
+% Let $\mrA$ be an idempotent set that is type-definable over $M$.
 We say that an element ${\mr c}$ is \emph{left-minimal\/} (w.r.t.\@ $\mrA$) if 
 ${\mr c}\in\mrA\cdot_M{\mr g}$ for every ${\mr g}\in\mrA\cdot_M{\mr c}$.
 % In other words, ${\mr a}$ is left-minimal 
 % if $\mrW\cdot_M{\mr a}$, i.e.\@ the left-ideal generated by the orbit of ${\mr a}$, is minimal among the type-definable left-ideals.
-% The ambient set $\mrW$ and the set of parameters $A$ are often implicit in the context.
+% The ambient set $\mrW$ and the set of parameters $M$ are often implicit in the context.
+It is immediate that if ${\mr c}$ is left-minimal then any ${\mr b}\in\mrA\cdot_M{\mr c}$ is also left-minimal.% and $\mrA\cdot_M{\mr c}=\mrA\cdot_M{\mr b}$.
 
 \begin{proposition}\label{prop_minimal_existence1}
-Let $\mrA$ be idempotent and type-definable over $A$.
+Assume $\cnonfork_{\!M}$ is stationary.
+Let $\mrA$ be idempotent and type-definable over $M$.
 Let ${\mr a}$ be arbitrary.
 Then $\mrA\cdot_M{\mr a}$ contains a left-minimal element ${\mr c}$.
-When $\mrA\cdot_M{\mr a}\,\cap\mrA$ is nonempty, we can also require that ${\mr c}$ has idempotent orbit.
+When $\mrA\cap(\mrA\cdot_M{\mr a})$ is nonempty, we can also require that ${\mr c}$ has idempotent orbit.
 \end{proposition}
 \begin{proof}
 If ${\mr b}\in\mrA\cdot_M{\mr a}$ then $\mrA\cdot_M{\mr b}\subseteq\mrA\cdot_M{\mr a}$.
-By compactness we obtain ${\mr c'}\in\mrA\cdot_M{\mr a}$ such that $\mrA\cdot_M{\mr b}=\mrA\cdot_M{\mr c'}$ for every ${\mr b}\in\mrA\cdot_M{\mr c'}$.
-Hence every ${\mr c}\in\mrA\cdot_M{\mr c'}$ is left-minimal.
-Note that if ${\mr b}\in\mrA$ then by idempotency  $\mrA\cdot_M{\mr b}\subseteq\mrA$. Hence when $\mrA\cdot_M{\mr a}$ and $\mrA$ have nonempty intersection, we can also require that ${\mr c'}\in\mrA$. 
-Then $\mrA\cdot_M{\mr c'}$ is idempotent. 
-Therefore, by Corollary~\ref{corol_idempotent} there is some ${\mr c}\in\mrA\cdot_M{\mr c'}$ with idempotent orbit.
+By compactness we obtain ${\mr c}\in\mrA\cdot_M{\mr a}$ such that $\mrA\cdot_M{\mr b}=\mrA\cdot_M{\mr c}\subseteq\mrA\cdot_M{\mr a}$ for every ${\mr b}\in\mrA\cdot_M{\mr c}$.
+Hence any ${\mr c'}\in\mrA\cdot_M{\mr c}$ is left-minimal.
+Note that if ${\mr b}\in\mrA$ then by idempotency  $\mrA\cdot_M{\mr b}\subseteq\mrA$. Hence when $\mrA\cdot_M{\mr a}$ and $\mrA$ have nonempty intersection, we can also require that ${\mr c}\in\mrA$. 
+Then $\mrA\cdot_M{\mr c}$ is idempotent. 
+Therefore, by Corollary~\ref{corol_idempotent} there is some ${\mr c'}\in\mrA\cdot_M{\mr c}$ with idempotent orbit.
 \end{proof}
 
 \begin{proposition}\label{prop_minimal_existence2}
-Let $M$ be a model and assume $\cnonfork_{\!M}$ is stationary.
-Let $\mrA$ be idempotent and type-definable over $M$.
-Let $({\mr c})_M$ be idempotent and such that 
-${\mr c}\cdot_M\mrA,\ \mrA\cdot_M{\mr c}\subseteq\mrA$.
-Then
-\begin{itemize}
-\item[1.]  ${\mr c}\cdot_M\mrA\cdot_M{\mr c}$ contains some ${\mr g}$ with idempotent orbit 
-\item[2.] if moreover ${\mr c}$ is left-minimal, then ${\mr c}\equiv_M{\mr g}$ for every ${\mr g}$ as in \ssf{1}.
-\end{itemize} 
+  Assume $\cnonfork_M$ is stationary.
+  Let $\mrA$ be idempotent and type-definable over $M$.
+  Let $({\mr c})_M$ be idempotent and such that ${\mr c}\cdot_M\mrA\subseteq\mrA$.
+  Then
+  \begin{itemize}
+  \item[1.]  ${\mr c}\cdot_M\mrA\cdot_M{\mr c}$ contains some ${\mr g}$ with idempotent orbit
+  \item[2.] moreover if ${\mr c}$ is left-minimal, then ${\mr c}\equiv_M{\mr g}$ for every ${\mr g}$ as in \ssf{1}.
+  \end{itemize} 
 \end{proposition}
 
-Note, parenthetically, that the set in \ssf{1} may not be type-definable, 
-therefore Corollary~\ref{corol_idempotent} does not apply 
-directly, and we need an indirect argument.
+Note, parenthetically, that in general the set in \ssf{1} need not be type-definable.
+Therefore Corollary~\ref{corol_idempotent} does not apply directly, and we need an indirect argument.
 
-\begin{proof}\ssf{1.} \  
+\begin{proof}\ssf{1}.  
 From ${\mr c}\cdot_M\mrA\subseteq\mrA$ we obtain that $\mrA\cdot_M{\mr c}$ is idempotent.
-As it is  also type-definable, 
-by Corollary~\ref{corol_idempotent} it contains a ${\mr b}$ with idempotent orbit.
-Then ${\mr b}\cdot_M{\mr c}=({\mr b})_M$, from which we obtain that ${\mr c}\cdot_M{\mr b}$ is idempotent and contained in ${\mr c}\cdot_M\mrA\cdot_M{\mr c}$.
+As it is  also type-definable, by Corollary~\ref{corol_idempotent} it contains a ${\mr b}$ with idempotent orbit.
+Note that ${\mr b}\cdot_M{\mr c}=({\mr b})_M$.
+Then $({\mr g})_M={\mr c}\cdot_M{\mr b}$ is as required by \ssf1.
 
-\ssf{2.} \ From ${\mr g}\in{\mr c}\cdot_M\mrA\cdot_M{\mr c}$ and the idempotency of $({\mr c})_M$ 
-we obtain ${\mr g}_M={\mr c}\cdot_M{\mr g}$.
-As ${\mr g}\in\mrA\cdot_M{\mr c}$, from the left-minimality of $({\mr c})_M$ we obtain ${\mr c}\in\mrA\cdot_M{\mr g}$.
-Hence $({\mr c})_M={\mr c}\cdot_M{\mr g}$, by the idempotency of ${\mr g}_M$.
-Therefore $({\mr c})_M={\mr g}_M$, which proves \ssf{2}.
+\ssf{2}. From ${\mr g}\in{\mr c}\cdot_M\mrA\cdot_M{\mr c}$ and ${\mr c}\cdot_M\mrA\subseteq\mrA$ we obtain that ${\mr g}\in\mrA\cdot_M{\mr c}$.
+Then by left-minimality ${\mr c}\in\mrA\cdot_M{\mr g}$.
+As $({\mr g})_M$ is idempotent, ${\mr c}\cdot_M{\mr g}=({\mr c})_M$.
+By the choice of ${\mr g}$, we know that ${\mr c}\cdot_M{\mr g}=({\mr g})_M$.
+Then \ssf{2} follows.
 \end{proof}
 
 The following is a technical lemma that is required in the proof of the main theorem.
 
 \begin{proposition}\label{prop_HJ_tecnical}
-Let $M$ be a model and assume $\cnonfork_{\!M}$ is stationary.
+  Assume $\cnonfork_{\!M}$ is stationary.
 Let $\sigma:\U\to\U$ be a semigroup homomorphism definable over $M$.
 Then 
 \begin{itemize}
@@ -604,15 +577,13 @@ which is in turn contained in the set on the r.h.s.
 Let $\U$ be a semigroup.
 A \emph{nice subsemigroup\/} of $\U$ is a subsemigroup $\mrC$ with the property that if ${\mr a}{\cdot}{\mr b}\in\mrC$ then both ${\mr a},{\mr b}\in \mrC$.
 
-\theoremstyle{mio}
-\newtheorem{HalesJewett}[thm]{Hales-Jewett Theorem}
-\begin{HalesJewett}[ (Koppelberg's version)]\label{thm_abstract_HJ}
+\begin{void}[Hales-Jewett Theorem (Koppelberg's formulation)]\label{thm_abstract_HJ}
 Let $G$ be an infinite semigroup and let $C\subset G$ be a nice subsemigroup.
 Let $\Sigma$ be a finite set of retractions of $G$ onto $C$, that is, 
 homomorphisms $\sigma:G\to C$ such that $\sigma_{\restriction C}={\rm id}_C$.
 Then, for every finite coloring of $C$,
 there is an $a\in G\sm C$ such that $\{\sigma\,a:\sigma\in\Sigma\}$ is monochromatic.
-\end{HalesJewett}
+\end{void}
 
 \begin{proof}
 Let $G\preceq\U$.
@@ -653,14 +624,14 @@ this proves the theorem.
 
 Finally we show how the classical Hales-Jewett theorem follows from its abstract version.
 
-\begin{HalesJewett}[ (Classical version)]\label{thm_HalesJewett}
+\begin{void}[Hales-Jewett Theorem (classical formulation)]\label{thm_HalesJewett}
 Let $C$ be an infinite semigroup.
 Fix a tuple of variables $x$ and let $F\subseteq C^{|x|}$ be a finite set.
 Fix also a finite coloring of $C$.
 Then there is a non-constant term $t(x)$ 
 of the language of semigroups with parameters in $C$
 such that $\{ t(a): a\in F\}$ is monochromatic.
-\end{HalesJewett}
+\end{void}
 
 \begin{proof}
 Let $G$ be the set of terms $t(x)$ in the language of semigroups 
@@ -670,42 +641,42 @@ For every $a\in C^{|x|}$ the map $\sigma_a:t(x)\mapsto t(a)$ is a retraction.
 Hence we can apply the theorem above.
 \end{proof}
 
-We conclude with a variant of Theorem~\ref{thm_abstract_HJ} that applies to 
-a broader class of semigroup homomorphisms. 
-%
-For $\Sigma$ a set of maps $\sigma:G\to C$ and $c\in C$ we define 
-
-\ceq{\hfill\emph{$\Sigma^{-1}[c]$}}{=}{\bigcap_{\sigma\in\Sigma}\sigma^{-1}[c]}\smallskip
-
-Clearly, when the maps in $\Sigma$ are retractions, $\Sigma^{-1}[c]$ is nonempty for all $c\in C$ because it contains at least $c$.
-
-\begin{HalesJewett}[ (Yet another variant)]\label{thm_hom_HJ}
+\begin{exercise}\label{thm_hom_HJ}
 Let $\Sigma$ be a finite set of homomorphisms $\sigma:G\to C$ 
-between infinite semigroups
-such that $\Sigma^{-1}[c]$ is nonempty for all $c\in C$.
-Then, for every finite coloring of $C$, there is a $g\in G$ such that the set 
+between infinite semigroups such that the following intersection is nonempty for all $c\in C$
+
+\ceq{\hfill\Sigma^{-1}[c]}{=}{\bigcap_{\sigma\in\Sigma}\sigma^{-1}[c]}
+
+Prove that, for every finite coloring of $C$, for some $g\in G$ the set 
 $\{\sigma\,g\ :\ \sigma\in\Sigma\}$ is monochromatic.
-\end{HalesJewett}
+\end{exercise}
 
-\begin{proof}
-Let $G*C$ be free product of the two semigroups.
-That is, $G*C$ contains finite sequences of elements of $G\cup C$, below called \textit{words}, that alternate elements in $G$ with elements in $C$.
-The product of two words is obtained concatenating them and, when it applies, replacing two contiguous elements of the same group by their product.
-Note that $C$ is a nice subsemigroups of $G*C$.
+% \begin{proof}
+% Let $G*C$ be free product of the two semigroups.
+% That is, $G*C$ contains finite sequences of elements of $G\cup C$, below called \textit{words}, that alternate elements in $G$ with elements in $C$.
+% The product of two words is obtained concatenating them and, when it applies, replacing two contiguous elements of the same group by their product.
+% Note that $C$ is a nice subsemigroups of $G*C$.
 
-Any homomorphism $\sigma:G\to C$ extends canonically to a retraction of $G*C$ to $C$.
-In fact, this extension is unique: the elements of $G$ that occur in a word are replaced by their image under $\sigma$, finally the elements in the resulting sequence are multiplied.
-This extension is denoted by the same symbol $\sigma$.
+% Any homomorphism $\sigma:G\to C$ extends canonically to a retraction of $G*C$ to $C$.
+% In fact, this extension is unique: the elements of $G$ that occur in a word are replaced by their image under $\sigma$, finally the elements in the resulting sequence are multiplied.
+% This extension is denoted by the same symbol $\sigma$.
 
-Apply Theorem~\ref{thm_abstract_HJ} to obtain some $w\in G*C$ such that 
-$\{\sigma \,w:\sigma\in\Sigma\}$ is monochromatic.
-%
-Suppose $w=c_0\cdot g_0\cdots\cdots c_n\cdot g_n$ for some $g_i\in G$ and $c_i\in C$, 
-where one or both of $c_0$ or $g_n$ could be absent. Pick some $h_i\in\Sigma^{-1}[c_i]$ and 
-let $g=h_0\cdot g_0\cdots\cdots h_n\cdot g_n$.
-%
-Then $\{\sigma\,g:\sigma\in\Sigma\}$ is monochromatic as required to complete the proof.
-\end{proof}
+% Apply Theorem~\ref{thm_abstract_HJ} to obtain some $w\in G*C$ such that 
+% $\{\sigma \,w:\sigma\in\Sigma\}$ is monochromatic.
+% %
+% Suppose $w=c_0\cdot g_0\cdots\cdots c_n\cdot g_n$ for some $g_i\in G$ and $c_i\in C$, 
+% where one or both of $c_0$ or $g_n$ could be absent. Pick some $h_i\in\Sigma^{-1}[c_i]$ and 
+% let $g=h_0\cdot g_0\cdots\cdots h_n\cdot g_n$.
+% %
+% Then $\{\sigma\,g:\sigma\in\Sigma\}$ is monochromatic as required to complete the proof.
+% \end{proof}
+
+\begin{exercise}
+  Assume $\cnonfork_M$ is stationary.
+  Let $\mrA$ be idempotent and type-definable over $M$.
+  Assume ${\mr c}$ left-minimal, with idempotent orbit, and such that ${\mr c}\cdot_M\mrA\subseteq\mrA$.
+  Prove that ${\mr c}\cdot_M\mrA\cdot_M{\mr c}\;/\equiv_M$ is a group with identity $({\mr c})_M$ and multiplication $\cdot_M$.
+\end{exercise}
 
 \section{Notes and references}
 
@@ -798,12 +769,12 @@ $\{\sigma_i({\mr s_i}):i<\omega\}$ is monochromatic disjoint of $C$..
 % 
 % \section{Crap (if this is publicly available, it's just by errror)}
 % 
-% \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}The following terminology in not standard.We say that the set $\mrB\subseteq\U^{|{\mr x}|}$, typically a definable set, is \emph{strongly quasi-invariant over $A$\/} if for every definable set $\mrD$ either $\mrB\cap\mrD$ or $\mrB\cap\neg\mrD$ is quasi-invariant.
+% \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}The following terminology in not standard.We say that the set $\mrB\subseteq\U^{|{\mr x}|}$, typically a definable set, is \emph{strongly quasi-invariant over $M$\/} if for every definable set $\mrD$ either $\mrB\cap\mrD$ or $\mrB\cap\neg\mrD$ is quasi-invariant.
 % 
-% \begin{proposition}If $\mrB$ is strongly quasi-invariant over $A$ and $\<{\mr\D_i}:i<n\>$ is a finite sequence of definable sets that covers $\mrB$, then $\mrB\cap{\mr\D_i}$ is strongly quasi-invariant over $A$ for some $i$.
+% \begin{proposition}If $\mrB$ is strongly quasi-invariant over $M$ and $\<{\mr\D_i}:i<n\>$ is a finite sequence of definable sets that covers $\mrB$, then $\mrB\cap{\mr\D_i}$ is strongly quasi-invariant over $M$ for some $i$.
 % \end{proposition}
 % 
-% We say that the type $p({\mr x})\subseteq L(\U)$ is \emph{strongly quasi-invariant over $A$\/} if $\phi(\U^{\mr x})$ is strongly quasi-invariant over $A$ for every $\phi({\mr x})$ conjunction of formulas in $p({\mr x})$.% So, the type $p({\mr x})$ is quasi-invariant if the set $p({\mr\V})$ is invariant, where $\V$ is an large saturated extension of $\U$, see Exercise~\ref{ex_quasi_inv_type}.
+% We say that the type $p({\mr x})\subseteq L(\U)$ is \emph{strongly quasi-invariant over $M$\/} if $\phi(\U^{\mr x})$ is strongly quasi-invariant over $M$ for every $\phi({\mr x})$ conjunction of formulas in $p({\mr x})$.% So, the type $p({\mr x})$ is quasi-invariant if the set $p({\mr\V})$ is invariant, where $\V$ is an large saturated extension of $\U$, see Exercise~\ref{ex_quasi_inv_type}.
 % 
 % \begin{proposition}
 % Every strongly quasi-invariant type has an extension to a global strongly quasi-invariant type.
@@ -820,7 +791,7 @@ $\{\sigma_i({\mr s_i}):i<\omega\}$ is monochromatic disjoint of $C$..
 
 
 \begin{lemma}\label{lem_tensor}
-Let $p({\mr x})\in S(\U)$ be a global type invariant over $A$.
+Let $p({\mr x})\in S(\U)$ be a global type invariant over $M$.
 Let ${\gr a}\equiv_A{\gr a'}$.
 Then  ${\gr a},{\mr b}\equiv_A{\gr a'},{\mr b'}$ for all ${\mr b}\models p_{\restriction A,{\gr a}}({\mr x})$ and  ${\mr b'}\models p_{\restriction A,{\gr a'}}({\mr x})$.
 
@@ -838,14 +809,14 @@ Lemma~\ref{lem_tensor} ensures that the definition below is well-defined, i.e.\@
 
 
 \begin{definition}\label{def_prodotto_tipi}
-Let $p({\mr x})\in S(\U)$ be an $A$-invariant type.
+Let $p({\mr x})\in S(\U)$ be an $M$-invariant type.
 For $q({\gr z})\in S(A)$ we define
 
-\ceq{\hfill\mbox{\emph{$q(z)\otimes_{\!A} p({\mr x})$}}}{\deq}{\tp({\gr a\,};{\mr b}/A)}\quad for some ${\gr a}\models q({\gr z})$ and ${\mr b}\models p_{\restriction A,{\gr a}}({\mr x})$.
+\ceq{\hfill\mbox{\emph{$q(z)\otimes__M p({\mr x})$}}}{\deq}{\tp({\gr a\,};{\mr b}/A)}\quad for some ${\gr a}\models q({\gr z})$ and ${\mr b}\models p_{\restriction A,{\gr a}}({\mr x})$.
 
 When $q({\gr z})\in S(\U)$, we define
 
-\ceq{\hfill\mbox{\emph{$q(z)\otimes p({\mr x})$}}}{\deq}{\bigcup_{A\subseteq B}\ q_{\restriction B}(z)\otimes_B p({\mr x})}.
+\ceq{\hfill\mbox{\emph{$q(z)\otimes p({\mr x})$}}}{\deq}{\bigcup_{M\subseteq B}\ q_{\restriction B}(z)\otimes_B p({\mr x})}.
 \end{definition}
 
 Note that $q({\gr z})\otimes p({\mr x})$ is consistent, and therefore a complete global type.
@@ -853,17 +824,17 @@ In fact, it is immediate to verify that if $A\subseteq B'\subseteq B''$ then $q_
 
 
 \begin{proposition}
-Let $q({\gr z}), p({\mr x})\in S(\U)$ be $A$-invariant types.
-Then $q(z)\otimes p({\mr x})$ is also $A$-invariant.
-And if they are finitely satisfiable in $A$ then so is $q(z)\otimes p({\mr x})$.
+Let $q({\gr z}), p({\mr x})\in S(\U)$ be $M$-invariant types.
+Then $q(z)\otimes p({\mr x})$ is also $M$-invariant.
+And if they are finitely satisfiable in $M$ then so is $q(z)\otimes p({\mr x})$.
 \end{proposition}
 
 \begin{proof}
 Let $\phi(z,x,u)\in L(A)$.
 Let $\phi(z,x,c)\in q(z)\otimes p({\mr x})$ and let $c'\equiv_Ac$.
 Fix $a\models q_{\restriction A,c,c'}$ and $b\models p_{\restriction A,c,c',a}$.
-From the invariance of $q$ we obtain $c\equiv_{A,a}c'$.
-From the invariance of $p$ we obtain  $c\equiv_{A,a,b}c'$.
+From the invariance of $q$ we obtain $c\equiv_{M,a}c'$.
+From the invariance of $p$ we obtain  $c\equiv_{M,a,b}c'$.
 As $\phi(a,b,c)$ hold by the choice of $a$ and $b$, also $\phi(a,b,c')$ holds.
 It follows that $\phi(z,x,c')\in q({\gr z})\otimes p({\mr x})$ which proves the invariance of $q({\gr z})\otimes p({\mr x})$.
 
@@ -881,7 +852,7 @@ La seguente proposizione mostra che possiamo ragionevolmente parlare di tipo del
 Questo paragrafo \`e dedicato alla descrizione sintattica di questo tipo.
 
 \begin{proposition}\label{prop_tiposequenzaMorley}
-Sia $p\in S_x(\U)$ un tipo globale $A$-invariante e supponiamo che $a$ e $b$ siano due sequenze di Morley di $p$ su $A$.
+Sia $p\in S_x(\U)$ un tipo globale $M$-invariante e supponiamo che $a$ e $b$ siano due sequenze di Morley di $p$ su $M$.
 Allora $a\equiv_A c$.
 
 \end{proposition}
@@ -905,7 +876,7 @@ Dati $p({\mr x}), q(y)\in S(\U)$, e due insiemi $A_i$, per $i=0,1$ su cui $q(y)$
 Allora $\phi(a_0,b_0)\iff\phi(a_1,b_1)$.
 \end{lemma}
 \begin{proof}
-Supponiamo per cominciare che $A_0=A_1$ e denotiamo questo insieme con $A$.
+Supponiamo per cominciare che $A_0=A_1$ e denotiamo questo insieme con $M$.
 Assumiamo $\phi(a_0,b_0)$ e quindi, per la completezza di $q$, che $\phi(a_0,y)\in q$.
 Per la completezza di $p$  abbiamo che $a_0\equiv_Aa_1$.
 Quindi, per l'invarianza di $q$ otteniamo $\phi(a_1,y)\in q$ e da questo segue $\phi(a_1,b_1)$.
@@ -920,11 +891,11 @@ Conviene immaginarsi questa operazione di prodotto come il passo induttivo per l
 \begin{definition}\label{def_prodotto_tipi}
 Dati $p({\mr x}),q(y)\in S(\U)$ dove $q(y)$ \`e un tipo invariante, definiamo il prodotto di $p$ e $q$ come il tipo:
 
-%\ceq{\hfill p({\mr x})\otimes q(y)}{=}{\Big\{\phi(x,y)\ :\ \phi(b,c) \textrm{ per qualche } a\models p_{\restriction A},\ b\models q_{\restriction A,a}(y) ed $A$ t\Big\}}
+%\ceq{\hfill p({\mr x})\otimes q(y)}{=}{\Big\{\phi(x,y)\ :\ \phi(b,c) \textrm{ per qualche } a\models p_{\restriction A},\ b\models q_{\restriction A,a}(y) ed $M$ t\Big\}}
 
 \ceq{\hfill\mbox{\emph{$p({\mr x})\otimes q(y)$}}}{=}{\Big\{\phi(x,y)\ :\ \textrm{esistono } a,b\ \models\ \phi(x,y)\ \wedge\ p_{\restriction A}({\mr x})\ \wedge\ q_{\restriction A,a}(y)\Big\}}
 
-L'insieme $A$ nella definizione \`e uno qualsiasi che contiene i parametri di $\phi(x,y)$ e su cui $q(y)$ \`e invariante.
+L'insieme $M$ nella definizione \`e uno qualsiasi che contiene i parametri di $\phi(x,y)$ e su cui $q(y)$ \`e invariante.
 Il lemma~\ref{lemma_prodotto} assicura che la definizione non dipende dal particolare insieme scelto.
 \end{definition}
 
@@ -936,22 +907,22 @@ Se $p({\mr x}),q(y)\in S(\U)$ e $q(y)$ \`e invariante, allora $p({\mr x})\otimes
 
 \begin{proof}
 Sia $\phi(x,y)\in L(\U)$.
-Fissiamo un insieme $A$ contenente i parametri di $\phi(x,y)$ e su cui $q(y)$ sia invariante.
+Fissiamo un insieme $M$ contenente i parametri di $\phi(x,y)$ e su cui $q(y)$ sia invariante.
 Fissiamo $a,b$ arbitrari tali che $a\models p_{\restriction A}({\mr x})$ e $b\models q_{\restriction A,a}(y)$.
 Dal lemma~\ref{lemma_prodotto} otteniamo che $\phi(x,y)\in p({\mr x})\otimes q(y)$ se e solo se $\phi(a,b)$.
 \end{proof}
 
 
 \begin{corollary}
-Se $p({\mr x}),q(y)\in S(\U)$ sono tipi globali $A$-invarianti, allora anche $p({\mr x})\otimes q(y)$ \`e $A$-invariante.
+Se $p({\mr x}),q(y)\in S(\U)$ sono tipi globali $M$-invarianti, allora anche $p({\mr x})\otimes q(y)$ \`e $M$-invariante.
 \end{corollary}
 
 \begin{proof}
 Sia $\phi(x,y,z)\in L$, sia $c$ arbitrario tale che  $\phi(x,y,c)\in p({\mr x})\otimes q(y)$, e sia $c'\equiv_Ac$.
 Fissiamo $a\models p_{\restriction A,c,c'}$.
-Poich\'e $p$ \`e invariante su $A$, otteniamo $a,c\equiv_Aa,c'$.
+Poich\'e $p$ \`e invariante su $M$, otteniamo $a,c\equiv_Aa,c'$.
 Ora fissiamo un $b$ arbitrario tale che $b\models q_{\restriction A,c,c',a}$.
-Per l'invarianza di $q$ su $A$ otteniamo  $a,b,c\equiv_Aa,b,c'$ e quindi $\phi(a,b,c')$.
+Per l'invarianza di $q$ su $M$ otteniamo  $a,b,c\equiv_Aa,b,c'$ e quindi $\phi(a,b,c')$.
 Seque che $\phi(x,y,c)\in p({\mr x})\otimes q(y)$.
 \end{proof}
 
@@ -984,7 +955,7 @@ Sia $p({\mr x})\in S(\U)$ un tipo globale $A$-invariante.
 Allora le seguenti affermazioni sono equivalenti
 \begin{itemize}
 \item[1.]$\<c_i:i<\omega\>$ \`e una sequenze di Morley di $p$ su $A$;
-\item[2.] $\<c_i:i<\omega\>\models p^{(\omega)}|_{\!A}$
+\item[2.] $\<c_i:i<\omega\>\models p^{(\omega)}|__M$
 \end{itemize}
 \end{proposition}
 
@@ -992,12 +963,12 @@ La seguente proposizione torner\`a utile nei prossimi paragrafi, si osservi che 
 
 \begin{proposition}
 Sia $p({\mr x})\in S(\U)$ un tipo globale invariante ed $A$ un insieme arbitrario.
-Allora ogni $\<c_i:i<\omega\>\models p^{(\omega)}|_{\!A}$ \`e una sequenza di indiscernibili su $A$.
+Allora ogni $\<c_i:i<\omega\>\models p^{(\omega)}|__M$ \`e una sequenza di indiscernibili su $A$.
 \end{proposition}
 
 
 \begin{proof}
-\`E sufficiente verificare che se $\<c_i:i<\omega\>\models p^{(\omega)}|_{\!A}$ allora $c_{i_0},\dots,c_{i_n}\models p^{(n+1)}|_{\!A}$ per ogni $i_0<\dots<i_n<\omega$.
+\`E sufficiente verificare che se $\<c_i:i<\omega\>\models p^{(\omega)}|__M$ allora $c_{i_0},\dots,c_{i_n}\models p^{(n+1)}|__M$ per ogni $i_0<\dots<i_n<\omega$.
 
 \end{proof}
 \end{comment}
