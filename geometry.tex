@@ -285,7 +285,7 @@ For every $B$ and every pair of elements ${\mr a},{\mr b}\in\U\sm\acl B$
 
 Note that when $T$ is the theory of vector spaces (over any fixed field) this principle is the so called \emph{Steinitz exchange lemma}.
 
-\begin{theorem} 
+\begin{theorem}\label{thm_exchange}
 ($T$ strongly minimal.) Independence is symmetric.
 That is, if ${\mr a},{\mr b}\notin\acl B$ then ${\mr b}\in\acl (B,{\mr a})\IFF{\mr a}\in\acl(B,{\mr b})$
 \end{theorem} 
@@ -313,7 +313,8 @@ The following theorem proves that all bases have the same cardinality, which we 
 First we need the following lemma.
 
 \begin{lemma}\label{indipendenza+1}
-($T$ strongly minimal.) If $B$ is an independent set and ${\mr a}\notin \acl B$ then $B,{\mr a}$ is also an independent set.
+  ($T$ strongly minimal.)
+  If $B$ is an independent set and ${\mr a}\notin \acl B$ then $B,{\mr a}$ is also an independent set.
 \end{lemma}
 \begin{proof}
 Suppose $B,{\mr a}$ is not independent and that ${\mr a}\notin \acl B$.
@@ -323,16 +324,20 @@ Hence $B$ is not an independent set.
 \end{proof}
 
 \begin{corollary}\label{basemassimale}
-($T$ strongly minimal.) For every $B\subseteq C$ the following are equivalent
-\begin{itemize}
-\item[1.] $B$ is a basis of $C$
-\item[2.] $B$ is a maximally independent subset of $C$.
-\end{itemize}
+  ($T$ strongly minimal.)
+  For every $B\subseteq C$ the following are equivalent
+  \begin{itemize}
+  \item[1.] $B$ is a basis of $C$
+  \item[2.] $B$ is a maximally independent subset of $C$.
+  \end{itemize}
 \end{corollary}
 
 Finally we prove the main theorem about basis.
 
-\begin{theorem} ($T$ strongly minimal.) Fix some arbitrary set $C$. Then
+\begin{theorem}\label{thm_cardinality_base}
+  ($T$ strongly minimal.)
+  Fix some arbitrary set $C$.
+  Then
   \begin{itemize}
   \item[1.] every independent set $B\subseteq C$ can be extended to a basis of $C$
   \item[2.] all bases of $C$ have the same cardinality.
@@ -358,13 +363,13 @@ Finally we prove the main theorem about basis.
   Now we suppose that $|A|<|B|=n<\omega$.
   Choose $B$ such that $|B\sm A|$ is minimal among the bases of cardinality $\ge n$.
   As $|A|<|B|$, there is a $b\in B\sm A$.
-  Let $B'$ be a maximal indipendent subset of $(B\sm b),A$ containing $B\sm b$.
+  Let $B'$ be a maximal independent subset of $(B\sm b),A$ containing $B\sm b$.
   By Corollary~\ref{basemassimale}, $B'$ is a base of $(B\sm b),A$, hence it is also a base of $C$.
   As $|B'\sm A|<|B\sm A|$, this is a contradiction.
 \end{proof}
 
 \begin{proposition}\label{prop_mappetraindipendenti}
-  ($T$ strongly minimal) 
+  ($T$ strongly minimal.) 
   Let $k$ be an elementary map.
   Then $k\cup\big\{\<{\mr b},{\mr c}\>\big\}$ is also an elementary map for every ${\mr b}\notin\acl(\dom k)$ and ${\mr c}\notin\acl(\range k)$.
 \end{proposition}
@@ -377,13 +382,15 @@ Finally we prove the main theorem about basis.
 \end{proof}
 
 \begin{corollary}\label{corol_mappetraindipendenti} 
-  ($T$ strongly minimal.) Every bijection between independent sets is an elementary map.
+  ($T$ strongly minimal.)
+  Every bijection between independent sets is an elementary map.
 \end{corollary}
 
 Finally we show that dimension classifies models of $T$.
 
-\begin{theorem}
-  ($T$ strongly minimal.) Models of $T$ with the same dimension are isomorphic.
+\begin{theorem}\label{thm_dim_classify_sm_models}
+  ($T$ strongly minimal.)
+  Models of $T$ with the same dimension are isomorphic.
 \end{theorem}
 \begin{proof}
   Let $A$ e $B$ be bases of $M$ and $N$ respectively.

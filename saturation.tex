@@ -311,7 +311,7 @@ They form both a base of closed sets and base of open sets, which makes these to
 By saturation, the topology induced by $A$ is compact.
 Actually, saturation is equivalent to the compactness of all these topologies as $A$ ranges over the sets of small cardinality.
 
-These topologies are never T$_0$ as any pair of tuples $a\equiv_A b$ have exactly the same neighborhoods. Such pairs always exist by cardinality reasons. However it is immediate that the topology induced on the quotient $\U^{|x|}/\!\equiv_A$ is Hausdorff (this is the so-called \textit{Kolmogorov quotient}). Indeed, this quotient corresponds to $S_x(A)$ with the topology introduced in Section~\ref{frammenti}.
+These topologies are never T$_0$ as any pair of tuples $a\equiv_A b$ have exactly the same neighborhoods. Such pairs always exist by cardinality reasons. However it is immediate that the topology induced on the quotient $\U^{x}/\!\equiv_A$ is Hausdorff (this is the so-called \textit{Kolmogorov quotient}). Indeed, this quotient corresponds to $S_x(A)$ with the topology introduced in Section~\ref{frammenti}.
 
 The following proposition is an immediate consequence of compactness. When $A=B$ it says that the topology induced by $A$ is \textit{normal}: any two closed sets are separated by open sets. It could be called \emph{mutual normality\/} (not a standard name) because the two closed sets belong to different topologies and the separating sets are each found in the corresponding topology.
 
@@ -506,7 +506,7 @@ Let $\phi(x,y)\in L(\U)$. Prove that if the set $\big\{\phi(a,\U)\ :\ a\in\U^{|x
 Does the claim remain true with a type $p(x,y)\subseteq L(A)$ for $\phi(x,y)$? 
 \end{exercise}
 
-\begin{exercise} 
+\begin{exercise}\label{ex_saturazione_catene_insiemi}
 Let $\phi(x\,;y)\in L(\U)$. Prove that the following are equivalent
 \begin{itemize}
 \item[1.] there is a sequence $\<a_i\,:\,i\in\omega\>$ such that $\phi(\U\,;a_i)\subset\phi(\U\,;a_{i+1})$ for every $i<\omega$
@@ -514,17 +514,17 @@ Let $\phi(x\,;y)\in L(\U)$. Prove that the following are equivalent
 \end{itemize}
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise}\label{ex_typedef_groups}
   Let $L$ be a countable language containing $L_{\rm gr}$ and assume $\U$ is a group.
   Let $p(x)\subseteq L$ define a subgroup of $\U$.
   Prove that there are some formulas $\phi_n(x)\in L$ such that 
   \begin{itemize}
     \item[1.] $p(x)\ \iff\ \{\phi_n(x):n<\omega\}$
     \item[2.] $\phi_{n+1}(x)\wedge\phi_{n+1}(y)\ \imp\ \phi_n(x\cdot y)$.
-  \end{itemize}  
+  \end{itemize}
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise}\label{ex_ak_definibilita}
   Let $\phi(x\,;z)\in L$ and $a\in\U^z$.
   Prove that the following are equivalent
   \begin{itemize}
