@@ -302,7 +302,7 @@ We may use small types in expression such as $p(x)\imp\neg q(x)$, $\E y\,p(x,y)$
 \item[\emph{orbits of tuples}] under the action of $\Aut(\U/A)$ are denoted by $\orbit(a/A)$.
 \end{litemize}
 
-Let $x$ be a tuple of variables. For any fixed $A\subseteq \U$ we introduce a topology on $\U^{|x|}$ that we call the \emph{topology induced by $A$} or, for short, \emph{$A\mbox{-}$topology}. 
+Let $x$ be a tuple of variables. For any fixed $A\subseteq \U$ we introduce a topology on $\U^{x}$ that we call the \emph{topology induced by $A$} or, for short, \emph{$A\mbox{-}$topology}. 
 (This is nonstandard terminology, not to be confused with the \textit{logic\/} $A\mbox{-}$topology in Section~\ref{KPtypes}.)
 The closed sets of the $A\mbox{-}$topology are those of the form $p(\U)$ where $p(x)\subseteq L(A)$ is a type over $A$.
 
@@ -339,9 +339,9 @@ The assumptions say that $p(x)\cup q(x)$ is inconsistent (i.e. not realized in $
   A definable set has the form $\phi(\U^{\mr x};{\gr b})$ for some formula $\phi({\mr x}\,;{\gr z})\in L$ and some ${\gr b}\in\U^{\gr z}$.
   If $f\in\Aut(\U)$ then 
 
-  \ceq{\hfill f\big[\phi(\U^{\mr x};{\gr b})\big]}{=}{\big\{f{\mr a}\ :\ \phi({\mr a}\,;{\gr b}),\phantom{ff}\ {\mr a}\in\U^{|{\mr x}|}\big\}}
+  \ceq{\hfill f\big[\phi(\U^{\mr x};{\gr b})\big]}{=}{\big\{f{\mr a}\ :\ \phi({\mr a}\,;{\gr b}),\phantom{ff}\ {\mr a}\in\U^{{\mr x}}\big\}}
 
-  \ceq{ }{=}{\big\{f{\mr a}\ :\ \phi(f{\mr a}\,;f{\gr b}),\ {\mr a}\in\U^{|{\mr x}|}\big\}}
+  \ceq{ }{=}{\big\{f{\mr a}\ :\ \phi(f{\mr a}\,;f{\gr b}),\ {\mr a}\in\U^{{\mr x}}\big\}}
 
   \ceq{ }{=}{\phi(\U^{\mr x};f{\gr b}).}
 
@@ -349,7 +349,7 @@ The assumptions say that $p(x)\cup q(x)$ is inconsistent (i.e. not realized in $
   Their action on type-definable sets is similar.
 \end{remark}
 
-We say that a set ${\mr\D}\subseteq\U^{|{\mr x}|}$ is \emph{invariant over $A$\/} if $f[{\mr\D}]={\mr\D}$ for every $f\in\Aut(\U/A)$ or, equivalently, if $\orbit({\mr a}/A)\subseteq {\mr\D}$ for every ${\mr a}\in {\mr\D}$.
+We say that a set ${\mr\D}\subseteq\U^{{\mr x}}$ is \emph{invariant over $A$\/} if $f[{\mr\D}]={\mr\D}$ for every $f\in\Aut(\U/A)$ or, equivalently, if $\orbit({\mr a}/A)\subseteq {\mr\D}$ for every ${\mr a}\in {\mr\D}$.
 By homogeneity this is equivalent to requiring that 
 
 \ceq{\hfill q({\mr x})}{\imp}{{\mr x}\in{\mr\D}}
@@ -486,7 +486,7 @@ Hence, by Proposition~\ref{prop_E_type}, $p({\mr x})$ is equivalent to a type ov
   Let $\phi(x)\in L$. Prove that the following are equivalent
   \begin{itemize}
    \item[1.] $\phi(x)$ is equivalent to some $\psi(x)\in L_{\rm qf}$
-   \item[2.] $\phi(a)\iff \phi(fa)$ for every partial isomorphism $f:\U\to\U$ and $a\in(\dom f)^{|x|}$.
+   \item[2.] $\phi(a)\iff \phi(fa)$ for every partial isomorphism $f:\U\to\U$ and $a\in(\dom f)^{x}$.
   \end{itemize}
   Use the result to prove Theorem~\ref{thm_tutteleimmersionisonoelementari_QE} for $T$ complete.
   \end{exercise}
@@ -502,7 +502,7 @@ Show that this is not true if $x$ has length $\omega$.
 \end{exercise}
 
 \begin{exercise}\label{cadinalitafinitasaturazioneinsiemi}
-Let $\phi(x,y)\in L(\U)$. Prove that if the set $\big\{\phi(a,\U)\ :\ a\in\U^{|x|}\big\}$ is infinite then it has cardinality $\kappa$.
+Let $\phi(x,y)\in L(\U)$. Prove that if the set $\big\{\phi(a,\U)\ :\ a\in\U^{x}\big\}$ is infinite then it has cardinality $\kappa$.
 Does the claim remain true with a type $p(x,y)\subseteq L(A)$ for $\phi(x,y)$? 
 \end{exercise}
 
@@ -512,6 +512,15 @@ Let $\phi(x\,;y)\in L(\U)$. Prove that the following are equivalent
 \item[1.] there is a sequence $\<a_i\,:\,i\in\omega\>$ such that $\phi(\U\,;a_i)\subset\phi(\U\,;a_{i+1})$ for every $i<\omega$
 \item[2.] there is a sequence $\<a_i\,:\,i\in\omega\>$ such that $\phi(\U\,;a_{i+1})\subset\phi(\U\,;a_i)$ for every $i<\omega$.
 \end{itemize}
+\end{exercise}
+
+\begin{exercise}\label{ex_ak_definibilita}
+  Let $\phi(x\,;z)\in L$ and $a\in\U^z$.
+  Prove that the following are equivalent
+  \begin{itemize}
+    \item[1.] the type $\{\phi(x\,;fa)\,:\,f\in\Aut(\U)\}$ is realized (in $\U$)
+    \item[2.] there is a formula $\psi(z)\in L$ such that $\E x\A z\,[\psi(z)\imp\phi(x\,;z)]$.
+  \end{itemize}  
 \end{exercise}
 
 \begin{exercise}\label{ex_typedef_groups}
@@ -524,11 +533,12 @@ Let $\phi(x\,;y)\in L(\U)$. Prove that the following are equivalent
   \end{itemize}
 \end{exercise}
 
-\begin{exercise}\label{ex_ak_definibilita}
-  Let $\phi(x\,;z)\in L$ and $a\in\U^z$.
-  Prove that the following are equivalent
+\begin{exercise}\label{ex_bfc_groups}
+  Let $\U$ be as in Exercise~\ref{ex_typedef_groups}.
+  Prove that for any model $M$ the following are equivalent
   \begin{itemize}
-    \item[1.] the type $\{\phi(x\,;fa)\,:\,f\in\Aut(\U)\}$ is realized (in $\U$)
-    \item[2.] there is a formula $\psi(z)\in L$ such that $\E x\A z\,[\psi(z)\imp\phi(x\,;z)]$.
-  \end{itemize}  
+    \item[1.] $M$ is a normal subgroup of $\U$
+    \item[2.] $\U$ is a {\sc bfc} group.
+  \end{itemize}
+  A group $G$ is {\sc bfc} (has boundedly finite conjugacy classes) if for some $n$ the sets $\{gag^{-1}:g\in G\}$, as $a$ ranges over $G$, have at most $n$ elements. Hint: implication \ssf2$\IMP$\ssf1 requires the B.H. Neumann's {\sc bfc}-Theorem
 \end{exercise}

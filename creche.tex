@@ -27,7 +27,6 @@
 \usepackage{graphicx}
 % \usepackage{tikz}
 % \usetikzlibrary{tikzmark}
-
 \usepackage{tikz-cd}
 \tikzcdset{
 arrow style=tikz,
@@ -281,7 +280,13 @@ diagrams={>=latex}
 }
 \makeatother
 
-\pagestyle{plain}
+% \pagestyle{plain}
+
+\usepackage{fancyhdr}
+\fancyhead{}
+\fancyfoot{}
+% \fancyhead[LE,RO]{\thepage}
+
 
 \definecolor{violet}{RGB}{115, 0, 205}
 \definecolor{brown}{RGB}{150, 50, 10}
@@ -324,7 +329,7 @@ diagrams={>=latex}
 
 %%%%%%% GETCOMMIT
 \newcommand\dotGitHEAD{}
-\newcommand\branch{master}
+\newcommand\branch{}
 \newcommand\commit{}
 \makeatletter
 \let\myfilehandle\@inputcheck\makeatother
@@ -345,16 +350,51 @@ diagrams={>=latex}
 
 \begin{document}
 \raggedbottom
-\renewcommand{\contentsname}{%
-{\normalfont\normalsize\texttt{Branch:\ \branch\ \DTMnow}}\\[3ex]%
-A Cr\`eche Course in Model Theory\\[3ex]%
-\parbox{\textwidth}{\normalfont\normalsize
-Domenico Zambella\\
-Universit\`a di Torino\\
-ORCID:~%\href{https://orcid.org/0000-0003-1141-2898}%
-{0000-0003-1141-2898}\\[1ex]}}
-\addcontentsline{toc}{chapter}{\Large Table of contents\phantom{$\bigg\{\}$}}
+% \renewcommand{\contentsname}{%
+% {\normalfont\normalsize\texttt{Branch:\ \branch\ \DTMnow}}\\[3ex]%
+% A Cr\`eche Course in Model Theory\\[3ex]%
+% \parbox{\textwidth}{\normalfont\normalsize
+% Domenico Zambella\\
+% Universit\`a di Torino\\
+% ORCID:~%\href{https://orcid.org/0000-0003-1141-2898}%
+% {0000-0003-1141-2898}\\[1ex]}}
+% \addcontentsline{toc}{chapter}{\Large Table of contents\phantom{$\bigg\{\}$}}
+\begin{titlepage}
+\begin{flushright}
+\tt
+Branch:\ \branch\ \DTMnow\\[.5ex]
+Check for the latest version in\\[.5ex]
+\href{https://github.com/domenicozambella/creche}{\tt https://github.com/domenicozambella/creche}
+\end{flushright}
+\vspace*{2ex}
+
+{\Large A Cr\`eche Course in Model Theory}\\[2ex]%
+
+Domenico Zambella\\[.5ex]
+Universit\`a di Torino\\[.5ex]
+ORCID:~\href{https://orcid.org/0000-0003-1141-2898}%
+{0000-0003-1141-2898}\\[19ex]
+
+\hfill
+\begin{minipage}{.7\textwidth}
+  \sl This book was written to answer one question ``Does a recursion theorist dare to write a book on model theory?''
+
+\hfill Gerald E.\@ Sacks
+
+\hfill Saturated Model Theory (1972)
+\end{minipage}\\[8ex]
+
+\hfill
+\includegraphics[width=.5\textwidth]{elephant_playing_piano.jpg}
+\hspace*{.1\textwidth}
+\end{titlepage}
+
+\pagestyle{empty}
 \tableofcontents
+\pagestyle{fancy}
+\fancyhead[RE]{\nouppercase{\leftmark}\hfill\thepage}
+\fancyhead[LO]{\thepage\hfill\nouppercase{\leftmark}}
+
 % \subfile{preface}
 \subfile{preliminaries}
 \subfile{elementarity}
