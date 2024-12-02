@@ -125,7 +125,7 @@ The converse inclusion is obtained by substituting  $f^{-1}$ for $f$ and $f[A]$ 
 \end{exercise}
 
 \begin{exercise}\label{ex_isosub}
-Let $a\in\U\sm\acl\0$.
+Let $a\in\U\sm\acl\varnothing$.
 Prove that $\U$ is isomorphic to some $\V\preceq \U$ such that $a\notin\V$.
 Hint: let $\bar c$ be an enumeration of $\U$ and let $p(\bar u)=\tp(\bar c)$ prove that 
 $p(\bar u)\cup\big\{ u_i\neq a :i<|\bar u|\big\}$ is realized in $\U$ and 
@@ -134,7 +134,7 @@ that any realization yields the required substructure of $\U$.
 
 \begin{exercise}\label{pofu2}
 Let $C$ be a finite set.
-Prove that if $C\cap M\neq\0$ for every model $M$ containing $A$, then $C\cap\acl A\neq\0$.
+Prove that if $C\cap M\neq\varnothing$ for every model $M$ containing $A$, then $C\cap\acl A\neq\varnothing$.
 Hint: by induction on the cardinality of $C$.
 Suppose there is a $c\in C\sm\acl A$, then there is $\V\simeq\U$ such that 
 $A\subseteq\V\preceq\U$ and $c\notin\V$, see Exercise~\ref{ex_isosub}.
@@ -175,7 +175,7 @@ Any $\bar a\models p(\bar x)$ enumerates a model $A$-isomorphic to $N$.
 Let $\phi(x)\in L(\U)$ and fix an arbitrary set $A$.
 Prove that the following are equivalent
 \begin{itemize}
-\item[1.] $\phi(M^{\mr x})\neq\0$ for every model $M$ containing $A$
+\item[1.] $\phi(M^{\mr x})\neq\varnothing$ for every model $M$ containing $A$
 \item[2.] there is a consistent formula $\psi(z_1,\dots,z_n)\in L(A)$ such that
 
 \hfil$\displaystyle\psi(z_1,\dots,z_n)\imp\bigvee^n_{i=1}\phi(z_i)$.
@@ -549,7 +549,7 @@ We show that (2) implies $\bb\nonfork_M \aa$, then  \casebo{\mr x}{$2\IMP1$} fol
 
 We want to show, at this early stage of the course, that strongly minimal theories are rich enough to develop some geometric ideas. 
 \p
-We cannot use $\UU^\eq$ nor canonical bases yet so, to keep the proofs concise, we work under the assumption that $\acl\0$ is infinite (we want that $T$ weakly eliminates imaginary, see Chapter~\ref{eq}). Necessarily, we define linearity without referring to canonical bases but the notion is the usual one.\STOP
+We cannot use $\UU^\eq$ nor canonical bases yet so, to keep the proofs concise, we work under the assumption that $\acl\varnothing$ is infinite (we want that $T$ weakly eliminates imaginary, see Chapter~\ref{eq}). Necessarily, we define linearity without referring to canonical bases but the notion is the usual one.\STOP
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \PARAGRAPH{Planar curves.} A \new{planar curve\/} is a strongly minimal subset of $\UU^2$. We say that two planar curves are \new{similar\/} if their symmetric difference is finite. By strong minimality a curve over $A$ and a curve over $B$ are similar if and only if they intersect outside of $\acl(AB)$ if and only if they coincide outside of $\acl(AB)$ (hence similarity is an equivalence relation).\STOP
@@ -570,15 +570,15 @@ We say that \new{$T$ is linear\/} if every planar curve is similar to a planar c
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \PARAGRAPH{A lemma.}%
-\Proposition Let $T$ be linear (and recall that in this section we always assume $\acl\0$ infinite). Then every planar curve over $A$ is similar to a planar curve that is over some tuple $\aa\sbs\acl A$ of dimension $\le1$.
-\Proof Let $\psi({\mr x}\,y)$ be a planar curve over $A$ that is similar to $\phi(\aa\,{\mr x}\,y)$ for some $\aa$ of dimension $\le1$. Say, $\psi({\mr x}\,y)$ and $\phi(\aa\,{\mr x}\,y)$ coincide up to $n$ points. Let $\theta(\zz)$ be the formula witnessing that $\aa$ has dimension $\le1$. The first-order $A$--formula saying $\theta(\zz)$ and that $\psi({\mr x}\,y)$ and $\phi(\zz\,{\mr x}\,y)$ coincide up to $n$ points is consistent. So it has a solution $\aa'\sbs\acl A$ (which is a model by the assumption that $\acl\0$ is infinite).
+\Proposition Let $T$ be linear (and recall that in this section we always assume $\acl\varnothing$ infinite). Then every planar curve over $A$ is similar to a planar curve that is over some tuple $\aa\sbs\acl A$ of dimension $\le1$.
+\Proof Let $\psi({\mr x}\,y)$ be a planar curve over $A$ that is similar to $\phi(\aa\,{\mr x}\,y)$ for some $\aa$ of dimension $\le1$. Say, $\psi({\mr x}\,y)$ and $\phi(\aa\,{\mr x}\,y)$ coincide up to $n$ points. Let $\theta(\zz)$ be the formula witnessing that $\aa$ has dimension $\le1$. The first-order $A$--formula saying $\theta(\zz)$ and that $\psi({\mr x}\,y)$ and $\phi(\zz\,{\mr x}\,y)$ coincide up to $n$ points is consistent. So it has a solution $\aa'\sbs\acl A$ (which is a model by the assumption that $\acl\varnothing$ is infinite).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \PARAGRAPH{Locally linear \ifft linear.\label{local linearity}}%
 Localizing the notion of linearity to a set of parameter $E$ does not yield anything new.
 \Proposition Let $E$ be set of parameters. Suppose that every planar curve is similar to a planar curve over $E\aa$ for some $\aa$ such that $\dim_E\aa\le 1$. Then $T$ be linear. 
-\Proof Let $\psi(\cc\,{\mr x}\,y)$ be a planar curve, where $\cc$ are all the parameters occurring in the formula. Fi{\mr x} some $\bb\equiv\cc$ such that $\bb\nonfork_\0 E$. Let $\phi(\ee\,\aa\,{\mr x}\,y)$ be a planar curve similar to $\psi(\bb\,{\mr x}\,y)$, say equal up to $n$ points, for some $\ee\sbs E$ and some $\aa$ such that $\dim_{\ee}\aa\le 1$. There is a first-order formula $\theta(\ee\,\bb)$ saying that $\phi(\ee\,\zz\,{\mr x}\,y)$ is equal to $\psi(\bb\,{\mr x}\,y)$ up to $n$ points for some $\zz$ such that $\dim_{\ee}\zz\le 1$. By Proposition~\ref{Independence and finite satisfiability} above, there is $\ee'\sbs\acl\0$ such that $\theta(\ee'\,\bb)$. Let $\aa'$ witness $\E \zz$ in  $\theta(\ee'\,\bb)$. Then $\phi(\ee'\,\aa'\,{\mr x}\,y)$ is a formula over $\aa'$, where $\dim\aa'\le1$, and is similar to $\psi(\bb\,{\mr x}\,y)$. Finally, by homogeneity, we map automorphically $\cc$ to $\bb$. The image $\aa''$ of $\aa'$ under this automorphism gives the required planar curve $\phi(\ee'\,\aa'\,{\mr x}\,y)$.
+\Proof Let $\psi(\cc\,{\mr x}\,y)$ be a planar curve, where $\cc$ are all the parameters occurring in the formula. Fi{\mr x} some $\bb\equiv\cc$ such that $\bb\nonfork_\varnothing E$. Let $\phi(\ee\,\aa\,{\mr x}\,y)$ be a planar curve similar to $\psi(\bb\,{\mr x}\,y)$, say equal up to $n$ points, for some $\ee\sbs E$ and some $\aa$ such that $\dim_{\ee}\aa\le 1$. There is a first-order formula $\theta(\ee\,\bb)$ saying that $\phi(\ee\,\zz\,{\mr x}\,y)$ is equal to $\psi(\bb\,{\mr x}\,y)$ up to $n$ points for some $\zz$ such that $\dim_{\ee}\zz\le 1$. By Proposition~\ref{Independence and finite satisfiability} above, there is $\ee'\sbs\acl\varnothing$ such that $\theta(\ee'\,\bb)$. Let $\aa'$ witness $\E \zz$ in  $\theta(\ee'\,\bb)$. Then $\phi(\ee'\,\aa'\,{\mr x}\,y)$ is a formula over $\aa'$, where $\dim\aa'\le1$, and is similar to $\psi(\bb\,{\mr x}\,y)$. Finally, by homogeneity, we map automorphically $\cc$ to $\bb$. The image $\aa''$ of $\aa'$ under this automorphism gives the required planar curve $\phi(\ee'\,\aa'\,{\mr x}\,y)$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -619,23 +619,23 @@ Finally we prove \casebo{\mr x}{$3\IMP1$} so assume (3). We prove ($\#$) by indu
 
 \hfil$\dim(ABc)\ \ =\ \ \dim A\ +\ \dim(Bc)\ -\ \dim(A\cap\acl(Bc)\big)$\smallskip
 
-We consider two cases: $c\in\acl(AB)$ and $c\notin\acl(AB)$. In the first case we need to show that $A\cap\acl(Bc)$ contains an element not in $A\cap B$. From  $c\in\acl(AB)$ and the induction hypothesis we get some $a\in A$ and some $b\in B$ such that $c\in\acl(a\,b)$. To avoid triviality we assume $b\notin\acl\0$ so, by e{\mr x}change, we get $a\in\acl(b\,c)$. So $a\notin A\cap B$, otherwise $c\in B$. In the second case it suffices to show that $A\cap\acl(Bc)=A\cap B$. So observe that if $a\in\acl(Bc)\sm\acl B$ then, by e{\mr x}change, $c\in\acl(Ba)$. So $a\notin A$. 
+We consider two cases: $c\in\acl(AB)$ and $c\notin\acl(AB)$. In the first case we need to show that $A\cap\acl(Bc)$ contains an element not in $A\cap B$. From  $c\in\acl(AB)$ and the induction hypothesis we get some $a\in A$ and some $b\in B$ such that $c\in\acl(a\,b)$. To avoid triviality we assume $b\notin\acl\varnothing$ so, by e{\mr x}change, we get $a\in\acl(b\,c)$. So $a\notin A\cap B$, otherwise $c\in B$. In the second case it suffices to show that $A\cap\acl(Bc)=A\cap B$. So observe that if $a\in\acl(Bc)\sm\acl B$ then, by e{\mr x}change, $c\in\acl(Ba)$. So $a\notin A$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \PARAGRAPH{Locally modular \ifft linear.} 
 \Proposition Let $T$ be strongly minimal. The following are equivalent:
 \begin{itemizeshort}
 \item[\casebo{\mr x}{1}] $T$ is linear;
-\item[\casebo{\mr x}{2}] for any $e\notin\acl\0$ the localization of $T$ at $e$ is modular; and
+\item[\casebo{\mr x}{2}] for any $e\notin\acl\varnothing$ the localization of $T$ at $e$ is modular; and
 \item[\casebo{\mr x}{3}] $T$ is locally modular.
 \end{itemizeshort}
-\Proof We prove \casebo{\mr x}{$1\IMP2$} first. Fi{\mr x} any $e\notin\acl\0$ and suppose $c\in\acl_e(Ab)$. We show that $c\in\acl_e(a\,b)$ for some $a\in\acl_eA$. Assume also that $c\notin\acl_e b$ and $c\notin\acl_e A$, otherwise we are done. So $\dim_{Ae}(b\,c)=1$. As $\acl_e A$ is a model, by~\ref{Planar curves} above, there is a planar curve over $\acl_e A$ through $b\,c$. By linearity this is of the form $\phi(\aa\,{\mr x}\,y)$ where $\phi(\zz\,{\mr x}\,y)$ is a parameter-free formula and $\aa\sbs\acl_e A$ has dimension $\le1$. Since we assumed that $c\notin\acl b$, we have $\dim\aa=1$. 
+\Proof We prove \casebo{\mr x}{$1\IMP2$} first. Fi{\mr x} any $e\notin\acl\varnothing$ and suppose $c\in\acl_e(Ab)$. We show that $c\in\acl_e(a\,b)$ for some $a\in\acl_eA$. Assume also that $c\notin\acl_e b$ and $c\notin\acl_e A$, otherwise we are done. So $\dim_{Ae}(b\,c)=1$. As $\acl_e A$ is a model, by~\ref{Planar curves} above, there is a planar curve over $\acl_e A$ through $b\,c$. By linearity this is of the form $\phi(\aa\,{\mr x}\,y)$ where $\phi(\zz\,{\mr x}\,y)$ is a parameter-free formula and $\aa\sbs\acl_e A$ has dimension $\le1$. Since we assumed that $c\notin\acl b$, we have $\dim\aa=1$. 
 \p
-We show that $\aa\in\acl(c\,b)$. As $\dim\aa=1$, there is an $a'\notin\acl\0$ such that $\aa\in\acl a'$. Since $c\in\acl(\aa\,b)$, then $c\in\acl(a'\,b)$. By symmetry, $a'\in\acl(c\,b)$. So $\aa\in\acl(c\,b)$ as desired.
+We show that $\aa\in\acl(c\,b)$. As $\dim\aa=1$, there is an $a'\notin\acl\varnothing$ such that $\aa\in\acl a'$. Since $c\in\acl(\aa\,b)$, then $c\in\acl(a'\,b)$. By symmetry, $a'\in\acl(c\,b)$. So $\aa\in\acl(c\,b)$ as desired.
 \p
 We now prove that $e\notin\acl\aa$ by showing that $a'\notin\acl e$. As $c\,b$ belong to a planar curve over $\aa$, then $c\in\acl_{\aa} b$. So, from $a'\in\acl e$ we would obtain $c\in\acl_e b$ which is contrary to the assumptions.
 \p
-We also have that $c\notin\acl\aa$, so there is a automorphism mapping $c$ to $e$ over $\aa$. Let $a$ be the image of $b$ under this automorphism. We claim that this $a$ is the required element of $\acl_e A$. Observe that since $b\in\acl(c\,\aa)$, then $a\in\acl_e\aa\sbs\acl_e A$. So we only have to check that $c\in\acl_e(a\,b)$. This follows from symmetry if we can show that $a\in \acl_e(c\,b)$ and $a\notin\acl_e b$. The first is clear since $\acl_e\aa\sbs \acl_e(c\,b)$. For the second observe that $b\notin\acl_e a$ and that $a\in\acl_e \0$,  so $a\notin\acl_e b$ follows by symmetry.
+We also have that $c\notin\acl\aa$, so there is a automorphism mapping $c$ to $e$ over $\aa$. Let $a$ be the image of $b$ under this automorphism. We claim that this $a$ is the required element of $\acl_e A$. Observe that since $b\in\acl(c\,\aa)$, then $a\in\acl_e\aa\sbs\acl_e A$. So we only have to check that $c\in\acl_e(a\,b)$. This follows from symmetry if we can show that $a\in \acl_e(c\,b)$ and $a\notin\acl_e b$. The first is clear since $\acl_e\aa\sbs \acl_e(c\,b)$. For the second observe that $b\notin\acl_e a$ and that $a\in\acl_e \varnothing$,  so $a\notin\acl_e b$ follows by symmetry.
 \p
 The implication \casebo{\mr x}{$2\IMP3$} does not need a proof so only the implication \casebo{\mr x}{$3\IMP1$} is left. The argument is clearer if we assume that $T$ is modular. Let $\phi(\aa\,{\mr x}\,y)$ be a planar curve and let $c\,b$ be a pair in the curve not in $\acl\aa$. Replacing $A$ with $\acl\aa$ and $\acl(c\,b)$ for $B$ in ($\#\#$) of~\ref{Modularity def} we obtain that the dimension of $c\,b$ over $\acl(c\,b)\cap\acl\aa$ is $1$. Since $\acl(c\,b)\cap\acl\aa$ has dimension 1 and is a model, the claim follows from Proposition~\ref{Planar curves} above. In general, i.e.\@ when $T$ is simply locally modular, we need just to fi{\mr x} a set $E$ containing the the parameters that make $T$ modular and in any case infinite. Then the argument above yields that $T$ is linear over $E$ so, by~\ref{local linearity} above, linear.
 
@@ -647,7 +647,7 @@ The implication \casebo{\mr x}{$2\IMP3$} does not need a proof so only the impli
 \PARAGRAPH{The definability of dimension} 
 The following is an important property of dimension (it will not be used in this chapter). 
 \Proposition  Let $T$ be strongly minimal. Let $\phi(\zz\,\{\mr x}{\mr x})$ be an parameter-free formula. For every positive integer $k$ there is a parameter-free formula $\psi(\zz)$ such that $\psi(\aa)$ holds if and only if $\phi(\aa\,\bar\UU)$ has dimension $k$. 
-\Proof  We prove first a slightly different claim: for every non-negative integer $k$ there is a parameter-free formula $\psi(\zz)$ such that $\psi(\aa)$ holds if and only if $\phi(\aa\,\bar\UU)$ has dimension $k$ over $\aa$. By what observed above, for positive $k$ we can replace $\aa$ with $\0$.
+\Proof  We prove first a slightly different claim: for every non-negative integer $k$ there is a parameter-free formula $\psi(\zz)$ such that $\psi(\aa)$ holds if and only if $\phi(\aa\,\bar\UU)$ has dimension $k$ over $\aa$. By what observed above, for positive $k$ we can replace $\aa$ with $\varnothing$.
 \p
 Observe that when $\{\mr x}{\mr x}$ has arity $1$ the claim follows easily form the strong minimality of $T$. In fact, for some $n$ we have
 

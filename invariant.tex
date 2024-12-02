@@ -161,7 +161,7 @@ We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is 
   %
   \ceq{\hfill\emph{${\mr a}\cnonfork_M{\gr b}$}}
   {\IFF}
-  {\phi(M^{\mr x},{\gr b})\neq\0
+  {\phi(M^{\mr x},{\gr b})\neq\varnothing
   \textrm{ for all }\phi({\mr x}\,;{\gr z})\in L(M) 
   \textrm{ such that }\phi({\mr a}\,;{\gr b})}.
 
@@ -173,7 +173,7 @@ We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is 
   {\Big\{\neg\phi({\mr x}\,;{\gr b})
   \ :\ 
   \phi({\mr x}\,;{\gr b})\in L(M)
-  \textrm{ and } \phi(M^{\mr x};{\gr b})=\0\Big\}.}
+  \textrm{ and } \phi(M^{\mr x};{\gr b})=\varnothing\Big\}.}
 
   We will write \emph{${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$} for the union of the types ${\mr x}\cnonfork_M{\gr b}$ and $\tp({\mr a}/M)$.
 \end{definition}
@@ -232,14 +232,14 @@ We will use the following easy lemma without explicit reference.
   Let $p(w,{\gr z})=\tp(c,{\gr b}/M)$.
   We can take $\V$ to be the structure enumerated by the tuple that realizes symultaneously $p(w,{\gr b}) $ and the following type 
 
-  \ceq{\hfill\Big\{\neg\phi({\mr a},w,{\gr b})}{:}{\phi({\mr x},w,{\gr z})\in L(M),\ \ p(w,{\gr b})\imp\phi(M^{\mr x},w,{\gr b})=\0\Big\}.}
+  \ceq{\hfill\Big\{\neg\phi({\mr a},w,{\gr b})}{:}{\phi({\mr x},w,{\gr z})\in L(M),\ \ p(w,{\gr b})\imp\phi(M^{\mr x},w,{\gr b})=\varnothing\Big\}.}
 
   We only need to prove consistency.
   If inconsistent, then 
 
   \ceq{\hfill\theta(w,{\gr b})}{\imp}{\bigvee_{i=1}^n\phi_i({\mr a},w,{\gr b})}
   
-  for some $\theta(w,{\gr z})\in p$ and some $\phi_i({\mr x},w,{\gr z})$ such that $p(w,{\gr b})\imp\phi_i(M^{\mr x},w,{\gr b})=\0$.
+  for some $\theta(w,{\gr z})\in p$ and some $\phi_i({\mr x},w,{\gr z})$ such that $p(w,{\gr b})\imp\phi_i(M^{\mr x},w,{\gr b})=\varnothing$.
   We obtain a contradiction because, as ${\mr a}\cnonfork_M{\gr b}$, we can replace ${\mr a}$ by some ${\mr a'}\in M^{\mr x}$.
 \end{proof}
 
@@ -284,7 +284,7 @@ Finally, the claim follows because ${\mr a_1}\equiv_M{\mr a_2}$.
 
 % We say that $p({\mr x})\in S(\U)$ is a \emph{global heir\/} of $p_{\restriction M}({\mr x})$ if  
 % 
-% \ceq{\hfill{\gr\D_{p,\phi}}\cap M^{\gr z}\neq\0}{\IFF}{{\gr\D_{p,\phi}}\neq\0}  for every formula $\phi({\mr x}\,;{\gr z})\in L$.
+% \ceq{\hfill{\gr\D_{p,\phi}}\cap M^{\gr z}\neq\varnothing}{\IFF}{{\gr\D_{p,\phi}}\neq\varnothing}  for every formula $\phi({\mr x}\,;{\gr z})\in L$.
 
 %Every type over a model has an extension to a global coheir.
 %A satisfactory generalization of this notions to types over sets should guarantee this existence.
@@ -345,7 +345,7 @@ The following are equivalent
 Assume \ssf{1} and let $p({\mr x})\in S(\U)$ be a global type that is finitely satisfiable in $M$ and such that ${\mr c_i}\models p_{\restriction M,{\mr c_{\restriction i}}}({\mr x})$.
 The requirement ${\mr c_{n+1}}\equiv_{M,{\mr c_{\restriction n}}} {\mr c_n}$ is clear.
 Now, suppose $\phi({\mr c_{n+1}})$ for some $\phi({\mr x})\in L(M,{\mr c_{\restriction n+1}})$.
-Then $\phi({\mr x})$ belongs to $p({\mr x})$, so $\phi(\U^{\mr x})\cap M^{\mr x}\neq\0$ because $p({\mr x})$ is finitely satisfiable in $M$.
+Then $\phi({\mr x})$ belongs to $p({\mr x})$, so $\phi(\U^{\mr x})\cap M^{\mr x}\neq\varnothing$ because $p({\mr x})$ is finitely satisfiable in $M$.
 This proves ${\mr c_n}\cnonfork_M{\mr c_{\restriction n}}$.
 
 \ssf{2}$\IMP$\ssf{1}.

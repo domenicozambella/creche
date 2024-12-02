@@ -305,7 +305,7 @@ Then we can set ${a_i}=f{b}$.
 Here we present some important characterizations of $\omega$-categoricity.
 The second property below can be stated in different equivalent ways; for convenience, these equivalents are considered in a separate proposition.
 For the time being we introduce the following generalization (which we will prove is completely unnecessary): we say hat $T$ is $\omega$-categorical over $A$ if any two countable models containing $A$ are isomorphic over $A$.
-We say $\omega$-categorical for $\omega$-categorical over $\0$.
+We say $\omega$-categorical for $\omega$-categorical over $\varnothing$.
 
 \begin{theorem}[ (Engeler, Ryll-Nardzewsky, and Svenonius)] Assume $L(A)$ is countable.
 The following are equivalent:
@@ -316,7 +316,7 @@ The following are equivalent:
 \end{itemize}
 \end{theorem}
 The set $A$ is introduced for convenience.
-By \ssf{3} of Proposition~\ref{prop_ERNS_equivalents} below, no theory is $\omega$-categorical over an infinite set, and categoricity over some finite $A$ is equivalent to categoricity over $\0$ (see Exercise~\ref{ex_omega_cat_overA}).
+By \ssf{3} of Proposition~\ref{prop_ERNS_equivalents} below, no theory is $\omega$-categorical over an infinite set, and categoricity over some finite $A$ is equivalent to categoricity over $\varnothing$ (see Exercise~\ref{ex_omega_cat_overA}).
 
 \vspace*{-\parskip}
 \begin{proof} \ssf{1}$\IMP$\ssf{2}. This is an immediate consequence of the omitting types theorem.
@@ -397,7 +397,7 @@ A different term is used in another very interesting case: a theory which is sma
 For this reason, the term $0$-stable is sometimes used for small.
 
 \begin{proposition}
-If $T$ is small (over $\0$) then it is small over any finite set $A$.
+If $T$ is small (over $\varnothing$) then it is small over any finite set $A$.
 \end{proposition}
 
 \begin{proof}
@@ -432,7 +432,7 @@ We may depict a binary tree of formulas as follows
 
 \qquad
 \begin{tikzpicture}[grow=right]
-\node[bag] {$\phi_\0$}
+\node[bag] {$\phi_\varnothing$}
     child {
         node[bag] {$\phi_0$}        
             child {
@@ -512,7 +512,7 @@ Since the implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3} are clear, it
 suffices to prove \ssf{3}$\IMP$\ssf{1}.
 We assume that $S(\Delta)$ is uncountable and define a tree of
 formulas in $\Delta$ by induction.
-Begin with $\phi_\0=\top$.
+Begin with $\phi_\varnothing=\top$.
 For $s\in 2^{<\omega}$ define
 
 \ceq{\hfill p_s}{=}{\big\{\phi_r\ :\ r\subseteq s\big\}.}
@@ -585,7 +585,7 @@ This allows to construct a binary tree of formulas in $L_{\mr x}(A)$ and prove t
 
 % \begin{exercise}\label{ex_binary_tree_canonical}
 % Suppose $\Delta$ is countable and closed under negation.
-% Prove that if there is a binary tree of formulas  then there is a binary tree such that $\phi_{s0}=\neg\phi_{s1}$ and $\phi_{\0}=\top$.
+% Prove that if there is a binary tree of formulas  then there is a binary tree such that $\phi_{s0}=\neg\phi_{s1}$ and $\phi_{\varnothing}=\top$.
 % \end{exercise}
 
 \begin{exercise}
@@ -599,7 +599,7 @@ Prove that no complete theory has exactly 2 countable models (assume $L$ is coun
 
 Hint: suppose $T$ has exactly two countable models.
 Then $T$ is small and there are a countable saturated model $N$ and an atomic model $M\subseteq N$.
-As $T$ is not $\omega$-categorical, $M\not\simeq N$ and there is finite tuple $a$ that is not isolated over $\0$.
+As $T$ is not $\omega$-categorical, $M\not\simeq N$ and there is finite tuple $a$ that is not isolated over $\varnothing$.
 Let $K$ be an atomic model over $a$.
 Clearly $K\not\simeq M$ and, by Exercises~\ref{ex_omega_cat_overA} and~\ref{ex_omega_cat_sat=atomic}, also $K\not\simeq N$.
 \end{exercise}

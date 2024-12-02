@@ -42,8 +42,8 @@ If $a,b\in A^{\alpha}$ and $h$ is a function defined on $A$, we write $h(a)=b$ f
 We often do not distinguish between the pair $\<a,b\>$ and the tuple of pairs $\<a_i,b_i\>$.
 The context will resolve the ambiguity.
 
-Note that there is a unique tuple of length $0$, the empty set $\0$, which in this context is called \emph{empty tuple.}
-Recall that by definition \emph{$A^{0}$\/}$=\{\0\}$ for every set $A$.
+Note that there is a unique tuple of length $0$, the empty set $\varnothing$, which in this context is called \emph{empty tuple.}
+Recall that by definition \emph{$A^{0}$\/}$=\{\varnothing\}$ for every set $A$.
 Therefore, even when $A$ is empty, $A^{0}$ contains the empty string.
 
 We often concatenate tuples.
@@ -82,9 +82,9 @@ A \emph{structure\/}\index{structure} $M$ of signature $L$ (for short \emph{$L$-
 We call $f^M$ and $r^M$, the \emph{interpretation\/}\index{interpretation} of $f$, respectively $r$, in $M$.
 \end{definition}
 
-Recall that, by definition, $M^0=\{\0\}$\index{function!0-ary}.
+Recall that, by definition, $M^0=\{\varnothing\}$\index{function!0-ary}.
 Therefore the interpretation of a constant $c$ is a function that maps the unique element of $M^0$ to an element of $M$.
-We identify \emph{$c^M$\/} with $c^M(\0)$.
+We identify \emph{$c^M$\/} with $c^M(\varnothing)$.
 
 We may use the word \emph{model\/} as a synonym for structure.
 But beware that, in some contexts, the word model is used to denote a particular kind of structure.
@@ -116,7 +116,7 @@ To view a vector space over $F$ as an $L_F$-structure, we interpret the group sy
 See Example~\ref{ex_ax_vect_sp}.
 \end{example}
 
-The languages in Examples~\ref{LgaLgmLau} and \ref{linguaggio_spazi_vettoriali}, with the exception of that of ordered rings, are \emph{functional languages;}\index{language!functional} that is, $L_{\rm rel}=\0$. The following example mention two important examples of \emph{relational languages,}\index{language!relational} that is, languages where $L_{\rm fun}=\0$.
+The languages in Examples~\ref{LgaLgmLau} and \ref{linguaggio_spazi_vettoriali}, with the exception of that of ordered rings, are \emph{functional languages;}\index{language!functional} that is, $L_{\rm rel}=\varnothing$. The following example mention two important examples of \emph{relational languages,}\index{language!relational} that is, languages where $L_{\rm fun}=\varnothing$.
 
 \begin{example}\label{expl_graph1}
 The \emph{language of strict orders\/}\index{language!strict orders} contains a binary relation symbol, which is usually denoted by~$<$.
@@ -177,7 +177,7 @@ Note that in \ssf{i} we have used Lemma~\ref{lemmaterminileggibilita} in an esse
 \end{definition}
 
 The inductive definition above is based on the case $n_f=0$, that is, the case where $f$ a constant, or a parameter. 
-When $t=c$, a constant, $t_1\dots t_{n_f}$ is the empty tuple, and so $t^M=c^M(\0)$, which we abbreviate as $c^M$. In particular, if $t=a$, a parameter, then $t^M=a^M=a$.
+When $t=c$, a constant, $t_1\dots t_{n_f}$ is the empty tuple, and so $t^M=c^M(\varnothing)$, which we abbreviate as $c^M$. In particular, if $t=a$, a parameter, then $t^M=a^M=a$.
 
 Now we generalize the interpretation to all (not necessarily closed) terms.
 If $t(x)$ is a term, we define \emph{$t^M\!(x) :\,M^{x}\to\, M$}\index{0tMx@$t^M(x)$} to be the function that maps $a$ to $t(a)^M$.
@@ -312,7 +312,7 @@ It is also very common to write \emph{$\phi(M^{\mr x})$} for the set defined by 
 
 \item[o2.] \hspace*{15ex}\llap{$(r\,t_1\dots\,t_n)(x)^M$}\ \   =\ \ \ $\Big\{a\in M^{x}\ :\ \<t_1^M(\!a),\dots,t_n^M\!(a)\>\in r^M\Big\}$\medskip
 
-\item[i0.] \hspace*{15ex}\llap{$\bot(x)^M$}\ \  =\ \ \  $\0$\bigskip
+\item[i0.] \hspace*{15ex}\llap{$\bot(x)^M$}\ \  =\ \ \  $\varnothing$\bigskip
 
 \item[i1.] \hspace*{15ex}\llap{$\big(\neg\xi\big)(x)^M$}\ \   =\ \ \  $M^{x}\smallsetminus\xi(x)^M$\bigskip
 
@@ -324,8 +324,8 @@ Condition \ssf{i2} assumes that $\xi$ and $\psi$ are uniquely determined by $\ve
 Analogously, \ssf{o1} e \ssf{o2} assume Lemma~\ref{lemmaterminileggibilita}.
 \end{definition}
 
-The case when $x$ is the empty tuple is far from trivial. Note that $\phi(\0)^M$ is a subset of $M^0=\{\0\}$. Then there are two possibilities either $\{\0\}$ or $\0$.
-We will read them as two \emph{truth values}: \emph{True\/} and \emph{False}, respectively. If $\phi^M=\{\0\}$ we say that \emph{$\phi$ is true in $M$}, if $\phi^M=\0$, we say that \emph{$\phi$ is false $M$} and we write \emph{$M\models\phi$}, respectively \emph{$M\notmodels\phi$.}
+The case when $x$ is the empty tuple is far from trivial. Note that $\phi(\varnothing)^M$ is a subset of $M^0=\{\varnothing\}$. Then there are two possibilities either $\{\varnothing\}$ or $\varnothing$.
+We will read them as two \emph{truth values}: \emph{True\/} and \emph{False}, respectively. If $\phi^M=\{\varnothing\}$ we say that \emph{$\phi$ is true in $M$}, if $\phi^M=\varnothing$, we say that \emph{$\phi$ is false $M$} and we write \emph{$M\models\phi$}, respectively \emph{$M\notmodels\phi$.}
 In words we may say that \emph{$M$ models $\phi$}, respectively \emph{$M$ does not model $\phi$.}
 It is immediate to verify that
 

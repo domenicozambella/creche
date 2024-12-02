@@ -447,7 +447,7 @@ The following proposition highlights the connection between the stability of $\p
 
 Binary trees of formulas have been introduced in Definition~\ref{def_tree_formulas}.
 Here we restrict to trees of a particular form.
-Namely, $\<\psi_s:s\in 2^{<\omega}\>$  where $\psi_\0=\top$ and for $s\in 2^{<\omega}$ and $i\in 2$ we have $\psi_{s^\frown 0}({\mr x})=\neg\phi({\mr x}\,;{\gr b_s})$ and $\psi_{s^\frown 1}({\mr x})=\phi({\mr x}\,;{\gr b_s})$.
+Namely, $\<\psi_s:s\in 2^{<\omega}\>$  where $\psi_\varnothing=\top$ and for $s\in 2^{<\omega}$ and $i\in 2$ we have $\psi_{s^\frown 0}({\mr x})=\neg\phi({\mr x}\,;{\gr b_s})$ and $\psi_{s^\frown 1}({\mr x})=\phi({\mr x}\,;{\gr b_s})$.
 If we define $\phi^0=\neg\phi$ and $\phi^1=\phi$ the condition of consistency becomes for every $s\in 2^\omega$ the type $\{\phi^{s_n}({\mr x}\,;{\gr b_{s\restriction n}})\ :\ n<\omega\}$.
 
 
@@ -468,7 +468,7 @@ If we define $\phi^0=\neg\phi$ and $\phi^1=\phi$ the condition of consistency be
 \begin{tikzpicture}[grow=right]
 \node[bag0] {{$\top$}}
     child {
-        node[bag] {\llap{$\neg$}$\phi(x;b_{\0}\!)$}      
+        node[bag] {\llap{$\neg$}$\phi(x;b_{\varnothing}\!)$}      
             child {
                 node[bag] {\llap{$\neg$}$\phi(x;b_0\!)$}
                     child {
@@ -497,7 +497,7 @@ If we define $\phi^0=\neg\phi$ and $\phi^1=\phi$ the condition of consistency be
        edge from parent 
     }
     child {
-        node[bag] {$\phi(x;b_{\0}\!)$}         
+        node[bag] {$\phi(x;b_{\varnothing}\!)$}         
             child {
                 node[bag] {\llap{$\neg$}$\phi(x;b_1\!)$}
                     child {
@@ -543,7 +543,7 @@ When a tree of this form exists, we say that $\phi({\mr x}\,;{\gr z})$ has the \
   The argument is the same as in the proof of Lemma~\ref{lem_bin_tree}.
   Assume \ssf1. 
   By Theorem~\ref{thm_def_stable_formula2} there are $2^\kappa$ sets externally definable by $\phi({\mr x}\,;{\gr z})$.
-  Then there is ${\gr b_\0}\in{\U^z}$ such that there are $2^\kappa$ sets ${\gr\D}$ externally definable by $\phi({\mr x}\,;{\gr z})$ and such that ${\gr b_\0}\in{\gr\D}$ and $2^\kappa$ sets such that ${\gr b_\0}\notin{\gr\D}$.
+  Then there is ${\gr b_\varnothing}\in{\U^z}$ such that there are $2^\kappa$ sets ${\gr\D}$ externally definable by $\phi({\mr x}\,;{\gr z})$ and such that ${\gr b_\varnothing}\in{\gr\D}$ and $2^\kappa$ sets such that ${\gr b_\varnothing}\notin{\gr\D}$.
 
   Assume inductively that ${\gr b}:2^n\to{\gr\U^z}$ is such that for all $s\in2^n$ and $r\in2^{n+1}$ there are $2^\kappa$ sets ${\gr\D}$ externally definable by $\phi({\mr x}\,;{\gr z})$ and such that ${\gr b_{s\restriction i}}\in\D\iff r(i)=1$.
   Reasoning as above we can extend ${\gr b}$ to a map ${\gr b'}:2^{n+1}\to{\gr\U^z}$ with the same property.
@@ -609,7 +609,7 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
   It is easy to see that we can expand these models to two substructures $\V_0$ and $\V_1$ that are $A$-isomorphic to $\U$ and such that $\V_0=\neg\phi(\V_0^{\mr x};{\gr b})$ and $\V_1=\neg\psi(\V_1^{\mr x};{\gr b})$.
 
   Let $f_i:\U\to\V_i$ be the $A$-isomorphisms mentioned above. 
-  Let $\V_\0=\U$ and ${\gr b_\0}={\gr b}$.
+  Let $\V_\varnothing=\U$ and ${\gr b_\varnothing}={\gr b}$.
   Define inductively for every $s\in 2^{<\omega}$ 
 
   \hfil$\V_{s^\frown i}=f_i[\V_s]$\ \ and\ \ ${\gr b_{s\frown i}}=f_i({\gr b_s})$.
@@ -713,7 +713,7 @@ In fact, when $T$ is stable, it implies that
   Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$ be such that ${\mr a}\cnonfork_M{\gr b}$.
   Then
 
-  \ceq{\hfill\phi({\mr a}\,;{\gr b})}{\IMP}{\phi({\mr a}\,;M^{\gr z})\neq\0.}
+  \ceq{\hfill\phi({\mr a}\,;{\gr b})}{\IMP}{\phi({\mr a}\,;M^{\gr z})\neq\varnothing.}
 \end{theorem}
 
 \vspace*{-\parskip}
@@ -770,7 +770,7 @@ Now we show that under the assumption of stability Lascar invariance reduces to 
   Let $\psi({\gr z})\in L(\acl^\eq\!A)$ be a formula defining ${\gr\D_{p,\phi}}$.
   Pick any ${\mr a}\models p({\mr x}){\restriction} M$ such that ${\gr b}\cnonfork_M{\mr a}$.
   As $\phi({\mr a}\,;M^{\gr z})=\psi(M^{\gr z})$ we have that $\phi({\mr a}\,;{\gr b})=\psi({\gr b})$.
-  But $\psi({\gr b})$ holds because $\phi({\mr x}\,;{\gr b})\in p$, hence $\phi({\mr a}\,;{\gr b})$ and, from Theorem~\ref{thm_symmetry} we obtain $\phi(M^{\mr x};{\gr b})\neq\0$.
+  But $\psi({\gr b})$ holds because $\phi({\mr x}\,;{\gr b})\in p$, hence $\phi({\mr a}\,;{\gr b})$ and, from Theorem~\ref{thm_symmetry} we obtain $\phi(M^{\mr x};{\gr b})\neq\varnothing$.
   The same argument extends easily to the conjunction of formulas of the form $\phi({\mr x}\,;{\gr b})$ and negation thereof (use that the complement and the Cartesian product of sets in $\acl^\eq\!A$ is again $\acl^\eq\!A$).
  
   \ssf{3}$\IMP$\ssf{1} By Theorem~\ref{thm_def_stable_formula2} the sets ${\gr\D_{p,\phi}}$ are definable (over $\U$).
@@ -1106,13 +1106,13 @@ We assume the hypotheses and the notation of Section~\ref{definablegroups}.
   By compactness, we can assume $H$ finite, so the $\grZ$-genericity follows.
   % \ssf1$\IMP$\ssf2.
   % Let ${\gr g}$ be given.
-  % By stability, there is a type $p({\mr x})\in L'\mbox{-}S(\grZ)$ that is invariant, and therefore definable, over $L'\mbox{-}\acl^\eq\0$.
+  % By stability, there is a type $p({\mr x})\in L'\mbox{-}S(\grZ)$ that is invariant, and therefore definable, over $L'\mbox{-}\acl^\eq\varnothing$.
   % If $\phi({\mr x}\,;{\gr g})$ is $\grZ$-generic, $p({\mr x})\proves\phi({\mr x}\,;{\gr h}\,{\gr g})$ for some ${\gr h}\in\grZ$.
   % Then $\phi({\mr x}\,;{\gr g})\in{\gr h^{-1}}p$.
-  % We claim that ${\gr h^{-1}}p({\mr x})$ is also definable over $L'\mbox{-}\acl^\eq\0$.
-  % Indeed, it suffices to note that ${\gr\D_{{h^{-1}}p,\phi}}={\gr h^{-1}}\,{\gr\D_{p,\phi}}$ and that if ${\gr\D_{p,\phi}}\in L'\mbox{-}\acl^\eq\0$ then also ${\gr h^{-1}}\,{\gr\D_{p,\phi}}\in L'\mbox{-}\acl^\eq\0$.
+  % We claim that ${\gr h^{-1}}p({\mr x})$ is also definable over $L'\mbox{-}\acl^\eq\varnothing$.
+  % Indeed, it suffices to note that ${\gr\D_{{h^{-1}}p,\phi}}={\gr h^{-1}}\,{\gr\D_{p,\phi}}$ and that if ${\gr\D_{p,\phi}}\in L'\mbox{-}\acl^\eq\varnothing$ then also ${\gr h^{-1}}\,{\gr\D_{p,\phi}}\in L'\mbox{-}\acl^\eq\varnothing$.
   % Now read ${\gr h^{-1}}p({\mr x})$ as a type $q({\mr x})\in S_\Delta(\grZ)$ in the natural way.
-  % Note that $\phi({\mr x}\,;{\gr g})\in q$ and that $q({\mr x})$ is definable over $\acl^\eq\0$ since this is a superset of $L'\mbox{-}\acl^\eq\0$.
+  % Note that $\phi({\mr x}\,;{\gr g})\in q$ and that $q({\mr x})$ is definable over $\acl^\eq\varnothing$ since this is a superset of $L'\mbox{-}\acl^\eq\varnothing$.
   % This shows that there is Lascar invariant type containing $\phi({\mr x}\,;{\gr g})$.
   % As the finite satisfiability in $\mrX$ is evident, \ssf1 follows.
   % \ssf3$\IMP$\ssf1.
@@ -1154,7 +1154,7 @@ We assume the hypotheses and the notation of Section~\ref{definablegroups}.
 \begin{proof}
   Apply Theorem~\ref{thm_FER} in $\UDelta$ with ${\mr x}={\mr x}$ for $p_0({\mr x})$.
   Let $\epsilon({\mr x},{\mr y})\in\LDelta$ and $P$ be as defined there.
-  We are using the transitivity of the action to conclude that ${\mr x}={\mr x}$ is an $\LDelta$-type complete over $\0$.
+  We are using the transitivity of the action to conclude that ${\mr x}={\mr x}$ is an $\LDelta$-type complete over $\varnothing$.
   As $\epsilon({\mr x},{\mr y})$ is invariant under the action of $\Aut(\UDelta)$ it is a fortiori $\grZ$-invariant.
   As $\grZ$ acts transitively on the classes of $\epsilon({\mr x},{\mr y})$, it also acts transitively on $P$.
 

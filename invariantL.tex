@@ -288,7 +288,7 @@ The following example shows that some theories may have no other extension bases
   Consider $T_{\rm dlo}$.
   Suppose $A$ is not a model.
   We show that $A$ is not an extension base for coheirs.
-  As $A$ is not a model, there are $a<c$ in $A$ such that either $A\cap(a,c)=\0$ or $a\le A$ or $A\le c$.
+  As $A$ is not a model, there are $a<c$ in $A$ such that either $A\cap(a,c)=\varnothing$ or $a\le A$ or $A\le c$.
   In the first case let $b\in(a,c)$. 
   Then every model containing $A$ intersects $(a,b)\cup (b,c)$, but there are both models that omit $(a,b)$ and models that omit $(b,c)$.
   In the second case let $b<a$ and consider $(-\infty,b)\cup (b,a)$.
@@ -356,9 +356,10 @@ We write \emph{$d_A({\mr a},{\mr b})$\/} for the distance between ${\mr a}$ and 
 Let us spell this out: $d_A({\mr a},{\mr b})\le n$ if there is a sequence ${\mr a_0},\dots,{\mr a_n}$ such that ${\mr a}={\mr a_0}$, ${\mr b}={\mr a_n}$, and ${\mr a_i}\equiv_{M_i}{\mr a_{i+1}}$ for some models $M_i$ containing $A$.
 We write \emph{$d_A({\mr a},{\mr b})<\infty$\/} if ${\mr a}$ and ${\mr b}$ are in the same connected component of the Lascar graph over $A$.
 
-\begin{proposition}\label{tipoforteLascarediametro} For every ${\mr a}\in\U^{\mr x}$
+\begin{proposition}\label{tipoforteLascarediametro}
+  For every ${\mr a}\in\U^{\mr x}$
 
-\ceq{\hfill\Ll({\mr a}/A)}{=}{\big\{{\mr c}\ :\ d_A({\mr a},{\mr c})<\infty\big\}.}
+  \ceq{\hfill\Ll({\mr a}/A)}{=}{\big\{{\mr c}\ :\ d_A({\mr a},{\mr c})<\infty\big\}.}
 \end{proposition}
 
 
@@ -434,6 +435,11 @@ Vice versa it is clear that we can realize $q(w)$ in any model containing $A$.
   Hint: use Exercise~\ref{ex_symmetry_ind} to prove symmetry, then reason as in Proposition~\ref{tipoforteLascarediametro}.
 \end{exercise}
 
+\begin{exercise}
+  Let $G=\{f\in\Aut(\U/A) : f\D=\D \textrm{ for every }\D \textrm{ with }o(\D/A)\textrm{ bounded}\}$. 
+  Prove that $G=\Autf(\U/A)$.
+\end{exercise}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -452,7 +458,7 @@ It follows that if ${\gr b}\in\K({\gr a}/A)$ then $\K({\gr b}/A)\subseteq\K({\gr
 
 To summarize, we recall that we have defined a whole hierarchy of strong types obtained from the intersection of different sets with various sots of invariance
 
-\hfil$\Ll({\gr a}/A)\ \subseteq\ \K({\gr a}/A)\ \subseteq\ \S({\gr a}/A)\ \subseteq\ \O({\gr a}/A)$. 
+\hfil$\Ll({\gr a}/A)\ \subseteq\ \K({\gr a}/A)\ \subseteq\ \S({\gr a}/A)\ \subseteq\ \Orbit({\gr a}/A)$. 
 
 Recall that $\S({\gr a}/A)$ was defined after Proposition~\ref{prop_Shelah_strong_types}.
 
@@ -568,6 +574,12 @@ Its Kolmogorov quotient, that is $\U^{\gr z}/\equivKP$, is Hausdorff.
 Prove that the clopen sets in the logic $A$-topology are exactly the sets that are definable over $\acl^\eq A$.
 \end{exercise}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notes and references}
 
 
@@ -753,7 +765,7 @@ For every $\grD\subseteq\U^{|z|}$ the following are equivalent
 \end{itemize}
 \end{proposition}
 
-We say that a type $p(x)\subseteq L(\U)$ is \emph{finitely satisfiable in\/} $A$ if $\psi(A)\neq\0$ for every $\psi(x)\in p$.
+We say that a type $p(x)\subseteq L(\U)$ is \emph{finitely satisfiable in\/} $A$ if $\psi(A)\neq\varnothing$ for every $\psi(x)\in p$.
 Notice that by elementarity every type $p(x)\subseteq L(M)$ is finitely satisfiable in $M$, for any model $M$.
 The following is clear:
 

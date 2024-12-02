@@ -19,18 +19,19 @@ Assumption~\ref{notation_GXphi} below is in force throughtout the chapter.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The dual perspective on invariance}\label{dual_perspective}
 
-The notions of invariance introduceted in Chapter~\ref{invariant} extend seemlessly to the action of a group $G$ on $\U^{\gr z}$.
+The notions of invariance introduceted in Chapter~\ref{invariant} extend seamlessly to the action of a group $G$ on $\U^{\gr z}$.
 It is convenient to work in a more general setting.
 
 In this chapter $\Delta\subseteq L_{{\mr x}\,{\gr z}}(\U)$.
 Let $\grZ\subseteq\U^{\gr z}$.
 We write \emph{$\Delta(\grZ)$} for the set of formulas of the form $\phi({\mr x}\,;{\gr b})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$ and some ${\gr b}\in\grZ$.
 We write \emph{$\pmDelta(\grZ)$} for the set of formulas in $\Delta(\grZ)$ or negation thereof.
-We write $S_\Delta(\grZ)$ for the set of complete $\pmDelta(\grZ)$-types.
+Furthermore write $S_\Delta(\grZ)$ for the set of complete $\pmDelta(\grZ)$-types.
 
 We write \emph{$\BDelta(\grZ)$} for the set of Boolean combinations of formulas in $\Delta(\grZ)$.
 
-When $\Aa\subseteq\U$, we may use $\Aa$ for $\Aa^{\gr z}$ in the notation above.
+When $\grZ=\Aa^{\gr z}$ for some $\Aa\subseteq\U$, we may write $\Aa$ for $\Aa^{\gr z}$ in the notation above.
+
 
 Finally, define \emph{$\GDelta(A)$\/} to be the set of formulas $\phi({\mr x})\in L(\U)$ that are equivalent to some formula in $\BDelta(A)$ or, equivalently, that are invariant over $A$.
 In the literature these formulas are called \textit{generalized\/} $\Delta$-formulas over $A$.
@@ -60,7 +61,6 @@ It should be clear that invariant under the action of $\Aut(\U/A)$ coincides wit
 
 Note that $p({\mr x})$ is $G$-invariant exactly when the sets ${\gr\D_{p,\theta}}\subseteq\U^{\gr z}$ are.
 In this section we want to discuss invariance using sets $\mrD\subseteq\U^{\mr x}$.
-We need stronger assumptions on the action of $G$.
 
 An immediate consequence of the invariance of $\phi(\mrX\,;\grZ)$ is that any $G$-translate of a $\BDelta({\grZ})$-definable set is again $\BDelta({\grZ})$-definable.
 In particular, by reasoning as in Remark~\ref{rem_image_def_set} we obtain that for every $\BDelta({\grZ})$-formula $\theta({\mr x}\,;{\gr\bar b})$ and every $g\in G$
@@ -99,7 +99,6 @@ Notation: for $\mrD\subseteq\U^{\mr x}$ and $H\subseteq G$ we write \emph{$H\,\m
 In this chapter many proofs require some juggling with negations as epitomized by the following fact.
 
 \begin{fact}\label{fact_fip}
-  %aaaaa
   The following are equivalent
   \begin{itemize}
     \item[1.] $\mrD$ is not $G$-generic
@@ -111,7 +110,7 @@ In this chapter many proofs require some juggling with negations as epitomized b
   Immediate by spelling out the definitions
   \begin{itemize}
     \item[1.] there are no finite $H\subseteq G$ such that $\mrX\ \subseteq\ \cup\, H\,{\mr\D}$.
-    \item[2.]  $\0\ \neq\ \mrX\,\cap\,\big(\cap\, H\neg{\mr\D}\big)$ for every finite $H\subseteq G$.\qedhere
+    \item[2.]  $\varnothing\ \neq\ \mrX\,\cap\,\big(\cap\, H\neg{\mr\D}\big)$ for every finite $H\subseteq G$.\qedhere
   \end{itemize} 
 \end{proof}
 
@@ -120,7 +119,6 @@ Define the following type
 \ceq{\hfill\emph{$\gamma_G({\mr x})$}}{=}{\{\theta({\mr x})\in \BDelta({\grZ}): \theta({\mr x})\textrm{ is }G\textrm{-generic}\}}
 
 \begin{corollary}\label{corol_q_pers}
-  %aaaaa
   Let $p({\mr x})\subseteq\BDelta(\grZ)$ be such that $\gamma_G({\mr x})\cup p({\mr x})$ is finitely satisfiable in $\mrX$.
   Then $p({\mr x})$ is $G$-persistent.
 \end{corollary}
@@ -134,7 +132,6 @@ Define the following type
 The converse implication holds for complete types.
 
 \begin{theorem}\label{thm_generic_invariant}
-  %aaaaa
   Let $p({\mr x})\in S_\Delta(\grZ)$.
   Then the following are equivalent
   \begin{itemize}
@@ -188,7 +185,6 @@ The converse implication holds for complete types.
 The theorem yields a necessary condition for the existence of $G$-invariant global $\BDelta({\grZ})$-types.
 
 \begin{corollary}\label{corol_def_mu}
-  %aaaaa
   If there exists a $G$-invariant type $p({\mr x})\in S_\Delta(\grZ)$ finitely satisfiable in $\mrX$ then for every $\BDelta({\grZ})$-definable set $\mrD$
   \begin{itemize}
     \item[1.] $\mrD$ and $\neg\mrD$ are not both $G$-generic
@@ -211,7 +207,6 @@ Our use of the term \textit{wide\/} is consistent with~\cite{Hr}, though we appl
 A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
 
 \begin{theorem}\label{thm_generic_invariant2}
-  %aaaaa
   Let $\mrD$ be a $\BDelta(\grZ)$-definable set.
   Then the following are equivalent 
   \begin{itemize}
@@ -287,7 +282,6 @@ We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\BDelta(\grZ)$-defi
 \end{exercise}
 
 \begin{exercise}
-  %aaaaa
   Let $p(x)\in S_\Delta(\U)$ be $G$-persistent.
   Prove that the following are equivalent
   \begin{itemize}
@@ -298,7 +292,6 @@ We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\BDelta(\grZ)$-defi
 \end{exercise}
 
 \begin{exercise}
-  %aaaaa
   Let $\D$ be a $\BDelta({\Z})$-type-definable set.
   Prove that the following are equivalent 
   \begin{itemize}
@@ -308,13 +301,11 @@ We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\BDelta(\grZ)$-defi
 \end{exercise}
 
 \begin{exercise}\label{ex_gen_sat}
-  %aaaaa
   Let $p(x)\subseteq \BDelta(\Z)$ be $G$-generic.
   Prove that it is finitely satisfiable in $\X$.
 \end{exercise}
 
 \begin{exercise}\label{ex_persistent_types}
-  %aaaaa
   Prove that for $p(x)\subseteq \BDelta(A)$ following are equivalent
   \begin{itemize}
     \item[1.] $p(x)$ is $G$-persistent
@@ -342,7 +333,6 @@ Dually, we say that $\mrD$ is \emph{weakly $G$-persistent\/} if for some finite 
 Again, the same properties may be attributed to formulas and types.
 
 \begin{lemma}\label{lem_strongly_generic}
-  %aaaaa
   The intersection of two strongly $G$-generic sets is strongly $G$-generic.
 \end{lemma}
 
@@ -363,7 +353,7 @@ Again, the same properties may be attributed to formulas and types.
   
   \ceq{}{=}{\cap\, H\,{\mr\C'}}
   
-  As ${\mrC'}$ is strongly $G$-generic, $\cap\, H\,{\mr\C'}$ is $G$-generic.
+  As ${\mr\C'}$ is strongly $G$-generic, $\cap\, H\,{\mr\C'}$ is $G$-generic.
   Therefore $\cup\,H\,\mrB$ is also $G$-generic.
   The $G$-genericity of $\mrB$ follows.
 \end{proof}
@@ -373,7 +363,6 @@ Define the following type
 \ceq{\hfill\emph{${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$}}{=}{\{\theta({\mr x})\in \BDelta({\grZ}): \theta({\mr x})\textrm{ is strong }G\textrm{-generic}\}}
 
 \begin{corollary}\label{corol_str_gen}
-  %aaaaa
   The type ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ is finitely satisfiable in $\mrX$, strongly $G$-generic, and $G$-invariant.
 \end{corollary}
 
@@ -384,7 +373,6 @@ Define the following type
 \end{proof}
 
 \begin{corollary}\label{corol_q_w_pers}
-  %aaaaa
   Let $p({\mr x})\subseteq L(\U)$ be such that ${}^{\rm s}\kern-.2ex\gamma({\mr x})\cup p({\mr x})$ is finitely satisfiable in $\mrX$.
   Then $p({\mr x})$ is weakly $G$-persistent.
 \end{corollary}
@@ -397,7 +385,6 @@ Define the following type
 \end{proof}
 
 \begin{exercise}
-  %aaaaa
   Show that $G$-generic sets need not be closed under intersection.
   Hint: find inspiration in Example~\ref{ex_cyclic_order}.
 \end{exercise}
@@ -497,10 +484,9 @@ The notions introduced in Section~\ref{strong_genericity} offer some hint.
 \section{A tamer landscape}\label{tame_landscape}
 
 Under suitable assumptions -- e.g.\@ see Proposition~\ref{prop_stable_lanscape} -- some  notion introduced in this chapter coalesce and we are left with a tamer landscape.
-We prove the following theorem.
+In general, we have the following.
 
 \begin{theorem}\label{thm_coalesce}
-  %aaaaa
   The following are equivalent
   \begin{itemize}
     \item[1.] $G$-persistent $\BDelta({\grZ})$-definable sets are $G$-wide
@@ -539,7 +525,6 @@ We prove the following theorem.
   Then the types $\gamma_G({\mr x})$ and ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ coincide, and therefore $G$-invariant global types exist.
   It is also worth mentioning that every positive Boolean combination of $G$-generic sets is $G$-generic.
 \end{remark}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -581,8 +566,8 @@ As it happens, we can slightly strengthen this fact.
 \begin{proof}
   Let $p({\mr x})\in S_\Delta(\grZ)$ be consistent with $\gamma_H({\mr x})$.
   As $\mrD$ is $G$-generic, by completeness $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in G$.
-  Equivalently, $g^{-1}p\proves{\mr x}\in\mrD$.
-  As $p({\mr x})$ is $H$-persistent, by Remark~\ref{rem_invariance_normalsubg} $g^{-1}p({\mr x})$ is also $H$-persistent.
+  Equivalently, $g^{-1}\!\cdot p\proves{\mr x}\in\mrD$.
+  As $p({\mr x})$ is $H$-persistent, by Remark~\ref{rem_invariance_normalsubg} $g^{-1}\!\cdot p({\mr x})$ is also $H$-persistent.
   Then the proposition follows from Theorem~\ref{thm_generic_invariant2}.
 \end{proof}
 
@@ -602,7 +587,7 @@ Let $\Psi\subseteq L_{\mr x}(\U)$ be some small set of formulas.
 In this section $\Delta$ contains formulas $\phi({\mr x}\,;{\gr z})$ of the form  $\psi({\gr z^{-1}}\!\cdot{\mr x})$ for $\psi({\mr x})\in\Psi$.
 The sets $\phi(\mrX\,;\grZ)$ are $\grZ$-invariant.
 We write ${\gr 1}$ for the identity of $\grZ$.
-Clearly, $\phi(\mrX\,;{\gr g})={\gr g}\cdot\phi(\mrX\,;{\gr 1})$.
+If $\phi(\mrX\,;{\gr 1})\in\BDelta({\gr 1})$ then $\phi(\mrX\,;{\gr g})={\gr g}\cdot\phi(\mrX\,;{\gr 1})$.
 
 The following auxiliary structure is useful.
 Let $\UDelta=\big\<\mrX\,;\grZ\big\>$ be a 2-sorted structure whose signature $\LDelta$ contains only relation symbols for every formula $\phi({\mr x}\,;{\gr z})\in\Delta$.
@@ -613,7 +598,7 @@ In this section $G=\Aut(\UDelta)$.
 
 \begin{remark}\label{rem_H}
   It is worth noticing that automorphisms of $\UDelta$ do not preserve the group operations nor the group action.
-However, if $\mrD=\phi(\mrX\,;{\gr 1})$ and ${\gr g}\in\grZ$, then $f({\gr g}){\cdot}\mrD=f[{\gr g}{\cdot}\mrD]$ for any $f\in\Aut(\UDelta)$.
+  However, if $\mrD=\phi(\mrX\,;{\gr 1})$ and ${\gr g}\in\grZ$, then $f({\gr g}){\cdot}\mrD=f[{\gr g}{\cdot}\mrD]$ for any $f\in\Aut(\UDelta)$.
 \end{remark}
 
 To each ${\gr h}\in\grZ$ we associate the $\LDelta$-automorphism $\<{\mr a}\,;{\gr g}\>\mapsto\<{\gr h}{\cdot}{\mr a}\,;{\gr h}{\cdot}{\gr g}\>$.
@@ -636,7 +621,7 @@ In the applications $H$ will be either $\Autf(\UDelta)$ or $\Aut(\UDelta/M)$.
   \end{itemize}
 \end{proposition}
 
-We will revisit this proposition and its converse implication under the assumption of stability.
+We will revisit this proposition under the assumption of stability and with $\Autf(\U^\Delta)$ for $H$~--~then the consistency of $\gamma_H({\mr x})$ is guaranteed, and also the converse implication holds.
 See Theorem~\ref{thm_Ggeneric_persistent}.\vspace*{-0.5\baselineskip}
 %
 \begin{proof}
@@ -649,7 +634,7 @@ See Theorem~\ref{thm_Ggeneric_persistent}.\vspace*{-0.5\baselineskip}
 We write \emph{$({\gr g})_H$\/} for the $H$-orbit of ${\gr g}$, that is, the set $\{f({\gr g})\ :\ f\in H\}$.
 
 \begin{proposition}\label{prop_wideHcojugate}
-  Let $\theta({\mr x}\,;{\gr z_1},\dots,{\gr z_n})$ be a formula in $\BDelta$.
+  Let $\theta({\mr x}\,;{\gr z_1},\dots,{\gr z_n})$ be a Boolean combination of formulas $\phi_i({\mr x}\,;{\gr z_i})$ for some $\phi_i({\mr x}\,;{\gr z})\in\Delta$.
   Then for every ${\gr h_i}\in({\gr g_i})_H$ the following are equivalent
   \begin{itemize}
     \item [1.] $\theta({\mr x}\,;{\gr g_1},\dots,{\gr g_n})$ is $H$-wide
@@ -659,51 +644,34 @@ We write \emph{$({\gr g})_H$\/} for the $H$-orbit of ${\gr g}$, that is, the set
 
 \begin{proof}
   Let $f_i\in H$ be such that ${\gr h_i}\in f_i({\gr g_i})$.
-  Without loss of generality we can assume that $\theta({\mr x}\,;{\gr g_1},\dots,{\gr g_n})$ is the conjunction of the formulas $\phi_i({\mr x}\,;{\gr g_i})$ for some $\phi_i({\mr x}\,;{\gr z})\in\Delta$
+  Without loss of generality we can assume that only conjunctions occur in $\theta({\mr x}\,;{\gr g_1},\dots,{\gr g_n})$.
   Let ${\mr\C_i}=\phi_i(\mrX\,;{\gr 1})$.
   Then \ssf1 says that $\mrC={\gr g_1}{\cdot}{\mr\C_1}\cap\dots\cap{\gr g_n}{\cdot}{\mr\C_n}$ is $H$-wide.
-  Let $f_i\in H$ be such that ${\gr h_i}\in f_i({\gr g_i})$.
+  Let $f_i\in H$ be such that ${\gr h_i}=f_i({\gr g_i})$.
   Then, by Corollary~\ref{corol_intersectionGwide} also the intersection of the sets $f_i[\mrC]$ is $H$-wide.
   A fortiori the intersection of the sets $f_i[{\gr g_i}{\cdot}{\mr\C_i}]$ is $H$-wide.
   Then \ssf1$\IMP$\ssf2 follows from Remark~\ref{rem_H}.
   By symmetry, this proves the equivalence.
 \end{proof}
 
-% \begin{fact}\label{prop_wideHcojugate}
-%   Let $\mrD=\phi(\mrX\,;{\gr 1})$ for some $\phi({\mr x}\,;{\gr z})\in\pmDelta$.
-%   For $i=1,2$ let ${\gr h_i}\in({\gr g_i})_H$.
-%   The following are equivalent
-%   \begin{itemize}
-%     \item [1.] ${\gr g_1}{\cdot}\mrD\ \cap\ {\gr g_2}{\cdot}\mrD$ is $H$-wide
-%     \item [2.] ${\gr h_1}{\cdot}\mrD\ \cap\ {\gr h_2}{\cdot}\mrD$ is $H$-wide.
-%   \end{itemize}
-% \end{fact}
+If $\grA\subseteq\grZ$, we write \emph{$\<\grA\>$} for the subgroup generated by $\grA$.
 
-% \begin{proof}
-%   Let $f_i\in H$ be such that ${\gr h_i}\in f_i({\gr g_i})$.
-%   Write $\mrC$ for the set in \ssf1.
-%   If $\mrC$ is $H$-wide, by Corollary~\ref{corol_intersectionGwide} also $f_1[\mrC]\,\cap\,f_2[\mrC]$ is $H$-wide.
-%   A fortiori $f_1[{\gr g_1}{\cdot}\mrD]\,\cap\,f_2[{\gr g_2}{\cdot}\mrD]$ is $H$-wide.
-%   Then \ssf1$\IMP$\ssf2 follows from Remark~\ref{rem_H}.
-%   By symmetry, this proves the equivalence.
-% \end{proof}
-
-We write \emph{$\big\<({\gr g})_H^{-1}\!\cdot({\gr g})_H\big\>$\,} for the group generated by the set $\big\{{\gr a^{-1}}\!\cdot{\gr b}\ :\ {\gr a},{\gr b}\in({\gr g})_H\big\}$.
-
-\begin{proposition}
-  Let $\theta({\mr x}\,;{\gr z_1},\dots,{\gr z_n})$ be a formula in $\BDelta$.
+\begin{proposition}\label{prop_stabilizer1}
+  Let $\theta({\mr x}\,;{\gr z_1},\dots,{\gr z_n})$ be a Boolean combination of formulas $\phi_i({\mr x}\,;{\gr z_i})$ for some $\phi_i({\mr x}\,;{\gr z})\in\Delta$.
   Let ${\gr g}\in\grZ$ be arbitrary.
-  Assume that the formula $\theta({\mr x}\,;{\gr 1},\dots,{\gr 1})$ is $H$-wide.
-  Then $\theta({\mr x}\,;{\gr h_1},\dots,{\gr h_n})$ is $H$-wide for every ${\gr h_i}\in\big\<({\gr g})_H^{-1}\!\cdot({\gr g})_H\big\>$.
+  Assume that $\theta({\mr x}\,;{\gr 1},\dots,{\gr 1})$ is $H$-wide.
+  Then $\theta({\mr x}\,;{\gr h_1},\dots,{\gr h_n})$ is $H$-wide for every 
+  
+  \ceq{\hfill{\gr h_1},\dots,{\gr h_n}}{\in}{\Big\<\bigcup_{{\gr g}\in\grZ}({\gr g})_H^{-1}\!\cdot({\gr g})_H\Big\>.}
 \end{proposition}
 
 \begin{proof}
-  We proceed by induction on the total number of factors ${\gr a^{-1}}\!\cdot{\gr b}$, for some ${\gr a},{\gr b}\in({\gr g})_H$, that occur in ${\gr h_1},\dots,{\gr h_n}$.
-  Without loss of generality we can assume that $\theta({\mr x}\,;{\gr z_1},\dots,{\gr z_n})$ is the conjunction of the formulas $\phi_i({\mr x}\,;{\gr z_i})$ for some $\phi_i({\mr x}\,;{\gr z})\in\Delta$.
+  We proceed by induction on the number of factors of the form ${\gr a^{-1}}\!\cdot{\gr b}$, for some ${\gr a},{\gr b}\in({\gr g})_H$, that occur in ${\gr h_1},\dots,{\gr h_n}$.
+  Without loss of generality we can assume that only conjunctions occur in $\theta({\mr x}\,;{\gr g_1},\dots,{\gr g_n})$.
   Let ${\mr\C_i}=\phi_i(\mrX\,;{\gr 1})$.
   Assume inductively that ${\gr h_1}{\cdot}{\mr\C_1}\cap\dots\cap{\gr h_n}{\cdot}{\mr\C_n}$ is $H$-wide.
   Pick two arbitrary ${\gr a},{\gr b}\in({\gr g})_H$.
-  Then
+  By Remark~\ref{rem_invariance_normalsubg}
   
   \hspace*{7ex}${\gr a}\cdot{\mr\C_1}\ \cap\ {\gr a}\cdot{\gr h_1^{-1}}\!\cdot{\gr h_2}\cdot{\mr\C_2}\ \cap\ \dots\dots\ \cap\ {\gr a}\cdot{\gr h_1^{-1}}\!\cdot{\gr h_n}\cdot{\mr\C_n}$ is $H$-wide.
   
@@ -712,20 +680,6 @@ We write \emph{$\big\<({\gr g})_H^{-1}\!\cdot({\gr g})_H\big\>$\,} for the group
 
   \hspace*{7ex}${\gr h_1}\cdot{\gr a^{-1}}\!\cdot{\gr b}\cdot{\mr\C_1}\ \cap\ {\gr h_2}\cdot{\mr\C_2}\ \cap\ \dots\dots\ \cap\ {\gr h_n}\cdot{\mr\C_n}$ is $H$-wide.
 \end{proof}
-
-% \begin{proposition}
-%   Let $\mrD=\phi(\mrX\,;{\gr 1})$ for some $\phi({\mr x}\,;{\gr z})\in\pmDelta$.
-%   Let ${\gr g}\in\grZ$ be arbitrary.
-%   Then $\mrD\cap{\gr h}{\cdot}\mrD$ is $H$-wide for every ${\gr h}\in\big\<({\gr g})_H^{-1}\!\cdot({\gr g})_H\big\>$.
-% \end{proposition}
-
-% \begin{proof}
-%   Assume inductively that $\mrD\cap{\gr h}{\cdot}\mrD$ is $H$-wide, where ${\gr h}\in\big\<({\gr g})_H^{-1}\!\cdot({\gr g})_H\big\>$.
-%   Pick two arbitrary ${\gr a},{\gr b}\in({\gr g})_H$.
-%   We claim that $\mrD\,\cap\,{\gr a^{-1}}\!\cdot{\gr b}\cdot{\gr h}\cdot\mrD$ is $H$-wide.
-%   From the induction hypothesis it follows that ${\gr b}\cdot\mrD\,\cap\,{\gr b}\cdot{\gr h}\cdot\mrD$ is $H$-wide.
-%   From Fact~\ref{prop_wideHcojugate} we obtain that ${\gr a}\cdot\mrD\,\cap\,{\gr b}\cdot{\gr h}\cdot\mrD$ is $H$-wide and the claim follows.
-% \end{proof}
 
 \begin{comment}
 \section{Tentative}

@@ -107,7 +107,7 @@ It is immediate to verify that $h:M\hookrightarrow N$ is the required embedding.
 
 We are now ready to prove that any two countable models of $T_{\rm dlo}$ are isomorphic which is a classical result of Cantor's.
 Actually what we prove is slightly more general than that.
-In fact Cantor's theorem is obtained from the theorem below by setting $k=\0$, which we are allowed to, because all models have the same empty characteristic (cf.\@ Remark~\ref{rmk_characteristic}).
+In fact Cantor's theorem is obtained from the theorem below by setting $k=\varnothing$, which we are allowed to, because all models have the same empty characteristic (cf.\@ Remark~\ref{rmk_characteristic}).
 
 \begin{theorem}\label{thm_zigzagcantor}
 Every finite partial isomorphism $k:M\imp N$ between countable models of $T_{\rm dlo}$ extends to an isomorphism $g:M\isomap N$.
@@ -137,7 +137,7 @@ Now apply the same lemma to extend $\big(g_{i+^1\!\!/\!_2}\big)^{-1}:N\to M$ to 
 
 Let $\lambda$ be an infinite cardinal.
 We say that a theory is \emph{$\lambda$-categorical\/} if any two models of $T$ of cardinality $\lambda$ are isomorphic.
-From Theorem~\ref{thm_zigzagcantor}, taking $k=\0$, we obtain the following.
+From Theorem~\ref{thm_zigzagcantor}, taking $k=\varnothing$, we obtain the following.
 
 \begin{corollary}\label{corol_DLO_omegacat}
 The theory $T_{\rm dlo}$ is $\omega$-categorical.
@@ -341,19 +341,19 @@ Hint: given a random graph $N$ and a set $P$ of cardinality $n+1$ show that you 
 \begin{exercise}[ (Peter J.~Cameron)]\label{ex_CameronRG}
 Prove that for every infinite countable graph $M$ the following are equivalent
 \begin{itemize}
-\item[1.] $M$ is either random, complete, or empty (i.e.\@ $r^M=M^2$ or $r^M=\0$)
+\item[1.] $M$ is either random, complete, or empty (i.e.\@ $r^M=M^2$ or $r^M=\varnothing$)
 \item[2.] if $M_1,M_2\subseteq M$ are such that $M_1\sqcup M_2=M$, then $M_1\simeq M$ or $M_2\simeq M$.
 \end{itemize}
-Hint: \ssf{2}$\IMP$\ssf{1}. Assume \ssf2 and show that if $r(a,M)=\0$ for some $a\in M$ then the graph is null; if $\{b\}\cup r(b,M)=M$ for some $b$, then the graph is complete.
+Hint: \ssf{2}$\IMP$\ssf{1}. Assume \ssf2 and show that if $r(a,M)=\varnothing$ for some $a\in M$ then the graph is null; if $\{b\}\cup r(b,M)=M$ for some $b$, then the graph is complete.
 Clearly, \ssf{2} implies that any finite partition of $M$ contains an element isomorphic to $M$.
-Then the claim above generalizes as follows: if there is a finite $A$ such that $\bigcap_{a\in A}r(a, M)=\0$ then $M$ is the empty graph and if there is a finite $B$ such that $B\cup\bigcup_{b\in B}r(b,M)=M$ then $M$ is the complete graph.
+Then the claim above generalizes as follows: if there is a finite $A$ such that $\bigcap_{a\in A}r(a, M)=\varnothing$ then $M$ is the empty graph and if there is a finite $B$ such that $B\cup\bigcup_{b\in B}r(b,M)=M$ then $M$ is the complete graph.
 
 Suppose $M$ is not a random graph.
-Fix some finite, disjoint $A$ and $B$ such that no $c$ satisfies both $r(A,c)= A$ and $r(B,c)=\0$.
+Fix some finite, disjoint $A$ and $B$ such that no $c$ satisfies both $r(A,c)= A$ and $r(B,c)=\varnothing$.
 Let $M_1=\{c:r(A,c)\neq A\}$ and $M_2=M\sm M_1$.
 Now note that 
 
-\hfil$\displaystyle\bigcap_{a\in A}r(a, M_1)=\0$\hfil and\hfil $\displaystyle\bigcup_{b\in B}r(b, M_2)=M_2$.
+\hfil$\displaystyle\bigcap_{a\in A}r(a, M_1)=\varnothing$\hfil and\hfil $\displaystyle\bigcup_{b\in B}r(b, M_2)=M_2$.
 \end{exercise}
 
 \section{Notes and references}

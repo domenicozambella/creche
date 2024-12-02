@@ -133,7 +133,7 @@ The point of $\U^\eq$ is that there might not be any $B\subseteq\U$ such that $L
 
 For instance, suppose $L$ contains only a binary relation which is interpreted as an equivalence relation with infinitely many infinite classes.
 Let ${\vl\Aa}$ be an equivalence class and let $A=\{{\vl\Aa}\}$.
-Then for ${\vl\Aa}$ is definable in $L(B)$ if and only if $B\cap {\vl\Aa}\neq\0$.
+Then for ${\vl\Aa}$ is definable in $L(B)$ if and only if $B\cap {\vl\Aa}\neq\varnothing$.
 But no element of ${\vl\Aa}$ is definable in $L(A)$.
 \end{remark}
 
@@ -200,8 +200,8 @@ This has been defined in Section~\ref{homogeneous} and now we apply it to $\U^\e
 
 \ceq{\hfill\emph{$\orbit(a/A)$}}{=}{\big\{fa\;:\; f\in\Aut(\U/A)\big\}.}
 
-By homogeneity, $\O(a/A)=p(\U^\eq)$ where $p(v)=\tp(a/A)$.
-When $\O(a/A)=\{a\}$ we say that $a$ is \emph{invariant over $A$\/} or \emph{$A$-invariant}, for short.
+By homogeneity, $\Orbit(a/A)=p(\U^\eq)$ where $p(v)=\tp(a/A)$.
+When $\Orbit(a/A)=\{a\}$ we say that $a$ is \emph{invariant over $A$\/} or \emph{$A$-invariant}, for short.
 
 
 \begin{definition}\label{def_def}
@@ -245,7 +245,7 @@ By Proposition~\ref{prop_def_def_set}, Theorem~\ref{thm_Galois_def=def} when app
 
 We conclude this section with a remark about the canonicity of the definitions of sets.
 The formula $\psi({\mr x})$ in Proposition~\ref{prop_def_def_set} need not be the sort $\sigma({\mr x}\,;{\gr z})$.
-For example, consider the theory of a binary equivalence relation $e({\mr x}\,;{\gr z})$ with two infinite classes, let ${\vl\Aa}$ be one of these classes and let $A\neq\0$ be such that $A\cap {\vl\Aa}=\0$.
+For example, consider the theory of a binary equivalence relation $e({\mr x}\,;{\gr z})$ with two infinite classes, let ${\vl\Aa}$ be one of these classes and let $A\neq\varnothing$ be such that $A\cap {\vl\Aa}=\varnothing$.
 Then ${\vl\Aa}$ is definable over $A$ though not by some formula of the form $e({\mr x}\,;{\gr b})$ for some ${\gr b}\in A$.
 Things change if we replace $A$ with a model.
 
@@ -298,7 +298,7 @@ The following proposition is proved with virtually the same proof as Theorem~\re
 \begin{theorem}\label{thm_Galois_alg=alg}
 For every $A\subseteq\U^\eq$ and every $a\in\U^\eq$ the following are equivalent
 \begin{itemize}
-\item[1.] $\O(a/A)$ is finite
+\item[1.] $\Orbit(a/A)$ is finite
 \item[2.] $a\in\acl^\eq\!A$
 \item[3.] $a\in M^\eq$ for every model such that $A\subseteq M^\eq$.
 \end{itemize}
@@ -323,7 +323,7 @@ Then the following are equivalent
 \ceq{\hfill {\mr x}\in{\vl\Aa}}{\iff}{\bigvee^n_{i=1} \epsilon({\mr x}\,;{\mr c_i}).}
 
 \end{theorem}
-\begin{proof} \ssf{2}$\IMP$\ssf{1}\quad If  $\epsilon({\mr x}\,;{\mr y})$ has $m$ classes, then $\O(\Aa/A)$ contains at most $\displaystyle\binom{m}{n}$ sets.
+\begin{proof} \ssf{2}$\IMP$\ssf{1}\quad If  $\epsilon({\mr x}\,;{\mr y})$ has $m$ classes, then $\Orbit(\Aa/A)$ contains at most $\displaystyle\binom{m}{n}$ sets.
 
 \ssf{1}$\IMP$\ssf{2}\quad Let $\phi({\vl\X})\in L^\eq(A)$ be an algebraic formula that has ${\vl\Aa}$ among its solutions and define
 
@@ -362,7 +362,7 @@ Then $\neg\epsilon({\mr a}\,;{\mr b})$ and $\neg$\ssf{1} follows.
 \end{proof}
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}We write \emph{$\S({\gr a}/A)$\/} for the intersection of all definable sets that contain $a$ and are algebraic over $A$.
-By the proposition above $\S({\gr a}/A)=\big\{{\gr b}\,:\,{\gr b}\,\equivSh_A {\gr a}\big\}=\O({\gr a}/\acl^\eq A)$.
+By the proposition above $\S({\gr a}/A)=\big\{{\gr b}\,:\,{\gr b}\,\equivSh_A {\gr a}\big\}=\Orbit({\gr a}/\acl^\eq A)$.
 
 
 \begin{exercise}
@@ -416,7 +416,7 @@ for some positive integer $k$.
 
 In the formulas above we allow ${\gr z}$ to be the empty string.
 In this case we read \ssf{ei} and \ssf{wei} omitting the quantifiers $\E^{=1}{\gr z}$, respectively $\E^{=k}{\gr z}$.
-Therefore $\0$-definable sets have all (at least) the empty string as a canonical parameter.
+Therefore $\varnothing$-definable sets have all (at least) the empty string as a canonical parameter.
 
 To show that the notions above are well-defined properties of a theory one needs to check that they are independent of our choice of monster model.
 We leave this to the reader as an exercise.
@@ -450,7 +450,7 @@ Let $\phi({\vl\X}\,;{\gr\B})$ be a formula that has ${\vl\Aa}$ as unique solutio
 Then $\E{\vl\Y} \big[{\vl\Y}=\big\{{\gr b_1},\dots,{\gr b_n}\big\}\wedge \phi({\vl\X}\,;{\vl\Y})\big]$ is the formula that proves \ssf{3}.
 
 \ssf{3}$\IMP$\ssf{1} Assume \ssf{3}.
-As \ssf{wei} holds trivially for all $\0$-definable sets, we may assume ${\vl\Aa}\neq\0$.
+As \ssf{wei} holds trivially for all $\varnothing$-definable sets, we may assume ${\vl\Aa}\neq\varnothing$.
 Let $\sigma({\mr x}\,;{\gr z})$ be such that
 
 \ceq{\hfill\A{\mr x}\ \bigg[{\mr x}\in{\vl\Aa}}{\iff}{\sigma({\mr x}\,;{\gr b})\bigg].}
@@ -548,12 +548,12 @@ Hence weak elimination follows from Theorem~\ref{thm_elimimd}.
 
 \begin{theorem}\label{elimimsm} 
 Let $T$ be a complete, strongly minimal theory.
-Then, if $\acl\0$ is infinite, $T$ has weak elimination of imaginaries.
+Then, if $\acl\varnothing$ is infinite, $T$ has weak elimination of imaginaries.
 \end{theorem}
 
 \begin{proof}
 %We prove condition $\,\sharp\,$ of lemma~\ref{tvtestimmaginari}. Let $A\subseteq\U^\eq$ and let $\phi({\gr z})\in L(A)$ be some consistent formula. Proceed by induction on the length of ${\gr z}$. If ${\gr z}$ is the empty tuple $\,\sharp\,$ holds trivially. Now, consider the formula $\phi({\gr z}\,;{\mr x})$  where $|{\mr x}|=1$. By induction hypothesis $\E{\mr x}\,\phi({\gr z}\,;{\mr x})$ has a solution ${\gr c}$ in $\acl A$. Now, $\phi({\gr c}\,;{\mr x})$ is either an algebraic formula, then it has a solution in $\acl\big(\acl A\big)=\acl A$ or it is co-algebraic, then it has a solution in $\acl A$ which is infinite by hypothesis.
-If $\acl\0$ is infinite, $\acl A$ is a model for every $A$ (cf.\@ Exercise~\ref{ex_infinite_acl}) so condition $\,\sharp\,$ of lemma~\ref{tvtestimmaginari} holds by elementarity and the theorem follows.
+If $\acl\varnothing$ is infinite, $\acl A$ is a model for every $A$ (cf.\@ Exercise~\ref{ex_infinite_acl}) so condition $\,\sharp\,$ of lemma~\ref{tvtestimmaginari} holds by elementarity and the theorem follows.
 \end{proof}
 
 
@@ -604,13 +604,13 @@ The rest of this section is dedicated to the proof that the theory of the random
 \end{lemma}
 
 \begin{proof}
-  For simplicity assume that $\range a\cap A=\range b\cap B=\0$.
+  For simplicity assume that $\range a\cap A=\range b\cap B=\varnothing$.
   The general case follows easily.
 
   By induction on the length of $a$ and $b$. 
   The claim is trivial if this length is $0$ so, assume they have length $n+1$ and that there are $c_0,\dots,c_{n-1}\notin A, B,\range a,\range b$ such that $a_{\restriction n}\equiv_A c_0,\dots,c_{n-1}\,\equiv_B b_{\restriction n}$.
 
-  We assume that $\range a\cap\range b=\0$ otherwise we replace $b$ with any tuple $b'\equiv_Bb$ that is disjoint of $\range a$.
+  We assume that $\range a\cap\range b=\varnothing$ otherwise we replace $b$ with any tuple $b'\equiv_Bb$ that is disjoint of $\range a$.
 
   Now, let $A'=A\cup\{a_0,\dots,a_{n-1}\}$ and $B'=B\cup\{b_0,\dots,b_{n-1}\}$.
   By the assumption above $A'\cap B'=A\cap B$.
@@ -667,7 +667,7 @@ For a given set ${\vl\Aa}=\sigma(\U^{\mr x};{\gr b})$ Shelah considers the equiv
 
 The equivalence class of ${\gr b}$ in the relation $\epsilon({\gr z}\,;{\gr z'})$ is what Shelah uses as canonical parameter of the set ${\vl\Aa}$.
 
-Shelah's $\U^\eq$ has a sort for each $\0$-definable equivalence relation $\epsilon({\gr z}\,;{\gr z'})$.
+Shelah's $\U^\eq$ has a sort for each $\varnothing$-definable equivalence relation $\epsilon({\gr z}\,;{\gr z'})$.
 The domain of the sort $\epsilon({\gr z}\,;{\gr z'})$ contains the classes of the equivalence relation defined by $\epsilon({\gr z}\,;{\gr z'})$.
 These equivalence classes are called \emph{imaginaries}.
 Shelah's $L^\eq$ contains functions that map tuples in the home sort to their equivalence class.
