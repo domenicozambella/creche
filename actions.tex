@@ -1,5 +1,5 @@
 % !TEX root = creche.tex
-\chapter{Actions of groups}
+\chapter{Group actions on models}
 \label{actions}
 
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
@@ -318,6 +318,11 @@ We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\BDelta(\grZ)$-defi
   Hint: find inspiration in Example~\ref{ex_cyclic_order}.
 \end{exercise}
 
+\begin{exercise}\label{ex_generic_type_vs_formulas}
+  Let $\D\subseteq\X$ be a $G$-generic set that is $\BDelta(\Z)$-type-definable.
+  Prove that $\D$ is definable by a $\BDelta(\Z)$-type containing only $G$-generic formulas.
+\end{exercise}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -570,6 +575,32 @@ As it happens, we can slightly strengthen this fact.
   As $p({\mr x})$ is $H$-persistent, by Remark~\ref{rem_invariance_normalsubg} $g^{-1}\!\cdot p({\mr x})$ is also $H$-persistent.
   Then the proposition follows from Theorem~\ref{thm_generic_invariant2}.
 \end{proof}
+\begin{comment}
+The following normal subgroup of $G$ is particularly interesting
+
+{
+\def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{8ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+
+\ceq{\hfill G^0}{=}{\big\{g\in G\ :\ g{\cdot}\mrD=\mrD\textrm{ for every }G\textrm{-generic }\BDelta(\grZ)\textrm{-type-definable set }\mrD\big\}}.
+}
+
+Note that by Exercise~\ref{ex_generic_type_vs_formulas} we can replace type-definable with definable in the definition of $G^0$.
+
+\begin{proposition}
+  Assume the action of $G$ is regular.
+  Let $K\le G$ be such that all $K$-orbits (that is, $K{\cdot}{\mr a}$, for ${\mr a}\in\mrX$) are $\BDelta(\grZ)$-type-definable.
+  Then, if $K$ has finite index, $G^0\le K$.
+\end{proposition}
+
+\begin{proof}
+  Let $g\in G^0$.
+  As $K$ has finite index and the action is transitive $K{\cdot}{\mr a}$ is $G$-generic for every ${\mr a}\in\mrX$.
+  Then $g{\cdot}K{\cdot}{\mr a}=K{\cdot}{\mr a}$.
+  By regularity, $g{\cdot}K=K$, then $g\in K$.
+\end{proof}
+  
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -577,6 +608,9 @@ As it happens, we can slightly strengthen this fact.
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Definable groups}\label{definablegroups}
+
+\def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{25ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 In this section we assume that $\grZ$ and $\mrX$ are type-definable over some set of parameters $A$.
 Moreover we assume that $\grZ$ is a group that act on $\mrX$.
@@ -590,9 +624,13 @@ We write ${\gr 1}$ for the identity of $\grZ$.
 If $\phi(\mrX\,;{\gr 1})\in\BDelta({\gr 1})$ then $\phi(\mrX\,;{\gr g})={\gr g}\cdot\phi(\mrX\,;{\gr 1})$.
 
 The following auxiliary structure is useful.
-Let $\UDelta=\big\<\mrX\,;\grZ\big\>$ be a 2-sorted structure whose signature $\LDelta$ contains only relation symbols for every formula $\phi({\mr x}\,;{\gr z})\in\Delta$.
+Let $\UDelta=\big\<\mrX\,;\grZ\big\>$ be a 2-sorted structure whose signature $\LDelta$ contains relation symbols for every formula $\phi({\mr x}\,;{\gr z})\in\Delta$.
 As there is little risk of confusion, these relations symbols are also denoted by $\phi({\mr x}\,;{\gr z})$.
-As $\mrX$ and $\grZ$ are assumed to be type-definable, $\UDelta$ is a saturated $\LDelta$-structure.
+In $\LDelta$ we include also symbols for the formulas
+
+\ceq{\hfill\zeta_n({\gr z_1},\dots,{\gr z_n},{\gr z_1'},\dots,{\gr z_n'})}{=}{\E{\gr w}\bigwedge_{i=1}^n {\gr w}\cdot{\gr z_i}={\gr z_i'}}
+
+Finally, note that as $\mrX$ and $\grZ$ are assumed to be type-definable, $\UDelta$ is a saturated $\LDelta$-structure.
 
 In this section $G=\Aut(\UDelta)$. 
 
@@ -604,19 +642,37 @@ In this section $G=\Aut(\UDelta)$.
 To each ${\gr h}\in\grZ$ we associate the $\LDelta$-automorphism $\<{\mr a}\,;{\gr g}\>\mapsto\<{\gr h}{\cdot}{\mr a}\,;{\gr h}{\cdot}{\gr g}\>$.
 Therefore $\grZ$ is, up to isomorphism, a subgroup of $G$.
 In fact, it is a normal subgroup.
-Note that, for any ${\gr g}\in\grZ$, the orbit of $\phi(\mrX\,;{\gr g})$ under the action of $\grZ$ is $\{\phi(\mrX\,;{\gr h}) : {\gr h}\in\grZ\}$.
-Therefore it coincides with the orbit under the action of $G$ (it cannot get any larger).
-We conclude that for formulas in $\pmDelta(\grZ)$ the notions of generic and persistent under the two actions coincide.
+
+\begin{remark}\label{rem_H2}
+  The formulas $\zeta_n({\gr z_1},\dots,{\gr z_n},{\gr z_1'},\dots,{\gr z_n'})$ ensure that for every automorphism in $f\in G$ and finite set $B\subseteq\grZ$, there is an automorphism in ${\gr g}\in \grZ$ that coincides with $f$ on $B$.
+  By saturation this is true also for any small set $B$.
+  We conclude that for formulas in $\LDelta(\grZ)$ the notions of generic and persistent under the action of $G$ and of $\grZ$ coincide.
+\end{remark}
+
+% Note that, for any ${\gr g}\in\grZ$, the orbit of $\phi(\mrX\,;{\gr g})$ under the action of $\grZ$ is $\{\phi(\mrX\,;{\gr h}) : {\gr h}\in\grZ\}$.
+% Therefore it coincides with the orbit under the action of $G$ (it cannot get any larger).
+% The following fact follows immediately.
+
+% \begin{fact}
+%   For every  $\BDelta(\grZ)$-type-definable set $\mrD$ the following are 
+%   \begin{itemize}
+%     \item [1.] the $G$-orbit of $\mrD$ is bounded
+%     \item [2.] the $\grZ$-orbit of $\mrD$ is bounded.
+%   \end{itemize}
+% \end{fact}
 
 We also consider the action some other normal subgroup $H\trianglelefteq G$.
 In the applications $H$ will be either $\Autf(\UDelta)$ or $\Aut(\UDelta/M)$.
 
+\def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{6ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+
 \begin{proposition}\label{prop_Ggeneric_persistent}
-  Let $\mrD$  be a $\BDelta$-definable set.
+  Let $\mrD$ be a $\LDelta(\grZ)$-definable set.
   Assume that $\gamma_H({\mr x})$ is consistent.
   Then \ssf1$\IMP$\ssf2 holds, where
   \begin{itemize}
-    \item [1.] $\mrD$ is $\grZ$-generic
+    \item [1.] $\mrD$ is $\grZ$-generic (equivalently $G$-generic)
     \item [2.] ${\gr g}{\cdot}\mrD$ is $H$-wide for every ${\gr g}\in\grZ$.
   \end{itemize}
 \end{proposition}
@@ -630,6 +686,36 @@ See Theorem~\ref{thm_Ggeneric_persistent}.\vspace*{-0.5\baselineskip}
   Then ${\gr g}{\cdot}\mrD$ is, a fortiori, $G$-generic.
   Therefore \ssf2 follows from Proposition~\ref{prop_Ggeneric_Hpersistent}.
 \end{proof}
+
+The following normal subgroup of $\grZ$ is interesting.
+
+\begin{definition}\label{def_G0}\noindent\vspace*{0.1ex}
+
+  \ceq{\hfill{\gr\Z^0}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \grW\textrm{ is }\BDelta(\grZ)\textrm{-definable and has finite index in }\grZ\big\}}.
+\end{definition}
+
+Note that we can replace \textit{definable\/} with \textit{type-definable\/} (essentially, by Exercise~\ref{ex_generic_type_vs_formulas}) and/or require that $\grW$ is normal.
+
+\begin{proposition}
+  Assume that the action of $\grZ$ is regular. Then
+
+  \ceq{\hfill{\gr\Z^0}}{\supseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\BDelta(\grZ)\textrm{-definable }\grZ\textrm{-generic set }\mrD\big\}}.
+ 
+  % Let ${\gr g}$ be such that $\ $ for every $\grZ$-generic $\BDelta(\grZ)$-definable set $\mrD$.
+  % Then ${\gr g}\in{\gr\Z^0}$.
+\end{proposition}
+
+Note incidentally that when $\gamma_{\gr\Z^0}({\mr x})$ is consistent then also the converse inclusion holds.
+In fact, from Proposition~\ref{prop_Ggeneric_Hpersistent} we infer that $\grZ$-generic sets are $\gr\Z^0$-persistent.
+
+\begin{proof}
+  Let ${\gr g}$ be an element of the set on the r.h.s.
+  Let $\grW$ be as in Definition~\ref{def_G0}.
+  As regular implies transitive and $\grW$ has finite index, $\grW{\cdot}{\mr a}$ is $G$-generic for every ${\mr a}\in\mrX$.
+  Then $\grW{\cdot}{\mr a}\cap{\gr g}{\cdot}\grW{\cdot}{\mr a}\neq\varnothing$.
+  Let ${\gr h},{\gr k}\in\grW$ be such that ${\gr h}{\cdot}{\mr a}={\gr g}{\cdot}{\gr k}{\cdot}{\mr a}$.
+  By regularity, ${\gr h}={\gr g}{\cdot}{\gr k}$, then ${\gr g}\in\grW$.
+ \end{proof}
 
 We write \emph{$({\gr g})_H$\/} for the $H$-orbit of ${\gr g}$, that is, the set $\{f({\gr g})\ :\ f\in H\}$.
 
@@ -657,6 +743,8 @@ We write \emph{$({\gr g})_H$\/} for the $H$-orbit of ${\gr g}$, that is, the set
 If $\grA\subseteq\grZ$, we write \emph{$\<\grA\>$} for the subgroup generated by $\grA$.
 
 \begin{proposition}\label{prop_stabilizer1}
+  \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+  \def\ceq#1#2#3{\parbox[t]{15ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
   Let $\theta({\mr x}\,;{\gr z_1},\dots,{\gr z_n})$ be a Boolean combination of formulas $\phi_i({\mr x}\,;{\gr z_i})$ for some $\phi_i({\mr x}\,;{\gr z})\in\Delta$.
   Let ${\gr g}\in\grZ$ be arbitrary.
   Assume that $\theta({\mr x}\,;{\gr 1},\dots,{\gr 1})$ is $H$-wide.
