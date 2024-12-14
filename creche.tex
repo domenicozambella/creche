@@ -83,6 +83,7 @@ diagrams={>=latex}
 \def\rank{\mathop{\rm rank}}
 \def\dcl{{\rm dcl}}
 \def\acl{{\rm acl}}
+\def\bdd{{\rm bdd}}
 \def\fp{{\rm fp}}
 \def\cf{\mathop{\rm cf}}
 \def\rad{\mathop{\rm rad}}
@@ -259,9 +260,9 @@ diagrams={>=latex}
 \newtheorem{definition}[thm]{Definition}\tcolorboxenvironment{definition}{mythm}
 \newtheorem{assumption}[thm]{Assumption}\tcolorboxenvironment{assumption}{mythm}
 \newtheorem{void}[thm]{}\tcolorboxenvironment{void}{mythm}
-\newtheorem{remark}[thm]{Remark}\tcolorboxenvironment{remark}{mythm}
 \newtheorem{notation}[thm]{Notation}\tcolorboxenvironment{notation}{mythm}
 \newtheorem{note}[thm]{Note}\tcolorboxenvironment{note}{mythm}
+\newtheorem{remark}[thm]{Remark}
 \newtheorem{exercise}[thm]{Exercise}
 \newtheorem{example}[thm]{Example}
 
@@ -331,21 +332,21 @@ diagrams={>=latex}
 \newcommand\dotGitHEAD{}
 \newcommand\branch{master}
 \newcommand\commit{}
-\makeatletter
-\let\myfilehandle\@inputcheck\makeatother
+% \makeatletter
+% \let\myfilehandle\@inputcheck\makeatother
 
-\openin\myfilehandle=.git/HEAD\relax
+% \openin\myfilehandle=.git/HEAD\relax
 
-\begingroup\endlinechar-1
-  \global\read\myfilehandle to \dotGitHEAD
-\endgroup
-\closein\myfilehandle
+% \begingroup\endlinechar-1
+%   \global\read\myfilehandle to \dotGitHEAD
+% \endgroup
+% \closein\myfilehandle
 
-\newcommand\GetBranch{}
-\def\GetBranch ref: refs/heads/#1\relax{\renewcommand{\branch}{#1}}
+% \newcommand\GetBranch{}
+% \def\GetBranch ref: refs/heads/#1\relax{\renewcommand{\branch}{#1}}
 
-\expandafter\GetBranch\dotGitHEAD\relax
-\makeatother
+% \expandafter\GetBranch\dotGitHEAD\relax
+% \makeatother
 %%%%%%% END GETCOMMIT
 
 \begin{document}

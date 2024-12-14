@@ -50,7 +50,7 @@ We say that $\grD$ is \emph{invariant\/} under the action of $G$, or \emph{$G$-i
 That is, $g\,\grD=\grD$ for every $g\in G$.
 Yet in other words, if
 
-\ceq{\ssf{is1.}\hfill {\gr a}\in\grD}{\iff}{g{\gr a}\in\grD}\hfill for every ${\gr a}\in\grZ$ and every $g\in G$.
+\ceq{\ssf{is1.}\hfill{\gr a}\in\grD}{\iff}{g{\gr a}\in\grD}\hfill for every ${\gr a}\in\grZ$ and every $g\in G$.
 
 A formula is $G$-invariant if the set it defines is $G$-invariant.
 We say that $p({\mr x})\subseteq\BDelta(\grZ)$ is \emph{invariant\/} under the action of $G$, or \emph{$G$-invariant,} if for every $\BDelta(\grZ)$-formula $\theta({\mr x}\,;{\gr\bar a})$. 
@@ -210,7 +210,7 @@ A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
   Let $\mrD$ be a $\BDelta(\grZ)$-definable set.
   Then the following are equivalent 
   \begin{itemize}
-    \item[1.] $\gamma_G({\mr x})$ is finitely satisfied in $\mrD\cap\mrX$
+    \item[1.] $\gamma_G({\mr x})$ is finitely satisfiable in $\mrD\cap\mrX$
     \item[2.] there exists a $G$-persistent type $p({\mr x})\in S_\Delta(\grZ)$ containing ${\mr x}\in\mrD$
     \item[3.] $\mrD$ is $G$-wide.
   \end{itemize}
@@ -218,7 +218,7 @@ A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  By Corollary~\ref{corol_q_pers}, it suffices to pick any $p({\mr x})\in S_\Delta(\grZ)$ containing $\gamma_G({\mr x})$ and finitely satisfied in $\mrD\cap\mrX$.
+  By Corollary~\ref{corol_q_pers}, it suffices to pick any $p({\mr x})\in S_\Delta(\grZ)$ containing $\gamma_G({\mr x})$ and finitely satisfiable in $\mrD\cap\mrX$.
   
   \ssf2$\IMP$\ssf1.
   By Theorem~\ref{thm_generic_invariant}.
@@ -460,10 +460,10 @@ The notions introduced in Section~\ref{strong_genericity} offer some hint.
 
 \begin{proof}
   By Proposition~\ref{prop_wpers_finite_diameter}, it suffices to prove that ${\mr\X_n}$ is weakly persistent.
-  By Corollary~\ref{corol_q_w_pers} it suffices to show that for some $n$ the type ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ is finitely satisfied in ${\mr\X_n}$.
+  By Corollary~\ref{corol_q_w_pers} it suffices to show that for some $n$ the type ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ is finitely satisfiable in ${\mr\X_n}$.
   Suppose not.
   Let $\psi_n({\mr x})\in{}^{\rm s}\kern-.2ex\gamma_G$ be a formula that is not satisfied in $\mr\X_n$.
-  Then the type $p({\mr x})=\{\psi_n({\mr x}):n\in\omega\}$ is finitely satisfied in $\mrX$.
+  Then the type $p({\mr x})=\{\psi_n({\mr x}):n\in\omega\}$ is finitely satisfiable in $\mrX$.
   From the type-definablity of $\mrX$ it follows that $p({\mr x})$ has a realization in $\mrX$.
   As this realization belongs to some ${\mr\X_n}$ we contradict the definition of $\psi_n({\mr x})$. 
 \end{proof}
@@ -488,13 +488,17 @@ The notions introduced in Section~\ref{strong_genericity} offer some hint.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{A tamer landscape}\label{tame_landscape}
 
-Under suitable assumptions -- e.g.\@ see Proposition~\ref{prop_stable_lanscape} -- some  notion introduced in this chapter coalesce and we are left with a tamer landscape.
+Under suitable assumptions -- e.g.\@ see Corollary~\ref{corol_persistent_finsat} -- some  notion introduced in this chapter coalesce and we are left with a tamer landscape.
 In general, we have the following.
 
+
 \begin{theorem}\label{thm_coalesce}
-  The following are equivalent
+  Assume 
   \begin{itemize}
-    \item[1.] $G$-persistent $\BDelta({\grZ})$-definable sets are $G$-wide
+    \item[1.] $G$-persistent $\BDelta({\grZ})$-definable sets are $G$-wide.
+  \end{itemize}
+  Then the following hold
+  \begin{itemize}
     \item[2.] $G$-generic $\BDelta({\grZ})$-definable sets are closed under intersection 
     \item[3.] $G$-generic $\BDelta({\grZ})$-definable sets are strongly $G$-generic
     \item[4.] weakly persistent $\BDelta({\grZ})$-definable sets are $G$-persistent.
@@ -502,7 +506,7 @@ In general, we have the following.
 \end{theorem}
 
 \begin{proof}
-  \ssf2$\IFF$\ssf3$\IFF$\ssf4. Clear.
+  Clearly \ssf2$\IFF$\ssf3$\IFF$\ssf4.
 
   \ssf1$\IMP$\ssf2.
   Let $\mrC$ and $\mrD$ be $G$-generic $\BDelta({\grZ})$-definable sets.
@@ -511,14 +515,14 @@ In general, we have the following.
   By \ssf1 and Theorem~\ref{thm_generic_invariant2} there is a $G$-invariant global $\BDelta({\grZ})$-type $p({\mr x})$ containing ${\mr x}\notin\mrC\cap\mrD$.
   By completeness either $p({\mr x})\proves{\mr x}\notin\mrC$ or $p({\mr x})\proves{\mr x}\notin\mrD$.
   This is a contradiction because by Theorem~\ref{thm_generic_invariant} $p({\mr x})\proves{\mr x}\in\mrC$ and $p({\mr x})\proves{\mr x}\in\mrD$.
-
-  \ssf4$\IMP$\ssf1.
-  Note that, by \ssf3, the type ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ coincides with $\gamma_G({\mr x})$, in particular $\gamma_G({\mr x})$ is finitely satisfied in $\mrX$.
-  Let $\mrD$ be a $G$-persistent $\BDelta({\grZ})$-definable set.
-  We show that $\gamma_G({\mr x})={}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ is finitely satisfiable in $\mrX\cap\mrD$.
-  Then, by \ssf4 and Corollary~\ref{corol_q_w_pers}, any global extension of $\gamma_G({\mr x})\cup\{{\mr x}\in\mrD\}$ witness \ssf2 of Theorems~\ref{thm_generic_invariant2}.
-  Suppose not, then $\gamma_G({\mr x})\proves {\mr x}\notin\mrD$.
-  Therefore $\neg\mrD$ is $G$-generic, contradicting the consistency of ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$.
+  %
+  % \ssf4$\IMP$\ssf1.
+  % Note that, by \ssf3, the type ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ coincides with $\gamma_G({\mr x})$, in particular $\gamma_G({\mr x})$ is finitely satisfiable in $\mrX$.
+  % Let $\mrD$ be a $G$-persistent $\BDelta({\grZ})$-definable set.
+  % We show that $\gamma_G({\mr x})={}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ is finitely satisfiable in $\mrX\cap\mrD$.
+  % Then, by \ssf4 and Corollary~\ref{corol_q_w_pers}, any global extension of $\gamma_G({\mr x})\cup\{{\mr x}\in\mrD\}$ witness \ssf2 of Theorems~\ref{thm_generic_invariant2}.
+  % Suppose not, then $\gamma_G({\mr x})\proves {\mr x}\notin\mrD$.
+  % Therefore $\neg\mrD$ is $G$-generic, contradicting the consistency of ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$.
 \end{proof}
 
 % \begin{assumption}\label{notation_2}
@@ -526,7 +530,7 @@ In general, we have the following.
 % \end{assumption}
 
 \begin{remark}\label{rem_coalesce} 
-  Assume that the equivalent conditions in Theorem~\ref{thm_coalesce} hold.
+  Assume that conditions \ssf2-\ssf4 in Theorem~\ref{thm_coalesce} hold.
   Then the types $\gamma_G({\mr x})$ and ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ coincide, and therefore $G$-invariant global types exist.
   It is also worth mentioning that every positive Boolean combination of $G$-generic sets is $G$-generic.
 \end{remark}
@@ -599,7 +603,6 @@ Note that by Exercise~\ref{ex_generic_type_vs_formulas} we can replace type-defi
   Then $g{\cdot}K{\cdot}{\mr a}=K{\cdot}{\mr a}$.
   By regularity, $g{\cdot}K=K$, then $g\in K$.
 \end{proof}
-  
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -631,22 +634,22 @@ In $\LDelta$ we include also symbols for the formulas
 \ceq{\hfill\zeta_n({\gr z_1},\dots,{\gr z_n},{\gr z_1'},\dots,{\gr z_n'})}{=}{\E{\gr w}\bigwedge_{i=1}^n {\gr w}\cdot{\gr z_i}={\gr z_i'}}
 
 Finally, note that as $\mrX$ and $\grZ$ are assumed to be type-definable, $\UDelta$ is a saturated $\LDelta$-structure.
+In this section \emph{$G$}$~=~\Aut(\UDelta)$.
 
-In this section $G=\Aut(\UDelta)$. 
-
-\begin{remark}\label{rem_H}
-  It is worth noticing that automorphisms of $\UDelta$ do not preserve the group operations nor the group action.
-  However, if $\mrD=\phi(\mrX\,;{\gr 1})$ and ${\gr g}\in\grZ$, then $f({\gr g}){\cdot}\mrD=f[{\gr g}{\cdot}\mrD]$ for any $f\in\Aut(\UDelta)$.
-\end{remark}
+% \begin{remark}\label{rem_H}
+%   However, if $\mrD=\phi(\mrX\,;{\gr 1})$ and ${\gr g}\in\grZ$, then $f({\gr g}){\cdot}\mrD=f[{\gr g}{\cdot}\mrD]$ for any $f\in\Aut(\UDelta)$.
+% \end{remark}
 
 To each ${\gr h}\in\grZ$ we associate the $\LDelta$-automorphism $\<{\mr a}\,;{\gr g}\>\mapsto\<{\gr h}{\cdot}{\mr a}\,;{\gr h}{\cdot}{\gr g}\>$.
 Therefore $\grZ$ is, up to isomorphism, a subgroup of $G$.
 In fact, it is a normal subgroup.
 
-\begin{remark}\label{rem_H2}
-  The formulas $\zeta_n({\gr z_1},\dots,{\gr z_n},{\gr z_1'},\dots,{\gr z_n'})$ ensure that for every automorphism in $f\in G$ and finite set $B\subseteq\grZ$, there is an automorphism in ${\gr g}\in \grZ$ that coincides with $f$ on $B$.
-  By saturation this is true also for any small set $B$.
-  We conclude that for formulas in $\LDelta(\grZ)$ the notions of generic and persistent under the action of $G$ and of $\grZ$ coincide.
+\begin{remark}\label{rem_H}
+  It is worth noticing that automorphisms of $\UDelta$ do not preserve the group operations nor the group action.
+  However the formulas $\zeta_n({\gr z_1},\dots,{\gr z_n},{\gr z_1'},\dots,{\gr z_n'})$ ensure that for every automorphism in $f\in G$ and finite set ${\gr B}\subseteq\grZ$, there is an automorphism in ${\gr g}\in \grZ$ that coincides with $f$ on ${\gr B}$.
+  By saturation this is true also for any small set ${\gr B}$.
+  Therefore the $\grZ$-orbit and the $G$-orbit of $\LDelta(\grZ)$-type-definable sets coincide.
+  We conclude that for these sets the notions of generic, persistent, wide under the actions of $G$ and $\grZ$ coincide.
 \end{remark}
 
 % Note that, for any ${\gr g}\in\grZ$, the orbit of $\phi(\mrX\,;{\gr g})$ under the action of $\grZ$ is $\{\phi(\mrX\,;{\gr h}) : {\gr h}\in\grZ\}$.
@@ -662,7 +665,7 @@ In fact, it is a normal subgroup.
 % \end{fact}
 
 We also consider the action some other normal subgroup $H\trianglelefteq G$.
-In the applications $H$ will be either $\Autf(\UDelta)$ or $\Aut(\UDelta/M)$.
+% In the applications $H$ will be either $\Autf(\UDelta)$ or $\Aut(\UDelta/M)$.
 
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{6ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
@@ -687,36 +690,6 @@ See Theorem~\ref{thm_Ggeneric_persistent}.\vspace*{-0.5\baselineskip}
   Therefore \ssf2 follows from Proposition~\ref{prop_Ggeneric_Hpersistent}.
 \end{proof}
 
-The following normal subgroup of $\grZ$ is interesting.
-
-\begin{definition}\label{def_G0}\noindent\vspace*{0.1ex}
-
-  \ceq{\hfill{\gr\Z^0}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \grW\textrm{ is }\BDelta(\grZ)\textrm{-definable and has finite index in }\grZ\big\}}.
-\end{definition}
-
-Note that we can replace \textit{definable\/} with \textit{type-definable\/} (essentially, by Exercise~\ref{ex_generic_type_vs_formulas}) and/or require that $\grW$ is normal.
-
-\begin{proposition}
-  Assume that the action of $\grZ$ is regular. Then
-
-  \ceq{\hfill{\gr\Z^0}}{\supseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\BDelta(\grZ)\textrm{-definable }\grZ\textrm{-generic set }\mrD\big\}}.
- 
-  % Let ${\gr g}$ be such that $\ $ for every $\grZ$-generic $\BDelta(\grZ)$-definable set $\mrD$.
-  % Then ${\gr g}\in{\gr\Z^0}$.
-\end{proposition}
-
-Note incidentally that when $\gamma_{\gr\Z^0}({\mr x})$ is consistent then also the converse inclusion holds.
-In fact, from Proposition~\ref{prop_Ggeneric_Hpersistent} we infer that $\grZ$-generic sets are $\gr\Z^0$-persistent.
-
-\begin{proof}
-  Let ${\gr g}$ be an element of the set on the r.h.s.
-  Let $\grW$ be as in Definition~\ref{def_G0}.
-  As regular implies transitive and $\grW$ has finite index, $\grW{\cdot}{\mr a}$ is $G$-generic for every ${\mr a}\in\mrX$.
-  Then $\grW{\cdot}{\mr a}\cap{\gr g}{\cdot}\grW{\cdot}{\mr a}\neq\varnothing$.
-  Let ${\gr h},{\gr k}\in\grW$ be such that ${\gr h}{\cdot}{\mr a}={\gr g}{\cdot}{\gr k}{\cdot}{\mr a}$.
-  By regularity, ${\gr h}={\gr g}{\cdot}{\gr k}$, then ${\gr g}\in\grW$.
- \end{proof}
-
 We write \emph{$({\gr g})_H$\/} for the $H$-orbit of ${\gr g}$, that is, the set $\{f({\gr g})\ :\ f\in H\}$.
 
 \begin{proposition}\label{prop_wideHcojugate}
@@ -729,15 +702,13 @@ We write \emph{$({\gr g})_H$\/} for the $H$-orbit of ${\gr g}$, that is, the set
 \end{proposition}
 
 \begin{proof}
-  Let $f_i\in H$ be such that ${\gr h_i}\in f_i({\gr g_i})$.
   Without loss of generality we can assume that only conjunctions occur in $\theta({\mr x}\,;{\gr g_1},\dots,{\gr g_n})$.
   Let ${\mr\C_i}=\phi_i(\mrX\,;{\gr 1})$.
   Then \ssf1 says that $\mrC={\gr g_1}{\cdot}{\mr\C_1}\cap\dots\cap{\gr g_n}{\cdot}{\mr\C_n}$ is $H$-wide.
   Let $f_i\in H$ be such that ${\gr h_i}=f_i({\gr g_i})$.
   Then, by Corollary~\ref{corol_intersectionGwide} also the intersection of the sets $f_i[\mrC]$ is $H$-wide.
   A fortiori the intersection of the sets $f_i[{\gr g_i}{\cdot}{\mr\C_i}]$ is $H$-wide.
-  Then \ssf1$\IMP$\ssf2 follows from Remark~\ref{rem_H}.
-  By symmetry, this proves the equivalence.
+  As $f_i[{\gr g_i}{\cdot}{\mr\C_i}]=f_i({\gr g_i}){\cdot}{\mr\C_i}$ the equivalence follows.
 \end{proof}
 
 If $\grA\subseteq\grZ$, we write \emph{$\<\grA\>$} for the subgroup generated by $\grA$.
@@ -819,7 +790,66 @@ For any $\grW\subseteq\grZ$, we write $\<\grW\>$ for the subgroup generated by $
 \end{proof}
 \end{comment}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Connected components}
+
+The following normal subgroups of $\grZ$ is interesting.
+
+\begin{definition}\label{def_G0}\noindent\vspace*{0.1ex}
+
+  \ceq{\ssf1.\hfill{\gr\Z^0}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \grW\textrm{ is }\LDelta(\grZ)\textrm{-definable and has finite index in }\grZ\big\}}.\smallskip
+
+  \ceq{\ssf2.\hfill{\gr\Z^{00}}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \grW\textrm{ is }\LDelta(\grZ)\textrm{-type-definable and has bounded index in }\grZ\big\}}.
+\end{definition}
+
+Note that in \ssf1 we can replace \textit{definable\/} with \textit{type-definable\/} (essentially, by Exercise~\ref{ex_generic_type_vs_formulas}).
+In both definitions we can require that $\grW$ is normal.
+
+Recall that \emph{$\bdd A$\/} for the set of type-definable sets with bounded orbit over $A$, equivalently, invariant over $\Autf A$.
+
+\begin{fact}\noindent\vspace*{0.1ex}
+  
+  \ceq{\ssf1.\hfill{\gr\Z^0}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \grW\in\LDelta\textrm{-}\acl^\eq\varnothing\big\}}.\smallskip
+
+  \ceq{\ssf2.\hfill{\gr\Z^{00}}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \grW\in\LDelta\textrm{-}\bdd\varnothing\big\}}.
+
+\end{fact}
+
+\begin{proof}
+  The index of a subgroup is the cardinality of its $\grZ$-orbit. 
+  By Remark~\ref{rem_H} the $\grZ$-orbit of an $\LDelta(\grZ)$-type-definable set coincides with its $G$-orbit.
+\end{proof}
+
+\begin{proposition}
+  Assume that the action of $\grZ$ is regular.
+  Define
+  
+  % \ceq{\hfill}{}{}
+
+  \ceq{\hfill{\gr\Z^0}}{\supseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\BDelta(\grZ)\textrm{-definable }\grZ\textrm{-generic set }\mrD\big\}}.
+ 
+  % Let ${\gr g}$ be such that $\ $ for every $\grZ$-generic $\BDelta(\grZ)$-definable set $\mrD$.
+  % Then ${\gr g}\in{\gr\Z^0}$.
+\end{proposition}
+
+% Note incidentally that when $\gamma_{\gr\Z^0}({\mr x})$ is consistent then also the converse inclusion holds.
+% In fact, from Proposition~\ref{prop_Ggeneric_Hpersistent} we infer that $\grZ$-generic sets are $\gr\Z^0$-persistent.
+
+\begin{proof}
+  Let ${\gr g}$ be an element of the set on the r.h.s.
+  Let $\grW$ be as in Definition~\ref{def_G0}.
+  As regular implies transitive and $\grW$ has finite index, $\grW{\cdot}{\mr a}$ is $G$-generic for every ${\mr a}\in\mrX$.
+  Then $\grW{\cdot}{\mr a}\cap{\gr g}{\cdot}\grW{\cdot}{\mr a}\neq\varnothing$.
+  Let ${\gr h},{\gr k}\in\grW$ be such that ${\gr h}{\cdot}{\mr a}={\gr g}{\cdot}{\gr k}{\cdot}{\mr a}$.
+  By regularity, ${\gr h}={\gr g}{\cdot}{\gr k}$, then ${\gr g}\in\grW$.
+ \end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -179,13 +179,13 @@ By the proposition above, they are closed under quantifiers.
 
 %Here we write \emph{$\phi({\mr x}\,;{\gr z})^*$\/} for the partitioned formula where the order of the two tuples is inverted (i.e.\@ it is the opposite of what displayed).
 
-Let $\pi\subseteq\U^{\mr x}\times\U^{\gr z}$ be a binary relation invariant over $A$.
+Let $\pi\subseteq\U^{\mr x}\times\U^{\gr z}$ be a binary relation (which need not be definable in any sense).
 We denote by $\pi({\mr x}\,;{\gr z})$ the predicate associated to $\pi$.
 We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$ is a \emph{ladder\/} of length $\alpha$ for $\pi({\mr x}\,;{\gr z})$ if for every $i<j<\alpha$
 
 \ceq{\hfill\pi({\mr a_i}\,;{\gr b_j})}{\wedge}{\neg\pi({\mr a_j}\,;{\gr b_i}).}
 
-We say that $\pi({\mr x}\,;{\gr z})$ is \emph{stable\/} if there is no ladder of length $\omega$.
+We say that $\pi({\mr x}\,;{\gr z})$ is \emph{stable\/} if for some $n$ there is no ladder of length $n$.
 Otherwise we say it is \emph{unstable} or that it has the \emph{order property}.
 We will mainly deal with relations that are definable or type-definable.
 We will say that a formula or a type is stable accordingly.
@@ -200,7 +200,8 @@ The proof of the following easy fact is left to the reader.
   \end{itemize}
 \end{fact}
 
-We can require that the ladder is an indiscernible sequence. 
+Requiring $\pi$ invariant over $A$ is not strictly necessary for the main theorem of this section, Theorem~\ref{thm_def_stable_formula}
+However, it simplifies the discussion as it allows to require that the ladder is an indiscernible sequence (cf.~). 
 
 \begin{theorem}\label{thm_sability_indiscernibility}
   Let $\pi({\mr x}\,;{\gr z})$ be invariant over $A$.
@@ -228,35 +229,38 @@ We can require that the ladder is an indiscernible sequence.
 \end{lemma}
 
 \begin{proof}
-  It suffices to consider conjunction and negation.
-  Let $\pi_i({\mr x}\,;{\gr z})$, for $i=1,2$,  be stable relations that are invariant over $A$.
-  By Theorem~\ref{thm_sability_indiscernibility}, it is immediate that $\pi_1({\mr x}\,;{\gr z})\wedge\pi_2({\mr x}\,;{\gr z})$ is stable.
-  As for negation, let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be a ladder for $\pi({\mr x}\,;{\gr z})$ that is indiscernible over $A$.
-  By Exercise~\ref{ex_symmetry_ind}, there is a $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ of $A$-indiscernibles such that ${\mr a'_0},{\gr b'_0}={\mr a_1}{\gr b_1}$ and ${\mr a'_1},{\gr b'_1}={\mr a_0}{\gr b_0}$.
-  This sequence witnesses the instability of $\neg\pi({\mr x}\,;{\gr z})$.
-
   The second claim is immediate.
+  o prove the first, it suffices to consider conjunction and negation.
+  Negation is immediate, in fact if $\<{\mr a_i}\,;{\gr b_i} : i<n\>$ is a ladder for $\pi({\mr x}\,;{\gr z})$ then $\<{\mr a_{n-i}}\,;{\gr b_{n-i}} : i<n\>$ is a ladder for $\neg\pi({\mr x}\,;{\gr z})$.
+  As for conjunction, note that when $\pi$ is invariant over $A$ it easily follows from the above lemma.
+  In general we reason as follows.
+
+  Assume $\pi_1({\mr x}\,;{\gr z})\wedge\pi_2({\mr x}\,;{\gr z})$ is unstable and pick a ladder sequence $\<{\mr a_i}\,;{\gr b_i} : i<m\>$, where $m$ is specified below.
+  Let $H_1,H_2\subseteq{m\choose 2}$ contain those pairs $j<i$ such that $\neg\pi_1({\mr a_i}\,;{\gr b_j})$, respectively $\neg\pi_2({\mr a_i}\,;{\gr b_j})$. 
+  Then $H_1\cup H_2={m\choose 2}$. 
+  If $m$ is large enough, by the (finite) Ramsey Theorem there is a set $H$ of size $n$ such that ${H\choose 2}$ is either contained in $H_1$ or in $H_2$. Suppose the first for definiteness. 
+  Let $H=\{h_1,\dots,h_n\}$ then $\<{\mr a_{h_i}}\,;{\gr b_{h_i}} : i<n\>$ is a ladder sequence for $\pi_1({\mr x}\,;{\gr z})$.
 \end{proof}
 
 The following theorem claims what is arguably one of the most important properties of stable formulas: any set that is externally definable by a stable formula is definable (by a related formula).
 
 \begin{theorem}\label{thm_def_stable_formula}
 Any $\grD\subseteq\U^{\gr z}$ approximated by a stable formula is definable.
-Precisely, if $\phi({\mr x}\,;{\gr z})$ is a stable formula that approximates $\grD$ then there are ${\mr a_{i,j}}\in\U^{\mr x}$ such that
+Precisely, if $\pi({\mr x}\,;{\gr z})$ is a stable relation that approximates $\grD$ then there are ${\mr a_{i,j}}\in\U^{\mr x}$ such that
 
-\ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\phi({\mr a_{i,j}}\,;{\gr z})}
+\ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\pi({\mr a_{i,j}}\,;{\gr z})}
 \end{theorem}
 
-Theorem~\ref{thm_def_stable_formula2} will prove the converse: if every set approximated by $\phi({\mr x}\,;{\gr z})$ is definable then $\phi({\mr x}\,;{\gr z})$ is stable.
+Theorem~\ref{thm_def_stable_formula2} will prove the converse: if every set approximated by $\pi({\mr x}\,;{\gr z})$ is definable then $\pi({\mr x}\,;{\gr z})$ is stable.
 
 \begin{proof}
   The theorem follows immediately from the two lemmas below.
 \end{proof}
 
 \begin{lemma}
-If $\grD$ is approximated from below by a stable formula $\phi({\mr x}\,;{\gr z})$ then
+If $\grD$ is approximated from below by a stable formula $\pi({\mr x}\,;{\gr z})$ then
 
-\ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=0}\phi({\mr a_i}\,;{\gr z})}
+\ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=0}\pi({\mr a_i}\,;{\gr z})}
 
 for some ${\mr a_0},\dots,{\mr a_n}\in\U^{\mr x}$.
 \end{lemma}
@@ -266,11 +270,11 @@ The elements ${\mr a_0},\dots,{\mr a_n}$ are defined recursively together with s
 
 Suppose ${\gr b_0},\dots,{\gr b_{n-1}}$ have been defined (this assumption is empty if $n=0$).
 We first define ${\mr a_n}$, then ${\gr b_n}$.
-Choose ${\mr a_n}\in\U^{\mr x}$ such that ${\gr b_0},\dots,{\gr b_{n-1}}\in\phi({\mr a_n}\,;\U^{\gr z})\subseteq\grD$.
+Choose ${\mr a_n}\in\U^{\mr x}$ such that ${\gr b_0},\dots,{\gr b_{n-1}}\in\pi({\mr a_n}\,;\U^{\gr z})\subseteq\grD$.
 This is possible because $\grD$ is approximated from below.
 Now, if possible, choose ${\gr b_n}$ such that
 
-\ceq{\hfill{\gr b_n}}{\in}{\grD\sm\bigcup^n_{i=0}\phi({\mr a_i}\,;\U^{\gr z})}.
+\ceq{\hfill{\gr b_n}}{\in}{\grD\sm\bigcup^n_{i=0}\pi({\mr a_i}\,;\U^{\gr z})}.
 
 Then $\<{\mr a_i}\,;{\gr b_i} : i\le n\>$ is a ladder sequence.
 By stability, for some $n$, the tuple ${\gr b_n}$ does not exist.
@@ -278,53 +282,53 @@ This yields the required ${\mr a_0},\dots,{\mr a_n}$.
 \end{proof}
 
 \begin{lemma}\label{lem_stab_approx_below}
-If $\grD$ is approximated by a stable formula $\phi({\mr x}\,;{\gr z})$.
+If $\grD$ is approximated by a stable formula $\pi({\mr x}\,;{\gr z})$.
 Then, for some $m$, the formula
 
-\ceq{\hfill\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr z})}{=}{\bigwedge^m_{j=0}\phi({\mr x_j}\,;{\gr z})}
+\ceq{\hfill\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr z})}{=}{\bigwedge^m_{j=0}\pi({\mr x_j}\,;{\gr z})}
 
 approximates $\grD$ from below.
 \end{lemma}
 
 \begin{proof}
-Let $m$ be such that there is no ladder sequence for $\phi({\mr x}\,;{\gr z})$ of length greater than $m$.
+Let $m$ be such that there is no ladder sequence for $\pi({\mr x}\,;{\gr z})$ of length greater than $m$.
 Let $C^{\gr z}\subseteq\grD$ be finite.
 We prove that there are some ${\mr a_0},\dots,{\mr a_m}$ such that $C^{\gr z}\subseteq\psi({\mr a_0},\dots,{\mr a_m}\,;\U^{\gr z})\subseteq\grD$.
-As in the proof above, we define by recursion a ladder sequence for $\phi({\mr x}\,;{\gr z})$.
+As in the proof above, we define by recursion a ladder sequence for $\pi({\mr x}\,;{\gr z})$.
 Suppose that ${\mr a_0},\dots,{\mr a_{n-1}}$ and ${\gr b_0},\dots,{\gr b_{n-1}}\notin\grD$ have been defined.
 We first define ${\mr a_n}$, then ${\gr b_n}$. 
 Choose ${\mr a_n}\in\U^{\mr x}$ such that 
 
-\hfil$C^{\gr z}\ \subseteq\ \phi({\mr a_n}\,;\U^{\gr z})\ \subseteq\ \U^{\gr z}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
+\hfil$C^{\gr z}\ \subseteq\ \pi({\mr a_n}\,;\U^{\gr z})\ \subseteq\ \U^{\gr z}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
 
-This ${\mr a_n}$ exists, because $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$.
+This ${\mr a_n}$ exists, because $\grD$ is approximated by $\pi({\mr x}\,;{\gr z})$.
 (Apply Definition~\ref{def_approx} with any $B$ such that $C^{\gr z}\cup\{{\gr b_0},\dots,{\gr b_{n-1}}\}\subseteq B^{\gr z}$.)
 Then, if possible, let ${\gr b_n}$ such that
 
-\ceq{\hfill{\gr b_n}}{\in}{\bigcap^n_{i=0}\phi({\mr a_i},\U^{\gr z})\sm\grD}
+\ceq{\hfill{\gr b_n}}{\in}{\bigcap^n_{i=0}\pi({\mr a_i},\U^{\gr z})\sm\grD}
 
 This procedure has to stop at some $n\le m$.
 Hence the required parameters are ${\mr a_1},\dots,{\mr a_n}={\mr a_{n+1}}=\dots={\mr a_{m}}$.
 \end{proof}
 
 % \begin{lemma}\label{lem_stable3}
-% If $\phi({\mr x}\,;{\gr z})$ is a stable formula then for every $m$ the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr z})$ defined above is stable.
+% If $\pi({\mr x}\,;{\gr z})$ is a stable formula then for every $m$ the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr z})$ defined above is stable.
 % \end{lemma}
 
 % \begin{proof}
-% It suffices to prove that if $\phi_1({\mr x_1}\,;{\gr z})\wedge\phi_2({\mr x_2}\,;{\gr z})$ is unstable then one of the formulas $\phi_n({\mr x_i}\,;{\gr z})$ is unstable. For simplicity, we use that instability implies the existence of an infinite ladder (this uses compactness, apparently contradicting Remark~\ref{rem_sability_no_compactness}). We leave to the reader to adapt the argument so that compactness is not required.
+% It suffices to prove that if $\pi_1({\mr x_1}\,;{\gr z})\wedge\pi_2({\mr x_2}\,;{\gr z})$ is unstable then one of the formulas $\pi_n({\mr x_i}\,;{\gr z})$ is unstable. For simplicity, we use that instability implies the existence of an infinite ladder (this uses compactness, apparently contradicting Remark~\ref{rem_sability_no_compactness}). We leave to the reader to adapt the argument so that compactness is not required.
 
 % Let ${\mr a^1_i},{\mr a^2_i}\in\U^{\mr x}$ and ${\gr b_i}\in\U^{\gr z}$ be such that 
 
-% \ceq{\hfill i\le j}{\IFF}{\phantom{\neg}\phi_1({\mr a^1_i}\,;{\gr b_j})\wedge\phi_2({\mr a^2_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
+% \ceq{\hfill i\le j}{\IFF}{\phantom{\neg}\pi_1({\mr a^1_i}\,;{\gr b_j})\wedge\pi_2({\mr a^2_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
 
-% For $n=1,2$ let $H_n\subseteq{\omega\choose 2}$ contain those pairs $j<i$ such that $\neg\phi_n({\mr a^n_i}\,;{\gr b_j})$. 
+% For $n=1,2$ let $H_n\subseteq{\omega\choose 2}$ contain those pairs $j<i$ such that $\neg\pi_n({\mr a^n_i}\,;{\gr b_j})$. 
 % By the equivalence above $H_1\cup H_2={\omega\choose 2}$. 
 % By the Ramsey Theorem there is an infinite set $H$ such that ${H\choose 2}\subseteq H_n$ for at least one of $n=1,2$. Suppose $H_1$ for definiteness. So, we obtain an infinite sequence $a^1_i$, $b_i$ such that
 
-% \ceq{\hfill j<i}{\IFF}{\neg\phi_1({\mr a^1_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
+% \ceq{\hfill j<i}{\IFF}{\neg\pi_1({\mr a^1_i}\,;{\gr b_j})}\hfill for all $i,j<\omega$
 
-% hence $\phi_1({\mr x_1}\,;{\gr z})$ is unstable.
+% hence $\pi_1({\mr x_1}\,;{\gr z})$ is unstable.
 % \end{proof}
 
 By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr z})$ is stable therefore this concludes the proof of Theorem~\ref{thm_def_stable_formula}. 
@@ -332,12 +336,12 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
 \begin{remark}\label{rem_sability_no_compactness}
   Theorem~\ref{thm_def_stable_formula} is often cast in the following  apparently more general form.
   Let $\mrA\subseteq\U^{\mr x}$ and $\grB\subseteq\U^{\gr z}$.
-  We say that $\phi({\mr x}\,;{\gr z})$ is stable between $\mrA$ and $\grB$ if for some $n$ no ladder of length $n$ exists with ${\mr a_i}\in\mrA$ and ${\gr b_i}\in\grB$.
+  We say that $\pi({\mr x}\,;{\gr z})$ is stable between $\mrA$ and $\grB$ if for some $n$ no ladder of length $n$ exists with ${\mr a_i}\in\mrA$ and ${\gr b_i}\in\grB$.
 
-  Let $\grD\subseteq\grB$ be approximable by $\phi({\mr x}\,;{\gr z})\wedge {\mr x}\in\mrA$.
+  Let $\grD\subseteq\grB$ be approximable by $\pi({\mr x}\,;{\gr z})\wedge {\mr x}\in\mrA$.
   Then for any such $\grD$ there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in \mrA$ such that 
   
-  \ceq{\hfill {\gr b}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\phi({\mr a_{i,j}}\,;{\gr b}).}
+  \ceq{\hfill {\gr b}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\pi({\mr a_{i,j}}\,;{\gr b}).}
   
   The proof is essentially the same. 
   In fact, elementarity and saturation as only been used to prove that conjunctions of stable formulas is stable.
@@ -418,7 +422,7 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
 \section{Stability and the number of types}
 
 
-The following proposition highlights the connection between the stability of $\phi({\mr x}\,;{\gr z})$ and the cardinality of $S_\phi(\U)$, equivalently the number of sets externally definable by $\phi({\mr x}\,;{\gr z})$. 
+The following proposition highlights the connection between the stability of the formula $\phi({\mr x}\,;{\gr z})$ and the cardinality of $S_\phi(\U)$, equivalently the number of sets externally definable by $\phi({\mr x}\,;{\gr z})$. 
 
 \begin{theorem}\label{thm_def_stable_formula2}
    The following are equivalent
@@ -677,7 +681,8 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 We say that $T$ is a \emph{stable theory\/} if every formula is stable.
 Most theorems in this section have a formulation that only requires the stability of a given formula $\phi({\mr x}\,;{\gr z})\in L$.
 This is sometimes called \textit{local\/} stability.
-When the global case does not trivially follow from the local one, we use a set $\Delta\subseteq L_{{\mr x}\,{\gr z}}$.
+Sometimes the global case does not trivially follow from the local one.
+Therefore our result are stated using an arbitrary set $\Delta\subseteq L_{{\mr x}\,{\gr z}}$.
 We say that $\Delta$ is stable if all formulas in $\Delta$ are stable.
 When $|{\mr x}|=|{\gr z}|=\omega$ and $\Delta=L_{{\mr x}\,{\gr z}}$ the stability of $\Delta$ is tantamount to the stability of $T$.
 
@@ -903,7 +908,7 @@ A more general version of the theorem holds which requires a different proof.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The action of the Lascar group}
+\section{The action of the Lascar group}\label{Lascar_action}
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox{10ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
@@ -911,51 +916,52 @@ A more general version of the theorem holds which requires a different proof.
 We adopt the notation and terminology of Chapter~\ref{actions} with $G=\Autf(\U/A)$ and $\grZ=\U^{\gr z}$.
 The set $\mrX$ is to be inferred from the context.
 We say \emph{Lascar generic\/} over $A$ for generic under the action of $\Autf(\U/A)$.
-We define \emph{Lascar persistent\/} similarly.
+We define \emph{Lascar persistent/wide\/} similarly.
 
 \begin{corollary}\label{corol_persistent_finsat}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
-  Let $\mrX= q(\U^{\mr x})$ for some $q({\mr x})\subseteq L(\acl^\eq\!A)$.
-  Let $\mrD$ be a $\BDelta(\U)$-definable set.
+  Assume $\mrX$ is type definable.
+  Finally, let $\mrD$ be a $\BDelta(\U)$-definable set.
   Then the following are equivalent 
   \begin{itemize}
     \item[1.] $\mrD$ is Lascar persistent over $A$
-    \item[2.] $\{{\mr x}\in\mrD\}\cup q({\mr x})$ is finitely satisfied every in $M\supseteq A$.
+    \item[2.] $\mrD$ is Lascar wide over $A$. 
+    % \item[2.] $\{{\mr x}\in\mrD\}\cup q({\mr x})$ is finitely satisfied every in $M\supseteq A$.
   \end{itemize}
 \end{corollary}
 \begin{proof}
   As Boolean combinations of stable formulas are stable, we can assume that $\mrD$ is defined by the formula $\phi({\mr x}\,;{\gr b})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$.
 
-  \ssf1$\IMP$\ssf2.
-  Let $M\supseteq A$.
-  Let $\psi({\mr x})\in q$.
-  If $\phi({\mr x}\,;{\gr b})$ is Lascar persistent, then it is also persistent under the action of $\Aut(\U/M)$.
-  Then the formula $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ in the proof of Theorem~\ref{thm_stability_definable_rovescio1} is consistent with $\psi({\mr x})$.
-  As $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ is equivalent to a formula in $L(M)$, by elementarity it satisfiable in $\psi(M^{\mr x})$.
-  Hence so is $\phi({\mr x}\,;{\gr b_i})$ for some $i$.
-  As ${\gr b_i}\equiv_M{\gr b}$, also $\phi({\mr x}\,;{\gr b})$ is satisfiable in $\psi(M^{\mr x})$.
+  Only \ssf1$\IMP$\ssf2 requires a proof.
+  Let $q({\mr x})$ be the type defining $\mrX$.
+  Pick $\psi({\mr x})\in q$.
+  It suffices to prove that $\psi({\mr x})\wedge\phi({\mr x}\,;{\gr b})$ is satisfied in every $M\subseteq A$.
+  Then, by Corollary~\ref{corol_stable_coheir_over_models}, it follows that $q({\mr x})\cup\{\phi({\mr x}\,;{\gr b})\}$ is contained in a type $p({\mr x})\in S_\Delta(\U)$ that is Lascar invariant over $A$.
+  Then $\mrD$ is Lascar wide by Theorem~\ref{thm_generic_invariant2}.
   
-  \ssf2$\IMP$\ssf1.
-  From \ssf2 and Corollary~\ref{corol_stable_coheir_over_models} it follows that $\phi({\mr x}\,;{\gr b})$ is contained in a type $p({\mr x})\in S_\Delta(\U)$ that is finitely satisfied in every $M\supseteq A$.
-  By Proposition~\ref{prop_type_over_acl2}, $p({\mr x})$ is Lascar invariant.
-  Then, by Theorem~\ref{thm_generic_invariant}, $p({\mr x})$ and in particular $\phi({\mr x}\,;{\gr b})$ is Lascar persistent.
+  Let $M\supseteq A$ be arbitrary.
+  Note that, as $q({\mr x})$ is invariant over $M$, we may assume that $\psi({\mr x})\in L(M)$.
+  Let $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be the formula in the proof of Theorem~\ref{thm_stability_definable_rovescio1}.
+  As $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ is equivalent to a formula in $L(M)$, by elementarity it satisfiable in $M$.
+  Hence so is $\psi({\mr x})\wedge\phi({\mr x}\,;{\gr b_i})$ for some $i$.
+  As ${\gr b_i}\equiv_M{\gr b}$, also $\phi({\mr x}\,;{\gr b})$ is satisfiable.
 \end{proof}
 
-\begin{proposition}\label{prop_stable_lanscape}
-  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
-  Let $\mrX= q(\U^{\mr x})$ for some $q({\mr x})\subseteq L(\acl^\eq\!A)$.
-  Then the equivalent conditions of Theorem~\ref{thm_coalesce} are satisfied.
-\end{proposition}
+% \begin{proposition}\label{prop_stable_lanscape}
+%   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
+%   Let $\mrX= q(\U^{\mr x})$ for some $q({\mr x})\subseteq L(\acl^\eq\!A)$.
+%   Then the equivalent conditions of Theorem~\ref{thm_coalesce} are satisfied.
+% \end{proposition}
 
-\begin{proof}
-  Let $\mrD$ be a $\BDelta(\U)$-definable set that is weakly Lascar persistent.
-  We prove that $\mrD$ is Lascar persistent.
-  Pick a finite $H\subseteq\Autf(\U/A)$ such that $\cup\,H\,\mrD$ is Lascar persistent.
-  By Corollary~\ref{corol_persistent_finsat}, the type $\{{\mr x}\in\cup\,H\,\mrD\}\cup q({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
-  Then, by Corollary~\ref{corol_stable_coheir_over_models} there is a Lascar invariant type $p({\mr x})\in S_\Delta(\U)$ containing ${\mr x}\in\cup\,H\,\mrD$ and finitely consistent with $q({\mr x})$.
-  By completeness and invariance ${\mr x}\in\mrD$ is in $p({\mr x})$.
-  Then $\mrD$ is persistent by Theorem~\ref{thm_generic_invariant}.
-\end{proof}
+% \begin{proof}
+%   Let $\mrD$ be a $\BDelta(\U)$-definable set that is weakly Lascar persistent.
+%   We prove that $\mrD$ is Lascar persistent.
+%   Pick a finite $H\subseteq\Autf(\U/A)$ such that $\cup\,H\,\mrD$ is Lascar persistent.
+%   By Corollary~\ref{corol_persistent_finsat}, the type $\{{\mr x}\in\cup\,H\,\mrD\}\cup q({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
+%   Then, by Corollary~\ref{corol_stable_coheir_over_models} there is a Lascar invariant type $p({\mr x})\in S_\Delta(\U)$ containing ${\mr x}\in\cup\,H\,\mrD$ and finitely consistent with $q({\mr x})$.
+%   By completeness and invariance ${\mr x}\in\mrD$ is in $p({\mr x})$.
+%   Then $\mrD$ is persistent by Theorem~\ref{thm_generic_invariant}.
+% \end{proof}
 
 \begin{proposition}\label{prop_stable_genericiffpersistent}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
@@ -1000,12 +1006,12 @@ We define \emph{Lascar persistent\/} similarly.
 % \end{exercise}
 The following lemma is applied in the theorem below (it does not require stability).
 
-\begin{lemma}
+\begin{lemma}\label{lem_trans_action}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$.
   Let $p_0({\mr x})$ be a complete $\GDelta(A)$-type.
   Finally, let 
   
-  \ceq{\hfill Q}{=}{\big\{q({\mr x})\subseteq\GDelta(\acl^\eq\!A)\ :\ q({\mr x})\supseteq p_0({\mr x})\textrm{ and is complete}\big\}}.
+  \ceq{\hfill Q}{=}{\big\{q({\mr x})\subseteq\GDelta(\acl^\eq\!A)\ :\ q({\mr x})\proves p_0({\mr x})\textrm{ and is complete}\big\}}.
   
   Then $\Aut(\U/A)$ acts on $Q$ transitively, i.e.\@ any two types in $Q$ are conjugated.
 \end{lemma}
@@ -1045,7 +1051,7 @@ The following lemma is applied in the theorem below (it does not require stabili
   \ssf1.
   Let $p_i$, where $i=1,2$, be two elements of $P$.
   Let $q_i({\mr x})$ be some complete $\GDelta(\acl^\eq\!A)$-type consistent with $p_i({\mr x})$.
-  By the proposition above $f\,q_1=q_2$ for some $f\in\Aut(\U/A)$.
+  By Lemma~\ref{lem_trans_action} $f\,q_1=q_2$ for some $f\in\Aut(\U/A)$.
   Then $f\,p_1$ is consistent with $q_2$.
   By stationarity $f\,p_1=p_2$.
 
@@ -1081,12 +1087,12 @@ The following lemma is applied in the theorem below (it does not require stabili
 We assume the hypotheses and the notation of Section~\ref{definablegroups}.
 
 \begin{theorem}\label{thm_Ggeneric_persistent}
-  Let $\phi({\mr x}\,;{\gr z})\in\Delta$ be stable.
+  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Assume the action of $\grZ$ is transitive.
-  Then the following are equivalent
+  Then for every $\BDelta(\grZ)$-definable set $\mrD$ the following are equivalent
   \begin{itemize}
-    \item [1.] $\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic
-    \item [2.] $\phi({\mr x}\,;{\gr g})$ is Lascar wide over $A$ for every ${\gr g}\in\grZ$.
+    \item [1.] $\mrD$ is $\grZ$-generic
+    \item [3.] ${\gr g}{\cdot}\mrD$ is Lascar persistent over $A$ for every ${\gr g}\in\grZ$.
   \end{itemize}
 \end{theorem}
 
@@ -1095,17 +1101,17 @@ It is worthwhile to recall that under the assumption of stability Lascar wide is
 \begin{proof} 
   \ssf1$\IMP$\ssf2.
   By stability, there exist a type $p({\mr x})\in\LDelta\mbox{-}S_\phi(\grZ)$ that is invariant under the action of $\Autf(\UDelta)$.
-  Then we can apply Corollary~\ref{prop_Ggeneric_persistent}
+  Then we can apply Corollary~\ref{prop_Ggeneric_persistent} with $H=\Autf(\UDelta)$.
 
   \ssf2$\IMP$\ssf1.
-  Let ${\mr a}\in\mrX$ and ${\gr g}\in\grZ$ be such that $\phi({\mr a}\,;{\gr g})$.
+  Let ${\mr a}\in\mrX$ and ${\gr g}\in\grZ$ be such that ${\mr a}\in{\gr g}{\cdot}\mrD$.
   Let $q({\mr x})=\tp({\mr a}/\acl^\eq\!A)$.
-  Assume \ssf2 then, by Proposition~\ref{prop_stable_genericiffpersistent}, $\phi({\mr x}\,;{\gr g})$ is Lascar generic relative to $q(\U^{\mr x})$, i.e.\@ with $q(\U^{\mr x})$ for $\mrX$.
-  A fortiori $\phi({\mr x}\,;{\gr g})$ is $G$-generic relative to $q(\U^{\mr x})$.
+  Assume \ssf2 then, by Proposition~\ref{prop_stable_genericiffpersistent}, ${\mr a}\in{\gr g}{\cdot}\mrD$ is Lascar generic relative to $q(\U^{\mr x})$, i.e.\@ with $q(\U^{\mr x})$ for $\mrX$.
   The same reasoning applies if we replace ${\mr a}$ and ${\gr g}$ with  ${\gr h}\,{\mr a}$ and ${\gr h}\,{\gr g}$ for any ${\gr h}\in\grZ$.
   By the transitivity of the action, ${\gr h}\,{\mr a}$ ranges the whole of $\mrX$.
-  We conclude that there is a set $H\subseteq\grZ$ of cardinality $<2^{|L(A)|}$ such that $\bigcup_{h\in H}\phi(\mrX\,;{\gr h})$ covers $\mrX$.
-  By compactness, we can assume $H$ finite, so the $\grZ$-genericity follows.
+  Therefore $q({\mr x})$ ranges over the whole of $S(\acl^\eq\!A)$.
+  We conclude that there is a set $H\subseteq\grZ$ of cardinality $<2^{|L(A)|}$ such that $\bigcup_{h\in H}{\gr h}{\cdot}\mrD$ covers $\mrX$.
+  By compactness, we can assume $H$ finite, so the $\grZ$-genericity of $\mrD$ follows.
   % \ssf1$\IMP$\ssf2.
   % Let ${\gr g}$ be given.
   % By stability, there is a type $p({\mr x})\in L'\mbox{-}S(\grZ)$ that is invariant, and therefore definable, over $L'\mbox{-}\acl^\eq\varnothing$.
@@ -1125,16 +1131,16 @@ It is worthwhile to recall that under the assumption of stability Lascar wide is
 \end{proof}
 
 \begin{corollary}\label{corol_genericornotgeneric}
-  Let $\phi({\mr x}\,;{\gr z})\in\Delta$ be stable.
+  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Assume the action of $\grZ$ is transitive.
-  Then $\phi({\mr x}\,;{\gr 1})$ or $\neg\phi({\mr x}\,;{\gr 1})$ is $\grZ$-generic.
+  Then for every $\BDelta(\grZ)$-definable set $\mrD$ either $\mrD$ or $\neg\mrD$ is $\grZ$-generic.
 \end{corollary}
 
 \begin{proof}
-  Suppose $\phi({\mr x}\,;{\gr 1})$ is not $\grZ$-generic.
-  Then $\phi({\mr x}\,;{\gr g})$ is not Lascar persistent for some ${\gr g}$.
-  Then $\neg\phi({\mr x}\,;{\gr g})$ is Lascar generic over $A$.
-  The $\grZ$-genericity of $\neg\phi({\mr x}\,;{\gr 1})$ follows.
+  Suppose $\mrD$ is not $\grZ$-generic.
+  Then ${\gr g}{\cdot}\mrD$ is not Lascar persistent for some ${\gr g}\in\grZ$.
+  Then $\neg({\gr g}{\cdot}\mrD)$ is Lascar generic over $A$.
+  The $\grZ$-genericity of $\neg\mrD$ follows.
 \end{proof}
 
 \begin{corollary}
@@ -1162,7 +1168,7 @@ It is worthwhile to recall that under the assumption of stability Lascar wide is
   Then $q({\mr x})$ has an extension in $P$.
   To prove the converse, we need to show that all formulas in $p({\mr x}){\restriction}\pmDelta(\grZ)$ are $\grZ$-generic.
   Let $\phi({\mr x}\,;{\gr g})\in p$.
-  As $\grZ$ acts transitively on $P$, there is a finite $H\subseteq\grZ$ such that every type in $P$ contains  the formula $\phi({\mr x}\,;{\gr h}\cdot{\gr g})$ for some ${\gr h}\in H$.
+  As $\grZ$ acts transitively on $P$, there is a finite $H\subseteq\grZ$ such that every type in $P$ contains the formula $\phi({\mr x}\,;{\gr h}\cdot{\gr g})$ for some ${\gr h}\in H$.
   Let $\psi({\mr x})$ be the disjunction of the $H$-translates of $\phi({\mr x}\,;{\gr g})$.
   Clearly $\phi({\mr x}\,;{\gr g})$ is $\grZ$-generic if and only if $\psi({\mr x})$ is $\grZ$-generic.
   If $\psi({\mr x})$ is not  $\grZ$-generic then, by Corollary~\ref{corol_genericornotgeneric}, $\neg\psi({\mr x})$ is $\grZ$-generic.

@@ -270,7 +270,6 @@ When appropriate, we assume $\kappa$ to be inaccessible.
 
 Some terms acquire a slightly different meaning when working inside a monster model.
 
-
 \newcommand{\labellalunga}[1]{#1\hfill}
 \newenvironment{litemize}[1]
    {\begin{list}{}{
@@ -294,7 +293,8 @@ Some terms acquire a slightly different meaning when working inside a monster mo
 %  and similarly for other expressions such as $p(x)\imp\neg q(x)$ or $\E y\,p(x,y)$ etc., which are neither first-order formulas nor types;
 \item[\emph{consistency}] we say that $\phi(x)$ is consistent if $\U\models\E x\,\phi(x)$.
 % ; the consistency of a type $p(x)$ or expressions such as those above is defined similarly;
-\item[\emph{small/large}] cardinalities smaller than $\kappa$ are called small. 
+\item[\emph{small/large}] cardinalities smaller than $\kappa$ are called small.
+\item[\emph{bounded}] is used in some contexts as synonym of small.
 \item[\emph{models}] are elementary substructure of $\U$ of small cardinality they are denoted by the letters $M$ and $N$.
 \item[\emph{parameters}] are always in $\U$; the symbols $A$, $B$, $C$, etc.\@ denote sets of parameters of small cardinality; calligraphic letters as $\Aa$, $\B$, $\C$, etc.\@ are used for sets of arbitrary cardinality.
 \item[\emph{tuples}] have length $<\kappa$ unless otherwise specified their type is denoted by $\tp(a/A)=\tp_\U(a/A)$ and $a\equiv_A b$ abbreviates $\U,a \equiv_A \U,b$.
@@ -304,11 +304,11 @@ We may use small types in expression such as $p(x)\imp\neg q(x)$, $\E y\,p(x,y)$
 \item[\emph{formulas}] have parameters in $\U$ unless otherwise specified.
 \item[\emph{definable}] sets are sets of the form $\phi(\U)$ for some formula $\phi(x)\in L(\U)$; we may say $A$-definable if $\phi(x)\in L(A)$.
 \item[\emph{type-definable}] sets are sets of the form $p(\U)$ for some small type $p(x)$.
-\item[\emph{orbits of tuples}] under the action of $\Aut(\U/A)$ are denoted by $\orbit(a/A)$.
+\item[\emph{orbits of tuples}] under the action of $\Aut(\U/A)$ are denoted by $\Orbit(a/A)$.
 \end{litemize}
 
 Let $x$ be a tuple of variables. For any fixed $A\subseteq \U$ we introduce a topology on $\U^{x}$ that we call the \emph{topology induced by $A$} or, for short, \emph{$A\mbox{-}$topology}. 
-(This is nonstandard terminology, not to be confused with the \textit{logic\/} $A\mbox{-}$topology in Section~\ref{KPtypes}.)
+(This is nonstandard terminology, not to be confused with the \textit{logic\/} $A\mbox{-}$topology in Section~\ref{KPtypes}, which is finer when $A$ is not a model.)
 The closed sets of the $A\mbox{-}$topology are those of the form $p(\U)$ where $p(x)\subseteq L(A)$ is a type over $A$.
 
 For $\phi(x)\in L(A)$ the sets of the form $\phi(\U)$ are clopen in this topology (and vice versa by Proposition~\ref{prop_normality}).
@@ -452,7 +452,7 @@ There is a type $q({\mr x})\subseteq L(A)$ such that
 
 \ceq{\hfill\U}{\models}{\A {\mr x}\,\big[\E {\gr z}\,p({\mr x}\,;{\gr z})\ \iff\ q({\mr x})\big].}
 
-The theorem holds also when ${\mr x}$ and ${\gr z}$ have length $\kappa$.
+The theorem holds also when ${\gr z}$ has length $\kappa$.
 \end{proposition}
 
 \begin{proof}
@@ -540,10 +540,11 @@ Let $\phi(x\,;y)\in L(\U)$. Prove that the following are equivalent
 
 \begin{exercise}\label{ex_bfc_groups}
   Let $\U$ be as in Exercise~\ref{ex_typedef_groups}.
-  Prove that for any model $M$ the following are equivalent
+  Prove that the following are equivalent
   \begin{itemize}
-    \item[1.] $M$ is a normal subgroup of $\U$
+    \item[1.] every model $M$ is a normal subgroup of $\U$
+    \item[1.] some model $M$ is a normal subgroup of $\U$
     \item[2.] $\U$ is a {\sc bfc} group.
   \end{itemize}
-  A group $G$ is {\sc bfc} (has boundedly finite conjugacy classes) if for some $n$ the sets $\{gag^{-1}:g\in G\}$, as $a$ ranges over $G$, have at most $n$ elements. Hint: implication \ssf2$\IMP$\ssf1 requires the B.H. Neumann's {\sc bfc}-Theorem
+  A group $G$ is {\sc bfc} (has boundedly finite conjugacy classes) if for some $n$ the sets $\{gag^{-1}:g\in G\}$, as $a$ ranges over $G$, have at most $n$ elements. 
 \end{exercise}
