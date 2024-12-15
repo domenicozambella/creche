@@ -18,8 +18,6 @@ The notation and implicit assumptions are as in Section~\ref{monster}.
 \section{Externally definable sets}
 \label{externally}
 
-\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
-
 Let $\grC,\grD\subseteq\U^{\gr z}$.
 The set $\grD\cap A^{\gr z}$ is called the \emph{trace\/} of $\grD$ over $A$.
 We write $\grC=_A\grD$ if  $\grC$ and $\grD$ have the same trace on $A$.
@@ -40,10 +38,10 @@ The latter interpretation explains the terminology.
 We prefer to deal with external definability in a different, though equivalent, way.
 
 \begin{definition}\label{def_approx}
-We say that $\grD$ is \emph{approximated\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite $B$ there is a tuple ${\mr a}\in\U^{\mr x}$ such that $\phi({\mr a}\,;B^{\gr z})=\grD\cap B^{\gr z}$.
+We say that $\grD$ is \emph{approximated\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite ${\gr B}\subseteq\U^{\gr z}$ there is a tuple ${\mr a}\in\U^{\mr x}$ such that $\phi({\mr a}\,;{\gr B})=\grD\cap{\gr B}$.
 We call $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grD$.
 If in addition $\phi({\mr a}\,;\U^{\gr z})\subseteq\grD$, we say that  $\grD$ is \emph{approximated from below}.
-Equivalently, we say that  $\grD$ is approximated from below if for every finite $B^{\gr z}\subseteq\grD$ there is a tuple ${\mr a}\in\U^{\mr x}$ such that  $B^{\gr z}\subseteq\phi({\mr a}\,;\U^{\gr z})\subseteq\grD$.
+Equivalently, we say that  $\grD$ is approximated from below if for every finite ${\gr B}\subseteq\grD$ there is a tuple ${\mr a}\in\U^{\mr x}$ such that  ${\gr B}\subseteq\phi({\mr a}\,;\U^{\gr z})\subseteq\grD$.
 The dual notion of \emph{approximation from above\/} is defined as expected (and coincides with $\neg\grD$ being approximated by $\neg\phi({\mr x}\,;{\gr z})$ from below).
 \end{definition} 
 
@@ -79,16 +77,15 @@ In Definition~\ref{def_approx}, the sort $\phi({\mr x}\,;{\gr z})$ is fixed (oth
 For every $\grD$ the following are equivalent
 \begin{itemize}
 \item[1.] $\grD$ is approximable
-\item[2.] for every $C$ of cardinality $\le|L|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi(C^{\gr z})=\grD\cap C^{\gr z}$.
+\item[2.] for every ${\gr C}\subseteq\U^{\gr z}$ of cardinality $\le|L|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi({\gr C})=\grD\cap{\gr C}$.
 \end{itemize}
 \end{proposition}
 
 \begin{proof}
-To prove \ssf{2}$\IMP$\ssf{1} assume \ssf{2} and negate \ssf{1} for a contradiction.
-For each formula $\psi({\mr x}\,;{\gr z})\in L$ choose a finite set $B$ such that $\psi({\mr b}\,;\U^{\gr z})\neq_B\grD$ for every ${\mr b}\in\U^{\mr x}$.
-Let $C$ be the union of all these finite sets.
-Clearly $|C|\le|L|$.
-By \ssf{2} there are a formula $\phi({\mr x}\,;{\gr z})$ and a tuple ${\mr c}$ such that $\phi({\mr c}\,;C^{\gr z})=\grD\cap C^{\gr z}$, contradicting the definition of $C$.
+To prove \ssf{2}$\IMP$\ssf{1} negate \ssf{1}
+For each formula $\psi({\mr x}\,;{\gr z})\in L$ choose a finite set ${\gr B}$ such that $\psi({\mr b}\,;{\gr B})\neq\grD\cap{\gr B}$ for every ${\mr b}\in\U^{\mr x}$.
+Let ${\gr C}$ be the union of all these finite sets.
+Then ${\gr C}$ witnesses the failure of \ssf{2}.
 \end{proof}
 
 \begin{remark}\label{prop_approx_el_eq}
@@ -111,13 +108,13 @@ From the following easy observation of Chernikov and Simon~\cite{CS} we obtain a
 % Let $B\subseteq\U$ be finite. 
 % We want ${\mr a}\in\U^{\mr x}$ such that 
 % 
-% \ceq{\ssf{a.}\hfill \E w\ \big({\gr b}\,w\in\C\big)}{\iff}{\E w\,\phi({\mr a}\,;{\gr b}\,w)}\hfill for every ${\gr b}\in B^{\gr z}$
+% \ceq{\ssf{a.}\hfill \E w\ \big({\gr b}\,w\in\C\big)}{\iff}{\E w\,\phi({\mr a}\,;{\gr b}\,w)}\hfill for every ${\gr b}\in{\gr B}$
 % 
 % \ceq{\ssf{b.}\hfill \A {\gr z}\;\Big[\E w\,\phi({\mr a}\,;{\gr z}\,w)}{\imp}{\E w\ \big({\gr z}\,w\in\C\big)\Big]}
 % 
 % Let $C\subseteq\U$ be a finite set such that 
 % 
-% \ceq{\ssf{c.}\hfill \E w\in C^{|w|}\ \big({\gr b}\,w\in\C\big)}{\iff}{\E w\ \big({\gr b}\,w\in\C\big)}\hfill for every ${\gr b}\in B^{\gr z}$
+% \ceq{\ssf{c.}\hfill \E w\in C^{|w|}\ \big({\gr b}\,w\in\C\big)}{\iff}{\E w\ \big({\gr b}\,w\in\C\big)}\hfill for every ${\gr b}\in{\gr B}$
 % 
 % As $\C$ is approximable from below, there is an ${\mr a}$ such that
 % 
@@ -139,17 +136,17 @@ Then $\grD=\big\{{\gr z}:\E y\ \big(y\,{\gr z}\in\C\big)\big\}$ is approximated 
 Let $B\subseteq\U$ be finite.
 We want ${\mr a}\in\U^{\mr x}$ such that
 
-\ceq{\ssf{a.}\hfill \E y\ \big(y\,{\gr b}\in\C\big)}{\iff}{\E y\,\phi({\mr a}\,;y\,{\gr b})}\hfill for every ${\gr b}\in B^{\gr z}$
+\ceq{\ssf{a.}\hfill \E y\ \big(y\,{\gr b}\in\C\big)}{\iff}{\E y\,\phi({\mr a}\,;y\,{\gr b})}\hfill for every ${\gr b}\in{\gr B}$
 
 \ceq{\ssf{b.}\hfill \A {\gr z}\;\Big[\E y\,\phi({\mr a}\,;y\,{\gr z})}{\imp}{\E y\ \big(y\,{\gr z}\in\C\big)\Big]}
 
-Let $D\subseteq\U$ be a finite set such that 
+Let $D\subseteq\U^y$ be a finite set such that 
 
-\ceq{\ssf{c.}\hfill \E y\in D^y\ \big(y\,{\gr b}\in\C\big)}{\iff}{\E y\ \big(y\,{\gr b}\in\C\big)}\hfill for every ${\gr b}\in B^{\gr z}$
+\ceq{\ssf{c.}\hfill \E y\in D\ \big(y\,{\gr b}\in\C\big)}{\iff}{\E y\ \big(y\,{\gr b}\in\C\big)}\hfill for every ${\gr b}\in{\gr B}$
 
 As $\C$ is approximable from below, there is an ${\mr a}$ such that
 
-\ceq{\ssf{a$'$.}\hfill d\,{\gr b}\in\C}{\iff}{\phi({\mr a}\,;d\,{\gr b})}\hfill for every $d\,{\gr b}\in \big(D\cup B\big)^{y\,{\gr z}}$
+\ceq{\ssf{a$'$.}\hfill d\,{\gr b}\in\C}{\iff}{\phi({\mr a}\,;d\,{\gr b})}\hfill for every $d\,{\gr b}\in D,{\gr B}$
 
 \ceq{\ssf{b$'$.}\hfill \A y\,{\gr z}\ \Big[\phi({\mr a}\,;y\,{\gr z})}{\imp}{y\,{\gr z}\in\C\Big]}
 
@@ -232,7 +229,7 @@ However, it simplifies the discussion as it allows to require that the ladder is
   The second claim is immediate.
   o prove the first, it suffices to consider conjunction and negation.
   Negation is immediate, in fact if $\<{\mr a_i}\,;{\gr b_i} : i<n\>$ is a ladder for $\pi({\mr x}\,;{\gr z})$ then $\<{\mr a_{n-i}}\,;{\gr b_{n-i}} : i<n\>$ is a ladder for $\neg\pi({\mr x}\,;{\gr z})$.
-  As for conjunction, note that when $\pi$ is invariant over $A$ it easily follows from the above lemma.
+  As for conjunction, note that when $\pi$ is invariant over $A$ it easily follows from Theorem~\ref{thm_sability_indiscernibility}.
   In general we reason as follows.
 
   Assume $\pi_1({\mr x}\,;{\gr z})\wedge\pi_2({\mr x}\,;{\gr z})$ is unstable and pick a ladder sequence $\<{\mr a_i}\,;{\gr b_i} : i<m\>$, where $m$ is specified below.
@@ -292,17 +289,17 @@ approximates $\grD$ from below.
 
 \begin{proof}
 Let $m$ be such that there is no ladder sequence for $\pi({\mr x}\,;{\gr z})$ of length greater than $m$.
-Let $C^{\gr z}\subseteq\grD$ be finite.
-We prove that there are some ${\mr a_0},\dots,{\mr a_m}$ such that $C^{\gr z}\subseteq\psi({\mr a_0},\dots,{\mr a_m}\,;\U^{\gr z})\subseteq\grD$.
+Let ${\gr C}\subseteq\grD$ be finite.
+We prove that there are some ${\mr a_0},\dots,{\mr a_m}$ such that ${\gr C}\subseteq\psi({\mr a_0},\dots,{\mr a_m}\,;\U^{\gr z})\subseteq\grD$.
 As in the proof above, we define by recursion a ladder sequence for $\pi({\mr x}\,;{\gr z})$.
 Suppose that ${\mr a_0},\dots,{\mr a_{n-1}}$ and ${\gr b_0},\dots,{\gr b_{n-1}}\notin\grD$ have been defined.
 We first define ${\mr a_n}$, then ${\gr b_n}$. 
 Choose ${\mr a_n}\in\U^{\mr x}$ such that 
 
-\hfil$C^{\gr z}\ \subseteq\ \pi({\mr a_n}\,;\U^{\gr z})\ \subseteq\ \U^{\gr z}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
+\hfil${\gr C}\ \subseteq\ \pi({\mr a_n}\,;\U^{\gr z})\ \subseteq\ \U^{\gr z}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
 
 This ${\mr a_n}$ exists, because $\grD$ is approximated by $\pi({\mr x}\,;{\gr z})$.
-(Apply Definition~\ref{def_approx} with any $B$ such that $C^{\gr z}\cup\{{\gr b_0},\dots,{\gr b_{n-1}}\}\subseteq B^{\gr z}$.)
+(Apply Definition~\ref{def_approx} with any $B$ such that ${\gr C}\cup\{{\gr b_0},\dots,{\gr b_{n-1}}\}\subseteq{\gr B}$.)
 Then, if possible, let ${\gr b_n}$ such that
 
 \ceq{\hfill{\gr b_n}}{\in}{\bigcap^n_{i=0}\pi({\mr a_i},\U^{\gr z})\sm\grD}
@@ -337,15 +334,10 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
   Theorem~\ref{thm_def_stable_formula} is often cast in the following  apparently more general form.
   Let $\mrA\subseteq\U^{\mr x}$ and $\grB\subseteq\U^{\gr z}$.
   We say that $\pi({\mr x}\,;{\gr z})$ is stable between $\mrA$ and $\grB$ if for some $n$ no ladder of length $n$ exists with ${\mr a_i}\in\mrA$ and ${\gr b_i}\in\grB$.
-
   Let $\grD\subseteq\grB$ be approximable by $\pi({\mr x}\,;{\gr z})\wedge {\mr x}\in\mrA$.
   Then for any such $\grD$ there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in \mrA$ such that 
   
   \ceq{\hfill {\gr b}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\pi({\mr a_{i,j}}\,;{\gr b}).}
-  
-  The proof is essentially the same. 
-  In fact, elementarity and saturation as only been used to prove that conjunctions of stable formulas is stable.
-  Exercise~\ref{ex_stability_conjunction} suggests a finitary proof of this fact.
 \end{remark} 
 
 % \begin{exercise}
@@ -410,9 +402,9 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
 %   \end{proof}
 %   \end{exercise} 
 
-  \begin{exercise}\label{ex_stability_conjunction}
-    Prove that if $p({\mr x}\,;{\gr z})$ and $q({\mr x}\,;{\gr z})$ are stable between $\mrA$ and $\grB$, then so is $p({\mr x}\,;{\gr z})\cup q({\mr x}\,;{\gr z})$.
-  \end{exercise}
+  % \begin{exercise}\label{ex_stability_conjunction}
+  %   Prove that if $p({\mr x}\,;{\gr z})$ and $q({\mr x}\,;{\gr z})$ are stable between $\mrA$ and $\grB$, then so is $p({\mr x}\,;{\gr z})\cup q({\mr x}\,;{\gr z})$.
+  % \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
@@ -440,7 +432,8 @@ The following proposition highlights the connection between the stability of the
  \ssf{2}$\IMP$\ssf{3}$\IMP$\ssf{4} Obvious.
  
  \ssf{4}$\IMP$\ssf{1} Suppose that $\phi({\mr x}\,;{\gr z})$ is not stable.
- By compactness there is a ladder sequence  $\<{\mr a_i}\,;{\gr b_i} : i\in I\>$ where $I,<_I$ a dense linear order of cardinality $\kappa$ with $2^\kappa$ cuts, where by \textit{cut\/} we mean a subset $c\subseteq I$ that is closed downward.
+ By compactness there is a ladder sequence  $\<{\mr a_i}\,;{\gr b_i} : i\in I\>$ where $I,<_I$ a dense linear order of cardinality $\kappa$ with $2^\kappa$ cuts.
+ Here, a \textit{cut\/} is a subset $c\subseteq I$ that is closed downward.
  For every such $c\subseteq I$ we pick a global type
  
  \ceq{\hfill p_c({\mr x} ) }{\supseteq}{\big\{\phi({\mr x}\,;{\gr b_i})\iff i\in c\ :\ i\in I\big\}.}
@@ -783,8 +776,13 @@ Now we show that under the assumption of stability Lascar invariance reduces to 
   By Corollary~\ref{coroll_defble_Lascar_inv}, they belong to $\acl^\eq\!A$.
 \end{proof}
 
-A type $q({\mr x})\subseteq L(A)$ is \emph{stationary\/} if it has a unique global extension that is Lascar invariant over $A$.
-The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary (the actual statement is a local version of this property).
+Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ and $A\subseteq\U$ be given.
+A type $q({\mr x})\subseteq L(\U)$ is \emph{stationary\/} if it has a unique global extension $p({\mr x})\in S_\Delta(\U)$ that is Lascar invariant over $A$.
+The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
+
+Finally, define \emph{$\GDelta(A)$\/} to be the set of formulas $\phi({\mr x})\in L(\U)$ that are equivalent to some formula in $\BDelta(A)$ or, equivalently, that are invariant over $A$.
+In the literature these formulas are called \textit{generalized\/} $\Delta$-formulas over $A$.
+Note that when $A$ is a model $\GDelta(A)$-formulas are equivalent to $\BDelta(A)$-formulas.
 
 \begin{theorem}[ (Stationarity)]\label{thm_stationarity}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
@@ -799,12 +797,12 @@ The following proposition says that in a stable theory with elimination of imagi
   Let $\psi_i({\gr z})\in L(\acl^\eq\!A)$ define ${\gr\D_{p_i,\phi}}$.
   These formulas exist by stability.
   We claim that $\psi_1({\gr b})\iff\psi_2({\gr b})$, for all ${\gr b}\in\U^{\gr z}$.
-  Let $p'({\gr z})\in S_\Delta(\U)$ be invariant over $\acl^\eq\!A$ and consistent with $\tp({\gr b}/\acl^\eq\!A)$.
-  Such a type exists, again, by Corollary~\ref{corol_stable_coheir_over_models} and Proposition~\ref{prop_type_over_acl2}.
+  Let $t({\gr z})\in S_\Delta(\U)$ be invariant over $\acl^\eq\!A$ and consistent with $\tp({\gr b}/\acl^\eq\!A)$.
+  As remarked above, such a type exists by stability.
   By stability there is a formula $\theta({\mr x})\in\BDelta(\U)$ that defines ${\mr\D_{t,\phi^{\rm op}}}$.
   But ${\mr\D_{t,\phi^{\rm op}}}$ is invariant over $\acl^\eq\!A$, then $\theta({\mr x})\in\GDelta(\acl^\eq\!A)$.
   Let $M$ be any model containing $A$.
-  Let ${\gr b'}\models p'({\gr z}){\restriction}M$ and ${\mr a_i}\models p_i({\mr x}){\restriction}M$.
+  Let ${\gr b'}\models t({\gr z}){\restriction}M$ and ${\mr a_i}\models p_i({\mr x}){\restriction}M$.
   Then $\theta(M^{\mr x})=\phi(M^{\mr x};{\gr b'})$ and $\psi_i(M^{\gr z})=\phi({\mr a_i}\,;M^{\gr z})$.
   Corollary~\ref{corol_harrington0} yields $\psi_i({\gr b'})\iff\theta({\mr a_i})$.
   As ${\mr a_1},{\mr a_2}\models q({\mr x})$, by completeness they both satisfy $\theta({\mr x})$. 
@@ -892,7 +890,7 @@ A more general version of the theorem holds which requires a different proof.
   By Corollary~\ref{corol_stable_coheir_over_models} there is a type $p({\gr z})\in S_\phi(\U)$ consistent with $q({\gr z})$ and invariant over $\acl^\eq\!A$.
   By Theorem~\ref{thm_def_stable_formula}, with the role of the two sorts reversed, there are some ${\gr b_1},\dots,{\gr b_n}\models q({\gr z})$ such that ${\mr\D_{p,\phi^{\rm op}}}$ is equivalent to a positive Boolean combination of the sets $\phi(\U^{\mr x};{\gr b_i})$.
   Let $\theta(\U^{\mr x};{\gr b_1},\dots,{\gr b_n})$ be such a Boolean combination.
-  As ${\mr\D_{p,\phi^{\rm op}}}\in\acl^\eq\!A$ by Proposition~\ref{prop_type_over_acl2}, this proove the theorem when $A=\acl^\eq\!A$.
+  As ${\mr\D_{p,\phi^{\rm op}}}\in\acl^\eq\!A$ by Proposition~\ref{prop_type_over_acl2}, this proves the theorem when $A=\acl^\eq\!A$.
 
   For the general case, reason as follows.
   Let $f_1,\dots,f_m\in\Aut(\U/A)$ be such that the sets $f_i{\mr\D_{p,\phi^{\rm op}}}$ span the whole orbit of ${\mr\D_{p,\phi^{\rm op}}}$ over $A$.
@@ -904,11 +902,11 @@ A more general version of the theorem holds which requires a different proof.
   Therefore the formula on the r.h.s.\@ is the required positive Boolean combination.
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The action of the Lascar group}\label{Lascar_action}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The action of the Lascar group on stable formulas}\label{Lascar_action}
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox{10ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
@@ -1076,12 +1074,12 @@ The following lemma is applied in the theorem below (it does not require stabili
   Hence \ssf3 follows.
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stable groups}\label{stable_groups}
 
 We assume the hypotheses and the notation of Section~\ref{definablegroups}.
@@ -1180,9 +1178,9 @@ It is worthwhile to recall that under the assumption of stability Lascar wide is
 
 Define 
 
-\ceq{\hfill\Stab_G(\grD)}{=}{\big\{g\in G\ :\ g\cdot\grD=\grD\big\}}
+\ceq{\hfill\Stab(\grD)}{=}{\big\{g\in G\ :\ g\cdot\grD=\grD\big\}}
 
-\ceq{\hfill\Stab_{G,\Delta}(p)}{=}{\bigcap_{\phi\in\Delta}\Stab_G(\gr\D_{p,\phi})}
+\ceq{\hfill\Stab(p)}{=}{\bigcap_{\phi\in\Delta}\Stab_G(\gr\D_{p,\phi})}
 
 \begin{proposition}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
@@ -1197,9 +1195,12 @@ Define
 \section{Stable theories}
 \label{stable_theories}
 
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox{15ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+
 \begin{theorem}[ (Pierre Simon)]
   If every formula $\phi(x\,;y)\in L(\U)$, where $|x|=|y|=1$, is stable then $T$ is stable.
-\end{theorem} 
+\end{theorem}
 
 \begin{proof}
   Suppose $\phi(x\,;y,z)\in L(\U)$ is not stable.
