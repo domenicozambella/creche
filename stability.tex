@@ -233,9 +233,9 @@ The invariance of $\pi$ would simplify the discussion as it allows to require th
   In general we reason as follows.
 
   Assume $\pi_1({\mr x}\,;{\gr z})\wedge\pi_2({\mr x}\,;{\gr z})$ is unstable and pick a ladder sequence $\<{\mr a_i}\,;{\gr b_i} : i<m\>$, where $m$ is specified below.
-  Let $H_1,H_2\subseteq{m\choose 2}$ contain those pairs $j<i$ such that $\neg\pi_1({\mr a_i}\,;{\gr b_j})$, respectively $\neg\pi_2({\mr a_i}\,;{\gr b_j})$. 
-  Then $H_1\cup H_2={m\choose 2}$. 
-  If $m$ is large enough, by the (finite) Ramsey Theorem there is a set $H$ of size $n$ such that ${H\choose 2}$ is either contained in $H_1$ or in $H_2$. Suppose the first for definiteness. 
+  Let $H_1,H_2\subseteq m^{(2)}$ contain those pairs $j<i$ such that $\neg\pi_1({\mr a_i}\,;{\gr b_j})$, respectively $\neg\pi_2({\mr a_i}\,;{\gr b_j})$. 
+  Then $H_1\cup H_2= m^{(2)}$. 
+  If $m$ is large enough, by the (finite) Ramsey Theorem there is a set $H$ of size $n$ such that $H^{(2)}$ is either contained in $H_1$ or in $H_2$. Suppose the first for definiteness. 
   Let $H=\{h_1,\dots,h_n\}$ then $\<{\mr a_{h_i}}\,;{\gr b_{h_i}} : i<n\>$ is a ladder sequence for $\pi_1({\mr x}\,;{\gr z})$.
 \end{proof}
 
@@ -305,7 +305,7 @@ Then, if possible, let ${\gr b_n}$ such that
 \ceq{\hfill{\gr b_n}}{\in}{\bigcap^n_{i=0}\pi({\mr a_i},\U^{\gr z})\sm\grD}
 
 This procedure has to stop at some $n\le m$.
-Hence the required parameters are ${\mr a_1},\dots,{\mr a_n}={\mr a_{n+1}}=\dots={\mr a_{m}}$.
+Therefore the required parameters are ${\mr a_1},\dots,{\mr a_n}={\mr a_{n+1}}=\dots={\mr a_{m}}$.
 \end{proof}
 
 % \begin{lemma}\label{lem_stable3}, say $P=\{p_1,\dots,p_n\}$
@@ -622,7 +622,7 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
   \ceq{\#\#\hfill\theta({\mr x})}{\imp}{\phi({\mr x}\,;{\gr b})\vee\psi({\mr x}\,;{\gr b})}
   
   Let $s\in2^n$ be given.
-  Let ${\mr a}\in\theta(\V_s^{\mr x})$ be arbitrary. We claim that ${\mr a}$ witnesses the concistency of $\{\phi^{s_i}({\mr x}\,;{\gr b_{s\restriction i}})\ :\ i<n\}$.
+  Let ${\mr a}\in\theta(\V_s^{\mr x})$ be arbitrary. We claim that ${\mr a}$ witnesses the consistency of $\{\phi^{s_i}({\mr x}\,;{\gr b_{s\restriction i}})\ :\ i<n\}$.
   As $\V_s\preceq\V_{s\restriction i}$, we have that ${\mr a}\in\theta(\V_{s\restriction i}^{\mr x})$.
   We prove that $\phi^{s_i}({\mr a}\,;{\gr b_{s\restriction i}})$.
   If $s_i=0$ then from \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi^0(\V_{s\restriction(i+1)}^{\mr x};{\gr b_{s\restriction i}})$ and $\phi^0({\mr a}\,;{\gr b_{s\restriction i}})$ follows by elementarity.
@@ -780,8 +780,9 @@ Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ and $A\subseteq\U$ be given.
 A type $q({\mr x})\subseteq L(\U)$ is \emph{stationary\/} if it has a unique global extension $p({\mr x})\in S_\Delta(\U)$ that is Lascar invariant over $A$.
 The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
 
-Finally, define \emph{$\GDelta(A)$\/} to be the set of formulas $\phi({\mr x})\in L(\U)$ that are equivalent to some formula in $\BDelta(A)$ or, equivalently, that are invariant over $A$.
-In the literature these formulas are called \textit{generalized\/} $\Delta$-formulas over $A$.
+Finally, define \emph{$\GDelta(A)$\/} to be the set of formulas $\phi({\mr x})\in\BDelta(\U)$ that are invariant over $A$.
+Note that though these formulas are equivalent to formulas over $A$, they need not be in $\BDelta(A)$.
+In the literature these formulas are called \textit{generalized\/} $\Delta$-formulas.
 Note that when $A$ is a model $\GDelta(A)$-formulas are equivalent to $\BDelta(A)$-formulas.
 
 \begin{theorem}[ (Stationarity)]\label{thm_stationarity}
@@ -1083,6 +1084,7 @@ The following lemma is applied in the theorem below (it does not require stabili
 \section{Stable groups}\label{stable_groups}
 
 We assume the hypotheses and the notation of Section~\ref{definablegroups}.
+Note that the structure $\U^\Delta$ defined there is stable whenever $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ is stable.
 
 \begin{theorem}\label{thm_Ggeneric_persistent}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
@@ -1090,18 +1092,21 @@ We assume the hypotheses and the notation of Section~\ref{definablegroups}.
   Then for every $\BDelta(\grZ)$-definable set $\mrD$ the following are equivalent
   \begin{itemize}
     \item [1.] $\mrD$ is $\grZ$-generic
-    \item [3.] ${\gr g}{\cdot}\mrD$ is Lascar persistent over $A$ for every ${\gr g}\in\grZ$.
+    \item [2.] ${\gr g}{\cdot}\mrD$ is $\LDelta$-Lascar persistent over $\varnothing$ for every ${\gr g}\in\grZ$
+    \item [2.] ${\gr g}{\cdot}\mrD$ is Lascar persistent over $A$ for every ${\gr g}\in\grZ$.
   \end{itemize}
 \end{theorem}
 
-It is worthwhile to recall that under the assumption of stability Lascar wide is equivalent to Lascar persistent.
+It is worthwhile to recall that, under the assumption of stability, Lascar wide is equivalent to Lascar persistent.
 
 \begin{proof} 
   \ssf1$\IMP$\ssf2.
   By stability, there exist a type $p({\mr x})\in\LDelta\mbox{-}S_\phi(\grZ)$ that is invariant under the action of $\Autf(\UDelta)$.
   Then we can apply Corollary~\ref{prop_Ggeneric_persistent} with $H=\Autf(\UDelta)$.
 
-  \ssf2$\IMP$\ssf1.
+  \ssf2$\IMP$\ssf3. Clear, as $\Autf(\U/A)\le\Autf(\UDelta)$.
+
+  \ssf3$\IMP$\ssf1.
   Let ${\mr a}\in\mrX$ and ${\gr g}\in\grZ$ be such that ${\mr a}\in{\gr g}{\cdot}\mrD$.
   Let $q({\mr x})=\tp({\mr a}/\acl^\eq\!A)$.
   Assume \ssf2 then, by Proposition~\ref{prop_stable_genericiffpersistent}, ${\mr a}\in{\gr g}{\cdot}\mrD$ is Lascar generic relative to $q(\U^{\mr x})$, i.e.\@ with $q(\U^{\mr x})$ for $\mrX$.
@@ -1141,7 +1146,7 @@ It is worthwhile to recall that under the assumption of stability Lascar wide is
   The $\grZ$-genericity of $\neg\mrD$ follows.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{corol_feq_thm}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable and finite.
   Assume that the action of $\grZ$ is transitive.
   Write $Q$ for the set $\big\{q({\mr x})\in S_\Delta(\grZ)\ :\ q({\mr x})\textrm{ is }\grZ\textrm{-generic}\big\}$.
@@ -1154,38 +1159,47 @@ It is worthwhile to recall that under the assumption of stability Lascar wide is
 \end{corollary}
 
 \begin{proof}
+  We work in the model $\U^\Delta$.
+  By the transitivity of the action ${\mr x}={\mr x}$ is complete over $\varnothing$.
   Apply Theorem~\ref{thm_FER} in $\UDelta$ with ${\mr x}={\mr x}$ for $p_0({\mr x})$.
-  Let $\epsilon({\mr x},{\mr y})\in\LDelta$ and $P$ be as defined there.
-  We are using the transitivity of the action to conclude that ${\mr x}={\mr x}$ is an $\LDelta$-type complete over $\varnothing$.
-  As $\epsilon({\mr x},{\mr y})$ is invariant under the action of $\Aut(\UDelta)$ it is a fortiori $\grZ$-invariant.
-  As $\grZ$ acts transitively on the classes of $\epsilon({\mr x},{\mr y})$, it also acts transitively on $P$.
-
-  We prove that $Q=\{p({\mr x}){\restriction}\pmDelta(\grZ)\, :\, p\in P\}$.
-  From this \ssf1 and \ssf2 follow immediately.
-  Let $q({\mr x})\in Q$. Note that by Theorem~\ref{thm_Ggeneric_persistent} all formulas in $q({\mr x})$ are Lascar persistent over $A$.
-  Then $q({\mr x})$ has an extension in $P$.
-  To prove the converse, we need to show that all formulas in $p({\mr x}){\restriction}\pmDelta(\grZ)$ are $\grZ$-generic.
-  Let $\phi({\mr x}\,;{\gr g})\in p$.
-  As $\grZ$ acts transitively on $P$, there is a finite $H\subseteq\grZ$ such that every type in $P$ contains the formula $\phi({\mr x}\,;{\gr h}\cdot{\gr g})$ for some ${\gr h}\in H$.
-  Let $\psi({\mr x})$ be the disjunction of the $H$-translates of $\phi({\mr x}\,;{\gr g})$.
-  Clearly $\phi({\mr x}\,;{\gr g})$ is $\grZ$-generic if and only if $\psi({\mr x})$ is $\grZ$-generic.
-  If $\psi({\mr x})$ is not  $\grZ$-generic then, by Corollary~\ref{corol_genericornotgeneric}, $\neg\psi({\mr x})$ is $\grZ$-generic.
-  Therefore, reasoning as above $\neg\psi({\mr x})\in p'$ for some $p'\in P$.
-  A contradiction.
-
-  Finally, \ssf3 follows immediately from \ssf3 of Theorem~\ref{thm_FER}.
+  By Theorem~\ref{thm_Ggeneric_persistent}, the set $P$ in Theorem~\ref{thm_FER} coincides with $Q$.
+  The corollary follows easily.
 \end{proof}
 
-Define 
 
-\ceq{\hfill\Stab(\grD)}{=}{\big\{g\in G\ :\ g\cdot\grD=\grD\big\}}
-
-\ceq{\hfill\Stab(p)}{=}{\bigcap_{\phi\in\Delta}\Stab_G(\gr\D_{p,\phi})}
-
+\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox{5ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 \begin{proposition}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
-  $\grZ$ acts transitively on the set of 
+  Assume that the action of $\grZ$ is regular.
+  Then
+
+  \ceq{\hfill{\gr\Z^0}}{=}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\BDelta(\grZ)\textrm{-definable }\grZ\textrm{-generic set }\mrD\big\}}.
+ 
 \end{proposition}
+
+\begin{proof}
+  Inclusion $\supseteq$ holds by Proposition~\ref{prop_Z0_inclusione}.
+  To prove the converse inclusion.
+  Pick ${\gr g}\in\grZ$ such that $\mrD\cap{\gr g}{\cdot}\mrD=\varnothing$ for some $\BDelta(\grZ)$-definable $\grZ$-generic set $\mrD$.
+  We can assume that $\Delta$ contains only the formulas occurring in the definition of $\mrD$ and therefore, it is finite.
+  Let $Q$ be as in Corollary~\ref{corol_feq_thm}.
+  Let $q({\mr x})\in Q$ be such that $q({\mr x})\proves{\mr x}\in\mrD$.
+  By Corollary~\ref{corol_feq_thm}, the subgroup $\grW=\{{\gr h}\in\grZ\ :\ q({\mr x})={\gr h}{\cdot}q({\mr x})\}$ has finite index.
+  Clearly, $q({\mr x})\notproves{\mr x}\in{\gr g}{\cdot}\mrD$, then ${\gr g}\notin\grW$.
+\end{proof}
+
+
+% Define 
+
+% \ceq{\hfill\Stab(\grD)}{=}{\big\{g\in G\ :\ g\cdot\grD=\grD\big\}}
+
+% \ceq{\hfill\Stab(p)}{=}{\bigcap_{\phi\in\Delta}\Stab_G(\gr\D_{p,\phi})}
+
+% \begin{proposition}
+%   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
+%   $\grZ$ acts transitively on the set of 
+% \end{proposition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
