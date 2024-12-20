@@ -1159,13 +1159,16 @@ It is worthwhile to recall that, under the assumption of stability, Lascar wide 
 \end{corollary}
 
 \begin{proof}
-  We work in the model $\U^\Delta$.
-  By the transitivity of the action ${\mr x}={\mr x}$ is complete over $\varnothing$.
-  Apply Theorem~\ref{thm_FER} in $\UDelta$ with ${\mr x}={\mr x}$ for $p_0({\mr x})$.
+  Work in the model $\U^\Delta$.
+  By the transitivity of the action the formula  ${\mr x}={\mr x}$ is complete over $\varnothing$.
+  Apply Theorem~\ref{thm_FER} (in $\LDelta$) with ${\mr x}={\mr x}$ for $p_0({\mr x})$.
   By Theorem~\ref{thm_Ggeneric_persistent}, the set $P$ in Theorem~\ref{thm_FER} coincides with $Q$.
   The corollary follows easily.
 \end{proof}
 
+The stabilizer of the type $q({\mr x})\in S_\Delta(\grZ)$ is the subgroup $\{{\gr h}\in\grZ\ :\ q({\mr x})={\gr h}{\cdot}q({\mr x})\}$.
+Which we can write also as $\{{\gr h}\in\grZ\ :\ {\gr\D_{q,\phi}}={\gr h}{\cdot}{\gr\D_{q,\phi}},\textrm{ for every }\phi({\mr x}\,;{\gr z})\in\Delta\}$.
+When $\Delta$ is stable, it is a $\BDelta(\mrX)$-type-definable set (or, definable, when $\Delta$ is finite).
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox{5ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
@@ -1173,19 +1176,19 @@ It is worthwhile to recall that, under the assumption of stability, Lascar wide 
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Assume that the action of $\grZ$ is regular.
   Then
-
+  
   \ceq{\hfill{\gr\Z^0}}{=}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\BDelta(\grZ)\textrm{-definable }\grZ\textrm{-generic set }\mrD\big\}}.
- 
+  
 \end{theorem}
 
 \begin{proof}
-  Inclusion $\supseteq$ holds by Proposition~\ref{prop_Z0_inclusione}.
-  To prove the converse inclusion.
-  Pick ${\gr g}\in\grZ$ such that $\mrD\cap{\gr g}{\cdot}\mrD=\varnothing$ for some $\BDelta(\grZ)$-definable $\grZ$-generic set $\mrD$.
-  We can assume that $\Delta$ contains only the formulas occurring in the definition of $\mrD$ and therefore, it is finite.
+  Inclusion $\supseteq$ holds in general by Proposition~\ref{prop_Z0_inclusione}.
+  To prove the converse inclusion pick ${\gr g}\in\grZ$ such that $\mrD\cap{\gr g}{\cdot}\mrD=\varnothing$ for some $\BDelta(\grZ)$-definable $\grZ$-generic set $\mrD$.
+  We can assume that $\Delta$ contains only the formulas occurring in the definition of $\mrD$ therefore, that it is finite.
   Let $Q$ be as in Corollary~\ref{corol_feq_thm}.
   Let $q({\mr x})\in Q$ be such that $q({\mr x})\proves{\mr x}\in\mrD$.
-  By Corollary~\ref{corol_feq_thm}, the subgroup $\grW=\{{\gr h}\in\grZ\ :\ q({\mr x})={\gr h}{\cdot}q({\mr x})\}$ has finite index.
+  By Corollary~\ref{corol_feq_thm}, the stabilizer of $q({\mr x})$ is a subgroup $\grW\le\grZ$ of finite index.
+  Then ${\gr\Z^0}\le\grW$.
   Clearly, $q({\mr x})\notproves{\mr x}\in{\gr g}{\cdot}\mrD$, then ${\gr g}\notin\grW$.
 \end{proof}
 
