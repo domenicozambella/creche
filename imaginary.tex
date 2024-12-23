@@ -141,7 +141,7 @@ If $\V\preceq\U$ we write \emph{$\V^{\eq}$\/} for the substructure of $\U^\eq$ t
 The following proposition claims that the elementary substructures of $\U^\eq$ are exactly those of the form $\V^\eq$ for some $\V\preceq\U$.
 
 \begin{proposition}
-The following are equivalent for every structure $\V^\dag$ of signature $L^\eq$\nobreak
+For any structure $\V^\dag$ of signature $L^\eq$, the following are equivalent\nobreak
 \begin{itemize}
 \item[1.] $\V^\dag\preceq\U^\eq$
 \item[2.] $\V^\dag=\V^\eq$ for some $\V\preceq\U$.
@@ -213,7 +213,7 @@ This is the natural generalization of the notion of definability introduced in S
 \end{definition}
 
 The definition above treats first- and second-order elements of $\U^\eq$ uniformly.
-The following propositions proves that when $a\in\U^\eq$ is a definable set, the notion of definability coincides with the one usually applied to sets.
+The following proposition claims that when $a\in\U^\eq$ is a definable set, the notion of definability coincides with the one usually applied to sets.
 
 \begin{proposition}\label{prop_def_def_set}
 Let $A\subseteq\U^\eq$ and let ${\vl\Aa}\in\U^\eq$ have sort $\sigma({\mr x}\,;{\gr z})$.
@@ -304,12 +304,12 @@ For every $A\subseteq\U^\eq$ and every $a\in\U^\eq$ the following are equivalent
 \end{itemize}
 \end{theorem}
 
-It is worthwile to spell out the equivalence \ssf2$\IFF$\ssf3 of the theorem above when $a$ is a definable set ${\vl\Aa}$.
+It is worthwhile to spell out the equivalence \ssf2$\IFF$\ssf3 of the theorem above when $a$ is a definable set ${\vl\Aa}$.
 Namely, ${\vl\Aa}\in\acl^\eq\!A$ if and only if ${\vl\Aa}$ is definable over every model containing $A$.
 
 We say \emph{finite equivalence relation\/} for an equivalence relation with finitely many classes.
 A \emph{finite equivalence formula\/} or \emph{type\/} is a formula, respectively a type, that defines a finite equivalence relation.
-Theorem~\ref{thm_set_alg=feq} belows proves that sets algebraic over $A$ are union of classes of a finite equivalence relations definable over $A$.
+Theorem~\ref{thm_set_alg=feq} below proves that sets algebraic over $A$ are union of classes of a finite equivalence relations definable over $A$.
 
 
 \begin{theorem}\label{thm_set_alg=feq}
@@ -334,12 +334,11 @@ Clearly, ${\vl\Aa}$ is union of some these classes.
 \end{proof}
 
 \begin{definition}\label{def_Sh_strong_type}
-We write \emph{${\mr a}\stackrel{\smash{\scalebox{.5}{\rm Sh}}}{\equiv}_A{\mr b}$} when $\epsilon({\mr a}\,;{\mr b})$ holds for every finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$.
-In words we say that ${\mr a}$ and ${\mr b}$ have the same \emph{Shelah strong-type\/} over $A$.
+  If $\epsilon({\mr a}\,;{\mr b})$ holds for every finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$, we say that ${\mr a}$ and ${\mr b}$ have the same \emph{Shelah strong type\/} over $A$.
+  We write \emph{${\mr a}\stackrel{\scalebox{.5}{\rm Sh}}{\equiv}_A{\mr b}$.}
 \end{definition}
 
 By the following proposition, the Shelah strong type of ${\mr a}$ over $A$ is $\tp({\mr a}/\acl^\eq\!A)$.
-
 
 \begin{proposition}\label{prop_Shelah_strong_types}
 Let $A\subseteq\U^\eq$ and let ${\mr a},{\mr b}\in\U^{\mr x}$.
@@ -353,7 +352,6 @@ Then the following are equivalent\nobreak
 \ssf{2}$\IMP$\ssf{1}\quad Assume $\neg$\ssf{1} and let $\epsilon({\mr x}\,;{\mr y})\in L(A)$ be a finite equivalence formula such that $\neg\epsilon({\mr a}\,;{\mr b})$.
 Let ${\vl\D}=\epsilon(\U^{\mr x};{\mr b})$, then  ${\mr b}\in{\vl\D}$ and ${\mr a}\notin{\vl\D}$.
 As $\epsilon({\mr x}\,;{\mr y})$ is an $A$-invariant finite equivalence formula, ${\vl\D}\in\acl^\eq\!A$, and $\neg$\ssf{2} follows.
-
 
 \ssf{1}$\IMP$\ssf{2}\quad Assume $\neg$\ssf{2} and let $\phi({\mr x})\in L\big(\acl^\eq\!A\big)$ be  such that $\phi({\mr a})\niff\phi({\mr b})$.
 Let ${\vl\D}=\phi(\U^{\mr x})$, then ${\vl\D}\in\acl^\eq\!A$.
@@ -396,7 +394,7 @@ Hint: you can use Theorem~\ref{thm_set_alg=feq}.
 For the time being, we agree that \textit{imaginary\/} is just another word for definable set.
 Though this is not formally correct (cf.\@ Section~\ref{imaginaries_long}), it is morally true and helps to understand the terminology.
 The concept of elimination of imaginaries has been introduced by Poizat who also proved Theorem~\ref{elimimacf} below.
-A theory has elimination of imaginaries if for every $A\subseteq\U^\eq$, there is a $B\subseteq\U$ such that $L(B)$ and $L(A)$ have the same expressive power (i.e.\@ they are the same up to to equivalence).
+A theory has elimination of imaginaries if for every $A\subseteq\U^\eq$, there is a $B\subseteq\U$ such that $L(B)$ and $L(A)$ have the same expressive power (i.e.\@ they are the same up to equivalence).
 
 
 \begin{definition}\label{defelimanazioneimmaginari}
@@ -470,7 +468,7 @@ By $\,\sharp\,$ and the definition of $\psi({\gr z}\,;{\vl\X})$ we obtain ${\vl\
 \end{proof}
 
 
-There are a notions of elimination of imaginaries that are weaker than weak elimination.
+There are notions of elimination of imaginaries that are weaker than weak elimination.
 For instance, we say that $T$ has \emph{geometric elimination of imaginaries\/} if for every $A\subseteq\U$
 
 \ceq{\hfill {\vl\Aa} }{\in}{{\acl}^\eq\big(\acl\{{\vl\Aa}\}\big)}

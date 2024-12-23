@@ -80,14 +80,14 @@ Assume that $A$ does not isolate $p({\mr x})$.
 The model $M$ is the union of a chain $\<A_i:i<\omega\>$ of countable subsets of $\U$ where $A_0=A$.
 Along the construction we require that $A_i$ does not isolate $p({\mr x})$.
 At the end, $M$ will not isolate $p({\mr x})$.
-Since $M$ is a model, this this is equivalent to $M$ omitting $p({\mr x})$.
+Since $M$ is a model, this is equivalent to $M$ omitting $p({\mr x})$.
 
 We proceed as in the proof of the downward L\"owenheim-Skolem theorem.
 Assume that $A_i$ does not isolate $p({\mr x})$.
-With the notation in the second proof of the L\"owenheim-Skolem Theorem~\ref{thm_lowenheimskolemallingiu}, at stage $i=\pi(j,k)$ apply Lemma~\ref{lem_kuratowskiUlam} to find a solution $a$ of $\phi_k({\mr x})$ such that $A_{i+1}=A_i,a$ does not isolates $p({\mr x})$.
+With the notation in the second proof of the L\"owenheim-Skolem Theorem~\ref{thm_lowenheimskolemallingiu}, at stage $i=\pi(j,k)$ apply Lemma~\ref{lem_kuratowskiUlam} to find a solution $a$ of $\phi_k({\mr x})$ such that $A_{i+1}=A_i,a$ does not isolate $p({\mr x})$.
 \end{proof}
 
-Gerald Sacks once famously remarked: \textit{Any fool can realize a type but it takes a model theorist to omit one}.
+Gerald Sacks once famously remarked: \textit{Any fool can realize a type, but it takes a model theorist to omit one}.
 However, the diagonalization method in the proof of Lemma~\ref{lem_kuratowskiUlam} lean towards descriptive set theory.
 (We invite the interested reader to compare this lemma with the Kura\-towski-Ulam theorem.)
 
@@ -200,8 +200,7 @@ Then the following are equivalent
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Let $p({\mr x},{\gr z})=\tp ({\mr b},{\gr a}/A)$.
-Then $p({\mr x},{\gr a})=\tp({\mr b}/A,{\gr a})$ and $\E{\mr x}\,p({\mr x},{\gr z})\iff\tp({\gr a}/A)$.
+Note that, if $p({\mr x},{\gr z})=\tp ({\mr b},{\gr a}/A)$, then $p({\mr x},{\gr a})=\tp({\mr b}/A,{\gr a})$ and $\E{\mr x}\,p({\mr x},{\gr z})$ equivalent to $\tp({\gr a}/A)$.
 
 
 \ssf{1}$\IMP$\ssf{2}. Let $\phi({\mr x},{\gr z})\in p$ be such that $\phi({\mr x},{\gr z})\imp p({\mr x},{\gr z})$.
@@ -496,7 +495,7 @@ We may depict a binary tree of formulas as follows
 where branches are consistent types and distinct branches are inconsistent.
 \end{definition}
 
-Let $S(\Delta)$ be denote the set of maximal consistent $\Delta$-types.
+Let $S(\Delta)$ denote the set of maximal consistent $\Delta$-types.
 
 \begin{lemma}\label{lem_bin_tree}
 Suppose $\Delta$ is countable and closed under negation.
@@ -598,7 +597,8 @@ Prove that if $S_{{\mr x}}(A)$ is countable for every finite set $A$, then $T$ i
 Prove that no complete theory has exactly 2 countable models (assume $L$ is countable~--~though it is not really necessary).
 
 Hint: suppose $T$ has exactly two countable models.
-Then $T$ is small and there are a countable saturated model $N$ and an atomic model $M\subseteq N$.
+Then $T$ is small. 
+Therefore, there is a countable saturated model $N$ and an atomic model $M\subseteq N$.
 As $T$ is not $\omega$-categorical, $M\not\simeq N$ and there is finite tuple $a$ that is not isolated over $\varnothing$.
 Let $K$ be an atomic model over $a$.
 Clearly $K\not\simeq M$ and, by Exercises~\ref{ex_omega_cat_overA} and~\ref{ex_omega_cat_sat=atomic}, also $K\not\simeq N$.
@@ -622,7 +622,7 @@ The property is interesting because of the following proposition.
 If $T$ has the finite model property then it is not finitely axiomatizable.
 \end{proposition}
 \begin{proof}
-Assume \ssf{fmp} and suppose for a contadiction that there is a sentence $\phi\in L$ such that $T\proves\phi\proves T$.
+Assume \ssf{fmp} and suppose for a contradiction that there is a sentence $\phi\in L$ such that $T\proves\phi\proves T$.
 Then $A\models T$ for some finite structure $A$.
 But $T\proves \E^{>k}x\,(x=x)$ for every $k$.
 A contradiction.

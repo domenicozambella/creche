@@ -601,9 +601,9 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 \end{lemma} 
 
 \begin{proof}
-  Negate the theorem. 
+  Negate the theorem.
   Then there are two models containing $A$, the first omitting $\phi({\mr x}\,;{\gr b})$, the second omitting $\psi({\mr x}\,;{\gr b})$.
-  It is easy to see that we can expand these models to two substructures $\V_0$ and $\V_1$ that are $A$-isomorphic to $\U$ and such that $\V_0=\neg\phi(\V_0^{\mr x};{\gr b})$ and $\V_1=\neg\psi(\V_1^{\mr x};{\gr b})$.
+  It is easy to see that we can expand these models to two substructures $\V_0$ and $\V_1$ that are $A$-isomorphic to $\U$ and such that $\V_0=\neg\phi(\V_0^{{\mr x}}\,;{\gr b})$ and $\V_1=\neg\psi(\V_1^{{\mr x}},;{\gr b})$.
 
   Let $f_i:\U\to\V_i$ be the $A$-isomorphisms mentioned above. 
   Let $\V_\varnothing=\U$ and ${\gr b_\varnothing}={\gr b}$.
@@ -613,7 +613,7 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 
   Then from the inclusion above we obtain
 
-  \#\hfil$\V_{s\frown0}^{{\mr x}}\subseteq\neg\phi(\V_{s\frown0}^{\mr x};{\gr b_s})$ \ \ and \ \  $\V_{s\frown1}^{\mr x}\subseteq\neg\psi(\V_{s\frown1}^{\mr x};{\gr b_s})$.
+  \#\hfil$\V_{s\frown0}^{{\mr x}}\subseteq\neg\phi(\V_{s\frown0}^{{\mr x}}\,;{\gr b_s})$ \ \ and \ \  $\V_{s\frown1}^{{\mr x}}\subseteq\neg\psi(\V_{s\frown1}^{{\mr x}}\,;{\gr b_s})$.
 
   We prove that the branches of the tree $\<\phi({\mr x}\,;{\gr b_s})\ :\  s\in2^{<\omega}\>$ are (finitely) consistent. 
   By Theorem~\ref{thm_count_types}, this contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
@@ -622,12 +622,12 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
   \ceq{\#\#\hfill\theta({\mr x})}{\imp}{\phi({\mr x}\,;{\gr b})\vee\psi({\mr x}\,;{\gr b})}
   
   Let $s\in2^n$ be given.
-  Let ${\mr a}\in\theta(\V_s^{\mr x})$ be arbitrary. We claim that ${\mr a}$ witnesses the consistency of $\{\phi^{s_i}({\mr x}\,;{\gr b_{s\restriction i}})\ :\ i<n\}$.
-  As $\V_s\preceq\V_{s\restriction i}$, we have that ${\mr a}\in\theta(\V_{s\restriction i}^{\mr x})$.
+  Let ${\mr a}\in\theta(\V_s^{{\mr x}})$ be arbitrary. We claim that ${\mr a}$ witnesses the consistency of $\{\phi^{s_i}({\mr x}\,;{\gr b_{s\restriction i}})\ :\ i<n\}$.
+  As $\V_s\preceq\V_{s\restriction i}$, we have that ${\mr a}\in\theta(\V_{s\restriction i}^{{\mr x}})$.
   We prove that $\phi^{s_i}({\mr a}\,;{\gr b_{s\restriction i}})$.
-  If $s_i=0$ then from \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi^0(\V_{s\restriction(i+1)}^{\mr x};{\gr b_{s\restriction i}})$ and $\phi^0({\mr a}\,;{\gr b_{s\restriction i}})$ follows by elementarity.
-  If $s_i=1$, from the second inclusion in \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\neg\psi(\V_{s\restriction(i+1)}^{\mr x};{\gr b_{s\restriction i}})$.
-  Therefore, from $\theta({\mr a})$ and \#\#, we obtain that $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi(\V_{s\restriction(i+1)}^{\mr x};{\gr b_{s\restriction i}})$ and $\phi^1({\mr a}\,;{\gr b_{s\restriction i}})$ follows.
+If $s_i=0$ then from \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi^0(\V_{s\restriction(i+1)}^{{\mr x}}\,;{\gr b_{s\restriction i}})$ and $\phi^0({\mr a}\,;{\gr b_{s\restriction i}})$ follows by elementarity.
+  If $s_i=1$, from the second inclusion in \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\neg\psi(\V_{s\restriction(i+1)}^{{\mr x}}\,;{\gr b_{s\restriction i}})$.
+  Therefore, from $\theta({\mr a})$ and \#\#, we obtain that $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi(\V_{s\restriction(i+1)}^{{\mr x}}\,;{\gr b_{s\restriction i}})$ and $\phi^1({\mr a}\,;{\gr b_{s\restriction i}})$ follows.
 
   We are left with proving that the provisional assumption is redundant.
   By Exercise~\ref{ex_almost_satisfied} there is a formula $\theta({\mr\bar x})\in L(A)$ such that
@@ -1159,7 +1159,7 @@ It is worthwhile to recall that, under the assumption of stability, Lascar wide 
 \end{corollary}
 
 \begin{proof}
-  Work in the model $\U^\Delta$.
+  Work in $\U^\Delta$.
   By the transitivity of the action the formula  ${\mr x}={\mr x}$ is complete over $\varnothing$.
   Apply Theorem~\ref{thm_FER} (in $\LDelta$) with ${\mr x}={\mr x}$ for $p_0({\mr x})$.
   By Theorem~\ref{thm_Ggeneric_persistent}, the set $P$ in Theorem~\ref{thm_FER} coincides with $Q$.
@@ -1168,7 +1168,7 @@ It is worthwhile to recall that, under the assumption of stability, Lascar wide 
 
 The stabilizer of the type $q({\mr x})\in S_\Delta(\grZ)$ is the subgroup $\{{\gr h}\in\grZ\ :\ q({\mr x})={\gr h}{\cdot}q({\mr x})\}$.
 Which we can write also as $\{{\gr h}\in\grZ\ :\ {\gr\D_{q,\phi}}={\gr h}{\cdot}{\gr\D_{q,\phi}},\textrm{ for every }\phi({\mr x}\,;{\gr z})\in\Delta\}$.
-When $\Delta$ is stable, it is a $\BDelta(\mrX)$-type-definable set (or, definable, when $\Delta$ is finite).
+When $\Delta$ is stable, it is a $\BDelta(\mrX)$-type-definable set (definable, when $\Delta$ is finite).
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox{5ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
@@ -1192,6 +1192,37 @@ When $\Delta$ is stable, it is a $\BDelta(\mrX)$-type-definable set (or, definab
   Clearly, $q({\mr x})\notproves{\mr x}\in{\gr g}{\cdot}\mrD$, then ${\gr g}\notin\grW$.
 \end{proof}
 
+\begin{exercise}
+  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
+  Write $H$ for $\LDelta\mbox{-}\Autf(\varnothing)$.
+  Assume that the action of $\grZ$ is regular.
+  Prove that $\Big\<\bigcup_{{\gr g}\in\grZ}({\gr g})_H^{-1}\!\cdot({\gr g})_H\Big\>$ contains the set on the r.h.s.\@ in Theorem~\ref{thm_Z0_stable} and that it has finite index in $\grZ$.
+\end{exercise}
+
+% \begin{theorem}
+%   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
+%   Write $H$ for $\LDelta\mbox{-}\Autf(\varnothing)$.
+%   Assume that the action of $\grZ$ is regular.
+%   Then
+  
+%   \ceq{\hfill{\gr\Z^0}}{=}{\Big\<\bigcup_{{\gr g}\in\grZ}({\gr g})_H^{-1}\!\cdot({\gr g})_H\Big\>}.
+  
+% \end{theorem}
+
+% \begin{proof}
+%   By Theorem~\ref{thm_Ggeneric_persistent}  
+
+%   \ceq{\hfill{\gr\Z^0}}{\subseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\BDelta(\grZ)\textrm{-definable }H\textrm{-persistent set }\mrD\big\}}
+
+%   and, by Proposition~\ref{prop_stabilizer1} 
+  
+%   \ceq{}{\subseteq}{\Big\<\bigcup_{{\gr g}\in\grZ}({\gr g})_H^{-1}\!\cdot({\gr g})_H\Big\>}.
+
+%   For the converse inclusion it suffices to prove that $\big\<\bigcup_{{\gr g}\in\grZ}({\gr g})_H^{-1}\!\cdot({\gr g})_H\big\>$ has finite index in $\grZ$.
+%   As the action of $\grZ\le G$ on itself is transitive, ${\gr z}={\gr z}$ is a complete $\LDelta$-type over $\varnothing$.
+%   Then, by Theorem~\ref{thm_FER}, there are finitely many $H$-orbits in $\grZ$.
+%   If ${\gr h}$ and ${\gr k}$ are in the same $H$-orbit then ${\gr h^{-1}}{\cdot}{\gr k}\in\big\<\bigcup_{{\gr g}\in\grZ}({\gr g})_H^{-1}\!\cdot({\gr g})_H\big\>$, and therefore they are in the same coset.
+% \end{proof}
 
 % Define 
 
@@ -1262,7 +1293,7 @@ When $\Delta$ is stable, it is a $\BDelta(\mrX)$-type-definable set (or, definab
   Prove that if every formula $\phi(x\,;z)\in L$, where $|x|=1$, is stable then $T$ is stable.
 \end{exercise}
 
-\begin{exercise} 
+\begin{exercise}
   A sequence $\<a_i:i<\omega\>$ is totally indiscernible if $a_1,\dots,a_n\equiv a_{i_1},\dots,a_{i_n}$ for every distinct $i_1,\dots,i_n$.
   Prove that the following are equivalent
   \begin{itemize}
@@ -1328,5 +1359,14 @@ Prove that strongly minimal theories are stable.
   pages={x+248},
   %isbn={978-0-521-76324-0},
   %doi={10.1017/CBO9781139015417},
+}\smallskip
+\bib{CS}{article}{
+  author={Simon, Pierre},
+  title={A note on stability and NIP in one variable},
+  note={\href{https://arxiv.org/abs/2103.15799}{ArXiv:2103.15799}},
+  date={2021},
+  %note={},
+  %issn={0021-2172},
+  %doi={10.1007/s11856-012-0061-9},
 }\smallskip
 \end{biblist}

@@ -281,6 +281,11 @@ $\qquad\displaystyle T\vdash\bigvee^n_{i=1}\sigma_i$,\qquad and  $\qquad\sigma_i
 For a counter example consider the empty theory in the language with a single unary predicate.
 \end{exercise}
 
+\begin{exercise}
+  Suppose that every formula $\phi(x)\in L$ is equivalent to a some quantifier-free formula $\psi(x)\in L(\U)$.
+  Prove that $T$ has positive $\Delta$-elimination of quantifiers for $\Delta$ the set of formulas of the form $\E y\,\A z\,\theta(x,y,z)$ with $\theta(x,y,z)\in\qfL$.
+\end{exercise}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -327,6 +332,7 @@ Assume $T$ is model-complete. Let $\M$ be the category that consists of models o
 \ssf{2}$\IMP$\ssf{1}\quad If all morphisms are elementary maps, amalgamations follows from Proposition~\ref{prop_elementary_amalg}.
 \end{proof}
 
+\begin{comment}
 Note however that the models of a model-complete theory $T$ do have amalgamation when the proper notion of morphism is chosen. 
 
 Let $\M'$ be the category that consists of models of $T$ and the maps $k:M\to N$ such that there is a  partial isomorphism $h:M'\to N'$ with 
@@ -336,6 +342,8 @@ Let $\M'$ be the category that consists of models of $T$ and the maps $k:M\to N$
 \item[2.] $\dom h$ contains a substructure of $M'$ that models $T$ (equivalently $\range h$ and $N'$).
 \end{itemize}
 
+
+  
 Moreover, we add as morphisms the maps that are obtained from those above by composition. It is clear that if $T$ is model-complete then the morphisms of $\M'$ are exactly the elementary maps. In this case $\M'$ has amalgamation. Vice versa if $\M'$ has amalgamation, the theory of rich models is model-complete.
 
 \begin{exercise}
