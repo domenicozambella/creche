@@ -227,7 +227,7 @@ The invariance of $\pi$ would simplify the discussion as it allows to require th
 
 \begin{proof}
   The second claim is immediate.
-  o prove the first, it suffices to consider conjunction and negation.
+  To prove the first, it suffices to consider conjunction and negation.
   Negation is immediate, in fact if $\<{\mr a_i}\,;{\gr b_i} : i<n\>$ is a ladder for $\pi({\mr x}\,;{\gr z})$ then $\<{\mr a_{n-i}}\,;{\gr b_{n-i}} : i<n\>$ is a ladder for $\neg\pi({\mr x}\,;{\gr z})$.
   As for conjunction, note that when $\pi$ is invariant over $A$ it easily follows from Theorem~\ref{thm_sability_indiscernibility}.
   In general we reason as follows.
@@ -780,10 +780,10 @@ Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ and $A\subseteq\U$ be given.
 A type $q({\mr x})\subseteq L(\U)$ is \emph{stationary\/} if it has a unique global extension $p({\mr x})\in S_\Delta(\U)$ that is Lascar invariant over $A$.
 The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
 
-Finally, define \emph{$\GDelta(A)$\/} to be the set of formulas $\phi({\mr x})\in\BDelta(\U)$ that are invariant over $A$.
-Note that though these formulas are equivalent to formulas over $A$, they need not be in $\BDelta(A)$.
+Finally, define \emph{$\GDelta(A)$\/} to be the set of formulas $\phi({\mr x})\in\qfDelta(\U)$ that are invariant over $A$.
+Note that though these formulas are equivalent to formulas over $A$, they need not be in $\qfDelta(A)$.
 In the literature these formulas are called \textit{generalized\/} $\Delta$-formulas.
-Note that when $A$ is a model $\GDelta(A)$-formulas are equivalent to $\BDelta(A)$-formulas.
+Note that when $A$ is a model $\GDelta(A)$-formulas are equivalent to $\qfDelta(A)$-formulas.
 
 \begin{theorem}[ (Stationarity)]\label{thm_stationarity}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
@@ -800,7 +800,7 @@ Note that when $A$ is a model $\GDelta(A)$-formulas are equivalent to $\BDelta(A
   We claim that $\psi_1({\gr b})\iff\psi_2({\gr b})$, for all ${\gr b}\in\U^{\gr z}$.
   Let $t({\gr z})\in S_\Delta(\U)$ be invariant over $\acl^\eq\!A$ and consistent with $\tp({\gr b}/\acl^\eq\!A)$.
   As remarked above, such a type exists by stability.
-  By stability there is a formula $\theta({\mr x})\in\BDelta(\U)$ that defines ${\mr\D_{t,\phi^{\rm op}}}$.
+  By stability there is a formula $\theta({\mr x})\in\qfDelta(\U)$ that defines ${\mr\D_{t,\phi^{\rm op}}}$.
   But ${\mr\D_{t,\phi^{\rm op}}}$ is invariant over $\acl^\eq\!A$, then $\theta({\mr x})\in\GDelta(\acl^\eq\!A)$.
   Let $M$ be any model containing $A$.
   Let ${\gr b'}\models t({\gr z}){\restriction}M$ and ${\mr a_i}\models p_i({\mr x}){\restriction}M$.
@@ -920,7 +920,7 @@ We define \emph{Lascar persistent/wide\/} similarly.
 \begin{corollary}\label{corol_persistent_finsat}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Assume $\mrX$ is type definable.
-  Finally, let $\mrD$ be a $\BDelta(\U)$-definable set.
+  Finally, let $\mrD$ be a $\qfDelta(\U)$-definable set.
   Then the following are equivalent 
   \begin{itemize}
     \item[1.] $\mrD$ is Lascar persistent over $A$
@@ -934,7 +934,7 @@ We define \emph{Lascar persistent/wide\/} similarly.
   Only \ssf1$\IMP$\ssf2 requires a proof.
   Let $q({\mr x})$ be the type defining $\mrX$.
   Pick $\psi({\mr x})\in q$.
-  It suffices to prove that $\psi({\mr x})\wedge\phi({\mr x}\,;{\gr b})$ is satisfied in every $M\subseteq A$.
+  It suffices to prove that $\psi({\mr x})\wedge\phi({\mr x}\,;{\gr b})$ is satisfied in every $M\supseteq A$.
   Then, by Corollary~\ref{corol_stable_coheir_over_models}, it follows that $q({\mr x})\cup\{\phi({\mr x}\,;{\gr b})\}$ is contained in a type $p({\mr x})\in S_\Delta(\U)$ that is Lascar invariant over $A$.
   Then $\mrD$ is Lascar wide by Theorem~\ref{thm_generic_invariant2}.
   
@@ -953,7 +953,7 @@ We define \emph{Lascar persistent/wide\/} similarly.
 % \end{proposition}
 
 % \begin{proof}
-%   Let $\mrD$ be a $\BDelta(\U)$-definable set that is weakly Lascar persistent.
+%   Let $\mrD$ be a $\qfDelta(\U)$-definable set that is weakly Lascar persistent.
 %   We prove that $\mrD$ is Lascar persistent.
 %   Pick a finite $H\subseteq\Autf(\U/A)$ such that $\cup\,H\,\mrD$ is Lascar persistent.
 %   By Corollary~\ref{corol_persistent_finsat}, the type $\{{\mr x}\in\cup\,H\,\mrD\}\cup q({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
@@ -965,7 +965,7 @@ We define \emph{Lascar persistent/wide\/} similarly.
 \begin{proposition}\label{prop_stable_genericiffpersistent}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Let $\mrX=q(\U^{\mr x})$ for some $q({\mr x})\in S(\acl^\eq\!A)$.
-  Then for every $\BDelta(\U)$-definable set $\mrD$, the following are equivalent
+  Then for every $\qfDelta(\grZ)$-definable set $\mrD$, the following are equivalent
   \begin{itemize}
     \item[1.] $\mrD$ is Lascar generic over $A$.
     \item[2.] $\mrD$ is Lascar persistent over $A$.
@@ -981,8 +981,8 @@ We define \emph{Lascar persistent/wide\/} similarly.
   Assume $\mrD$ is not Lascar generic.
   Then $\neg\mrD$ is Lascar persistent.
   Assume for a contradiction that also $\mrD$ is Lascar persistent.
-  Let $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be the $\BDelta(\U)$-formula that defines $\mrD$.
-  As $\theta({\mr x}\,;{\gr z_1},\dots,{\gr z_n})$ is stable, by Corollary~\ref{corol_persistent_finsat} both $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ and its negation are finitely satisfied in every model $M\supseteq A$.
+  Let $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be the $\qfDelta(\grZ)$-formula that defines $\mrD$.
+  As $\theta({\mr x}\,;{\gr z_1},\dots,{\gr z_n})$ is stable, by Proposition~\ref{prop_type_over_acl2} both $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ and its negation are finitely satisfied in every model $M\supseteq A$.
   Then there are two distinct types $p_i({\mr x})\in S_\Delta(\U)$ finitely consistent with $q({\mr x})$ and finitely satisfied in every $M\supseteq A$.
   This contradicts stationarity, see Proposition~\ref{prop_type_over_acl2} and Theorem~\ref{thm_stationarity}.
 \end{proof}
@@ -990,7 +990,7 @@ We define \emph{Lascar persistent/wide\/} similarly.
 \begin{corollary}\label{corol_stable_generic}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Let $\mrX=q(\U^{\mr x})$ for some $q({\mr x})\in S(\acl^\eq\!A)$.
-  Then for every $\BDelta(\U)$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is Lascar generic over $A$.
+  Then for every $\qfDelta(\grZ)$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is Lascar generic over $A$.
 \end{corollary}
 
 \begin{proof}
@@ -1022,7 +1022,7 @@ The following lemma is applied in the theorem below (it does not require stabili
   Suppose not, then $p({\mr x})\imp\neg\phi({\mr x})$ for some $\phi({\mr x})\in q$.
   Let $\psi({\mr x})$ be the disjunction of all the (finitely many) conjugates of $\phi({\mr x})$ over $A$.
   Then $p({\mr x})\imp\neg\psi({\mr x})$.
-  But $\psi({\mr x})\in\BDelta(\acl^\eq\!A)$ and is invariant over $A$.
+  But $\psi({\mr x})\in\qfDelta(\acl^\eq\!A)$ and is invariant over $A$.
   Therefore $\psi({\mr x})\in\GDelta(A)$.
   Then $\psi({\mr x})\in p$, a contradiction.
 \end{proof}
@@ -1089,7 +1089,7 @@ Note that the structure $\U^\Delta$ defined there is stable whenever $\Delta\sub
 \begin{theorem}\label{thm_Ggeneric_persistent}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Assume the action of $\grZ$ is transitive.
-  Then for every $\BDelta(\grZ)$-definable set $\mrD$ the following are equivalent
+  Then for every $\qfDelta(\grZ)$-definable set $\mrD$ the following are equivalent
   \begin{itemize}
     \item [1.] $\mrD$ is $\grZ$-generic
     \item [2.] ${\gr g}{\cdot}\mrD$ is $\LDelta$-Lascar persistent over $\varnothing$ for every ${\gr g}\in\grZ$
@@ -1136,7 +1136,7 @@ It is worthwhile to recall that, under the assumption of stability, Lascar wide 
 \begin{corollary}\label{corol_genericornotgeneric}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Assume the action of $\grZ$ is transitive.
-  Then for every $\BDelta(\grZ)$-definable set $\mrD$ either $\mrD$ or $\neg\mrD$ is $\grZ$-generic.
+  Then for every $\qfDelta(\grZ)$-definable set $\mrD$ either $\mrD$ or $\neg\mrD$ is $\grZ$-generic.
 \end{corollary}
 
 \begin{proof}
@@ -1168,28 +1168,34 @@ It is worthwhile to recall that, under the assumption of stability, Lascar wide 
 
 The stabilizer of the type $q({\mr x})\in S_\Delta(\grZ)$ is the subgroup $\{{\gr h}\in\grZ\ :\ q({\mr x})={\gr h}{\cdot}q({\mr x})\}$.
 Which we can write also as $\{{\gr h}\in\grZ\ :\ {\gr\D_{q,\phi}}={\gr h}{\cdot}{\gr\D_{q,\phi}},\textrm{ for every }\phi({\mr x}\,;{\gr z})\in\Delta\}$.
-When $\Delta$ is stable, it is a $\BDelta(\mrX)$-type-definable set (definable, when $\Delta$ is finite).
+When $\Delta$ is stable, it is a $\qfDelta(\mrX)$-type-definable set (definable, when $\Delta$ is finite).
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox{5ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 \begin{theorem}\label{thm_Z0_stable}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
-  Assume that the action of $\grZ$ is regular.
+  Assume that $\mrX=\grZ$.
   Then
   
-  \ceq{\hfill{\gr\Z^0}}{=}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\BDelta(\grZ)\textrm{-definable }\grZ\textrm{-generic set }\mrD\big\}}.
+  \ceq{\hfill{\gr\Z^0}}{=}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\qfDelta(\grZ)\textrm{-definable }\grZ\textrm{-generic set }\mrD\big\}}.
   
 \end{theorem}
 
 \begin{proof}
-  Inclusion $\supseteq$ holds in general by Proposition~\ref{prop_Z0_inclusione}.
-  To prove the converse inclusion pick ${\gr g}\in\grZ$ such that $\mrD\cap{\gr g}{\cdot}\mrD=\varnothing$ for some $\BDelta(\grZ)$-definable $\grZ$-generic set $\mrD$.
-  We can assume that $\Delta$ contains only the formulas occurring in the definition of $\mrD$ therefore, that it is finite.
+  Inclusion $\supseteq$ holds by Proposition~\ref{prop_Z0_inclusione2}~--~stability is not required.
+  For the converse inclusion we prove that $\gamma_{\Z^0}({\mr x})$ is finitely consistent and apply Proposition~\ref{prop_Z0_inclusione1}.
+  By Proposition~\ref{corol_def_mu} it suffices to prove that there exists a $\gr\Z^0$-invariant type $p({\mr x})\in S_\Delta(\grZ)$.
   Let $Q$ be as in Corollary~\ref{corol_feq_thm}.
   Let $q({\mr x})\in Q$ be such that $q({\mr x})\proves{\mr x}\in\mrD$.
-  By Corollary~\ref{corol_feq_thm}, the stabilizer of $q({\mr x})$ is a subgroup $\grW\le\grZ$ of finite index.
-  Then ${\gr\Z^0}\le\grW$.
-  Clearly, $q({\mr x})\notproves{\mr x}\in{\gr g}{\cdot}\mrD$, then ${\gr g}\notin\grW$.
+  As $Q$ is finite, the stabilizer of any $q({\mr x})\in Q$ is a subgroup $\grW\le\grZ$ of finite index.
+  Therefore all $q({\mr x})\in Q$ are $\gr\Z^0$-invariant.
+  % pick ${\gr g}\in\grZ$ such that $\mrD\cap{\gr g}{\cdot}\mrD=\varnothing$ for some $\qfDelta(\grZ)$-definable $\grZ$-generic set $\mrD$.
+  % We can assume that $\Delta$ contains only the formulas occurring in the definition of $\mrD$ therefore, that it is finite.
+  % Let $Q$ be as in Corollary~\ref{corol_feq_thm}.
+  % Let $q({\mr x})\in Q$ be such that $q({\mr x})\proves{\mr x}\in\mrD$.
+  % By Corollary~\ref{corol_feq_thm}, the stabilizer of $q({\mr x})$ is a subgroup $\grW\le\grZ$ of finite index.
+  % Then ${\gr\Z^0}\le\grW$.
+  % Clearly, $q({\mr x})\notproves{\mr x}\in{\gr g}{\cdot}\mrD$, then ${\gr g}\notin\grW$.
 \end{proof}
 
 \begin{exercise}
@@ -1212,7 +1218,7 @@ When $\Delta$ is stable, it is a $\BDelta(\mrX)$-type-definable set (definable, 
 % \begin{proof}
 %   By Theorem~\ref{thm_Ggeneric_persistent}  
 
-%   \ceq{\hfill{\gr\Z^0}}{\subseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\BDelta(\grZ)\textrm{-definable }H\textrm{-persistent set }\mrD\big\}}
+%   \ceq{\hfill{\gr\Z^0}}{\subseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\qfDelta(\grZ)\textrm{-definable }H\textrm{-persistent set }\mrD\big\}}
 
 %   and, by Proposition~\ref{prop_stabilizer1} 
   
