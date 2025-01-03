@@ -627,7 +627,7 @@ Moreover we assume that $\grZ$ is a group that act on $\mrX$.
 The group operations and the group action are assumed definable over $A$.
 We use the symbol $\,\cdot\,$ for both the group multiplication and the group action.
 
-Let $\Psi\subseteq L_{\mr x}(\U)$ be some small set of formulas.
+Let $\Psi\subseteq L_{\mr x}(A)$.
 In this section $\Delta$ contains formulas $\phi({\mr x}\,;{\gr z})$ of the form  $\psi({\gr z^{-1}}\!\cdot{\mr x})$ for $\psi({\mr x})\in\Psi$.
 The sets $\phi(\mrX\,;\grZ)$ are $\grZ$-invariant.
 We write ${\gr 1}$ for the identity of $\grZ$.
@@ -658,7 +658,7 @@ We also consider the action some other normal subgroup \emph{$H$\/}$\,\trianglel
 \def\ceq#1#2#3{\parbox[t]{6ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 \begin{proposition}\label{prop_Ggeneric_persistent}
-  Let $\mrD$ be a $\LDelta(\grZ)$-definable set.
+  Let $\mrD$ be a $\UDelta(\grZ)$-definable set.
   Assume that $\gamma_H({\mr x})$ is consistent.
   Then \ssf1$\IMP$\ssf2 holds, where
   \begin{itemize}
@@ -791,7 +791,7 @@ For $\mrD\subseteq\mrX$, the stabilizers of $\mrD$ is the subgroup $\grW=\{{\gr 
 
 \begin{definition}\label{def_G0}\noindent\vspace*{0.1ex}
 
-  \ceq{\ssf1.\hfill{\gr\Z^0}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \textrm{ stabilizer of a }\qfDelta(\grZ)\textrm{-definable set with finite $\grZ$-orbit}\big\}}.\smallskip
+  \ceq{\hfill{\gr\Z^0}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \textrm{ stabilizer of a }\LDelta(\grZ)\textrm{-definable set with finite $\grZ$-orbit}\big\}}.\smallskip
 
   % \ceq{\ssf2.\hfill{\gr\Z^{00}}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \grW\textrm{ is }\LDelta(\grZ)\textrm{-type-definable and has bounded index in }\grZ\big\}}.
 \end{definition}
@@ -807,7 +807,7 @@ For $\mrD\subseteq\mrX$, the stabilizers of $\mrD$ is the subgroup $\grW=\{{\gr 
 
 % Note that we can replace \textit{definable\/} with \textit{type-definable\/} (essentially, by Exercise~\ref{ex_generic_type_vs_formulas}).
 
-Note that $\gr\Z^0$ is normal.
+Note that if $\grW$ $\gr\Z^0$ is a normal subgroup of $\grZ$..
 
 % Recall that \emph{$\bdd A$\/} for the set of type-definable sets with bounded orbit over $A$, equivalently, invariant over $\Autf A$.
 
@@ -825,25 +825,26 @@ Note that $\gr\Z^0$ is normal.
 % \end{proof}
 
 \begin{proposition}\label{prop_Z0_inclusione1}
-  Assume $\gamma_{\Z^0}({\mr x})$ is finitely consistent.
+  Assume $\gamma_{\Z^0}({\mr x})$ finitely consistent.
   Then                            
 
-  \ceq{\hfill{\gr\Z^0}}{\subseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\qfDelta(\grZ)\textrm{-definable }\grZ\textrm{-generic set }\mrD\big\}}.
+  \ceq{\hfill{\gr\Z^0}}{\subseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\LDelta(\grZ)\textrm{-definable }\grZ\textrm{-generic set }\mrD\big\}}.
  
   % Let ${\gr g}$ be such that $\ $ for every $\grZ$-generic $\qfDelta(\grZ)$-definable set $\mrD$.
   % Then ${\gr g}\in{\gr\Z^0}$.
 \end{proposition}
 
 \begin{proof}
-  By Proposition~\ref{prop_Ggeneric_Hpersistent}, any $\grZ$-generic set $\mrD$ is $\gr\Z^0$-wide.
+  We apply Proposition~\ref{prop_Ggeneric_Hpersistent} with $H=\gr\Z^0$, $G=\grZ$, and $\Delta=\LDelta$.
+  It follows that any $\grZ$-generic set $\mrD$ is $\gr\Z^0$-wide.
   In particular, $\mrD$ is $\gr\Z^0$-persistent, hence $\mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing$ for every ${\gr g}\in\gr\Z^0$.
 \end{proof}
 
 \begin{proposition}\label{prop_Z0_inclusione2}
-  Assume that $\mrX=\grZ$.
+  Assume $\mrX=\grZ$.
   Then                            
 
-  \ceq{\hfill{\gr\Z^0}}{\supseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\qfDelta(\grZ)\textrm{-definable }\grZ\textrm{-generic set }\mrD\big\}}.
+  \ceq{\hfill{\gr\Z^0}}{\supseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\LDelta(\grZ)\textrm{-definable }\grZ\textrm{-generic set }\mrD\big\}}.
 \end{proposition}
 
 % We will revisit this proposition under the assumption of stability and prove the converse inclusion.
@@ -852,11 +853,10 @@ Note that $\gr\Z^0$ is normal.
 \begin{proof}
   Let ${\gr g}$ be an element of the set on the r.h.s.
   Let $\grW$ be as in Definition~\ref{def_G0}.
-  If $\grW$ is the stabilizer of a set with finite orbit, then $\grW$ has finite index.
-  Then $\grW{\cdot}{\mr a}$ is $G$-generic for any ${\mr a}\in\mrX$.
-  Then $\grW{\cdot}{\mr a}\cap{\gr g}{\cdot}\grW{\cdot}{\mr a}\neq\varnothing$.
-  Let ${\gr h},{\gr k}\in\grW$ be such that ${\gr h}{\cdot}{\mr a}={\gr g}{\cdot}{\gr k}{\cdot}{\mr a}$.
-  It follows that ${\gr h}={\gr g}{\cdot}{\gr k}$, then ${\gr g}\in\grW$.
+  As $\grW$ is the stabilizer of a set with finite orbit, then $\grW$ has finite index.
+  Then $\grW$ (as an $\LDelta(\grZ)$-definable subset of $\mrX$) is $\grZ$-generic.
+  Then $\grW\cap{\gr g}{\cdot}\grW{\cdot}\neq\varnothing$.
+  Finally, ${\gr g}\in\grW$ follows.
  \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
