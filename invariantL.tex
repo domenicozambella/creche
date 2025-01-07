@@ -420,13 +420,13 @@ Any realization of $q(w)$ satisfy the Tarski-Vaught test therefore it enumerates
 Vice versa it is clear that we can realize $q(w)$ in any model containing $A$.
 \end{proof}
 
-\begin{exercise}
-  Let $p(x)\in S(A)$.
-  Define $Q=\big\{q(x)\in S(\acl^\eq\!A)\, :\, p(x)\subseteq q(x)\big\}$.
-  Also, for any $f\in\Aut(\U/A)$, let $fq(x)=\{\phi(x,fb):\phi(x,b)\in q\}$.
-  This defines an action of $f\in\Aut(\U/A)$ on $Q$.
-  Prove that this action is transitive.
-\end{exercise}
+% \begin{exercise}
+%   Let $p(x)\in S(A)$.
+%   Define $Q=\big\{q(x)\in S(\acl^\eq\!A)\, :\, p(x)\subseteq q(x)\big\}$.
+%   Also, for any $f\in\Aut(\U/A)$, let $fq(x)=\{\phi(x,fb):\phi(x,b)\in q\}$.
+%   This defines an action of $f\in\Aut(\U/A)$ on $Q$.
+%   Prove that this action is transitive.
+% \end{exercise}
 
 \begin{exercise}\label{ex_Lstp_indiscernibles}
   Prove that the equivalence relation $a\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}_Ab$ is the transitive closure of the relation: there is a sequence $\<{\mr c_i}:i<\omega\>$ indiscernible over $A$ such that $c_0=a$ and $c_1=b$.
@@ -458,7 +458,7 @@ To summarize, we recall that we have defined a whole hierarchy of strong types o
 
 \hfil$\Ll({\gr a}/A)\ \subseteq\ \K({\gr a}/A)\ \subseteq\ \S({\gr a}/A)\ \subseteq\ \Orbit({\gr a}/A)$. 
 
-Recall that $\S({\gr a}/A)$ was defined after Proposition~\ref{prop_Shelah_strong_types}.
+Recall that $\S({\gr a}/A)$ was defined after Theorem~\ref{thm_Shelah_strong_types}.
 
 If $\K({\gr a}/A)=\K({\gr b}/A)$, we say that ${\gr a}$ and ${\gr b}$ have the same \emph{Kim-Pillay strong type\/} over $A$.
 We abbreviate this by \emph{${\gr a}\stackrel{\smash{\scalebox{.5}{\rm KP}}}{\equiv}_A{\gr b}$.}
@@ -468,11 +468,11 @@ In other words, we write ${\gr a}\equivKP_A{\gr b}$ when ${\gr a}\in\grD\iff{\gr
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}%
 Warning: the symbol $\K({\gr a}/A)$ is not standard.
-The symbol ${\gr a}\equivKP_A{\gr b}$ is not unusual, but some author write $\mbox{KP-stp}({\gr a}/A)=\mbox{KP-stp}({\gr b}/A)$ or ${\gr a}\mathrel{E_{_{{\rm KP}/A}}}{\gr b}$.
+The symbol ${\gr a}\equivKP_A{\gr b}$ is not unusual, but some authors write $\mbox{KP-stp}({\gr a}/A)=\mbox{KP-stp}({\gr b}/A)$ or ${\gr a}\mathrel{E_{_{{\rm KP}/A}}}{\gr b}$.
 
 \begin{proposition}\label{prop_bardotto}
   Fix some ${\gr a}\in\U^{\gr z}$ and some $A\subseteq\U$.
-Then there is a type $e({\gr z}\,;{\gr w})\subseteq L(A)$ such that $\K({\gr b}/A)=e(\U\,;{\gr b})$ for all ${\gr b}\in\orbit({\gr a}/A)$ and $e({\gr z}\,;{\gr w})$ defines an equivalence relation on $\orbit({\gr a}/A)$.
+  Then there is a type $e({\gr z}\,;{\gr w})\subseteq L(A)$ such that $\K({\gr b}/A)=e(\U\,;{\gr b})$ for all ${\gr b}\in\Orbit({\gr a}/A)$ and $e({\gr z}\,;{\gr w})$ defines an equivalence relation on $\Orbit({\gr a}/A)$.
 \end{proposition}
 
 \begin{proof}
@@ -482,22 +482,22 @@ Then there is a type $e({\gr z}\,;{\gr w})\subseteq L(A)$ such that $\K({\gr b}/
   As $\K({\gr a}/A)$ is type-definable, invariance implies that it is type-definable over $A,{\gr a}$.
   Let $e({\gr z}\,;{\gr w})\subseteq L(A)$ be such that $\K({\gr a}/A)=e(\U\,;{\gr a})$. 
     
-  We prove that $\K({\gr b}/A)=e(\U\,;{\gr b})$ for all ${\gr b}\in\orbit({\gr a}/A)$.
+  We prove that $\K({\gr b}/A)=e(\U\,;{\gr b})$ for all ${\gr b}\in\Orbit({\gr a}/A)$.
   Let $f\in\Aut(\U/A)$ be such that $f{\gr a}={\gr b}$.
   If $\grD$ is a type-definable Lascar invariant over $A$, then so is $f[\grD]$.
   Therefore, $f$ is a bijection between type-definable sets that are Lascar invariant over $A$ and contain ${\gr a}$ and analogous sets containing ${\gr b}$.
   Then $f[\K({\gr a}/A)]=\K({\gr b}/A)$ and $\K({\gr b}/A)=e(\U\,;{\gr b})$ follows.
     
-  We prove that $e({\gr b}\,;\U)\cap \orbit({\gr a}/A)$ is Lascar invariant over $A$.
-  Let $f\in\Autf(\U/A)$ and ${\gr c}\in\orbit({\gr a}/A)$.
+  We prove that $e({\gr b}\,;\U)\cap \Orbit({\gr a}/A)$ is Lascar invariant over $A$.
+  Let $f\in\Autf(\U/A)$ and ${\gr c}\in\Orbit({\gr a}/A)$.
   Then $e({\gr b}\,;f{\gr c})$ is equivalent to  $e(f^{-1}{\gr b}\,;{\gr c})$ which in turn is equivalent to $e({\gr b}\,;{\gr c})$, by the invariance of $e(\U\,;{\gr c})$. 
     
-  Finally we are ready to prove that $e({\gr z}\,;{\gr w})$ defines a symmetric relation on $\orbit({\gr a}/A)$.
-  From what proved above, $e({\gr b}\,;\U)\cap \orbit({\gr a}/A)$ is a type-definable Lascar invariant set containing ${\gr b}$ and therefore it contains $\K({\gr b}/A)$.
-  We conclude that for all ${\gr b},{\gr c}\in\orbit({\gr a}/A)$
-    
+  Finally we are ready to prove that $e({\gr z}\,;{\gr w})$ defines a symmetric relation on $\Orbit({\gr a}/A)$.
+  From what proved above, $e({\gr b}\,;\U)\cap \Orbit({\gr a}/A)$ is a type-definable Lascar invariant set containing ${\gr b}$ and therefore it contains $\K({\gr b}/A)$.
+  We conclude that for all ${\gr b},{\gr c}\in\Orbit({\gr a}/A)$
+  
   \ceq{\hfill e({\gr c}\,;{\gr b})}{\iff}{{\gr c}\in e(\U\,;{\gr b})}\medrel{\iff}${\gr c}\in\K({\gr b}/A)$\medrel{\imp}$e({\gr b}\,;{\gr c})$
-    
+  
   Reflexivity is clear; we prove transitivity.
   As remarked above, $\K({\gr b}/A)\subseteq\K({\gr c}/A)$, for all ${\gr b}\in\K({\gr c}/A)$ or equivalently $e({\gr b}\,;{\gr c})$.
   Hence if $e({\gr b}\,;{\gr c})$ then
@@ -508,70 +508,82 @@ Then there is a type $e({\gr z}\,;{\gr w})\subseteq L(A)$ such that $\K({\gr b}/
 \end{proof}
 
 \begin{corollary}\label{corol_KP_simmetry}
-For every ${\gr a},{\gr b}\in\U^{\gr z}$ and $A\subseteq\U$ the following are equivalent
-\begin{itemize}
-\item[1.] ${\gr a}\in\K({\gr b}/A)$
-\item[2.] ${\gr b}\in\K({\gr a}/A)$
-\item[3.] $\K({\gr a}/A)=\K({\gr b}/A)$.
-\end{itemize}
+  For every ${\gr a},{\gr b}\in\U^{\gr z}$ and $A\subseteq\U$ the following are equivalent
+  \begin{itemize}
+  \item[1.] ${\gr a}\in\K({\gr b}/A)$
+  \item[2.] ${\gr b}\in\K({\gr a}/A)$
+  \item[3.] $\K({\gr a}/A)=\K({\gr b}/A)$.
+  \end{itemize}
 \end{corollary}
 
 The following useful lemma is the key ingredient in the proof of Theorem~\ref{thm_Krupinski}.
 
 \begin{lemma}\label{lem_beq_global}
-Let $p({\gr z})\subseteq L(A)$ and let $e({\gr z}\,;{\gr w})\subseteq L(A)$ define a bounded equivalence relation on $p(\U)$.
-Then there is a type $e'({\gr z}\,;{\gr w})\subseteq L(A)$ which defines a bounded equivalence relation (on $\U$) and refines $e({\gr z}\,;{\gr w})$ on  $p(\U)$.
+  Let $p({\gr z})\subseteq L(A)$ and let $e({\gr z}\,;{\gr w})\subseteq L(A)$ define a bounded equivalence relation on $p(\U)$.
+  Then there is a type $e'({\gr z}\,;{\gr w})\subseteq L(A)$ which defines a bounded equivalence relation (on $\U$) and refines $e({\gr z}\,;{\gr w})$ on  $p(\U)$.
 \end{lemma}
 \begin{proof} 
-Let $\grC=\<\grC_i:i<\lambda\>$ enumerate the partition of $p(\U)$ induced by $e({\gr z}\,;{\gr w})$.
-Note that each $\grC_i$ is type-definable over $A,{\gr a}$ for any ${\gr a}\in\grC_i$.
-If $x=\<{\gr x_i}:i<\lambda\>$, we write $x\in\grC$ for the type that is the conjunction of ${\gr x_i}\in\grC_i$ for $i<\lambda$. 
+  Let $\grC=\<\grC_i:i<\lambda\>$ enumerate the partition of $p(\U)$ induced by $e({\gr z}\,;{\gr w})$.
+  Note that each $\grC_i$ is type-definable over $A,{\gr a}$ for any ${\gr a}\in\grC_i$.
+  If $x=\<{\gr x_i}:i<\lambda\>$, we write $x\in\grC$ for the type that is the conjunction of ${\gr x_i}\in\grC_i$ for $i<\lambda$. 
 
-We claim that the required type is 
+  We claim that the required type is 
 
-\ceq{\hfill e'({\gr a}\,;{\gr b})}{=}{\E x'\in\grC\ \E  x''\in\grC \quad {\gr a},x'\equiv_A{\gr b},x''}
+  \ceq{\hfill e'({\gr a}\,;{\gr b})}{=}{\E x'\in\grC\ \E  x''\in\grC \quad {\gr a},x'\equiv_A{\gr b},x''}
 
-As the type above is invariant over $A$, we can assume that $e'({\gr a}\,;{\gr b})$ is type-definable over $A$.
-Moreover, it is clearly a reflexive and symmetric relation, so we only check it is transitive.
-Suppose ${\gr a},x'\equiv_A{\gr b},x''$ and  ${\gr b},y'\equiv_A{\gr c},y''$ for some $x',x'',y',y''\in \grC$.
-Let $z$ be such that ${\gr a},x',z\equiv_A{\gr b},x'',y'$ then   $z\in\grC$ and ${\gr a},z\equiv_A{\gr c},y''$.
+  As the type above is invariant over $A$, we can assume that $e'({\gr a}\,;{\gr b})$ is type-definable over $A$.
+  Moreover, it is clearly a reflexive and symmetric relation, so we only check it is transitive.
+  Suppose ${\gr a},x'\equiv_A{\gr b},x''$ and  ${\gr b},y'\equiv_A{\gr c},y''$ for some $x',x'',y',y''\in \grC$.
+  Let $z$ be such that ${\gr a},x',z\equiv_A{\gr b},x'',y'$ then   $z\in\grC$ and ${\gr a},z\equiv_A{\gr c},y''$.
 
-The relation $e'({\gr a}\,;{\gr b})$ clearly refines the equivalence defined by $e({\gr z}\,;{\gr w})$ when restricted to  to $p(\U)$.
-To prove that it is bounded fix some $c\in\grC$ and note that $e'({\gr a}\,;{\gr b})$  is refined by ${\gr a}\equiv_{A,c}{\gr b}$, which is bounded. 
+  The relation $e'({\gr a}\,;{\gr b})$ clearly refines the equivalence defined by $e({\gr z}\,;{\gr w})$ when restricted to $p(\U)$.
+  To prove that it is bounded fix some $c\in\grC$ and note that $e'({\gr a}\,;{\gr b})$  is refined by ${\gr a}\equiv_{A,c}{\gr b}$, which is bounded. 
 \end{proof}
 
 Finally, we have the following.
 
 \begin{theorem}\label{thm_Krupinski}
-Denote by $e_A(z\,;w)$ be the finest bounded equivalence relation on $\U^{\gr z}$ that is type-definable over $A$.
-Then for every ${\gr a}, {\gr b}\in\U^{\gr z}$ the following are equivalent
- \begin{itemize}
-\item[1.] ${\gr a}\equivKP{\gr b}$
-\item[2.] $e_A({\gr a}\,;{\gr b})$.
-\end{itemize} 
+  Denote by $e_A(z\,;w)$ be the finest bounded equivalence relation on $\U^{\gr z}$ that is type-definable over $A$.
+  Then for every ${\gr a}, {\gr b}\in\U^{\gr z}$ the following are equivalent
+  \begin{itemize}
+  \item[1.] ${\gr a}\equivKP{\gr b}$
+  \item[2.] $e_A({\gr a}\,;{\gr b})$.
+  \end{itemize} 
 \end{theorem}
 \begin{proof} 
   As  ${\gr a}\equivKP{\gr b}$ is equivalent to ${\gr a}\in\K({\gr b}/A)$, it suffices to prove that $e_A(\U\,;{\gr b})=\K({\gr b}/A)$ for every ${\gr b}\in\U^{\gr z}$. 
  
   $\subseteq$. The orbit of $e_A(\U\,;{\gr b})$ under $\Aut(\U/A)$ has cardinality $<\kappa$.
-Hence, by Theorem~\ref{thm_Lascar_indiscernibles}, it is  Lascar invariant over $A$.
-As $\K({\gr b}/A)$ is the least of such sets, $\K({\gr b}/A)\subseteq e_A(\U\,;{\gr b})$.
+  Hence, by Theorem~\ref{thm_Lascar_indiscernibles}, it is  Lascar invariant over $A$.
+  As $\K({\gr b}/A)$ is the least of such sets, $\K({\gr b}/A)\subseteq e_A(\U\,;{\gr b})$.
   
   $\supseteq$. Let $e({\gr z}\,;{\gr w})$ be the type-definable equivalence relation given by Proposition~\ref{prop_bardotto}. 
   The orbit of $\K({\gr b}/A)$ under $\Aut(\U/A)$ has cardinality $<\kappa$. 
-  Hence the equivalence relation $e({\gr z}\,;{\gr w})$ that defines on $\orbit({\gr b}/A)$ is bounded. 
-  By Lemma~\ref{lem_beq_global} there is a type-definable bounded equivalence relation $e'({\gr z}\,;{\gr w})\subseteq L(A)$ that refines $e({\gr z}\,;{\gr w})$ on $\orbit({\gr b}/A)$. 
+  Hence the equivalence relation $e({\gr z}\,;{\gr w})$ that defines on $\Orbit({\gr b}/A)$ is bounded. 
+  By Lemma~\ref{lem_beq_global} there is a type-definable bounded equivalence relation $e'({\gr z}\,;{\gr w})\subseteq L(A)$ that refines $e({\gr z}\,;{\gr w})$ on $\Orbit({\gr b}/A)$. 
   As $e'({\gr z}\,;{\gr w})$ is refined by $e_A({\gr z}\,;{\gr w})$, we obtain $e_A(\U\,;{\gr b})\subseteq e(\U\,;{\gr b})=\K({\gr b}/A)$.
 \end{proof}
 
 The \emph{logic $A$-topology,} or simply the \emph{logic topology\/} when $A$ is empty, is the topology on $\U^{\gr z}$ whose closed sets are the type-definable Lascar $A$-invariant sets.
 It is clearly a compact topology.
-Its Kolmogorov quotient, that is $\U^{\gr z}/\equivKP$, is Hausdorff.
+Its Kolmogorov quotient, that is $\U^{\gr z}/{\equivKP}$, is Hausdorff.
+
+\begin{proposition}\label{prop_trans_action_KP}
+  Let $p({\mr x})\in S(A)$ be given.
+  Let 
+  
+  \ceq{\hfill Q}{=}{\big\{\K({\gr a}/A)\ :\  {\gr a}\models p({\gr z})\big\}}.
+  
+  Then $\Aut(\U/A)$ acts transitively on $Q$, i.e.\@ any two types in $Q$ are conjugated.
+\end{proposition}
+
+\begin{proof}
+  An easy adaptation of the proof of Proposition~\ref{prop_trans_action}.
+\end{proof}
 
 \begin{exercise}
-Prove that the clopen sets in the logic $A$-topology are exactly the sets that are definable over $\acl^\eq A$.
+  Prove that the clopen sets in the logic $A$-topology are exactly the sets that are definable over $\acl^\eq A$.
 \end{exercise}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%

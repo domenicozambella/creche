@@ -1002,7 +1002,8 @@ We define \emph{Lascar persistent/wide\/} similarly.
 %   Let $p({\mr x})\in S(\U)$.
 %   Prove that there is at most one definably closed set $A\subseteq\U^\eq$ such that $\Aut(\U/A)$ is the set of automorphisms that fix $p({\mr x})$.
 % \end{exercise}
-The following lemma is needed for the theorem below (it does not require stability).
+The following lemma, which does not require stability, is a slight modification of Proposition~\ref{prop_trans_action}.
+It is needed for the theorem below.
 
 \begin{lemma}\label{lem_trans_action}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$.
@@ -1015,15 +1016,7 @@ The following lemma is needed for the theorem below (it does not require stabili
 \end{lemma}
 
 \begin{proof}
-  We prove that any two types $q_1,q_2\in Q$ are realized be some $a_1\equiv_Aa_2$, respectively.
-  The claim follows because any automorphism in $\Aut(\U/A)$ that takes $a_1$ to $a_2$ takes also $q_1$ in $q_2$.
-  It suffices to prove that every type $p({\mr x})\in S(A)$ is consistent with every $q\in Q$.
-  Suppose not, then $p({\mr x})\imp\neg\phi({\mr x})$ for some $\phi({\mr x})\in q$.
-  Let $\psi({\mr x})$ be the disjunction of all the (finitely many) conjugates of $\phi({\mr x})$ over $A$.
-  Then $p({\mr x})\imp\neg\psi({\mr x})$.
-  But $\psi({\mr x})\in\qfDelta(\acl^\eq\!A)$ and is invariant over $A$.
-  Therefore $\psi({\mr x})\in\GDelta(A)$.
-  Then $\psi({\mr x})\in p$, a contradiction.
+  An easy adaptation of the proof of Proposition~\ref{prop_trans_action}.
 \end{proof}
 
 \begin{theorem}[ (Finite Equivalence Relation Theorem)]\label{thm_FER}
@@ -1094,6 +1087,7 @@ Recall that $\Psi\subseteq L_{\mr x}(A)$ is some fixed set of formulas and \emph
     \item [2.] $\mrD$ is persistent under the action of $\Autf(\UDelta)$
     \item [3.] $\mrD$ is persistent under the action of $\Autf(\U/A)$.
   \end{itemize}
+  In particular, it follows the if these properties hold for $\mrD$, they hold also for ${\gr g}{\cdot}\mrD$ for any ${\gr G}\in\grZ$. 
 \end{theorem}
 
 It is worthwhile to recall that, under the assumption of stability, Lascar wide is equivalent to Lascar persistent.

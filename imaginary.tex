@@ -2,9 +2,6 @@
 \chapter{Imaginaries}
 \label{imaginary}
 
-\def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox[t]{25ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
-
 
 %\setcounter{page}{1}
 \def\vl{\mr}
@@ -280,8 +277,8 @@ The following is the natural generalization of the notion introduced in Section~
 \begin{definition}
   Let $A\subseteq\U^\eq$ and $a\in\U^\eq$.
   We say that \emph{$a$ is algebraic over $A$\/} if a formula of the form $\phi(a)\wedge\E^{=k}v\,\phi(v)$ holds for some $\phi(v)\in L^\eq(A)$ and some positive integer $k$.
-  We write \emph{\rm acl$^{\rm eq}(A)$\/} for the set of those $a\in\U^\eq$ that are algebraic over $A$.
-  We write \emph{\rm acl$(A)$\/} for $\acl^\eq(A)\cap\U$.
+  We write \emph{${\rm acl}^\eq\!A$\/} for the set of those $a\in\U^\eq$ that are algebraic over $A$.
+  We write \emph{${\rm acl}A$\/} for $\acl^\eq\!A\cap\U$.
 \end{definition}
 
 % \begin{proposition}\label{acl123} For every $A\subseteq\U^\eq$ and every $a\in\U^{\eq}$
@@ -311,13 +308,12 @@ We say \emph{finite equivalence relation\/} for an equivalence relation with fin
 A \emph{finite equivalence formula\/} or \emph{type\/} is a formula, respectively a type, that defines a finite equivalence relation.
 Theorem~\ref{thm_set_alg=feq} below proves that sets algebraic over $A$ are union of classes of a finite equivalence relations definable over $A$.
 
-
 \begin{theorem}\label{thm_set_alg=feq}
 Let $A\subseteq\U^\eq$ and let ${\vl\Aa}\in\U^\eq$ be an element of sort $\sigma({\mr x}\,;{\gr z})$.
 Then the following are equivalent
 \begin{itemize}
 \item[1.] ${\vl\Aa}\in\acl^\eq\!A$
-\item[2.] for some finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$ and some ${\mr c_1},\dots,{\mr c_n}\in\U^{|{\mr y}|}$
+\item[2.] for some finite equivalence formula $\epsilon({\mr x}\,;{\mr y})\in L(A)$ and some ${\mr c_1},\dots,{\mr c_n}\in\U^{{\mr y}}$
 \end{itemize}
 
 \ceq{\hfill {\mr x}\in{\vl\Aa}}{\iff}{\bigvee^n_{i=1} \epsilon({\mr x}\,;{\mr c_i}).}
@@ -340,14 +336,14 @@ Clearly, ${\vl\Aa}$ is union of some these classes.
 
 By the following proposition, the Shelah strong type of ${\mr a}$ over $A$ is $\tp({\mr a}/\acl^\eq\!A)$.
 
-\begin{proposition}\label{prop_Shelah_strong_types}
+\begin{theorem}\label{thm_Shelah_strong_types}
 Let $A\subseteq\U^\eq$ and let ${\mr a},{\mr b}\in\U^{\mr x}$.
 Then the following are equivalent\nobreak
 \begin{itemize}
 \item[1.]  ${\mr a}\ \equivSh_A\, {\mr b}$
 \item[2.]  ${\mr a}\,\equiv_{\acl^\eq\! A}{\mr b}$.
 \end{itemize} 
-\end{proposition}
+\end{theorem}
 \begin{proof}
 \ssf{2}$\IMP$\ssf{1}\quad Assume $\neg$\ssf{1} and let $\epsilon({\mr x}\,;{\mr y})\in L(A)$ be a finite equivalence formula such that $\neg\epsilon({\mr a}\,;{\mr b})$.
 Let ${\vl\D}=\epsilon(\U^{\mr x};{\mr b})$, then  ${\mr b}\in{\vl\D}$ and ${\mr a}\notin{\vl\D}$.
@@ -359,8 +355,44 @@ Therefore, by Proposition~\ref{thm_set_alg=feq}, the set ${\vl\D}$ is union of e
 Then $\neg\epsilon({\mr a}\,;{\mr b})$ and $\neg$\ssf{1} follows.
 \end{proof}
 
-\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}We write \emph{$\S({\gr a}/A)$\/} for the intersection of all definable sets that contain $a$ and are algebraic over $A$.
-By the proposition above $\S({\gr a}/A)=\big\{{\gr b}\,:\,{\gr b}\,\equivSh_A {\gr a}\big\}=\Orbit({\gr a}/\acl^\eq A)$.
+%\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}%
+We write \emph{$\S({\mr a}/A)$\/} for the intersection of all definable sets that contain ${\mr a}$ and are algebraic over $A$.
+This is called the Shelah strong type over $A$ (the symbol is not standard).
+By Theorems~\ref{thm_set_alg=feq} and~\ref{thm_Shelah_strong_types} 
+
+\ceq{\hfill\S({\mr a}/A)}{=}{\Orbit({\mr a}/\acl^\eq A)}
+
+\ceq{}{=}{q(\U^{\mr x})}\hfill where  $q({\mr x})=\tp({\mr a}/\acl^\eq\!A)$
+
+\ceq{}{=}{\bigcap\big\{\epsilon(\U^{\mr x};{\mr a})\hfill :\hfill\epsilon({\mr x}\,;{\mr y})\in L(A)\ \textrm{ a finite equivalence relation}\big\}}
+
+\ceq{}{=}{\bigcap\big\{\mrA\ :\ {\mr a}\in\mrA\in\acl^\eq\!A\big\}.}
+
+\begin{proposition}\label{prop_trans_action}
+  Let $p({\mr x})\in S(A)$ be given.
+  Let 
+  
+  \ceq{\hfill Q}{=}{\big\{q({\mr x})\in S(\acl^\eq\!A)\ :\  p({\mr x})\subseteq q({\mr x})\big\}}.
+  
+  Then $\Aut(\U/A)$ acts transitively on $Q$, i.e.\@ any two types in $Q$ are conjugated.
+\end{proposition}
+
+\begin{proof}
+  By what remarked above, there is a one-to-one correspondence between $Q$ and the set
+
+  \ceq{\hfill Q'}{=}{\big\{\S({\mr a}/A)\ :\  {\mr a})\models p({\mr x})\big\}.}
+
+  Then the proposition is immediate.
+  % We prove that any two types $q_1,q_2\in Q$ are realized be some $a_1\equiv_Aa_2$, respectively.
+  % The claim follows because any automorphism in $\Aut(\U/A)$ that takes $a_1$ to $a_2$ takes also $q_1$ in $q_2$.
+  % It suffices to prove that every type $p({\mr x})\in S(A)$ is consistent with every $q\in Q$.
+  % Suppose not, then $p({\mr x})\imp\neg\phi({\mr x})$ for some $\phi({\mr x})\in q$.
+  % Let $\psi({\mr x})$ be the disjunction of all the (finitely many) conjugates of $\phi({\mr x})$ over $A$.
+  % Then $p({\mr x})\imp\neg\psi({\mr x})$.
+  % But $\psi({\mr x})$ is invariant over $A$.
+  % Therefore $\psi({\mr x})\in L(A)$.
+  % Then $\psi({\mr x})\in p$, a contradiction.
+\end{proof}
 
 
 \begin{exercise}
@@ -376,7 +408,6 @@ Without using the $\eq$-expansion, prove that ${\vl\Aa}$ is union of classes of 
 \begin{exercise}
 Let $T$ be strongly minimal and let $\phi({\mr x}\,;{\gr z})\in L(A)$ with $|{\mr x}|=1$.
 For arbitrary ${\gr b}\in\U^{\gr z}$, prove that if the orbit of $\phi(\U^{\mr x}; {\gr b})$ over $A$ is finite, then $\phi(\U^{\mr x}; {\gr b})$ is definable over $\acl A$.
-
 Hint: you can use Theorem~\ref{thm_set_alg=feq}.
 \end{exercise}
 
@@ -389,7 +420,7 @@ Hint: you can use Theorem~\ref{thm_set_alg=feq}.
 \section{Elimination of imaginaries}\label{elimination_imaginaries}
 
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox[t]{30ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+\def\ceq#1#2#3{\parbox[t]{20ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 For the time being, we agree that \textit{imaginary\/} is just another word for definable set.
 Though this is not formally correct (cf.\@ Section~\ref{imaginaries_long}), it is morally true and helps to understand the terminology.
@@ -581,11 +612,11 @@ The rest of this section is dedicated to the proof that the theory of the random
 \begin{lemma}\label{lem_suff_wei}
   The following is a sufficient condition for weak elimination of imaginaries
 
-  $\natural$\qquad $\D\subseteq\U^{|x|}$ is definable both over $A$ and over $B$, then it is definable over $A\cap B$.
+  $\natural$\qquad $\D\subseteq\U^{x}$ is definable both over $A$ and over $B$, then it is definable over $A\cap B$.
 \end{lemma}
 
 \begin{proof}
-  Let $\D\subseteq\U^{|x|}$ be a definable set, and pick a finite set $A\subseteq\U$ of minimal size over which $\D$ is definable. 
+  Let $\D\subseteq\U^{x}$ be a definable set, and pick a finite set $A\subseteq\U$ of minimal size over which $\D$ is definable. 
   Now, let $f$ be an automorphism that fixes $\D$. Then $\D$ is definable over $A\cap f[A]$, so by minimality of $|A|$ we have $A= f[A]$. 
   Now let $a$ be an enumeration of $A$.
   By the above, $a$ has a finite orbit under $\Aut(\U/\{\D\})$.
@@ -637,7 +668,7 @@ The rest of this section is dedicated to the proof that the theory of the random
 
 \begin{proof}
   We prove ${\natural}$ of Lemma~\ref{lem_suff_wei}.
-  Suppose not and pick $a,b\in\U^{|x|}$ such that $a\equiv_{A\cap B}b$ and $a\in\D\niff b\in\D$.
+  Suppose not and pick $a,b\in\U^{x}$ such that $a\equiv_{A\cap B}b$ and $a\in\D\niff b\in\D$.
 
   Note that $\D$ is definable over $f[A]$ for every $f\in\Aut(\U/B)$ and the same holds swapping $A$ and $B$.
   Therefore we can replace $A$ and $B$ with suitable $f[A]$ and $g[B]$ that are disjoint of $\range a$ and $\range b$, rispectively (for simplicity we are assuming that $a$ and $b$ do not contain elements in $A\cap B$).
