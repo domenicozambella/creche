@@ -3,7 +3,7 @@
 \label{stability}
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+\def\ceq#1#2#3{\parbox[t]{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 Chapter under revision.
@@ -669,7 +669,7 @@ If $s_i=0$ then from \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\ph
 \section{Symmetry and stationarity}
 \label{stationarity}
 
-\def\ceq#1#2#3{\parbox{20ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+\def\ceq#1#2#3{\parbox[t]{20ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 We say that $T$ is a \emph{stable theory\/} if every formula is stable.
 Most theorems in this section have a formulation that only requires the stability of a given formula $\phi({\mr x}\,;{\gr z})\in L$.
@@ -894,13 +894,13 @@ A more general version of the theorem holds which requires a different proof.
   As ${\mr\D_{p,\phi^{\rm op}}}\in\acl^\eq\!A$ by Proposition~\ref{prop_type_over_acl2}, this proves the theorem when $A=\acl^\eq\!A$.
 
   For the general case, reason as follows.
-  Let $f_1,\dots,f_m\in\Aut(\U/A)$ be such that the sets $f_i{\mr\D_{p,\phi^{\rm op}}}$ span the whole orbit of ${\mr\D_{p,\phi^{\rm op}}}$ over $A$.
-  Clearly
+  Let 
+  
+  \ceq{\hfill\bigcup_{f\in\Aut(\U/A)} f{\mr\D_{p,\phi^{\rm op}}}}{=}{\bigvee_{f\in\Aut(\U/A)}\theta(\U^{\mr x};f{\gr b_1},\dots,f{\gr b_n}).}
 
-  \ceq{\hfill\bigcup_{i=1}^m f_i{\mr\D_{p,\phi^{\rm op}}}}{=}{\bigvee_{i=1}^m\theta(\U^{\mr x};f_i{\gr b_1},\dots,f_i{\gr b_n}).}
-
+  As ${\mr\D_{p,\phi^{\rm op}}}\in\acl^\eq\!A$, this is a finite union, respectively disjunction.
   The set on the l.h.s.\@ is invariant (hence definable) over $A$.
-  Therefore the formula on the r.h.s.\@ is the required positive Boolean combination.
+  The formula on the r.h.s.\@ is the required positive Boolean combination.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -910,7 +910,7 @@ A more general version of the theorem holds which requires a different proof.
 \section{The action of the Lascar group on stable formulas}\label{Lascar_action}
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox{10ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+\def\ceq#1#2#3{\parbox[t]{10ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 We adopt the notation and terminology of Chapter~\ref{actions}. The set $\grZ\subseteq\U^{\gr z}$ is fixed but arbitrary.
 The set $\mrX$ is to be inferred from the context.
@@ -996,27 +996,6 @@ We define \emph{Lascar persistent/wide\/} similarly.
   By Theorem~\ref{thm_stationarity} there is a type $p({\mr x})\in S_\Delta(\U)$ finitely consistent with $q({\mr x})$ that is Lascar invariant and therefore persistent.
   Hence, by Corollary~\ref{corol_def_mu}, $\mrD$ and $\neg\mrD$ are not both generic.
   If $\mrD$ is not generic then $\neg\mrD$ is persistent and, by Proposition~\ref{prop_stable_genericiffpersistent}, generic.
-\end{proof}
-
-% \begin{exercise}\label{ex_Cb}
-%   Let $p({\mr x})\in S(\U)$.
-%   Prove that there is at most one definably closed set $A\subseteq\U^\eq$ such that $\Aut(\U/A)$ is the set of automorphisms that fix $p({\mr x})$.
-% \end{exercise}
-The following lemma, which does not require stability, is a slight modification of Proposition~\ref{prop_trans_action}.
-It is needed for the theorem below.
-
-\begin{lemma}\label{lem_trans_action}
-  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$.
-  Let $p_0({\mr x})$ be a complete $\GDelta(A)$-type.
-  Finally, let 
-  
-  \ceq{\hfill Q}{=}{\big\{q({\mr x})\subseteq\GDelta(\acl^\eq\!A)\ :\ q({\mr x})\proves p_0({\mr x})\textrm{ and is complete}\big\}}.
-  
-  Then $\Aut(\U/A)$ acts on $Q$ transitively, i.e.\@ any two types in $Q$ are conjugated.
-\end{lemma}
-
-\begin{proof}
-  An easy adaptation of the proof of Proposition~\ref{prop_trans_action}.
 \end{proof}
 
 \begin{theorem}[ (Finite Equivalence Relation Theorem)]\label{thm_FER}
@@ -1153,12 +1132,23 @@ It is worthwhile to recall that, under the assumption of stability, Lascar wide 
   The corollary follows easily.
 \end{proof}
 
+\begin{proposition}
+  Let $\Delta$ be stable.
+  Assume that the action of $\grZ$ is transitive.
+  Then every $\grZ$-generic type $q({\mr x})\in S_\Delta(\grZ)$ is fixed by any ${\gr g}\in\gr\Z^0$.
+\end{proposition}
+
+\begin{proof}
+  We can assume that $\Delta$ is finite.
+  
+\end{proof}
+
 The stabilizer of the type $q({\mr x})\in S_\Delta(\grZ)$ is the subgroup $\{{\gr h}\in\grZ\ :\ q({\mr x})={\gr h}{\cdot}q({\mr x})\}$.
 Which we can write also as $\{{\gr h}\in\grZ\ :\ {\gr\D_{q,\phi}}={\gr h}{\cdot}{\gr\D_{q,\phi}},\textrm{ for every }\phi({\mr x}\,;{\gr z})\in\Delta\}$.
 When $\Delta$ is stable, it is a $\qfDelta(\mrX)$-type-definable set (definable, when $\Delta$ is finite).
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox{5ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+\def\ceq#1#2#3{\parbox[t]{5ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 \begin{theorem}\label{thm_Z0_stable}
   Let $\Delta$ be stable.
   Assume that $\mrX=\grZ$.
@@ -1231,7 +1221,7 @@ When $\Delta$ is stable, it is a $\qfDelta(\mrX)$-type-definable set (definable,
 \label{stable_theories}
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox{15ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+\def\ceq#1#2#3{\parbox[t]{15ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 \begin{theorem}[ (Pierre Simon)]
   If every formula $\phi(x\,;y)\in L(\U)$, where $|x|=|y|=1$, is stable then $T$ is stable.
