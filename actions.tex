@@ -37,6 +37,7 @@ $\LDelta_{{\rm\,qf},\,{\mr x}}(\grZ)$ with
 % $\pmDelta(\grZ)$, respectively 
 $\qfDelta(\grZ)$.
 We write $S_\Delta(\grZ)$ for the set of complete $\qfDelta(\grZ)$-types~--~which we may conveniently think as subsets of $\LDelta_{{\rm\,at^\pm}\!,\,{\mr x}}(\grZ)$.
+In this chapter the types in $S_\Delta(\grZ)$ are required to be finite consistent $\mrX$~--~a piece of information that is not displayed by the notation as there is little risk of ambiguity.
 
 A set $\mrD\subseteq\mrX$ is (relatively) \emph{$\qfDelta({\grZ})$-definable\/} if $\mrD=\phi(\mrX)$ for some $\phi({\mr x})\in\qfDelta({\grZ})$.
 Similarly, we define (relatively) \emph{$\qfDelta({\grZ})$-type-definable\/} sets.
@@ -248,39 +249,39 @@ A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
   By $G$-invariance $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$.
 \end{proof}
 
-Let $q({\mr x})\subseteq\qfDelta(\grZ)$.
-We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\qfDelta(\grZ)$-definable set $\mrD$ and every $g_1,g_2\in G$ if $q({\mr x})\proves{\mr x}\in(g_1{\cdot}\mrD\cup g_2{\cdot}\mrD)$ then $q({\mr x})\proves{\mr x}\in g_i{\cdot}\mrD$ for some $i$.
-The following fact is immediate.
+% Let $q({\mr x})\subseteq\qfDelta(\grZ)$.
+% We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\qfDelta(\grZ)$-definable set $\mrD$ and every $g_1,g_2\in G$ if $q({\mr x})\proves{\mr x}\in(g_1{\cdot}\mrD\cup g_2{\cdot}\mrD)$ then $q({\mr x})\proves{\mr x}\in g_i{\cdot}\mrD$ for some $i$.
+% The following fact is immediate.
 
-\begin{fact}
-  The following are equivalent for every $\qfDelta(\grZ)$-type $q({\mr x})$
-  \begin{itemize}
-    \item [1.] $q({\mr x})$ is $G$-prime and $G$-invariant
-    \item [2.] if $\mrD$ is $\qfDelta(\grZ)$-definable, $g\in G$, and $q({\mr x})\proves{\mr x}\in(\mrD\cup g{\cdot}\mrD)$, then $q({\mr x})\proves{\mr x}\in\mrD$.
-  \end{itemize}
-\end{fact}
+% \begin{fact}
+%   The following are equivalent for every $\qfDelta(\grZ)$-type $q({\mr x})$
+%   \begin{itemize}
+%     \item [1.] $q({\mr x})$ is $G$-prime and $G$-invariant
+%     \item [2.] if $\mrD$ is $\qfDelta(\grZ)$-definable, $g\in G$, and $q({\mr x})\proves{\mr x}\in(\mrD\cup g{\cdot}\mrD)$, then $q({\mr x})\proves{\mr x}\in\mrD$.
+%   \end{itemize}
+% \end{fact}
 
-\begin{proposition}
-  For every type $q({\mr x})\subseteq\qfDelta(\grZ)$ the following are equivalent
-  \begin{itemize}
-    \item [1.] $q({\mr x})\proves\gamma_G({\mr x})$
-    \item [2.] $q({\mr x})$ is $G$-prime and $G$-invariant.
-  \end{itemize}
-\end{proposition}
+% \begin{proposition}
+%   For every type $q({\mr x})\subseteq\qfDelta(\grZ)$ the following are equivalent
+%   \begin{itemize}
+%     \item [1.] $q({\mr x})\proves\gamma_G({\mr x})$
+%     \item [2.] $q({\mr x})$ is $G$-prime and $G$-invariant.
+%   \end{itemize}
+% \end{proposition}
 
-\begin{proof}
-  \ssf1$\IMP$\ssf2.
-  Suppose $q({\mr x})\proves{\mr x}\in(\mrD\cup g{\cdot}\mrD)$.
-  Let $p({\mr x})\in S_\Delta(\grZ)$ extend $q({\mr x})$.
-  By completeness $p({\mr x})\proves{\mr x}\in\mrD$ or $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$.
-  As $p({\mr x})$ is $G$-invariant by Theorem~\ref{thm_generic_invariant}, it follows that
-  $p({\mr x})\proves{\mr x}\in\mrD$.
-  Finally, as $p({\mr x})$ is arbitrary, $q({\mr x})\proves{\mr x}\in\mrD$. 
+% \begin{proof}
+%   \ssf1$\IMP$\ssf2.
+%   Suppose $q({\mr x})\proves{\mr x}\in(\mrD\cup g{\cdot}\mrD)$.
+%   Let $p({\mr x})\in S_\Delta(\grZ)$ extend $q({\mr x})$.
+%   By completeness $p({\mr x})\proves{\mr x}\in\mrD$ or $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$.
+%   As $p({\mr x})$ is $G$-invariant by Theorem~\ref{thm_generic_invariant}, it follows that
+%   $p({\mr x})\proves{\mr x}\in\mrD$.
+%   Finally, as $p({\mr x})$ is arbitrary, $q({\mr x})\proves{\mr x}\in\mrD$. 
 
-  \ssf2$\IMP$\ssf1.
-  As $\mrD$ is $G$-generic and $q({\mr x})$ is $G$-prime, $q({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in G$.
-  Finally $q({\mr x})\proves{\mr x}\in\mrD$ by invariance.
-\end{proof}
+%   \ssf2$\IMP$\ssf1.
+%   As $\mrD$ is $G$-generic and $q({\mr x})$ is $G$-prime, $q({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in G$.
+%   Finally $q({\mr x})\proves{\mr x}\in\mrD$ by invariance.
+% \end{proof}
 
 \begin{exercise}
   Prove that if $p(x)\in S(\U)$ is finitely satisfiable in every $M\supseteq A$ then it is persistent under the action of $\Autf(\U/A)$.
@@ -341,7 +342,116 @@ The following fact is immediate.
 %     \item [2.] every finite cover of $\mrD$ by $\pmDelta({\grZ})$-definable sets contains a $G$-persistent set.
 %   \end{itemize}
 % \end{exercize}
-  %%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The action of normal subgroups}\label{normalsubgroups}
+
+Let $H\trianglelefteq G$.
+The following is an immediate consequence of normality.
+
+\begin{remark}\label{rem_invariance_normalsubg}
+% \newlength{\ceqlength}
+% \settowidth{\ceqlength}{p(x) is H-invariant\ }
+% \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+% \def\ceq#1#2#3{\parbox[t]{\ceqlength}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+%
+  For every $\mrD\subseteq\mrX$ and every $g\in G$
+  
+  \ceq{\hfill\mrD\textrm{ is }H\textrm{-foo}}{\IFF}{g{\cdot}\mrD\textrm{ is }H\textrm{-foo},}
+  
+  where \textit{foo\/} can be replaced by \textit{generic,} \textit{invariant,} \textit{persistent,} \textit{wide.}
+  In particular, the type $\gamma_H({\mr x})$ is $G$-invariant.
+  % It also follows that for any $p({\mr x})\in S_\Delta(\grZ)$
+  % \begin{itemize}
+  %   \item [3.] \ceq{\hfill p({\mr x})\textrm{ is }H\textrm{-invariant}}{\IFF}{g\cdot p({\mr x})\textrm{ is }H\textrm{-invariant}.}
+  % \end{itemize}
+\end{remark}
+
+Recall that if $\gamma_H({\mr x})$ is finitely consistent, then $H$-generic sets are $H$-wide, cf.\@ Theorem~\ref{thm_generic_invariant2}.
+As it happens, we can slightly strengthen this fact (because $G$-genericity is a weaker assumption than $H$-genericity).
+
+\begin{proposition}\label{prop_Ggeneric_Hpersistent}
+  Assume that $\gamma_H({\mr x})$ is finitely consistent.
+  Let $\mrD$ be a $\qfDelta(\grZ)$-definable set.
+  Then if $\mrD$ is $G$-generic it is also $H$-wide.
+\end{proposition}
+
+\begin{proof}
+  Let $p({\mr x})\in S_\Delta(\grZ)$ be finitely consistent with $\gamma_H({\mr x})$.
+  As $\mrD$ is $G$-generic, by completeness $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in G$.
+  Equivalently, $g^{-1}\!\cdot p({\mr x})\proves{\mr x}\in\mrD$.
+  As $p({\mr x})$ is $H$-persistent, from Remark~\ref{rem_invariance_normalsubg} we obtain that also $g^{-1}\!\cdot p({\mr x})$ is $H$-persistent.
+  Then the proposition follows from Theorem~\ref{thm_generic_invariant2}.
+\end{proof}
+
+As $\gamma_G({\mr x})$ may be inconsistent, the following notion is relevant
+
+\ceq{\hfill Q}{=}{\big\{q({\mr x})\subseteq\gamma_G({\mr x})\;:\textrm{ maximally finitely consistent set}\big\}}.
+
+It is easy to see that $Q$ is closed under the action of $G$.
+Define 
+
+\ceq{\hfill H}{=}{\bigcap_{q\in Q}\Stab(q)}.
+
+Then $H\trianglelefteq G$.
+It is easy to verify that $\gamma_H({\mr x})\subseteq q({\mr x})$ for every $q\in Q$.
+In particular, $\gamma_H({\mr x})$ is consistent.
+In fact, if $\mrD$ is $H$-generic, then $q({\mr x})\proves {\mr x}\in h{\cdot}\mrD$ for some $h\in H$.
+% Equivalently $h^{-1}{\cdot}q({\mr x})\proves{\mr x}\in \mrD$.
+Then $q({\mr x})\proves\mrD$ follows because $h\in\Stab(q)$.
+
+\begin{example}
+  Assume that $G=\Aut(\U/A)$ and $\mrX=O({\mr a}/A)$ for some ${\mr a}\in\U^{\mr x}$.
+  Let $\grZ=\U^z$ and $\Delta=L_{{\mr x},{\gr z}}(A)$.
+  If $\epsilon({\mr x}\,;{\mr y})\in L(A)$ is a finite equivalence relation then, for every ${\mr b}\in\mrX$, the sets $\epsilon(\mrX\,;{\mr b})$ are $G$-generic.
+  Therefore, all sets in $\acl^\eq\!A$ that intersect $\mrX$ are $G$-generic.
+  Let $Q$ be as above.\
+  Then any $q({\mr x})\in Q$ decides all formulas ${\mr x}\in\mrD$ for $\mrD\in\acl^\eq\!A$.
+  Therefore restriction to $\acl^\eq\!A$ is a surjective map from $Q$ onto $S_{\mr x}(\acl^\eq\!A)$.
+  It follows that $H\le\Aut(\U/\acl^\eq\!A)$, where $H$ the group $H$ defined above.
+
+  Ideally, we would like to have that $H=\Aut(\U/\acl^\eq\varnothing)$.
+  This happens when the types in $S_{\mr x}(\acl^\eq\!A)$ have a unique extension to a type in $Q$.
+  We will prove that this is the case under the assumption of stability.
+  However it is not true in general, see Exercise~\ref{ex_H_neq_acleq}.
+\end{example}
+
+\begin{exercise}\label{ex_H_neq_acleq}
+  With the notation of the example above.
+  Show that $\Aut(\U/\acl^\eq\varnothing)$ differs from $H$ when $T=T_{\rm dlo}$.
+  Hint: the algebraic closure of the empty set is trivial, while $Q$ is not.
+\end{exercise}
+
+\begin{comment}
+The following normal subgroup of $G$ is particularly interesting
+
+{
+\def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{8ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+
+\ceq{\hfill G^0}{=}{\big\{g\in G\ :\ g{\cdot}\mrD=\mrD\textrm{ for every }G\textrm{-generic }\qfDelta(\grZ)\textrm{-type-definable set }\mrD\big\}}.
+}
+
+Note that by Exercise~\ref{ex_generic_type_vs_formulas} we can replace type-definable with definable in the definition of $G^0$.
+
+\begin{proposition}
+  Assume the action of $G$ is regular.
+  Let $K\le G$ be such that all $K$-orbits (that is, $K{\cdot}{\mr a}$, for ${\mr a}\in\mrX$) are $\qfDelta(\grZ)$-type-definable.
+  Then, if $K$ has finite index, $G^0\le K$.
+\end{proposition}
+
+\begin{proof}
+  Let $g\in G^0$.
+  As $K$ has finite index and the action is transitive $K{\cdot}{\mr a}$ is $G$-generic for every ${\mr a}\in\mrX$.
+  Then $g{\cdot}K{\cdot}{\mr a}=K{\cdot}{\mr a}$.
+  By regularity, $g{\cdot}K=K$, then $g\in K$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%
@@ -384,6 +494,9 @@ Note that when $G$ acts transitively on $\mrX$, equivalence classes of $G$-invar
   Then $\epsilon(\U^{\mr x};{\mr a})\subseteq\mrD$.
   As the action is transitive, $\epsilon(\U^{\mr x};{\mr a})$, and a fortiori $\mrD$, is $G$-generic.
 \end{proof}
+
+
+
 
 The following lemma refine Theorem~\ref{thm_Shelah_strong_types} and Proposition~\ref{prop_trans_action} by adding a requirement on the language.
 The proof is essentially the same (but it would be rude to leave it as an exercise).
@@ -456,6 +569,7 @@ The proof is essentially the same (but it would be rude to leave it as an exerci
   Pick any ${\mr a}\models g^{-1}\!\cdot q({\mr x})$.
   As $g^{-1}\!\cdot q({\mr x})\in Q$, by the second claim in the lemma and compactness,  $\epsilon(\U^{\mr x}\,;{\mr a})\subseteq\mrD$ for some finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\GDelta(A)$.
 \end{proof}
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -531,9 +645,9 @@ Define the following type
   From Fact~\ref{fact_fip}, $\mrD$ is not weakly $G$-persistent, and $\neg$\ssf2 follows.
 \end{proof}
 
-Note that 
-%from Corollary~\ref{corol_str_gen} and~\ref{corol_q_w_pers} 
-the $G$-translate of a weakly $G$-persistent type is weakly persistent.
+% Note that 
+% %from Corollary~\ref{corol_str_gen} and~\ref{corol_q_w_pers} 
+% the $G$-translate of a weakly $G$-persistent type is weakly $G$-persistent.
 
 \begin{exercise}
   Show that $G$-generic sets need not be closed under intersection.
@@ -632,7 +746,7 @@ The notions introduced in Section~\ref{strong_genericity} offer some hint.
   Let $\Delta=L_{{\mr x}\,{\gr z}}$ and $\grZ=\U^{\gr z}$.
   Then $d({\mr a},{\mr b})$ coincides with the distance in the Lascar graph.
   As shown in Proposition~\ref{prop_Lascar_distance_type_def} the sets $K^n\cdot{\mr a}=\{{\mr x}:d({\mr x},{\mr a})\le n\}$ are type definable.
-  Then from Theorem~\ref{thm_newelski} it follows that $\Ll({\mr a}/A)$ is type definable (if and) only if it has a finite diameter.
+  Then from Theorem~\ref{thm_newelski} it follows that $\Ll({\mr a}/A)$ is type definable (if and) only if it has finite diameter.
 \end{example} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -642,7 +756,7 @@ The notions introduced in Section~\ref{strong_genericity} offer some hint.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{A tamer landscape}\label{tame_landscape}
 
-Under suitable assumptions -- e.g.\@ see Corollary~\ref{corol_persistent_finsat} -- some  notion introduced in this chapter coalesce and we are left with a tamer landscape.
+Under suitable assumptions -- e.g.\@ see Theorem~\ref{thm_persistent_finsat} -- some  notions introduced in this chapter coalesce and we are left with a tamer landscape.
 In general, we have the following.
 
 
@@ -655,7 +769,8 @@ In general, we have the following.
   \begin{itemize}
     \item[2.] $G$-generic $\qfDelta({\grZ})$-definable sets are closed under intersection 
     \item[3.] $G$-generic $\qfDelta({\grZ})$-definable sets are strongly $G$-generic
-    \item[4.] weakly persistent $\qfDelta({\grZ})$-definable sets are $G$-persistent.
+    \item[4.] weakly $G$-persistent $\qfDelta({\grZ})$-definable sets are $G$-persistent
+    \item[5.] $G$-generic $\qfDelta({\grZ})$-definable sets are $G$-wide.
   \end{itemize}
 \end{theorem}
 
@@ -666,9 +781,12 @@ In general, we have the following.
   Let $\mrC$ and $\mrD$ be $G$-generic $\qfDelta({\grZ})$-definable sets.
   Suppose for a contradiction that $\mrC\cap\mrD$ is not $G$-generic.
   Then $\neg(\mrC\cap\mrD)$ is $G$-persistent.
-  By \ssf1 and Theorem~\ref{thm_generic_invariant2} there is a $G$-invariant global $\qfDelta({\grZ})$-type $p({\mr x})$ containing ${\mr x}\notin\mrC\cap\mrD$.
+  By \ssf1 and Theorem~\ref{thm_generic_invariant2} there is a $G$-invariant type $p({\mr x})\in S_\Delta(\grZ)$ such that $p({\mr x})\proves{\mr x}\notin\mrC\cap\mrD$.
   By completeness either $p({\mr x})\proves{\mr x}\notin\mrC$ or $p({\mr x})\proves{\mr x}\notin\mrD$.
   This is a contradiction because by Theorem~\ref{thm_generic_invariant} $p({\mr x})\proves{\mr x}\in\mrC$ and $p({\mr x})\proves{\mr x}\in\mrD$.
+
+  \ssf1$\IMP$\ssf5.
+  By~\ssf{3}, because strongly $G$-generic sets are $G$-persistent.
   %
   % \ssf4$\IMP$\ssf1.
   % Note that, by \ssf3, the type ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ coincides with $\gamma_G({\mr x})$, in particular $\gamma_G({\mr x})$ is finitely consistent.
@@ -684,80 +802,11 @@ In general, we have the following.
 % \end{assumption}
 
 \begin{remark}\label{rem_coalesce} 
-  Assume that conditions \ssf2-\ssf4 in Theorem~\ref{thm_coalesce} hold.
-  Then the types $\gamma_G({\mr x})$ and ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ coincide, and therefore $G$-invariant global types exist.
+  Assume that conditions \ssf1 in Theorem~\ref{thm_coalesce} holds.
+  Then the types $\gamma_G({\mr x})$ and ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ coincide and are finitely consistent.
+  Also, $G$-invariant global types exist.
   It is also worth mentioning that every positive Boolean combination of $G$-generic sets is $G$-generic.
 \end{remark}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The action of normal subgroups}\label{normalsubgroups}
-
-Let $H\trianglelefteq G$.
-The following is an immediate consequence of normality.
-
-\begin{remark}\label{rem_invariance_normalsubg}
-\newlength{\ceqlength}
-\settowidth{\ceqlength}{p(x) is H-invariant\ }
-\def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox[t]{\ceqlength}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
-%
-  For every $\mrD\subseteq\mrX$ and every $g\in G$
-  
-  \ceq{\hfill\mrD\textrm{ is }H\textrm{-foo}}{\IFF}{g{\cdot}\mrD\textrm{ is }H\textrm{-foo},}
-  
-  where \textit{foo\/} can be replaced by \textit{generic,} \textit{invariant,} \textit{persistent,} \textit{wide.}
-  In particular, the type $\gamma_H({\mr x})$ is $G$-invariant.
-  % It also follows that for any $p({\mr x})\in S_\Delta(\grZ)$
-  % \begin{itemize}
-  %   \item [3.] \ceq{\hfill p({\mr x})\textrm{ is }H\textrm{-invariant}}{\IFF}{g\cdot p({\mr x})\textrm{ is }H\textrm{-invariant}.}
-  % \end{itemize}
-\end{remark}
-
-Recall that if $\gamma_H({\mr x})$ is finitely consistent, then $H$-generic sets are $H$-wide, cf.\@ Theorem~\ref{thm_generic_invariant2}.
-As it happens, we can slightly strengthen this fact.
-
-\begin{proposition}\label{prop_Ggeneric_Hpersistent}
-  Assume that $\gamma_H({\mr x})$ is finitely consistent.
-  Let $\mrD$ be a $\qfDelta(\grZ)$-definable set.
-  Then if $\mrD$ is $G$-generic it is also $H$-wide.
-\end{proposition}
-
-\begin{proof}
-  Let $p({\mr x})\in S_\Delta(\grZ)$ be finitely consistent with $\gamma_H({\mr x})$.
-  As $\mrD$ is $G$-generic, by completeness $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in G$.
-  Equivalently, $g^{-1}\!\cdot p({\mr x})\proves{\mr x}\in\mrD$.
-  As $p({\mr x})$ is $H$-persistent, by Remark~\ref{rem_invariance_normalsubg} $g^{-1}\!\cdot p({\mr x})$ is also $H$-persistent.
-  Then the proposition follows from Theorem~\ref{thm_generic_invariant2}.
-\end{proof}
-\begin{comment}
-The following normal subgroup of $G$ is particularly interesting
-
-{
-\def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox[t]{8ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
-
-\ceq{\hfill G^0}{=}{\big\{g\in G\ :\ g{\cdot}\mrD=\mrD\textrm{ for every }G\textrm{-generic }\qfDelta(\grZ)\textrm{-type-definable set }\mrD\big\}}.
-}
-
-Note that by Exercise~\ref{ex_generic_type_vs_formulas} we can replace type-definable with definable in the definition of $G^0$.
-
-\begin{proposition}
-  Assume the action of $G$ is regular.
-  Let $K\le G$ be such that all $K$-orbits (that is, $K{\cdot}{\mr a}$, for ${\mr a}\in\mrX$) are $\qfDelta(\grZ)$-type-definable.
-  Then, if $K$ has finite index, $G^0\le K$.
-\end{proposition}
-
-\begin{proof}
-  Let $g\in G^0$.
-  As $K$ has finite index and the action is transitive $K{\cdot}{\mr a}$ is $G$-generic for every ${\mr a}\in\mrX$.
-  Then $g{\cdot}K{\cdot}{\mr a}=K{\cdot}{\mr a}$.
-  By regularity, $g{\cdot}K=K$, then $g\in K$.
-\end{proof}
-\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%

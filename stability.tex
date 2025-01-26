@@ -824,7 +824,7 @@ Note that when $A$ is a model $\GDelta(A)$-formulas are equivalent to $\qfDelta(
 % Without loss of generality we can assume $p({\mr x})\in S(\U^\eq)$. 
 % \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{corol_Ltype_Shtype}
 ($T$ stable)
 The following are equivalent
 \begin{itemize}
@@ -861,7 +861,7 @@ The following are equivalent
 % \end{proof}
 
 The following theorem presents a property of definability that seems to go in the opposite direction.
-It has an application in the proof of Corollary~\ref{corol_persistent_finsat}.
+It has an application in the proof of Theorem~\ref{thm_persistent_finsat}.
 
 \begin{theorem}\label{thm_stability_definable_rovescio1}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
@@ -912,12 +912,14 @@ A more general version of the theorem holds which requires a different proof.
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{10ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
-We adopt the notation and terminology of Chapter~\ref{actions}. The set $\grZ\subseteq\U^{\gr z}$ is fixed but arbitrary.
-The set $\mrX$ is to be inferred from the context.
-We say \emph{Lascar generic\/} over $A$ for generic under the action of $\Autf(\U/A)$.
-We define \emph{Lascar persistent/wide\/} similarly.
+We adopt the notation and terminology of Chapter~\ref{actions}.
+We consider the action of the group $G=\Aut(\UDelta/A)$ and its normal subgroup $H=\Autf(\UDelta/A)$, which by Corollary~\ref{corol_Ltype_Shtype} coincides with the automorphism group $\UDelta$ over $\LDelta\mbox{-}\acl^\eq\!A$.
+The set $\grZ\subseteq\U^{\gr z}$ is fixed but arbitrary.
+The set $\mrX$ is to be inferred from the context: we may use $\U^{\mr x}$, a $G$-orbit or an $H$-orbit.
+We say \emph{generic\/} over $A$ and \emph{Lascar generic\/} over $A$ for generic under the action of $\Aut(\UDelta/A)$, respectively $\Autf(\UDelta/A)$.
+We use \emph{persistent/wide\/} similarly.
 
-\begin{corollary}\label{corol_persistent_finsat}
+\begin{theorem}\label{thm_persistent_finsat}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Assume $\mrX$ is type definable.
   Finally, let $\mrD$ be a $\qfDelta(\grZ)$-definable set.
@@ -927,25 +929,28 @@ We define \emph{Lascar persistent/wide\/} similarly.
     \item[2.] $\mrD$ is Lascar wide over $A$. 
     % \item[2.] $\{{\mr x}\in\mrD\}\cup q({\mr x})$ is finitely satisfied every in $M\supseteq A$.
   \end{itemize}
-\end{corollary}
+\end{theorem}
 \begin{proof}
   As Boolean combinations of stable formulas are stable, we can assume that $\mrD$ is defined by the formula $\phi({\mr x}\,;{\gr b})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$.
 
   Only \ssf1$\IMP$\ssf2 requires a proof.
   Let $q({\mr x})$ be the type defining $\mrX$.
-  It suffices to prove that $\psi({\mr x})\wedge\phi({\mr x}\,;{\gr b})$ is finitely satisfied in every $M\supseteq A$.
-  Then, by Corollary~\ref{corol_stable_coheir_over_models}, it follows that $q({\mr x})\cup\{\phi({\mr x}\,;{\gr b})\}$ is contained in a type $p({\mr x})\in S_\Delta(\U)$ that is Lascar invariant over $A$.
+  Let $\psi({\mr x})$ be a conjunction of formulas in $q({\mr x})$.
+  It suffices to prove that $\psi({\mr x})\wedge\phi({\mr x}\,;{\gr b})$ is satisfied in every $M\supseteq A$.
+  Then, by Corollary~\ref{corol_stable_coheir_over_models}, it follows that $q({\mr x})\cup\{\phi({\mr x}\,;{\gr b})\}$ is contained in a type $p({\mr x})\in S_\Delta(\grZ)$ that is Lascar invariant over $A$.
   Then $\mrD$ is Lascar wide by Theorem~\ref{thm_generic_invariant2}.
   
   Let $M\supseteq A$ be arbitrary.
   Note that, as $q({\mr x})$ is invariant over $M$, we may assume that $q({\mr x})\subseteq L(M)$.
   Let $\psi({\mr x})$ be a conjunction of formulas in $q({\mr x})$. 
-  Let $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be the formula in the proof of Theorem~\ref{thm_stability_definable_rovescio1}.
+  Let $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be the formula in the proof of Theorem~\ref{thm_stability_definable_rovescio2}.
   As $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ is equivalent to a formula in $L(M)$, by elementarity it satisfiable in $M$.
   Hence so is $\psi({\mr x})\wedge\phi({\mr x}\,;{\gr b_i})$ for some $i$.
   As ${\gr b_i}\equiv_M{\gr b}$, also $\phi({\mr x}\,;{\gr b})$ is satisfiable.
 \end{proof}
 
+This theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coalesce} applies with $\Autf(\U/A)$ for $G$.
+Therefore, in particular, Lascar generic sets are Lascar wide.
 % \begin{proposition}\label{prop_stable_lanscape}
 %   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
 %   Let $\mrX= q(\U^{\mr x})$ for some $q({\mr x})\subseteq L(\acl^\eq\!A)$.
@@ -956,7 +961,7 @@ We define \emph{Lascar persistent/wide\/} similarly.
 %   Let $\mrD$ be a $\qfDelta(\U)$-definable set that is weakly Lascar persistent.
 %   We prove that $\mrD$ is Lascar persistent.
 %   Pick a finite $H\subseteq\Autf(\U/A)$ such that $\cup\,H\,\mrD$ is Lascar persistent.
-%   By Corollary~\ref{corol_persistent_finsat}, the type $\{{\mr x}\in\cup\,H\,\mrD\}\cup q({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
+%   By Theorem~\ref{thm_persistent_finsat}, the type $\{{\mr x}\in\cup\,H\,\mrD\}\cup q({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
 %   Then, by Corollary~\ref{corol_stable_coheir_over_models} there is a Lascar invariant type $p({\mr x})\in S_\Delta(\U)$ containing ${\mr x}\in\cup\,H\,\mrD$ and finitely consistent with $q({\mr x})$.
 %   By completeness and invariance ${\mr x}\in\mrD$ is in $p({\mr x})$.
 %   Then $\mrD$ is persistent by Theorem~\ref{thm_generic_invariant}.
@@ -974,14 +979,13 @@ We define \emph{Lascar persistent/wide\/} similarly.
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  By Theorem~\ref{thm_stationarity} there is a type $p({\mr x})\in S_\Delta(\U)$ consistent with $q({\mr x})$ that is Lascar invariant.
-  Therefore, from \ssf1 and Corollary~\ref{corol_def_mu} we infer that $\mrD$ is Lascar persistent.
+  By Theorem~\ref{thm_persistent_finsat}.
 
   \ssf2$\IMP$\ssf1.
   Assume $\mrD$ is not Lascar generic.
   Then $\neg\mrD$ is Lascar persistent.
   Assume for a contradiction that also $\mrD$ is Lascar persistent.
-  By Corollary~\ref{corol_persistent_finsat} both $\mrD$ and $\mrD$ and $\neg\mrD$ are Lascar wide.
+  By Theorem~\ref{thm_persistent_finsat} both $\mrD$ and $\neg\mrD$ are Lascar wide.
   Then by Theorem~\ref{thm_generic_invariant2} both $q({\mr x})\cup\{{\mr x}\in\mrD\}$ and $q({\mr x})\cup\{{\mr x}\notin\mrD\}$ extend to Lascar invariant global types.
   This contradicts stationarity, see Proposition~\ref{prop_type_over_acl2} and Theorem~\ref{thm_stationarity}.
 \end{proof}
@@ -1140,7 +1144,6 @@ It is worthwhile to recall that, under the assumption of stability, Lascar wide 
 
 \begin{proof}
   We can assume that $\Delta$ is finite.
-  
 \end{proof}
 
 The stabilizer of the type $q({\mr x})\in S_\Delta(\grZ)$ is the subgroup $\{{\gr h}\in\grZ\ :\ q({\mr x})={\gr h}{\cdot}q({\mr x})\}$.

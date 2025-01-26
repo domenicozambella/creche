@@ -21,7 +21,7 @@ We often need to prove quantifier elimination in order to prove completeness.
 Therefore any assumption of completeness would make criteria for quantifier elimination less applicable.
 
 In this section $T$ is a consistent theory without finite models and $\Delta$ is a set of formulas closed under renaming of variables. 
-At a first reading the reader is encouraged to assume that $\Delta$ is $L_{\rm at}$.
+At a first reading the reader is encouraged to assume $\Delta=L_{\rm at}$.
 
 \begin{definition}\label{def_C_Delta}
 If $\ssf{C}\subseteq\{\A,\E,\neg,\vee,\wedge\}$ is a set of connectives, we write \emph{$\ssf{C}\Delta$} for the closure of $\Delta$ with respect to all connectives in $\ssf{C}$.
@@ -38,9 +38,7 @@ We may write $\pmDelta$ for $\{\neg\}\Delta$.%Note that $\ssf{C}_1\ssf{C}_2\Delt
 % 
 % Per esempio $\Delta$ pu\`o essere l'insieme delle formule senza quantificatori, l'insieme delle formule esistenziali, o delle combinazioni booleane di queste. Quando $\Delta$ \`e l'insieme delle formule senza quantificatori 
 
-
-
-Recall that \emph{$\Delta$-morphism\/} is a map $k:M\imp N$ that preserves the truth of formulas in $\Delta$. It is immediate that $\Delta$-morphism are automatically $\{\mathord\wedge\mathord\vee\}\Delta$-morphisms. Similarly $\{\E\wedge\}\Delta$-morphism are $\{\E\mathord\wedge\mathord\vee\}\Delta$-morphisms and similarly $\{\A\vee\}\Delta$-morphism are $\{\A\mathord\wedge\mathord\vee\}\Delta$-morphisms.
+Recall that \emph{$\Delta$-morphism\/} is a map $k:M\imp N$ that preserves the truth of formulas in $\Delta$. It is immediate that $\Delta$-morphism are automatically $\{\mathord\wedge\mathord\vee\}\Delta$-morphisms. Similarly $\{\E\wedge\}\Delta$-morphism are $\{\E\mathord\wedge\mathord\vee\}\Delta$-morphisms and $\{\A\vee\}\Delta$-morphism are $\{\A\mathord\wedge\mathord\vee\}\Delta$-morphisms.
 
 Below we use the following proposition without further reference.
 \def\.{\kern0.2ex}
@@ -88,15 +86,14 @@ From $\#$ and compactness we obtain
 Applying compactness again allows us to replace the infinite disjunction above with a finite one and prove \ssf{2}.
 \end{proof}
 
-The following exercise is immediate but it is arguably the most important result of this chapter. 
-
-\begin{exercise}\label{ex_prove_thm_EQ}
-Prove Theorem~\ref{thm_tutteleimmersionisonoelementari_QE}, that is, that for every theory $T$ the following are equivalent
-\begin{itemize}
-\item[1.] $T$ has elimination of quantifiers
-\item[2.] every partial isomorphism between models of $T$ is an elementary map.
-\end{itemize}
-\end{exercise}
+\begin{remark}\label{rem_prove_thm_EQ}
+  Note that Theorem~\ref{thm_tutteleimmersionisonoelementari_QE}, which we repeat for emphasis, follows immediately from the lemma.
+  For every theory $T$ the following are equivalent
+  \begin{itemize}
+  \item[1.] $T$ has elimination of quantifiers
+  \item[2.] every partial isomorphism between models of $T$ is an elementary map.
+  \end{itemize}
+\end{remark}
 
 In the rest of these section we ... 
 
@@ -192,7 +189,6 @@ The following are equivalent
 \end{itemize}
 \end{theorem}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -242,7 +238,9 @@ Let $|L|\le\lambda$. The following are equivalent
 \begin{itemize}
 \item[1.] $T$ has positive $\Delta$-elimination of quantifiers
 \item[2.] for every finite $\Delta$-morphism $k:M\imp N$ between $\lambda$-saturated models of $T$
-\begin{itemize}                                                                                               \item[a.] for every $b\in M$ some $\Delta$-morphism $h:M\imp N$ extends $k$ and $b\in\dom h$;                                                                                \item[b.] for every $c\in N$ some $\Delta$-morphism $h:M\imp N$ extends $k$ and $c\in\range h$.\noindent\nolinebreak[4]\hfill\rlap{\ \ $\Box$}                                                                   \end{itemize}
+\begin{itemize}
+  \item[a.] for every $b\in M$ some $\Delta$-morphism $h:M\imp N$ extends $k$ and $b\in\dom h$;                                                       \item[b.] for every $c\in N$ some $\Delta$-morphism $h:M\imp N$ extends $k$ and $c\in\range h$.
+\end{itemize}
 \end{itemize}
 \end{corollary}
 
@@ -262,7 +260,9 @@ Let $T$ be the theory of \emph{discrete linear orders}, that is, $T$ extends the
 \item[dis$\uparrow$.] $\E z\ \big[x<z\ \wedge\ \neg\E y\ x<y<z\big]$
 \item[dis$\downarrow$.] $\E z\ \big[ z<x\ \wedge\ \neg\E y\ z<y<x\big]$.
 \end{itemize}
-Let $\Delta$ be the set of formulas that contains (all alphabetic variants of) the formulas $x<_ny:=\E^{\ge n}z\ (x\mathord<z\mathord< y)$ and their negations, for all positive integers $n$. Prove that the theory of discrete linear orders has $\Delta$-elimination of quantifiers. Prove that the structure $\QQ\times\ZZ$ ordered with the lexicographic order 
+Let $\Delta$ be the set of formulas that contains (all alphabetic variants of) the formulas $x<_ny:=\E^{\ge n}z\ (x\mathord<z\mathord< y)$ and their negations, for every $n>0$.
+Prove that the theory of discrete linear orders has $\Delta$-elimination of quantifiers.
+Prove that the structure $\QQ\times\ZZ$ ordered with the lexicographic order 
 
 \hfil$(a_1,a_2)<(b_1,b_2)\quad\IFF\quad a_1<b_1$\ \ or\ \ ($a_1=b_1$\ \ e\ \ $a_2<b_2$)
 
@@ -270,8 +270,11 @@ is a saturated model of $T$.
 \end{exercise}
 
 \begin{exercise}
-Let $T$ be a consistent theory. Suppose that all completions of $T$ are of the form 
-$T\cup S$ for some set $S$ of quantifier-free sentences. Prove that if all completions of $T$ have elimination of quantifiers, so does $T$. Show that this fails when the completions of $T$ have arbitrary complexity. 
+Let $T$ be a consistent theory.
+Suppose that all completions of $T$ are of the form 
+$T\cup S$ for some set $S$ of quantifier-free sentences.
+Prove that if all completions of $T$ have elimination of quantifiers, so does $T$.
+Show that this fails when the completions of $T$ have arbitrary complexity.
 
 Note. Thought the claim follows immediately from Corollary~\ref{corol_QE}, a direct proof by compactness is also instructive. Prove that for every formula $\phi(x)$ there are some quantifier-free sentences $\sigma_i$ and quantifier-free formulas $\psi_i(x)$ such that
 
@@ -286,6 +289,14 @@ For a counter example consider the empty theory in the language with a single un
   Prove that $T$ has positive $\Delta$-elimination of quantifiers for $\Delta$ the set of formulas of the form $\E y\,\A z\,\theta(x,y,z)$ with $\theta(x,y,z)\in\qfL$.
 \end{exercise}
 
+\begin{exercise}\label{prop_inv_def}
+  Let $\phi(x)\in L_{\rm qf}(\U)$.
+  Are the following are equivalent?
+  \begin{itemize}
+   \item[1.] $\phi(x)$ is equivalent to some formula $\psi(x)\in L_{\rm qf}(A)$
+   \item[2.] $\phi(x)$ is invariant over $A$.
+  \end{itemize}
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -295,7 +306,7 @@ For a counter example consider the empty theory in the language with a single un
 
 We say that $T$ is \emph{model-complete\/} if every embedding $h:M\hookrightarrow N$ between models of $T$ is an elementary embedding. The terminology, introduced by Abraham Robinson, is inspired by the fact that $T$ is model-complete if and only if $T\cup\Diag(M)$ is a complete theory, in the language $L(M)$, for every $M\models T$. 
 
-To stress positivity in the next proposition, we generalize the definition as follows. We say that $T$ is \emph{$\Delta$-model-complete\/} if every $\Delta$-embedding $h:M\hookrightarrow N$ between models of $T$ is a $\{\A\E\wedge\vee\}\Delta$-embedding. 
+To stress positivity in the next proposition, we generalize the definition as follows. We say that $T$ is \emph{$\Delta$-model-complete\/} if every $\Delta$-embedding $h:M\hookrightarrow N$ between models of $T$ is a $\{\A\E{\wedge}{\vee}\}\Delta$-embedding. 
 
 Model-completeness is equivalent to a property akin to quantifier elimination.
 

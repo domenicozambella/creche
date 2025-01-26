@@ -356,7 +356,9 @@ The assumptions say that $p(x)\cup q(x)$ is inconsistent (i.e. not realized in $
   Their action on type-definable sets is similar.
 \end{remark}
 
-We say that a set ${\mr\D}\subseteq\U^{{\mr x}}$ is \emph{invariant over $A$\/} if $f[{\mr\D}]={\mr\D}$ for every $f\in\Aut(\U/A)$ or, equivalently, if $\orbit({\mr a}/A)\subseteq {\mr\D}$ for every ${\mr a}\in {\mr\D}$.
+We say that a set ${\mr\D}\subseteq\U^{{\mr x}}$ is \emph{invariant over $A$\/} if $f[{\mr\D}]={\mr\D}$ for every $f\in\Aut(\U/A)$.
+A formula $\phi({\mr x})\in L(\U)$ is invariant if the set it defines is such.   
+If $\mrD$ is invariant then $\orbit({\mr a}/A)\subseteq {\mr\D}$ for every ${\mr a}\in {\mr\D}$.
 By homogeneity this is equivalent to requiring that 
 
 \ceq{\hfill q({\mr x})}{\imp}{{\mr x}\in{\mr\D}}
@@ -370,7 +372,7 @@ It may clarify the proof to consider first the particular case of definable sets
 For every $\phi({\mr x})\in L(\U)$ the following are equivalent
 \begin{itemize}
  \item[1.] $\phi({\mr x})$ is equivalent to some formula $\psi({\mr x})\in L(A)$
- \item[2.] $\phi(\U^{\mr x})$ is invariant over $A$.
+ \item[2.] $\phi({\mr x})$ is invariant over $A$.
 \end{itemize}
 \end{proposition}
 
@@ -400,7 +402,7 @@ for some formula $\theta_i({\mr x})\in L(A)$.
 
 \begin{proof}[Second proof of Proposition~\ref{prop_inv_def}] 
    \ssf{2}$\IMP$\ssf{1} 
-   Let $\phi(\U^{\mr x};{\gr b})$, where $\phi({\mr x}\,;{\gr z})\in L$, be a set invariant over $A$.
+   Let $\phi({\mr x};{\gr b})\in L$ be invariant over $A$.
    Let $p({\gr z})=\tp({\gr b}/A)$.
    As $f[\phi(\U^{\mr x};{\gr b})]=\phi(\U^{\mr x};f{\gr b})$ for every $f\in\Aut(\U/A)$, homogeneity and invariance yield
    
@@ -410,7 +412,7 @@ By compactness there is a formula $\theta({\gr z})\in p$ such that
 
 \ceq{\hfill \theta({\gr z})}{\imp}{\A {\mr x}\ \big[\phi({\mr x}\,;{\gr z})\iff\phi({\mr x}\,;{\gr b})\big].}
 
-Hence  $\phi(\U^{\mr x};{\gr b})$ is defined by the formula $\E {\gr z}\,\big[\theta({\gr z})\wedge\phi({\mr x}\,;{\gr z})\big]$, which is a formula in $L(A)$ as required.
+Hence  $\phi({\mr x};{\gr b})$ is equivalent to the formula $\E {\gr z}\,\big[\theta({\gr z})\wedge\phi({\mr x}\,;{\gr z})\big]$, which is a formula in $L(A)$ as required.
 \end{proof}
 
 \begin{proposition}\label{prop_inv_types}
@@ -493,7 +495,7 @@ Hence, by Proposition~\ref{prop_E_type}, $p({\mr x})$ is equivalent to a type ov
   Let $\phi(x)\in L$. Prove that the following are equivalent
   \begin{itemize}
    \item[1.] $\phi(x)$ is equivalent to some $\psi(x)\in L_{\rm qf}$
-   \item[2.] $\phi(a)\iff \phi(fa)$ for every partial isomorphism $f:\U\to\U$ and $a\in(\dom f)^{x}$.
+   \item[2.] $\phi(a)\iff\phi(fa)$ for every partial isomorphism $f:\U\to\U$ and $a\in(\dom f)^x$.
   \end{itemize}
   Use the result to prove Theorem~\ref{thm_tutteleimmersionisonoelementari_QE} for $T$ complete.
   \end{exercise}
@@ -509,7 +511,7 @@ Show that this is not true if $x$ has length $\omega$.
 \end{exercise}
 
 \begin{exercise}\label{cadinalitafinitasaturazioneinsiemi}
-Let $\phi(x,y)\in L(\U)$. Prove that if the set $\big\{\phi(a,\U)\ :\ a\in\U^{x}\big\}$ is infinite then it has cardinality $\kappa$.
+Let $\phi(x,y)\in L(\U)$. Prove that if the set $\big\{\phi(a,\U)\, :\, a\in\U^{x}\big\}$ is infinite then it has cardinality $\kappa$.
 Does the claim remain true with a type $p(x,y)\subseteq L(A)$ for $\phi(x,y)$? 
 \end{exercise}
 
