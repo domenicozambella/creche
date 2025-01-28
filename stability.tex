@@ -837,9 +837,9 @@ The following are equivalent
   This is left as an exercise to the reader~--~stability is not required.
 
   \ssf{2}$\IMP$\ssf{1}.
-  Assume \ssf2 which, by Proposition~\ref{prop_Shelah_strong_types}, is equivalent to ${\mr a}\equiv_{\acl^\eq\!A}{\mr b}$.
+  Assume \ssf2 which, by Theorem~\ref{thm_Shelah_strong_types}, is equivalent to ${\mr a}\equiv_{\acl^\eq\!A}{\mr b}$.
   Write $q({\mr x})$ for $\tp({\mr a}/{\acl}^\eq\!A)=\tp({\mr b}/{\acl}^\eq\!A)$. Let $p({\mr x})\in S(\U^\eq)$ be the unique global type that is invariant over $\acl^\eq\!A$ and extends $q({\mr x})$ which we obtain from Theorem~\ref{thm_stationarity}.
-  Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be such that ${\mr c_i}\models p({\mr x}){\restriction}\acl^\eq\!A,\,{\mr a},\,{\mr b},\,{\mr c_{\restriction i}}$.
+  Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be such that ${\mr c_i}\models p({\mr x}){\restriction}\,\acl^\eq\!A,\,{\mr a},\,{\mr b},\,{\mr c_{\restriction i}}$.
   Then ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lstp_indiscernibles}.
 \end{proof}
 
@@ -912,45 +912,61 @@ A more general version of the theorem holds which requires a different proof.
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{10ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
+\def\DLascar{L\kern-.6ex\raisebox{1.1ex}{\tiny$\Delta$}\kern-.1ex ascar}
+
 We adopt the notation and terminology of Chapter~\ref{actions}.
-We consider the action of the group $G=\Aut(\UDelta/A)$ and its normal subgroup $H=\Autf(\UDelta/A)$, which by Corollary~\ref{corol_Ltype_Shtype} coincides with the automorphism group $\UDelta$ over $\LDelta\mbox{-}\acl^\eq\!A$.
-The set $\grZ\subseteq\U^{\gr z}$ is fixed but arbitrary.
-The set $\mrX$ is to be inferred from the context: we may use $\U^{\mr x}$, a $G$-orbit or an $H$-orbit.
-We say \emph{generic\/} over $A$ and \emph{Lascar generic\/} over $A$ for generic under the action of $\Aut(\UDelta/A)$, respectively $\Autf(\UDelta/A)$.
-We use \emph{persistent/wide\/} similarly.
+The set $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ is fixed and, generally, assumed to be stable.
+In this section we always work with the language $\LDelta$.
+In particular the algebraic closure in always in $\LDelta$.
+
+We consider the action of two groups $\Aut(\UDelta)$ and $\Autf(\UDelta)$.
+%, which by Corollary~\ref{corol_Ltype_Shtype} coincides with the automorphism group $\UDelta$ over $\LDelta\mbox{-}\acl^\eq\varnothing$.
+The set $\grZ$ is fixed but arbitrary.
+The set $\mrX$ is to be inferred from the context.
+We say \emph{\DLascar\/} generic (over $\varnothing$) for generic under the action of $\Autf(\UDelta)$.
+Similarly for persistent/invariant/wide.
+%We say \emph{generic/persistent/wide\/} over $\acl^\eq\varnothing$ when the action is of 
 
 \begin{theorem}\label{thm_persistent_finsat}
-  Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
-  Assume $\mrX$ is type definable.
-  Finally, let $\mrD$ be a $\qfDelta(\grZ)$-definable set.
+  Let $\Delta$ be stable.
+  Assume that $\mrX$ and $\grZ$ are type-definable and invariant over  $\Aut(\UDelta/\acl^\eq\varnothing)$.
+  Let $\mrD$ be a $\qfDelta(\grZ)$-definable set.
   Then the following are equivalent 
   \begin{itemize}
-    \item[1.] $\mrD$ is Lascar persistent over $A$
-    \item[2.] $\mrD$ is Lascar wide over $A$. 
-    % \item[2.] $\{{\mr x}\in\mrD\}\cup q({\mr x})$ is finitely satisfied every in $M\supseteq A$.
+    \item[1.] $\mrD$ is \DLascar\ persistent
+    \item[2.] $\mrD$ is \DLascar\ wide.
+    \item[3.] $\mrD$ is persistent under the action of $\Aut(\UDelta/\acl^\eq\varnothing)$ 
+    \item[4.] $\mrD$ is wide under the action of $\Aut(\UDelta/\acl^\eq\varnothing)$.
   \end{itemize}
 \end{theorem}
 \begin{proof}
+  Implications \ssf4$\IMP$\ssf3 and \ssf2$\IMP$\ssf1 are trivial.
+  Implications \ssf4$\IMP$\ssf3 and \ssf3$\IMP$\ssf1 hold because $\Autf(\UDelta)\le\Aut(\UDelta/\acl^\eq\varnothing)$.
+
+  \ssf1$\IMP$\ssf2.
   As Boolean combinations of stable formulas are stable, we can assume that $\mrD$ is defined by the formula $\phi({\mr x}\,;{\gr b})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$.
 
-  Only \ssf1$\IMP$\ssf2 requires a proof.
   Let $q({\mr x})$ be the type defining $\mrX$.
   Let $\psi({\mr x})$ be a conjunction of formulas in $q({\mr x})$.
-  It suffices to prove that $\psi({\mr x})\wedge\phi({\mr x}\,;{\gr b})$ is satisfied in every $M\supseteq A$.
-  Then, by Corollary~\ref{corol_stable_coheir_over_models}, it follows that $q({\mr x})\cup\{\phi({\mr x}\,;{\gr b})\}$ is contained in a type $p({\mr x})\in S_\Delta(\grZ)$ that is Lascar invariant over $A$.
+  It suffices to prove that $\psi({\mr x})\wedge\phi({\mr x}\,;{\gr b})$ is satisfied in every $\LDelta$-model $M$.
+  Then from Corollary~\ref{corol_stable_coheir_over_models} it follows that $q({\mr x})\cup\{\phi({\mr x}\,;{\gr b})\}$ is contained in a type $p({\mr x})\in S_\Delta(\grZ)$ that is Lascar invariant over $A$.
   Then $\mrD$ is Lascar wide by Theorem~\ref{thm_generic_invariant2}.
   
-  Let $M\supseteq A$ be arbitrary.
-  Note that, as $q({\mr x})$ is invariant over $M$, we may assume that $q({\mr x})\subseteq L(M)$.
+  Let $M$ be an $\LDelta$-model.
+  Then $q({\mr x})\subseteq\LDelta(M)$.
   Let $\psi({\mr x})$ be a conjunction of formulas in $q({\mr x})$. 
-  Let $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be the formula in the proof of Theorem~\ref{thm_stability_definable_rovescio2}.
-  As $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ is equivalent to a formula in $L(M)$, by elementarity it satisfiable in $M$.
+  Let $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be the formula in the proof of Theorem~\ref{thm_stability_definable_rovescio1}.
+  As $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ is equivalent to a formula in $\LDelta(M)$, by elementarity it satisfiable in $M$.
   Hence so is $\psi({\mr x})\wedge\phi({\mr x}\,;{\gr b_i})$ for some $i$.
   As ${\gr b_i}\equiv_M{\gr b}$, also $\phi({\mr x}\,;{\gr b})$ is satisfiable.
+
+  \ssf2$\IMP$\ssf4.
+  Assume \ssf2.
+  Then there is a type $p({\mr x})\in S_\Delta(\grZ)$ that is Lascar persistent and $p({\mr x})\proves{\mr x}\in\mrD$.
+  By Theorem~\ref{prop_type_over_acl2} $p({\mr x})$ is invariant (or persistent) over $\acl^\eq\varnothing$.
+  Then $\mrD$ is wide under the action of $\Aut(\UDelta/\acl^\eq\varnothing)$.
 \end{proof}
 
-This theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coalesce} applies with $\Autf(\U/A)$ for $G$.
-Therefore, in particular, Lascar generic sets are Lascar wide.
 % \begin{proposition}\label{prop_stable_lanscape}
 %   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
 %   Let $\mrX= q(\U^{\mr x})$ for some $q({\mr x})\subseteq L(\acl^\eq\!A)$.
@@ -966,6 +982,71 @@ Therefore, in particular, Lascar generic sets are Lascar wide.
 %   By completeness and invariance ${\mr x}\in\mrD$ is in $p({\mr x})$.
 %   Then $\mrD$ is persistent by Theorem~\ref{thm_generic_invariant}.
 % \end{proof}
+
+We want a version of Theorem~\ref{thm_Shelah_strong_types} and Proposition~\ref{prop_trans_action} that includes requirements on the language.
+The proof is essentially the same (but it would be rude to leave it as an exercise).
+
+Theorem~\ref{thm_persistent_finsat} shows that when $\Delta$ is stable Theorem~\ref{thm_coalesce} applies with $\Autf(\U)$ for $G$.
+Therefore, in particular, \DLascar\ generic sets are \DLascar\ wide.
+The following remark strengthens this result.
+
+\begin{remark}
+  Let $\Delta$ be stable.
+  Let $G=\Aut(\UDelta)$ and $H=\Autf(\UDelta)$.
+  Assume that $\mrX$ and $\grZ$ are type-definable and invariant over $G$.
+  From Theorem~\ref{thm_persistent_finsat} and Remark~\ref{rem_coalesce} it follows that $\gamma_H(x)$ is consistent.
+  Therefore, by Proposition~\ref{prop_Ggeneric_Hpersistent}, G-generic sets are $H$-wide.
+\end{remark}
+
+\begin{fact}
+  Let $\mrD\in\acl^\eq\varnothing$.
+  Then $\mrD$ is generic under the action of $\Aut(\UDelta)$.
+\end{fact}
+
+\begin{lemma}\label{lem_trans_action}
+  \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+  \def\ceq#1#2#3{\parbox[t]{15ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+
+  Let $\Delta$ be stable.
+  Let $G=\Aut(\UDelta)$ and $H=\Autf(\UDelta)$.
+  Assume that $\mrX$ and $\grZ$ are type-definable and invariant over $G$.
+  Moreover $G$ acts transitively on $\mrX$.
+  Finally, let 
+  
+  \ceq{\hfill P}{=}{\big\{p({\mr x})\in S_\Delta(\grZ)\ :\ p({\mr x})\textrm{ $H$-invariant}\big\}}.
+  
+  Then $G$ acts transitively on $P$.
+  Moreover, for any ${\mr a}\models p({\mr x})$ there is a unique $q({\mr x})\in Q$ such that
+
+  \ceq{\hfill q({\mr x})}{\iff}{\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in\GDelta(A)\textrm{ finite equivalence relation}\big\}}.
+
+\end{lemma}
+
+\begin{proof}
+  We prove that any two types $p_1,p_2\in P$ are realized be some $a_1,a_2$ that are .
+  The claim follows because any automorphism in $\Aut(\U/A)$ that takes $a_1$ to $a_2$ takes also $q_1$ in $q_2$.
+  It suffices to prove that every type $p({\mr x})\in S(A)$ is consistent with every $q\in Q$.
+  Suppose not, then $p({\mr x})\imp\neg\phi({\mr x})$ for some $\phi({\mr x})\in q$.
+  Let $\psi({\mr x})$ be the disjunction of all the (finitely many) conjugates of $\phi({\mr x})$ over $A$.
+  Then $p({\mr x})\imp\neg\psi({\mr x})$.
+  But $\psi({\mr x})\in\qfDelta(\acl^\eq\!A)$ and is invariant over $A$.
+  Therefore $\psi({\mr x})\in\GDelta(A)$.
+  Then $\psi({\mr x})\in p$, a contradiction.
+  
+  Let $\<q_i:i<\lambda\>$ be an enumeration without repetitions of $Q$.
+  For every $i<j<\lambda$ pick $\theta_{i,j}({\mr x}\,;w)\in L$ and $c\in\acl^\eq\!A$ such that  $\theta_{i,j}({\mr x}\,;c)$ separates $q_i$ and $q_j$.
+  Define 
+  {
+  \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+  \def\ceq#1#2#3{\parbox[t]{15ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+  
+  \ceq{\hfill\epsilon_{i,j}({\mr x},{\mr y})}{=}{\bigwedge_{f\in\Aut(\U/A)}\big[\theta_{i,j}({\mr x}\,;fc)\iff\theta_{i,j}({\mr y}\,;fc)\big]}
+  }
+
+  Clearly $\epsilon_{i,j}({\mr x},{\mr y})$ defines a finite equivalence relation. 
+  As this is definable and invariant over $A$, it belongs to $\GDelta(A)$.
+  The equivalence in the lemma holds if we take for $q({\mr x})$, the unique $q_i({\mr x})$ satisfied by ${\mr a}$.
+\end{proof}
 
 \begin{proposition}\label{prop_stable_genericiffpersistent}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
