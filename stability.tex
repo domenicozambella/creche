@@ -18,41 +18,40 @@ The notation and implicit assumptions are as in Section~\ref{monster}.
 \section{Externally definable sets}
 \label{externally}
 
-Let $\grC,\grD\subseteq\U^{\gr z}$.
-The set $\grD\cap A^{\gr z}$ is called the \emph{trace\/} of $\grD$ over $A$.
-We write $\grC=_A\grD$ if  $\grC$ and $\grD$ have the same trace on $A$.
+Let $p({\mr x})\in S_\phi(\grZ)$.
+For every formula $\phi({\mr x}\,;{\gr z})\in L$ we define (this the same definition in Section~\ref{invariant_sets}, only restricted to $\grZ$)
 
-Let $p({\mr x})\subseteq L(\U)$ be a consistent type.
-Recall from Section~\ref{invariant_sets} that for every formula $\phi({\mr x}\,;{\gr z})\in L$ we define
+\ceq{\hfill\emph{$\gr\D_{p,\phi}$}}{=}{\Big\{{\gr a}\in\grZ\ :\ \phi({\mr x}\,;{\gr a})\in p\Big\}.}
 
-\ceq{\hfill\emph{$\gr\D_{p,\phi}$}}{=}{\Big\{{\gr a}\in\U^{\gr z}\ :\ \phi({\mr x}\,;{\gr a})\in p\Big\}.}
-
-We say that $\grD$ is \emph{externally definable\/} if it is of the form ${\gr\D_{p,\phi}}$ for a type $p(x)$ in $S(\U)$ or $S_\phi(\U)$.
-We say that $\grD$ is externally definable \emph{by $p({\mr x})$ and $\phi({\mr x}\,;{\gr z})$}.
-
-Equivalently, a set $\grD$ is externally definable if it is the trace over $\U$ of a set which is definable in some elementary extension of $\U$.
-More precisely, $\grD$ is the trace on $\U$ of a set of the form $\phi({\mr ^{*\kern-.3ex}b}\,;{\gr ^{*\kern-.2ex}\U})$ where $ ^{*\kern-.2ex}\U$ is elementary extension of $\U$ and ${\mr  ^{*\kern-.3ex}b}\in {}^{*\kern-.2ex}\U^{\mr x}$.
-The latter interpretation explains the terminology.
+We say that $\grD\subseteq\grZ$ is \emph{externally definable\/} if it is of the form ${\gr\D_{p,\phi}}$ .
+Equivalently, a set $\grD$ is externally definable if it is the trace on $\grZ$ of a set which is definable in some elementary extension of $\U$.
+More precisely, let ${}^{*\kern-.2ex}\U$ be an elementary extension of $\U$.
+% Let ${\mr{}^{*\kern-.2ex}\X}$ and ${\mr{}^{*\kern-.2ex}\Z}$ 
+Then $\grD=\phi({\mr{}^{*\kern-.3ex}b}\,;{}^{*\kern-.2ex}\grZ)\cap\U^{\gr z}$ for some ${\mr  ^{*\kern-.3ex}b}\,{\in}{\mr{}^{*\kern-.2ex}\X}$.
+This interpretation explains the terminology.
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}%
 We prefer to deal with external definability in a different, though equivalent, way.
+Let $\pi\subseteq\mrX\times\grZ$ be a binary relation (which need not be definable in any sense).
+We denote by $\pi({\mr x}\,;{\gr z})$ the predicate associated to $\pi$.
 
 \begin{definition}\label{def_approx}
-We say that $\grD$ is \emph{approximated\/} by the formula $\phi({\mr x}\,;{\gr z})$ if for every finite ${\gr B}\subseteq\U^{\gr z}$ there is a tuple ${\mr a}\in\U^{\mr x}$ such that $\phi({\mr a}\,;{\gr B})=\grD\cap{\gr B}$.
-We call $\phi({\mr x}\,;{\gr z})$ the \emph{sort} of $\grD$.
-If in addition $\phi({\mr a}\,;\U^{\gr z})\subseteq\grD$, we say that  $\grD$ is \emph{approximated from below}.
-Equivalently, we say that  $\grD$ is approximated from below if for every finite ${\gr B}\subseteq\grD$ there is a tuple ${\mr a}\in\U^{\mr x}$ such that  ${\gr B}\subseteq\phi({\mr a}\,;\U^{\gr z})\subseteq\grD$.
-The dual notion of \emph{approximation from above\/} is defined as expected (and coincides with $\neg\grD$ being approximated by $\neg\phi({\mr x}\,;{\gr z})$ from below).
+We say that $\grD\subseteq\grZ$ is \emph{approximated\/} by the relation $\pi({\mr x}\,;{\gr z})$ if for every finite ${\gr B}\subseteq\grZ$ there is a tuple ${\mr a}\in\mrX$ such that $\pi({\mr a}\,;{\gr B})=\grD\cap{\gr B}$.
+If in addition $\pi({\mr a}\,;\grZ)\subseteq\grD$, we say that  $\grD$ is approximated \emph{from below.}
+Equivalently, we say that $\grD$ is approximated from below if for every finite ${\gr B}\subseteq\grD$ there is a tuple ${\mr a}\in\mrX$ such that  ${\gr B}\subseteq\pi({\mr a}\,;\grZ)\subseteq\grD$.
+The dual notion of approximation \emph{from above\/} is defined as expected (and coincides with $\grZ\sm\grD$ being approximated by $\neg\pi({\mr x}\,;{\gr z})$ from below).
 \end{definition} 
 
 The following proposition is clear by compactness.
 
 \begin{proposition}\label{prop_approx=external}
-   For every $\grD$ the following are equivalent
-   \begin{itemize}
-   \item[1.] $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$
-   \item[2.] $\grD$ is externally definable by $\phi({\mr x}\,;{\gr z})$.
-   \end{itemize}
+  Assume that $\mrX$ is type-definable.
+  Let $\grD\subseteq\grZ$ and $\phi({\mr x}\,;{\gr z})\in L(\U)$ be given.
+  Then the following are equivalent
+  \begin{itemize}
+  \item[1.] $\grD$ is approximated by $\phi({\mr x}\,;{\gr z})$
+  \item[2.] $\grD$ is externally definable by $\phi({\mr x}\,;{\gr z})$.
+  \end{itemize}
 \end{proposition}
 
 The rest of this section is only required in Chapter~\ref{vc}.
@@ -68,28 +67,29 @@ Sets may be approximable by different formulas.
 For instance, if $T=T_{\rm dlo}$, then $\D=\{z\in\U:a\le z\le b\}$ is approximable both from below and from above by the formula $x_1<z<x_2$ though it is not definable by this formula.
 
 Now, let $T=T_{\rm rg}$.
-Then every $\D\subseteq\U$ is approximable and, when $\D$ has small infinite cardinality, it is approximable from above but not from below.
+Then every $\D\subseteq\U$ is approximable be the formula $r(x\,;y)$.
+When $\D$ has small infinite cardinality, it is approximable from above but not from below.
 \end{example}
 
-In Definition~\ref{def_approx}, the sort $\phi({\mr x}\,;{\gr z})$ is fixed (otherwise any set would be approximable) but this requirement of uniformity may be dropped if we allow $B$ to have larger cardinality.
+In Definition~\ref{def_approx}, the approximating formula/relation is fixed (otherwise any set would be approximable) but this requirement of uniformity may be dropped if we allow $B$ to have larger cardinality.
 
 \begin{proposition}\label{lem_approx_nonunif}
-For every $\grD$ the following are equivalent
+For every $\grD\subseteq\grZ$ the following are equivalent
 \begin{itemize}
-\item[1.] $\grD$ is approximable
-\item[2.] for every ${\gr C}\subseteq\U^{\gr z}$ of cardinality $\le|L|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi({\gr C})=\grD\cap{\gr C}$.
+\item[1.] $\grD$ is approximable by some $\phi({\mr x}\,;{\gr z})\in L$
+\item[2.] for all ${\gr C}\subseteq\grZ$ of cardinality $\le|L|$ there is $\psi({\gr z})\in L(\U)$ such that $\psi({\gr C})=\grD\cap{\gr C}$.\nobreak
 \end{itemize}
 \end{proposition}
 
 \begin{proof}
 To prove \ssf{2}$\IMP$\ssf{1} negate \ssf{1}
-For each formula $\psi({\mr x}\,;{\gr z})\in L$ choose a finite set ${\gr B}$ such that $\psi({\mr b}\,;{\gr B})\neq\grD\cap{\gr B}$ for every ${\mr b}\in\U^{\mr x}$.
+For each formula $\phi({\mr x}\,;{\gr z})\in L$ choose a finite set ${\gr B}$ such that $\phi({\mr b}\,;{\gr B})\neq\grD\cap{\gr B}$ for every ${\mr b}\in\U^{\mr x}$.
 Let ${\gr C}$ be the union of all these finite sets.
 Then ${\gr C}$ witnesses the failure of \ssf{2}.
 \end{proof}
 
 \begin{remark}\label{prop_approx_el_eq}
-If $\grD\subseteq\U^{\gr z}$ is approximated by $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\ref{expansions} for the notation.
+If $\grD\subseteq\U^{\gr z}$ is approximated by $\phi({\mr x}\,;{\gr z})\in L$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\ref{expansions} for the notation.
 In fact, if the set $\grD$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for every $n$
 
 \hfil$\displaystyle\A {\gr z_1},\dots,{\gr z_n}\;\E {\mr x}\ \bigwedge^n_{i=1}\big[\phi({\mr x}\,;{\gr z_i})\ \iff\ {\gr z_i}\in{\gr \D}\big]$.
@@ -176,46 +176,26 @@ By the proposition above, they are closed under quantifiers.
 
 %Here we write \emph{$\phi({\mr x}\,;{\gr z})^*$\/} for the partitioned formula where the order of the two tuples is inverted (i.e.\@ it is the opposite of what displayed).
 
-Let $\pi\subseteq\U^{\mr x}\times\U^{\gr z}$ be a binary relation (which need not be definable in any sense).
-We denote by $\pi({\mr x}\,;{\gr z})$ the predicate associated to $\pi$.
-We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$ is a \emph{ladder\/} of length $\alpha$ for $\pi({\mr x}\,;{\gr z})$ if for every $i<j<\alpha$
+
+We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$, where ${\mr a_i}\in\mrX$ and ${\gr b_i}\in\grZ$ is a \emph{ladder\/}  of length $\alpha$ (between $\mrX$ and $\grZ$) for $\pi({\mr x}\,;{\gr z})$ if for every $i<j<\alpha$
 
 \ceq{\hfill\pi({\mr a_i}\,;{\gr b_j})}{\wedge}{\neg\pi({\mr a_j}\,;{\gr b_i}).}
 
-We say that $\pi({\mr x}\,;{\gr z})$ is \emph{stable\/} if for some $n$ there is no ladder of length $n$.
+We say that $\pi({\mr x}\,;{\gr z})$ is \emph{stable\/} (between $\mrX$ and $\grZ$) if for some $n$ there is no ladder of length $n$.
 Otherwise we say it is \emph{unstable} or that it has the \emph{order property}.
 We will mainly deal with relations that are definable or type-definable.
-We will say that a formula or a type is stable accordingly.
+Then we say that a formula or a type is stable accordingly.
 The proof of the following easy fact is left to the reader.
 
 \begin{fact}\label{}
   The following are equivalent for every $p({\mr x}\,;{\gr z})\subseteq L(A)$
   \begin{itemize}
     \item [1.] $p({\mr x}\,;{\gr z})$ is stable
-    \item [1.] for some finite $n$, there is no ladder of length $n$ for $p({\mr x}\,;{\gr z})$
-    \item [2.] there is $q({\mr x}\,;{\gr z})\subseteq L(A)$ equivalent to $p({\mr x}\,;{\gr z})$ containing only stable formulas.
+    \item [2.] for some finite $n$, there is no ladder of length $n$ for $p({\mr x}\,;{\gr z})$
+    \item [3.] there is $q({\mr x}\,;{\gr z})\subseteq L(A)$ equivalent to $p({\mr x}\,;{\gr z})$ containing only stable formulas.
   \end{itemize}
 \end{fact}
 
-In this section there is no blanket assumption of invariance over $A$ as it is not strictly necessary.
-The invariance of $\pi$ would simplify the discussion as it allows to require that the ladder is an indiscernible sequence (cf.\@ Lemma~\ref{lem_stab_Boole}). 
-
-\begin{theorem}\label{thm_sability_indiscernibility}
-  Let $\pi({\mr x}\,;{\gr z})$ be invariant over $A$.
-  Then the following are equivalent
-  \begin{itemize}
-    \item[1.] $\pi({\mr x}\,;{\gr z})$ is stable
-    \item[2.] $\pi({\mr a_0}\,;{\gr b_1})\imp\pi({\mr a_1}\,;{\gr b_0})$ for every $A$-indiscernible sequence $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
-  \end{itemize}
-\end{theorem}
-
-\begin{proof}
-  (2$\IMP$1) \ Assume $\pi({\mr x}\,;{\gr z})$ is unstable and that this is witnessed by the ladder $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
-  Let $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ be a sequence of $A$-indiscernibles with the same EM-type as $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
-  By invariance $\pi({\mr a'_0}\,;{\gr b'_1})$ and $\neg\pi({\mr a'_1}\,;{\gr b'_0})$.
-
-  (2$\IMP$1) Immediate by indiscernibility.
-\end{proof}
 %It is clear that $p({\mr x}\,;{\gr z})$ is stable if and only if $p({\mr x}\,;{\gr z})^*$ is stable.
 
 %Suppose $p({\mr x}\,;{\gr z})$ is unstable and let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be a ladder sequence. By padding redundant variables, we can read $p({\mr x}\,;{\gr z})$ as a formula $p({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$. Then $p({\mr x}\,{\gr z}\,;{\mr y}\,{\gr w})$ defines the order of the sequence $\<{\mr a_i}\,{\gr b_i} : i<\omega\>$. For this reason it is also common to say that $p({\mr x}\,;{\gr z})$ has the \emph{order property}, this simply means that it is unstable. 
@@ -239,11 +219,31 @@ The invariance of $\pi$ would simplify the discussion as it allows to require th
   Let $H=\{h_1,\dots,h_n\}$ then $\<{\mr a_{h_i}}\,;{\gr b_{h_i}} : i<n\>$ is a ladder sequence for $\pi_1({\mr x}\,;{\gr z})$.
 \end{proof}
 
-The following theorem claims what is arguably one of the most important properties of stable formulas: any set that is externally definable by a stable formula is definable (by a related formula).
+% In this section there is no assumption on $\pi({\mr x}\,;{\gr z})$.
+Note that invariance (over some small set of parameters) would have simplified the above proof as we could have required the ladder sequence to be indiscernible.
+
+\begin{lemma}\label{thm_sability_indiscernibility}
+  Let $\pi({\mr x}\,;{\gr z})$ be invariant over $A$.
+  Then the following are equivalent
+  \begin{itemize}
+    \item[1.] $\pi({\mr x}\,;{\gr z})$ has a ladder sequence of length $\omega$
+    \item[2.] $\pi({\mr a_0}\,;{\gr b_1})\wedge\neg\pi({\mr a_1}\,;{\gr b_0})$ for some $A$-indiscernible sequence $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
+  \end{itemize}
+\end{lemma}
+
+\begin{proof}
+  (1$\IMP$2) \ Let $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ be a ladder sequence.
+  Let $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ be a sequence of $A$-indiscernibles with the same EM-type as $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
+  By invariance $\pi({\mr a'_0}\,;{\gr b'_1})$ and $\neg\pi({\mr a'_1}\,;{\gr b'_0})$.
+
+  (2$\IMP$1) Immediate by indiscernibility.
+\end{proof}
+
+The following theorem claims what is arguably one of the most important properties of stable relations: any set that is externally definable by a stable formula is definable (by a related formula).
 
 \begin{theorem}\label{thm_def_stable_formula}
-Any $\grD\subseteq\U^{\gr z}$ approximated by a stable formula is definable.
-Precisely, if $\pi({\mr x}\,;{\gr z})$ is a stable relation that approximates $\grD$ then there are ${\mr a_{i,j}}\in\U^{\mr x}$ such that
+Any $\grD\subseteq\grZ$ approximated by a stable relation $\pi({\mr x}\,;{\gr z})$ is definable in the following sense.
+There are ${\mr a_{i,j}}\in\mrX$ such that
 
 \ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\pi({\mr a_{i,j}}\,;{\gr z})}
 \end{theorem}
@@ -255,11 +255,11 @@ Theorem~\ref{thm_def_stable_formula2} will prove the converse: if every set appr
 \end{proof}
 
 \begin{lemma}
-If $\grD$ is approximated from below by a stable formula $\pi({\mr x}\,;{\gr z})$ then
+If $\grD\subseteq\grZ$ is approximated from below by a stable relation $\pi({\mr x}\,;{\gr z})$ then
 
 \ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=0}\pi({\mr a_i}\,;{\gr z})}
 
-for some ${\mr a_0},\dots,{\mr a_n}\in\U^{\mr x}$.
+for some ${\mr a_0},\dots,{\mr a_n}\in\mrX$.
 \end{lemma}
 
 \begin{proof}
@@ -267,11 +267,11 @@ The elements ${\mr a_0},\dots,{\mr a_n}$ are defined recursively together with s
 
 Suppose ${\gr b_0},\dots,{\gr b_{n-1}}$ have been defined (this assumption is empty if $n=0$).
 We first define ${\mr a_n}$, then ${\gr b_n}$.
-Choose ${\mr a_n}\in\U^{\mr x}$ such that ${\gr b_0},\dots,{\gr b_{n-1}}\in\pi({\mr a_n}\,;\U^{\gr z})\subseteq\grD$.
+Choose ${\mr a_n}\in\mrX$ such that ${\gr b_0},\dots,{\gr b_{n-1}}\in\pi({\mr a_n}\,;\grZ)\subseteq\grD$.
 This is possible because $\grD$ is approximated from below.
 Now, if possible, choose ${\gr b_n}$ such that
 
-\ceq{\hfill{\gr b_n}}{\in}{\grD\sm\bigcup^n_{i=0}\pi({\mr a_i}\,;\U^{\gr z})}.
+\ceq{\hfill{\gr b_n}}{\in}{\grD\sm\bigcup^n_{i=0}\pi({\mr a_i}\,;\grZ)}.
 
 Then $\<{\mr a_i}\,;{\gr b_i} : i\le n\>$ is a ladder sequence.
 By stability, for some $n$, the tuple ${\gr b_n}$ does not exist.
@@ -279,8 +279,8 @@ This yields the required ${\mr a_0},\dots,{\mr a_n}$.
 \end{proof}
 
 \begin{lemma}\label{lem_stab_approx_below}
-If $\grD$ is approximated by a stable formula $\pi({\mr x}\,;{\gr z})$.
-Then, for some $m$, the formula
+If $\grD\subseteq\grZ$ is approximated by a stable relation $\pi({\mr x}\,;{\gr z})$.
+Then, for some $m$, the relation
 
 \ceq{\hfill\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr z})}{=}{\bigwedge^m_{j=0}\pi({\mr x_j}\,;{\gr z})}
 
@@ -290,19 +290,19 @@ approximates $\grD$ from below.
 \begin{proof}
 Let $m$ be such that there is no ladder sequence for $\pi({\mr x}\,;{\gr z})$ of length greater than $m$.
 Let ${\gr C}\subseteq\grD$ be finite.
-We prove that there are some ${\mr a_0},\dots,{\mr a_m}$ such that ${\gr C}\subseteq\psi({\mr a_0},\dots,{\mr a_m}\,;\U^{\gr z})\subseteq\grD$.
+We prove that there are some ${\mr a_0},\dots,{\mr a_m}$ such that ${\gr C}\subseteq\psi({\mr a_0},\dots,{\mr a_m}\,;\grZ)\subseteq\grD$.
 As in the proof above, we define by recursion a ladder sequence for $\pi({\mr x}\,;{\gr z})$.
-Suppose that ${\mr a_0},\dots,{\mr a_{n-1}}$ and ${\gr b_0},\dots,{\gr b_{n-1}}\notin\grD$ have been defined.
+Suppose that ${\mr a_0},\dots,{\mr a_{n-1}}$ and ${\gr b_0},\dots,{\gr b_{n-1}}\in\grZ\sm\grD$ have been defined.
 We first define ${\mr a_n}$, then ${\gr b_n}$. 
 Choose ${\mr a_n}\in\U^{\mr x}$ such that 
 
-\hfil${\gr C}\ \subseteq\ \pi({\mr a_n}\,;\U^{\gr z})\ \subseteq\ \U^{\gr z}\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
+\hfil${\gr C}\ \subseteq\ \pi({\mr a_n}\,;\grZ)\ \subseteq\ \grZ\sm\{{\gr b_0},\dots,{\gr b_{n-1}}\}$.
 
 This ${\mr a_n}$ exists, because $\grD$ is approximated by $\pi({\mr x}\,;{\gr z})$.
 (Apply Definition~\ref{def_approx} with any $B$ such that ${\gr C}\cup\{{\gr b_0},\dots,{\gr b_{n-1}}\}\subseteq{\gr B}$.)
 Then, if possible, let ${\gr b_n}$ such that
 
-\ceq{\hfill{\gr b_n}}{\in}{\bigcap^n_{i=0}\pi({\mr a_i},\U^{\gr z})\sm\grD}
+\ceq{\hfill{\gr b_n}}{\in}{\bigcap^n_{i=0}\pi({\mr a_i},\grZ)\sm\grD}
 
 This procedure has to stop at some $n\le m$.
 Therefore the required parameters are ${\mr a_1},\dots,{\mr a_n}={\mr a_{n+1}}=\dots={\mr a_{m}}$.
@@ -329,20 +329,6 @@ Therefore the required parameters are ${\mr a_1},\dots,{\mr a_n}={\mr a_{n+1}}=\
 % \end{proof}
 
 By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr z})$ is stable therefore this concludes the proof of Theorem~\ref{thm_def_stable_formula}.
-
-\begin{remark}\label{rem_sability_no_compactness}
-  Theorem~\ref{thm_def_stable_formula} is often cast in the following  apparently more general form.
-  Let $\mrA\subseteq\U^{\mr x}$ and $\grB\subseteq\U^{\gr z}$.
-  We say that $\pi({\mr x}\,;{\gr z})$ is stable between $\mrA$ and $\grB$ if for some $n$ no ladder of length $n$ exists with ${\mr a_i}\in\mrA$ and ${\gr b_i}\in\grB$.
-  Let $\grD\subseteq\grB$ be approximable by $\pi({\mr x}\,;{\gr z})\wedge {\mr x}\in\mrA$.
-  Then for any such $\grD$ there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in \mrA$ such that 
-  
-  \ceq{\hfill {\gr b}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\pi({\mr a_{i,j}}\,;{\gr b}).}
-\end{remark} 
-
-% \begin{exercise}
-%   Prove Fact~\ref{fact_stability_compactness}.
-% \end{exercise}
 
 \begin{exercise}
   Prove that if $p({\mr x}\,;{\gr z})$ admits ladder sequences of arbitrary finite length, then it admits a ladder sequence of infinite length.
@@ -414,16 +400,17 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
 \section{Stability and the number of types}
 
 
-The following proposition highlights the connection between the stability of the formula $\phi({\mr x}\,;{\gr z})$ and the cardinality of $S_\phi(\U)$, equivalently the number of sets externally definable by $\phi({\mr x}\,;{\gr z})$. 
+The following proposition highlights the connection between the stability of the formula $\phi({\mr x}\,;{\gr z})$ and the cardinality of $S_\phi(\grZ)$, equivalently the number of sets externally definable by $\phi({\mr x}\,;{\gr z})$. 
 
 \begin{theorem}\label{thm_def_stable_formula2}
-   The following are equivalent
-   \begin{itemize}
-     \item[1.] $\phi({\mr x}\,;{\gr z})$ is stable
-     \item[2.] every subset of $\U^{\gr z}$ that is externally definable by $\phi({\mr x}\,;{\gr z})$ is definable
-     \item[3.] there are $\le\kappa$ subsets of $\U^{\gr z}$ that are externally definable by $\phi({\mr x}\,;{\gr z})$
-     \item[4.] there are $<2^\kappa$ subsets of $\U^{\gr z}$ that are externally definable by $\phi({\mr x}\,;{\gr z})$.
-   \end{itemize}
+  ($\mrX,\grZ$ type-definable)
+  The following are equivalent
+  \begin{itemize}
+  \item[1.] $\phi({\mr x}\,;{\gr z})$ is stable
+  \item[2.] every subset of $\grZ$ that is externally definable by $\phi({\mr x}\,;{\gr z})$ is definable
+  \item[3.] there are $\le\kappa$ subsets of $\grZ$ that are externally definable by $\phi({\mr x}\,;{\gr z})$
+  \item[4.] there are $<2^\kappa$ subsets of $\grZ$ that are externally definable by $\phi({\mr x}\,;{\gr z})$.
+  \end{itemize}
  \end{theorem}
  
  \begin{proof}
@@ -444,7 +431,9 @@ The following proposition highlights the connection between the stability of the
 
 Binary trees of formulas have been introduced in Definition~\ref{def_tree_formulas}.
 Here we restrict to trees of a particular form.
-Namely, $\<\psi_s:s\in 2^{<\omega}\>$  where $\psi_\varnothing=\top$ and for $s\in 2^{<\omega}$ and $i\in 2$ we have $\psi_{s^\frown 0}({\mr x})=\neg\phi({\mr x}\,;{\gr b_s})$ and $\psi_{s^\frown 1}({\mr x})=\phi({\mr x}\,;{\gr b_s})$.
+Namely, $\<\psi_s:s\in 2^{<\omega}\>$  where $\psi_\varnothing=\top$ and, for $s\in 2^{<\omega}$ and $i\in 2$, we have $\psi_{s^\frown 0}({\mr x})=\neg\phi({\mr x}\,;{\gr b_s})$ and $\psi_{s^\frown 1}({\mr x})=\phi({\mr x}\,;{\gr b_s})$ for some ${\gr b_s}\in\grZ$.
+We also require that the branches are consistent in $\mrX$.
+
 If we define $\phi^0=\neg\phi$ and $\phi^1=\phi$ the condition of consistency becomes for every $s\in 2^\omega$ the type $\{\phi^{s_n}({\mr x}\,;{\gr b_{s\restriction n}})\ :\ n<\omega\}$.
 
 
@@ -465,28 +454,28 @@ If we define $\phi^0=\neg\phi$ and $\phi^1=\phi$ the condition of consistency be
 \begin{tikzpicture}[grow=right]
 \node[bag0] {{$\top$}}
     child {
-        node[bag] {\llap{$\neg$}$\phi(x;b_{\varnothing}\!)$}      
+        node[bag] {\llap{$\neg$}$\phi({\mr x}\,;{\gr b_{\varnothing}})$}      
             child {
-                node[bag] {\llap{$\neg$}$\phi(x;b_0\!)$}
+                node[bag] {\llap{$\neg$}$\phi({\mr x}\,;{\gr b_0})$}
                     child {
-                       node[bag] {\footnotesize\llap{$\neg$}$\phi(x;b_{00})$\rlap{$\ \cdots$}}
+                       node[bag] {\footnotesize\llap{$\neg$}$\phi({\mr x}\,;{\gr b_{00}})$\rlap{$\ \cdots$}}
                        edge from parent
                     }    
                     child {
-                       node[bag] {\footnotesize$\phi(x;b_{00})$\rlap{$\ \cdots$}}
+                       node[bag] {\footnotesize$\phi({\mr x}\,;{\gr b_{00}})$\rlap{$\ \cdots$}}
                        edge from parent
                     }  
                  edge from parent
             }
             child {
-                node[bag] {$\phi(x;b_0\!)$}
+                node[bag] {$\phi({\mr x}\,;{\gr b_0})$}
                 edge from parent
                     child {
-                       node[bag] {\footnotesize\llap{$\neg$}$\phi(x;b_{01})$\rlap{$\ \cdots$}}
+                       node[bag] {\footnotesize\llap{$\neg$}$\phi({\mr x}\,;{\gr b_{01}})$\rlap{$\ \cdots$}}
                        edge from parent
                     }    
                     child {
-                       node[bag] {\footnotesize$\phi(x;b_{01})$\rlap{$\ \cdots$}}
+                       node[bag] {\footnotesize$\phi({\mr x}\,;{\gr b_{01}})$\rlap{$\ \cdots$}}
                        edge from parent
                     }  
                  edge from parent
@@ -494,28 +483,28 @@ If we define $\phi^0=\neg\phi$ and $\phi^1=\phi$ the condition of consistency be
        edge from parent 
     }
     child {
-        node[bag] {$\phi(x;b_{\varnothing}\!)$}         
+        node[bag] {$\phi({\mr x}\,;{\gr b_{\varnothing}})$}         
             child {
-                node[bag] {\llap{$\neg$}$\phi(x;b_1\!)$}
+                node[bag] {\llap{$\neg$}$\phi({\mr x}\,;{\gr b_1})$}
                     child {
-                       node[bag] {\footnotesize\llap{$\neg$}$\phi(x;b_{10})$\rlap{$\ \cdots$}}
+                       node[bag] {\footnotesize\llap{$\neg$}$\phi({\mr x}\,;{\gr b_{10}})$\rlap{$\ \cdots$}}
                        edge from parent
                     }    
                     child {
-                       node[bag] {\footnotesize$\phi(x;b_{10})$\rlap{$\ \cdots$}}
+                       node[bag] {\footnotesize$\phi({\mr x}\,;{\gr b_{10}})$\rlap{$\ \cdots$}}
                        edge from parent
                     }  
                  edge from parent
             }
             child {
-                node[bag] {$\phi(x;b_1\!)$}
+                node[bag] {$\phi({\mr x}\,;{\gr b_1})$}
                 edge from parent
                     child {
-                       node[bag] {\footnotesize\llap{$\neg$}$\phi(x;b_{11})$\rlap{$\ \cdots$}}
+                       node[bag] {\footnotesize\llap{$\neg$}$\phi({\mr x}\,;{\gr b_{11}})$\rlap{$\ \cdots$}}
                        edge from parent
                     }    
                     child {
-                       node[bag] {\footnotesize$\phi(x;b_{11})$\rlap{$\ \cdots$}}
+                       node[bag] {\footnotesize$\phi({\mr x}\,;{\gr b_{11}})$\rlap{$\ \cdots$}}
                        edge from parent
                     }  
                  edge from parent
@@ -528,6 +517,7 @@ If we define $\phi^0=\neg\phi$ and $\phi^1=\phi$ the condition of consistency be
 When a tree of this form exists, we say that $\phi({\mr x}\,;{\gr z})$ has the \emph{binary tree property.}
 
 \begin{theorem}\label{thm_count_types}
+  ($\mrX,\grZ$ type-definable)
   The following are equivalent
   \begin{itemize}
   \item[1.] $\phi({\mr x}\,;{\gr z})$ is unstable
@@ -535,12 +525,16 @@ When a tree of this form exists, we say that $\phi({\mr x}\,;{\gr z})$ has the \
   \end{itemize}
 \end{theorem}
 
+The assumption of type-definability is redundant and $\phi({\mr x}\,;{\gr z})$ can be replaced with an arbitrary relation $\pi({\mr x}\,;{\gr z})$.
+But the proof would be more involved.
+
+\vspace*{-\baselineskip}
 \begin{proof}
   \ssf{1}$\IMP$\ssf{2}.
   The argument is the same as in the proof of Lemma~\ref{lem_bin_tree}.
   Assume \ssf1.
   By Theorem~\ref{thm_def_stable_formula2} there are $2^\kappa$ sets externally definable by $\phi({\mr x}\,;{\gr z})$.
-  Then there is ${\gr b_\varnothing}\in{\U^z}$ such that there are $2^\kappa$ sets ${\gr\D}$ externally definable by $\phi({\mr x}\,;{\gr z})$ and such that ${\gr b_\varnothing}\in{\gr\D}$ and $2^\kappa$ sets such that ${\gr b_\varnothing}\notin{\gr\D}$.
+  Then there is ${\gr b_\varnothing}\in\grZ$ such that there are $2^\kappa$ sets ${\gr\D}$ externally definable by $\phi({\mr x}\,;{\gr z})$ and such that ${\gr b_\varnothing}\in{\gr\D}$ and $2^\kappa$ sets such that ${\gr b_\varnothing}\notin{\gr\D}$.
 
   Assume inductively that ${\gr b}:2^n\to{\gr\U^z}$ is such that for all $s\in2^n$ and $r\in2^{n+1}$ there are $2^\kappa$ sets ${\gr\D}$ externally definable by $\phi({\mr x}\,;{\gr z})$ and such that ${\gr b_{s\restriction i}}\in\D\iff r(i)=1$.
   Reasoning as above we can extend ${\gr b}$ to a map ${\gr b'}:2^{n+1}\to{\gr\U^z}$ with the same property.
@@ -579,12 +573,13 @@ When a tree of this form exists, we say that $\phi({\mr x}\,;{\gr z})$ has the \
 \end{proof}
 
 \begin{corollary}\label{corol_count_types}
-The following are equivalent
-\begin{itemize}
-\item[1.] $\phi({\mr x}\,;{\gr z})$ is a stable formula
-\item[2.] $\big|S_{\phi}(A)\big|\le|A|$ for all countable sets $A$
-\item[3.] $\big|S_{\phi}(A)\big|<2^{|A|}$ for all countable sets $A$.
-\end{itemize}
+  ($\mrX,\grZ$ type-definable over $A$)
+  The following are equivalent
+  \begin{itemize}
+  \item[1.] $\phi({\mr x}\,;{\gr z})$ is a stable formula
+  \item[2.] $\big|S_{\phi}(A)\big|\le|A|$ for all countable sets $A$
+  \item[3.] $\big|S_{\phi}(A)\big|<2^{|A|}$ for all countable sets $A$.
+  \end{itemize}
 \end{corollary}
 
 \begin{proof}
@@ -594,40 +589,41 @@ The following are equivalent
 We use binary trees to prove the following fundamental lemma (attributed by Harnik and Harrington~\cite{HH} to Martin Ziegler).
 
 \begin{lemma}\label{lem_ziegler}
-   Let $\phi({\mr x}\,;{\gr z}),\psi({\mr x}\,;{\gr z}) \in L(A)$.
-   Let ${\gr b}\in\U^{\gr z}$.
-   Assume that $\phi({\mr x}\,;{\gr z})$ is stable and that $\phi({\mr x}\,;{\gr b})\vee\psi({\mr x}\,;{\gr b})$ is finitely satisfied in every $M\supseteq A$.
-   Then $\phi({\mr x}\,;{\gr b})$ or $\psi({\mr x}\,;{\gr b})$ is finitely satisfied in every $M\supseteq A$.
-\end{lemma} 
+  ($\mrX,\grZ$ type-definable over $A$)
+  Let $\phi({\mr x}\,;{\gr z}),\psi({\mr x}\,;{\gr z}) \in L(A)$.
+  Assume that $\phi({\mr x}\,;{\gr z})$ is stable.
+  Let ${\gr b}\in\grZ$.
+  Suppose that $\phi({\mr x}\,;{\gr b})\vee\psi({\mr x}\,;{\gr b})$ is satisfied in $\mrX\cap M^{\mr x}$ for every sufficiently saturated $M\supseteq A$.
+  Then $\phi({\mr x}\,;{\gr b})$ or $\psi({\mr x}\,;{\gr b})$ is satisfied in  $\mrX\cap M^{\mr x}$ for every sufficiently saturated $M\supseteq A$.
+\end{lemma}
 
 \begin{proof}
   Negate the theorem.
   Then there are two models containing $A$, the first omitting $\phi({\mr x}\,;{\gr b})$, the second omitting $\psi({\mr x}\,;{\gr b})$.
-  It is easy to see that we can expand these models to two substructures $\V_0$ and $\V_1$ that are $A$-isomorphic to $\U$ and such that $\V_0=\neg\phi(\V_0^{{\mr x}}\,;{\gr b})$ and $\V_1=\neg\psi(\V_1^{{\mr x}},;{\gr b})$.
+  It is easy to see that we can expand these models to two substructures $\V_0$ and $\V_1$ that are $A$-isomorphic to $\U$.
+  Then $\phi({\mr\X_0}\,;{\gr b})=\psi({\mr\X_1}\,;{\gr b})=\varnothing$ where ${\mr\X_i}=\mrX\cap\V_i^{{\mr x}}$.
 
   Let $f_i:\U\to\V_i$ be the $A$-isomorphisms mentioned above. 
-  Let $\V_\varnothing=\U$ and ${\gr b_\varnothing}={\gr b}$.
-  Define inductively for every $s\in 2^{<\omega}$ 
+  Set $f_\varnothing=\id_\U$, then define inductively $f_{s\frown i}=f_i\circ f_s$, for every $s\in 2^{<\omega}$.
+  We write $\V_s=f_s[\U]$ and ${\gr b_s}=f_s\,{\gr b}$.
+  Then, we obtain
 
-  \hfil$\V_{s^\frown i}=f_i[\V_s]$\ \ and\ \ ${\gr b_{s\frown i}}=f_i({\gr b_s})$.
-
-  Then from the inclusion above we obtain
-
-  \#\hfil$\V_{s\frown0}^{{\mr x}}\subseteq\neg\phi(\V_{s\frown0}^{{\mr x}}\,;{\gr b_s})$ \ \ and \ \  $\V_{s\frown1}^{{\mr x}}\subseteq\neg\psi(\V_{s\frown1}^{{\mr x}}\,;{\gr b_s})$.
-
-  We prove that the branches of the tree $\<\phi({\mr x}\,;{\gr b_s})\ :\  s\in2^{<\omega}\>$ are (finitely) consistent. 
+  \#\hfill$\phi({\mr\X_{s\frown0}}\,;{\gr b_s})\ =\ \psi({\mr\X_{s\frown1}}\,;{\gr b_s})\ =\ \varnothing$\hfill where ${\mr\X_{s}}=\mrX\cap\V_{s}^{{\mr x}}$.
+  
+  We prove that the branches of the tree $\<\phi({\mr x}\,;{\gr b_s})\, :\,  s\in2^{<\omega}\>$ are consistent in $\mrX$. 
   By Theorem~\ref{thm_count_types}, this contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
   Assume provisionally that there is a formula $\theta({\mr x})\in L(A)$ such that
   
-  \ceq{\#\#\hfill\theta({\mr x})}{\imp}{\phi({\mr x}\,;{\gr b})\vee\psi({\mr x}\,;{\gr b})}
+  \ceq{\#\#\hfill\varnothing\ \ \neq\ \ \theta(\mrX)}{\subseteq}{\phi(\mrX\,;{\gr b})\cup\psi(\mrX\,;{\gr b})}
   
+  Let ${\mr a}\in\theta(\mrX)$ be arbitrary.
   Let $s\in2^n$ be given.
-  Let ${\mr a}\in\theta(\V_s^{{\mr x}})$ be arbitrary. We claim that ${\mr a}$ witnesses the consistency of $\{\phi^{s_i}({\mr x}\,;{\gr b_{s\restriction i}})\ :\ i<n\}$.
-  As $\V_s\preceq\V_{s\restriction i}$, we have that ${\mr a}\in\theta(\V_{s\restriction i}^{{\mr x}})$.
-  We prove that $\phi^{s_i}({\mr a}\,;{\gr b_{s\restriction i}})$.
-If $s_i=0$ then from \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi^0(\V_{s\restriction(i+1)}^{{\mr x}}\,;{\gr b_{s\restriction i}})$ and $\phi^0({\mr a}\,;{\gr b_{s\restriction i}})$ follows by elementarity.
-  If $s_i=1$, from the second inclusion in \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\neg\psi(\V_{s\restriction(i+1)}^{{\mr x}}\,;{\gr b_{s\restriction i}})$.
-  Therefore, from $\theta({\mr a})$ and \#\#, we obtain that $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi(\V_{s\restriction(i+1)}^{{\mr x}}\,;{\gr b_{s\restriction i}})$ and $\phi^1({\mr a}\,;{\gr b_{s\restriction i}})$ follows.
+  We prove that ${\mr a_s}=f_s{\mr a}$ witnesses the consistency of $\{\phi^{s_i}({\mr x}\,;{\gr b_{s\restriction i}})\, :\,i<n\}$.
+  Clearly ${\mr a_s}\in\theta({\mr\X_s})$, then, as $\V_s\preceq\V_{s\restriction i}$, we have that ${\mr a_s}\in\theta({\mr\X_{s\restriction i}})$.
+  We prove that $\phi^{s_i}({\mr a_s}\,;{\gr b_{s\restriction i}})$.
+  When $s_i=0$, from \# we obtain ${\mr\X_{s\restriction(i+1)}}\subseteq\neg\phi({\mr\X_{s\restriction(i+1)}}\,;{\gr b_{s\restriction i}})$ and $\phi^0({\mr a}\,;{\gr b_{s\restriction i}})$ follows.
+  When $s_i=1$, from the second inclusion in \# we obtain ${\mr\X_{s\restriction(i+1)}}\subseteq\neg\psi({\mr\X_{s\restriction(i+1)}}\,;{\gr b_{s\restriction i}})$.
+  Therefore, from $\theta({\mr a})$ and \#\#, we obtain  ${\mr\X_{s\restriction(i+1)}}\subseteq\phi({\mr\X_{s\restriction(i+1)}}\,;{\gr b_{s\restriction i}})$ and $\phi^1({\mr a_s}\,;{\gr b_{s\restriction i}})$ follows.
 
   We are left with proving that the provisional assumption is redundant.
   By Exercise~\ref{ex_almost_satisfied} there is a formula $\theta({\mr\bar x})\in L(A)$ such that
@@ -640,8 +636,8 @@ If $s_i=0$ then from \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\ph
 
   \ceq{\hfill\psi'({\mr\bar x}\,;{\gr b})}{=}{\bigvee_{i=1}^n\psi({\mr x_i}\,;{\gr b})}
 
-  Note that $\phi'({\mr\bar x}\,;{\gr z})$ is a stable formula.
-  Therefore we can apply what proved above to the formulas $\phi'({\mr\bar x}\,;{\gr b})$ and $\psi'({\mr\bar x}\,;{\gr b})$ and note that these formulas are satisfied in every model $M\supseteq A$ if and only if $\phi({\mr x}\,;{\gr b})$, respectively $\psi({\mr x}\,;{\gr b})$, are.
+  Note that $\phi'({\mr\bar x}\,;{\gr z})$ is a stable formula (between ${\mr\X^n}$ and $\grZ$).
+  Therefore we can apply what proved above to the formulas $\phi'({\mr\bar x}\,;{\gr b})$ and $\psi'({\mr\bar x}\,;{\gr b})$ and note that these formulas are satisfied in ${\mr\X^n}\cap M^{{\mr x_1}\dots{\mr x_n}}$ if and only if $\phi({\mr x}\,;{\gr b})$, respectively $\psi({\mr x}\,;{\gr b})$, are satisfied in ${\mrX}\cap M^{\mr x}$.
 \end{proof}
 
 % \begin{theorem}
@@ -672,10 +668,8 @@ If $s_i=0$ then from \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\ph
 \def\ceq#1#2#3{\parbox[t]{20ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 We say that $T$ is a \emph{stable theory\/} if every formula is stable.
-Most theorems in this section have a formulation that only requires the stability of a given formula $\phi({\mr x}\,;{\gr z})\in L$.
+Most theorems in this section have a formulation that only requires the stability of a given formula $\phi({\mr x}\,;{\gr z})\in L$ or a set of formulas $\Delta\subseteq L_{{\mr x}\,{\gr z}}$.
 This is sometimes called \textit{local\/} stability.
-Sometimes the global case does not trivially follow from the local one.
-Therefore our result are stated using an arbitrary set $\Delta\subseteq L_{{\mr x}\,{\gr z}}$.
 We say that $\Delta$ is stable if all formulas in $\Delta$ are stable.
 When $|{\mr x}|=|{\gr z}|=\omega$ and $\Delta=L_{{\mr x}\,{\gr z}}$ the stability of $\Delta$ is tantamount to the stability of $T$.
 
@@ -683,52 +677,56 @@ The following corollary of Theorem~\ref{lem_ziegler} is a fundamental tool.
 It implies, in particular the existence of Lascar invariant types.
 
 \begin{corollary}\label{corol_stable_coheir_over_models}
-  Let  $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
-  Let $q({\mr x})\subseteq L(\U)$ be finitely satisfiable in every $M\supseteq A$.
-  Then there is a type $p({\mr x})\in S_\Delta(\U)$ such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
+  [$\mrX,\grZ$ type-definable over $A$; $\Delta\subseteq L_{{\mr x}\,{\gr z}}(A)$ stable.]
+  Let $q({\mr x})\subseteq L(\grZ)$ be finitely satisfiable in $\mrX\cap M^{\mr x}$ for every $M\supseteq A$.
+  Then there is a type $p({\mr x})\in S_\Delta(\grZ)$ such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in $\mrX\cap M^{\mr x}$ for every $M\supseteq A$.
 \end{corollary}
 
 \begin{proof}
-  Let $p({\mr x})\subseteq \pmDelta(\U)$ be maximal such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
+  Let $p({\mr x})\subseteq \pmDelta(\grZ)$ be maximal such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in $\mrX\cap M^{\mr x}$ for every $M\supseteq A$.
   We prove that $p({\mr x})$ is complete.
-  Suppose not than there are a conjunction $\alpha({\mr x})$ of formulas in $q({\mr x})$, a conjunction $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ of formulas in $p({\mr x})$, and a formula $\phi({\mr x}\,;{\gr b})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$ such that 
+  Suppose not, then there are a conjunction $\alpha({\mr x})$ of formulas in $q({\mr x})$, a conjunction $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ of formulas in $p({\mr x})$, and a formula $\phi({\mr x}\,;{\gr b})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$ such that 
 
   \hfil$\alpha({\mr x})\wedge\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})\wedge\phi({\mr x}\,;{\gr b})$ \ \ and\ \   $\alpha({\mr x})\wedge\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})\wedge\neg\phi({\mr x}\,;{\gr b})$ 
  
-  are not satisfied in every $M\supseteq A$.
-  The disjunction of the two formulas is satisfied in every $M\supseteq A$ by the definition of $p({\mr x})$.
+  are not satisfied in $\mrX\cap M^{\mr x}$ for every $M\supseteq A$.
+  The disjunction of the two formulas is satisfied in $\mrX\cap M^{\mr x}$ for every $M\supseteq A$ by the definition of $p({\mr x})$.
   Moreover the formulas obtained replacing ${\gr b},{\gr b_1},\dots,{\gr b_n}$ by ${\gr z},{\gr z_1},\dots,{\gr z_n}$ are stable.
   This contradicts Theorem~\ref{lem_ziegler}
 \end{proof}
 
 The following theorem shows that in stable theories the heir-coheir relation is symmetric.
-In fact, when $T$ is stable, it implies that
+In fact, when $T$ is stable (i.e., when all formulas are stable), it implies that
 
 \ceq{\hfill{\mr a}\cnonfork_M{\gr b}}{\IMP}{{\gr b}\cnonfork_M{\mr a}.}
 
 \begin{theorem}[ (Symmetry)]\label{thm_symmetry}
+  ($\mrX,\grZ$ type-definable over $A\subseteq M$)
   Let $\phi({\mr x}\,;{\gr z})\in L(M)$ be stable.
-  Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$ be such that ${\mr a}\cnonfork_M{\gr b}$.
+  Let ${\mr a}\in\mrX$ and ${\gr b}\in\grZ$ be such that ${\mr a}\cnonfork_M{\gr b}$.
   Then
 
   \ceq{\hfill\phi({\mr a}\,;{\gr b})}{\IMP}{\phi({\mr a}\,;M^{\gr z})\neq\varnothing.}
+
+  When $M$ is sufficiently saturated we can also claim that $\phi({\mr a}\,;\grZ\cap M^{\gr z})\neq\varnothing$. 
 \end{theorem}
 
-\vspace*{-\parskip}
 \begin{proof}
   Assume $\phi({\mr a}\,;{\gr b})$.
   Let $\V\preceq\U$ be isomorphic to $\U$ over $M$ and such that ${\gr b}\in\V^{\gr z}$ and ${\mr a}\cnonfork_M\V$. Such $\V$ exists by Proposition~\ref{prop_saturate_heir}.
-  By stability, there is $\psi({\gr z})\in L(\V)$ such that $\psi(\V^{\gr z})=\phi({\mr a},\V^{\gr z})$.
-  Recall that by Lemma~\ref{lem_coheir_independence} (non-splitting) if ${\gr b'}\equiv_M{\gr b''}$ are in $\V$ then ${\gr b'}\equiv_{M,\kern.2ex{\mr a}}{\gr b''}$.
-  Then $\psi(\V^{\gr z})$ is invariant under $\Aut(\V/M)$, so we can assume that $\psi({\gr z})\in L(M)$.
-  Therefore $\psi({\gr z})$ is satisfied in $M$ and so is $\phi({\mr a},{\gr z})$.
+  By stability, there is a formula $\psi({\gr z})\in L(\mrX\cap\V^{\mr x})$ such that $\psi(\grZ\cap\V^{\gr z})=\phi({\mr a}\,;\grZ\cap\V^{\gr z})$.
+  Recall that by Lemma~\ref{lem_coheir_independence} (non-splitting) if ${\gr b'}\equiv_M{\gr b''}$ are in $\V^{\gr z}$ then ${\gr b'}\equiv_{M,\kern.2ex{\mr a}}{\gr b''}$.
+  Then $\phi({\mr a}\,;\grZ\cap\V^{\gr z})$ is invariant under $\Aut(\V/M)$, and so is $\psi(\grZ\cap\V^{\gr z})$.
+  Therefore we can assume that $\psi({\gr z})\in L(M)$, see Exercise~\ref{ex_inv_def}.
+  Then $\psi({\gr z})$ is satisfied in $M$ and so is $\phi({\mr a},{\gr z})$.
 \end{proof}
 
-We deduce a version of Harrington's mysterious Lemma cf.~\cite{TZ}*{Lemma 8.3.4}.
+We deduce a version of Harrington's mysterious lemma cf.~\cite{TZ}*{Lemma 8.3.4}.
 
 \begin{corollary}\label{corol_harrington0}
+  [$\mrX,\grZ$ type-definable over $A\subseteq M$.]
   Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
-  Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$.
+  Let ${\mr a}\in\mrX$ and ${\gr b}\in\grZ$.
   Finally, let $\theta({\mr x}),\psi({\gr z})\in L(M)$ be such that $\theta(M^{\mr x})=\phi(M^{\mr x};{\gr b})$ and $\psi(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$.
   Such formulas exist by stability.
   Then $\theta({\mr a})\iff\psi({\gr b})$.
@@ -749,6 +747,7 @@ We deduce a version of Harrington's mysterious Lemma cf.~\cite{TZ}*{Lemma 8.3.4}
 Now we show that under the assumption of stability Lascar invariance reduces to a tamer form of invariance.
 
 \begin{proposition}\label{prop_type_over_acl2}
+  [$\mrX,\grZ$ type-definable over $A$.]
   Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
   Let $p({\mr x})\in S_\phi(\U)$. 
   Then the following are equivalent
@@ -776,7 +775,7 @@ Now we show that under the assumption of stability Lascar invariance reduces to 
   By Corollary~\ref{coroll_defble_Lascar_inv}, they belong to $\acl^\eq\!A$.
 \end{proof}
 
-Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ and $A\subseteq\U$ be given.
+Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ and $A\subseteq\U$ be given.e
 A type $q({\mr x})\subseteq L(\U)$ is \emph{stationary\/} if it has a unique global extension $p({\mr x})\in S_\Delta(\U)$ that is Lascar invariant over $A$.
 The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
 
@@ -983,20 +982,20 @@ Similarly for persistent/invariant/wide.
 %   Then $\mrD$ is persistent by Theorem~\ref{thm_generic_invariant}.
 % \end{proof}
 
+\begin{remark}
+  Let $\Delta$ be stable.
+  Let $G=\Aut(\UDelta)$ and $H=\Autf(\UDelta)$.
+  Assume that $\mrX$ and $\grZ$ are type-definable and invariant over $G$.
+  From Theorem~\ref{thm_persistent_finsat} and Remark~\ref{rem_coalesce} it follows that $\gamma_H({\mr x})$ is consistent.
+  Therefore, by Proposition~\ref{prop_Ggeneric_Hpersistent}, G-generic sets are $H$-wide.
+\end{remark}
+
 We want a version of Theorem~\ref{thm_Shelah_strong_types} and Proposition~\ref{prop_trans_action} that includes requirements on the language.
 The proof is essentially the same (but it would be rude to leave it as an exercise).
 
 Theorem~\ref{thm_persistent_finsat} shows that when $\Delta$ is stable Theorem~\ref{thm_coalesce} applies with $\Autf(\U)$ for $G$.
 Therefore, in particular, \DLascar\ generic sets are \DLascar\ wide.
 The following remark strengthens this result.
-
-\begin{remark}
-  Let $\Delta$ be stable.
-  Let $G=\Aut(\UDelta)$ and $H=\Autf(\UDelta)$.
-  Assume that $\mrX$ and $\grZ$ are type-definable and invariant over $G$.
-  From Theorem~\ref{thm_persistent_finsat} and Remark~\ref{rem_coalesce} it follows that $\gamma_H(x)$ is consistent.
-  Therefore, by Proposition~\ref{prop_Ggeneric_Hpersistent}, G-generic sets are $H$-wide.
-\end{remark}
 
 \begin{fact}
   Let $\mrD\in\acl^\eq\varnothing$.
@@ -1008,12 +1007,12 @@ The following remark strengthens this result.
   \def\ceq#1#2#3{\parbox[t]{15ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
   Let $\Delta$ be stable.
-  Let $G=\Aut(\UDelta)$ and $H=\Autf(\UDelta)$.
+  Define, for convenience, $G=\Aut(\UDelta)$ and $H=\Autf(\UDelta)$.
   Assume that $\mrX$ and $\grZ$ are type-definable and invariant over $G$.
-  Moreover $G$ acts transitively on $\mrX$.
+  Also, assume that $G$ acts transitively on $\mrX$.
   Finally, let 
   
-  \ceq{\hfill P}{=}{\big\{p({\mr x})\in S_\Delta(\grZ)\ :\ p({\mr x})\textrm{ $H$-invariant}\big\}}.
+  \ceq{\hfill P}{=}{\big\{p({\mr x})\in S_\Delta(\grZ)\ :\ p({\mr x})\textrm{ is $H$-invariant}\big\}}.
   
   Then $G$ acts transitively on $P$.
   Moreover, for any ${\mr a}\models p({\mr x})$ there is a unique $q({\mr x})\in Q$ such that
