@@ -701,7 +701,7 @@ In fact, when $T$ is stable (i.e., when all formulas are stable), it implies tha
 \ceq{\hfill{\mr a}\cnonfork_M{\gr b}}{\IMP}{{\gr b}\cnonfork_M{\mr a}.}
 
 \begin{theorem}[ (Symmetry)]\label{thm_symmetry}
-  ($\mrX,\grZ$ type-definable over $A\subseteq M$)
+  [$\mrX,\grZ$ type-definable over $A\subseteq M$]
   Let $\phi({\mr x}\,;{\gr z})\in L(M)$ be stable.
   Let ${\mr a}\in\mrX$ and ${\gr b}\in\grZ$ be such that ${\mr a}\cnonfork_M{\gr b}$.
   Then
@@ -724,7 +724,7 @@ In fact, when $T$ is stable (i.e., when all formulas are stable), it implies tha
 We deduce a version of Harrington's mysterious lemma cf.~\cite{TZ}*{Lemma 8.3.4}.
 
 \begin{corollary}\label{corol_harrington0}
-  [$\mrX,\grZ$ type-definable over $A\subseteq M$.]
+  [$\mrX,\grZ$ type-definable over $A\subseteq M$]
   Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
   Let ${\mr a}\in\mrX$ and ${\gr b}\in\grZ$.
   Finally, let $\theta({\mr x}),\psi({\gr z})\in L(M)$ be such that $\theta(M^{\mr x})=\phi(M^{\mr x};{\gr b})$ and $\psi(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$.
@@ -740,16 +740,15 @@ We deduce a version of Harrington's mysterious lemma cf.~\cite{TZ}*{Lemma 8.3.4}
   Suppose not.
   Then $\phi({\mr a}\,;{\gr b})\wedge\neg\psi({\gr b})$.
   As $\phi({\mr x}\,;{\gr z})\wedge\neg\psi({\gr z})$ is stable, from Theorem~\ref{thm_symmetry} we obtain $\phi({\mr a}\,;M^{\gr z})\sm\theta(M^{\gr z})\neq\varnothing$ which contradicts  $\psi(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$.
-  Assuming $\neg\phi({\mr a}\,;{\gr b})$ we obtain $\neg\theta({\mr a})$ and $\neg\psi({\gr b})$ by a symilar argument.
+  Assuming $\neg\phi({\mr a}\,;{\gr b})$ we obtain $\neg\theta({\mr a})$ and $\neg\psi({\gr b})$ by a similar argument.
   Then $\theta({\mr a})\iff\psi({\gr b})$ as required.
 \end{proof}
 
 Now we show that under the assumption of stability Lascar invariance reduces to a tamer form of invariance.
 
 \begin{proposition}\label{prop_type_over_acl2}
-  [$\mrX,\grZ$ type-definable over $A$.]
   Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
-  Let $p({\mr x})\in S_\phi(\U)$. 
+  Let $p({\mr x})\in S_\phi(\U^{\gr z})$. 
   Then the following are equivalent
   \begin{itemize}
   \item[1.] ${\gr\D_{p,\phi}}\in \acl^\eq\!A$ -- recall that, by stability, ${\gr\D_{p,\phi}}\in\U^\eq$
@@ -765,7 +764,7 @@ Now we show that under the assumption of stability Lascar invariance reduces to 
   Let $M\supseteq A$ be given.
   First, for simplicity, we prove that any $\phi({\mr x}\,;{\gr b})\in p$ is satisfied in $M$.
   Let $\psi({\gr z})\in L(\acl^\eq\!A)$ be a formula defining ${\gr\D_{p,\phi}}$.
-  Pick any ${\mr a}\models p({\mr x}){\restriction} M$ such that ${\gr b}\cnonfork_M{\mr a}$.
+  Pick any ${\mr a}\models p({\mr x}){\restriction}M$ such that ${\gr b}\cnonfork_M{\mr a}$.
   As $\phi({\mr a}\,;M^{\gr z})=\psi(M^{\gr z})$ we have that $\phi({\mr a}\,;{\gr b})=\psi({\gr b})$.
   But $\psi({\gr b})$ holds because $\phi({\mr x}\,;{\gr b})\in p$, hence $\phi({\mr a}\,;{\gr b})$ and, from Theorem~\ref{thm_symmetry} we obtain $\phi(M^{\mr x};{\gr b})\neq\varnothing$.
   The same argument extends easily to the conjunction of formulas of the form $\phi({\mr x}\,;{\gr b})$ and negation thereof (use that the complement and the Cartesian product of sets in $\acl^\eq\!A$ is again $\acl^\eq\!A$).
@@ -786,16 +785,30 @@ Note that when $A$ is a model $\GDelta(A)$-formulas are equivalent to $\qfDelta(
 
 \begin{theorem}[ (Stationarity)]\label{thm_stationarity}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
-  Let $q({\mr x})$ be a complete $\GDelta(\acl^\eq\!A)$-type.
-  Then there is a unique type $p({\mr x})\in S_\Delta(\U)$ containing $q({\mr x})$ that is invariant over $\acl^\eq A$.
+  Let $q({\mr x})\subseteq L(\U)$ be a type that is invariant over $\acl^\eq\!A$ decides all formulas in $\Delta(\U^{\gr z})$ that are invariant over $\acl^\eq\!A$.
+  Then there is a unique type $p({\mr x})\in S_\Delta(\U^{ge z})$ that is consistent with $q({\mr x})$ and is invariant over $\acl^\eq A$.
 \end{theorem}
 
 \begin{proof}
   Existence follows from Corollary~\ref{corol_stable_coheir_over_models} and Proposition~\ref{prop_type_over_acl2}.
-  Suppose $p_i({\mr x})\in S_\Delta(\U)$, for $i=1,2$, are two types that extend $q({\mr x})$ and are invariant over $\acl^\eq\!A$.
+  Suppose that $p_i({\mr x})\in S_\Delta(\U)$, for $i=1,2$, are two types that are consistent with $q({\mr x})$ and invariant over $\acl^\eq\!A$.
+  Let $\phi({\mr x}\,;{\gr z})\in\Delta$ and ${\gr b}\in\U^{\gr z}$ be given.
+  Pick ${\mr a_i}\models p_i({\mr x})\restriction \acl^\eq\!A,{\gr b}$.
+  It suffices to show that $\phi({\mr a_1}\,;{\gr b})\iff\phi({\mr a_2}\,;{\gr b})$.
+  Note that we can choose the ${\mr a_i}$ so that ${\mr a_1},{\mr a_2}\cnonfork_M{\gr b}$.
+  As $p_i({\mr x})$ are finitely satisfied in $M$, by symmetry 
+
   It suffices to prove that ${\gr\D_{p_1,\phi}}={\gr\D_{p_2,\phi}}$ for every $\phi({\mr x}\,;{\gr z})\in\Delta$.
-  Let $\psi_i({\gr z})\in L(\acl^\eq\!A)$ define ${\gr\D_{p_i,\phi}}$.
+
+  Let $M\subseteq A$.
+  Let $\psi_i({\mr x_1},\dots,{\mr x_n}\,;{\gr z})$ be such that ${\gr\D_{p_i,\phi}}=\psi_i({\mr a_1},\dots,{\mr a_n}\,;\grZ)$ where ${\mr a_1},\dots,{\mr a_n}\in\mrX\cap M^{\mr x}$.
+
+  
+  By Proposition~\ref{prop_type_over_acl2}, the types $p_i({\mr x})$ are finitely satisfied in $\mrX\cap M^{\mr x}$.
+  We claim that $\psi_1({\gr b})\iff\psi_2({\gr b})$, for all ${\gr b}\in\grZ$.
+
   These formulas exist by stability.
+  By invariance we can assume that they have parameters in $\acl^\eq\!A$.
   We claim that $\psi_1({\gr b})\iff\psi_2({\gr b})$, for all ${\gr b}\in\U^{\gr z}$.
   Let $t({\gr z})\in S_\Delta(\U)$ be invariant over $\acl^\eq\!A$ and consistent with $\tp({\gr b}/\acl^\eq\!A)$.
   As remarked above, such a type exists by stability.
