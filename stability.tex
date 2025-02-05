@@ -27,12 +27,12 @@ Recall from Section~\ref{invariant_sets} that for every formula $\phi({\mr x}\,;
 
 \ceq{\hfill\emph{$\gr\D_{p,\phi}$}}{=}{\Big\{{\gr a}\in\U^{\gr z}\ :\ \phi({\mr x}\,;{\gr a})\in p\Big\}.}
 
-We say that $\grD$ is \emph{externally definable\/} if it is of the form ${\gr\D_{p,\phi}}$ for a type $p(x)$ in $S(\U)$ or $S_\phi(\U)$.
-We say that $\grD$ is externally definable \emph{by $p({\mr x})$ and $\phi({\mr x}\,;{\gr z})$}.
+We say that $\grD$ is \emph{externally definable\/} if it is of the form ${\gr\D_{p,\phi}}$ for some type $p({\mr x})\in S_\phi(\U^{\gr z})$.
+% We say that $\grD$ is externally definable \emph{by $p({\mr x})$ and $\phi({\mr x}\,;{\gr z})$}.
 
-Equivalently, a set $\grD$ is externally definable if it is the trace over $\U$ of a set which is definable in some elementary extension of $\U$.
-More precisely, $\grD$ is the trace on $\U$ of a set of the form $\phi({\mr ^{*\kern-.3ex}b}\,;{\gr ^{*\kern-.2ex}\U})$ where $ ^{*\kern-.2ex}\U$ is elementary extension of $\U$ and ${\mr  ^{*\kern-.3ex}b}\in {}^{*\kern-.2ex}\U^{\mr x}$.
-The latter interpretation explains the terminology.
+Equivalently, a set $\grD$ is externally definable if it is the trace over $\U^{\gr z}$ of a set which is definable in some elementary extension of $\U$.
+More precisely, $\grD=\phi({\mr ^{*\kern-.3ex}b}\,;{}^{*\kern-.2ex}\U^{\gr z})\cap\U^{\gr z}$ where $ ^{*\kern-.2ex}\U\succeq\U$ and ${\mr  ^{*\kern-.3ex}b}\in {}^{*\kern-.2ex}\U^{\mr x}$.
+This explains the terminology.
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}%
 We prefer to deal with external definability in a different, though equivalent, way.
@@ -88,15 +88,15 @@ Let ${\gr C}$ be the union of all these finite sets.
 Then ${\gr C}$ witnesses the failure of \ssf{2}.
 \end{proof}
 
-\begin{remark}\label{prop_approx_el_eq}
-If $\grD\subseteq\U^{\gr z}$ is approximated by $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\ref{expansions} for the notation.
-In fact, if the set $\grD$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for every $n$
+% \begin{remark}\label{prop_approx_el_eq}
+% If $\grD\subseteq\U^{\gr z}$ is approximated by $\phi({\mr x}\,;{\gr z})$ then so is any $\grC$ such that $\grC\equiv\grD$, see Section~\ref{expansions} for the notation.
+% In fact, if the set $\grD$ is approximable by $\phi({\mr x}\,;{\gr z})$ then for every $n$
 
-\hfil$\displaystyle\A {\gr z_1},\dots,{\gr z_n}\;\E {\mr x}\ \bigwedge^n_{i=1}\big[\phi({\mr x}\,;{\gr z_i})\ \iff\ {\gr z_i}\in{\gr \D}\big]$.
+% \hfil$\displaystyle\A {\gr z_1},\dots,{\gr z_n}\;\E {\mr x}\ \bigwedge^n_{i=1}\big[\phi({\mr x}\,;{\gr z_i})\ \iff\ {\gr z_i}\in{\gr \D}\big]$.
 
-So the same holds for any $\grC\equiv\grD$.
-A similar remark apply to approximability from below and from above (e.g.\@ for approximability from below, add the conjunct $\A {\gr z}\,\big[\phi({\mr x}\,;{\gr z})\imp {\gr z}\in\grD\big]$ to the formula above).
-\end{remark}
+% So the same holds for any $\grC\equiv\grD$.
+% A similar remark apply to approximability from below and from above (e.g.\@ for approximability from below, add the conjunct $\A {\gr z}\,\big[\phi({\mr x}\,;{\gr z})\imp {\gr z}\in\grD\big]$ to the formula above).
+% \end{remark}
 
 From the following easy observation of Chernikov and Simon~\cite{CS} we obtain an interesting (and mysterious) quantifier elimination result originally due to Shelah, see Corollary~\ref{corol_sh_exp_qe} below.
 
@@ -156,7 +156,7 @@ Implication $\pmi$ follows from \ssf{b}.
 \end{proof}
 
 \begin{corollary}
-If $p\in S_{{\mr x}}(\U)$ is honestly definable then the family of sets externally definable by $p$ is closed under quantifiers and Boolean combinations.
+If $p({\mr x})\in S(\U)$ is honestly definable then the family of sets externally definable by $p({\mr x})$ is closed under quantifiers and Boolean combinations.
 \end{corollary}
 
 \begin{proof}
@@ -582,8 +582,8 @@ When a tree of this form exists, we say that $\phi({\mr x}\,;{\gr z})$ has the \
 The following are equivalent
 \begin{itemize}
 \item[1.] $\phi({\mr x}\,;{\gr z})$ is a stable formula
-\item[2.] $\big|S_{\phi}(A)\big|\le|A|$ for all countable sets $A$
-\item[3.] $\big|S_{\phi}(A)\big|<2^{|A|}$ for all countable sets $A$.
+\item[2.] $\big|S_{\phi}(A^{\gr z})\big|\le|A|$ for all countable sets $A$
+\item[3.] $\big|S_{\phi}(A^{\gr z})\big|<2^{|A|}$ for all countable sets $A$.
 \end{itemize}
 \end{corollary}
 
@@ -603,31 +603,30 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 \begin{proof}
   Negate the theorem.
   Then there are two models containing $A$, the first omitting $\phi({\mr x}\,;{\gr b})$, the second omitting $\psi({\mr x}\,;{\gr b})$.
-  It is easy to see that we can expand these models to two substructures $\V_0$ and $\V_1$ that are $A$-isomorphic to $\U$ and such that $\V_0=\neg\phi(\V_0^{{\mr x}}\,;{\gr b})$ and $\V_1=\neg\psi(\V_1^{{\mr x}},;{\gr b})$.
+  It is easy to see that we can expand these models to two substructures $\U_0$ and $\U_1$ that are $A$-isomorphic to $\U$.
+  Then $\phi(\U_0^{\mr x}\,;{\gr b})=\psi(\U_1^{\mr x}\,;{\gr b})=\varnothing$.
 
-  Let $f_i:\U\to\V_i$ be the $A$-isomorphisms mentioned above. 
-  Let $\V_\varnothing=\U$ and ${\gr b_\varnothing}={\gr b}$.
-  Define inductively for every $s\in 2^{<\omega}$ 
+  Let $f_i:\U\to\U_i$ be the $A$-isomorphisms mentioned above. 
+  Set $f_\varnothing=\id_\U$, then define inductively $f_{s\frown i}=f_i\circ f_s$, for every $s\in 2^{<\omega}$.
+  We write $\U_s=f_s[\U]$ and ${\gr b_s}=f_s\,{\gr b}$.
+  Then, we obtain
 
-  \hfil$\V_{s^\frown i}=f_i[\V_s]$\ \ and\ \ ${\gr b_{s\frown i}}=f_i({\gr b_s})$.
-
-  Then from the inclusion above we obtain
-
-  \#\hfil$\V_{s\frown0}^{{\mr x}}\subseteq\neg\phi(\V_{s\frown0}^{{\mr x}}\,;{\gr b_s})$ \ \ and \ \  $\V_{s\frown1}^{{\mr x}}\subseteq\neg\psi(\V_{s\frown1}^{{\mr x}}\,;{\gr b_s})$.
-
-  We prove that the branches of the tree $\<\phi({\mr x}\,;{\gr b_s})\ :\  s\in2^{<\omega}\>$ are (finitely) consistent. 
+  \ceq{\#\hfill\phi(\U_{s\frown0}^{{\mr x}}\,;{\gr b_s})}{=}{\psi(\U_{s\frown0}^{{\mr x}}\,;{\gr b_s})\ \ =\ \ \varnothing}
+  
+  We prove that the branches of the tree $\<\phi({\mr x}\,;{\gr b_s})\, :\,  s\in2^{<\omega}\>$ are consistent. 
   By Theorem~\ref{thm_count_types}, this contradicts the stability of $\phi({\mr x}\,;{\gr z})$.
   Assume provisionally that there is a formula $\theta({\mr x})\in L(A)$ such that
   
-  \ceq{\#\#\hfill\theta({\mr x})}{\imp}{\phi({\mr x}\,;{\gr b})\vee\psi({\mr x}\,;{\gr b})}
+  \ceq{\#\#\hfill\varnothing\ \ \neq\ \ \theta(\mrX)}{\subseteq}{\phi(\mrX\,;{\gr b})\cup\psi(\mrX\,;{\gr b})}
   
+  Let ${\mr a}\in\theta(\U^{\mr x})$ be arbitrary.
   Let $s\in2^n$ be given.
-  Let ${\mr a}\in\theta(\V_s^{{\mr x}})$ be arbitrary. We claim that ${\mr a}$ witnesses the consistency of $\{\phi^{s_i}({\mr x}\,;{\gr b_{s\restriction i}})\ :\ i<n\}$.
-  As $\V_s\preceq\V_{s\restriction i}$, we have that ${\mr a}\in\theta(\V_{s\restriction i}^{{\mr x}})$.
-  We prove that $\phi^{s_i}({\mr a}\,;{\gr b_{s\restriction i}})$.
-If $s_i=0$ then from \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi^0(\V_{s\restriction(i+1)}^{{\mr x}}\,;{\gr b_{s\restriction i}})$ and $\phi^0({\mr a}\,;{\gr b_{s\restriction i}})$ follows by elementarity.
-  If $s_i=1$, from the second inclusion in \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\neg\psi(\V_{s\restriction(i+1)}^{{\mr x}}\,;{\gr b_{s\restriction i}})$.
-  Therefore, from $\theta({\mr a})$ and \#\#, we obtain that $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi(\V_{s\restriction(i+1)}^{{\mr x}}\,;{\gr b_{s\restriction i}})$ and $\phi^1({\mr a}\,;{\gr b_{s\restriction i}})$ follows.
+  We prove that ${\mr a_s}=f_s{\mr a}$ witnesses the consistency of $\{\phi^{s_i}({\mr x}\,;{\gr b_{s\restriction i}})\, :\,i<n\}$.
+  Clearly ${\mr a_s}\in\theta(\U_s^{\mr x})$, then, as $\U_s\preceq\U_{s\restriction i}$, we have that ${\mr a_s}\in\theta(\U_{s\restriction i}^{\mr x})$.
+  We prove that $\phi^{s_i}({\mr a_s}\,;{\gr b_{s\restriction i}})$.
+  When $s_i=0$, from \# we obtain $\U_{s\restriction(i+1)}^{\mr x}\subseteq\neg\phi(\U_{s\restriction(i+1)}^{{\mr x}}\,;{\gr b_{s\restriction i}})$ and $\phi^0({\mr a}\,;{\gr b_{s\restriction i}})$ follows.
+  When $s_i=1$, from the second inclusion in \# we obtain $\U_{s\restriction(i+1)}^{{\mr x}}\subseteq\neg\psi(\U_{s\restriction(i+1)}^{{\mr x}}\,;{\gr b_{s\restriction i}})$.
+  Therefore, from $\theta({\mr a})$ and \#\#, we obtain  $\U_{s\restriction(i+1)}^{{\mr x}}\subseteq\phi(\U_{s\restriction(i+1)}^{{\mr x}}\,;{\gr b_{s\restriction i}})$ and $\phi^1({\mr a_s}\,;{\gr b_{s\restriction i}})$ follows.
 
   We are left with proving that the provisional assumption is redundant.
   By Exercise~\ref{ex_almost_satisfied} there is a formula $\theta({\mr\bar x})\in L(A)$ such that
@@ -641,7 +640,7 @@ If $s_i=0$ then from \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\ph
   \ceq{\hfill\psi'({\mr\bar x}\,;{\gr b})}{=}{\bigvee_{i=1}^n\psi({\mr x_i}\,;{\gr b})}
 
   Note that $\phi'({\mr\bar x}\,;{\gr z})$ is a stable formula.
-  Therefore we can apply what proved above to the formulas $\phi'({\mr\bar x}\,;{\gr b})$ and $\psi'({\mr\bar x}\,;{\gr b})$ and note that these formulas are satisfied in every model $M\supseteq A$ if and only if $\phi({\mr x}\,;{\gr b})$, respectively $\psi({\mr x}\,;{\gr b})$, are.
+  Therefore we can apply what proved above to the formulas $\phi'({\mr\bar x}\,;{\gr b})$ and $\psi'({\mr\bar x}\,;{\gr b})$ and note that these formulas are satisfied in $M^{\mr\bar x}$ if and only if $\phi({\mr x}\,;{\gr b})$, respectively $\psi({\mr x}\,;{\gr b})$, are satisfied in $M^{\mr x}$.
 \end{proof}
 
 % \begin{theorem}
@@ -666,24 +665,22 @@ If $s_i=0$ then from \# we obtain $\V_{s\restriction(i+1)}^{{\mr x}}\subseteq\ph
 % \ssf{1}$\IMP$\ssf{3}.
 % Proposition~\ref{thm_count_types} implies that $|S(A)|\le |A|^{|L|}$. Therefore, when $|L|<\cf(A)$, we obtain $|S(A)|\le |A|$.
 % \end{proof}
-\section{Symmetry and stationarity}
-\label{stationarity}
+\section{Symmetry and stationarity}\label{stationarity}
 
 \def\ceq#1#2#3{\parbox[t]{20ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
-We say that $T$ is a \emph{stable theory\/} if every formula is stable.
-Most theorems in this section have a formulation that only requires the stability of a given formula $\phi({\mr x}\,;{\gr z})\in L$.
-This is sometimes called \textit{local\/} stability.
-Sometimes the global case does not trivially follow from the local one.
-Therefore our result are stated using an arbitrary set $\Delta\subseteq L_{{\mr x}\,{\gr z}}$.
+% We say that $T$ is a \emph{stable theory\/} if every formula is stable.
+% Most theorems in this section have a formulation that only requires the stability of some given formulas $\phi({\mr x}\,;{\gr z})\in L$.
+
+Let \emph{$\Delta$\/}$\subseteq L_{{\mr x}\,{\gr z}}(\U)$.
 We say that $\Delta$ is stable if all formulas in $\Delta$ are stable.
-When $|{\mr x}|=|{\gr z}|=\omega$ and $\Delta=L_{{\mr x}\,{\gr z}}$ the stability of $\Delta$ is tantamount to the stability of $T$.
+% When $|{\mr x}|=|{\gr z}|=\omega$ and $\Delta=L_{{\mr x}\,{\gr z}}$ the stability of $\Delta$ is tantamount to the stability of $T$.
 
 The following corollary of Theorem~\ref{lem_ziegler} is a fundamental tool.
 It implies, in particular the existence of Lascar invariant types.
 
 \begin{corollary}\label{corol_stable_coheir_over_models}
-  Let  $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
+  Let  $\Delta$ be stable.
   Let $q({\mr x})\subseteq L(\U)$ be finitely satisfiable in every $M\supseteq A$.
   Then there is a type $p({\mr x})\in S_\Delta(\U)$ such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
 \end{corollary}
@@ -728,22 +725,37 @@ We deduce a version of Harrington's mysterious Lemma cf.~\cite{TZ}*{Lemma 8.3.4}
 
 \begin{corollary}\label{corol_harrington0}
   Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
-  Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$.
-  Finally, let $\theta({\mr x}),\psi({\gr z})\in L(M)$ be such that $\theta(M^{\mr x})=\phi(M^{\mr x};{\gr b})$ and $\psi(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$.
-  Such formulas exist by stability.
-  Then $\theta({\mr a})\iff\psi({\gr b})$.
+  Let $p({\mr x})\in S_\phi(\U^{\gr z})$ and $q({\gr z})\in S_{\phi^{\rm op}}(\U^{\mr x})$ be invariant over $M$.
+  % Recall that by stability ${\gr\D_{p,\phi}}$ and ${\mr\D_{q,\phi^{\rm op}}}$ are definable.
+  Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$ be such that 
+
+  \ceq{1.\hfill\phi({\mr a}\,;M^{\gr z})}{=}{M^{\gr z}\cap {\gr\D_{p,\phi}}}
+
+  \ceq{2.\hfill\phi(M^{\mr x};{\gr b})}{=}{M^{\mr x}\cap {\mr\D_{q,\phi^{\rm op}}}}.
+
+  Then ${\mr a}\in{\mr\D_{q,\phi^{\rm op}}}\ \iff\ {\gr b}\in{\gr\D_{p,\phi}}$.
+  %
+  % Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$.
+  % Finally, let $\theta({\mr x}),\psi({\gr z})\in L(M)$ be such that $\theta(M^{\mr x})=\phi(M^{\mr x};{\gr b})$ and $\psi(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$.
+  % Such formulas exist by stability.
+  % Then $\theta({\mr a})\iff\psi({\gr b})$.
 \end{corollary}
 
 \begin{proof}
-  We can assume that ${\mr a}\cnonfork_M{\gr b}$.
-  First, assume $\phi({\mr a}\,;{\gr b})$.
-  Then $\theta({\mr a})$ otherwise, by ${\mr a}\cnonfork_M{\gr b}$, we would contradict $\theta(M^{\mr x})=\phi(M^{\mr x};{\gr b})$.
-  We claim that $\psi({\gr b})$.
-  Suppose not.
-  Then $\phi({\mr a}\,;{\gr b})\wedge\neg\psi({\gr b})$.
-  As $\phi({\mr x}\,;{\gr z})\wedge\neg\psi({\gr z})$ is stable, from Theorem~\ref{thm_symmetry} we obtain $\phi({\mr a}\,;M^{\gr z})\sm\theta(M^{\gr z})\neq\varnothing$ which contradicts  $\psi(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$.
-  Assuming $\neg\phi({\mr a}\,;{\gr b})$ we obtain $\neg\theta({\mr a})$ and $\neg\psi({\gr b})$ by a symilar argument.
-  Then $\theta({\mr a})\iff\psi({\gr b})$ as required.
+  By stability ${\gr\D_{p,\phi}}$ and ${\mr\D_{q,\phi^{\rm op}}}$ are definable.
+  By invariance they are definable over $M$.
+  Note that we can assume ${\mr a}\cnonfork_M{\gr b}$.
+  Then, from \ssf2 we obtain immediately
+
+  \ceq{2$'$.\hfill\phi({\mr a};{\gr b})}{\iff}{{\mr a}\in {\mr\D_{q,\phi^{\rm op}}}}.
+
+  The corollary follows if we can also show that 
+
+  \ceq{1$'$.\hfill\phi({\mr a}\,;{\gr b})}{\iff}{{\gr b}\in {\gr\D_{p,\phi}}}
+
+  Negate \ssf1$'$ for a contradiction.
+  The formula $\phi({\mr x}\,;{\gr z})\niff{\gr z}\in {\gr\D_{p,\phi}}$ is stable, therefore by Theorem~\ref{thm_symmetry} $\neg\ssf1'$ entails that $\phi({\mr a}\,;{\gr b'})\niff{\gr b'}\in {\gr\D_{p,\phi}}$ for some ${\gr b'}\in M^{\gr z}$.
+  This contradicts \ssf1.
 \end{proof}
 
 Now we show that under the assumption of stability Lascar invariance reduces to a tamer form of invariance.
@@ -780,35 +792,33 @@ Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ and $A\subseteq\U$ be given.
 A type $q({\mr x})\subseteq L(\U)$ is \emph{stationary\/} if it has a unique global extension $p({\mr x})\in S_\Delta(\U)$ that is Lascar invariant over $A$.
 The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
 
-Finally, define \emph{$\GDelta(A)$\/} to be the set of formulas $\phi({\mr x})\in\qfDelta(\U)$ that are invariant over $A$.
-Note that though these formulas are equivalent to formulas over $A$, they need not be in $\qfDelta(A)$.
-In the literature these formulas are called \textit{generalized\/} $\Delta$-formulas.
-Note that when $A$ is a model $\GDelta(A)$-formulas are equivalent to $\qfDelta(A)$-formulas.
+% Finally, define \emph{$\GDelta(A)$\/} to be the set of formulas $\phi({\mr x})\in\qfDelta(\U)$ that are invariant over $A$.
+% Note that though these formulas are equivalent to formulas over $A$, they need not be in $\qfDelta(A)$.
+% In the literature these formulas are called \textit{generalized\/} $\Delta$-formulas.
+% Note that when $A$ is a model $\GDelta(A)$-formulas are equivalent to $\qfDelta(A)$-formulas.
 
 \begin{theorem}[ (Stationarity)]\label{thm_stationarity}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
-  Let $q({\mr x})$ be a complete $\GDelta(\acl^\eq\!A)$-type.
-  Then there is a unique type $p({\mr x})\in S_\Delta(\U)$ containing $q({\mr x})$ that is invariant over $\acl^\eq A$.
+  Let $q({\mr x})\subseteq L(\U)$ be a type that is invariant over $\acl^\eq\!A$ and decides all $\qfDelta(\U^{\mr x})$-formulas that are invariant over $\acl^\eq\!A$.
+  Then there is a unique type $p({\mr x})\in S_\Delta(\U^{\gr z})$ consistent with $q({\mr x})$ that is invariant over $\acl^\eq\!A$.
 \end{theorem}
 
 \begin{proof}
   Existence follows from Corollary~\ref{corol_stable_coheir_over_models} and Proposition~\ref{prop_type_over_acl2}.
-  Suppose $p_i({\mr x})\in S_\Delta(\U)$, for $i=1,2$, are two types that extend $q({\mr x})$ and are invariant over $\acl^\eq\!A$.
+  To prove uniqueness, pick two types $p_i({\mr x})\in S_\Delta(\U^{\gr z})$, for $i=1,2$, that are consistent with $q({\mr x})$ and invariant over $\acl^\eq\!A$.
   It suffices to prove that ${\gr\D_{p_1,\phi}}={\gr\D_{p_2,\phi}}$ for every $\phi({\mr x}\,;{\gr z})\in\Delta$.
-  Let $\psi_i({\gr z})\in L(\acl^\eq\!A)$ define ${\gr\D_{p_i,\phi}}$.
-  These formulas exist by stability.
-  We claim that $\psi_1({\gr b})\iff\psi_2({\gr b})$, for all ${\gr b}\in\U^{\gr z}$.
-  Let $t({\gr z})\in S_\Delta(\U)$ be invariant over $\acl^\eq\!A$ and consistent with $\tp({\gr b}/\acl^\eq\!A)$.
-  As remarked above, such a type exists by stability.
-  By stability there is a formula $\theta({\mr x})\in\qfDelta(\U)$ that defines ${\mr\D_{t,\phi^{\rm op}}}$.
-  But ${\mr\D_{t,\phi^{\rm op}}}$ is invariant over $\acl^\eq\!A$, then $\theta({\mr x})\in\GDelta(\acl^\eq\!A)$.
-  Let $M$ be any model containing $A$.
-  Let ${\gr b'}\models t({\gr z}){\restriction}M$ and ${\mr a_i}\models p_i({\mr x}){\restriction}M$.
-  Then $\theta(M^{\mr x})=\phi(M^{\mr x};{\gr b'})$ and $\psi_i(M^{\gr z})=\phi({\mr a_i}\,;M^{\gr z})$.
-  Corollary~\ref{corol_harrington0} yields $\psi_i({\gr b'})\iff\theta({\mr a_i})$.
-  As ${\mr a_1},{\mr a_2}\models q({\mr x})$, by completeness they both satisfy $\theta({\mr x})$. 
-  Hence we obtain $\psi_1({\gr b'})\iff\psi_2({\gr b'})$.
-  As ${\gr b}\equiv_{\acl^\eq\!A}{\gr b'}$, the claim follows and with it the theorem.
+  Let ${\gr b}\in\U^{\gr z}$ and $\phi({\mr x}\,;{\gr z})\in\Delta$ be fixed but arbitrary.
+
+  By stability there exists a type $t({\gr z})\in S_\phi(\U^{\mr x})$ that is invariant over $\acl^\eq\!A$ and consistent with $\tp({\gr b}/\acl^\eq\!A)$.
+  By stability and invariance ${\gr\D_{p_i,\phi}}$ and ${\mr\D_{t,\phi^{\rm op}}}$ are in $\acl^\eq\!A$.
+  Let $M\supseteq A$.
+  Let ${\gr b'}$ be such that ${\gr b}\equiv_{\acl^\eq\!A}{\gr b'}\models t({\gr z}){\restriction}M$.
+  Let ${\mr a_i}\models\big(p_i({\mr x})\cup q({\mr x})\big){\restriction}M$.
+  From Corollary~\ref{corol_harrington0} we obtain ${\mr a_i}\in{\mr\D_{t,\phi^{\rm op}}}\iff{\gr b'}\in{\gr\D_{p_i,\phi}}$.
+  Note that the formula ${\mr x}\in{\mr\D_{t,\phi^{\rm op}}}$ is among those decided by $q({\mr x})$.
+  Then ${\mr a_1}\in{\mr\D_{t,\phi^{\rm op}}}\iff{\mr a_2}\in{\mr\D_{t,\phi^{\rm op}}}$.
+  Therefore ${\gr b'}\in{\gr\D_{p_1,\phi}}\iff{\gr b'}\in{\gr\D_{p_2,\phi}}$.
+  Finally, the theorem follows because ${\gr b}\equiv_{\acl^\eq\!A}{\gr b'}$.
 \end{proof}
 
 % If $p({\mr x})\in S(\U)$ is a global type, a \emph{canonical base\/} of $p({\mr x})$ is a definably closed set $\emph{$\Cb(p)$}\subseteq \U^\eq$ such that an automorphism $f\in\Aut(\U)$ fixes $p({\mr x})$ if and only if it fixes $\Cb(p)$ pointwise. When they exist, canonical bases are unique, see Exercise~\ref{ex_Cb}.
@@ -913,7 +923,7 @@ A more general version of the theorem holds which requires a different proof.
 \def\ceq#1#2#3{\parbox[t]{10ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 We adopt the notation and terminology of Chapter~\ref{actions}.
-We consider the action of the group $G=\Aut(\UDelta/A)$ and its normal subgroup $H=\Autf(\UDelta/A)$, which by Corollary~\ref{corol_Ltype_Shtype} coincides with the automorphism group $\UDelta$ over $\LDelta\mbox{-}\acl^\eq\!A$.
+We consider the action of the group $G=\Aut(\UDelta)$ and its normal subgroup $H=\Autf(\UDelta)$, which by Corollary~\ref{corol_Ltype_Shtype} coincides with the automorphism group $\UDelta$ over $\LDelta\mbox{-}\acl^\eq\!A$.
 The set $\grZ\subseteq\U^{\gr z}$ is fixed but arbitrary.
 The set $\mrX$ is to be inferred from the context: we may use $\U^{\mr x}$, a $G$-orbit or an $H$-orbit.
 We say \emph{generic\/} over $A$ and \emph{Lascar generic\/} over $A$ for generic under the action of $\Aut(\UDelta/A)$, respectively $\Autf(\UDelta/A)$.
@@ -921,8 +931,7 @@ We use \emph{persistent/wide\/} similarly.
 
 \begin{theorem}\label{thm_persistent_finsat}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
-  Assume $\mrX$ is type definable.
-  Finally, let $\mrD$ be a $\qfDelta(\grZ)$-definable set.
+  Let $\mrD$ be a $\qfDelta(\U^{\gr z})$-definable set.
   Then the following are equivalent 
   \begin{itemize}
     \item[1.] $\mrD$ is Lascar persistent over $A$
@@ -934,22 +943,18 @@ We use \emph{persistent/wide\/} similarly.
   As Boolean combinations of stable formulas are stable, we can assume that $\mrD$ is defined by the formula $\phi({\mr x}\,;{\gr b})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$.
 
   Only \ssf1$\IMP$\ssf2 requires a proof.
-  Let $q({\mr x})$ be the type defining $\mrX$.
-  Let $\psi({\mr x})$ be a conjunction of formulas in $q({\mr x})$.
-  It suffices to prove that $\psi({\mr x})\wedge\phi({\mr x}\,;{\gr b})$ is satisfied in every $M\supseteq A$.
-  Then, by Corollary~\ref{corol_stable_coheir_over_models}, it follows that $q({\mr x})\cup\{\phi({\mr x}\,;{\gr b})\}$ is contained in a type $p({\mr x})\in S_\Delta(\grZ)$ that is Lascar invariant over $A$.
+  It suffices to prove that $\phi({\mr x}\,;{\gr b})$ is satisfied in every $M\supseteq A$.
+  Then, by Corollary~\ref{corol_stable_coheir_over_models}, it follows that $\{\phi({\mr x}\,;{\gr b})\}$ is contained in a type $p({\mr x})\in S_\Delta(\U^{\gr z})$ that is Lascar invariant over $A$.
   Then $\mrD$ is Lascar wide by Theorem~\ref{thm_generic_invariant2}.
   
   Let $M\supseteq A$ be arbitrary.
-  Note that, as $q({\mr x})$ is invariant over $M$, we may assume that $q({\mr x})\subseteq L(M)$.
-  Let $\psi({\mr x})$ be a conjunction of formulas in $q({\mr x})$. 
   Let $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be the formula in the proof of Theorem~\ref{thm_stability_definable_rovescio2}.
   As $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ is equivalent to a formula in $L(M)$, by elementarity it satisfiable in $M$.
-  Hence so is $\psi({\mr x})\wedge\phi({\mr x}\,;{\gr b_i})$ for some $i$.
+  Hence so is $\phi({\mr x}\,;{\gr b_i})$ for some $i$.
   As ${\gr b_i}\equiv_M{\gr b}$, also $\phi({\mr x}\,;{\gr b})$ is satisfiable.
 \end{proof}
 
-This theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coalesce} applies with $\Autf(\U/A)$ for $G$.
+The above theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coalesce} applies with $\Autf(\U/A)$ for $G$.
 Therefore, in particular, Lascar generic sets are Lascar wide.
 % \begin{proposition}\label{prop_stable_lanscape}
 %   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
@@ -970,7 +975,7 @@ Therefore, in particular, Lascar generic sets are Lascar wide.
 \begin{proposition}\label{prop_stable_genericiffpersistent}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Let $\mrX=q(\U^{\mr x})$ where $q({\mr x})$ is a complete $\GDelta(\acl^\eq\!A)$-type.
-  Then for every $\qfDelta(\grZ)$-definable set $\mrD$, the following are equivalent
+  Then for every $\qfDelta(\U^{\gr z})$-definable set $\mrD$, the following are equivalent
   \begin{itemize}
     \item[1.] $\mrD$ is Lascar generic over $A$.
     \item[2.] $\mrD$ is Lascar persistent over $A$.
@@ -993,7 +998,7 @@ Therefore, in particular, Lascar generic sets are Lascar wide.
 \begin{corollary}\label{corol_stable_generic}
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
   Let $\mrX=q(\U^{\mr x})$ where $q({\mr x})$ is a complete $\GDelta(\acl^\eq\!A)$-type.
-  Then for every $\qfDelta(\grZ)$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is Lascar generic over $A$.
+  Then for every $\qfDelta(\U^{\gr z})$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is Lascar generic over $A$.
 \end{corollary}
 
 \begin{proof}
@@ -1064,13 +1069,13 @@ Recall that $\Psi\subseteq L_{\mr x}(A)$ is some fixed set of formulas and \emph
 
 \begin{theorem}\label{thm_Ggeneric_persistent}
   Let $\Delta$ be stable.
-  Then for every $\qfDelta(\grZ)$-definable set $\mrD$ the following are equivalent
+  Then for every $\qfDelta(\U^{\gr z})$-definable set $\mrD$ the following are equivalent
   \begin{itemize}
-    \item [1.] $\mrD$ is generic under the action of $\grZ$
+    \item [1.] $\mrD$ is generic under the action of $\U^{\gr z}$
     \item [2.] $\mrD$ is persistent under the action of $\Autf(\UDelta)$
     \item [3.] $\mrD$ is persistent under the action of $\Autf(\U/A)$.
   \end{itemize}
-  In particular, it follows the if these properties hold for $\mrD$, they hold also for ${\gr g}{\cdot}\mrD$ for any ${\gr G}\in\grZ$. 
+  In particular, it follows the if these properties hold for $\mrD$, they hold also for ${\gr g}{\cdot}\mrD$ for any ${\gr g}\in\U^{\gr z}$. 
 \end{theorem}
 
 It is worthwhile to recall that, under the assumption of stability, Lascar wide is equivalent to Lascar persistent.
@@ -1083,7 +1088,7 @@ It is worthwhile to recall that, under the assumption of stability, Lascar wide 
   \ssf2$\IMP$\ssf3. Clear, because $\Autf(\U/A)\le\Autf(\UDelta)$.
 
   \ssf3$\IMP$\ssf1.
-  For ${\mr a}\in\mrX$ let $q({\mr x})=\tp({\mr a}/\acl^\eq\!A)$.
+  For ${\mr a}\in\U^{\mr x}$ let $q({\mr x})=\tp({\mr a}/\acl^\eq\!A)$.
   Assume \ssf2 then, by Proposition~\ref{prop_stable_genericiffpersistent}, $\mrD$ is Lascar generic relative to $q(\U^{\mr x})$, i.e.\@ with $q(\U^{\mr x})$ for $\mrX$.
   The same reasoning applies to all ${\mr a}\in\mrX$, therefore $q({\mr x})$ ranges over the whole of $S(\acl^\eq\!A)$.
   We conclude that there is a set $H\subseteq\grZ$ of cardinality $<2^{|L(A)|}$ such that $\bigcup_{h\in H}{\gr h}{\cdot}\mrD$ covers $\mrX$.
