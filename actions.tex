@@ -18,6 +18,7 @@ Assumption~\ref{notation_GXphi} below is in force throughout the chapter.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The dual perspective on invariance}\label{dual_perspective}
+% \def\BDelta{\LDelta\kern-.4ex_{{\rm qf}}}
 
 The notions of invariance introduceted in Chapter~\ref{invariant} extend seamlessly to the action of a group $G$ on $\U^{\gr z}$.
 It is convenient to work in a more general setting.
@@ -31,23 +32,23 @@ As there is little risk of confusion, these relations symbols are also denoted b
 When $\mrX$ and $\grZ$ are type definable and $\Delta$ is small, $\UDelta$ is a saturated structure.
 But, as for the time being we do not need compactness, until further notice these sets are arbitrary.
 
-In the first few sections we only need the quantifier-free fragment of $\LDelta$, we abbreviate
+In the first few sections we only work a subset of the quantifier-free fragment of $\LDelta_{\,\mr x}$.
+Let $\BDelta(\grZ)$ be the set of Boolean combinations of the formulas $\phi({\mr x}\,;{\gr b})$, where $\phi({\mr x}\,;{\gr z})\in\Delta$ and ${\gr b}\in\grZ$.
 %  $\LDelta_{{\rm\,at^\pm}\!,\,{\mr x}}(\grZ)$ and 
-$\LDelta_{{\rm\,qf},\,{\mr x}}(\grZ)$ with 
+% $\LDelta_{{\rm\,qf},\,{\mr x}}(\grZ)$ with 
 % $\pmDelta(\grZ)$, respectively 
-$\qfDelta(\grZ)$.
-We write $S_\Delta(\grZ)$ for the set of complete $\qfDelta(\grZ)$-types~--~which we may conveniently think as subsets of $\LDelta_{{\rm\,at^\pm}\!,\,{\mr x}}(\grZ)$.
-In this chapter the types in $S_\Delta(\grZ)$ are required to be finite consistent $\mrX$~--~a piece of information that is not displayed by the notation as there is little risk of ambiguity.
+We write $S_\Delta(\grZ)$ for the set of complete $\BDelta(\grZ)$-types~--~which we may conveniently think as subsets of $\pmDelta(\grZ)$.
+In this chapter the types in $S_\Delta(\grZ)$ are required to be finitely consistent $\mrX$~--~a piece of information that is not displayed by the notation as there is little risk of ambiguity.
 
-A set $\mrD\subseteq\mrX$ is (relatively) \emph{$\qfDelta({\grZ})$-definable\/} if $\mrD=\phi(\mrX)$ for some $\phi({\mr x})\in\qfDelta({\grZ})$.
-Similarly, we define (relatively) \emph{$\qfDelta({\grZ})$-type-definable\/} sets.
+A set $\mrD\subseteq\mrX$ is (relatively) \emph{$\BDelta({\grZ})$-definable\/} if $\mrD=\phi(\mrX)$ for some $\phi({\mr x})\in\BDelta({\grZ})$.
+Similarly, we define (relatively) \emph{$\BDelta({\grZ})$-type-definable\/} sets.
 
 \begin{assumption}\label{notation_GXphi}
   Let $G$ be a group that acts on the sets ${\mrX}$ and ${\grZ}$.
   We require that for every $\phi({\mr x}\,;{\gr z})\in\Delta$ the set $\phi(\mrX\,;\grZ)$ is invariant under the action of $G$.
-  In other words, $G\le\Aut(\UDelta)$.
+  In other words, $G\le\Aut(\UDelta)$.\smallskip
 
-  When $p({\mr x})\subseteq\qfDelta(\grZ)$ and ${\mrD}\subseteq\mrX$ we write $p({\mr x})\proves{\mr x}\in{\mrD}$ if the inclusion $\psi(\mrX)\subseteq{\mrD}$ holds for some $\psi({\mr x})$ that is conjunctions of formulas in $p({\mr x})$.
+  When $p({\mr x})\subseteq\BDelta(\grZ)$ and ${\mrD}\subseteq\mrX$ we write $p({\mr x})\proves{\mr x}\in{\mrD}$ if the inclusion $\psi(\mrX)\subseteq{\mrD}$ holds for some $\psi({\mr x})$ that is conjunctions of formulas in $p({\mr x})$.
 \end{assumption}
 
 Let $\grD\subseteq\grZ$.
@@ -58,19 +59,19 @@ Yet in other words, if
 \ceq{\ssf{is.}\hfill{\gr a}\in\grD}{\iff}{g\,{\gr a}\in\grD}\hfill for every ${\gr a}\in\grZ$ and every $g\in G$.
 
 A formula is $G$-invariant if the set it defines is $G$-invariant.
-We say that the type $p({\mr x})\subseteq\qfDelta(\grZ)$ is \emph{invariant\/} under the action of $G$, or \emph{$G$-invariant,} if 
+We say that the type $p({\mr x})\subseteq\BDelta(\grZ)$ is \emph{invariant\/} under the action of $G$, or \emph{$G$-invariant,} if 
 
-\ceq{\ssf{it.}\hfill\theta({\mr x}\,;{\gr\bar a})\in p}{\IFF}{\theta({\mr x}\,;g\,{\gr\bar a})\in p}\hfill for every $g\in G$ and every $\theta({\mr x}\,;{\gr\bar a})\in\qfDelta(\grZ)$.
+\ceq{\ssf{it.}\hfill\theta({\mr x}\,;{\gr\bar a})\in p}{\IFF}{\theta({\mr x}\,;g\,{\gr\bar a})\in p}\hfill for every $g\in G$ and every $\theta({\mr x}\,;{\gr\bar a})\in\BDelta(\grZ)$.
 
 Note that $p({\mr x})$ is $G$-invariant exactly when the sets ${\gr\D_{p,\theta}}$ are.
 In this section we want to discuss the invariance of types using the sets $\mrD\subseteq\mrX$.
 
-An immediate consequence of the invariance of $\phi(\mrX\,;\grZ)$ is that any $G$-translate of a $\qfDelta({\grZ})$-definable set is again $\qfDelta({\grZ})$-definable.
-In particular, by reasoning as in Remark~\ref{rem_image_def_set} we obtain that for every $\qfDelta({\grZ})$-formula $\theta({\mr x}\,;{\gr\bar b})$ and every $g\in G$
+An immediate consequence of the invariance of $\phi(\mrX\,;\grZ)$ is that any $G$-translate of a $\BDelta({\grZ})$-definable set is again $\BDelta({\grZ})$-definable.
+In particular, by reasoning as in Remark~\ref{rem_image_def_set} we obtain that for every $\BDelta({\grZ})$-formula $\theta({\mr x}\,;{\gr\bar b})$ and every $g\in G$
 
 \ceq{\hfill g[\theta(\mrX\,;{\gr\bar b})]}{=}{\theta(\mrX\,;g\,{\gr\bar b}).}
 
-Therefore, a type $p({\mr x})\subseteq\qfDelta(\grZ)$ is $G$-invariant if
+Therefore, a type $p({\mr x})\subseteq\BDelta(\grZ)$ is $G$-invariant if
 
 \ceq{\hfill p({\mr x})\proves{\mr x}\in\mrD}{\IFF}{p({\mr x})\proves{\mr x}\in g{\cdot}\mrD}\hfill for every $\mrD\subseteq\mrX$ and $g\in G$.
 
@@ -114,10 +115,10 @@ In this chapter many proofs require some juggling with negations as epitomized b
 
 Define the following type
 
-\ceq{\hfill\emph{$\gamma_G({\mr x})$}}{=}{\{\theta({\mr x})\in \qfDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is }G\textrm{-generic}\}}
+\ceq{\hfill\emph{$\gamma_G({\mr x})$}}{=}{\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is }G\textrm{-generic}\}}
 
 \begin{corollary}\label{corol_q_pers}
-  Let $p({\mr x})\subseteq\qfDelta(\grZ)$ be such that $\gamma_G({\mr x})\cup p({\mr x})$ is finitely consistent.
+  Let $p({\mr x})\subseteq\BDelta(\grZ)$ be such that $\gamma_G({\mr x})\cup p({\mr x})$ is finitely consistent.
   Then $p({\mr x})$ is $G$-persistent.
 \end{corollary}
 
@@ -141,7 +142,7 @@ The converse implication holds for complete types.
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  Let $\mrD$ be a $G$-generic $\qfDelta(\grZ)$-definable set.
+  Let $\mrD$ be a $G$-generic $\BDelta(\grZ)$-definable set.
   Pick $H\subseteq G$ be finite such that $\mrX\subseteq\cup\,H{\cdot}\mrD$.
   Then $p({\mr x})\proves {\mr x}\in\cup\,H{\cdot}\mrD$.
   By completeness, $p({\mr x})\proves {\mr x}\in h\,\mrD$ for some $h\in H$.
@@ -155,14 +156,14 @@ The converse implication holds for complete types.
   % Let $g_1,\dots,g_{n+2}\in G$ and $\theta({\mr x})\,;{\gr\bar b}$ witness this.
   % Then 
   Suppose $p({\mr x})$ is not $G$-invariant.
-  % Then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g\,{\gr b})$ for some $g\in G$ and $\phi({\mr x}\,;{\gr b})\in\qfDelta(\grZ)$.
+  % Then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g\,{\gr b})$ for some $g\in G$ and $\phi({\mr x}\,;{\gr b})\in\BDelta(\grZ)$.
   % Clearly $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g\,{\gr b})$ is not $2$-$G$-persistent as it is inconsistent with its $g$-translate.
-  By completeness $p({\mr x})\proves{\mr x}\in(\neg\mrD\cap g{\cdot}\mrD)$ for some $g\in G$ and some $\qfDelta(\grZ)$-definable set $\mrD$.
+  By completeness $p({\mr x})\proves{\mr x}\in(\neg\mrD\cap g{\cdot}\mrD)$ for some $g\in G$ and some $\BDelta(\grZ)$-definable set $\mrD$.
   Clearly $\neg\mrD\cap g{\cdot}\mrD$ is not $2$-$G$-persistent as it is inconsistent with its $g$-translate.
 \end{proof}
 
 % \begin{corollary}\label{corol_gammaG_invaqriancer}
-%   The following are equivalent for every $\qfDelta(\grZ)$-definable set $\mrD$
+%   The following are equivalent for every $\BDelta(\grZ)$-definable set $\mrD$
 %   \begin{itemize}
 %     \item [1.] $\gamma_G({\mr x})\proves{\mr x}\in\mrD$
 %     \item [2.] $p({\mr x})\proves{\mr x}\in\mrD$ for every $G$-persistent $p({\mr x})\in S_\Delta(\grZ)$.
@@ -180,11 +181,11 @@ The converse implication holds for complete types.
 %   Then $\neg\ssf2$.
 % \end{proof}
 
-The theorem yields a necessary condition for the existence of $G$-persistent global $\qfDelta({\grZ})$-types.
+The theorem yields a necessary condition for the existence of $G$-persistent global $\BDelta({\grZ})$-types.
 
 \begin{corollary}\label{corol_def_mu}
   Assume there exists a $G$-persistent type $p({\mr x})\in S_\Delta(\grZ)$.
-  Then for every $\qfDelta({\grZ})$-definable set $\mrD$
+  Then for every $\BDelta({\grZ})$-definable set $\mrD$
   \begin{itemize}
     \item[1.] $\mrD$ and $\neg\mrD$ are not both $G$-generic
     \item[2.] if $\mrD$ is $G$-generic then it is $G$-persistent
@@ -197,16 +198,16 @@ The theorem yields a necessary condition for the existence of $G$-persistent glo
   Finally, \ssf3 is an immediate consequence of \ssf2 of Theorem~\ref{thm_generic_invariant}.
 \end{proof}
 
-The following theorem gives a necessary and sufficient condition for the  existence of global $G$-invariant $\qfDelta({\grZ})$-type.
-Ideally, we would like that every $G$-persistent $\qfDelta({\grZ})$-type extends to a global persistent type.
+The following theorem gives a necessary and sufficient condition for the  existence of global $G$-invariant $\BDelta({\grZ})$-type.
+Ideally, we would like that every $G$-persistent $\BDelta({\grZ})$-type extends to a global persistent type.
 Unfortunately this is not true in general (it is a strong assumption, see Section~\ref{tame_landscape}).
-A set $\mrD$ is \emph{$G$-wide\/} if every finite cover of $\mrD$ by $\qfDelta({\grZ})$-definable sets contains a $G$-persistent set.
+A set $\mrD$ is \emph{$G$-wide\/} if every finite cover of $\mrD$ by $\BDelta({\grZ})$-definable sets contains a $G$-persistent set.
 In~\cite{CK} a similar property is called \textit{quasi-non-forking.}
 Our use of the term \textit{wide\/} is consistent with~\cite{Hr}, though we apply it to a narrow context.
 A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
 
 \begin{theorem}\label{thm_generic_invariant2}
-  Let $\mrD$ be a $\qfDelta(\grZ)$-definable set.
+  Let $\mrD$ be a $\BDelta(\grZ)$-definable set.
   Then the following are equivalent 
   \begin{itemize}
     \item[1.] $\gamma_G({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent
@@ -223,24 +224,24 @@ A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
   By Theorem~\ref{thm_generic_invariant}.
 
   \ssf2$\IMP$\ssf3.
-  Let ${\mr\C_1},\dots,{\mr\C_n}$ be $\qfDelta({\grZ})$-definable sets that cover $\mrD$.
+  Let ${\mr\C_1},\dots,{\mr\C_n}$ be $\BDelta({\grZ})$-definable sets that cover $\mrD$.
   Pick $p({\mr x})$ as in \ssf2.
   By completeness, $p({\mr x})\proves {\mr x}\in{\mr\C_i}$ for some $i$.
   Then, by Theorem~\ref{thm_generic_invariant}, $\neg{\mr\C_i}$ is not $G$-generic.
   Therefore, by Fact~\ref{fact_fip}, ${\mr\C_i}$ is $G$-persistent.
 
   \ssf3$\IMP$\ssf2.
-  Let $p({\mr x})$ be maximal among the $\qfDelta({\grZ})$-types that are finitely satisfiable in $\mrX\cap\mrD$ and are such that $\theta(\U^{\mr x})$ is $G$-wide for every $\theta({\mr x})$ that is conjunction of formulas in $p({\mr x})$.
-  We claim that $p({\mr x})$ is a complete $\qfDelta({\grZ})$-type.
+  Let $p({\mr x})$ be maximal among the $\BDelta({\grZ})$-types that are finitely satisfiable in $\mrX\cap\mrD$ and are such that $\theta(\U^{\mr x})$ is $G$-wide for every $\theta({\mr x})$ that is conjunction of formulas in $p({\mr x})$.
+  We claim that $p({\mr x})$ is a complete $\BDelta({\grZ})$-type.
   Suppose for a contradiction that $\theta({\mr x}),\neg\theta({\mr x})\notin p$.
-  By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$, and some $\qfDelta({\grZ})$-definable sets ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi(\U^{\mr x})\cap\theta(\U^{\mr x})$ and $\psi(\U^{\mr x})\smallsetminus\theta(\U^{\mr x})$ and such that no ${\mr\C_i}$ is $G$-persistent.
+  By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$, and some $\BDelta({\grZ})$-definable sets ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi(\U^{\mr x})\cap\theta(\U^{\mr x})$ and $\psi(\U^{\mr x})\smallsetminus\theta(\U^{\mr x})$ and such that no ${\mr\C_i}$ is $G$-persistent.
   As ${\mr\C_1},\dots,{\mr\C_n}$ cover $\psi(\U^{\mr x})$ this is a contradiction.
   It is only left to show that $p({\mr x})$ is $G$-persistent.
   This follows from completeness and Theorem~\ref{thm_generic_invariant}.
 \end{proof}
 
 \begin{corollary}\label{corol_intersectionGwide}
-  Let $\mrD$ be a $G$-wide $\qfDelta(\grZ)$-definable set.
+  Let $\mrD$ be a $G$-wide $\BDelta(\grZ)$-definable set.
   Then $\mrD\cap g{\cdot}\mrD$ is $G$-wide for every $g\in G$.
 \end{corollary}
 
@@ -249,20 +250,20 @@ A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
   By $G$-invariance $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$.
 \end{proof}
 
-% Let $q({\mr x})\subseteq\qfDelta(\grZ)$.
-% We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\qfDelta(\grZ)$-definable set $\mrD$ and every $g_1,g_2\in G$ if $q({\mr x})\proves{\mr x}\in(g_1{\cdot}\mrD\cup g_2{\cdot}\mrD)$ then $q({\mr x})\proves{\mr x}\in g_i{\cdot}\mrD$ for some $i$.
+% Let $q({\mr x})\subseteq\BDelta(\grZ)$.
+% We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\BDelta(\grZ)$-definable set $\mrD$ and every $g_1,g_2\in G$ if $q({\mr x})\proves{\mr x}\in(g_1{\cdot}\mrD\cup g_2{\cdot}\mrD)$ then $q({\mr x})\proves{\mr x}\in g_i{\cdot}\mrD$ for some $i$.
 % The following fact is immediate.
 
 % \begin{fact}
-%   The following are equivalent for every $\qfDelta(\grZ)$-type $q({\mr x})$
+%   The following are equivalent for every $\BDelta(\grZ)$-type $q({\mr x})$
 %   \begin{itemize}
 %     \item [1.] $q({\mr x})$ is $G$-prime and $G$-invariant
-%     \item [2.] if $\mrD$ is $\qfDelta(\grZ)$-definable, $g\in G$, and $q({\mr x})\proves{\mr x}\in(\mrD\cup g{\cdot}\mrD)$, then $q({\mr x})\proves{\mr x}\in\mrD$.
+%     \item [2.] if $\mrD$ is $\BDelta(\grZ)$-definable, $g\in G$, and $q({\mr x})\proves{\mr x}\in(\mrD\cup g{\cdot}\mrD)$, then $q({\mr x})\proves{\mr x}\in\mrD$.
 %   \end{itemize}
 % \end{fact}
 
 % \begin{proposition}
-%   For every type $q({\mr x})\subseteq\qfDelta(\grZ)$ the following are equivalent
+%   For every type $q({\mr x})\subseteq\BDelta(\grZ)$ the following are equivalent
 %   \begin{itemize}
 %     \item [1.] $q({\mr x})\proves\gamma_G({\mr x})$
 %     \item [2.] $q({\mr x})$ is $G$-prime and $G$-invariant.
@@ -299,21 +300,21 @@ A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
 \end{exercise}
 
 \begin{exercise}
-  Let $\D$ be a $\qfDelta(\Z)$-type-definable set.
+  Let $\D$ be a $\BDelta(\Z)$-type-definable set.
   Prove that the following are equivalent 
   \begin{itemize}
     \item[1.] there is a $G$-invariant type $p(x)\in S_\Delta(\Z)$ such that $p(x)\proves x\in\D$.
-    \item[2.] every finite cover of $\D$ by $\qfDelta(\Z)$-definable sets contains a 2-$G$-persistent set.
+    \item[2.] every finite cover of $\D$ by $\BDelta(\Z)$-definable sets contains a 2-$G$-persistent set.
   \end{itemize}
 \end{exercise}
 
 % \begin{exercise}\label{ex_gen_sat}
-%   Let $p(x)\subseteq \qfDelta(\Z)$ be $G$-generic.
+%   Let $p(x)\subseteq \BDelta(\Z)$ be $G$-generic.
 %   Prove that it is finitely satisfiable in $\X$.
 % \end{exercise}
 
 \begin{exercise}\label{ex_persistent_types}
-  Prove that for every $p(x)\subseteq \qfDelta(A)$ following are equivalent
+  Prove that for every $p(x)\subseteq \BDelta(A)$ following are equivalent
   \begin{itemize}
     \item[1.] $p(x)$ is $G$-persistent
     \item[2.] $p(\U^x)$ is $G$-persistent.
@@ -326,8 +327,8 @@ A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
 \end{exercise}
 
 \begin{exercise}\label{ex_generic_type_vs_formulas}
-  Let $\D\subseteq\X$ be a $G$-generic $\qfDelta(\Z)$-type-definable set.
-  Prove that $\D$ is definable by a $\qfDelta(\Z)$-type containing only $G$-generic formulas.
+  Let $\D\subseteq\X$ be a $G$-generic $\BDelta(\Z)$-type-definable set.
+  Prove that $\D$ is definable by a $\BDelta(\Z)$-type containing only $G$-generic formulas.
 \end{exercise}
 
 % \begin{exercise}\label{ex_Gprime}
@@ -335,7 +336,7 @@ A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
 % \end{exercise}
 
 % \begin{exercize}
-%   Let $\mrD$ be a $\qfDelta(\grZ)$-definable set.
+%   Let $\mrD$ be a $\BDelta(\grZ)$-definable set.
 %   Prove that the following are equivalent
 %   \begin{itemize}
 %     \item [1.] $\mrD$ is $G$-wide;
@@ -376,7 +377,7 @@ As it happens, we can slightly strengthen this fact (because $G$-genericity is a
 
 \begin{proposition}\label{prop_Ggeneric_Hpersistent}
   Assume that $\gamma_H({\mr x})$ is finitely consistent.
-  Let $\mrD$ be a $\qfDelta(\grZ)$-definable set.
+  Let $\mrD$ be a $\BDelta(\grZ)$-definable set.
   Then if $\mrD$ is $G$-generic it is also $H$-wide.
 \end{proposition}
 
@@ -433,14 +434,14 @@ The following normal subgroup of $G$ is particularly interesting
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{8ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-\ceq{\hfill G^0}{=}{\big\{g\in G\ :\ g{\cdot}\mrD=\mrD\textrm{ for every }G\textrm{-generic }\qfDelta(\grZ)\textrm{-type-definable set }\mrD\big\}}.
+\ceq{\hfill G^0}{=}{\big\{g\in G\ :\ g{\cdot}\mrD=\mrD\textrm{ for every }G\textrm{-generic }\BDelta(\grZ)\textrm{-type-definable set }\mrD\big\}}.
 }
 
 Note that by Exercise~\ref{ex_generic_type_vs_formulas} we can replace type-definable with definable in the definition of $G^0$.
 
 \begin{proposition}
   Assume the action of $G$ is regular.
-  Let $K\le G$ be such that all $K$-orbits (that is, $K{\cdot}{\mr a}$, for ${\mr a}\in\mrX$) are $\qfDelta(\grZ)$-type-definable.
+  Let $K\le G$ be such that all $K$-orbits (that is, $K{\cdot}{\mr a}$, for ${\mr a}\in\mrX$) are $\BDelta(\grZ)$-type-definable.
   Then, if $K$ has finite index, $G^0\le K$.
 \end{proposition}
 
@@ -462,24 +463,24 @@ Note that by Exercise~\ref{ex_generic_type_vs_formulas} we can replace type-defi
 
 % In this section $G=\Aut(\UDelta)$ and $\mrX=p_0(\U^{\mr x})$, for some $p_0({\mr x})\in S_\Delta(\grZ)$.
 Let ${\mr y}$ be a variable of the same sort of ${\mr x}$.
-Below $\qfDelta(\grZ)$ may also denote $\LDelta_{{\rm\,qf},\,{\mr x},{\mr y}}(\grZ)$.
-In this section a $\qfDelta(\grZ)$-definable finite equivalence relation is a formula $\epsilon({\mr x}\,;{\mr y})\in\qfDelta(\grZ)$ such that $\epsilon(\mrX\,;\mrX)$ is an equivalence relation with finitely many classes.
+Below $\BDelta(\grZ)$ may also denote $\LDelta_{{\rm\,qf},\,{\mr x},{\mr y}}(\grZ)$.
+In this section a $\BDelta(\grZ)$-definable finite equivalence relation is a formula $\epsilon({\mr x}\,;{\mr y})\in\BDelta(\grZ)$ such that $\epsilon(\mrX\,;\mrX)$ is an equivalence relation with finitely many classes.
 Note that when $G$ acts transitively on $\mrX$, equivalence classes of $G$-invariant finite equivalence relations are $G$-generic sets.
 % \begin{remark}\label{rem_trans_action}
   % Assume that $G$ acts transitively on $\mrX$.
   Define
   
-  \ceq{\hfill e({\mr x}\,;{\mr y})}{=}{\big\{\epsilon({\mr x}\,;{\mr y})\in\qfDelta(\grZ)\ :\ G\textrm{-invariant, finite equivalence relation}\big\}}.
+  \ceq{\hfill e({\mr x}\,;{\mr y})}{=}{\big\{\epsilon({\mr x}\,;{\mr y})\in\BDelta(\grZ)\ :\ G\textrm{-invariant, finite equivalence relation}\big\}}.
 
   The $e({\mr x}\,;{\mr y})$-equivalence classes are those defined by the types
   
-  \ceq{\hfill q({\mr x})}{=}{\big\{\epsilon({\mr x}\,;{\mr a})\in\qfDelta(\grZ)\ :\ G\textrm{-invariant, finite equivalence relation}\big\}.}
+  \ceq{\hfill q({\mr x})}{=}{\big\{\epsilon({\mr x}\,;{\mr a})\in\BDelta(\grZ)\ :\ G\textrm{-invariant, finite equivalence relation}\big\}.}
 
 % \end{remark}
 
 \begin{fact}
   Assume that $G$ acts transitively on $\mrX$.
-  Let $\mrD$ be a $\qfDelta(\grZ)$-definable set that intersects $\mrX$ and has finite $G$-orbit.
+  Let $\mrD$ be a $\BDelta(\grZ)$-definable set that intersects $\mrX$ and has finite $G$-orbit.
   Then $\mrD$ is $G$-generic.
 \end{fact}
 
@@ -495,7 +496,7 @@ Note that when $G$ acts transitively on $\mrX$, equivalence classes of $G$-invar
   As the action is transitive, $\epsilon(\U^{\mr x};{\mr a})$, and a fortiori $\mrD$, is $G$-generic.
 \end{proof}
 
-
+\end{comment}
 
 
 The following lemma refine Theorem~\ref{thm_Shelah_strong_types} and Proposition~\ref{prop_trans_action} by adding a requirement on the language.
@@ -506,15 +507,15 @@ The proof is essentially the same (but it would be rude to leave it as an exerci
   \def\ceq#1#2#3{\parbox[t]{15ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$.
-  Let $p({\mr x})$ be a complete $\GDelta(A)$-type.
-  Finally, let 
+  Let $p({\mr x})$ be a complete $\BDelta(A)$-type.
+  Finally, let\smallskip
   
-  \ceq{\hfill Q}{=}{\big\{q({\mr x})\subseteq\GDelta(\acl^\eq\!A)\ :\ q({\mr x})\proves p({\mr x})\textrm{ and is complete}\big\}}.
+  \ceq{\hfill Q}{=}{\big\{q({\mr x})\subseteq\BDelta(\acl^\eq\!A)\ :\ q({\mr x})\proves p({\mr x})\textrm{ and is complete}\big\}}.\smallskip
   
   Then $\Aut(\U/A)$ acts on $Q$ transitively, i.e.\@ any two types in $Q$ are conjugated.
   Moreover, for any ${\mr a}\models p({\mr x})$ there is a unique $q({\mr x})\in Q$ such that
 
-  \ceq{\hfill q({\mr x})}{\iff}{\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in\GDelta(A)\textrm{ finite equivalence relation}\big\}}.
+  \ceq{\hfill q({\mr x})}{\iff}{\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in\BDelta(A)\textrm{ finite equivalence relation}\big\}}.
 
 \end{lemma}
 
@@ -525,8 +526,8 @@ The proof is essentially the same (but it would be rude to leave it as an exerci
   Suppose not, then $p({\mr x})\imp\neg\phi({\mr x})$ for some $\phi({\mr x})\in q$.
   Let $\psi({\mr x})$ be the disjunction of all the (finitely many) conjugates of $\phi({\mr x})$ over $A$.
   Then $p({\mr x})\imp\neg\psi({\mr x})$.
-  But $\psi({\mr x})\in\qfDelta(\acl^\eq\!A)$ and is invariant over $A$.
-  Therefore $\psi({\mr x})\in\GDelta(A)$.
+  But $\psi({\mr x})\in\BDelta(\acl^\eq\!A)$ and is invariant over $A$.
+  Therefore $\psi({\mr x})\in\BDelta(A)$.
   Then $\psi({\mr x})\in p$, a contradiction.
   
   Let $\<q_i:i<\lambda\>$ be an enumeration without repetitions of $Q$.
@@ -540,14 +541,16 @@ The proof is essentially the same (but it would be rude to leave it as an exerci
   }
 
   Clearly $\epsilon_{i,j}({\mr x},{\mr y})$ defines a finite equivalence relation. 
-  As this is definable and invariant over $A$, it belongs to $\GDelta(A)$.
+  As this is definable and invariant over $A$, it belongs to $\BDelta(A)$.
   The equivalence in the lemma holds if we take for $q({\mr x})$, the unique $q_i({\mr x})$ satisfied by ${\mr a}$.
 \end{proof}
+
+\begin{comment}
 
 \begin{corollary}
   Let $G=\Aut(\U/A)$.
   Let $\mrX=p(\U^{\mr x})$ where $p({\mr x})$ is a complete $\GDelta(A)$-type.
-  Then for every $\qfDelta(\grZ)$-definable set $\mrD$ that intersects $\mrX$ the following are equivalent
+  Then for every $\BDelta(\grZ)$-definable set $\mrD$ that intersects $\mrX$ the following are equivalent
   \begin{itemize}
     \item [1.]  $\mrC\subseteq\mrD$ for some $\mrC\in\acl^\eq\!A$ that intersects $\mrX$
     \item [2.]  $\mrD$ is $G$-generic.
@@ -613,7 +616,7 @@ Again, the same properties may be attributed to formulas and types when every co
 
 Define the following type
 
-\ceq{\hfill\emph{${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$}}{=}{\{\theta({\mr x})\in \qfDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is strongly }G\textrm{-generic}\}}
+\ceq{\hfill\emph{${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$}}{=}{\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is strongly }G\textrm{-generic}\}}
 
 \begin{corollary}\label{corol_str_gen}
   ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ is finitely consistent, strongly $G$-generic, and $G$-invariant.
@@ -763,14 +766,14 @@ In general, we have the following.
 \begin{theorem}\label{thm_coalesce}
   Assume 
   \begin{itemize}
-    \item[1.] $G$-persistent $\qfDelta({\grZ})$-definable sets are $G$-wide.
+    \item[1.] $G$-persistent $\BDelta({\grZ})$-definable sets are $G$-wide.
   \end{itemize}
   Then the following hold
   \begin{itemize}
-    \item[2.] $G$-generic $\qfDelta({\grZ})$-definable sets are closed under intersection 
-    \item[3.] $G$-generic $\qfDelta({\grZ})$-definable sets are strongly $G$-generic
-    \item[4.] weakly $G$-persistent $\qfDelta({\grZ})$-definable sets are $G$-persistent
-    \item[5.] $G$-generic $\qfDelta({\grZ})$-definable sets are $G$-wide.
+    \item[2.] $G$-generic $\BDelta({\grZ})$-definable sets are closed under intersection 
+    \item[3.] $G$-generic $\BDelta({\grZ})$-definable sets are strongly $G$-generic
+    \item[4.] weakly $G$-persistent $\BDelta({\grZ})$-definable sets are $G$-persistent
+    \item[5.] $G$-generic $\BDelta({\grZ})$-definable sets are $G$-wide.
   \end{itemize}
 \end{theorem}
 
@@ -778,7 +781,7 @@ In general, we have the following.
   Clearly \ssf2$\IFF$\ssf3$\IFF$\ssf4.
 
   \ssf1$\IMP$\ssf2.
-  Let $\mrC$ and $\mrD$ be $G$-generic $\qfDelta({\grZ})$-definable sets.
+  Let $\mrC$ and $\mrD$ be $G$-generic $\BDelta({\grZ})$-definable sets.
   Suppose for a contradiction that $\mrC\cap\mrD$ is not $G$-generic.
   Then $\neg(\mrC\cap\mrD)$ is $G$-persistent.
   By \ssf1 and Theorem~\ref{thm_generic_invariant2} there is a $G$-invariant type $p({\mr x})\in S_\Delta(\grZ)$ such that $p({\mr x})\proves{\mr x}\notin\mrC\cap\mrD$.
@@ -790,7 +793,7 @@ In general, we have the following.
   %
   % \ssf4$\IMP$\ssf1.
   % Note that, by \ssf3, the type ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ coincides with $\gamma_G({\mr x})$, in particular $\gamma_G({\mr x})$ is finitely consistent.
-  % Let $\mrD$ be a $G$-persistent $\qfDelta({\grZ})$-definable set.
+  % Let $\mrD$ be a $G$-persistent $\BDelta({\grZ})$-definable set.
   % We show that $\gamma_G({\mr x})={}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ is finitely satisfiable in $\mrX\cap\mrD$.
   % Then, by \ssf4 and Corollary~\ref{corol_q_w_pers}, any global extension of $\gamma_G({\mr x})\cup\{{\mr x}\in\mrD\}$ witness \ssf2 of Theorems~\ref{thm_generic_invariant2}.
   % Suppose not, then $\gamma_G({\mr x})\proves {\mr x}\notin\mrD$.
@@ -840,7 +843,7 @@ Therefore it coincides with the orbit under the action of $G$.
 % The following fact follows immediately.
 
 % \begin{fact}
-%   For every  $\qfDelta(\grZ)$-type-definable set $\mrD$ the following are 
+%   For every  $\BDelta(\grZ)$-type-definable set $\mrD$ the following are 
 %   \begin{itemize}
 %     \item [1.] the $G$-orbit of $\mrD$ is bounded
 %     \item [2.] the $\grZ$-orbit of $\mrD$ is bounded.
@@ -854,7 +857,7 @@ We also consider the action some other normal subgroup \emph{$H$\/}$\,\trianglel
 \def\ceq#1#2#3{\parbox[t]{6ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 \begin{proposition}\label{prop_Ggeneric_persistent}
-  Let $\mrD$ be a $\qfDelta(\grZ)$-definable set.
+  Let $\mrD$ be a $\BDelta(\grZ)$-definable set.
   Assume that $\gamma_H({\mr x})$ is consistent.
   Then \ssf1$\IMP$\ssf2 holds, where
   \begin{itemize}
@@ -930,7 +933,7 @@ If $\grA\subseteq\grZ$, we write \emph{$\<\grA\>$} for the subgroup generated by
 
 In this section we work over a given $M\preceq\U^\Delta$.
 
-Let $\mrD\subseteq\mrX$ be definable by some $p({\mr x})\subseteq\qfDelta(M)$.
+Let $\mrD\subseteq\mrX$ be definable by some $p({\mr x})\subseteq\BDelta(M)$.
 We say that $\mrD$ has 
 
 A formula $\psi({\mr x})\in L$ is \emph{symmetric\/} if $\psi({\gr g}\cdot{\mr x})\iff\psi({\gr g^{-1}}\!\cdot{\mr x})$ holds for every ${\gr g}\in\grZ$.
@@ -987,22 +990,23 @@ For any $\grW\subseteq\grZ$, we write $\<\grW\>$ for the subgroup generated by $
 \def\ceq#1#2#3{\parbox[t]{5ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 For $\mrD\subseteq\mrX$, the stabilizers of $\mrD$ is $\grW=\{{\gr g}\in\grZ\ :\ {\gr g}{\cdot}\mrD=\mrD\}$, a subgroup of $\grZ$.
-Let \emph{$G$\/} = $\Aut(\UDelta)$.
+% Let \emph{$G$\/} = $\Aut(\UDelta)$.
 
-\begin{definition}\label{def_G0}\noindent\vspace*{0.1ex}
+\begin{definition}\label{def_G0}\noindent\smallskip
 
-  \ceq{\hfill{\gr\Z^0}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \textrm{ stabilizer of a }\LDelta(\grZ)\textrm{-definable set with finite $\grZ$-orbit}\big\}}.\smallskip
+  \ceq{\hfill{\gr\Z^0}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \textrm{ stabilizer of a }\BDelta(\grZ)\textrm{-definable set with finite $\grZ$-orbit}\big\}}.
 
-  % \ceq{\ssf2.\hfill{\gr\Z^{00}}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \grW\textrm{ is }\LDelta(\grZ)\textrm{-type-definable and has bounded index in }\grZ\big\}}.
+  % \smallskip
+  % \ceq{\ssf2.\hfill{\gr\Z^{00}}}{=}{\bigcap\big\{\grW\le\grZ\ :\textrm{ stabilizer of a }\BDelta(\grZ)\textrm{-type-definable set with small $G$-orbit}\big\}}.
 \end{definition}
 
 % The following fact is immediate.
 
 % \begin{fact}\label{fact_G0}\noindent\vspace*{0.1ex}
 
-%   \ceq{\ssf2.\hfill{\gr\Z^0}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \LDelta(\mrX\,;\grZ)\textrm{-definable subgroup with finite index}\big\}}.\smallskip
+%   \ceq{\ssf2.\hfill{\gr\Z^0}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \BDelta(\mrX\,;\grZ)\textrm{-definable subgroup with finite index}\big\}}.\smallskip
 
-%   % \ceq{\ssf3.\hfill{\gr\Z^0}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \textrm{ stabilizer of a }\LDelta(\mrX,\grZ)\textrm{-definable $\grZ$-generic set}\big\}}.\smallskip
+%   % \ceq{\ssf3.\hfill{\gr\Z^0}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \textrm{ stabilizer of a }\BDelta(\mrX,\grZ)\textrm{-definable $\grZ$-generic set}\big\}}.\smallskip
 % \end{fact}
 
 % Note that we can replace \textit{definable\/} with \textit{type-definable\/} (essentially, by Exercise~\ref{ex_generic_type_vs_formulas}).
@@ -1014,39 +1018,39 @@ Note also that every $\grW\le\grZ$ on the r.h.s.\@ has finite index in $\grZ$.
 
 % \begin{fact}\noindent\vspace*{0.1ex}
   
-%   \ceq{\ssf1.\hfill{\gr\Z^0}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \grW\in\LDelta\textrm{-}\acl^\eq\varnothing\big\}}.\smallskip
+%   \ceq{\ssf1.\hfill{\gr\Z^0}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \grW\in\BDelta\textrm{-}\acl^\eq\varnothing\big\}}.\smallskip
 
-%   \ceq{\ssf2.\hfill{\gr\Z^{00}}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \grW\in\LDelta\textrm{-}\bdd\varnothing\big\}}.
+%   \ceq{\ssf2.\hfill{\gr\Z^{00}}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \grW\in\BDelta\textrm{-}\bdd\varnothing\big\}}.
 
 % \end{fact}
 
 % \begin{proof}
 %   The index of a subgroup is the cardinality of its $\grZ$-orbit. 
-%   By Remark~\ref{rem_H} the $\grZ$-orbit of an $\LDelta(\grZ)$-type-definable set coincides with its $G$-orbit.
+%   By Remark~\ref{rem_H} the $\grZ$-orbit of an $\BDelta(\grZ)$-type-definable set coincides with its $G$-orbit.
 % \end{proof}
 
 \begin{proposition}\label{prop_Z0_inclusione1}
   % Assume $\gamma_{\Z^0}({\mr x})$ finitely consistent.
-  Then                            
+  Then\smallskip         
 
-  \ceq{\hfill{\gr\Z^0}}{\subseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\LDelta(\grZ)\textrm{-definable }\grZ\textrm{-generic set }\mrD\big\}}.
+  \ceq{\hfill{\gr\Z^0}}{\subseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\BDelta(\grZ)\textrm{-definable }\grZ\textrm{-generic set }\mrD\big\}}.
  
-  % Let ${\gr g}$ be such that $\ $ for every $\grZ$-generic $\qfDelta(\grZ)$-definable set $\mrD$.
+  % Let ${\gr g}$ be such that $\ $ for every $\grZ$-generic $\BDelta(\grZ)$-definable set $\mrD$.
   % Then ${\gr g}\in{\gr\Z^0}$.
 \end{proposition}
 
 \begin{proof}
   
-  % We apply Proposition~\ref{prop_Ggeneric_Hpersistent} with $H=\gr\Z^0$, $G=\grZ$, and $\Delta=\LDelta_{\;{\mr x},{\gr z}}$.
+  % We apply Proposition~\ref{prop_Ggeneric_Hpersistent} with $H=\gr\Z^0$, $G=\grZ$, and $\Delta=\BDelta_{\;{\mr x},{\gr z}}$.
   % It follows that if $\mrD$ is $\grZ$-generic then it is $\gr\Z^0$-wide.
   % In particular, $\mrD$ is $\gr\Z^0$-persistent, hence $\mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing$ for every ${\gr g}\in\gr\Z^0$.
 \end{proof}
 
 \begin{proposition}\label{prop_Z0_inclusione2}
   Assume $\mrX=\grZ$.
-  Then              
+  Then\smallskip
 
-  \ceq{\hfill{\gr\Z^0}}{\supseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\LDelta(\grZ)\textrm{-definable }\grZ\textrm{-generic set }\mrD\big\}}.
+  \ceq{\hfill{\gr\Z^0}}{\supseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\BDelta(\grZ)\textrm{-definable }\grZ\textrm{-generic set }\mrD\big\}}.
   
 \end{proposition}
 
@@ -1056,18 +1060,12 @@ Note also that every $\grW\le\grZ$ on the r.h.s.\@ has finite index in $\grZ$.
 \begin{proof}
   Let ${\gr g}$ be an element of the set on the r.h.s.
   Let $\grW$ be as in Definition~\ref{def_G0}.
-  A fortiori $\grW$ is the stabilizer of a set with finite  $\grZ$-orbit.
-  As such, $\grW$ has finite index in $\grZ$.
-  Then $\grW$ (viewed as an $\LDelta(\grZ)$-definable subset of $\mrX$) is $\grZ$-generic.
+  % A fortiori $\grW$ is the stabilizer of a set with finite  $\grZ$-orbit.
+  Then $\grW$ has finite index in $\grZ$.
+  Then $\grW$ (viewed as an $\BDelta(\grZ)$-definable subset of $\mrX$) is $\grZ$-generic.
   Then $\grW\cap{\gr g}{\cdot}\grW\neq\varnothing$; which implies ${\gr g}\in\grW$.
  \end{proof}
 
- \begin{definition}\label{def_G00}\noindent\vspace*{0.1ex}
-
-  \ceq{\hfill{\gr\Z^{00}}}{=}{\bigcap\big\{\grW\le\grZ\ :\textrm{ stabilizer of a }\LDelta(\grZ)\textrm{-type-definable set with small $G$-orbit}\big\}}.\smallskip
-
-  % \ceq{\ssf2.\hfill{\gr\Z^{00}}}{=}{\bigcap\big\{\grW\le\grZ\ :\ \grW\textrm{ is }\LDelta(\grZ)\textrm{-type-definable and has bounded index in }\grZ\big\}}.
-\end{definition}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%

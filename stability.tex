@@ -18,7 +18,7 @@ The notation and implicit assumptions are as in Section~\ref{monster}.
 \section{Externally definable sets}
 \label{externally}
 
-Let $\grC,\grD\subseteq\U^{\gr z}$.
+Let $\grC,\grD\subseteq\grZ$.
 The set $\grD\cap A^{\gr z}$ is called the \emph{trace\/} of $\grD$ over $A$.
 We write $\grC=_A\grD$ if  $\grC$ and $\grD$ have the same trace on $A$.
 
@@ -727,7 +727,7 @@ We deduce a version of Harrington's mysterious Lemma cf.~\cite{TZ}*{Lemma 8.3.4}
 \begin{corollary}\label{corol_harrington0}
   Let $\Delta$ be stable.
   Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$. 
-  Suppose there exist $\mrA\subseteq\U^{\mr x}$ and $\grB\subseteq\U^{\gr z}$ that are $\qfDelta(M^{\gr z})$, respectively $\qfDelta(M^{\mr x})$-definable and 
+  Suppose there exist $\mrA\subseteq\U^{\mr x}$ and $\grB\subseteq\U^{\gr z}$ that are $\BDelta(M^{\gr z})$, respectively $\BDelta(M^{\mr x})$-definable and 
 
   \ceq{1.\hfill\phi({\mr a}\,;M^{\gr z})}{=}{\grB\cap M^{\gr z}}
 
@@ -805,16 +805,19 @@ The sets $\Delta\subseteq L_{{\mr x}\,{\gr z}}(\U)$ and $A\subseteq\U$ are impli
 A type $q({\mr x})\subseteq L(\U)$ is \emph{stationary\/} if it has a unique global extension $p({\mr x})\in S_\Delta(\U)$ that is Lascar invariant over $A$.
 The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
 
-% Finally, define \emph{$\GDelta(A)$\/} to be the set of formulas $\phi({\mr x})\in\qfDelta(\U)$ that are invariant over $A$.
-% Note that though these formulas are equivalent to formulas over $A$, they need not be in $\qfDelta(A)$.
+% Finally, define \emph{$\GDelta(A)$\/} to be the set of formulas $\phi({\mr x})\in\BDelta(\U)$ that are invariant over $A$.
+% Note that though these formulas are equivalent to formulas over $A$, they need not be in $\BDelta(A)$.
 % In the literature these formulas are called \textit{generalized\/} $\Delta$-formulas.
-% Note that when $A$ is a model $\GDelta(A)$-formulas are equivalent to $\qfDelta(A)$-formulas.
+% Note that when $A$ is a model $\GDelta(A)$-formulas are equivalent to $\BDelta(A)$-formulas.
 
 \begin{theorem}[ (Stationarity)]\label{thm_stationarity}
   Let $\Delta$ be stable.
-  Let $q({\mr x})\subseteq L(\U)$ be a type that is invariant over $\acl^\eq\!A$ and decides all $\qfDelta(\U^{\gr z})$-formulas that are invariant over $\acl^\eq\!A$.
+  Let $q({\mr x})\subseteq L(\U)$ be a type that is invariant over $\acl^\eq\!A$ and decides all $\BDelta(\U^{\gr z})$-formulas that are invariant over $\acl^\eq\!A$.
   Then there is a unique type $p({\mr x})\in S_\Delta(\U^{\gr z})$ consistent with $q({\mr x})$ that is invariant over $\acl^\eq\!A$.
 \end{theorem}
+
+The assumptions on $q({\mr x})$ are a mouthful.
+If we replace $\BDelta$ with $\LDelta$ we could simply require $q({\mr x})$ to be a complete type over $\LDelta\mbox{-}\acl^\eq\varnothing$.
 
 \begin{proof}
   Existence follows from Corollary~\ref{corol_stable_coheir_over_models} and Proposition~\ref{prop_type_over_acl2}.
@@ -948,7 +951,7 @@ Similarly for persistent/invariant/wide.
 
 \begin{theorem}\label{thm_persistent_finsat}
   Let $\Delta$ be stable.
-  Let $\mrD$ be a $\qfDelta(\grZ)$-definable set.
+  Let $\mrD$ be a $\BDelta(\grZ)$-definable set.
   Then the following are equivalent 
   \begin{itemize}
     \item[1.] $\mrD$ is \DLascar\ persistent/invariant
@@ -965,7 +968,7 @@ Similarly for persistent/invariant/wide.
   As Boolean combinations of stable formulas are stable, we can assume that $\mrD$ is defined by the formula $\phi({\mr x}\,;{\gr b})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$.
 
   It suffices to prove that $\phi({\mr x}\,;{\gr b})$ is satisfied in every $\LDelta$-model $M$.
-  Then from Corollary~\ref{corol_stable_coheir_over_models} it follows that $\phi({\mr x}\,;{\gr b})$ is contained in a type $p({\mr x})\in S_\Delta(\U^{\gr z})$ that is \DLascar\ invariant.
+  Then from Corollary~\ref{corol_stable_coheir_over_models} it follows that $\phi({\mr x}\,;{\gr b})$ is contained in a type $p({\mr x})\in S_\Delta(\grZ)$ that is \DLascar\ invariant.
   Then $\mrD$ is \DLascar\ wide by Theorem~\ref{thm_generic_invariant2}.
   
   Let $M$ be an $\LDelta$-model.
@@ -976,7 +979,7 @@ Similarly for persistent/invariant/wide.
 
   \ssf2$\IMP$\ssf4.
   Assume \ssf2.
-  Then there is a type $p({\mr x})\in S_\Delta(\U^{\gr z})$ that is \DLascar\  persistent and $p({\mr x})\proves{\mr x}\in\mrD$.
+  Then there is a type $p({\mr x})\in S_\Delta(\grZ)$ that is \DLascar\  persistent and $p({\mr x})\proves{\mr x}\in\mrD$.
   By Theorem~\ref{prop_type_over_acl2} $p({\mr x})$ is invariant over $\LDelta\mbox{-}\acl^\eq\varnothing$.
   Then $\mrD$ is wide under the action of $\Aut(\UDelta/\LDelta\mbox{-}\acl^\eq\varnothing)$.
 \end{proof}
@@ -990,7 +993,7 @@ Therefore, in particular, \DLascar\  generic sets are \DLascar\  wide.
 % \end{proposition}
 
 % \begin{proof}
-%   Let $\mrD$ be a $\qfDelta(\U)$-definable set that is weakly \DLascar\  persistent.
+%   Let $\mrD$ be a $\BDelta(\U)$-definable set that is weakly \DLascar\  persistent.
 %   We prove that $\mrD$ is \DLascar\  persistent.
 %   Pick a finite $H\subseteq\Autf(\U/A)$ such that $\cup\,H\,\mrD$ is \DLascar\  persistent.
 %   By Theorem~\ref{thm_persistent_finsat}, the type $\{{\mr x}\in\cup\,H\,\mrD\}\cup q({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
@@ -1001,10 +1004,10 @@ Therefore, in particular, \DLascar\  generic sets are \DLascar\  wide.
 
 \begin{proposition}\label{prop_stable_genericiffpersistent}
   Let $\Delta$ be stable.
-  Let $\mrX=q(\U^{\mr x})$ where $q({\mr x})\subseteq\qfDelta(\U^{\gr z})$  is invariant over $\acl^\eq\!A$ and decides all $\qfDelta(\U^{\gr z})$-formulas that are invariant over $\LDelta\mbox{-}\acl^\eq\varnothing$.
-  Then for every $\qfDelta(\U^{\gr z})$-definable set $\mrD$, the following are equivalent
+  Let $\mrX=q(\U^{\mr x})$ where $q({\mr x})\subseteq\BDelta(\grZ)$  is invariant over $\LDelta\mbox{-}\acl^\eq\varnothing$ and decides all $\BDelta(\grZ)$-formulas that are invariant over $\LDelta\mbox{-}\acl^\eq\varnothing$.
+  Then for every $\BDelta(\grZ)$-definable set $\mrD$, the following are equivalent
   \begin{itemize}
-    \item[1.] $\mrD$ is \DLascar\  generic.
+    \item[1.] $\mrD$ is \DLascar\  generic
     \item[2.] $\mrD$ is \DLascar\  persistent.
   \end{itemize}
 \end{proposition}
@@ -1024,66 +1027,68 @@ Therefore, in particular, \DLascar\  generic sets are \DLascar\  wide.
 
 \begin{corollary}\label{corol_stable_generic}
   Let $\Delta$ be stable.
-  Let $\mrX=q(\U^{\mr x})$ where $q({\mr x})\subseteq\qfDelta(\U^{\gr z})$ is a type that is invariant over $\LDelta\mbox{-}\acl^\eq\varnothing$ and decides all $\qfDelta(\U^{\gr z})$-formulas that are invariant over $\LDelta\mbox{-}\acl^\eq\varnothing$.
-  Then for every $\qfDelta(\U^{\gr z})$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is \DLascar\ generic.
+  Let $\mrX=q(\U^{\mr x})$ where $q({\mr x})\subseteq\BDelta(\grZ)$ is a type that is invariant over $\LDelta\mbox{-}\acl^\eq\varnothing$ and decides all $\BDelta(\grZ)$-formulas that are invariant over $\LDelta\mbox{-}\acl^\eq\varnothing$.
+  Then for every $\BDelta(\grZ)$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is \DLascar\ generic.
 \end{corollary}
 
 \begin{proof}
-  By Theorem~\ref{thm_stationarity} there is a type $p({\mr x})\in S_\Delta(\U)$ finitely consistent with $q({\mr x})$ that is \DLascar\ invariant and therefore persistent.
+  By Theorem~\ref{thm_stationarity} there is a type $p({\mr x})\in S_\Delta(\grZ)$ finitely consistent with $q({\mr x})$ that is \DLascar\ invariant and therefore persistent.
   Hence, by Corollary~\ref{corol_def_mu}, $\mrD$ and $\neg\mrD$ are not both generic.
   If $\mrD$ is not generic then $\neg\mrD$ is persistent and, by Proposition~\ref{prop_stable_genericiffpersistent}, generic.
 \end{proof}
 
 \begin{theorem}\label{thm_FER}
   Let $\Delta$ be stable.
-  Let $\mrX=q(\U^{\mr x})$, where $q({\mr x})\subseteq\qfDelta(\U^{\gr z})$ is a type that is invariant (over $\varnothing$) and decides all invariant $\qfDelta(\U^{\gr z})$-formulas.
+  Let $\mrX=q(\U^{\mr x})$, for $q({\mr x})\subseteq\BDelta(\grZ)$ be a type that is invariant (over $\varnothing$) and decides all invariant $\BDelta(\grZ)$-formulas.
   Finally, let \smallskip
   
-  \ceq{\hfill P}{=}{\big\{p({\mr x})\in S_\Delta(\U^{\gr z})\ :\ \textrm{consistent with }\mrX\textrm{ and is \DLascar\ invariant}\big\}}. \smallskip
+  \ceq{\hfill P}{=}{\big\{p({\mr x})\in S_\Delta(\grZ)\ :\ p({\mr x})\textrm{ is \DLascar\ invariant}\big\}}. \smallskip
   
   Then the following hold
   \begin{itemize}
     \item [1.] $\Aut(\UDelta)$ acts transitively on $P$
-    \item [2.] $P$ is finite
+    \item [2.] if $\Delta$ is finite, then $P$ is finite
     % \item [3.] there is a finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\GDelta(A)$ such that for all $p_i,p_j\in P$ 
     
     % \ceq{\hfill p_i=p_j}{\IFF}{p_i({\mr x})\cup p_j({\mr y}) \textrm{ is consistent with }\epsilon({\mr x},{\mr y})}.
     % 
-    \item [3.] there is a finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\GDelta(A)$ such that for every ${\mr a}\models p_0({\mr x})$ there is a unique $p({\mr x})$ in $P$ that is consistent with $\epsilon({\mr x}\,;{\mr a})$.
+    \item [3.] Let $E$ be the set of finite equivalence relations on $\mrX$ that are $\BDelta(\grZ)$-definable and invariant over $\varnothing$.%under the action of $\Aut(\UDelta)$.
+    For every ${\mr a}\in\mrX$  there is a unique $p({\mr x})$ in $P$ that is consistent with $\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in E\big\}$.
+
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
   \ssf1.
   Let $p_i$, where $i=1,2$, be two elements of $P$.
-  Let $q_i({\mr x})$ be some complete $\GDelta(\acl^\eq\!A)$-type consistent with $p_i({\mr x})$.
-  By Lemma~\ref{lem_trans_action} $f\,q_1=q_2$ for some $f\in\Aut(\U/A)$.
+  Let $q_i({\mr x})$ be the set of $\BDelta(\grZ)$-formulas that are consequence of $p_i({\mr x})$.
+  By Lemma~\ref{lem_trans_action} $f\,q_1=q_2$ for some $f\in\Aut(\UDelta)$.
   Then $f\,p_1$ is consistent with $q_2$.
   By stationarity $f\,p_1=p_2$.
 
   \ssf2.
   We may identify a type $p({\mr x})\in S_\Delta(\U)$ with the tuple $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$.
-  As ${\gr\D_{fp,\phi}}=f[{\gr\D_{p,\phi}}]$ for any $f\in\Aut(\U/A)$, the orbit of $p({\mr x})$ corresponds to the orbit of $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$.
-  As $p\in P$ is \DLascar\ invariant over $A$, the sets ${\gr\D_{p,\phi}}$ are in $\acl^\eq\!A$.
+  The orbit of $p({\mr x})$ under the action of $\Aut(\UDelta)$ corresponds to the orbit of $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$.
+  As $p\in P$ is \DLascar\ invariant, by Theorem~\ref{thm_persistent_finsat} the sets ${\gr\D_{p,\phi}}$ are in $\acl^\eq\varnothing$.
   Hence have a finite orbit.
   As $\Delta$ is finite the orbit of $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$ is finite, and so is the orbit of $p$.
-  By \ssf1, $P$ is finite.
+  Therefore by \ssf1, $P$ is finite.
 
   \ssf3. 
-  Let $p_1,\dots,p_n$ be an enumeration without repetitions of $P$.
-  Let $q_1({\mr x})$ be some complete $\GDelta(\acl^\eq\!A)$-type consistent with $p_1$.
-  It is easy to see that the orbit of $q_1({\mr x})$ under the action of $\Aut(\U/A)$ consists of $\GDelta(\acl^\eq\!A)$-types $q_1,\dots,q_n$ that are complete and consistent with $p_1,\dots,p_n$.
+  Let $p_i:i<\lambda$ be an enumeration without repetitions of $P$.
+  Let $q_1({\mr x})$ be some complete $\BDelta(\acl^\eq\!A)$-type consistent with $p_1$.
+  It is easy to see that the orbit of $q_1({\mr x})$ under the action of $\Aut(\U/A)$ consists of $\BDelta(\acl^\eq\!A)$-types $q_1,\dots,q_n$ that are complete and consistent with $p_1,\dots,p_n$.
   By stationarity the $q_i$ are mutually inconsistent.
   Pick $n$ mutually inconsistent formulas $\theta_i({\mr x})\in q_i$ and define
 
   \ceq{\hfill\epsilon({\mr x},{\mr y})}{=}{\bigwedge_{i=1}^n\big[\theta_i({\mr x})\iff\theta_i({\mr y})\big]}
   
-  From the definition of $\epsilon({\mr x},{\mr y})$ we know that it belongs to $\GDelta(\acl^\eq\!A)$, but, as $\epsilon({\mr x},{\mr y})$ is invariant over $A$, it is equivalent to a formula in $L(A)$.
+  From the definition of $\epsilon({\mr x},{\mr y})$ we know that it belongs to $\BDelta(\acl^\eq\!A)$, but, as $\epsilon({\mr x},{\mr y})$ is invariant over $A$, it is equivalent to a formula in $L(A)$.
   Hence \ssf3 follows.
 \end{proof}
 
 \begin{exercise}\label{ex_X_vs_U}
-  Let $q({\mr x})\subseteq\qfDelta(\U^{gr z})$.
+  Let $q({\mr x})\subseteq\BDelta(\U^{gr z})$.
   Prove that if $\mrD$ is wide relative to $\mrX=q(\U^{\mr x})$, than it is wide relative to $\U^{\mr x}$.
 \end{exercise}
 
@@ -1101,28 +1106,25 @@ Recall that $\Psi\subseteq L_{\mr x}(A)$ is some fixed set of formulas and \emph
 
 \begin{theorem}\label{thm_Ggeneric_persistent}
   Let $\Delta$ be stable.
-  Then for every $\qfDelta(\U^{\gr z})$-definable set $\mrD$ the following are equivalent
+  Then for every $\BDelta(\grZ)$-definable set $\mrD$ the following are equivalent
   \begin{itemize}
-    \item [1.] $\mrD$ is generic under the action of $\U^{\gr z}$
-    \item [2.] $\mrD$ is \DLascar\ persistent.
+    \item [1.] $\mrD$ is $\grZ$-generic
+    \item [2.] $\mrD$ is \DLascar\ invariant.
   \end{itemize}\smallskip
 
-  In particular, it follows the if these properties hold for $\mrD$, they hold also for ${\gr g}{\cdot}\mrD$ for any ${\gr g}\in\U^{\gr z}$. 
+  In particular it follows that, if these properties hold for $\mrD$, they hold also for ${\gr g}{\cdot}\mrD$ for any ${\gr g}\in\grZ$. 
 \end{theorem}
-
-It is worthwhile to recall that, under the assumption of stability, \DLascar\ wide is equivalent to \DLascar\ persistent, see Theorem~\ref{thm_persistent_finsat}.
 
 \begin{proof} 
   \ssf1$\IMP$\ssf2.
-  By stability, there exist a type $p({\mr x})\in S_\Delta(\U^{\gr z})$ that is invariant under the action of $\Autf(\UDelta)$.
-  As $\mrD$ is generic under the action of $\Aut(\UDelta)$, we can apply Corollary~\ref{prop_Ggeneric_persistent} with $H=\Autf(\UDelta)$ to obtain that $\mrD$ is persistent under the action of $\Autf(\UDelta)$.
+  By stability, there exist a type $p({\mr x})\in S_\Delta(\grZ)$ that is invariant under the action of $\Autf(\UDelta)$.
+  As $\mrD$ is generic under the action of $\Aut(\UDelta)$, we can apply Corollary~\ref{prop_Ggeneric_persistent} with $H=\Autf(\UDelta)$ to obtain that $\mrD$ is persistent/invariant under the action of $\Autf(\UDelta)$.
 
   \ssf2$\IMP$\ssf1.
-  For ${\mr a}\in\U^{\mr x}$ let $q({\mr x})=\tp({\mr a}/\acl^\eq\!A)$.
+  For ${\mr a}\in\mrX$ let $q({\mr x})$ be the set of $\BDelta(\grZ)$-formulas that hold in ${\mr a}$ and are invariant over $\LDelta\mbox{-}\acl^\eq\varnothing$.
   Assume \ssf2 then, by Proposition~\ref{prop_stable_genericiffpersistent}, $\mrD$ is \DLascar\ generic relative to $q(\U^{\mr x})$, i.e.\@ with $q(\U^{\mr x})$ for $\mrX$.
-  The same reasoning applies to all ${\mr a}\in\mrX$, therefore $q({\mr x})$ ranges over the whole of $S(\acl^\eq\!A)$.
-  We conclude that there is a set $H\subseteq\grZ$ of cardinality $<2^{|L(A)|}$ such that $\bigcup_{h\in H}{\gr h}{\cdot}\mrD$ covers $\mrX$.
-  By compactness, we can assume $H$ finite, so the $\grZ$-genericity of $\mrD$ follows.
+  As the same reasoning applies to all ${\mr a}\in\mrX$, there is a set ${\gr Z}\subseteq\grZ$ of cardinality $<2^{|L(A)|}$ such that $\bigcup_{{\gr h}\in{\gr Z}}{\gr h}{\cdot}\mrD$ covers $\mrX$.
+  By compactness, we can assume ${\gr Z}$ finite, then the $\grZ$-genericity of $\mrD$ follows.
   % \ssf1$\IMP$\ssf2.
   % Let ${\gr g}$ be given.
   % By stability, there is a type $p({\mr x})\in L'\mbox{-}S(\grZ)$ that is invariant, and therefore definable, over $L'\mbox{-}\acl^\eq\varnothing$.
@@ -1143,11 +1145,11 @@ It is worthwhile to recall that, under the assumption of stability, \DLascar\ wi
 
 \begin{corollary}\label{corol_genericornotgeneric}
   Let $\Delta$ be stable.
-  Then, for every $\qfDelta(\grZ)$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is $\grZ$-generic.
+  Then, for every $\BDelta(\grZ)$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is $\grZ$-generic.
 \end{corollary}
 
 \begin{proof}
-  By stability either $\mrD$ or $\neg\mrD$ is persistent under the action of $\Autf(\UDelta)$.
+  By stability either $\mrD$ or $\neg\mrD$ is \DLascar\ persistent.
   The $\grZ$-genericity of either one follows.
 \end{proof}
 
@@ -1159,7 +1161,7 @@ It is worthwhile to recall that, under the assumption of stability, \DLascar\ wi
   \begin{itemize}
     \item [1.] $\grZ$ acts transitively on $Q$
     \item [2.] $Q$ is finite
-    \item [3.] there is a $\grZ$-invariant finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\GDelta(A)$ such that for every ${\mr a}\in\mrX$ there is a unique $q({\mr x})$ in $Q$ that is consistent with $\epsilon({\mr x}\,;{\mr a})$.
+    \item [3.] there is a $\grZ$-invariant finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\BDelta(A)$ such that for every ${\mr a}\in\mrX$ there is a unique $q({\mr x})$ in $Q$ that is consistent with $\epsilon({\mr x}\,;{\mr a})$.
   \end{itemize}
 \end{corollary}
 
@@ -1183,7 +1185,7 @@ It is worthwhile to recall that, under the assumption of stability, \DLascar\ wi
 
 The stabilizer of the type $q({\mr x})\in S_\Delta(\grZ)$ is the subgroup $\{{\gr h}\in\grZ\ :\ q({\mr x})={\gr h}{\cdot}q({\mr x})\}$.
 Which we can write also as $\{{\gr h}\in\grZ\ :\ {\gr\D_{q,\phi}}={\gr h}{\cdot}{\gr\D_{q,\phi}},\textrm{ for every }\phi({\mr x}\,;{\gr z})\in\Delta\}$.
-When $\Delta$ is stable, it is a $\qfDelta(\mrX)$-type-definable set (definable, when $\Delta$ is finite).
+When $\Delta$ is stable, it is a $\BDelta(\mrX)$-type-definable set (definable, when $\Delta$ is finite).
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{5ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
@@ -1227,7 +1229,7 @@ When $\Delta$ is stable, it is a $\qfDelta(\mrX)$-type-definable set (definable,
 % \begin{proof}
 %   By Theorem~\ref{thm_Ggeneric_persistent}  
 
-%   \ceq{\hfill{\gr\Z^0}}{\subseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\qfDelta(\grZ)\textrm{-definable }H\textrm{-persistent set }\mrD\big\}}
+%   \ceq{\hfill{\gr\Z^0}}{\subseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\BDelta(\grZ)\textrm{-definable }H\textrm{-persistent set }\mrD\big\}}
 
 %   and, by Proposition~\ref{prop_stabilizer1} 
   
