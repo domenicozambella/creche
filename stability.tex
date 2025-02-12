@@ -18,16 +18,12 @@ The notation and implicit assumptions are as in Section~\ref{monster}.
 \section{Externally definable sets}
 \label{externally}
 
-Let $\grC,\grD\subseteq\grZ$.
-The set $\grD\cap A^{\gr z}$ is called the \emph{trace\/} of $\grD$ over $A$.
-We write $\grC=_A\grD$ if  $\grC$ and $\grD$ have the same trace on $A$.
-
 Let $p({\mr x})\subseteq L(\U)$ be a consistent type.
 Recall from Section~\ref{invariant_sets} that for every formula $\phi({\mr x}\,;{\gr z})\in L$ we define
 
 \ceq{\hfill\emph{$\gr\D_{p,\phi}$}}{=}{\Big\{{\gr a}\in\U^{\gr z}\ :\ \phi({\mr x}\,;{\gr a})\in p\Big\}.}
 
-We say that $\grD$ is \emph{externally definable\/} if it is of the form ${\gr\D_{p,\phi}}$ for some type $p({\mr x})\in S_\phi(\U^{\gr z})$.
+We say that $\grD$ is \emph{externally definable\/} if $\grD={\gr\D_{p,\phi}}$ for some type $p({\mr x})\in S_\phi(\U^{\gr z})$.
 % We say that $\grD$ is externally definable \emph{by $p({\mr x})$ and $\phi({\mr x}\,;{\gr z})$}.
 
 Equivalently, a set $\grD$ is externally definable if it is the trace over $\U^{\gr z}$ of a set which is definable in some elementary extension of $\U$.
@@ -588,7 +584,7 @@ The following are equivalent
 \end{corollary}
 
 \begin{proof}
-  The corollary follows immediately from Lemma~\ref{lem_bin_tree} and Theorem~\ref{thm_count_types}.
+  It follows immediately from Lemma~\ref{lem_bin_tree} and Theorem~\ref{thm_count_types}.
 \end{proof}
 
 We use binary trees to prove the following fundamental lemma (attributed by Harnik and Harrington~\cite{HH} to Martin Ziegler).
@@ -676,7 +672,7 @@ Let \emph{$\Delta$\/} $\subseteq L_{{\mr x}\,{\gr z}}(\U)$.
 We say that $\Delta$ is stable if all formulas in $\Delta$ are stable.
 % When $|{\mr x}|=|{\gr z}|=\omega$ and $\Delta=L_{{\mr x}\,{\gr z}}$ the stability of $\Delta$ is tantamount to the stability of $T$.
 
-The following corollary of Theorem~\ref{lem_ziegler} is a fundamental tool.
+The following corollary of Theorem~\ref{lem_ziegler} is of fundamental importance.
 It implies, in particular the existence of Lascar invariant types.
 
 \begin{corollary}\label{corol_stable_coheir_over_models}
@@ -706,7 +702,7 @@ In fact, when $T$ is stable, it implies that
 \begin{theorem}[ (Symmetry)]\label{thm_symmetry}
   Let $\phi({\mr x}\,;{\gr z})\in L(M)$ be stable.
   Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$ be such that ${\mr a}\cnonfork_M{\gr b}$.
-  Then
+  Then\smallskip
 
   \ceq{\hfill\phi({\mr a}\,;{\gr b})}{\IMP}{\phi({\mr a}\,;M^{\gr z})\neq\varnothing.}
 \end{theorem}
@@ -727,11 +723,11 @@ We deduce a version of Harrington's mysterious Lemma cf.~\cite{TZ}*{Lemma 8.3.4}
 \begin{corollary}\label{corol_harrington0}
   Let $\Delta$ be stable.
   Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$. 
-  Suppose there exist $\mrA\subseteq\U^{\mr x}$ and $\grB\subseteq\U^{\gr z}$ that are $\BDelta(M^{\gr z})$, respectively $\BDelta(M^{\mr x})$-definable and 
+  Suppose there exist $\mrA\subseteq\U^{\mr x}$ and $\grB\subseteq\U^{\gr z}$ that are $\BDelta(M^{\gr z})$, respectively $\BDelta(M^{\mr x})$-definable and \smallskip
 
-  \ceq{1.\hfill\phi({\mr a}\,;M^{\gr z})}{=}{\grB\cap M^{\gr z}}
+  \ceq{1.\hfill\phi({\mr a}\,;M^{\gr z})}{=}{\grB\cap M^{\gr z}}\smallskip
 
-  \ceq{2.\hfill\phi(M^{\mr x};{\gr b})}{=}{\mrA\cap M^{\mr x}},
+  \ceq{2.\hfill\phi(M^{\mr x};{\gr b})}{=}{\mrA\cap M^{\mr x}},\smallskip
 
   for some $\phi({\mr x}\,;{\gr z})\in\Delta$.
   Then ${\mr a}\in\mrA\ \iff\ {\gr b}\in\grB$.
@@ -748,7 +744,7 @@ We deduce a version of Harrington's mysterious Lemma cf.~\cite{TZ}*{Lemma 8.3.4}
 
   \ceq{\ssf2$'$.\hfill\phi({\mr a};{\gr b})}{\iff}{{\mr a}\in\mrA}.
 
-  The corollary follows if we can also show that 
+  The corollary follows if we can also show that
 
   \ceq{\ssf1$'$.\hfill\phi({\mr a}\,;{\gr b})}{\iff}{{\gr b}\in\grB}
 
@@ -762,11 +758,11 @@ The above corollary is usually applied in the following form.
 \begin{corollary}\label{corol_harrington1}
   Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
   Let $p({\mr x})\in S_\phi(\U^{\gr z})$ and $q({\gr z})\in S_{\phi^{\rm op}}(\U^{\mr x})$ be invariant over $M$.
-  Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$ be such that 
+  Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$ be such that\smallskip
 
-  \ceq{\ssf1.\hfill\phi({\mr a}\,;M^{\gr z})}{=}{M^{\gr z}\cap {\gr\D_{p,\phi}}}
+  \ceq{\ssf1.\hfill\phi({\mr a}\,;M^{\gr z})}{=}{M^{\gr z}\cap {\gr\D_{p,\phi}}}\smallskip
 
-  \ceq{\ssf2.\hfill\phi(M^{\mr x};{\gr b})}{=}{M^{\mr x}\cap {\mr\D_{q,\phi^{\rm op}}}}.
+  \ceq{\ssf2.\hfill\phi(M^{\mr x};{\gr b})}{=}{M^{\mr x}\cap {\mr\D_{q,\phi^{\rm op}}}}.\smallskip
 
   Then ${\mr a}\in{\mr\D_{q,\phi^{\rm op}}}\ \iff\ {\gr b}\in{\gr\D_{p,\phi}}$
 \end{corollary}
@@ -774,31 +770,28 @@ The above corollary is usually applied in the following form.
 Now we show that under the assumption of stability Lascar invariance reduces to a tamer form of invariance.
 
 \begin{proposition}\label{prop_type_over_acl2}
-  Let $\phi({\mr x}\,;{\gr z})$ be stable.
-  Let $p({\mr x})\in S_\phi(\U^{\gr z})$. 
-  Then the following are equivalent
+  Let $\Delta$ be stable.
+  Then for every $p({\mr x})\in S_\Delta(\U^{\gr z})$ the following are equivalent
   \begin{itemize}
-  \item[1.] ${\gr\D_{p,\phi}}\in \acl^\eq\!A$ -- recall that, by stability, ${\gr\D_{p,\phi}}\in\U^\eq$
+  \item[1.] ${\gr\D_{p,\phi}}\in \acl^\eq\!A$ for every $\phi({\mr x}\,;{\gr z})\in\Delta$.
   \item[2.] $p({\mr x})$ is finitely satisfied in every $M\supseteq A$
-  \item[3.] $p({\mr x})$ is invariant over $\acl^\eq\!A$
-  \item[4.] $p({\mr x})$ is Lascar invariant over $A$.
+  \item[3.] $p({\mr x})$ is Lascar invariant over $A$
+  \item[4.] $p({\mr x})$ is invariant over $\acl^\eq\!A$.
   \end{itemize}
 \end{proposition}
 \begin{proof}
-  \ssf{2}$\IMP$\ssf{3}$\IMP$\ssf{4} (and even \ssf{1}$\IMP$\ssf{3}) are clear~--~stability is not required.
+  \ssf2$\IMP$\ssf3$\IMP$\ssf1 and \ssf4$\IMP$\ssf1 are clear.
 
   \ssf{1}$\IMP$\ssf{2}
   Let $M\supseteq A$ be given.
-  First, for simplicity, we prove that any $\phi({\mr x}\,;{\gr b})\in p$ is satisfied in $M$.
-  Let $\psi({\gr z})\in L(\acl^\eq\!A)$ be a formula defining ${\gr\D_{p,\phi}}$.
-  Pick any ${\mr a}\models p({\mr x}){\restriction} M$ such that ${\gr b}\cnonfork_M{\mr a}$.
-  As $\phi({\mr a}\,;M^{\gr z})=\psi(M^{\gr z})$ we have that $\phi({\mr a}\,;{\gr b})=\psi({\gr b})$.
-  But $\psi({\gr b})$ holds because $\phi({\mr x}\,;{\gr b})\in p$, hence $\phi({\mr a}\,;{\gr b})$ and, from Theorem~\ref{thm_symmetry} we obtain $\phi(M^{\mr x};{\gr b})\neq\varnothing$.
-  The same argument extends easily to the conjunction of formulas of the form $\phi({\mr x}\,;{\gr b})$ and negation thereof (use that the complement and the Cartesian product of sets in $\acl^\eq\!A$ is again $\acl^\eq\!A$).
- 
-  \ssf{3}$\IMP$\ssf{1} By Theorem~\ref{thm_def_stable_formula2} the sets ${\gr\D_{p,\phi}}$ are definable (over $\U$).
-  As $p({\mr x})$ is Lascar invariant over $A$, so are the sets ${\gr\D_{p,\phi}}$.
-  By Corollary~\ref{coroll_defble_Lascar_inv}, they belong to $\acl^\eq\!A$.
+  Let $\psi({\mr x})$ be a conjunction of formulas in $p({\mr x})$, we prove that $\phi({\mr x}\,;{\gr b})$ is satisfied in $M$.
+  For simplicity we assume that $\psi({\mr x})$ and the form $\phi({\mr x}\,;{\gr b})$.
+  The same argument extends easily because $\acl^\eq\!A$ is closed under Boolean combinations and Cartesian product.
+
+  Pick ${\mr a}\in\U^{\mr x}$ such that $\phi({\mr a}\,;M^{\gr z})={\gr\D_{p,\phi}}\cap M^{\gr z}$ and ${\gr b}\cnonfork_M{\mr a}$.
+  As ${\gr\D_{p,\phi}}\in M^\eq$, for every ${\gr b}\cnonfork_M{\mr a}$ we have $\phi({\mr a}\,;{\gr b})\iff{\gr b}\in{\gr\D_{p,\phi}}$.
+  As ${\gr b}\in{\gr\D_{p,\phi}}$ is true, so is $\phi({\mr a}\,;{\gr b})$.
+  By symmetry $\phi(M^{\mr x};{\gr b})\neq\varnothing$.
 \end{proof}
 
 The sets $\Delta\subseteq L_{{\mr x}\,{\gr z}}(\U)$ and $A\subseteq\U$ are implicit in the definition below.
@@ -812,12 +805,9 @@ The following proposition says that in a stable theory with elimination of imagi
 
 \begin{theorem}[ (Stationarity)]\label{thm_stationarity}
   Let $\Delta$ be stable.
-  Let $q({\mr x})\subseteq L(\U)$ be a type that is invariant over $\acl^\eq\!A$ and decides all $\BDelta(\U^{\gr z})$-formulas that are invariant over $\acl^\eq\!A$.
+  Let $q({\mr x})\subseteq L(\U)$ be a type that is finitely satisfiable in every $M\supseteq A$ and decides all $\BDelta(\U^{\gr z})$-formulas that are invariant over $\acl^\eq\!A$.
   Then there is a unique type $p({\mr x})\in S_\Delta(\U^{\gr z})$ consistent with $q({\mr x})$ that is invariant over $\acl^\eq\!A$.
 \end{theorem}
-
-The assumptions on $q({\mr x})$ are a mouthful.
-If we replace $\BDelta$ with $\LDelta$ we could simply require $q({\mr x})$ to be a complete type over $\LDelta\mbox{-}\acl^\eq\varnothing$.
 
 \begin{proof}
   Existence follows from Corollary~\ref{corol_stable_coheir_over_models} and Proposition~\ref{prop_type_over_acl2}.
@@ -852,11 +842,10 @@ If we replace $\BDelta$ with $\LDelta$ we could simply require $q({\mr x})$ to b
 
 \begin{corollary}\label{corol_Ltype_Shtype}
 ($T$ stable)
-The following are equivalent
+The following are equivalent\smallskip
 \begin{itemize}
-\item[1.] ${\mr a}\equivL_A{\mr b}$, see Definition~\ref{def_Lascar_type}
-\item[2.] ${\mr a}\equivSh_A{\mr b}$, see Definition~\ref{def_Sh_strong_type}
-% \item[3.] ${\mr a}\,\equiv_{\acl^\eq\! A}{\mr b}$.
+\item[1.] ${\mr a}\equivL_A{\mr b}$, see Definition~\ref{def_Lascar_type}\smallskip
+\item[2.] ${\mr a}\equivSh_A{\mr b}$, see Definition~\ref{def_Sh_strong_type}\smallskip
 \end{itemize}
 \end{corollary}
 \begin{proof}\ssf{1}$\IMP$\ssf{2}.
@@ -905,6 +894,7 @@ It has an application in the proof of Theorem~\ref{thm_persistent_finsat}.
 \end{proof}
 
 A more general version of the theorem holds, but it requires a different proof.
+It is not necessary in the following.
 
 \begin{theorem}\label{thm_stability_definable_rovescio2}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
@@ -941,51 +931,68 @@ A more general version of the theorem holds, but it requires a different proof.
 \def\DLascar{L\kern-.6ex\raisebox{1.1ex}{\tiny$\Delta$}\kern-.1ex ascar}
 
 We adopt the notation and terminology of Chapter~\ref{actions}.
-The set $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ is fixed and, generally, assumed to be stable.
-In this section we always work with the language $\LDelta$, somewhat pedantically, the notation will keep reminding this.
+The set $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ is fixed and assumed to be stable.
+% In this section we always work with the language $\LDelta$.%, somewhat pedantically, the notation will keep reminding this.
+In this section, unless otherwise stated, $\mrX=\U^{\mr x}$ and $\grZ=\U^{\gr z}$.
+As in Chapter~\ref{actions}, we write \emph{$G$\/} for $\Aut(\UDelta)$.
+We also set $H=\Autf(\UDelta)$.
+Therefore $H$-invariance is Lascar invariance over $\varnothing$ in the language $\LDelta$.
+% We consider the action of two groups $\Aut(\UDelta)$ and $\Autf(\UDelta)$.
+% We say \emph{\DLascar\/} generic (over $\varnothing$) for generic under the action of $\Autf(\UDelta)$.
+% Similarly for persistent/invariant/wide.\phi(\mrX\,;{\gr b})
 
-Unless otherwise stated $\mrX=\U^{\mr x}$ and $\grZ=\U^{\gr z}$.
-We consider the action of two groups $\Aut(\UDelta)$ and $\Autf(\UDelta)$.
-We say \emph{\DLascar\/} generic (over $\varnothing$) for generic under the action of $\Autf(\UDelta)$.
-Similarly for persistent/invariant/wide.
+\ceq{\hfill\Psi}{=}{\big\{\theta({\gr z})\in\BDelta(\mrX)\ : \textrm{ with finite $G$-orbit}\big\}}
+
+
+Let $K=\Aut(\UDelta/\Psi)$, i.e.\@ the set of automorphisms that fix every $\Psi$-definable set.
+Clearly, $H\le K$.
+
+\begin{remark}\label{rem_type_over_acl2}
+  Let $\Delta$ be stable.
+  Reading Proposition~\ref{prop_type_over_acl2} in the language $\LDelta$, we obtain that $p({\mr x})$ is $H$-invariant if and only if for every $\phi({\mr x}\,;{\gr z})\in\Delta$ the sets ${\gr\D_{p,\phi}}$ have finite $G$-orbit.
+  By stability, the sets ${\gr\D_{p,\phi}}$ are $\BDelta(\mrX)$-definable.
+  Therefore if $p({\mr x})$ is $H$-invariant then it is also $K$-invariant (the converse is trivial).
+\end{remark}
+
+
+The following theorem consists of two parts. 
+The first part shows that when $\Delta$ is stable Theorem~\ref{thm_coalesce} applies.
+The second part is shows that in some cases $H$ can be replaced by $K$.
 
 \begin{theorem}\label{thm_persistent_finsat}
   Let $\Delta$ be stable.
   Let $\mrD$ be a $\BDelta(\grZ)$-definable set.
   Then the following are equivalent 
   \begin{itemize}
-    \item[1.] $\mrD$ is \DLascar\ persistent/invariant
-    \item[2.] $\mrD$ is \DLascar\ wide.
-    \item[3.] $\mrD$ is persistent under the action of $\Aut(\UDelta/\LDelta\mbox{-}\acl^\eq\varnothing)$ 
-    \item[4.] $\mrD$ is wide under the action of $\Aut(\UDelta/\LDelta\mbox{-}\acl^\eq\varnothing)$.
+    \item[1.] $\mrD$ is $H$-persistent
+    \item[2.] $\mrD$ is $H$-wide
+    \item[3.] $\mrD$ is $K$-persistent 
+    \item[4.] $\mrD$ is $K$-wide.\smallskip
   \end{itemize}
 \end{theorem}
 \begin{proof}
-  Implications \ssf4$\IMP$\ssf3 and \ssf2$\IMP$\ssf1 are trivial.
-  Implications \ssf4$\IMP$\ssf3 and \ssf3$\IMP$\ssf1 hold because $\Autf(\UDelta)\le\Aut(\UDelta/\LDelta\mbox{-}\acl^\eq\varnothing)$.
+  Implications \ssf2$\IMP$\ssf1 and \ssf4$\IMP$\ssf3 are trivial.
+  Implications \ssf3$\IMP$\ssf1 and \ssf4$\IMP$\ssf3 hold because  $H\le K$.
 
   \ssf1$\IMP$\ssf2.
   As Boolean combinations of stable formulas are stable, we can assume that $\mrD$ is defined by the formula $\phi({\mr x}\,;{\gr b})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$.
 
   It suffices to prove that $\phi({\mr x}\,;{\gr b})$ is satisfied in every $\LDelta$-model $M$.
-  Then from Corollary~\ref{corol_stable_coheir_over_models} it follows that $\phi({\mr x}\,;{\gr b})$ is contained in a type $p({\mr x})\in S_\Delta(\grZ)$ that is \DLascar\ invariant.
-  Then $\mrD$ is \DLascar\ wide by Theorem~\ref{thm_generic_invariant2}.
+  Then from Corollary~\ref{corol_stable_coheir_over_models} it follows that $\phi({\mr x}\,;{\gr b})$ extends to a type $p({\mr x})\in S_\Delta(\grZ)$ that is $H$-invariant.
+  Then $\mrD$ is $H$-wide by Theorem~\ref{thm_generic_invariant2}.
   
-  Let $M$ be an $\LDelta$-model.
   Let $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be the formula in the proof of Theorem~\ref{thm_stability_definable_rovescio1}.
-  As $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ is equivalent to a formula in $\LDelta(M)$, by elementarity it satisfiable in $M$.
+  As it is equivalent to a formula in $\LDelta(M)$, by elementarity it is satisfiable in $M$.
   Hence so is $\phi({\mr x}\,;{\gr b_i})$ for some $i$.
   As ${\gr b_i}\equiv_M{\gr b}$, also $\phi({\mr x}\,;{\gr b})$ is satisfiable.
 
   \ssf2$\IMP$\ssf4.
   Assume \ssf2.
-  Then there is a type $p({\mr x})\in S_\Delta(\grZ)$ that is \DLascar\  persistent and $p({\mr x})\proves{\mr x}\in\mrD$.
-  By Theorem~\ref{prop_type_over_acl2} $p({\mr x})$ is invariant over $\LDelta\mbox{-}\acl^\eq\varnothing$.
-  Then $\mrD$ is wide under the action of $\Aut(\UDelta/\LDelta\mbox{-}\acl^\eq\varnothing)$.
+  Then some $H$-invariant type $p({\mr x})\in S_\Delta(\grZ)$ entails ${\mr x}\in\mrD$.
+  By Remark~\ref{rem_type_over_acl2} $p({\mr x})$ is $K$-invariant.
+  Then $\mrD$ is $K$-wide.
 \end{proof}
 
-The above theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coalesce} applies with $\Autf(\UDelta)$ for $G$.
-Therefore, in particular, \DLascar\  generic sets are \DLascar\  wide.
 % \begin{proposition}\label{prop_stable_lanscape}
 %   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
 %   Let $\mrX= q(\U^{\mr x})$ for some $q({\mr x})\subseteq L(\acl^\eq\!A)$.
@@ -993,60 +1000,63 @@ Therefore, in particular, \DLascar\  generic sets are \DLascar\  wide.
 % \end{proposition}
 
 % \begin{proof}
-%   Let $\mrD$ be a $\BDelta(\U)$-definable set that is weakly \DLascar\  persistent.
-%   We prove that $\mrD$ is \DLascar\  persistent.
-%   Pick a finite $H\subseteq\Autf(\U/A)$ such that $\cup\,H\,\mrD$ is \DLascar\  persistent.
+%   Let $\mrD$ be a $\BDelta(\U)$-definable set that is weakly $H$- persistent.
+%   We prove that $\mrD$ is $H$- persistent.
+%   Pick a finite $H\subseteq\Autf(\U/A)$ such that $\cup\,H\,\mrD$ is $H$- persistent.
 %   By Theorem~\ref{thm_persistent_finsat}, the type $\{{\mr x}\in\cup\,H\,\mrD\}\cup q({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
-%   Then, by Corollary~\ref{corol_stable_coheir_over_models} there is a \DLascar\  invariant type $p({\mr x})\in S_\Delta(\U)$ containing ${\mr x}\in\cup\,H\,\mrD$ and finitely consistent with $q({\mr x})$.
+%   Then, by Corollary~\ref{corol_stable_coheir_over_models} there is a $H$- invariant type $p({\mr x})\in S_\Delta(\U)$ containing ${\mr x}\in\cup\,H\,\mrD$ and finitely consistent with $q({\mr x})$.
 %   By completeness and invariance ${\mr x}\in\mrD$ is in $p({\mr x})$.
 %   Then $\mrD$ is persistent by Theorem~\ref{thm_generic_invariant}.
 % \end{proof}
 
 \begin{proposition}\label{prop_stable_genericiffpersistent}
   Let $\Delta$ be stable.
-  Let $\mrX=q(\U^{\mr x})$ where $q({\mr x})\subseteq\BDelta(\grZ)$  is invariant over $\LDelta\mbox{-}\acl^\eq\varnothing$ and decides all $\BDelta(\grZ)$-formulas that are invariant over $\LDelta\mbox{-}\acl^\eq\varnothing$.
+  Assume that $H$ acts transitively on $\mrX$.
+  %Let $\mrX=q(\U^{\mr x})$ where $q({\mr x})\subseteq\BDelta(\grZ)$ is an $H$-invariant type that decides all $\BDelta(\grZ)$-formulas that are $H$-invariant.
   Then for every $\BDelta(\grZ)$-definable set $\mrD$, the following are equivalent
   \begin{itemize}
-    \item[1.] $\mrD$ is \DLascar\  generic
-    \item[2.] $\mrD$ is \DLascar\  persistent.
+    \item[1.] $\mrD$ is $H$-generic
+    \item[2.] $\mrD$ is $H$-persistent.
   \end{itemize}
 \end{proposition}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  By Theorem~\ref{thm_persistent_finsat}.
+  By Theorems~\ref{thm_coalesce} and~\ref{thm_persistent_finsat}.
 
   \ssf2$\IMP$\ssf1.
-  Assume $\mrD$ is not \DLascar\  generic.
-  Then $\neg\mrD$ is \DLascar\  persistent.
-  Assume for a contradiction that also $\mrD$ is \DLascar\ persistent.
-  By Theorem~\ref{thm_persistent_finsat} and Exercise~\ref{ex_X_vs_U} both $\mrD$ and $\neg\mrD$ are \DLascar\ wide.
-  Then by Theorem~\ref{thm_generic_invariant2} both $q({\mr x})\cup\{{\mr x}\in\mrD\}$ and $q({\mr x})\cup\{{\mr x}\notin\mrD\}$ extend to \DLascar\ invariant global types.
-  This contradicts stationarity, see Proposition~\ref{prop_type_over_acl2} and Theorem~\ref{thm_stationarity}.
+  Assume $\mrD$ is not $H$-generic.
+  Then $\neg\mrD$ is $H$-persistent.
+  Assume for a contradiction that also $\mrD$ is $H$-persistent.
+  By Theorem~\ref{thm_persistent_finsat} both $\mrD$ and $\neg\mrD$ are $H$-wide.
+  Then by Theorem~\ref{thm_generic_invariant2} both ${\mr x}\in\mrD$ and ${\mr x}\notin\mrD$ extend to $H$-invariant global types.
+  This contradicts stationarity (of the type ${\mr x}\in\mrX$), see Proposition~\ref{prop_type_over_acl2} and Theorem~\ref{thm_stationarity}.
 \end{proof}
 
 \begin{corollary}\label{corol_stable_generic}
   Let $\Delta$ be stable.
-  Let $\mrX=q(\U^{\mr x})$ where $q({\mr x})\subseteq\BDelta(\grZ)$ is a type that is invariant over $\LDelta\mbox{-}\acl^\eq\varnothing$ and decides all $\BDelta(\grZ)$-formulas that are invariant over $\LDelta\mbox{-}\acl^\eq\varnothing$.
-  Then for every $\BDelta(\grZ)$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is \DLascar\ generic.
+  Assume that $H$ acts transitively on $\mrX$.
+  % Let $\mrX=q(\U^{\mr x})$ where $q({\mr x})\subseteq\BDelta(\grZ)$ is an $H$-invariant type that decides all $\BDelta(\grZ)$-formulas that are $H$-invariant.
+  Then for every $\BDelta(\grZ)$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is $H$-generic.
 \end{corollary}
 
 \begin{proof}
-  By Theorem~\ref{thm_stationarity} there is a type $p({\mr x})\in S_\Delta(\grZ)$ finitely consistent with $q({\mr x})$ that is \DLascar\ invariant and therefore persistent.
+  By Theorem~\ref{thm_stationarity} there is a type $p({\mr x})\in S_\Delta(\grZ)$ consistent with $q({\mr x})$ that is $H$-invariant and therefore persistent.
   Hence, by Corollary~\ref{corol_def_mu}, $\mrD$ and $\neg\mrD$ are not both generic.
   If $\mrD$ is not generic then $\neg\mrD$ is persistent and, by Proposition~\ref{prop_stable_genericiffpersistent}, generic.
 \end{proof}
 
 \begin{theorem}\label{thm_FER}
   Let $\Delta$ be stable.
-  Let $\mrX=q(\U^{\mr x})$, for $q({\mr x})\subseteq\BDelta(\grZ)$ be a type that is invariant (over $\varnothing$) and decides all invariant $\BDelta(\grZ)$-formulas.
-  Finally, let \smallskip
+  Assume that $H$ acts transitively on $\mrX$.
+  % Let $\mrX=q(\U^{\mr x})$ where $q({\mr x})\subseteq\BDelta(\grZ)$ is an $H$-invariant type that decides all $\BDelta(\grZ)$-formulas that are $H$-invariant.  
+  Let \smallskip
   
-  \ceq{\hfill P}{=}{\big\{p({\mr x})\in S_\Delta(\grZ)\ :\ p({\mr x})\textrm{ is \DLascar\ invariant}\big\}}. \smallskip
+  \ceq{\hfill P}{=}{\big\{p({\mr x})\in S_\Delta(\grZ)\ :\ p({\mr x})\textrm{ is $H$-invariant}\big\}}. \smallskip
   
   Then the following hold
   \begin{itemize}
-    \item [1.] $\Aut(\UDelta)$ acts transitively on $P$
+    \item [1.] $G$ acts transitively on $P$
     \item [2.] if $\Delta$ is finite, then $P$ is finite
     % \item [3.] there is a finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\GDelta(A)$ such that for all $p_i,p_j\in P$ 
     
@@ -1068,16 +1078,16 @@ Therefore, in particular, \DLascar\  generic sets are \DLascar\  wide.
 
   \ssf2.
   We may identify a type $p({\mr x})\in S_\Delta(\U)$ with the tuple $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$.
-  The orbit of $p({\mr x})$ under the action of $\Aut(\UDelta)$ corresponds to the orbit of $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$.
-  As $p\in P$ is \DLascar\ invariant, by Theorem~\ref{thm_persistent_finsat} the sets ${\gr\D_{p,\phi}}$ are in $\acl^\eq\varnothing$.
-  Hence have a finite orbit.
-  As $\Delta$ is finite the orbit of $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$ is finite, and so is the orbit of $p$.
+  The $G$-orbit of $p({\mr x})$ corresponds to the $G$-orbit of $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$.
+  As $p({\mr x})\in P$ is $H$-invariant, by Remark~\ref{rem_type_over_acl2} the sets ${\gr\D_{p,\phi}}$ are in $\Psi$.
+  Hence they have a finite $G$-orbit.
+  If $\Delta$ is finite the orbit of $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$ is finite, and so is the orbit of $p({\mr x})$.
   Therefore by \ssf1, $P$ is finite.
 
   \ssf3. 
   Let $p_i:i<\lambda$ be an enumeration without repetitions of $P$.
-  Let $q_1({\mr x})$ be some complete $\BDelta(\acl^\eq\!A)$-type consistent with $p_1$.
-  It is easy to see that the orbit of $q_1({\mr x})$ under the action of $\Aut(\U/A)$ consists of $\BDelta(\acl^\eq\!A)$-types $q_1,\dots,q_n$ that are complete and consistent with $p_1,\dots,p_n$.
+  Let $q_i({\mr x})$ be as in \ssf1.
+  Under the action of $G$ consists of $\BDelta(\acl^\eq\!A)$-types $q_1,\dots,q_n$ that are complete and consistent with $p_1,\dots,p_n$.
   By stationarity the $q_i$ are mutually inconsistent.
   Pick $n$ mutually inconsistent formulas $\theta_i({\mr x})\in q_i$ and define
 
@@ -1088,8 +1098,9 @@ Therefore, in particular, \DLascar\  generic sets are \DLascar\  wide.
 \end{proof}
 
 \begin{exercise}\label{ex_X_vs_U}
-  Let $q({\mr x})\subseteq\BDelta(\U^{gr z})$.
-  Prove that if $\mrD$ is wide relative to $\mrX=q(\U^{\mr x})$, than it is wide relative to $\U^{\mr x}$.
+  Let $q(x)\subseteq\BDelta(\Z)$.
+  Let $\X=q(\U^x)$ where $q(x)\subseteq\BDelta(\Z)$ is a small $H$-invariant types that decides all $\BDelta(\Z)$-formulas that are $H$-invariant.
+  Prove that if $\D$ is $H$-wide relative to $\X=q(\U^x)$, then it is wide relative to $\U^x$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1109,7 +1120,7 @@ Recall that $\Psi\subseteq L_{\mr x}(A)$ is some fixed set of formulas and \emph
   Then for every $\BDelta(\grZ)$-definable set $\mrD$ the following are equivalent
   \begin{itemize}
     \item [1.] $\mrD$ is $\grZ$-generic
-    \item [2.] $\mrD$ is \DLascar\ invariant.
+    \item [2.] $\mrD$ is $H$-invariant.
   \end{itemize}\smallskip
 
   In particular it follows that, if these properties hold for $\mrD$, they hold also for ${\gr g}{\cdot}\mrD$ for any ${\gr g}\in\grZ$. 
@@ -1122,7 +1133,7 @@ Recall that $\Psi\subseteq L_{\mr x}(A)$ is some fixed set of formulas and \emph
 
   \ssf2$\IMP$\ssf1.
   For ${\mr a}\in\mrX$ let $q({\mr x})$ be the set of $\BDelta(\grZ)$-formulas that hold in ${\mr a}$ and are invariant over $\LDelta\mbox{-}\acl^\eq\varnothing$.
-  Assume \ssf2 then, by Proposition~\ref{prop_stable_genericiffpersistent}, $\mrD$ is \DLascar\ generic relative to $q(\U^{\mr x})$, i.e.\@ with $q(\U^{\mr x})$ for $\mrX$.
+  Assume \ssf2 then, by Proposition~\ref{prop_stable_genericiffpersistent}, $\mrD$ is $H$-generic relative to $q(\U^{\mr x})$, i.e.\@ with $q(\U^{\mr x})$ for $\mrX$.
   As the same reasoning applies to all ${\mr a}\in\mrX$, there is a set ${\gr Z}\subseteq\grZ$ of cardinality $<2^{|L(A)|}$ such that $\bigcup_{{\gr h}\in{\gr Z}}{\gr h}{\cdot}\mrD$ covers $\mrX$.
   By compactness, we can assume ${\gr Z}$ finite, then the $\grZ$-genericity of $\mrD$ follows.
   % \ssf1$\IMP$\ssf2.
@@ -1134,11 +1145,11 @@ Recall that $\Psi\subseteq L_{\mr x}(A)$ is some fixed set of formulas and \emph
   % Indeed, it suffices to note that ${\gr\D_{{h^{-1}}p,\phi}}={\gr h^{-1}}\,{\gr\D_{p,\phi}}$ and that if ${\gr\D_{p,\phi}}\in L'\mbox{-}\acl^\eq\varnothing$ then also ${\gr h^{-1}}\,{\gr\D_{p,\phi}}\in L'\mbox{-}\acl^\eq\varnothing$.
   % Now read ${\gr h^{-1}}p({\mr x})$ as a type $q({\mr x})\in S_\Delta(\grZ)$ in the natural way.
   % Note that $\phi({\mr x}\,;{\gr g})\in q$ and that $q({\mr x})$ is definable over $\acl^\eq\varnothing$ since this is a superset of $L'\mbox{-}\acl^\eq\varnothing$.
-  % This shows that there is \DLascar\ invariant type containing $\phi({\mr x}\,;{\gr g})$.
+  % This shows that there is $H$-invariant type containing $\phi({\mr x}\,;{\gr g})$.
   % As the finite satisfiability in $\mrX$ is evident, \ssf1 follows.
   % \ssf3$\IMP$\ssf1.
-  % Let ${\gr g}$ be such that $\phi({\mr x}\,;{\gr g})$ is not \DLascar\ persistent.
-  % Then $\neg\phi({\mr x}\,;{\gr g})$ is \DLascar\ generic.
+  % Let ${\gr g}$ be such that $\phi({\mr x}\,;{\gr g})$ is not $H$-persistent.
+  % Then $\neg\phi({\mr x}\,;{\gr g})$ is $H$-generic.
   % Then it is also  $\grZ$-generic.
   % The $\grZ$-genericity of $\neg\phi({\mr x}\,;{\gr 1})$ follows.
 \end{proof}
@@ -1149,7 +1160,7 @@ Recall that $\Psi\subseteq L_{\mr x}(A)$ is some fixed set of formulas and \emph
 \end{corollary}
 
 \begin{proof}
-  By stability either $\mrD$ or $\neg\mrD$ is \DLascar\ persistent.
+  By stability either $\mrD$ or $\neg\mrD$ is $H$-persistent.
   The $\grZ$-genericity of either one follows.
 \end{proof}
 
