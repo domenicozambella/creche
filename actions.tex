@@ -384,66 +384,71 @@ As it happens, we can slightly strengthen this fact (because $G$-genericity is a
   Then the proposition follows from Theorem~\ref{thm_generic_invariant2}.
 \end{proof}
 
-\begin{remark}
-As $\gamma_G({\mr x})$ may be inconsistent, the following notion is relevant \smallskip
+As $\gamma_G({\mr x})$ may be inconsistent, the following notion is relevant
 
-\ceq{\hfill Q}{=}{\big\{q({\mr x})\subseteq\gamma_G({\mr x})\;:\textrm{ maximally consistent set}\big\}}. \smallskip
+\begin{definition}\label{def_Q}\noindent\vskip-1ex
+
+\ceq{\hfill Q}{=}{\big\{q({\mr x})\subseteq\gamma_G({\mr x})\;:\ q({\mr x})\textrm{ maximally consistent}\big\}}.\smallskip
 
 It is easy to see that $Q$ is closed under the action of $G$.
-Write for brevity\smallskip
+\end{definition}
 
-\ceq{\hfill H}{=}{\Stab(Q)}\medrel{=}$\displaystyle\bigcap_{q\in Q}\Stab(q)$,
+We write $\Stab(q)$ for the  stabilized of $q({\mr x})\subseteq\BDelta(\gr Z)$, that is, $\{g\in G:g{\cdot}q({\mr x})=q({\mr x})\}$.
+Note that $\Stab(q)\le G$. 
+We write
 
-where $\Stab(q)$ is the stabilized of $q({\mr x})$.
-Then $H\trianglelefteq G$.
-It is easy to verify that $\gamma_H({\mr x})\subseteq q({\mr x})$ for every $q\in Q$.
-In particular, $\gamma_H({\mr x})$ is consistent.
-In fact, if $\mrD$ is $H$-generic, then $q({\mr x})\proves {\mr x}\in h{\cdot}\mrD$ for some $h\in H$.
+\ceq{\hfill\Stab(Q)}{=}{\displaystyle\bigcap_{q\in Q}\Stab(q),}
+
+Then $\Stab(Q)\trianglelefteq G$.
+It is easy to verify that $\gamma_{\Stab(Q)}({\mr x})\subseteq q({\mr x})$ for every $q\in Q$.
+In particular, $\gamma_{\Stab(Q)}({\mr x})$ is consistent.
+In fact, if $\mrD$ is $\Stab(Q)$-generic, then $q({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in\Stab(Q)$.
 % Equivalently $h^{-1}{\cdot}q({\mr x})\proves{\mr x}\in \mrD$.
-Then $q({\mr x})\proves\mrD$ follows because $h\in\Stab(q)$.
-\end{remark}
+Then $q({\mr x})\proves{\mr x}\in\mrD$ follows because $g\in\Stab(q)$.
 
 We need to revisit the notions introduced in Section~\ref{eq_algebraic} as we want to apply them to $\BDelta(\grZ)$, not to the full language $\LDelta(\mrX,\grZ)$.
 
-\begin{definition}
+\begin{lemma}\label{lem_trans_action0}
   Define
 
-  \ceq{\hfill\Phi}{=}{\big\{\phi({\mr x})\in\BDelta(\grZ)\ :\ \textrm{ with finite }G\textrm{-orbit}\big\}}
+  \ceq{\hfill\Phi}{=}{\big\{\phi({\mr x})\in\BDelta(\grZ)\ :\ \textrm{ with finite }G\textrm{-orbit}\big\},}\medskip
 
-  and 
+  \ceq{\hfill P}{=}{\big\{p({\mr x})\subseteq\Phi\ :\ \textrm{ maximally consistent (in $\mrX$)}\big\}.}\smallskip
 
-  \ceq{\hfill P}{=}{\big\{p({\mr x})\subseteq\Phi\ :\ \textrm{ maximally consistent (in $\mrX$)}\big\}}.\smallskip
+  Then $P$ is closed under the action of $G$ and, when $G$ acts transitively on $\mrX$, it works transitively also on $P$. Moreover, let
+  
+  \ceq{\hfill\epsilon_\phi({\mr x},{\mr y})}{=}{\bigwedge_{i=1}^n\big[\phi_i({\mr x})\iff\phi_i({\mr y})\big],}\smallskip
+  
+  \ceq{\hfill E}{=}{\big\{\epsilon_\phi({\mr x},{\mr y})\ :\  \phi({\mr x})\in\Phi\big\}.}\smallskip
+  
+  Then, for every ${\mr a}\in\mrX$, the type $\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in E\big\}$  is equivalent to a type $p({\mr x})\in P$.
+\end{lemma}
 
-  It is easy to see that $P$ is closed under the action of $G$.
-  For every formula $\phi({\mr x})\in\Phi$, say with orbit $\{\phi_1({\mr x}),\dots,\phi_n({\mr x})\}$, define 
-
-  \ceq{\hfill\epsilon_\phi({\mr x},{\mr y})}{=}{\bigwedge_{i=1}^n\big[\phi_i({\mr x})\iff\phi_i({\mr y})\big]}
-
-  which is clearly a finite equivalence relation (in $\mrX$).
-  Finally let\smallskip
-
-  \ceq{\hfill E}{=}{\big\{\epsilon_\phi({\mr x},{\mr y})\ :\  \phi({\mr x})\in\Phi\big\}.}
-\end{definition}
+\begin{proof}
+  The first claim is clear.
+  It is easy to see that equivalence classes of relations in $E$ are $\Phi$-definable and that all $\Phi$-definable sets are union of such equivalence classes.
+  Then the second claim follows.
+\end{proof}
 
 % \def\DLascar{L\kern-.6ex\raisebox{1.1ex}{\tiny$\Delta$}\kern-.1ex ascar}
-It is easy to see that equivalence classes of relations in $E$ are $\Phi$-definable and that all $\Phi$-definable sets are union of such equivalence classes.
-  Therefore, for every ${\mr a}\in\mrX$ the type $\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in E\big\}$  is equivalent to a type $p({\mr x})\in P$.
+
 
 \begin{remark}\label{lem_trans_action}
-  When $G$ acts transitively on $\mrX$ all $\Phi$-definable sets are $G$-generic and every $p({\mr x})$ extends to some $q({\mr x})\in Q$.
-  Then $\Stab(P)\le\Stab(Q)$,  where $\Stab(P)$ be the stabilizer of all $p\in P$.
+  When $G$ acts transitively on $\mrX$ all $\Phi$-definable sets are $G$-generic and every $p({\mr x})\in P$ extends to some $q({\mr x})\in Q$.
+  Then $\Stab(Q)\le\Stab(P)$.
 \end{remark}
 
-Ideally, we would like $\Stab(P)=\Stab(Q)$.
+Ideally, we would like $\Stab(Q)=\Stab(P)$.
 This happens when the types in $P$ have a unique extension to a type in $Q$.
 We will prove that this is the case under the assumption of stability.
-However it is not true in general, as the following example shows.
+% However it is not true in general, as the following example shows.
 
-\begin{example}\label{ex_H_neq_acleq}
-  Let $T_{\rm dlo}\models\U$.
-  Let $\X=\Z=\U$ and $\Delta=\{x<z\}$.
-  There are plenty of $G$-generic formulas but there is no nontrivial $\BDelta(\Z)$-formula with finite $G$-orbit.
-\end{example}
+% \begin{example}\label{ex_H_neq_acleq}
+%   Let $T_{\rm dlo}\models\U$.
+%   Let $\mrX=\grZ=\U$ and $\Delta=\{{\mr x}<{\gr z}\}$.
+%   It is easy to see that there are plenty of $G$-generic $\BDelta(\grZ)$-formulas but there is no nontrivial $\BDelta(\grZ)$-formula with finite $G$-orbit.
+%   Therefore $P$ is empty and $\Stab(P)=G$.
+% \end{example}
 
 \begin{comment}
 The following normal subgroup of $G$ is particularly interesting
