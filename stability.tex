@@ -910,8 +910,8 @@ It is not necessary in the following.
 
 We adopt the notation and terminology of Chapter~\ref{actions}.
 The set $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ is fixed and assumed to be stable.
-The set $\grZ\subseteq^{\gr z}$ is arbitrary, while $\mrX$ will be specified in the context.
-As in Chapter~\ref{actions}, we abbreviate $\Aut(\UDelta)$ with \emph{$G$.}
+The set $\grZ\subseteq\U^{\gr z}$ is arbitrary, while $\mrX$ will be specified in the context.
+As in Chapter~\ref{actions},  \emph{$G$\/} is a subgroup of $\Aut(\UDelta)$.
 We also write \emph{$H$\/} for $\Autf(\UDelta)$.
 Therefore $H$-invariance is Lascar invariance over $\varnothing$ in the language $\LDelta$.
 
@@ -986,7 +986,7 @@ The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coales
 
 \begin{proposition}\label{prop_stable_genericiffpersistent}
   Let $\Delta$ be stable.
-  Let $\mrX=q(\U^{\mr x})$, where $q({\mr x})\subseteq\LDelta(\mrX,\grZ)$ is a type that is finitely satisfiable in every $\LDelta$-model.
+  Let $\mrX=q(\U^{\mr x})$, where $q({\mr x})\subseteq\LDelta(\mrX,\grZ)$ is a type that is finitely satisfiable in every $\LDelta$-model and decides all $H$-invariant $\BDelta(\grZ)$-formulas.
   % Assume that $H$ acts transitively on $\mrX$.
   Then for every $\BDelta(\grZ)$-definable set $\mrD$, the following are equivalent
   \begin{itemize}
@@ -1010,7 +1010,7 @@ The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coales
 
 \begin{corollary}\label{corol_stable_generic}
   Let $\Delta$ be stable.
-  Let $\mrX=q(\U^{\mr x})$, where $q({\mr x})\subseteq\LDelta(\mrX,\grZ)$ is a type that is finitely satisfiable in every $\LDelta$-model.
+  Let $\mrX=q(\U^{\mr x})$, where $q({\mr x})\subseteq\LDelta(\mrX,\grZ)$ is a type that is finitely satisfiable in every $\LDelta$-model and decides all $H$-invariant $\BDelta(\grZ)$-formulas.
   Then for every $\BDelta(\grZ)$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is $H$-generic.
 \end{corollary}
 
@@ -1035,8 +1035,7 @@ The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coales
     
     % \ceq{\hfill p_i=p_j}{\IFF}{p_i({\mr x})\cup p_j({\mr y}) \textrm{ is consistent with }\epsilon({\mr x},{\mr y})}.
     % 
-    \item [3.] Let $E$ be as in Lemma~\ref{lem_trans_action0}.
-    Then for every ${\mr a}\in\mrX$ there is a unique $p({\mr x})\in P$ that is consistent with $\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in E\big\}$.
+    \item [3.] let $E$ be as in Lemma~\ref{lem_trans_action0}~--~then for every ${\mr a}\in\mrX$ there is a unique $p({\mr x})\in P$ that is consistent with $\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in E\big\}$.
   \end{itemize}
 \end{theorem}
 
@@ -1084,7 +1083,7 @@ The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coales
   Let $q({\mr x})$ be the set of $\Phi$-formulas that are consequence of $p({\mr x})$, where $\Phi$ is as in Lemma~\ref{lem_trans_action0}.
   Then $\mrD$ is $H$-wide relative to $q(\U^{\mr x})$ and, by Proposition~\ref{prop_stable_genericiffpersistent}, $H$-generic.
   For every $g\in G$ we also have that $g{\cdot}\mrD$ is $H$-generic relative to $g{\cdot}q(\U^{\mr x})$.
-  The $G$-orbit of $q(\U^{\mr x})$ has small cardinality and, by Lemma~\ref{lem_trans_action0}, covers $\mrX$.
+  The $G$-orbit of $q(\U^{\mr x})$ has small cardinality and covers $\mrX$.
   Therefore there is a set $C\subseteq G$ of small cardinality such that $\cup\,C{\cdot}\mrD$ covers $t(\U^{\mr x})$.
   By compactness, we can take $C$ finite.
   % \ssf1$\IMP$\ssf2.
@@ -1108,7 +1107,7 @@ The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coales
 Finally we prove that $Q=P$, where $Q$ is as defined in Definition~\ref{def_Q} and $P$ is as in Theorem~\ref{thm_Ggeneric_persistent}.
 In particular $H=\Stab(P)=\Stab(Q)$.
 
-\begin{theorem}%\label{}
+\begin{theorem}\label{thm_P=Q}
   Let $\Delta$ be stable.
   Let $\mrX=t(\U^{\mr x})$, where $t({\mr x})\in\LDelta\mbox{-}S(\varnothing)$.  
   Then $Q=P$.%there is a one-to-one correspondence between $Q$ and $P$ given by the relation $q({\mr x})\cup p({\mr x})$ is consistent.
@@ -1143,17 +1142,17 @@ In this section \emph{$G$\/} = $\Aut(\UDelta)$ and \emph{$H$\/} = $\Autf(\UDelta
   Then for every $\BDelta(\grZ)$-definable set $\mrD$ the following are equivalent
   \begin{itemize}
     \item [1.] $\mrD$ is $\grZ$-generic
-    \item [2.] $\mrD$ is $H$-wide.
+    \item [2.] $\mrD$ is $G$-generic
+    \item [3.] $\mrD$ is $H$-wide.
   \end{itemize}\smallskip
 \end{theorem}
 
 \begin{proof} 
-  \ssf1$\IMP$\ssf2.
-  By Theorem~\ref{thm_Ggeneric_persistent} as $\grZ$-generic implies $G$-generic.
+  \ssf1$\IMP$\ssf2$\IMP$\ssf3. Because $\grZ$-generic implies $G$-generic, and by Theorem~\ref{thm_Ggeneric_persistent}.
 
-  \ssf2$\IMP$\ssf1.
-
-
+  \ssf3$\IMP$\ssf1.
+  After replacing $G$ by $\grZ$, the proof of \ssf2$\IMP$\ssf1 in Theorem~\ref{thm_Ggeneric_persistent} applies (by transitivity, the $\grZ$-orbit of $q(\U^{\mr x})$ covers $t(\U^{\mr x})=\mrX$).
+  %
   % \ssf1$\IMP$\ssf2.
   % Let ${\gr g}$ be given.
   % By stability, there is a type $p({\mr x})\in L'\mbox{-}S(\grZ)$ that is invariant, and therefore definable, over $L'\mbox{-}\acl^\eq\varnothing$.
@@ -1174,33 +1173,33 @@ In this section \emph{$G$\/} = $\Aut(\UDelta)$ and \emph{$H$\/} = $\Autf(\UDelta
 
 \begin{corollary}\label{corol_genericornotgeneric}
   Let $\Delta$ be stable.
-  Then, for every $\BDelta(\grZ)$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is $\grZ$-generic.
+  Assume that $\grZ$ acts transitively.
+  Let $\mrD$ be any $\BDelta(\grZ)$-definable set.
+  Then $\mrD$ or $\neg\mrD$ is $\grZ$-generic.
 \end{corollary}
 
-\begin{proof}
-  By stability either $\mrD$ or $\neg\mrD$ is $H$-persistent.
-  The $\grZ$-genericity of either one follows.
-\end{proof}
+% \begin{proof}
+%    The transitivity of the action implies that 
+% \end{proof}
 
-\begin{corollary}\label{corol_feq_thm}
-  Let $\Delta$ be stable and finite.
-  Assume that the action of $\grZ$ is transitive.
-  Write $Q$ for the set $\big\{q({\mr x})\in S_\Delta(\grZ)\ :\ q({\mr x})\textrm{ is }\grZ\textrm{-generic}\big\}$.
+\begin{theorem}\label{thm_FER2}
+  Let $\Delta$ be stable.
+  Let $\mrX=t(\U^{\mr x})$, where $t({\mr x})\in\LDelta\mbox{-}S(\varnothing)$.
+  Define \smallskip
+  
+  \ceq{\hfill P}{=}{\big\{p({\mr x})\in S_\Delta(\grZ)\ :\ p({\mr x})\textrm{ is $H$-invariant}\big\}}. \smallskip
+  
   Then the following hold
   \begin{itemize}
-    \item [1.] $\grZ$ acts transitively on $Q$
-    \item [2.] $Q$ is finite
-    \item [3.] there is a $\grZ$-invariant finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\BDelta(A)$ such that for every ${\mr a}\in\mrX$ there is a unique $q({\mr x})$ in $Q$ that is consistent with $\epsilon({\mr x}\,;{\mr a})$.
+    \item [1.] $\grZ$ acts transitively on $P$
+    \item [2.] if $\Delta$ is finite, then $P$ is finite
+    % \item [3.] there is a finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\GDelta(A)$ such that for all $p_i,p_j\in P$ 
+    
+    % \ceq{\hfill p_i=p_j}{\IFF}{p_i({\mr x})\cup p_j({\mr y}) \textrm{ is consistent with }\epsilon({\mr x},{\mr y})}.
+    % 
+    \item [3.] let $E$ be as in Lemma~\ref{lem_trans_action0}~--~then for every ${\mr a}\in\mrX$ there is a unique $p({\mr x})\in P$ that is consistent with $\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in E\big\}$.
   \end{itemize}
-\end{corollary}
-
-\begin{proof}
-  Work in $\U^\Delta$.
-  By the transitivity of the action the formula  ${\mr x}={\mr x}$ is complete over $\varnothing$.
-  Apply Theorem~\ref{thm_FER} (in $\LDelta$) with ${\mr x}={\mr x}$ for $p_0({\mr x})$.
-  By Theorem~\ref{thm_Ggeneric_persistent}, the set $P$ in Theorem~\ref{thm_FER} coincides with $Q$.
-  The corollary follows easily.
-\end{proof}
+\end{theorem}
 
 \begin{proposition}
   Let $\Delta$ be stable.
@@ -1221,21 +1220,14 @@ When $\Delta$ is stable, it is a $\BDelta(\mrX)$-type-definable set (definable, 
 \begin{theorem}\label{thm_Z0_stable}
   Let $\Delta$ be stable.
   Assume that $\mrX=\grZ$.
-  Then
+  Then\smallskip
   
   \ceq{\hfill{\gr\Z^0}}{=}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\LDelta(\grZ)\textrm{-definable }\grZ\textrm{-generic set }\mrD\big\}}.
   
 \end{theorem}
 
-\begin{proof}
-  Inclusion $\supseteq$ holds by Proposition~\ref{prop_Z0_inclusione2}~--~stability is not required.
-  To prove the converse inclusion pick ${\gr g}\in\grZ$ such that $\mrD\cap{\gr g}{\cdot}\mrD=\varnothing$ for some $\LDelta(\grZ)$-definable $\grZ$-generic set $\mrD$.
-  We can assume that $\Delta$ contains only the formula defining $\mrD$ therefore, that it is finite.
-  Let $Q$ be as in Corollary~\ref{corol_feq_thm}.
-  Let $q({\mr x})\in Q$ be such that $q({\mr x})\proves{\mr x}\in\mrD$.
-  By Corollary~\ref{corol_feq_thm}, the stabilizer of $q({\mr x})$ is a subgroup $\grW\le\grZ$ of finite index.
-  Then ${\gr\Z^0}\le\grW$.
-  Clearly, $q({\mr x})\notproves{\mr x}\in{\gr g}{\cdot}\mrD$, then ${\gr g}\notin\grW$.
+\begin{proof}  
+  By Proposition~\ref{prop_G0_inclusione2} and Theorem~\ref{thm_P=Q}.
 \end{proof}
 
 \begin{exercise}
