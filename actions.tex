@@ -26,15 +26,15 @@ We revisit the notions of invariance introduceted in Chapter~\ref{invariant} in 
 Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}(\U)$.
 Given any \emph{$\mrX$\/} $\subseteq\U^{\mr x}$ and \emph{$\grZ$\/} $\subseteq\U^{\gr z}$, we define the structure \emph{$\UDelta$\/} $=\big\<\mrX\,;\grZ\big\>$.
 This is a 2-sorted structure whose signature  \emph{$\LDelta$\/} contains relation symbols for every formula $\phi({\mr x}\,;{\gr z})\in\Delta$.
-As there is little risk of confusion, these relations symbols are also denoted by $\phi({\mr x}\,;{\gr z})$, and we identify $\LDelta$ with a subset of $L$. We write \emph{$G$\/} for some fixed subgroup of $\Aut(\UDelta)$.
+As there is little risk of confusion, these relations symbols are also denoted by $\phi({\mr x}\,;{\gr z})$, and we identify $\LDelta$ with a subset of $L$. We write \emph{$G$\/} for some fixed subgroup of $\Aut(\UDelta)$ and $H$ is some arbitrary subgroup of $G$.
 \end{assumption}
 
 When $\mrX$ and $\grZ$ are type definable and $\Delta$ is small, $\UDelta$ is a saturated structure.
 But, as for the time being we do not need compactness, until further notice these sets are arbitrary.
 
 In the first few sections we only work a subset of the quantifier-free fragment of $\LDelta$.
-Let $\BDelta(\grZ)$ be the set of Boolean combinations of the formulas $\phi({\mr x}\,;{\gr b})$, where $\phi({\mr x}\,;{\gr z})\in\Delta$ and ${\gr b}\in\grZ$.
-The same symbol is used to denote the collection of subsets of $\mrX$ defined by these formulas.
+Let $\BDelta(\grZ)$ be the set of Boolean combinations of the sets $\phi(\mrX\,;{\gr b})$, for $\phi({\mr x}\,;{\gr z})\in\Delta$ and ${\gr b}\in\grZ$.
+The same symbol is also used to denote the collection of formulas defining these sets.
 %  $\LDelta_{{\rm\,at^\pm}\!,\,{\mr x}}(\grZ)$ and 
 % $\LDelta_{{\rm\,qf},\,{\mr x}}(\grZ)$ with 
 % $\pmDelta(\grZ)$, respectively 
@@ -215,7 +215,7 @@ A type is $H$-wide if every conjunction of formulas in the type is $H$-wide.
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  By Corollary~\ref{corol_q_pers}, it suffices to pick any $p({\mr x})\in S_\Delta(\grZ)$ consistent with $\gamma_H({\mr x})\cup\{{\mr x}\in\mrD\}$.
+  By Corollary~\ref{corol_q_pers}, it suffices to pick any $p({\mr x})\in S_\Delta(\grZ)$ finitely consistent with $\gamma_H({\mr x})\cup\{{\mr x}\in\mrD\}$.
 
   \ssf2$\IMP$\ssf1.
   By Theorem~\ref{thm_generic_invariant}.
@@ -347,30 +347,62 @@ A type is $H$-wide if every conjunction of formulas in the type is $H$-wide.
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The connected component}\label{G0}
+\def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{12ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-As $\gamma_G({\mr x})$ may be inconsistent, the following notion is relevant
+Unfortunately, genericity is not preserved under intersection.
+In particular $\gamma_G({\mr x})$ is not a $G$-generic type, and it may even be inconsistent.
+Then following notion is relevant
 
-\begin{definition}\label{def_Q}
-  Let\vskip-.5ex
+\begin{definition}\label{def_Q}\ 
 
-  \ceq{\hfill Q}{=}{\big\{q({\mr x})\subseteq\gamma_G({\mr x})\;:\ q({\mr x})\textrm{ maximally consistent}\big\}.}\smallskip
+  \ceq{\hfill\emph{$Q$\/}}{=}{\big\{q({\mr x})\subseteq\gamma_G({\mr x})\;:\ q({\mr x})\textrm{ maximally generic}\big\}.}\smallskip
 
-  It is easy to see that $Q$ is closed under the action of $G$.
+  In other words, the types in $Q$ are maximal among the subtypes of $\gamma_G({\mr x})$ that are closed under conjunction.
 \end{definition}
 
+It is easy to see that $Q$ is closed under the action of $G$.
 We write $\Stab(q)$ for the  stabilized of $q({\mr x})\subseteq\BDelta(\grZ)$ in $G$, that is, the subgroup $\{g\in G:g{\cdot}q({\mr x})=q({\mr x})\}$.
 We write $\Stab(\mrD)$ with a similar meaning.
 Finally we define
 
-\ceq{\hfill\emph{$\Stab(Q)$}}{=}{\displaystyle\bigcap_{q\in Q}\Stab(q),}
+\ceq{\hfill\emph{$\Stab(Q)$}}{=}{\bigcap_{q\in Q}\Stab(q).}
 
 Clearly, $\Stab(Q)\trianglelefteq G$.
-Write $K$ for  $\Stab(Q)$.
-It is easy to verify that $\gamma_K({\mr x})\subseteq q({\mr x})$ for every $q\in Q$.
-In particular, $\gamma_K({\mr x})$ is consistent.
-In fact, if $\mrD$ is $K$-generic, then $q({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in K$.
-Then $q({\mr x})\proves{\mr x}\in\mrD$ follows because $g\in\Stab(q)$.
 
+\begin{proposition}
+  Write $K$ for $\Stab(Q)$. 
+  For every $q({\mr x})\in Q$ we have $q({\mr x})\proves\gamma_K({\mr x})$.
+  In particular, $\gamma_K({\mr x})$ is finitely consistent.
+  Moreover $\gamma_K({\mr x})$ is closed under conjunction.
+\end{proposition}
+
+\begin{proof}
+  As the types in $Q$ are closed under conjunction, the second claim in the proposition follows from the first.
+  Let $\mrD\in\gamma_K$, then $q({\mr x})\proves{\mr x}\in k{\cdot}\mrD$ for some $k\in K$. 
+  Then $q({\mr x})\proves{\mr x}\in k{\cdot}\mrD$ for some $k\in K$.
+  Then $q({\mr x})\proves{\mr x}\in\mrD$ follows because $k\in\Stab(q)$.
+\end{proof}
+
+\begin{proposition}\  \smallskip
+
+  \ceq{\hfill\Stab(Q)}{=}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\in\gamma_G({\mr x})\textrm{ whenever }\mrD\in\gamma_G({\mr x})\big\}.}\smallskip
+\end{proposition}
+
+\begin{proof}
+  $\subseteq$. 
+  Pick $k\in\Stab(Q)$ and $\mrD\in\gamma_G({\mr x})$.
+  Let $q({\mr x})\in Q$ be a type containing ${\mr x}\in\mrD$.
+  From the $\Stab(Q)$-invariance of $q({\mr x})$ we obtain that $q({\mr x})\proves {\mr x}\in k{\cdot}\mrD$.
+  As $q({\mr x})$ is closed under conjunction, $q({\mr x})\proves {\mr x}\in \mrD\cap k{\cdot}\mrD$.
+
+  $\supseteq$. 
+  Pick $g\notin \Stab(Q)$.
+  Then $q({\mr x})\neq g{\cdot}q({\mr x})$ for some $q({\mr x})\in Q$.
+  Let $\phi({\mr x})\in q$ such that $q({\mr x})\not\proves g{\cdot}\phi({\mr x})$.
+  By maximality, $\psi({\mr x})\wedge g{\cdot}\phi({\mr x})$ is not $G$-generic for some $\psi({\mr x})\in q$.
+  As $q({\mr x})$ is closed under conjunction, we can assume $\phi({\mr x})=\psi({\mr x})$, then $g$ belongs to the set on the r.h.s.
+\end{proof}
 
 We remark a useful consequence of normality.
 
@@ -379,6 +411,8 @@ We remark a useful consequence of normality.
 % \settowidth{\ceqlength}{p(x) is H-invariant\ }
 % \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
 % \def\ceq#1#2#3{\parbox[t]{\ceqlength}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+\def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+\def\ceq#1#2#3{\parbox[t]{20ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
   Assume $H\trianglelefteq G$.
   For every $\mrD\subseteq\mrX$ and every $g\in G$ \smallskip
   
@@ -393,100 +427,156 @@ We remark a useful consequence of normality.
 \end{remark}
 
 Recall that when $\gamma_H({\mr x})$ is finitely consistent then $H$-generic sets are $H$-wide, see Theorem~\ref{thm_generic_invariant2}.
-As it happens, under the assumption of normality we can slightly strengthen this fact (because $G$-genericity is a weaker assumption than $H$-genericity).
+As it happens, under the assumption of normality also $G$-generic sets are $H$-wide.
 
-\begin{proposition}\label{prop_Ggeneric_Hpersistent}
+
+\begin{proposition}\label{prop_Ggeneric_Hpersistent1}
   Assume $H\trianglelefteq G$ and that $\gamma_H({\mr x})$ is finitely consistent.
   Then every $G$-generic $\mrD\in\BDelta(\grZ)$ is $H$-wide.
+  In particular all types in $Q$ are $\Stab(Q)$-wide.
 \end{proposition}
 
 \begin{proof}
   Let $p({\mr x})\in S_\Delta(\grZ)$ be finitely consistent with $\gamma_H({\mr x})$.
   As $\mrD$ is $G$-generic, by completeness $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in G$.
   Equivalently, $g^{-1}\!\cdot p({\mr x})\proves{\mr x}\in\mrD$.
-  As $p({\mr x})$ is $H$-persistent, from Remark~\ref{rem_invariance_normalsubg} we obtain that also $g^{-1}\!\cdot p({\mr x})$ is $H$-persistent.
+  As $p({\mr x})$ is $H$-persistent, by Remark~\ref{rem_invariance_normalsubg} also $g^{-1}\!\cdot p({\mr x})$ is $H$-persistent.
   Then the proposition follows from Theorem~\ref{thm_generic_invariant2}.
 \end{proof}
 
-We need to revisit the notions introduced in Section~\ref{eq_algebraic} as we want to apply them to $\BDelta(\grZ)$, not to the full language.% $\LDelta(\mrX,\grZ)$.
+% \begin{theorem}
+%   Every $\Stab(Q)$-persistent $\BDelta(\grZ)$-set is $\Stab(Q)$-wide.
+% \end{theorem}
+
+Let $\mrY\subseteq\mrX$ be $H$-invariant.
+When reasoning about the action relative to $\mrY$ it is convenient to confuse $\mrD\subseteq\mrX$, with $\mrD\cap\mrY$.
+For instance, when we say that $\mrD$ is $H$-generic relative $\mrY$, we actually mean $\mrD\cap\mrY$.
+
+\begin{proposition}
+  Let $H\trianglelefteq G$.
+  Assume that $\mrX$ is type-definable.
+  Let $\mrY\subseteq\mrX$ be some $H$-invariant set.
+  Assume that boundedly many $G$-translates of $\mrY$ cover $\mrX$.
+  Then every $\mrD\in\BDelta(\grZ)$ that is $H$-generic relative to $\mrY$ is $G$-generic.
+  % Then the following are equivalent for every $\mrD\in\BDelta(\grZ)$
+  % \begin{itemize}
+  %   \item [1.] $\mrD$ is $G$-generic
+  %   \item [2.] $\mrD$ is $H$-generic relative to $\mrY$.
+  % \end{itemize}\smallskip
+\end{proposition}
+
+\begin{proof}
+%   \ssf1$\IMP$\ssf2.
+%   Trivial.
+%
+%   \ssf2$\IMP$\ssf1.
+  By normality, $g{\cdot}\mrD$ is $H$-generic relative to $g{\cdot}\mrY$ for any $g\in G$.
+  Then boundedly many $G$-translations of $\mrD$ cover $\mrX$.
+  By compactness (which we may apply because $\mrX$ is type-definable), finitely many translations suffices.
+\end{proof}
+
+It would help to have a more syntactic description of $\Stab(Q)$.
+The group $G^0$ defined below is a good candidate. %~--~we will see that under the assumption of stability it indeed coincides with $\Stab(Q)$. 
+First we need to revisit the notions introduced in Section~\ref{eq_algebraic} as we want to apply them to $\BDelta(\grZ)$, not to the full language.%$\LDelta(\mrX,\grZ)$.
 
 \begin{definition}\label{def_G0}
-  Write \emph{$\Phi_G$\/} for the set of $\BDelta(\grZ)$-formulas/sets that have finite $G$-orbit and define%\vskip-1ex
+  Write \emph{$\Phi^0$\/} for the set of $\BDelta(\grZ)$-formulas/sets that have finite $G$-orbit and define%\vskip-1ex
 
-  \ceq{\hfill\emph{$G^0$}}{=}{\Stab(\Phi_G)}\medrel{=}$\displaystyle\bigcap\big\{\Stab(\mrD) :\  \mrD\in\Phi_G\}$
+  \ceq{\hfill\emph{$G^0$}}{=}{\Stab(\Phi)}\medrel{=}$\displaystyle\bigcap\big\{\Stab(\mrD) :\  \mrD\in\Phi^0\}$
 
   and%\vskip-.5ex
 
-  \ceq{\hfill E_G}{=}{\big\{\epsilon_\D({\mr x},{\mr y})\ :\  \mrD\in\Phi_G\big\},}%\vskip-0.5ex
+  \ceq{\hfill E^0}{=}{\big\{\epsilon_\D({\mr x},{\mr y})\ :\  \mrD\in\Phi^0\big\},}%\vskip-0.5ex
   
   where%\vskip-0.5ex
 
-\ceq{\hfill\epsilon_\D({\mr x},{\mr y})}{=}{\bigwedge_{g\in G}\big[{\mr x}\in g{\cdot}\mrD\iff{\mr y}\in g{\cdot}\mrD\big].}
+  \ceq{\hfill\epsilon_\D({\mr x},{\mr y})}{=}{\bigwedge_{g\in G}\big[{\mr x}\in g{\cdot}\mrD\iff{\mr y}\in g{\cdot}\mrD\big].}
+
+  Let $P^0$ be the set of types of the form $\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in E^0\big\}$ for ${\mr a}\in\mrX$.
 \end{definition}
 
-Note that, when $G=\Aut(\UDelta)$, then $G^0$ is the group of $\LDelta$-automorphisms of $\UDelta$ that fix $\LDelta\mbox-\acl^\eq\varnothing$.% and $E_G$ contains all the the $\varnothing$-definable finite equivalence relations.
+Note that, when $G=\Aut(\UDelta)$, then $G^0$ is the group of $\LDelta$-automorphisms of $\UDelta$ that fix $\LDelta\mbox-\acl^\eq\varnothing$.% and $E$ contains all the the $\varnothing$-definable finite equivalence relations.
 
-\begin{lemma}\label{lem_trans_action0}
-  Assume that $G$ acts transitively.
-  Let \smallskip
+\begin{remark}\label{lem_trans_action}
+  Equivalence classes of relations in $E^0$ are in $\Phi^0$ and every set in $\Phi^0$ is union of such equivalence classes.
+  Then $G^0$ is the stabilizer of $P^0$.\smallskip
 
-  \ceq{\hfill P}{=}{\big\{p({\mr x})\subseteq\Phi_G\ :\ \textrm{ maximally consistent (in $\mrX$)}\big\}}\smallskip
-
-  and assume that all types in $P$ are realized in $\mrX$.
-  Then $G$ transitively also on $P$. 
-  Moreover $P$ coincides, up to equivalence, with the set of types of the form $\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in E_G\big\}$ for some ${\mr a}\in\mrX$.
-  Finally, $G^0=\Stab(P)$.
-\end{lemma}
-
-\begin{proof}
-  The first claim follows from the second by the transitivity of the action.
-  It is easy to see that equivalence classes of relations in $E_G$ are $\Phi_G$-sets and that these sets are union of such equivalence classes.
-  Then the second claim follows.
-  Finally, the inclusion $G^0\le\Stab(P)$ is trivial.
-  For the converse note that $\epsilon({\mr a}\,;g\,{\mr a})$ for every $g\in\Stab(P)$ and $\epsilon({\mr x}\,;{\mr y})\in E_G$.
-  As $\Phi_G$-sets are union of equivalence classes of relation in $E_G$, any such $g$ fixes every set in $\Phi_G$.
-\end{proof}
+  Assume $G$ acts transitively.
+  Then the sets in $\Phi^0$ are $G$-generic.
+  Every $p({\mr x})\in P^0$ extends to some $q({\mr x})\in Q$.
+  Then $\Stab(Q)\le G^0$.
+\end{remark}
 
 % \def\DLascar{L\kern-.6ex\raisebox{1.1ex}{\tiny$\Delta$}\kern-.1ex ascar}
 
-\begin{remark}\label{lem_trans_action}
-  Assume that $G$ acts transitively.
-  Then the sets in $\Phi_G$ are $G$-generic and every $p({\mr x})\in P$ extends to some $q({\mr x})\in Q$.
-  Then $\Stab(Q)\le\Stab(P)$.
-\end{remark}
-
-Ideally, we would like $\Stab(Q)=\Stab(P)$.
-This happens when the types in $P$ have a unique extension to a type in $Q$.
+Ideally, we would like to have $\Stab(Q)=G^0$.
+This happens when the types in $P^0$ have a unique extension to a type in $Q$.
 We will prove that this is the case under the assumption of stability.
 
-  \begin{proposition}\label{prop_G0_inclusione2}
-  \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
-  \def\ceq#1#2#3{\parbox[t]{12ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
-  Assume that $G$ acts transitively.
-  Then\smallskip
 
-  \ceq{\hfill \Stab(Q)}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\neq\varnothing\textrm{ for any }G\textrm{-generic }\mrD\in\BDelta(\grZ)\big\}}\medrel{\subseteq}$G^0$.
- 
-  
-\end{proposition}
+\begin{definition}\label{def_G00}
+  Write \emph{$\Phi^{00}$\/} for the collection of $\BDelta(\grZ)$-type-definable sets $\mrY$ with bounded $G$-orbit and define\smallskip
 
-% We will revisit this proposition under the assumption of stability and prove the converse inclusion.
-% See Theorem~\ref{thm_Z0_stable}.\vspace*{-0.5\baselineskip}
+  \ceq{\hfill\emph{$G^{00}$}}{=}{\Stab(\Phi^{00})}\medrel{=}$\displaystyle\bigcap\big\{\Stab(\mrY) :\  \mrY\in\Phi^{00}\}$.
+\end{definition}
 
-\begin{proof}
-  The first inclusion is left to the reader.
-  We prove the second.
-  Let $g$ be an element of the second set.
-  Pick any $\mrD\in\Phi_G$.
-  We need to show that $g\in\Stab(\mrD)$.
-  % A fortiori $\grW$ is the stabilizer of a set with finite  $\grZ$-orbit.
-  Let $\mrC$ be an atom of the Boolean algebra generated by $G{\cdot}\mrD$.
-  As $G$ acts transitively, $\mrC$ is $G$-generic.
-  Then $\mrC\cap g{\cdot}\mrC\neq\varnothing$.
-  As $g{\cdot}\mrC$ is also an atom, we conclude that $g{\cdot}\mrC=\mrC$.
-  But $\mrD$ is union of such sets $\mrC$.
-  Then $\mrD=g{\cdot}\mrD$.
- \end{proof}
+We want to define $E^{00}$ and $P^{00}$ in analogy with $E^0$ and $P^0$.
+
+% \begin{proposition}
+%   For $\mrY\in\Phi^{00}$ define 
+
+%   \ceq{\hfill\epsilon_\Y({\mr x},{\mr y})}{=}{\bigwedge_{g\in G}\big[{\mr x}\in g{\cdot}\mrY\iff{\mr y}\in g{\cdot}\mrY\big].}
+
+%   Let $\M$ be a collection of $\LDelta$-models of cardinality $|\LDelta|$
+
+%   \ceq{\hfill\epsilon_\Y({\mr x},{\mr y})}{\iff}{\big\{\big[\phi({\mr x})\iff\phi({\mr y})\ :\ \big]\big\}.}
+% \end{proposition}
+
+
+% and
+
+% \ceq{\hfill E^{00}}{=}{\big\{\epsilon_\Y({\mr x},{\mr y})\ :\  \mrY\in\Phi^{00}\big\},}
+
+% where
+
+% \ceq{\hfill\epsilon_\Y({\mr x},{\mr y})}{=}{\bigwedge_{g\in G}\big[{\mr x}\in g{\cdot}\mrY\iff{\mr y}\in g{\cdot}\mrY\big].}
+
+% Let $P^{00}$ be the set of types of the form $\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in E^{00}\big\}$ for ${\mr a}\in\mrX$.
+
+% \begin{proposition}\label{prop_G0_inclusione2}
+%   Assume that $G$ acts transitively.
+%   Then $K\subsetyeq G^0$.\smallskip
+
+%   % \ceq{\hfill \Stab(Q)}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\textrm{ is }G\textrm{-generic for all }G\textrm{-generic }\mrD\in\BDelta(\grZ)\big\}}\smallskip
+
+%   % \ceq{}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\neq\varnothing\textrm{ for any }G\textrm{-generic }\mrD\in\BDelta(\grZ)\big\}}\smallskip
+
+
+%   % \ceq{\hfill \Stab(Q)}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\in\gamma_G({\mr x})\textrm{ whenever }\mrD\in\gamma_G({\mr x})\big\}}\smallskip
+
+%   % \ceq{}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\neq\varnothing\textrm{ whenever }\mrD\in\gamma_G({\mr x})\big\}}\smallskip
+
+%   % \ceq{}{\subseteq}{G^0.}
+
+% \end{proposition}
+
+% % We will revisit this proposition under the assumption of stability and prove the converse inclusion.
+% % See Theorem~\ref{thm_Z0_stable}.\vspace*{-0.5\baselineskip}
+
+% \begin{proof}
+%   The first inclusion is left to the reader.
+%   We prove the second.
+%   Let $g$ be an element of the second set.
+%   Pick any $\mrD\in\Phi$.
+%   We need to show that $g\in\Stab(\mrD)$.
+%   % A fortiori $\grW$ is the stabilizer of a set with finite  $\grZ$-orbit.
+%   Let $\mrC$ be an equivalence class of $\epsilon_\D({\mr x},{\mr y})$.
+%   As $G$ acts transitively, $\mrC$ is $G$-generic.
+%   Then $\mrC\cap g{\cdot}\mrC\neq\varnothing$.
+%   As $\epsilon_\D({\mr x},{\mr y})$ is $G$-invariant, we conclude that $g{\cdot}\mrC=\mrC$.
+%   But $\mrD$ is union of such equivalence classes.
+%   Then $\mrD=g{\cdot}\mrD$.
+% \end{proof}
 % However it is not true in general, as the following example shows.
 
 % \begin{example}\label{ex_H_neq_acleq}
@@ -603,8 +693,8 @@ Note that when $G$ acts transitively on $\mrX$, equivalence classes of $G$-invar
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Strong genericity}\label{strong_genericity}
 
-Unfortunately, genericity is not preserved under intersection.
-To obtain closure under intersection, we need to push the concept to a higher level of complexity.
+% Unfortunately, genericity is not preserved under intersection.
+% To obtain closure under intersection, we need to push the concept to a higher level of complexity.
 
 A set $\mrD\subseteq\mrX$ is \emph{strongly $H$-generic\/} if for every finite $F\subseteq H$ the set $\cap\,F{\cdot}\mrD$ is generic (recall that $F{\cdot}\mrD$ stands for $\{h{\cdot}\mrD: h\in F\}$).
 Dually, we say that $\mrD$ is \emph{weakly $H$-persistent\/} if for some finite $F\subseteq H$ the set $\cup\,F{\cdot}\mrD$ is persistent.
@@ -616,9 +706,9 @@ Again, the same properties may be attributed to formulas and types when every co
 
 \begin{proof}
   We may assume that all sets mentioned below are subsets of $\mrX$.
-  Let ${\mr\D}$ and ${\mr\C}$ be strongly $H$-generic and let $K\subseteq H$ be an arbitrary finite set.
-  It suffices to prove that $\mrB=\cap\, K{\cdot}({\mr\C}\cap{\mr\D})$ is $H$-generic. 
-  Clearly $\mrB={\mr\C'}\cap{\mr\D'}$, where ${\mr\C'}=\cap\, K{\cdot}{\mr\C}$ and ${\mr\D'}=\cap\, K{\cdot}{\mr\D}$.
+  Let ${\mr\D}$ and ${\mr\C}$ be strongly $H$-generic and let $C\subseteq H$ be an arbitrary finite set.
+  It suffices to prove that $\mrB=\cap\, C{\cdot}({\mr\C}\cap{\mr\D})$ is $H$-generic. 
+  Clearly $\mrB={\mr\C'}\cap{\mr\D'}$, where ${\mr\C'}=\cap\, C{\cdot}{\mr\C}$ and ${\mr\D'}=\cap\, C{\cdot}{\mr\D}$.
   Note that ${\mr\C'}$ and ${\mr\D'}$ are both strongly $H$-generic.
   In particular $\mrX=\cup\,F{\cdot}\mr\D'$ for some finite $F\subseteq H$.
   Note that
@@ -646,8 +736,8 @@ Define the following type
 
 \begin{proof}
   The strong $H$-genericity is an immediate consequence of Lemma~\ref{lem_strongly_generic}.
-  The finite satisfiability is a consequence of $H$-genericity.% , see Exercise~\ref{ex_gen_sat}.
-  As for invariance, note that any translate of a strongly $H$-generic formula is also strongly $H$-generic.
+  The finite consistency is a consequence of genericity. % , see Exercise~\ref{ex_gen_sat}.
+  Finally, $H$-invariance is clear because any translate of a strongly $H$-generic formula is also strongly $H$-generic.
 \end{proof}
 
 \begin{corollary}\label{corol_q_w_pers}
@@ -701,14 +791,14 @@ In other words, only if the connected component of ${\mr a}$ in the Lascar graph
 
 It is convenient to address the problem in more general terms.
 We work under Assumption~\ref{notation_GXphi} and also assume that $H\le G$ acts transitively on $\mrX$.
-Let $K\subseteq H$ be a set of generators that is
+Let $C\subseteq H$ be a set of generators that is
 \begin{itemize}
   \item[1.] symmetric i.e.\@ it contains the unit and is closed under inverse
-  \item[2.] conjugacy invariant i.e.\@ $g\,Kg^{-1}=K$ for every $g\in H$
+  \item[2.] conjugacy invariant i.e.\@ $g\,Cg^{-1}=C$ for every $g\in H$
 \end{itemize}
 
 We define a discrete metric on $\mrX$.
-For ${\mr a},{\mr b}\in\mrX$ let $d({\mr a},{\mr b})$ be the minimal $n$ such that ${\mr a}\in K^n{\mr b}$.
+For ${\mr a},{\mr b}\in\mrX$ let $d({\mr a},{\mr b})$ be the minimal $n$ such that ${\mr a}\in C^n{\mr b}$.
 This defines a metric which is $H$-invariant by \ssf2.
 The \emph{diameter\/} of a set $\mrC\subseteq\mrX$ is the supremum of $d({\mr a},{\mr b})$ for ${\mr a},{\mr b}\in\mrC$.
 
@@ -747,7 +837,7 @@ The notions introduced in Section~\ref{strong_genericity} offer some hint.
 \end{proof}
 
 \begin{theorem}\label{thm_newelski}
-  Suppose that $\mrX$ and the sets ${\mr\X_n}=K^n{\mr a}$, for some ${\mr a}\in\mrX$, are type-definable.
+  Suppose that $\mrX$ and the sets ${\mr\X_n}=C^n{\mr a}$, for some ${\mr a}\in\mrX$, are type-definable.
   Then $\mrX$ has finite diameter.
 \end{theorem}
 
@@ -763,17 +853,18 @@ The notions introduced in Section~\ref{strong_genericity} offer some hint.
 
 % \ceq{\hfill p_n({\mr\X},{\mr\X})}{=}{\{\<{\mr a},{\mr b}\>\in{\mr\X^2}\ :\ {\mr a}\in K^n{\mr b}\}}
 
-% Below we write ${\mr x}\in K^n{\mr y}$ for the type $p_n({\mr x},{\mr y})$ and ${\mr x}\in G\,{\mr y}$ for the disjunction of all these types (n.b.\@ an infinite disjunction of types need not be a type).
+% Below we write ${\mr x}\in C^n{\mr y}$ for the type $p_n({\mr x},{\mr y})$ and ${\mr x}\in G\,{\mr y}$ for the disjunction of all these types (n.b.\@ an infinite disjunction of types need not be a type).
 
 \begin{example}\label{ex_newelski}
   Let $\Delta=L_{{\mr x}\,{\gr z}}(A)$, where $|{\gr z}|=\omega$.
   Let $\mrX=\Ll({\mr a}/A)$ and $\grZ=\U^{\gr z}$.
   Assume that $\mrX$ is type definable.
-  Let $K\subseteq\Aut(\U/A)\le G$ be the set of automorphisms that fix a model containing $A$.
-  Then the group $H$ generated by $K$ is $\Autf(\U/A)$ and $H\cdot{\mr a}=\mrX$.
+  Let $G=\Aut(\U/A)$.
+  Let $C\subseteq G$ be the set of automorphisms that fix a model containing $A$.
+  Then the group $H$ generated by $C$ is $\Autf(\U/A)$ and $H\cdot{\mr a}=\mrX$.
   
   Then $d({\mr a},{\mr b})$ coincides with the distance in the Lascar graph.
-  As shown in Proposition~\ref{prop_Lascar_distance_type_def} the sets $K^n\cdot{\mr a}=\{{\mr x}:d({\mr x},{\mr a})\le n\}$ are type definable.
+  As shown in Proposition~\ref{prop_Lascar_distance_type_def} the sets $C^n\cdot{\mr a}=\{{\mr x}:d({\mr x},{\mr a})\le n\}$ are type definable.
   Then from Theorem~\ref{thm_newelski} it follows that $\Ll({\mr a}/A)$ is type definable (if and) only if it has finite diameter.
 \end{example} 
 
@@ -837,35 +928,35 @@ In general, we have the following.
 %   It is also worth mentioning that every positive Boolean combination of $H$-generic sets is $H$-generic.
 % \end{remark}
 
-The landscape is further simplified when also the following condition obtains.
-We say that $H$ is \emph{stationary\/} if any two $H$-wide $\BDelta({\grZ})$-sets have nonempty intersection.
+% The landscape is further simplified when also the following condition obtains.
+% We say that $H$ is \emph{stationary\/} if any two $H$-wide $\BDelta({\grZ})$-sets have nonempty intersection.
 
-\begin{fact}
-  Assume \ssf1 of Theorem~\ref{thm_coalesce}.
-  Then, when $H$ is stationary, for every $\mrD\in\BDelta(\grZ)$, the following are equivalent
-  \begin{itemize}
-    \item[1.] $\mrD$ is $H$-generic
-    \item[2.] $\mrD$ is $H$-persistent.
-  \end{itemize}\smallskip
-\end{fact}
+% \begin{fact}
+%   Assume \ssf1 of Theorem~\ref{thm_coalesce}.
+%   Then, when $H$ is stationary, for every $\mrD\in\BDelta(\grZ)$, the following are equivalent
+%   \begin{itemize}
+%     \item[1.] $\mrD$ is $H$-generic
+%     \item[2.] $\mrD$ is $H$-persistent.
+%   \end{itemize}\smallskip
+% \end{fact}
 
-\begin{fact}
-  Assume \ssf1 of Theorem~\ref{thm_coalesce}.
-  Then the following are equivalent
-  \begin{itemize}
-    \item[1.] $H$ is stationary
-    \item[2.] the intersection of any two $H$-wide $\BDelta({\grZ})$-sets is $H$-wide.
-  \end{itemize}
-\end{fact}
+% \begin{fact}
+%   Assume \ssf1 of Theorem~\ref{thm_coalesce}.
+%   Then the following are equivalent
+%   \begin{itemize}
+%     \item[1.] $H$ is stationary
+%     \item[2.] the intersection of any two $H$-wide $\BDelta({\grZ})$-sets is $H$-wide.
+%   \end{itemize}
+% \end{fact}
 
-\begin{fact}
-  Assume that $G$ acts transitively and that all types in $P$ are realized in $\mrX$.
-  Then, when $H$ is stationary and \ssf1 of Theorem~\ref{thm_coalesce} holds, $P=Q$.
-\end{fact}
+% \begin{fact}
+%   Assume that $G$ acts transitively and that all types in $P$ are realized in $\mrX$.
+%   Then, when $H$ is stationary and \ssf1 of Theorem~\ref{thm_coalesce} holds, $P=Q$.
+% \end{fact}
 
-\begin{proof}
-  It suffices to prove that   
-\end{proof}
+% \begin{proof}
+%   It suffices to prove that   
+% \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%

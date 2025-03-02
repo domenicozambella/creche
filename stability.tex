@@ -18,7 +18,7 @@ The notation and implicit assumptions are as in Section~\ref{monster}.
 \section{Externally definable sets}
 \label{externally}
 
-Let $p({\mr x})\subseteq L(\U)$ be a consistent type.
+Let $p({\mr x})\subseteq L(\U)$ be a finitely consistent type.
 Recall from Section~\ref{invariant_sets} that for every formula $\phi({\mr x}\,;{\gr z})\in L$ we define
 
 \ceq{\hfill\emph{$\gr\D_{p,\phi}$}}{=}{\Big\{{\gr a}\in\U^{\gr z}\ :\ \phi({\mr x}\,;{\gr a})\in p\Big\}.}
@@ -600,7 +600,7 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
   Negate the theorem.
   Then there are two models containing $A$, the first omitting $\phi({\mr x}\,;{\gr b})$, the second omitting $\psi({\mr x}\,;{\gr b})$.
   It is easy to see that we can expand these models to two substructures $\U_0$ and $\U_1$ that are $A$-isomorphic to $\U$.
-  Then $\phi(\U_0^{\mr x}\,;{\gr b})=\psi(\U_1^{\mr x}\,;{\gr b})=\varnothing$.
+  Then $\phi(\U_0^{{\mr x}}\,;{\gr b})=\psi(\U_1^{{\mr x}}\,;{\gr b})=\varnothing$.
 
   Let $f_i:\U\to\U_i$ be the $A$-isomorphisms mentioned above. 
   Set $f_\varnothing=\id_\U$, then define inductively $f_{s\frown i}=f_i\circ f_s$, for every $s\in 2^{<\omega}$.
@@ -802,17 +802,17 @@ The following proposition says that in a stable theory with elimination of imagi
 \begin{theorem}[ (Stationarity)]\label{thm_stationarity}
   Let $\Delta$ be stable.
   Let $q({\mr x})\subseteq L(\U)$ be a type that is finitely satisfiable in every $M\supseteq A$ and decides all $\BDelta(\U^{\gr z})$-formulas that are Lascar invariant over $A$.
-  Then there is a unique type $p({\mr x})\in S_\Delta(\U^{\gr z})$ consistent with $q({\mr x})$ that is Larcar invariant over $A$.
+  Then there is a unique type $p({\mr x})\in S_\Delta(\U^{\gr z})$ finitely consistent with $q({\mr x})$ that is Lascar invariant over $A$.
 \end{theorem}
 
 \begin{proof}
   Existence follows from Corollary~\ref{corol_stable_coheir_over_models} and Proposition~\ref{prop_type_over_acl2}.
-  To prove uniqueness, pick two types $p_i({\mr x})\in S_\Delta(\U^{\gr z})$, for $i=1,2$, that are consistent with $q({\mr x})$ and Lascar invariant over $A$.
+  To prove uniqueness, pick two types $p_i({\mr x})\in S_\Delta(\U^{\gr z})$, for $i=1,2$, that are finitely consistent with $q({\mr x})$ and Lascar invariant over $A$.
   It suffices to prove that ${\gr\D_{p_1,\phi}}={\gr\D_{p_2,\phi}}$ for every $\phi({\mr x}\,;{\gr z})\in\Delta$.
   Let ${\gr b}\in\U^{\gr z}$ and $\phi({\mr x}\,;{\gr z})\in\Delta$ be fixed but arbitrary.
 
   Let $M\supseteq A$.
-  By stability there exists a type $t({\gr z})\in S_\phi(\U^{\mr x})$ that is invariant over $M$ and is consistent with $\tp({\gr b}/M)$.
+  By stability there exists a type $t({\gr z})\in S_\phi(\U^{\mr x})$ that is invariant over $M$ and is finitely consistent with $\tp({\gr b}/M)$.
   By stability and invariance ${\gr\D_{p_i,\phi}}$ and ${\mr\D_{t,\phi^{\rm op}}}$ are in definable over $M$.
   % Let ${\gr b'}$ be such that ${\gr b}\equiv_M{\gr b'}\models t({\gr z}){\restriction}M$.
   Let ${\mr a_i}\models p_i({\mr x}){\restriction}M$.
@@ -882,7 +882,7 @@ It is not necessary in the following.
 
 \begin{proof}
   Let $q({\gr z})=\tp({\gr b}/\acl^\eq\!A)$.
-  By Corollary~\ref{corol_stable_coheir_over_models} there is a type $p({\gr z})\in S_\phi(\U)$ consistent with $q({\gr z})$ and invariant over $\acl^\eq\!A$.
+  By Corollary~\ref{corol_stable_coheir_over_models} there is a type $p({\gr z})\in S_\phi(\U)$ that is finitely consistent with $q({\gr z})$ and invariant over $\acl^\eq\!A$.
   By Theorem~\ref{thm_def_stable_formula}, with the role of the two sorts reversed, there are some ${\gr b_1},\dots,{\gr b_n}\models q({\gr z})$ such that ${\mr\D_{p,\phi^{\rm op}}}$ is equivalent to a positive Boolean combination of the sets $\phi(\U^{\mr x};{\gr b_i})$.
   Let $\theta(\U^{\mr x};{\gr b_1},\dots,{\gr b_n})$ be such a Boolean combination.
   As ${\mr\D_{p,\phi^{\rm op}}}\in\acl^\eq\!A$ by Proposition~\ref{prop_type_over_acl2}, this proves the theorem when $A=\acl^\eq\!A$.
@@ -914,6 +914,7 @@ The set $\grZ\subseteq\U^{\gr z}$ is arbitrary, while $\mrX$ will be specified i
 As in Chapter~\ref{actions},  \emph{$G$\/} is a subgroup of $\Aut(\UDelta)$.
 We also write \emph{$H$\/} for $\Autf(\UDelta)$.
 Therefore $H$-invariance is Lascar invariance over $\varnothing$ in the language $\LDelta$.
+We stress that in this section $H$ is not required to be a subgroup of $G$.
 
 % \ceq{\hfill\Psi}{=}{\big\{\theta({\gr z})\in\BDelta(\mrX)\ : \textrm{ with finite $G$-orbit}\big\}}
 
@@ -928,13 +929,13 @@ Therefore $H$-invariance is Lascar invariance over $\varnothing$ in the language
 % \end{remark}
 
 % The following theorem consists of two parts. 
-The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coalesce} applies.
+The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coalesce} applies (however, note the requirement on $\mrX$).
 % The second part is shows that in some cases $H$ can be replaced by $K$.
 
 \begin{theorem}\label{thm_persistent_finsat}
   Let $\Delta$ be stable.
-  Let $\mrX=q(\U^{\mr x})$, where $q({\mr x})\subseteq\LDelta(\mrX,\grZ)$ be a type that is finitely satisfiable in every $\LDelta$-model.
-  Then for every $\BDelta(\grZ)$-definable set $\mrD$ the following are equivalent 
+  Let $\mrX=q(\U^{\mr x})$, where $q({\mr x})\subseteq\LDelta(\mrX,\grZ)$ be a type that is finitely satisfiable in every $\LDelta$-model (in particular $\mrX$ is $H$-invariant).
+  Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent 
   \begin{itemize}
     \item[1.] $\mrD$ is $H$-persistent
     \item[2.] $\mrD$ is $H$-wide
@@ -988,7 +989,7 @@ The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coales
   Let $\Delta$ be stable.
   Let $\mrX=q(\U^{\mr x})$, where $q({\mr x})\subseteq\LDelta(\mrX,\grZ)$ is a type that is finitely satisfiable in every $\LDelta$-model and decides all $H$-invariant $\BDelta(\grZ)$-formulas.
   % Assume that $H$ acts transitively on $\mrX$.
-  Then for every $\BDelta(\grZ)$-definable set $\mrD$, the following are equivalent
+  Then for every $\mrD\in\BDelta(\grZ)$, the following are equivalent
   \begin{itemize}
     \item[1.] $\mrD$ is $H$-generic
     \item[2.] $\mrD$ is $H$-persistent.
@@ -1011,13 +1012,13 @@ The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coales
 \begin{corollary}\label{corol_stable_generic}
   Let $\Delta$ be stable.
   Let $\mrX=q(\U^{\mr x})$, where $q({\mr x})\subseteq\LDelta(\mrX,\grZ)$ is a type that is finitely satisfiable in every $\LDelta$-model and decides all $H$-invariant $\BDelta(\grZ)$-formulas.
-  Then for every $\BDelta(\grZ)$-definable set $\mrD$, either $\mrD$ or $\neg\mrD$ is $H$-generic.
+  Then for every $\mrD\in\BDelta(\grZ)$, either $\mrD$ or $\neg\mrD$ is $H$-generic.
 \end{corollary}
 
 \begin{proof}
   By Theorem~\ref{thm_stationarity} there is a type $p({\mr x})\in S_\Delta(\grZ)$ consistent with $q({\mr x})$ that is $H$-invariant and therefore persistent.
-  Hence, by Corollary~\ref{corol_def_mu}, $\mrD$ and $\neg\mrD$ are not both generic.
-  If $\mrD$ is not generic then $\neg\mrD$ is persistent and, by Proposition~\ref{prop_stable_genericiffpersistent}, generic.
+  Hence, by Corollary~\ref{corol_def_mu}, $\mrD$ and $\neg\mrD$ are not both $H$-generic.
+  If $\mrD$ is not $H$-generic then $\neg\mrD$ is $H$-persistent and, by Proposition~\ref{prop_stable_genericiffpersistent}, $H$-generic.
 \end{proof}
 
 \begin{theorem}\label{thm_FER}
@@ -1035,14 +1036,14 @@ The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coales
     
     % \ceq{\hfill p_i=p_j}{\IFF}{p_i({\mr x})\cup p_j({\mr y}) \textrm{ is consistent with }\epsilon({\mr x},{\mr y})}.
     % 
-    \item [3.] let $E$ be as in Lemma~\ref{lem_trans_action0}~--~then for every ${\mr a}\in\mrX$ there is a unique $p({\mr x})\in P$ that is consistent with $\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in E\big\}$.
+    \item [3.] let $E$ be as in Definition~\ref{def_G0}~--~then for every ${\mr a}\in\mrX$ there is a unique $p({\mr x})\in P$ that is consistent with $\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in E\big\}$.
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
   \ssf1.
   Let $p_i({\mr x})$, for $i=1,2$, be two elements of $P$.
-  Let $\Phi$ be as in Lemma~\ref{lem_trans_action0}.
+  Let $\Phi$ be as in Definition~\ref{def_G0}.
   Note that the formulas in $\Phi$ are exactly those that are $H$-invariant.
   Write $q_i({\mr x})$ for the set of $\Phi$-formulas that are consequence of $p_i({\mr x})$.
   Note that $G$ acts transitively on $\mrX$.
@@ -1058,13 +1059,14 @@ The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coales
   Therefore by \ssf1, $P$ is finite.
 
   \ssf3.
-  Follows immediately from Lemma~\ref{lem_trans_action0}.
+  Follows immediately from stationarity.
 \end{proof}
 
 \begin{theorem}\label{thm_Ggeneric_persistent}
   Let $\Delta$ be stable.
   Let $\mrX=t(\U^{\mr x})$, where $t({\mr x})\in\LDelta\mbox{-}S(\varnothing)$.
-  Then for every $\BDelta(\grZ)$-definable set $\mrD$ the following are equivalent
+  Assume $G$ acts transitively on $\mrX$.
+  Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
   \begin{itemize}
     \item [1.] $\mrD$ is $G$-generic
     \item [2.] $\mrD$ is $H$-wide.
@@ -1074,15 +1076,16 @@ The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coales
 \begin{proof} 
   \ssf1$\IMP$\ssf2.
   By stability, there exist a type $p({\mr x})\in S_\Delta(\grZ)$ that is $H$-invariant.
-  Then $\gamma_H({\mr x})$ is consistent and Proposition~\ref{prop_Ggeneric_Hpersistent} applies.
+  Then $\gamma_H({\mr x})$ is consistent and Proposition~\ref{prop_Ggeneric_Hpersistent1} applies.
   
   \ssf2$\IMP$\ssf1.
   % Negate \ssf1.
   % Then $\neg\mrD$ is $G$-persistent.
   By \ssf2, there is an $H$-invariant type $p({\mr x})\in S_\Delta(\grZ)$ consistent with ${\mr x}\in\mrD$.
-  Let $q({\mr x})$ be the set of $\Phi$-formulas that are consequence of $p({\mr x})$, where $\Phi$ is as in Lemma~\ref{lem_trans_action0}.
-  Then $\mrD$ is $H$-wide relative to $q(\U^{\mr x})$ and, by Proposition~\ref{prop_stable_genericiffpersistent}, $H$-generic.
+  Let $q({\mr x})$ be the set of $\Phi$-formulas that are consequence of $p({\mr x})$, where $\Phi$ is as in Definition~\ref{def_G0}.
+  Then $\mrD$ is $H$-wide relative to $q(\U^{\mr x})$ and, by Proposition~\ref{prop_stable_genericiffpersistent}, $H$-generic relative to $q(\U^{\mr x})$.
   For every $g\in G$ we also have that $g{\cdot}\mrD$ is $H$-generic relative to $g{\cdot}q(\U^{\mr x})$.
+  Therefore $\mrD$ is also $H$-generic relative to $g{\cdot}q(\U^{\mr x})$.
   The $G$-orbit of $q(\U^{\mr x})$ has small cardinality and covers $\mrX$.
   Therefore there is a set $C\subseteq G$ of small cardinality such that $\cup\,C{\cdot}\mrD$ covers $t(\U^{\mr x})$.
   By compactness, we can take $C$ finite.
@@ -1135,23 +1138,29 @@ We assume the hypotheses and the notation of Section~\ref{definablegroups}.
 Recall that $\Psi\subseteq L_{\mr x}(A)$ is some fixed set of formulas and \emph{$\Delta$\/} contains the formulas $\phi({\mr x}\,;{\gr z})$ of the form  $\psi({\gr z^{-1}}\!\cdot{\mr x})$ for $\psi({\mr x})\in\Psi$.
 In this section \emph{$G$\/} = $\Aut(\UDelta)$ and \emph{$H$\/} = $\Autf(\UDelta)$.
 % Recall that $G=\Aut(\UDelta)$ has two relevant normal subgroups $H=\Autf(\UDelta)$ and $\grZ$.
+We will always assume that $\grZ$ acts transitively. 
+Then, as $\grZ\le\Aut(\UDelta)$, all elements of $\mrX$ have the same $\LDelta$-type.
 
-\begin{theorem}\label{thm_Ggeneric_persistent}
+\begin{theorem}
   Let $\Delta$ be stable.
   Assume that $\grZ$ acts transitively.
-  Then for every $\BDelta(\grZ)$-definable set $\mrD$ the following are equivalent
+  Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
   \begin{itemize}
-    \item [1.] $\mrD$ is $\grZ$-generic
-    \item [2.] $\mrD$ is $G$-generic
-    \item [3.] $\mrD$ is $H$-wide.
+  \item [1.] $\mrD$ is $\grZ$-generic
+  \item [2.] $\mrD$ is $G$-generic
+  \item [3.] $\mrD$ is $H$-wide.
   \end{itemize}\smallskip
 \end{theorem}
 
 \begin{proof} 
-  \ssf1$\IMP$\ssf2$\IMP$\ssf3. Because $\grZ$-generic implies $G$-generic, and by Theorem~\ref{thm_Ggeneric_persistent}.
+  \ssf1$\IMP$\ssf2.
+  Because $\grZ$-generic implies $G$-generic.
+  
+  \ssf2$\IMP$\ssf3.
+  By Theorem~\ref{thm_Ggeneric_persistent}, which applies because, by transitivity, the elements of $\mrX$ have the same $\LDelta$-type.
 
   \ssf3$\IMP$\ssf1.
-  After replacing $G$ by $\grZ$, the proof of \ssf2$\IMP$\ssf1 in Theorem~\ref{thm_Ggeneric_persistent} applies (by transitivity, the $\grZ$-orbit of $q(\U^{\mr x})$ covers $t(\U^{\mr x})=\mrX$).
+  After replacing $G$ by $\grZ$, we may repeat the proof of \ssf2$\IMP$\ssf1 of Theorem~\ref{thm_Ggeneric_persistent}.
   %
   % \ssf1$\IMP$\ssf2.
   % Let ${\gr g}$ be given.
@@ -1171,11 +1180,13 @@ In this section \emph{$G$\/} = $\Aut(\UDelta)$ and \emph{$H$\/} = $\Autf(\UDelta
   % The $\grZ$-genericity of $\neg\phi({\mr x}\,;{\gr 1})$ follows.
 \end{proof}
 
+Corollary~\ref{corol_stable_generic} becomes the following.,
+
 \begin{corollary}\label{corol_genericornotgeneric}
   Let $\Delta$ be stable.
   Assume that $\grZ$ acts transitively.
-  Let $\mrD$ be any $\BDelta(\grZ)$-definable set.
-  Then $\mrD$ or $\neg\mrD$ is $\grZ$-generic.
+  Let $\mrD\in\BDelta(\grZ)$.
+  Then $\mrD$ or $\neg\mrD$ is $H$-generic.
 \end{corollary}
 
 % \begin{proof}
@@ -1197,7 +1208,7 @@ In this section \emph{$G$\/} = $\Aut(\UDelta)$ and \emph{$H$\/} = $\Autf(\UDelta
     
     % \ceq{\hfill p_i=p_j}{\IFF}{p_i({\mr x})\cup p_j({\mr y}) \textrm{ is consistent with }\epsilon({\mr x},{\mr y})}.
     % 
-    \item [3.] let $E$ be as in Lemma~\ref{lem_trans_action0}~--~then for every ${\mr a}\in\mrX$ there is a unique $p({\mr x})\in P$ that is consistent with $\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in E\big\}$.
+    \item [3.] let $E$ be as in Definition~\ref{def_G0}~--~then for every ${\mr a}\in\mrX$ there is a unique $p({\mr x})\in P$ that is consistent with $\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in E\big\}$.
   \end{itemize}
 \end{theorem}
 
