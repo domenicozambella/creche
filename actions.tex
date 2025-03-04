@@ -75,19 +75,18 @@ Therefore, a type $p({\mr x})\subseteq\BDelta(\grZ)$ is $H$-invariant if
 % Then $\pmDelta(\grZ)=L_{\mr x}(\U)$ and  $S_\Delta(\grZ)=S_{\mr x}(\U)$. 
 % Note that when $H$ acts by automorphisms $\phi(\U^{\mr x};\U^{\gr z})$ is $H$-invariant for all $\phi({\mr x}\,;{\gr z})\in L$.
 
-A set $\mrD\subseteq\mrX$ is \emph{generic\/} under the action of $H$, or \emph{$H$-generic\/} for short, if finitely many $H$-translates of $\mrD$ cover $\mrX$; we say \emph{$n$-$H$-generic\/} if $\le n$ translates suffices.
-Dually, we say that $\mrD$ is \emph{persistent\/} under the action of $H$, or \emph{$H$-persistent\/} for short, if the intersection of any finitely many $H$-translates of $\mrD$ is nonempty; we say \emph{$n$-$H$-persistent\/} when the request is limited to $\le n$ translates.
+A set $\mrD\subseteq\mrX$ is \emph{syndetic\/} under the action of $H$, or \emph{$H$-syndetic\/} for short, if finitely many $H$-translates of $\mrD$ cover $\mrX$; we say \emph{$n$-$H$-syndetic\/} if $\le n$ translates suffices.
+Dually, we say that $\mrD$ is \emph{thick\/} under the action of $H$, or \emph{$H$-thick\/} for short, if the intersection of any finitely many $H$-translates of $\mrD$ is nonempty; we say \emph{$n$-$H$-thick\/} when the request is limited to $\le n$ translates.
 When $\mrX$ and/or $\grZ$ are not clear from the context, we say that these notions are \emph{relative\/} to $\mrX$ and $\grZ$.
 
 The same properties may be attributed to formulas (as these are identified with the set they define).
 When these properties are attributed to a type $p({\mr x})$, we understand that they hold for every conjunction of formulas in $p({\mr x})$.
-See Exercise~\ref{ex_persistent_types} for an alternative characterization when $p({\mr x})$ is small.
+See Exercise~\ref{ex_thick_types} for an alternative characterization when $p({\mr x})$ is small.
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
-The terminology above is non-standard.
-In~\cite{CK} the authors write \textit{quasi-non-dividing\/} for \textit{persistent\/} under the action of $\Aut(\U/A)$.
-Their terminology has good motivations, but it would be a mouthful if adapted to our context.
-In topological dynamics similar notions have been introduced with different terminology: \textit{syndetic\/} corresponds to \textit{generic\/} and \textit{thick\/} corresponds to \textit{persistent.}
+The terminology above is taken from topological dynamics.
+In~\cite{CK} the authors write \textit{quasi-non-dividing\/} for \textit{thick\/} under the action of $\Aut(\U/A)$.
+Their terminology has good motivations, but it would be a mouthful if adapted to our context. 
 
 Notation: for $\mrD\subseteq\mrX$ and $C\subseteq G$ we write \emph{$C{\cdot}\mrD$\/} for $\{h{\cdot}\mrD: h\in C\}$.
 
@@ -96,8 +95,8 @@ In this chapter many proofs require some juggling with negations as epitomized b
 \begin{fact}\label{fact_fip}
   The following are equivalent
   \begin{itemize}
-    \item[1.] $\mrD$ is not $H$-generic
-    \item[2.] $\neg\mrD$ is $H$-persistent.
+    \item[1.] $\mrD$ is not $H$-syndetic
+    \item[2.] $\neg\mrD$ is $H$-thick.
   \end{itemize}
 \end{fact}
 
@@ -111,36 +110,36 @@ In this chapter many proofs require some juggling with negations as epitomized b
 
 Define the following type
 
-\ceq{\hfill\emph{$\gamma_H({\mr x})$}}{=}{\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is }H\textrm{-generic}\}}
+\ceq{\hfill\emph{$\gamma_H({\mr x})$}}{=}{\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is }H\textrm{-syndetic}\}}
 
 % We remark that the consistency of $\gamma_H({\mr x})$ is far from guaranteed.
 
 \begin{corollary}\label{corol_q_pers}
   Let $p({\mr x})\subseteq\BDelta(\grZ)$ be such that $\gamma_H({\mr x})\cup p({\mr x})$ is finitely consistent.
-  Then $p({\mr x})$ is $H$-persistent.
+  Then $p({\mr x})$ is $H$-thick.
 \end{corollary}
 
 \begin{proof}
   Let $\theta({\mr x})$ be a conjunction of formulas in $p({\mr x})$.
-  As $\gamma_H({\mr x})\cup\{\theta({\mr x})\}$ is finitely consistent, it cannot be that $\neg\theta({\mr x})$ is $H$-generic.
-  From Fact~\ref{fact_fip}, we obtain that $\theta({\mr x})$ is $H$-persistent.
+  As $\gamma_H({\mr x})\cup\{\theta({\mr x})\}$ is finitely consistent, it cannot be that $\neg\theta({\mr x})$ is $H$-syndetic.
+  From Fact~\ref{fact_fip}, we obtain that $\theta({\mr x})$ is $H$-thick.
 \end{proof}
 
 The converse implication holds for complete types.
 
-\begin{theorem}\label{thm_generic_invariant}
+\begin{theorem}\label{thm_syndetic_invariant}
   Let $p({\mr x})\in S_\Delta(\grZ)$.
   Then the following are equivalent
   \begin{itemize}
     \item[1.] $p({\mr x})$ is $H$-invariant
     \item[2.] $p({\mr x})\proves\gamma_H({\mr x})$
-    \item[3.] $p({\mr x})$ is $H$-persistent.
+    \item[3.] $p({\mr x})$ is $H$-thick.
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  Let $\mrD\in\BDelta(\grZ)$ be a $H$-generic.
+  Let $\mrD\in\BDelta(\grZ)$ be a $H$-syndetic.
   Pick $C\subseteq H$ be finite such that $\mrX\subseteq\cup\,C{\cdot}\mrD$.
   Then $p({\mr x})\proves {\mr x}\in\cup\,C{\cdot}\mrD$.
   By completeness, $p({\mr x})\proves {\mr x}\in h\,\mrD$ for some $h\in C$.
@@ -150,65 +149,65 @@ The converse implication holds for complete types.
   By Corollary~\ref{corol_q_pers}.
 
   \ssf3$\IMP$\ssf1.
-  % uppose $p({\mr x})$ is not $(n+2)$-persistent and let $n$ be minimal.
+  % uppose $p({\mr x})$ is not $(n+2)$-thick and let $n$ be minimal.
   % Let $g_1,\dots,g_{n+2}\in H$ and $\theta({\mr x})\,;{\gr\bar b}$ witness this.
   % Then 
   Suppose $p({\mr x})$ is not $H$-invariant.
   % Then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g\,{\gr b})$ for some $g\in H$ and $\phi({\mr x}\,;{\gr b})\in\BDelta(\grZ)$.
-  % Clearly $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g\,{\gr b})$ is not $2$-$H$-persistent as it is inconsistent with its $g$-translate.
+  % Clearly $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g\,{\gr b})$ is not $2$-$H$-thick as it is inconsistent with its $g$-translate.
   By completeness $p({\mr x})\proves{\mr x}\in(\neg\mrD\cap g{\cdot}\mrD)$ for some $g\in H$ and some $\mrD\in\BDelta(\grZ)$.
-  Clearly $\neg\mrD\cap g{\cdot}\mrD$ is not $2$-$H$-persistent as it is inconsistent with its $g$-translate.
+  Clearly $\neg\mrD\cap g{\cdot}\mrD$ is not $2$-$H$-thick as it is inconsistent with its $g$-translate.
 \end{proof}
 
 % \begin{corollary}\label{corol_gammaG_invaqriancer}
 %   The following are equivalent for every $\BDelta(\grZ)$-definable set $\mrD$
 %   \begin{itemize}
 %     \item [1.] $\gamma_H({\mr x})\proves{\mr x}\in\mrD$
-%     \item [2.] $p({\mr x})\proves{\mr x}\in\mrD$ for every $H$-persistent $p({\mr x})\in S_\Delta(\grZ)$.
+%     \item [2.] $p({\mr x})\proves{\mr x}\in\mrD$ for every $H$-thick $p({\mr x})\in S_\Delta(\grZ)$.
 %   \end{itemize}
 % \end{corollary}
 
 % \begin{proof}
 %   \ssf1$\IMP$\ssf2.
-%   This is an immediate consequence of Theorem~\ref{thm_generic_invariant}.
+%   This is an immediate consequence of Theorem~\ref{thm_syndetic_invariant}.
 
 %   \ssf2$\IMP$\ssf1.
 %   Suppose $\gamma_H({\mr x})\not\proves{\mr x}\in\mrD$.
 %   Then there is a type $p({\mr x})\in S_\Delta(\grZ)$ finitely consistent with $\gamma_H({\mr x})\cup\{{\mr x}\notin\mrD\}$.
-%   By Corollary~\ref{corol_q_pers} $p({\mr x})$ is $H$-persistent.
+%   By Corollary~\ref{corol_q_pers} $p({\mr x})$ is $H$-thick.
 %   Then $\neg\ssf2$.
 % \end{proof}
 
-The theorem yields a necessary condition for the existence of $H$-persistent global $\BDelta({\grZ})$-types.
+The theorem yields a necessary condition for the existence of $H$-thick global $\BDelta({\grZ})$-types.
 
 \begin{corollary}\label{corol_def_mu}
-  Assume there exists a $H$-persistent type $p({\mr x})\in S_\Delta(\grZ)$.
+  Assume there exists a $H$-thick type $p({\mr x})\in S_\Delta(\grZ)$.
   Then for every $\BDelta({\grZ})$-set $\mrD$
   \begin{itemize}
-    \item[1.] $\mrD$ and $\neg\mrD$ are not both $H$-generic
-    \item[2.] if $\mrD$ is $H$-generic then it is $H$-persistent
+    \item[1.] $\mrD$ and $\neg\mrD$ are not both $H$-syndetic
+    \item[2.] if $\mrD$ is $H$-syndetic then it is $H$-thick
     \item[3.] $\gamma_H({\mr x})$ is finitely consistent.\smallskip
   \end{itemize}
 \end{corollary}
 
 \begin{proof}
   Clearly, \ssf1 and \ssf2 are equivalent by Fact~\ref{fact_fip} and follow from \ssf3.
-  Finally, \ssf3 is an immediate consequence of \ssf2 of Theorem~\ref{thm_generic_invariant}.
+  Finally, \ssf3 is an immediate consequence of \ssf2 of Theorem~\ref{thm_syndetic_invariant}.
 \end{proof}
 
 The following theorem gives a necessary and sufficient condition for the  existence of global $H$-invariant $\BDelta({\grZ})$-type.
-Ideally, we would like that every $H$-persistent $\BDelta({\grZ})$-type extends to a global persistent type.
+Ideally, we would like that every $H$-thick $\BDelta({\grZ})$-type extends to a global thick type.
 Unfortunately this is not true in general (it is a strong assumption, see Section~\ref{tame_landscape}).
-A set $\mrD$ is \emph{$H$-wide\/} if every finite cover of $\mrD$ by $\BDelta({\grZ})$-sets contains a $H$-persistent set.
+A set $\mrD$ is \emph{$H$-wide\/} if every finite cover of $\mrD$ by $\BDelta({\grZ})$-sets contains a $H$-thick set.
 In~\cite{CK} a similar property is called \textit{quasi-non-forking.}
 Our use of the term \textit{wide\/} is consistent with~\cite{Hr}, though we apply it to a narrow context.
 A type is $H$-wide if every conjunction of formulas in the type is $H$-wide.
 
-\begin{theorem}\label{thm_generic_invariant2}
+\begin{theorem}\label{thm_syndetic_invariant2}
   For every $\mrD\in\BDelta(\grZ)$ the following are equivalent 
   \begin{itemize}
     \item[1.] $\gamma_H({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent
-    \item[2.] there exists a $H$-persistent type $p({\mr x})\in S_\Delta(\grZ)$ entailing ${\mr x}\in\mrD$
+    \item[2.] there exists a $H$-thick type $p({\mr x})\in S_\Delta(\grZ)$ entailing ${\mr x}\in\mrD$
     \item[3.] $\mrD$ is $H$-wide.\smallskip
   \end{itemize}
 \end{theorem}
@@ -218,23 +217,23 @@ A type is $H$-wide if every conjunction of formulas in the type is $H$-wide.
   By Corollary~\ref{corol_q_pers}, it suffices to pick any $p({\mr x})\in S_\Delta(\grZ)$ finitely consistent with $\gamma_H({\mr x})\cup\{{\mr x}\in\mrD\}$.
 
   \ssf2$\IMP$\ssf1.
-  By Theorem~\ref{thm_generic_invariant}.
+  By Theorem~\ref{thm_syndetic_invariant}.
 
   \ssf2$\IMP$\ssf3.
   Let ${\mr\C_1},\dots,{\mr\C_n}$ be $\BDelta({\grZ})$-sets that cover $\mrD$.
   Pick $p({\mr x})$ as in \ssf2.
   By completeness, $p({\mr x})\proves {\mr x}\in{\mr\C_i}$ for some $i$.
-  Then, by Theorem~\ref{thm_generic_invariant}, $\neg{\mr\C_i}$ is not $H$-generic.
-  Therefore, by Fact~\ref{fact_fip}, ${\mr\C_i}$ is $H$-persistent.
+  Then, by Theorem~\ref{thm_syndetic_invariant}, $\neg{\mr\C_i}$ is not $H$-syndetic.
+  Therefore, by Fact~\ref{fact_fip}, ${\mr\C_i}$ is $H$-thick.
 
   \ssf3$\IMP$\ssf2.
   Let $p({\mr x})$ be maximal among the $\BDelta({\grZ})$-types that are finitely satisfiable in $\mrX\cap\mrD$ and are such that $\theta(\U^{\mr x})$ is $H$-wide for every $\theta({\mr x})$ that is conjunction of formulas in $p({\mr x})$.
   We claim that $p({\mr x})$ is a complete $\BDelta({\grZ})$-type.
   Suppose for a contradiction that $\theta({\mr x}),\neg\theta({\mr x})\notin p$.
-  By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$, and some $\BDelta({\grZ})$-sets ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi(\U^{\mr x})\cap\theta(\U^{\mr x})$ and $\psi(\U^{\mr x})\smallsetminus\theta(\U^{\mr x})$ and such that no ${\mr\C_i}$ is $H$-persistent.
+  By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$, and some $\BDelta({\grZ})$-sets ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi(\U^{\mr x})\cap\theta(\U^{\mr x})$ and $\psi(\U^{\mr x})\smallsetminus\theta(\U^{\mr x})$ and such that no ${\mr\C_i}$ is $H$-thick.
   As ${\mr\C_1},\dots,{\mr\C_n}$ cover $\psi(\U^{\mr x})$ this is a contradiction.
-  It is only left to show that $p({\mr x})$ is $H$-persistent.
-  This follows from completeness and Theorem~\ref{thm_generic_invariant}.
+  It is only left to show that $p({\mr x})$ is $H$-thick.
+  This follows from completeness and Theorem~\ref{thm_syndetic_invariant}.
 \end{proof}
 
 \begin{corollary}\label{corol_intersectionGwide}
@@ -243,7 +242,7 @@ A type is $H$-wide if every conjunction of formulas in the type is $H$-wide.
 \end{corollary}
 
 \begin{proof}
-  Let $p({\mr x})\in S_\Delta(\grZ)$ be a $H$-persistent type such that $p({\mr x})\proves{\mr x}\in\mrD$.
+  Let $p({\mr x})\in S_\Delta(\grZ)$ be a $H$-thick type such that $p({\mr x})\proves{\mr x}\in\mrD$.
   By $H$-invariance $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$.
 \end{proof}
 
@@ -272,17 +271,17 @@ A type is $H$-wide if every conjunction of formulas in the type is $H$-wide.
 %   Suppose $q({\mr x})\proves{\mr x}\in(\mrD\cup g{\cdot}\mrD)$.
 %   Let $p({\mr x})\in S_\Delta(\grZ)$ extend $q({\mr x})$.
 %   By completeness $p({\mr x})\proves{\mr x}\in\mrD$ or $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$.
-%   As $p({\mr x})$ is $H$-invariant by Theorem~\ref{thm_generic_invariant}, it follows that
+%   As $p({\mr x})$ is $H$-invariant by Theorem~\ref{thm_syndetic_invariant}, it follows that
 %   $p({\mr x})\proves{\mr x}\in\mrD$.
 %   Finally, as $p({\mr x})$ is arbitrary, $q({\mr x})\proves{\mr x}\in\mrD$. 
 
 %   \ssf2$\IMP$\ssf1.
-%   As $\mrD$ is $H$-generic and $q({\mr x})$ is $H$-prime, $q({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in H$.
+%   As $\mrD$ is $H$-syndetic and $q({\mr x})$ is $H$-prime, $q({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in H$.
 %   Finally $q({\mr x})\proves{\mr x}\in\mrD$ by invariance.
 % \end{proof}
 
 \begin{exercise}
-  Prove that if $p(x)\in S(\U)$ is finitely satisfiable in every $M\supseteq A$ then it is persistent under the action of $H=\Autf(\U/A)$.
+  Prove that if $p(x)\in S(\U)$ is finitely satisfiable in every $M\supseteq A$ then it is thick under the action of $H=\Autf(\U/A)$.
   Is the same true for incomplete types?
 \end{exercise}
 
@@ -291,8 +290,8 @@ A type is $H$-wide if every conjunction of formulas in the type is $H$-wide.
   Prove that the following are equivalent
   \begin{itemize}
     \item[1.] $p(x)$ is $H$-invariant
-    \item[2.] $p(x)\proves x\in\D$ for every 2-$H$-generic definable set $\D$
-    \item[3.] $p(x)$ is 2-$H$-persistent.
+    \item[2.] $p(x)\proves x\in\D$ for every 2-$H$-syndetic definable set $\D$
+    \item[3.] $p(x)$ is 2-$H$-thick.
   \end{itemize}
 \end{exercise}
 
@@ -301,31 +300,31 @@ A type is $H$-wide if every conjunction of formulas in the type is $H$-wide.
   Prove that the following are equivalent 
   \begin{itemize}
     \item[1.] there is a $H$-invariant type $p(x)\in S_\Delta(\Z)$ such that $p(x)\proves x\in\D$.
-    \item[2.] every finite cover of $\D$ by $\BDelta(\Z)$-definable sets contains a 2-$H$-persistent set.
+    \item[2.] every finite cover of $\D$ by $\BDelta(\Z)$-definable sets contains a 2-$H$-thick set.
   \end{itemize}
 \end{exercise}
 
 % \begin{exercise}\label{ex_gen_sat}
-%   Let $p(x)\subseteq \BDelta(\Z)$ be $H$-generic.
+%   Let $p(x)\subseteq \BDelta(\Z)$ be $H$-syndetic.
 %   Prove that it is finitely satisfiable in $\X$.
 % \end{exercise}
 
-\begin{exercise}\label{ex_persistent_types}
+\begin{exercise}\label{ex_thick_types}
   Prove that for every $p(x)\subseteq \BDelta(A)$ following are equivalent
   \begin{itemize}
-    \item[1.] $p(x)$ is $H$-persistent
-    \item[2.] $p(\U^x)$ is $H$-persistent.
+    \item[1.] $p(x)$ is $H$-thick
+    \item[2.] $p(\U^x)$ is $H$-thick.
   \end{itemize}
 \end{exercise}
 
 \begin{exercise}
-  Give an example of a persistent set that is not wide.
+  Give an example of a thick set that is not wide.
   Hint: find inspiration in Example~\ref{ex_cyclic_order}.
 \end{exercise}
 
-\begin{exercise}\label{ex_generic_type_vs_formulas}
-  Let $\D\subseteq\X$ be a $H$-generic $\BDelta(\Z)$-type-definable set.
-  Prove that $\D$ is definable by a $\BDelta(\Z)$-type containing only $H$-generic formulas.
+\begin{exercise}\label{ex_syndetic_type_vs_formulas}
+  Let $\D\subseteq\X$ be a $H$-syndetic $\BDelta(\Z)$-type-definable set.
+  Prove that $\D$ is definable by a $\BDelta(\Z)$-type containing only $H$-syndetic formulas.
 \end{exercise}
 
 % \begin{exercise}\label{ex_Hprime}
@@ -337,7 +336,7 @@ A type is $H$-wide if every conjunction of formulas in the type is $H$-wide.
 %   Prove that the following are equivalent
 %   \begin{itemize}
 %     \item [1.] $\mrD$ is $H$-wide;
-%     \item [2.] every finite cover of $\mrD$ by $\pmDelta({\grZ})$-definable sets contains a $H$-persistent set.
+%     \item [2.] every finite cover of $\mrD$ by $\pmDelta({\grZ})$-definable sets contains a $H$-thick set.
 %   \end{itemize}
 % \end{exercize}
 
@@ -350,13 +349,13 @@ A type is $H$-wide if every conjunction of formulas in the type is $H$-wide.
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{12ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-Unfortunately, genericity is not preserved under intersection.
-In particular $\gamma_G({\mr x})$ is not a $G$-generic type, and it may even be inconsistent.
+Unfortunately, syndeticity is not preserved under intersection.
+In particular $\gamma_G({\mr x})$ is not a $G$-syndetic type, and it may even be inconsistent.
 Then following notion is relevant
 
 \begin{definition}\label{def_Q}\ 
 
-  \ceq{\hfill\emph{$Q$\/}}{=}{\big\{q({\mr x})\subseteq\gamma_G({\mr x})\;:\ q({\mr x})\textrm{ maximally generic}\big\}.}\smallskip
+  \ceq{\hfill\emph{$Q$\/}}{=}{\big\{q({\mr x})\subseteq\gamma_G({\mr x})\;:\ q({\mr x})\textrm{ maximally syndetic}\big\}.}\smallskip
 
   In other words, the types in $Q$ are maximal among the subtypes of $\gamma_G({\mr x})$ that are closed under conjunction.
 \end{definition}
@@ -370,7 +369,7 @@ Finally we define
 
 Clearly, $\Stab(Q)\trianglelefteq G$.
 
-\begin{proposition}
+\begin{proposition}\label{prop_gammaK}
   Write $K$ for $\Stab(Q)$. 
   For every $q({\mr x})\in Q$ we have $q({\mr x})\proves\gamma_K({\mr x})$.
   In particular, $\gamma_K({\mr x})$ is finitely consistent.
@@ -379,12 +378,12 @@ Clearly, $\Stab(Q)\trianglelefteq G$.
 
 \begin{proof}
   As the types in $Q$ are closed under conjunction, the second claim in the proposition follows from the first.
-  Let $\mrD\in\gamma_K$, then $q({\mr x})\proves{\mr x}\in k{\cdot}\mrD$ for some $k\in K$. 
+  Let $\mrD\in\gamma_K$, then $q({\mr x})\proves{\mr x}\in k{\cdot}\mrD$ for some $k\in K$.
   Then $q({\mr x})\proves{\mr x}\in k{\cdot}\mrD$ for some $k\in K$.
   Then $q({\mr x})\proves{\mr x}\in\mrD$ follows because $k\in\Stab(q)$.
 \end{proof}
 
-\begin{proposition}\  \smallskip
+\begin{proposition}\ \smallskip
 
   \ceq{\hfill\Stab(Q)}{=}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\in\gamma_G({\mr x})\textrm{ whenever }\mrD\in\gamma_G({\mr x})\big\}.}\smallskip
 \end{proposition}
@@ -400,7 +399,7 @@ Clearly, $\Stab(Q)\trianglelefteq G$.
   Pick $g\notin \Stab(Q)$.
   Then $q({\mr x})\neq g{\cdot}q({\mr x})$ for some $q({\mr x})\in Q$.
   Let $\phi({\mr x})\in q$ such that $q({\mr x})\not\proves g{\cdot}\phi({\mr x})$.
-  By maximality, $\psi({\mr x})\wedge g{\cdot}\phi({\mr x})$ is not $G$-generic for some $\psi({\mr x})\in q$.
+  By maximality, $\psi({\mr x})\wedge g{\cdot}\phi({\mr x})$ is not $G$-syndetic for some $\psi({\mr x})\in q$.
   As $q({\mr x})$ is closed under conjunction, we can assume $\phi({\mr x})=\psi({\mr x})$, then $g$ belongs to the set on the r.h.s.
 \end{proof}
 
@@ -418,7 +417,7 @@ We remark a useful consequence of normality.
   
   \ceq{\hfill\mrD\textrm{ is }H\textrm{-foo}}{\IFF}{g{\cdot}\mrD\textrm{ is }H\textrm{-foo},} \smallskip
   
-  where \textit{foo\/} can be replaced by \textit{generic,} \textit{invariant,} \textit{persistent,} \textit{wide.}
+  where \textit{foo\/} can be replaced by \textit{syndetic,} \textit{invariant,} \textit{thick,} \textit{wide.}
   In particular, the type $\gamma_H({\mr x})$ is $G$-invariant.
   % It also follows that for any $p({\mr x})\in S_\Delta(\grZ)$
   % \begin{itemize}
@@ -426,42 +425,41 @@ We remark a useful consequence of normality.
   % \end{itemize}
 \end{remark}
 
-Recall that when $\gamma_H({\mr x})$ is finitely consistent then $H$-generic sets are $H$-wide, see Theorem~\ref{thm_generic_invariant2}.
-As it happens, under the assumption of normality also $G$-generic sets are $H$-wide.
+Recall that when $\gamma_H({\mr x})$ is finitely consistent then $H$-syndetic sets are $H$-wide, see Theorem~\ref{thm_syndetic_invariant2}.
+As it happens, under the assumption of normality, this can be strengthened as follows.
 
-
-\begin{proposition}\label{prop_Ggeneric_Hpersistent1}
+\begin{proposition}\label{prop_Gsyndetic_Hthick1}
   Assume $H\trianglelefteq G$ and that $\gamma_H({\mr x})$ is finitely consistent.
-  Then every $G$-generic $\mrD\in\BDelta(\grZ)$ is $H$-wide.
+  Then every $G$-syndetic $\mrD\in\BDelta(\grZ)$ is $H$-wide.
   In particular all types in $Q$ are $\Stab(Q)$-wide.
 \end{proposition}
 
 \begin{proof}
   Let $p({\mr x})\in S_\Delta(\grZ)$ be finitely consistent with $\gamma_H({\mr x})$.
-  As $\mrD$ is $G$-generic, by completeness $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in G$.
+  As $\mrD$ is $G$-syndetic, by completeness $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in G$.
   Equivalently, $g^{-1}\!\cdot p({\mr x})\proves{\mr x}\in\mrD$.
-  As $p({\mr x})$ is $H$-persistent, by Remark~\ref{rem_invariance_normalsubg} also $g^{-1}\!\cdot p({\mr x})$ is $H$-persistent.
-  Then the proposition follows from Theorem~\ref{thm_generic_invariant2}.
+  As $p({\mr x})$ is $H$-thick, by Remark~\ref{rem_invariance_normalsubg} also $g^{-1}\!\cdot p({\mr x})$ is $H$-thick.
+  Then the proposition follows from Theorem~\ref{thm_syndetic_invariant2}.
 \end{proof}
 
 % \begin{theorem}
-%   Every $\Stab(Q)$-persistent $\BDelta(\grZ)$-set is $\Stab(Q)$-wide.
+%   Every $\Stab(Q)$-thick $\BDelta(\grZ)$-set is $\Stab(Q)$-wide.
 % \end{theorem}
 
 Let $\mrY\subseteq\mrX$ be $H$-invariant.
 When reasoning about the action relative to $\mrY$ it is convenient to confuse $\mrD\subseteq\mrX$, with $\mrD\cap\mrY$.
-For instance, when we say that $\mrD$ is $H$-generic relative $\mrY$, we actually mean $\mrD\cap\mrY$.
+For instance, when we say that $\mrD$ is $H$-syndetic relative $\mrY$, we actually mean $\mrD\cap\mrY$.
 
-\begin{proposition}
+\begin{proposition}\label{prop_HgenGgen}
   Let $H\trianglelefteq G$.
   Assume that $\mrX$ is type-definable.
   Let $\mrY\subseteq\mrX$ be some $H$-invariant set.
   Assume that boundedly many $G$-translates of $\mrY$ cover $\mrX$.
-  Then every $\mrD\in\BDelta(\grZ)$ that is $H$-generic relative to $\mrY$ is $G$-generic.
+  Then every $\mrD\in\BDelta(\grZ)$ that is $H$-syndetic relative to $\mrY$ is $G$-syndetic.
   % Then the following are equivalent for every $\mrD\in\BDelta(\grZ)$
   % \begin{itemize}
-  %   \item [1.] $\mrD$ is $G$-generic
-  %   \item [2.] $\mrD$ is $H$-generic relative to $\mrY$.
+  %   \item [1.] $\mrD$ is $G$-syndetic
+  %   \item [2.] $\mrD$ is $H$-syndetic relative to $\mrY$.
   % \end{itemize}\smallskip
 \end{proposition}
 
@@ -470,14 +468,14 @@ For instance, when we say that $\mrD$ is $H$-generic relative $\mrY$, we actuall
 %   Trivial.
 %
 %   \ssf2$\IMP$\ssf1.
-  By normality, $g{\cdot}\mrD$ is $H$-generic relative to $g{\cdot}\mrY$ for any $g\in G$.
+  By normality, $g{\cdot}\mrD$ is $H$-syndetic relative to $g{\cdot}\mrY$ for any $g\in G$.
   Then boundedly many $G$-translations of $\mrD$ cover $\mrX$.
   By compactness (which we may apply because $\mrX$ is type-definable), finitely many translations suffices.
 \end{proof}
 
 It would help to have a more syntactic description of $\Stab(Q)$.
-The group $G^0$ defined below is a good candidate. %~--~we will see that under the assumption of stability it indeed coincides with $\Stab(Q)$. 
-First we need to revisit the notions introduced in Section~\ref{eq_algebraic} as we want to apply them to $\BDelta(\grZ)$, not to the full language.%$\LDelta(\mrX,\grZ)$.
+The group $G^0$ defined below is a candidate. %~--~we will see that under the assumption of stability it indeed coincides with $\Stab(Q)$. 
+We revisit the notions introduced in Section~\ref{eq_algebraic} as we want to apply them to $\BDelta(\grZ)$, not to the full language.%$\LDelta(\mrX,\grZ)$.
 
 \begin{definition}\label{def_G0}
   Write \emph{$\Phi^0$\/} for the set of $\BDelta(\grZ)$-formulas/sets that have finite $G$-orbit and define%\vskip-1ex
@@ -502,7 +500,7 @@ Note that, when $G=\Aut(\UDelta)$, then $G^0$ is the group of $\LDelta$-automorp
   Then $G^0$ is the stabilizer of $P^0$.\smallskip
 
   Assume $G$ acts transitively.
-  Then the sets in $\Phi^0$ are $G$-generic.
+  Then the sets in $\Phi^0$ are $G$-syndetic.
   Every $p({\mr x})\in P^0$ extends to some $q({\mr x})\in Q$.
   Then $\Stab(Q)\le G^0$.
 \end{remark}
@@ -521,6 +519,10 @@ We will prove that this is the case under the assumption of stability.
 \end{definition}
 
 We want to define $E^{00}$ and $P^{00}$ in analogy with $E^0$ and $P^0$.
+
+\begin{question}
+  Does $G$ acts transitively on $Q$?
+\end{question}
 
 % \begin{proposition}
 %   For $\mrY\in\Phi^{00}$ define 
@@ -547,9 +549,9 @@ We want to define $E^{00}$ and $P^{00}$ in analogy with $E^0$ and $P^0$.
 %   Assume that $G$ acts transitively.
 %   Then $K\subsetyeq G^0$.\smallskip
 
-%   % \ceq{\hfill \Stab(Q)}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\textrm{ is }G\textrm{-generic for all }G\textrm{-generic }\mrD\in\BDelta(\grZ)\big\}}\smallskip
+%   % \ceq{\hfill \Stab(Q)}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\textrm{ is }G\textrm{-syndetic for all }G\textrm{-syndetic }\mrD\in\BDelta(\grZ)\big\}}\smallskip
 
-%   % \ceq{}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\neq\varnothing\textrm{ for any }G\textrm{-generic }\mrD\in\BDelta(\grZ)\big\}}\smallskip
+%   % \ceq{}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\neq\varnothing\textrm{ for any }G\textrm{-syndetic }\mrD\in\BDelta(\grZ)\big\}}\smallskip
 
 
 %   % \ceq{\hfill \Stab(Q)}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\in\gamma_G({\mr x})\textrm{ whenever }\mrD\in\gamma_G({\mr x})\big\}}\smallskip
@@ -571,7 +573,7 @@ We want to define $E^{00}$ and $P^{00}$ in analogy with $E^0$ and $P^0$.
 %   We need to show that $g\in\Stab(\mrD)$.
 %   % A fortiori $\grW$ is the stabilizer of a set with finite  $\grZ$-orbit.
 %   Let $\mrC$ be an equivalence class of $\epsilon_\D({\mr x},{\mr y})$.
-%   As $G$ acts transitively, $\mrC$ is $G$-generic.
+%   As $G$ acts transitively, $\mrC$ is $G$-syndetic.
 %   Then $\mrC\cap g{\cdot}\mrC\neq\varnothing$.
 %   As $\epsilon_\D({\mr x},{\mr y})$ is $G$-invariant, we conclude that $g{\cdot}\mrC=\mrC$.
 %   But $\mrD$ is union of such equivalence classes.
@@ -582,7 +584,7 @@ We want to define $E^{00}$ and $P^{00}$ in analogy with $E^0$ and $P^0$.
 % \begin{example}\label{ex_H_neq_acleq}
 %   Let $T_{\rm dlo}\models\U$.
 %   Let $\mrX=\grZ=\U$ and $\Delta=\{{\mr x}<{\gr z}\}$.
-%   It is easy to see that there are plenty of $G$-generic $\BDelta(\grZ)$-formulas but there is no nontrivial $\BDelta(\grZ)$-formula with finite $G$-orbit.
+%   It is easy to see that there are plenty of $G$-syndetic $\BDelta(\grZ)$-formulas but there is no nontrivial $\BDelta(\grZ)$-formula with finite $G$-orbit.
 %   Therefore $P$ is empty and $\Stab(P)=G$.
 % \end{example}
 
@@ -593,10 +595,10 @@ The following normal subgroup of $G$ is particularly interesting
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{8ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-\ceq{\hfill G^0}{=}{\big\{g\in G\ :\ g{\cdot}\mrD=\mrD\textrm{ for every }G\textrm{-generic }\BDelta(\grZ)\textrm{-type-definable set }\mrD\big\}}.
+\ceq{\hfill G^0}{=}{\big\{g\in G\ :\ g{\cdot}\mrD=\mrD\textrm{ for every }G\textrm{-syndetic }\BDelta(\grZ)\textrm{-type-definable set }\mrD\big\}}.
 }
 
-Note that by Exercise~\ref{ex_generic_type_vs_formulas} we can replace type-definable with definable in the definition of $G^0$.
+Note that by Exercise~\ref{ex_syndetic_type_vs_formulas} we can replace type-definable with definable in the definition of $G^0$.
 
 \begin{proposition}
   Assume the action of $G$ is regular.
@@ -606,7 +608,7 @@ Note that by Exercise~\ref{ex_generic_type_vs_formulas} we can replace type-defi
 
 \begin{proof}
   Let $g\in G^0$.
-  As $K$ has finite index and the action is transitive $K{\cdot}{\mr a}$ is $G$-generic for every ${\mr a}\in\mrX$.
+  As $K$ has finite index and the action is transitive $K{\cdot}{\mr a}$ is $G$-syndetic for every ${\mr a}\in\mrX$.
   Then $g{\cdot}K{\cdot}{\mr a}=K{\cdot}{\mr a}$.
   By regularity, $g{\cdot}K=K$, then $g\in K$.
 \end{proof}
@@ -624,7 +626,7 @@ Note that by Exercise~\ref{ex_generic_type_vs_formulas} we can replace type-defi
 Let ${\mr y}$ be a variable of the same sort of ${\mr x}$.
 Below $\BDelta(\grZ)$ may also denote $\LDelta_{{\rm\,qf},\,{\mr x},{\mr y}}(\grZ)$.
 In this section a $\BDelta(\grZ)$-definable finite equivalence relation is a formula $\epsilon({\mr x}\,;{\mr y})\in\BDelta(\grZ)$ such that $\epsilon(\mrX\,;\mrX)$ is an equivalence relation with finitely many classes.
-Note that when $G$ acts transitively on $\mrX$, equivalence classes of $G$-invariant finite equivalence relations are $G$-generic sets.
+Note that when $G$ acts transitively on $\mrX$, equivalence classes of $G$-invariant finite equivalence relations are $G$-syndetic sets.
 % \begin{remark}\label{rem_trans_action}
   % Assume that $G$ acts transitively on $\mrX$.
   Define
@@ -640,7 +642,7 @@ Note that when $G$ acts transitively on $\mrX$, equivalence classes of $G$-invar
 \begin{fact}
   Assume that $G$ acts transitively on $\mrX$.
   Let $\mrD$ be a $\BDelta(\grZ)$-definable set that intersects $\mrX$ and has finite $G$-orbit.
-  Then $\mrD$ is $G$-generic.
+  Then $\mrD$ is $G$-syndetic.
 \end{fact}
 
 \begin{proof}
@@ -652,7 +654,7 @@ Note that when $G$ acts transitively on $\mrX$, equivalence classes of $G$-invar
   Clearly, $\epsilon({\mr x}\,;{\mr y})$ is $G$-invariant.
   Pick any ${\mr a}\in\mrD$.  
   Then $\epsilon(\U^{\mr x};{\mr a})\subseteq\mrD$.
-  As the action is transitive, $\epsilon(\U^{\mr x};{\mr a})$, and a fortiori $\mrD$, is $G$-generic.
+  As the action is transitive, $\epsilon(\U^{\mr x};{\mr a})$, and a fortiori $\mrD$, is $G$-syndetic.
 \end{proof}
 
 \end{comment}
@@ -665,7 +667,7 @@ Note that when $G$ acts transitively on $\mrX$, equivalence classes of $G$-invar
   Then for every $\BDelta(\grZ)$-definable set $\mrD$ that intersects $\mrX$ the following are equivalent
   \begin{itemize}
     \item [1.]  $\mrC\subseteq\mrD$ for some $\mrC\in\acl^\eq\!A$ that intersects $\mrX$
-    \item [2.]  $\mrD$ is $G$-generic.
+    \item [2.]  $\mrD$ is $G$-syndetic.
   \end{itemize}
 \end{corollary}
 
@@ -674,12 +676,12 @@ Note that when $G$ acts transitively on $\mrX$, equivalence classes of $G$-invar
   Pick any ${\mr a}\in\mrC\cap\mrX$.
   We can assume that $\mrC=\epsilon(\U^{\mr x}\,;{\mr a})$ is an equivalence class of some finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in L(A)$ 
   As $G$ acts transitively on $\mrX$ the orbit of $\mrC$ coves $\mrX$.
-  Therefore $\mrC\subseteq\mrD$, and a fortiori $\mrD$, is $G$-generic.
+  Therefore $\mrC\subseteq\mrD$, and a fortiori $\mrD$, is $G$-syndetic.
 
   \ssf2$\IMP$\ssf1.
   Let $Q$ be as in Lemma~\ref{lem_trans_action}.
   Pick any $q({\mr x})\in Q$.
-  By genericity $q({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in G$.
+  By syndeticity $q({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in G$.
   Then $g^{-1}\!\cdot q({\mr x})\proves{\mr x}\in \mrD$.
   Pick any ${\mr a}\models g^{-1}\!\cdot q({\mr x})$.
   As $g^{-1}\!\cdot q({\mr x})\in Q$, by the second claim in the lemma and compactness,  $\epsilon(\U^{\mr x}\,;{\mr a})\subseteq\mrD$ for some finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\GDelta(A)$.
@@ -691,25 +693,29 @@ Note that when $G$ acts transitively on $\mrX$, equivalence classes of $G$-invar
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Strong genericity}\label{strong_genericity}
+\section{Strong syndeticity}\label{strong_syndeticity}
 
-% Unfortunately, genericity is not preserved under intersection.
+% Unfortunately, syndeticity is not preserved under intersection.
 % To obtain closure under intersection, we need to push the concept to a higher level of complexity.
 
-A set $\mrD\subseteq\mrX$ is \emph{strongly $H$-generic\/} if for every finite $F\subseteq H$ the set $\cap\,F{\cdot}\mrD$ is generic (recall that $F{\cdot}\mrD$ stands for $\{h{\cdot}\mrD: h\in F\}$).
-Dually, we say that $\mrD$ is \emph{weakly $H$-persistent\/} if for some finite $F\subseteq H$ the set $\cup\,F{\cdot}\mrD$ is persistent.
+A set $\mrD\subseteq\mrX$ is \emph{strongly $H$-syndetic\/} if for every finite $F\subseteq H$ the set $\cap\,F{\cdot}\mrD$ is syndetic (recall that $F{\cdot}\mrD$ stands for $\{h{\cdot}\mrD: h\in F\}$).
+Dually, we say that $\mrD$ is \emph{weakly $H$-thick\/} if for some finite $F\subseteq H$ the set $\cup\,F{\cdot}\mrD$ is thick.
 Again, the same properties may be attributed to formulas and types when every conjunction of formulas in the type has the property.
 
-\begin{lemma}\label{lem_strongly_generic}
-  The intersection of two strongly $H$-generic sets is strongly $H$-generic.
+\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
+In topological dynamic, strong syndedic sets are called \textit{thickly syndetic\/} and weak thickness is called \textit{piecewise syndetic.}
+A terminology that defies my intuition.
+
+\begin{lemma}\label{lem_strongly_syndetic}
+  The intersection of two strongly $H$-syndetic sets is strongly $H$-syndetic.
 \end{lemma}
 
 \begin{proof}
   We may assume that all sets mentioned below are subsets of $\mrX$.
-  Let ${\mr\D}$ and ${\mr\C}$ be strongly $H$-generic and let $C\subseteq H$ be an arbitrary finite set.
-  It suffices to prove that $\mrB=\cap\, C{\cdot}({\mr\C}\cap{\mr\D})$ is $H$-generic. 
+  Let ${\mr\D}$ and ${\mr\C}$ be strongly $H$-syndetic and let $C\subseteq H$ be an arbitrary finite set.
+  It suffices to prove that $\mrB=\cap\, C{\cdot}({\mr\C}\cap{\mr\D})$ is $H$-syndetic. 
   Clearly $\mrB={\mr\C'}\cap{\mr\D'}$, where ${\mr\C'}=\cap\, C{\cdot}{\mr\C}$ and ${\mr\D'}=\cap\, C{\cdot}{\mr\D}$.
-  Note that ${\mr\C'}$ and ${\mr\D'}$ are both strongly $H$-generic.
+  Note that ${\mr\C'}$ and ${\mr\D'}$ are both strongly $H$-syndetic.
   In particular $\mrX=\cup\,F{\cdot}\mr\D'$ for some finite $F\subseteq H$.
   Note that
   
@@ -721,23 +727,27 @@ Again, the same properties may be attributed to formulas and types when every co
   
   \ceq{}{=}{\cap\, F{\cdot}{\mr\C'}}
   
-  As ${\mr\C'}$ is strongly $H$-generic, $\cap\, F{\cdot}{\mr\C'}$ is $H$-generic.
-  Therefore $\cup\,F{\cdot}\mrB$ is also $H$-generic.
-  The $H$-genericity of $\mrB$ follows.
+  As ${\mr\C'}$ is strongly $H$-syndetic, $\cap\, F{\cdot}{\mr\C'}$ is $H$-syndetic.
+  Therefore $\cup\,F{\cdot}\mrB$ is also $H$-syndetic.
+  The $H$-syndeticity of $\mrB$ follows.
 \end{proof}
 
 Define the following type
 
-\ceq{\hfill\emph{${}^{\rm s}\kern-.2ex\gamma_H({\mr x})$}}{=}{\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is strongly }H\textrm{-generic}\}}
+\ceq{\hfill\emph{${}^{\rm s}\kern-.2ex\gamma_H({\mr x})$}}{=}{\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is strongly }H\textrm{-syndetic}\}.}
+
+Let $K=\Stab(Q)$ be the group introduced in Section~\ref{G0}.
+As $\gamma_K({\mr x})$ is $G$-invariant and closed under conjunction, we may conclude that $K$-syndetic sets are strongly $G$-syndetic.
+In symbols, $\gamma_K({\mr x})\subseteq{}^{\rm s}\kern-.2ex\gamma_G({\mr x})$.
 
 \begin{corollary}\label{corol_str_gen}
-  ${}^{\rm s}\kern-.2ex\gamma_H({\mr x})$ is finitely consistent, strongly $H$-generic, and $H$-invariant.
+  ${}^{\rm s}\kern-.2ex\gamma_H({\mr x})$ is finitely consistent, strongly $H$-syndetic, and $H$-invariant.
 \end{corollary}
 
 \begin{proof}
-  The strong $H$-genericity is an immediate consequence of Lemma~\ref{lem_strongly_generic}.
-  The finite consistency is a consequence of genericity. % , see Exercise~\ref{ex_gen_sat}.
-  Finally, $H$-invariance is clear because any translate of a strongly $H$-generic formula is also strongly $H$-generic.
+  The strong $H$-syndeticity is an immediate consequence of Lemma~\ref{lem_strongly_syndetic}.
+  The finite consistency is a consequence of syndeticity. % , see Exercise~\ref{ex_gen_sat}.
+  Finally, $H$-invariance is clear because any translate of a strongly $H$-syndetic formula is also strongly $H$-syndetic.
 \end{proof}
 
 \begin{corollary}\label{corol_q_w_pers}
@@ -745,37 +755,55 @@ Define the following type
   Then the following are equivalent
   \begin{itemize}
     \item [1.] ${}^{\rm s}\kern-.2ex\gamma_H({\mr x})\cup p({\mr x})$ is finitely consistent
-    \item [2.] $p({\mr x})$ is weakly $H$-persistent.
+    \item [2.] $p({\mr x})$ is weakly $H$-thick.
   \end{itemize}
 \end{corollary}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2. Similar to Corollary~\ref{corol_q_pers}.
   Let $\theta({\mr x})$ be a conjunction of formulas in $p({\mr x})$.
-  As ${}^{\rm s}\kern-.2ex\gamma_H({\mr x})\cup\{\theta({\mr x})\}$ is finitely consistent, it cannot be that $\neg\theta({\mr x})$ is strongly $H$-generic.
-  From Fact~\ref{fact_fip}, we obtain that $\neg\theta({\mr x})$ not being strongly $H$-generic is equivalent to $\theta({\mr x})$ being weakly $H$-persistent.
+  As ${}^{\rm s}\kern-.2ex\gamma_H({\mr x})\cup\{\theta({\mr x})\}$ is finitely consistent, it cannot be that $\neg\theta({\mr x})$ is strongly $H$-syndetic.
+  From Fact~\ref{fact_fip}, we obtain that $\neg\theta({\mr x})$ not being strongly $H$-syndetic is equivalent to $\theta({\mr x})$ being weakly $H$-thick.
 
   \ssf2$\IMP$\ssf1. 
-  Suppose $\mrD$ is strongly $H$-generic and $p({\mr x})\proves{\mr x}\notin\mrD$.
-  From Fact~\ref{fact_fip}, $\mrD$ is not weakly $H$-persistent, and $\neg$\ssf2 follows.
+  Suppose $\mrD$ is strongly $H$-syndetic and $p({\mr x})\proves{\mr x}\notin\mrD$.
+  From Fact~\ref{fact_fip}, $\mrD$ is not weakly $H$-thick, and $\neg$\ssf2 follows.
 \end{proof}
 
 % Note that 
 % %from Corollary~\ref{corol_str_gen} and~\ref{corol_q_w_pers} 
-% the $H$-translate of a weakly $H$-persistent type is weakly $H$-persistent.
+% the $H$-translate of a weakly $H$-thick type is weakly $H$-thick.
 
 \begin{exercise}
-  Show that $H$-generic sets need not be closed under intersection.
+  Prove that the following are equivalent
+  \begin{itemize}
+    \item[1.] $\D$ is weakly $H$-thick
+    \item[2.] $\D=\C\cap\B$ for some $H$-syndetic set $\B$ and some $H$-thick set $\C$.
+  \end{itemize}
+\end{exercise}
+
+\begin{exercise}
+  Prove that if $\C\cup\B$ is weakly $H$-thick then at least one of $\B$ and $\C$ is also weakly $H$-thick.
+\end{exercise}
+
+\begin{exercise}
+  Show that $H$-syndetic sets need not be closed under intersection.
   Hint: find inspiration in Example~\ref{ex_cyclic_order}.
 \end{exercise}
 
 \begin{exercise}
   Prove that the following are equivalent
   \begin{itemize}
-    \item [1.] $\D$ is weakly $H$-persistent
-    \item [2.] there is a non $H$-generic set $\C$ such that $\D\cup\C$ is generic.
+    \item [1.] $\D$ is weakly $H$-thick
+    \item [2.] there is a non $H$-syndetic set $\C$ such that $\D\cup\C$ is syndetic.
   \end{itemize}
 \end{exercise}
+
+\begin{question}
+  Let $H\trianglelefteq G$.
+  Does strongly $G$-syndetic implies strongly $H$-syndetic or vice versa?
+  In particular, does strongly $G$-syndetic implies $\Stab(Q)$-syndetic?
+\end{question}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -803,15 +831,15 @@ This defines a metric which is $H$-invariant by \ssf2.
 The \emph{diameter\/} of a set $\mrC\subseteq\mrX$ is the supremum of $d({\mr a},{\mr b})$ for ${\mr a},{\mr b}\in\mrC$.
 
 We are interested in sufficient conditions for $\mrX$ to have finite diameter.
-The notions introduced in Section~\ref{strong_genericity} offer some hint.
+The notions introduced in Section~\ref{strong_syndeticity} offer some hint.
 
 \begin{proposition}\label{prop_wpers_finite_diameter}
-  If $\mrX$ has a weakly persistent subset of finite diameter, then $\mrX$ itself has finite diameter.
+  If $\mrX$ has a weakly thick subset of finite diameter, then $\mrX$ itself has finite diameter.
 \end{proposition}
 
 \begin{proof}
-  Let $\mrC\subseteq\mrX$ be a weakly persistent set of diameter $n$.
-  Let $F\subseteq H$ be finite such that $\cup\,H{\cdot}\mrC$ is persistent.
+  Let $\mrC\subseteq\mrX$ be a weakly thick set of diameter $n$.
+  Let $F\subseteq H$ be finite such that $\cup\,H{\cdot}\mrC$ is thick.
   We claim that also $\cup\,H{\cdot}\mrC$ has finite diameter.
   Let ${\mr a}\in\mrC$ be arbitrary.
   Let $m$ be larger than $d(h{\mr a}, k{\mr a})$ for all $h,k,\in H$.
@@ -823,10 +851,10 @@ The notions introduced in Section~\ref{strong_genericity} offer some hint.
   \ceq{}{\le}{n+m+n.}
 
   This proves that $\cup\,H{\cdot}\mrC$ has finite diameter.
-  Therefore, without loss of generality, we may assume that $\mrC$ itself is persistent.
+  Therefore, without loss of generality, we may assume that $\mrC$ itself is thick.
   
   By the transitivity of the action, any two elements of $\mrX$ are of the form $h{\mr a}$, $k{\mr a}$ for some $h,k\in H$ and some ${\mr a}\in\mrC$.
-  By persistency, there are ${\mr c}\in\mrC\cap h\mrC$ and ${\mr d}\in\mrC\cap k\mrC$.
+  By thickness, there are ${\mr c}\in\mrC\cap h\mrC$ and ${\mr d}\in\mrC\cap k\mrC$.
   Then 
 
   \ceq{\hfill d(h{\mr a},\, k{\mr a})}{\le}{d(h{\mr a},\,{\mr c})\ +\ d({\mr c},\, {\mr d})\ +\ d({\mr d},\,k{\mr a})}
@@ -842,7 +870,7 @@ The notions introduced in Section~\ref{strong_genericity} offer some hint.
 \end{theorem}
 
 \begin{proof}
-  By Proposition~\ref{prop_wpers_finite_diameter}, it suffices to prove that ${\mr\X_n}$ is weakly persistent.
+  By Proposition~\ref{prop_wpers_finite_diameter}, it suffices to prove that ${\mr\X_n}$ is weakly thick.
   By Corollary~\ref{corol_q_w_pers} it suffices to show that for some $n$ the type ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ is finitely satisfiable in ${\mr\X_n}$.
   Suppose not.
   Let $\psi_n({\mr x})\in{}^{\rm s}\kern-.2ex\gamma_G$ be a formula that is not satisfied in $\mr\X_n$.
@@ -875,22 +903,22 @@ The notions introduced in Section~\ref{strong_genericity} offer some hint.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{A tamer landscape}\label{tame_landscape}
 
-Under suitable assumptions -- e.g.\@ stability, see Theorem~\ref{thm_persistent_finsat} -- some  notions introduced in this chapter coalesce, and we are left with a tamer landscape.
+Under suitable assumptions -- e.g.\@ stability, see Theorem~\ref{thm_thick_finsat} -- some  notions introduced in this chapter coalesce, and we are left with a tamer landscape.
 In general, we have the following.
 
 
 \begin{theorem}\label{thm_coalesce}
   Assume 
   \begin{itemize}
-    \item[1.] $H$-persistent $\BDelta({\grZ})$-sets are $H$-wide.
+    \item[1.] $H$-thick $\BDelta({\grZ})$-sets are $H$-wide.
   \end{itemize}\smallskip
 
   Then the following hold
   \begin{itemize}
-    \item[2.] $H$-generic $\BDelta({\grZ})$-sets are closed under intersection 
-    \item[3.] $H$-generic $\BDelta({\grZ})$-sets are strongly $H$-generic
-    \item[4.] weakly $H$-persistent $\BDelta({\grZ})$-sets are $H$-persistent
-    \item[5.] $H$-generic $\BDelta({\grZ})$-sets are $H$-wide.
+    \item[2.] $H$-syndetic $\BDelta({\grZ})$-sets are closed under intersection 
+    \item[3.] $H$-syndetic $\BDelta({\grZ})$-sets are strongly $H$-syndetic
+    \item[4.] weakly $H$-thick $\BDelta({\grZ})$-sets are $H$-thick
+    \item[5.] $H$-syndetic $\BDelta({\grZ})$-sets are $H$-wide.
   \end{itemize}
 \end{theorem}
 
@@ -898,23 +926,23 @@ In general, we have the following.
   Clearly \ssf2$\IFF$\ssf3$\IFF$\ssf4.
 
   \ssf1$\IMP$\ssf2.
-  Let $\mrC$ and $\mrD$ be $H$-generic $\BDelta({\grZ})$-sets.
-  Suppose for a contradiction that $\mrC\cap\mrD$ is not $H$-generic.
-  Then $\neg(\mrC\cap\mrD)$ is $H$-persistent.
-  By \ssf1 and Theorem~\ref{thm_generic_invariant2} there is a $H$-invariant type $p({\mr x})\in S_\Delta(\grZ)$ such that $p({\mr x})\proves{\mr x}\notin\mrC\cap\mrD$.
+  Let $\mrC$ and $\mrD$ be $H$-syndetic $\BDelta({\grZ})$-sets.
+  Suppose for a contradiction that $\mrC\cap\mrD$ is not $H$-syndetic.
+  Then $\neg(\mrC\cap\mrD)$ is $H$-thick.
+  By \ssf1 and Theorem~\ref{thm_syndetic_invariant2} there is a $H$-invariant type $p({\mr x})\in S_\Delta(\grZ)$ such that $p({\mr x})\proves{\mr x}\notin\mrC\cap\mrD$.
   By completeness either $p({\mr x})\proves{\mr x}\notin\mrC$ or $p({\mr x})\proves{\mr x}\notin\mrD$.
-  This is a contradiction because by Theorem~\ref{thm_generic_invariant} $p({\mr x})\proves{\mr x}\in\mrC$ and $p({\mr x})\proves{\mr x}\in\mrD$.
+  This is a contradiction because by Theorem~\ref{thm_syndetic_invariant} $p({\mr x})\proves{\mr x}\in\mrC$ and $p({\mr x})\proves{\mr x}\in\mrD$.
 
   \ssf1$\IMP$\ssf5.
-  By~\ssf{3}, because strongly $H$-generic sets are $H$-persistent.
+  By~\ssf{3}, because strongly $H$-syndetic sets are $H$-thick.
   %
   % \ssf4$\IMP$\ssf1.
   % Note that, by \ssf3, the type ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ coincides with $\gamma_G({\mr x})$, in particular $\gamma_G({\mr x})$ is finitely consistent.
-  % Let $\mrD$ be a $H$-persistent $\BDelta({\grZ})$-set.
+  % Let $\mrD$ be a $H$-thick $\BDelta({\grZ})$-set.
   % We show that $\gamma_G({\mr x})={}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ is finitely satisfiable in $\mrX\cap\mrD$.
-  % Then, by \ssf4 and Corollary~\ref{corol_q_w_pers}, any global extension of $\gamma_G({\mr x})\cup\{{\mr x}\in\mrD\}$ witness \ssf2 of Theorems~\ref{thm_generic_invariant2}.
+  % Then, by \ssf4 and Corollary~\ref{corol_q_w_pers}, any global extension of $\gamma_G({\mr x})\cup\{{\mr x}\in\mrD\}$ witness \ssf2 of Theorems~\ref{thm_syndetic_invariant2}.
   % Suppose not, then $\gamma_G({\mr x})\proves {\mr x}\notin\mrD$.
-  % Therefore $\neg\mrD$ is $H$-generic, contradicting the consistency of ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$.
+  % Therefore $\neg\mrD$ is $H$-syndetic, contradicting the consistency of ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$.
 \end{proof}
 
 % \begin{assumption}\label{notation_2}
@@ -925,7 +953,7 @@ In general, we have the following.
 %   Assume that conditions \ssf1 in Theorem~\ref{thm_coalesce} holds.
 %   Then the types $\gamma_H({\mr x})$ and ${}^{\rm s}\kern-.2ex\gamma_H({\mr x})$ coincide and are finitely consistent.
 %   Also, $H$-invariant global types exist.
-%   It is also worth mentioning that every positive Boolean combination of $H$-generic sets is $H$-generic.
+%   It is also worth mentioning that every positive Boolean combination of $H$-syndetic sets is $H$-syndetic.
 % \end{remark}
 
 % The landscape is further simplified when also the following condition obtains.
@@ -935,8 +963,8 @@ In general, we have the following.
 %   Assume \ssf1 of Theorem~\ref{thm_coalesce}.
 %   Then, when $H$ is stationary, for every $\mrD\in\BDelta(\grZ)$, the following are equivalent
 %   \begin{itemize}
-%     \item[1.] $\mrD$ is $H$-generic
-%     \item[2.] $\mrD$ is $H$-persistent.
+%     \item[1.] $\mrD$ is $H$-syndetic
+%     \item[2.] $\mrD$ is $H$-thick.
 %   \end{itemize}\smallskip
 % \end{fact}
 
@@ -1002,24 +1030,24 @@ Therefore it coincides with the orbit under the action of $G$.
 % \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
 % \def\ceq#1#2#3{\parbox[t]{6ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-% \begin{proposition}\label{prop_Ggeneric_persistent}
+% \begin{proposition}\label{prop_Gsyndetic_thick}
 %   Let $\mrD$ be a $\BDelta(\grZ)$-definable set.
 %   Assume that $\gamma_H({\mr x})$ is consistent.
 %   Then \ssf1$\IMP$\ssf2 holds, where
 %   \begin{itemize}
-%     \item [1.] $\mrD$ is $\grZ$-generic
+%     \item [1.] $\mrD$ is $\grZ$-syndetic
 %     \item [2.] ${\gr g}{\cdot}\mrD$ is $H$-wide for every ${\gr g}\in\grZ$.
 %   \end{itemize}
 % \end{proposition}
 
 % We will revisit this proposition under the assumption of stability and with $\Autf(\U^\Delta)$ for $H$~--~then the consistency of $\gamma_H({\mr x})$ is guaranteed, and also the converse implication holds.
-% See Theorem~\ref{thm_Ggeneric_persistent}.\vspace*{-0.5\baselineskip}
+% See Theorem~\ref{thm_Gsyndetic_thick}.\vspace*{-0.5\baselineskip}
 % %
 % \begin{proof}
 %   Let ${\gr g}$ be given.
-%   If $\mrD$ is $\grZ$-generic, then so is ${\gr g}{\cdot}\mrD$.
-%   Then ${\gr g}{\cdot}\mrD$ is, a fortiori, $G$-generic.
-%   Therefore \ssf2 follows from Proposition~\ref{prop_Ggeneric_Hpersistent}.
+%   If $\mrD$ is $\grZ$-syndetic, then so is ${\gr g}{\cdot}\mrD$.
+%   Then ${\gr g}{\cdot}\mrD$ is, a fortiori, $G$-syndetic.
+%   Therefore \ssf2 follows from Proposition~\ref{prop_Gsyndetic_Hthick}.
 % \end{proof}
 
 We also consider the action an arbitrary subgroup $H\le G$.

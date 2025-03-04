@@ -854,7 +854,7 @@ The following proposition says that in a stable theory with elimination of imagi
 % \end{proof}
 
 The following theorem presents a property of definability that seems to go in the opposite direction.
-It has an application in the proof of Theorem~\ref{thm_persistent_finsat}.
+It has an application in the proof of Theorem~\ref{thm_thick_finsat}.
 
 \begin{theorem}\label{thm_stability_definable_rovescio1}
   Let $\phi({\mr x}\,;{\gr z})$ be stable.
@@ -911,7 +911,7 @@ It is not necessary in the following.
 We adopt the notation and terminology of Chapter~\ref{actions}.
 The set $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ is fixed and assumed to be stable.
 The set $\grZ\subseteq\U^{\gr z}$ is arbitrary, while $\mrX$ will be specified in the context.
-As in Chapter~\ref{actions},  \emph{$G$\/} is a subgroup of $\Aut(\UDelta)$.
+As in Chapter~\ref{actions}, \emph{$G$\/} is a subgroup of $\Aut(\UDelta)$.
 We also write \emph{$H$\/} for $\Autf(\UDelta)$.
 Therefore $H$-invariance is Lascar invariance over $\varnothing$ in the language $\LDelta$.
 We stress that in this section $H$ is not required to be a subgroup of $G$.
@@ -932,14 +932,14 @@ We stress that in this section $H$ is not required to be a subgroup of $G$.
 The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coalesce} applies (however, note the requirement on $\mrX$).
 % The second part is shows that in some cases $H$ can be replaced by $K$.
 
-\begin{theorem}\label{thm_persistent_finsat}
+\begin{theorem}\label{thm_thick_finsat}
   Let $\Delta$ be stable.
   Let $\mrX=q(\U^{\mr x})$, where $q({\mr x})\subseteq\LDelta(\mrX,\grZ)$ be a type that is finitely satisfiable in every $\LDelta$-model (in particular $\mrX$ is $H$-invariant).
   Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent 
   \begin{itemize}
-    \item[1.] $\mrD$ is $H$-persistent
+    \item[1.] $\mrD$ is $H$-thick
     \item[2.] $\mrD$ is $H$-wide
-    % \item[3.] $\mrD$ is $K$-persistent 
+    % \item[3.] $\mrD$ is $K$-thick 
     % \item[4.] $\mrD$ is $K$-wide.\smallskip
   \end{itemize}\smallskip
 \end{theorem}
@@ -952,7 +952,7 @@ The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coales
 
   It suffices to prove that $q({\mr x})\cup\{\phi({\mr x}\,;{\gr b})\}$ is finitely satisfied in every $\LDelta$-model $M$.
   Then from Corollary~\ref{corol_stable_coheir_over_models} we obtain a type $p({\mr x})\in S_\Delta(\grZ)$ containing $\phi({\mr x}\,;{\gr b})$ such that $q({\mr x})\cup p({\mr x})$ is finitely  satisfied in every $\LDelta$-model $M$. 
-  As $p({\mr x})$ is $H$-persistent, $\mrD$ is $H$-wide by Theorem~\ref{thm_generic_invariant2}.
+  As $p({\mr x})$ is $H$-thick, $\mrD$ is $H$-wide by Theorem~\ref{thm_syndetic_invariant2}.
   
   Let $M$ be any  $\LDelta$-model.
   By invariance we can assume that $q({\mr x})\subseteq\LDelta(M)$.
@@ -976,49 +976,49 @@ The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coales
 % \end{proposition}
 
 % \begin{proof}
-%   Let $\mrD$ be a $\BDelta(\U)$-definable set that is weakly $H$- persistent.
-%   We prove that $\mrD$ is $H$- persistent.
-%   Pick a finite $H\subseteq\Autf(\U/A)$ such that $\cup\,H\,\mrD$ is $H$- persistent.
-%   By Theorem~\ref{thm_persistent_finsat}, the type $\{{\mr x}\in\cup\,H\,\mrD\}\cup q({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
+%   Let $\mrD$ be a $\BDelta(\U)$-definable set that is weakly $H$- thick.
+%   We prove that $\mrD$ is $H$- thick.
+%   Pick a finite $H\subseteq\Autf(\U/A)$ such that $\cup\,H\,\mrD$ is $H$- thick.
+%   By Theorem~\ref{thm_thick_finsat}, the type $\{{\mr x}\in\cup\,H\,\mrD\}\cup q({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
 %   Then, by Corollary~\ref{corol_stable_coheir_over_models} there is a $H$- invariant type $p({\mr x})\in S_\Delta(\U)$ containing ${\mr x}\in\cup\,H\,\mrD$ and finitely consistent with $q({\mr x})$.
 %   By completeness and invariance ${\mr x}\in\mrD$ is in $p({\mr x})$.
-%   Then $\mrD$ is persistent by Theorem~\ref{thm_generic_invariant}.
+%   Then $\mrD$ is thick by Theorem~\ref{thm_syndetic_invariant}.
 % \end{proof}
 
-\begin{proposition}\label{prop_stable_genericiffpersistent}
+\begin{proposition}\label{prop_stable_syndeticiffthick}
   Let $\Delta$ be stable.
   Let $\mrX=q(\U^{\mr x})$, where $q({\mr x})\subseteq\LDelta(\mrX,\grZ)$ is a type that is finitely satisfiable in every $\LDelta$-model and decides all $H$-invariant $\BDelta(\grZ)$-formulas.
   % Assume that $H$ acts transitively on $\mrX$.
   Then for every $\mrD\in\BDelta(\grZ)$, the following are equivalent
   \begin{itemize}
-    \item[1.] $\mrD$ is $H$-generic
-    \item[2.] $\mrD$ is $H$-persistent.
+    \item[1.] $\mrD$ is $H$-syndetic
+    \item[2.] $\mrD$ is $H$-thick.
   \end{itemize}\smallskip
 \end{proposition}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  By Theorems~\ref{thm_coalesce} and~\ref{thm_persistent_finsat}.
+  By Theorems~\ref{thm_coalesce} and~\ref{thm_thick_finsat}.
 
   \ssf2$\IMP$\ssf1.
-  Assume $\mrD$ is not $H$-generic.
-  Then $\neg\mrD$ is $H$-persistent.
-  Assume for a contradiction that also $\mrD$ is $H$-persistent.
-  By Theorem~\ref{thm_persistent_finsat} both $\mrD$ and $\neg\mrD$ are $H$-wide.
-  Then by Theorem~\ref{thm_generic_invariant2} both ${\mr x}\in\mrD$ and ${\mr x}\notin\mrD$ extend to $H$-invariant global $\BDelta(\grZ)$-types.
+  Assume $\mrD$ is not $H$-syndetic.
+  Then $\neg\mrD$ is $H$-thick.
+  Assume for a contradiction that also $\mrD$ is $H$-thick.
+  By Theorem~\ref{thm_thick_finsat} both $\mrD$ and $\neg\mrD$ are $H$-wide.
+  Then by Theorem~\ref{thm_syndetic_invariant2} both ${\mr x}\in\mrD$ and ${\mr x}\notin\mrD$ extend to $H$-invariant global $\BDelta(\grZ)$-types.
   This contradicts stationarity of the type $q({\mr x})$, see Proposition~\ref{prop_type_over_acl2} and Theorem~\ref{thm_stationarity}.
 \end{proof}
 
-\begin{corollary}\label{corol_stable_generic}
+\begin{corollary}\label{corol_stable_syndetic}
   Let $\Delta$ be stable.
   Let $\mrX=q(\U^{\mr x})$, where $q({\mr x})\subseteq\LDelta(\mrX,\grZ)$ is a type that is finitely satisfiable in every $\LDelta$-model and decides all $H$-invariant $\BDelta(\grZ)$-formulas.
-  Then for every $\mrD\in\BDelta(\grZ)$, either $\mrD$ or $\neg\mrD$ is $H$-generic.
+  Then for every $\mrD\in\BDelta(\grZ)$, either $\mrD$ or $\neg\mrD$ is $H$-syndetic.
 \end{corollary}
 
 \begin{proof}
-  By Theorem~\ref{thm_stationarity} there is a type $p({\mr x})\in S_\Delta(\grZ)$ consistent with $q({\mr x})$ that is $H$-invariant and therefore persistent.
-  Hence, by Corollary~\ref{corol_def_mu}, $\mrD$ and $\neg\mrD$ are not both $H$-generic.
-  If $\mrD$ is not $H$-generic then $\neg\mrD$ is $H$-persistent and, by Proposition~\ref{prop_stable_genericiffpersistent}, $H$-generic.
+  By Theorem~\ref{thm_stationarity} there is a type $p({\mr x})\in S_\Delta(\grZ)$ consistent with $q({\mr x})$ that is $H$-invariant and therefore thick.
+  Hence, by Corollary~\ref{corol_def_mu}, $\mrD$ and $\neg\mrD$ are not both $H$-syndetic.
+  If $\mrD$ is not $H$-syndetic then $\neg\mrD$ is $H$-thick and, by Proposition~\ref{prop_stable_syndeticiffthick}, $H$-syndetic.
 \end{proof}
 
 \begin{theorem}\label{thm_FER}
@@ -1062,13 +1062,13 @@ The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coales
   Follows immediately from stationarity.
 \end{proof}
 
-\begin{theorem}\label{thm_Ggeneric_persistent}
+\begin{theorem}\label{thm_Gsyndetic_thick}
   Let $\Delta$ be stable.
   Let $\mrX=t(\U^{\mr x})$, where $t({\mr x})\in\LDelta\mbox{-}S(\varnothing)$.
   Assume $G$ acts transitively on $\mrX$.
   Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
   \begin{itemize}
-    \item [1.] $\mrD$ is $G$-generic
+    \item [1.] $\mrD$ is $G$-syndetic
     \item [2.] $\mrD$ is $H$-wide.
   \end{itemize}\smallskip
 \end{theorem}
@@ -1076,23 +1076,23 @@ The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coales
 \begin{proof} 
   \ssf1$\IMP$\ssf2.
   By stability, there exist a type $p({\mr x})\in S_\Delta(\grZ)$ that is $H$-invariant.
-  Then $\gamma_H({\mr x})$ is consistent and Proposition~\ref{prop_Ggeneric_Hpersistent1} applies.
+  Then $\gamma_H({\mr x})$ is consistent and Proposition~\ref{prop_Gsyndetic_Hthick1} applies.
   
   \ssf2$\IMP$\ssf1.
   % Negate \ssf1.
-  % Then $\neg\mrD$ is $G$-persistent.
+  % Then $\neg\mrD$ is $G$-thick.
   By \ssf2, there is an $H$-invariant type $p({\mr x})\in S_\Delta(\grZ)$ consistent with ${\mr x}\in\mrD$.
   Let $q({\mr x})$ be the set of $\Phi$-formulas that are consequence of $p({\mr x})$, where $\Phi$ is as in Definition~\ref{def_G0}.
-  Then $\mrD$ is $H$-wide relative to $q(\U^{\mr x})$ and, by Proposition~\ref{prop_stable_genericiffpersistent}, $H$-generic relative to $q(\U^{\mr x})$.
-  For every $g\in G$ we also have that $g{\cdot}\mrD$ is $H$-generic relative to $g{\cdot}q(\U^{\mr x})$.
-  Therefore $\mrD$ is also $H$-generic relative to $g{\cdot}q(\U^{\mr x})$.
+  Then $\mrD$ is $H$-wide relative to $q(\U^{\mr x})$ and, by Proposition~\ref{prop_stable_syndeticiffthick}, $H$-syndetic relative to $q(\U^{\mr x})$.
+  For every $g\in G$ we also have that $g{\cdot}\mrD$ is $H$-syndetic relative to $g{\cdot}q(\U^{\mr x})$.
+  Therefore $\mrD$ is also $H$-syndetic relative to $g{\cdot}q(\U^{\mr x})$.
   The $G$-orbit of $q(\U^{\mr x})$ has small cardinality and covers $\mrX$.
   Therefore there is a set $C\subseteq G$ of small cardinality such that $\cup\,C{\cdot}\mrD$ covers $t(\U^{\mr x})$.
   By compactness, we can take $C$ finite.
   % \ssf1$\IMP$\ssf2.
   % Let ${\gr g}$ be given.
   % By stability, there is a type $p({\mr x})\in L'\mbox{-}S(\grZ)$ that is invariant, and therefore definable, over $L'\mbox{-}\acl^\eq\varnothing$.
-  % If $\phi({\mr x}\,;{\gr g})$ is $\grZ$-generic, $p({\mr x})\proves\phi({\mr x}\,;{\gr h}\,{\gr g})$ for some ${\gr h}\in\grZ$.
+  % If $\phi({\mr x}\,;{\gr g})$ is $\grZ$-syndetic, $p({\mr x})\proves\phi({\mr x}\,;{\gr h}\,{\gr g})$ for some ${\gr h}\in\grZ$.
   % Then $\phi({\mr x}\,;{\gr g})\in{\gr h^{-1}}p$.
   % We claim that ${\gr h^{-1}}p({\mr x})$ is also definable over $L'\mbox{-}\acl^\eq\varnothing$.
   % Indeed, it suffices to note that ${\gr\D_{{h^{-1}}p,\phi}}={\gr h^{-1}}\,{\gr\D_{p,\phi}}$ and that if ${\gr\D_{p,\phi}}\in L'\mbox{-}\acl^\eq\varnothing$ then also ${\gr h^{-1}}\,{\gr\D_{p,\phi}}\in L'\mbox{-}\acl^\eq\varnothing$.
@@ -1101,13 +1101,13 @@ The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coales
   % This shows that there is $H$-invariant type containing $\phi({\mr x}\,;{\gr g})$.
   % As the finite satisfiability in $\mrX$ is evident, \ssf1 follows.
   % \ssf3$\IMP$\ssf1.
-  % Let ${\gr g}$ be such that $\phi({\mr x}\,;{\gr g})$ is not $H$-persistent.
-  % Then $\neg\phi({\mr x}\,;{\gr g})$ is $H$-generic.
-  % Then it is also  $\grZ$-generic.
-  % The $\grZ$-genericity of $\neg\phi({\mr x}\,;{\gr 1})$ follows.
+  % Let ${\gr g}$ be such that $\phi({\mr x}\,;{\gr g})$ is not $H$-thick.
+  % Then $\neg\phi({\mr x}\,;{\gr g})$ is $H$-syndetic.
+  % Then it is also  $\grZ$-syndetic.
+  % The $\grZ$-syndeticity of $\neg\phi({\mr x}\,;{\gr 1})$ follows.
 \end{proof}
 
-Finally we prove that $Q=P$, where $Q$ is as defined in Definition~\ref{def_Q} and $P$ is as in Theorem~\ref{thm_Ggeneric_persistent}.
+Finally we prove that $Q=P$, where $Q$ is as defined in Definition~\ref{def_Q} and $P$ is as in Theorem~\ref{thm_Gsyndetic_thick}.
 In particular $H=\Stab(P)=\Stab(Q)$.
 
 \begin{theorem}\label{thm_P=Q}
@@ -1118,7 +1118,7 @@ In particular $H=\Stab(P)=\Stab(Q)$.
 
 \begin{proof}
   Let $p({\mr x})\in P$.
-  All formulas in $p({\mr x})$ are $H$-wide, and therefore $G$-generic.
+  All formulas in $p({\mr x})$ are $H$-wide, and therefore $G$-syndetic.
   As $p({\mr x})$ complete, $p({\mr x})\in Q$.
   Let $q({\mr x})\in Q$ be given.
   By Theorem~\ref{thm_FER}, every formula in $q({\mr x})$ is $H$-wide, then $q({\mr x})$ is consistent with some $p({\mr x})\in P$.
@@ -1146,26 +1146,26 @@ Then, as $\grZ\le\Aut(\UDelta)$, all elements of $\mrX$ have the same $\LDelta$-
   Assume that $\grZ$ acts transitively.
   Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
   \begin{itemize}
-  \item [1.] $\mrD$ is $\grZ$-generic
-  \item [2.] $\mrD$ is $G$-generic
+  \item [1.] $\mrD$ is $\grZ$-syndetic
+  \item [2.] $\mrD$ is $G$-syndetic
   \item [3.] $\mrD$ is $H$-wide.
   \end{itemize}\smallskip
 \end{theorem}
 
 \begin{proof} 
   \ssf1$\IMP$\ssf2.
-  Because $\grZ$-generic implies $G$-generic.
+  Because $\grZ$-syndetic implies $G$-syndetic.
   
   \ssf2$\IMP$\ssf3.
-  By Theorem~\ref{thm_Ggeneric_persistent}, which applies because, by transitivity, the elements of $\mrX$ have the same $\LDelta$-type.
+  By Theorem~\ref{thm_Gsyndetic_thick}, which applies because, by transitivity, the elements of $\mrX$ have the same $\LDelta$-type.
 
   \ssf3$\IMP$\ssf1.
-  After replacing $G$ by $\grZ$, we may repeat the proof of \ssf2$\IMP$\ssf1 of Theorem~\ref{thm_Ggeneric_persistent}.
+  After replacing $G$ by $\grZ$, we may repeat the proof of \ssf2$\IMP$\ssf1 of Theorem~\ref{thm_Gsyndetic_thick}.
   %
   % \ssf1$\IMP$\ssf2.
   % Let ${\gr g}$ be given.
   % By stability, there is a type $p({\mr x})\in L'\mbox{-}S(\grZ)$ that is invariant, and therefore definable, over $L'\mbox{-}\acl^\eq\varnothing$.
-  % If $\phi({\mr x}\,;{\gr g})$ is $\grZ$-generic, $p({\mr x})\proves\phi({\mr x}\,;{\gr h}\,{\gr g})$ for some ${\gr h}\in\grZ$.
+  % If $\phi({\mr x}\,;{\gr g})$ is $\grZ$-syndetic, $p({\mr x})\proves\phi({\mr x}\,;{\gr h}\,{\gr g})$ for some ${\gr h}\in\grZ$.
   % Then $\phi({\mr x}\,;{\gr g})\in{\gr h^{-1}}p$.
   % We claim that ${\gr h^{-1}}p({\mr x})$ is also definable over $L'\mbox{-}\acl^\eq\varnothing$.
   % Indeed, it suffices to note that ${\gr\D_{{h^{-1}}p,\phi}}={\gr h^{-1}}\,{\gr\D_{p,\phi}}$ and that if ${\gr\D_{p,\phi}}\in L'\mbox{-}\acl^\eq\varnothing$ then also ${\gr h^{-1}}\,{\gr\D_{p,\phi}}\in L'\mbox{-}\acl^\eq\varnothing$.
@@ -1174,19 +1174,19 @@ Then, as $\grZ\le\Aut(\UDelta)$, all elements of $\mrX$ have the same $\LDelta$-
   % This shows that there is $H$-invariant type containing $\phi({\mr x}\,;{\gr g})$.
   % As the finite satisfiability in $\mrX$ is evident, \ssf1 follows.
   % \ssf3$\IMP$\ssf1.
-  % Let ${\gr g}$ be such that $\phi({\mr x}\,;{\gr g})$ is not $H$-persistent.
-  % Then $\neg\phi({\mr x}\,;{\gr g})$ is $H$-generic.
-  % Then it is also  $\grZ$-generic.
-  % The $\grZ$-genericity of $\neg\phi({\mr x}\,;{\gr 1})$ follows.
+  % Let ${\gr g}$ be such that $\phi({\mr x}\,;{\gr g})$ is not $H$-thick.
+  % Then $\neg\phi({\mr x}\,;{\gr g})$ is $H$-syndetic.
+  % Then it is also  $\grZ$-syndetic.
+  % The $\grZ$-syndeticity of $\neg\phi({\mr x}\,;{\gr 1})$ follows.
 \end{proof}
 
-Corollary~\ref{corol_stable_generic} becomes the following.,
+Corollary~\ref{corol_stable_syndetic} becomes the following.,
 
-\begin{corollary}\label{corol_genericornotgeneric}
+\begin{corollary}\label{corol_syndeticornotsyndetic}
   Let $\Delta$ be stable.
   Assume that $\grZ$ acts transitively.
   Let $\mrD\in\BDelta(\grZ)$.
-  Then $\mrD$ or $\neg\mrD$ is $H$-generic.
+  Then $\mrD$ or $\neg\mrD$ is $H$-syndetic.
 \end{corollary}
 
 % \begin{proof}
@@ -1195,7 +1195,7 @@ Corollary~\ref{corol_stable_generic} becomes the following.,
 
 \begin{theorem}\label{thm_FER2}
   Let $\Delta$ be stable.
-  Let $\mrX=t(\U^{\mr x})$, where $t({\mr x})\in\LDelta\mbox{-}S(\varnothing)$.
+  Assume that $\grZ$ acts transitively.
   Define \smallskip
   
   \ceq{\hfill P}{=}{\big\{p({\mr x})\in S_\Delta(\grZ)\ :\ p({\mr x})\textrm{ is $H$-invariant}\big\}}. \smallskip
@@ -1215,7 +1215,7 @@ Corollary~\ref{corol_stable_generic} becomes the following.,
 \begin{proposition}
   Let $\Delta$ be stable.
   Assume that the action of $\grZ$ is transitive.
-  Then every $\grZ$-generic type $q({\mr x})\in S_\Delta(\grZ)$ is fixed by any ${\gr g}\in\gr\Z^0$.
+  Then every $\grZ$-syndetic type $q({\mr x})\in S_\Delta(\grZ)$ is fixed by any ${\gr g}\in\gr\Z^0$.
 \end{proposition}
 
 \begin{proof}
@@ -1233,7 +1233,7 @@ When $\Delta$ is stable, it is a $\BDelta(\mrX)$-type-definable set (definable, 
   Assume that $\mrX=\grZ$.
   Then\smallskip
   
-  \ceq{\hfill{\gr\Z^0}}{=}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\LDelta(\grZ)\textrm{-definable }\grZ\textrm{-generic set }\mrD\big\}}.
+  \ceq{\hfill{\gr\Z^0}}{=}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\LDelta(\grZ)\textrm{-definable }\grZ\textrm{-syndetic set }\mrD\big\}}.
   
 \end{theorem}
 
@@ -1259,9 +1259,9 @@ When $\Delta$ is stable, it is a $\BDelta(\mrX)$-type-definable set (definable, 
 % \end{theorem}
 
 % \begin{proof}
-%   By Theorem~\ref{thm_Ggeneric_persistent}  
+%   By Theorem~\ref{thm_Gsyndetic_thick}  
 
-%   \ceq{\hfill{\gr\Z^0}}{\subseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\BDelta(\grZ)\textrm{-definable }H\textrm{-persistent set }\mrD\big\}}
+%   \ceq{\hfill{\gr\Z^0}}{\subseteq}{\big\{{\gr g}\in\grZ\ :\ \mrD\cap{\gr g}{\cdot}\mrD\neq\varnothing\textrm{ for every }\BDelta(\grZ)\textrm{-definable }H\textrm{-thick set }\mrD\big\}}
 
 %   and, by Proposition~\ref{prop_stabilizer1} 
   

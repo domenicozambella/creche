@@ -4,11 +4,11 @@
 
 \def\ceq#1#2#3{\parbox[b]{20ex}{$\displaystyle #1$}\parbox[b]{4ex}{\hfil$#2$}$\displaystyle #3$}
 
-We introduce \textit{Fra\"iss\'e limits}, also known as \textit{homogeneous-universal\/} or \textit{generic\/} structures, which here we call \textit{rich\/} models, after Poizat.
+We introduce \textit{Fra\"iss\'e limits}, also known as \textit{homogeneous-universal\/} or \textit{syndetic\/} structures, which here we call \textit{rich\/} models, after Poizat.
 Rich models generalize the examples in Chapters~\ref{relational} and the many more to come.
 
 Elimination of quantifiers is briefly discussed at the end of Section~\ref{rich}.
-For the time being we identify  quantifier elimination with the property that says that all partial isomorphisms are elementary maps.
+For the time being we identify  quantifier elimination with the property that says that all partial embeddings are elementary maps.
 Proofs are easier with this notion in mind.
 The equivalence of this property with its syntactic counterpart is only proved in Chapter~\ref{elimination}, when the reader is more familiar with arguments of compactness.
 
@@ -30,7 +30,7 @@ The second is the class of \emph{morphisms\/} and contains (partial) maps betwee
 We require that the identity maps are morphisms and that composition of two morphism is again morphism.
 This makes $\M$ a well-defined category.
 
-For example, $\M$ could consist of all models of some theory $T_0$ and of all partial isomorphisms between these.
+For example, $\M$ could consist of all models of some theory $T_0$ and of all partial embeddings between these.
 Alternatively, as morphisms we could take elementary maps between models.
 On a first reading the reader may assume $\M$ is as in one of the two examples above.
 In the general case we need to make some assumptions on $\M$.
@@ -68,8 +68,8 @@ We say that $N$ is \emph{rich\/} if it is $\lambda$-rich for $\lambda=|N|$.
 When $\M_{\rm ob}=\Mod(T_0)$ for some theory $T_0$ and $\M_{\rm hom}$ is clear from the context, we say \emph{rich model of $T_0$.}
 \end{definition}
 
-Rich models are also called \textit{Fra\"iss\'e limits} or \textit{homogeneous-universal\/} for a reason that will soon be clear; they are also called \textit{generic}.
-Unfortunately these names are either too long or too generic, so we opt for the less common term \textit{rich\/} that was proposed by Poizat.
+Rich models are also called \textit{Fra\"iss\'e limits} or \textit{homogeneous-universal\/} for a reason that will soon be clear; they are also called \textit{syndetic}.
+Unfortunately these names are either too long or too syndetic, so we opt for the less common term \textit{rich\/} that was proposed by Poizat.
 
 The following two notions are closely connected with richness.
 
@@ -79,13 +79,13 @@ We say that a model $N$ is \emph{$\lambda$-universal\/} if for every model $M$ o
 We say that a model $N$ is \emph{$\lambda$-homogeneous\/} if every $k:N\to N$ of cardinality $<\lambda$ extends to a bijective morphism $h:N\isomap N$ (an automorphism when \ssf{c4} holds).
 
 Note that the larger $\M_{\rm hom}$, the stronger notion of homogeneity.
-When  $\M_{\rm hom}$ contains all partial isomorphisms between models (the largest class of morphisms considered here), it is common to say \emph{$\lambda$-ultra\-homo\-geneous\/} for $\lambda$-homogeneous.
+When  $\M_{\rm hom}$ contains all partial embeddings between models (the largest class of morphisms considered here), it is common to say \emph{$\lambda$-ultra\-homo\-geneous\/} for $\lambda$-homogeneous.
 
 As above, when $\lambda=|N|$ we say \emph{universal}, \emph{homogeneous} and \emph{ultrahomogeneous}.
 \end{definition}
 
-In Section~\ref{dlo} we implicitly used $\M_{\rm ob}=\Mod(T_{\rm lo})$ and partial isomorphisms as $\M_{\rm hom}$.
-In Section~\ref{randomgraph} we used $\M_{\rm ob}=\Mod(T_{\rm gph})$ and again partial isomorphisms as $\M_{\rm hom}$.
+In Section~\ref{dlo} we implicitly used $\M_{\rm ob}=\Mod(T_{\rm lo})$ and partial embeddings as $\M_{\rm hom}$.
+In Section~\ref{randomgraph} we used $\M_{\rm ob}=\Mod(T_{\rm gph})$ and again partial embeddings as $\M_{\rm hom}$.
 Corollary~\ref{coroll_ordinericco} proves that every model of $T_{\rm dlo}$ is $\omega$-rich.
 Corollary~\ref{coroll_graforicco} claims the analogous fact for $T_{\rm rg}$.
 
@@ -121,7 +121,7 @@ Then every morphism $k:M\imp N$ of cardinality $<\lambda$ extends to an isomorph
 \end{theorem}
 
 \begin{proof}
-When $\lambda=\omega$, we can take the proof of Theorem~\ref{thm_zigzagcantor} and replace \textit{partial isomorphism\/} by \textit{morphism\/} and the references to Lemma~\ref{lem_ordinericco} by references to Proposition~\ref{prop_6.1}.
+When $\lambda=\omega$, we can take the proof of Theorem~\ref{thm_zigzagcantor} and replace \textit{partial embedding\/} by \textit{morphism\/} and the references to Lemma~\ref{lem_ordinericco} by references to Proposition~\ref{prop_6.1}.
 As for uncountable $\lambda$, we only need to extend the construction through limit stages.
 By \ssf{c7} we can simply take the union.
 \end{proof}
@@ -160,7 +160,7 @@ This case is dealt with in Theorem~\ref{thm_morphism_rich_elementary}, arguably 
 
 \begin{exercise}
 Let $N$ be the structure obtained by adding to a countable random graph an isolated point.
-Show that $N$ is homogeneous if morphisms are elementary maps, but that this is not true if morphisms are simply partial isomorphisms.
+Show that $N$ is homogeneous if morphisms are elementary maps, but that this is not true if morphisms are simply partial embeddings.
 \end{exercise}
 
 \begin{exercise}
@@ -257,7 +257,7 @@ Here we report without proof the following theorem.
 The following are equivalent
 \begin{itemize}
 \item[1.] $T$ has elimination of quantifiers
-\item[2.] every partial isomorphism between models of $T$ is an elementary map.
+\item[2.] every partial embedding between models of $T$ is an elementary map.
 \end{itemize}
 \end{theorem}
 
@@ -273,7 +273,7 @@ So, we conclude this section with an example of this phenomenon in an almost tri
 \begin{example}\label{ex_infiniti_colori}
 Let $L$ contain a unary predicate $r_n$ for every positive integer $n$.
 The theory $T_0$ contains the axioms $\neg\E x\, \big[r_n(x)\wedge r_m(x)\big]$ for $n\neq m$ and $\E^{\le n}x\,r_n(x)$ for every $n$.
-Work in the category of models of $T_0$ and partial isomorphisms.
+Work in the category of models of $T_0$ and partial embeddings.
 Let $T_1$ be the theory that extends $T_0$ with the axioms $\E^{= n} x\, r_n(x)$ for every  $n$.
 Let $q(x)$ be the type $\big\{\neg r_n(x):n\in\omega\big\}$.
 There are models of $T_1$ that do not realize $q(x)$, hence $T_1$ is not $\omega$-categorical.
@@ -297,31 +297,46 @@ It is also easy to verify that every uncountable model of $T_1$ is rich and cons
 % \end{exercise}
 
 \begin{exercise}\label{ex_dlo+eqiovalenza}
-The language contains only the binary relations $<$ and $e$.
-The theory $T_0$ says that $<$ is a strict linear order and that $e$ is an equivalence relation.
-Let $\M$ consists of models of $T_0$ and partial isomorphisms.
-Do rich models exist? Can we axiomatize their theory? If so, does it have elimination of quantifiers? Is it $\lambda$-categorical for some $\lambda$?
+  The language contains only the binary relations $<$ and $e$.
+  The theory $T_0$ says that $<$ is a strict linear order and that $e$ is an equivalence relation.
+  Let $\M$ consists of models of $T_0$ and partial embeddings as morphisms.
+  Do rich models exist? Can we axiomatize their theory? If so, does it have elimination of quantifiers? Is it $\lambda$-categorical for some $\lambda$?
 \end{exercise}
 
 \begin{exercise}\label{ex_2bin_equivalenze}
-The language contains only two binary relations.
-The theory $T_0$ says that they are equivalence relations.
-Let $\M$ consists of models of $T_0$ and partial isomorphisms.
-Do rich models exist? Can we axiomatize their theory? If so, does it have elimination of quantifiers? Is it $\lambda$-categorical for some $\lambda$?
+  The language contains only two binary relations.
+  The theory $T_0$ says that they are equivalence relations.
+  Let $\M$ consists of models of $T_0$ and partial embeddings as morphisms.
+  Do rich models exist? Can we axiomatize their theory? If so, does it have elimination of quantifiers? Is it $\lambda$-categorical for some $\lambda$?
 \end{exercise}
 
 \begin{exercise}
-In the language of graphs let $T_0$ say that there are no cycles (equivalently, there is at most one path between any two nodes).
-In combinatorics these graphs are called \textit{forests}, and their connected components are called \textit{trees}.
-Let $\M$ consists of models of $T_0$ and partial isomorphisms.
-Do rich models exist? Can we axiomatize their theory? If so, does it have elimination of quantifiers? Is it $\lambda$-categorical for some $\lambda$?
+  The language contains a binary relation $r$ and countably many unary relation symbols $r_i$.
+  The theory $T_0$ says that $r$ is a graph and that the $r_i$ are mutually exclusive.
+  Let $\M$ consists of models of $T_0$ and partial embeddings as morphisms.
+  Axiomatize the theory $T_1$ of the rich models.
+  Are all countable models of $T_1$ rich?
+  Does $T_1$ have quantifier elimination?
 \end{exercise}
+
+\begin{exercise}
+  Let $T_0$ be the theory axiomatized by $T_{\rm lo}$ and the axiom that says that every point has an immediate successor and an immediate predecessor.
+  Let $\M$ consists of models of $T_{\rm lo}$ and, as morphisms, maps that preserve the distance between points.
+  Describe a countable rich model and the theory of rich models.
+\end{exercise}
+
+% \begin{exercise}
+% In the language of graphs let $T_0$ say that there are no cycles (equivalently, there is at most one path between any two nodes).
+% In combinatorics these graphs are called \textit{forests}, and their connected components are called \textit{trees}.
+% Let $\M$ consists of models of $T_0$ and partial embeddings.
+% Do rich models exist? Can we axiomatize their theory? If so, does it have elimination of quantifiers? Is it $\lambda$-categorical for some $\lambda$?
+% \end{exercise}
 
 % \begin{exercise}
 % Assuming Theorem~\ref{thm_tutteleimmersionisonoelementari_QE}, prove that the following are equivalent
 % \begin{itemize}
 %     \item[1.] $T$ has elimination of quantifiers
-%     \item[2.] every \textit{finite\/} partial isomorphism between models $T$ is an elementary map.
+%     \item[2.] every \textit{finite\/} partial embedding between models $T$ is an elementary map.
 % \end{itemize}
 % \end{exercise}
 
@@ -563,7 +578,7 @@ Let $T$ be the theory that contains $T_0$ and the axioms
 We claim that $T$ is consistent.
 In fact, $\QQ$ is a model of $T$ if we interpret $r_n$ in the set of rationals of the form $k\cdot p_n^{-i}$, where $p_n$ is the $n$-th prime, $i\in\ZZ$ is positive, and $k\in\ZZ$ is coprime with $p_n$.
 
-For the rest of this section $\M$ is the c.o.m.\@ with $\M_{\rm ob}=\Mod(T_0)$ and $\M_{\rm hom}$ the class of partial isomorphisms between models.
+For the rest of this section $\M$ is the c.o.m.\@ with $\M_{\rm ob}=\Mod(T_0)$ and $\M_{\rm hom}$ the class of partial embeddings between models.
 
 \begin{proposition}
 For every model $N$ and $a,b\in N$ define 
@@ -587,7 +602,7 @@ The proof of implication \ssf{1}$\IMP$\ssf{2} is left to the reader.
 As for \ssf{2}$\IMP$\ssf{1}, we adapt the proof of Lemma~\ref{lem_ordinericco}.
 We assume for simplicity that $A\neq\varnothing\neq B$, the reader may easily adapt the argument to the general case.
 Suppose first that $M\models r_n(a_i)$ for some $n$.
-As the $r_n$ are mutually exclusive, for $h_{i+1}$ to be a partial isomorphism it sufficient to find $c\in N$ such that $h_i[A]<c<h_i[B]$ and $N\models r_n(c)$.
+As the $r_n$ are mutually exclusive, for $h_{i+1}$ to be a partial embedding it sufficient to find $c\in N$ such that $h_i[A]<c<h_i[B]$ and $N\models r_n(c)$.
 This we can do by axiom \ssf{d$_{n}$}.
 It could also be the case that  $M\models \neg r_n(a_i)$ for every $n$.
 In this case the required $c$ is any witness of $M\models \E x\, p_{a,b}(x)$ with $h_i[A]=a$ and $h_i[B]=b$
