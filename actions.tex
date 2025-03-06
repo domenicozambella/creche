@@ -26,7 +26,8 @@ We revisit the notions of invariance introduceted in Chapter~\ref{invariant} in 
 Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}(\U)$.
 Given any \emph{$\mrX$\/} $\subseteq\U^{\mr x}$ and \emph{$\grZ$\/} $\subseteq\U^{\gr z}$, we define the structure \emph{$\UDelta$\/} $=\big\<\mrX\,;\grZ\big\>$.
 This is a 2-sorted structure whose signature  \emph{$\LDelta$\/} contains relation symbols for every formula $\phi({\mr x}\,;{\gr z})\in\Delta$.
-As there is little risk of confusion, these relations symbols are also denoted by $\phi({\mr x}\,;{\gr z})$, and we identify $\LDelta$ with a subset of $L$. We write \emph{$G$\/} for some fixed subgroup of $\Aut(\UDelta)$ and $H$ is some arbitrary subgroup of $G$.
+As there is little risk of confusion, these relations symbols are also denoted by $\phi({\mr x}\,;{\gr z})$, and we identify $\LDelta$ with a subset of $L$. 
+%We write \emph{$G$\/} for some fixed subgroup of $\Aut(\UDelta)$ and $H$ is some arbitrary subgroup of $G$.
 \end{assumption}
 
 When $\mrX$ and $\grZ$ are type definable and $\Delta$ is small, $\UDelta$ is a saturated structure.
@@ -47,7 +48,7 @@ In this chapter the types in $S_\Delta(\grZ)$ are required to be finitely consis
 
 When $p({\mr x})\subseteq\LDelta(\grZ)$ and ${\mrD}\subseteq\mrX$ we write $p({\mr x})\proves{\mr x}\in{\mrD}$ if the inclusion $\psi(\mrX)\subseteq{\mrD}$ holds for some $\psi({\mr x})$ that is conjunctions of formulas in $p({\mr x})$.
 
-Let \emph{$H$\/} $\le G$.
+Let \emph{$H$\/} $\le\Aut(\UDelta)$.
 We say that $\grD\subseteq\grZ$ is \emph{invariant\/} under the action of $H$, or \emph{$H$-invariant,} if  $\grD$ is fixed setwise by $H$.
 That is, $g\,\grD=\grD$ for every $g\in H$.
 Yet in other words, if
@@ -88,7 +89,7 @@ The terminology above is taken from topological dynamics.
 In~\cite{CK} the authors write \textit{quasi-non-dividing\/} for \textit{thick\/} under the action of $\Aut(\U/A)$.
 Their terminology has good motivations, but it would be a mouthful if adapted to our context. 
 
-Notation: for $\mrD\subseteq\mrX$ and $C\subseteq G$ we write \emph{$C{\cdot}\mrD$\/} for $\{h{\cdot}\mrD: h\in C\}$.
+Notation: for $\mrD\subseteq\mrX$ and $C\subseteq H$ we write \emph{$C{\cdot}\mrD$\/} for $\{h{\cdot}\mrD: h\in C\}$.
 
 In this chapter many proofs require some juggling with negations as epitomized by the following fact.
 
@@ -107,6 +108,25 @@ In this chapter many proofs require some juggling with negations as epitomized b
     \item[2.] $\varnothing\ \neq\ \mrX\,\cap\,\big(\cap\, C{\cdot}\neg{\mr\D}\big)$ for every finite $C\subseteq H$.\qedhere
   \end{itemize} 
 \end{proof}
+
+The following characterization is also useful (an is sometimes taken as the definition).
+
+\begin{corollary}\label{fact_fip2}
+  The following are equivalent
+  \begin{itemize}
+    \item[1.] $\mrD$ is $H$-thick
+    \item[2.] $\mrD\cap\mrC\neq\varnothing$ for every $H$-syndetic set $\mrC$.
+  \end{itemize}
+\end{corollary}
+
+\begin{proof}
+  \ssf1$\IMP$\ssf2. 
+  If $\mrD$ is $H$-thick and $\mrD\subseteq\neg\mrC$ implies that $\neq\mrC$ is also $H$-thick, then $\mrC$ cannot be $H$-syndetic.
+
+  \ssf2$\IMP$\ssf1. 
+  If $\mrD$ is not $H$-thick then $\mrD$ is $H$-syndetic then $\neg$\ssf2.
+\end{proof}
+
 
 Define the following type
 
@@ -349,55 +369,57 @@ A type is $H$-wide if every conjunction of formulas in the type is $H$-wide.
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{12ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
+Let \emph{$G$\/} $\le\Aut(\UDelta)$.
 Unfortunately, syndeticity is not preserved under intersection.
 In particular $\gamma_G({\mr x})$ is not a $G$-syndetic type, and it may even be inconsistent.
-Then following notion is relevant
+Then following notion is relevant.
 
 \begin{definition}\label{def_Q}\ 
 
-  \ceq{\hfill\emph{$Q$\/}}{=}{\big\{q({\mr x})\subseteq\gamma_G({\mr x})\;:\ q({\mr x})\textrm{ maximally syndetic}\big\}.}\smallskip
+  \ceq{\hfill\emph{$Q_G$\/}}{=}{\big\{q({\mr x})\subseteq\gamma_G({\mr x})\;:\ q({\mr x})\textrm{ maximally syndetic}\big\}.}\smallskip
 
-  In other words, the types in $Q$ are maximal among the subtypes of $\gamma_G({\mr x})$ that are closed under conjunction.
+  In other words, the types in $Q_G$ are maximal among the subtypes of $\gamma_G({\mr x})$ that are closed under conjunction.
 \end{definition}
 
-It is easy to see that $Q$ is closed under the action of $G$.
-We write $\Stab(q)$ for the  stabilized of $q({\mr x})\subseteq\BDelta(\grZ)$ in $G$, that is, the subgroup $\{g\in G:g{\cdot}q({\mr x})=q({\mr x})\}$.
+It is easy to see that $Q_G$ is closed under the action of $G$.
+We write $\Stab(q)$ for the stabilizer of $q({\mr x})\subseteq\BDelta(\grZ)$ in $G$, that is, the subgroup $\{g\in G:g{\cdot}q({\mr x})=q({\mr x})\}$.
 We write $\Stab(\mrD)$ with a similar meaning.
 Finally we define
 
-\ceq{\hfill\emph{$\Stab(Q)$}}{=}{\bigcap_{q\in Q}\Stab(q).}
+\ceq{\hfill\emph{$\Stab(Q_G)$}}{=}{\bigcap_{q\in Q_G}\Stab(q).}
 
-Clearly, $\Stab(Q)\trianglelefteq G$.
+Clearly, $\Stab(Q_G)\trianglelefteq G$.
 
 \begin{proposition}\label{prop_gammaK}
-  Write $K$ for $\Stab(Q)$. 
-  For every $q({\mr x})\in Q$ we have $q({\mr x})\proves\gamma_K({\mr x})$.
+  Write $K$ for $\Stab(Q_G)$. 
+  For every $q({\mr x})\in Q_G$ we have $q({\mr x})\proves\gamma_K({\mr x})$.
   In particular, $\gamma_K({\mr x})$ is finitely consistent.
-  Moreover $\gamma_K({\mr x})$ is closed under conjunction.
+  % Moreover $\gamma_K({\mr x})$ is closed under conjunction.
 \end{proposition}
 
 \begin{proof}
-  As the types in $Q$ are closed under conjunction, the second claim in the proposition follows from the first.
-  Let $\mrD\in\gamma_K$, then $q({\mr x})\proves{\mr x}\in k{\cdot}\mrD$ for some $k\in K$.
-  Then $q({\mr x})\proves{\mr x}\in k{\cdot}\mrD$ for some $k\in K$.
+  % As the types in $Q_G$ are closed under conjunction, the second claim in the proposition follows from the first.
+  Let $\mrD\in\gamma_K({\mr x})$.
+  Then $q({\mr x})\proves\cup\, C{\cdot}\mrD$ for some finite $C\subseteq K$.
+  As $k{\cdot}\mrD$ is $G$-generic for every $k\in C$, by maximality $q({\mr x})\proves{\mr x}\in k{\cdot}\mrD$ for some $k\in C$
   Then $q({\mr x})\proves{\mr x}\in\mrD$ follows because $k\in\Stab(q)$.
 \end{proof}
 
 \begin{proposition}\ \smallskip
 
-  \ceq{\hfill\Stab(Q)}{=}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\in\gamma_G({\mr x})\textrm{ whenever }\mrD\in\gamma_G({\mr x})\big\}.}\smallskip
+  \ceq{\hfill\Stab(Q_G)}{=}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\in\gamma_G({\mr x})\textrm{ whenever }\mrD\in\gamma_G({\mr x})\big\}.}\smallskip
 \end{proposition}
 
 \begin{proof}
   $\subseteq$. 
-  Pick $k\in\Stab(Q)$ and $\mrD\in\gamma_G({\mr x})$.
-  Let $q({\mr x})\in Q$ be a type containing ${\mr x}\in\mrD$.
-  From the $\Stab(Q)$-invariance of $q({\mr x})$ we obtain that $q({\mr x})\proves {\mr x}\in k{\cdot}\mrD$.
+  Pick $k\in\Stab(Q_G)$ and $\mrD\in\gamma_G({\mr x})$.
+  Let $q({\mr x})\in Q_G$ be a type containing ${\mr x}\in\mrD$.
+  From the $\Stab(Q_G)$-invariance of $q({\mr x})$ we obtain that $q({\mr x})\proves {\mr x}\in k{\cdot}\mrD$.
   As $q({\mr x})$ is closed under conjunction, $q({\mr x})\proves {\mr x}\in \mrD\cap k{\cdot}\mrD$.
 
   $\supseteq$. 
-  Pick $g\notin \Stab(Q)$.
-  Then $q({\mr x})\neq g{\cdot}q({\mr x})$ for some $q({\mr x})\in Q$.
+  Pick $g\notin \Stab(Q_G)$.
+  Then $q({\mr x})\neq g{\cdot}q({\mr x})$ for some $q({\mr x})\in Q_G$.
   Let $\phi({\mr x})\in q$ such that $q({\mr x})\not\proves g{\cdot}\phi({\mr x})$.
   By maximality, $\psi({\mr x})\wedge g{\cdot}\phi({\mr x})$ is not $G$-syndetic for some $\psi({\mr x})\in q$.
   As $q({\mr x})$ is closed under conjunction, we can assume $\phi({\mr x})=\psi({\mr x})$, then $g$ belongs to the set on the r.h.s.
@@ -431,7 +453,7 @@ As it happens, under the assumption of normality, this can be strengthened as fo
 \begin{proposition}\label{prop_Gsyndetic_Hthick1}
   Assume $H\trianglelefteq G$ and that $\gamma_H({\mr x})$ is finitely consistent.
   Then every $G$-syndetic $\mrD\in\BDelta(\grZ)$ is $H$-wide.
-  In particular all types in $Q$ are $\Stab(Q)$-wide.
+  In particular all types in $Q_G$ are $\Stab(Q_G)$-wide.
 \end{proposition}
 
 \begin{proof}
@@ -443,7 +465,7 @@ As it happens, under the assumption of normality, this can be strengthened as fo
 \end{proof}
 
 % \begin{theorem}
-%   Every $\Stab(Q)$-thick $\BDelta(\grZ)$-set is $\Stab(Q)$-wide.
+%   Every $\Stab(Q_G)$-thick $\BDelta(\grZ)$-set is $\Stab(Q_G)$-wide.
 % \end{theorem}
 
 Let $\mrY\subseteq\mrX$ be $H$-invariant.
@@ -473,8 +495,8 @@ For instance, when we say that $\mrD$ is $H$-syndetic relative $\mrY$, we actual
   By compactness (which we may apply because $\mrX$ is type-definable), finitely many translations suffices.
 \end{proof}
 
-It would help to have a more syntactic description of $\Stab(Q)$.
-The group $G^0$ defined below is a candidate. %~--~we will see that under the assumption of stability it indeed coincides with $\Stab(Q)$. 
+It would help to have a more syntactic description of $\Stab(Q_G)$.
+The group $G^0$ defined below is a candidate. %~--~we will see that under the assumption of stability it indeed coincides with $\Stab(Q_G)$. 
 We revisit the notions introduced in Section~\ref{eq_algebraic} as we want to apply them to $\BDelta(\grZ)$, not to the full language.%$\LDelta(\mrX,\grZ)$.
 
 \begin{definition}\label{def_G0}
@@ -501,14 +523,14 @@ Note that, when $G=\Aut(\UDelta)$, then $G^0$ is the group of $\LDelta$-automorp
 
   Assume $G$ acts transitively.
   Then the sets in $\Phi^0$ are $G$-syndetic.
-  Every $p({\mr x})\in P^0$ extends to some $q({\mr x})\in Q$.
-  Then $\Stab(Q)\le G^0$.
+  Every $p({\mr x})\in P^0$ extends to some $q({\mr x})\in Q_G$.
+  Then $\Stab(Q_G)\le G^0$.
 \end{remark}
 
 % \def\DLascar{L\kern-.6ex\raisebox{1.1ex}{\tiny$\Delta$}\kern-.1ex ascar}
 
-Ideally, we would like to have $\Stab(Q)=G^0$.
-This happens when the types in $P^0$ have a unique extension to a type in $Q$.
+Ideally, we would like to have $\Stab(Q_G)=G^0$.
+This happens when the types in $P^0$ have a unique extension to a type in $Q_G$.
 We will prove that this is the case under the assumption of stability.
 
 
@@ -521,7 +543,7 @@ We will prove that this is the case under the assumption of stability.
 We want to define $E^{00}$ and $P^{00}$ in analogy with $E^0$ and $P^0$.
 
 \begin{question}
-  Does $G$ acts transitively on $Q$?
+  Does $G$ acts transitively on $Q_G$?
 \end{question}
 
 % \begin{proposition}
@@ -549,12 +571,12 @@ We want to define $E^{00}$ and $P^{00}$ in analogy with $E^0$ and $P^0$.
 %   Assume that $G$ acts transitively.
 %   Then $K\subsetyeq G^0$.\smallskip
 
-%   % \ceq{\hfill \Stab(Q)}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\textrm{ is }G\textrm{-syndetic for all }G\textrm{-syndetic }\mrD\in\BDelta(\grZ)\big\}}\smallskip
+%   % \ceq{\hfill \Stab(Q_G)}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\textrm{ is }G\textrm{-syndetic for all }G\textrm{-syndetic }\mrD\in\BDelta(\grZ)\big\}}\smallskip
 
 %   % \ceq{}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\neq\varnothing\textrm{ for any }G\textrm{-syndetic }\mrD\in\BDelta(\grZ)\big\}}\smallskip
 
 
-%   % \ceq{\hfill \Stab(Q)}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\in\gamma_G({\mr x})\textrm{ whenever }\mrD\in\gamma_G({\mr x})\big\}}\smallskip
+%   % \ceq{\hfill \Stab(Q_G)}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\in\gamma_G({\mr x})\textrm{ whenever }\mrD\in\gamma_G({\mr x})\big\}}\smallskip
 
 %   % \ceq{}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\neq\varnothing\textrm{ whenever }\mrD\in\gamma_G({\mr x})\big\}}\smallskip
 
@@ -679,12 +701,12 @@ Note that when $G$ acts transitively on $\mrX$, equivalence classes of $G$-invar
   Therefore $\mrC\subseteq\mrD$, and a fortiori $\mrD$, is $G$-syndetic.
 
   \ssf2$\IMP$\ssf1.
-  Let $Q$ be as in Lemma~\ref{lem_trans_action}.
-  Pick any $q({\mr x})\in Q$.
+  Let $Q_G$ be as in Lemma~\ref{lem_trans_action}.
+  Pick any $q({\mr x})\in Q_G$.
   By syndeticity $q({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in G$.
   Then $g^{-1}\!\cdot q({\mr x})\proves{\mr x}\in \mrD$.
   Pick any ${\mr a}\models g^{-1}\!\cdot q({\mr x})$.
-  As $g^{-1}\!\cdot q({\mr x})\in Q$, by the second claim in the lemma and compactness,  $\epsilon(\U^{\mr x}\,;{\mr a})\subseteq\mrD$ for some finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\GDelta(A)$.
+  As $g^{-1}\!\cdot q({\mr x})\in Q_G$, by the second claim in the lemma and compactness,  $\epsilon(\U^{\mr x}\,;{\mr a})\subseteq\mrD$ for some finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\GDelta(A)$.
 \end{proof}
 \end{comment}
 
@@ -736,7 +758,7 @@ Define the following type
 
 \ceq{\hfill\emph{${}^{\rm s}\kern-.2ex\gamma_H({\mr x})$}}{=}{\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is strongly }H\textrm{-syndetic}\}.}
 
-Let $K=\Stab(Q)$ be the group introduced in Section~\ref{G0}.
+Let $K=\Stab(Q_G)$ be the group introduced in Section~\ref{G0}.
 As $\gamma_K({\mr x})$ is $G$-invariant and closed under conjunction, we may conclude that $K$-syndetic sets are strongly $G$-syndetic.
 In symbols, $\gamma_K({\mr x})\subseteq{}^{\rm s}\kern-.2ex\gamma_G({\mr x})$.
 
@@ -745,8 +767,8 @@ In symbols, $\gamma_K({\mr x})\subseteq{}^{\rm s}\kern-.2ex\gamma_G({\mr x})$.
 \end{corollary}
 
 \begin{proof}
-  The strong $H$-syndeticity is an immediate consequence of Lemma~\ref{lem_strongly_syndetic}.
-  The finite consistency is a consequence of syndeticity. % , see Exercise~\ref{ex_gen_sat}.
+  Strong $H$-syndeticity is an immediate consequence of Lemma~\ref{lem_strongly_syndetic}.
+  Finite consistency is a consequence of syndeticity.
   Finally, $H$-invariance is clear because any translate of a strongly $H$-syndetic formula is also strongly $H$-syndetic.
 \end{proof}
 
@@ -760,7 +782,8 @@ In symbols, $\gamma_K({\mr x})\subseteq{}^{\rm s}\kern-.2ex\gamma_G({\mr x})$.
 \end{corollary}
 
 \begin{proof}
-  \ssf1$\IMP$\ssf2. Similar to Corollary~\ref{corol_q_pers}.
+  \ssf1$\IMP$\ssf2. 
+  Similar to Corollary~\ref{corol_q_pers}.
   Let $\theta({\mr x})$ be a conjunction of formulas in $p({\mr x})$.
   As ${}^{\rm s}\kern-.2ex\gamma_H({\mr x})\cup\{\theta({\mr x})\}$ is finitely consistent, it cannot be that $\neg\theta({\mr x})$ is strongly $H$-syndetic.
   From Fact~\ref{fact_fip}, we obtain that $\neg\theta({\mr x})$ not being strongly $H$-syndetic is equivalent to $\theta({\mr x})$ being weakly $H$-thick.
@@ -802,7 +825,7 @@ In symbols, $\gamma_K({\mr x})\subseteq{}^{\rm s}\kern-.2ex\gamma_G({\mr x})$.
 \begin{question}
   Let $H\trianglelefteq G$.
   Does strongly $G$-syndetic implies strongly $H$-syndetic or vice versa?
-  In particular, does strongly $G$-syndetic implies $\Stab(Q)$-syndetic?
+  In particular, does strongly $G$-syndetic implies $\Stab(Q_G)$-syndetic?
 \end{question}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -903,22 +926,16 @@ The notions introduced in Section~\ref{strong_syndeticity} offer some hint.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{A tamer landscape}\label{tame_landscape}
 
-Under suitable assumptions -- e.g.\@ stability, see Theorem~\ref{thm_thick_finsat} -- some  notions introduced in this chapter coalesce, and we are left with a tamer landscape.
-In general, we have the following.
-
+Under suitable assumptions~--~e.g.\@ if $H=\Stab(Q_G)$ for some $G\le\Aut(\UDelta)$~--~some notions introduced in this chapter coalesce, and we are left with a tamer landscape.
+We will see an example in Theorem~\ref{thm_thick_finsat}.
 
 \begin{theorem}\label{thm_coalesce}
-  Assume 
+  Then the following are equivalent
   \begin{itemize}
-    \item[1.] $H$-thick $\BDelta({\grZ})$-sets are $H$-wide.
-  \end{itemize}\smallskip
-
-  Then the following hold
-  \begin{itemize}
+    \item[1.] $H$-thick $\BDelta({\grZ})$-sets are $H$-wide
     \item[2.] $H$-syndetic $\BDelta({\grZ})$-sets are closed under intersection 
     \item[3.] $H$-syndetic $\BDelta({\grZ})$-sets are strongly $H$-syndetic
-    \item[4.] weakly $H$-thick $\BDelta({\grZ})$-sets are $H$-thick
-    \item[5.] $H$-syndetic $\BDelta({\grZ})$-sets are $H$-wide.
+    \item[4.] weakly $H$-thick $\BDelta({\grZ})$-sets are $H$-thick.
   \end{itemize}
 \end{theorem}
 
@@ -933,16 +950,21 @@ In general, we have the following.
   By completeness either $p({\mr x})\proves{\mr x}\notin\mrC$ or $p({\mr x})\proves{\mr x}\notin\mrD$.
   This is a contradiction because by Theorem~\ref{thm_syndetic_invariant} $p({\mr x})\proves{\mr x}\in\mrC$ and $p({\mr x})\proves{\mr x}\in\mrD$.
 
-  \ssf1$\IMP$\ssf5.
-  By~\ssf{3}, because strongly $H$-syndetic sets are $H$-thick.
-  %
-  % \ssf4$\IMP$\ssf1.
-  % Note that, by \ssf3, the type ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ coincides with $\gamma_G({\mr x})$, in particular $\gamma_G({\mr x})$ is finitely consistent.
-  % Let $\mrD$ be a $H$-thick $\BDelta({\grZ})$-set.
-  % We show that $\gamma_G({\mr x})={}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ is finitely satisfiable in $\mrX\cap\mrD$.
-  % Then, by \ssf4 and Corollary~\ref{corol_q_w_pers}, any global extension of $\gamma_G({\mr x})\cup\{{\mr x}\in\mrD\}$ witness \ssf2 of Theorems~\ref{thm_syndetic_invariant2}.
-  % Suppose not, then $\gamma_G({\mr x})\proves {\mr x}\notin\mrD$.
-  % Therefore $\neg\mrD$ is $H$-syndetic, contradicting the consistency of ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$.
+  \ssf2$\IMP$\ssf1.
+  By \ssf2, $\gamma_H({\mr x})$ is consistent.
+  Then $\mrC$ is $H$-syndetic if and only if $\gamma_H({\mr x})\proves{\mr x}\in\mrC$.
+  If $\mrD$ is $H$-thick, then $\neg\mrD$ is not $H$-syndetic.
+  Then $\gamma_H({\mr x})\notproves{\mr x}\notin\mrD$ by what remarked above.
+  Then $\mrD$ is $H$-wide by Theorem~\ref{thm_syndetic_invariant2}.
+\end{proof}
+
+\begin{fact}
+  If the equivalent conditions in Theorem~\ref{thm_coalesce} hold, then $H$-syndetic $\BDelta({\grZ})$-sets are $H$-wide.
+\end{fact}
+
+\begin{proof}
+  By Corollary~\ref{corol_q_w_pers} strongly $H$-syndetic sets are $H$-thick.
+  Then the fact follows from~\ssf1 and ~\ssf3 of the theorem.
 \end{proof}
 
 % \begin{assumption}\label{notation_2}
@@ -979,7 +1001,7 @@ In general, we have the following.
 
 % \begin{fact}
 %   Assume that $G$ acts transitively and that all types in $P$ are realized in $\mrX$.
-%   Then, when $H$ is stationary and \ssf1 of Theorem~\ref{thm_coalesce} holds, $P=Q$.
+%   Then, when $H$ is stationary and \ssf1 of Theorem~\ref{thm_coalesce} holds, $P=Q_G$.
 % \end{fact}
 
 % \begin{proof}
