@@ -119,8 +119,8 @@ The following models are $\omega\mbox{-}$saturated
 \item[2] models of $T_{\rm rg}$
 \item[3] models of $T_{\rm dag}$ with infinite rank
 \item[4] models of $T_{\rm acf}$ with infinite degree of transcendence.
-\end{itemize}
-Countable models of $T_{\rm dlo}$ and $T_{\rm rg}$ and uncountable models of $T_{\rm dag}$ or $T_{\rm acf}$ are saturated. 
+\end{itemize}\smallskip
+Moreover, all countable models of $T_{\rm dlo}$ and $T_{\rm rg}$ and all uncountable models of $T_{\rm dag}$ or $T_{\rm acf}$ are saturated. 
 \end{corollary}
 \begin{proof}
 We proved that partial embeddings between models of these theories coincide with elementary embeddings -- that is, quantifier elimination.
@@ -137,10 +137,14 @@ Assume $|L|\le\lambda$. Consider the category that consists of models of some th
 \end{itemize}
 \end{theorem}
 
-\begin{proof}\ssf{2}$\IMP$\ssf{1}. Let $N\models T_1$ be $\lambda\mbox{-}$saturated. Fix a partial isomorphism $k:M\to N$ of cardinality $<\lambda$, some ${\mr b}\in M$ and let $p({\mr x}\,;{\gr z})=\qftp_M({\mr b}\,;{\gr a})$, where ${\gr a}$ enumerates $\dom k$. The type $p({\mr x}\,;k\,{\gr a})$ is realized in any $\lambda\mbox{-}$rich model $N'$ that contains $\<k\,{\gr a}\>_N$. By \ssf{2}, $N\equiv_{k{\gr a}} N'$, so $p({\mr x}\,;k\,{\gr a})$ is finitely consistent in $N$.  By saturation, it is realised by some ${\mr c}\in N$. Then $k\cup \{\<{\mr b},{\mr c}\>\}:M\to N$ is the required extension.
+\begin{proof}\ssf{2}$\IMP$\ssf{1}.
+  Let $N\models T_1$ be $\lambda\mbox{-}$saturated.
+  Let $k:M\to N$ be a partial embedding of cardinality $<\lambda$
+  Pick ${\mr b}\in M$.
+  By elimination of quantifiers, $k:M\to N$ is an elementary map.
+  Then reasoning as in the proof of Theorem~\ref{saturo->ricco} there is some ${\mr c}\in N$ such that $k\cup \{\<{\mr b},{\mr c}\>\}:M\to N$ is elementary so, in particular, a partial embedding.
 
-
-\ssf{1}$\IMP$\ssf{2}. Let $k:M\to N$ be a finite partial isomorphism between models of $T$. We claim that it is an elementary map. Let $M'\succeq M$ and $N'\succeq N$ are $\lambda$-saturated models. As these are $\lambda$-rich, $k:M'\to N'$ is elementary by Theorem~\ref{thm_morphism_rich_elementary}.
+  \ssf{1}$\IMP$\ssf{2}. Let $k:M\to N$ be a finite partial isomorphism between models of $T$. We claim that it is an elementary map. Let $M'\succeq M$ and $N'\succeq N$ are $\lambda$-saturated models. As these are $\lambda$-rich, $k:M'\to N'$ is elementary by Theorem~\ref{thm_morphism_rich_elementary}.
 \end{proof}
 
 \begin{exercise}
@@ -156,7 +160,7 @@ Assume $|L|\le\lambda$. Consider the category that consists of models of some th
   Let $L = \{<\}$ and let $N$ be a $\omega_1$-saturated extension of $\QQ$.
   Prove that there is an embedding $f:\RR \to  N$.
   Is it elementary?
-  Is it an isomorphism?
+  Could it be surjective?
 \end{exercise}
 
 \begin{exercise}

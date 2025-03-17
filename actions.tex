@@ -20,18 +20,17 @@ Assumption~\ref{notation_GXphi} below is in force throughout the chapter.
 \section{The dual perspective on invariance}\label{dual_perspective}
 % \def\BDelta{\LDelta\kern-.4ex_{{\rm qf}}}
 
-We revisit the notions of invariance introduceted in Chapter~\ref{invariant} in a more general setting.
+We revisit the notion of invariance introduceted in Chapter~\ref{invariant} in a more general setting.
 
 \begin{assumption}\label{notation_GXphi}
 Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}(\U)$.
 Given any \emph{$\mrX$\/} $\subseteq\U^{\mr x}$ and \emph{$\grZ$\/} $\subseteq\U^{\gr z}$, we define the structure \emph{$\UDelta$\/} $=\big\<\mrX\,;\grZ\big\>$.
 This is a 2-sorted structure whose signature  \emph{$\LDelta$\/} contains relation symbols for every formula $\phi({\mr x}\,;{\gr z})\in\Delta$.
 As there is little risk of confusion, these relations symbols are also denoted by $\phi({\mr x}\,;{\gr z})$, and we identify $\LDelta$ with a subset of $L$. 
-%We write \emph{$G$\/} for some fixed subgroup of $\Aut(\UDelta)$ and $H$ is some arbitrary subgroup of $G$.
 \end{assumption}
 
 When $\mrX$ and $\grZ$ are type definable and $\Delta$ is small, $\UDelta$ is a saturated structure.
-But, as for the time being we do not need compactness, until further notice these sets are arbitrary.
+As compactness is not always required, these sets are arbitrary unless explicitly required.
 
 In the first few sections we only work a subset of the quantifier-free fragment of $\LDelta$.
 Let $\BDelta(\grZ)$ be the set of Boolean combinations of the sets $\phi(\mrX\,;{\gr b})$, for $\phi({\mr x}\,;{\gr z})\in\Delta$ and ${\gr b}\in\grZ$.
@@ -86,8 +85,9 @@ See Exercise~\ref{ex_thick_types} for an alternative characterization when $p({\
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 The terminology above is taken from topological dynamics.
+In other contexts (see eg.~\cite{Newelski09}) syndetic sets are called \textit{generic}.
 In~\cite{CK} the authors write \textit{quasi-non-dividing\/} for \textit{thick\/} under the action of $\Aut(\U/A)$.
-Their terminology has good motivations, but it would be a mouthful if adapted to our context. 
+Their terminology has good motivations, but it would be a mouthful if adapted to our context.
 
 Notation: for $\mrD\subseteq\mrX$ and $C\subseteq H$ we write \emph{$C{\cdot}\mrD$\/} for $\{h{\cdot}\mrD: h\in C\}$.
 
@@ -126,7 +126,6 @@ The following characterization is also useful (an is sometimes taken as the defi
   \ssf2$\IMP$\ssf1. 
   If $\mrD$ is not $H$-thick then $\mrD$ is $H$-syndetic then $\neg$\ssf2.
 \end{proof}
-
 
 Define the following type
 
@@ -198,11 +197,10 @@ The converse implication holds for complete types.
 %   Then $\neg\ssf2$.
 % \end{proof}
 
-The theorem yields a necessary condition for the existence of $H$-thick global $\BDelta({\grZ})$-types.
+The theorem yields a necessary condition for the existence of global $\BDelta({\grZ})$-types that are $H$-thick.
 
 \begin{corollary}\label{corol_def_mu}
-  Assume there exists a $H$-thick type $p({\mr x})\in S_\Delta(\grZ)$.
-  Then for every $\BDelta({\grZ})$-set $\mrD$
+  If an $H$-thick type $p({\mr x})\in S_\Delta(\grZ)$ exists, then for any $\mrD\in\BDelta({\grZ})$
   \begin{itemize}
     \item[1.] $\mrD$ and $\neg\mrD$ are not both $H$-syndetic
     \item[2.] if $\mrD$ is $H$-syndetic then it is $H$-thick
@@ -306,6 +304,14 @@ A type is $H$-wide if every conjunction of formulas in the type is $H$-wide.
 \end{exercise}
 
 \begin{exercise}
+  Prove that the following are equivalent
+  \begin{itemize}
+    \item[1.] $\D$ is $H$-thick
+    \item[2.] there is a type $p(x)\in S_\Delta(\Z)$ containing $\{x\in g{\cdot}\D\;:\;g\in H\}$.
+  \end{itemize}
+\end{exercise}
+
+\begin{exercise}
   Let $p(x)\in S_\Delta(\U)$.
   Prove that the following are equivalent
   \begin{itemize}
@@ -359,6 +365,67 @@ A type is $H$-wide if every conjunction of formulas in the type is $H$-wide.
 %     \item [2.] every finite cover of $\mrD$ by $\pmDelta({\grZ})$-definable sets contains a $H$-thick set.
 %   \end{itemize}
 % \end{exercize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Actions of semigroups}\label{Qactions}
+
+\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
+Absolutely experimental.
+
+Let $G$ be a semigroup that acts on $\P(\mrX)$ from the right by maps that preserve inclusion and are continuous.
+By continuous we mean that if $\mrD$ is the union of an increasing chain $\<{\mr\D_i}:i<\lambda\>$ then $\mrD{\cdot}g$ is the union of $\<{\mr\D_i}{\cdot}g:i<\lambda\>$.
+We also require that $\mrD{\cdot}g$ is $\BDelta(\grZ)$-type-definable for all $\mrD\in\BDelta(\grZ)$ and $g\in G$.
+
+The following definition introduces the motivating example.
+
+\begin{definition}
+  The language $L$ includes, among other symbols, a binary function.
+  This is interpreted in $\mrX=\U^{\mr x}$ as a semigroup operation.
+  Let $\grZ=M^{\gr z}$, for some $M\preceq\mrX$ and $|{\gr z}|=\omega$.
+  We set $\Delta=L_{{\mr x}\,{\gr z}}$.
+  Note that $\UDelta$ is not compact in the ${\gr z}$-sort.
+  On the other hand, it is compact in the ${\mr x}$-sort and, remarkably, all types in $S_\Delta(\grZ)$ are realized in $\mrX$.\smallskip
+
+  For ${\mr b}\in\mrX$, we abbreviate by $({\mr b})_M$ the orbit of ${\mr b}$ under $M$-automorphisms i.e.\@ the set $\{{\mr a}\in\mrX:{\mr a}\equiv_M{\mr b}\}$.
+  As semigroup $G$ we take $\mrX/{\equiv_M}$ with the operation defined in Section~\ref{semigroups}.
+  The result of the action of $({\mr b})_M$ on $\mrD$, which is denoted by $\mrD {*} ({\mr b})_M$, is defined accordingly\smallskip
+
+  \ceq{\hfill \mrD {*} ({\mr b})_M}{=}{\big\{{\mr a}{\cdot}{\mr b}\ :\ \E{\mr x}\,\big[{\mr a}\equiv_M{\mr x}\in \mrD\textrm{ and }{\mr x}\cnonfork_M{\mr b}\big]\big\}.}\smallskip
+
+  % This action is not faithful when restricted to $\BDelta(\grZ)$, in fact any two ${\mr b}\equiv_M{\mr b'}$ have the same action on these sets.
+  % This is a nuisance that we will patiently accept.
+\end{definition}
+
+Assume that every $\mrD\in\BDelta(\grZ)$ has a small $G$-orbit.
+For instance, the action presented in the definition above has small orbits.
+A set $\mrD$ with small $G$-orbit is $G$-thick if and only if $\cap\,\mrD{\cdot}G$ is nonempty.
+Note that the latter set is always $G$-invariant.
+
+\begin{proposition}
+  Assume that every $\mrD\in\BDelta(\grZ)$ has a small $G$-orbit.
+  Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
+  \begin{itemize}
+    \item [1.] $\mrD$ is weakly $G$-thick
+    \item [2.]$\mrD$ syndetic relative to some $G$-invariant $\BDelta(\grZ)$-type-definable set $\mrC$.
+  \end{itemize}
+\end{proposition}
+
+\begin{proof}
+  \ssf1$\IMP$\ssf2 Let $F\subseteq G$ be finite and such that $\cup\,\mrD{\cdot}F$ is $G$-thick.
+  Then \ssf2 holds if we take $\cap\,\big(\cup\,\mrD{\cdot}F\big){\cdot}G$ as $\mrC$.
+
+  \ssf2$\IMP$\ssf1 Let $F\subseteq G$ be finite and such that $\mrC\subseteq\cup\,\mrD{\cdot}F$.
+  % By compactness there is some finite $C\subseteq G$ such that $\cap\,\mrC{\cdot}C\subseteq\cup\,\mrD{\cdot}F$.
+  As $\cap\,\mrC{\cdot}G$ is, trivially, $G$-thick, $\mrD$ is weakly $G$-thick.
+\end{proof}
+
+Let $g\in G$ if $g^2=g$ then we say that $g$ is an idempotent.
+If $M\subseteq G$ is a right ideal if $G{\cdot}M=M$.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -790,24 +857,23 @@ Note that Theorem~\ref{thm_gammaK} shows that $\gamma_K({\mr x})\subseteq{}^{\rm
 The following is similar to Corollary~\ref{corol_q_pers}, but now we obtain also the converse implication.
 
 \begin{corollary}\label{corol_q_w_pers}
-  Let $p({\mr x})\subseteq\BDelta(\grZ)$.
-  Then the following are equivalent
+  For every $\mrD\in\BDelta(\grZ)$ the following are equivalent
   \begin{itemize}
-    \item [1.] ${}^{\rm s}\kern-.2ex\gamma_H({\mr x})\cup p({\mr x})$ is finitely consistent
-    \item [2.] $p({\mr x})$ is weakly $H$-thick.
+    \item [1.] ${}^{\rm s}\kern-.2ex\gamma_H({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent
+    \item [2.] $\mrD$ is weakly $H$-thick.
   \end{itemize}
 \end{corollary}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2. 
   Similar to Corollary~\ref{corol_q_pers}.
-  Let $\theta({\mr x})$ be a conjunction of formulas in $p({\mr x})$.
-  As ${}^{\rm s}\kern-.2ex\gamma_H({\mr x})\cup\{\theta({\mr x})\}$ is finitely consistent, it cannot be that $\neg\theta({\mr x})$ is strongly $H$-syndetic.
-  From Fact~\ref{fact_fip}, we obtain that $\neg\theta({\mr x})$ not being strongly $H$-syndetic is equivalent to $\theta({\mr x})$ being weakly $H$-thick.
+  If ${}^{\rm s}\kern-.2ex\gamma_H({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent, then $\neg\mrD$ is strongly $H$-syndetic.
+  From Fact~\ref{fact_fip}, we obtain that $\neg\mrD$ not being strongly $H$-syndetic is equivalent to $\mrD$ being weakly $H$-thick.
 
-  \ssf2$\IMP$\ssf1. 
-  Suppose $\mrD$ is strongly $H$-syndetic and $p({\mr x})\proves{\mr x}\notin\mrD$.
-  From Fact~\ref{fact_fip}, $\mrD$ is not weakly $H$-thick, and $\neg$\ssf2 follows.
+  \ssf2$\IMP$\ssf1.
+  Suppose ${}^{\rm s}\kern-.2ex\gamma_H({\mr x})\proves{\mr x}\notin\mrD$.
+  Then $\neg\mrD$ is strongly $H$-syndetic.
+  From Fact~\ref{fact_fip}, $\mrD$ is not weakly $H$-thick.
 \end{proof}
 
 The following theorem asserts that weak thickness is partition regular.
@@ -834,14 +900,13 @@ The following theorem asserts that weak thickness is partition regular.
 \end{exercise}
 
 \begin{exercise}
-  Show that $H$-syndetic sets need not be closed under intersection.
-  Hint: find inspiration in Example~\ref{ex_cyclic_order}.
+  Prove that $H$-syndetic sets are weakly $H$-thick.
 \end{exercise}
 
 \begin{question}
   Let $H\trianglelefteq G$.
   Does strongly $G$-syndetic implies strongly $H$-syndetic or vice versa?
-  In particular, does strongly $G$-syndetic implies $K$-syndetic?
+  Does strongly $G$-syndetic implies $K$-syndetic?
 \end{question}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -857,46 +922,42 @@ In this section we prove that $\Ll({\mr a}/A)$ is type-definable (if and) only t
 In other words, only if the connected component of ${\mr a}$ in the Lascar graph has finite diameter.
 
 It is convenient to address the problem in more general terms.
-We work under Assumption~\ref{notation_GXphi} and also assume that $H\le G$ acts transitively on $\mrX$.
-Let $C\subseteq H$ be a set of generators that is
+We work under Assumption~\ref{notation_GXphi} and also assume that $H\le\Aut(\UDelta)$ acts transitively on $\mrX$.
+Let \emph{$C$\/} $\subseteq H$ be a set of generators of $H$ that is
 \begin{itemize}
   \item[1.] symmetric i.e.\@ it contains the unit and is closed under inverse
-  \item[2.] conjugacy invariant i.e.\@ $g\,Cg^{-1}=C$ for every $g\in H$
+  \item[2.] conjugacy invariant i.e.\@ $g{\cdot}C{\cdot}g^{-1}=C$ for every $g\in H$
 \end{itemize}
 
 We define a discrete metric on $\mrX$.
-For ${\mr a},{\mr b}\in\mrX$ let $d({\mr a},{\mr b})$ be the minimal $n$ such that ${\mr a}\in C^n{\mr b}$.
+For ${\mr a},{\mr b}\in\mrX$ let \emph{$d_C({\mr a},{\mr b})$\/} be the minimal $n$ such that ${\mr a}\in C^n{\mr b}$.
 This defines a metric which is $H$-invariant by \ssf2.
-The \emph{diameter\/} of a set $\mrC\subseteq\mrX$ is the supremum of $d({\mr a},{\mr b})$ for ${\mr a},{\mr b}\in\mrC$.
+The \emph{diameter\/} of a set $\mrC\subseteq\mrX$ is the supremum of $d_C({\mr a},{\mr b})$ for ${\mr a},{\mr b}\in\mrC$.
 
 We are interested in sufficient conditions for $\mrX$ to have finite diameter.
 The notions introduced in Section~\ref{strong_syndeticity} offer some hint.
 
 \begin{proposition}\label{prop_wpers_finite_diameter}
-  If $\mrX$ has a weakly thick subset of finite diameter, then $\mrX$ itself has finite diameter.
+  Let $H$ act transitively on $\mrX$.
+  Then, if $\mrX$ contains a weakly thick subset of finite diameter, $\mrX$ itself has finite diameter.
 \end{proposition}
 
 \begin{proof}
-  Let $\mrC\subseteq\mrX$ be a weakly thick set of diameter $n$.
-  Let $F\subseteq H$ be finite such that $\cup\,H{\cdot}\mrC$ is thick.
-  We claim that also $\cup\,H{\cdot}\mrC$ has finite diameter.
-  Let ${\mr a}\in\mrC$ be arbitrary.
-  Let $m$ be larger than $d(h{\mr a}, k{\mr a})$ for all $h,k,\in H$.
-  Now, let $h{\mr b}$ and $k{\mr c}$, for some $h,k,\in H$ and ${\mr b},{\mr c}\in\mrC$, be two arbitrary elements of $\cup\,H{\cdot}\mrC$.
-  As $h\mrC$ and $k\mrC$ have the same diameter of $\mrC$, 
+  Let $\mrC\subseteq\mrX$ be a set of finite diameter, say $n$.
+  Let $F\subseteq H$ be finite.
+  We claim that also $\cup\,F{\cdot}\mrC$ has finite diameter.
+  In fact, pick any ${\mr a}\in\mrC$.
+  Then $\mrC$ is contained in a ball of radius $n$ centered in ${\mr a}$. Let $m$ be the maximum of $d_C(h{\mr a}, k{\mr a})$ for $h,k,\in F$.
+  Clearly, the diameter of $\cup\,F{\cdot}\mrC$ is at most $2n+m$.
+  This proves the claim.
 
-  \ceq{\hfill d(h{\mr b},\, k{\mr c})}{\le}{d(h{\mr b},\,h{\mr a})\ +\ d(h{\mr a},\, k{\mr a})\ +\ d(k{\mr a},\,k{\mr c})}
-
-  \ceq{}{\le}{n+m+n.}
-
-  This proves that $\cup\,H{\cdot}\mrC$ has finite diameter.
-  Therefore, without loss of generality, we may assume that $\mrC$ itself is thick.
+  By the claim, if there is a weakly thick subset of finite diameter, there is also a (plain) thick subset $\mrC\subseteq\mrX$ of finite diameter, say $n$.
   
   By the transitivity of the action, any two elements of $\mrX$ are of the form $h{\mr a}$, $k{\mr a}$ for some $h,k\in H$ and some ${\mr a}\in\mrC$.
   By thickness, there are ${\mr c}\in\mrC\cap h\mrC$ and ${\mr d}\in\mrC\cap k\mrC$.
   Then 
 
-  \ceq{\hfill d(h{\mr a},\, k{\mr a})}{\le}{d(h{\mr a},\,{\mr c})\ +\ d({\mr c},\, {\mr d})\ +\ d({\mr d},\,k{\mr a})}
+  \ceq{\hfill d_C(h{\mr a},\, k{\mr a})}{\le}{d_C(h{\mr a},\,{\mr c})\ +\ d_C({\mr c},\, {\mr d})\ +\ d_C({\mr d},\,k{\mr a})}
 
   \ceq{}{\le}{n+n+n.}
 
@@ -926,12 +987,12 @@ The notions introduced in Section~\ref{strong_syndeticity} offer some hint.
   Let $\Delta=L_{{\mr x}\,{\gr z}}(A)$, where $|{\gr z}|=\omega$.
   Let $\mrX=\Ll({\mr a}/A)$ and $\grZ=\U^{\gr z}$.
   Assume that $\mrX$ is type definable.
-  Let $G=\Aut(\U/A)$.
+  Let $G=\Aut(\U)$.
   Let $C\subseteq G$ be the set of automorphisms that fix a model containing $A$.
-  Then the group $H$ generated by $C$ is $\Autf(\U/A)$ and $H\cdot{\mr a}=\mrX$.
+  Then the group $H$ generated by $C$ is $\Autf(\U/A)$ and $H{\cdot}{\mr a}=\mrX$.
   
-  Then $d({\mr a},{\mr b})$ coincides with the distance in the Lascar graph.
-  As shown in Proposition~\ref{prop_Lascar_distance_type_def} the sets $C^n\cdot{\mr a}=\{{\mr x}:d({\mr x},{\mr a})\le n\}$ are type definable.
+  Then $d_C({\mr a},{\mr b})$ coincides with the distance in the Lascar graph.
+  As shown in Proposition~\ref{prop_Lascar_distance_type_def} the sets $C^n{\cdot}{\mr a}=\{{\mr x}:d_C({\mr x},{\mr a})\le n\}$ are type definable.
   Then from Theorem~\ref{thm_newelski} it follows that $\Ll({\mr a}/A)$ is type definable (if and) only if it has finite diameter.
 \end{example} 
 
@@ -1035,6 +1096,9 @@ We will see an example in Theorem~\ref{thm_thick_finsat}.
 
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{25ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+
+\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
+Section under major revision.
 
 In this section we assume that $\grZ$ and $\mrX$ are type-definable.
 Moreover we assume that $\grZ$ is a group that acts on $\mrX$.
@@ -1235,6 +1299,12 @@ The proof here is a streamlined and generalized version of the latter~--~inspire
 %  issn={0022-4812},
 %  review={\MR{2951626}},
 %  doi={10.2178/jsl/1327068688},
+}\smallskip
+\bib{Newelski09}{article}{
+  author={Newelski, Ludomir},
+  title={Topological dynamics of definable group actions},
+  journal={J. Symbolic Logic},
+  date={2009},
 }\smallskip
 \bib{Hr}{article}{
   label={Hr},
