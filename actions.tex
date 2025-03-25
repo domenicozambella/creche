@@ -366,66 +366,6 @@ A type is $H$-wide if every conjunction of formulas in the type is $H$-wide.
 %   \end{itemize}
 % \end{exercize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Actions of semigroups}\label{Qactions}
-
-\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
-Absolutely experimental.
-
-Let $G$ be a semigroup that acts on $\P(\mrX)$ from the right by maps that preserve inclusion and are continuous.
-By continuous we mean that if $\mrD$ is the union of an increasing chain $\<{\mr\D_i}:i<\lambda\>$ then $\mrD{\cdot}g$ is the union of $\<{\mr\D_i}{\cdot}g:i<\lambda\>$.
-We also require that $\mrD{\cdot}g$ is $\BDelta(\grZ)$-type-definable for all $\mrD\in\BDelta(\grZ)$ and $g\in G$.
-
-The following definition introduces the motivating example.
-
-\begin{definition}
-  The language $L$ includes, among other symbols, a binary function.
-  This is interpreted in $\mrX=\U^{\mr x}$ as a semigroup operation.
-  Let $\grZ=M^{\gr z}$, for some $M\preceq\mrX$ and $|{\gr z}|=\omega$.
-  We set $\Delta=L_{{\mr x}\,{\gr z}}$.
-  Note that $\UDelta$ is not compact in the ${\gr z}$-sort.
-  On the other hand, it is compact in the ${\mr x}$-sort and, remarkably, all types in $S_\Delta(\grZ)$ are realized in $\mrX$.\smallskip
-
-  For ${\mr b}\in\mrX$, we abbreviate by $({\mr b})_M$ the orbit of ${\mr b}$ under $M$-automorphisms i.e.\@ the set $\{{\mr a}\in\mrX:{\mr a}\equiv_M{\mr b}\}$.
-  As semigroup $G$ we take $\mrX/{\equiv_M}$ with the operation defined in Section~\ref{semigroups}.
-  The result of the action of $({\mr b})_M$ on $\mrD$, which is denoted by $\mrD {*} ({\mr b})_M$, is defined accordingly\smallskip
-
-  \ceq{\hfill \mrD {*} ({\mr b})_M}{=}{\big\{{\mr a}{\cdot}{\mr b}\ :\ \E{\mr x}\,\big[{\mr a}\equiv_M{\mr x}\in \mrD\textrm{ and }{\mr x}\cnonfork_M{\mr b}\big]\big\}.}\smallskip
-
-  % This action is not faithful when restricted to $\BDelta(\grZ)$, in fact any two ${\mr b}\equiv_M{\mr b'}$ have the same action on these sets.
-  % This is a nuisance that we will patiently accept.
-\end{definition}
-
-Assume that every $\mrD\in\BDelta(\grZ)$ has a small $G$-orbit.
-For instance, the action presented in the definition above has small orbits.
-A set $\mrD$ with small $G$-orbit is $G$-thick if and only if $\cap\,\mrD{\cdot}G$ is nonempty.
-Note that the latter set is always $G$-invariant.
-
-\begin{proposition}
-  Assume that every $\mrD\in\BDelta(\grZ)$ has a small $G$-orbit.
-  Then the following are equivalent for every $\mrD\in\BDelta(\grZ)$
-  \begin{itemize}
-    \item [1.] $\mrD$ is weakly $G$-thick
-    \item [2.]$\mrD$ syndetic relative to some $G$-invariant $\BDelta(\grZ)$-type-definable set $\mrC$.
-  \end{itemize}
-\end{proposition}
-
-\begin{proof}
-  \ssf1$\IMP$\ssf2 Let $F\subseteq G$ be finite and such that $\cup\,\mrD{\cdot}F$ is $G$-thick.
-  Then \ssf2 holds if we take $\cap\,\big(\cup\,\mrD{\cdot}F\big){\cdot}G$ as $\mrC$.
-
-  \ssf2$\IMP$\ssf1 Let $F\subseteq G$ be finite and such that $\mrC\subseteq\cup\,\mrD{\cdot}F$.
-  % By compactness there is some finite $C\subseteq G$ such that $\cap\,\mrC{\cdot}C\subseteq\cup\,\mrD{\cdot}F$.
-  As $\cap\,\mrC{\cdot}G$ is, trivially, $G$-thick, $\mrD$ is weakly $G$-thick.
-\end{proof}
-
-Let $g\in G$ if $g^2=g$ then we say that $g$ is an idempotent.
-If $M\subseteq G$ is a right ideal if $G{\cdot}M=M$.
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -557,7 +497,7 @@ For instance, when we say that $\mrD$ is $H$-syndetic relative $\mrY$, we actual
   Assume that $\mrX$ is type-definable.
   Let $\mrY\subseteq\mrX$ be some $H$-invariant set.
   Assume that boundedly many $G$-translates of $\mrY$ cover $\mrX$.
-  Then every $\mrD\in\BDelta(\grZ)$ that is $H$-syndetic relative to $\mrY$ is $G$-syndetic.
+  Then every $\mrD\in\BDelta(\grZ)$ that is $H$-syndetic relative to $\mrY$ is $G$-syndetic (relative to $\mrX$).
   % Then the following are equivalent for every $\mrD\in\BDelta(\grZ)$
   % \begin{itemize}
   %   \item [1.] $\mrD$ is $G$-syndetic
@@ -810,7 +750,7 @@ Again, the same properties may be attributed to formulas and types when every co
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 In topological dynamic, strong syndedic sets are called \textit{thickly syndetic\/} and weak thickness is called \textit{piecewise syndetic.}
-A terminology that defies my intuition.
+Newelski in~\cite{Newelski09} calls weak thick sets \textit{weak generics.} These are terminologies that defy my intuition.
 
 \begin{lemma}\label{lem_strongly_syndetic}
   The intersection of two strongly $H$-syndetic sets is strongly $H$-syndetic.
@@ -884,6 +824,28 @@ The following theorem asserts that weak thickness is partition regular.
 
 \begin{proof}
   If $x\in \mrC\cup\mrB$ is consistent with ${}^{\rm s}\kern-.2ex\gamma_H({\mr x})$ then so is one of the two sets.
+\end{proof}
+
+Assume that every $\mrD\in\BDelta(\grZ)$ has a small $H$-orbit.
+% For instance, the action presented in the definition above has small orbits.
+A set $\mrD$ with small $H$-orbit is $H$-thick if and only if $\cap\,H{\cdot}\mrD$ is nonempty.
+Note that the latter set is always $H$-invariant.
+
+\begin{proposition}
+  Assume that every $\mrD\in\BDelta(\grZ)$ has a small $H$-orbit.
+  Then the following are equivalent for every $\mrD\in\BDelta(\grZ)$
+  \begin{itemize}
+    \item [1.] $\mrD$ is weakly $H$-thick
+    \item [2.]$\mrD$ is syndetic relative to some $H$-invariant $\BDelta(\grZ)$-type-definable set $\mrC$.
+  \end{itemize}
+\end{proposition}
+
+\begin{proof}
+  \ssf1$\IMP$\ssf2 Let $F\subseteq H$ be finite and such that $\cup\,F{\cdot}\mrD$ is $H$-thick.
+  Then \ssf2 holds if we take $\cap\,H{\cdot}(\cup\,F{\cdot}\mrD)$ as $\mrC$.
+
+  \ssf2$\IMP$\ssf1 Let $F\subseteq H$ be finite and such that $\mrC\subseteq\cup\,F{\cdot}\mrD$.
+  As $\mrC$ is, trivially, $H$-thick, $\mrD$ is weakly $H$-thick.
 \end{proof}
 
 % Note that 
