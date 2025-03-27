@@ -85,7 +85,7 @@ See Exercise~\ref{ex_thick_types} for an alternative characterization when $p({\
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 The terminology above is taken from topological dynamics.
-In other contexts (see eg.~\cite{Newelski09}) syndetic sets are called \textit{generic}.
+In other contexts (see eg.~\cite{Newelski09}) syndetic sets are called \textit{generic.}
 In~\cite{CK} the authors write \textit{quasi-non-dividing\/} for \textit{thick\/} under the action of $\Aut(\U/A)$.
 Their terminology has good motivations, but it would be a mouthful if adapted to our context.
 
@@ -254,6 +254,24 @@ A type is $H$-wide if every conjunction of formulas in the type is $H$-wide.
   This follows from completeness and Theorem~\ref{thm_syndetic_invariant}.
 \end{proof}
 
+For future reference we note that theorem also apply to type-definable sets.
+
+\begin{corollary}
+  For every $\BDelta(\grZ)$-type $q({\mr x})$ the following are equivalent 
+  \begin{itemize}
+    \item[1.] $\gamma_H({\mr x})\cup q({\mr x})$ is finitely consistent
+    \item[2.] there exists an $H$-thick type $p({\mr x})\in S_\Delta(\grZ)$ consistent with $q({\mr x})$
+    \item[3.] $q({\mr x})$ is $H$-wide.\smallskip
+  \end{itemize}
+\end{corollary}
+
+\begin{proof}
+  Implication \ssf1$\IMP$\ssf2 is obtained by the same proof as the in theorem.
+  The other implications follow immediately from the theorem.
+\end{proof}
+
+We say that the type $q({\mr x})$ is \emph{$H$-stationary\/} if there exists exactly one $H$-thick type $p({\mr x})\in S_\Delta(\grZ)$ consistent with $q({\mr x})$.
+
 \begin{corollary}\label{corol_intersectionGwide}
   Let $\mrD\in\BDelta(\grZ)$ be a $H$-wide.
   Then $\mrD\cap g{\cdot}\mrD$ is $H$-wide for every $g\in H$.
@@ -418,18 +436,18 @@ It is easy to verify that $\Stab(Q_G)\trianglelefteq G$.
 \end{proof}
 
 \begin{theorem}\label{thm_gammaK}
-  Write $K$ for $\Stab(Q_G)$. 
-  Then any finite conjunction of formulas in $\gamma_K({\mr x})$ is $G$-generic. \
+  Write $K$ for $\Stab(Q_G)$.
+  Then any finite conjunction of formulas in $\gamma_K({\mr x})$ is $G$-syndetic.
   In particular $\gamma_K({\mr x})$ is consistent.
 \end{theorem}
 
 \begin{proof}
   \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
   \def\ceq#1#2#3{\parbox[t]{23ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
-  Notice that from Proposition~\ref{prop_StabQ} it easily follows that for every $\mrD\in\gamma_G({\mr x})$ and every finite $F\subseteq K$ the set $\cap\,F{\cdot}\mrD$ is $G$-generic.
+  Notice that from Proposition~\ref{prop_StabQ} it easily follows that for every $\mrD\in\gamma_G({\mr x})$ and every finite $F\subseteq K$ the set $\cap\,F{\cdot}\mrD$ is $G$-syndetic.
    
   Let  ${\mr\D_1},\dots,{\mr\D_n}\in\gamma_K({\mr x})$.
-  Assume inductively that ${\mr\D_1}\cap\dots\cap{\mr\D_{n-1}}$ is $G$-generic.
+  Assume inductively that ${\mr\D_1}\cap\dots\cap{\mr\D_{n-1}}$ is $G$-syndetic.
   Let $F\subseteq K$ be such that $\cup\,F{\cdot}{\mr\D_n}=\mrX$.
   Then
   
@@ -445,7 +463,11 @@ It is easy to verify that $\Stab(Q_G)\trianglelefteq G$.
   The $G$-syndeticity of ${\mr\D_1}\cap\dots\cap{\mr\D_n}$ follows.
 \end{proof}
 
-We remark a useful consequence of normality.
+From Theorems~\ref{thm_syndetic_invariant2} and~\ref{thm_gammaK} it follows that $K$-syndetic sets are $K$-wide.
+But we can do better.
+% In particular, every $q({\mr x})\in Q_G$ has an extension to a $K$-invariant $p({\mr x})\in S_\Delta(\grZ)$.
+% If this extension is unique we say that $q({\mr x})$ is stationary.
+First, we remark a useful consequence of normality.
 
 \begin{remark}\label{rem_invariance_normalsubg}
 % \newlength{\ceqlength}
@@ -563,11 +585,15 @@ We will prove that this is the case under the assumption of stability.
 We want to define $E^{00}$ and $P^{00}$ in analogy with $E^0$ and $P^0$.
 
 \begin{question}
-  Does $G$ acts transitively on $Q_G$?
-\end{question}
-
-\begin{question}
-  Is $\gamma_K({\mr x})$ closed under conjunction?
+  Work under the assumption that $\mrX$ is type-definable and that $G$ acts transitively.
+  How are the following properties connected?
+  \begin{itemize}
+    \item [1.] $\gamma_K({\mr x})$ is closed under conjunction
+    \item [2.] the types in $Q_G$ are $K$-stationary
+    \item [3.] $Q_G$ has small cardinality
+    \item [4.] $G$ acts transitively on $Q_G$
+    \item [5.] $\mrX=\bigcup\{q(\mrX)\ :\ q({\mr x})\in Q_G\}$.
+  \end{itemize}
 \end{question}
 
 % \begin{proposition}
@@ -750,7 +776,8 @@ Again, the same properties may be attributed to formulas and types when every co
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 In topological dynamic, strong syndedic sets are called \textit{thickly syndetic\/} and weak thickness is called \textit{piecewise syndetic.}
-Newelski in~\cite{Newelski09} calls weak thick sets \textit{weak generics.} These are terminologies that defy my intuition.
+Newelski in~\cite{Newelski09} says \textit{weak generic\/} for weakly thick.
+These are terminologies that defy my intuition.
 
 \begin{lemma}\label{lem_strongly_syndetic}
   The intersection of two strongly $H$-syndetic sets is strongly $H$-syndetic.
@@ -999,13 +1026,29 @@ We will see an example in Theorem~\ref{thm_thick_finsat}.
   \ssf4$\IMP$\ssf1. By Theorem~\ref{thm_wt_partreg}
 \end{proof}
 
+The condition in Theorem~\ref{thm_coalesce} together with stationarity, produce further simplification.
+
 \begin{fact}
-  If the equivalent conditions in Theorem~\ref{thm_coalesce} hold, then $H$-syndetic $\BDelta({\grZ})$-sets are $H$-wide.
+  Assume the equivalent conditions in Theorem~\ref{thm_coalesce} hold. 
+  Suppose that $\mrX$ is $H$-stationary.
+  Then the following are equivalent
+  \begin{itemize}
+    \item [1.] $\mrD$ is $H$-syndetic
+    \item [2.] $\mrD$ is $H$-wide.
+  \end{itemize}
 \end{fact}
 
 \begin{proof}
-  By Corollary~\ref{corol_q_w_pers} strongly $H$-syndetic sets are $H$-thick.
-  Then the fact follows from~\ssf1 and ~\ssf3 of the theorem.
+  \ssf1$\IMP$\ssf2.
+  By assumption, $\gamma_H({\mr x})$ is consistent.
+  Then $H$-syndetic $\BDelta({\grZ})$-sets are $H$-thick by Corollary~\ref{corol_def_mu}.
+  Finally, they are  $H$-wide by \ssf1 of Theorem~\ref{thm_coalesce}.
+  (Stationarity is not required.)
+
+  \ssf2$\IMP$\ssf1.
+  Let $p({\mr x})\in S_\Delta(\grZ)$ be an $H$-thick type consistent with ${\mr x}\in\mrD$.
+  If $\mrD$ was not $H$-syndetic then $\neg\mrD$ would be $H$-thick, and therefore $H$-wide.
+  This would contradict $H$-stationarity.
 \end{proof}
 
 % \begin{assumption}\label{notation_2}
