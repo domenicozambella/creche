@@ -47,36 +47,36 @@ In this chapter the types in $S_\Delta(\grZ)$ are required to be finitely consis
 
 When $p({\mr x})\subseteq\LDelta(\grZ)$ and ${\mrD}\subseteq\mrX$ we write $p({\mr x})\proves{\mr x}\in{\mrD}$ if the inclusion $\psi(\mrX)\subseteq{\mrD}$ holds for some $\psi({\mr x})$ that is conjunctions of formulas in $p({\mr x})$.
 
-Let \emph{$H$\/} $\le\Aut(\UDelta)$.
-We say that $\grD\subseteq\grZ$ is \emph{invariant\/} under the action of $H$, or \emph{$H$-invariant,} if  $\grD$ is fixed setwise by $H$.
-That is, $g\,\grD=\grD$ for every $g\in H$.
+Let \emph{$G$\/} $\le\Aut(\UDelta)$.
+We say that $\grD\subseteq\grZ$ is \emph{invariant\/} under the action of $G$, or \emph{$G$-invariant,} if  $\grD$ is fixed setwise by $G$.
+That is, $g\,\grD=\grD$ for every $g\in G$.
 Yet in other words, if
 
-\ceq{\ssf{is.}\hfill{\gr a}\in\grD}{\iff}{g\,{\gr a}\in\grD}\hfill for every ${\gr a}\in\grZ$ and every $g\in H$.
+\ceq{\ssf{is.}\hfill{\gr a}\in\grD}{\iff}{g\,{\gr a}\in\grD}\hfill for every ${\gr a}\in\grZ$ and every $g\in G$.
 
-A formula is $H$-invariant if the set it defines is $H$-invariant.
-We say that the type $p({\mr x})\subseteq\BDelta(\grZ)$ is \emph{invariant\/} under the action of $H$, or \emph{$H$-invariant,} if 
+A formula is $G$-invariant if the set it defines is $G$-invariant.
+We say that the type $p({\mr x})\subseteq\BDelta(\grZ)$ is \emph{invariant\/} under the action of $G$, or \emph{$G$-invariant,} if 
 
-\ceq{\ssf{it.}\hfill\theta({\mr x}\,;{\gr\bar a})\in p}{\IFF}{\theta({\mr x}\,;g\,{\gr\bar a})\in p}\hfill for every $g\in H$ and every $\theta({\mr x}\,;{\gr\bar a})\in\BDelta(\grZ)$.
+\ceq{\ssf{it.}\hfill\theta({\mr x}\,;{\gr\bar a})\in p}{\IFF}{\theta({\mr x}\,;g\,{\gr\bar a})\in p}\hfill for every $g\in G$ and every $\theta({\mr x}\,;{\gr\bar a})\in\BDelta(\grZ)$.
 
-Note that $p({\mr x})$ is $H$-invariant exactly when the sets ${\gr\D_{p,\theta}}$ are.
+Note that $p({\mr x})$ is $G$-invariant exactly when the sets ${\gr\D_{p,\theta}}$ are.
 In this section we want to discuss the invariance of types using the sets $\mrD\subseteq\mrX$.
 
-An immediate consequence of the invariance of $\phi(\mrX\,;\grZ)$ is that $H$-translates sets in $\BDelta({\grZ})$ remain in $\BDelta({\grZ})$.
-In particular, by reasoning as in Remark~\ref{rem_image_def_set} we obtain that for every $\BDelta({\grZ})$-formula $\theta({\mr x}\,;{\gr\bar b})$ and every $g\in H$
+An immediate consequence of the invariance of $\phi(\mrX\,;\grZ)$ is that $G$-translates sets in $\BDelta({\grZ})$ remain in $\BDelta({\grZ})$.
+In particular, by reasoning as in Remark~\ref{rem_image_def_set} we obtain that for every $\BDelta({\grZ})$-formula $\theta({\mr x}\,;{\gr\bar b})$ and every $g\in G$
 
 \ceq{\hfill g[\theta(\mrX\,;{\gr\bar b})]}{=}{\theta(\mrX\,;g\,{\gr\bar b}).}
 
-Therefore, a type $p({\mr x})\subseteq\BDelta(\grZ)$ is $H$-invariant if
+Therefore, a type $p({\mr x})\subseteq\BDelta(\grZ)$ is $G$-invariant if
 
-\ceq{\hfill p({\mr x})\proves{\mr x}\in\mrD}{\IFF}{p({\mr x})\proves{\mr x}\in g{\cdot}\mrD}\hfill for every $\mrD\subseteq\mrX$ and $g\in H$.
+\ceq{\hfill p({\mr x})\proves{\mr x}\in\mrD}{\IFF}{p({\mr x})\proves{\mr x}\in g{\cdot}\mrD}\hfill for every $\mrD\subseteq\mrX$ and $g\in G$.
 
-% At the first reading the reader may assume that $H=\Aut(\U)$, $\mrX=\U^{\mr x}$, $\grZ=\U^{\gr z}$ and $\Delta=L_{{\mr x}\,;{\gr z}}$, where $|{\gr z}|=\omega$.
+% At the first reading the reader may assume that $G=\Aut(\U)$, $\mrX=\U^{\mr x}$, $\grZ=\U^{\gr z}$ and $\Delta=L_{{\mr x}\,;{\gr z}}$, where $|{\gr z}|=\omega$.
 % Then $\pmDelta(\grZ)=L_{\mr x}(\U)$ and  $S_\Delta(\grZ)=S_{\mr x}(\U)$. 
-% Note that when $H$ acts by automorphisms $\phi(\U^{\mr x};\U^{\gr z})$ is $H$-invariant for all $\phi({\mr x}\,;{\gr z})\in L$.
+% Note that when $G$ acts by automorphisms $\phi(\U^{\mr x};\U^{\gr z})$ is $G$-invariant for all $\phi({\mr x}\,;{\gr z})\in L$.
 
-A set $\mrD\subseteq\mrX$ is \emph{syndetic\/} under the action of $H$, or \emph{$H$-syndetic\/} for short, if finitely many $H$-translates of $\mrD$ cover $\mrX$; we say \emph{$n$-$H$-syndetic\/} if $\le n$ translates suffices.
-Dually, we say that $\mrD$ is \emph{thick\/} under the action of $H$, or \emph{$H$-thick\/} for short, if the intersection of any finitely many $H$-translates of $\mrD$ is nonempty; we say \emph{$n$-$H$-thick\/} when the request is limited to $\le n$ translates.
+A set $\mrD\subseteq\mrX$ is \emph{syndetic\/} under the action of $G$, or \emph{$G$-syndetic\/} for short, if finitely many $G$-translates of $\mrD$ cover $\mrX$; we say \emph{$n$-$G$-syndetic\/} if $\le n$ translates suffices.
+Dually, we say that $\mrD$ is \emph{thick\/} under the action of $G$, or \emph{$G$-thick\/} for short, if the intersection of any finitely many $G$-translates of $\mrD$ is nonempty; we say \emph{$n$-$G$-thick\/} when the request is limited to $\le n$ translates.
 When $\mrX$ and/or $\grZ$ are not clear from the context, we say that these notions are \emph{relative\/} to $\mrX$ and $\grZ$.
 
 The same properties may be attributed to formulas (as these are identified with the set they define).
@@ -89,23 +89,23 @@ In other contexts (see eg.~\cite{Newelski09}) syndetic sets are called \textit{g
 In~\cite{CK} the authors write \textit{quasi-non-dividing\/} for \textit{thick\/} under the action of $\Aut(\U/A)$.
 Their terminology has good motivations, but it would be a mouthful if adapted to our context.
 
-Notation: for $\mrD\subseteq\mrX$ and $C\subseteq H$ we write \emph{$C{\cdot}\mrD$\/} for $\{h{\cdot}\mrD: h\in C\}$.
+Notation: for $\mrD\subseteq\mrX$ and $C\subseteq G$ we write \emph{$C{\cdot}\mrD$\/} for $\{h{\cdot}\mrD: h\in C\}$.
 
 In this chapter many proofs require some juggling with negations as epitomized by the following fact.
 
 \begin{fact}\label{fact_fip}
   The following are equivalent
   \begin{itemize}
-    \item[1.] $\mrD$ is not $H$-syndetic
-    \item[2.] $\neg\mrD$ is $H$-thick.
+    \item[1.] $\mrD$ is not $G$-syndetic
+    \item[2.] $\neg\mrD$ is $G$-thick.
   \end{itemize}
 \end{fact}
 
 \begin{proof}
   Immediate by spelling out the definitions
   \begin{itemize}
-    \item[1.] there are no finite $C\subseteq H$ such that $\mrX\ \subseteq\ \cup\, C{\cdot}{\mr\D}$.
-    \item[2.] $\varnothing\ \neq\ \mrX\,\cap\,\big(\cap\, C{\cdot}\neg{\mr\D}\big)$ for every finite $C\subseteq H$.\qedhere
+    \item[1.] there are no finite $C\subseteq G$ such that $\mrX\ \subseteq\ \cup\, C{\cdot}{\mr\D}$.
+    \item[2.] $\varnothing\ \neq\ \mrX\,\cap\,\big(\cap\, C{\cdot}\neg{\mr\D}\big)$ for every finite $C\subseteq G$.\qedhere
   \end{itemize} 
 \end{proof}
 
@@ -114,34 +114,34 @@ The following characterization is also useful (an is sometimes taken as the defi
 \begin{corollary}\label{fact_fip2}
   The following are equivalent
   \begin{itemize}
-    \item[1.] $\mrD$ is $H$-thick
-    \item[2.] $\mrD\cap\mrC\neq\varnothing$ for every $H$-syndetic set $\mrC$.
+    \item[1.] $\mrD$ is $G$-thick
+    \item[2.] $\mrD\cap\mrC\neq\varnothing$ for every $G$-syndetic set $\mrC$.
   \end{itemize}
 \end{corollary}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2. 
-  If $\mrD$ is $H$-thick and $\mrD\subseteq\neg\mrC$ implies that $\neq\mrC$ is also $H$-thick, then $\mrC$ cannot be $H$-syndetic.
+  If $\mrD$ is $G$-thick and $\mrD\subseteq\neg\mrC$ implies that $\neq\mrC$ is also $G$-thick, then $\mrC$ cannot be $G$-syndetic.
 
   \ssf2$\IMP$\ssf1. 
-  If $\mrD$ is not $H$-thick then $\mrD$ is $H$-syndetic then $\neg$\ssf2.
+  If $\mrD$ is not $G$-thick then $\mrD$ is $G$-syndetic then $\neg$\ssf2.
 \end{proof}
 
 Define the following type
 
-\ceq{\hfill\emph{$\gamma_H({\mr x})$}}{=}{\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is }H\textrm{-syndetic}\}}
+\ceq{\hfill\emph{$\gamma_H({\mr x})$}}{=}{\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is }G\textrm{-syndetic}\}}
 
 % We remark that the consistency of $\gamma_H({\mr x})$ is far from guaranteed.
 
 \begin{corollary}\label{corol_q_pers}
   Let $p({\mr x})\subseteq\BDelta(\grZ)$ be such that $\gamma_H({\mr x})\cup p({\mr x})$ is finitely consistent.
-  Then $p({\mr x})$ is $H$-thick.
+  Then $p({\mr x})$ is $G$-thick.
 \end{corollary}
 
 \begin{proof}
   Let $\theta({\mr x})$ be a conjunction of formulas in $p({\mr x})$.
-  As $\gamma_H({\mr x})\cup\{\theta({\mr x})\}$ is finitely consistent, it cannot be that $\neg\theta({\mr x})$ is $H$-syndetic.
-  From Fact~\ref{fact_fip}, we obtain that $\theta({\mr x})$ is $H$-thick.
+  As $\gamma_H({\mr x})\cup\{\theta({\mr x})\}$ is finitely consistent, it cannot be that $\neg\theta({\mr x})$ is $G$-syndetic.
+  From Fact~\ref{fact_fip}, we obtain that $\theta({\mr x})$ is $G$-thick.
 \end{proof}
 
 The converse implication holds for complete types.
@@ -150,16 +150,16 @@ The converse implication holds for complete types.
   Let $p({\mr x})\in S_\Delta(\grZ)$.
   Then the following are equivalent
   \begin{itemize}
-    \item[1.] $p({\mr x})$ is $H$-invariant
+    \item[1.] $p({\mr x})$ is $G$-invariant
     \item[2.] $p({\mr x})\proves\gamma_H({\mr x})$
-    \item[3.] $p({\mr x})$ is $H$-thick.
+    \item[3.] $p({\mr x})$ is $G$-thick.
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  Let $\mrD\in\BDelta(\grZ)$ be a $H$-syndetic.
-  Pick $C\subseteq H$ be finite such that $\mrX\subseteq\cup\,C{\cdot}\mrD$.
+  Let $\mrD\in\BDelta(\grZ)$ be a $G$-syndetic.
+  Pick $C\subseteq G$ be finite such that $\mrX\subseteq\cup\,C{\cdot}\mrD$.
   Then $p({\mr x})\proves {\mr x}\in\cup\,C{\cdot}\mrD$.
   By completeness, $p({\mr x})\proves {\mr x}\in h\,\mrD$ for some $h\in C$.
   Finally, by invariance, $p({\mr x})\proves{\mr x}\in\mrD$.
@@ -169,20 +169,20 @@ The converse implication holds for complete types.
 
   \ssf3$\IMP$\ssf1.
   % uppose $p({\mr x})$ is not $(n+2)$-thick and let $n$ be minimal.
-  % Let $g_1,\dots,g_{n+2}\in H$ and $\theta({\mr x})\,;{\gr\bar b}$ witness this.
+  % Let $g_1,\dots,g_{n+2}\in G$ and $\theta({\mr x})\,;{\gr\bar b}$ witness this.
   % Then 
-  Suppose $p({\mr x})$ is not $H$-invariant.
-  % Then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g\,{\gr b})$ for some $g\in H$ and $\phi({\mr x}\,;{\gr b})\in\BDelta(\grZ)$.
-  % Clearly $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g\,{\gr b})$ is not $2$-$H$-thick as it is inconsistent with its $g$-translate.
-  By completeness $p({\mr x})\proves{\mr x}\in(\neg\mrD\cap g{\cdot}\mrD)$ for some $g\in H$ and some $\mrD\in\BDelta(\grZ)$.
-  Clearly $\neg\mrD\cap g{\cdot}\mrD$ is not $2$-$H$-thick as it is inconsistent with its $g$-translate.
+  Suppose $p({\mr x})$ is not $G$-invariant.
+  % Then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g\,{\gr b})$ for some $g\in G$ and $\phi({\mr x}\,;{\gr b})\in\BDelta(\grZ)$.
+  % Clearly $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g\,{\gr b})$ is not $2$-$G$-thick as it is inconsistent with its $g$-translate.
+  By completeness $p({\mr x})\proves{\mr x}\in(\neg\mrD\cap g{\cdot}\mrD)$ for some $g\in G$ and some $\mrD\in\BDelta(\grZ)$.
+  Clearly $\neg\mrD\cap g{\cdot}\mrD$ is not $2$-$G$-thick as it is inconsistent with its $g$-translate.
 \end{proof}
 
 % \begin{corollary}\label{corol_gammaG_invaqriancer}
 %   The following are equivalent for every $\BDelta(\grZ)$-definable set $\mrD$
 %   \begin{itemize}
 %     \item [1.] $\gamma_H({\mr x})\proves{\mr x}\in\mrD$
-%     \item [2.] $p({\mr x})\proves{\mr x}\in\mrD$ for every $H$-thick $p({\mr x})\in S_\Delta(\grZ)$.
+%     \item [2.] $p({\mr x})\proves{\mr x}\in\mrD$ for every $G$-thick $p({\mr x})\in S_\Delta(\grZ)$.
 %   \end{itemize}
 % \end{corollary}
 
@@ -193,17 +193,17 @@ The converse implication holds for complete types.
 %   \ssf2$\IMP$\ssf1.
 %   Suppose $\gamma_H({\mr x})\not\proves{\mr x}\in\mrD$.
 %   Then there is a type $p({\mr x})\in S_\Delta(\grZ)$ finitely consistent with $\gamma_H({\mr x})\cup\{{\mr x}\notin\mrD\}$.
-%   By Corollary~\ref{corol_q_pers} $p({\mr x})$ is $H$-thick.
+%   By Corollary~\ref{corol_q_pers} $p({\mr x})$ is $G$-thick.
 %   Then $\neg\ssf2$.
 % \end{proof}
 
-The theorem yields a necessary condition for the existence of global $\BDelta({\grZ})$-types that are $H$-thick.
+The theorem yields a necessary condition for the existence of global $\BDelta({\grZ})$-types that are $G$-thick.
 
 \begin{corollary}\label{corol_def_mu}
-  If an $H$-thick type $p({\mr x})\in S_\Delta(\grZ)$ exists, then for any $\mrD\in\BDelta({\grZ})$
+  If an $G$-thick type $p({\mr x})\in S_\Delta(\grZ)$ exists, then for any $\mrD\in\BDelta({\grZ})$
   \begin{itemize}
-    \item[1.] $\mrD$ and $\neg\mrD$ are not both $H$-syndetic
-    \item[2.] if $\mrD$ is $H$-syndetic then it is $H$-thick
+    \item[1.] $\mrD$ and $\neg\mrD$ are not both $G$-syndetic
+    \item[2.] if $\mrD$ is $G$-syndetic then it is $G$-thick
     \item[3.] $\gamma_H({\mr x})$ is finitely consistent.\smallskip
   \end{itemize}
 \end{corollary}
@@ -213,20 +213,20 @@ The theorem yields a necessary condition for the existence of global $\BDelta({\
   Finally, \ssf3 is an immediate consequence of \ssf2 of Theorem~\ref{thm_syndetic_invariant}.
 \end{proof}
 
-The following theorem gives a necessary and sufficient condition for the  existence of global $H$-invariant $\BDelta({\grZ})$-type.
-Ideally, we would like that every $H$-thick $\BDelta({\grZ})$-type extends to a global thick type.
+The following theorem gives a necessary and sufficient condition for the  existence of global $G$-invariant $\BDelta({\grZ})$-type.
+Ideally, we would like that every $G$-thick $\BDelta({\grZ})$-type extends to a global thick type.
 Unfortunately this is not true in general (it is a strong assumption, see Section~\ref{tame_landscape}).
-A set $\mrD$ is \emph{$H$-wide\/} if every finite cover of $\mrD$ by $\BDelta({\grZ})$-sets contains a $H$-thick set.
+A set $\mrD$ is \emph{$G$-wide\/} if every finite cover of $\mrD$ by $\BDelta({\grZ})$-sets contains a $G$-thick set.
 In~\cite{CK} a similar property is called \textit{quasi-non-forking.}
 Our use of the term \textit{wide\/} is consistent with~\cite{Hr}, though we apply it to a narrow context.
-A type is $H$-wide if every conjunction of formulas in the type is $H$-wide.
+A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
 
 \begin{theorem}\label{thm_syndetic_invariant2}
   For every $\mrD\in\BDelta(\grZ)$ the following are equivalent 
   \begin{itemize}
     \item[1.] $\gamma_H({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent
-    \item[2.] there exists a $H$-thick type $p({\mr x})\in S_\Delta(\grZ)$ entailing ${\mr x}\in\mrD$
-    \item[3.] $\mrD$ is $H$-wide.\smallskip
+    \item[2.] there exists a $G$-thick type $p({\mr x})\in S_\Delta(\grZ)$ entailing ${\mr x}\in\mrD$
+    \item[3.] $\mrD$ is $G$-wide.\smallskip
   \end{itemize}
 \end{theorem}
 
@@ -241,16 +241,15 @@ A type is $H$-wide if every conjunction of formulas in the type is $H$-wide.
   Let ${\mr\C_1},\dots,{\mr\C_n}$ be $\BDelta({\grZ})$-sets that cover $\mrD$.
   Pick $p({\mr x})$ as in \ssf2.
   By completeness, $p({\mr x})\proves {\mr x}\in{\mr\C_i}$ for some $i$.
-  Then, by Theorem~\ref{thm_syndetic_invariant}, $\neg{\mr\C_i}$ is not $H$-syndetic.
-  Therefore, by Fact~\ref{fact_fip}, ${\mr\C_i}$ is $H$-thick.
+  Therefore, ${\mr\C_i}$ is $G$-thick.
 
   \ssf3$\IMP$\ssf2.
-  Let $p({\mr x})$ be maximal among the $\BDelta({\grZ})$-types that are finitely satisfiable in $\mrX\cap\mrD$ and are such that $\theta(\U^{\mr x})$ is $H$-wide for every $\theta({\mr x})$ that is conjunction of formulas in $p({\mr x})$.
+  Let $p({\mr x})$ be maximal among the $\BDelta({\grZ})$-types that are finitely satisfiable in $\mrX\cap\mrD$ and are $G$-wide.
   We claim that $p({\mr x})$ is a complete $\BDelta({\grZ})$-type.
   Suppose for a contradiction that $\theta({\mr x}),\neg\theta({\mr x})\notin p$.
-  By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$, and some $\BDelta({\grZ})$-sets ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi(\U^{\mr x})\cap\theta(\U^{\mr x})$ and $\psi(\U^{\mr x})\smallsetminus\theta(\U^{\mr x})$ and such that no ${\mr\C_i}$ is $H$-thick.
+  By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$, and some $\BDelta({\grZ})$-sets ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi(\U^{\mr x})\cap\theta(\U^{\mr x})$ and $\psi(\U^{\mr x})\smallsetminus\theta(\U^{\mr x})$ and such that no ${\mr\C_i}$ is $G$-thick.
   As ${\mr\C_1},\dots,{\mr\C_n}$ cover $\psi(\U^{\mr x})$ this is a contradiction.
-  It is only left to show that $p({\mr x})$ is $H$-thick.
+  It is only left to show that $p({\mr x})$ is $G$-thick.
   This follows from completeness and Theorem~\ref{thm_syndetic_invariant}.
 \end{proof}
 
@@ -260,8 +259,8 @@ For future reference we note that theorem also apply to type-definable sets.
   For every $\BDelta(\grZ)$-type $q({\mr x})$ the following are equivalent 
   \begin{itemize}
     \item[1.] $\gamma_H({\mr x})\cup q({\mr x})$ is finitely consistent
-    \item[2.] there exists an $H$-thick type $p({\mr x})\in S_\Delta(\grZ)$ consistent with $q({\mr x})$
-    \item[3.] $q({\mr x})$ is $H$-wide.\smallskip
+    \item[2.] there exists an $G$-thick type $p({\mr x})\in S_\Delta(\grZ)$ consistent with $q({\mr x})$
+    \item[3.] $q({\mr x})$ is $G$-wide.\smallskip
   \end{itemize}
 \end{corollary}
 
@@ -270,27 +269,27 @@ For future reference we note that theorem also apply to type-definable sets.
   The other implications follow immediately from the theorem.
 \end{proof}
 
-We say that the type $q({\mr x})$ is \emph{$H$-stationary\/} if there exists exactly one $H$-thick type $p({\mr x})\in S_\Delta(\grZ)$ consistent with $q({\mr x})$.
+We say that the type $q({\mr x})$ is \emph{$G$-stationary\/} if there exists exactly one $G$-thick type $p({\mr x})\in S_\Delta(\grZ)$ consistent with $q({\mr x})$.
 
 \begin{corollary}\label{corol_intersectionGwide}
-  Let $\mrD\in\BDelta(\grZ)$ be a $H$-wide.
-  Then $\mrD\cap g{\cdot}\mrD$ is $H$-wide for every $g\in H$.
+  Let $\mrD\in\BDelta(\grZ)$ be a $G$-wide.
+  Then $\mrD\cap g{\cdot}\mrD$ is $G$-wide for every $g\in G$.
 \end{corollary}
 
 \begin{proof}
-  Let $p({\mr x})\in S_\Delta(\grZ)$ be a $H$-thick type such that $p({\mr x})\proves{\mr x}\in\mrD$.
-  By $H$-invariance $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$.
+  Let $p({\mr x})\in S_\Delta(\grZ)$ be a $G$-thick type such that $p({\mr x})\proves{\mr x}\in\mrD$.
+  By $G$-invariance $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$.
 \end{proof}
 
 % Let $q({\mr x})\subseteq\BDelta(\grZ)$.
-% We say that $q({\mr x})$ is \emph{$H$-prime\/} if for every $\BDelta(\grZ)$-definable set $\mrD$ and every $g_1,g_2\in H$ if $q({\mr x})\proves{\mr x}\in(g_1{\cdot}\mrD\cup g_2{\cdot}\mrD)$ then $q({\mr x})\proves{\mr x}\in g_i{\cdot}\mrD$ for some $i$.
+% We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\BDelta(\grZ)$-definable set $\mrD$ and every $g_1,g_2\in G$ if $q({\mr x})\proves{\mr x}\in(g_1{\cdot}\mrD\cup g_2{\cdot}\mrD)$ then $q({\mr x})\proves{\mr x}\in g_i{\cdot}\mrD$ for some $i$.
 % The following fact is immediate.
 
 % \begin{fact}
 %   The following are equivalent for every $\BDelta(\grZ)$-type $q({\mr x})$
 %   \begin{itemize}
-%     \item [1.] $q({\mr x})$ is $H$-prime and $H$-invariant
-%     \item [2.] if $\mrD$ is $\BDelta(\grZ)$-definable, $g\in H$, and $q({\mr x})\proves{\mr x}\in(\mrD\cup g{\cdot}\mrD)$, then $q({\mr x})\proves{\mr x}\in\mrD$.
+%     \item [1.] $q({\mr x})$ is $G$-prime and $G$-invariant
+%     \item [2.] if $\mrD$ is $\BDelta(\grZ)$-definable, $g\in G$, and $q({\mr x})\proves{\mr x}\in(\mrD\cup g{\cdot}\mrD)$, then $q({\mr x})\proves{\mr x}\in\mrD$.
 %   \end{itemize}
 % \end{fact}
 
@@ -298,7 +297,7 @@ We say that the type $q({\mr x})$ is \emph{$H$-stationary\/} if there exists exa
 %   For every type $q({\mr x})\subseteq\BDelta(\grZ)$ the following are equivalent
 %   \begin{itemize}
 %     \item [1.] $q({\mr x})\proves\gamma_H({\mr x})$
-%     \item [2.] $q({\mr x})$ is $H$-prime and $H$-invariant.
+%     \item [2.] $q({\mr x})$ is $G$-prime and $G$-invariant.
 %   \end{itemize}
 % \end{proposition}
 
@@ -307,25 +306,25 @@ We say that the type $q({\mr x})$ is \emph{$H$-stationary\/} if there exists exa
 %   Suppose $q({\mr x})\proves{\mr x}\in(\mrD\cup g{\cdot}\mrD)$.
 %   Let $p({\mr x})\in S_\Delta(\grZ)$ extend $q({\mr x})$.
 %   By completeness $p({\mr x})\proves{\mr x}\in\mrD$ or $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$.
-%   As $p({\mr x})$ is $H$-invariant by Theorem~\ref{thm_syndetic_invariant}, it follows that
+%   As $p({\mr x})$ is $G$-invariant by Theorem~\ref{thm_syndetic_invariant}, it follows that
 %   $p({\mr x})\proves{\mr x}\in\mrD$.
 %   Finally, as $p({\mr x})$ is arbitrary, $q({\mr x})\proves{\mr x}\in\mrD$. 
 
 %   \ssf2$\IMP$\ssf1.
-%   As $\mrD$ is $H$-syndetic and $q({\mr x})$ is $H$-prime, $q({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in H$.
+%   As $\mrD$ is $G$-syndetic and $q({\mr x})$ is $G$-prime, $q({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in G$.
 %   Finally $q({\mr x})\proves{\mr x}\in\mrD$ by invariance.
 % \end{proof}
 
 \begin{exercise}
-  Prove that if $p(x)\in S(\U)$ is finitely satisfiable in every $M\supseteq A$ then it is thick under the action of $H=\Autf(\U/A)$.
+  Prove that if $p(x)\in S_\Delta(\U)$ is finitely satisfiable in every $M\supseteq A$ then it is thick under the action of $G=\Autf(\UDelta)$.
   Is the same true for incomplete types?
 \end{exercise}
 
 \begin{exercise}
   Prove that the following are equivalent
   \begin{itemize}
-    \item[1.] $\D$ is $H$-thick
-    \item[2.] there is a type $p(x)\in S_\Delta(\Z)$ containing $\{x\in g{\cdot}\D\;:\;g\in H\}$.
+    \item[1.] $\D$ is $G$-thick
+    \item[2.] there is a type $p(x)\in S_\Delta(\Z)$ containing $\{x\in g{\cdot}\D\;:\;g\in G\}$.
   \end{itemize}
 \end{exercise}
 
@@ -333,9 +332,9 @@ We say that the type $q({\mr x})$ is \emph{$H$-stationary\/} if there exists exa
   Let $p(x)\in S_\Delta(\U)$.
   Prove that the following are equivalent
   \begin{itemize}
-    \item[1.] $p(x)$ is $H$-invariant
-    \item[2.] $p(x)\proves x\in\D$ for every 2-$H$-syndetic definable set $\D$
-    \item[3.] $p(x)$ is 2-$H$-thick.
+    \item[1.] $p(x)$ is $G$-invariant
+    \item[2.] $p(x)\proves x\in\D$ for every 2-$G$-syndetic definable set $\D$
+    \item[3.] $p(x)$ is 2-$G$-thick.
   \end{itemize}
 \end{exercise}
 
@@ -343,21 +342,21 @@ We say that the type $q({\mr x})$ is \emph{$H$-stationary\/} if there exists exa
   Let $\D$ be a $\BDelta(\Z)$-type-definable set.
   Prove that the following are equivalent 
   \begin{itemize}
-    \item[1.] there is a $H$-invariant type $p(x)\in S_\Delta(\Z)$ such that $p(x)\proves x\in\D$.
-    \item[2.] every finite cover of $\D$ by $\BDelta(\Z)$-definable sets contains a 2-$H$-thick set.
+    \item[1.] there is a $G$-invariant type $p(x)\in S_\Delta(\Z)$ such that $p(x)\proves x\in\D$.
+    \item[2.] every finite cover of $\D$ by $\BDelta(\Z)$-definable sets contains a 2-$G$-thick set.
   \end{itemize}
 \end{exercise}
 
 % \begin{exercise}\label{ex_gen_sat}
-%   Let $p(x)\subseteq \BDelta(\Z)$ be $H$-syndetic.
+%   Let $p(x)\subseteq \BDelta(\Z)$ be $G$-syndetic.
 %   Prove that it is finitely satisfiable in $\X$.
 % \end{exercise}
 
 \begin{exercise}\label{ex_thick_types}
   Prove that for every $p(x)\subseteq \BDelta(A)$ following are equivalent
   \begin{itemize}
-    \item[1.] $p(x)$ is $H$-thick
-    \item[2.] $p(\U^x)$ is $H$-thick.
+    \item[1.] $p(x)$ is $G$-thick
+    \item[2.] $p(\U^x)$ is $G$-thick.
   \end{itemize}
 \end{exercise}
 
@@ -367,20 +366,20 @@ We say that the type $q({\mr x})$ is \emph{$H$-stationary\/} if there exists exa
 \end{exercise}
 
 \begin{exercise}\label{ex_syndetic_type_vs_formulas}
-  Let $\D\subseteq\X$ be a $H$-syndetic $\BDelta(\Z)$-type-definable set.
-  Prove that $\D$ is definable by a $\BDelta(\Z)$-type containing only $H$-syndetic formulas.
+  Let $\D\subseteq\X$ be a $G$-syndetic $\BDelta(\Z)$-type-definable set.
+  Prove that $\D$ is definable by a $\BDelta(\Z)$-type containing only $G$-syndetic formulas.
 \end{exercise}
 
 % \begin{exercise}\label{ex_Hprime}
-%   Prove that if $q(x)$ is $H$-prime and $q(x)\proves x\in \cup\,H{\cdot}\D$ for some finite $H\subseteq H$, then $q(x)\proves x\in\D$.
+%   Prove that if $q(x)$ is $G$-prime and $q(x)\proves x\in \cup\,G{\cdot}\D$ for some finite $G\subseteq G$, then $q(x)\proves x\in\D$.
 % \end{exercise}
 
 % \begin{exercize}
 %   Let $\mrD$ be a $\BDelta(\grZ)$-definable set.
 %   Prove that the following are equivalent
 %   \begin{itemize}
-%     \item [1.] $\mrD$ is $H$-wide;
-%     \item [2.] every finite cover of $\mrD$ by $\pmDelta({\grZ})$-definable sets contains a $H$-thick set.
+%     \item [1.] $\mrD$ is $G$-wide;
+%     \item [2.] every finite cover of $\mrD$ by $\pmDelta({\grZ})$-definable sets contains a $G$-thick set.
 %   \end{itemize}
 % \end{exercize}
 
@@ -850,7 +849,7 @@ The following theorem asserts that weak thickness is partition regular.
 \end{theorem}
 
 \begin{proof}
-  If $x\in \mrC\cup\mrB$ is consistent with ${}^{\rm s}\kern-.2ex\gamma_H({\mr x})$ then so is one of the two sets.
+  If ${\mr x}\in \mrC\cup\mrB$ is consistent with ${}^{\rm s}\kern-.2ex\gamma_H({\mr x})$ then so is one of the two sets.
 \end{proof}
 
 Assume that every $\mrD\in\BDelta(\grZ)$ has a small $H$-orbit.
