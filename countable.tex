@@ -401,12 +401,12 @@ A different term is used in another very interesting case: a theory which is sma
 For this reason, the term $0$-stable is sometimes used for small.
 
 \begin{proposition}
-If $T$ is small (over $\varnothing$) then it is small over any finite set $A$.
+If $T$ is small over $A$ then it is small over $A\cup B$ for any finite set $B$.
 \end{proposition}
 
 \begin{proof}
-Let ${\gr a}$ be an enumeration of $A$.
-As $S_{\mr x}(A)=\big\{p({\mr x}\,;{\gr a})\ :\ p\in S_{{\mr x}\,;\,{\gr z}}(T)\big\}$ the proposition is immediate.
+Let ${\gr b}$ be an enumeration of $B$.
+As $S_{\mr x}(A,B)=\big\{p({\mr x}\,;{\gr b})\ :\ p\in S_{{\mr x}\,;\,{\gr z}}(A)\big\}$ the proposition is immediate.
 \end{proof}
 
 Below we identify $S_{\mr x}(A)$ with $\U^{\mr x}/\mathord\equiv_A$
@@ -535,17 +535,20 @@ Consider the following type that extends $p_s({\mr x})$
 \ceq{\hfill q({\mr x})}{=}{\Big\{\xi({\mr x})\in\Delta\ :\ p_s({\mr x})\cup\{\neg\xi({\mr x})\} \textrm{
 has }\le\omega\textrm{ extensions in }S(\Delta)\Big\}.}
 
-This type is consistent, otherwise $\neg\xi_1\vee\dots\vee\neg\xi_n$
-would hold for some $\xi_i \in q$.
-This cannot happen, because $p_s$ has uncountably many extensions in
-$S(\Delta)$, while by the definition of $q$ each of
-$p_s\cup\{\neg\xi_i\}$ has countably many extensions.
+This type is consistent, otherwise 
 
-If the formula $\psi$ required above does not exist, $q$ is complete,
+\ceq{\hfill p_s({\mr x})}{\imp}{\neg\xi_1({\mr x})\vee\dots\vee\neg\xi_n({\mr x})}
+
+would hold for some $\xi_i({\mr x}) \in q$.
+This cannot happen, because $p_s({\mr x})$ has uncountably many extensions in
+$S(\Delta)$, while by the definition of $q$ each of
+$p_s({\mr x})\cup\{\neg\xi_i({\mr x})\}$ has countably many extensions.
+
+If the formula $\psi({\mr x})$ required above does not exist, $q({\mr x})$ is complete,
 hence it belongs to $S(\Delta)$.
-Every type in $S(\Delta)$ that extends $p_s$ and is distinct from $q$
-contains $p_s\cup\{\neg\xi\}$ for some $\xi\in q$.
-By the definition of $q$, there are countably many such types,
+Every type in $S(\Delta)$ that extends $p_s({\mr x})$ and is distinct from $q({\mr x})$
+contains $p_s({\mr x})\cup\{\neg\xi({\mr x})\}$ for some $\xi({\mr x})\in q({\mr x})$.
+By the definition of $q({\mr x})$, there are countably many such types,
 so this contradicts the induction hypothesis.
 \end{proof}
 
@@ -575,7 +578,7 @@ The union of the chain is the saturated model that proves \ssf2.
 
 
 \begin{proposition} 
-A small theory has countable atomic models over every countable set.
+A small theory has atomic models over $A$ for any countable $A$.
 \end{proposition}
 \begin{proof}
 We prove that every formula in $L_{\mr x}(A)$, where ${\mr x}$ is finite, has a solution isolated over $A$.
@@ -616,13 +619,14 @@ Clearly $K\not\simeq M$ and, by Exercises~\ref{ex_omega_cat_overA} and~\ref{ex_o
 %%%%%%%%%%%%%%%%%%
 \section{A toy version of a theorem of Zil'ber}\label{toy}
 
+Recall that $T$ is a complete theory without finite models.
 As an application we prove that if $T$ is $\omega$-categorical and strongly minimal then it is not finitely axiomatizable.
 
 We say that $T$ has the \emph{finite model property\/} if for every sentence $\phi\in L$ there is a finite substructure $A\subseteq\U$ such that 
 
 \ceq{\ssf{fmp}\hfill\U\models\phi}{\IFF}{A\models\phi}
 
-The property is interesting because of the following proposition.
+The property is interesting to us because of the following proposition.
 
 \begin{proposition}\label{prop_fmp_fa}
 If $T$ has the finite model property then it is not finitely axiomatizable.
@@ -634,61 +638,56 @@ But $T\proves \E^{>k}x\,(x=x)$ for every $k$.
 A contradiction.
 \end{proof}
 We need the following definition.
-We say that $C\subseteq\U$ is a \emph{homogeneous set\/} if for every pair of tuples  ${\gr a},{\gr c}\in C^{<\omega}$ such that ${\gr a}\equiv{\gr c}$ and for every ${\mr b}\in C$ there is a ${\mr d}\in C$ such that ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$.
+We say that $C\subseteq\U$ is a \emph{homogeneous set\/} if for every finite elementary map $k:C\to C$ and every ${\mr b}\in C$ there is a ${\mr c}\in C$ such that $k\cup\{\<{\mr b},{\mr c}\>\}$ is elementary.
 
-\begin{lemma}\label{lem_zilbergiocattolo} Suppose $L$ is countable.
-If $T$ is $\omega$-categorical and every finite set is contained in a finite homogeneous substructure, then $T$ has the finite model property.
-\end{lemma}
-\begin{proof}
-%Assume for the moment that $L$ is a relational language.
-We prove \ssf{fmp} also for formulas with parameters.
-We prove that for all $n$ there is a finite structure $A\subseteq\U$ where \ssf{fmp} holds for all sentences $\phi\in L(A)$ such that
-
-$\#$\hfil number of parameters in $\phi$\ \  $+$\ \  number of quantifiers in $\phi$\ \ $\le n$.
-
-Fix $n$ and pick some finite substructure $A$ that is homogeneous and such that all types $p(z)\subseteq L$ with $|z|\le n$ have a realization in $A^z$.
-Now we prove \ssf{fmp} by induction on the syntax of $\phi$.
-
-The claim for atomic formulas is witnessed by any finite structure that contains the parameters of the formula.
-Such finite substructure exists in fact it suffices to take the algebraic closure which, in an $\omega$-categorical theory, is finite (by \ssf{3} of Lemma~\ref{prop_ERNS_equivalents}).
-Induction for Boolean connectives is straightforward.
-As for induction step for the existential quantifier, consider the formula $\E {\mr x}\,\phi({\mr x}\,;{\gr c})$, where ${\gr c}\in A^{<n}$ and $|{\mr x}|=1$.
-Implication $\PMI$ of \ssf{fmp} follows immediately from the induction hypothesis and from the fact that, if $\E {\mr x}\,\phi({\mr x}\,;{\gr c})$ satisfy $\#$, also $\phi({\mr d}\,;{\gr c})$ satisfies it.
-As for $\IMP$, assume $\U\models\E {\mr x}\, \phi({\mr x}\,;{\gr c})$.
-Let ${\gr a},{\mr b}\in A^{<\omega}$ be a solution of $\phi({\mr x}\,;{\gr z})$ such that ${\gr a}\equiv{\gr c}$.
-Such a solution exists because all types with $\le n$ variables are realized in $A$.
-By homogeneity there is a ${\mr d}\in A$ such that ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$ and therefore $A\models\phi({\mr d}\,;{\gr c})$.%
-% Finally consider the case when $L$ contains functions symbols.
-% Now we also need to check that $A$ is a structure.
-% This is true in general but, for simplicity we add to \ssf{\#} the requirement that all function symbols in $L$ have arity $<n$.
-% Note that if all types $p(z)\subseteq L$ with $|z|\le n$ have a realization in $A^z$, then $A$ is a substructure w.r.t.\@ a fragment which only contains functions of arity $< n$.
-\end{proof}
-
-\begin{proposition}\label{prop_zilbergiocattolo} If $T$ is strongly minimal, then every algebraically closed set is homogeneous.
+\begin{proposition}\label{prop_zilbergiocattolo}
+  ($T$ strongly minimal.)
+  Every algebraically closed set of finite dimension is homogeneous.
 \end{proposition}
 \begin{proof}
-Let $A$ be algebraically closed and let ${\gr a},{\gr c}\in A^{<\omega}$ be such that ${\gr a}\equiv{\gr c}$.
-Let ${\mr b}$ be an element of $A$.
-Suppose first that ${\mr b}\in\acl{\gr a}$.
-Let $f\in\Aut(\U)$ be such that $f({\gr a})={\gr c}$ and $f[A]=\acl A$.
-Then ${\mr d}=f{\mr b}$ is the required element, in fact ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$.
-Now, suppose instead that ${\mr b}\notin\acl{\gr a}$.
-Then any ${\mr d}\notin\acl{\gr c}$ satisfies ${\gr a},{\mr b}\equiv {\gr c},{\mr d}$.
-Such a ${\mr d}$ exists in $A$, otherwise $A=\acl{\gr c}\neq\acl{\gr a}$, which contradicts ${\gr a}\equiv {\gr c}$.
+  Let $k:A\to A$ be elementary.
+  Assume $A$ is algebraically closed and pick ${\mr b}\in A$.
+  If ${\mr b}\in\acl(\dom k)$, then by Proposition~\ref{prop_estensionemappechiusuraalgebrica} there is an $f\in\Aut(\U)$ that extends $k$ and is such that $f({\mr b})\in\acl(\range k)\subseteq A$.
+  Then ${\mr c}=f{\mr b}$ is as required.
+  If ${\mr b}\notin\acl(\dom k)$, then $\dim(\dom k)<\dim A$.
+  Therefore also  $\dim(\range k)<\dim A$.
+  Then we can pick any ${\mr c}\in A\sm\range k$.
 \end{proof}
 
-From the propositions above we finally obtain the following.
+\begin{lemma}\label{lem_zilbergiocattolo} 
+  ($T$ strongly minimal.)
+  If $T$ is $\omega$-categorical then $T$ has the finite model property.
+\end{lemma}
+\begin{proof}
+  We prove \ssf{fmp} also for formulas with parameters.
+  Namely, we prove that for every $n$ there is a finite structure $A\subseteq\U$ such that \ssf{fmp} holds for all sentences $\phi\in L(A)$ such that
+
+  $\#_n$\hfil number of parameters in $\phi$\ \ $+$\ \ number of quantifiers in $\phi$\ \ $\le\ n$.
+
+  Fix $n$ and pick some finite algebraically closed set $A$ such that all types $p(z)\subseteq L$ with $|z|\le n$ have a realization in $A^z$.
+  Recall that the algebraic closure is always a substructure and that, in an $\omega$-categorical theory, finite sets have finite algebraic closure. 
+  Now we prove that $A\models\phi$ for every $\phi$ as in $\#_n$.
+
+  Proceed by induction on the syntax of $\phi$.
+  The claim is clear for atomic formulas.
+  Induction for Boolean connectives is straightforward.
+  As for induction step for the existential quantifier, consider the formula $\E {\mr x}\,\phi({\mr x}\,;{\gr a})$, where ${\gr a}\in A^{<n}$ and $|{\mr x}|=1$.
+  Implication $\PMI$ of \ssf{fmp} follows immediately from the induction hypothesis and from the fact that, if $\E {\mr x}\,\phi({\mr x}\,;{\gr a})$ satisfy $\#_n$, also $\phi({\mr b}\,;{\gr a})$ satisfies it.
+  As for $\IMP$, assume that $\U\models\E {\mr x}\, \phi({\mr x}\,;{\gr a})$.
+  Let ${\mr b},{\gr a'}\in A^{{\mr x}\,{\gr z}}$ be a solution of $\phi({\mr x}\,;{\gr z})$ such that ${\gr a}\equiv{\gr a'}$.
+  Such a solution exists because all types with $\le n$ variables are realized in $A$.
+  As $A$ is a homogeneous set (apply the definition with $k=\{\<{\gr a'},{\gr a}\>\}$),  there is a ${\mr c}\in A$ such that ${\gr a},{\mr c}\equiv {\gr a'},{\mr b}$.
+  Therefore $A\models\phi({\mr c}\,;{\gr a})$ follows by induction hypothesis.
+  % Finally consider the case when $L$ contains functions symbols.
+  % Now we also need to check that $A$ is a structure.
+  % This is true in general but, for simplicity we add to \ssf{\#} the requirement that all function symbols in $L$ have arity $<n$.
+  % Note that if all types $p(z)\subseteq L$ with $|z|\le n$ have a realization in $A^z$, then $A$ is a substructure w.r.t.\@ a fragment which only contains functions of arity $< n$.
+\end{proof}
 
 \begin{theorem}\label{thm_zilbergiocattolo}
-A theory which is $\omega$-categorical and strongly minimal is not finitely axiomatizable.
-\end{theorem}
-
-\begin{proof}
-If $T$ is $\omega$-categorical the algebraic closure of a finite set is finite.
-Therefore from Proposition~\ref{prop_zilbergiocattolo} we infer that $T$ satisfies the assumptions of Lemma~\ref{lem_zilbergiocattolo}.
-Hence $T$ has the finite model property, so, by Proposition~\ref{prop_fmp_fa} it is not finitely axiomatizable.
-\end{proof}
-
+  ($T$ strongly minimal.)
+  If $T$ is $\omega$-categorical then it is not finitely axiomatizable.
+\end{theorem} 
 
 \begin{exercise} 
 Assume $L$ is countable and let $T$ be strongly minimal.
@@ -700,6 +699,10 @@ Prove that the following are equivalent
 Implication \ssf{1}$\IMP$\ssf{2} does not require the strong minimality of $T$.
 \end{exercise}
 
+\begin{exercise} 
+  Let $T$ be $\omega$-categorical.
+  Prove that if all algebraically closed sets are homogeneous, then $T$ is not finitely axiomatizable.
+\end{exercise}
 
 \section{Notes and references}
 \label{Notes_countable}

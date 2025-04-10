@@ -75,9 +75,10 @@ Therefore, a type $p({\mr x})\subseteq\BDelta(\grZ)$ is $G$-invariant if
 % Then $\pmDelta(\grZ)=L_{\mr x}(\U)$ and  $S_\Delta(\grZ)=S_{\mr x}(\U)$. 
 % Note that when $G$ acts by automorphisms $\phi(\U^{\mr x};\U^{\gr z})$ is $G$-invariant for all $\phi({\mr x}\,;{\gr z})\in L$.
 
-A set $\mrD\subseteq\mrX$ is \emph{syndetic\/} under the action of $G$, or \emph{$G$-syndetic\/} for short, if finitely many $G$-translates of $\mrD$ cover $\mrX$; we say \emph{$n$-$G$-syndetic\/} if $\le n$ translates suffices.
-Dually, we say that $\mrD$ is \emph{thick\/} under the action of $G$, or \emph{$G$-thick\/} for short, if the intersection of any finitely many $G$-translates of $\mrD$ is nonempty; we say \emph{$n$-$G$-thick\/} when the request is limited to $\le n$ translates.
-When $\mrX$ and/or $\grZ$ are not clear from the context, we say that these notions are \emph{relative\/} to $\mrX$ and $\grZ$.
+Let $\mrY\subseteq\mrX$.
+A set $\mrD\subseteq\mrX$ is \emph{syndetic\/} under the action of $G$ relative to $\mrY$, or \emph{$G$-syndetic\/} for short, if finitely many $G$-translates of $\mrD$ cover $\mrY$; we say \emph{$n$-$G$-syndetic\/} if $\le n$ translates suffices.
+Dually, we say that $\mrD$ is \emph{thick\/} under the action of $G$ relative to $\mrY$, or \emph{$G$-thick\/} for short, if the intersection of any finitely many $G$-translates of $\mrD$ is consistent with $\mrY$; we say \emph{$n$-$G$-thick\/} when the request is limited to $\le n$ translates.
+We omit reference of $\mrY$ when this is $\mrX$, or clear from the context.
 
 The same properties may be attributed to formulas (as these are identified with the set they define).
 When these properties are attributed to a type $p({\mr x})$, we understand that they hold for every conjunction of formulas in $p({\mr x})$.
@@ -94,34 +95,38 @@ Notation: for $\mrD\subseteq\mrX$ and $C\subseteq G$ we write \emph{$C{\cdot}\mr
 In this chapter many proofs require some juggling with negations as epitomized by the following fact.
 
 \begin{fact}\label{fact_fip}
+  (Relative to $\mrY$.)
   The following are equivalent
   \begin{itemize}
     \item[1.] $\mrD$ is not $G$-syndetic
     \item[2.] $\neg\mrD$ is $G$-thick.
-  \end{itemize}
+  \end{itemize}\smallskip
 \end{fact}
 
 \begin{proof}
-  Immediate by spelling out the definitions
+  Spelling out the definitions, \ssf1 and \ssf2 are, respectively, equivalent to
   \begin{itemize}
-    \item[1.] there are no finite $C\subseteq G$ such that $\mrX\ \subseteq\ \cup\, C{\cdot}{\mr\D}$.
-    \item[2.] $\varnothing\ \neq\ \mrX\,\cap\,\big(\cap\, C{\cdot}\neg{\mr\D}\big)$ for every finite $C\subseteq G$.\qedhere
+    \item[1$'$.] there are no finite $C\subseteq G$ such that $\mrY\ \subseteq\ \cup\, C{\cdot}{\mr\D}$.
+    \item[2$'$.] $\varnothing\ \neq\ \mrY\,\cap\,\big(\cap\, C{\cdot}\neg{\mr\D}\big)$ for every finite $C\subseteq G$.
   \end{itemize} 
+  Then the equivalence is evident.
 \end{proof}
 
 The following characterization is also useful (an is sometimes taken as the definition).
 
 \begin{corollary}\label{fact_fip2}
+  (Relative to $\mrY$.)
   The following are equivalent
   \begin{itemize}
     \item[1.] $\mrD$ is $G$-thick
-    \item[2.] $\mrD\cap\mrC\neq\varnothing$ for every $G$-syndetic set $\mrC$.
+    \item[2.] $\mrD\cap\mrC\neq\varnothing$ for every set $\mrC$ that is $G$-syndetic.
   \end{itemize}
 \end{corollary}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2. 
-  If $\mrD$ is $G$-thick and $\mrD\subseteq\neg\mrC$ implies that $\neq\mrC$ is also $G$-thick, then $\mrC$ cannot be $G$-syndetic.
+  If $\mrD$ is $G$-thick and $\mrD\cap\mrC=\varnothing$ then $\mrD\subseteq\neg\mrC$.
+  Then $\neg\mrC$ is also $G$-thick which, by Fact~\ref{fact_fip} implies that $\mrC$ is not $G$-syndetic.
 
   \ssf2$\IMP$\ssf1. 
   If $\mrD$ is not $G$-thick then $\mrD$ is $G$-syndetic then $\neg$\ssf2.
@@ -129,38 +134,41 @@ The following characterization is also useful (an is sometimes taken as the defi
 
 Define the following type
 
-\ceq{\hfill\emph{$\gamma_H({\mr x})$}}{=}{\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is }G\textrm{-syndetic}\}}
+\ceq{\hfill\emph{$\gamma_{G,\Y}({\mr x})$}}{=}{\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is }G\textrm{-syndetic relatve to }\mrY\}}
 
-% We remark that the consistency of $\gamma_H({\mr x})$ is far from guaranteed.
+We write $\gamma_G({\mr x})$ for $\gamma_{G,\X}({\mr x})$.
+
+% We remark that the consistency of $\gamma_G({\mr x})$ is far from guaranteed.
 
 \begin{corollary}\label{corol_q_pers}
-  Let $p({\mr x})\subseteq\BDelta(\grZ)$ be such that $\gamma_H({\mr x})\cup p({\mr x})$ is finitely consistent.
-  Then $p({\mr x})$ is $G$-thick.
+  (Relative to $\mrY$.)
+  Let $\mrD\in\BDelta(\grZ)$ be such that $\gamma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent in $\mrY$.
+  Then $\mrD$ is $G$-thick.
 \end{corollary}
 
 \begin{proof}
-  Let $\theta({\mr x})$ be a conjunction of formulas in $p({\mr x})$.
-  As $\gamma_H({\mr x})\cup\{\theta({\mr x})\}$ is finitely consistent, it cannot be that $\neg\theta({\mr x})$ is $G$-syndetic.
-  From Fact~\ref{fact_fip}, we obtain that $\theta({\mr x})$ is $G$-thick.
+  As $\gamma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent in $\mrY$, it cannot be that $\neg\mrD$ is $G$-syndetic.
+  Then from Fact~\ref{fact_fip} we obtain that $\mrD$ is $G$-thick.
 \end{proof}
 
 The converse implication holds for complete types.
 
 \begin{theorem}\label{thm_syndetic_invariant}
-  Let $p({\mr x})\in S_\Delta(\grZ)$.
-  Then the following are equivalent
+  For every $p({\mr x})\in S_\Delta(\grZ)$ the following are equivalent
   \begin{itemize}
-    \item[1.] $p({\mr x})$ is $G$-invariant
-    \item[2.] $p({\mr x})\proves\gamma_H({\mr x})$
-    \item[3.] $p({\mr x})$ is $G$-thick.
+    \item[1.] $p({\mr x})$ is $G$-invariant and finitely consistent in $\mrY$
+    \item[2.] $p({\mr x})\proves\gamma_{G,\Y}({\mr x})$
+    \item[2$'$.] $p({\mr x})\proves\gamma_{G}({\mr x})$ and is finitely consistent in $\mrY$
+    \item[3.] $p({\mr x})$ is $G$-thick relative to $\mrY$
+    \item[3$'$.] $p({\mr x})$ is $G$-thick and is finitely consistent in $\mrY$.
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  Let $\mrD\in\BDelta(\grZ)$ be a $G$-syndetic.
-  Pick $C\subseteq G$ be finite such that $\mrX\subseteq\cup\,C{\cdot}\mrD$.
-  Then $p({\mr x})\proves {\mr x}\in\cup\,C{\cdot}\mrD$.
+  Let $\mrD\in\BDelta(\grZ)$ be a $G$-syndetic relative to $\mrY$.
+  Pick $C\subseteq G$ be finite such that $\mrY\subseteq\cup\,C{\cdot}\mrD$.
+  Then $p({\mr x})$ is finitely consistent with ${\mr x}\in\cup\,C{\cdot}\mrD$.
   By completeness, $p({\mr x})\proves {\mr x}\in h\,\mrD$ for some $h\in C$.
   Finally, by invariance, $p({\mr x})\proves{\mr x}\in\mrD$.
   
@@ -171,17 +179,21 @@ The converse implication holds for complete types.
   % uppose $p({\mr x})$ is not $(n+2)$-thick and let $n$ be minimal.
   % Let $g_1,\dots,g_{n+2}\in G$ and $\theta({\mr x})\,;{\gr\bar b}$ witness this.
   % Then 
-  Suppose $p({\mr x})$ is not $G$-invariant.
+  Negate \ssf1.
+  Assume that $p({\mr x})$ finitely consistent in $\mrY$, otherwise $\neg$\ssf2 is immediate.
+  Then $p({\mr x})$ is not $G$-invariant.
   % Then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g\,{\gr b})$ for some $g\in G$ and $\phi({\mr x}\,;{\gr b})\in\BDelta(\grZ)$.
   % Clearly $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g\,{\gr b})$ is not $2$-$G$-thick as it is inconsistent with its $g$-translate.
   By completeness $p({\mr x})\proves{\mr x}\in(\neg\mrD\cap g{\cdot}\mrD)$ for some $g\in G$ and some $\mrD\in\BDelta(\grZ)$.
   Clearly $\neg\mrD\cap g{\cdot}\mrD$ is not $2$-$G$-thick as it is inconsistent with its $g$-translate.
+
+  \ssf1$\IMP$\ssf2$'{\IFF}$\ssf3$'$. Apply what proved above with $\mrX$ for $\mrY$.
 \end{proof}
 
 % \begin{corollary}\label{corol_gammaG_invaqriancer}
 %   The following are equivalent for every $\BDelta(\grZ)$-definable set $\mrD$
 %   \begin{itemize}
-%     \item [1.] $\gamma_H({\mr x})\proves{\mr x}\in\mrD$
+%     \item [1.] $\gamma_G({\mr x})\proves{\mr x}\in\mrD$
 %     \item [2.] $p({\mr x})\proves{\mr x}\in\mrD$ for every $G$-thick $p({\mr x})\in S_\Delta(\grZ)$.
 %   \end{itemize}
 % \end{corollary}
@@ -191,8 +203,8 @@ The converse implication holds for complete types.
 %   This is an immediate consequence of Theorem~\ref{thm_syndetic_invariant}.
 
 %   \ssf2$\IMP$\ssf1.
-%   Suppose $\gamma_H({\mr x})\not\proves{\mr x}\in\mrD$.
-%   Then there is a type $p({\mr x})\in S_\Delta(\grZ)$ finitely consistent with $\gamma_H({\mr x})\cup\{{\mr x}\notin\mrD\}$.
+%   Suppose $\gamma_G({\mr x})\not\proves{\mr x}\in\mrD$.
+%   Then there is a type $p({\mr x})\in S_\Delta(\grZ)$ finitely consistent with $\gamma_G({\mr x})\cup\{{\mr x}\notin\mrD\}$.
 %   By Corollary~\ref{corol_q_pers} $p({\mr x})$ is $G$-thick.
 %   Then $\neg\ssf2$.
 % \end{proof}
@@ -200,11 +212,12 @@ The converse implication holds for complete types.
 The theorem yields a necessary condition for the existence of global $\BDelta({\grZ})$-types that are $G$-thick.
 
 \begin{corollary}\label{corol_def_mu}
-  If an $G$-thick type $p({\mr x})\in S_\Delta(\grZ)$ exists, then for any $\mrD\in\BDelta({\grZ})$
+  (Relative to $\mrY$.)
+  If a type $p({\mr x})\in S_\Delta(\grZ)$ exists that is $G$-thick, then for any $\mrD\in\BDelta({\grZ})$
   \begin{itemize}
     \item[1.] $\mrD$ and $\neg\mrD$ are not both $G$-syndetic
     \item[2.] if $\mrD$ is $G$-syndetic then it is $G$-thick
-    \item[3.] $\gamma_H({\mr x})$ is finitely consistent.\smallskip
+    \item[3.] $\gamma_{G,\Y}({\mr x})$ is finitely consistent in $\mrY$.\smallskip
   \end{itemize}
 \end{corollary}
 
@@ -216,15 +229,18 @@ The theorem yields a necessary condition for the existence of global $\BDelta({\
 The following theorem gives a necessary and sufficient condition for the  existence of global $G$-invariant $\BDelta({\grZ})$-type.
 Ideally, we would like that every $G$-thick $\BDelta({\grZ})$-type extends to a global thick type.
 Unfortunately this is not true in general (it is a strong assumption, see Section~\ref{tame_landscape}).
-A set $\mrD$ is \emph{$G$-wide\/} if every finite cover of $\mrD$ by $\BDelta({\grZ})$-sets contains a $G$-thick set.
-In~\cite{CK} a similar property is called \textit{quasi-non-forking.}
-Our use of the term \textit{wide\/} is consistent with~\cite{Hr}, though we apply it to a narrow context.
+
+A set $\mrD$ is \emph{$G$-wide\/} relative to $\mrY$ if every finite cover of $\mrD$ by $\BDelta({\grZ})$-sets contains a set that is $G$-thick relative to $\mrY$.
 A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
 
+In~\cite{CK} a similar property is called \textit{quasi-non-forking.}
+Our use of the term \textit{wide\/} is consistent with~\cite{Hr}, though we apply it to a narrow context.
+
 \begin{theorem}\label{thm_syndetic_invariant2}
+  (Relative to $\mrY$.)
   For every $\mrD\in\BDelta(\grZ)$ the following are equivalent 
   \begin{itemize}
-    \item[1.] $\gamma_H({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent
+    \item[1.] $\gamma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent in $\mrY$
     \item[2.] there exists a $G$-thick type $p({\mr x})\in S_\Delta(\grZ)$ entailing ${\mr x}\in\mrD$
     \item[3.] $\mrD$ is $G$-wide.\smallskip
   \end{itemize}
@@ -232,7 +248,7 @@ A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  By Corollary~\ref{corol_q_pers}, it suffices to pick any $p({\mr x})\in S_\Delta(\grZ)$ finitely consistent with $\gamma_H({\mr x})\cup\{{\mr x}\in\mrD\}$.
+  By Corollary~\ref{corol_q_pers}, it suffices to pick any $p({\mr x})\in S_\Delta(\grZ)$ finitely consistent in $\mrY$ with $\gamma_G({\mr x})\cup\{{\mr x}\in\mrD\}$.
 
   \ssf2$\IMP$\ssf1.
   By Theorem~\ref{thm_syndetic_invariant}.
@@ -244,7 +260,7 @@ A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
   Therefore, ${\mr\C_i}$ is $G$-thick.
 
   \ssf3$\IMP$\ssf2.
-  Let $p({\mr x})$ be maximal among the $\BDelta({\grZ})$-types that are finitely satisfiable in $\mrX\cap\mrD$ and are $G$-wide.
+  Let $p({\mr x})$ be maximal among the $\BDelta({\grZ})$-types that are finitely satisfiable in $\mrY\cap\mrD$ and are $G$-wide.
   We claim that $p({\mr x})$ is a complete $\BDelta({\grZ})$-type.
   Suppose for a contradiction that $\theta({\mr x}),\neg\theta({\mr x})\notin p$.
   By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$, and some $\BDelta({\grZ})$-sets ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi(\U^{\mr x})\cap\theta(\U^{\mr x})$ and $\psi(\U^{\mr x})\smallsetminus\theta(\U^{\mr x})$ and such that no ${\mr\C_i}$ is $G$-thick.
@@ -258,7 +274,7 @@ For future reference we note that theorem also apply to type-definable sets.
 \begin{corollary}
   For every $\BDelta(\grZ)$-type $q({\mr x})$ the following are equivalent 
   \begin{itemize}
-    \item[1.] $\gamma_H({\mr x})\cup q({\mr x})$ is finitely consistent
+    \item[1.] $\gamma_G({\mr x})\cup q({\mr x})$ is finitely consistent
     \item[2.] there exists an $G$-thick type $p({\mr x})\in S_\Delta(\grZ)$ consistent with $q({\mr x})$
     \item[3.] $q({\mr x})$ is $G$-wide.\smallskip
   \end{itemize}
@@ -268,8 +284,6 @@ For future reference we note that theorem also apply to type-definable sets.
   Implication \ssf1$\IMP$\ssf2 is obtained by the same proof as the in theorem.
   The other implications follow immediately from the theorem.
 \end{proof}
-
-We say that the type $q({\mr x})$ is \emph{$G$-stationary\/} if there exists exactly one $G$-thick type $p({\mr x})\in S_\Delta(\grZ)$ consistent with $q({\mr x})$.
 
 \begin{corollary}\label{corol_intersectionGwide}
   Let $\mrD\in\BDelta(\grZ)$ be a $G$-wide.
@@ -481,7 +495,7 @@ First, we remark a useful consequence of normality.
   \ceq{\hfill\mrD\textrm{ is }H\textrm{-foo}}{\IFF}{g{\cdot}\mrD\textrm{ is }H\textrm{-foo},} \smallskip
   
   where \textit{foo\/} can be replaced by \textit{syndetic,} \textit{invariant,} \textit{thick,} \textit{wide.}
-  In particular, the type $\gamma_H({\mr x})$ is $G$-invariant.
+  In particular, the type $\gamma_G({\mr x})$ is $G$-invariant.
   % It also follows that for any $p({\mr x})\in S_\Delta(\grZ)$
   % \begin{itemize}
   %   \item [3.] \ceq{\hfill p({\mr x})\textrm{ is }H\textrm{-invariant}}{\IFF}{g\cdot p({\mr x})\textrm{ is }H\textrm{-invariant}.}
@@ -508,33 +522,6 @@ As it happens, under the assumption of normality, this can be strengthened as fo
 % \begin{theorem}
 %   Every $\Stab(Q_G)$-thick $\BDelta(\grZ)$-set is $\Stab(Q_G)$-wide.
 % \end{theorem}
-
-Let $\mrY\subseteq\mrX$ be $H$-invariant.
-When reasoning about the action relative to $\mrY$ it is convenient to confuse $\mrD\subseteq\mrX$, with $\mrD\cap\mrY$.
-For instance, when we say that $\mrD$ is $H$-syndetic relative $\mrY$, we actually mean $\mrD\cap\mrY$.
-
-\begin{proposition}\label{prop_HgenGgen}
-  Let $H\trianglelefteq G$.
-  Assume that $\mrX$ is type-definable.
-  Let $\mrY\subseteq\mrX$ be some $H$-invariant set.
-  Assume that boundedly many $G$-translates of $\mrY$ cover $\mrX$.
-  Then every $\mrD\in\BDelta(\grZ)$ that is $H$-syndetic relative to $\mrY$ is $G$-syndetic (relative to $\mrX$).
-  % Then the following are equivalent for every $\mrD\in\BDelta(\grZ)$
-  % \begin{itemize}
-  %   \item [1.] $\mrD$ is $G$-syndetic
-  %   \item [2.] $\mrD$ is $H$-syndetic relative to $\mrY$.
-  % \end{itemize}\smallskip
-\end{proposition}
-
-\begin{proof}
-%   \ssf1$\IMP$\ssf2.
-%   Trivial.
-%
-%   \ssf2$\IMP$\ssf1.
-  By normality, $g{\cdot}\mrD$ is $H$-syndetic relative to $g{\cdot}\mrY$ for any $g\in G$.
-  Then boundedly many $G$-translations of $\mrD$ cover $\mrX$.
-  By compactness (which we may apply because $\mrX$ is type-definable), finitely many translations suffices.
-\end{proof}
 
 It would help to have a more syntactic description of $\Stab(Q_G)$.
 The group $G^0$ defined below is a candidate. %~--~we will see that under the assumption of stability it indeed coincides with $\Stab(Q_G)$. 
@@ -1025,16 +1012,17 @@ We will see an example in Theorem~\ref{thm_thick_finsat}.
   \ssf4$\IMP$\ssf1. By Theorem~\ref{thm_wt_partreg}
 \end{proof}
 
-The condition in Theorem~\ref{thm_coalesce} together with stationarity, produce further simplification.
+A subset $\mrY\subseteq\mrX$) is \emph{$H$-stationary\/} if there is a unique $H$-thick $p({\mr x})\in S_\Delta(\grZ)$ finitely consistent in $\mrY\subseteq\mrX$.
+The conditions in Theorem~\ref{thm_coalesce} together with stationarity, produce further simplification.
 
-\begin{fact}
+\begin{fact}\label{fact_starionarity_thick_syndetic}
   Assume the equivalent conditions in Theorem~\ref{thm_coalesce} hold. 
-  Suppose that $\mrX$ is $H$-stationary.
+  Suppose that the set $\mrX$ is $H$-stationary.
   Then the following are equivalent
   \begin{itemize}
     \item [1.] $\mrD$ is $H$-syndetic
     \item [2.] $\mrD$ is $H$-wide.
-  \end{itemize}
+  \end{itemize}\smallskip
 \end{fact}
 
 \begin{proof}
@@ -1046,10 +1034,51 @@ The condition in Theorem~\ref{thm_coalesce} together with stationarity, produce 
 
   \ssf2$\IMP$\ssf1.
   Let $p({\mr x})\in S_\Delta(\grZ)$ be an $H$-thick type consistent with ${\mr x}\in\mrD$.
-  If $\mrD$ was not $H$-syndetic then $\neg\mrD$ would be $H$-thick, and therefore $H$-wide.
-  This would contradict $H$-stationarity.
+  If $\mrD$ was not $H$-syndetic then $\neg\mrD$ would be $H$-thick and therefore, by the assumption, $H$-wide.
+  This contradicts $H$-stationarity.
 \end{proof}
 
+Stationarity is a very strong condition when required for the whole set $\mrX$.
+It may be easy to realize realize in a smaller subset. 
+To adapt the proof of Fact~\ref{fact_starionarity_thick_syndetic} with some $\mrY\subseteq\mrX$ for $\mrX$, we need to relate the notions of thick, syndetic, etc.\@ when relative to different sets.
+
+\begin{proposition}\label{prop_HgenGgen}
+  Let $H\trianglelefteq G$.
+  Assume that $\mrX$ is type-definable.
+  Let $\mrY\subseteq\mrX$.
+  Assume that boundedly many $G$-translates of $\mrY$ cover $\mrX$.
+  Then every $\mrD\in\BDelta(\grZ)$ that is $H$-syndetic relative to $\mrY$ is $G$-syndetic relative to $\mrX$.
+  % Then the following are equivalent for every $\mrD\in\BDelta(\grZ)$
+  % \begin{itemize}
+  %   \item [1.] $\mrD$ is $G$-syndetic
+  %   \item [2.] $\mrD$ is $H$-syndetic relative to $\mrY$.
+  % \end{itemize}\smallskip
+\end{proposition}
+
+\begin{proof}
+  By normality, $g{\cdot}\mrD$ is $H$-syndetic relative to $g{\cdot}\mrY$ for any $g\in G$.
+  Then boundedly many $G$-translations of $\mrD$ cover $\mrX$.
+  By compactness (which we may apply because $\mrX$ is type-definable), finitely many translations suffices.
+\end{proof}
+
+\begin{proposition}
+  Assume that $\mrX$ is type-definable.
+  Let $\mrY_i\subseteq\mrX$ for $i<\lambda$ be a cover of $\mrX$ of small cardinalty.
+  Then the following are equivalent for every $\mrD\in\BDelta(\grZ)$ 
+  \begin{itemize}
+    \item [1.] $\mrD$ is $G$-thick relative to $\mrX$
+    \item [2.] $\mrD$ is $G$-thick relative to some $\mrY_i$.
+  \end{itemize}\smallskip
+  The same holds for weakly $G$-thick.
+\end{proposition}
+
+\begin{proof}
+  Only \ssf1$\IMP$\ssf2.
+  Negate \ssf2.
+  Then for every $i<\lambda$ there is a finite set $C_i\subseteq G$ such that $\cap\,C_i{\cdot}\mrD$ does not intersect ${\mr\Y_i}$.
+  Let $C$ be the union of all these $C_i$.
+  As $C$ has small cardinality and $\cap\,C{\cdot}\mrD$ is empty, by compactyess (recall that $\mrX$ is type definable) there is a finite subset of $C$ that contradicts \ssf1.
+\end{proof}
 % \begin{assumption}\label{notation_2}
 %   For $H$, $\mrX$, $\grZ$ and $\Delta$ as in Assumption~\ref{notation_GXphi} we also require that the equivalent conditions in Theorem~\ref{thm_coalesce} hold.
 % \end{assumption}

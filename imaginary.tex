@@ -172,7 +172,6 @@ Assume for clarity of notation that ${\vl\X}$ is a single variable of sort $\sig
 If ${\mr c}\,;{\gr b}\models q'({\mr u}\,;{\gr z})$, then  ${\mr c}\,;\sigma(\U^{\mr x};{\gr b})\models q({\mr u}\,;{\vl\X})$.
 \end{proof}
 
-
 Automorphisms of a many-sorted structure are defined in the obvious way: sorts are preserved and so are functions and relations.
 Every automorphism $f:\U\imp\U$ extends to an automorphism $f:\U^\eq\imp\U^\eq$ as follows.
 If ${\vl\Aa}=\sigma(\U^{\mr x};{\gr b})$ we define $f{\vl\Aa}=\sigma(\U^{\mr x};f{\gr b})=f\big[{\vl\Aa}\big]$, which clearly preserves the sort and the relation $\in$.
@@ -192,10 +191,10 @@ Every elementary map $k:\U^\eq\to\U^\eq$ of cardinality $<\kappa$ extends to an 
 We may safely identify automorphism of $\U$ with automorphisms of $\U^\eq$.
 Let $A\subseteq\U^\eq$ and let $a$ be a tuple of elements of $\U^{\eq}$.
 We denote by \emph{$\Aut(\U/A)$\/} the set of automorphisms (of $\U^\eq$) that fix all elements of $A$.
-The symbol \emph{$\orbit(a/A)$\/} denotes the \emph{orbit of $a$ over $A$}.
+The symbol \emph{$\Orbit(a/A)$\/} denotes the \emph{orbit of $a$ over $A$}.
 This has been defined in Section~\ref{homogeneous} and now we apply it to $\U^\eq$
 
-\ceq{\hfill\emph{$\orbit(a/A)$}}{=}{\big\{fa\;:\; f\in\Aut(\U/A)\big\}.}
+\ceq{\hfill\emph{$\Orbit(a/A)$}}{=}{\big\{fa\;:\; f\in\Aut(\U/A)\big\}.}
 
 By homogeneity, $\Orbit(a/A)=p(\U^\eq)$ where $p(v)=\tp(a/A)$.
 When $\Orbit(a/A)=\{a\}$ we say that $a$ is \emph{invariant over $A$\/} or \emph{$A$-invariant}, for short.
@@ -394,20 +393,19 @@ By Theorems~\ref{thm_set_alg=feq} and~\ref{thm_Shelah_strong_types}
   % Then $\psi({\mr x})\in p$, a contradiction.
 \end{proof}
 
-
 \begin{exercise}
-Let $p({\mr x})\subseteq L(A)$ and let $\phi({\mr x}\,;{\mr y})\in L(A)$ be a formula that defines, when restricted to $p(\U^{\mr x})$, an equivalence relation with finitely many classes.
-Prove that there is a finite equivalence relation definable over $A$ that coincides with $\phi({\mr x}\,;{\mr y})$ on $p(\U^{\mr x})$.
+Let $p(x)\subseteq L(A)$ and let $\phi(x\,;y)\in L(A)$ be a formula that defines, when restricted to $p(\U^x)$, an equivalence relation with finitely many classes.
+Prove that there is a finite equivalence relation definable over $A$ that coincides with $\phi(x\,;y)$ on $p(\U^x)$.
 \end{exercise}
 
 \begin{exercise}\label{ex_feqthm_senza_eq}
-Let $A\subseteq\U$ and let ${\vl\Aa}$ be a definable set with finite orbit over $A$.
-Without using the $\eq$-expansion, prove that ${\vl\Aa}$ is union of classes of a finite equivalence relation definable over $A$.
+Let $A\subseteq\U$ and let $\Aa$ be a definable set with finite orbit over $A$.
+Without using the $\eq$-expansion, prove that $\Aa$ is union of classes of a finite equivalence relation definable over $A$.
 \end{exercise}
 
 \begin{exercise}
-Let $T$ be strongly minimal and let $\phi({\mr x}\,;{\gr z})\in L(A)$ with $|{\mr x}|=1$.
-For arbitrary ${\gr b}\in\U^{\gr z}$, prove that if the orbit of $\phi(\U^{\mr x}; {\gr b})$ over $A$ is finite, then $\phi(\U^{\mr x}; {\gr b})$ is definable over $\acl A$.
+Let $T$ be strongly minimal and let $\phi(x\,;z)\in L(A)$ with $|x|=1$.
+For arbitrary $b\in\U^z$, prove that if the orbit of $\phi(\U^x; b)$ over $A$ is finite, then $\phi(\U^x; b)$ is definable over $\acl A$.
 Hint: you can use Theorem~\ref{thm_set_alg=feq}.
 \end{exercise}
 
@@ -498,11 +496,10 @@ As ${\vl\Aa}$ is non empty, $\psi({\gr c}\,;{\vl\Aa'})$ holds for some ${\vl\Aa'
 By $\,\sharp\,$ and the definition of $\psi({\gr z}\,;{\vl\X})$ we obtain ${\vl\Aa'}={\vl\Aa}$ and  $\delta({\gr c}\,;{\vl\Aa})$.
 \end{proof}
 
-
 There are notions of elimination of imaginaries that are weaker than weak elimination.
 For instance, we say that $T$ has \emph{geometric elimination of imaginaries\/} if for every $A\subseteq\U$
 
-\ceq{\hfill {\vl\Aa} }{\in}{{\acl}^\eq\big(\acl\{{\vl\Aa}\}\big)}
+\ceq{\hfill {\vl\Aa} }{\in}{{\acl}^\eq\{{\vl\Aa}\}}
 
 This will not  be applied in these notes, but see Exercises~\ref{ex_est} and~\ref{ex_wei=est+gei}.
 
@@ -511,7 +508,7 @@ The following are equivalent
 \begin{itemize}
 \item[1.] $T$ has elimination of imaginaries
 \item[2.] every definable set is interdefinable with a tuple of real elements
-\item[3.] every definable set ${\vl\Aa}$ is definable over $\dcl\{{\vl\Aa}\}$.
+\item[3.] every definable set ${\vl\Aa}\in\dcl^\eq\{{\vl\Aa}\}$.
 \end{itemize}
 \end{theorem}
 
@@ -520,11 +517,9 @@ Implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3} are immediate.
 Implication \ssf{3}$\IMP$\ssf{1} is identical to the homologous implication in Theorem~\ref{thm_elimimd}, just substitute algebraic with definable.
 \end{proof}
 
-
-
 \begin{exercise}
-  Let $T$ have elimination of imaginaries and $\phi({\mr x}\,;{\gr z})\in L(A)$.
-  For arbitrary ${\gr c}\in\U^{\gr z}$, prove that if the orbit of $\phi(\U^{\mr x}; {\gr c})$ over $A$ is finite, then $\phi(\U^{\mr x}; {\gr c})$ is definable over $\acl A$.
+  Let $T$ have elimination of imaginaries and $\phi(x\,;z)\in L(A)$.
+  For arbitrary $c\in\U^z$, prove that if the orbit of $\phi(\U^x; c)$ over $A$ is finite, then $\phi(\U^x; c)$ is definable over $\acl A$.
   \end{exercise}
   
   
@@ -533,10 +528,9 @@ Implication \ssf{3}$\IMP$\ssf{1} is identical to the homologous implication in T
     \begin{itemize}
     \item[1.]  $\acl^\eq A=\dcl^\eq\big(\acl A\big)$ for every $A\subseteq\U$
     \item[2.]  $\Aut(\U/\acl^\eq A)= \Aut(\U/\acl A)$
-    \item[3.] ${\mr a}\,\equiv_{\acl A}{\mr b}\ \IFF\ {\mr a}\ \smash{\equivSh_A}\, {\mr b}$ \ \ for every $A\subseteq\U$ and  ${\mr a},{\mr b}\in\U^{<\omega}$.
+    \item[3.] $c\,\equiv_{\acl A}b\ \IFF\ c\ \smash{\equivSh_A}\, b$ \ \ for every $A\subseteq\U$ and  $c,b\in\U^{<\omega}$.
     \end{itemize} 
   \end{exercise}
-  
   
   \begin{exercise}\label{ex_wei=est+gei}
     Prove that the following are equivalent
@@ -550,8 +544,8 @@ Implication \ssf{3}$\IMP$\ssf{1} is identical to the homologous implication in T
     Prove that the following are equivalent
     \begin{itemize}
     \item[1.] $T$ has weak elimination of imaginaries
-    \item[2.] for every ${\vl\Aa}\in \U^\eq$ there exists the least algebraically closed set $A\subseteq\U$ such that ${\vl\Aa}$ is definable over $A$.
-    \end{itemize} 
+    \item[2.] for every $\Aa\in \U^\eq$ there exists the least algebraically closed set $A\subseteq\U$ such that $\Aa$ is definable over $A$.
+    \end{itemize}
   \end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
