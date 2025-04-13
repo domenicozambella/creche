@@ -78,10 +78,10 @@ Therefore, a type $p({\mr x})\subseteq\BDelta(\grZ)$ is $G$-invariant if
 % Note that when $G$ acts by automorphisms $\phi(\U^{\mr x};\U^{\gr z})$ is $G$-invariant for all $\phi({\mr x}\,;{\gr z})\in L$.
 
 Let $\mrY\subseteq\mrX$.
-A set $\mrD\subseteq\mrX$ is \emph{syndetic\/} under the action of $G$ relative to $\mrY$, or \emph{$G$-syndetic\/} for short, if finitely many $G$-translates of $\mrD$ cover $\mrY$; we say \emph{$n$-$G$-syndetic\/} if $\le n$ translates suffices.
+A set $\mrD\subseteq\mrX$ is \emph{syndetic\/} under the action of $G$ \emph{relative\/} to $\mrY$, or \emph{$G$-syndetic\/} for short, if finitely many $G$-translates of $\mrD$ cover $\mrY$; we say \emph{$n$-$G$-syndetic\/} if $\le n$ translates suffices.
 Dually, we say that $\mrD$ is \emph{thick\/} under the action of $G$ relative to $\mrY$, or \emph{$G$-thick\/} for short, if the intersection of any finitely many $G$-translates of $\mrD$ is consistent with $\mrY$; we say \emph{$n$-$G$-thick\/} when the request is limited to $\le n$ translates.
 
-We omit reference of $\mrY$ when this is made clear in the context.
+We omit reference of $\mrY$ when this is $\mrX$ or if it is made crystal clear in the context.
 
 The same properties may be attributed to formulas (as these are identified with the set they define).
 When these properties are attributed to a type $p({\mr x})$, we understand that they hold for every conjunction of formulas in $p({\mr x})$.
@@ -407,15 +407,14 @@ Our use of the term \textit{wide\/} is consistent with~\cite{Hr}, though we appl
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Invariant equivalence relations}
+\section{Impediments to invariant global types}
 
 We prove a necessary condition for the consistency of $\gamma_G({\mr x})$, i.e.\@ for the existence of $G$-invariant global types.
 First, we need to relate the notions of thick, syndetic, etc.\@ when relative to different sets.
 
 \begin{proposition}\label{prop_HgenGgen}
   Assume that $\mrX$ is type-definable.
-  Let $\mrY\subseteq\mrX$.
-  Assume that boundedly many $G$-translates of $\mrY$ cover $\mrX$.
+  Assume that boundedly many $G$-translates of $\mrY\subseteq\mrX$ cover $\mrX$.
   Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
   \begin{itemize}
     \item [1.] $\mrD$ is $G$-syndetic
@@ -430,33 +429,84 @@ First, we need to relate the notions of thick, syndetic, etc.\@ when relative to
   By compactness (which we may apply because $\mrX$ is type-definable), finitely many translations suffices.
 \end{proof}
 
+The following corollary expresses a similar result.
+
+\begin{corollary}\label{corol_bounded_orbit_syndetic}
+  Assume that $\mrX$ is type-definable and that $G$ acts transitively on $\mrX$.
+  Let $\mrY\subseteq\mrX$ be a nonempty set with small $G$-orbit.
+  Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
+  \begin{itemize}
+    \item [1.] $\mrD$ is $G$-syndetic
+    \item [2.] $\mrD$ is $G$-syndetic relative to $\mrY$.
+  \end{itemize}
+\end{corollary}
+
+\begin{proof}
+  Only \ssf2$\IMP$\ssf1 requires a proof.
+  By assumption, the following equivalence relation has boundedly many classes
+  
+  \ceq{\hfill\epsilon_\Y({\mr x},{\mr y})}{=}{\bigwedge_{g\in G}\big[{\mr x}\in g{\cdot}\mrY\,\iff\,{\mr y}\in g{\cdot}\mrY\big].}
+  
+  Then $\mrY$ contains a $\epsilon_\Y({\mr x},{\mr y})$-class.
+  Assume \ssf2, then it is $G$-syndetic relative to some class, say ${\mr\Y'}$, of $\epsilon_\Y({\mr x},{\mr y})$.
+  As $G$ acts transitively on $\mrX$, we know that ${\mr\Y'}$ has a bounded orbit that covers $\mrX$.
+  Then \ssf2 follows from Proposition~\ref{prop_HgenGgen}.
+\end{proof}
+
 \begin{proposition}\label{prop_HgenGgen}
   Assume that $\mrX$ is type-definable.
-  Let $\mrY\subseteq\mrX$.
-  Assume that boundedly many $G$-translates of $\mrY$ cover $\mrX$.
-  Say, $C{\cdot}\mrY$ covers $\mrX$ for some small $C\subseteq G$.
+  Let $\mrY\subseteq\mrX$ be a nonempty set with small $G$-orbit.
   Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
   \begin{itemize}
     \item [1.] $\mrD$ is $G$-wide
-    \item [2.] $\mrD$ is $G$-wide relative to any $C$-translate of $\mrY$.
+    \item [2.] $\mrD$ is $G$-wide relative to any $G$-translate of $\mrY$.
   \end{itemize}\smallskip
-  In particular, if $\mrY$ is $\BDelta(\grZ)$-type-definable then $\mrD$ is $G$-wide relative to $\cap\,C{\cdot}\mrY$ (which therefore is nonempty).
+  % In particular, if $\mrY$ is $\BDelta(\grZ)$-type-definable then $\mrD$ is $G$-wide relative to $\cap\,G{\cdot}\mrY$ (which therefore is nonempty).
 \end{proposition}
 
 \begin{proof}
   Only \ssf1$\IMP$\ssf2 requires a proof.
   Assume \ssf1.
   There is a $G$-invariant $p({\mr x})\in S_\Delta(\grZ)$ that implies ${\mr x}\in\mrD$.
+  Let $C\subseteq G$ be a small set such that $C{\cdot}\mrY$ covers $\mrX$.
   As $C{\cdot}\mrY$ is small and covers $\mrX$, then $p({\mr x})$ is finitely consistent in $h{\cdot}\mrY$ for some $h\in C$.
-  Then $p({\mr x})$, which by invariance coincides with $g{\cdot}h^{-1}{\cdot}p({\mr x})$, is finitely consistent in $g{\cdot}\mrY$ for every $g\in C$.
-  If $\mrY$ is type definable then  $p({\mr x})$ entails $g{\cdot}\mrY$ for every $g\in C$ and the second claim follows.
+  Then $p({\mr x})$, which by invariance coincides with $g{\cdot}h^{-1}{\cdot}p({\mr x})$, is finitely consistent in $g{\cdot}\mrY$ for every $g\in G$.
+  % If $\mrY$ is type definable then $p({\mr x})$ entails $g{\cdot}\mrY$ for every $g\in G$ and the second claim follows.
 \end{proof}
 
 \begin{corollary}
   Assume that $\mrX$ is type-definable and that $G$ acts transitively on $\mrX$.
-  Then, if $\gamma_G({\mr x})$ is consistent, there is no bounded $G$-invariant $\BDelta(\grZ)$-type-definable equivalence relation.
+  Assume that the $G$-orbit of $\mrY\subseteq\mrX$ is bounded.
+  Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
+  \begin{itemize}
+    \item [1.] $\mrD$ is $G$-wide
+    \item [2.] $\mrD$ is $G$-wide relative to any $G$-translation of $\mrY$.
+  \end{itemize}\smallskip
 \end{corollary}
 
+\begin{proof}
+  Only \ssf1$\IMP$\ssf2 requires a proof.
+  Assume \ssf1.
+  Let $\epsilon_\Y({\mr x},{\mr y})$ be the equivalence relation defined in the proof of Corollary~\ref{corol_bounded_orbit_syndetic}.
+  As $\epsilon_\Y({\mr x},{\mr y})$ has boundedly many classes, we can apply Proposition~\ref{prop_HgenGgen} to obtain that $\mrD$ is $G$-wide relative to any equivalence class.
+  In particular it is $G$-wide relative to $\mrY$, as it contains one of these classes.
+\end{proof}
+
+\begin{proposition}
+  Assume that $\mrX$ is type-definable and that $G$ acts transitively on $\mrX$.
+  Also, assume that $\gamma_G({\mr x})$ is consistent.
+  Then $\mrX$ is the sole nonempty $\BDelta(\grZ)$-type-definable set with small $G$-orbit.
+\end{proposition}
+\begin{proof}
+  By the consistency of $\gamma_G({\mr x})$, there is a $G$-invariant $p({\mr x})\in S_\Delta(\grZ)$.
+  Let $\mrY\neq\varnothing$ be a $\BDelta(\grZ)$-type-definable set with small $G$-orbit.
+  Let $\epsilon_{\Y}({\mr x},{\mr y})$ be the equivalence relation defined in the proof of Corollary~\ref{corol_bounded_orbit_syndetic}.
+  As $\epsilon_{\Y}({\mr x},{\mr y})$ has boundedly many classes, from Proposition~\ref{prop_HgenGgen} we obtain that $p({\mr x})$ is finitely consistent in every equivalence class of $\epsilon_{\Y}({\mr x},{\mr y})$.
+  In particular, $p({\mr x})$ is finitely consistent in $\mrY$ as it contains one of these classes.
+  As $\mrY$ is type-definable, $p({\mr x})$ entails $\mrY$.
+  By the $G$-invariance of $p({\mr x})$, it follows that $p({\mr x})$ entails $\cap\,G{\cdot}\mrY$ which therefore is nonempty.
+  As $\cap\,G{\cdot}\mrY$ is $G$-invariant and $G$ acts transitively, it coincides with $\mrX$.
+\end{proof}
 
 % \begin{fact}
 %   Assume \ssf1 of Theorem~\ref{thm_coalesce}.
@@ -597,6 +647,8 @@ As it happens, under the assumption of normality, this can be strengthened as fo
 %   Every $\Stab(Q_G)$-thick $\BDelta(\grZ)$-set is $\Stab(Q_G)$-wide.
 % \end{theorem}
 
+\begin{comment}
+
 It would help to have a more syntactic description of $\Stab(Q_G)$.
 The group $G^0$ defined below is a candidate. %~--~we will see that under the assumption of stability it indeed coincides with $\Stab(Q_G)$. 
 We revisit the notions introduced in Section~\ref{eq_algebraic} with the only difference that we apply them to $\BDelta(\grZ)$, not to the full language.%$\LDelta(\mrX,\grZ)$.
@@ -635,14 +687,39 @@ Ideally, we would like to have $\Stab(Q_G)=G^0$.
 This happens when the types in $P^0$ have a unique extension to a type in $Q_G$.
 We will prove that this is the case under the assumption of stability.
 
+\end{comment}
 
 \begin{definition}\label{def_G00}
-  Write \emph{$\Phi^{00}$\/} for the collection of $\BDelta(\grZ)$-type-definable sets $\mrY$ with bounded $G$-orbit and define\smallskip
+  Write \emph{$\Phi^0$\/} for the set of $\BDelta(\grZ)$-sets that have finite $G$-orbit.
+  Write \emph{$\Phi^{00}$\/} for the collection of $\BDelta(\grZ)$-type-definable sets that have a bounded $G$-orbit.
+  Define\smallskip
+
+  \ceq{\hfill\emph{$G^0$}}{=}{\Stab(\Phi)}\medrel{=}$\displaystyle\bigcap\big\{\Stab(\mrD) :\  \mrD\in\Phi^0\}$
+
+  and
 
   \ceq{\hfill\emph{$G^{00}$}}{=}{\Stab(\Phi^{00})}\medrel{=}$\displaystyle\bigcap\big\{\Stab(\mrY) :\  \mrY\in\Phi^{00}\}$.
 \end{definition}
 
-We want to define $E^{00}$ and $P^{00}$ in analogy with $E^0$ and $P^0$.
+\begin{proposition}
+  Assume that $\mrX$ is type-definable and that $G$ acts transitively on $\mrX$.
+  Then 
+  
+  \ceq{\hfill K}{\leq}{G^{00}}\medrel{\leq}$G^0$.
+\end{proposition}
+
+\begin{proof}[Proof???]
+  The inclusion $G^{00}\leq G^0$ is trivial.
+  Let $\mrY\in\Phi^{00}$ and $\mrY\subseteq\mrD\in\BDelta(\grZ)$.
+  Then $\mrD$ is trivially $G$-syndetic relative to $\mrY$.
+  By Corollary~\ref{corol_bounded_orbit_syndetic}, $\mrD$ is $G$-syndetic.
+  Then the type defining $\mrY$ is $G$-syndetic.
+  Then there is some $q({\mr x})\in Q_G$ entailing $\mrY$.
+  Therefore $g{\cdot}q({\mr x})=q({\mr x})$ for every $g\in\Stab(\mrY)$.
+  By the $K$-invariance of $q({\mr x})$, it follows that $q({\mr x})$ entails $\cap\,K{\cdot}\mrY$.
+  As $\cap\,K{\cdot}\mrY$, which therefore is nonempty.
+\end{proof}
+
 
 \begin{question}
   Work under the assumption that $\mrX$ is type-definable and that $G$ acts transitively.
