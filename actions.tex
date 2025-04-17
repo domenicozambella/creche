@@ -527,7 +527,7 @@ The following corollary expresses a similar result.
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The connected component}\label{G0}
+\section{Connected components}\label{G0}
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{12ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
@@ -689,16 +689,26 @@ We will prove that this is the case under the assumption of stability.
 
 \end{comment}
 
-\begin{definition}\label{def_G00}
-  Write \emph{$\Phi^0$\/} for the set of $\BDelta(\grZ)$-sets that have finite $G$-orbit.
-  Write \emph{$\Phi^{00}$\/} for the collection of $\BDelta(\grZ)$-type-definable sets that have a bounded $G$-orbit.
-  Define\smallskip
+When the context suggests it, $\BDelta(\grZ)$ will denote the broader class of formulas that include also those of the form  $\phi({\mr y})$ for $\phi({\mr x})\in\BDelta(\grZ)$ and is closed under Boolean connectives.
+As there is little risk of confusion, below we write $\BDelta_{x,y}(\grZ)$ for $\BDelta(\grZ)$.
+A $\BDelta(\grZ)$-definable equivalence relation is an equivale3nce relation defined by some formula $\epsilon({\mr x},{\mr y})\in\BDelta(\grZ)$
+We define $\BDelta(\grZ)$-type-definable equivalence relations similarly.
 
-  \ceq{\hfill\emph{$G^0$}}{=}{\Stab(\Phi)}\medrel{=}$\displaystyle\bigcap\big\{\Stab(\mrD) :\  \mrD\in\Phi^0\}$
+An equivalence relation is bounded if it has a small numer of equivalence classes.
+Note that if $\epsilon({\mr x},{\mr y})$ is a $\BDelta(\grZ)$-definable equivalence relation then $\epsilon({\mr x},{\mr a})$, for any ${\mr a}\in\mrX$, is equivalent to a $\BDelta(\grZ)$-formula.
+Similarly for types.
+
+\begin{definition}\label{def_G00}
+  Let $\Phi^0$ be the collection of sets that are equivalence classes of a bounded $G$-invariant $\BDelta(\grZ)$-type-definable equivalence relation.
+  Let $\Phi^{00}$ be the collection of sets that are equivalence classes of a bounded $G$-invariant $\BDelta(\grZ)$-type-definable equivalence relation.
+  Define\medskip
+
+  \ceq{\hfill\emph{$G^0$}}{=}{\Stab(\Phi^0)}\medrel{=}$\displaystyle\bigcap\big\{\Stab(\mrD)\ :\  \mrD\in\Phi^0\}$
 
   and
 
-  \ceq{\hfill\emph{$G^{00}$}}{=}{\Stab(\Phi^{00})}\medrel{=}$\displaystyle\bigcap\big\{\Stab(\mrY) :\  \mrY\in\Phi^{00}\}$.
+  \ceq{\hfill\emph{$G^{00}$}}{=}{\Stab(\Phi^{00})}\medrel{=}$\displaystyle\bigcap\big\{\Stab(\mrY)\ :\  \mrY\in\Phi^{00}\}$.
+
 \end{definition}
 
 \begin{proposition}
@@ -708,18 +718,16 @@ We will prove that this is the case under the assumption of stability.
   \ceq{\hfill K}{\leq}{G^{00}}\medrel{\leq}$G^0$.
 \end{proposition}
 
-\begin{proof}[Proof???]
+\begin{proof}
   The inclusion $G^{00}\leq G^0$ is trivial.
   Let $\mrY\in\Phi^{00}$ and $\mrY\subseteq\mrD\in\BDelta(\grZ)$.
   Then $\mrD$ is trivially $G$-syndetic relative to $\mrY$.
   By Corollary~\ref{corol_bounded_orbit_syndetic}, $\mrD$ is $G$-syndetic.
   Then the type defining $\mrY$ is $G$-syndetic.
   Then there is some $q({\mr x})\in Q_G$ entailing $\mrY$.
-  Therefore $g{\cdot}q({\mr x})=q({\mr x})$ for every $g\in\Stab(\mrY)$.
-  By the $K$-invariance of $q({\mr x})$, it follows that $q({\mr x})$ entails $\cap\,K{\cdot}\mrY$.
-  As $\cap\,K{\cdot}\mrY$, which therefore is nonempty.
+  By $K$-invariance $q({\mr x})$ entails $k{\cdot}\mrY$ for every $k\in K$.
+  Then $k$ is in the stabilizer of $\mrY$.
 \end{proof}
-
 
 \begin{question}
   Work under the assumption that $\mrX$ is type-definable and that $G$ acts transitively.
@@ -729,7 +737,7 @@ We will prove that this is the case under the assumption of stability.
     \item [2.] the types in $Q_G$ are $K$-stationary
     \item [3.] $Q_G$ has small cardinality
     \item [4.] $G$ acts transitively on $Q_G$
-    \item [5.] the types in $Q_G$ realized in $\mrX$ and $\mrX=\bigcup\{q(\mrX)\ :\ q({\mr x})\in Q_G\}$.
+    \item [5.] the types in $Q_G$ are realized in $\mrX$ and $\mrX=\bigcup\{q(\mrX)\ :\ q({\mr x})\in Q_G\}$.
   \end{itemize}
 \end{question}
 
@@ -742,7 +750,6 @@ We will prove that this is the case under the assumption of stability.
 
 %   \ceq{\hfill\epsilon_\Y({\mr x},{\mr y})}{\iff}{\big\{\big[\phi({\mr x})\iff\phi({\mr y})\ :\ \big]\big\}.}
 % \end{proposition}
-
 
 % and
 
@@ -1204,8 +1211,7 @@ The conditions in Theorem~\ref{thm_coalesce} together with stationarity, produce
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 Section under major revision.
 
-In this section we assume that $\grZ$ and $\mrX$ are type-definable.
-Moreover we assume that $\grZ$ is a group that acts on $\mrX$.
+In this section $\grZ$ is a group that acts on $\mrX$.
 The group operations and the group action are assumed definable.
 We use the symbol $\,\cdot\,$ for both the group multiplication and the group action.
 Let $\Psi\subseteq L_{\mr x}(\U)$.
@@ -1214,7 +1220,6 @@ The sets $\phi(\mrX\,;\grZ)$ are $\grZ$-invariant.
 We write ${\gr 1}$ for the identity of $\grZ$.
 Note that $\phi(\mrX\,;{\gr g})={\gr g}\cdot\phi(\mrX\,;{\gr 1})$.
 
-Note that as $\mrX$ and $\grZ$ are assumed to be type-definable, $\UDelta$ is a saturated $\LDelta$-structure.
 It is worth noticing that automorphisms of $\UDelta$ need not preserve the group operations nor the group action.
 
 To each ${\gr h}\in\grZ$ we associate the $\LDelta$-automorphism $\<{\mr a}\,;{\gr g}\>\mapsto\<{\gr h}{\cdot}{\mr a}\,;{\gr h}{\cdot}{\gr g}\>$.

@@ -275,7 +275,7 @@ The following is the natural generalization of the notion introduced in Section~
 
 \begin{definition}
   Let $A\subseteq\U^\eq$ and $a\in\U^\eq$.
-  We say that \emph{$a$ is algebraic over $A$\/} if a formula of the form $\phi(a)\wedge\E^{=k}v\,\phi(v)$ holds for some $\phi(v)\in L^\eq(A)$ and some positive integer $k$.
+  We say that $a$ is \emph{algebraic\/}  over $A$ if there is a formula $\phi(v)\in L^\eq(A)$ such that $\phi(a)\wedge\E^{=k}v\,\phi(v)$ holds for some and some positive integer $k$.
   We write \emph{${\rm acl}^\eq\!A$\/} for the set of those $a\in\U^\eq$ that are algebraic over $A$.
   We write \emph{${\rm acl}A$\/} for $\acl^\eq\!A\cap\U$.
 \end{definition}
@@ -508,7 +508,7 @@ The following are equivalent
 \begin{itemize}
 \item[1.] $T$ has elimination of imaginaries
 \item[2.] every definable set is interdefinable with a tuple of real elements
-\item[3.] every definable set ${\vl\Aa}\in\dcl^\eq\{{\vl\Aa}\}$.
+\item[3.] every definable set ${\vl\Aa}\in\dcl^\eq(\dcl\{{\vl\Aa}\})  $.
 \end{itemize}
 \end{theorem}
 
@@ -521,7 +521,6 @@ Implication \ssf{3}$\IMP$\ssf{1} is identical to the homologous implication in T
   Let $T$ have elimination of imaginaries and $\phi(x\,;z)\in L(A)$.
   For arbitrary $c\in\U^z$, prove that if the orbit of $\phi(\U^x; c)$ over $A$ is finite, then $\phi(\U^x; c)$ is definable over $\acl A$.
 \end{exercise}
-  
   
 \begin{exercise}\label{ex_est}
   Prove that following are equivalent for every $A\subseteq\U$

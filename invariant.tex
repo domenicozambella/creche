@@ -45,17 +45,14 @@ One is tempted to require that the formulas in the type are invariant~--~but thi
 Alternatively, one could require that the set defined by the type is invariant~--~but this is an empty requirement for types that are not realized in $\U$.
 
 First we introduce some notation.
-Let $\phi({\mr x}\,;{\gr z})\in L$.
-A \emph{$\phi$-formula\/} is a formula the form $\theta({\mr x}\,;{\gr\bar b})$ for some $\theta({\mr x}\,;{\gr\bar z})$ that is a Boolean combination of the formulas $\phi({\mr x}\,;{\gr z_i})$, where ${\gr\bar z}={\gr z_1},\dots,{\gr z_n}$, and some ${\gr\bar b}\in\U^{\gr\bar z}$.
-A \emph{$\phi$-definable\/} set is a set  $\theta(\U^{\mr x};{\gr\bar b})$ definable by a $\phi$-formula.
-We write \emph{$L_\phi(\Aa)$\/} for the set of $\phi$-formulas with parameters in $\Aa$.
+Let $\phi({\mr x}\,;{\gr z})\in L(\U)$.
+A \emph{$\phi$-formula\/} is a formula the form $\phi({\mr x}\,;{\bar b})$ or $\neg\phi({\mr x}\,;{\bar b})$ for some ${\bar b}\in\U^{\gr z}$.
+A \emph{$\phi$-type\/} is a set of $\phi$-formulas.
 
-We are mainly concerned in $\Delta$-types where $\Delta$ is either $L(\Aa)$ or $L_\phi(\Aa)$.
-In the latter case $\Delta$-types are called \emph{$\phi$-types.}
 We denote by \emph{$S_\phi(\Aa)$\/} the set of complete $\phi$-types with parameters in $\Aa$.
 Typically, $\Aa$ is either $\U$ or some small set $A\subseteq\U$.
 Types in \emph{$S_{\phi}(\U)$\/} are called \emph{global $\phi$-types.}
-Note that whenever convenient we can assume that complete $\phi$-types only contain formulas of the form $\phi({\mr x}\,;{\gr b})$ and $\neg\phi({\mr x}\,;{\gr b})$.
+
 % They may be identified with subsets of $\U^{\gr z}$.
 % Namely, $p({\mr x})\in S_\phi(\Aa)$ is identified with
    
@@ -72,7 +69,7 @@ Note that whenever convenient we can assume that complete $\phi$-types only cont
 % \end{proof}
 
 Let $p({\mr x})\subseteq L(\U)$ be a consistent type.
-For every formula $\phi({\mr x}\,;{\gr z})\in L$ we define
+For every formula $\phi({\mr x}\,;{\gr z})\in L(\U)$ we define
 
 \ceq{\hfill\emph{$\gr\D_{p,\phi}$}}{=}{\Big\{{\gr a}\in\U^{\gr z}\ :\ p({\mr x})\proves\phi({\mr x}\,;{\gr a})\Big\}.}
 
@@ -80,20 +77,20 @@ For every formula $\phi({\mr x}\,;{\gr z})\in L$ we define
 % This is possible because adding or erasing dummy variables to the tuple of ${\gr z}$ does not change ${\gr\D_{p,\phi}}$ in any relevant way; in particular, invariance is preserved.
 
 A global $\phi$-type $p({\mr x})\in S_\phi(\U)$ can be identified with the set ${\gr\D_{p,\phi}}$.
-Therefore a global type $p({\mr x})\in S(\U)$ can be identified with the collection of the sets ${\gr\D_{p,\phi}}$, where $\phi({\mr x}\,;{\gr z})$ ranges over $L$.
+Therefore a global type $p({\mr x})\in S(\U)$ can be identified with the collection of the sets ${\gr\D_{p,\phi}}$, where $\phi({\mr x}\,;{\gr z})$ ranges over $L(\U)$.
 
 Let $p({\mr x})\subseteq L(\U)$.
-For $f\in\Aut(\U)$, we write $fp({\mr x})$ for the type containing the of formulas $\phi({\mr x}\,;f{\gr a})$ for every $\phi({\mr x}\,;{\gr a})\in p$.
+For $f\in\Aut(\U)$, we write $fp({\mr x})$ for the type containing the of formulas $\phi({\mr x}\,;f{\gr a})$ for every $\phi({\mr x}\,;{\gr a})\in p$, where $\phi({\mr x}\,;{\gr z})\in L$.
 We say that $p({\mr x})$ is \emph{invariant\/} over $A$, or \emph{$A$-invariant\/} for short, if for every $f\in\Aut(\U/A)$
 
 \ceq{\ssf{it1.}\hfill p({\mr x})}{\proves}{fp({\mr x})}
 
 Equivalently, if for every $\phi({\mr x}\,;{\gr z})\in L$, every ${\gr a}\in\U^{\gr z}$, and every $f\in\Aut(\U/A)$
 
-\ceq{\ssf{it1$'$.}\hfill p({\mr x})\proves\phi({\mr x}\,;{\gr a})}{\IFF}{p({\mr x})\proves\phi({\mr x}\,;f{\gr a})}.
+\ceq{\ssf{it1$'$.}\hfill \phi({\mr x}\,;{\gr a})\in p}{\IFF}{\phi({\mr x}\,;f{\gr a})\in p}.
 
 Hence $p({\mr x})$ is invariant exactly when all the sets $\gr\D_{p,\phi}$ are.
-That is, $p({\mr x})$ is invariant over $A$ if  for all $\phi({\mr x}\,;{\gr z})\in L$ and ${\gr a},{\gr b}\in\U^{\gr z}$
+That is, $p({\mr x})$ is invariant over $A$ if for all $\phi({\mr x}\,;{\gr z})\in L$ and ${\gr a},{\gr b}\in\U^{\gr z}$
 
 \ceq{\ssf{it2.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\Big(\phi({\mr x}\,;{\gr a})\in p\,\IFF\,\phi({\mr x}\,;{\gr b})\in p\Big)}
 
@@ -128,7 +125,7 @@ The easiest way to obtain types that are invariant over a model $M$ is via types
 We say that a type $p({\mr x})$ is \emph{finitely satisfiable\/} in $A$ if every conjunction of formulas in $p({\mr x})$ has a solution in $A^{\mr x}$.
 
 \begin{proposition}\label{prop_coeredi_quasiinvarienti}
-  Every type $p({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $A$ is invariant over $A$.
+  Every $p({\mr x})\in S(\U)$ that is finitely satisfiable in $A$ is invariant over $A$.
 \end{proposition}
 
 \begin{proof}
