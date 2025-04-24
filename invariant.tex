@@ -307,7 +307,9 @@ Therefore $\cnonfork_M$ is $1$-stationary.
 \end{remark}
 
 \begin{exercise}\label{ex_heir_type}
-  Show that for every $b\in\U^z$ there is a type $p(x\,;z)\subseteq L(M)$ such that $a\cnonfork_M b'$ if and only if $a,b'\models p(x\,;z)$.
+  Show that for every $b\in\U^z$ there is a type $p(x\,;z)\subseteq L(M)$ such that for every  $a\in\U^x$ and $b'\in\U^z$ 
+  
+  \ceq{\hfill a,b'\models p(x\,;z)}{\IFF}{ a\cnonfork_M b'\equiv_M b.}
 \end{exercise}
 
 \begin{exercise}
@@ -317,6 +319,14 @@ Therefore $\cnonfork_M$ is $1$-stationary.
   % When $a\in\U^x$ is a tuple, this generalizes to $\dim(M,a)<\dim(M,a,b)$.
 \end{exercise}
 
+\begin{exercise}
+  Let $a\cnonfork_M b$ then there is $\V\preceq\U$ that is isomorphic to $\U$ over $M,a$ and such that $\V\cnonfork_Mb$.
+\end{exercise}
+
+\begin{exercise}
+  Let $a\cnonfork_M b$. 
+  Prove that for every $c$ there is $b'\equiv_{M,a} b$ such that $a,c\cnonfork_M b'$. 
+\end{exercise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -447,8 +457,6 @@ The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({
 % Let $c=\<{\mr c_i}:i<\alpha \>$ be a constant sequence, i.e.\@ ${\mr c_0}={\mr c_i}$ for all $i$.Prove that $c$ is a Morley sequence over $A$ if and only if ${\mr c_0}\in(\dcl A)^{\mr x}$ and that $c$ is a coheir sequence over $A$ if and only if  ${\mr c_0}\in A^{\mr x}$.
 % \end{exercise}
 
-
-
 % \begin{exercise}
 % The following are equivalent
 % \begin{itemize}
@@ -458,8 +466,7 @@ The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({
 % 
 % \end{exercise}
 
-
 \begin{exercise}
   Let $\bar a$ be a sequence such that $a_{\restriction I_0}\equiv a_{\restriction I_1}$ for every $I_0,I_1$ such that $I_0<I_1$.
   Prove that $\bar a$ is a sequence of indiscernibles.
-  \end{exercise}
+\end{exercise}

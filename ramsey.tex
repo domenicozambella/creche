@@ -30,10 +30,10 @@ Let $M$ be an arbitrary infinite set.
 Fix $n,k<\omega$ and fix a coloring $f$ of the set of all \emph{$n$-subsets} of $M$,
 also known as the \emph{complete $n$-uniform hypergraph\/} with vertex set $M$,
 
-\ceq{\hfill f}{:}{ \binom{M}{n}\ \ \to\ \ [k]}.
+\ceq{\hfill f}{:}{ \binom{M}{n}=M^{(n)}\ \ \to\ \ [k]}.
 
-We say that $H\subseteq M$ is a \emph{monochromatic subgraph\/} if the subgraph induced by $H$ is monochromatic.
-In combinatorics, monochromatic subgraphs are also called \emph{homogeneous sets.}
+We say that $H\subseteq M$ is a \emph{monochromatic set\/} if $f$ is constant on $H^{(n)}$.
+In combinatorics, monochromatic sets are also called \emph{homogeneous sets.}
 
 The following is a very famous theorem which we prove here in an unusual (and overly convoluted)  way.
 Our purpose is to illustrate the method of proof of Theorem~\ref{thm_Hindman}.
@@ -43,13 +43,13 @@ In the latter the model theoretic overhead really pays off.
 \newtheorem{Ramsey}[thm]{Ramsey Theorem}
 \begin{Ramsey}\label{thm_Ramsey}
 Let $M$ be an infinite set and fix some positive integers $n$ and $k$.
-Fix an arbitrary $k$-coloring of the (edges of the) complete $n$-uniform hypergraph with vertex set $M$.
-Then there is an infinite monochromatic subgraph $H\subseteq M$.
+Fix an arbitrary $k$-coloring of $M^{(n)}$.
+Then there is an infinite monochromatic set $H\subseteq M$.
 \end{Ramsey}
 \begin{proof}
 Let $L$ be a language that contains $k$ relation symbols $r_1,\dots,r_k$ of arity $n$.
 Given a $k$-coloring $f$ we define a structure with domain $M$.
-The interpretation the relation symbols is
+The interpretation the relation symbol $r_i$ is
 
 %\ceq{\hfill r_i^M}{=}{\Big\{ ({\mr a_0},\dots,a_{n-1})\ :\ |\{{\mr a_0},\dots,a_{n-1}\}|=n \ \textrm { e \ }f\big(\{{\mr a_0},\dots,a_{n-1}\}\big)= i\Big\}}
 
@@ -58,7 +58,9 @@ The interpretation the relation symbols is
 \ceq{\hfill r_i^M}{=}{\Big\{  a\in M^n \ : \ |\range(a)|=n \ \textrm{ and } \ f\big(\range(a)\big)= i\Big\}.} 
 
 We may assume that $M$ is an elementary substructure of some large saturated model $\U$.
-Pick any type $p({\mr x})\in S(\U^{\mr x})$ finitely satisfied in $M$ but not realized in $M$ and let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be a coheir sequence of $p({\mr x})$ over $M$.
+Let $q({\mr x})$, where $|{\mr x}|=1$, be the type that says that ${\mr x}$ is not in $M$.
+Let $p({\mr x})\in S(\U^{\mr x})$ be an extension of $q({\mr x})$ that is finitely satisfied in $M$.
+Finally, let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be a coheir sequence of $p({\mr x})$ over $M$.
 
 There is a first-order sentence saying that the formulas $r_i({\mr x_1},\dots,{\mr x_n})$ are a coloring of $M^{(n)}$.
 Then by elementarity the same holds in $\U$.
@@ -67,7 +69,6 @@ all tuples of $n$ distinct elements of ${\mr\bar c}$ have the same color, say $1
 
 %\ceq{\ssf{\#}\hfill M}{\models}{\A {\mr x_0},\dots,{\mr x_{n-1}}\ \left[\bigwedge_{0\le i<j<n} {\mr x_i}\neq {\mr x_j}\quad\imp\quad\bigvee_{i<k}r_i({\mr x_0},\dots,{\mr x_{n-1}})\right].}
 
-Incidentally, no element of ${\mr\bar c}$ is in $M$.
 The theorem is proved if we can find in $M$ a sequence $\bar a=\<a_i:i<\omega\>$ with color $1$.
 We construct $a_{\restriction i}$ by induction on $i$ as follows.
 
@@ -81,6 +82,12 @@ So,
 as the order is irrelevant,
 $a_{\restriction i},a_i,{\mr c_{\restriction n}}$ satisfies the induction hypothesis.
 \end{proof}
+
+\begin{exercise}\label{ex_Ramsey_order}
+  Let $I,<_I$ be an linear order without largest element.
+  Let $f$ be a coloring of the subsets of $I$ of cardinality $n$.
+  Prove that there is a monochromatic subset $H\subseteq I$ that is ordered as $\omega$.
+\end{exercise}
 
 \begin{exercise}\label{ex_Ramsey_random}
     Let $M$ be a graph with the property that for every finite $A\subseteq M$ there is a $c\in M$ such that $A\subseteq r(c,\U)$. 
@@ -101,15 +108,18 @@ $a_{\restriction i},a_i,{\mr c_{\restriction n}}$ satisfies the induction hypoth
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Ehrenfeucht-Mostowski theorem}\label{EM}
 
-Let $I,<_I$ be an infinite linear order and let ${\mr\bar a}$ be an $I$-sequence.
+Let $I,<_I$ be an infinite linear order.
+For simplicity we assume thoughout the section that $I$ has no largest element.
+This assumption is unnecessary, but it simplifies the exposition.
+Let ${\mr\bar a}$ be an $I$-sequence.
 Fix a tuple of distinct variables ${\mr\bar x}=\<{\mr x_i}: i<\omega\>$.
 We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$} and say that $p({\mr\bar x})$ is the \emph{Ehren\-feucht-Mostowski type\/} of ${\mr\bar a}$ over $A$ if
 
-\ceq{\hfill p({\mr\bar x})}{=}{\Big\{\phi({\mr x_{\restriction n}})\in L(A)\ :\ \phi({\mr a_{\restriction I_0}})\ \textrm{ holds for every }\ I_0\in\binom{I}{n}\Big\}.}
+\ceq{\hfill p({\mr\bar x})}{=}{\Big\{\phi({\mr\bar x})\in L(A)\ :\ \phi({\mr a_{\restriction I_0}})\ \textrm{ holds for every }\ I_0\in I^{(\omega)}\Big\}.}
 
-Note that ${\mr\bar x}$ is always of order-type $\omega$,
-while ${\mr\bar a}$ is an arbitrary infinite sequence.
-Clearly,
+Where $I^{(\omega)}$ is the set of subsets of $I$ ordered as $\omega$.
+Note that ${\mr\bar x}$ is always of order-type $\omega$, therefore 
+the meaning of $\phi({\mr a_{\restriction I_0}})$ is clear.
 
 Note also that if ${\mr\bar a}$ is $A$-indiscernible then $\EMtp({\mr\bar a}/A)$ is a complete type,
 and vice versa.
@@ -120,43 +130,42 @@ then ${\mr\bar a}\equiv_A {\mr\bar c}$.
 \theoremstyle{mio}
 \newtheorem{EhrenfeuchtMostowski}[thm]{Ehrenfeucht-Mostowski Theorem}
 \begin{EhrenfeuchtMostowski}\label{thm_EM}
-Let $I,<_I$ and $J,<_J$ be two infinite linear orders such that $|J|\le \kappa$.
-Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is a $J$-sequence of $A$-indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/A)\subseteq\EMtp({\mr\bar c}/A)$.
+Let $I,<_I$ be an infinite linear order.
+Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is a sequence ${\mr\bar c}=\<{\mr c_i}:i\in\omega\>$ of $A$-indiscernibles such that $\EMtp({\mr\bar a}/A)\subseteq\tp({\mr\bar c}/A)$.
 \end{EhrenfeuchtMostowski}
 
 \begin{proof}
-We prove the theorem for $I=J=\omega$ and leave the general case to the reader.
 Let $q({\mr\bar x})=\EMtp({\mr\bar a}/A)$.
-Any realization of the following type is a $J$-sequence of $A$-indiscernibles ${\mr\bar c}$ as required by the theorem.
+Any realization of the following type is a sequence of $A$-indiscernibles ${\mr\bar c}$ as required by the theorem.
 
 \ceq{\hfill q({\mr\bar x})}
 {\cup}
-{\Big\{\phi({\mr x_{\restriction I_0}})\iff\phi({\mr x_{\restriction J_0}})\ :\  \phi({\mr x_{\restriction n}})\in L(A), \ I_0, J_0\in\binom{\omega}{n}, \ n<\omega\Big\}.}
+{\Big\{\phi({\mr x_{\restriction I_0}})\iff\phi({\mr x_{\restriction J_0}})\ :\  \phi({\mr\bar x})\in L(A), \ I_0, J_0\in\omega^{(\omega)} \Big\}.}
 
-We will prove that any finite subset of the type above is realized by a finite subsequence of ${\mr\bar a}$.
-First note that any finite subset of $q({\mr\bar x})$ is realized by any subsequence of ${\mr\bar a}$ of the proper length by the definition of EM-type.
+We will prove that any finite subset of the type above is realized by a subsequence of ${\mr\bar a}$.
+First note that $q({\mr\bar x})$ is realized by ${\mr a_{\restriction H}}$ for every $H\subseteq I^{(\omega)}$.
 Then we only need to pay attention to the set on the right.
 
-We prove that for $k$ and $n$ arbitrary large and every $\phi_1,\dots,\phi_k\in L_{\mr x_{\restriction n}}(A)$ there is an infinite $H\subseteq\omega$ such that ${\mr a_{\restriction H}}$ realizes
+We prove that for $k$ and $n$ arbitrarily large and every $\phi_1({\mr\bar x}),\dots,\phi_k({\mr\bar x})\in L(A)$ there is an infinite $H\subseteq\omega$ such that ${\mr a_{\restriction H}}$ realizes
 
 \ceq{\ssf{\#}}
 {}
-{\Big\{\phi_i({\mr x_{\restriction I_0}})\iff\phi_i({\mr x_{\restriction J_0}})\ :\  I_0, J_0\in\binom{\omega}{n}\textrm{ and } i\in[k]\Big\}.}
+{\Big\{\phi_i({\mr x_{\restriction I_0}})\iff\phi_i({\mr x_{\restriction J_0}})\ :\  I_0, J_0\in\omega^{(\omega)}\textrm{ and } i\in[k]\Big\}.}
 
-Consider the subsets of $[k]$ as colors and let $f$ be the coloring of $\omega^{(n)}$ that maps $I_0$ to the set $\big\{i\ :\ \phi_i({\mr a_{\restriction I_0}})\big\}$.
+Let $n$ be larger than any $i$ such that ${\mr x_i}$ occurs in $\phi_1({\mr\bar x}),\dots,\phi_k({\mr\bar x})$.
+Consider the subsets of $[k]$ as colors and let $f$ be the coloring of $I^{(n)}$ that maps $I_0$ to the set $\big\{i\ :\ \phi_i({\mr a_{\restriction I_0}})\big\}$.
 By the Ramsey theorem,
-there is some infinite monochromatic set $H\subseteq\omega$.
+there is some infinite monochromatic set $H\subseteq I$ with the order type of $\omega$, see Exercise~\ref{ex_Ramsey_order}.
 Hence
 
 \ceq{}
 {}
-{\Big\{\phi_i({\mr a_{\restriction I_0}})\iff\phi_i({\mr a_{\restriction J_0}})\ :\  I_0, J_0\in\binom{H}{n}\textrm{ and } i\in[k]\Big\}.}
+{\Big\{\phi_i({\mr a_{\restriction I_0}})\iff\phi_i({\mr a_{\restriction J_0}})\ :\  I_0, J_0\in H^{(n)}\textrm{ and } i\in[k]\Big\}.}
 
 As $H$ has order type $\omega$,
-it is immediate that ${\mr a_{\restriction H}}$ realizes \ssf{\#},
-as required to prove the theorem with $I=J=\omega$.
+it is immediate that ${\mr a_{\restriction H}}$ realizes \ssf{\#}
+as required.
 \end{proof}
-
 
 \begin{proposition}\label{prop_indiscernibles_set_model}
 Let ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ be a sequence of $A$-indiscernibles.
@@ -172,25 +181,24 @@ Hence ${\mr\bar a}$ is indiscernible over $h[M]$.
 \end{proof}
 
 \begin{exercise}
-Let $\bar a=\<a_i:i\in I\>$ be an $A$-indiscernible sequence and let $J\supseteq I$ with $|J|\le \kappa$.
-Then there is an $A$-indiscernible sequence $\bar c=\<c_i:i\in J\>$ such that $c_{\restriction I}=\bar a$.
+  Let $\bar a=\<a_i:i\in I\>$ be an $A$-indiscernible sequence and let $J\supseteq I$ with $|J|\le \kappa$.
+  Then there is an $A$-indiscernible sequence $\bar c=\<c_i:i\in J\>$ such that $c_{\restriction I}=\bar a$.
 \end{exercise}
 
 \begin{exercise}
-Let  $p({\mr x})\in S(\U)$ be a global type invariant over $A$.
-Let ${\mr a},
-{\mr b}\models p_{\restriction A}({\mr x})$.
-Prove that there is a sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ such that ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are both sequences of $A$-indiscernibles.
+  Let  $p(x)\in S(\U)$ be a global type invariant over $A$.
+  Let $a,b\models p_{\restriction A}(x)$.
+  Prove that there is a sequence $\bar c=\<c_i:i<\omega\>$ such that $a,\bar c$ and $b,\bar c$ are both sequences of $A$-indiscernibles.
 \end{exercise}
 
 \begin{exercise}\label{ex_symmetry_ind}
-  Let $\<{\mr c_i}:i<\omega\>$ be an indiscernible sequence.
-  Prove that there is an indiscernible sequence $\<{\mr d_i}:i<\omega\>$ such that ${\mr d_0},{\mr d_1}= {\mr c_1},{\mr c_0}$.
+  Let $\<c_i:i<\omega\>$ be an indiscernible sequence.
+  Prove that there is an indiscernible sequence $\<d_i:i<\omega\>$ such that $d_0,d_1 = c_1,c_0$.
 \end{exercise}
 
 \begin{exercise}
   Let $\<\D_i:i<\omega\>$ be an $A$-indiscernible sequence in $\U^\eq$.
-  Prove that there is an $A$-indiscernible sequence $\<b_i:i<\omega\>$ and a formula $\phi(x\,;z)\in L$ such that $\D_i=\phi(\U\,;b_i)$.
+  Prove that there is an $A$-indiscernible sequence $\<b_i:i<\omega\>$ in $\U^z$ and a formula $\phi(x\,;z)\in L$ such that $\D_i=\phi(\U\,;b_i)$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%

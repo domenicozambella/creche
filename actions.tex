@@ -288,9 +288,11 @@ Our use of the term \textit{wide\/} is consistent with~\cite{Hr}, though we appl
 %   The other implications follow immediately from the theorem.
 % \end{proof}
 
+The following easy consequence of the theorem will be used below.
+
 \begin{corollary}\label{corol_intersectionGwide}
   Work relative to some given $\mrY\subseteq\mrX$.
-  Let $\mrD\in\BDelta(\grZ)$ be a $G$-wide.
+  Let $\mrD\in\BDelta(\grZ)$ be $G$-wide.
   Then $\mrD\cap g{\cdot}\mrD$ is $G$-wide for every $g\in G$.
 \end{corollary}
 
@@ -573,19 +575,19 @@ It is easy to verify that $\Stab(Q_G)\trianglelefteq G$.
 \end{proof}
 
 \begin{theorem}\label{thm_gammaK}
-  Write $K$ for $\Stab(Q_G)$.
-  Then any finite conjunction of formulas in $\gamma_K({\mr x})$ is $G$-syndetic.
-  In particular $\gamma_K({\mr x})$ is finitely consistent.
+  Write $G^1$ for $\Stab(Q_G)$.
+  Then any finite conjunction of formulas in $\gamma_{G^1}({\mr x})$ is $G$-syndetic.
+  In particular $\gamma_{G^1}({\mr x})$ is finitely consistent.
 \end{theorem}
 
 \begin{proof}
   \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
   \def\ceq#1#2#3{\parbox[t]{23ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
-  Notice that from Proposition~\ref{prop_StabQ} it easily follows that for every $\mrD\in\gamma_G({\mr x})$ and every finite $F\subseteq K$ the set $\cap\,F{\cdot}\mrD$ is $G$-syndetic.
+  Notice that from Proposition~\ref{prop_StabQ} it easily follows that for every $\mrD\in\gamma_G({\mr x})$ and every finite $F\subseteq G^1$ the set $\cap\,F{\cdot}\mrD$ is $G$-syndetic.
    
-  Let  ${\mr\D_1},\dots,{\mr\D_n}\in\gamma_K({\mr x})$.
+  Let ${\mr\D_1},\dots,{\mr\D_n}\in\gamma_{G^1}({\mr x})$.
   Assume inductively that ${\mr\D_1}\cap\dots\cap{\mr\D_{n-1}}$ is $G$-syndetic.
-  Let $F\subseteq K$ be such that $\cup\,F{\cdot}{\mr\D_n}=\mrX$.
+  Let $F\subseteq G^1$ be such that $\cup\,F{\cdot}{\mr\D_n}=\mrX$.
   Then
   
   \ceq{\hfill\cup\,F{\cdot}[{\mr\D_1}\cap\dots\cap{\mr\D_n}]}
@@ -600,9 +602,16 @@ It is easy to verify that $\Stab(Q_G)\trianglelefteq G$.
   The $G$-syndeticity of ${\mr\D_1}\cap\dots\cap{\mr\D_n}$ follows.
 \end{proof}
 
-From Theorems~\ref{thm_syndetic_invariant2} and~\ref{thm_gammaK} it follows that $K$-syndetic sets are $K$-wide.
+Unfortunately, we cannot conclude that the intersection of $G^1$-syndetic sets is $G^1$ syndetic.
+To obtain a subgroup with this property, we need to iterate the above construction.
+We define $G^{n+1}=\Stab(Q_{G^n})$ and let $G^\omega$ be the intersection of all $G^n$. 
+It is easy to see that $\gamma_{G^\omega}$ is closed under conjunction.
+More on the properties of $G^\omega$ in Section~\ref{tame_landscape}.
+However, it is important to emphasize that, in general, $G^\omega$ could be trivial.
+
+From Theorems~\ref{thm_syndetic_invariant2} and~\ref{thm_gammaK} it follows that $G^1$-syndetic sets are $G^1$-wide.
 But we can do better.
-% In particular, every $q({\mr x})\in Q_G$ has an extension to a $K$-invariant $p({\mr x})\in S_\Delta(\grZ)$.
+% In particular, every $q({\mr x})\in Q_G$ has an extension to a $G^1$-invariant $p({\mr x})\in S_\Delta(\grZ)$.
 % If this extension is unique we say that $q({\mr x})$ is stationary.
 First, we remark a useful consequence of normality.
 
@@ -632,7 +641,7 @@ As it happens, under the assumption of normality, this can be strengthened as fo
 \begin{proposition}\label{prop_Gsyndetic_Hthick1}
   Assume $H\trianglelefteq G$ and that $\gamma_H({\mr x})$ is finitely consistent.
   Then every $G$-syndetic $\mrD\in\BDelta(\grZ)$ is $H$-wide.
-  In particular all types in $Q_G$ are $K$-wide.
+  In particular all types in $Q_G$ are $G^1$-wide.
 \end{proposition}
 
 \begin{proof}
@@ -689,14 +698,12 @@ We will prove that this is the case under the assumption of stability.
 
 \end{comment}
 
-When the context suggests it, $\BDelta(\grZ)$ will denote the broader class of formulas that include also those of the form  $\phi({\mr y})$ for $\phi({\mr x})\in\BDelta(\grZ)$ and is closed under Boolean connectives.
-As there is little risk of confusion, below we write $\BDelta_{x,y}(\grZ)$ for $\BDelta(\grZ)$.
-A $\BDelta(\grZ)$-definable equivalence relation is an equivale3nce relation defined by some formula $\epsilon({\mr x},{\mr y})\in\BDelta(\grZ)$
+When the context suggests it, $\BDelta(\grZ)$ will denote the broader class that includes also formulas obtained substituting ${\mr y}$ for ${\mr x}$ and is closed under Boolean connectives.
+A $\BDelta(\grZ)$-definable equivalence relation is an equivalence relation defined by some formula $\epsilon({\mr x},{\mr y})\in\BDelta(\grZ)$.
 We define $\BDelta(\grZ)$-type-definable equivalence relations similarly.
-
-An equivalence relation is bounded if it has a small numer of equivalence classes.
 Note that if $\epsilon({\mr x},{\mr y})$ is a $\BDelta(\grZ)$-definable equivalence relation then $\epsilon({\mr x},{\mr a})$, for any ${\mr a}\in\mrX$, is equivalent to a $\BDelta(\grZ)$-formula.
-Similarly for types.
+
+An equivalence relation is bounded if it has a small number of equivalence classes.
 
 \begin{definition}\label{def_G00}
   Let $\Phi^0$ be the collection of sets that are equivalence classes of a bounded $G$-invariant $\BDelta(\grZ)$-type-definable equivalence relation.
@@ -715,7 +722,7 @@ Similarly for types.
   Assume that $\mrX$ is type-definable and that $G$ acts transitively on $\mrX$.
   Then 
   
-  \ceq{\hfill K}{\leq}{G^{00}}\medrel{\leq}$G^0$.
+  \ceq{\hfill G^1}{\leq}{G^{00}}\medrel{\leq}$G^0$.
 \end{proposition}
 
 \begin{proof}
@@ -725,21 +732,21 @@ Similarly for types.
   By Corollary~\ref{corol_bounded_orbit_syndetic}, $\mrD$ is $G$-syndetic.
   Then the type defining $\mrY$ is $G$-syndetic.
   Then there is some $q({\mr x})\in Q_G$ entailing $\mrY$.
-  By $K$-invariance $q({\mr x})$ entails $k{\cdot}\mrY$ for every $k\in K$.
+  By $G^1$-invariance $q({\mr x})$ entails $k{\cdot}\mrY$ for every $k\in G^1$.
   Then $k$ is in the stabilizer of $\mrY$.
 \end{proof}
 
-\begin{question}
-  Work under the assumption that $\mrX$ is type-definable and that $G$ acts transitively.
-  How are the following properties connected?
-  \begin{itemize}
-    \item [1.] $\gamma_K({\mr x})$ is closed under conjunction
-    \item [2.] the types in $Q_G$ are $K$-stationary
-    \item [3.] $Q_G$ has small cardinality
-    \item [4.] $G$ acts transitively on $Q_G$
-    \item [5.] the types in $Q_G$ are realized in $\mrX$ and $\mrX=\bigcup\{q(\mrX)\ :\ q({\mr x})\in Q_G\}$.
-  \end{itemize}
-\end{question}
+% \begin{question}
+%   Work under the assumption that $\mrX$ is type-definable and that $G$ acts transitively.
+%   How are the following properties connected?
+%   \begin{itemize}
+%     \item [1.] $\gamma_{G^1}({\mr x})$ is closed under conjunction
+%     \item [2.] the types in $Q_G$ are $G^1$-stationary
+%     \item [3.] $Q_G$ has small cardinality
+%     \item [4.] $G$ acts transitively on $Q_G$
+%     \item [5.] the types in $Q_G$ are realized in $\mrX$ and $\mrX=\bigcup\{q(\mrX)\ :\ q({\mr x})\in Q_G\}$.
+%   \end{itemize}
+% \end{question}
 
 % \begin{proposition}
 %   For $\mrY\in\Phi^{00}$ define 
@@ -763,7 +770,7 @@ Similarly for types.
 
 % \begin{proposition}\label{prop_G0_inclusione2}
 %   Assume that $G$ acts transitively.
-%   Then $K\subsetyeq G^0$.\smallskip
+%   Then $G^1\subsetyeq G^0$.\smallskip
 
 %   % \ceq{\hfill \Stab(Q_G)}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\textrm{ is }G\textrm{-syndetic for all }G\textrm{-syndetic }\mrD\in\BDelta(\grZ)\big\}}\smallskip
 
@@ -818,15 +825,15 @@ Note that by Exercise~\ref{ex_syndetic_type_vs_formulas} we can replace type-def
 
 \begin{proposition}
   Assume the action of $G$ is regular.
-  Let $K\le G$ be such that all $K$-orbits (that is, $K{\cdot}{\mr a}$, for ${\mr a}\in\mrX$) are $\BDelta(\grZ)$-type-definable.
-  Then, if $K$ has finite index, $G^0\le K$.
+  Let $G^1\le G$ be such that all $G^1$-orbits (that is, $G^1{\cdot}{\mr a}$, for ${\mr a}\in\mrX$) are $\BDelta(\grZ)$-type-definable.
+  Then, if $G^1$ has finite index, $G^0\le G^1$.
 \end{proposition}
 
 \begin{proof}
   Let $g\in G^0$.
-  As $K$ has finite index and the action is transitive $K{\cdot}{\mr a}$ is $G$-syndetic for every ${\mr a}\in\mrX$.
-  Then $g{\cdot}K{\cdot}{\mr a}=K{\cdot}{\mr a}$.
-  By regularity, $g{\cdot}K=K$, then $g\in K$.
+  As $G^1$ has finite index and the action is transitive $G^1{\cdot}{\mr a}$ is $G$-syndetic for every ${\mr a}\in\mrX$.
+  Then $g{\cdot}G^1{\cdot}{\mr a}=G^1{\cdot}{\mr a}$.
+  By regularity, $g{\cdot}G^1=G^1$, then $g\in G^1$.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%
@@ -914,7 +921,7 @@ Note that when $G$ acts transitively on $\mrX$, equivalence classes of $G$-invar
 % Unfortunately, syndeticity is not preserved under intersection.
 % To obtain closure under intersection, we need to push the concept to a higher level of complexity.
 
-A set $\mrD\subseteq\mrX$ is \emph{strongly $H$-syndetic\/} if for every finite $F\subseteq H$ the set $\cap\,F{\cdot}\mrD$ is syndetic (recall that $F{\cdot}\mrD$ stands for $\{h{\cdot}\mrD: h\in F\}$).
+A set $\mrD\subseteq\mrX$ is \emph{strongly $H$-syndetic\/} if for every finite $F\subseteq H$ the set $\cap\,F{\cdot}\mrD$ is syndetic (recall that $F{\cdot}\mrD$ stands for $\{h{\cdot}\mrD : h\in F\}$).
 Dually, we say that $\mrD$ is \emph{weakly $H$-thick\/} if for some finite $F\subseteq H$ the set $\cup\,F{\cdot}\mrD$ is thick.
 Again, the same properties may be attributed to formulas and types when every conjunction of formulas in the type has the property.
 
@@ -953,7 +960,7 @@ Define the following type
 
 \ceq{\hfill\emph{${}^{\rm s}\kern-.2ex\gamma_H({\mr x})$}}{=}{\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is strongly }H\textrm{-syndetic}\}.}\smallskip
 
-Note that Theorem~\ref{thm_gammaK} shows that $\gamma_K({\mr x})\subseteq{}^{\rm s}\kern-.2ex\gamma_G({\mr x})$.
+Note that Theorem~\ref{thm_gammaK} shows that $\gamma_{G^1}({\mr x})\subseteq{}^{\rm s}\kern-.2ex\gamma_G({\mr x})$.
 
 \begin{corollary}\label{corol_str_gen}
   ${}^{\rm s}\kern-.2ex\gamma_H({\mr x})$ is finitely consistent, strongly $H$-syndetic, and $H$-invariant.
@@ -998,7 +1005,6 @@ The following theorem asserts that weak thickness is partition regular.
 \end{proof}
 
 Assume that every $\mrD\in\BDelta(\grZ)$ has a small $H$-orbit.
-% For instance, the action presented in the definition above has small orbits.
 A set $\mrD$ with small $H$-orbit is $H$-thick if and only if $\cap\,H{\cdot}\mrD$ is nonempty.
 Note that the latter set is always $H$-invariant.
 
@@ -1039,7 +1045,7 @@ Note that the latter set is always $H$-invariant.
 \begin{question}
   Let $H\trianglelefteq G$.
   Does strongly $G$-syndetic implies strongly $H$-syndetic or vice versa?
-  Does strongly $G$-syndetic implies $K$-syndetic?
+  Does strongly $G$-syndetic implies $G^1$-syndetic?
 \end{question}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1112,7 +1118,7 @@ The notions introduced in Section~\ref{strong_syndeticity} offer some hint.
   As this realization belongs to some ${\mr\X_n}$ we contradict the definition of $\psi_n({\mr x})$.
 \end{proof}
 
-% \ceq{\hfill p_n({\mr\X},{\mr\X})}{=}{\{\<{\mr a},{\mr b}\>\in{\mr\X^2}\ :\ {\mr a}\in K^n{\mr b}\}}
+% \ceq{\hfill p_n({\mr\X},{\mr\X})}{=}{\{\<{\mr a},{\mr b}\>\in{\mr\X^2}\ :\ {\mr a}\in G^1^n{\mr b}\}}
 
 % Below we write ${\mr x}\in C^n{\mr y}$ for the type $p_n({\mr x},{\mr y})$ and ${\mr x}\in G\,{\mr y}$ for the disjunction of all these types (n.b.\@ an infinite disjunction of types need not be a type).
 
@@ -1171,8 +1177,11 @@ We will see an example in Theorem~\ref{thm_thick_finsat}.
   \ssf4$\IMP$\ssf1. By Theorem~\ref{thm_wt_partreg}
 \end{proof}
 
+It is easy to see that the equivalent conditions in Theorem~\ref{thm_coalesce} hold when $H=G^\omega$, as defined in Section~\ref{G0}, and $\mrY=\mrX$.
+Vice vesa, if the equivalent conditions in Theorem~\ref{thm_coalesce} hold for $H\le G$, then $H\le G^\omega$. 
+
 A subset $\mrY\subseteq\mrX$ is \emph{$H$-stationary\/} if there is a unique $H$-invariant $p({\mr x})\in S_\Delta(\grZ)$ finitely consistent in $\mrY$.
-Nolte, by Theorem~\ref{thm_syndetic_invariant2} this is equivalent to requiring that $\mrD$ and $\neg\mrD$ cannot be both wide relative to
+Nolte, by Theorem~\ref{thm_syndetic_invariant2} this is equivalent to requiring that $\mrD$ and $\neg\mrD$ are not both wide relative to $\mrY$.
 The conditions in Theorem~\ref{thm_coalesce} together with stationarity, produce further simplification.
 
 \begin{fact}\label{fact_starionarity_thick_syndetic}
@@ -1332,18 +1341,18 @@ We say that $\Psi\subseteq L_{\mr x}$ is symmetric if every formula in $\Psi$ is
 When $\Psi$ is symmetric, the map $\iota:\<{\mr a}\,;{\gr g}\>\mapsto\<{\mr a}\,;{\gr g^{-1}}\>$ is an automorphism of $\U^\Delta$.
 As $H$ is normal and $\iota$ is an involution, $\iota\,H=H{\cdot}\iota$ and $H\cup\iota\,H$ is a subgroup of $G$.
 In particular, if $f\in H$ and ${\gr g}\in\grZ$ then $f({\gr g^{-1}})=f'({\gr g})^{\gr -1}$ for some $f'\in H$.
-We write \emph{$K$\/} for $H\cup\iota\,H$.
+We write \emph{$G^1$\/} for $H\cup\iota\,H$.
 
 When $\Psi$ is symmetric, we can strengthen Fact~\ref{prop_wideHcojugate} as follows.
 
 \begin{fact}\label{prop_wideHcojugate_symm}
   Let $\mrD=\phi(\mrX\,;{\gr 1})$ for some $\phi({\mr x}\,;{\gr z})\in\pmDelta$.
-  For $i=1,2$ let ${\gr h_i}\in({\gr g_i})_K$. 
+  For $i=1,2$ let ${\gr h_i}\in({\gr g_i})_{G^1}$. 
   Then \ssf1 and \ssf2 of Fact~\ref{prop_wideHcojugate} are equivalent
 \end{fact}
 
 \begin{proof}
-  Let $f_i\in K$ be such that ${\gr h_i}\in f_i{\gr g_i})$.
+  Let $f_i\in G^1$ be such that ${\gr h_i}\in f_i{\gr g_i})$.
   By Remark~\ref{rem_invariance_normalsubg} it suffices to consider the case $f_1\in H$ and $f_2\in\iota\,H$.
   Then $f_2({\gr g_2})=f_3({\gr g_2^{-1}})$.
   By Fact~\ref{prop_wideHcojugate}, \ssf2 is equivalent to claiming that ${\gr g_1}{\cdot}\mrD\ \cap\ {\gr g_2^{-1}}{\cdot}\mrD$ is $H$-wide. 
@@ -1357,12 +1366,12 @@ For any $\grW\subseteq\grZ$, we write $\<\grW\>$ for the subgroup generated by $
   Assume $\Psi$ is symmetric.
   Let $\mrD=\phi(\mrX\,;{\gr 1})$ for some $\phi({\mr x}\,;{\gr z})\in\pmDelta$.
   Let ${\gr g}$ be such that $\mrD\cap{\gr g}{\cdot}\mrD$ is $H$-wide.
-  Then $\mrD\cap{\gr g'}{\cdot}\mrD$ is $H$-wide for every ${\gr g'}\in\<\,({\gr g})_{K}^2\>$.
+  Then $\mrD\cap{\gr g'}{\cdot}\mrD$ is $H$-wide for every ${\gr g'}\in\<\,({\gr g})_{G^1}^2\>$.
 \end{proposition}
 
 \begin{proof}
-  Assume inductively that $\mrD\cap{\gr g'}{\cdot}\mrD$ is $H$-wide, where ${\gr g'}\in\<\,({\gr g})_{K}^2\>$.
-  Pick two arbitrary ${\gr a},{\gr b}\in({\gr g})_K$.
+  Assume inductively that $\mrD\cap{\gr g'}{\cdot}\mrD$ is $H$-wide, where ${\gr g'}\in\<\,({\gr g})_{G^1}^2\>$.
+  Pick two arbitrary ${\gr a},{\gr b}\in({\gr g})_{G^1}$.
   We claim that $\mrD\cap{\gr a}{\cdot}{\gr b}{\cdot}{\gr g'}{\cdot}\mrD$ is $H$-wide.
   From the induction hypothesis it follows that ${\gr b}{\cdot}\mrD\cap{\gr b}{\cdot}{\gr g'}{\cdot}\mrD$ is $H$-wide.
   By Fact~\ref{prop_wideHcojugate_symm}, ${\gr a^{-1}}{\cdot}\mrD\cap{\gr b}{\cdot}{\gr g'}{\cdot}\mrD$ is $H$-wide and the claim follows.
