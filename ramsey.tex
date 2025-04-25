@@ -85,7 +85,7 @@ $a_{\restriction i},a_i,{\mr c_{\restriction n}}$ satisfies the induction hypoth
 
 \begin{exercise}\label{ex_Ramsey_order}
   Let $I,<_I$ be an linear order without largest element.
-  Let $f$ be a coloring of the subsets of $I$ of cardinality $n$.
+  Let $f$ be a coloring of $I^{(n)}$.
   Prove that there is a monochromatic subset $H\subseteq I$ that is ordered as $\omega$.
 \end{exercise}
 
@@ -215,7 +215,7 @@ For a lighter notation, we assume that the semigroup operation \emph{$\ \cdot\ $
 In this section we work over a given model $M$.
 For any two sets $\mrA,\mrB\subseteq\U^{\mr x}$ we define
 
-\ceq{\hfill\emph{$\mrA\cdot_M\mrB$}}
+\ceq{\hfill\emph{$\mrA*\mrB$}}
 {=}
 {\Big\{ {\mr a}{\cdot}{\mr b}
 \ :\ 
@@ -224,29 +224,30 @@ For any two sets $\mrA,\mrB\subseteq\U^{\mr x}$ we define
 In this and the next section we abbreviate $\Orbit({\mr a}/M)$, 
 the orbit of ${\mr a}$ under $\Aut(\U/M)$, 
 by \emph{$({\mr a})_M$}.
-We write \emph{$\mrA\cdot_M{\mr b}$} for $\mrA\cdot_M({\mr b})_M$ and \emph{${\mr a}\cdot_M{\mr b}$} for $({\mr a})_M\cdot_M{\mr b}$.
+When ajacent to $*$, we write ${\mr a}$ for $({\mr a})_M$.
+E.g.\@ we write \emph{$\mrA*{\mr b}$} for $\mrA*({\mr b})_M$ and \emph{${\mr a}*{\mr b}$} for $({\mr a})_M*{\mr b}$.
 
 \begin{proposition}\label{prop_typedef_Ab}
-If $\mrA$ is type definable over $M$ then so is $\mrA\cdot_M{\mr b}$ 
+If $\mrA$ is type definable over $M$ then so is $\mrA*{\mr b}$ 
 for any ${\mr b}$.
 \end{proposition}
 \begin{proof}
   Let $p({\mr x}\,;{\mr z})$ the type in Exercise~\ref{ex_heir_type}.
-  Then the set $\mrA\cdot_M{\mr b}$ is defined by the type $q({\mr y})=\E {\mr x},{\mr z}\ \big[ {\mr y}={\mr x}{\cdot}{\mr z}\ \wedge\ {\mr x}\in\mrA \ \wedge\ p({\mr x}\,;{\mr z})\big]$.
+  Then the set $\mrA*{\mr b}$ is defined by the type $q({\mr y})=\E {\mr x},{\mr z}\ \big[ {\mr y}={\mr x}{\cdot}{\mr z}\ \wedge\ {\mr x}\in\mrA \ \wedge\ p({\mr x}\,;{\mr z})\big]$.
 \end{proof}
 
-From the invariance of $\cnonfork_M$ it follows immediately that $f[\mrA\cdot_M\mrB]=f[\mrA]\cdot_Mf[\mrB]$ for every $f\in\Aut(\U/M)$.
+From the invariance of $\cnonfork_M$ it follows immediately that $f[\mrA*\mrB]=f[\mrA]*f[\mrB]$ for every $f\in\Aut(\U/M)$.
 %
 Therefore, when $\mrA$ and $\mrB$ are invariant over $M$,
-also $\mrA\cdot_M\mrB$ is invariant over $M$.
+also $\mrA*\mrB$ is invariant over $M$.
 Below we are mostly concerned with sets that are type-definable, therefore invariant, over $M$.
 
 \begin{proposition}\label{prop_semi_associative}
 For every $M$-invariant sets $\mrA$, $\mrB$, and  $\mrC$.
 
-\ceq{\hfill\mrA\cdot_M\big(\mrB\cdot_M\mrC\big)}
+\ceq{\hfill\mrA*\big(\mrB*\mrC\big)}
 {\subseteq}
-{\big(\mrA\cdot_M\mrB\big)\cdot_M\mrC}
+{\big(\mrA*\mrB\big)*\mrC}
 \end{proposition}
 \begin{proof}
 Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ where ${\mr a}\cnonfork_M{\mr b}{\cdot}{\mr c}$ and ${\mr b}\cnonfork_M{\mr c}$.
@@ -261,7 +262,7 @@ also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by $M$-invari
 \end{proof}
 
 We show that, under the assumption of stationarity,
-the operation $\cdot_M$ is associative.
+the operation $*$ is associative.
 The quotient map $\U^{\mr x}\to\U^{\mr x}/{\equiv_M}$ is comes close to being a semigroup homomorphism.
 
 \begin{proposition}\label{prop_orbits_main}
@@ -271,17 +272,17 @@ Fix ${\mr a}\cnonfork_M{\mr b}$ arbitrarily.
 Then ${\mr a'}{\cdot}{\mr b'}\equiv_M{\mr a}{\cdot}{\mr b}$ for every 
 ${\mr a'}\equiv_M{\mr a}$ and  ${\mr b'}\equiv_M{\mr b}$ such that
 ${\mr a'}\cnonfork_M{\mr b'}$.
-Or, in other words, $({\mr a}{\cdot}{\mr b})_M={\mr a}\cdot_M{\mr b}$.
+Or, in other words, $({\mr a}{\cdot}{\mr b})_M={\mr a}*{\mr b}$.
 \end{proposition}
 %
 \begin{proof} 
 We prove two inclusions, the second one requires stationarity.
 
 $\subseteq$ \ As ${\mr a}\cnonfork_M{\mr b}$ holds by hypothesis,
-${\mr a}{\cdot}{\mr b}\in{\mr a}\cdot_M{\mr b}$.
+${\mr a}{\cdot}{\mr b}\in{\mr a}*{\mr b}$.
 The inclusion follows by invariance.
 
-$\supseteq$ \ By invariance it suffices to show that the l.h.s.\@ contains $({\mr a})_M\cdot_M\{{\mr b}\}$.
+$\supseteq$ \ By invariance it suffices to show that the l.h.s.\@ contains $({\mr a})_M*\{{\mr b}\}$.
 Pick any ${\mr a'}\equiv_M{\mr a}_M$ such that ${\mr a'}\cnonfork_M{\mr b}$.
 We need to prove that ${\mr a'}{\cdot}{\mr b}\in({\mr a}{\cdot}{\mr b})_M$.
 Both ${\mr a}$ and ${\mr a'}$ satisfy ${\mr a}\equiv_M{\mr x}\cnonfork_M{\mr b}$.
@@ -295,9 +296,9 @@ Assume $\cnonfork_{\!M}$ is stationary.
 Then for every $M$-invariant sets $\mrA$,
 $\mrB$ and  $\mrC$.
 
-\ceq{\hfill\mrA\cdot_M\big(\mrB\cdot_M\mrC\big)}
+\ceq{\hfill\mrA*\big(\mrB*\mrC\big)}
 {=}
-{\big(\mrA\cdot_M\mrB\big)\cdot_M\mrC}
+{\big(\mrA*\mrB\big)*\mrC}
 \end{corollary}
 
 \begin{proof}
@@ -312,8 +313,8 @@ But inclusion between orbits amounts to equality.
 \end{proof}
 
 Let $\mrA$ be a nonempty set.
-When $\mrA\cdot_M\mrA\subseteq\mrA$, we say that $\mrA$ is \emph{idempotent.}
-Note that if  $\mrA$ is idempotent and $\mrB\subseteq\mrA$, then also $\mrA\cdot_M\mrB$ is idempotent.
+When $\mrA*\mrA\subseteq\mrA$, we say that $\mrA$ is \emph{idempotent.}
+Note that if  $\mrA$ is idempotent and $\mrB\subseteq\mrA$, then also $\mrA*\mrB$ is idempotent.
 
 \begin{lemma}\label{lem_Hindman}
 Assume $\cnonfork_M$ is stationary.
@@ -325,15 +326,15 @@ type-definable over $M$, then $\mrA=({\mr b})_M$ for some (any) ${\mr b}\in\mrA$
 \begin{proof}
 Pick arbitrarily some ${\mr b}\in\mrA$.
 %
-The set $\mrA\cdot_{\!M}{\mr b}$ is contained in $\mrA$, idempotent and 
+The set $\mrA*{\mr b}$ is contained in $\mrA$, idempotent and 
 type-definable over $M$ by Proposition~\ref{prop_typedef_Ab}.
 %
-Therefore by minimality $\mrA\cdot_{\!M}{\mr b}=\mrA$.
+Therefore by minimality $\mrA*{\mr b}=\mrA$.
 %
 Let ${\mr\Aa'}\subseteq\mrA$ contain those ${\mr a}$ such that 
-${\mr a}\cdot_{\!M}{\mr b}=({\mr b})_M$.
+${\mr a}*{\mr b}=({\mr b})_M$.
 %
-This set is nonempty because ${\mr b}\in\mrA\cdot_{\!M}{\mr b}$.
+This set is nonempty because ${\mr b}\in\mrA*{\mr b}$.
 %
 It is easy to verify that ${\mr\Aa'}$ is type-definable over $M,{\mr b}$.
 %
@@ -343,7 +344,7 @@ By associativity, it is idempotent.
 %
 Hence, by minimality, ${\mr\Aa'}=\mrA$.
 %
-Then ${\mr b}\in{\mr\Aa'}$, which implies ${\mr b}\cdot_{\!M}{\mr b}=({\mr b})_M$.
+Then ${\mr b}\in{\mr\Aa'}$, which implies ${\mr b}*{\mr b}=({\mr b})_M$.
 %
 That is, ${\mr b}$ has idempotent orbit.
 %
@@ -406,8 +407,7 @@ Then for every finite coloring of $G$
 there is an infinite $\cpaw$-chain $\bar a$ such that $\fp\,\bar a$ is monochromatic.
 \end{Hindman}
 
-Note that this implies that every commutative semigroup $G$ has an infinite monochromatic subset 
-closed under finite sums of distinct elements (order $G$ arbitrarily).
+This implies that every commutative semigroup $G$ has an infinite monochromatic subset closed under finite sums of distinct elements (order $G$ arbitrarily).
 
 Our proof follows closely the proof of Ramsey's theorem~\ref{thm_Ramsey}.
 %
@@ -489,35 +489,35 @@ We need a few definitions.
 We work with the same notation as Section~\ref{semigroups}.
 % Let $\mrA$ be an idempotent set that is type-definable over $M$.
 We say that an element ${\mr c}$ is \emph{left-minimal\/} (w.r.t.\@ $\mrA$) if 
-${\mr c}\in\mrA\cdot_M{\mr g}$ for every ${\mr g}\in\mrA\cdot_M{\mr c}$.
+${\mr c}\in\mrA*{\mr g}$ for every ${\mr g}\in\mrA*{\mr c}$.
 % In other words, ${\mr a}$ is left-minimal 
-% if $\mrW\cdot_M{\mr a}$, i.e.\@ the left-ideal generated by the orbit of ${\mr a}$, is minimal among the type-definable left-ideals.
+% if $\mrW*{\mr a}$, i.e.\@ the left-ideal generated by the orbit of ${\mr a}$, is minimal among the type-definable left-ideals.
 % The ambient set $\mrW$ and the set of parameters $M$ are often implicit in the context.
-It is immediate that if ${\mr c}$ is left-minimal then any ${\mr b}\in\mrA\cdot_M{\mr c}$ is also left-minimal.% and $\mrA\cdot_M{\mr c}=\mrA\cdot_M{\mr b}$.
+It is immediate that if ${\mr c}$ is left-minimal then any ${\mr b}\in\mrA*{\mr c}$ is also left-minimal.% and $\mrA*{\mr c}=\mrA*{\mr b}$.
 
 \begin{proposition}\label{prop_minimal_existence1}
 Assume $\cnonfork_{\!M}$ is stationary.
 Let $\mrA$ be idempotent and type-definable over $M$.
 Let ${\mr a}$ be arbitrary.
-Then $\mrA\cdot_M{\mr a}$ contains a left-minimal element ${\mr c}$.
-When $\mrA\cap(\mrA\cdot_M{\mr a})$ is nonempty, we can also require ${\mr c}\in\mrA\cap(\mrA\cdot_M{\mr a})$ and that it has idempotent orbit.
+Then $\mrA*{\mr a}$ contains a left-minimal element ${\mr c}$.
+When $\mrA\cap(\mrA*{\mr a})$ is nonempty, we can also require ${\mr c}\in\mrA\cap(\mrA*{\mr a})$ and that it has idempotent orbit.
 \end{proposition}
 \begin{proof}
-If ${\mr b}\in\mrA\cdot_M{\mr a}$ then $\mrA\cdot_M{\mr b}\subseteq\mrA\cdot_M{\mr a}$.
-By compactness we obtain ${\mr c}\in\mrA\cdot_M{\mr a}$ such that $\mrA\cdot_M{\mr b}=\mrA\cdot_M{\mr c}\subseteq\mrA\cdot_M{\mr a}$ for every ${\mr b}\in\mrA\cdot_M{\mr c}$.
-Hence any ${\mr c'}\in\mrA\cdot_M{\mr c}$ is left-minimal.
-Note that if ${\mr b}\in\mrA$ then by idempotency  $\mrA\cdot_M{\mr b}\subseteq\mrA$. Hence when $\mrA\cdot_M{\mr a}$ and $\mrA$ have nonempty intersection, we can also require that ${\mr c}\in\mrA$. 
-Then $\mrA\cdot_M{\mr c}$ is idempotent. 
-Therefore, by Corollary~\ref{corol_idempotent} there is some ${\mr c'}\in\mrA\cdot_M{\mr c}$ with idempotent orbit.
+If ${\mr b}\in\mrA*{\mr a}$ then $\mrA*{\mr b}\subseteq\mrA*{\mr a}$.
+By compactness we obtain ${\mr c}\in\mrA*{\mr a}$ such that $\mrA*{\mr b}=\mrA*{\mr c}\subseteq\mrA*{\mr a}$ for every ${\mr b}\in\mrA*{\mr c}$.
+Hence any ${\mr c'}\in\mrA*{\mr c}$ is left-minimal.
+Note that if ${\mr b}\in\mrA$ then by idempotency  $\mrA*{\mr b}\subseteq\mrA$. Hence when $\mrA*{\mr a}$ and $\mrA$ have nonempty intersection, we can also require that ${\mr c}\in\mrA$. 
+Then $\mrA*{\mr c}$ is idempotent. 
+Therefore, by Corollary~\ref{corol_idempotent} there is some ${\mr c'}\in\mrA*{\mr c}$ with idempotent orbit.
 \end{proof}
 
 \begin{proposition}\label{prop_minimal_existence2}
   Assume $\cnonfork_M$ is stationary.
   Let $\mrA$ be idempotent and type-definable over $M$.
-  Let $({\mr c})_M$ be idempotent and such that ${\mr c}\cdot_M\mrA\subseteq\mrA$.
+  Let $({\mr c})_M$ be idempotent and such that ${\mr c}*\mrA\subseteq\mrA$.
   Then
   \begin{itemize}
-  \item[1.]  ${\mr c}\cdot_M\mrA\cdot_M{\mr c}$ contains some ${\mr g}$ with idempotent orbit
+  \item[1.]  ${\mr c}*\mrA*{\mr c}$ contains some ${\mr g}$ with idempotent orbit
   \item[2.] moreover if ${\mr c}$ is left-minimal, then every such ${\mr g}$ is in $({\mr c})_M$.
   \end{itemize} 
 \end{proposition}
@@ -526,15 +526,15 @@ Note, parenthetically, that in general the set in \ssf{1} need not be type-defin
 Therefore Corollary~\ref{corol_idempotent} does not apply directly, and we need an indirect argument.
 
 \begin{proof}\ssf{1}.  
-From ${\mr c}\cdot_M\mrA\subseteq\mrA$ we obtain that $\mrA\cdot_M{\mr c}$ is idempotent.
+From ${\mr c}*\mrA\subseteq\mrA$ we obtain that $\mrA*{\mr c}$ is idempotent.
 As it is  also type-definable, by Corollary~\ref{corol_idempotent} it contains a ${\mr b}$ with idempotent orbit.
-Note that ${\mr b}\cdot_M{\mr c}=({\mr b})_M$.
-Then $({\mr g})_M={\mr c}\cdot_M{\mr b}$ is as required by \ssf1.
+Note that ${\mr b}*{\mr c}=({\mr b})_M$.
+Then $({\mr g})_M={\mr c}*{\mr b}$ is as required by \ssf1.
 
-\ssf{2}. From ${\mr g}\in{\mr c}\cdot_M\mrA\cdot_M{\mr c}$ and ${\mr c}\cdot_M\mrA\subseteq\mrA$ we obtain that ${\mr g}\in\mrA\cdot_M{\mr c}$.
-Then by left-minimality ${\mr c}\in\mrA\cdot_M{\mr g}$.
-As $({\mr g})_M$ is idempotent, ${\mr c}\cdot_M{\mr g}=({\mr c})_M$.
-By the choice of ${\mr g}$, we know that ${\mr c}\cdot_M{\mr g}=({\mr g})_M$.
+\ssf{2}. From ${\mr g}\in{\mr c}*\mrA*{\mr c}$ and ${\mr c}*\mrA\subseteq\mrA$ we obtain that ${\mr g}\in\mrA*{\mr c}$.
+Then by left-minimality ${\mr c}\in\mrA*{\mr g}$.
+As $({\mr g})_M$ is idempotent, ${\mr c}*{\mr g}=({\mr c})_M$.
+By the choice of ${\mr g}$, we know that ${\mr c}*{\mr g}=({\mr g})_M$.
 Then \ssf{2} follows.
 \end{proof}
 
@@ -548,7 +548,7 @@ Then
 \item[1.] $\sigma\big[({\mr a})_M\big]=(\sigma\,{\mr a})_M$
 
 \item[2.]
-$\sigma\big[{\mr a}\cdot_M{\mr b}\big]=\sigma\,{\mr a}\cdot_M\sigma\,{\mr b}$.
+$\sigma\big[{\mr a}*{\mr b}\big]=\sigma\,{\mr a}*\sigma\,{\mr b}$.
 \end{itemize}
 \end{proposition}
 \begin{proof}\ \ssf{1.}  
@@ -672,8 +672,8 @@ $\{\sigma\,g\ :\ \sigma\in\Sigma\}$ is monochromatic.
 \begin{exercise}
   Assume $\cnonfork_M$ is stationary.
   Let $\mrA$ be idempotent and type-definable over $M$.
-  Assume ${\mr c}$ left-minimal, with idempotent orbit, and such that ${\mr c}\cdot_M\mrA\subseteq\mrA$.
-  Prove that ${\mr c}\cdot_M\mrA\cdot_M{\mr c}\;/\equiv_M$ is a group with identity $({\mr c})_M$ and multiplication $\cdot_M$.
+  Assume ${\mr c}$ left-minimal, with idempotent orbit, and such that ${\mr c}*\mrA\subseteq\mrA$.
+  Prove that ${\mr c}*\mrA*{\mr c}\;/\equiv_M$ is a group with identity $({\mr c})_M$ and multiplication $*$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -274,7 +274,7 @@ If for every $\phi({\mr x})\in L(\U)$ there is a formula $\psi({\mr x})\in L(M)$
 Let ${\gr b}\in\U^{\gr z}$ and ${\mr a_1},{\mr a_2}\in\U^{\mr x}$ be such that ${\mr a_i}\cnonfork_M{\gr b}$ and ${\mr a_1}\equiv_M{\mr a_2}$.
 We claim that ${\mr a_1}\equiv_{M,\,{\gr b}}{\mr a_2}$.
 We need to prove that $\phi({\mr a_1}\,;{\gr b})\iff\phi({\mr a_2}\,;{\gr b})$ for every  $\phi({\mr x}\,;{\gr z})\in L(M)$.
-Let $\psi({\mr x})\in L(M)$ be such that $\phi(\U^{\mr x};{\gr b})=\psi({\mr \U})$.
+Let $\psi({\mr x})\in L(M)$ be such that $\phi(M^{\mr x};{\gr b})=\psi(M^{\mr x})$.
 From ${\mr a_i}\cnonfork_M{\gr b}$ we obtain that  $\phi({\mr a_i}\,;{\gr b})\iff\psi({\mr a_i})$.
 Finally, the claim follows because ${\mr a_1}\equiv_M{\mr a_2}$.
 \end{proof}
@@ -326,6 +326,12 @@ Therefore $\cnonfork_M$ is $1$-stationary.
 \begin{exercise}
   Let $a\cnonfork_M b$. 
   Prove that for every $c$ there is $b'\equiv_{M,a} b$ such that $a,c\cnonfork_M b'$. 
+\end{exercise}
+
+\begin{exercise}
+  Let $a_i\cnonfork_M b$, for $i=1,2$. 
+  Let $N\supseteq M$ be saturated and of cardinality $>|M|$.
+  Prove that if $a_1\equiv_N a_2$ then $a_1\equiv_{N,b} a_2$.
 \end{exercise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -454,7 +460,7 @@ The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({
 
 % 
 % \begin{exercise}
-% Let $c=\<{\mr c_i}:i<\alpha \>$ be a constant sequence, i.e.\@ ${\mr c_0}={\mr c_i}$ for all $i$.Prove that $c$ is a Morley sequence over $A$ if and only if ${\mr c_0}\in(\dcl A)^{\mr x}$ and that $c$ is a coheir sequence over $A$ if and only if  ${\mr c_0}\in A^{\mr x}$.
+% Let $c=\<{\mr c_i}:i<\alpha \>$ be a constant sequence, i.e.\@ ${\mr c_0}={\mr c_i}$ for all $i$. Prove that $c$ is a Morley sequence over $A$ if and only if ${\mr c_0}\in(\dcl A)^{\mr x}$ and that $c$ is a coheir sequence over $A$ if and only if  ${\mr c_0}\in A^{\mr x}$.
 % \end{exercise}
 
 % \begin{exercise}
@@ -466,7 +472,7 @@ The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({
 % 
 % \end{exercise}
 
-\begin{exercise}
-  Let $\bar a$ be a sequence such that $a_{\restriction I_0}\equiv a_{\restriction I_1}$ for every $I_0,I_1$ such that $I_0<I_1$.
-  Prove that $\bar a$ is a sequence of indiscernibles.
-\end{exercise}
+% \begin{exercise}
+%   Let $\bar a$ be a sequence such that $a_{\restriction I_0}\equiv a_{\restriction I_1}$ for every $I_0,I_1$ such that $I_0<I_1$.
+%   Prove that $\bar a$ is a sequence of indiscernibles.
+% \end{exercise}
