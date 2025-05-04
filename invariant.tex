@@ -23,7 +23,7 @@ which, by homogeneity, is equivalent to,
 
 \ceq{\ssf{is2.}\hfill {\gr a}\in\grD}{\iff}{{\gr b}\in\grD}\hfill for all ${\gr a},{\gr b}\in\U^{\gr z}$ such that ${\gr a}\equiv_A{\gr b}$.
 
-The latter condition yield the following bound on the number of invariant sets.
+The latter condition yields the following bound on the number of invariant sets.
 
 \begin{proposition}\label{prop_numberIS}
 Let $\lambda=|L_{\gr z}(A)|$.
@@ -77,26 +77,26 @@ For every formula $\phi({\mr x}\,;{\gr z})\in L(\U)$ we define
 % This is possible because adding or erasing dummy variables to the tuple of ${\gr z}$ does not change ${\gr\D_{p,\phi}}$ in any relevant way; in particular, invariance is preserved.
 
 A global $\phi$-type $p({\mr x})\in S_\phi(\U)$ can be identified with the set ${\gr\D_{p,\phi}}$.
-Therefore a global type $p({\mr x})\in S(\U)$ can be identified with the collection of the sets ${\gr\D_{p,\phi}}$, where $\phi({\mr x}\,;{\gr z})$ ranges over $L(\U)$.
+Therefore a global type $p({\mr x})\in S(\U)$ can be identified with the collection of the sets ${\gr\D_{p,\phi}}$, where $\phi({\mr x}\,;{\gr z})$ ranges over $L$.
 
 Let $p({\mr x})\subseteq L(\U)$.
-For $f\in\Aut(\U)$, we write $fp({\mr x})$ for the type containing the of formulas $\phi({\mr x}\,;f{\gr a})$ for every $\phi({\mr x}\,;{\gr a})\in p$, where $\phi({\mr x}\,;{\gr z})\in L$.
+For $f\in\Aut(\U)$, we write $fp({\mr x})$ for the type containing the formulas $\phi({\mr x}\,;f{\gr a})$ for every $\phi({\mr x}\,;{\gr a})\in p$, where $\phi({\mr x}\,;{\gr z})\in L$.
 We say that $p({\mr x})$ is \emph{invariant\/} over $A$, or \emph{$A$-invariant\/} for short, if for every $f\in\Aut(\U/A)$
 
 \ceq{\ssf{it1.}\hfill p({\mr x})}{\proves}{fp({\mr x})}
 
-Equivalently, if for every $\phi({\mr x}\,;{\gr z})\in L$, every ${\gr a}\in\U^{\gr z}$, and every $f\in\Aut(\U/A)$
+Equivalently, if for every $\phi({\mr x}\,;{\gr z})\in L(A)$, every ${\gr a}\in\U^{\gr z}$, and every $f\in\Aut(\U/A)$
 
-\ceq{\ssf{it1$'$.}\hfill \phi({\mr x}\,;{\gr a})\in p}{\IFF}{\phi({\mr x}\,;f{\gr a})\in p}.
+\ceq{\ssf{it1$'$.}\hfill p({\mr x})\proves\phi({\mr x}\,;{\gr a})}{\IFF}{p({\mr x})\proves\phi({\mr x}\,;f{\gr a})}.
 
 Hence $p({\mr x})$ is invariant exactly when all the sets $\gr\D_{p,\phi}$ are.
-That is, $p({\mr x})$ is invariant over $A$ if for all $\phi({\mr x}\,;{\gr z})\in L$ and ${\gr a},{\gr b}\in\U^{\gr z}$
+That is, $p({\mr x})$ is invariant over $A$ if for all $\phi({\mr x}\,;{\gr z})\in L(A)$ and ${\gr a},{\gr b}\in\U^{\gr z}$
 
-\ceq{\ssf{it2.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\Big(\phi({\mr x}\,;{\gr a})\in p\,\IFF\,\phi({\mr x}\,;{\gr b})\in p\Big)}
+\ceq{\ssf{it2.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\Big(p({\mr x})\proves\phi({\mr x}\,;{\gr a})\,\IFF\,p({\mr x})\proves\phi({\mr x}\,;{\gr b})\Big)}
 
 % In words we say that $p({\mr x})\subseteq L(\U)$ \emph{does not split\/} over $A$.
 
-If $p({\mr x})$ is a global $\phi$-types types \ssf{it2} is equivalent to requiring that for every ${\gr a},{\gr b}\in\U^{\gr z}$
+If $p({\mr x})$ is a global $\phi$-type \ssf{it2} is equivalent to requiring that for every ${\gr a},{\gr b}\in\U^{\gr z}$
 
 \ceq{\ssf{it2$^\prime$.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{p({\mr x})\,\proves\,\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})}.
 
@@ -130,7 +130,7 @@ We say that a type $p({\mr x})$ is \emph{finitely satisfiable\/} in $A$ if every
 
 \begin{proof}
   Suppose not.
-  By \ssf{it3} there are ${\gr a}\equiv_A{\gr b}$ and $\phi({\mr x}\,;{\gr z})\in L$ such that $p({\mr x})\proves\phi({\mr x}\,;{\gr a})\niff\phi({\mr x}\,;{\gr b})$.
+  By \ssf{it2$'$} and the completeness of $p({\mr x})$ there are ${\gr a}\equiv_A{\gr b}$ and $\phi({\mr x}\,;{\gr z})\in L$ such that $p({\mr x})\proves\phi({\mr x}\,;{\gr a})\niff\phi({\mr x}\,;{\gr b})$.
   Then the finite satisfiability of $p({\mr x})$ contradicts ${\gr a}\equiv_A{\gr b}$.
 \end{proof}
 
@@ -148,12 +148,12 @@ We say that a type $p({\mr x})$ is \emph{finitely satisfiable\/} in $A$ if every
 In most cases we work with types that are finitely satisfiable over a model.
 The reason is explained by the next proposition, which is clear by elementarity.
 
-\begin{proposition}\label{prop_coher_over_model}
+\begin{remark}\label{rk_coher_over_model}
   Every consistent type over a model is finitely satisfiable in that model, that is, whenever $p({\mr x})\subseteq L(M)$ is consistent, $p({\mr x})$ is finitely satisfiable in $M$.
-\end{proposition}
+\end{remark}
 
 \begin{definition}\label{def_choeir_uno}
-  A type $p({\mr x}) \subseteq L(\U)$ that is finitely satisfiable in $M$ is said to be a \emph{coheir\/} of $p_{\restriction M}({\mr x})$.
+  A type $p({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $M$ is said to be a \emph{coheir\/} of $p_{\restriction M}({\mr x})$.
 \end{definition}
 
 In many cases it is convenient to work with elements instead of types.
@@ -177,10 +177,11 @@ We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is 
   {=}
   {\Big\{\neg\phi({\mr x}\,;{\gr b})
   \ :\ 
-  \phi({\mr x}\,;{\gr b})\in L(M)
+  \phi({\mr x}\,;{\gr z})\in L(M)
   \textrm{ and } \phi(M^{\mr x};{\gr b})=\varnothing\Big\}.}
 
-  We will write \emph{${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$} for the union of the types ${\mr x}\cnonfork_M{\gr b}$ and $\tp({\mr a}/M)$.
+  We write \emph{${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$} for the union of the types ${\mr x}\cnonfork_M{\gr b}$ and $\tp({\mr a}/M)$.
+  By Lemma~\ref{lem_coheir_independence}.\ssf4 below, this is a consistent type over $M,{\gr b}$.
 \end{definition}
 
 The tuples ${\mr a}$ realizing ${\mr x}\cnonfork_M{\gr b}$ are exactly those such that ${\mr a}\cnonfork_M{\gr b}$.
@@ -252,7 +253,7 @@ We will use the following easy lemma without explicit reference.
 
 The type ${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$ in Definition~\ref{def_coheir_idepencence} is the intersection of all global coheirs of $\tp({\mr a}/M)$.
 %
-Its consistency is guaranteed by the fact that $M$ is a model (see Proposition~\ref{prop_coher_over_model}).
+Its consistency is guaranteed by the fact that $M$ is a model (see Remark~\ref{rk_coher_over_model}).
 %
 However, in general it need not be a complete type over $M,{\gr b}$.
 %
@@ -341,15 +342,13 @@ Therefore $\cnonfork_M$ is $1$-stationary.
 \section{Morley sequences and indiscernibles}
 
 In what follows $\alpha$ is some ordinal $\le\kappa$, typically $\omega$, and ${\mr x}$ is a tuple of variables of length $<\kappa$.
-
 Let \mbox{$p({\mr x})\in S(\U)$} be a global type.
 We say that ${\mr\bar c}=\<{\mr c_i}:i<\alpha\>$ is a \emph{Morley sequence\/} of $p({\mr x})$ over $A$ if for every $i<\alpha$
 
 \ceq{\ssf{Ms.}\hfill {\mr c_i}}{\models}{p_{\restriction  A,\,{\mr c_{\restriction i}}}({\mr x})}.
 
 When $p({\mr x})$ is finitely satisfiable in $A$, we say that ${\mr\bar c}$ is a \emph{coheir sequence\/} of $p({\mr x})$ over $A$.
-
-When we say that ${\mr\bar c}$ is a coheir sequence over $A$ (with no explicit reference to a global type), we mean that \textit{there is\/} a type $p({\mr x})\in S(\U)$ that is finitely satisfiable in $A$ such that ${\mr\bar c}$ is a \emph{coheir sequence\/} of $p({\mr x})$.
+When we say that ${\mr\bar c}$ is a coheir sequence over $A$ (with no explicit reference to a global type), we mean that \textit{there is\/} a type $p({\mr x})\in S(\U)$ that is finitely satisfiable in $A$ such that ${\mr\bar c}$ is a coheir sequence of $p({\mr x})$.
 
 The following is a convenient characterization of coheir sequences.
 
@@ -390,7 +389,7 @@ As $p({\mr x})$ extends $q({\mr x})$, the latter cannot occur.
 \end{proof}
 
 Let $(I,<_I)$ be a linear order.
-A function ${\mr\bar a}:I\to\U^{\mr x}$ is said to be an \emph{$I$-sequence}, or simply a \emph{sequence\/} when $I$ is clear.
+A function ${\mr\bar a}:I\to\U^{\mr x}$ is said to be an \emph{$I$-sequence,} or simply a sequence when $I$ is clear.
 We will often introduce an $I$-sequence as ${\mr\bar a}=\<{\mr a_i}: i\in I\>$.
 
 If $I_0\subseteq I$ we call ${\mr a_{\restriction I_0}}$ a \emph{subsequence\/} of ${\mr\bar a}$.

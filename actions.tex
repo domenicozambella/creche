@@ -336,7 +336,7 @@ The following easy consequence of the theorem will be used below.
 % \end{proof}
 
 \begin{exercise}
-  Let $\U^x=\U^z=\U$ and $\Delta=L_x$.
+  Let $\X=\Z=\U$ and $\Delta=L_x$.
   Prove that if $p(x)\in S_\Delta(\U)$ is finitely satisfiable in every $M\supseteq A$ then it is thick under the action of $G=\Autf(\UDelta)$.
   Is the same true for incomplete types?
 \end{exercise}
@@ -402,21 +402,22 @@ The following easy consequence of the theorem will be used below.
 %     \item [1.] $\mrD$ is $G$-wide;
 %     \item [2.] every finite cover of $\mrD$ by $\pmDelta({\grZ})$-definable sets contains a $G$-thick set.
 %   \end{itemize}
-% \end{exercize}
+% \end{exercize}M7FJT0RB61M
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Impediments to invariant global types}
+\section{Subsets with bounded orbit}
 
-We prove a necessary condition for the consistency of $\gamma_G({\mr x})$, i.e.\@ for the existence of $G$-invariant global types.
-First, we need to relate the notions of thick, syndetic, etc.\@ when relative to different sets.
+We want to compare the notions of $G$-syndetic and $G$-wide when relative to $\mrX$ or to some $\mrY\subseteq\mrX$.
+When boundedly many $G$-translates of $\mrY$ cover $\mrX$ (in particular, when $G$ acts transitively on $\mrX$ and $\mrY$ has a bounded $G$-orbit) these two notions relativize seamlessly.
+We will apply this to prove a necessary condition for the consistency of $\gamma_G({\mr x})$, i.e.\@ for the existence of $G$-invariant global types.
 
 \begin{proposition}\label{prop_HgenGgen}
-  Assume that $\mrX$ is type-definable.
-  Assume that boundedly many $G$-translates of $\mrY\subseteq\mrX$ cover $\mrX$.
+  Let $\mrX$ be type-definable.
+  Assume that $\mrX$ is covered by boundedly many $G$-translates of some $\mrY\subseteq\mrX$.
   Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
   \begin{itemize}
     \item [1.] $\mrD$ is $G$-syndetic
@@ -431,33 +432,34 @@ First, we need to relate the notions of thick, syndetic, etc.\@ when relative to
   By compactness (which we may apply because $\mrX$ is type-definable), finitely many translations suffices.
 \end{proof}
 
-The following corollary expresses a similar result.
+% The following corollary expresses a similar result.
 
-\begin{corollary}\label{corol_bounded_orbit_syndetic}
-  Assume that $\mrX$ is type-definable and that $G$ acts transitively on $\mrX$.
-  Let $\mrY\subseteq\mrX$ be a nonempty set with small $G$-orbit.
-  Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
-  \begin{itemize}
-    \item [1.] $\mrD$ is $G$-syndetic
-    \item [2.] $\mrD$ is $G$-syndetic relative to $\mrY$.
-  \end{itemize}
-\end{corollary}
+% \begin{corollary}\label{corol_bounded_orbit_syndetic}
+%   Let $\mrX$ be type-definable.
+%   Assume that $G$ acts transitively on $\mrX$.
+%   Let $\mrY\subseteq\mrX$ be a nonempty set with small $G$-orbit.
+%   Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
+%   \begin{itemize}
+%     \item [1.] $\mrD$ is $G$-syndetic
+%     \item [2.] $\mrD$ is $G$-syndetic relative to $\mrY$.
+%   \end{itemize}
+% \end{corollary}
 
-\begin{proof}
-  Only \ssf2$\IMP$\ssf1 requires a proof.
-  By assumption, the following equivalence relation has boundedly many classes
+% \begin{proof}
+%   Only \ssf2$\IMP$\ssf1 requires a proof.
+%   By assumption, the following $G$-invariant equivalence relation has boundedly many classes
   
-  \ceq{\hfill\epsilon_\Y({\mr x},{\mr y})}{=}{\bigwedge_{g\in G}\big[{\mr x}\in g{\cdot}\mrY\,\iff\,{\mr y}\in g{\cdot}\mrY\big].}
+%   \ceq{\hfill\epsilon_\Y({\mr x},{\mr y})}{=}{\bigwedge_{g\in G}\big[{\mr x}\in g{\cdot}\mrY\,\iff\,{\mr y}\in g{\cdot}\mrY\big].}
   
-  Then $\mrY$ contains a $\epsilon_\Y({\mr x},{\mr y})$-class.
-  Assume \ssf2, then it is $G$-syndetic relative to some class, say ${\mr\Y'}$, of $\epsilon_\Y({\mr x},{\mr y})$.
-  As $G$ acts transitively on $\mrX$, we know that ${\mr\Y'}$ has a bounded orbit that covers $\mrX$.
-  Then \ssf2 follows from Proposition~\ref{prop_HgenGgen}.
-\end{proof}
+%   Then $\mrY$ contains a $\epsilon_\Y({\mr x},{\mr y})$-class.
+%   Assume \ssf2, then it is $G$-syndetic relative to some class, say ${\mr\Y'}$, of $\epsilon_\Y({\mr x},{\mr y})$.
+%   As $G$ acts transitively on $\mrX$, we know that ${\mr\Y'}$ has a bounded orbit that covers $\mrX$.
+%   Then \ssf2 follows from Proposition~\ref{prop_HgenGgen}.
+% \end{proof}
 
 \begin{proposition}\label{prop_HgenGgen}
-  Assume that $\mrX$ is type-definable.
-  Let $\mrY\subseteq\mrX$ be a nonempty set with small $G$-orbit.
+  Let $\mrX$ be type-definable.
+  Assume that $\mrX$ is covered by boundedly many $G$-translates of some $\mrY\subseteq\mrX$.
   Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
   \begin{itemize}
     \item [1.] $\mrD$ is $G$-wide
@@ -476,38 +478,39 @@ The following corollary expresses a similar result.
   % If $\mrY$ is type definable then $p({\mr x})$ entails $g{\cdot}\mrY$ for every $g\in G$ and the second claim follows.
 \end{proof}
 
-\begin{corollary}
-  Assume that $\mrX$ is type-definable and that $G$ acts transitively on $\mrX$.
-  Assume that the $G$-orbit of $\mrY\subseteq\mrX$ is bounded.
-  Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
-  \begin{itemize}
-    \item [1.] $\mrD$ is $G$-wide
-    \item [2.] $\mrD$ is $G$-wide relative to any $G$-translation of $\mrY$.
-  \end{itemize}\smallskip
-\end{corollary}
+% \begin{corollary}
+%   Assume that $\mrX$ is type-definable and that $G$ acts transitively on $\mrX$.
+%   Assume that the $G$-orbit of $\mrY\subseteq\mrX$ is bounded.
+%   Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
+%   \begin{itemize}
+%     \item [1.] $\mrD$ is $G$-wide
+%     \item [2.] $\mrD$ is $G$-wide relative to any $G$-translation of $\mrY$.
+%   \end{itemize}\smallskip
+% \end{corollary}
 
-\begin{proof}
-  Only \ssf1$\IMP$\ssf2 requires a proof.
-  Assume \ssf1.
-  Let $\epsilon_\Y({\mr x},{\mr y})$ be the equivalence relation defined in the proof of Corollary~\ref{corol_bounded_orbit_syndetic}.
-  As $\epsilon_\Y({\mr x},{\mr y})$ has boundedly many classes, we can apply Proposition~\ref{prop_HgenGgen} to obtain that $\mrD$ is $G$-wide relative to any equivalence class.
-  In particular it is $G$-wide relative to $\mrY$, as it contains one of these classes.
-\end{proof}
+% \begin{proof}
+%   Only \ssf1$\IMP$\ssf2 requires a proof.
+%   Assume \ssf1.
+%   Let $\epsilon_\Y({\mr x},{\mr y})$ be the equivalence relation defined in the proof of Corollary~\ref{corol_bounded_orbit_syndetic}.
+%   As $\epsilon_\Y({\mr x},{\mr y})$ has boundedly many classes, we can apply Proposition~\ref{prop_HgenGgen} to obtain that $\mrD$ is $G$-wide relative to any equivalence class.
+%   In particular it is $G$-wide relative to $\mrY$, as it contains one of these classes.
+% \end{proof}
 
-\begin{proposition}
-  Assume that $\mrX$ is type-definable and that $G$ acts transitively on $\mrX$.
-  Also, assume that $\gamma_G({\mr x})$ is consistent.
-  Then $\mrX$ is the sole nonempty $\BDelta(\grZ)$-type-definable set with small $G$-orbit.
+\begin{proposition}\label{prop_HgenGgen}
+  Let $\mrX$ be type-definable
+  Assume that $G$ acts transitively on $\mrX$ and that $\gamma_G({\mr x})$ is consistent.
+  Then $\mrX$ is the sole nonempty $\BDelta(\grZ)$-type-definable set with bounded $G$-orbit.
 \end{proposition}
 \begin{proof}
   By the consistency of $\gamma_G({\mr x})$, there is a $G$-invariant $p({\mr x})\in S_\Delta(\grZ)$.
-  Let $\mrY\neq\varnothing$ be a $\BDelta(\grZ)$-type-definable set with small $G$-orbit.
-  Let $\epsilon_{\Y}({\mr x},{\mr y})$ be the equivalence relation defined in the proof of Corollary~\ref{corol_bounded_orbit_syndetic}.
-  As $\epsilon_{\Y}({\mr x},{\mr y})$ has boundedly many classes, from Proposition~\ref{prop_HgenGgen} we obtain that $p({\mr x})$ is finitely consistent in every equivalence class of $\epsilon_{\Y}({\mr x},{\mr y})$.
-  In particular, $p({\mr x})$ is finitely consistent in $\mrY$ as it contains one of these classes.
-  As $\mrY$ is type-definable, $p({\mr x})$ entails $\mrY$.
-  By the $G$-invariance of $p({\mr x})$, it follows that $p({\mr x})$ entails $\cap\,G{\cdot}\mrY$ which therefore is nonempty.
-  As $\cap\,G{\cdot}\mrY$ is $G$-invariant and $G$ acts transitively, it coincides with $\mrX$.
+  Let $\mrY\subseteq\mrX$ be a nonempty $\BDelta(\grZ)$-type-definable set with bounded $G$-orbit.
+  Note that $\cap\,G{\cdot}\mrY$ is a $G$-invariant $\BDelta(\grZ)$-type-definable set.
+  We claim that it is nonempty.
+  By the transitivity of the action, boundedly many $G$-translates of $\mrY$ cover $\mrX$.
+  Then, by Proposition~\ref{prop_HgenGgen}, we obtain that $p({\mr x})$ is $G$-wide relative to any $G$-translate of $\mrY$.
+  Then $p({\mr x})$ entails $g{\cdot}\mrY$ for every $g\in G$.
+  By compactness $\cap\,G{\cdot}\mrY$ is nonempty.
+  By the transitivity of the action, any nonempty $G$-invariant set coincides with $\mrX$. 
 \end{proof}
 
 % \begin{fact}
@@ -523,6 +526,7 @@ The following corollary expresses a similar result.
 %   Assume that $G$ acts transitively and that all types in $P$ are realized in $\mrX$.
 %   Then, when $H$ is stationary and \ssf1 of Theorem~\ref{thm_coalesce} holds, $P=Q_G$.
 % \end{fact}
+  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -602,7 +606,7 @@ It is easy to verify that $\Stab(Q_G)\trianglelefteq G$.
   The $G$-syndeticity of ${\mr\D_1}\cap\dots\cap{\mr\D_n}$ follows.
 \end{proof}
 
-Unfortunately, we cannot conclude that the intersection of $G^1$-syndetic sets is $G^1$ syndetic.
+Unfortunately, we cannot conclude that the intersection of $G^1$-syndetic sets is $G^1$-syndetic.
 To obtain a subgroup with this property, we need to iterate the above construction.
 We define $G^{n+1}=\Stab(Q_{G^n})$ and let $G^\omega$ be the intersection of all $G^n$. 
 It is easy to see that $\gamma_{G^\omega}$ is closed under conjunction.
@@ -698,16 +702,16 @@ We will prove that this is the case under the assumption of stability.
 
 \end{comment}
 
-When the context suggests it, $\BDelta(\grZ)$ will denote the broader class that includes also formulas obtained substituting ${\mr y}$ for ${\mr x}$ and is closed under Boolean connectives.
-A $\BDelta(\grZ)$-definable equivalence relation is an equivalence relation defined by some formula $\epsilon({\mr x},{\mr y})\in\BDelta(\grZ)$.
-We define $\BDelta(\grZ)$-type-definable equivalence relations similarly.
-Note that if $\epsilon({\mr x},{\mr y})$ is a $\BDelta(\grZ)$-definable equivalence relation then $\epsilon({\mr x},{\mr a})$, for any ${\mr a}\in\mrX$, is equivalent to a $\BDelta(\grZ)$-formula.
+% When the context suggests it, $\BDelta(\grZ)$ will denote the broader class that includes also formulas obtained substituting ${\mr y}$ for ${\mr x}$ and is closed under Boolean connectives.
+% A $\BDelta(\grZ)$-definable equivalence relation is an equivalence relation defined by some formula $\epsilon({\mr x},{\mr y})\in\BDelta(\grZ)$.
+% We define $\BDelta(\grZ)$-type-definable equivalence relations similarly.
+% Note that if $\epsilon({\mr x},{\mr y})$ is a $\BDelta(\grZ)$-definable, or type-definable, equivalence relation then $\epsilon({\mr x},{\mr a})$, for any ${\mr a}\in\mrX$, is equivalent to a $\BDelta(\grZ)$-formula, respectively a $\BDelta(\grZ)$-type.
 
-An equivalence relation is bounded if it has a small number of equivalence classes.
+% An equivalence relation is bounded if it has a small number of equivalence classes.
 
 \begin{definition}\label{def_G00}
-  Let $\Phi^0$ be the collection of sets that are equivalence classes of a bounded $G$-invariant $\BDelta(\grZ)$-type-definable equivalence relation.
-  Let $\Phi^{00}$ be the collection of sets that are equivalence classes of a bounded $G$-invariant $\BDelta(\grZ)$-type-definable equivalence relation.
+  Let $\Phi^0$ be the collection of $\BDelta(\grZ)$-definable with finite $G$-orbit.
+  Let $\Phi^{00}$ be the collection of $\BDelta(\grZ)$-type-definable with bounded $G$-orbit.
   Define\medskip
 
   \ceq{\hfill\emph{$G^0$}}{=}{\Stab(\Phi^0)}\medrel{=}$\displaystyle\bigcap\big\{\Stab(\mrD)\ :\  \mrD\in\Phi^0\}$
@@ -729,7 +733,7 @@ An equivalence relation is bounded if it has a small number of equivalence class
   The inclusion $G^{00}\leq G^0$ is trivial.
   Let $\mrY\in\Phi^{00}$ and $\mrY\subseteq\mrD\in\BDelta(\grZ)$.
   Then $\mrD$ is trivially $G$-syndetic relative to $\mrY$.
-  By Corollary~\ref{corol_bounded_orbit_syndetic}, $\mrD$ is $G$-syndetic.
+  By Proposition~\ref{prop_HgenGgen}, $\mrD$ is $G$-syndetic.
   Then the type defining $\mrY$ is $G$-syndetic.
   Then there is some $q({\mr x})\in Q_G$ entailing $\mrY$.
   By $G^1$-invariance $q({\mr x})$ entails $k{\cdot}\mrY$ for every $k\in G^1$.

@@ -20,17 +20,17 @@ Our only purpose is to illustrate a concrete (relatively speaking) application o
 \label{Ramsey}
 
 In this chapter we are interested in finite partitions.
-We may represent the partition of a set $X$ into $k$ subsets with a map $f:X\to [k]$.
-The elements of $[k]=\{1,\dots,k\}$ are also called \emph{colors},
-and the partition a \emph{coloring},
-or \emph{$k$-coloring}, of $X$.
+We may represent the partition of a set $X$ into $k$ subsets with a map $f:X\to (k]$.
+The elements of $(k]=\{1,\dots,k\}$ are also called \emph{colors,}
+and the partition a \emph{coloring,}
+or \emph{$k$-coloring,} of $X$.
 We say that $Y\subseteq X$ is \emph{monochromatic\/} if $f_{\restriction Y}$ is constant on $Y$.
 
 Let $M$ be an arbitrary infinite set.
 Fix $n,k<\omega$ and fix a coloring $f$ of the set of all \emph{$n$-subsets} of $M$,
 also known as the \emph{complete $n$-uniform hypergraph\/} with vertex set $M$,
 
-\ceq{\hfill f}{:}{ \binom{M}{n}=M^{(n)}\ \ \to\ \ [k]}.
+\ceq{\hfill f}{:}{ \binom{M}{n}=M^{(n)}\ \ \to\ \ (k]}.
 
 We say that $H\subseteq M$ is a \emph{monochromatic set\/} if $f$ is constant on $H^{(n)}$.
 In combinatorics, monochromatic sets are also called \emph{homogeneous sets.}
@@ -109,8 +109,8 @@ $a_{\restriction i},a_i,{\mr c_{\restriction n}}$ satisfies the induction hypoth
 \section{The Ehrenfeucht-Mostowski theorem}\label{EM}
 
 Let $I,<_I$ be an infinite linear order.
-For simplicity we assume thoughout the section that $I$ has no largest element.
-This assumption is unnecessary, but it simplifies the exposition.
+To minimize notation, we assume throughout the section that $I$ has no largest element.
+It is immediate how to tweak the definition below so that it makes sense without this assumption.
 Let ${\mr\bar a}$ be an $I$-sequence.
 Fix a tuple of distinct variables ${\mr\bar x}=\<{\mr x_i}: i<\omega\>$.
 We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$} and say that $p({\mr\bar x})$ is the \emph{Ehren\-feucht-Mostowski type\/} of ${\mr\bar a}$ over $A$ if
@@ -118,22 +118,30 @@ We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$} and 
 \ceq{\hfill p({\mr\bar x})}{=}{\Big\{\phi({\mr\bar x})\in L(A)\ :\ \phi({\mr a_{\restriction I_0}})\ \textrm{ holds for every }\ I_0\in I^{(\omega)}\Big\}.}
 
 Where $I^{(\omega)}$ is the set of subsets of $I$ ordered as $\omega$.
-Note that ${\mr\bar x}$ is always of order-type $\omega$, therefore 
-the meaning of $\phi({\mr a_{\restriction I_0}})$ is clear.
+As ${\mr\bar x}$ is of order-type $\omega$, the expression $\phi({\mr a_{\restriction I_0}})$ is sound.
 
-Note also that if ${\mr\bar a}$ is $A$-indiscernible then $\EMtp({\mr\bar a}/A)$ is a complete type,
+Note that if ${\mr\bar a}$ is $A$-indiscernible then $\EMtp({\mr\bar a}/A)$ is a complete type,
 and vice versa.
-So,
-if ${\mr\bar a}$ and ${\mr\bar c}$ are two $A$-indiscernible $I$-sequences with the same Ehren\-feucht-Mostowski type over $A$,
-then ${\mr\bar a}\equiv_A {\mr\bar c}$.
 
-\theoremstyle{mio}
-\newtheorem{EhrenfeuchtMostowski}[thm]{Ehrenfeucht-Mostowski Theorem}
-\begin{EhrenfeuchtMostowski}\label{thm_EM}
-Let $I,<_I$ be an infinite linear order.
-Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is a sequence ${\mr\bar c}=\<{\mr c_i}:i\in\omega\>$ of $A$-indiscernibles such that $\EMtp({\mr\bar a}/A)\subseteq\tp({\mr\bar c}/A)$.
-\end{EhrenfeuchtMostowski}
+\begin{remark}
+  Let $I,<_I$ and $J,<_J$ be infinite linear orders.
+  Let ${\mr\bar c}=\<{\mr c_i}:i\in I\>$ be a sequence of $A$-indiscernibles.
+  By compactness, there is a sequence of $A$-indiscernibles ${\mr\bar a}=\<{\mr a_j}:j\in J\>$ such that $\EMtp({\mr\bar a}/A)=\EMtp({\mr\bar c}/A)$.
+\end{remark}
 
+% \theoremstyle{mio}
+% \newtheorem{EhrenfeuchtMostowski}[thm]{Ehrenfeucht-Mostowski Theorem}
+% \begin{EhrenfeuchtMostowski}\label{thm_EM}
+% Let $I,<_I$ be an infinite linear order.
+% Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is a sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ of $A$-indiscernibles such that $\EMtp({\mr\bar a}/A)\subseteq\tp({\mr\bar c}/A)$.
+% \end{EhrenfeuchtMostowski}
+
+Finally, we can state the Ehrenfeucht-Mostowski theorem.
+
+\begin{void}[Ehrenfeucht-Mostowski Theorem]\label{thm_EM}
+  Let $I,<_I$ be an infinite linear order.
+  Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is an $A$-indiscernible sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ such that $\EMtp({\mr\bar a}/A)\subseteq\tp({\mr\bar c}/A)$.  
+\end{void}
 \begin{proof}
 Let $q({\mr\bar x})=\EMtp({\mr\bar a}/A)$.
 Any realization of the following type is a sequence of $A$-indiscernibles ${\mr\bar c}$ as required by the theorem.
@@ -150,17 +158,17 @@ We prove that for $k$ and $n$ arbitrarily large and every $\phi_1({\mr\bar x}),\
 
 \ceq{\ssf{\#}}
 {}
-{\Big\{\phi_i({\mr x_{\restriction I_0}})\iff\phi_i({\mr x_{\restriction J_0}})\ :\  I_0, J_0\in\omega^{(\omega)}\textrm{ and } i\in[k]\Big\}.}
+{\Big\{\phi_i({\mr x_{\restriction I_0}})\iff\phi_i({\mr x_{\restriction J_0}})\ :\  I_0, J_0\in\omega^{(\omega)}\textrm{ and } i\in(k]\Big\}.}
 
 Let $n$ be larger than any $i$ such that ${\mr x_i}$ occurs in $\phi_1({\mr\bar x}),\dots,\phi_k({\mr\bar x})$.
-Consider the subsets of $[k]$ as colors and let $f$ be the coloring of $I^{(n)}$ that maps $I_0$ to the set $\big\{i\ :\ \phi_i({\mr a_{\restriction I_0}})\big\}$.
+Consider the subsets of $(k]$ as colors and let $f$ be the coloring of $I^{(n)}$ that maps $I_0$ to the set $\big\{i\ :\ \phi_i({\mr a_{\restriction I_0}})\big\}$.
 By the Ramsey theorem,
 there is some infinite monochromatic set $H\subseteq I$ with the order type of $\omega$, see Exercise~\ref{ex_Ramsey_order}.
 Hence
 
 \ceq{}
 {}
-{\Big\{\phi_i({\mr a_{\restriction I_0}})\iff\phi_i({\mr a_{\restriction J_0}})\ :\  I_0, J_0\in H^{(n)}\textrm{ and } i\in[k]\Big\}.}
+{\Big\{\phi_i({\mr a_{\restriction I_0}})\iff\phi_i({\mr a_{\restriction J_0}})\ :\  I_0, J_0\in H^{(n)}\textrm{ and } i\in(k]\Big\}.}
 
 As $H$ has order type $\omega$,
 it is immediate that ${\mr a_{\restriction H}}$ realizes \ssf{\#}
@@ -174,7 +182,7 @@ Then ${\mr\bar a}$ is indiscernible over some model $M$ containing $A$.
 
 \begin{proof}
 Fix a model $M$ containing $A$.
-By Theorem~\ref{thm_EM} there is an $I$-sequence of $M$-indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/M)\subseteq\EMtp({\mr\bar c}/M)$.
+By Theorem~\ref{thm_EM} and the remark there is an $I$-sequence of $M$-indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/M)\subseteq\EMtp({\mr\bar c}/M)$.
 As ${\mr\bar a}$ is an $A$-indiscernible sequence ${\mr\bar a}\equiv_A{\mr\bar c}$.
 Therefore $h\,{\mr\bar c}={\mr\bar a}$ for some $h\in\Aut(\U/A)$.
 Hence ${\mr\bar a}$ is indiscernible over $h[M]$.
@@ -262,8 +270,7 @@ also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by $M$-invari
 \end{proof}
 
 We show that, under the assumption of stationarity,
-the operation $*$ is associative.
-The quotient map $\U^{\mr x}\to\U^{\mr x}/{\equiv_M}$ is comes close to being a semigroup homomorphism.
+$*$ is an operation on  $\U^{\mr x}/{\equiv_M}$.
 
 \begin{proposition}\label{prop_orbits_main}
 Assume $\cnonfork_M$ is stationary,
@@ -275,20 +282,10 @@ ${\mr a'}\cnonfork_M{\mr b'}$.
 Or, in other words, $({\mr a}{\cdot}{\mr b})_M={\mr a}*{\mr b}$.
 \end{proposition}
 %
-\begin{proof} 
-We prove two inclusions, the second one requires stationarity.
-
-$\subseteq$ \ As ${\mr a}\cnonfork_M{\mr b}$ holds by hypothesis,
-${\mr a}{\cdot}{\mr b}\in{\mr a}*{\mr b}$.
-The inclusion follows by invariance.
-
-$\supseteq$ \ By invariance it suffices to show that the l.h.s.\@ contains $({\mr a})_M*\{{\mr b}\}$.
-Pick any ${\mr a'}\equiv_M{\mr a}_M$ such that ${\mr a'}\cnonfork_M{\mr b}$.
-We need to prove that ${\mr a'}{\cdot}{\mr b}\in({\mr a}{\cdot}{\mr b})_M$.
-Both ${\mr a}$ and ${\mr a'}$ satisfy ${\mr a}\equiv_M{\mr x}\cnonfork_M{\mr b}$.
-By stationarity,
-${\mr a}\equiv_{M,\,{\mr b}}{\mr a'}$.
-Hence ${\mr a}{\cdot}{\mr b}\equiv_M{\mr a'}{\cdot}{\mr b}$.
+\begin{proof}
+  By invariance we can assume ${\mr b}={\mr b'}$.
+  By stationarity, ${\mr a}\equiv_{M,\,{\mr b}}{\mr a'}$.
+  Hence ${\mr a}{\cdot}{\mr b}\equiv_M{\mr a'}{\cdot}{\mr b}$.
 \end{proof}
 
 \begin{corollary}[ (associativity)]\label{corol_orbits_associative}
