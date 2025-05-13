@@ -25,8 +25,8 @@ We revisit the notion of invariance introduceted in Chapter~\ref{invariant} in a
 \begin{assumption}\label{notation_GXphi}
 Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}(\U)$.
 Given any \emph{$\mrX$\/} $\subseteq\U^{\mr x}$ and \emph{$\grZ$\/} $\subseteq\U^{\gr z}$, we define the structure \emph{$\UDelta$\/} $=\big\<\mrX\,;\grZ\big\>$.
-This is a 2-sorted structure whose signature  \emph{$\LDelta$\/} contains relation symbols for every formula $\phi({\mr x}\,;{\gr z})\in\Delta$.
-As there is little risk of confusion, these relations symbols are also denoted by $\phi({\mr x}\,;{\gr z})$, and we identify $\LDelta$ with a subset of $L$. 
+This is a 2-sorted structure whose signature \emph{$\LDelta$\/} contains relation symbols for every formula $\phi({\mr x}\,;{\gr z})\in\Delta$.
+As there is little risk of confusion, these relations symbols are also denoted by $\phi({\mr x}\,;{\gr z})$, and we identify $\LDelta$ with a subset of $L$.
 \end{assumption}
 
 When $\mrX$ and $\grZ$ are type definable and $\Delta$ is small, $\UDelta$ is a saturated structure.
@@ -186,11 +186,9 @@ The converse implication holds for complete types.
   % Let $g_1,\dots,g_{n+2}\in G$ and $\theta({\mr x})\,;{\gr\bar b}$ witness this.
   % Then 
   Negate \ssf1.
-  Then $p({\mr x})$ is not $G$-invariant.
-  % Then, by completeness, $p({\mr x})\proves\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g\,{\gr b})$ for some $g\in G$ and $\phi({\mr x}\,;{\gr b})\in\BDelta(\grZ)$.
-  % Clearly $\phi({\mr x}\,;{\gr b})\wedge\neg\phi({\mr x}\,;g\,{\gr b})$ is not $2$-$G$-thick as it is inconsistent with its $g$-translate.
-  By completeness $p({\mr x})\proves{\mr x}\in(\neg\mrD\cap g{\cdot}\mrD)$ for some $g\in G$ and some $\mrD\in\BDelta(\grZ)$.
-  Clearly $\neg\mrD\cap g{\cdot}\mrD$ is not $2$-$G$-thick as it is inconsistent with its $g$-translate.
+  Let $\mrD\in\BDelta(\grZ)$ and $g\in G$ such that $p({\mr x})\proves{\mr x}\in\mrD$ and $p({\mr x})\notproves g{\cdot}\mrD$.
+  By completeness $p({\mr x})\proves{\mr x}\in(\mrD\cap\neg g{\cdot}\mrD)$.
+  Clearly $\mrD\cap \neg g{\cdot}\mrD$ is not $2$-$G$-thick as it is inconsistent with its $g$-translate.
 %  \ssf1$\IMP$\ssf2$'{\IFF}$\ssf3$'$. Apply what proved above with $\mrX$ for $\mrY$.
 \end{proof}
 
@@ -566,14 +564,14 @@ It is easy to verify that $G^1\trianglelefteq G$.
 \end{proposition}
 
 \begin{proof}
-  $\subseteq$. 
-  Pick $k\in G^1$ and $\mrD\in\gamma_G({\mr x})$.
+  $\subseteq$.
+  Pick any $k\in G^1$ and $\mrD\in\gamma_G({\mr x})$.
   Let $q({\mr x})\in Q_G$ be a type containing ${\mr x}\in\mrD$.
   From the $G^1$-invariance of $q({\mr x})$ we obtain that $q({\mr x})\proves {\mr x}\in k{\cdot}\mrD$.
   Then $q({\mr x})\proves {\mr x}\in \mrD\cap k{\cdot}\mrD$, hence $\mrD\cap k{\cdot}\mrD$ is $G$-syndetic.
 
-  $\supseteq$. 
-  Pick $g\notin G^1$.
+  $\supseteq$.
+  Pick any $g\notin G^1$.
   Then $q({\mr x})\neq g{\cdot}q({\mr x})$ for some $q({\mr x})\in Q_G$.
   Let $\phi({\mr x})\in q$ such that $q({\mr x})\not\proves g{\cdot}\phi({\mr x})$.
   By maximality, $\psi({\mr x})\wedge g{\cdot}\phi({\mr x})$ is not $G$-syndetic for some $\psi({\mr x})\in q$.
