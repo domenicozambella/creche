@@ -197,7 +197,7 @@ The following is a fundamental notion in model theory.
 \begin{definition}\label{def_el_eq}
 We say that $M$ and $N$ are \emph{elementarily equivalent\/} if
 \begin{itemize}
-\item[ee.] $N\models\phi\ \ \IFF\ \ M\models \phi$,\hspace{4ex} for every sentence $\phi\in L$.
+\item[ee.] $N\models\phi\ \ \IFF\ \ M\models \phi$,\hspace{4ex} for every sentence $\phi\in L$.\smallskip
 \end{itemize}
 In this case we write \emph{$M\equiv N$.}
 More generally, we write \emph{$M\equiv_A N$\/} and say that $M$ and $N$ are elementarily equivalent \emph{over $A$\/} if the following hold
@@ -254,8 +254,9 @@ For every pair of structures $M$ and $N$ and every $A\subseteq M\cap N$ the foll
 
 If we restate \ssf{a} and \ssf{c} of the proposition above when $A=M$ we obtain that the following are equivalent
 \begin{itemize}
-\item[a'.] $M\preceq N$
-\item[d'.] \parbox{26ex}{$\phi(M^x)\ =\ \phi(N^x) \cap M^x$} for every $\phi(x)\in L$.
+\item[a$'$.] $M\preceq N$
+\item[b$'$.] $N\models\Th(M/M)$
+\item[d$'$.] \parbox{26ex}{$\phi(M^x)\ =\ \phi(N^x) \cap M^x$} for every $\phi(x)\in L$.
 \end{itemize}
 Note that \ssf{c'} extends to all definable sets what Definition~\ref{sottostrutturadef} requires for a few basic definable sets.
 
@@ -501,59 +502,59 @@ In Corollary~\ref{continuo}, it is important to restrict \ssf{c} to \textit{fini
 
 \begin{proposition}\label{prop_unif_cont}
    For every $f:\RR\to\RR$, the following are equivalent
-\begin{itemize}
-\item[a.] $f$ is uniformly continuous
-\item[b.] $\ns f(a)\approx\ns  f(b)$ for every pair of hyperreals such that $a\approx b$.
-\end{itemize}
+  \begin{itemize}
+  \item[a.] $f$ is uniformly continuous
+  \item[b.] $\ns f(a)\approx\ns  f(b)$ for every pair of hyperreals such that $a\approx b$.
+  \end{itemize}
 \end{proposition}
 
 \begin{proof}
-\ssf{a}$\IMP$\ssf{b}.
-Assume \ssf{a}, then
+  \ssf{a}$\IMP$\ssf{b}.
+  Assume \ssf{a}, then
 
-\ceq{\ssf1\hfill\RR}{\models}{\A\,\epsilon>0\ \E\,\delta>0\ \A x, y\ \Big[|x-y|<\delta\ \ \imp\ \ |fx-fy|<\epsilon\Big].}
+  \ceq{\ssf1\hfill\RR}{\models}{\A\,\epsilon>0\ \E\,\delta>0\ \A x, y\ \Big[|x-y|<\delta\ \ \imp\ \ |fx-fy|<\epsilon\Big].}
 
-Let $a\approx b$.
-We want to show that $|\ns f(a)-\ns f(b)|<\dot\epsilon$ for every positive standard $\dot\epsilon$.
-Given a standard positive $\dot\epsilon$, let $\dot\delta$ be a standard real obtained from \ssf{1}.
-Now elementarity gives
+  Let $a\approx b$.
+  We want to show that $|\ns f(a)-\ns f(b)|<\dot\epsilon$ for every positive standard $\dot\epsilon$.
+  Given a standard positive $\dot\epsilon$, let $\dot\delta$ be a standard real obtained from \ssf{1}.
+  Now elementarity gives
 
-\ceq{\ssf2\hfill\RR}{\models}{\phantom{\A\,\epsilon>0\ \E\,\delta>0}\ \A x, y\ \Big[|x-y|<\dot\delta\ \ \imp\ \ |fx-fy|<\dot\epsilon\Big].}
+  \ceq{\ssf2\hfill\RR}{\models}{\phantom{\A\,\epsilon>0\ \E\,\delta>0}\ \A x, y\ \Big[|x-y|<\dot\delta\ \ \imp\ \ |fx-fy|<\dot\epsilon\Big].}
 
-Hence, in particular,
+  Hence, in particular,
 
-\ceq{\hfill\ns\RR}{\models}{\phantom{\A\,\epsilon>0\ \E\,\delta>0\ \A x, y\ \Big[}|a-b|<\dot\delta\ \ \imp\ \ |fa-fb|<\dot\epsilon.}
+  \ceq{\hfill\ns\RR}{\models}{\phantom{\A\,\epsilon>0\ \E\,\delta>0\ \A x, y\ \Big[}|a-b|<\dot\delta\ \ \imp\ \ |fa-fb|<\dot\epsilon.}
 
-Since $a\approx b$ and $\dot\delta$ is standard, $|a-b|<\dot\delta$ is true.
-Therefore $|\ns f(a)-\ns f(b)|<\dot\epsilon$.
+  Since $a\approx b$ and $\dot\delta$ is standard, $|a-b|<\dot\delta$ is true.
+  Therefore $|\ns f(a)-\ns f(b)|<\dot\epsilon$.
 
-\ssf{b}$\IMP$\ssf{a}.
-Negate \ssf{a}
+  \ssf{b}$\IMP$\ssf{a}.
+  Negate \ssf{a}
 
-\ceq{\ssf3\hfill\RR}{\models}{\E\,\epsilon>0\ \A\,\delta>0\ \E x, y\ \Big[|x-y|<\delta\ \ \wedge\ \ \epsilon\le|fx-fy|\Big]}
+  \ceq{\ssf3\hfill\RR}{\models}{\E\,\epsilon>0\ \A\,\delta>0\ \E x, y\ \Big[|x-y|<\delta\ \ \wedge\ \ \epsilon\le|fx-fy|\Big]}
 
-We want  $a\approx b$ such that $\dot\epsilon\le|\ns f(a)-\ns f(b)|$ for some positive standard $\dot\epsilon$.
-Let $\dot\epsilon$ be a standard real that witnesses \ssf{3}.
-Elementarity gives
+  We want  $a\approx b$ such that $\dot\epsilon\le|\ns f(a)-\ns f(b)|$ for some positive standard $\dot\epsilon$.
+  Let $\dot\epsilon$ be a standard real that witnesses \ssf{3}.
+  Elementarity gives
 
-\ceq{\hfill\ns\RR}{\models}{\phantom{\E\,\epsilon>0}\ \A\,\delta>0\ \E x, y\ \Big[|x-y|<\delta\ \ \wedge\ \ \dot\epsilon\le|fx-fy|\Big].}
+  \ceq{\hfill\ns\RR}{\models}{\phantom{\E\,\epsilon>0}\ \A\,\delta>0\ \E x, y\ \Big[|x-y|<\delta\ \ \wedge\ \ \dot\epsilon\le|fx-fy|\Big].}
 
-Pick an arbitrary infinitesimal $\dot\delta>0$ and let $a,b\in\nsR$ be given by the formula above
+  Pick an arbitrary infinitesimal $\dot\delta>0$ and let $a,b\in\nsR$ be given by the formula above
 
-\ceq{\hfill\ns\RR}{\models}{\phantom{\E\,\epsilon>0\ \A\,\delta>0\ \E x, y\ \Big[}|a-b|<\delta\ \ \wedge\ \ \dot\epsilon\le|fa-fb|.}
+  \ceq{\hfill\ns\RR}{\models}{\phantom{\E\,\epsilon>0\ \A\,\delta>0\ \E x, y\ \Big[}|a-b|<\delta\ \ \wedge\ \ \dot\epsilon\le|fa-fb|.}
 
-Since $\dot\delta$ is infinitesimal, we have $a\approx b$, as required.
+  Since $\dot\delta$ is infinitesimal, we have $a\approx b$, as required.
+\end{proof}
 
 The following proposition is an immediate consequence of Proposition~\ref{prop_fattolimitinonstandard}.
 
 \begin{proposition}
-For every unary function $f$ and every standard $a$, the following are equivalent.
-\begin{itemize}
-\item[a.] $f$ is differentiable in $a$
-\item[b.] ${\rm st}\left(\displaystyle\frac{f(a)-f(a+h)}{h}\right)$ exists and is constant for all infinitesimal $h\neq0$.
-\end{itemize}
+  For every unary function $f$ and every standard $a$, the following are equivalent.
+  \begin{itemize}
+  \item[a.] $f$ is differentiable in $a$
+  \item[b.] ${\rm st}\left(\displaystyle\frac{f(a)-f(a+h)}{h}\right)$ exists and is constant for all infinitesimal $h\neq0$.
+  \end{itemize}
 \end{proposition}
-
 
 %Nel passato si sono sperimentati approcci didattici alternativi al calcolo classico basati sull'analisi non standard.
 % Il testo di  H.
@@ -564,33 +565,32 @@ For every unary function $f$ and every standard $a$, the following are equivalen
 \end{exercise}
 
 \begin{exercise}
-Prove that if the function $f:\RR\to\RR$ is injective, then $\ns f a$ is nonstandard whenever $a$ is nonstandard.
+  Prove that if the function $f:\RR\to\RR$ is injective, then $\ns f a$ is nonstandard whenever $a$ is nonstandard.
 \end{exercise}
 
 \begin{exercise}
-Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
-\begin{itemize}
-\item[1.]  $X$ is a finite set
-\item[2.]  $\ns X=X$.
-\end{itemize}
+  Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
+  \begin{itemize}
+  \item[1.]  $X$ is a finite set
+  \item[2.]  $\ns X=X$.
+  \end{itemize}
 \end{exercise}
 
 \begin{exercise}\label{ex_open_nstd}
-Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
-\begin{itemize}
-\item[1.]  $X$ is an open set in the usual topology on $\RR$
-\item[2.]  $b\approx a\in X \ \ \IMP\ \ b\in\ns X$ for every $b\in\nsR$.
-\end{itemize}
+  Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
+  \begin{itemize}
+  \item[1.]  $X$ is an open set in the usual topology on $\RR$
+  \item[2.]  $b\approx a\in X \ \ \IMP\ \ b\in\ns X$\hfill for every $b\in\nsR$.
+  \end{itemize}
 \end{exercise}
 
 \begin{exercise}\label{ex_closed_nstd}
-Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
-\begin{itemize}
-\item[1.]  $X$ is closed in the usual topology on $\RR$
-\item[2.]  $a\in\ns X \ \ \IMP\ \ \st\, a\in X$ for every finite $a\in\nsR$.
-\end{itemize}
+  Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
+  \begin{itemize}
+  \item[1.]  $X$ is closed in the usual topology on $\RR$
+  \item[2.]  $a\in\ns X \ \ \IMP\ \ \st\, a\in X$\hfill for every finite $a\in\nsR$.
+  \end{itemize}
 \end{exercise}
-
 
 \begin{exercise}\label{ex_bclosed_nstd}
   Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
@@ -608,8 +608,8 @@ Prove that the following are equivalent for every subset $X\subseteq\RR$\nobreak
 \end{exercise}
 
 \begin{exercise}\label{ex_card_nstd}
-Prove that $|\RR|\;\le\;|\nsQ|$, that is, that the cardinality of $\nsQ$ is at least that of the continuum.
-(Hint: define an injective function $f:\RR\to\nsQ$ by choosing a nonstandard rational in the monad of every standard real.) 
+  Prove that $|\RR|\;\le\;|\nsQ|$, that is, that the cardinality of $\nsQ$ is at least that of the continuum.
+  (Hint: define an injective function $f:\RR\to\nsQ$ by choosing a nonstandard rational in the monad of every standard real.) 
 \end{exercise}
 
 \begin{exercise}\label{ex_Q_nstd}

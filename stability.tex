@@ -6,6 +6,9 @@
 \def\ceq#1#2#3{\parbox[t]{25ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
 
+\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}%
+Chapter under major revision
+
 In this chapter we fix a signature $L$, a complete theory $T$ without finite models, and a saturated model $\U$ of inaccessible cardinality $\kappa>|L|$.
 The notation and implicit assumptions are as in Section~\ref{monster}.
 
@@ -59,7 +62,7 @@ Approximability from below is an adaptation to our context of the notion of \tex
 \begin{example}
 Every definable set is trivially approximable.
 Sets may be approximable by different formulas.
-For instance, if $T=T_{\rm dlo}$, then $\D=\{z\in\U:a\le z\le b\}$ is approximable both from below and from above by the formula $x_1<z<x_2$ though it is not definable by this formula.
+For instance, if $T=T_{\rm dlo}$, then $\D=\{z\in\U:a\le z\le b\}$ is approximable by the formula $x_1<z<x_2$ though not definable from below nor from above by $x_1<z<x_2$.
 
 Now, let $T=T_{\rm rg}$.
 Then every $\D\subseteq\U$ is approximable and, when $\D$ has small infinite cardinality, it is approximable from above but not from below.
@@ -179,36 +182,47 @@ We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$ is a \emph{ladder\/} of lengt
 We say that $\pi({\mr x}\,;{\gr z})$ is \emph{stable\/} if for some $n$ there is no ladder of length $n$.
 Otherwise we say it is \emph{unstable} or that it has the \emph{order property}.
 We will mainly deal with relations that are definable or type-definable.
-We will say that a formula or a type is stable accordingly.
-The proof of the following easy fact is left to the reader.
+We say that a formula or a type is stable accordingly.
+% The proof of the following easy fact is left to the reader.
+
+% \begin{fact}\label{}
+%   The following are equivalent for every $p({\mr x}\,;{\gr z})\subseteq L(A)$
+%   \begin{itemize}
+%     \item [1.] $p({\mr x}\,;{\gr z})$ is stable
+%     \item [2.] there is $q({\mr x}\,;{\gr z})\subseteq L(A)$ equivalent to $p({\mr x}\,;{\gr z})$ containing only stable formulas.
+%   \end{itemize}
+% \end{fact}
+
+When $\pi({\mr x}\,;{\gr z})$ is a formula, compactness allows to simplify the definition of stability.
 
 \begin{fact}\label{}
-  The following are equivalent for every $p({\mr x}\,;{\gr z})\subseteq L(A)$
+  The following are equivalent for every $\pi({\mr x}\,;{\gr z})\in L(\U)$
   \begin{itemize}
-    \item [1.] $p({\mr x}\,;{\gr z})$ is stable
-    \item [1.] for some finite $n$, there is no ladder of length $n$ for $p({\mr x}\,;{\gr z})$
-    \item [2.] there is $q({\mr x}\,;{\gr z})\subseteq L(A)$ equivalent to $p({\mr x}\,;{\gr z})$ containing only stable formulas.
+    \item [1.] $\pi({\mr x}\,;{\gr z})$ is stable
+    \item [2.] $\pi({\mr x}\,;{\gr z})$ admits no ladder of length $\omega$.
   \end{itemize}
 \end{fact}
 
-In this section there is no blanket assumption of invariance over $A$ as it is not strictly necessary.
-The invariance of $\pi$ would simplify the discussion as it allows to require that the ladder is an indiscernible sequence (cf.\@ Lemma~\ref{lem_stab_Boole}). 
+Sometimes \ssf2 of the above lemma is taken as definition of stability.
+With this definition and asssuming invariance over $A$ one obtains a useful characterization.
+% In this section there is no blanket assumption of invariance over $A$ as it is not strictly necessary.
+% The invariance of $\pi$ would simplify the discussion as it allows to require that the ladder is an indiscernible sequence (cf.\@ Lemma~\ref{lem_stab_Boole}).
 
 \begin{theorem}\label{thm_sability_indiscernibility}
   Let $\pi({\mr x}\,;{\gr z})$ be invariant over $A$.
   Then the following are equivalent
   \begin{itemize}
-    \item[1.] $\pi({\mr x}\,;{\gr z})$ is stable
+    \item[1.] $\pi({\mr x}\,;{\gr z})$ admits no ladder sequence of length $\omega$
     \item[2.] $\pi({\mr a_0}\,;{\gr b_1})\imp\pi({\mr a_1}\,;{\gr b_0})$ for every $A$-indiscernible sequence $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
-  (2$\IMP$1) \ Assume $\pi({\mr x}\,;{\gr z})$ is unstable and that this is witnessed by the ladder $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
+  (2$\IMP$1) \ Suppose that the ladder $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ witnessee the failure of (1).
   Let $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ be a sequence of $A$-indiscernibles with the same EM-type as $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
-  By invariance $\pi({\mr a'_0}\,;{\gr b'_1})$ and $\neg\pi({\mr a'_1}\,;{\gr b'_0})$.
+  By $A$-invariance $\pi({\mr a'_0}\,;{\gr b'_1})$ and $\neg\pi({\mr a'_1}\,;{\gr b'_0})$.
 
-  (2$\IMP$1) Immediate by indiscernibility.
+  (2$\IMP$1) Immediate by indiscernibility and invariance.
 \end{proof}
 %It is clear that $p({\mr x}\,;{\gr z})$ is stable if and only if $p({\mr x}\,;{\gr z})^*$ is stable.
 
@@ -233,23 +247,23 @@ The invariance of $\pi$ would simplify the discussion as it allows to require th
   Let $H=\{h_1,\dots,h_n\}$ then $\<{\mr a_{h_i}}\,;{\gr b_{h_i}} : i<n\>$ is a ladder sequence for $\pi_1({\mr x}\,;{\gr z})$.
 \end{proof}
 
-The following theorem claims what is arguably one of the most important properties of stable formulas: any set that is externally definable by a stable formula is definable (by a related formula).
+The following theorem claims what is arguably one of the most important properties of stable formulas: any set that is externally definable by a stable formula is definable (by a positive Boolean combination of the formula).
 
 \begin{theorem}\label{thm_def_stable_formula}
 Any $\grD\subseteq\U^{\gr z}$ approximated by a stable formula is definable.
-Precisely, if $\pi({\mr x}\,;{\gr z})$ is a stable relation that approximates $\grD$ then there are ${\mr a_{i,j}}\in\U^{\mr x}$ such that
+In general, if $\pi({\mr x}\,;{\gr z})$ is a stable relation that approximates $\grD$ then there are ${\mr a_{i,j}}\in\U^{\mr x}$ such that
 
 \ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=1}\bigwedge^m_{j=1}\pi({\mr a_{i,j}}\,;{\gr z})}
 \end{theorem}
 
-Theorem~\ref{thm_def_stable_formula2} will prove the converse: if every set approximated by $\pi({\mr x}\,;{\gr z})$ is definable then $\pi({\mr x}\,;{\gr z})$ is stable.
+Theorem~\ref{thm_def_stable_formula2} proves that the converse holds for formulas: if every set $\grD$ approximated by the formula $\phi({\mr x}\,;{\gr z})$ is definable then $\phi({\mr x}\,;{\gr z})$ is stable.
 
 \begin{proof}
   The theorem follows immediately from the two lemmas below.
 \end{proof}
 
 \begin{lemma}
-If $\grD$ is approximated from below by a stable formula $\pi({\mr x}\,;{\gr z})$ then
+If $\grD$ is approximated from below by a stable relation $\pi({\mr x}\,;{\gr z})$ then
 
 \ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=0}\pi({\mr a_i}\,;{\gr z})}
 
@@ -327,7 +341,8 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
 \begin{remark}\label{rem_sability_no_compactness}
   Theorem~\ref{thm_def_stable_formula} is often cast in the following  apparently more general form.
   Let $\mrA\subseteq\U^{\mr x}$ and $\grB\subseteq\U^{\gr z}$.
-  We say that $\pi({\mr x}\,;{\gr z})$ is stable between $\mrA$ and $\grB$ if for some $n$ no ladder of length $n$ exists with ${\mr a_i}\in\mrA$ and ${\gr b_i}\in\grB$.
+  We say that the relation $\pi({\mr x}\,;{\gr z})$ is stable between the sets $\mrA$ and $\grB$ if for some $n$ no ladder of length $n$ exists with ${\mr a_i}\in\mrA$ and ${\gr b_i}\in\grB$.
+
   Let $\grD\subseteq\grB$ be approximable by $\pi({\mr x}\,;{\gr z})\wedge {\mr x}\in\mrA$.
   Then for any such $\grD$ there are ${\mr a_{1,1}},\dots,{\mr a_{n,m}}\in \mrA$ such that 
   
@@ -339,7 +354,7 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
 % \end{exercise}
 
 \begin{exercise}
-  Prove that if $p({\mr x}\,;{\gr z})$ admits ladder sequences of arbitrary finite length, then it admits a ladder sequence of infinite length.
+  Find some unstable $p(x\,;z)\subseteq L(A)$ that admits no ladder of infinite length.
 \end{exercise}
 
 \begin{exercise}
@@ -823,13 +838,13 @@ The following proposition says that in a stable theory with elimination of imagi
 
 \begin{theorem}[ (Stationarity)]\label{thm_stationarity}
   Let $\Delta$ be stable.
-  Let $q({\mr x})\subseteq L(\U)$ be a type that is finitely satisfiable in every $M\supseteq A$ and decides all $\BDelta(\U^{\gr z})$-formulas that are Lascar invariant over $A$.
-  Then there is a unique type $p({\mr x})\in S_\Delta(\U^{\gr z})$ finitely consistent with $q({\mr x})$ that is Lascar invariant over $A$.
+  Let $q({\mr x})\subseteq L(\U)$ be a type that is finitely satisfiable in every $M\supseteq A$ and decides all $\BDelta(\U^{\gr z})$-formulas that are invariant over $\acl^\eq\!A$.
+  Then there is a unique type $p({\mr x})\in S_\Delta(\U^{\gr z})$ finitely consistent with $q({\mr x})$ that is invariant over $\acl^\eq\!A$.
 \end{theorem}
 
 \begin{proof}
   Existence follows from Corollary~\ref{corol_stable_coheir_over_models} and Proposition~\ref{prop_type_over_acl2}.
-  To prove uniqueness, pick two types $p_i({\mr x})\in S_\Delta(\U^{\gr z})$, for $i=1,2$, that are finitely consistent with $q({\mr x})$ and Lascar invariant over $A$.
+  To prove uniqueness, pick two types $p_i({\mr x})\in S_\Delta(\U^{\gr z})$, for $i=1,2$, that are finitely consistent with $q({\mr x})$ and invariant over $\acl^eq\!A$.
   It suffices to prove that ${\gr\D_{p_1,\phi}}={\gr\D_{p_2,\phi}}$ for every $\phi({\mr x}\,;{\gr z})\in\Delta$.
   Let ${\gr b}\in\U^{\gr z}$ and $\phi({\mr x}\,;{\gr z})\in\Delta$ be fixed but arbitrary.
 
@@ -1331,7 +1346,7 @@ When $\Delta$ is stable, it is a $\BDelta(\mrX)$-type-definable set (definable, 
     This is left as an exercise to the reader~--~stability is not required.
   
     \ssf{2}$\IMP$\ssf{1}.
-    Assume \ssf2 which, by Proposition~\ref{prop_Shelah_strong_types}, is equivalent to ${\mr a}\equiv_{\acl^\eq\!A}{\mr b}$.
+    Assume \ssf2 which, by Theorem~\ref{thm_Shelah_strong_types}, is equivalent to ${\mr a}\equiv_{\acl^\eq\!A}{\mr b}$.
     Write $q({\mr x})$ for $\tp({\mr a}/{\acl}^\eq\!A)=\tp({\mr b}/{\acl}^\eq\!A)$. Let $p({\mr x})\in S(\U^\eq)$ be the unique global type that is invariant over $\acl^\eq\!A$ and extends $q({\mr x})$ which we obtain from Theorem~\ref{thm_stationarity}.
     Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be such that ${\mr c_i}\models p({\mr x}){\restriction}\acl^\eq\!A,\,{\mr a},\,{\mr b},\,{\mr c_{\restriction i}}$.
     Then ${\mr a},{\mr\bar c}$ and ${\mr b},{\mr\bar c}$ are $A$-indiscernible sequences, which proves \ssf{1}, see Exercise~\ref{ex_Lstp_indiscernibles}.

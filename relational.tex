@@ -297,9 +297,14 @@ The same argument as in the proof of Corollary~\ref{corol_DLO_QE} yields the fol
 
 \begin{exercise}\label{ex_r(b,N)}
 Let $A\subseteq N\models T_{\rm rg}$.
-Prove that $\phi(N)$ is a random graph whenever $\phi(x)\in L(A)$ is consistent and such that $\phi(N)$ is disjoint of $A$.
+Let $\phi(x)\in L(A)$.
+Prove that if $\phi(N)$ nonempty and disjoint from $A$ then $\phi(N)$ is a random graph.
 \end{exercise}
 
+\begin{exercise}
+Let $N\models T_{\rm rg}$.
+Is there a formula $\phi(x)\in L(N)$ such that both $\phi(N)$ and $\neg\phi(N)$ are random graphs?
+\end{exercise}
 % \begin{exercise}
 % Let $A\subseteq N\models  T_{\rm rg}$. What are the possible cardinalities of $\big\{b:r(b,N){=}A\big\}$~?
 % \end{exercise}
@@ -327,16 +332,29 @@ Axiomatize the class of graphs that are free union of two random graphs.
 % Sia $T$ la teoria definita nell'esercizio~\ref{unionedisgiunta2} e sia $N\models T$. Si dimostri che per ogni grafo numerabile $M$, ogni mappa finita $k:M\to N$ che preserva la verit\`a delle formule esistenziali ha un'estensione ad una mappa totale $h:M\to N$ che preserva la verit\`a le formule esistenziali.
 % \end{exercise}
 
-\begin{exercise}
-Prove that $T_{\rm rg}$ is not $\lambda$-categorical for any uncountable $\lambda$.
-Hint: prove that there is a random graph $N$ of cardinality $\lambda$ where every vertex is adjacent to $<\lambda$ vertices.
-Compare it with its complement graph (the graph that has edges between pairs that are non-adjacent in $N$).
+
+\begin{exercise}\label{ex_RGnonfiniteaxiom}
+  Let $M$ be the graph that has, as verteces, the hereditarily finite sets.
+  There is an edge between two sets $a$ and $b$ if either $a\in b$ or $b\in a$.
+  Prove that $M$ is a random graph.
+  Modify this example to prove that $T_{\rm rg}$ is not finitely axiomatizable.
 \end{exercise}
+% \begin{exercise}
+% Prove that $T_{\rm rg}$ is not finitely axiomatizable.
+% Hint: given a random graph $N$ and a set $P$ of cardinality $n+1$ show that you can add edges to $M\sqcup P$ and make it satisfy axiom \ssf{r$_n$} but not \ssf{r$_{n+1}$}.
+% \end{exercise}
 
 \begin{exercise}
-Prove that $T_{\rm rg}$ is not finitely axiomatizable.
-Hint: given a random graph $N$ and a set $P$ of cardinality $n+1$ show that you can add edges to $M\sqcup P$ and make it satisfy axiom \ssf{r$_n$} but not \ssf{r$_{n+1}$}.
+Prove that $T_{\rm rg}$ is not $\lambda$-categorical for any uncountable $\lambda$.
+Hint: construct a sequence $\<a_i:i<\lambda\>$ that enumerates a random graph $N$ and is such that every $a_i$ is adiacent to only finitely many $a_j$ with $j<i$.
+We can also require that $N$ contains an uncountable anticlique (that is, a set of vertices mutually nonadjacent) but note that the enumeration forbids uncountable cliques.
+Compare $N$ with its complement graph (the graph that has edges between pairs that are non-adjacent in $N$).
 \end{exercise}
+
+% \begin{exercise}
+% Prove that $T_{\rm rg}$ is not finitely axiomatizable.
+% Hint: given a random graph $N$ and a set $P$ of cardinality $n+1$ show that you can add edges to $M\sqcup P$ and make it satisfy axiom \ssf{r$_n$} but not \ssf{r$_{n+1}$}.
+% \end{exercise}
 
 \begin{exercise}[ (Peter J.~Cameron)]\label{ex_CameronRG}
 Prove that for every infinite countable graph $M$ the following are equivalent
@@ -356,6 +374,10 @@ Now note that
 \hfil$\displaystyle\bigcap_{a\in A}r(a, M_1)=\varnothing$\hfil and\hfil $\displaystyle\bigcup_{b\in B}r(b, M_2)=M_2$.
 \end{exercise}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notes and references}
 
 We refer the reader to~\cite{Cameron} for a well-written accessible survey on the amazing model theoretic properties of the random graph.

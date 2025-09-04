@@ -1,5 +1,5 @@
 % !TEX root = creche.tex
-\chapter{Group actions on models}
+\chapter{Five notions of largeness}
 \label{actions}
 
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
@@ -80,7 +80,7 @@ Therefore, a type $p({\mr x})\subseteq\BDelta(\grZ)$ is $G$-invariant if
 % Note that when $G$ acts by automorphisms $\phi(\U^{\mr x};\U^{\gr z})$ is $G$-invariant for all $\phi({\mr x}\,;{\gr z})\in L$.
 
 Let $\mrY\subseteq\mrX$.
-A set $\mrD\subseteq\mrX$ is \emph{syndetic\/} under the action of $G$ \emph{relative\/} to $\mrY$, or \emph{$G$-syndetic\/} for short, if finitely many $G$-translates of $\mrD$ cover $\mrY$; we say \emph{$n$-$G$-syndetic\/} if $\le n$ translates suffices.
+We say that a set $\mrD\subseteq\mrX$ is \emph{syndetic\/} under the action of $G$ \emph{relative\/} to $\mrY$, or \emph{$G$-syndetic\/} for short, if finitely many $G$-translates of $\mrD$ cover $\mrY$; we say \emph{$n$-$G$-syndetic\/} if $\le n$ translates suffices.
 Dually, we say that $\mrD$ is \emph{thick\/} under the action of $G$ relative to $\mrY$, or \emph{$G$-thick\/} for short, if the intersection of any finitely many $G$-translates of $\mrD$ is consistent with $\mrY$; we say \emph{$n$-$G$-thick\/} when the request is limited to $\le n$ translates.
 
 We omit reference to $\mrY$ when this is $\mrX$ or if it is made crystal clear by the context.
@@ -92,7 +92,7 @@ See Exercise~\ref{ex_thick_types} for an alternative characterization when $p({\
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 The terminology above is taken from topological dynamics.
 In other contexts (see eg.~\cite{Newelski09}) syndetic sets are called \textit{generic.}
-In~\cite{CK} the authors write \textit{quasi-non-dividing\/} for \textit{thick\/} under the action of $\Aut(\U/A)$.
+In~\cite{CK} the authors write \textit{quasi-non-ødividing\/} for \textit{thick\/} under the action of $\Aut(\U/A)$.
 Their terminology has good motivations, but it would be a mouthful if adapted to our context.
 
 Notation: for $\mrD\subseteq\mrX$ and $C\subseteq G$ we write \emph{$C{\cdot}\mrD$\/} for $\{h{\cdot}\mrD: h\in C\}$.
@@ -139,20 +139,20 @@ The following characterization is also useful (an is sometimes taken as the defi
 
 Define the following type
 
-\ceq{\hfill\emph{$\gamma_{G,\Y}({\mr x})$}}{=}{\big\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is }G\textrm{-syndetic relatve to }\mrY\big\}.}
+\ceq{\hfill\emph{$\Sigma_{G,\Y}({\mr x})$}}{=}{\big\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is }G\textrm{-syndetic relatve to }\mrY\big\}.}
 
-We write $\gamma_G({\mr x})$ for $\gamma_{G,\X}({\mr x})$.
+We write $\Sigma_G({\mr x})$ for $\Sigma_{G,\X}({\mr x})$.
 
-% We remark that the consistency of $\gamma_G({\mr x})$ is far from guaranteed.
+% We remark that the consistency of $\Sigma_G({\mr x})$ is far from guaranteed.
 
 \begin{corollary}\label{corol_q_pers}
   Work relative to some given $\mrY\subseteq\mrX$.
-  Let $\mrD\in\BDelta(\grZ)$ and assume that $\gamma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent in $\mrY$.
+  Let $\mrD\in\BDelta(\grZ)$ and assume that $\Sigma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent in $\mrY$.
   Then $\mrD$ is $G$-thick.
 \end{corollary}
 
 \begin{proof}
-  As $\gamma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent in $\mrY$, it cannot be that $\neg\mrD$ is $G$-syndetic.
+  As $\Sigma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent in $\mrY$, it cannot be that $\neg\mrD$ is $G$-syndetic.
   Then from Fact~\ref{fact_fip} we obtain that $\mrD$ is $G$-thick.
 \end{proof}
 
@@ -163,8 +163,8 @@ The converse implication holds for complete types.
   For every $p({\mr x})\in S_{\Delta,\Y}(\grZ)$ the following are equivalent
   \begin{itemize}
     \item[1.] $p({\mr x})$ is $G$-invariant
-    \item[2.] $p({\mr x})\proves\gamma_{G,\Y}({\mr x})$
-    %\item[2$'$.] $p({\mr x})\proves\gamma_{G}({\mr x})$ and is finitely consistent in $\mrY$
+    \item[2.] $p({\mr x})\proves\Sigma_{G,\Y}({\mr x})$
+    %\item[2$'$.] $p({\mr x})\proves\Sigma_{G}({\mr x})$ and is finitely consistent in $\mrY$
     \item[3.] $p({\mr x})$ is $G$-thick.
     %\item[3$'$.] $p({\mr x})$ is $G$-thick and is finitely consistent in $\mrY$.
   \end{itemize}
@@ -195,7 +195,7 @@ The converse implication holds for complete types.
 % \begin{corollary}\label{corol_gammaG_invaqriancer}
 %   The following are equivalent for every $\BDelta(\grZ)$-definable set $\mrD$
 %   \begin{itemize}
-%     \item [1.] $\gamma_G({\mr x})\proves{\mr x}\in\mrD$
+%     \item [1.] $\Sigma_G({\mr x})\proves{\mr x}\in\mrD$
 %     \item [2.] $p({\mr x})\proves{\mr x}\in\mrD$ for every $G$-thick $p({\mr x})\in S_\Delta(\grZ)$.
 %   \end{itemize}
 % \end{corollary}
@@ -205,8 +205,8 @@ The converse implication holds for complete types.
 %   This is an immediate consequence of Theorem~\ref{thm_syndetic_invariant}.
 
 %   \ssf2$\IMP$\ssf1.
-%   Suppose $\gamma_G({\mr x})\not\proves{\mr x}\in\mrD$.
-%   Then there is a type $p({\mr x})\in S_\Delta(\grZ)$ finitely consistent with $\gamma_G({\mr x})\cup\{{\mr x}\notin\mrD\}$.
+%   Suppose $\Sigma_G({\mr x})\not\proves{\mr x}\in\mrD$.
+%   Then there is a type $p({\mr x})\in S_\Delta(\grZ)$ finitely consistent with $\Sigma_G({\mr x})\cup\{{\mr x}\notin\mrD\}$.
 %   By Corollary~\ref{corol_q_pers} $p({\mr x})$ is $G$-thick.
 %   Then $\neg\ssf2$.
 % \end{proof}
@@ -219,7 +219,7 @@ The theorem yields a necessary condition for the existence of global $\BDelta({\
   \begin{itemize}
     \item[1.] $\mrD$ and $\neg\mrD$ are not both $G$-syndetic
     \item[2.] if $\mrD$ is $G$-syndetic then it is $G$-thick
-    \item[3.] $\gamma_{G,\Y}({\mr x})$ is finitely consistent in $\mrY$.\smallskip
+    \item[3.] $\Sigma_{G,\Y}({\mr x})$ is finitely consistent in $\mrY$.\smallskip
   \end{itemize}
 \end{corollary}
 
@@ -232,7 +232,7 @@ The following theorem gives a necessary and sufficient condition for the  existe
 Ideally, we would like that every $G$-thick $\BDelta({\grZ})$-type extends to a global thick type.
 Unfortunately this is not true in general (it is a strong assumption, see Section~\ref{tame_landscape}).
 
-A set $\mrD$ is \emph{$G$-wide\/} relative to $\mrY$ if every finite cover of $\mrD$ by $\BDelta({\grZ})$-sets contains a set that is $G$-thick relative to $\mrY$.
+A set $\mrD$ is \emph{$G$-wide\/} relative to $\mrY$ if every finite cover of $\mrD\cap\mrY$ by $\BDelta({\grZ})$-sets contains a set that is $G$-thick relative to $\mrY$.
 A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
 
 In~\cite{CK} a similar property is called \textit{quasi-non-forking.}
@@ -242,7 +242,7 @@ Our use of the term \textit{wide\/} is consistent with~\cite{Hr}, though we appl
   Work relative to some given $\mrY\subseteq\mrX$.
   For every $\mrD\in\BDelta(\grZ)$ the following are equivalent 
   \begin{itemize}
-    \item[1.] $\gamma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent in $\mrY$
+    \item[1.] $\Sigma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent in $\mrY$
     \item[2.] there is a $G$-thick type $p({\mr x})\in S_{\Delta,\Y}(\grZ)$ that entails ${\mr x}\in\mrD$
     \item[3.] $\mrD$ is $G$-wide.\smallskip
   \end{itemize}
@@ -250,7 +250,7 @@ Our use of the term \textit{wide\/} is consistent with~\cite{Hr}, though we appl
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  By Corollary~\ref{corol_q_pers}, it suffices to pick any $p({\mr x})\in S_{\Delta,\Y}(\grZ)$ that entails $\gamma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$.
+  By Corollary~\ref{corol_q_pers}, it suffices to pick any $p({\mr x})\in S_{\Delta,\Y}(\grZ)$ that entails $\Sigma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$.
 
   \ssf2$\IMP$\ssf1.
   By Theorem~\ref{thm_syndetic_invariant}.
@@ -277,7 +277,7 @@ Our use of the term \textit{wide\/} is consistent with~\cite{Hr}, though we appl
 %   Work relative to some given $\mrY\subseteq\mrX$.
 %   For every $\BDelta(\grZ)$-type $q({\mr x})$ the following are equivalent 
 %   \begin{itemize}
-%     \item[1.] $\gamma_{G,\Y}({\mr x})\cup q({\mr x})$ is finitely consistent in $\mrY$
+%     \item[1.] $\Sigma_{G,\Y}({\mr x})\cup q({\mr x})$ is finitely consistent in $\mrY$
 %     \item[2.] $p({\mr x})\cup q({\mr x})$ is finitely consistent in $\mrY$, for some $G$-thick type $p({\mr x})\in S_\Delta(\grZ)$ 
 %     \item[3.] $q({\mr x})$ is $G$-wide.\smallskip
 %   \end{itemize}
@@ -316,7 +316,7 @@ The following easy consequence of the theorem will be used below.
 % \begin{proposition}
 %   For every type $q({\mr x})\subseteq\BDelta(\grZ)$ the following are equivalent
 %   \begin{itemize}
-%     \item [1.] $q({\mr x})\proves\gamma_H({\mr x})$
+%     \item [1.] $q({\mr x})\proves\Sigma_H({\mr x})$
 %     \item [2.] $q({\mr x})$ is $G$-prime and $G$-invariant.
 %   \end{itemize}
 % \end{proposition}
@@ -413,7 +413,7 @@ The following easy consequence of the theorem will be used below.
 
 We want to compare the notions of $G$-syndetic/wide when relative to $\mrX$ or to some $\mrY\subseteq\mrX$.
 When boundedly many $G$-translates of $\mrY$ cover $\mrX$ (in particular, when $G$ acts transitively on $\mrX$ and $\mrY$ has a bounded $G$-orbit) these two notions relativize seamlessly.
-We will apply this to prove a necessary condition for the consistency of $\gamma_G({\mr x})$, i.e.\@ for the existence of $G$-invariant global types.
+We will apply this to prove a necessary condition for the consistency of $\Sigma_G({\mr x})$, i.e.\@ for the existence of $G$-invariant global types.
 
 \begin{proposition}\label{prop_HgenGgen}
   Let $\mrX$ be type-definable.
@@ -498,11 +498,11 @@ We will apply this to prove a necessary condition for the consistency of $\gamma
 
 \begin{proposition}\label{prop_HgenGgen}
   Let $\mrX$ be type-definable.
-  Assume that $G$ acts transitively on $\mrX$ and that $\gamma_G({\mr x})$ is consistent.
+  Assume that $G$ acts transitively on $\mrX$ and that $\Sigma_G({\mr x})$ is consistent.
   Then $\mrX$ is the sole nonempty $\BDelta(\grZ)$-type-definable set with bounded $G$-orbit.
 \end{proposition}
 \begin{proof}
-  By the consistency of $\gamma_G({\mr x})$, there is a $G$-invariant $p({\mr x})\in S_\Delta(\grZ)$.
+  By the consistency of $\Sigma_G({\mr x})$, there is a $G$-invariant $p({\mr x})\in S_\Delta(\grZ)$.
   Let $\mrY\subseteq\mrX$ be a nonempty $\BDelta(\grZ)$-type-definable set with bounded $G$-orbit.
   Then $\cap\,G{\cdot}\mrY$ is a $G$-invariant $\BDelta(\grZ)$-type-definable set.
   We claim that it is nonempty.
@@ -539,14 +539,14 @@ We will apply this to prove a necessary condition for the consistency of $\gamma
 
 Let \emph{$G$\/} $\le\Aut(\UDelta)$.
 Unfortunately, syndeticity is not preserved under intersection.
-In particular $\gamma_G({\mr x})$ is not a $G$-syndetic type, and it may even be inconsistent.
+In particular $\Sigma_G({\mr x})$ is not a $G$-syndetic type, and it may even be inconsistent.
 Then following notion is relevant.
 
 \begin{definition}\label{def_Q}\ 
 
-  \ceq{\hfill\emph{$Q_G$\/}}{=}{\big\{q({\mr x})\subseteq\gamma_G({\mr x})\;:\ q({\mr x})\textrm{ maximally }G\textrm{-syndetic}\big\}.}\smallskip
+  \ceq{\hfill\emph{$Q_G$\/}}{=}{\big\{q({\mr x})\subseteq\Sigma_G({\mr x})\;:\ q({\mr x})\textrm{ maximally }G\textrm{-syndetic}\big\}.}\smallskip
 
-  In other words, the types in $Q_G$ are maximal among the subtypes of $\gamma_G({\mr x})$ that are closed under conjunction.
+  In other words, the types in $Q_G$ are maximal among the subtypes of $\Sigma_G({\mr x})$ that are closed under conjunction.
 \end{definition}
 
 It is easy to see that $Q_G$ is closed under the action of $G$.
@@ -560,12 +560,12 @@ It is easy to verify that $G^1\trianglelefteq G$.
 
 \begin{proposition}\label{prop_StabQ}\ \smallskip
 
-  \ceq{\hfill G^1}{=}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\in\gamma_G({\mr x})\textrm{ whenever }\mrD\in\gamma_G({\mr x})\big\}.}\smallskip
+  \ceq{\hfill G^1}{=}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\in\Sigma_G({\mr x})\textrm{ whenever }\mrD\in\Sigma_G({\mr x})\big\}.}\smallskip
 \end{proposition}
 
 \begin{proof}
   $\subseteq$.
-  Pick any $k\in G^1$ and $\mrD\in\gamma_G({\mr x})$.
+  Pick any $k\in G^1$ and $\mrD\in\Sigma_G({\mr x})$.
   Let $q({\mr x})\in Q_G$ be a type containing ${\mr x}\in\mrD$.
   From the $G^1$-invariance of $q({\mr x})$ we obtain that $q({\mr x})\proves {\mr x}\in k{\cdot}\mrD$.
   Then $q({\mr x})\proves {\mr x}\in \mrD\cap k{\cdot}\mrD$, hence $\mrD\cap k{\cdot}\mrD$ is $G$-syndetic.
@@ -579,36 +579,33 @@ It is easy to verify that $G^1\trianglelefteq G$.
 \end{proof}
 
 \begin{theorem}\label{thm_gammaK}
-  Any finite conjunction of formulas in $\gamma_{G^1}({\mr x})$ is $G$-syndetic.
-  In particular $\gamma_{G^1}({\mr x})$ is finitely consistent.
+  Any finite conjunction of formulas in $\Sigma_{G^1}({\mr x})$ is $G$-syndetic.
+  In particular $\Sigma_{G^1}({\mr x})$ is finitely consistent.
 \end{theorem}
 
 \begin{proof}
   \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
   \def\ceq#1#2#3{\parbox[t]{23ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
-  Notice that from Proposition~\ref{prop_StabQ} it easily follows that for every $\mrD\in\gamma_G({\mr x})$ and every finite $F\subseteq G^1$ the set $\cap\,F{\cdot}\mrD$ is $G$-syndetic.
+  Notice that from Proposition~\ref{prop_StabQ} it easily follows that for every $\mrD\in\Sigma_G({\mr x})$ and every finite $F\subseteq G^1$ the set $\cap\,F{\cdot}\mrD$ is $G$-syndetic.
    
-  Let ${\mr\D_1},\dots,{\mr\D_n}\in\gamma_{G^1}({\mr x})$.
+  Let ${\mr\D_1},\dots,{\mr\D_n}\in\Sigma_{G^1}({\mr x})$.
   Assume inductively that ${\mr\D_1}\cap\dots\cap{\mr\D_{n-1}}$ is $G$-syndetic.
   Let $F\subseteq G^1$ be such that $\cup\,F{\cdot}{\mr\D_n}=\mrX$.
   Then
   
   \ceq{\hfill\cup\,F{\cdot}[{\mr\D_1}\cap\dots\cap{\mr\D_n}]}
-  {\supseteq}
-  {\cup\,F{\cdot}\big[\cap\, F{\cdot}[{\mr\D_1}\cap\dots\cap{\mr\D_{n-1}}]\ \cap\ {\mr\D_n}\big]}
-
-  \ceq{}{\supseteq}{\cap\, F{\cdot}[{\mr\D_1}\cap\dots\cap{\mr\D_{n-1}}]\ \cap\ \cup\,F{\cdot}{\mr\D_n}}
+  {\supseteq}{\cap\, F{\cdot}[{\mr\D_1}\cap\dots\cap{\mr\D_{n-1}}]\ \cap\ \cup\,F{\cdot}{\mr\D_n}}
 
   \ceq{}{=}{\cap\, F{\cdot}[{\mr\D_1}\cap\dots\cap{\mr\D_{n-1}}].}
 
-  This last set is $G$-syndetic by the inductive hypothesis and the remark above.
+  This last set is $G$-syndetic by the inductive hypothesis and what remarked above.
   The $G$-syndeticity of ${\mr\D_1}\cap\dots\cap{\mr\D_n}$ follows.
 \end{proof}
 
 Unfortunately, we are unable to conclude that the intersection of $G^1$-syndetic sets is $G^1$-syndetic.
 % To obtain a subgroup with this property, we need to iterate the above construction.
 % We define $G^{n+1}=\Stab(Q_{G^n})$ and let $G^\omega$ be the intersection of all $G^n$. 
-% It is easy to see that $\gamma_{G^\omega}$ is closed under conjunction.
+% It is easy to see that $\Sigma_{G^\omega}$ is closed under conjunction.
 % More on the properties of $G^\omega$ in Section~\ref{tame_landscape}.
 % However, it is important to emphasize that, in general, $G^\omega$ could be trivial.
 
@@ -631,24 +628,24 @@ First, we remark a useful consequence of normality.
   \ceq{\hfill\mrD\textrm{ is }H\textrm{-foo}}{\IFF}{g{\cdot}\mrD\textrm{ is }H\textrm{-foo},} \smallskip
   
   where \textit{foo\/} can be replaced by \textit{syndetic,} \textit{invariant,} \textit{thick,} \textit{wide.}
-  In particular, the type $\gamma_G({\mr x})$ is $G$-invariant.
+  In particular, the type $\Sigma_H({\mr x})$ is $G$-invariant.
   % It also follows that for any $p({\mr x})\in S_\Delta(\grZ)$
   % \begin{itemize}
   %   \item [3.] \ceq{\hfill p({\mr x})\textrm{ is }H\textrm{-invariant}}{\IFF}{g\cdot p({\mr x})\textrm{ is }H\textrm{-invariant}.}
   % \end{itemize}
 \end{remark}
 
-Recall that when $\gamma_H({\mr x})$ is finitely consistent then $H$-syndetic sets are $H$-wide, see Theorem~\ref{thm_syndetic_invariant2}.
+Recall that when $\Sigma_H({\mr x})$ is finitely consistent then $H$-syndetic sets are $H$-wide, see Theorem~\ref{thm_syndetic_invariant2}.
 As it happens, under the assumption of normality, this can be strengthened as follows.
 
 \begin{proposition}\label{prop_Gsyndetic_Hthick1}
-  Assume $H\trianglelefteq G$ and that $\gamma_H({\mr x})$ is finitely consistent.
+  Assume $H\trianglelefteq G$ and that $\Sigma_H({\mr x})$ is finitely consistent.
   Then every $G$-syndetic $\mrD\in\BDelta(\grZ)$ is $H$-wide.
   In particular all types in $Q_G$ are $G^1$-wide.
 \end{proposition}
 
 \begin{proof}
-  Let $p({\mr x})\in S_\Delta(\grZ)$ be finitely consistent with $\gamma_H({\mr x})$.
+  Let $p({\mr x})\in S_\Delta(\grZ)$ be finitely consistent with $\Sigma_H({\mr x})$.
   As $\mrD$ is $G$-syndetic, by completeness $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in G$.
   Equivalently, $g^{-1}\!\cdot p({\mr x})\proves{\mr x}\in\mrD$.
   As $p({\mr x})$ is $H$-thick, by Remark~\ref{rem_invariance_normalsubg} also $g^{-1}\!\cdot p({\mr x})$ is $H$-thick.
@@ -701,17 +698,18 @@ We will prove that this is the case under the assumption of stability.
 
 \end{comment}
 
-% When the context suggests it, $\BDelta(\grZ)$ will denote the broader class that includes also formulas obtained substituting ${\mr y}$ for ${\mr x}$ and is closed under Boolean connectives.
-% A $\BDelta(\grZ)$-definable equivalence relation is an equivalence relation defined by some formula $\epsilon({\mr x},{\mr y})\in\BDelta(\grZ)$.
-% We define $\BDelta(\grZ)$-type-definable equivalence relations similarly.
-% Note that if $\epsilon({\mr x},{\mr y})$ is a $\BDelta(\grZ)$-definable, or type-definable, equivalence relation then $\epsilon({\mr x},{\mr a})$, for any ${\mr a}\in\mrX$, is equivalent to a $\BDelta(\grZ)$-formula, respectively a $\BDelta(\grZ)$-type.
+When the context suggests it, $\BDelta(\grZ)$ will denote the broader class that includes also formulas obtained substituting ${\mr y}$ for ${\mr x}$ and is closed under Boolean connectives.
+A $\BDelta(\grZ)$-definable equivalence relation is an equivalence relation defined by some formula $\epsilon({\mr x},{\mr y})\in\BDelta(\grZ)$.
+We define $\BDelta(\grZ)$-type-definable equivalence relations similarly.
+Note that if $\epsilon({\mr x},{\mr y})$ is a $\BDelta(\grZ)$-definable, or type-definable, equivalence relation then $\epsilon({\mr x},{\mr a})$, for any ${\mr a}\in\mrX$, is equivalent to a $\BDelta(\grZ)$-formula, respectively a $\BDelta(\grZ)$-type.
 
-% An equivalence relation is bounded if it has a small number of equivalence classes.
+An equivalence relation is bounded if it has a small number of equivalence classes.
 
 \begin{definition}\label{def_G00}
-  Let $\Phi^0$ be the collection of $\BDelta(\grZ)$-definable sets with finite $G$-orbit.
-  Let $\Phi^{00}$ be the collection of $\BDelta(\grZ)$-type-definable sets with bounded $G$-orbit.
-  Define\medskip
+  Let $\Phi^0$ be the collection of sets that are equivalence classes of a bounded $G$-invariant $\BDelta(\grZ)$-type-definable equivalence relation.
+  Let $\Phi^{00}$ be the collection of sets that are equivalence classes of a bounded $G$-invariant $\BDelta(\grZ)$-type-definable equivalence relation.
+  Define
+  \smallskip
 
   \ceq{\hfill\emph{$G^0$}}{=}{\Stab(\Phi^0)}\medrel{=}$\displaystyle\bigcap\big\{\Stab(\mrD)\ :\  \mrD\in\Phi^0\}$
 
@@ -744,7 +742,7 @@ We will prove that this is the case under the assumption of stability.
 %   Work under the assumption that $\mrX$ is type-definable and that $G$ acts transitively.
 %   How are the following properties connected?
 %   \begin{itemize}
-%     \item [1.] $\gamma_{G^1}({\mr x})$ is closed under conjunction
+%     \item [1.] $\Sigma_{G^1}({\mr x})$ is closed under conjunction
 %     \item [2.] the types in $Q_G$ are $G^1$-stationary
 %     \item [3.] $Q_G$ has small cardinality
 %     \item [4.] $G$ acts transitively on $Q_G$
@@ -781,9 +779,9 @@ We will prove that this is the case under the assumption of stability.
 %   % \ceq{}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\neq\varnothing\textrm{ for any }G\textrm{-syndetic }\mrD\in\BDelta(\grZ)\big\}}\smallskip
 
 
-%   % \ceq{\hfill G^1}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\in\gamma_G({\mr x})\textrm{ whenever }\mrD\in\gamma_G({\mr x})\big\}}\smallskip
+%   % \ceq{\hfill G^1}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\in\Sigma_G({\mr x})\textrm{ whenever }\mrD\in\Sigma_G({\mr x})\big\}}\smallskip
 
-%   % \ceq{}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\neq\varnothing\textrm{ whenever }\mrD\in\gamma_G({\mr x})\big\}}\smallskip
+%   % \ceq{}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\neq\varnothing\textrm{ whenever }\mrD\in\Sigma_G({\mr x})\big\}}\smallskip
 
 %   % \ceq{}{\subseteq}{G^0.}
 
@@ -926,8 +924,8 @@ Note that when $G$ acts transitively on $\mrX$, equivalence classes of $G$-invar
 % To obtain closure under intersection, we need to push the concept to a higher level of complexity.
 
 Work relative to some given $\mrY\subseteq\mrX$.
-A set $\mrD$ is \emph{strongly $H$-syndetic\/} if for every finite $F\subseteq H$ the set $\cap\,F{\cdot}\mrD$ is $H$-syndetic (recall that $F{\cdot}\mrD$ stands for $\{h{\cdot}\mrD : h\in F\}$).
-Dually, we say that $\mrD$ is \emph{weakly $H$-thick\/} if for some finite $F\subseteq H$ the set $\cup\,F{\cdot}\mrD$ is thick.
+A set $\mrD$ is \emph{strongly $G$-syndetic\/} if for every finite $F\subseteq G$ the set $\cap\,F{\cdot}\mrD$ is $G$-syndetic (recall that $F{\cdot}\mrD$ stands for $\{h{\cdot}\mrD : h\in F\}$).
+Dually, we say that $\mrD$ is \emph{weakly $G$-thick\/} if for some finite $F\subseteq G$ the set $\cup\,F{\cdot}\mrD$ is thick.
 Again, the same properties may be attributed to formulas and types when every conjunction of formulas in the type has the property.
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
@@ -937,45 +935,50 @@ These are terminologies that defy my intuition.
 
 \begin{lemma}\label{lem_strongly_syndetic}
   Work relative to some given $\mrY\subseteq\mrX$.
-  The intersection of two strongly $H$-syndetic sets is strongly $H$-syndetic.
+  The intersection of two strongly $G$-syndetic sets is strongly $G$-syndetic.
 \end{lemma}
 
 \begin{proof}
-  Let ${\mr\D}$ and ${\mr\C}$ be strongly $H$-syndetic and let $C\subseteq H$ be an arbitrary finite set.
-  It suffices to prove that $\mrB=\cap\, C{\cdot}({\mr\C}\cap{\mr\D})$ is $H$-syndetic. 
+  Let ${\mr\D}$ and ${\mr\C}$ be strongly $G$-syndetic and let $C\subseteq G$ be an arbitrary finite set.
+  It suffices to prove that $\mrB=\cap\, C{\cdot}({\mr\C}\cap{\mr\D})$ is $G$-syndetic. 
   Clearly $\mrB={\mr\C'}\cap{\mr\D'}$, where ${\mr\C'}=\cap\, C{\cdot}{\mr\C}$ and ${\mr\D'}=\cap\, C{\cdot}{\mr\D}$.
-  Note that ${\mr\C'}$ and ${\mr\D'}$ are both strongly $H$-syndetic.
-  In particular $\mrY\subseteq\cup\,F{\cdot}\mr\D'$ for some finite $F\subseteq H$.
+  Note that ${\mr\C'}$ and ${\mr\D'}$ are both strongly $G$-syndetic.
+  In particular $\mrY\subseteq\cup\,F{\cdot}\mr\D'$ for some finite $F\subseteq G$.
   Note that
   
   \ceq{\hfill\cup\,F{\cdot}\mrB}{=}{\cup\,F{\cdot}\big[{\mr\C'}\ \cap\ {\mr\D'}\big]}
-
-  \ceq{}{\supseteq}{\cup\,F{\cdot}\big[\big(\cap\, F{\cdot}{\mr\C'}\big)\ \cap\ {\mr\D'}\big]}
   
   \ceq{}{\supseteq}{ \big(\cap\, F{\cdot}{\mr\C'}\big)\ \cap\ \big(\cup\,F{\cdot}{\mr\D'}\big)}
   
   \ceq{}{=}{\cap\, F{\cdot}{\mr\C'}}
   
-  As ${\mr\C'}$ is strongly $H$-syndetic, $\cap\, F{\cdot}{\mr\C'}$ is $H$-syndetic.
-  Therefore $\cup\,F{\cdot}\mrB$ is also $H$-syndetic.
-  The $H$-syndeticity of $\mrB$ follows.
+  As ${\mr\C'}$ is strongly $G$-syndetic, $\cap\, F{\cdot}{\mr\C'}$ is $G$-syndetic.
+  Therefore $\cup\,F{\cdot}\mrB$ is also $G$-syndetic.
+  The $G$-syndeticity of $\mrB$ follows.
 \end{proof}
 
 Define the following type
 
-\ceq{\hfill\emph{${}^{\rm s}\kern-.2ex\gamma_{H,\Y}({\mr x})$}}{=}{\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is strongly }H\textrm{-syndetic relative to }\mrY\}.}\smallskip
+\ceq{\hfill\emph{${\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})$}}{=}{\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is strongly }G\textrm{-syndetic relative to }\mrY\}.}\smallskip
 
-Note that Theorem~\ref{thm_gammaK} shows that $\gamma_{G^1}({\mr x})\subseteq{}^{\rm s}\kern-.2ex\gamma_G({\mr x})$.
+Note that Theorem~\ref{thm_gammaK} shows that $\Sigma_{G^1}({\mr x})\subseteq{\mathstrut}^{\rm s}\kern-.2ex\Sigma_G({\mr x})$.
 
 \begin{corollary}\label{corol_str_gen}
   Work relative to some given $\mrY\subseteq\mrX$.
-  Then ${}^{\rm s}\kern-.2ex\gamma_{H,\Y}({\mr x})$ is finitely consistent, strongly $H$-syndetic, and $H$-invariant.
+  Then ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})$ is finitely consistent, strongly $G$-syndetic, and $G$-invariant.\smallskip
+
+  Moreover, ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})$ is the maximal $G$-syndetic $G$-invariant type and\medskip
+
+
+  \ceq{\hfill{\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})}{=}{\bigcap_{q\in Q_{G,\Y}}q({\mr x})}.\smallskip
+
+  Where $Q_{G,\Y}$ is as in Definition~\ref{def_Q} but relativized to $\mrY$.  
 \end{corollary}
 
 \begin{proof}
-  Strong $H$-syndeticity is an immediate consequence of Lemma~\ref{lem_strongly_syndetic}.
+  Strong $G$-syndeticity is an immediate consequence of Lemma~\ref{lem_strongly_syndetic}.
   Finite consistency is a consequence of syndeticity.
-  Finally, $H$-invariance is clear because any translate of a strongly $H$-syndetic formula is also strongly $H$-syndetic.
+  Finally, $G$-invariance is clear because any translate of a strongly $G$-syndetic formula is also strongly $G$-syndetic.
 \end{proof}
 
 The following is similar to Corollary~\ref{corol_q_pers}, but now we obtain also the converse implication.
@@ -984,71 +987,71 @@ The following is similar to Corollary~\ref{corol_q_pers}, but now we obtain also
   Work relative to some given $\mrY\subseteq\mrX$.
   For every $\mrD\in\BDelta(\grZ)$ the following are equivalent
   \begin{itemize}
-    \item [1.] ${}^{\rm s}\kern-.2ex\gamma_{H,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent
-    \item [2.] $\mrD$ is weakly $H$-thick.
+    \item [1.] ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent
+    \item [2.] $\mrD$ is weakly $G$-thick.
   \end{itemize}
 \end{corollary}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2. 
   Similar to Corollary~\ref{corol_q_pers}.
-  If ${}^{\rm s}\kern-.2ex\gamma_{H,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent, then $\neg\mrD$ is strongly $H$-syndetic.
-  From Fact~\ref{fact_fip}, we obtain that $\neg\mrD$ not being strongly $H$-syndetic is equivalent to $\mrD$ being weakly $H$-thick.
+  If ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent, then $\neg\mrD$ is strongly $G$-syndetic.
+  From Fact~\ref{fact_fip}, we obtain that $\neg\mrD$ not being strongly $G$-syndetic is equivalent to $\mrD$ being weakly $G$-thick.
 
   \ssf2$\IMP$\ssf1.
-  Suppose ${}^{\rm s}\kern-.2ex\gamma_{H,\Y}({\mr x})\proves{\mr x}\notin\mrD$.
-  Then $\neg\mrD$ is strongly $H$-syndetic.
-  From Fact~\ref{fact_fip}, $\mrD$ is not weakly $H$-thick.
+  Suppose ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})\proves{\mr x}\notin\mrD$.
+  Then $\neg\mrD$ is strongly $G$-syndetic.
+  From Fact~\ref{fact_fip}, $\mrD$ is not weakly $G$-thick.
 \end{proof}
 
 The following theorem asserts that weak thickness is partition regular.
 
 \begin{theorem}\label{thm_wt_partreg}
   Work relative to some given $\mrY\subseteq\mrX$.
-  If $\mrC\cup\mrB$ is weakly $H$-thick then $\mrB$ or $\mrC$ is weakly $H$-thick.
+  If $\mrC\cup\mrB$ is weakly $G$-thick then $\mrB$ or $\mrC$ is weakly $G$-thick.
 \end{theorem}
 
 \begin{proof}
-  As ${}^{\rm s}\kern-.2ex\gamma_{H,\Y}({\mr x})$ is closed under conjunction.
-  If ${\mr x}\in \mrC\cup\mrB$ is finitely consistent with ${}^{\rm s}\kern-.2ex\gamma_{H,\Y}({\mr x})$ then so is one of the two sets.
+  As ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})$ is closed under conjunction.
+  If ${\mr x}\in \mrC\cup\mrB$ is finitely consistent with ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})$ then so is one of the two sets.
 \end{proof}
 
-% Assume that every $\mrD\in\BDelta(\grZ)$ has a small $H$-orbit.
-% A set $\mrD$ with small $H$-orbit is $H$-thick if and only if $\cap\,H{\cdot}\mrD$ is nonempty.
-% Note that the latter set is always $H$-invariant.
+% Assume that every $\mrD\in\BDelta(\grZ)$ has a small $G$-orbit.
+% A set $\mrD$ with small $G$-orbit is $G$-thick if and only if $\cap\,G{\cdot}\mrD$ is nonempty.
+% Note that the latter set is always $G$-invariant.
 
 % \begin{proposition}
-%   Assume that every $\mrD\in\BDelta(\grZ)$ has a small $H$-orbit.
+%   Assume that every $\mrD\in\BDelta(\grZ)$ has a small $G$-orbit.
 %   Then the following are equivalent for every $\mrD\in\BDelta(\grZ)$
 %   \begin{itemize}
-%     \item [1.] $\mrD$ is weakly $H$-thick
-%     \item [2.]$\mrD$ is syndetic relative to some $H$-invariant $\BDelta(\grZ)$-type-definable set $\mrC$.
+%     \item [1.] $\mrD$ is weakly $G$-thick
+%     \item [2.]$\mrD$ is syndetic relative to some $G$-invariant $\BDelta(\grZ)$-type-definable set $\mrC$.
 %   \end{itemize}
 % \end{proposition}
 
 % \begin{proof}
-%   \ssf1$\IMP$\ssf2. Let $F\subseteq H$ be finite and such that $\cup\,F{\cdot}\mrD$ is $H$-thick.
-%   Then \ssf2 holds if we take $\cap\,H{\cdot}(\cup\,F{\cdot}\mrD)$ as $\mrC$.
+%   \ssf1$\IMP$\ssf2. Let $F\subseteq G$ be finite and such that $\cup\,F{\cdot}\mrD$ is $G$-thick.
+%   Then \ssf2 holds if we take $\cap\,G{\cdot}(\cup\,F{\cdot}\mrD)$ as $\mrC$.
 
-%   \ssf2$\IMP$\ssf1. Let $F\subseteq H$ be finite and such that $\mrC\subseteq\cup\,F{\cdot}\mrD$.
-%   As $\mrC$ is, trivially, $H$-thick, $\mrD$ is weakly $H$-thick.
+%   \ssf2$\IMP$\ssf1. Let $F\subseteq G$ be finite and such that $\mrC\subseteq\cup\,F{\cdot}\mrD$.
+%   As $\mrC$ is, trivially, $G$-thick, $\mrD$ is weakly $G$-thick.
 % \end{proof}
 
 % Note that 
 % %from Corollary~\ref{corol_str_gen} and~\ref{corol_q_w_pers} 
-% the $H$-translate of a weakly $H$-thick type is weakly $H$-thick.
+% the $G$-translate of a weakly $G$-thick type is weakly $G$-thick.
 
 \begin{exercise}
   Prove that the following are equivalent
   \begin{itemize}
-    \item[1.] $\D$ is weakly $H$-thick
-    \item[2.] $\D=\C\cap\B$ for some $H$-syndetic set $\B$ and some $H$-thick set $\C$
-    \item [3.] there is a non $H$-syndetic set $\C$ such that $\D\cup\C$ is syndetic.
+    \item[1.] $\D$ is weakly $G$-thick
+    \item[2.] $\D=\C\cap\B$ for some $G$-syndetic set $\B$ and some $G$-thick set $\C$
+    \item [3.] there is a non $G$-syndetic set $\C$ such that $\D\cup\C$ is syndetic.
   \end{itemize}
 \end{exercise}
 
 \begin{exercise}
-  Prove that $H$-syndetic sets are weakly $H$-thick.
+  Prove that $G$-syndetic sets are weakly $G$-thick.
 \end{exercise}
 
 \begin{question}
@@ -1119,9 +1122,9 @@ The notions introduced in Section~\ref{strong_syndeticity} offer some hint.
 
 \begin{proof}
   By Proposition~\ref{prop_wpers_finite_diameter}, it suffices to prove that ${\mr\X_n}$ is weakly thick.
-  By Corollary~\ref{corol_q_w_pers} it suffices to show that for some $n$ the type ${}^{\rm s}\kern-.2ex\gamma_G({\mr x})$ is finitely satisfiable in ${\mr\X_n}$.
+  By Corollary~\ref{corol_q_w_pers} it suffices to show that for some $n$ the type ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G({\mr x})$ is finitely satisfiable in ${\mr\X_n}$.
   Suppose not.
-  Let $\psi_n({\mr x})\in{}^{\rm s}\kern-.2ex\gamma_G$ be a formula that is not satisfied in $\mr\X_n$.
+  Let $\psi_n({\mr x})\in{}^{\rm s}\kern-.2ex\Sigma_G$ be a formula that is not satisfied in $\mr\X_n$.
   Then the type $p({\mr x})=\{\psi_n({\mr x}):n\in\omega\}$ is finitely consistent.
   From the type-definablity of $\mrX$ it follows that $p({\mr x})$ has a realization in $\mrX$.
   As this realization belongs to some ${\mr\X_n}$ we contradict the definition of $\psi_n({\mr x})$.
@@ -1177,10 +1180,10 @@ We will see an example in Theorem~\ref{thm_thick_finsat}.
   This is a contradiction because by Theorem~\ref{thm_syndetic_invariant} $p({\mr x})\proves{\mr x}\in\mrC$ and $p({\mr x})\proves{\mr x}\in\mrD$.
 
   % \ssf2$\IMP$\ssf1.
-  % By \ssf2, $\gamma_H({\mr x})$ is consistent.
-  % Then $\mrC$ is $H$-syndetic if and only if $\gamma_H({\mr x})\proves{\mr x}\in\mrC$.
+  % By \ssf2, $\Sigma_H({\mr x})$ is consistent.
+  % Then $\mrC$ is $H$-syndetic if and only if $\Sigma_H({\mr x})\proves{\mr x}\in\mrC$.
   % If $\mrD$ is $H$-thick, then $\neg\mrD$ is not $H$-syndetic.
-  % Then $\gamma_H({\mr x})\notproves{\mr x}\notin\mrD$ by what remarked above.
+  % Then $\Sigma_H({\mr x})\notproves{\mr x}\notin\mrD$ by what remarked above.
   % Then $\mrD$ is $H$-wide by Theorem~\ref{thm_syndetic_invariant2}.
 
   \ssf4$\IMP$\ssf1. By Theorem~\ref{thm_wt_partreg}
@@ -1190,7 +1193,7 @@ We will see an example in Theorem~\ref{thm_thick_finsat}.
 % Vice vesa, if the equivalent conditions in Theorem~\ref{thm_coalesce} hold for $H\le G$, then $H\le G^\omega$. 
 
 A subset $\mrY\subseteq\mrX$ is \emph{$H$-stationary\/} if there exists a unique $H$-invariant $p({\mr x})\in S_{\Delta,\Y}(\grZ)$.
-When $\gamma_{H,\Y}({\mr x})$ is consistent, by \ssf1 in Theorem~\ref{thm_syndetic_invariant2} this is equivalent to requiring that $\mrD$ and $\neg\mrD$ are not both wide relative to $\mrY$.
+When $\Sigma_{H,\Y}({\mr x})$ is consistent, by \ssf1 in Theorem~\ref{thm_syndetic_invariant2} this is equivalent to requiring that $\mrD$ and $\neg\mrD$ are not both wide relative to $\mrY$.
 The conditions in Theorem~\ref{thm_coalesce} together with stationarity, produce further simplification.
 
 \begin{fact}\label{fact_starionarity_thick_syndetic}
@@ -1206,7 +1209,7 @@ The conditions in Theorem~\ref{thm_coalesce} together with stationarity, produce
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  By assumption, $\gamma_{H,\Y}({\mr x})$ is consistent.
+  By assumption, $\Sigma_{H,\Y}({\mr x})$ is consistent.
   Then $H$-syndetic $\BDelta({\grZ})$-sets are $H$-thick by Corollary~\ref{corol_def_mu}.
   Finally, they are  $H$-wide by \ssf1 in Theorem~\ref{thm_coalesce}.
   (Stationarity is not required in this direction.)
@@ -1262,7 +1265,7 @@ Therefore it coincides with the orbit under the action of $\Aut(\UDelta)$.
 
 % \begin{proposition}\label{prop_Gsyndetic_thick}
 %   Let $\mrD$ be a $\BDelta(\grZ)$-definable set.
-%   Assume that $\gamma_H({\mr x})$ is consistent.
+%   Assume that $\Sigma_H({\mr x})$ is consistent.
 %   Then \ssf1$\IMP$\ssf2 holds, where
 %   \begin{itemize}
 %     \item [1.] $\mrD$ is $\grZ$-syndetic
@@ -1270,7 +1273,7 @@ Therefore it coincides with the orbit under the action of $\Aut(\UDelta)$.
 %   \end{itemize}
 % \end{proposition}
 
-% We will revisit this proposition under the assumption of stability and with $\Autf(\U^\Delta)$ for $H$~--~then the consistency of $\gamma_H({\mr x})$ is guaranteed, and also the converse implication holds.
+% We will revisit this proposition under the assumption of stability and with $\Autf(\U^\Delta)$ for $H$~--~then the consistency of $\Sigma_H({\mr x})$ is guaranteed, and also the converse implication holds.
 % See Theorem~\ref{thm_Gsyndetic_thick}.\vspace*{-0.5\baselineskip}
 % %
 % \begin{proof}
