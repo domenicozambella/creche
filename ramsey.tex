@@ -212,16 +212,18 @@ Hence ${\mr\bar a}$ is indiscernible over $h[M]$.
 %%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
 \section{Idempotent orbits in semigroups}\label{semigroups}
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{22ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 In this and the following sections we focus on semigroups definable in a first-order structure.
-For a lighter notation, we assume that the semigroup operation \emph{$\ \cdot\ $} is among the symbols of $L$ and that the whole monster model is a semigroup.
+For a lighter notation, we assume that the semigroup operation \emph{$\ \cdot\ $} is among the symbols of $L$ and that the whole monster model is a semigroup \emph{$\mrS$\/} = $\U$. 
 
 In this section we work over a given model $M$.
-For any two sets $\mrA,\mrB\subseteq\U^{\mr x}$ we define
+For any two sets $\mrA,\mrB\subseteq\mrS$ we define
 
 \ceq{\hfill\emph{$\mrA*\mrB$}}
 {=}
@@ -397,66 +399,66 @@ A \emph{$\cpaw$-chain\/} in $\U$ is a tuple ${\mr\bar a}\in\U^{\le\omega}$ such 
 The requirements on  $\cpaw$ are hardly restrictive.
 For example, on a free semigroup we can take the preorder relation given by the length of the words.
 %
-Or, on any semigroup $G$, we could take the trivial relation $G^2$ --the theorem below would remain nontrivial.
+Or, on any semigroup $S$, we could take the trivial relation $S^2$ --the theorem below would remain nontrivial.
 
 \theoremstyle{mio}
 \newtheorem{Hindman}[thm]{Hindman's Theorem}
 \begin{Hindman}\label{thm_Hindman}
-Let $\cpaw$ be a relation on a semigroup $G$.
+Let $\cpaw$ be a relation on a semigroup $S$.
 %
-Assume that $G$ is  \cpawdot-closed and $\cpaw$-covered.
+Assume that $S$ is  \cpawdot-closed and $\cpaw$-covered.
 %
-Then for every finite coloring of $G$ 
+Then for every finite coloring of $S$ 
 there is an infinite $\cpaw$-chain $\bar a$ such that $\fp\,\bar a$ is monochromatic.
 \end{Hindman}
 
-This implies that every commutative semigroup $G$ has an infinite monochromatic subset closed under finite sums of distinct elements (order $G$ arbitrarily).
+This implies that every commutative semigroup $S$ has an infinite monochromatic subset closed under finite sums of distinct elements (order $S$ arbitrarily).
 
 Our proof follows closely the proof of Ramsey's theorem~\ref{thm_Ramsey}.
 %
 The novelty is all in Lemma~\ref{lem_Hindman}.
 
 \begin{proof}
-We interpret $G$ as a structure in a language 
+We interpret $S$ as a structure in a language 
 that extends the natural language of semigroups
-with a symbol for $\cpaw$ and one for each subset of $G$.
+with a symbol for $\cpaw$ and one for each subset of $S$.
 %
-Let $\U$ be a saturated elementary superstructure of $G$.
+Let $\mrS$ be a saturated elementary superstructure of $S$.
 %
 As observed in Remark~\ref{rk_coheir_stationary}, 
-the language makes $\cnonfork_G$ trivially stationary.
+the language makes $\cnonfork_S$ trivially stationary.
 
-We write ${\mr\G'}$ for the type-definable set $\{{\mr x} : G\cpaw{\mr x}\}$,
-which is nonempty because $G$ is $\cpaw$-covered.
+We write ${\mr\S'}$ for the type-definable set $\{{\mr x} : S\cpaw{\mr x}\}$,
+which is nonempty because $S$ is $\cpaw$-covered.
 %
-We claim that ${\mr\G'}$ is idempotent.
+We claim that ${\mr\S'}$ is idempotent.
 %
-In fact, if ${\mr a},{\mr b}\in{\mr\G'}$ 
-then, as $G\cpaw{\mr a},{\mr b}$ and ${\mr a}\cnonfork_G{\mr b}$, 
+In fact, if ${\mr a},{\mr b}\in{\mr\S'}$ 
+then, as $S\cpaw{\mr a},{\mr b}$ and ${\mr a}\cnonfork_S{\mr b}$, 
 we must have that ${\mr a}\cpaw{\mr b}$.
 %
-Therefore, from the \cpawdot-closure of $\cpaw$ we infer ${\mr a}{\cdot}{\mr b}\in{\mr\G'}$.
+Therefore, from the \cpawdot-closure of $\cpaw$ we infer ${\mr a}{\cdot}{\mr b}\in{\mr\S'}$.
 
-Let ${\mr g}$ be an element of ${\mr\G'}$ with idempotent orbit 
+Let ${\mr g}$ be an element of ${\mr\S'}$ with idempotent orbit 
 as given by Corollary~\ref{corol_idempotent}.
 %
-Let $p({\mr x})\in S(\U)$ be a global coheir of $\tp({\mr g}/G)$.
+Let $p({\mr x})\in S(\U)$ be a global coheir of $\tp({\mr g}/S)$.
 %
 Let ${\mr\bar g}$ a coheir sequence of $p({\mr x})$, that is,
 
-\ceq{\hfill {\mr g_i}}{\models}{p_{\restriction G,\,{\mr g_{\restriction i} }  }({\mr x}).}
+\ceq{\hfill {\mr g_i}}{\models}{p_{\restriction S,\,{\mr g_{\restriction i} }  }({\mr x}).}
 
 We write ${\mr \cev{g}_{\restriction i}}$ for the tuple ${\mr g_{i-1}},\dots,{\mr g_{0}}$.
 %
-By the idempotency of ${\mr g}_G$ and Proposition~\ref{prop_orbits_main}, 
-${\mr h}\equiv_G{\mr g}$ for all ${\mr h}\in \fp\,{\mr \cev{g}_{\restriction i}}$ and all $i$.
+By the idempotency of ${\mr g}_S$ and Proposition~\ref{prop_orbits_main}, 
+${\mr h}\equiv_S{\mr g}$ for all ${\mr h}\in \fp\,{\mr \cev{g}_{\restriction i}}$ and all $i$.
 It follows in particular that $\fp\,{\mr \cev{g}_{\restriction i}}$ is monochromatic, 
 say all its elements have color $1$.
 %
-Now, we use the sequence ${\mr\bar g}$ to define $\bar a\in G^\omega$
+Now, we use the sequence ${\mr\bar g}$ to define $\bar a\in S^\omega$
 such that all elements of $\fp\,\bar a$ have color $1$.
 
-Assume as induction hypothesis that we have $a_{\restriction i}\in G^i$ 
+Assume as induction hypothesis that we have $a_{\restriction i}\in S^i$ 
 such that all elements of $\fp(a_{\restriction i},\,{\mr g_0})$ have color $1$.
 %
 Our goal is to find $a_i$ 
@@ -469,7 +471,7 @@ In fact, the elements of $\fp(a_{\restriction i},\,{\mr\cev{g}_{\restriction j}}
 have the form $b\cdot{\mr h}$ for some $b\in\fp(a_{\restriction i})$
 and ${\mr h}\in\fp({\mr\cev{g}_{\restriction j}})$.
 %
-As ${\mr h}\equiv_G{\mr g}$, we conclude that $b\cdot{\mr h}\equiv_Gb\cdot {\mr g_0}$, which proves the claim.
+As ${\mr h}\equiv_S{\mr g}$, we conclude that $b\cdot{\mr h}\equiv_Sb\cdot {\mr g_0}$, which proves the claim.
 
 Let $\phi(a_{\restriction i},\,{\mr g_{i+1}},\,{\mr g_{\restriction i+1}})$ 
 say that all elements of $\fp(a_{\restriction i},\,{\mr\cev{g}_{\restriction i+2}})$ have color $1$.
@@ -482,14 +484,78 @@ Hence all elements of $\fp(a_{\restriction i+1},\,{\mr g_{\restriction i+1}})$ h
 Therefore $a_i$ is as required.
 \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Hales-Jewett Theorem}
 \label{HJ}
 
 The Hales-Jewett Theorem is a purely combinatorial statement 
 that implies the van der Waerden Theorem.
 
-We need a few definitions.
 We work with the same notation as Section~\ref{semigroups}.
+We need a few definitions.
+Let $\mrA\subseteq\mrS$.
+When $\mrS*\mrA\subseteq\mrA$, we say that $\mrA$ is a \emph{left-ideal.}
+% We arte interested in left-ideal that are type-definable (over $M$).
+A \emph{minimal\/} left-ideal is one that does not properly contain any other left-ideal.
+
+\begin{fact}
+  Every left-ideal contains a minimal left-ideal and this is type-definable.
+\end{fact}
+
+\begin{proof}
+  First note that, if $\mrA$ is an left-ideal and ${\mr b}\in\mrA$, then $\mrS*{\mr b}$ is a left-ideal contained in $\mrA$ that is type-definable.
+  Given any left-ideal $\mrA$ ideal we construct a maximal descending chain of type-definable letft-ideals contained in $\mrA$.
+  By compactness the intersection of this chain is nonempty.
+  By what remarked above, it is a minimal left-ideal.
+\end{proof}
+
+Note that every left-ideal is an idempotent set and therefore contains idempotent elements.
+
+\begin{lemma}
+  Let $\mrM$ be a minimal left-ideal.
+  Let ${\mr u},{\mr v}\in\mrM$ be two idempotents.
+  Then the followings hold
+  \begin{itemize}
+    \item [1.] ${\mr a}*{\mr u}={\mr a}$ for every ${\mr a}\in\mrM$ 
+    \item [2.] $*$ is a group operation on ${\mr u}*\mrM$ with identity ${\mr u}$
+    \item [3.] ${\mr a}\mapsto{\mr v}*{\mr a}$ define a group isomorphism between ${\mr u}*\mrM$ and ${\mr v}*\mrM$
+    \item [4.] if ${\mr u}$ and ${\mr v}$ are distinct (i.e.\@ have distict orbits), then ${\mr u}*\mrM$ and ${\mr v}*\mrM$ are disjoint
+    \item [5.] $\mrM$ is covered by sets of the form ${\mr u}*\mrM$ as ${\mr u}\in\mrM$ ranges over the idempotents.\smallskip
+  \end{itemize}
+\end{lemma}
+
+\begin{proof}
+  (1) \ By minimality $\mrM*{\mr u}=\mrM$.
+  Therefore ${\mr a'}*{\mr u}={\mr a}$ for some ${\mr a'}\in\mrM$.
+  Then ${\mr a}*{\mr u}={\mr a'}*{\mr u}*{\mr u}={\mr a}$.
+
+  (2) \ By (1) and idempotency, ${\mr u}$ is an identity of ${\mr u}*\mrM$.
+  It suffices to prove the existence of a left inverse.
+  Let ${\mr a}\in{\mr u}*\mrM$.
+  By minimality $\mrM*{\mr a}=\mrM$.
+  Therefore ${\mr u}*\mrM*{\mr a}={\mr u}*\mrM$.
+  Then ${\mr u}*{\mr a'}*{\mr a}={\mr u}$ for some ${\mr a'}\in\mrM$.
+  Then ${\mr u}*{\mr a'}$ is the left inverse of ${\mr a}$.
+
+  (3) \ By (1), the map ${\mr a}\mapsto{\mr v}*{\mr a}$ is a semigroup homomorphism.
+   By (1) and (2), its inverse is ${\mr a}\mapsto{\mr u}*{\mr a}$.
+   So, ${\mr a}\mapsto{\mr v}*{\mr a}$ is a group isomomorphism.
+
+  (4) \ Suppose there is an ${\mr a}\in{\mr u}*\mrM\cap{\mr v}*\mrM$.
+  Let ${\mr a'}\in\mrM$ be such that ${\mr a}*{\mr a'}={\mr u}$.
+  Then ${\mr u}\in{\mr v}*\mrM*{\mr a'}={\mr v}*\mrM$.
+  Then ${\mr u}$ is an identity in the group ${\mr v}*\mrM$.
+
+
+  (5) \ Let ${\mr a}\in\mrM$.
+  As  $\mrM*{\mr a}=\mrM$, the set $\{ {\mr c}\ : {\mr c}* {\mr a} =  {\mr a}\}$ is nonempty.
+  As this is a type-definable idempotent set, it contains an idempotent element ${\mr u}$.
+  Then ${\mr a}\in{\mr u}*\mrM$.
+\end{proof}
+
 % Let $\mrA$ be an idempotent set that is type-definable over $M$.
 We say that an element ${\mr c}$ is \emph{left-minimal\/} (w.r.t.\@ $\mrA$) if 
 ${\mr c}\in\mrA*{\mr g}$ for every ${\mr g}\in\mrA*{\mr c}$.
@@ -585,45 +651,45 @@ which is in turn contained in the set on the r.h.s.
  
 The following theorem is an elegant rephrasing of the celebrated Hales-Jewett Theorem.
 
-Let $G$ be a semigroup.
+Let $S$ be a semigroup.
 A subsemigroup $C$ is \emph{nice\/} if it has the property that if $a{\cdot}b\in C$ then $a,b\in C$.
 
 \begin{void}[Hales-Jewett Theorem (Koppelberg's formulation)]\label{thm_abstract_HJ}
-Let $G$ be a semigroup with an infinite nice subsemigroup $C$.
-Let $\Sigma$ be a finite set of retractions of $G$ onto $C$, that is, 
-homomorphisms $\sigma:G\to C$ such that $\sigma_{\restriction C}={\rm id}_C$.
+Let $S$ be a semigroup with an infinite nice subsemigroup $C$.
+Let $\Sigma$ be a finite set of retractions of $S$ onto $C$, that is, 
+homomorphisms $\sigma:S\to C$ such that $\sigma_{\restriction C}={\rm id}_C$.
 Then, for every finite coloring of $C$,
-there is an $a\in G\sm C$ such that $\{\sigma\,a:\sigma\in\Sigma\}$ is monochromatic.
+there is an $a\in S\sm C$ such that $\{\sigma\,a:\sigma\in\Sigma\}$ is monochromatic.
 \end{void}
 
 \begin{proof}
-Let $G\preceq\U$.
-Here $\U$ is a monster model in a language that expands the natural one with a symbol for all subsets of $G$.
+Let $S\preceq\U$.
+Here $\U$ is a monster model in a language that expands the natural one with a symbol for all subsets of $S$.
 As observed in Remark~\ref{rk_coheir_stationary}, 
-this makes $\cnonfork_G$ stationary.
-Let $\mrC$ be the definable set such that $C=G\cap\mrC$.
+this makes $\cnonfork_S$ stationary.
+Let $\mrC$ be the definable set such that $C=S\cap\mrC$.
 The language contains also symbols for 
 the retractions $\sigma:\U\to\mrC$.
 
 By Proposition~\ref{prop_minimal_existence1} there is ${\mr c}\in\mrC$ that is left-minimal w.r.t.\@ $\mrC$ and has idempotent orbit.
-As $C$ is infinite, we can also require that ${\mr c}\notin G$.
+As $C$ is infinite, we can also require that ${\mr c}\notin S$.
 
-By nicety $\U\sm\mrC$ is an idempotent such that ${\mr c}\cdot_G(\U\sm\mrC)\subseteq(\U\sm\mrC)$.
+By nicety $\U\sm\mrC$ is an idempotent such that ${\mr c}\cdot_S(\U\sm\mrC)\subseteq(\U\sm\mrC)$.
 Therefore we can apply the first claim in Proposition~\ref{prop_minimal_existence2} with $\U\sm\mrC$ for $\mrA$.
-This yields the existence of some  ${\mr g}\in{\mr c}\cdot_G(\U\sm\mrC)\cdot_G{\mr c}$ with idempotent orbit.
+This yields the existence of some  ${\mr g}\in{\mr c}\cdot_S(\U\sm\mrC)\cdot_S{\mr c}$ with idempotent orbit.
 %
 (Incidentally, note that ${\mr c}$ is not left-minimal w.r.t.\@ $\U\sm\mrC$, so the second claim in Proposition~\ref{prop_minimal_existence2} does not apply.)
 %
 Now, from the second claim of Proposition~\ref{prop_HJ_tecnical} we obtain that 
-$\sigma\,{\mr g}\in{\mr c}\cdot_G\mrC\cdot_G{\mr c}$ 
+$\sigma\,{\mr g}\in{\mr c}\cdot_S\mrC\cdot_S{\mr c}$ 
 for all $\sigma\in\Sigma$.
 %
 As these $\sigma\,{\mr g}$ have idempotent orbits, we apply the second claim Proposition~\ref{prop_minimal_existence2} with $\mrC$ for $\mrA$, to conclude that 
-$\sigma\,{\mr g}\equiv_G{\mr c}$ for every $\sigma\in\Sigma$.
+$\sigma\,{\mr g}\equiv_S{\mr c}$ for every $\sigma\in\Sigma$.
 %
 In particular the set $\{\sigma\,{\mr g}:\sigma\in\Sigma\}$ is monochromatic.
 
-Though ${\mr g}$ above need not belong to $G\sm C$, by elementarity $G\sm C$ contains some $a$ with the same property.
+Though ${\mr g}$ above need not belong to $S\sm C$, by elementarity $S\sm C$ contains some $a$ with the same property.
 \end{proof}
 
 Finally we derive the classical Hales-Jewett Theorem from the above algebraic version.
@@ -635,20 +701,20 @@ Finally we derive the classical Hales-Jewett Theorem from the above algebraic ve
 \end{void}
 
 \begin{proof}
-  Let $G$ be the set of the terms n the language of semigroups with parameters in $C$ where at most the variable $x$ occur.
-  Then $G$ is a semigroup under the natural operation and $C$ is a nice subgroup.
+  Let $S$ be the set of the terms n the language of semigroups with parameters in $C$ where at most the variable $x$ occur.
+  Then $S$ is a semigroup under the natural operation and $C$ is a nice subgroup.
   For every $a\in C$ the map $\sigma_a$ that takes $t(x)$ to $t(a)^C$.
-  These are a retraction of $G$ onto $C$.
+  These are a retraction of $S$ onto $C$.
   Hence we can apply Theorem~\ref{thm_abstract_HJ}.
 \end{proof}
 
 \begin{exercise}\label{thm_hom_HJ}
-Let $\Sigma$ be a finite set of homomorphisms $\sigma:G\to C$ 
+Let $\Sigma$ be a finite set of homomorphisms $\sigma:S\to C$ 
 between infinite semigroups such that the following intersection is nonempty for all $c\in C$
 
 \ceq{\hfill\Sigma^{-1}[c]}{=}{\bigcap_{\sigma\in\Sigma}\sigma^{-1}[c]}
 
-Prove that, for every finite coloring of $C$, for some $g\in G$ the set 
+Prove that, for every finite coloring of $C$, for some $g\in S$ the set 
 $\{\sigma\,g\ :\ \sigma\in\Sigma\}$ is monochromatic.
 \end{exercise}
 
@@ -686,11 +752,11 @@ $\{\sigma\,g\ :\ \sigma\in\Sigma\}$ is monochromatic.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notes and references}
 
-The first application of the algebraic structure of $\beta G$ 
-(the Stone-\v{C}ech compactification of a semigroup $G$) 
+The first application of the algebraic structure of $\beta S$ 
+(the Stone-\v{C}ech compactification of a semigroup $S$) 
 to Ramsey Theory is the celebrated Galvin-Glazer proof of Hindman's theorem. 
 Here we have used saturated models in place of Stone-\v{C}ech compactification.
-The idea to replace the semigroup $\beta G$ with types has been pioneered by Ludomir Newelski
+The idea to replace the semigroup $\beta S$ with types has been pioneered by Ludomir Newelski
 in the study of applications of topological dynamics to model theory.
 Our exposition follows~\cite{CZ}.
 
