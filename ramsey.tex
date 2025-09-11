@@ -496,26 +496,37 @@ that implies the van der Waerden Theorem.
 
 We work with the same notation as Section~\ref{semigroups}.
 We need a few definitions.
-Let $\mrA\subseteq\mrS$.
-When $\mrS*\mrA\subseteq\mrA$, we say that $\mrA$ is a \emph{left-ideal.}
-% We arte interested in left-ideal that are type-definable (over $M$).
-A \emph{minimal\/} left-ideal is one that does not properly contain any other left-ideal.
+Let $\mrC\subseteq\mrS$ be an idempotent set.
+If $\mrA\subseteq\mrC$ is such that $\mrC*\mrA\subseteq\mrA$, we say that $\mrA$ is a \emph{left ideal\/} of $\mrC$.
+When $\mrC$ is clear we omit reference to it.
+% We arte interested in left ideal that are type-definable (over $M$).
+A \emph{minimal\/} left ideal is one that does not properly contain any other left ideal.
 
 \begin{fact}
-  Every left-ideal contains a minimal left-ideal and this is type-definable.
+  Assume $\cnonfork_{\!M}$ is stationary.
+  Let $\mrC$ be a type-definable idempotent set.
+  Every left ideal of $\mrC$ contains a minimal left ideal and this is type-definable.
 \end{fact}
 
 \begin{proof}
-  First note that, if $\mrA$ is an left-ideal and ${\mr b}\in\mrA$, then $\mrS*{\mr b}$ is a left-ideal contained in $\mrA$ that is type-definable.
-  Given any left-ideal $\mrA$ ideal we construct a maximal descending chain of type-definable letft-ideals contained in $\mrA$.
+  First note that, if $\mrA\subseteq\mrC$ is an left ideal (of $\mrC$) and ${\mr b}\in\mrA$, then $\mrC*{\mr b}$ is a left ideal contained in $\mrA$ that is type-definable.
+  Therefore, given any left ideal $\mrA$ we construct a maximal descending chain of type-definable left ideals contained in $\mrA$.
   By compactness the intersection of this chain is nonempty.
-  By what remarked above, it is a minimal left-ideal.
+  By what remarked above, this is a minimal left ideal
 \end{proof}
 
-Note that every left-ideal is an idempotent set and therefore contains idempotent elements.
+It is interesting to note that we could define, in the obvious way, \textit{right ideals\/} and even \textit{two-sided ideals.}
+But the above fact does not hold for these ideals because, in general, ${\mr b}*\mrC$ is not type-definable.
 
-\begin{lemma}
-  Let $\mrM$ be a minimal left-ideal.
+It is also useful to remark that when $\mrM$ is a minimal left ideal and ${\mr a}\in\mrM$ then $\mrM*{\mr a}=\mrM$, by minimality.
+On the other hand, though ${\mr a}*\mrM\subseteq\mrM$ for every ${\mr a}\in\mrC$, we cannot infer the converse inclusion.
+
+Note that every left ideal is an idempotent set and therefore contains idempotent elements.
+
+\begin{lemma}\label{lem_leftideal}
+  Assume $\cnonfork_{\!M}$ is stationary.
+  Let $\mrC$ be a type-definable idempotent set.
+  Let $\mrM$ be a minimal left ideal of $\mrC$.
   Let ${\mr u},{\mr v}\in\mrM$ be two idempotents.
   Then the followings hold
   \begin{itemize}
@@ -523,88 +534,40 @@ Note that every left-ideal is an idempotent set and therefore contains idempoten
     \item [2.] $*$ is a group operation on ${\mr u}*\mrM$ with identity ${\mr u}$
     \item [3.] ${\mr a}\mapsto{\mr v}*{\mr a}$ define a group isomorphism between ${\mr u}*\mrM$ and ${\mr v}*\mrM$
     \item [4.] if ${\mr u}$ and ${\mr v}$ are distinct (i.e.\@ have distict orbits), then ${\mr u}*\mrM$ and ${\mr v}*\mrM$ are disjoint
-    \item [5.] $\mrM$ is covered by sets of the form ${\mr u}*\mrM$ as ${\mr u}\in\mrM$ ranges over the idempotents.\smallskip
+    \item [5.] $\mrM$ is covered by sets of the form ${\mr u}*\mrM$ as ${\mr u}\in\mrM$ ranges over the idempotents
+    \item [6.] if ${\mr a}\in\mrC$ is an idempotent, ${\mr u}*{\mr a}={\mr u}$ and ${\mr a}*{\mr u}$ is idempotent.\smallskip
   \end{itemize}
 \end{lemma}
 
 \begin{proof}
-  (1) \ By minimality $\mrM*{\mr u}=\mrM$.
+  \ssf1. By minimality $\mrM*{\mr u}=\mrM$.
   Therefore ${\mr a'}*{\mr u}={\mr a}$ for some ${\mr a'}\in\mrM$.
   Then ${\mr a}*{\mr u}={\mr a'}*{\mr u}*{\mr u}={\mr a}$.
 
-  (2) \ By (1) and idempotency, ${\mr u}$ is an identity of ${\mr u}*\mrM$.
-  It suffices to prove the existence of a left inverse.
-  Let ${\mr a}\in{\mr u}*\mrM$.
-  By minimality $\mrM*{\mr a}=\mrM$.
-  Therefore ${\mr u}*\mrM*{\mr a}={\mr u}*\mrM$.
+  \ssf2. \ By \ssf1 and idempotency, ${\mr u}$ is an identity of ${\mr u}*\mrM$.
+  It suffices to prove the existence of a left inverse (in fact, by algebra, this is also a right inverse).
+  Pick any ${\mr a}\in{\mr u}*\mrM$.
+  From $\mrM*{\mr a}=\mrM$ we obtain that ${\mr u}*\mrM*{\mr a}={\mr u}*\mrM$.
   Then ${\mr u}*{\mr a'}*{\mr a}={\mr u}$ for some ${\mr a'}\in\mrM$.
-  Then ${\mr u}*{\mr a'}$ is the left inverse of ${\mr a}$.
+  This proves that ${\mr u}*{\mr a'}$ is the left inverse of ${\mr a}$.
 
-  (3) \ By (1), the map ${\mr a}\mapsto{\mr v}*{\mr a}$ is a semigroup homomorphism.
-   By (1) and (2), its inverse is ${\mr a}\mapsto{\mr u}*{\mr a}$.
+  \ssf3. By \ssf1, the map ${\mr a}\mapsto{\mr v}*{\mr a}$ is a semigroup homomorphism.
+   By \ssf1 and \ssf2, its inverse is ${\mr a}\mapsto{\mr u}*{\mr a}$.
    So, ${\mr a}\mapsto{\mr v}*{\mr a}$ is a group isomomorphism.
 
-  (4) \ Suppose there is an ${\mr a}\in{\mr u}*\mrM\cap{\mr v}*\mrM$.
+  \ssf4. Suppose there is an ${\mr a}\in{\mr u}*\mrM\cap{\mr v}*\mrM$.
   Let ${\mr a'}\in\mrM$ be such that ${\mr a}*{\mr a'}={\mr u}$.
   Then ${\mr u}\in{\mr v}*\mrM*{\mr a'}={\mr v}*\mrM$.
   Then ${\mr u}$ is an identity in the group ${\mr v}*\mrM$.
 
-
-  (5) \ Let ${\mr a}\in\mrM$.
-  As  $\mrM*{\mr a}=\mrM$, the set $\{ {\mr c}\ : {\mr c}* {\mr a} =  {\mr a}\}$ is nonempty.
+  \ssf5. Let ${\mr a}\in\mrM$.
+  As $\mrM*{\mr a}=\mrM$, the set $\{ {\mr c}\,:\, {\mr c}* {\mr a} =  {\mr a}\}$ is nonempty.
   As this is a type-definable idempotent set, it contains an idempotent element ${\mr u}$.
   Then ${\mr a}\in{\mr u}*\mrM$.
-\end{proof}
 
-% Let $\mrA$ be an idempotent set that is type-definable over $M$.
-We say that an element ${\mr c}$ is \emph{left-minimal\/} (w.r.t.\@ $\mrA$) if 
-${\mr c}\in\mrA*{\mr g}$ for every ${\mr g}\in\mrA*{\mr c}$.
-% In other words, ${\mr a}$ is left-minimal 
-% if $\mrW*{\mr a}$, i.e.\@ the left-ideal generated by the orbit of ${\mr a}$, is minimal among the type-definable left-ideals.
-% The ambient set $\mrW$ and the set of parameters $M$ are often implicit in the context.
-It is immediate that if ${\mr c}$ is left-minimal then any ${\mr b}\in\mrA*{\mr c}$ is also left-minimal.% and $\mrA*{\mr c}=\mrA*{\mr b}$.
-
-\begin{proposition}\label{prop_minimal_existence1}
-Assume $\cnonfork_{\!M}$ is stationary.
-Let $\mrA$ be idempotent and type-definable over $M$.
-Let ${\mr a}$ be arbitrary.
-Then $\mrA*{\mr a}$ contains a left-minimal element ${\mr c}$.
-When $\mrA\cap(\mrA*{\mr a})$ is nonempty, we can also require ${\mr c}\in\mrA\cap(\mrA*{\mr a})$ and that it has idempotent orbit.
-\end{proposition}
-\begin{proof}
-If ${\mr b}\in\mrA*{\mr a}$ then $\mrA*{\mr b}\subseteq\mrA*{\mr a}$.
-By compactness we obtain ${\mr c}\in\mrA*{\mr a}$ such that $\mrA*{\mr b}=\mrA*{\mr c}\subseteq\mrA*{\mr a}$ for every ${\mr b}\in\mrA*{\mr c}$.
-Hence any ${\mr c'}\in\mrA*{\mr c}$ is left-minimal.
-Note that if ${\mr b}\in\mrA$ then by idempotency  $\mrA*{\mr b}\subseteq\mrA$. Hence when $\mrA*{\mr a}$ and $\mrA$ have nonempty intersection, we can also require that ${\mr c}\in\mrA$. 
-Then $\mrA*{\mr c}$ is idempotent. 
-Therefore, by Corollary~\ref{corol_idempotent} there is some ${\mr c'}\in\mrA*{\mr c}$ with idempotent orbit.
-\end{proof}
-
-\begin{proposition}\label{prop_minimal_existence2}
-  Assume $\cnonfork_M$ is stationary.
-  Let $\mrA$ be idempotent and type-definable over $M$.
-  Let $({\mr c})_M$ be idempotent and such that ${\mr c}*\mrA\subseteq\mrA$.
-  Then
-  \begin{itemize}
-  \item[1.]  ${\mr c}*\mrA*{\mr c}$ contains some ${\mr g}$ with idempotent orbit
-  \item[2.] moreover if ${\mr c}$ is left-minimal, then every such ${\mr g}$ is in $({\mr c})_M$.
-  \end{itemize} 
-\end{proposition}
-
-Note, parenthetically, that in general the set in \ssf{1} need not be type-definable.
-Therefore Corollary~\ref{corol_idempotent} does not apply directly, and we need an indirect argument.
-
-\begin{proof}\ssf{1}.  
-From ${\mr c}*\mrA\subseteq\mrA$ we obtain that $\mrA*{\mr c}$ is idempotent.
-As it is  also type-definable, by Corollary~\ref{corol_idempotent} it contains a ${\mr b}$ with idempotent orbit.
-Note that ${\mr b}*{\mr c}=({\mr b})_M$.
-Then $({\mr g})_M={\mr c}*{\mr b}$ is as required by \ssf1.
-
-\ssf{2}. From ${\mr g}\in{\mr c}*\mrA*{\mr c}$ and ${\mr c}*\mrA\subseteq\mrA$ we obtain that ${\mr g}\in\mrA*{\mr c}$.
-Then by left-minimality ${\mr c}\in\mrA*{\mr g}$.
-As $({\mr g})_M$ is idempotent, ${\mr c}*{\mr g}=({\mr c})_M$.
-By the choice of ${\mr g}$, we know that ${\mr c}*{\mr g}=({\mr g})_M$.
-Then \ssf{2} follows.
+  \ssf6. As $\mrM*{\mr a}=\mrM$, there is ${\mr u'}\in\mrM$ such that ${\mr u'}*{\mr a}={\mr u}$.
+  Then, as ${\mr a}$ is idempotent, ${\mr u}*{\mr a}={\mr u}$ follows.
+  From this equality, we easily obtain that ${\mr a}*{\mr u}$ is idempotent.
 \end{proof}
 
 The following is a technical lemma that is required in the proof of the main theorem.
@@ -663,33 +626,27 @@ there is an $a\in S\sm C$ such that $\{\sigma\,a:\sigma\in\Sigma\}$ is monochrom
 \end{void}
 
 \begin{proof}
-Let $S\preceq\U$.
-Here $\U$ is a monster model in a language that expands the natural one with a symbol for all subsets of $S$.
-As observed in Remark~\ref{rk_coheir_stationary}, 
-this makes $\cnonfork_S$ stationary.
-Let $\mrC$ be the definable set such that $C=S\cap\mrC$.
-The language contains also symbols for 
-the retractions $\sigma:\U\to\mrC$.
+Let $S\preceq\mrS$.
+Here $\mrS$ is a monster model in a language that expands the language of semigroups with a symbol for all subsets of $S$.
+As observed in Remark~\ref{rk_coheir_stationary}, this makes $\cnonfork_S$ stationary.
+The language contains also symbols for the retractions $\sigma:S\to C$.
+Let $\mrC$ be the interpretation of $C$ in $\mrS$.
+Then $\sigma:\mrS\to\mrC$.
 
-By Proposition~\ref{prop_minimal_existence1} there is ${\mr c}\in\mrC$ that is left-minimal w.r.t.\@ $\mrC$ and has idempotent orbit.
-As $C$ is infinite, we can also require that ${\mr c}\notin S$.
+By nicety, $\mrS\sm\mrC$ is a left ideal of $\mrS$ (as a matter of fact, a two-sided ideal).
+Let $\mrM\subseteq \mrS\sm\mrC$ be minimal a left ideal and pick an idempotent ${\mr u}\in\mrM$.
+Let $\mrN\subseteq\mrC$ be a minimal left ideal of $\mrC$.
+Let ${\mr v}\in\mrN$ be an idempotent.
 
-By nicety $\U\sm\mrC$ is an idempotent such that ${\mr c}\cdot_S(\U\sm\mrC)\subseteq(\U\sm\mrC)$.
-Therefore we can apply the first claim in Proposition~\ref{prop_minimal_existence2} with $\U\sm\mrC$ for $\mrA$.
-This yields the existence of some  ${\mr g}\in{\mr c}\cdot_S(\U\sm\mrC)\cdot_S{\mr c}$ with idempotent orbit.
-%
-(Incidentally, note that ${\mr c}$ is not left-minimal w.r.t.\@ $\U\sm\mrC$, so the second claim in Proposition~\ref{prop_minimal_existence2} does not apply.)
-%
-Now, from the second claim of Proposition~\ref{prop_HJ_tecnical} we obtain that 
-$\sigma\,{\mr g}\in{\mr c}\cdot_S\mrC\cdot_S{\mr c}$ 
-for all $\sigma\in\Sigma$.
-%
-As these $\sigma\,{\mr g}$ have idempotent orbits, we apply the second claim Proposition~\ref{prop_minimal_existence2} with $\mrC$ for $\mrA$, to conclude that 
-$\sigma\,{\mr g}\equiv_S{\mr c}$ for every $\sigma\in\Sigma$.
-%
-In particular the set $\{\sigma\,{\mr g}:\sigma\in\Sigma\}$ is monochromatic.
+From the second claim of Proposition~\ref{prop_HJ_tecnical} we obtain that 
+$\sigma({\mr v}*{\mr u}*{\mr v})\in{\mr v}*\sigma[\mrM]*{\mr v}\subseteq\mrC*{\mr v}={\mr v}*\mrN$ for all $\sigma\in\Sigma$.
+By \ssf6 of Lemma~\ref{lem_leftideal}, ${\mr v}*{\mr u}*{\mr v}$ is an idempotent.
+Then $\sigma({\mr v}*{\mr u}*{\mr v})$ is idempotent  for all $\sigma\in\Sigma$.
 
-Though ${\mr g}$ above need not belong to $S\sm C$, by elementarity $S\sm C$ contains some $a$ with the same property.
+As ${\mr v}*\mrN$ contains only one idempotent (orbit), all these $\sigma({\mr v}*{\mr u}*{\mr v})$ are elementarily equivalent over $S$.
+In particular the set $\{\sigma({\mr v}*{\mr u}*{\mr v})\,:\,\sigma\in\Sigma\}$ is monochromatic.
+Note that, by nicety, ${\mr v}*{\mr u}*{\mr v}\notin\mrC$.
+Finally, the theorem follows by elementarity.
 \end{proof}
 
 Finally we derive the classical Hales-Jewett Theorem from the above algebraic version.
