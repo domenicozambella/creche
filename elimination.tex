@@ -20,7 +20,7 @@ elimination, e.g.\@ Corollary~\ref{corol_QE} below.
 We often need to prove quantifier elimination in order to prove completeness.
 Therefore any assumption of completeness would make criteria for quantifier elimination less applicable.
 
-In this section $T$ is a consistent theory without finite models and $\Delta$ is a set of formulas closed under renaming of variables. 
+In this section $T$ is a consistent theory without finite models and $\Delta$ is a set of formulas containing the formula $x=y$ closed under renaming of variables.
 At a first reading the reader is encouraged to assume $\Delta=L_{\rm at}$.
 
 \begin{definition}\label{def_C_Delta}
@@ -28,17 +28,14 @@ If $\ssf{C}\subseteq\{\A,\E,\neg,\vee,\wedge\}$ is a set of connectives, we writ
 We may write $\pmDelta$ for $\{\neg\}\Delta$.%Note that $\ssf{C}_1\ssf{C}_2\Delta$ does not always coincide with $\big(\ssf{C}_1\cup\ssf{C}_2)\Delta$.
 \end{definition}
 
-
-
-
-
 % Diremo che $\Delta$ \`e un \emph{insieme di eliminazione\/} per $T$ se ogni formula $\phi(x)$, dove $x$ \`e un'arbitraria tupla di variabili che varia con $\phi(x)$, \`e equivalente modulo $T$ ad una formula in $\Delta$. Detto esplicitamente, se for every formula $\phi(x)$ esiste una formula $\psi(x)$ in $\Delta$ tale che
 % 
 % \hfil$\displaystyle T\proves\ \phi(x)\iff\psi(x)$.
 % 
 % Per esempio $\Delta$ pu\`o essere l'insieme delle formule senza quantificatori, l'insieme delle formule esistenziali, o delle combinazioni booleane di queste. Quando $\Delta$ \`e l'insieme delle formule senza quantificatori 
 
-Recall that \emph{$\Delta$-morphism\/} is a map $k:M\imp N$ that preserves the truth of formulas in $\Delta$. It is immediate that $\Delta$-morphism are automatically $\{\mathord\wedge\mathord\vee\}\Delta$-morphisms. Similarly $\{\E\wedge\}\Delta$-morphism are $\{\E\mathord\wedge\mathord\vee\}\Delta$-morphisms and $\{\A\vee\}\Delta$-morphism are $\{\A\mathord\wedge\mathord\vee\}\Delta$-morphisms.
+Recall that a \emph{$\Delta$-morphism\/} is a map $k:M\imp N$ that preserves the truth of all formulas in $\Delta$. It is immediate that $\Delta$-morphism are automatically $\{\mathord\wedge\mathord\vee\}\Delta$-morphisms.
+Similarly, all $\{\E\wedge\}\Delta$-morphisms are $\{\E\mathord\wedge\mathord\vee\}\Delta$-morphisms and $\{\A\vee\}\Delta$-morphisms are $\{\A\mathord\wedge\mathord\vee\}\Delta$-morphisms.
 
 Below we use the following proposition without further reference.
 \def\.{\kern0.2ex}
@@ -55,6 +52,7 @@ Fix $M\models T$ and ${\mr b}\in M^{\mr x}$. Let $q({\mr x})=\Deltatp_M({\mr b})
 \ssf{2}$\IMP$\ssf{1}\quad Immediate.  
 
 \ssf{1}$\IMP$\ssf{2}\quad Negate \ssf{2}, then there are $N\models T$ and ${\mr c}\in N^{\mr x}$ such that $N\models q({\mr c})\wedge\neg\phi({\mr c})$. Therefore the map $k:M\to N$, where $k=\{\<{\mr b},{\mr c}\>\}$, contradicts \ssf{1}.
+Note that, as $\Delta$ contains equality, $k$ is indeed a function.
 \end{proof}
 
 The following is sometimes referred to as the Lyndon-Robinson Lemma.
@@ -114,17 +112,21 @@ Let $N$ be $\lambda$-saturated and let $k:M\imp N$ be a $\Delta$-morphism of car
 Then the following are equivalent
 \begin{itemize}
 \item[1.] $k:M\imp N$ is a $\{\E\wedge\}\Delta$-morphism
-\item[2.] for every ${\mr b}\in M$ some $\{\E\wedge\}\Delta$-morphism $h:M\imp N$ defined in ${\mr b}$ extends $k$
-\item[3.] for every ${\mr\bar b}\in M^{\omega}$ some $\Delta$-morphism $h:M\imp N$ defined in ${\mr\bar b}$ extends $k$.
+\item[2.] for ${\mr b}\in M$ there is ${\mr c}\in N$ such that $k\cup\{\<{\mr b},{\mr c}\>\}:M\imp N$ is a $\{\E\wedge\}\Delta$-morphism
+\item[3.] for ${\mr b}\in M^\omega$ there is ${\mr c}\in N^\omega$ such that $k\cup\{\<{\mr b},{\mr c}\>\}:M\imp N$ is a $\Delta$-morphism.
 \end{itemize}
 \end{proposition}
 
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2}\quad Let ${\gr a}$ enumerate $\dom k$. Define $p({\mr x}\,;{\gr z})=\{\E\wedge\}\Deltatp_M ({\mr b}\,;{\gr a})$. By \ssf{1}, $p({\mr x}\,;k{\gr a})$ is finitely consistent in $N$. By saturation there is a ${\mr c}\in N$ that realizes $p({\mr x}\,;k{\gr a})$. Therefore, $h:M\to N$ where $h=k\cup\{\<{\mr b},{\mr c}\>\}$, witnesses \ssf{2}.
 
-\ssf{2}$\IMP$\ssf{3}\quad Iterate $\omega$-times the extension in \ssf{2}. 
+\ssf{2}$\IMP$\ssf{1}
+Iterate \ssf2.
 
-\ssf{3}$\IMP$\ssf{1}\quad Let ${\gr a}$ enumerate $\dom k$ and let $|{\gr z}|=|{\gr a}|$. Formulas in $\{\E\wedge\}\Delta$ with free variables among ${\gr z}$ are of the form  $\E {\mr\bar x}\, \phi ({\mr\bar x}\,;{\gr z})$ where $\phi({\mr\bar x}\,;{\gr z})$ is in $\{\wedge\}\Delta$ and ${\mr\bar x}$ is some fixed tuple of length $\omega$. Assume $M\models\E{\mr\bar x}\,\phi({\mr\bar x}\,;{\gr a})$ and let ${\mr\bar b}$ be such that $M\models\phi({\mr\bar b}\,;{\gr a})$. By \ssf{3}, we can extend $k$ to some $\Delta$-morphism $h:M\to N$ defined in ${\mr\bar b}$. Then $N\models\phi(h{\mr\bar b}\,;h{\gr a})$ and therefore $N\models\E {\mr\bar x}\,\phi({\mr\bar x}\,;k{\gr a})$.
+\ssf{2}$\IMP$\ssf{3}\quad Let ${\gr a}$ enumerate $\dom k$ and let $|{\gr z}|=|{\gr a}|$. Formulas in $\{\E\wedge\}\Delta$ with free variables among ${\gr z}$ are of the form  $\E {\mr\bar x}\, \phi ({\mr\bar x}\,;{\gr z})$ where $\phi({\mr\bar x}\,;{\gr z})$ is in $\{\wedge\}\Delta$ and ${\mr\bar x}$ is of finite length.
+Assume $M\models\E{\mr\bar x}\,\phi({\mr\bar x}\,;{\gr a})$ and let ${\mr\bar b}$ be such that $M\models\phi({\mr\bar b}\,;{\gr a})$.
+By \ssf{2} we can extend $k$ to some $\Delta$-morphism $h:M\to N$ defined in ${\mr\bar b}$.
+Then $N\models\phi(h{\mr\bar b}\,;h{\gr a})$ and therefore $N\models\E {\mr\bar x}\,\phi({\mr\bar x}\,;k{\gr a})$.
 \end{proof}
 
 Iterating the lemma above we obtain the following.
@@ -133,49 +135,58 @@ Iterating the lemma above we obtain the following.
 Let $N$ be $\lambda$-saturated and let $|M|\le\lambda$. Let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
 \begin{itemize}
 \item[1.] $k:M\imp N$ is a $\{\E\wedge\}\Delta$-morphism
-\item[2.] $k:M\imp N$ extends to an $\{\E\wedge\}\Delta$-embedding
-\item[3.] $k:M\imp N$ extends to an $\Delta$-embedding.
+\item[2.] $k:M\imp N$ extends to a total $\{\E\wedge\}\Delta$-morphism
+\item[3.] $k:M\imp N$ extends to a total $\Delta$-morphism.
 \end{itemize}
 \end{corollary}
 
 The following theorem is often paraphrased as follows: a formula is existential if and only if (its truth) is preserved under extensions of structures.
 
 \begin{theorem}\label{thm_embeddings_preservation_E}
-For every $\phi(x)\in L$ the following are equivalent
+For every $\phi({\mr x})\in L$ the following are equivalent
 \begin{itemize}
-\item[1.] $\phi(x)$ is equivalent over $T$ to a formula in $\{\E{\wedge}{\vee}\}\Delta$;
-\item[2.] $\phi(x)$ is preserved by $\Delta$-embedding between models of $T$.
+\item[1.] $\phi({\mr x})$ is equivalent over $T$ to a formula in $\{\E{\wedge}{\vee}\}\Delta$
+\item[2.] $\phi({\mr x})$ is preserved by total $\Delta$-morphisms between models of $T$.
 \end{itemize}
 \end{theorem}
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}\quad Immediate. 
+\ssf{1}$\IMP$\ssf{2}\quad Immediate.
 
-\ssf{2}$\IMP$\ssf{1}\quad Negate \ssf{1}. By the Lyndon-Robinson Lemma~\ref{lem_qfdefinability} there is a $\{\E\wedge\}\Delta$-morphism $k:M\to N$ between models of $T$ that does not preserve $\phi(x)$. We can assume that $N$ is $\lambda$-saturated for some sufficiently large $\lambda$. By Corollary~\ref{corol_EDelta_estensione} there is a $\Delta$-embedding $h:M\hookrightarrow N$ that extends $k$ and contradicts \ssf{2}.
+\ssf{2}$\IMP$\ssf{1}\quad Negate \ssf{1}.
+By the Lyndon-Robinson Lemma~\ref{lem_qfdefinability} there is a $\{\E\wedge\}\Delta$-morphism $k:M\to N$ between models of $T$ that does not preserve $\phi({\mr x})$.
+We can assume that $N$ is $\lambda$-saturated for some sufficiently large $\lambda$.
+By Corollary~\ref{corol_EDelta_estensione} there is a total $\Delta$-morphism $h:M\hookrightarrow N$ that extends $k$ and contradicts \ssf{2}.
 \end{proof}
 
-A dual version of the results above is obtained replacing embeddings by epimorphisms, i.e.\@ surjective (partial) homomorphisms, and $\{\E\wedge\}$ by $\{\A\vee\}$. If $\Delta$ contains the formula $x=y$ and is closed under negation, then $k:M\imp N$ is a $\Delta$-morphism if and only is $k^{-1}:N\imp M$ is a $\Delta$-morphism. In this case the dual version follows from what proved above. Without these assumptions the results need a similar but independent proof. 
-
+A dual version of the results above is obtained replacing total morphisms by surjective morphisms and $\{\E\wedge\}$ by $\{\A\vee\}$.
+If $\Delta$ is closed under negation, then $k:M\imp N$ is a $\Delta$-morphism if and only is $k^{-1}:N\imp M$ is a $\Delta$-morphism.
+In this case the dual version follows from what proved above.
+Without these assumptions the results need a similar but independent proof.
 
 \begin{proposition}\label{prop_ADelta_estensione}
-Let $M$ be $\lambda$-saturated and let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
+Let $M$ be $\lambda$-saturated and let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$.
+Then the following are equivalent
 \begin{itemize}
 \item[1.] $k:M\imp N$ is a $\{\A\vee\}\Delta$-morphism
-\item[2.] for every $c\in N$ some $\{\A\vee\}\Delta$-morphism $h:M\imp N$ extends $k$ and $c\in\range h$
-\item[3.] for every $c\in N^{\omega}$ some $\Delta$-morphism $h:M\imp N$ extends $k$ and $c\in(\range h)^{\omega}$.
+\item[2.] for ${\mr c}\in N$ there is ${\mr b}\in M$ such that $k\cup\{\<{\mr b},{\mr c}\>\}:M\imp N$ is a $\{\A\vee\}\Delta$-morphism
+\item[3.] for ${\mr c}\in N^\omega$ there is ${\mr b}\in M^\omega$ such that $k\cup\{\<{\mr b},{\mr c}\>\}:M\imp N$ is a $\Delta$-morphism.
 \end{itemize}
 \end{proposition}
 
-We write \emph{$\neg\Delta$} for the set containing the negation of the formulas in $\Delta$. Warning: do not confuse $\neg\Delta$ with $\{\neg\}\Delta$.
+We write \emph{$\neg\Delta$} for the set containing the negation of the formulas in $\Delta$.
+Warning: do not confuse $\neg\Delta$ with $\{\neg\}\Delta$.
 
-\begin{proof} Left as an exercise for the reader. Hint: to prove implication \ssf{1}$\IMP$\ssf{2} define $p(x,y)=\neg\{\A\vee\}\Deltatp_N (ka,c)$, where $a$ is a tuple that enumerates $\dom k$. From \ssf{1} obtain that $p(a,y)$ is finitely consistent in $M$. Then proceed as in the proof of Proposition~\ref{prop_EDelta_estensione}.
+\begin{proof} Left as an exercise for the reader.
+  Hint: to prove implication \ssf{1}$\IMP$\ssf{2} define $p(x,y)=\neg\{\A\vee\}\Deltatp_N (ka,c)$, where $a$ is a tuple that enumerates $\dom k$. From \ssf{1} obtain that $p(a,y)$ is finitely consistent in $M$.
+  Then proceed as in the proof of Proposition~\ref{prop_EDelta_estensione}.
 \end{proof}
 
 \begin{corollary}\label{corol_ADelta_estensione}
 Let $M$ be $\lambda$-saturated and let $|N|\le\lambda$. Let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
 \begin{itemize}
 \item[1.] $k:M\imp N$ is a $\{\A\vee\}\Delta$-morphism
-\item[2.] $k:M\imp N$ extends to an $\{\A\vee\}\Delta$-epimorphism
-\item[3.] $k:M\imp N$ extends to an $\Delta$-epimorphism.
+\item[2.] $k:M\imp N$ extends to a sujective $\{\A\vee\}\Delta$-morphism
+\item[3.] $k:M\imp N$ extends to a surjective $\Delta$-morphism.
 \end{itemize}
 \end{corollary}
 
@@ -184,8 +195,8 @@ Finally we obtain the following.
 \begin{theorem}
 The following are equivalent
 \begin{itemize}
-\item[1.] $\phi(x)$ is equivalent to a formula in $\{\A{\wedge}{\vee}\}\Delta$
-\item[2.] every $\Delta$-epimorphism between models of $T$ preserves $\phi(x)$.
+\item[1.] $\phi({\mr x})$ is equivalent to a formula in $\{\A{\wedge}{\vee}\}\Delta$
+\item[2.] every surjective $\Delta$-morphism between models of $T$ preserves $\phi({\mr x})$.
 \end{itemize}
 \end{theorem}
 
@@ -197,9 +208,9 @@ The following are equivalent
 \section{Quantifier elimination by back-and-forth}
 \label{eliminazionequantificatoricriterio}
 
-We say that \emph{$T$ admits\/} (or \emph{has\/}) \emph{positive $\Delta$-elimination of quantifiers\/} if for every formula $\phi(x)$ in $\{\E\,\A\mathord\wedge\mathord\vee\}\Delta$ there is a formula $\psi(x)$ in $\{\mathord\wedge\mathord\vee\}\Delta$ such that
+We say that \emph{$T$ admits\/} (or \emph{has\/}) \emph{positive $\Delta$-elimination of quantifiers\/} if for every formula $\phi({\mr x})$ in $\{\E\,\A\mathord\wedge\mathord\vee\}\Delta$ there is a formula $\psi({\mr x})$ in $\{\mathord\wedge\mathord\vee\}\Delta$ such that
 
-\ceq{\hfill T}{\proves}{\phi(x)\iff\psi(x).}
+\ceq{\hfill T}{\proves}{\phi({\mr x})\iff\psi({\mr x}).}
 
 When $\Delta$ is closed under negation the attribute \textit{positive\/} becomes irrelevant and will be omitted. When $\Delta$ is $\atpmL$ or $\qfL$, we simply say that $T$ admits elimination of quantifiers. This is by far the most common case.
 
@@ -209,9 +220,9 @@ Quantifier elimination is often used to prove that a theory is complete because 
 If $T$ has elimination of quantifiers then the following are equivalent 
 \begin{itemize}
 \item[1.] $T$ decides all quantifier free sentences
-\item[2.] $T$ is complete.
+\item[2.] $T$ is complete.\smallskip
 \end{itemize}
-Hence a theory with quantifier elimination is complete if it decides the characteristic, see Definition~\ref{rmk_characteristic}).
+Hence a theory with quantifier elimination is complete if it decides the characteristic of its models, see Definition~\ref{rmk_characteristic}.
 \end{remark}
 
 % Scriveremo  ${\vee}\hskip-.33ex\Delta$ e ${\wedge}\hskip-.2ex\Delta$ per l'insieme delle formule che sono disgiunzione, rispettivamente congiunzione, di formule in $\Delta$ e scriveremo $\E\Delta$ per le formule della forma $\E y\,\phi(x,y)$ dove $y$ \`e una tupla di variabili e $\phi(x,y)$ \`e in $\Delta$. Se vogliamo limitarci a tuple $y$ di lunghezza $1$ scriveremo $\E_1\Delta$. Infine $\pmDelta$ \`e l'insieme che contiene le formule in $\Delta$ e le loro negazioni. Quindi, a meno di equivalenza logica, le formule in $\veewedge\pmDelta$ sono le combinazioni booleane di formule in $\Delta$ e le formule in $\veewedge\Delta$ le combinazioni booleane positive.
@@ -228,7 +239,7 @@ The following are equivalent
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2}\quad Immediate.
 
-\ssf{2}$\IMP$\ssf{1}\quad We prove by induction of syntax that $\Delta$-morphism preserve the truth of all formulas in $\{\E\,\A\mathord\wedge\mathord\vee\}\Delta$, this suffices by Lemma~\ref{lem_qfdefinability}. Induction for the connectives $\vee$ and $\wedge$ is trivial.  So assume as induction hypothesis that the truth of  $\phi(x,y)$ is preserved.  By Lemma~\ref{lem_qfdefinability} $\phi(x,y)$ is equivalent to a formula in $\{\mathord\wedge\mathord\vee\}\Delta$, hence by \ssf{2} the truth of $\E y\, \phi (x,y)$ and $\A y \,\phi (x,y)$ is preserved.
+\ssf{2}$\IMP$\ssf{1}\quad We prove by induction of syntax that $\Delta$-morphism preserve the truth of all formulas in $\{\E\,\A\mathord\wedge\mathord\vee\}\Delta$, this suffices by Lemma~\ref{lem_qfdefinability}. Induction for the connectives $\vee$ and $\wedge$ is trivial.  So assume as induction hypothesis that the truth of  $\phi(x,y)$ is preserved.  By Lemma~\ref{lem_qfdefinability} $\phi({\mr x},{\mr y})$ is equivalent to a formula in $\{\mathord\wedge\mathord\vee\}\Delta$, hence by \ssf{2} the truth of $\E{\mr y}\, \phi ({\mr x},{\mr y})$ and $\A{\mr y} \,\phi ({\mr x},{\mr y})$ is preserved.
 \end{proof}
 
 Condition \ssf{2} of the corollary above may be difficult to verify directly. The following corollary of Proposition~\ref{prop_EDelta_estensione} and~\ref{prop_ADelta_estensione} gives a back-and-forth condition witch is easier to verify.
@@ -239,15 +250,18 @@ Let $|L|\le\lambda$. The following are equivalent
 \item[1.] $T$ has positive $\Delta$-elimination of quantifiers
 \item[2.] for every finite $\Delta$-morphism $k:M\imp N$ between $\lambda$-saturated models of $T$
 \begin{itemize}
-  \item[a.] for every $b\in M$ some $\Delta$-morphism $h:M\imp N$ extends $k$ and $b\in\dom h$;                                                       \item[b.] for every $c\in N$ some $\Delta$-morphism $h:M\imp N$ extends $k$ and $c\in\range h$.
+  \item[a.] for any ${\mr b}\in M$ there is ${\mr c}\in N$ such that $k\cup\{\<{\mr b},{\mr c}\>\}:M\imp N$ is a $\Delta$-morphism          
+  \item[b.] for any ${\mr c}\in N$ there is ${\mr b}\in M$ such that $k\cup\{\<{\mr b},{\mr c}\>\}:M\imp N$ is a $\Delta$-morphism
 \end{itemize}
 \end{itemize}
 \end{corollary}
 
-Note that when $\Delta$ contains the formula $x=y$ and is closed under negation, then  $k:M\imp N$ is a $\Delta$-morphism if and only if $k^{-1}:N\imp M$ is a $\Delta$-morphism. In this case \ssf{a} and \ssf{b} are equivalent.
+Note that when $\Delta$ is closed under negation, then  $k:M\imp N$ is a $\Delta$-morphism if and only if $k^{-1}:N\imp M$ is a $\Delta$-morphism. In this case \ssf{a} and \ssf{b} are equivalent.
 
 \begin{exercise}
-Let $T$ be a complete theory without finite models in a language that consists only of unary predicates. Prove that $T$ has elimination of quantifiers.
+Let $T$ be a complete theory without finite models in a language that consists only of unary predicates. 
+Prove that $T$ has elimination of quantifiers.
+Is the claim true if $T$ is not complete?
 \end{exercise}
 
 \begin{exercise}
@@ -271,7 +285,7 @@ is a saturated model of $T$.
 \end{exercise}
 
 \begin{exercise}
-Let $T$ be a consistent theory.
+Let $T$ be a consistent theory without finite models.
 Suppose that all completions of $T$ are of the form $T\cup S$ for some set $S$ of quantifier-free sentences.
 Prove that if all completions of $T$ have elimination of quantifiers, so does $T$.
 Show that this fails when the completions of $T$ have arbitrary complexity.
@@ -286,11 +300,13 @@ For a counter example consider the empty theory in the language with a single un
 \end{exercise}
 
 \begin{exercise}
+  Work in a monster model $\U$
   Suppose that every formula $\phi(x)\in L$ is equivalent to a some quantifier-free formula $\psi(x)\in L(\U)$.
   Prove that $T$ has positive $\Delta$-elimination of quantifiers for $\Delta$ the set of formulas of the form $\E y\,\A z\,\theta(x,y,z)$ with $\theta(x,y,z)\in\qfL$.
 \end{exercise}
 
 \begin{exercise}\label{prop_inv_def}
+  Work in a monster model $\U$
   Let $\phi(x)\in L_{\rm qf}(\U)$.
   Are the following are equivalent?
   \begin{itemize}
@@ -307,7 +323,7 @@ For a counter example consider the empty theory in the language with a single un
 
 We say that $T$ is \emph{model-complete\/} if every embedding $h:M\hookrightarrow N$ between models of $T$ is an elementary embedding. The terminology, introduced by Abraham Robinson, is inspired by the fact that $T$ is model-complete if and only if $T\cup\Diag(M)$ is a complete theory, in the language $L(M)$, for every $M\models T$. 
 
-To stress positivity in the next proposition, we generalize the definition as follows. We say that $T$ is \emph{$\Delta$-model-complete\/} if every $\Delta$-embedding $h:M\hookrightarrow N$ between models of $T$ is a $\{\A\E{\wedge}{\vee}\}\Delta$-embedding. 
+To stress positivity in the next proposition, we generalize the definition as follows. We say that $T$ is \emph{$\Delta$-model-complete\/} if every total $\Delta$-morphism $k:M\hookrightarrow N$ between models of $T$ is a $\{\A\E{\wedge}{\vee}\}\Delta$-morphism. 
 
 Model-completeness is equivalent to a property akin to quantifier elimination.
 
@@ -320,15 +336,15 @@ The following are equivalent
 \end{proposition}
 
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}\quad By \ssf{1}, every formula $\{\A\E\mathord\wedge\mathord\vee\}\Delta$ is preserved by $\Delta$-embeddings therefore, by Theorem~\ref{thm_embeddings_preservation_E}, it is equivalent to a formula in $\{\E\mathord\wedge\mathord\vee\}\Delta$.
+\ssf{1}$\IMP$\ssf{2}\quad By \ssf{1}, every formula $\{\A\E\mathord\wedge\mathord\vee\}\Delta$ is preserved by total $\Delta$-morphism therefore, by Theorem~\ref{thm_embeddings_preservation_E}, it is equivalent to a formula in $\{\E\mathord\wedge\mathord\vee\}\Delta$.
 
-\ssf{2}$\IMP$\ssf{1}\quad Clear, because $\Delta$-embeddings preserve formulas in $\{\E\mathord\wedge\mathord\vee\}\Delta$.
+\ssf{2}$\IMP$\ssf{1}\quad Clear, because total $\Delta$-morphism preserve formulas in $\{\E\mathord\wedge\mathord\vee\}\Delta$.
 \end{proof}
 
 The theory of discrete linear orders defined in Exercise~\ref{ex_discrete_lo} is an example of a model-complete theory without elimination of quantifiers.
 
-
-The difference between quantifier elimination and model-completeness subtle. It boils down to models of $T$ having or not the amalgamation property.
+The difference between quantifier elimination and model-completeness subtle.
+It boils down to models of $T$ having or not the amalgamation property.
 
 \begin{proposition}
 Assume $T$ is model-complete.
@@ -345,6 +361,15 @@ Then the following are equivalent
 
 \ssf{2}$\IMP$\ssf{1}\quad If all morphisms are elementary maps, amalgamations follows from Proposition~\ref{prop_elementary_amalg}.
 \end{proof}
+
+\begin{exercise}
+  Prove that the following are equivalent
+  \begin{itemize}
+    \item [1.] $T$ is $\Delta$-model-complete
+    \item [2.] for every $M\models T$, the theory $T\cup\Delta\mbox{-Diag}(M)$ is complete
+  \end{itemize}
+  where $\Delta\mbox{-Diag}(M)=\{\phi(a):\phi(x)\in\Delta, \ a\in M^x, \ M\models\phi(a)\}$.
+\end{exercise}
 
 \begin{comment}
 Note however that the models of a model-complete theory $T$ do have amalgamation when the proper notion of morphism is chosen. 
