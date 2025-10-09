@@ -217,28 +217,28 @@ Hence ${\mr\bar a}$ is indiscernible over $h[M]$.
 \section{Idempotent orbits in semigroups}\label{semigroups}
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox[t]{22ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+\def\ceq#1#2#3{\parbox[t]{18ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 In this and the following sections we focus on semigroups definable in a first-order structure.
 For a lighter notation, we assume that the semigroup operation \emph{$\ \cdot\ $} is among the symbols of $L$ and that the whole monster model is a semigroup \emph{$\mrS$\/} = $\U$. 
 
-In this section we work over a given model $M$.
+In this section we work over a given model $S\preceq\mrS$.
 For any two sets $\mrA,\mrB\subseteq\mrS$ we define
 
 \ceq{\hfill\emph{$\mrA*\mrB$}}
 {=}
 {\Big\{ {\mr a}{\cdot}{\mr b}
 \ :\ 
-{\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\cnonfork_M{\mr b}\Big\}}
+{\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\cnonfork_S{\mr b}\Big\}}
 
-In this and the next section we abbreviate $\Orbit({\mr a}/M)$, 
-the orbit of ${\mr a}$ under $\Aut(\U/M)$, 
-by \emph{$({\mr a})_M$}.
-When ajacent to $*$, we write ${\mr a}$ for $({\mr a})_M$.
-E.g.\@ we write \emph{$\mrA*{\mr b}$} for $\mrA*({\mr b})_M$ and \emph{${\mr a}*{\mr b}$} for $({\mr a})_M*{\mr b}$.
+In this and the next section we abbreviate $\Orbit({\mr a}/S)$, 
+the orbit of ${\mr a}$ under $\Aut(\U/S)$, 
+by \emph{$({\mr a})_S$}.
+When ajacent to $*$, we write ${\mr a}$ for $({\mr a})_S$.
+E.g.\@ we write \emph{$\mrA*{\mr b}$} for $\mrA*({\mr b})_S$ and \emph{${\mr a}*{\mr b}$} for $({\mr a})_S*{\mr b}$.
 
 \begin{proposition}\label{prop_typedef_Ab}
-If $\mrA$ is type definable over $M$ then so is $\mrA*{\mr b}$ 
+If $\mrA$ is type definable over $S$ then so is $\mrA*{\mr b}$ 
 for any ${\mr b}$.
 \end{proposition}
 \begin{proof}
@@ -246,53 +246,53 @@ for any ${\mr b}$.
   Then the set $\mrA*{\mr b}$ is defined by the type $q({\mr y})=\E {\mr x},{\mr z}\ \big[ {\mr y}={\mr x}{\cdot}{\mr z}\ \wedge\ {\mr x}\in\mrA \ \wedge\ p({\mr x}\,;{\mr z})\big]$.
 \end{proof}
 
-From the invariance of $\cnonfork_M$ it follows immediately that $f[\mrA*\mrB]=f[\mrA]*f[\mrB]$ for every $f\in\Aut(\U/M)$.
+From the invariance of $\cnonfork_S$ it follows immediately that $f[\mrA*\mrB]=f[\mrA]*f[\mrB]$ for every $f\in\Aut(\U/S)$.
 %
-Therefore, when $\mrA$ and $\mrB$ are invariant over $M$,
-also $\mrA*\mrB$ is invariant over $M$.
-Below we are mostly concerned with sets that are type-definable, therefore invariant, over $M$.
+Therefore, when $\mrA$ and $\mrB$ are invariant over $S$,
+also $\mrA*\mrB$ is invariant over $S$.
+Below we are mostly concerned with sets that are type-definable, therefore invariant, over $S$.
 
 \begin{proposition}\label{prop_semi_associative}
-For every $M$-invariant sets $\mrA$, $\mrB$, and $\mrC$.
+For every $S$-invariant sets $\mrA$, $\mrB$, and $\mrC$\smallskip
 
 \ceq{\hfill\mrA*\big(\mrB*\mrC\big)}
 {\subseteq}
 {\big(\mrA*\mrB\big)*\mrC}
 \end{proposition}
 \begin{proof}
-Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ where ${\mr a}\cnonfork_M{\mr b}{\cdot}{\mr c}$ and ${\mr b}\cnonfork_M{\mr c}$.
+Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ where ${\mr a}\cnonfork_S{\mr b}{\cdot}{\mr c}$ and ${\mr b}\cnonfork_S{\mr c}$.
 By extension (Lemma~\ref{lem_coheir_independence}),
 there exists ${\mr a'}$ such that 
-${\mr a}\equiv_{M,\,{\mr b}{\cdot}{\mr c}}{\mr a'}\cnonfork_M{\mr b}{\cdot}{\mr c},\,{\mr a},\,{\mr b},\,{\mr c}$.
+${\mr a}\equiv_{S,\,{\mr b}{\cdot}{\mr c}}{\mr a'}\cnonfork_S{\mr b}{\cdot}{\mr c},\,{\mr a},\,{\mr b},\,{\mr c}$.
 By transitivity (again Lemma~\ref{lem_coheir_independence}),
-${\mr a'}{\cdot}{\mr b}\cnonfork_M{\mr c}$.
+${\mr a'}{\cdot}{\mr b}\cnonfork_S{\mr c}$.
 Therefore ${\mr a'}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.
-Finally, as ${\mr a'}\equiv_{M,\,{\mr b}{\cdot}{\mr c}}{\mr a}$,
-also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by $M$-invariance.
+Finally, as ${\mr a'}\equiv_{S,\,{\mr b}{\cdot}{\mr c}}{\mr a}$,
+also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by $S$-invariance.
 \end{proof}
 
 We show that, under the assumption of stationarity,
-$*$ is an operation on  $\U^{\mr x}/{\equiv_M}$.
+$*$ is an operation on  $\U^{\mr x}/{\equiv_S}$.
 
 \begin{proposition}\label{prop_orbits_main}
-Assume $\cnonfork_M$ is stationary,
+Assume $\cnonfork_S$ is stationary,
 see Definition~\ref{def_coheir_stationary}.
-Fix ${\mr a}\cnonfork_M{\mr b}$ arbitrarily.
-Then ${\mr a'}{\cdot}{\mr b'}\equiv_M{\mr a}{\cdot}{\mr b}$ for every 
-${\mr a'}\equiv_M{\mr a}$ and  ${\mr b'}\equiv_M{\mr b}$ such that
-${\mr a'}\cnonfork_M{\mr b'}$.
-Or, in other words, $({\mr a}{\cdot}{\mr b})_M={\mr a}*{\mr b}$.
+Fix ${\mr a}\cnonfork_S{\mr b}$ arbitrarily.
+Then ${\mr a'}{\cdot}{\mr b'}\equiv_S{\mr a}{\cdot}{\mr b}$ for every 
+${\mr a'}\equiv_S{\mr a}$ and  ${\mr b'}\equiv_S{\mr b}$ such that
+${\mr a'}\cnonfork_S{\mr b'}$.
+Or, in other words, $({\mr a}{\cdot}{\mr b})_S={\mr a}*{\mr b}$.
 \end{proposition}
 %
 \begin{proof}
   By invariance we can assume ${\mr b}={\mr b'}$.
-  By stationarity, ${\mr a}\equiv_{M,\,{\mr b}}{\mr a'}$.
-  Hence ${\mr a}{\cdot}{\mr b}\equiv_M{\mr a'}{\cdot}{\mr b}$.
+  By stationarity, ${\mr a}\equiv_{S,\,{\mr b}}{\mr a'}$.
+  Hence ${\mr a}{\cdot}{\mr b}\equiv_S{\mr a'}{\cdot}{\mr b}$.
 \end{proof}
 
 \begin{corollary}[ (associativity)]\label{corol_orbits_associative}
-Assume $\cnonfork_{\!M}$ is stationary.
-Then for every $M$-invariant sets $\mrA$,
+Assume $\cnonfork_{\!S}$ is stationary.
+Then for every $S$-invariant sets $\mrA$,
 $\mrB$ and  $\mrC$.
 
 \ceq{\hfill\mrA*\big(\mrB*\mrC\big)}
@@ -301,12 +301,12 @@ $\mrB$ and  $\mrC$.
 \end{corollary}
 
 \begin{proof}
-We can assume that $\mrA$, $\mrB$ and $\mrC$ are $M$-orbits.
+We can assume that $\mrA$, $\mrB$ and $\mrC$ are $S$-orbits.
 Say of ${\mr a}$, ${\mr b}$, and ${\mr c}$ respectively.
 As we are working over a model,
-we can assume that ${\mr a}\cnonfork_M{\mr b}{\cdot}{\mr c}$ and ${\mr b}\cnonfork_M{\mr c}$.
-By Proposition~\ref{prop_orbits_main} the set on the l.h.s.\@ equals $({\mr a}{\cdot}{\mr b}{\cdot}{\mr c})_M$.
-By a similar argument the set on the r.h.s.\@ equals $({\mr a'}{\cdot}{\mr b'}{\cdot}{\mr c'})_M$ for some elements ${\mr a'}$, ${\mr b'}$, and ${\mr c'}$.
+we can assume that ${\mr a}\cnonfork_S{\mr b}{\cdot}{\mr c}$ and ${\mr b}\cnonfork_S{\mr c}$.
+By Proposition~\ref{prop_orbits_main} the set on the l.h.s.\@ equals $({\mr a}{\cdot}{\mr b}{\cdot}{\mr c})_S$.
+By a similar argument the set on the r.h.s.\@ equals $({\mr a'}{\cdot}{\mr b'}{\cdot}{\mr c'})_S$ for some elements ${\mr a'}$, ${\mr b'}$, and ${\mr c'}$.
 Proposition~\ref{prop_semi_associative} proves that inclusion $\subseteq$ holds in general.
 But inclusion between orbits amounts to equality.
 \end{proof}
@@ -316,38 +316,38 @@ When $\mrA*\mrA\subseteq\mrA$, we say that $\mrA$ is \emph{idempotent.}
 Note that if  $\mrA$ is idempotent and $\mrB\subseteq\mrA$, then also $\mrA*\mrB$ is idempotent.
 
 \begin{lemma}\label{lem_Hindman}
-Assume $\cnonfork_M$ is stationary.
+Assume $\cnonfork_S$ is stationary.
 If $\mrA$ is minimal among the
 idempotent sets that are
-type-definable over $M$, then $\mrA=({\mr b})_M$ for some (any) ${\mr b}\in\mrA$.
+type-definable over $S$, then $\mrA=({\mr b})_S$ for some (any) ${\mr b}\in\mrA$.
 \end{lemma}
 
 \begin{proof}
 Pick arbitrarily some ${\mr b}\in\mrA$.
 %
 The set $\mrA*{\mr b}$ is contained in $\mrA$, idempotent and 
-type-definable over $M$ by Proposition~\ref{prop_typedef_Ab}.
+type-definable over $S$ by Proposition~\ref{prop_typedef_Ab}.
 %
 Therefore by minimality $\mrA*{\mr b}=\mrA$.
 %
 Let ${\mr\Aa'}\subseteq\mrA$ contain those ${\mr a}$ such that 
-${\mr a}*{\mr b}=({\mr b})_M$.
+${\mr a}*{\mr b}=({\mr b})_S$.
 %
 This set is nonempty because ${\mr b}\in\mrA*{\mr b}$.
 %
-It is easy to verify that ${\mr\Aa'}$ is type-definable over $M,{\mr b}$.
+It is easy to verify that ${\mr\Aa'}$ is type-definable over $S,{\mr b}$.
 %
-As it is clearly invariant over $M$, it is type-definable over $M$.
+As it is clearly invariant over $S$, it is type-definable over $S$.
 %
 By associativity, it is idempotent.
 %
 Hence, by minimality, ${\mr\Aa'}=\mrA$.
 %
-Then ${\mr b}\in{\mr\Aa'}$, which implies ${\mr b}*{\mr b}=({\mr b})_M$.
+Then ${\mr b}\in{\mr\Aa'}$, which implies ${\mr b}*{\mr b}=({\mr b})_S$.
 %
 That is, ${\mr b}$ has idempotent orbit.
 %
-Finally, by minimality, $\mrA=({\mr b})_M$.
+Finally, by minimality, $\mrA=({\mr b})_S$.
 \end{proof}
 
 \begin{corollary}\label{corol_idempotent}
@@ -499,11 +499,11 @@ We need a few definitions.
 Let $\mrC\subseteq\mrS$ be an idempotent set.
 If $\mrA\subseteq\mrC$ is such that $\mrC*\mrA\subseteq\mrA$, we say that $\mrA$ is a \emph{left ideal\/} of $\mrC$.
 When $\mrC$ is clear we omit reference to it.
-% We arte interested in left ideal that are type-definable (over $M$).
+% We arte interested in left ideal that are type-definable (over $S$).
 A \emph{minimal\/} left ideal is one that does not properly contain any other left ideal.
 
 \begin{fact}
-  Assume $\cnonfork_{\!M}$ is stationary.
+  Assume $\cnonfork_{\!S}$ is stationary.
   Let $\mrC$ be a type-definable idempotent set.
   Every left ideal of $\mrC$ contains a minimal left ideal and this is type-definable.
 \end{fact}
@@ -515,16 +515,38 @@ A \emph{minimal\/} left ideal is one that does not properly contain any other le
   By what remarked above, this is a minimal left ideal
 \end{proof}
 
-It is interesting to note that we could define, in the obvious way, \textit{right ideals\/} and even \textit{two-sided ideals.}
-But the above fact does not hold for these ideals because, in general, ${\mr b}*\mrC$ is not type-definable.
-
-It is also useful to remark that when $\mrM$ is a minimal left ideal and ${\mr a}\in\mrM$ then $\mrM*{\mr a}=\mrM$, by minimality.
+It is useful to remark that when $\mrM$ is a minimal left ideal and ${\mr a}\in\mrM$ then $\mrM*{\mr a}=\mrM$, by minimality.
 On the other hand, though ${\mr a}*\mrM\subseteq\mrM$ for every ${\mr a}\in\mrC$, we cannot infer the converse inclusion.
+
+It is also interesting to note that we can define, in the obvious way, \textit{right ideals\/} and even \textit{two-sided ideals.}
+But note the proof of the above fact would not apply because, in general, ${\mr b}*\mrC$ is not type-definable.
+However for two-sided ideals we have the following remarkable fact.
+
+\begin{fact}
+  Assume $\cnonfork_{\!S}$ is stationary.
+  Let $\mrC$ be a type-definable idempotent set.
+  Define \smallskip
+
+  \ceq{\hfill\mrK}{=}{\bigcup\big\{\mrM\ :\ \mrM\text{ a minimal left ideal of }\mrC\big\}}\smallskip
+
+  Then $\mrK$ is a minimal two-sided ideal.
+\end{fact}
+
+\begin{proof}
+  Clearly, $\mrK$ is a left ideal.
+  To prove that $\mrK$ is also a right ideal note that, by what remarked above
+
+  \ceq{\hfill\mrK*{\mr a}}{=}{\bigcup\big\{\mrM*{\mr a}\ :\ \mrM\text{ a minimal left ideal of }\mrC\big\}}\medrel{=}$\mrK$.\smallskip
+
+  As for minimality, it sufficies to prove that any two-sided ideal $\mrH$ contains any minimal left ideal $\mrM$.
+  Note that $\mrH\cap\mrM$ is not empty in fact, as $\mrH$ is in particular a right ideal $\mrH*\mrM\subseteq\mrH\cap\mrM$.
+  As $\mrH\cap\mrM$ is in particular a left ideal and it is contained in $\mrM$, by minimality, it coincides with $\mrM$.
+\end{proof}
 
 Note that every left ideal is an idempotent set and therefore contains idempotent elements.
 
 \begin{lemma}\label{lem_leftideal}
-  Assume $\cnonfork_{\!M}$ is stationary.
+  Assume $\cnonfork_{\!S}$ is stationary.
   Let $\mrC$ be a type-definable idempotent set.
   Let $\mrM$ be a minimal left ideal of $\mrC$.
   Let ${\mr u},{\mr v}\in\mrM$ be two idempotents.
@@ -577,37 +599,37 @@ The following is a technical lemma that is required in the proof of the main the
 Let $\sigma:\U\to\U$ be a semigroup homomorphism definable over $M$.
 Then 
 \begin{itemize}
-\item[1.] $\sigma\big[({\mr a})_M\big]=(\sigma\,{\mr a})_M$
+\item[1.] $\sigma\big[({\mr a})_S\big]=(\sigma\,{\mr a})_S$
 
 \item[2.]
 $\sigma\big[{\mr a}*{\mr b}\big]=\sigma\,{\mr a}*\sigma\,{\mr b}$.
 \end{itemize}
 \end{proposition}
 \begin{proof}\ \ssf{1.}  
-As ${\mr a}\equiv_M{\mr a'}$ implies $\sigma\,{\mr a}\equiv_M\sigma\,{\mr a'}$,
+As ${\mr a}\equiv_M{\mr a'}$ implies $\sigma\,{\mr a}\equiv_S\sigma\,{\mr a'}$,
 inclusion $\subseteq$ is clear.
 For the converse, note that the type 
-$\E{\mr y}\,\big[\sigma\,{\mr y}={\mr x}\,\wedge\,{\mr y}\equiv_M{\mr a}\big]$ 
+$\E{\mr y}\,\big[\sigma\,{\mr y}={\mr x}\,\wedge\,{\mr y}\equiv_S{\mr a}\big]$ 
 is trivially realized by $\sigma\,{\mr a}$.
-By invariance it is equivalent to a type over $M$.
-Therefore it is realized by all elements of $(\sigma\,{\mr a})_M$.
-Hence all elements of $(\sigma\,{\mr a})_M$ are the image of some element in $({\mr a})_M$.
+By invariance it is equivalent to a type over $S$.
+Therefore it is realized by all elements of $(\sigma\,{\mr a})_S$.
+Hence all elements of $(\sigma\,{\mr a})_S$ are the image of some element in $({\mr a})_S$.
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{39ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 \ssf{2.} \  
 We have to prove the following equality\smallskip
 
-\ceq{\hfill\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ {\mr a}\equiv_M{\mr a'}\cnonfork_M{\mr b'}\equiv_M{\mr b} \Big\}}
+\ceq{\hfill\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ {\mr a}\equiv_S{\mr a'}\cnonfork_S{\mr b'}\equiv_S{\mr b} \Big\}}
 {=}
-{\Big\{{\mr a'}{\cdot}{\mr b'}\ :\ \sigma\,{\mr a}\equiv_M{\mr a'}\cnonfork_M{\mr b'}\equiv_M\sigma\,{\mr b} \Big\}.}\smallskip
+{\Big\{{\mr a'}{\cdot}{\mr b'}\ :\ \sigma\,{\mr a}\equiv_S{\mr a'}\cnonfork_S{\mr b'}\equiv_S\sigma\,{\mr b} \Big\}.}\smallskip
 
 It suffices to prove one inclusion because by Proposition~\ref{prop_orbits_main} both sides are orbits.
 We prove $\subseteq$.
-Note that ${\mr a'}\cnonfork_M{\mr b'}$ implies $\sigma\,{\mr a'}\cnonfork_M\sigma\,{\mr b'}$.
+Note that ${\mr a'}\cnonfork_S{\mr b'}$ implies $\sigma\,{\mr a'}\cnonfork_S\sigma\,{\mr b'}$.
 Hence the set on l.h.s.\@ is contained in the following\smallskip
 
-\hfil$\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ \sigma\,{\mr a'}\cnonfork_M\sigma\,{\mr b'},\ {\mr a'}\equiv_M{\mr a},\  {\mr b'}\equiv_M{\mr b} \Big\}$\smallskip
+\hfil$\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ \sigma\,{\mr a'}\cnonfork_S\sigma\,{\mr b'},\ {\mr a'}\equiv_S{\mr a},\  {\mr b'}\equiv_S{\mr b} \Big\}$\smallskip
 
 which is in turn contained in the set on the r.h.s.
 \end{proof}
@@ -626,8 +648,7 @@ there is an $a\in S\sm C$ such that $\{\sigma\,a:\sigma\in\Sigma\}$ is monochrom
 \end{void}
 
 \begin{proof}
-Let $S\preceq\mrS$.
-Here $\mrS$ is a monster model in a language that expands the language of semigroups with a symbol for all subsets of $S$.
+Let $\mrS$ be a saturated elementary extension of $S$ in a language that expands the language of semigroups with a symbol for all subsets of $S$.
 As observed in Remark~\ref{rk_coheir_stationary}, this makes $\cnonfork_S$ stationary.
 The language contains also symbols for the retractions $\sigma:S\to C$.
 Let $\mrC$ be the interpretation of $C$ in $\mrS$.
@@ -638,14 +659,17 @@ Let $\mrM\subseteq \mrS\sm\mrC$ be minimal a left ideal and pick an idempotent $
 Let $\mrN\subseteq\mrC$ be a minimal left ideal of $\mrC$.
 Let ${\mr v}\in\mrN$ be an idempotent.
 
-From the second claim of Proposition~\ref{prop_HJ_tecnical} we obtain that 
-$\sigma({\mr v}*{\mr u}*{\mr v})\in{\mr v}*\sigma[\mrM]*{\mr v}\subseteq\mrC*{\mr v}={\mr v}*\mrN$ for all $\sigma\in\Sigma$.
-By \ssf6 of Lemma~\ref{lem_leftideal}, ${\mr v}*{\mr u}*{\mr v}$ is an idempotent.
-Then $\sigma({\mr v}*{\mr u}*{\mr v})$ is idempotent  for all $\sigma\in\Sigma$.
+As ${\mr v}*{\mr u}*{\mr v}\in{\mr v}*\mrM*{\mr v}$, from \ssf2 in Proposition~\ref{prop_HJ_tecnical} we obtain that for every $\sigma\in\Sigma$
 
+\ceq{\hfill \sigma({\mr v}*{\mr u}*{\mr v})}{\in}{{\mr v}*\sigma[\mrM]*{\mr v}}
+\medrel{\subseteq}${\mr v}*\mrC*{\mr v}$
+\medrel{=}${\mr v}*\mrN$
+
+By \ssf6 of Lemma~\ref{lem_leftideal}, ${\mr v}*{\mr u}*{\mr v}$ is an idempotent.
+Then $\sigma({\mr v}*{\mr u}*{\mr v})$ is idempotent for all $\sigma\in\Sigma$.
 As ${\mr v}*\mrN$ contains only one idempotent (orbit), all these $\sigma({\mr v}*{\mr u}*{\mr v})$ are elementarily equivalent over $S$.
 In particular the set $\{\sigma({\mr v}*{\mr u}*{\mr v})\,:\,\sigma\in\Sigma\}$ is monochromatic.
-Note that, by nicety, ${\mr v}*{\mr u}*{\mr v}\notin\mrC$.
+Note that, by nicety, ${\mr v}*{\mr u}*{\mr v}\in\mrS\sm\mrC$.
 Finally, the theorem follows by elementarity.
 \end{proof}
 
@@ -696,10 +720,10 @@ $\{\sigma\,g\ :\ \sigma\in\Sigma\}$ is monochromatic.
 % \end{proof}
 
 \begin{exercise}
-  Assume $\cnonfork_M$ is stationary.
-  Let $\mrA$ be idempotent and type-definable over $M$.
-  Assume ${\mr c}$ left-minimal, with idempotent orbit, and such that ${\mr c}*\mrA\subseteq\mrA$.
-  Prove that ${\mr c}*\mrA*{\mr c}\;/\equiv_M$ is a group with identity $({\mr c})_M$ and multiplication $*$.
+  Assume $\cnonfork_S$ is stationary.
+  Let $\mrA$ be idempotent and type-definable over $S$.
+  Let ${\mr c}$ is anidempotent such that ${\mr c}\in\mrA*{\mr g}$ for every ${\mr g}\in\mrA*{\mr c}$, with idempotent orbit, and such that ${\mr c}*\mrA\subseteq\mrA$.
+  Prove that ${\mr c}*\mrA*{\mr c}$ is a group with identity ${\mr c}$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -787,7 +811,7 @@ Our goal is to find ${\mr a_i}$ such as the same property holds for ${\mr a_{\re
 
 
 Let $\phi({\mr a_{\restriction i}},\,{\mr c_i},\,{\mr c_{\restriction i}})$ be the sentence that says $\fp_{i+1}({\mr a_{\restriction i}},\,{\mr c_i},\,{\mr c_{\restriction i}})$ is monochromatic.
-As ${\mr\bar c}$ is a coheir sequence we can find  ${\mr a_i}\in M$ such that $\phi({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr c_{\restriction i}})$.
+As ${\mr\bar c}$ is a coheir sequence we can find  ${\mr a_i}\in S$ such that $\phi({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr c_{\restriction i}})$.
   Hence $\fp_{i+1}({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr c_{\restriction i}})$ is monochromatic.
  As ${\mr\bar c}$ is indiscernible over $G$, this is equivalent to  $\fp({\mr a_{\restriction i}},\,{\mr a_i},\,{\mr\bar c})$.
 
@@ -809,12 +833,12 @@ $\{\sigma_i({\mr s_i}):i<\omega\}$ is monochromatic disjoint of $C$..
 % 
 % \section{Crap (if this is publicly available, it's just by errror)}
 % 
-% \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}The following terminology in not standard.We say that the set $\mrB\subseteq\U^{|{\mr x}|}$, typically a definable set, is \emph{strongly quasi-invariant over $M$\/} if for every definable set $\mrD$ either $\mrB\cap\mrD$ or $\mrB\cap\neg\mrD$ is quasi-invariant.
+% \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}The following terminology in not standard.We say that the set $\mrB\subseteq\U^{|{\mr x}|}$, typically a definable set, is \emph{strongly quasi-invariant over $S$\/} if for every definable set $\mrD$ either $\mrB\cap\mrD$ or $\mrB\cap\neg\mrD$ is quasi-invariant.
 % 
-% \begin{proposition}If $\mrB$ is strongly quasi-invariant over $M$ and $\<{\mr\D_i}:i<n\>$ is a finite sequence of definable sets that covers $\mrB$, then $\mrB\cap{\mr\D_i}$ is strongly quasi-invariant over $M$ for some $i$.
+% \begin{proposition}If $\mrB$ is strongly quasi-invariant over $S$ and $\<{\mr\D_i}:i<n\>$ is a finite sequence of definable sets that covers $\mrB$, then $\mrB\cap{\mr\D_i}$ is strongly quasi-invariant over $S$ for some $i$.
 % \end{proposition}
 % 
-% We say that the type $p({\mr x})\subseteq L(\U)$ is \emph{strongly quasi-invariant over $M$\/} if $\phi(\U^{\mr x})$ is strongly quasi-invariant over $M$ for every $\phi({\mr x})$ conjunction of formulas in $p({\mr x})$.% So, the type $p({\mr x})$ is quasi-invariant if the set $p({\mr\V})$ is invariant, where $\V$ is an large saturated extension of $\U$, see Exercise~\ref{ex_quasi_inv_type}.
+% We say that the type $p({\mr x})\subseteq L(\U)$ is \emph{strongly quasi-invariant over $S$\/} if $\phi(\U^{\mr x})$ is strongly quasi-invariant over $S$ for every $\phi({\mr x})$ conjunction of formulas in $p({\mr x})$.% So, the type $p({\mr x})$ is quasi-invariant if the set $p({\mr\V})$ is invariant, where $\V$ is an large saturated extension of $\U$, see Exercise~\ref{ex_quasi_inv_type}.
 % 
 % \begin{proposition}
 % Every strongly quasi-invariant type has an extension to a global strongly quasi-invariant type.
@@ -831,7 +855,7 @@ $\{\sigma_i({\mr s_i}):i<\omega\}$ is monochromatic disjoint of $C$..
 
 
 \begin{lemma}\label{lem_tensor}
-Let $p({\mr x})\in S(\U)$ be a global type invariant over $M$.
+Let $p({\mr x})\in S(\U)$ be a global type invariant over $S$.
 Let ${\gr a}\equiv_A{\gr a'}$.
 Then  ${\gr a},{\mr b}\equiv_A{\gr a'},{\mr b'}$ for all ${\mr b}\models p_{\restriction A,{\gr a}}({\mr x})$ and  ${\mr b'}\models p_{\restriction A,{\gr a'}}({\mr x})$.
 
@@ -849,14 +873,14 @@ Lemma~\ref{lem_tensor} ensures that the definition below is well-defined, i.e.\@
 
 
 \begin{definition}\label{def_prodotto_tipi}
-Let $p({\mr x})\in S(\U)$ be an $M$-invariant type.
+Let $p({\mr x})\in S(\U)$ be an $S$-invariant type.
 For $q({\gr z})\in S(A)$ we define
 
-\ceq{\hfill\mbox{\emph{$q(z)\otimes__M p({\mr x})$}}}{\deq}{\tp({\gr a\,};{\mr b}/A)}\quad for some ${\gr a}\models q({\gr z})$ and ${\mr b}\models p_{\restriction A,{\gr a}}({\mr x})$.
+\ceq{\hfill\mbox{\emph{$q(z)\otimes__S p({\mr x})$}}}{\deq}{\tp({\gr a\,};{\mr b}/A)}\quad for some ${\gr a}\models q({\gr z})$ and ${\mr b}\models p_{\restriction A,{\gr a}}({\mr x})$.
 
 When $q({\gr z})\in S(\U)$, we define
 
-\ceq{\hfill\mbox{\emph{$q(z)\otimes p({\mr x})$}}}{\deq}{\bigcup_{M\subseteq B}\ q_{\restriction B}(z)\otimes_B p({\mr x})}.
+\ceq{\hfill\mbox{\emph{$q(z)\otimes p({\mr x})$}}}{\deq}{\bigcup_{S\subseteq B}\ q_{\restriction B}(z)\otimes_B p({\mr x})}.
 \end{definition}
 
 Note that $q({\gr z})\otimes p({\mr x})$ is consistent, and therefore a complete global type.
@@ -864,17 +888,17 @@ In fact, it is immediate to verify that if $A\subseteq B'\subseteq B''$ then $q_
 
 
 \begin{proposition}
-Let $q({\gr z}), p({\mr x})\in S(\U)$ be $M$-invariant types.
-Then $q(z)\otimes p({\mr x})$ is also $M$-invariant.
-And if they are finitely satisfiable in $M$ then so is $q(z)\otimes p({\mr x})$.
+Let $q({\gr z}), p({\mr x})\in S(\U)$ be $S$-invariant types.
+Then $q(z)\otimes p({\mr x})$ is also $S$-invariant.
+And if they are finitely satisfiable in $S$ then so is $q(z)\otimes p({\mr x})$.
 \end{proposition}
 
 \begin{proof}
 Let $\phi(z,x,u)\in L(A)$.
 Let $\phi(z,x,c)\in q(z)\otimes p({\mr x})$ and let $c'\equiv_Ac$.
 Fix $a\models q_{\restriction A,c,c'}$ and $b\models p_{\restriction A,c,c',a}$.
-From the invariance of $q$ we obtain $c\equiv_{M,a}c'$.
-From the invariance of $p$ we obtain  $c\equiv_{M,a,b}c'$.
+From the invariance of $q$ we obtain $c\equiv_{S,a}c'$.
+From the invariance of $p$ we obtain  $c\equiv_{S,a,b}c'$.
 As $\phi(a,b,c)$ hold by the choice of $a$ and $b$, also $\phi(a,b,c')$ holds.
 It follows that $\phi(z,x,c')\in q({\gr z})\otimes p({\mr x})$ which proves the invariance of $q({\gr z})\otimes p({\mr x})$.
 
@@ -892,7 +916,7 @@ La seguente proposizione mostra che possiamo ragionevolmente parlare di tipo del
 Questo paragrafo \`e dedicato alla descrizione sintattica di questo tipo.
 
 \begin{proposition}\label{prop_tiposequenzaMorley}
-Sia $p\in S_x(\U)$ un tipo globale $M$-invariante e supponiamo che $a$ e $b$ siano due sequenze di Morley di $p$ su $M$.
+Sia $p\in S_x(\U)$ un tipo globale $S$-invariante e supponiamo che $a$ e $b$ siano due sequenze di Morley di $p$ su $S$.
 Allora $a\equiv_A c$.
 
 \end{proposition}
@@ -916,7 +940,7 @@ Dati $p({\mr x}), q(y)\in S(\U)$, e due insiemi $A_i$, per $i=0,1$ su cui $q(y)$
 Allora $\phi(a_0,b_0)\iff\phi(a_1,b_1)$.
 \end{lemma}
 \begin{proof}
-Supponiamo per cominciare che $A_0=A_1$ e denotiamo questo insieme con $M$.
+Supponiamo per cominciare che $A_0=A_1$ e denotiamo questo insieme con $S$.
 Assumiamo $\phi(a_0,b_0)$ e quindi, per la completezza di $q$, che $\phi(a_0,y)\in q$.
 Per la completezza di $p$  abbiamo che $a_0\equiv_Aa_1$.
 Quindi, per l'invarianza di $q$ otteniamo $\phi(a_1,y)\in q$ e da questo segue $\phi(a_1,b_1)$.
@@ -931,11 +955,11 @@ Conviene immaginarsi questa operazione di prodotto come il passo induttivo per l
 \begin{definition}\label{def_prodotto_tipi}
 Dati $p({\mr x}),q(y)\in S(\U)$ dove $q(y)$ \`e un tipo invariante, definiamo il prodotto di $p$ e $q$ come il tipo:
 
-%\ceq{\hfill p({\mr x})\otimes q(y)}{=}{\Big\{\phi(x,y)\ :\ \phi(b,c) \textrm{ per qualche } a\models p_{\restriction A},\ b\models q_{\restriction A,a}(y) ed $M$ t\Big\}}
+%\ceq{\hfill p({\mr x})\otimes q(y)}{=}{\Big\{\phi(x,y)\ :\ \phi(b,c) \textrm{ per qualche } a\models p_{\restriction A},\ b\models q_{\restriction A,a}(y) ed $S$ t\Big\}}
 
 \ceq{\hfill\mbox{\emph{$p({\mr x})\otimes q(y)$}}}{=}{\Big\{\phi(x,y)\ :\ \textrm{esistono } a,b\ \models\ \phi(x,y)\ \wedge\ p_{\restriction A}({\mr x})\ \wedge\ q_{\restriction A,a}(y)\Big\}}
 
-L'insieme $M$ nella definizione \`e uno qualsiasi che contiene i parametri di $\phi(x,y)$ e su cui $q(y)$ \`e invariante.
+L'insieme $S$ nella definizione \`e uno qualsiasi che contiene i parametri di $\phi(x,y)$ e su cui $q(y)$ \`e invariante.
 Il lemma~\ref{lemma_prodotto} assicura che la definizione non dipende dal particolare insieme scelto.
 \end{definition}
 
@@ -947,22 +971,22 @@ Se $p({\mr x}),q(y)\in S(\U)$ e $q(y)$ \`e invariante, allora $p({\mr x})\otimes
 
 \begin{proof}
 Sia $\phi(x,y)\in L(\U)$.
-Fissiamo un insieme $M$ contenente i parametri di $\phi(x,y)$ e su cui $q(y)$ sia invariante.
+Fissiamo un insieme $S$ contenente i parametri di $\phi(x,y)$ e su cui $q(y)$ sia invariante.
 Fissiamo $a,b$ arbitrari tali che $a\models p_{\restriction A}({\mr x})$ e $b\models q_{\restriction A,a}(y)$.
 Dal lemma~\ref{lemma_prodotto} otteniamo che $\phi(x,y)\in p({\mr x})\otimes q(y)$ se e solo se $\phi(a,b)$.
 \end{proof}
 
 
 \begin{corollary}
-Se $p({\mr x}),q(y)\in S(\U)$ sono tipi globali $M$-invarianti, allora anche $p({\mr x})\otimes q(y)$ \`e $M$-invariante.
+Se $p({\mr x}),q(y)\in S(\U)$ sono tipi globali $S$-invarianti, allora anche $p({\mr x})\otimes q(y)$ \`e $S$-invariante.
 \end{corollary}
 
 \begin{proof}
 Sia $\phi(x,y,z)\in L$, sia $c$ arbitrario tale che  $\phi(x,y,c)\in p({\mr x})\otimes q(y)$, e sia $c'\equiv_Ac$.
 Fissiamo $a\models p_{\restriction A,c,c'}$.
-Poich\'e $p$ \`e invariante su $M$, otteniamo $a,c\equiv_Aa,c'$.
+Poich\'e $p$ \`e invariante su $S$, otteniamo $a,c\equiv_Aa,c'$.
 Ora fissiamo un $b$ arbitrario tale che $b\models q_{\restriction A,c,c',a}$.
-Per l'invarianza di $q$ su $M$ otteniamo  $a,b,c\equiv_Aa,b,c'$ e quindi $\phi(a,b,c')$.
+Per l'invarianza di $q$ su $S$ otteniamo  $a,b,c\equiv_Aa,b,c'$ e quindi $\phi(a,b,c')$.
 Seque che $\phi(x,y,c)\in p({\mr x})\otimes q(y)$.
 \end{proof}
 
@@ -990,25 +1014,25 @@ Definiamo induttivamente
 
 La seguente proposizione giustifica la definizione di $p^{(\omega)}$, la dimostrazione \`e immediata.
 
-\begin{proposition}\label{prop_p^omega_Morley}
+\begin{proposition}\label{prop_p^omega_Sorley}
 Sia $p({\mr x})\in S(\U)$ un tipo globale $A$-invariante.
 Allora le seguenti affermazioni sono equivalenti
 \begin{itemize}
 \item[1.]$\<c_i:i<\omega\>$ \`e una sequenze di Morley di $p$ su $A$;
-\item[2.] $\<c_i:i<\omega\>\models p^{(\omega)}|__M$
+\item[2.] $\<c_i:i<\omega\>\models p^{(\omega)}|__S$
 \end{itemize}
 \end{proposition}
 
-La seguente proposizione torner\`a utile nei prossimi paragrafi, si osservi che  non \`e una conseguenza della proposizione~\ref{prop_p^omega_Morley} perch\'e qui l'invarianza su $A$ non \`e tra le ipotesi.
+La seguente proposizione torner\`a utile nei prossimi paragrafi, si osservi che  non \`e una conseguenza della proposizione~\ref{prop_p^omega_Sorley} perch\'e qui l'invarianza su $A$ non \`e tra le ipotesi.
 
 \begin{proposition}
 Sia $p({\mr x})\in S(\U)$ un tipo globale invariante ed $A$ un insieme arbitrario.
-Allora ogni $\<c_i:i<\omega\>\models p^{(\omega)}|__M$ \`e una sequenza di indiscernibili su $A$.
+Allora ogni $\<c_i:i<\omega\>\models p^{(\omega)}|__S$ \`e una sequenza di indiscernibili su $A$.
 \end{proposition}
 
 
 \begin{proof}
-\`E sufficiente verificare che se $\<c_i:i<\omega\>\models p^{(\omega)}|__M$ allora $c_{i_0},\dots,c_{i_n}\models p^{(n+1)}|__M$ per ogni $i_0<\dots<i_n<\omega$.
+\`E sufficiente verificare che se $\<c_i:i<\omega\>\models p^{(\omega)}|__S$ allora $c_{i_0},\dots,c_{i_n}\models p^{(n+1)}|__S$ per ogni $i_0<\dots<i_n<\omega$.
 
 \end{proof}
 \end{comment}

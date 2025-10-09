@@ -180,13 +180,14 @@ Assume $|L|\le\lambda$. Consider the category that consists of models of some th
 \section{Homogeneous structures}\label{homogeneous}
 Definition~\ref{def_omogenea_universale} introduces the notions of universal and homogeneous structures in a general context.
 When the morphisms of the underlying category are the elementary maps, we refer to these notions as elementary homogeneity and elementary universality.
-However, one often omits to specify \textit{elementary}. We repeat Definition~\ref{def_omogenea_universale} in this specific case. 
+However, one often omits to specify \textit{elementary}. 
+We repeat Definition~\ref{def_omogenea_universale} in this specific case. 
 
 \begin{definition}
 A structure $N$ is \emph{(elementarily) $\lambda$-universal\/} if every $M\equiv N$ of cardinality $\le\lambda$ there is an elementary embedding $h:M\hookrightarrow N$.
-We say  \emph{universal\/}  if it is $\lambda$-universal and of cardinality $\lambda$.
+We say \emph{universal\/} if it is $\lambda$-universal and of cardinality $\lambda$.\smallskip
 
-We say that $N$ is \emph{(elementarily) $\lambda$-homogeneous\/} if every elementary map $k:N\to N$ of cardinality $<\lambda$ extends to an automorphism. 
+A model $N$ is \emph{(elementarily) $\lambda$-homogeneous\/} if every elementary map $k:N\to N$ of cardinality $<\lambda$ extends to an automorphism. 
 As usual, $N$ is \emph{homogeneous\/} if it is $\lambda$-homogeneous and of cardinality $\lambda$.
 \end{definition}
 
@@ -201,9 +202,9 @@ For every structure $N$ of cardinality $\ge|L|$ the following are equivalent\nob
 \end{theorem}
 
 Given $A\subseteq N$ we denote by \emph{$\Aut(N/A)$\/} the group of \emph{$A\mbox{-}$automorphisms\/} of $N$. That is the group of automorphisms that fix $A$ point-wise.
-Let $a$ be a tuple of elements of $N$. The \emph{orbit of $a$ over $A$ in $N$} is the set
+Let ${\mr a}$ be a tuple of elements of $N$. The \emph{orbit of ${\mr a}$ over $A$ in $N$} is the set
 
-\ceq{\hfill\emph{$O_N(a/A)$}}{=}{\Big\{fa\;:\; f\in\Aut(N/A)\Big\}.}
+\ceq{\hfill\emph{$O_N({\mr a}/A)$}}{=}{\Big\{f{\mr a}\;:\; f\in\Aut(N/A)\Big\}.}
 
 When the model $N$ is clear from the context we omit the subscript.
 
@@ -220,7 +221,7 @@ Finally, we want to extend the equivalence in Theorem~\ref{thm_saturo_omogeneoun
 When the morphisms of the underlying category are the elementary maps, it is usual to replace the notion of $\lambda\mbox{-}$universal (cf.\@ Definition~\ref{def_omogenea_universale}) with the following.
 
 \begin{definition}\label{def_w_saturation}
-  We say that $N$ is \emph{weakly $\lambda\mbox{-}$saturated\/} if $N$ realizes every type $p(x)\subseteq L$, where $|x|\le\lambda$, that is finitely consistent in $N$.
+  We say that $N$ is \emph{weakly $\lambda\mbox{-}$saturated\/} if $N$ realizes every type $p({\mr x})\subseteq L$, where $|{\mr x}|\le\lambda$, that is finitely consistent in $N$.
 \end{definition}
 
 In fact, by the L\"owenheim-Skolem theorem the two notions are equivalent.
@@ -244,8 +245,8 @@ Let $|L|\le\lambda$. The following are equivalent\nobreak
 \end{corollary}
 
 \begin{exercise}\label{ex_omega_homogeneous_same_card}
-Let $M$ be an arbitrary structure of cardinality larger than $|L|$.
-Prove that $M$ has an $\omega\mbox{-}$homogeneous elementary extension of the same cardinality. 
+Let $M$ be an arbitrary structure of cardinality $\lambda\ge|L|$, a regular cardinal.
+Prove that $M$ has an homogeneous elementary extension of the same cardinality. 
 \end{exercise}
 
 \begin{exercise}
@@ -303,7 +304,7 @@ Some terms acquire a slightly different meaning when working inside a monster mo
 \item[\emph{bounded}] is used in some contexts as synonym of small.
 \item[\emph{models}] are elementary substructure of $\U$ of small cardinality they are denoted by the letters $M$ and $N$.
 \item[\emph{parameters}] are always in $\U$; the symbols $A$, $B$, $C$, etc.\@ denote sets of parameters of small cardinality; calligraphic letters as $\Aa$, $\B$, $\C$, etc.\@ are used for sets of arbitrary cardinality.
-\item[\emph{tuples}] have length $<\kappa$ unless otherwise specified their type is denoted by $\tp(a/A)=\tp_\U(a/A)$ and $a\equiv_A b$ abbreviates $\U,a \equiv_A \U,b$.
+\item[\emph{tuples}] have length $<\kappa$ unless otherwise specified; their type is denoted by $\tp(a/A)=\tp_\U(a/A)$ and $a\equiv_A b$ abbreviates $\U,a \equiv_A \U,b$.
 \item[\emph{small types}] are subsets of $L(\U)$ of small cardinality.
 We may use small types in expression such as $p(x)\imp\neg q(x)$, $\E y\,p(x,y)$, etc. with the obvious meaning though these are neither first-order formulas nor types.
 \item[\emph{global types}] are complete finitely consistent types over $\U$; the set of global types is denoted by $S(\U)$. If $p(x)$ is a global type we write $p(x)\proves\phi(x)$ if $\psi(x)\imp\phi(x)$ for some conjunction $\psi(x)$ of formulas in $p(x)$.
@@ -456,9 +457,9 @@ The following easy proposition is very useful.
 
 \begin{proposition}\label{prop_E_type}
 Let $p({\mr x}\,;{\gr z})\subseteq L(A)$.
-There is a type $q({\mr x})\subseteq L(A)$ such that
+There is a type $q({\mr x})\subseteq L(A)$ such that\smallskip
 
-\ceq{\hfill\U}{\models}{\A {\mr x}\,\big[\E {\gr z}\,p({\mr x}\,;{\gr z})\ \iff\ q({\mr x})\big].}
+\hfil$\A {\mr x}\,\big[\E {\gr z}\,p({\mr x}\,;{\gr z})\ \iff\ q({\mr x})\big].$\smallskip
 
 The proposition also holds when ${\gr z}$ has length $\kappa$.
 \end{proposition}
