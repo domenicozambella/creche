@@ -47,11 +47,11 @@ Fix $M\models T$ and ${\mr b}\in M^{\mr x}$. Let $q({\mr x})=\Deltatp_M({\mr b})
 \item[2.] $T\ \proves\  q({\mr x})\imp\phi({\mr x})$.
 \end{itemize}
 \end{proposition}
-\begin{proof} \ssf{1}$\IFF$\ssf{1$'$}\quad In fact, the difference is just in the notation.
+\begin{proof} \ssf{1}$\IFF$\ssf{1$'$}. In fact, the difference is just in the notation.
 
-\ssf{2}$\IMP$\ssf{1}\quad Immediate.  
+\ssf{2}$\IMP$\ssf{1}. Immediate.  
 
-\ssf{1}$\IMP$\ssf{2}\quad Negate \ssf{2}, then there are $N\models T$ and ${\mr c}\in N^{\mr x}$ such that $N\models q({\mr c})\wedge\neg\phi({\mr c})$. Therefore the map $k:M\to N$, where $k=\{\<{\mr b},{\mr c}\>\}$, contradicts \ssf{1}.
+\ssf{1}$\IMP$\ssf{2}. Negate \ssf{2}, then there are $N\models T$ and ${\mr c}\in N^{\mr x}$ such that $N\models q({\mr c})\wedge\neg\phi({\mr c})$. Therefore the map $k:M\to N$, where $k=\{\<{\mr b},{\mr c}\>\}$, contradicts \ssf{1}.
 Note that, as $\Delta$ contains equality, $k$ is indeed a function.
 \end{proof}
 
@@ -65,9 +65,9 @@ For every $\phi({\mr x})\in L$ the following are equivalent
 %\item[2'.] $M\models\phi(a)\IMP N\models\phi(b)$ for every $M,a\Rrightarrow_\Delta N,b$ con $M$ ed $N$ modelli di $T$.
 \end{itemize}
 \end{lemma}
-\begin{proof} \ssf{1}$\IMP$\ssf{2}\quad Immediate.
+\begin{proof} \ssf{1}$\IMP$\ssf{2}. Immediate.
 
-\ssf{2}$\IMP$\ssf{1}\quad  We claim that \ssf{2} implies
+\ssf{2}$\IMP$\ssf{1}.  We claim that \ssf{2} implies
 
 \ceq{\#\hfill T}{\proves}{\phi({\mr x})\ \ \iff\ \ \bigvee\big\{\,p({\mr x})\subseteq\Delta\ :\ T\proves p({\mr x})\imp\phi({\mr x})\,\big\}.}
 
@@ -118,12 +118,12 @@ Then the following are equivalent
 \end{proposition}
 
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}\quad Let ${\gr a}$ enumerate $\dom k$. Define $p({\mr x}\,;{\gr z})=\{\E\wedge\}\Deltatp_M ({\mr b}\,;{\gr a})$. By \ssf{1}, $p({\mr x}\,;k{\gr a})$ is finitely consistent in $N$. By saturation there is a ${\mr c}\in N$ that realizes $p({\mr x}\,;k{\gr a})$. Therefore, $h:M\to N$ where $h=k\cup\{\<{\mr b},{\mr c}\>\}$, witnesses \ssf{2}.
+\ssf{1}$\IMP$\ssf{2}. Let ${\gr a}$ enumerate $\dom k$. Define $p({\mr x}\,;{\gr z})=\{\E\wedge\}\Deltatp_M ({\mr b}\,;{\gr a})$. By \ssf{1}, $p({\mr x}\,;k{\gr a})$ is finitely consistent in $N$. By saturation there is a ${\mr c}\in N$ that realizes $p({\mr x}\,;k{\gr a})$. Therefore, $h:M\to N$ where $h=k\cup\{\<{\mr b},{\mr c}\>\}$, witnesses \ssf{2}.
 
-\ssf{2}$\IMP$\ssf{1}
+\ssf{2}$\IMP$\ssf{1}.
 Iterate \ssf2.
 
-\ssf{2}$\IMP$\ssf{3}\quad Let ${\gr a}$ enumerate $\dom k$ and let $|{\gr z}|=|{\gr a}|$. Formulas in $\{\E\wedge\}\Delta$ with free variables among ${\gr z}$ are of the form  $\E {\mr\bar x}\, \phi ({\mr\bar x}\,;{\gr z})$ where $\phi({\mr\bar x}\,;{\gr z})$ is in $\{\wedge\}\Delta$ and ${\mr\bar x}$ is of finite length.
+\ssf{2}$\IMP$\ssf{3}. Let ${\gr a}$ enumerate $\dom k$ and let $|{\gr z}|=|{\gr a}|$. Formulas in $\{\E\wedge\}\Delta$ with free variables among ${\gr z}$ are of the form  $\E {\mr\bar x}\, \phi ({\mr\bar x}\,;{\gr z})$ where $\phi({\mr\bar x}\,;{\gr z})$ is in $\{\wedge\}\Delta$ and ${\mr\bar x}$ is of finite length.
 Assume $M\models\E{\mr\bar x}\,\phi({\mr\bar x}\,;{\gr a})$ and let ${\mr\bar b}$ be such that $M\models\phi({\mr\bar b}\,;{\gr a})$.
 By \ssf{2} we can extend $k$ to some $\Delta$-morphism $h:M\to N$ defined in ${\mr\bar b}$.
 Then $N\models\phi(h{\mr\bar b}\,;h{\gr a})$ and therefore $N\models\E {\mr\bar x}\,\phi({\mr\bar x}\,;k{\gr a})$.
@@ -150,9 +150,9 @@ For every $\phi({\mr x})\in L$ the following are equivalent
 \end{itemize}
 \end{theorem}
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}\quad Immediate.
+\ssf{1}$\IMP$\ssf{2}. Immediate.
 
-\ssf{2}$\IMP$\ssf{1}\quad Negate \ssf{1}.
+\ssf{2}$\IMP$\ssf{1}. Negate \ssf{1}.
 By the Lyndon-Robinson Lemma~\ref{lem_qfdefinability} there is a $\{\E\wedge\}\Delta$-morphism $k:M\to N$ between models of $T$ that does not preserve $\phi({\mr x})$.
 We can assume that $N$ is $\lambda$-saturated for some sufficiently large $\lambda$.
 By Corollary~\ref{corol_EDelta_estensione} there is a total $\Delta$-morphism $h:M\hookrightarrow N$ that extends $k$ and contradicts \ssf{2}.
@@ -237,9 +237,9 @@ The following are equivalent
 \end{itemize}
 \end{corollary}
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}\quad Immediate.
+\ssf{1}$\IMP$\ssf{2}. Immediate.
 
-\ssf{2}$\IMP$\ssf{1}\quad We prove by induction of syntax that $\Delta$-morphism preserve the truth of all formulas in $\{\E\,\A\mathord\wedge\mathord\vee\}\Delta$, this suffices by Lemma~\ref{lem_qfdefinability}. Induction for the connectives $\vee$ and $\wedge$ is trivial.  So assume as induction hypothesis that the truth of  $\phi(x,y)$ is preserved.  By Lemma~\ref{lem_qfdefinability} $\phi({\mr x},{\mr y})$ is equivalent to a formula in $\{\mathord\wedge\mathord\vee\}\Delta$, hence by \ssf{2} the truth of $\E{\mr y}\, \phi ({\mr x},{\mr y})$ and $\A{\mr y} \,\phi ({\mr x},{\mr y})$ is preserved.
+\ssf{2}$\IMP$\ssf{1}. We prove by induction of syntax that $\Delta$-morphism preserve the truth of all formulas in $\{\E\,\A\mathord\wedge\mathord\vee\}\Delta$, this suffices by Lemma~\ref{lem_qfdefinability}. Induction for the connectives $\vee$ and $\wedge$ is trivial.  So assume as induction hypothesis that the truth of  $\phi(x,y)$ is preserved.  By Lemma~\ref{lem_qfdefinability} $\phi({\mr x},{\mr y})$ is equivalent to a formula in $\{\mathord\wedge\mathord\vee\}\Delta$, hence by \ssf{2} the truth of $\E{\mr y}\, \phi ({\mr x},{\mr y})$ and $\A{\mr y} \,\phi ({\mr x},{\mr y})$ is preserved.
 \end{proof}
 
 Condition \ssf{2} of the corollary above may be difficult to verify directly. The following corollary of Proposition~\ref{prop_EDelta_estensione} and~\ref{prop_ADelta_estensione} gives a back-and-forth condition witch is easier to verify.
@@ -336,9 +336,9 @@ The following are equivalent
 \end{proposition}
 
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}\quad By \ssf{1}, every formula $\{\A\E\mathord\wedge\mathord\vee\}\Delta$ is preserved by total $\Delta$-morphism therefore, by Theorem~\ref{thm_embeddings_preservation_E}, it is equivalent to a formula in $\{\E\mathord\wedge\mathord\vee\}\Delta$.
+\ssf{1}$\IMP$\ssf{2}. By \ssf{1}, every formula $\{\A\E\mathord\wedge\mathord\vee\}\Delta$ is preserved by total $\Delta$-morphism therefore, by Theorem~\ref{thm_embeddings_preservation_E}, it is equivalent to a formula in $\{\E\mathord\wedge\mathord\vee\}\Delta$.
 
-\ssf{2}$\IMP$\ssf{1}\quad Clear, because total $\Delta$-morphism preserve formulas in $\{\E\mathord\wedge\mathord\vee\}\Delta$.
+\ssf{2}$\IMP$\ssf{1}. Clear, because total $\Delta$-morphism preserve formulas in $\{\E\mathord\wedge\mathord\vee\}\Delta$.
 \end{proof}
 
 The theory of discrete linear orders defined in Exercise~\ref{ex_discrete_lo} is an example of a model-complete theory without elimination of quantifiers.
@@ -357,9 +357,9 @@ Then the following are equivalent
 \end{proposition}
 
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}\quad By Proposition~\ref{prop_amalgamation_def} every partial morphism $k:M\to N$ extends to an embedding $g : M\hookrightarrow N'$ which, by model-completeness, is an elementary embedding. Model-completeness also implies that $N\preceq N'$. Hence $k:M\to N$ is an elementary map. This proves \ssf{2}.
+\ssf{1}$\IMP$\ssf{2}. By Proposition~\ref{prop_amalgamation_def} every partial morphism $k:M\to N$ extends to an embedding $g : M\hookrightarrow N'$ which, by model-completeness, is an elementary embedding. Model-completeness also implies that $N\preceq N'$. Hence $k:M\to N$ is an elementary map. This proves \ssf{2}.
 
-\ssf{2}$\IMP$\ssf{1}\quad If all morphisms are elementary maps, amalgamations follows from Proposition~\ref{prop_elementary_amalg}.
+\ssf{2}$\IMP$\ssf{1}. If all morphisms are elementary maps, amalgamations follows from Proposition~\ref{prop_elementary_amalg}.
 \end{proof}
 
 \begin{exercise}
