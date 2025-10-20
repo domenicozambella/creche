@@ -11,7 +11,7 @@ Chapter under revision.
 In this chapter, $L$ is a signature, $T$ is a complete theory without finite models, and $\U$ is a saturated model of inaccessible cardinality $\kappa$ strictly larger than $|L|$.
 We use the same notation and make the same implicit assumptions as in Section~\ref{monster}.
 
-Assumption~\ref{notation_GXphi} below is in force throughout the chapter.
+Throughout this chapter \emph{$\mrX$\/} $\subseteq\U^{\mr x}$ and \emph{$\grZ$\/} $\subseteq\U^{\gr z}$ are two given sets that are type-definable over some set $A$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -22,68 +22,14 @@ Assumption~\ref{notation_GXphi} below is in force throughout the chapter.
 
 We revisit the notion of invariance introduceted in Chapter~\ref{invariant} in a more general setting.
 
-\begin{assumption}\label{notation_GXphi}
-Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}(\U)$.
-Given any \emph{$\mrX$\/} $\subseteq\U^{\mr x}$ and \emph{$\grZ$\/} $\subseteq\U^{\gr z}$, we define the structure \emph{$\UDelta$\/} $=\big\<\mrX\,;\grZ\big\>$.
-This is a 2-sorted structure whose signature \emph{$\LDelta$\/} contains relation symbols for every formula $\phi({\mr x}\,;{\gr z})\in\Delta$.
-As there is little risk of confusion, these relations symbols are also denoted by $\phi({\mr x}\,;{\gr z})$, and we identify $\LDelta$ with a subset of $L$.
-\end{assumption}
+Let \emph{$G$\/} $\le\Aut(\U/A)$.
+We view $G$ as a group acting on $\mrX$ and $\grZ$ and write ${\cdot}$ for such action.
+We write $\cdot$ also for the operation of $G$, i.e.\@ composition of automorphisms.
+If $\phi({\mr x}\,;{\gr z})\in L(A)$ and $\mrD=\varphi(\mrX\,;{\gr b})$ then $g{\cdot}\mrD=\varphi(\mrX\,;g{\cdot}{\gr b})$.
+A formula is $G$-invariant if the set it defines is $G$-invariant (i.e.\@ fixed by the action of $G$).
 
-When $\mrX$ and $\grZ$ are type definable and $\Delta$ is small, $\UDelta$ is a saturated structure.
-As compactness is not always required, these sets are arbitrary unless explicitly required.
-
-In the first few sections we only work a subset of the quantifier-free fragment of $\LDelta$.
-Let $\BDelta(\grZ)$ be the set of Boolean combinations of the sets $\phi(\mrX\,;{\gr b})$, for $\phi({\mr x}\,;{\gr z})\in\Delta$ and ${\gr b}\in\grZ$.
-The same symbol is also used to denote the collection of formulas defining these sets.
-%  $\LDelta_{{\rm\,at^\pm}\!,\,{\mr x}}(\grZ)$ and 
-% $\LDelta_{{\rm\,qf},\,{\mr x}}(\grZ)$ with 
-% $\pmDelta(\grZ)$, respectively 
-
-A $\BDelta(\grZ)$-type-definable set is a set that is the intersection of a small collection of sets in $\BDelta(\grZ)$.
-
-We write \emph{$S_\Delta(\grZ)$\/} for the set of complete $\BDelta(\grZ)$-types~--~which we may conveniently think as subsets of $\pmDelta(\grZ)$.
-In this chapter the types in $S_\Delta(\grZ)$ are required to be finitely consistent $\mrX$~--~a piece of information that we will not display in the notation as there is little risk of ambiguity.
-When the types are required to be finitely consistent in some $\mrY\subseteq\mrX$ we write \emph{$S_{\Delta,\Y}(\grZ)$.}
-
-% A set $\mrD\subseteq\mrX$ is \emph{$\BDelta({\grZ})$-definable\/} if $\mrD=\phi(\mrX)$ for some $\phi({\mr x})\in\BDelta({\grZ})$.
-% In the literature these sets are sometime called \textit{relatively\/} definable to distinguish them from $\phi(\U^{\mr x})$ and $\phi(\U^{\gr z})$.
-% Similarly, we define \emph{$\BDelta({\grZ})$-type-definable\/} sets.
-
-When $p({\mr x})\subseteq\LDelta(\grZ)$ and ${\mrD}\subseteq\mrX$ we write $p({\mr x})\proves{\mr x}\in{\mrD}$ if the inclusion $\psi(\mrX)\subseteq{\mrD}$ holds for some $\psi({\mr x})$ that is conjunctions of formulas in $p({\mr x})$.
-
-Let \emph{$G$\/} $\le\Aut(\UDelta)$.
-We say that $\grD\subseteq\grZ$ is \emph{invariant\/} under the action of $G$, or \emph{$G$-invariant,} if  $\grD$ is fixed setwise by $G$.
-That is, $g\,\grD=\grD$ for every $g\in G$.
-Yet in other words, if
-
-\ceq{\ssf{is.}\hfill{\gr a}\in\grD}{\iff}{g\,{\gr a}\in\grD}\hfill for every ${\gr a}\in\grZ$ and every $g\in G$.
-
-A formula is $G$-invariant if the set it defines is $G$-invariant.
-We say that the type $p({\mr x})\subseteq\BDelta(\grZ)$ is \emph{invariant\/} under the action of $G$, or \emph{$G$-invariant,} if 
-
-\ceq{\ssf{it.}\hfill\theta({\mr x}\,;{\gr\bar a})\in p}{\IFF}{\theta({\mr x}\,;g\,{\gr\bar a})\in p}\hfill for every $g\in G$ and every $\theta({\mr x}\,;{\gr\bar a})\in\BDelta(\grZ)$.
-
-Note that $p({\mr x})$ is $G$-invariant exactly when the sets ${\gr\D_{p,\theta}}$ are.
-In this section we want to discuss the invariance of types using the sets $\mrD\subseteq\mrX$.
-
-An immediate consequence of the invariance of $\phi(\mrX\,;\grZ)$ is that $G$-translates sets in $\BDelta({\grZ})$ remain in $\BDelta({\grZ})$.
-In particular, by reasoning as in Remark~\ref{rem_image_def_set} we obtain that for every $\BDelta({\grZ})$-formula $\theta({\mr x}\,;{\gr\bar b})$ and every $g\in G$
-
-\ceq{\hfill g[\theta(\mrX\,;{\gr\bar b})]}{=}{\theta(\mrX\,;g\,{\gr\bar b}).}
-
-Therefore, a type $p({\mr x})\subseteq\BDelta(\grZ)$ is $G$-invariant if
-
-\ceq{\hfill p({\mr x})\proves{\mr x}\in\mrD}{\IFF}{p({\mr x})\proves{\mr x}\in g{\cdot}\mrD}\hfill for every $\mrD\subseteq\mrX$ and $g\in G$.
-
-% At the first reading the reader may assume that $G=\Aut(\U)$, $\mrX=\U^{\mr x}$, $\grZ=\U^{\gr z}$ and $\Delta=L_{{\mr x}\,;{\gr z}}$, where $|{\gr z}|=\omega$.
-% Then $\pmDelta(\grZ)=L_{\mr x}(\U)$ and  $S_\Delta(\grZ)=S_{\mr x}(\U)$. 
-% Note that when $G$ acts by automorphisms $\phi(\U^{\mr x};\U^{\gr z})$ is $G$-invariant for all $\phi({\mr x}\,;{\gr z})\in L$.
-
-Let $\mrY\subseteq\mrX$.
-We say that a set $\mrD\subseteq\mrX$ is \emph{syndetic\/} under the action of $G$ \emph{relative\/} to $\mrY$, or \emph{$G$-syndetic\/} for short, if finitely many $G$-translates of $\mrD$ cover $\mrY$; we say \emph{$n$-$G$-syndetic\/} if $\le n$ translates suffices.
-Dually, we say that $\mrD$ is \emph{thick\/} under the action of $G$ relative to $\mrY$, or \emph{$G$-thick\/} for short, if the intersection of any finitely many $G$-translates of $\mrD$ is consistent with $\mrY$; we say \emph{$n$-$G$-thick\/} when the request is limited to $\le n$ translates.
-
-We omit reference to $\mrY$ when this is $\mrX$ or if it is made crystal clear by the context.
+We say that a set $\mrD\subseteq\mrX$ is \emph{syndetic\/} under the action of $G$, or \emph{$G$-syndetic\/} for short, if finitely many $G$-translates of $\mrD$ cover $\mrX$; we say \emph{$n$-$G$-syndetic\/} if $\le n$ translates suffices.
+Dually, we say that $\mrD$ is \emph{thick\/} under the action of $G$, or \emph{$G$-thick\/} for short, if the intersection of any finitely many $G$-translates of $\mrD$ is consistent; we say \emph{$n$-$G$-thick\/} when the request is limited to $\le n$ translates.
 
 The same properties may be attributed to formulas (as these are identified with the set they define).
 When these properties are attributed to a type $p({\mr x})$, we understand that they hold for every conjunction of formulas in $p({\mr x})$.
@@ -92,27 +38,35 @@ See Exercise~\ref{ex_thick_types} for an alternative characterization when $p({\
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 The terminology above is taken from topological dynamics.
 In other contexts (see eg.~\cite{Newelski09}) syndetic sets are called \textit{generic.}
-In~\cite{CK} the authors write \textit{quasi-non-ødividing\/} for \textit{thick\/} under the action of $\Aut(\U/A)$.
+In~\cite{CK} the authors write \textit{quasi-non-dividing\/} for \textit{thick\/} under the action of $\Aut(\U/A)$.
 Their terminology has good motivations, but it would be a mouthful if adapted to our context.
 
 Notation: for $\mrD\subseteq\mrX$ and $C\subseteq G$ we write \emph{$C{\cdot}\mrD$\/} for $\{h{\cdot}\mrD: h\in C\}$.
 
+\begin{remark}\label{rem_relative}
+Let $q({\mr x})\subseteq L(\grZ)$.
+We say that $\mrD$ is $G$-syndetic \emph{relative\/} to $q({\mr x})$ if $q({\mr x})$ entails $\cup\,F{\cdot}\mrD$ for some finite $F\subseteq G$.
+Dually, $\mrD$ is $G$-thick \emph{relative\/} to $q({\mr x})$ if $G{\cdot}\mrD$ is finitely consistent with $q({\mr x})$.
+The notions of \textit{wide,\/} \textit{strong syndetic,\/} and \textit{weakly thick,\/}  which we indroduce below relitivize likewise.
+All results below easily relativize to any type $q({\mr x})$.
+We entrust the generalization to the reader (this is only required in Fact~\ref{fact_stationarity}).
+\end{remark}
+
 In this chapter many proofs require some juggling with negations as epitomized by the following fact.
 
 \begin{fact}\label{fact_fip}
-  Work relative to some given $\mrY\subseteq\mrX$.
   The following are equivalent
   \begin{itemize}
     \item[1.] $\mrD$ is not $G$-syndetic
-    \item[2.] $\neg\mrD$ is $G$-thick.
+    \item[2.] $\neg\mrD$ is $G$-thick (throughout the chapter \emph{$\neg\mrD$\/} denotes that complement in $\mrX$).
   \end{itemize}\smallskip
 \end{fact}
 
 \begin{proof}
   Spelling out the definitions, \ssf1 and \ssf2 are, respectively, equivalent to
   \begin{itemize}
-    \item[1$'$.] there are no finite $C\subseteq G$ such that $\mrY\ \subseteq\ \cup\, C{\cdot}{\mr\D}$.
-    \item[2$'$.] $\varnothing\ \neq\ \mrY\,\cap\,\big(\cap\, C{\cdot}\neg{\mr\D}\big)$ for every finite $C\subseteq G$.
+    \item[1$'$.] there are no finite $C\subseteq G$ such that $\mrX\ \subseteq\ \cup\, C{\cdot}{\mr\D}$.
+    \item[2$'$.] $\varnothing\ \neq\ \cap\, C{\cdot}\neg{\mr\D}$ for every finite $C\subseteq G$.
   \end{itemize} 
   Then the equivalence is evident.
 \end{proof}
@@ -120,7 +74,6 @@ In this chapter many proofs require some juggling with negations as epitomized b
 The following characterization is also useful (an is sometimes taken as the definition).
 
 \begin{corollary}\label{fact_fip2}
-  Work relative to some given $\mrY\subseteq\mrX$.
   The following are equivalent
   \begin{itemize}
     \item[1.] $\mrD$ is $G$-thick
@@ -129,53 +82,49 @@ The following characterization is also useful (an is sometimes taken as the defi
 \end{corollary}
 
 \begin{proof}
-  \ssf1$\IMP$\ssf2. 
+  \ssf1$\IMP$\ssf2.
   If $\mrD$ is $G$-thick and $\mrD\cap\mrC=\varnothing$ then $\mrD\subseteq\neg\mrC$.
   Then $\neg\mrC$ is also $G$-thick which, by Fact~\ref{fact_fip} implies that $\mrC$ is not $G$-syndetic.
 
-  \ssf2$\IMP$\ssf1. 
+  \ssf2$\IMP$\ssf1.
   If $\mrD$ is not $G$-thick then $\mrD$ is $G$-syndetic then $\neg$\ssf2.
 \end{proof}
 
 Define the following type
 
-\ceq{\hfill\emph{$\Sigma_{G,\Y}({\mr x})$}}{=}{\big\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is }G\textrm{-syndetic relatve to }\mrY\big\}.}
-
-We write $\Sigma_G({\mr x})$ for $\Sigma_{G,\X}({\mr x})$.
+\ceq{\hfill\emph{$\Sigma_G({\mr x})$}}{=}{\big\{\theta({\mr x})\in  L(\grZ)\ :\ \theta({\mr x})\textrm{ is }G\textrm{-syndetic }\big\}.}
 
 % We remark that the consistency of $\Sigma_G({\mr x})$ is far from guaranteed.
 
 \begin{corollary}\label{corol_q_pers}
-  Work relative to some given $\mrY\subseteq\mrX$.
-  Let $\mrD\in\BDelta(\grZ)$ and assume that $\Sigma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent in $\mrY$.
+  Let $\mrD\in L(\grZ)$ and assume that $\Sigma_G({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent.
   Then $\mrD$ is $G$-thick.
 \end{corollary}
 
 \begin{proof}
-  As $\Sigma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent in $\mrY$, it cannot be that $\neg\mrD$ is $G$-syndetic.
+  As $\Sigma_G({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent, it cannot be that $\neg\mrD$ is $G$-syndetic.
   Then from Fact~\ref{fact_fip} we obtain that $\mrD$ is $G$-thick.
 \end{proof}
 
 The converse implication holds for complete types.
 
 \begin{theorem}\label{thm_syndetic_invariant}
-  Work relative to some given $\mrY\subseteq\mrX$.
-  For every $p({\mr x})\in S_{\Delta,\Y}(\grZ)$ the following are equivalent
+  For every $p({\mr x})\in S(\grZ)$ the following are equivalent
   \begin{itemize}
     \item[1.] $p({\mr x})$ is $G$-invariant
-    \item[2.] $p({\mr x})\proves\Sigma_{G,\Y}({\mr x})$
-    %\item[2$'$.] $p({\mr x})\proves\Sigma_{G}({\mr x})$ and is finitely consistent in $\mrY$
+    \item[2.] $p({\mr x})\proves\Sigma_G({\mr x})$
+    %\item[2$'$.] $p({\mr x})\proves\Sigma_{G}({\mr x})$ and is finitely consistent
     \item[3.] $p({\mr x})$ is $G$-thick.
-    %\item[3$'$.] $p({\mr x})$ is $G$-thick and is finitely consistent in $\mrY$.
+    %\item[3$'$.] $p({\mr x})$ is $G$-thick and is finitely consistent.
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  Let $\mrD\in\BDelta(\grZ)$ be a $G$-syndetic.
-  Pick $C\subseteq G$ be finite such that $\mrY\subseteq\cup\,C{\cdot}\mrD$.
+  Let $\mrD\in L(\grZ)$ be a $G$-syndetic.
+  Pick $C\subseteq G$ be finite such that $\cup\,C{\cdot}\mrD$ covers $\mrX$.
   Then $p({\mr x})$ is finitely consistent with ${\mr x}\in\cup\,C{\cdot}\mrD$.
-  By completeness, $p({\mr x})\proves {\mr x}\in h\,\mrD$ for some $h\in C$.
+  Therefore, by completeness, $p({\mr x})\proves {\mr x}\in h\,\mrD$ for some $h\in C$.
   Finally, by invariance, $p({\mr x})\proves{\mr x}\in\mrD$.
   
   \ssf2$\IMP$\ssf3.
@@ -186,17 +135,17 @@ The converse implication holds for complete types.
   % Let $g_1,\dots,g_{n+2}\in G$ and $\theta({\mr x})\,;{\gr\bar b}$ witness this.
   % Then 
   Negate \ssf1.
-  Let $\mrD\in\BDelta(\grZ)$ and $g\in G$ such that $p({\mr x})\proves{\mr x}\in\mrD$ and $p({\mr x})\notproves g{\cdot}\mrD$.
+  Let $\mrD\in L(\grZ)$ and $g\in G$ such that $p({\mr x})\proves{\mr x}\in\mrD$ and $p({\mr x})\notproves g{\cdot}\mrD$.
   By completeness $p({\mr x})\proves{\mr x}\in(\mrD\cap\neg g{\cdot}\mrD)$.
   Clearly $\mrD\cap \neg g{\cdot}\mrD$ is not $2$-$G$-thick as it is inconsistent with its $g$-translate.
 %  \ssf1$\IMP$\ssf2$'{\IFF}$\ssf3$'$. Apply what proved above with $\mrX$ for $\mrY$.
 \end{proof}
 
 % \begin{corollary}\label{corol_gammaG_invaqriancer}
-%   The following are equivalent for every $\BDelta(\grZ)$-definable set $\mrD$
+%   The following are equivalent for every $ L(\grZ)$-definable set $\mrD$
 %   \begin{itemize}
 %     \item [1.] $\Sigma_G({\mr x})\proves{\mr x}\in\mrD$
-%     \item [2.] $p({\mr x})\proves{\mr x}\in\mrD$ for every $G$-thick $p({\mr x})\in S_\Delta(\grZ)$.
+%     \item [2.] $p({\mr x})\proves{\mr x}\in\mrD$ for every $G$-thick $p({\mr x})\in S(\grZ)$.
 %   \end{itemize}
 % \end{corollary}
 
@@ -206,20 +155,19 @@ The converse implication holds for complete types.
 
 %   \ssf2$\IMP$\ssf1.
 %   Suppose $\Sigma_G({\mr x})\not\proves{\mr x}\in\mrD$.
-%   Then there is a type $p({\mr x})\in S_\Delta(\grZ)$ finitely consistent with $\Sigma_G({\mr x})\cup\{{\mr x}\notin\mrD\}$.
+%   Then there is a type $p({\mr x})\in S(\grZ)$ finitely consistent with $\Sigma_G({\mr x})\cup\{{\mr x}\notin\mrD\}$.
 %   By Corollary~\ref{corol_q_pers} $p({\mr x})$ is $G$-thick.
 %   Then $\neg\ssf2$.
 % \end{proof}
 
-The theorem yields a necessary condition for the existence of global $\BDelta({\grZ})$-types that are $G$-thick.
+The theorem yields a necessary condition for the existence of global $ L(\grZ)$-types that are $G$-thick.
 
 \begin{corollary}\label{corol_def_mu}
-  Work relative to some given $\mrY\subseteq\mrX$.
-  If a type a $G$-thick $p({\mr x})\in S_{\Delta,\Y}(\grZ)$ exists, then for any $\mrD\in\BDelta({\grZ})$
+  If a type a $G$-thick $p({\mr x})\in S(\grZ)$ exists, then for any $\mrD\in L(\grZ)$
   \begin{itemize}
     \item[1.] $\mrD$ and $\neg\mrD$ are not both $G$-syndetic
     \item[2.] if $\mrD$ is $G$-syndetic then it is $G$-thick
-    \item[3.] $\Sigma_{G,\Y}({\mr x})$ is finitely consistent in $\mrY$.\smallskip
+    \item[3.] $\Sigma_G({\mr x})$ is finitely consistent.\smallskip
   \end{itemize}
 \end{corollary}
 
@@ -228,93 +176,75 @@ The theorem yields a necessary condition for the existence of global $\BDelta({\
   Finally, \ssf3 is an immediate consequence of \ssf2 of Theorem~\ref{thm_syndetic_invariant}.
 \end{proof}
 
-The following theorem gives a necessary and sufficient condition for the  existence of global $G$-invariant $\BDelta({\grZ})$-type.
-Ideally, we would like that every $G$-thick $\BDelta({\grZ})$-type extends to a global thick type.
+The following theorem gives a necessary and sufficient condition for the  existence of global $G$-invariant $ L(\grZ)$-type.
+Ideally, we would like that every $G$-thick $ L(\grZ)$-type extends to a global thick type.
 Unfortunately this is not true in general (it is a strong assumption, see Section~\ref{tame_landscape}).
 
-A set $\mrD$ is \emph{$G$-wide\/} relative to $\mrY$ if every finite cover of $\mrD\cap\mrY$ by $\BDelta({\grZ})$-sets contains a set that is $G$-thick relative to $\mrY$.
+A set $\mrD$ is \emph{$G$-wide\/} if every finite cover of $\mrD$ by $L(\grZ)$-sets contains a set that is $G$-thick.
 A type is $G$-wide if every conjunction of formulas in the type is $G$-wide.
 
 In~\cite{CK} a similar property is called \textit{quasi-non-forking.}
 Our use of the term \textit{wide\/} is consistent with~\cite{Hr}, though we apply it to a narrow context.
 
 \begin{theorem}\label{thm_syndetic_invariant2}
-  Work relative to some given $\mrY\subseteq\mrX$.
-  For every $\mrD\in\BDelta(\grZ)$ the following are equivalent 
+  For every $\mrD\in L(\grZ)$ the following are equivalent 
   \begin{itemize}
-    \item[1.] $\Sigma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent in $\mrY$
-    \item[2.] there is a $G$-thick type $p({\mr x})\in S_{\Delta,\Y}(\grZ)$ that entails ${\mr x}\in\mrD$
+    \item[1.] $\Sigma_G({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent
+    \item[2.] there is a $G$-thick type $p({\mr x})\in S(\grZ)$ that entails ${\mr x}\in\mrD$
     \item[3.] $\mrD$ is $G$-wide.\smallskip
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  By Corollary~\ref{corol_q_pers}, it suffices to pick any $p({\mr x})\in S_{\Delta,\Y}(\grZ)$ that entails $\Sigma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$.
+  By Corollary~\ref{corol_q_pers}, it suffices to pick any $p({\mr x})\in S(\grZ)$ that entails $\Sigma_G({\mr x})\cup\{{\mr x}\in\mrD\}$.
 
   \ssf2$\IMP$\ssf1.
   By Theorem~\ref{thm_syndetic_invariant}.
 
   \ssf2$\IMP$\ssf3.
-  Let ${\mr\C_1},\dots,{\mr\C_n}$ be $\BDelta({\grZ})$-sets that cover $\mrD$.
+  Let ${\mr\C_1},\dots,{\mr\C_n}$ be $ L(\grZ)$-sets that cover $\mrD$.
   Pick $p({\mr x})$ as in \ssf2.
   By completeness, $p({\mr x})\proves {\mr x}\in{\mr\C_i}$ for some $i$.
   Therefore, ${\mr\C_i}$ is $G$-thick.
 
   \ssf3$\IMP$\ssf2.
-  Let $p({\mr x})$ be maximal among the $\BDelta({\grZ})$-types that are finitely satisfiable in $\mrY\cap\mrD$ and are $G$-wide.
-  We claim that $p({\mr x})$ is a complete $\BDelta({\grZ})$-type.
+  Let $p({\mr x})$ be maximal among the $L(\grZ)$-types containing $\mrD$ that are $G$-wide.
+  We claim that $p({\mr x})$ is a complete, $G$-thick $L(\grZ)$-type.
+  We prove completeness.
   Suppose for a contradiction that $\theta({\mr x}),\neg\theta({\mr x})\notin p$.
-  By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$, and some $\BDelta({\grZ})$-sets ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi(\U^{\mr x})\cap\theta(\U^{\mr x})$ and $\psi(\U^{\mr x})\smallsetminus\theta(\U^{\mr x})$ and such that no ${\mr\C_i}$ is $G$-thick.
-  As ${\mr\C_1},\dots,{\mr\C_n}$ cover $\psi(\U^{\mr x})$ this is a contradiction.
+  By maximality there is some formula $\psi({\mr x})$, a conjunction of formulas in $p({\mr x})$, and some $L(\grZ)$-definable sets ${\mr\C_1},\dots,{\mr\C_n}$ that cover both $\psi(\mrX)\cap\theta(\mrX)$ and $\psi(\mrX)\smallsetminus\theta(\mrX)$ and such that no ${\mr\C_i}$ is $G$-thick.
+  As ${\mr\C_1},\dots,{\mr\C_n}$ cover $\psi(\mrX)$ this is a contradiction.
   It is only left to show that $p({\mr x})$ is $G$-thick.
   This follows from completeness and Theorem~\ref{thm_syndetic_invariant}.
 \end{proof}
 
-% For future reference we note that theorem also apply to type-definable sets.
-
-% \begin{corollary}
-%   Work relative to some given $\mrY\subseteq\mrX$.
-%   For every $\BDelta(\grZ)$-type $q({\mr x})$ the following are equivalent 
-%   \begin{itemize}
-%     \item[1.] $\Sigma_{G,\Y}({\mr x})\cup q({\mr x})$ is finitely consistent in $\mrY$
-%     \item[2.] $p({\mr x})\cup q({\mr x})$ is finitely consistent in $\mrY$, for some $G$-thick type $p({\mr x})\in S_\Delta(\grZ)$ 
-%     \item[3.] $q({\mr x})$ is $G$-wide.\smallskip
-%   \end{itemize}
-% \end{corollary}
-
-% \begin{proof}
-%   Implication \ssf1$\IMP$\ssf2 is obtained by the same proof as the in theorem.
-%   The other implications follow immediately from the theorem.
-% \end{proof}
-
 The following easy consequence of the theorem will be used below.
 
 \begin{corollary}\label{corol_intersectionGwide}
-  Work relative to some given $\mrY\subseteq\mrX$.
-  Let $\mrD\in\BDelta(\grZ)$ be $G$-wide.
+  Let $\mrD\in L(\grZ)$ be $G$-wide.
   Then $\mrD\cap g{\cdot}\mrD$ is $G$-wide for every $g\in G$.
 \end{corollary}
 
 \begin{proof}
-  Let $p({\mr x})\in S_{\Delta,\Y}(\grZ)$ be a $G$-thick type such that $p({\mr x})\proves{\mr x}\in\mrD$.
+  Let $p({\mr x})\in S(\grZ)$ be a $G$-thick type such that $p({\mr x})\proves{\mr x}\in\mrD$.
   By $G$-invariance $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$.
 \end{proof}
 
-% Let $q({\mr x})\subseteq\BDelta(\grZ)$.
-% We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $\BDelta(\grZ)$-definable set $\mrD$ and every $g_1,g_2\in G$ if $q({\mr x})\proves{\mr x}\in(g_1{\cdot}\mrD\cup g_2{\cdot}\mrD)$ then $q({\mr x})\proves{\mr x}\in g_i{\cdot}\mrD$ for some $i$.
+% Let $q({\mr x})\subseteq L(\grZ)$.
+% We say that $q({\mr x})$ is \emph{$G$-prime\/} if for every $ L(\grZ)$-definable set $\mrD$ and every $g_1,g_2\in G$ if $q({\mr x})\proves{\mr x}\in(g_1{\cdot}\mrD\cup g_2{\cdot}\mrD)$ then $q({\mr x})\proves{\mr x}\in g_i{\cdot}\mrD$ for some $i$.
 % The following fact is immediate.
 
 % \begin{fact}
-%   The following are equivalent for every $\BDelta(\grZ)$-type $q({\mr x})$
+%   The following are equivalent for every $ L(\grZ)$-type $q({\mr x})$
 %   \begin{itemize}
 %     \item [1.] $q({\mr x})$ is $G$-prime and $G$-invariant
-%     \item [2.] if $\mrD$ is $\BDelta(\grZ)$-definable, $g\in G$, and $q({\mr x})\proves{\mr x}\in(\mrD\cup g{\cdot}\mrD)$, then $q({\mr x})\proves{\mr x}\in\mrD$.
+%     \item [2.] if $\mrD$ is $ L(\grZ)$-definable, $g\in G$, and $q({\mr x})\proves{\mr x}\in(\mrD\cup g{\cdot}\mrD)$, then $q({\mr x})\proves{\mr x}\in\mrD$.
 %   \end{itemize}
 % \end{fact}
 
 % \begin{proposition}
-%   For every type $q({\mr x})\subseteq\BDelta(\grZ)$ the following are equivalent
+%   For every type $q({\mr x})\subseteq L(\grZ)$ the following are equivalent
 %   \begin{itemize}
 %     \item [1.] $q({\mr x})\proves\Sigma_H({\mr x})$
 %     \item [2.] $q({\mr x})$ is $G$-prime and $G$-invariant.
@@ -324,7 +254,7 @@ The following easy consequence of the theorem will be used below.
 % \begin{proof}
 %   \ssf1$\IMP$\ssf2.
 %   Suppose $q({\mr x})\proves{\mr x}\in(\mrD\cup g{\cdot}\mrD)$.
-%   Let $p({\mr x})\in S_\Delta(\grZ)$ extend $q({\mr x})$.
+%   Let $p({\mr x})\in S(\grZ)$ extend $q({\mr x})$.
 %   By completeness $p({\mr x})\proves{\mr x}\in\mrD$ or $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$.
 %   As $p({\mr x})$ is $G$-invariant by Theorem~\ref{thm_syndetic_invariant}, it follows that
 %   $p({\mr x})\proves{\mr x}\in\mrD$.
@@ -337,7 +267,7 @@ The following easy consequence of the theorem will be used below.
 
 \begin{exercise}
   Let $\X=\Z=\U$ and $\Delta=L_x$.
-  Prove that if $p(x)\in S_\Delta(\U)$ is finitely satisfiable in every $M\supseteq A$ then it is thick under the action of $G=\Autf(\UDelta)$.
+  Prove that if $p(x)\in S(\U)$ is finitely satisfiable in every $M\supseteq A$ then it is thick under the action of $G=\Autf(\UDelta)$.
   Is the same true for incomplete types?
 \end{exercise}
 
@@ -345,12 +275,12 @@ The following easy consequence of the theorem will be used below.
   Prove that the following are equivalent
   \begin{itemize}
     \item[1.] $\D$ is $G$-thick
-    \item[2.] there is a type $p(x)\in S_\Delta(\Z)$ containing $\{x\in g{\cdot}\D\;:\;g\in G\}$.
+    \item[2.] there is a type $p(x)\in S(\Z)$ containing $\{x\in g{\cdot}\D\;:\;g\in G\}$.
   \end{itemize}
 \end{exercise}
 
 \begin{exercise}
-  Let $p(x)\in S_\Delta(\U)$.
+  Let $p(x)\in S(\U)$.
   Prove that the following are equivalent
   \begin{itemize}
     \item[1.] $p(x)$ is $G$-invariant
@@ -363,7 +293,7 @@ The following easy consequence of the theorem will be used below.
   Let $\D$ be a $\BDelta(\Z)$-type-definable set.
   Prove that the following are equivalent 
   \begin{itemize}
-    \item[1.] there is a $G$-invariant type $p(x)\in S_\Delta(\Z)$ such that $p(x)\proves x\in\D$.
+    \item[1.] there is a $G$-invariant type $p(x)\in S(\Z)$ such that $p(x)\proves x\in\D$.
     \item[2.] every finite cover of $\D$ by $\BDelta(\Z)$-definable sets contains a 2-$G$-thick set.
   \end{itemize}
 \end{exercise}
@@ -396,7 +326,7 @@ The following easy consequence of the theorem will be used below.
 % \end{exercise}
 
 % \begin{exercize}
-%   Let $\mrD$ be a $\BDelta(\grZ)$-definable set.
+%   Let $\mrD$ be a $ L(\grZ)$-definable set.
 %   Prove that the following are equivalent
 %   \begin{itemize}
 %     \item [1.] $\mrD$ is $G$-wide;
@@ -404,140 +334,16 @@ The following easy consequence of the theorem will be used below.
 %   \end{itemize}
 % \end{exercize}M7FJT0RB61M
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Subsets with bounded orbit}
-
-We want to compare the notions of $G$-syndetic/wide when relative to $\mrX$ or to some $\mrY\subseteq\mrX$.
-When boundedly many $G$-translates of $\mrY$ cover $\mrX$ (in particular, when $G$ acts transitively on $\mrX$ and $\mrY$ has a bounded $G$-orbit) these two notions relativize seamlessly.
-We will apply this to prove a necessary condition for the consistency of $\Sigma_G({\mr x})$, i.e.\@ for the existence of $G$-invariant global types.
-
-\begin{proposition}\label{prop_HgenGgen}
-  Let $\mrX$ be type-definable.
-  Assume that $\mrX$ is covered by boundedly many $G$-translates of some $\mrY\subseteq\mrX$.
-  Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
-  \begin{itemize}
-    \item [1.] $\mrD$ is $G$-syndetic
-    \item [2.] $\mrD$ is $G$-syndetic relative to $\mrY$.
-  \end{itemize}
-\end{proposition}
-
-\begin{proof}
-  Only \ssf2$\IMP$\ssf1 requires a proof.
-  If $\mrD$ is $G$-syndetic relative to $\mrY$ then is it is also $G$-syndetic relative to $g{\cdot}\mrY$ for any $g\in G$.
-  Then boundedly many $G$-translations of $\mrD$ cover $\mrX$.
-  By compactness (which we may apply because $\mrX$ is type-definable), finitely many translations suffices.
-\end{proof}
-
-% The following corollary expresses a similar result.
-
-% \begin{corollary}\label{corol_bounded_orbit_syndetic}
-%   Let $\mrX$ be type-definable.
-%   Assume that $G$ acts transitively on $\mrX$.
-%   Let $\mrY\subseteq\mrX$ be a nonempty set with small $G$-orbit.
-%   Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
-%   \begin{itemize}
-%     \item [1.] $\mrD$ is $G$-syndetic
-%     \item [2.] $\mrD$ is $G$-syndetic relative to $\mrY$.
-%   \end{itemize}
-% \end{corollary}
-
-% \begin{proof}
-%   Only \ssf2$\IMP$\ssf1 requires a proof.
-%   By assumption, the following $G$-invariant equivalence relation has boundedly many classes
-  
-%   \ceq{\hfill\epsilon_\Y({\mr x},{\mr y})}{=}{\bigwedge_{g\in G}\big[{\mr x}\in g{\cdot}\mrY\,\iff\,{\mr y}\in g{\cdot}\mrY\big].}
-  
-%   Then $\mrY$ contains a $\epsilon_\Y({\mr x},{\mr y})$-class.
-%   Assume \ssf2, then it is $G$-syndetic relative to some class, say ${\mr\Y'}$, of $\epsilon_\Y({\mr x},{\mr y})$.
-%   As $G$ acts transitively on $\mrX$, we know that ${\mr\Y'}$ has a bounded orbit that covers $\mrX$.
-%   Then \ssf2 follows from Proposition~\ref{prop_HgenGgen}.
-% \end{proof}
-
-\begin{proposition}\label{prop_HgenGgen}
-  Let $\mrX$ be type-definable.
-  Assume that $\mrX$ is covered by boundedly many $G$-translates of some $\mrY\subseteq\mrX$.
-  Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
-  \begin{itemize}
-    \item [1.] $\mrD$ is $G$-wide
-    \item [2.] $\mrD$ is $G$-wide relative to $\mrY$.
-  \end{itemize}\smallskip
-  % In particular, if $\mrY$ is $\BDelta(\grZ)$-type-definable then $\mrD$ is $G$-wide relative to $\cap\,G{\cdot}\mrY$ (which therefore is nonempty).
-\end{proposition}
-
-\begin{proof}
-  Only \ssf1$\IMP$\ssf2 requires a proof.
-  Assume \ssf1.
-  There is a $G$-invariant $p({\mr x})\in S_\Delta(\grZ)$ that implies ${\mr x}\in\mrD$.
-  Let $C\subseteq G$ be a small set such that $C{\cdot}\mrY$ covers $\mrX$.
-  As $C{\cdot}\mrY$ is small and covers $\mrX$, then $p({\mr x})$ is finitely consistent in $h{\cdot}\mrY$ for some $h\in C$.
-  Then $p({\mr x})$, which by invariance coincides with $h^{-1}{\cdot}p({\mr x})$, is finitely consistent in $\mrY$.
-  % If $\mrY$ is type definable then $p({\mr x})$ entails $g{\cdot}\mrY$ for every $g\in G$ and the second claim follows.
-\end{proof}
-
-% \begin{corollary}
-%   Assume that $\mrX$ is type-definable and that $G$ acts transitively on $\mrX$.
-%   Assume that the $G$-orbit of $\mrY\subseteq\mrX$ is bounded.
-%   Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
-%   \begin{itemize}
-%     \item [1.] $\mrD$ is $G$-wide
-%     \item [2.] $\mrD$ is $G$-wide relative to any $G$-translation of $\mrY$.
-%   \end{itemize}\smallskip
-% \end{corollary}
-
-% \begin{proof}
-%   Only \ssf1$\IMP$\ssf2 requires a proof.
-%   Assume \ssf1.
-%   Let $\epsilon_\Y({\mr x},{\mr y})$ be the equivalence relation defined in the proof of Corollary~\ref{corol_bounded_orbit_syndetic}.
-%   As $\epsilon_\Y({\mr x},{\mr y})$ has boundedly many classes, we can apply Proposition~\ref{prop_HgenGgen} to obtain that $\mrD$ is $G$-wide relative to any equivalence class.
-%   In particular it is $G$-wide relative to $\mrY$, as it contains one of these classes.
-% \end{proof}
-
-\begin{proposition}\label{prop_HgenGgen}
-  Let $\mrX$ be type-definable.
-  Assume that $G$ acts transitively on $\mrX$ and that $\Sigma_G({\mr x})$ is consistent.
-  Then $\mrX$ is the sole nonempty $\BDelta(\grZ)$-type-definable set with bounded $G$-orbit.
-\end{proposition}
-\begin{proof}
-  By the consistency of $\Sigma_G({\mr x})$, there is a $G$-invariant $p({\mr x})\in S_\Delta(\grZ)$.
-  Let $\mrY\subseteq\mrX$ be a nonempty $\BDelta(\grZ)$-type-definable set with bounded $G$-orbit.
-  Then $\cap\,G{\cdot}\mrY$ is a $G$-invariant $\BDelta(\grZ)$-type-definable set.
-  We claim that it is nonempty.
-  By the transitivity of the action, boundedly many $G$-translates of $\mrY$ cover $\mrX$.
-  Then $p({\mr x})$ is $G$-wide relative $\mrY$ by Proposition~\ref{prop_HgenGgen}.
-  Then $p({\mr x})$ entails $\mrY$ and, by invariance, also $g{\cdot}\mrY$ for every $g\in G$.
-  By compactness, $\cap\,G{\cdot}\mrY$ is nonempty.
-  By the transitivity of the action, any nonempty $G$-invariant set coincides with $\mrX$. 
-\end{proof}
-
-% \begin{fact}
-%   Assume \ssf1 of Theorem~\ref{thm_coalesce}.
-%   Then the following are equivalent
-%   \begin{itemize}
-%     \item[1.] $H$ is stationary
-%     \item[2.] the intersection of any two $H$-wide $\BDelta({\grZ})$-sets is $H$-wide.
-%   \end{itemize}
-% \end{fact}
-
-% \begin{fact}
-%   Assume that $G$ acts transitively and that all types in $P$ are realized in $\mrX$.
-%   Then, when $H$ is stationary and \ssf1 of Theorem~\ref{thm_coalesce} holds, $P=Q_G$.
-% \end{fact}
-  
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Connected components}\label{G0}
+\section{Notable subgroups}\label{G0}
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{12ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-Let \emph{$G$\/} $\le\Aut(\UDelta)$.
+Let \emph{$G$\/} $\le\Aut(\U/A)$.
 Unfortunately, syndeticity is not preserved under intersection.
 In particular $\Sigma_G({\mr x})$ is not a $G$-syndetic type, and it may even be inconsistent.
 Then following notion is relevant.
@@ -550,7 +356,7 @@ Then following notion is relevant.
 \end{definition}
 
 It is easy to see that $Q_G$ is closed under the action of $G$.
-We write $\Stab(q)$ for the stabilizer of $q({\mr x})\subseteq\BDelta(\grZ)$ in $G$, that is, the subgroup $\{g\in G:g{\cdot}q({\mr x})=q({\mr x})\}$.
+We write $\Stab(q)$ for the stabilizer of $q({\mr x})\subseteq L(\grZ)$ in $G$, that is, the subgroup $\{g\in G:g{\cdot}q({\mr x})=q({\mr x})\}$.
 We write $\Stab(\mrD)$ with a similar meaning.
 Finally we define
 
@@ -560,12 +366,12 @@ It is easy to verify that $G^1\trianglelefteq G$.
 
 \begin{proposition}\label{prop_StabQ}\ \smallskip
 
-  \ceq{\hfill G^1}{=}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\in\Sigma_G({\mr x})\textrm{ whenever }\mrD\in\Sigma_G({\mr x})\big\}.}\smallskip
+  \ceq{\hfill G^1}{=}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\in\Sigma_G\textrm{ whenever }\mrD\in\Sigma_G\big\}.}\smallskip
 \end{proposition}
 
 \begin{proof}
   $\subseteq$.
-  Pick any $k\in G^1$ and $\mrD\in\Sigma_G({\mr x})$.
+  Pick any $k\in G^1$ and $\mrD\in\Sigma_G$.
   Let $q({\mr x})\in Q_G$ be a type containing ${\mr x}\in\mrD$.
   From the $G^1$-invariance of $q({\mr x})$ we obtain that $q({\mr x})\proves {\mr x}\in k{\cdot}\mrD$.
   Then $q({\mr x})\proves {\mr x}\in \mrD\cap k{\cdot}\mrD$, hence $\mrD\cap k{\cdot}\mrD$ is $G$-syndetic.
@@ -586,7 +392,7 @@ It is easy to verify that $G^1\trianglelefteq G$.
 \begin{proof}
   \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
   \def\ceq#1#2#3{\parbox[t]{23ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
-  Notice that from Proposition~\ref{prop_StabQ} it easily follows that for every $\mrD\in\Sigma_G({\mr x})$ and every finite $F\subseteq G^1$ the set $\cap\,F{\cdot}\mrD$ is $G$-syndetic.
+  Notice that from Proposition~\ref{prop_StabQ} it easily follows that for every $\mrD\in\Sigma_G$ and every finite $F\subseteq G^1$ the set $\cap\,F{\cdot}\mrD$ is $G$-syndetic.
    
   Let ${\mr\D_1},\dots,{\mr\D_n}\in\Sigma_{G^1}({\mr x})$.
   Assume inductively that ${\mr\D_1}\cap\dots\cap{\mr\D_{n-1}}$ is $G$-syndetic.
@@ -611,7 +417,7 @@ Unfortunately, we are unable to conclude that the intersection of $G^1$-syndetic
 
 From Theorems~\ref{thm_syndetic_invariant2} and~\ref{thm_gammaK} it follows that $G^1$-syndetic sets are $G^1$-wide.
 But we can do better.
-% In particular, every $q({\mr x})\in Q_G$ has an extension to a $G^1$-invariant $p({\mr x})\in S_\Delta(\grZ)$.
+% In particular, every $q({\mr x})\in Q_G$ has an extension to a $G^1$-invariant $p({\mr x})\in S(\grZ)$.
 % If this extension is unique we say that $q({\mr x})$ is stationary.
 First, we remark a useful consequence of normality.
 
@@ -629,7 +435,7 @@ First, we remark a useful consequence of normality.
   
   where \textit{foo\/} can be replaced by \textit{syndetic,} \textit{invariant,} \textit{thick,} \textit{wide.}
   In particular, the type $\Sigma_H({\mr x})$ is $G$-invariant.
-  % It also follows that for any $p({\mr x})\in S_\Delta(\grZ)$
+  % It also follows that for any $p({\mr x})\in S(\grZ)$
   % \begin{itemize}
   %   \item [3.] \ceq{\hfill p({\mr x})\textrm{ is }H\textrm{-invariant}}{\IFF}{g\cdot p({\mr x})\textrm{ is }H\textrm{-invariant}.}
   % \end{itemize}
@@ -640,12 +446,12 @@ As it happens, under the assumption of normality, this can be strengthened as fo
 
 \begin{proposition}\label{prop_Gsyndetic_Hthick1}
   Assume $H\trianglelefteq G$ and that $\Sigma_H({\mr x})$ is finitely consistent.
-  Then every $G$-syndetic $\mrD\in\BDelta(\grZ)$ is $H$-wide.
+  Then every $G$-syndetic $\mrD\in L(\grZ)$ is $H$-wide.
   In particular all types in $Q_G$ are $G^1$-wide.
 \end{proposition}
 
 \begin{proof}
-  Let $p({\mr x})\in S_\Delta(\grZ)$ be finitely consistent with $\Sigma_H({\mr x})$.
+  Let $p({\mr x})\in S(\grZ)$ be finitely consistent with $\Sigma_H({\mr x})$.
   As $\mrD$ is $G$-syndetic, by completeness $p({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in G$.
   Equivalently, $g^{-1}\!\cdot p({\mr x})\proves{\mr x}\in\mrD$.
   As $p({\mr x})$ is $H$-thick, by Remark~\ref{rem_invariance_normalsubg} also $g^{-1}\!\cdot p({\mr x})$ is $H$-thick.
@@ -653,17 +459,17 @@ As it happens, under the assumption of normality, this can be strengthened as fo
 \end{proof}
 
 % \begin{theorem}
-%   Every $G^1$-thick $\BDelta(\grZ)$-set is $G^1$-wide.
+%   Every $G^1$-thick $ L(\grZ)$-set is $G^1$-wide.
 % \end{theorem}
 
 \begin{comment}
 
 It would help to have a more syntactic description of $G^1$.
 The group $G^0$ defined below is a candidate. %~--~we will see that under the assumption of stability it indeed coincides with $G^1$. 
-We revisit the notions introduced in Section~\ref{eq_algebraic} with the only difference that we apply them to $\BDelta(\grZ)$, not to the full language.%$\LDelta(\mrX,\grZ)$.
+We revisit the notions introduced in Section~\ref{eq_algebraic} with the only difference that we apply them to $ L(\grZ)$, not to the full language.%$ L(\mrX,\grZ)$.
 
 \begin{definition}\label{def_G0}
-  Write \emph{$\Phi^0$\/} for the set of $\BDelta(\grZ)$-formulas/sets that have finite $G$-orbit and define%\vskip-1ex
+  Write \emph{$\Phi^0$\/} for the set of $ L(\grZ)$-formulas/sets that have finite $G$-orbit and define%\vskip-1ex
 
   \ceq{\hfill\emph{$G^0$}}{=}{\Stab(\Phi)}\medrel{=}$\displaystyle\bigcap\big\{\Stab(\mrD) :\  \mrD\in\Phi^0\}$
 
@@ -678,7 +484,7 @@ We revisit the notions introduced in Section~\ref{eq_algebraic} with the only di
   Let $P^0$ be the set of types of the form $\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in E^0\big\}$ for ${\mr a}\in\mrX$.
 \end{definition}
 
-Note that, when $G=\Aut(\UDelta)$, then $G^0$ is the group of $\LDelta$-automorphisms of $\UDelta$ that fix $\LDelta\mbox-\acl^\eq\varnothing$.% and $E$ contains all the the $\varnothing$-definable finite equivalence relations.
+Note that, when $G=\Aut(\U/A)$, then $G^0$ is the group of $\LDelta$-automorphisms of $\UDelta$ that fix $\LDelta\mbox-\acl^\eq\varnothing$.% and $E$ contains all the the $\varnothing$-definable finite equivalence relations.
 
 \begin{remark}\label{lem_trans_action}
   Equivalence classes of relations in $E^0$ are in $\Phi^0$ and every set in $\Phi^0$ is union of such equivalence classes.
@@ -698,18 +504,11 @@ We will prove that this is the case under the assumption of stability.
 
 \end{comment}
 
-When the context suggests it, $\BDelta(\grZ)$ will denote the broader class that includes also formulas obtained substituting ${\mr y}$ for ${\mr x}$ and is closed under Boolean connectives.
-A $\BDelta(\grZ)$-definable equivalence relation is an equivalence relation defined by some formula $\epsilon({\mr x},{\mr y})\in\BDelta(\grZ)$.
-We define $\BDelta(\grZ)$-type-definable equivalence relations similarly.
-Note that if $\epsilon({\mr x},{\mr y})$ is a $\BDelta(\grZ)$-definable, or type-definable, equivalence relation then $\epsilon({\mr x},{\mr a})$, for any ${\mr a}\in\mrX$, is equivalent to a $\BDelta(\grZ)$-formula, respectively a $\BDelta(\grZ)$-type.
-
-An equivalence relation is bounded if it has a small number of equivalence classes.
-
 \begin{definition}\label{def_G00}
-  Let $\Phi^0$ be the collection of sets that are equivalence classes of a bounded $G$-invariant $\BDelta(\grZ)$-type-definable equivalence relation.
-  Let $\Phi^{00}$ be the collection of sets that are equivalence classes of a bounded $G$-invariant $\BDelta(\grZ)$-type-definable equivalence relation.
-  Define
-  \smallskip
+  Let $\Phi^0$ be the collection of $L(\grZ)$-definable sets with finite orbits.
+  that are equivalence classes of a bounded $G$-invariant $L(\grZ)$-type-definable equivalence relation.
+  Let $\Phi^{00}$ be the collection of sets that are $L(\grZ)$-type-definable and have a bounded $G$-orbit.
+  Define\smallskip
 
   \ceq{\hfill\emph{$G^0$}}{=}{\Stab(\Phi^0)}\medrel{=}$\displaystyle\bigcap\big\{\Stab(\mrD)\ :\  \mrD\in\Phi^0\}$
 
@@ -720,7 +519,6 @@ An equivalence relation is bounded if it has a small number of equivalence class
 \end{definition}
 
 \begin{proposition}
-  Let $\mrX$ be type-definable.
   Assume that $G$ acts transitively on $\mrX$.
   Then 
   
@@ -729,189 +527,54 @@ An equivalence relation is bounded if it has a small number of equivalence class
 
 \begin{proof}
   The inclusion $G^{00}\leq G^0$ is trivial.
-  Let $\mrY\in\Phi^{00}$ and $\mrY\subseteq\mrD\in\BDelta(\grZ)$.
-  Then $\mrD$ is trivially $G$-syndetic relative to $\mrY$.
-  By Proposition~\ref{prop_HgenGgen}, $\mrD$ is $G$-syndetic.
+  Let $\mrY\in\Phi^{00}$ and $\mrY\subseteq\mrD\in L(\grZ)$.
+  Then a small numaber of translations of $\mrD$ cover $\mrX$.
+  Therefore, by compactness, $\mrD$ is $G$-syndetic.
   Then the type defining $\mrY$ is $G$-syndetic.
   Then there is some $q({\mr x})\in Q_G$ entailing $\mrY$.
-  By $G^1$-invariance $q({\mr x})$ entails $k{\cdot}\mrY$ for every $k\in G^1$.
-  Then $k$ is in the stabilizer of $\mrY$.
+  By $G^1$-invariance $q({\mr x})$ entails also $k{\cdot}\mrY$ for every $k\in G^1$.
+  Now, let $\mrY$ be minimal in $\Phi^{00}$, then $k$ is in the stabilizer of $\mrY$.
 \end{proof}
 
-% \begin{question}
-%   Work under the assumption that $\mrX$ is type-definable and that $G$ acts transitively.
-%   How are the following properties connected?
-%   \begin{itemize}
-%     \item [1.] $\Sigma_{G^1}({\mr x})$ is closed under conjunction
-%     \item [2.] the types in $Q_G$ are $G^1$-stationary
-%     \item [3.] $Q_G$ has small cardinality
-%     \item [4.] $G$ acts transitively on $Q_G$
-%     \item [5.] the types in $Q_G$ are realized in $\mrX$ and $\mrX=\bigcup\{q(\mrX)\ :\ q({\mr x})\in Q_G\}$.
-%   \end{itemize}
-% \end{question}
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+\section{Examples: random graph}
 
-% \begin{proposition}
-%   For $\mrY\in\Phi^{00}$ define 
+In this section $\U$ is a saturated model of the of theory of the random graph.
+Let $\mrX$ adn $\grZ$ are two copies of $\U$ and let $G={\rm Aut}(\U)$.
+We prove that the equivalent conditions in Theorem~\ref{thm_coalesce} hold.
 
-%   \ceq{\hfill\epsilon_\Y({\mr x},{\mr y})}{=}{\bigwedge_{g\in G}\big[{\mr x}\in g{\cdot}\mrY\iff{\mr y}\in g{\cdot}\mrY\big].}
+There are two $G$-invariant global types $p_i({\mr x})$.
+The first says that $x$ is adjacent to all vertices, the second says that $x$ is adjacent to none.
+The type on the r.h.s. of (5) in Proposition~\ref{prop_coalese} is equivalent to the disjunction of $p_1({\mr x})$ and $p_2({\mr x})$.
+This is in turn equivalent to the type containing the formulas
 
-%   Let $\M$ be a collection of $\LDelta$-models of cardinality $|\LDelta|$
+\ceq{\hfill\varphi({\mr x},a)}{=}{r({\mr x},a_1)\leftrightarrow r({\mr x},a_2)\leftrightarrow\cdots\cdots\leftrightarrow r({\mr x},a_n)}
 
-%   \ceq{\hfill\epsilon_\Y({\mr x},{\mr y})}{\iff}{\big\{\big[\phi({\mr x})\iff\phi({\mr y})\ :\ \big]\big\}.}
-% \end{proposition}
+for every tuple of vertices $a=\langle a_1,\dots,a_n\rangle$. 
+Therefore we only need to prove that these formulas are $G$-syndetic.
 
-% and
-
-% \ceq{\hfill E^{00}}{=}{\big\{\epsilon_\Y({\mr x},{\mr y})\ :\  \mrY\in\Phi^{00}\big\},}
-
-% where
-
-% \ceq{\hfill\epsilon_\Y({\mr x},{\mr y})}{=}{\bigwedge_{g\in G}\big[{\mr x}\in g{\cdot}\mrY\iff{\mr y}\in g{\cdot}\mrY\big].}
-
-% Let $P^{00}$ be the set of types of the form $\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in E^{00}\big\}$ for ${\mr a}\in\mrX$.
-
-% \begin{proposition}\label{prop_G0_inclusione2}
-%   Assume that $G$ acts transitively.
-%   Then $G^1\subsetyeq G^0$.\smallskip
-
-%   % \ceq{\hfill G^1}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\textrm{ is }G\textrm{-syndetic for all }G\textrm{-syndetic }\mrD\in\BDelta(\grZ)\big\}}\smallskip
-
-%   % \ceq{}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\neq\varnothing\textrm{ for any }G\textrm{-syndetic }\mrD\in\BDelta(\grZ)\big\}}\smallskip
-
-
-%   % \ceq{\hfill G^1}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\in\Sigma_G({\mr x})\textrm{ whenever }\mrD\in\Sigma_G({\mr x})\big\}}\smallskip
-
-%   % \ceq{}{\subseteq}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\neq\varnothing\textrm{ whenever }\mrD\in\Sigma_G({\mr x})\big\}}\smallskip
-
-%   % \ceq{}{\subseteq}{G^0.}
-
-% \end{proposition}
-
-% % We will revisit this proposition under the assumption of stability and prove the converse inclusion.
-% % See Theorem~\ref{thm_Z0_stable}.\vspace*{-0.5\baselineskip}
-
-% \begin{proof}
-%   The first inclusion is left to the reader.
-%   We prove the second.
-%   Let $g$ be an element of the second set.
-%   Pick any $\mrD\in\Phi$.
-%   We need to show that $g\in\Stab(\mrD)$.
-%   % A fortiori $\grW$ is the stabilizer of a set with finite  $\grZ$-orbit.
-%   Let $\mrC$ be an equivalence class of $\epsilon_\D({\mr x},{\mr y})$.
-%   As $G$ acts transitively, $\mrC$ is $G$-syndetic.
-%   Then $\mrC\cap g{\cdot}\mrC\neq\varnothing$.
-%   As $\epsilon_\D({\mr x},{\mr y})$ is $G$-invariant, we conclude that $g{\cdot}\mrC=\mrC$.
-%   But $\mrD$ is union of such equivalence classes.
-%   Then $\mrD=g{\cdot}\mrD$.
-% \end{proof}
-% However it is not true in general, as the following example shows.
-
-% \begin{example}\label{ex_H_neq_acleq}
-%   Let $T_{\rm dlo}\models\U$.
-%   Let $\mrX=\grZ=\U$ and $\Delta=\{{\mr x}<{\gr z}\}$.
-%   It is easy to see that there are plenty of $G$-syndetic $\BDelta(\grZ)$-formulas but there is no nontrivial $\BDelta(\grZ)$-formula with finite $G$-orbit.
-%   Therefore $P$ is empty and $\Stab(P)=G$.
-% \end{example}
-
-\begin{comment}
-The following normal subgroup of $G$ is particularly interesting
-
-{
-\def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox[t]{8ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
-
-\ceq{\hfill G^0}{=}{\big\{g\in G\ :\ g{\cdot}\mrD=\mrD\textrm{ for every }G\textrm{-syndetic }\BDelta(\grZ)\textrm{-type-definable set }\mrD\big\}}.
-}
-
-Note that by Exercise~\ref{ex_syndetic_type_vs_formulas} we can replace type-definable with definable in the definition of $G^0$.
-
-\begin{proposition}
-  Assume the action of $G$ is regular.
-  Let $G^1\le G$ be such that all $G^1$-orbits (that is, $G^1{\cdot}{\mr a}$, for ${\mr a}\in\mrX$) are $\BDelta(\grZ)$-type-definable.
-  Then, if $G^1$ has finite index, $G^0\le G^1$.
-\end{proposition}
+\begin{theorem}
+  The formula $\varphi_n({\mr x},a)$ is $G$-syndetic for all $n\ge 2$ and all $a=\langle a_1,\ldots,a_n\rangle$.
+\end{theorem}
 
 \begin{proof}
-  Let $g\in G^0$.
-  As $G^1$ has finite index and the action is transitive $G^1{\cdot}{\mr a}$ is $G$-syndetic for every ${\mr a}\in\mrX$.
-  Then $g{\cdot}G^1{\cdot}{\mr a}=G^1{\cdot}{\mr a}$.
-  By regularity, $g{\cdot}G^1=G^1$, then $g\in G^1$.
+  Let $b^1,\ldots,b^n$ be tuples of length $n$ with disjoint ranges that have the same type as $a$ (over $\varnothing$). Let $C$ be the set of tuples $c=\langle c_1,\ldots,c_n\rangle$ such that $c_i\in{\rm range}(b^i)$.
+  Finally when we pick the $b^i$, we do so in such a way that every tuple $c\in C$ has the same type as $a$.
+
+  We claim that the following disjunction is a tautology
+
+  \hfil$\displaystyle\bigvee_{c\in C}\varphi({\mr x},c)\ \vee\ \bigvee_{i=1}^n \varphi({\mr x},b^i)$
+
+  Fix $x$.
+  If $\varphi({\mr x},b^i)$ holds for some $i$, then we are done.
+  Otherwise, for every $i$ we have some $k$ such that $r({\mr x},b^i_k)$ holds (as well as some $h$ such that $r({\mr x},b^i_h)$ does not).
+  Let $c_i=b^i_k$ for some $k$ such that $r({\mr x},b^i_k)$ holds.
+  Then $\varphi({\mr x},c)$ holds.
 \end{proof}
-
-%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%
-\section{An example}
-  \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
-  \def\ceq#1#2#3{\parbox[t]{13ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
-
-% In this section $G=\Aut(\UDelta)$ and $\mrX=p_0(\U^{\mr x})$, for some $p_0({\mr x})\in S_\Delta(\grZ)$.
-Let ${\mr y}$ be a variable of the same sort of ${\mr x}$.
-Below $\BDelta(\grZ)$ may also denote $\LDelta_{{\rm\,qf},\,{\mr x},{\mr y}}(\grZ)$.
-In this section a $\BDelta(\grZ)$-definable finite equivalence relation is a formula $\epsilon({\mr x}\,;{\mr y})\in\BDelta(\grZ)$ such that $\epsilon(\mrX\,;\mrX)$ is an equivalence relation with finitely many classes.
-Note that when $G$ acts transitively on $\mrX$, equivalence classes of $G$-invariant finite equivalence relations are $G$-syndetic sets.
-% \begin{remark}\label{rem_trans_action}
-  % Assume that $G$ acts transitively on $\mrX$.
-  Define
-  
-  \ceq{\hfill e({\mr x}\,;{\mr y})}{=}{\big\{\epsilon({\mr x}\,;{\mr y})\in\BDelta(\grZ)\ :\ G\textrm{-invariant, finite equivalence relation}\big\}}.
-
-  The $e({\mr x}\,;{\mr y})$-equivalence classes are those defined by the types
-  
-  \ceq{\hfill q({\mr x})}{=}{\big\{\epsilon({\mr x}\,;{\mr a})\in\BDelta(\grZ)\ :\ G\textrm{-invariant, finite equivalence relation}\big\}.}
-
-% \end{remark}
-
-\begin{fact}
-  Assume that $G$ acts transitively on $\mrX$.
-  Let $\mrD$ be a $\BDelta(\grZ)$-definable set that intersects $\mrX$ and has finite $G$-orbit.
-  Then $\mrD$ is $G$-syndetic.
-\end{fact}
-
-\begin{proof}
-  Let $g_i{\cdot}\mrD$, for $i=1,\dots,n$, enumerate the $G$-orbit of $\mrD$.
-  Define 
-
-  \ceq{\hfill\epsilon({\mr x}\,;{\mr y})}{=}{\bigwedge_{i=1}^n\big[{\mr x}\in g_i{\cdot}\mrD\ \iff\ {\mr y}\in g_i{\cdot}\mrD\big]}
-
-  Clearly, $\epsilon({\mr x}\,;{\mr y})$ is $G$-invariant.
-  Pick any ${\mr a}\in\mrD$.  
-  Then $\epsilon(\U^{\mr x};{\mr a})\subseteq\mrD$.
-  As the action is transitive, $\epsilon(\U^{\mr x};{\mr a})$, and a fortiori $\mrD$, is $G$-syndetic.
-\end{proof}
-
-\end{comment}
-
-\begin{comment}
-
-\begin{corollary}
-  Let $G=\Aut(\U/A)$.
-  Let $\mrX=p(\U^{\mr x})$ where $p({\mr x})$ is a complete $\GDelta(A)$-type.
-  Then for every $\BDelta(\grZ)$-definable set $\mrD$ that intersects $\mrX$ the following are equivalent
-  \begin{itemize}
-    \item [1.]  $\mrC\subseteq\mrD$ for some $\mrC\in\acl^\eq\!A$ that intersects $\mrX$
-    \item [2.]  $\mrD$ is $G$-syndetic.
-  \end{itemize}
-\end{corollary}
-
-\begin{proof}
-  \ssf1$\IMP$\ssf2.
-  Pick any ${\mr a}\in\mrC\cap\mrX$.
-  We can assume that $\mrC=\epsilon(\U^{\mr x}\,;{\mr a})$ is an equivalence class of some finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in L(A)$ 
-  As $G$ acts transitively on $\mrX$ the orbit of $\mrC$ coves $\mrX$.
-  Therefore $\mrC\subseteq\mrD$, and a fortiori $\mrD$, is $G$-syndetic.
-
-  \ssf2$\IMP$\ssf1.
-  Let $Q_G$ be as in Lemma~\ref{lem_trans_action}.
-  Pick any $q({\mr x})\in Q_G$.
-  By syndeticity $q({\mr x})\proves{\mr x}\in g{\cdot}\mrD$ for some $g\in G$.
-  Then $g^{-1}\!\cdot q({\mr x})\proves{\mr x}\in \mrD$.
-  Pick any ${\mr a}\models g^{-1}\!\cdot q({\mr x})$.
-  As $g^{-1}\!\cdot q({\mr x})\in Q_G$, by the second claim in the lemma and compactness,  $\epsilon(\U^{\mr x}\,;{\mr a})\subseteq\mrD$ for some finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\GDelta(A)$.
-\end{proof}
-\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -920,10 +583,6 @@ Note that when $G$ acts transitively on $\mrX$, equivalence classes of $G$-invar
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Strong syndeticity}\label{strong_syndeticity}
 
-% Unfortunately, syndeticity is not preserved under intersection.
-% To obtain closure under intersection, we need to push the concept to a higher level of complexity.
-
-Work relative to some given $\mrY\subseteq\mrX$.
 A set $\mrD$ is \emph{strongly $G$-syndetic\/} if for every finite $F\subseteq G$ the set $\cap\,F{\cdot}\mrD$ is $G$-syndetic (recall that $F{\cdot}\mrD$ stands for $\{h{\cdot}\mrD : h\in F\}$).
 Dually, we say that $\mrD$ is \emph{weakly $G$-thick\/} if for some finite $F\subseteq G$ the set $\cup\,F{\cdot}\mrD$ is thick.
 Again, the same properties may be attributed to formulas and types when every conjunction of formulas in the type has the property.
@@ -934,7 +593,6 @@ Newelski in~\cite{Newelski09} says \textit{weak generic\/} for weakly thick.
 These are terminologies that defy my intuition.
 
 \begin{lemma}\label{lem_strongly_syndetic}
-  Work relative to some given $\mrY\subseteq\mrX$.
   The intersection of two strongly $G$-syndetic sets is strongly $G$-syndetic.
 \end{lemma}
 
@@ -959,20 +617,18 @@ These are terminologies that defy my intuition.
 
 Define the following type
 
-\ceq{\hfill\emph{${\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})$}}{=}{\{\theta({\mr x})\in \BDelta({\grZ})\ :\ \theta({\mr x})\textrm{ is strongly }G\textrm{-syndetic relative to }\mrY\}.}\smallskip
+\ceq{\hfill\emph{${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G({\mr x})$}}{=}{\{\theta({\mr x})\in  L(\grZ)\ :\ \theta({\mr x})\textrm{ is strongly }G\textrm{-syndetic relative to }\mrY\}.}\smallskip
 
-Note that Theorem~\ref{thm_gammaK} shows that $\Sigma_{G^1}({\mr x})\subseteq{\mathstrut}^{\rm s}\kern-.2ex\Sigma_G({\mr x})$.
+Note that Theorem~\ref{thm_gammaK} shows that $\Sigma_{G^1}({\mr x})\subseteq{\mathstrut}^{\rm s}\kern-.1ex\Sigma_G({\mr x})$.
 
 \begin{corollary}\label{corol_str_gen}
-  Work relative to some given $\mrY\subseteq\mrX$.
-  Then ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})$ is finitely consistent, strongly $G$-syndetic, and $G$-invariant.\smallskip
+  Then ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G({\mr x})$ is finitely consistent, strongly $G$-syndetic, and $G$-invariant.\smallskip
 
-  Moreover, ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})$ is the maximal $G$-syndetic $G$-invariant type and\medskip
+  Moreover, ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G({\mr x})$ is the maximal $G$-syndetic $G$-invariant type and\medskip
 
+  \ceq{\hfill{\mathstrut}^{\rm s}\kern-.1ex\Sigma_G({\mr x})}{=}{\bigcap_{q\in Q_G}q({\mr x})}.\smallskip
 
-  \ceq{\hfill{\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})}{=}{\bigcap_{q\in Q_{G,\Y}}q({\mr x})}.\smallskip
-
-  Where $Q_{G,\Y}$ is as in Definition~\ref{def_Q} but relativized to $\mrY$.  
+  Where $Q_G$ is as in Definition~\ref{def_Q} but relativized to $\mrY$.  
 \end{corollary}
 
 \begin{proof}
@@ -984,10 +640,10 @@ Note that Theorem~\ref{thm_gammaK} shows that $\Sigma_{G^1}({\mr x})\subseteq{\m
 The following is similar to Corollary~\ref{corol_q_pers}, but now we obtain also the converse implication.
 
 \begin{corollary}\label{corol_q_w_pers}
-  Work relative to some given $\mrY\subseteq\mrX$.
-  For every $\mrD\in\BDelta(\grZ)$ the following are equivalent
+  
+  For every $\mrD\in L(\grZ)$ the following are equivalent
   \begin{itemize}
-    \item [1.] ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent
+    \item [1.] ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent
     \item [2.] $\mrD$ is weakly $G$-thick.
   \end{itemize}
 \end{corollary}
@@ -995,11 +651,11 @@ The following is similar to Corollary~\ref{corol_q_pers}, but now we obtain also
 \begin{proof}
   \ssf1$\IMP$\ssf2. 
   Similar to Corollary~\ref{corol_q_pers}.
-  If ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent, then $\neg\mrD$ is strongly $G$-syndetic.
+  If ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent, then $\neg\mrD$ is strongly $G$-syndetic.
   From Fact~\ref{fact_fip}, we obtain that $\neg\mrD$ not being strongly $G$-syndetic is equivalent to $\mrD$ being weakly $G$-thick.
 
   \ssf2$\IMP$\ssf1.
-  Suppose ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})\proves{\mr x}\notin\mrD$.
+  Suppose ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G({\mr x})\proves{\mr x}\notin\mrD$.
   Then $\neg\mrD$ is strongly $G$-syndetic.
   From Fact~\ref{fact_fip}, $\mrD$ is not weakly $G$-thick.
 \end{proof}
@@ -1007,25 +663,24 @@ The following is similar to Corollary~\ref{corol_q_pers}, but now we obtain also
 The following theorem asserts that weak thickness is partition regular.
 
 \begin{theorem}\label{thm_wt_partreg}
-  Work relative to some given $\mrY\subseteq\mrX$.
   If $\mrC\cup\mrB$ is weakly $G$-thick then $\mrB$ or $\mrC$ is weakly $G$-thick.
 \end{theorem}
 
 \begin{proof}
-  As ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})$ is closed under conjunction.
-  If ${\mr x}\in \mrC\cup\mrB$ is finitely consistent with ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_{G,\Y}({\mr x})$ then so is one of the two sets.
+  As ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G({\mr x})$ is closed under conjunction.
+  If ${\mr x}\in \mrC\cup\mrB$ is finitely consistent with ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G({\mr x})$ then so is one of the two sets.
 \end{proof}
 
-% Assume that every $\mrD\in\BDelta(\grZ)$ has a small $G$-orbit.
+% Assume that every $\mrD\in L(\grZ)$ has a small $G$-orbit.
 % A set $\mrD$ with small $G$-orbit is $G$-thick if and only if $\cap\,G{\cdot}\mrD$ is nonempty.
 % Note that the latter set is always $G$-invariant.
 
 % \begin{proposition}
-%   Assume that every $\mrD\in\BDelta(\grZ)$ has a small $G$-orbit.
-%   Then the following are equivalent for every $\mrD\in\BDelta(\grZ)$
+%   Assume that every $\mrD\in L(\grZ)$ has a small $G$-orbit.
+%   Then the following are equivalent for every $\mrD\in L(\grZ)$
 %   \begin{itemize}
 %     \item [1.] $\mrD$ is weakly $G$-thick
-%     \item [2.]$\mrD$ is syndetic relative to some $G$-invariant $\BDelta(\grZ)$-type-definable set $\mrC$.
+%     \item [2.]$\mrD$ is syndetic relative to some $G$-invariant $ L(\grZ)$-type-definable set $\mrC$.
 %   \end{itemize}
 % \end{proposition}
 
@@ -1073,7 +728,7 @@ In this section we prove that $\Ll({\mr a}/A)$ is type-definable (if and) only t
 In other words, only if the connected component of ${\mr a}$ in the Lascar graph has finite diameter.
 
 It is convenient to address the problem in more general terms.
-We work under Assumption~\ref{notation_GXphi} and also assume that $H\le\Aut(\UDelta)$ acts transitively on $\mrX$.
+We work under Assumption~\ref{notation_GXphi} and also assume that $H\le\Aut(\U/A)$ acts transitively on $\mrX$.
 Let \emph{$C$\/} $\subseteq H$ be a set of generators of $H$ that is
 \begin{itemize}
   \item[1.] symmetric i.e.\@ it contains the unit and is closed under inverse
@@ -1158,13 +813,13 @@ Under suitable assumptions some notions introduced in this chapter coalesce, and
 We will see an example in Theorem~\ref{thm_thick_finsat}.
 
 \begin{theorem}\label{thm_coalesce}
-  Work relative to some given $\mrY\subseteq\mrX$.
+  
   The following are equivalent
   \begin{itemize}
-    \item[1.] $H$-thick $\BDelta({\grZ})$-sets are $H$-wide
-    \item[2.] $H$-syndetic $\BDelta({\grZ})$-sets are closed under intersection 
-    \item[3.] $H$-syndetic $\BDelta({\grZ})$-sets are strongly $H$-syndetic
-    \item[4.] weakly $H$-thick $\BDelta({\grZ})$-sets are $H$-thick.
+    \item[1.] $H$-thick $ L(\grZ)$-sets are $H$-wide
+    \item[2.] $H$-syndetic $ L(\grZ)$-sets are closed under intersection 
+    \item[3.] $H$-syndetic $ L(\grZ)$-sets are strongly $H$-syndetic
+    \item[4.] weakly $H$-thick $ L(\grZ)$-sets are $H$-thick.
   \end{itemize}
 \end{theorem}
 
@@ -1172,10 +827,10 @@ We will see an example in Theorem~\ref{thm_thick_finsat}.
   Clearly \ssf2$\IFF$\ssf3$\IFF$\ssf4.
 
   \ssf1$\IMP$\ssf2.
-  Let $\mrC$ and $\mrD$ be $H$-syndetic $\BDelta({\grZ})$-sets.
+  Let $\mrC$ and $\mrD$ be $H$-syndetic $ L(\grZ)$-sets.
   Suppose for a contradiction that $\mrC\cap\mrD$ is not $H$-syndetic.
   Then $\neg(\mrC\cap\mrD)$ is $H$-thick.
-  By \ssf1 and Theorem~\ref{thm_syndetic_invariant2} there is a $H$-invariant type $p({\mr x})\in S_\Delta(\grZ)$ that is finitely consistent in $\mrY$ and such that $p({\mr x})\proves{\mr x}\notin\mrC\cap\mrD$.
+  By \ssf1 and Theorem~\ref{thm_syndetic_invariant2} there is a $H$-invariant type $p({\mr x})\in S(\grZ)$ that is finitely consistent and such that $p({\mr x})\proves{\mr x}\notin\mrC\cap\mrD$.
   By completeness either $p({\mr x})\proves{\mr x}\notin\mrC$ or $p({\mr x})\proves{\mr x}\notin\mrD$.
   This is a contradiction because by Theorem~\ref{thm_syndetic_invariant} $p({\mr x})\proves{\mr x}\in\mrC$ and $p({\mr x})\proves{\mr x}\in\mrD$.
 
@@ -1189,34 +844,58 @@ We will see an example in Theorem~\ref{thm_thick_finsat}.
   \ssf4$\IMP$\ssf1. By Theorem~\ref{thm_wt_partreg}
 \end{proof}
 
-% It is easy to see that the equivalent conditions in Theorem~\ref{thm_coalesce} hold when $H=G^\omega$, as defined in Section~\ref{G0}, and $\mrY=\mrX$.
-% Vice vesa, if the equivalent conditions in Theorem~\ref{thm_coalesce} hold for $H\le G$, then $H\le G^\omega$. 
+It is convenient to prove one last characterization of the above phenomenon.
+This is used in the next section. 
 
-A subset $\mrY\subseteq\mrX$ is \emph{$H$-stationary\/} if there exists a unique $H$-invariant $p({\mr x})\in S_{\Delta,\Y}(\grZ)$.
-When $\Sigma_{H,\Y}({\mr x})$ is consistent, by \ssf1 in Theorem~\ref{thm_syndetic_invariant2} this is equivalent to requiring that $\mrD$ and $\neg\mrD$ are not both wide relative to $\mrY$.
+\begin{proposition}\label{prop_coalese}\ 
+  The equivalent conditions in Theorem~\ref{thm_coalesce} are also equivalent to\smallskip
+
+  \ceq{5.\hfill\Sigma_G({\mr x})}{=}{\bigcap\Big\{p({\mr x})\in S(\grZ)\ :\ p({\mr x})\text{ is }G\text{-invariant}\Big\}}
+\end{proposition}
+
+Note that $\subseteq$ is always true, therefore (5) amounts to claiming that the type on the r.h.s.\@ is $G$-syndetic.
+\begin{proof} 
+  Assume (1) of Theorem~\ref{thm_coalesce}.
+  It suffices to prove $\supseteq$, because the converse inclusion is always true. 
+  Let $\mrD$ be non $G$-syndetic.
+  Then $\neg\mrD$ is $G$-thick and therefore $G$-wide.
+  Then some $G$-invariant global type $p({\mr x})$ entails $\neg\mrD$.
+  Therefore $x\in\mrD$ does not belong to the type on the r.h.s.
+  
+  Vice versa, note that the type on the r.h.s.\@ is closed under conjunction.
+  Then (2) of Theorem~\ref{thm_coalesce} immediately follows from (5).
+\end{proof}
+
+Let $q({\mr x})$ be a $ L(\grZ)$-type.
+We say that $q({\mr x})$ is \emph{$G$-stationary\/} if it extends to a unique $G$-in\-var\-iant $p({\mr x})\in S(\grZ)$.
+
+The notions of relative syndeticity/thickness are defined in Remark~\ref{rem_relative}.
+It is easy to verify that the above theorem relativize to any type $q({\mr x})$.
+
 The conditions in Theorem~\ref{thm_coalesce} together with stationarity, produce further simplification.
 
-\begin{fact}\label{fact_starionarity_thick_syndetic}
-  Work relative to some given $\mrY\subseteq\mrX$.
-  Assume the equivalent conditions in Theorem~\ref{thm_coalesce} hold.
-  Suppose that the set $\mrY$ is $H$-stationary.
+\begin{fact}\label{fact_stationarity}
+  Let $q({\mr x})$ be $G$-stationary.
+  Assume that the equivalent conditions in Theorem~\ref{thm_coalesce} hold relative to $q({\mr x})$.
   Then the following are equivalent
   \begin{itemize}
-    \item [1.] $\mrD$ is $H$-syndetic
-    \item [2.] $\mrD$ is $H$-wide.
-  \end{itemize}\smallskip
+    \item [1.] $\mrD$ is $G$-syndetic relative to $q({\mr x})$
+    \item [2.] $\mrD$ is $G$-wide/thick relative to $q({\mr x})$.
+  \end{itemize}
 \end{fact}
 
 \begin{proof}
-  \ssf1$\IMP$\ssf2.
-  By assumption, $\Sigma_{H,\Y}({\mr x})$ is consistent.
-  Then $H$-syndetic $\BDelta({\grZ})$-sets are $H$-thick by Corollary~\ref{corol_def_mu}.
-  Finally, they are  $H$-wide by \ssf1 in Theorem~\ref{thm_coalesce}.
+  Work relatively to $q({\mr x})$.
+
+  1$\Rightarrow$2.
+  Assume (1), then $\Sigma_G({\mr x})$ is finitely consistent.
+  Then $G$-syndetic $ L(\grZ)$-sets are $G$-thick.
+  Finally, they are $G$-wide by (1) in Theorem~\ref{thm_coalesce}.
   (Stationarity is not required in this direction.)
 
-  \ssf2$\IMP$\ssf1.
-  If $\mrD$ was not $H$-syndetic then $\neg\mrD$ would be $H$-thick and therefore, by the assumption, $H$-wide.
-  This contradicts $H$-stationarity.
+  2$\Rightarrow$1.
+  If $\mrD$ was not $G$-syndetic then $\neg\mrD$ would be $G$-thick and therefore, by the assumption, $G$-wide.
+  This contradicts $G$-stationarity.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1227,15 +906,161 @@ The conditions in Theorem~\ref{thm_coalesce} together with stationarity, produce
 \section{Definable groups}\label{definablegroups}
 
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox[t]{25ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+\def\ceq#1#2#3{\parbox[t]{20ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 Section under major revision.
 
-In this section $\grZ$ is a group that acts on $\mrX$.
+In this section we assume that there is a bijection $\pi:\grZ\to\Aut(\U/A)$ such that $\pi\big(\pi({\gr g}){\cdot}{\gr h}\big)=\pi({\gr g}){\cdot}\pi({\gr h})$.
+Therefore we may safely identify $\grZ$ with $\Aut(\U/A)$,in fact the action of $\Aut(\U/A)$ on $\grZ$ corresponds to the action $\Aut(\U/A)$ on itself by left multiplication.
+It is worth stressing that, bar trivial cases, neither the group operation $\grZ$ nor the group action $\grZ$ on $\mrX$ are definable in $L$.
+% Note that ${\gr g}\cdot\varphi(\mrX\,;{\gr h})=\varphi(\mrX\,;{\gr g}{\cdot}{\gr h})$ for all ${\gr g},{\gr h}\in\grZ$ and $\varphi({\mr x}\,;{\gr z})\in L(A)$.
+
+Let $M\preceq\U$ be a model containing $A$.
+We write ${\mr X}$ and ${\gr Z}$ for $\mrX\cap M^{\mr x}$ and $\grZ\cap M^{\mr z}$ respectively.
+
+When ${\gr g}\in\grZ$ and ${\mr a}\in\mrX$ we write ${\gr g}\nonfork{\mr a}$ if for every $\varphi({\mr x}\,;{\gr z})\in L(A)$ such that $\varphi({\mr a}\,;{\gr g})$ we have that $\varphi({\mr a}\,;{\gr Z})\neq\varnothing$.
+When $\grC\subseteq\grZ$ and $\mrD\subseteq\mrX$ we define
+
+\ceq{\hfill\grC\circ\mrD}{=}{\Big\{{\gr g}{\cdot}{\mr a}\ :\ {\gr g}\in\grC,\ {\mr a}\in\mrD,\ {\gr g}\nonfork {\mr a}\Big\}}
+
+% If $G\le{\rm Aut}(\UDelta)$ and $a\in\mrX$, we write $G{\cdot}a$ for the orbit of $a$ under the action of $G$.
+When $\mrD$ is the orbit of ${\mr a}\in\mrX$ under the action of ${\rm Aut}(\U/M)$, we write $\grC\circ {\mr a}$ for $\grC\circ\mrD$.
+
+If $\mrD\subseteq\mrX$ we write ${\rm cl}(\mrD)$ for the closure of $\mrD$ in the topology generated by the subsets of $\mrX$ that are $L(M)$-definable.
+Explicitely,
+
+\ceq{1.\hfill{\rm cl}(\mrD)}{=}{\bigcap\Big\{\varphi(\mrX)\ :\ \varphi({\mr x})\in L(M)\text{ such that }\mrD\subseteq\varphi(\mrX)\Big\}}
+
+\ceq{2.}{=}{\Big\{{\mr b}\ :\ \varphi(\mrD)\neq\varnothing\text{ for every }\varphi({\mr x})\in L(M)\text{ that is satisfied by }{\mr b}\Big\}}
+
+
+% \begin{fact}
+%   For every $\mrD\subseteq\mrX$\smallskip
+
+%   \ceq{\hfill{\rm cl}(\cup\,Z{\cdot}\mrD)}{=}{\grZ\circ\mrD}
+% \end{fact}
+
+% \begin{proof}
+%   $\supseteq$. 
+%   Let $b\in\grZ\circ\mrD$, say $b=g{\cdot}a$ for some $g\in\grZ$ and $a\in\mrD$ such that $g\nonfork a$.
+%   Let $\varphi(x)\in L(M)$ be such that $Z{\cdot}\mrD\subseteq\varphi(\mrX)$.
+%   Then $g\nonfork a$ implies $\varphi(g{\cdot}a)$.
+%   This proves that $b\in{\rm cl}(\cup\,Z{\cdot}\mrD)$.
+  
+%   $\subseteq$. 
+%   Let $b\in{\rm cl}(\cup\,Z{\cdot}\mrD)$ be given and define $p(x)=\LDelta\mbox{-tp}(b/M)$.
+%   It suffices to prove that for every $a\in\mrD$ the type $z\nonfork a$ is consistent with $p(z{\cdot}a)$.
+%   In fact, if $g\nonfork a$, then $g{\cdot}a\in\grZ\circ a$.
+%   And, as $\grZ\circ a$ is $M$-invariant, if $p(g{\cdot}a)$ then $b\in\grZ\circ a$.
+%   Now, to prove concistency, assume for a contradiction that $z\nonfork a\rightarrow\neg\varphi(z{\cdot}a)$ for some $\varphi(x)\in p$.
+%   As any $m\in Z$ realizes $z\nonfork a$, no element of $Z{\cdot}a$ satisfies $\varphi(x)$.
+%   This is a contradiction by (2) above.
+% \end{proof}
+
+
+\begin{fact}
+  For every ${\mr a}\in\mrX$\smallskip
+
+  \ceq{\hfill{\rm cl}({\gr Z}{\cdot}{\mr a})}{=}{\grZ\circ {\mr a}}
+\end{fact}
+
+\begin{proof}
+  $\supseteq$. 
+  Let ${\mr b}\in\grZ\circ {\mr a}$, say ${\mr b}=g{\cdot}{\mr a}$ for some $g\nonfork {\mr a}$.
+  Let $\varphi({\mr x})\in L(M)$ be such that ${\gr Z}{\cdot}{\mr a}\subseteq\varphi(\mrX)$.
+  Then $g\nonfork {\mr a}$ implies $\varphi(g{\cdot}{\mr a})$.
+  This proves that ${\mr b}\in{\rm cl}({\gr Z}{\cdot}{\mr a})$.
+  
+  $\subseteq$. 
+  Let ${\mr b}\in{\rm cl}({\gr Z}{\cdot}{\mr a})$ be given and define $p({\mr x})=\LDelta\mbox{-tp}({\mr b}/M)$.
+  It suffices to prove that $z\nonfork {\mr a}$ is consistent with $p(z{\cdot}{\mr a})$.
+  In fact, if $g\nonfork {\mr a}$, then $g{\cdot}{\mr a}\in\grZ\circ {\mr a}$.
+  And, as $\grZ\circ {\mr a}$ is $M$-invariant, if $p(g{\cdot}{\mr a})$ then ${\mr b}\in\grZ\circ {\mr a}$.
+  Now, to prove concistency, assume for a contradiction that $z\nonfork {\mr a}\rightarrow\neg\varphi(z{\cdot}{\mr a})$ for some $\varphi({\mr x})\in p$.
+  As any $m\in {\gr Z}$ realizes $z\nonfork {\mr a}$, no element of ${\gr Z}{\cdot}{\mr a}$ satisfies $\varphi({\mr x})$.
+  This is a contradiction by (2) above.
+\end{proof}
+
+% A subset $A\subseteq\mrX$ is dense if $\psi(A)\neq\varnothing$ for every $\psi(x)\in\Psi$.
+
+Let $\D\subseteq\mrX$ be an $M$-definable set.
+As ${\gr Z}$ is small, $\D$ is ${\gr Z}$-thick if and only if $\cap\,{\gr Z}{\cdot}\D$ is consistent.
+
+\begin{fact}\label{fact_thick_circ}
+  Let $\D\subseteq\mrX$ be definable over $M$.
+  Then the following are equivalent
+  \begin{itemize}
+    \item [1.] $\D$ is ${\gr Z}$-thick
+    \item [2.] $\grZ\circ {\mr a}\subseteq\D$ for some ${\mr a}\in\D$.
+  \end{itemize}
+\end{fact}
+
+\begin{proof}
+  1$\Rightarrow$2. \ 
+  Pick ${\mr a}\in\cap\,{\gr Z}{\cdot}\D$.
+  Suppose for a contradiction that $g{\cdot}{\mr a}\notin\D$ for some $g\in\grZ$ such that $g\nonfork_M a$.
+  Then $m{\cdot}{\mr a}\notin\D$ for some $m\in {\gr Z}$.
+  This contradicts the choice of ${\mr a}$.  
+
+  2$\Rightarrow$1. \ 
+  It suffices to note that $m\cdot\grZ\circ {\mr a}=\grZ\circ {\mr a}$ for every $m\in {\gr Z}$.
+\end{proof}
+
+The following is the dual version of the above fact.
+
+\begin{fact}
+  Let $\D\subseteq\mrX$ be definable over $M$.
+  Then the following are equivalent
+  \begin{itemize}
+    \item [1.] $\D$ is ${\gr Z}$-syndetic
+    \item [2.] $(\grZ\circ {\mr a})\cap\D\neq\varnothing$ for every ${\mr a}\in\mrX$.
+  \end{itemize}
+\end{fact}
+
+We say that $\grC\subseteq\mrX$ is $\grZ{\circ}$-invariant if $\grZ\circ\grC\subseteq\C$.
+Note that, when $\grZ=\mrX$, this says that $\grC$ is a left ideal.
+The following fact is easy.
+
+\begin{fact}
+  Every minimal $\grZ{\circ}$-invariant subset of $\mrX$ is of the form $\grZ\circ {\mr a}$ for some ${\mr a}\in\mrX$ so, in particular, it is type-definable over $M$.
+  % We also have that $\grZ\circ a=\M\circ a$ for $\M$ any left ideal of $\grZ$.
+\end{fact}
+
+We say that ${\mr a}\in\mrX$ is \emph{minimal\/} if $\grZ\circ {\mr a}$ is a minimal $\grZ{\circ}$-invariant subset of $\mrX$.
+
+\begin{theorem}
+  Let $\D\subseteq\mrX$ be definable over $M$.
+  Then the following are equivalent
+  \begin{itemize}
+    \item [1.] $\D$ is weakly ${\gr Z}$-thick
+    \item [2.] ${\mr a}\subseteq\D$ for some minimal ${\mr a}\in\D$.
+  \end{itemize}
+\end{theorem}
+
+\begin{proof}
+  2$\Rightarrow$1. \ 
+  Let ${\mr b}\in\grZ\circ {\mr a}$.
+  Then ${\mr b}\in\grZ\circ\D$.
+  Therefore ${\mr b}\in m{\cdot}\D$ for some $m\in {\gr Z}$.
+  This proves that $\grZ\circ {\mr a}\subseteq\cup\,{\gr Z}{\cdot}\D$.
+  By compactness $\grZ\circ {\mr a}\subseteq\cup\,C{\cdot}\D$ for some finite $C\subseteq {\gr Z}$.
+  By Fact~\ref{fact_thick_circ}, $\D$ is weakly ${\gr Z}$-thick.
+
+  1$\Rightarrow$2. \ 
+  Let $C\subseteq {\gr Z}$ be a finite set such that $\cup\,C{\cdot}\D$ is ${\gr Z}$-thick.
+  By Fact~\ref{fact_thick_circ}, there is ${\mr a}\in\cup\,C{\cdot}\D$ such that $\grZ\circ {\mr a}\subseteq\cup\,C{\cdot}\D$.
+  Let ${\mr a'}\in\grZ\circ {\mr a}$ be minimal.
+  As ${\mr a'}\in m{\cdot}\D$ for some $m\in C$, we conclude that $m^{-1}\!\cdot {\mr a'}\in\D$.
+  Then $m^{-1}\!\cdot {\mr a'}$ is the minimal element required by (2).
+\end{proof}
+
+
+\begin{comment}
+
+is a group that acts on $\mrX$.
 The group operations and the group action are assumed definable.
 We use the symbol $\,\cdot\,$ for both the group multiplication and the group action.
-Let $\Psi\subseteq L_{\mr x}(\U)$.
 In this section $\Delta$ contains formulas $\phi({\mr x}\,;{\gr z})$ of the form  $\psi({\gr z^{-1}}\!\cdot{\mr x})$ for $\psi({\mr x})\in\Psi$.
 The sets $\phi(\mrX\,;\grZ)$ are $\grZ$-invariant.
 We write ${\gr 1}$ for the identity of $\grZ$.
@@ -1244,13 +1069,13 @@ Note that $\phi(\mrX\,;{\gr g})={\gr g}\cdot\phi(\mrX\,;{\gr 1})$.
 It is worth noticing that automorphisms of $\UDelta$ need not preserve the group operations nor the group action.
 
 To each ${\gr h}\in\grZ$ we associate the $\LDelta$-automorphism $\<{\mr a}\,;{\gr g}\>\mapsto\<{\gr h}{\cdot}{\mr a}\,;{\gr h}{\cdot}{\gr g}\>$.
-Therefore $\grZ$ is, up to isomorphism, a subgroup of $\Aut(\UDelta)$.
+Therefore $\grZ$ is, up to isomorphism, a subgroup of $\Aut(\U/A)$.
 For any ${\gr g}\in\grZ$, the orbit of $\phi(\mrX\,;{\gr g})$ under the action of $\grZ$ is $\{\phi(\mrX\,;{\gr h}) : {\gr h}\in\grZ\}$.
-Therefore it coincides with the orbit under the action of $\Aut(\UDelta)$.
+Therefore it coincides with the orbit under the action of $\Aut(\U/A)$.
 % The following fact follows immediately.
 
 % \begin{fact}
-%   For every  $\BDelta(\grZ)$-type-definable set $\mrD$ the following are 
+%   For every  $ L(\grZ)$-type-definable set $\mrD$ the following are 
 %   \begin{itemize}
 %     \item [1.] the $G$-orbit of $\mrD$ is bounded
 %     \item [2.] the $\grZ$-orbit of $\mrD$ is bounded.
@@ -1264,7 +1089,7 @@ Therefore it coincides with the orbit under the action of $\Aut(\UDelta)$.
 % \def\ceq#1#2#3{\parbox[t]{6ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 % \begin{proposition}\label{prop_Gsyndetic_thick}
-%   Let $\mrD$ be a $\BDelta(\grZ)$-definable set.
+%   Let $\mrD$ be a $ L(\grZ)$-definable set.
 %   Assume that $\Sigma_H({\mr x})$ is consistent.
 %   Then \ssf1$\IMP$\ssf2 holds, where
 %   \begin{itemize}
@@ -1283,7 +1108,7 @@ Therefore it coincides with the orbit under the action of $\Aut(\UDelta)$.
 %   Therefore \ssf2 follows from Proposition~\ref{prop_Gsyndetic_Hthick}.
 % \end{proof}
 
-We also consider the action an arbitrary subgroup $H\le\Aut(\UDelta)$.
+We also consider the action an arbitrary subgroup $H\le\Aut(\U/A)$.
 We write \emph{$({\gr g})_H$\/} for the $H$-orbit of ${\gr g}$, that is, the set $\{f({\gr g})\ :\ f\in H\}$.
 
 \begin{proposition}\label{prop_wideHcojugate}
