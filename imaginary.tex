@@ -371,9 +371,9 @@ By Theorems~\ref{thm_set_alg=feq} and~\ref{thm_Shelah_strong_types}
 
 \begin{proposition}\label{prop_trans_action}
   Let $p({\mr x})\in S(A)$ be given.
-  Let 
+  Let \smallskip
   
-  \ceq{\hfill Q}{=}{\big\{q({\mr x})\in S(\acl^\eq\!A)\ :\  p({\mr x})\subseteq q({\mr x})\big\}}.
+  \ceq{\hfill Q}{=}{\big\{q({\mr x})\in S(\acl^\eq\!A)\ :\  p({\mr x})\subseteq q({\mr x})\big\}}.\smallskip
   
   Then $\Aut(\U/A)$ acts transitively on $Q$, i.e.\@ any two types in $Q$ are conjugated.
 \end{proposition}
@@ -464,19 +464,22 @@ The following are equivalent
 
 % N.B.\@ it is important to note the difference between $\acl{\vl\Aa}$ and $\acl\{{\vl\Aa}\}$. In the first, the parameter are the elements of ${\vl\Aa}$. In the latter, the set ${\vl\Aa}$ is the (second-order) parameter.
 
-\begin{proof}\ssf{1}$\IMP$\ssf{2} Assume \ssf{1} and let ${\gr\B}$ be the set of solutions of the formula
+\begin{proof}
+  \ssf{1}$\IMP$\ssf{2} 
+  Assume \ssf{1} and let $\phi({\mr x}\,;{\gr z})$ be the formula in \ssf{wei}.
+  Let ${\gr\B}$ be the set of solutions of the formula
 
-\ceq{\hfill\A{\mr x}\ \bigg[{\mr x}\in{\vl\Aa}}{\iff}{\sigma({\mr x}\,;{\gr z})\bigg].}
+\ceq{\hfill\A{\mr x}\ \bigg[{\mr x}\in{\vl\Aa}}{\iff}{\phi({\mr x}\,;{\gr z})\bigg].}
 
 Hence ${\gr\B}$ is finite and ${\gr\B}\in\dcl^\eq\{{\vl\Aa}\}$.
-We also have ${\vl\Aa}\in\dcl^\eq\{{\gr\B}\}$ because ${\vl\Aa}$ is definable by the formula $\E{\gr z}\,\big[{\gr z}\in {\gr\B}\wedge \sigma({\mr x}\,;{\gr z})\big]$.
+We also have ${\vl\Aa}\in\dcl^\eq\{{\gr\B}\}$ because ${\vl\Aa}$ is definable by the formula $\E{\gr z}\,\big[{\gr z}\in {\gr\B}\wedge \phi({\mr x}\,;{\gr z})\big]$.
 Therefore $\dcl^\eq\{{\vl\Aa}\}=\dcl^\eq\{{\gr\B}\}$.
 
 \ssf{2}$\IMP$\ssf{3} Assume $\dcl^\eq\{{\vl\Aa}\}=\dcl^\eq\{{\gr\B}\}$ for some finite set ${\gr\B}$.
 The elements of ${\gr\B}$, say ${\gr b_1},\dots,{\gr b_n}$, are the (finitely many) solutions of the formula ${\gr z}\in{\gr\B}$.
 Therefore ${\gr b_1},\dots,{\gr b_n}\in\acl\{{\gr\B}\}=\acl\{{\vl\Aa}\}$.
-Let $\phi({\vl\X}\,;{\gr\B})$ be a formula that has ${\vl\Aa}$ as unique solution.
-Then $\E{\vl\Y} \big[{\vl\Y}=\big\{{\gr b_1},\dots,{\gr b_n}\big\}\wedge \phi({\vl\X}\,;{\vl\Y})\big]$ is the formula that proves \ssf{3}.
+By the assumption there is a formula $\psi({\mr x}\,;{\gr\B})\in L^\eq$ that defines ${\vl\Aa}$.
+Then ${\vl\Aa}$ is also defined by a formula $\psi'({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ with parameters in $\acl\{{\vl\Aa}\}$.
 
 \ssf{3}$\IMP$\ssf{1} Assume \ssf{3}.
 As \ssf{wei} holds trivially for all $\varnothing$-definable sets, we may assume ${\vl\Aa}\neq\varnothing$.
@@ -501,27 +504,28 @@ By $\,\sharp\,$ and the definition of $\psi({\gr z}\,;{\vl\X})$ we obtain ${\vl\
 There are notions of elimination of imaginaries that are weaker than weak elimination.
 For instance, we say that $T$ has \emph{geometric elimination of imaginaries\/} if for every $A\subseteq\U$
 
-\ceq{\hfill {\vl\Aa} }{\in}{{\acl}^\eq\{{\vl\Aa}\}}
+\ceq{\hfill {\vl\Aa} }{\in}{{\acl}^\eq(\acl\{{\vl\Aa}\})}
 
 This will not  be applied in these notes, but see Exercises~\ref{ex_est} and~\ref{ex_wei=est+gei}.
 
 \begin{theorem}\label{elimimf} 
-The following are equivalent
-\begin{itemize}
-\item[1.] $T$ has elimination of imaginaries
-\item[2.] every definable set is interdefinable with a tuple of real elements
-\item[3.] every definable set ${\vl\Aa}\in\dcl^\eq(\dcl\{{\vl\Aa}\})  $.
-\end{itemize}
+  The following are equivalent
+  \begin{itemize}
+  \item[1.] $T$ has elimination of imaginaries
+  \item[2.] every definable set is interdefinable with a tuple of real elements
+  \item[3.] every definable set ${\vl\Aa}\in\dcl^\eq(\dcl\{{\vl\Aa}\})$.
+  \end{itemize}
 \end{theorem}
 
 \begin{proof}
-Implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3} are immediate.
-Implication \ssf{3}$\IMP$\ssf{1} is identical to the homologous implication in Theorem~\ref{thm_elimimd}, just substitute algebraic with definable.
+  Implications \ssf{1}$\IMP$\ssf{2}$\IMP$\ssf{3} are immediate.
+  Implication \ssf{3}$\IMP$\ssf{1} is identical to the homologous implication in Theorem~\ref{thm_elimimd}, just substitute algebraic with definable.
 \end{proof}
 
 \begin{exercise}
-  Let $T$ have elimination of imaginaries and $\phi(x\,;z)\in L(A)$.
-  For arbitrary $c\in\U^z$, prove that if the orbit of $\phi(\U^x; c)$ over $A$ is finite, then $\phi(\U^x; c)$ is definable over $\acl A$.
+  Let $T$ have elimination of imaginaries.
+  Let $\phi(x\,;z)\in L(A)$ and  $c\in\U^z$ be given.
+  Prove that if the orbit of $\phi(\U^x; c)$ over $A$ is finite, then $\phi(\U^x; c)$ is definable over $\acl A$.
 \end{exercise}
   
 \begin{exercise}\label{ex_est}
@@ -533,22 +537,23 @@ Implication \ssf{3}$\IMP$\ssf{1} is identical to the homologous implication in T
   \end{itemize} 
 \end{exercise}
   
-  \begin{exercise}\label{ex_wei=est+gei}
-    Prove that the following are equivalent
-    \begin{itemize}
-    \item[1.]  $T$ has weak elimination of imaginaries
-    \item[2.]  $T$ has geometric elimination of imaginaries and \ssf{1} of Exercise~\ref{ex_est} holds.
-    \end{itemize} 
-  \end{exercise}
+\begin{exercise}\label{ex_wei=est+gei}
+  Prove that the following are equivalent
+  \begin{itemize}
+  \item[1.] $T$ has weak elimination of imaginaries
+  \item[2.] $T$ has geometric elimination of imaginaries and \ssf{1} of Exercise~\ref{ex_est} holds.
+  \end{itemize} 
+\end{exercise}
   
-  \begin{example}
-    Prove that the following are equivalent
-    \begin{itemize}
-    \item[1.] $T$ has weak elimination of imaginaries
-    \item[2.] for every $\Aa\in \U^\eq$ there exists the least algebraically closed set $A\subseteq\U$ such that $\Aa$ is definable over $A$.
-    \end{itemize}
-  \end{example}
+\begin{example}
+  Prove that the following are equivalent
+  \begin{itemize}
+  \item[1.] $T$ has weak elimination of imaginaries
+  \item[2.] for every $\Aa\in \U^\eq$ there exists the least algebraically closed set $A\subseteq\U$ such that $\Aa$ is definable over $A$.
+  \end{itemize}
+\end{example}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -607,16 +612,16 @@ The rest of this section is dedicated to the proof that the theory of the random
 \begin{lemma}\label{lem_suff_wei}
   The following is a sufficient condition for weak elimination of imaginaries
 
-  $\natural$\qquad $\D\subseteq\U^{x}$ is definable both over $A$ and over $B$, then it is definable over $A\cap B$.
+  $\natural$\qquad $\mrD\subseteq\U^{\mr x}$ is definable both over $A$ and over $B$, then it is definable over $A\cap B$.
 \end{lemma}
 
 \begin{proof}
-  Let $\D\subseteq\U^{x}$ be a definable set, and pick a finite set $A\subseteq\U$ of minimal size over which $\D$ is definable. 
-  Now, let $f$ be an automorphism that fixes $\D$. Then $\D$ is definable over $A\cap f[A]$, so by minimality of $|A|$ we have $A= f[A]$. 
-  Now let $a$ be an enumeration of $A$.
-  By the above, $a$ has a finite orbit under $\Aut(\U/\{\D\})$.
-  Hence $A\subseteq\acl\{\D\}$.
-  Therefore $\D\in\dcl^\eq\big(\acl\{\D\}\big)$
+  Let $\mrD\subseteq\U^{\mr x}$ be a definable set, and pick a finite set $A\subseteq\U$ of minimal size over which $\mrD$ is definable. 
+  Now, let $f$ be an automorphism that fixes $\mrD$. Then $\mrD$ is definable over $A\cap f[A]$, so by minimality of $|A|$ we have $A= f[A]$. 
+  Now let ${\gr a}$ be an enumeration of $A$.
+  By the above, ${\gr a}$ has a finite orbit under $\Aut(\U/\{\mrD\})$.
+  Hence ${\gr a}\in\acl\{\mrD\}$.
+  Therefore $\mrD\in\dcl^\eq\big(\acl\{\mrD\}\big)$
   The lemma follows by applying Theorem~\ref{thm_elimimd}.
 \end{proof}
 
@@ -655,7 +660,6 @@ The rest of this section is dedicated to the proof that the theory of the random
 
   Clearly, any $c_n$ not in $A, B,\range a,\range b$ proves the lemma.
 \end{proof}
-
 
 \begin{lemma}
   The theory $T_{\rm rg}$ has weak elimination of imaginaries.

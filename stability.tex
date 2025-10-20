@@ -172,17 +172,19 @@ By the proposition above, they are closed under quantifiers.
 \section{Ladders and definability}
 
 %Here we write \emph{$\phi({\mr x}\,;{\gr z})^*$\/} for the partitioned formula where the order of the two tuples is inverted (i.e.\@ it is the opposite of what displayed).
-
 Let $\pi\subseteq\U^{\mr x}\times\U^{\gr z}$ be a binary relation (which need not be definable in any sense).
 We denote by $\pi({\mr x}\,;{\gr z})$ the predicate associated to $\pi$.
 We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$ is a \emph{ladder\/} of length $\alpha$ for $\pi({\mr x}\,;{\gr z})$ if for every $i<j<\alpha$
 
 \ceq{\hfill\pi({\mr a_i}\,;{\gr b_j})}{\wedge}{\neg\pi({\mr a_j}\,;{\gr b_i}).}
 
-We say that $\pi({\mr x}\,;{\gr z})$ is \emph{stable\/} if for some $n$ there is no ladder of length $n$.
-Otherwise we say it is \emph{unstable} or that it has the \emph{order property}.
-We will mainly deal with relations that are definable or type-definable.
-We say that a formula or a type is stable accordingly.
+We say that $\pi({\mr x}\,;{\gr z})$ is \emph{unstable\/} if it admits ladder sequences of arbitrary finite length; \emph{stable\/} otherwise.
+If $\pi({\mr x}\,;{\gr z})$  is unstable we may also sat that it has the \emph{order property.}
+
+In the following \emph{$\mrX$\/} $\subseteq\U^{\mr x}$ and \emph{$\grZ$\/} $\subseteq\U^{\gr z}$ are two given sets that are type-definable over $A$.
+If the condition above holds when we require the ladder sequence to contain only elements of $\mrX\times\grZ$, we say that $\pi({\mr x}\,;{\gr z})$ is stable \emph{restricted to\/} $\mrX$ and $\grZ$.
+
+We will mainly deal with relations that are definable but it noteworthy that a few results in this section do not need this assumption.
 % The proof of the following easy fact is left to the reader.
 
 % \begin{fact}\label{}
@@ -195,34 +197,38 @@ We say that a formula or a type is stable accordingly.
 
 When $\pi({\mr x}\,;{\gr z})$ is a formula, compactness allows to simplify the definition of stability as in the following fact.
 
-\begin{fact}\label{}
+\begin{fact}\label{fact_infiniteladders}
   The following are equivalent for every $\pi({\mr x}\,;{\gr z})\in L(\U)$
   \begin{itemize}
     \item [1.] $\pi({\mr x}\,;{\gr z})$ is stable
     \item [2.] $\pi({\mr x}\,;{\gr z})$ admits no ladder of length $\omega$.
   \end{itemize}
+  \smallskip
+  The equivalence holds also if restricted to $\mrX$ and $\grZ$.
 \end{fact}
 
-Sometimes \ssf2 of the above fact is taken as definition of stability.
-With this definition and asssuming invariance over $A$ one obtains a useful characterization.
+Sometimes \ssf2 in the above fact is taken as definition of stability.
+The following is another useful characterization.
 % In this section there is no blanket assumption of invariance over $A$ as it is not strictly necessary.
 % The invariance of $\pi$ would simplify the discussion as it allows to require that the ladder is an indiscernible sequence (cf.\@ Lemma~\ref{lem_stab_Boole}).
 
 \begin{theorem}\label{thm_sability_indiscernibility}
-  Let $\pi({\mr x}\,;{\gr z})$ be a relation invariant over $A$.
+  Let $\pi({\mr x}\,;{\gr z})\in L(A)$.
   Then the following are equivalent
   \begin{itemize}
-    \item[1.] $\pi({\mr x}\,;{\gr z})$ admits no ladder sequence of length $\omega$
+    \item[1.] $\pi({\mr x}\,;{\gr z})$ is stable
     \item[2.] $\pi({\mr a_0}\,;{\gr b_1})\imp\pi({\mr a_1}\,;{\gr b_0})$ for every $A$-indiscernible sequence $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
   \end{itemize}
+  \smallskip
+  The equivalence holds also if restricted to $\mrX$ and $\grZ$.
 \end{theorem}
 
 \begin{proof}
-  (2$\IMP$1) \ Suppose that the ladder $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ witnessee the failure of (1).
+  \ssf2$\IMP$\ssf1. \ Suppose that the ladder $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$ witnessee the failure of \ssf2 in Fact~\ref{fact_infiniteladders}.
   Let $\<{\mr a'_i}\,;{\gr b'_i} : i<\omega\>$ be a sequence of $A$-indiscernibles with the same EM-type as $\<{\mr a_i}\,;{\gr b_i} : i<\omega\>$.
   By $A$-invariance $\pi({\mr a'_0}\,;{\gr b'_1})$ and $\neg\pi({\mr a'_1}\,;{\gr b'_0})$.
 
-  (2$\IMP$1) Immediate by indiscernibility and invariance.
+  \ssf2$\IMP$\ssf1. Immediate by indiscernibility.
 \end{proof}
 %It is clear that $p({\mr x}\,;{\gr z})$ is stable if and only if $p({\mr x}\,;{\gr z})^*$ is stable.
 

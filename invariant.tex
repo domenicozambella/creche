@@ -121,7 +121,7 @@ When $p({\mr x})\in S(\U)$, this can be rephrased as
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{16ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
-The easiest way to obtain types that are invariant over a model $M$ is via types that are finitely satisfiable in $M$.
+The easiest way to obtain types that are invariant over $A$ is via types that are finitely satisfiable in $A$.
 We say that a type $p({\mr x})$ is \emph{finitely satisfiable\/} in $A$ if every conjunction of formulas in $p({\mr x})$ has a solution in $A^{\mr x}$.
 
 \begin{proposition}\label{prop_coeredi_quasiinvarienti}
@@ -160,7 +160,7 @@ In many cases it is convenient to work with elements instead of types.
 We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is finitely satisfied in $M$.
 
 \begin{definition}\label{def_coheir_idepencence}
-  For every ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$ we define
+  For every ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$ we define\smallskip
 
   \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}
   %
@@ -168,17 +168,17 @@ We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is 
   {\IFF}
   {\phi(M^{\mr x},{\gr b})\neq\varnothing
   \textrm{ for all }\phi({\mr x}\,;{\gr z})\in L(M) 
-  \textrm{ such that }\phi({\mr a}\,;{\gr b})}.
+  \textrm{ such that }\phi({\mr a}\,;{\gr b})}.\smallskip
 
   We say that $\tp({\mr a}/M,{\gr b})$ is a \emph{coheir} of $\tp({\mr a}/M)$ or, equivalently, that $\tp({\gr b}/M,{\mr a})$ is an \emph{heir} of $\tp({\gr b}/M)$.
-  We define the type
+  We define the type\smallskip
 
   \ceq{\hfill\emph{${\mr x}\cnonfork_M{\gr b}$}}
   {=}
   {\Big\{\neg\phi({\mr x}\,;{\gr b})
   \ :\ 
   \phi({\mr x}\,;{\gr z})\in L(M)
-  \textrm{ and } \phi(M^{\mr x};{\gr b})=\varnothing\Big\}.}
+  \textrm{ and } \phi(M^{\mr x};{\gr b})=\varnothing\Big\}.}\smallskip
 
   We write \emph{${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$} for the union of the types ${\mr x}\cnonfork_M{\gr b}$ and $\tp({\mr a}/M)$.
   By Lemma~\ref{lem_coheir_independence}.\ssf4 below, this is a consistent type over $M,{\gr b}$.
