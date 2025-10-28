@@ -46,12 +46,21 @@ Alternatively, one could require that the set defined by the type is invariant~-
 
 First we introduce some notation.
 Let $\phi({\mr x}\,;{\gr z})\in L(\U)$.
-A \emph{$\phi$-formula\/} is a formula the form $\phi({\mr x}\,;{\bar b})$ or $\neg\phi({\mr x}\,;{\bar b})$ for some ${\bar b}\in\U^{\gr z}$.
+A \emph{$\phi$-formula\/} is a Boolean combination of formulas of the form $\phi({\mr x}\,;{\gr b})$ for some ${\gr b}\in\U^{\gr z}$.
 A \emph{$\phi$-type\/} is a set of $\phi$-formulas.
-
-We denote by \emph{$S_\phi(\Aa)$\/} the set of complete $\phi$-types with parameters in $\Aa$.
+We denote by \emph{$S_\phi(\Aa)$\/} the set of complete $\phi$-types that contain $\phi$-formulas that are invariant over $\Aa$.
 Typically, $\Aa$ is either $\U$ or some small set $A\subseteq\U$.
 Types in \emph{$S_{\phi}(\U)$\/} are called \emph{global $\phi$-types.}
+
+Let $p({\mr x})\subseteq L(\U)$.
+For $f\in\Aut(\U)$, we write $fp({\mr x})$ for the type containing the formulas $\phi({\mr x}\,;f{\gr a})$ for every $\phi({\mr x}\,;{\gr a})\in p$, where $\phi({\mr x}\,;{\gr z})\in L$.
+We say that $p({\mr x})$ is \emph{invariant\/} over $A$, or \emph{$A$-invariant\/} for short, if for every $f\in\Aut(\U/A)$
+
+\ceq{\ssf{it1.}\hfill p({\mr x})}{\proves}{fp({\mr x})}
+
+Equivalently, if for every $\phi({\mr x}\,;{\gr z})\in L(A)$, every ${\gr a}\in\U^{\gr z}$, and every $f\in\Aut(\U/A)$
+
+\ceq{\ssf{it1$'$.}\hfill p({\mr x})\proves\phi({\mr x}\,;{\gr a})}{\IFF}{p({\mr x})\proves\phi({\mr x}\,;f{\gr a})}.
 
 % They may be identified with subsets of $\U^{\gr z}$.
 % Namely, $p({\mr x})\in S_\phi(\Aa)$ is identified with
@@ -68,7 +77,7 @@ Types in \emph{$S_{\phi}(\U)$\/} are called \emph{global $\phi$-types.}
 % The set $\grD$ is the union, for $p({\gr z})\in S(A)$, of the sets $p(\U)$ that intersect $D$.
 % \end{proof}
 
-Let $p({\mr x})\subseteq L(\U)$ be a consistent type.
+Let $p({\mr x})\in S(\U)$ be a global type.
 For every formula $\phi({\mr x}\,;{\gr z})\in L(\U)$ we define
 
 \ceq{\hfill\emph{$\gr\D_{p,\phi}$}}{=}{\Big\{{\gr a}\in\U^{\gr z}\ :\ p({\mr x})\proves\phi({\mr x}\,;{\gr a})\Big\}.}
@@ -76,18 +85,9 @@ For every formula $\phi({\mr x}\,;{\gr z})\in L(\U)$ we define
 % We can read the notation in two ways: either the tuple ${\gr z}$ has length $\omega$ and is the same for all formulas, or it is finite and depends on $\phi$.
 % This is possible because adding or erasing dummy variables to the tuple of ${\gr z}$ does not change ${\gr\D_{p,\phi}}$ in any relevant way; in particular, invariance is preserved.
 
+
 A global $\phi$-type $p({\mr x})\in S_\phi(\U)$ can be identified with the set ${\gr\D_{p,\phi}}$.
 Therefore a global type $p({\mr x})\in S(\U)$ can be identified with the collection of the sets ${\gr\D_{p,\phi}}$, where $\phi({\mr x}\,;{\gr z})$ ranges over $L$.
-
-Let $p({\mr x})\subseteq L(\U)$.
-For $f\in\Aut(\U)$, we write $fp({\mr x})$ for the type containing the formulas $\phi({\mr x}\,;f{\gr a})$ for every $\phi({\mr x}\,;{\gr a})\in p$, where $\phi({\mr x}\,;{\gr z})\in L$.
-We say that $p({\mr x})$ is \emph{invariant\/} over $A$, or \emph{$A$-invariant\/} for short, if for every $f\in\Aut(\U/A)$
-
-\ceq{\ssf{it1.}\hfill p({\mr x})}{\proves}{fp({\mr x})}
-
-Equivalently, if for every $\phi({\mr x}\,;{\gr z})\in L(A)$, every ${\gr a}\in\U^{\gr z}$, and every $f\in\Aut(\U/A)$
-
-\ceq{\ssf{it1$'$.}\hfill p({\mr x})\proves\phi({\mr x}\,;{\gr a})}{\IFF}{p({\mr x})\proves\phi({\mr x}\,;f{\gr a})}.
 
 Hence $p({\mr x})$ is invariant exactly when all the sets $\gr\D_{p,\phi}$ are.
 That is, $p({\mr x})$ is invariant over $A$ if for all $\phi({\mr x}\,;{\gr z})\in L(A)$ and ${\gr a},{\gr b}\in\U^{\gr z}$
@@ -96,7 +96,7 @@ That is, $p({\mr x})$ is invariant over $A$ if for all $\phi({\mr x}\,;{\gr z})\
 
 % In words we say that $p({\mr x})\subseteq L(\U)$ \emph{does not split\/} over $A$.
 
-If $p({\mr x})$ is a global $\phi$-type \ssf{it2} is equivalent to requiring that for every ${\gr a},{\gr b}\in\U^{\gr z}$
+If $p({\mr x})\in S_\phi(\U)$ \ssf{it2} is equivalent to requiring that for every ${\gr a},{\gr b}\in\U^{\gr z}$
 
 \ceq{\ssf{it2$^\prime$.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{p({\mr x})\,\proves\,\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})}.
 
@@ -192,10 +192,13 @@ ${\mr a}$ is \emph{independent\/} from ${\gr b}$ over $M$.
 This is a strong notion of independence.
 In general it is not symmetric, that is, ${\mr b}\cnonfork_M{\gr a}$ is not equivalent to ${\gr a}\cnonfork_M{\mr b}$. In Chapter~\ref{stability} we will see that symmetry is equivalent to stability.
 
-\begin{remark}
-  In general there is no type that says ${\mr x}\cnonfork_M{\gr z}$.
-  However, for every ${\gr b}\in\U^{\gr z}$ there is a type $p({\mr x}\,;{\gr z})$ that says ${\mr x}\cnonfork_M{\gr z}\equiv_M{\gr b}$.
-  See Exercise~\ref{ex_heir_type}.
+\begin{remark}\label{rem_heir_type}
+  In general there is no type that says ${\mr x}\cnonfork_M{\gr z}$, see Exercise~\ref{ex_heir_coheir_counterexample}.
+  However, for every ${\gr b}\in\U^{\gr z}$ there is a type that says ${\mr x}\cnonfork_M{\gr z}\equiv_M{\gr b}$, namely\smallskip
+
+  \ceq{\hfill p({\mr x}\,;{\mr z})}{\IFF}{ \big\{\neg\phi({\mr x}\,;{\gr z})\ :\ \phi(M^{\mr x}\,;{\gr b})=\varnothing, \ \ \phi({\mr x}\,;{\gr z})\in L(M)\big\}\ \cup\ q({\gr z})}\smallskip
+
+  where $q({\gr z})=\tp({\gr b}/M)$.
 \end{remark}
 
 We will use the following easy lemma without explicit reference.
@@ -238,15 +241,15 @@ We will use the following easy lemma without explicit reference.
   Let $p(w,{\gr z})=\tp(c,{\gr b}/M)$.
   We can take $\V$ to be the structure enumerated by the tuple that realizes symultaneously $p(w,{\gr b}) $ and the following type 
 
-  \ceq{\hfill\Big\{\neg\phi({\mr a},w,{\gr b})}{:}{\phi({\mr x},w,{\gr z})\in L(M),\ \ p(w,{\gr b})\imp\phi(M^{\mr x},w,{\gr b})=\varnothing\Big\}.}
+  \ceq{\hfill\Big\{\neg\phi({\mr a},w)}{:}{\phi({\mr x},w)\in L(M),\ \ \phi(M^{\mr x},c)=\varnothing\Big\}.}
 
-  We only need to prove consistency.
-  If inconsistent, then 
+  We only need to prove finite consistency.
+  If inconsistent, for some $\theta(w,{\gr z})\in p$ and some $\phi_i({\mr x},w,{\gr z})$ in the above set
 
-  \ceq{\hfill\theta(w,{\gr b})}{\imp}{\bigvee_{i=1}^n\phi_i({\mr a},w,{\gr b})}
+  \ceq{\hfill\theta(w,{\gr b})}{\imp}{\bigvee_{i=1}^n\phi_i({\mr a},w).}
   
-  for some $\theta(w,{\gr z})\in p$ and some $\phi_i({\mr x},w,{\gr z})$ such that $p(w,{\gr b})\imp\phi_i(M^{\mr x},w,{\gr b})=\varnothing$.
-  We obtain a contradiction because, as ${\mr a}\cnonfork_M{\gr b}$, we can replace ${\mr a}$ by some ${\mr a'}\in M^{\mr x}$.
+  As ${\mr a}\cnonfork_M{\gr b}$, we can replace ${\mr a}$ by some ${\mr a'}\in M^{\mr x}$.
+  Finally, substituting $c$ for $w$, we obtain that $\phi_i({\mr a},c)$ holds for some $i$, a contradiction
 \end{proof}
 
 %Transitivity has dual version that holds under stronger assumptions.
@@ -307,12 +310,6 @@ By Dedekind completeness, the trace on $M$ of any interval of $\U$ coincides wit
 Therefore $\cnonfork_M$ is $1$-stationary.
 \end{remark}
 
-\begin{exercise}\label{ex_heir_type}
-  Show that for every $b\in\U^z$ there is a type $p(x\,;z)\subseteq L(M)$ such that for every  $a\in\U^x$ and $b'\in\U^z$ 
-  
-  \ceq{\hfill a,b'\models p(x\,;z)}{\IFF}{ a\cnonfork_M b'\equiv_M b.}
-\end{exercise}
-
 \begin{exercise}
   Let $T$ be strongly minimal.
   Let $a\in\U$ and $b\in\U^z$.
@@ -330,10 +327,19 @@ Therefore $\cnonfork_M$ is $1$-stationary.
 \end{exercise}
 
 \begin{exercise}
-  Let $a_i\cnonfork_M b$, for $i=1,2$. 
-  Let $N\supseteq M$ be saturated and of cardinality $>|M|$.
+  Let $N\succeq M$ be saturated and of cardinality $>|M|$.
+  Let $a_i\cnonfork_M N, b$, for $i=1,2$. 
   Prove that if $a_1\equiv_N a_2$ then $a_1\equiv_{N,b} a_2$.
 \end{exercise}
+
+\begin{exercise}\label{ex_heir_coheir_counterexample}
+  Show that in general there is no type $p(x\,;z)\subseteq L(M)$ such that 
+
+   \ceq{\hfill a\cnonfork_M b}{\IFF}{a\,;b\models p(x\,;z).}
+
+  Hint: consider the theory of dense linear orders without endpoints.
+\end{exercise}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

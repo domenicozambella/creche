@@ -83,21 +83,29 @@ as the order is irrelevant,
 $a_{\restriction i},a_i,{\mr c_{\restriction n}}$ satisfies the induction hypothesis.
 \end{proof}
 
-\begin{exercise}\label{ex_Ramsey_order}
-  Let $I,<_I$ be an linear order without largest element.
-  Let $f$ be a coloring of $I^{(n)}$.
-  Prove that there is a monochromatic subset $H\subseteq I$ that is ordered as $\omega$.
-\end{exercise}
-
-\begin{exercise}\label{ex_Ramsey_random}
-    Let $M$ be a graph with the property that for every finite $A\subseteq M$ there is a $c\in M$ such that $A\subseteq r(c,\U)$. 
-    (This holds in particular when $M$ is a random graph.)
-    Prove that for every finite coloring of the edges of $M$, there is a subgraph that is complete and monochromatic.
-\end{exercise}
+% \begin{exercise}\label{ex_Ramsey_order}
+%   Let $I,<_I$ be an linear order without largest element.
+%   Let $f$ be a coloring of $I^{(n)}$.
+%   Prove that there is a monochromatic subset $H\subseteq I$ that is ordered as $\omega$.
+% \end{exercise}
 
 \begin{exercise}
-    The graph $M$ is as in Exercise~\ref{ex_Ramsey_random}.
-    %
+  Let $M$ be an arbitrary model.
+  Let $\phi(x,y)\in L(M)$, where $|x|=|y|=1$.
+  Prove that there is a sequence $\langle a_i:i<\omega\rangle$ in $M$ such that 
+
+  \hfil$\phi(a_i,a_j)\iff\phi(a_h,a_k)$
+
+  for every $i<j<\omega$ and $h<k<\omega$.
+\end{exercise}
+
+% \begin{exercise}\label{ex_Ramsey_random}
+%     Let $M$ be a graph with the property that for every finite $A\subseteq M$ there is a $c\in M$ such that $A\subseteq r(c,\U)$. 
+%     (This holds in particular when $M$ is a random graph.)
+%     Prove that for every finite coloring of the edges of $M$, there is a subgraph that is complete and monochromatic.
+% \end{exercise}
+
+\begin{exercise} Let $M$ be a graph with the property that for every finite $A\subseteq M$ there is a $c\in M$ such that $A\subseteq r(c,\U)$. 
     A star in $M$ is a subgraph whose edges all share a common vertex. We say that a coloring of the edges of $M$ is locally finite if there is a $k$ such that every star has at most $k$ colors.
     Prove that for every locally finite coloring of the edges of $M$, there is an infinite monochromatic complete subgraph.
 \end{exercise}
@@ -194,7 +202,7 @@ Hence ${\mr\bar a}$ is indiscernible over $h[M]$.
 \end{exercise}
 
 \begin{exercise}
-  Let  $p(x)\in S(\U)$ be a global type invariant over $A$.
+  Let $p(x)\in S(\U)$ be a global type invariant over $A$.
   Let $a,b\models p_{\restriction A}(x)$.
   Prove that there is a sequence $\bar c=\<c_i:i<\omega\>$ such that $a,\bar c$ and $b,\bar c$ are both sequences of $A$-indiscernibles.
 \end{exercise}
@@ -206,7 +214,7 @@ Hence ${\mr\bar a}$ is indiscernible over $h[M]$.
 
 \begin{exercise}
   Let $\<\D_i:i<\omega\>$ be an $A$-indiscernible sequence in $\U^\eq$.
-  Prove that there is an $A$-indiscernible sequence $\<b_i:i<\omega\>$ in $\U^z$ and a formula $\phi(x\,;z)\in L$ such that $\D_i=\phi(\U\,;b_i)$.
+  Prove that there is a formula $\phi(x\,;z)\in L$ and an $A$-indiscernible sequence $\<b_i:i<\omega\>$ in $\U^z$ such that $\D_i=\phi(\U\,;b_i)$.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -242,7 +250,7 @@ If $\mrA$ is type definable over $S$ then so is $\mrA*{\mr b}$
 for any ${\mr b}$.
 \end{proposition}
 \begin{proof}
-  Let $p({\mr x}\,;{\mr z})$ the type in Exercise~\ref{ex_heir_type}.
+  Let $p({\mr x}\,;{\mr z})$ the type in Remark~\ref{rem_heir_type}.
   Then the set $\mrA*{\mr b}$ is defined by the type $q({\mr y})=\E {\mr x},{\mr z}\ \big[ {\mr y}={\mr x}{\cdot}{\mr z}\ \wedge\ {\mr x}\in\mrA \ \wedge\ p({\mr x}\,;{\mr z})\big]$.
 \end{proof}
 
@@ -355,6 +363,10 @@ Under the same assumptions of the lemma above, every type-definable
 idempotent set contains an element with an idempotent orbit.
 \end{corollary}
 
+\begin{exercise}[ (van der Waerden's theorem)]
+  Prove that for every finite coloring of $\NN$ and for every $n<\omega$, there is a monochromatic arithmetical progression of length $n$.
+  An \textit{arithmetical progression\/} of length $n$ is a sequence of natural numbers $\langle a_i : i\le n\rangle$ such that $a_{i+1} - a_i$ is constant for $i<n$.
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  

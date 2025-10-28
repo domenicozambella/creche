@@ -65,8 +65,8 @@ In this chapter many proofs require some juggling with negations as epitomized b
 \begin{proof}
   Spelling out the definitions, \ssf1 and \ssf2 are, respectively, equivalent to
   \begin{itemize}
-    \item[1$'$.] there are no finite $C\subseteq G$ such that $\mrX\ \subseteq\ \cup\, C{\cdot}{\mr\D}$.
-    \item[2$'$.] $\varnothing\ \neq\ \cap\, C{\cdot}\neg{\mr\D}$ for every finite $C\subseteq G$.
+    \item[1$'$.] there are no finite $C\subseteq G$ such that $\mrX\ \subseteq\ \cup\, C{\cdot}\mrD$.
+    \item[2$'$.] $\varnothing\ \neq\ \cap\, C{\cdot}\neg\mrD$ for every finite $C\subseteq G$.
   \end{itemize} 
   Then the equivalence is evident.
 \end{proof}
@@ -728,7 +728,7 @@ In this section we prove that $\Ll({\mr a}/A)$ is type-definable (if and) only t
 In other words, only if the connected component of ${\mr a}$ in the Lascar graph has finite diameter.
 
 It is convenient to address the problem in more general terms.
-We work under Assumption~\ref{notation_GXphi} and also assume that $H\le\Aut(\U/A)$ acts transitively on $\mrX$.
+We assume that $H\le\Aut(\U/A)$ acts transitively on $\mrX$.
 Let \emph{$C$\/} $\subseteq H$ be a set of generators of $H$ that is
 \begin{itemize}
   \item[1.] symmetric i.e.\@ it contains the unit and is closed under inverse
@@ -850,12 +850,12 @@ This is used in the next section.
 \begin{proposition}\label{prop_coalese}\ 
   The equivalent conditions in Theorem~\ref{thm_coalesce} are also equivalent to\smallskip
 
-  \ceq{5.\hfill\Sigma_G({\mr x})}{=}{\bigcap\Big\{p({\mr x})\in S(\grZ)\ :\ p({\mr x})\text{ is }G\text{-invariant}\Big\}}
+  \ceq{\ssf5.\hfill\Sigma_G({\mr x})}{=}{\bigcap\Big\{p({\mr x})\in S(\grZ)\ :\ p({\mr x})\text{ is }G\text{-invariant}\Big\}}
 \end{proposition}
 
-Note that $\subseteq$ is always true, therefore (5) amounts to claiming that the type on the r.h.s.\@ is $G$-syndetic.
+Note that $\subseteq$ is always true, therefore (5K) amounts to claiming that the type on the r.h.s.\@ is $G$-syndetic.
 \begin{proof} 
-  Assume (1) of Theorem~\ref{thm_coalesce}.
+  Assume \ssf1 of Theorem~\ref{thm_coalesce}.
   It suffices to prove $\supseteq$, because the converse inclusion is always true. 
   Let $\mrD$ be non $G$-syndetic.
   Then $\neg\mrD$ is $G$-thick and therefore $G$-wide.
@@ -863,7 +863,7 @@ Note that $\subseteq$ is always true, therefore (5) amounts to claiming that the
   Therefore $x\in\mrD$ does not belong to the type on the r.h.s.
   
   Vice versa, note that the type on the r.h.s.\@ is closed under conjunction.
-  Then (2) of Theorem~\ref{thm_coalesce} immediately follows from (5).
+  Then \ssf2 of Theorem~\ref{thm_coalesce} immediately follows from \ssf5.
 \end{proof}
 
 Let $q({\mr x})$ be a $ L(\grZ)$-type.
@@ -888,9 +888,9 @@ The conditions in Theorem~\ref{thm_coalesce} together with stationarity, produce
   Work relatively to $q({\mr x})$.
 
   1$\Rightarrow$2.
-  Assume (1), then $\Sigma_G({\mr x})$ is finitely consistent.
+  Assume \ssf1, then $\Sigma_G({\mr x})$ is finitely consistent.
   Then $G$-syndetic $ L(\grZ)$-sets are $G$-thick.
-  Finally, they are $G$-wide by (1) in Theorem~\ref{thm_coalesce}.
+  Finally, they are $G$-wide by \ssf1 in Theorem~\ref{thm_coalesce}.
   (Stationarity is not required in this direction.)
 
   2$\Rightarrow$1.
@@ -906,155 +906,166 @@ The conditions in Theorem~\ref{thm_coalesce} together with stationarity, produce
 \section{Definable groups}\label{definablegroups}
 
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
-\def\ceq#1#2#3{\parbox[t]{20ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
+\def\ceq#1#2#3{\parbox[t]{16ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 Section under major revision.
 
 In this section we assume that there is a bijection $\pi:\grZ\to\Aut(\U/A)$ such that $\pi\big(\pi({\gr g}){\cdot}{\gr h}\big)=\pi({\gr g}){\cdot}\pi({\gr h})$.
-Therefore we may safely identify $\grZ$ with $\Aut(\U/A)$,in fact the action of $\Aut(\U/A)$ on $\grZ$ corresponds to the action $\Aut(\U/A)$ on itself by left multiplication.
+This says that the action of $\Aut(\U/A)$ on $\grZ$ is isomorphic to the action $\Aut(\U/A)$ on itself by left multiplication.
+Therefore we may safely identify $\grZ$ with $\Aut(\U/A)$ and never mention $\pi$ again.
+% We write ${\gr g}{\cdot}{\gr h}$ for the group operation on $\grZ$ induced by composition of automorphisms.
 It is worth stressing that, bar trivial cases, neither the group operation $\grZ$ nor the group action $\grZ$ on $\mrX$ are definable in $L$.
 % Note that ${\gr g}\cdot\varphi(\mrX\,;{\gr h})=\varphi(\mrX\,;{\gr g}{\cdot}{\gr h})$ for all ${\gr g},{\gr h}\in\grZ$ and $\varphi({\mr x}\,;{\gr z})\in L(A)$.
 
-Let $M\preceq\U$ be a model containing $A$.
-We write ${\mr X}$ and ${\gr Z}$ for $\mrX\cap M^{\mr x}$ and $\grZ\cap M^{\mr z}$ respectively.
+\begin{example}
+  This example shows that the above assumption is not unnatural.
+  Let $\U=\<\mrX\,;\grZ\>$ where $\grZ$ is a group that acts on $\mrX$.
+  The group operations and the group action are assumed definable in some signature $L'$.
+  Let $L$ be the reduct of $L'$ that has a relation symbol for each formula of the form $\psi({\gr z^{-1}}\!\cdot{\mr x})$ for some $\psi({\mr x})\in L$.
+  To each ${\gr h}\in\grZ$ we associate the $L$-automorphism $\pi({\gr h}):\<{\mr a}\,;{\gr g}\>\mapsto\<{\gr h}{\cdot}{\mr a}\,;{\gr h}{\cdot}{\gr g}\>$.
+  Therefore $\grZ$ embeds into $L$-$\Aut(\U)$.
+  It is easy to see that this embedding is onto.
+\end{example}
 
-When ${\gr g}\in\grZ$ and ${\mr a}\in\mrX$ we write ${\gr g}\nonfork{\mr a}$ if for every $\varphi({\mr x}\,;{\gr z})\in L(A)$ such that $\varphi({\mr a}\,;{\gr g})$ we have that $\varphi({\mr a}\,;{\gr Z})\neq\varnothing$.
+Let $M\preceq\U$ be a model containing $A$.
+We write $X$ and $Z$ for $\mrX\cap M^{\mr x}$ and $\grZ\cap M^{\mr z}$ respectively.
+
+When ${\gr g}\in\grZ$ and ${\mr a}\in\mrX$ we write ${\gr g}\cnonfork_M{\mr a}$ if for every $\varphi({\mr x})\in L(M)$ such that $\varphi({\gr g}{\cdot}{\mr a})$ we have that $\varphi(Z{\cdot}{\mr a})\neq\varnothing$.
 When $\grC\subseteq\grZ$ and $\mrD\subseteq\mrX$ we define
 
-\ceq{\hfill\grC\circ\mrD}{=}{\Big\{{\gr g}{\cdot}{\mr a}\ :\ {\gr g}\in\grC,\ {\mr a}\in\mrD,\ {\gr g}\nonfork {\mr a}\Big\}}
+\ceq{\hfill\emph{$\grC\diamond\mrD$}}{=}{\Big\{{\gr g}{\cdot}{\mr a}\ :\ {\gr g}\in\grC,\ {\mr a}\in\mrD,\ {\gr g}\cnonfork_M {\mr a}\Big\}}
 
 % If $G\le{\rm Aut}(\UDelta)$ and $a\in\mrX$, we write $G{\cdot}a$ for the orbit of $a$ under the action of $G$.
-When $\mrD$ is the orbit of ${\mr a}\in\mrX$ under the action of ${\rm Aut}(\U/M)$, we write $\grC\circ {\mr a}$ for $\grC\circ\mrD$.
+When $\mrD$ is the orbit of ${\mr a}\in\mrX$ under the action of ${\rm Aut}(\U/M)\le\grZ$, we write $\grC\diamond {\mr a}$ for $\grC\diamond\mrD$.
 
-If $\mrD\subseteq\mrX$ we write ${\rm cl}(\mrD)$ for the closure of $\mrD$ in the topology generated by the subsets of $\mrX$ that are $L(M)$-definable.
+If $\mrD\subseteq\mrX$ we write \emph{${\rm cl}_M(\mrD)$\/} for the closure of $\mrD$ in the topology generated by the subsets of $\mrX$ that are $L(M)$-definable.
 Explicitely,
 
-\ceq{1.\hfill{\rm cl}(\mrD)}{=}{\bigcap\Big\{\varphi(\mrX)\ :\ \varphi({\mr x})\in L(M)\text{ such that }\mrD\subseteq\varphi(\mrX)\Big\}}
+\ceq{\ssf1.\hfill{\rm cl}_M(\mrD)}{=}{\bigcap\Big\{\varphi(\mrX)\ :\ \varphi({\mr x})\in L(M)\text{ such that }\mrD\subseteq\varphi(\mrX)\Big\}}
 
-\ceq{2.}{=}{\Big\{{\mr b}\ :\ \varphi(\mrD)\neq\varnothing\text{ for every }\varphi({\mr x})\in L(M)\text{ that is satisfied by }{\mr b}\Big\}}
+\ceq{\ssf2.}{=}{\Big\{{\mr b}\ :\ \varphi(\mrD)\neq\varnothing\text{ for every }\varphi({\mr x})\in L(M)\text{ that is satisfied by }{\mr b}\Big\}}
 
 
 % \begin{fact}
 %   For every $\mrD\subseteq\mrX$\smallskip
 
-%   \ceq{\hfill{\rm cl}(\cup\,Z{\cdot}\mrD)}{=}{\grZ\circ\mrD}
+%   \ceq{\hfill{\rm cl}_M(\cup\,Z{\cdot}\mrD)}{=}{\grZ\diamond\mrD}
 % \end{fact}
 
 % \begin{proof}
 %   $\supseteq$. 
-%   Let $b\in\grZ\circ\mrD$, say $b=g{\cdot}a$ for some $g\in\grZ$ and $a\in\mrD$ such that $g\nonfork a$.
+%   Let $b\in\grZ\diamond\mrD$, say $b=g{\cdot}a$ for some $g\in\grZ$ and $a\in\mrD$ such that $g\cnonfork_M a$.
 %   Let $\varphi(x)\in L(M)$ be such that $Z{\cdot}\mrD\subseteq\varphi(\mrX)$.
-%   Then $g\nonfork a$ implies $\varphi(g{\cdot}a)$.
-%   This proves that $b\in{\rm cl}(\cup\,Z{\cdot}\mrD)$.
+%   Then $g\cnonfork_M a$ implies $\varphi(g{\cdot}a)$.
+%   This proves that $b\in{\rm cl}_M(\cup\,Z{\cdot}\mrD)$.
   
 %   $\subseteq$. 
-%   Let $b\in{\rm cl}(\cup\,Z{\cdot}\mrD)$ be given and define $p(x)=\LDelta\mbox{-tp}(b/M)$.
-%   It suffices to prove that for every $a\in\mrD$ the type $z\nonfork a$ is consistent with $p(z{\cdot}a)$.
-%   In fact, if $g\nonfork a$, then $g{\cdot}a\in\grZ\circ a$.
-%   And, as $\grZ\circ a$ is $M$-invariant, if $p(g{\cdot}a)$ then $b\in\grZ\circ a$.
-%   Now, to prove concistency, assume for a contradiction that $z\nonfork a\rightarrow\neg\varphi(z{\cdot}a)$ for some $\varphi(x)\in p$.
-%   As any $m\in Z$ realizes $z\nonfork a$, no element of $Z{\cdot}a$ satisfies $\varphi(x)$.
-%   This is a contradiction by (2) above.
+%   Let $b\in{\rm cl}_M(\cup\,Z{\cdot}\mrD)$ be given and define $p(x)=\LDelta\mbox{-tp}(b/M)$.
+%   It suffices to prove that for every $a\in\mrD$ the type $z\cnonfork_M a$ is consistent with $p(z{\cdot}a)$.
+%   In fact, if $g\cnonfork_M a$, then $g{\cdot}a\in\grZ\diamond a$.
+%   And, as $\grZ\diamond a$ is $M$-invariant, if $p(g{\cdot}a)$ then $b\in\grZ\diamond a$.
+%   Now, to prove concistency, assume for a contradiction that $z\cnonfork_M a\rightarrow\neg\varphi(z{\cdot}a)$ for some $\varphi(x)\in p$.
+%   As any $m\in Z$ realizes $z\cnonfork_M a$, no element of $Z{\cdot}a$ satisfies $\varphi(x)$.
+%   This is a contradiction by \ssf2 above.
 % \end{proof}
 
 
 \begin{fact}
   For every ${\mr a}\in\mrX$\smallskip
 
-  \ceq{\hfill{\rm cl}({\gr Z}{\cdot}{\mr a})}{=}{\grZ\circ {\mr a}}
+  \ceq{\hfill{\rm cl}_M(Z{\cdot}{\mr a})}{=}{\grZ\diamond {\mr a}}
 \end{fact}
 
 \begin{proof}
   $\supseteq$. 
-  Let ${\mr b}\in\grZ\circ {\mr a}$, say ${\mr b}=g{\cdot}{\mr a}$ for some $g\nonfork {\mr a}$.
-  Let $\varphi({\mr x})\in L(M)$ be such that ${\gr Z}{\cdot}{\mr a}\subseteq\varphi(\mrX)$.
-  Then $g\nonfork {\mr a}$ implies $\varphi(g{\cdot}{\mr a})$.
-  This proves that ${\mr b}\in{\rm cl}({\gr Z}{\cdot}{\mr a})$.
+  Let ${\mr b}\in\grZ\diamond {\mr a}$, say ${\mr b}={\gr g}{\cdot}{\mr a}$ for some ${\gr g}\cnonfork_M {\mr a}$.
+  Let $\varphi({\mr x})\in L(M)$ be such that $Z{\cdot}{\mr a}\subseteq\varphi(\mrX)$.
+  Then ${\gr g}\cnonfork_M {\mr a}$ implies $\varphi({\gr g}{\cdot}{\mr a})$.
+  This proves that ${\mr b}\in{\rm cl}_M(Z{\cdot}{\mr a})$.
   
   $\subseteq$. 
-  Let ${\mr b}\in{\rm cl}({\gr Z}{\cdot}{\mr a})$ be given and define $p({\mr x})=\LDelta\mbox{-tp}({\mr b}/M)$.
-  It suffices to prove that $z\nonfork {\mr a}$ is consistent with $p(z{\cdot}{\mr a})$.
-  In fact, if $g\nonfork {\mr a}$, then $g{\cdot}{\mr a}\in\grZ\circ {\mr a}$.
-  And, as $\grZ\circ {\mr a}$ is $M$-invariant, if $p(g{\cdot}{\mr a})$ then ${\mr b}\in\grZ\circ {\mr a}$.
-  Now, to prove concistency, assume for a contradiction that $z\nonfork {\mr a}\rightarrow\neg\varphi(z{\cdot}{\mr a})$ for some $\varphi({\mr x})\in p$.
-  As any $m\in {\gr Z}$ realizes $z\nonfork {\mr a}$, no element of ${\gr Z}{\cdot}{\mr a}$ satisfies $\varphi({\mr x})$.
-  This is a contradiction by (2) above.
+  Let ${\mr b}\in{\rm cl}_M(Z{\cdot}{\mr a})$ be given and define $p({\mr x})=\tp({\mr b}/M)$.
+  It suffices to prove that ${\gr z}\cnonfork_M{\mr a}$ is consistent with $p({\gr z}{\cdot}{\mr a})$.
+  In fact, if ${\gr g}\cnonfork_M{\mr a}$, then ${\gr g}{\cdot}{\mr a}\in\grZ\diamond {\mr a}$.
+  And, as $\grZ\diamond {\mr a}$ is $M$-invariant, if $p({\gr g}{\cdot}{\mr a})$ then ${\mr b}\in\grZ\diamond{\mr a}$.
+  Now, to prove concistency, assume for a contradiction that ${\gr z}\cnonfork_M {\mr a}\rightarrow\neg\varphi({\gr z}{\cdot}{\mr a})$ for some $\varphi({\mr x})\in p$.
+  As any $c\in Z$ realizes ${\gr z}\cnonfork_M {\mr a}$, no element of $Z{\cdot}{\mr a}$ satisfies $\varphi({\mr x})$.
+  This is a contradiction by \ssf2 above.
 \end{proof}
 
 % A subset $A\subseteq\mrX$ is dense if $\psi(A)\neq\varnothing$ for every $\psi(x)\in\Psi$.
 
-Let $\D\subseteq\mrX$ be an $M$-definable set.
-As ${\gr Z}$ is small, $\D$ is ${\gr Z}$-thick if and only if $\cap\,{\gr Z}{\cdot}\D$ is consistent.
+Let $\mrD\subseteq\mrX$ be an $M$-definable set.
+As $Z$ is small, $\mrD$ is $Z$-thick if and only if $\cap\,Z{\cdot}\mrD$ is consistent.
 
 \begin{fact}\label{fact_thick_circ}
-  Let $\D\subseteq\mrX$ be definable over $M$.
+  Let $\mrD\subseteq\mrX$ be definable over $M$.
   Then the following are equivalent
   \begin{itemize}
-    \item [1.] $\D$ is ${\gr Z}$-thick
-    \item [2.] $\grZ\circ {\mr a}\subseteq\D$ for some ${\mr a}\in\D$.
+    \item [1.] $\mrD$ is $Z$-thick
+    \item [2.] $\grZ\diamond {\mr a}\subseteq\mrD$ for some ${\mr a}\in\mrD$.
   \end{itemize}
 \end{fact}
 
 \begin{proof}
   1$\Rightarrow$2. \ 
-  Pick ${\mr a}\in\cap\,{\gr Z}{\cdot}\D$.
-  Suppose for a contradiction that $g{\cdot}{\mr a}\notin\D$ for some $g\in\grZ$ such that $g\nonfork_M a$.
-  Then $m{\cdot}{\mr a}\notin\D$ for some $m\in {\gr Z}$.
+  Pick ${\mr a}\in\cap\,Z{\cdot}\mrD$.
+  Suppose for a contradiction that ${\gr g}{\cdot}{\mr a}\notin\mrD$ for some ${\gr g}\in\grZ$ such that ${\gr g}\cnonfork_M {\mr a}$.
+  Then $c{\cdot}{\mr a}\notin\mrD$ for some $c\in Z$.
   This contradicts the choice of ${\mr a}$.  
 
   2$\Rightarrow$1. \ 
-  It suffices to note that $m\cdot\grZ\circ {\mr a}=\grZ\circ {\mr a}$ for every $m\in {\gr Z}$.
+  It suffices to note that $c\cdot\grZ\diamond {\mr a}=\grZ\diamond {\mr a}$ for every $c\in Z$.
 \end{proof}
 
 The following is the dual version of the above fact.
 
 \begin{fact}
-  Let $\D\subseteq\mrX$ be definable over $M$.
+  Let $\mrD\subseteq\mrX$ be definable over $M$.
   Then the following are equivalent
   \begin{itemize}
-    \item [1.] $\D$ is ${\gr Z}$-syndetic
-    \item [2.] $(\grZ\circ {\mr a})\cap\D\neq\varnothing$ for every ${\mr a}\in\mrX$.
+    \item [1.] $\mrD$ is $Z$-syndetic
+    \item [2.] $(\grZ\diamond {\mr a})\cap\mrD\neq\varnothing$ for every ${\mr a}\in\mrX$.
   \end{itemize}
 \end{fact}
 
-We say that $\grC\subseteq\mrX$ is $\grZ{\circ}$-invariant if $\grZ\circ\grC\subseteq\C$.
-Note that, when $\grZ=\mrX$, this says that $\grC$ is a left ideal.
+We say that $\mrC\subseteq\mrX$ is $\grZ$-${\diamond}$-invariant if $\grZ\diamond\mrC\subseteq\mrC$.
+% Note that, when $\grZ=\mrX$, this says that $\mrC$ is a left ideal.
 The following fact is easy.
 
 \begin{fact}
-  Every minimal $\grZ{\circ}$-invariant subset of $\mrX$ is of the form $\grZ\circ {\mr a}$ for some ${\mr a}\in\mrX$ so, in particular, it is type-definable over $M$.
-  % We also have that $\grZ\circ a=\M\circ a$ for $\M$ any left ideal of $\grZ$.
+  Every minimal $\grZ$-${\diamond}$-invariant subset of $\mrX$ is of the form $\grZ\diamond {\mr a}$ for some ${\mr a}\in\mrX$ so, in particular, it is type-definable over $M$.
+  % We also have that $\grZ\diamond a=\M\diamond a$ for $\M$ any left ideal of $\grZ$.
 \end{fact}
 
-We say that ${\mr a}\in\mrX$ is \emph{minimal\/} if $\grZ\circ {\mr a}$ is a minimal $\grZ{\circ}$-invariant subset of $\mrX$.
+We say that ${\mr a}\in\mrX$ is \emph{minimal\/} if $\grZ\diamond {\mr a}$ is a minimal $\grZ$-${\diamond}$-invariant subset of $\mrX$.
 
 \begin{theorem}
-  Let $\D\subseteq\mrX$ be definable over $M$.
+  Let $\mrD\subseteq\mrX$ be definable over $M$.
   Then the following are equivalent
   \begin{itemize}
-    \item [1.] $\D$ is weakly ${\gr Z}$-thick
-    \item [2.] ${\mr a}\subseteq\D$ for some minimal ${\mr a}\in\D$.
+    \item [1.] $\mrD$ is weakly $Z$-thick
+    \item [2.] ${\mr a}\subseteq\mrD$ for some minimal ${\mr a}\in\mrD$.
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
   2$\Rightarrow$1. \ 
-  Let ${\mr b}\in\grZ\circ {\mr a}$.
-  Then ${\mr b}\in\grZ\circ\D$.
-  Therefore ${\mr b}\in m{\cdot}\D$ for some $m\in {\gr Z}$.
-  This proves that $\grZ\circ {\mr a}\subseteq\cup\,{\gr Z}{\cdot}\D$.
-  By compactness $\grZ\circ {\mr a}\subseteq\cup\,C{\cdot}\D$ for some finite $C\subseteq {\gr Z}$.
-  By Fact~\ref{fact_thick_circ}, $\D$ is weakly ${\gr Z}$-thick.
+  Let ${\mr b}\in\grZ\diamond {\mr a}$.
+  Then ${\mr b}\in\grZ\diamond\mrD$.
+  Therefore ${\mr b}\in c{\cdot}\mrD$ for some $c\in Z$.
+  This proves that $\grZ\diamond {\mr a}\subseteq\cup\,Z{\cdot}\mrD$.
+  By compactness $\grZ\diamond {\mr a}\subseteq\cup\,C{\cdot}\mrD$ for some finite $C\subseteq Z$.
+  By Fact~\ref{fact_thick_circ}, $\mrD$ is weakly $Z$-thick.
 
   1$\Rightarrow$2. \ 
-  Let $C\subseteq {\gr Z}$ be a finite set such that $\cup\,C{\cdot}\D$ is ${\gr Z}$-thick.
-  By Fact~\ref{fact_thick_circ}, there is ${\mr a}\in\cup\,C{\cdot}\D$ such that $\grZ\circ {\mr a}\subseteq\cup\,C{\cdot}\D$.
-  Let ${\mr a'}\in\grZ\circ {\mr a}$ be minimal.
-  As ${\mr a'}\in m{\cdot}\D$ for some $m\in C$, we conclude that $m^{-1}\!\cdot {\mr a'}\in\D$.
-  Then $m^{-1}\!\cdot {\mr a'}$ is the minimal element required by (2).
+  Let $C\subseteq Z$ be a finite set such that $\cup\,C{\cdot}\mrD$ is $Z$-thick.
+  By Fact~\ref{fact_thick_circ}, there is ${\mr a}\in\cup\,C{\cdot}\mrD$ such that $\grZ\diamond {\mr a}\subseteq\cup\,C{\cdot}\mrD$.
+  Let ${\mr a'}\in\grZ\diamond {\mr a}$ be minimal.
+  As ${\mr a'}\in c{\cdot}\mrD$ for some $c\in C$, we conclude that $c^{-1}\!\cdot {\mr a'}\in\mrD$.
+  Then $c^{-1}\!\cdot {\mr a'}$ is the minimal element required by \ssf2.
 \end{proof}
-
 
 \begin{comment}
 
