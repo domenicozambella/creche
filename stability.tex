@@ -353,8 +353,9 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
   Note also that, when $\mrX$ and $\grZ$ are type-definable, Fact~\ref{fact_infiniteladders}, Theorem~\ref{thm_sability_indiscernibility}, and Lemma~\ref{lem_stab_Boole} generalize in the obvious way.
 \end{remark} 
 
+\bigskip
 \begin{exercise}
-  Prove that a relation $\pi({\mr x}\,;{\gr z})$ is instable if and only if for every $n<\omega$ there is a set ${\gr A}$ and a sequence $\<{\mr a_i}:i<n\>$ such that $\pi({\mr a_i}\,;{\gr A})\subset\pi({\mr a_{i+1}}\,;{\gr A})$ for all $i<n$.
+  Prove that a relation $\pi(x\,;z)$ is instable if and only if for every $n<\omega$ there is a set $B$ and a sequence $\<a_i:i<n\>$ such that $\pi(a_i\,;B)\subset\pi(a_{i+1}\,;B)$ for all $i<n$.
 \end{exercise}
 
 \begin{exercise}
@@ -367,6 +368,19 @@ By Lemma~\ref{lem_stab_Boole} the formula $\psi({\mr x_0},\dots,{\mr x_m}\,;{\gr
   Prove that $\phi(x\,;y)$ is unstable.
 \end{exercise}
 
+\begin{exercise}
+  Prove that the following are equivalent for every relation $\pi(x\,;z)$
+  \begin{itemize}
+    \item [1.] $\pi(x\,;z)$ is instable
+    \item [2.] there are arbitrary long finite sequences $\<a_i\,;b_i : i<n\>$ such that for every $i,j<n$
+
+    \ceq{\hfill i<j}{\IFF}{\pi(a_i\,;b_j)}
+
+    \item [3.] there are arbitrary long finite sequences $\<a_i\,;b_i : i<n\>$ such that for every $i,j<n$
+
+    \ceq{\hfill j\le i}{\IFF}{\pi(a_i\,;b_j)}
+  \end{itemize}
+\end{exercise}
 
 % \begin{exercise}\label{ex_harrington}
 %   Prove the following claim (a version of Harrington's mysterious Lemma cf.~\cite[Lemma 8.3.4]{TZ}).
@@ -758,15 +772,14 @@ Note that, when all formulas in $L_{{\mr x}\,{\gr z}}(M)$ are stable, the theore
 We deduce a version of Harrington's mysterious Lemma cf.~\cite{TZ}*{Lemma 8.3.4}.
 
 \begin{corollary}\label{corol_harrington0}
-  Let $\Delta$ be stable.
+  Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
   Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$. 
-  Suppose there exist $\mrA\subseteq\U^{\mr x}$ and $\grB\subseteq\U^{\gr z}$ that are $\BDelta(M^{\gr z})$, respectively $\BDelta(M^{\mr x})$-definable and \smallskip
+  Suppose there exist $\mrA\subseteq\U^{\mr x}$ and $\grB\subseteq\U^{\gr z}$ that are boolean combinations of sets of the form $\phi(\U^{\mr x}\,;{\gr b'})$ for ${\gr b'}\in M^{\gr z}$, respectively of the form $\phi({\mr a'}\,;\U^{\gr z})$ for  ${\mr a'}\in M^{\mr x}$, such that\smallskip
 
   \ceq{\ssf1.\hfill\phi({\mr a}\,;M^{\gr z})}{=}{\grB\cap M^{\gr z}}\smallskip
 
-  \ceq{\ssf2.\hfill\phi(M^{\mr x};{\gr b})}{=}{\mrA\cap M^{\mr x}},\smallskip
+  \ceq{\ssf2.\hfill\phi(M^{\mr x};{\gr b})}{=}{\mrA\cap M^{\mr x}}.\smallskip
 
-  for some $\phi({\mr x}\,;{\gr z})\in\Delta$.
   Then ${\mr a}\in\mrA\ \iff\ {\gr b}\in\grB$.
   %
   % Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$.
@@ -793,7 +806,7 @@ We deduce a version of Harrington's mysterious Lemma cf.~\cite{TZ}*{Lemma 8.3.4}
 The above corollary is usually applied in the following form. 
 
 \begin{corollary}\label{corol_harrington1}
-  Let $\phi({\mr x}\,;{\gr z})\in L$ be stable.
+  Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
   Let $p({\mr x})\in S_\phi(\U^{\gr z})$ and $q({\gr z})\in S_{\phi^{\rm op}}(\U^{\mr x})$ be invariant over $M$.
   Then for every ${\mr a}\models p({\mr x}){\restriction}M$ and ${\gr b}\models q({\gr z}){\restriction}M$\smallskip
   
@@ -803,10 +816,10 @@ The above corollary is usually applied in the following form.
 Now we show that under the assumption of stability Lascar invariance reduces to a tamer form of invariance.
 
 \begin{proposition}\label{prop_type_over_acl2}
-  Let $\Delta$ be stable.
-  Then for every $p({\mr x})\in S_\Delta(\U^{\gr z})$ the following are equivalent
+  Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
+  Then for every $p({\mr x})\in S_\phi(\U^{\gr z})$ the following are equivalent
   \begin{itemize}
-  \item[1.] ${\gr\D_{p,\phi}}\in \acl^\eq\!A$ for every $\phi({\mr x}\,;{\gr z})\in\Delta$.
+  \item[1.] ${\gr\D_{p,\phi}}\in \acl^\eq\!A$
   \item[2.] $p({\mr x})$ is finitely satisfied in every $M\supseteq A$
   \item[3.] $p({\mr x})$ is Lascar invariant over $A$
   \item[4.] $p({\mr x})$ is invariant over $\acl^\eq\!A$.
@@ -817,7 +830,7 @@ Now we show that under the assumption of stability Lascar invariance reduces to 
 
   \ssf{1}$\IMP$\ssf{2}
   Let $M\supseteq A$ be given.
-  Let $\psi({\mr x})$ be a conjunction of formulas in $p({\mr x})$, we prove that $\phi({\mr x}\,;{\gr b})$ is satisfied in $M$.
+  Let $\psi({\mr x})$ be a conjunction of formulas in $p({\mr x})$, we prove that $\psi({\mr x})$ is satisfied in $M$.
   For simplicity we assume that $\psi({\mr x})$ and the form $\phi({\mr x}\,;{\gr b})$.
   The same argument extends easily because $\acl^\eq\!A$ is closed under Boolean combinations and Cartesian product.
 
@@ -830,8 +843,8 @@ Now we show that under the assumption of stability Lascar invariance reduces to 
   By symmetry $\phi(M^{\mr x};{\gr b})\neq\varnothing$.
 \end{proof}
 
-The sets $\Delta\subseteq L_{{\mr x}\,{\gr z}}(\U)$ and $A\subseteq\U$ are implicit in the definition below.
 A type $q({\mr x})\subseteq L(\U)$ is \emph{stationary\/} if it has a unique global extension $p({\mr x})\in S_\Delta(\U)$ that is Lascar invariant over $A$.
+The sets $\Delta$ and $A$ are to be inferred from the context.
 The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
 
 % Finally, define \emph{$\GDelta(A)$\/} to be the set of formulas $\phi({\mr x})\in\BDelta(\U)$ that are invariant over $A$.
@@ -847,7 +860,7 @@ The following proposition says that in a stable theory with elimination of imagi
 
 \begin{proof}
   Existence follows from Corollary~\ref{corol_stable_coheir_over_models} and Proposition~\ref{prop_type_over_acl2}.
-  To prove uniqueness, pick two types $p_i({\mr x})\in S_\Delta(\U^{\gr z})$, for $i=1,2$, that are finitely consistent with $q({\mr x})$ and invariant over $\acl^eq\!A$.
+  To prove uniqueness, pick two types $p_i({\mr x})\in S_\Delta(\U^{\gr z})$, for $i=1,2$, that are finitely consistent with $q({\mr x})$ and invariant over $\acl^\eq\!A$.
   It suffices to prove that ${\gr\D_{p_1,\phi}}={\gr\D_{p_2,\phi}}$ for every $\phi({\mr x}\,;{\gr z})\in\Delta$.
   Let ${\gr b}\in\U^{\gr z}$ and $\phi({\mr x}\,;{\gr z})\in\Delta$ be fixed but arbitrary.
 

@@ -119,6 +119,7 @@ $a_{\restriction i},a_i,{\mr c_{\restriction n}}$ satisfies the induction hypoth
 Let $I,<_I$ be an infinite linear order.
 To minimize notation, we assume throughout the section that $I$ has no largest element.
 It is immediate how to tweak the definition below so that it makes sense without this assumption.
+
 Let ${\mr\bar a}$ be an $I$-sequence.
 Fix a tuple of distinct variables ${\mr\bar x}=\<{\mr x_i}: i<\omega\>$.
 We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$} and say that $p({\mr\bar x})$ is the \emph{Ehren\-feucht-Mostowski type\/} of ${\mr\bar a}$ over $A$ if
@@ -171,7 +172,7 @@ We prove that for $k$ and $n$ arbitrarily large and every $\phi_1({\mr\bar x}),\
 Let $n$ be larger than any $i$ such that ${\mr x_i}$ occurs in $\phi_1({\mr\bar x}),\dots,\phi_k({\mr\bar x})$.
 Consider the subsets of $(k]$ as colors and let $f$ be the coloring of $I^{(n)}$ that maps $I_0$ to the set $\big\{i\ :\ \phi_i({\mr a_{\restriction I_0}})\big\}$.
 By the Ramsey theorem,
-there is some infinite monochromatic set $H\subseteq I$ with the order type of $\omega$, see Exercise~\ref{ex_Ramsey_order}.
+there is some infinite monochromatic set $H\subseteq I$ with the order type of $\omega$.
 Hence
 
 \ceq{}
@@ -197,8 +198,13 @@ Hence ${\mr\bar a}$ is indiscernible over $h[M]$.
 \end{proof}
 
 \begin{exercise}
-  Let $\bar a=\<a_i:i\in I\>$ be an $A$-indiscernible sequence and let $J\supseteq I$ with $|J|\le \kappa$.
-  Then there is an $A$-indiscernible sequence $\bar c=\<c_i:i\in J\>$ such that $c_{\restriction I}=\bar a$.
+  Let $I,<_I$ and $J,<_J$ be infinite linear orders.
+  Prove that for every sequence $\bar a=\<a_i:i\in I\>$ there is an $A$-indiscernible sequence $\bar c=\<c_i:i\in J\>$ such that $\mbox{EM-tp}(\bar a/A)\supseteq\mbox{EM-tp}(\bar c/A)$.
+\end{exercise}
+
+\begin{exercise}
+  Let $\bar a=\<a_i:i\in I\>$ be an $A$-indiscernible sequence and let $J$ with $|J|\le \kappa$ be a linear order extending $I$.
+  Prove that there is an $A$-indiscernible sequence that extends $\bar a$. I.e. some $\bar c=\<c_i:i\in J\>$ such that $c_{\restriction I}=\bar a$.
 \end{exercise}
 
 \begin{exercise}
@@ -271,7 +277,7 @@ For every $S$-invariant sets $\mrA$, $\mrB$, and $\mrC$\smallskip
 Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ where ${\mr a}\cnonfork_S{\mr b}{\cdot}{\mr c}$ and ${\mr b}\cnonfork_S{\mr c}$.
 By extension (Lemma~\ref{lem_coheir_independence}),
 there exists ${\mr a'}$ such that 
-${\mr a}\equiv_{S,\,{\mr b}{\cdot}{\mr c}}{\mr a'}\cnonfork_S{\mr b}{\cdot}{\mr c},\,{\mr a},\,{\mr b},\,{\mr c}$.
+${\mr a}\equiv_{S,\,{\mr b}{\cdot}{\mr c}}{\mr a'}\cnonfork_S{\mr b}{\cdot}{\mr c},\,{\mr b},\,{\mr c}$.
 By transitivity (again Lemma~\ref{lem_coheir_independence}),
 ${\mr a'}{\cdot}{\mr b}\cnonfork_S{\mr c}$.
 Therefore ${\mr a'}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.
@@ -363,10 +369,10 @@ Under the same assumptions of the lemma above, every type-definable
 idempotent set contains an element with an idempotent orbit.
 \end{corollary}
 
-\begin{exercise}[ (van der Waerden's theorem)]
-  Prove that for every finite coloring of $\NN$ and for every $n<\omega$, there is a monochromatic arithmetical progression of length $n$.
-  An \textit{arithmetical progression\/} of length $n$ is a sequence of natural numbers $\langle a_i : i\le n\rangle$ such that $a_{i+1} - a_i$ is constant for $i<n$.
-\end{exercise}
+% \begin{exercise}[ (van der Waerden's theorem)]
+%   Prove that for every finite coloring of $\NN$ and for every $n<\omega$, there is a monochromatic arithmetical progression of length $n$.
+%   An \textit{arithmetical progression\/} of length $n$ is a sequence of natural numbers $\langle a_i : i\le n\rangle$ such that $a_{i+1} - a_i$ is constant for $i<n$.
+% \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
@@ -451,49 +457,23 @@ we must have that ${\mr a}\cpaw{\mr b}$.
 %
 Therefore, from the \cpawdot-closure of $\cpaw$ we infer ${\mr a}{\cdot}{\mr b}\in{\mr\S'}$.
 
-Let ${\mr g}$ be an element of ${\mr\S'}$ with idempotent orbit 
+Let ${\mr g_0}$ be an element of ${\mr\S'}$ with idempotent orbit 
 as given by Corollary~\ref{corol_idempotent}.
+Let ${\mr g_1}$ realize ${\mr g_0}\equiv_S{\mr x}\cnonfork_S{\mr g_0}$.
 %
-Let $p({\mr x})\in S(\U)$ be a global coheir of $\tp({\mr g}/S)$.
+Assume for definiteness that ${\mr g_0}$ has color $1$.
 %
-Let ${\mr\bar g}$ a coheir sequence of $p({\mr x})$, that is,
+Now, we define $\bar a\in S^\omega$ inductively such that all elements of $\fp\,\bar a$ have color $1$.
 
-\ceq{\hfill {\mr g_i}}{\models}{p_{\restriction S,\,{\mr g_{\restriction i} }  }({\mr x}).}
-
-We write ${\mr \cev{g}_{\restriction i}}$ for the tuple ${\mr g_{i-1}},\dots,{\mr g_{0}}$.
-%
-By the idempotency of ${\mr g}_S$ and Proposition~\ref{prop_orbits_main}, 
-${\mr h}\equiv_S{\mr g}$ for all ${\mr h}\in \fp\,{\mr \cev{g}_{\restriction i}}$ and all $i$.
-It follows in particular that $\fp\,{\mr \cev{g}_{\restriction i}}$ is monochromatic, 
-say all its elements have color $1$.
-%
-Now, we use the sequence ${\mr\bar g}$ to define $\bar a\in S^\omega$
-such that all elements of $\fp\,\bar a$ have color $1$.
-
-Assume as induction hypothesis that we have $a_{\restriction i}\in S^i$ 
+Assume inductively that we have $a_{\restriction i}\in S^i$ 
 such that all elements of $\fp(a_{\restriction i},\,{\mr g_0})$ have color $1$.
 %
 Our goal is to find $a_i$ 
 such that the same property holds for $\fp(a_{\restriction i+1},\,{\mr g_0})$.
 
-First we claim that from the induction hypothesis it follows that, 
-for all $j$, all elements of $\fp(a_{\restriction i},\,{\mr\cev{g}_{\restriction j}})$ have color $1$.
-%
-In fact, the elements of $\fp(a_{\restriction i},\,{\mr\cev{g}_{\restriction j}})$ 
-have the form $b\cdot{\mr h}$ for some $b\in\fp(a_{\restriction i})$
-and ${\mr h}\in\fp({\mr\cev{g}_{\restriction j}})$.
-%
-As ${\mr h}\equiv_S{\mr g}$, we conclude that $b\cdot{\mr h}\equiv_Sb\cdot {\mr g_0}$, which proves the claim.
-
-Let $\phi(a_{\restriction i},\,{\mr g_{i+1}},\,{\mr g_{\restriction i+1}})$ 
-say that all elements of $\fp(a_{\restriction i},\,{\mr\cev{g}_{\restriction i+2}})$ have color $1$.
-%
-As ${\mr\bar g}$ is a coheir sequence we can find  $a_i$ 
-such that $\phi(a_{\restriction i},\,a_i,\,{\mr g_{\restriction i+1}})$.
-%
-Hence all elements of $\fp(a_{\restriction i+1},\,{\mr g_{\restriction i+1}})$ have color $1$.
-%
-Therefore $a_i$ is as required.
+Note that $\fp(a_{\restriction i},\,{\mr g_1}\,,{\mr g_0})$ has color $1$.
+In fact, ${\mr g_1}\equiv_S{\mr g_0}\equiv_S{\mr g_1}{\cdot}{\mr g_0}$.
+Now, ${\mr g_1}\cnonfork_S{\mr g_0}$ yields some $a_i\in S$ such that  $\fp(a_{\restriction i+1},\,{\mr g_0})$ has color 1.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -506,36 +486,56 @@ Therefore $a_i$ is as required.
 The Hales-Jewett Theorem is a purely combinatorial statement 
 that implies the van der Waerden Theorem.
 
+Throughout this section we assume that $\cnonfork_{\!S}$ is stationary.
+
 We work with the same notation as Section~\ref{semigroups}.
 We need a few definitions.
 Let $\mrC\subseteq\mrS$ be an idempotent set.
-If $\mrA\subseteq\mrC$ is such that $\mrC*\mrA\subseteq\mrA$, we say that $\mrA$ is a \emph{left ideal\/} of $\mrC$.
+If $\varnothing\neq\mrA\subseteq\mrC$ is such that $\mrC*\mrA\subseteq\mrA$, we say that $\mrA$ is a \emph{left ideal\/} of $\mrC$.
 When $\mrC$ is clear we omit reference to it.
 % We arte interested in left ideal that are type-definable (over $S$).
 A \emph{minimal\/} left ideal is one that does not properly contain any other left ideal.
+The following fact is immediate.
 
-\begin{fact}
-  Assume $\cnonfork_{\!S}$ is stationary.
-  Let $\mrC$ be a type-definable idempotent set.
-  Every left ideal of $\mrC$ contains a minimal left ideal and this is type-definable.
+\begin{fact}\label{fact_mli}
+  The following are equivalent for any $\mrM$ that is a left ideal of $\mrC$
+  \begin{itemize}
+    \item [1.] $\mrM$ is minimal
+    \item [2.] $\mrM=\mrM*{\mr b}$ for every ${\mr b}\in\mrM$
+    \item [3.] $\mrM=\mrC*{\mr b}$ for every ${\mr b}\in\mrM$
+  \end{itemize}
+\end{fact}
+
+Moreover, when ${\mr b}$ is not in $\mrM$, we have the following.
+
+\begin{fact}\label{fact_mli2}
+   Let $\mrM$ be a minimal left ideal of $\mrC$.
+   Then $\mrM*{\mr b}$ is a minimal left ideal for any ${\mr b}\in\mrC$.
 \end{fact}
 
 \begin{proof}
-  First note that, if $\mrA\subseteq\mrC$ is an left ideal (of $\mrC$) and ${\mr b}\in\mrA$, then $\mrC*{\mr b}$ is a left ideal contained in $\mrA$ that is type-definable.
-  Therefore, given any left ideal $\mrA$ we construct a maximal descending chain of type-definable left ideals contained in $\mrA$.
-  By compactness the intersection of this chain is nonempty.
-  By what remarked above, this is a minimal left ideal
+  Clearly, $\mrM*{\mr b}$ is a left ideal.
+  Let ${\mr a}*{\mr b}$, for some ${\mr a}\in\mrM$, be an arbitrary element of $\mrM*{\mr b}$.
+  By Fact~\ref{fact_mli}, it sufficies to prove that $\mrM*{\mr b}*{\mr a}*{\mr b}\subseteq\mrM*{\mr b}$.
+  This follows because ${\mr b}*{\mr a}\in\mrM$, hence $\mrM*{\mr b}*{\mr a}\subseteq\mrM$, by Fact~\ref{fact_mli} and the minimality of $\mrM$.
 \end{proof}
 
-It is useful to remark that when $\mrM$ is a minimal left ideal and ${\mr a}\in\mrM$ then $\mrM*{\mr a}=\mrM$, by minimality.
-On the other hand, though ${\mr a}*\mrM\subseteq\mrM$ for every ${\mr a}\in\mrC$, we cannot infer the converse inclusion.
+Now we prove the existence of minimal left ideals.
+
+\begin{fact}
+  Let $\mrC$ be a type-definable idempotent set. Then $\mrC$ contains a minimal left ideal which is type-definable.
+\end{fact}
+
+\begin{proof}
+  Construct inductively a descending chain of type-definable left ideals ${\mr\M_i}$ where ${\mr\M_0}=\mrC$ and ${\mr\M_{i+1}}={\mr\M_i}*{\mr b_i}$ for some ${\mr b_i}\in{\mr\M_i}$.
+  By compactness the chain stabilizes at some ordinal yielding some type-definable left ideal ${\mr\M_\alpha}$ which is minimal as it satisfies \ssf2 in the above fact.
+\end{proof}
 
 It is also interesting to note that we can define, in the obvious way, \textit{right ideals\/} and even \textit{two-sided ideals.}
 But note the proof of the above fact would not apply because, in general, ${\mr b}*\mrC$ is not type-definable.
-However for two-sided ideals we have the following remarkable fact.
+However for two-sided ideals we have the following remarkable fact (which is not needed in the sequel).
 
-\begin{fact}
-  Assume $\cnonfork_{\!S}$ is stationary.
+\begin{fact}\label{fact_two_sided_ideal}
   Let $\mrC$ be a type-definable idempotent set.
   Define \smallskip
 
@@ -546,9 +546,9 @@ However for two-sided ideals we have the following remarkable fact.
 
 \begin{proof}
   Clearly, $\mrK$ is a left ideal.
-  To prove that $\mrK$ is also a right ideal note that, by what remarked above
+  To prove that $\mrK$ is also a right ideal note that, by Fact~\ref{fact_mli2}, for every ${\mr a}\in\mrC$ 
 
-  \ceq{\hfill\mrK*{\mr a}}{=}{\bigcup\big\{\mrM*{\mr a}\ :\ \mrM\text{ a minimal left ideal of }\mrC\big\}}\medrel{=}$\mrK$.\smallskip
+  \ceq{\hfill\mrK*{\mr a}}{=}{\bigcup\big\{\mrM*{\mr a}\ :\ \mrM\text{ a minimal left ideal of }\mrC\big\}}\medrel{\subseteq}$\mrK$.\smallskip
 
   As for minimality, it sufficies to prove that any two-sided ideal $\mrH$ contains any minimal left ideal $\mrM$.
   Note that $\mrH\cap\mrM$ is not empty in fact, as $\mrH$ is in particular a right ideal $\mrH*\mrM\subseteq\mrH\cap\mrM$.
@@ -558,7 +558,6 @@ However for two-sided ideals we have the following remarkable fact.
 Note that every left ideal is an idempotent set and therefore contains idempotent elements.
 
 \begin{lemma}\label{lem_leftideal}
-  Assume $\cnonfork_{\!S}$ is stationary.
   Let $\mrC$ be a type-definable idempotent set.
   Let $\mrM$ be a minimal left ideal of $\mrC$.
   Let ${\mr u},{\mr v}\in\mrM$ be two idempotents.
@@ -569,45 +568,50 @@ Note that every left ideal is an idempotent set and therefore contains idempoten
     \item [3.] ${\mr a}\mapsto{\mr v}*{\mr a}$ define a group isomorphism between ${\mr u}*\mrM$ and ${\mr v}*\mrM$
     \item [4.] if ${\mr u}$ and ${\mr v}$ are distinct (i.e.\@ have distict orbits), then ${\mr u}*\mrM$ and ${\mr v}*\mrM$ are disjoint
     \item [5.] $\mrM$ is covered by sets of the form ${\mr u}*\mrM$ as ${\mr u}\in\mrM$ ranges over the idempotents
-    \item [6.] if ${\mr a}\in\mrC$ is an idempotent, ${\mr u}*{\mr a}={\mr u}$ and ${\mr a}*{\mr u}$ is idempotent.\smallskip
+    % \item [6.] if ${\mr b}\in\mrC$ is an idempotent, ${\mr u}*{\mr b}={\mr u}$ and ${\mr b}*{\mr u}$ is idempotent.
+    \item [6.] if ${\mr b}\in\mrC$ is an idempotent, then ${\mr b}*\mrM*{\mr b}$ icontains an idempotent.\smallskip
   \end{itemize}
 \end{lemma}
 
 \begin{proof}
-  \ssf1. By minimality $\mrM*{\mr u}=\mrM$.
+  \ssf1. 
+  By minimality $\mrM*{\mr u}=\mrM$.
   Therefore ${\mr a'}*{\mr u}={\mr a}$ for some ${\mr a'}\in\mrM$.
   Then ${\mr a}*{\mr u}={\mr a'}*{\mr u}*{\mr u}={\mr a}$.
 
-  \ssf2. \ By \ssf1 and idempotency, ${\mr u}$ is an identity of ${\mr u}*\mrM$.
+  \ssf2. 
+  By \ssf1 and idempotency, ${\mr u}$ is an identity of ${\mr u}*\mrM$.
   It suffices to prove the existence of a left inverse (in fact, by algebra, this is also a right inverse).
   Pick any ${\mr a}\in{\mr u}*\mrM$.
   From $\mrM*{\mr a}=\mrM$ we obtain that ${\mr u}*\mrM*{\mr a}={\mr u}*\mrM$.
   Then ${\mr u}*{\mr a'}*{\mr a}={\mr u}$ for some ${\mr a'}\in\mrM$.
   This proves that ${\mr u}*{\mr a'}$ is the left inverse of ${\mr a}$.
 
-  \ssf3. By \ssf1, the map ${\mr a}\mapsto{\mr v}*{\mr a}$ is a semigroup homomorphism.
+  \ssf3.
+  By \ssf1, the map ${\mr a}\mapsto{\mr v}*{\mr a}$ is a semigroup homomorphism.
    By \ssf1 and \ssf2, its inverse is ${\mr a}\mapsto{\mr u}*{\mr a}$.
    So, ${\mr a}\mapsto{\mr v}*{\mr a}$ is a group isomomorphism.
 
-  \ssf4. Suppose there is an ${\mr a}\in{\mr u}*\mrM\cap{\mr v}*\mrM$.
+  \ssf4. 
+  Suppose there is an ${\mr a}\in{\mr u}*\mrM\cap{\mr v}*\mrM$.
   Let ${\mr a'}\in\mrM$ be such that ${\mr a}*{\mr a'}={\mr u}$.
   Then ${\mr u}\in{\mr v}*\mrM*{\mr a'}={\mr v}*\mrM$.
   Then ${\mr u}$ is an identity in the group ${\mr v}*\mrM$.
 
-  \ssf5. Let ${\mr a}\in\mrM$.
-  As $\mrM*{\mr a}=\mrM$, the set $\{ {\mr c}\,:\, {\mr c}* {\mr a} =  {\mr a}\}$ is nonempty.
+  \ssf5.
+  Let ${\mr a}\in\mrM$.
+  As $\mrM*{\mr a}=\mrM$, the set $\{ {\mr c}\in\mrM\,:\, {\mr c}* {\mr a} =  {\mr a}\}$ is nonempty.
   As this is a type-definable idempotent set, it contains an idempotent element ${\mr u}$.
   Then ${\mr a}\in{\mr u}*\mrM$.
-
-  \ssf6. As $\mrM*{\mr a}=\mrM$, there is ${\mr u'}\in\mrM$ such that ${\mr u'}*{\mr a}={\mr u}$.
-  Then, as ${\mr a}$ is idempotent, ${\mr u}*{\mr a}={\mr u}$ follows.
-  From this equality, we easily obtain that ${\mr a}*{\mr u}$ is idempotent.
+  
+  \ssf6. 
+  As $\mrM*{\mr b}$ is a minimal left ideal by Fact~\ref{fact_mli2}, it contains an idempotent element ${\mr u}\in\mrM*{\mr b}$.
+  It is immediate to verify that ${\mr b}*{\mr u}$ is the required idempotent.
 \end{proof}
 
 The following is a technical lemma that is required in the proof of the main theorem.
 
 \begin{proposition}\label{prop_HJ_tecnical}
-  Assume $\cnonfork_{\!M}$ is stationary.
 Let $\sigma:\U\to\U$ be a semigroup homomorphism definable over $M$.
 Then 
 \begin{itemize}
@@ -667,22 +671,16 @@ Let $\mrC$ be the interpretation of $C$ in $\mrS$.
 Then $\sigma:\mrS\to\mrC$.
 
 By nicety, $\mrS\sm\mrC$ is a left ideal of $\mrS$ (as a matter of fact, a two-sided ideal).
-Let $\mrM\subseteq \mrS\sm\mrC$ be minimal a left ideal and pick an idempotent ${\mr u}\in\mrM$.
+Let $\mrM\subseteq \mrS\sm\mrC$ be minimal a left ideal of $\mrS$.
 Let $\mrN\subseteq\mrC$ be a minimal left ideal of $\mrC$.
 Let ${\mr v}\in\mrN$ be an idempotent.
-
-As ${\mr v}*{\mr u}*{\mr v}\in{\mr v}*\mrM*{\mr v}$, from \ssf2 in Proposition~\ref{prop_HJ_tecnical} we obtain that for every $\sigma\in\Sigma$
-
-\ceq{\hfill \sigma({\mr v}*{\mr u}*{\mr v})}{\in}{{\mr v}*\sigma[\mrM]*{\mr v}}
-\medrel{\subseteq}${\mr v}*\mrC*{\mr v}$
-\medrel{=}${\mr v}*\mrN$
-
-By \ssf6 of Lemma~\ref{lem_leftideal}, ${\mr v}*{\mr u}*{\mr v}$ is an idempotent.
-Then $\sigma({\mr v}*{\mr u}*{\mr v})$ is idempotent for all $\sigma\in\Sigma$.
-As ${\mr v}*\mrN$ contains only one idempotent (orbit), all these $\sigma({\mr v}*{\mr u}*{\mr v})$ are elementarily equivalent over $S$.
-In particular the set $\{\sigma({\mr v}*{\mr u}*{\mr v})\,:\,\sigma\in\Sigma\}$ is monochromatic.
-Note that, by nicety, ${\mr v}*{\mr u}*{\mr v}\in\mrS\sm\mrC$.
-Finally, the theorem follows by elementarity.
+By Proposition~\ref{prop_HJ_tecnical}, for every retraction $\sigma$, we have that $\sigma(\mrM)*{\mr v}$ is a left ideal contained in $\mrN$.
+Therefore they all coincide with $\mrN$.
+Let ${\mr u}\in{\mr v}*\mrM*{\mr v}$ be an idempotent.
+Then $\sigma({\mr u})$ is an idempotent of ${\mr v}*\mrN$.
+As ${\mr v}*\mrN$ contains only one idempotent, $\sigma({\mr u})={\mr v}$ for every $\sigma$.
+In particular $\{\sigma({\mr u})\,:\,\sigma\in\Sigma\}$ is monochromatic.
+As $\Sigma$ is finite , the theorem follows by elementarity.
 \end{proof}
 
 Finally we derive the classical Hales-Jewett Theorem from the above algebraic version.
@@ -701,14 +699,29 @@ Finally we derive the classical Hales-Jewett Theorem from the above algebraic ve
   Hence we can apply Theorem~\ref{thm_abstract_HJ}.
 \end{proof}
 
+We also derive a famous consequence of the Hales-Jewett Theorem.
+An \textit{arithmetical progression\/} of length $k$ is a sequence of natural numbers $\langle n{+}m{\cdot}i : i<k\rangle$ for some $n,m\in\NN$.
+
+\begin{void}[van der Waerden's Theorem]
+  For every finite coloring of $\NN$ and for every $k<\omega$, there is a monochromatic arithmetical progression of length $k$.
+\end{void}
+
+\begin{proof}
+  Let $C=\NN$ and let $S$ be the semigroup of terms in the language of semigroups with parameters in $\NN$ where at most the variable $x$ occur.
+  That is terms of the form $n{+}m{\cdot}x$ for some $n,m\in\NN$.
+  Then $\NN$ is a nice subsemigroup of $S$.
+  For $i<k$ let $\sigma_i$ be the retraction that takes $n{+}m{\cdot}x\in S$ to $n{+}m{\cdot}i\in\NN$.
+  Apply Theorem~\ref{thm_abstract_HJ} to obtain some $n,m\in\NN$ such that the set $\{n{+}m{\cdot}i\ :\ i<k\}$ is monochromatic.
+\end{proof}
+
 \begin{exercise}\label{thm_hom_HJ}
-Let $\Sigma$ be a finite set of homomorphisms $\sigma:S\to C$ 
-between infinite semigroups such that the following intersection is nonempty for all $c\in C$
+  Let $\Sigma$ be a finite set of homomorphisms $\sigma:S\to C$ 
+  between infinite semigroups such that the following intersection is nonempty for all $c\in C$
 
-\ceq{\hfill\Sigma^{-1}[c]}{=}{\bigcap_{\sigma\in\Sigma}\sigma^{-1}[c]}
+  \ceq{\hfill\Sigma^{-1}[c]}{=}{\bigcap_{\sigma\in\Sigma}\sigma^{-1}[c]}
 
-Prove that, for every finite coloring of $C$, for some $g\in S$ the set 
-$\{\sigma\,g\ :\ \sigma\in\Sigma\}$ is monochromatic.
+  Prove that, for every finite coloring of $C$, for some $g\in S$ the set 
+  $\{\sigma\,g\ :\ \sigma\in\Sigma\}$ is monochromatic.
 \end{exercise}
 
 % \begin{proof}
@@ -733,9 +746,16 @@ $\{\sigma\,g\ :\ \sigma\in\Sigma\}$ is monochromatic.
 
 \begin{exercise}
   Assume $\cnonfork_S$ is stationary.
-  Let $\mrA$ be idempotent and type-definable over $S$.
-  Let ${\mr c}$ is anidempotent such that ${\mr c}\in\mrA*{\mr g}$ for every ${\mr g}\in\mrA*{\mr c}$, with idempotent orbit, and such that ${\mr c}*\mrA\subseteq\mrA$.
-  Prove that ${\mr c}*\mrA*{\mr c}$ is a group with identity ${\mr c}$.
+  Let $\M$ be a type-definable minimal left ideal of $\C$.
+  Let $u\in\M$ be an idempotent.
+  Prove that $u*\M$ is a minimal right ideal of $\C$.
+\end{exercise}
+
+\begin{exercise}
+  Assume $\cnonfork_S$ is stationary.
+  Let $\M$ and $\N$ be type-definable minimal left ideals of $\C$.
+  Let $u\in\M$ and $v\in\N$ be idempotents.
+  Prove that $u*\M$ and $v*\N$ are isomorphic groups.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
