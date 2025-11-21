@@ -31,7 +31,7 @@ Equivalently, a set $\grD$ is externally definable if it is the trace over $\U^{
 More precisely, $\grD=\phi({\mr ^{*\kern-.3ex}b}\,;{}^{*\kern-.2ex}\U^{\gr z})\cap\U^{\gr z}$ where $ ^{*\kern-.2ex}\U\succeq\U$ and ${\mr  ^{*\kern-.3ex}b}\in {}^{*\kern-.2ex}\U^{\mr x}$.
 This explains the terminology.
 
-\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}%
+%\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}%
 We prefer to deal with external definability in a different, though equivalent, way.
 
 \begin{definition}\label{def_approx}
@@ -181,8 +181,8 @@ We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$ is a \emph{ladder\/} of lengt
 We say that $\pi({\mr x}\,;{\gr z})$ is \emph{unstable\/} if it admits ladder sequences of arbitrary finite length; \emph{stable\/} otherwise.
 If $\pi({\mr x}\,;{\gr z})$  is unstable we may also sat that it has the \emph{order property.}
 
-In the following \emph{$\mrX$\/} $\subseteq\U^{\mr x}$ and \emph{$\grZ$\/} $\subseteq\U^{\gr z}$ are two given sets that are type-definable over $A$.
-If the condition above holds when we require the ladder sequence to contain only elements of $\mrX\times\grZ$, we say that $\pi({\mr x}\,;{\gr z})$ is stable \emph{restricted to\/} $\mrX$ and $\grZ$.
+% In the following \emph{$\mrX$\/} $\subseteq\U^{\mr x}$ and \emph{$\grZ$\/} $\subseteq\U^{\gr z}$ are two given sets that are type-definable over $A$.
+% If the condition above holds when we require the ladder sequence to contain only elements of $\mrX\times\grZ$, we say that $\pi({\mr x}\,;{\gr z})$ is stable \emph{restricted to\/} $\mrX$ and $\grZ$.
 
 We will mainly deal with relations that are definable but it noteworthy that a few results in this section do not need this assumption.
 % The proof of the following easy fact is left to the reader.
@@ -854,7 +854,8 @@ The following proposition says that in a stable theory with elimination of imagi
 
 \begin{theorem}[ (Stationarity)]\label{thm_stationarity}
   Let $\Delta$ be stable.
-  Let $q({\mr x})\subseteq L(\U)$ be a type that is finitely satisfiable in every $M\supseteq A$ and decides all $\BDelta(\U^{\gr z})$-formulas that are invariant over $\acl^\eq\!A$.
+  Let $q({\mr x})\subseteq L(\U)$ be a type that is finitely satisfiable in every $M\supseteq A$.
+  Assume $q({\mr x})$ decides all Boolean combinations of formulas in $\Delta(\U^{\gr z})$ that are invariant over $\acl^\eq\!A$.
   Then there is a unique type $p({\mr x})\in S_\Delta(\U^{\gr z})$ finitely consistent with $q({\mr x})$ that is invariant over $\acl^\eq\!A$.
 \end{theorem}
 
@@ -1418,6 +1419,11 @@ When $\Delta$ is stable, it is a $\BDelta(\mrX)$-type-definable set (definable, 
 \begin{exercise}
   Prove that if every formula $\phi(x\,;z)\in L$, where $|x|=1$, is stable then $T$ is stable.
 \end{exercise}
+
+\begin{proof}
+  Let  $\phi(x,y\,;z)\in L$ not stable.
+  Then there are indiscernibles $\<a_i,b_i\,;c_i\ :\ i\in\QQ\>$ such that 
+\end{proof}
 
 \begin{exercise}
   A sequence $\<a_i:i<\omega\>$ is totally indiscernible if $a_1,\dots,a_n\equiv a_{i_1},\dots,a_{i_n}$ for every distinct $i_1,\dots,i_n$.

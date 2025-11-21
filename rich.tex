@@ -215,13 +215,16 @@ A similar consideration holds for $N'$.
 This is achieved using the same dovetail enumeration as in our second proof the downward Löwenheim-Skolem Theorem~\ref{thm_lowenheimskolemallingiu}.
 \end{proof}
 
-The following is immediate.
-
 \begin{corollary}
   (Assume~\ref{ass_c1-6})  \  Assume $\M$ is connected.
   Let $T_1$ be the theory of the rich models of $\M$.
   Then $T_1$ is complete.
 \end{corollary}
+
+\begin{proof}
+  If for a contradictiopn $\phi,\neg\phi\notin T_1$, then there are two $\lambda$-rich models (say, $\lambda=|L|$) such that $M\models\phi$ and $N\models\neg\phi$.
+  But, as $\varnothing:M\to\N$ is a morphism, this contradicts the above theorem.
+\end{proof}
 
 Assume for simplicity that $\M$ is connected.
 Then all $\lambda$-rich models belong to $\Mod(T_1)$ for some complete theory $T_1$.
@@ -350,6 +353,11 @@ It is also easy to verify that every uncountable model of $T_1$ is rich and cons
     Prove that if $L$ is countable and there is a back-and-forth system between $M$ and $N$ then there are $M'\preceq M$ and $N'\preceq N$ such that $M'\simeq N'$.
 \end{exercise}
 
+\begin{exercise}
+  Let $\M$ consists of models of $T_{\rm lo}$ and, as morphisms, partial embeddings.
+  Assume there exists a rich model $N$ of uncountable cardinality $\kappa$.
+  Prove that $N$ has $2^\kappa$ Dedekind cuts. A \textit{Dedekind cut\/} is a set $C\subseteq N$ that is downward closed, i.e.\@ such that $a<b\in C$ implies $a\in C$.
+\end{exercise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

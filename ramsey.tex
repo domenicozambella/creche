@@ -121,19 +121,19 @@ To minimize notation, we assume throughout the section that $I$ has no largest e
 It is immediate how to tweak the definition below so that it makes sense without this assumption.
 
 Let ${\mr\bar a}$ be an $I$-sequence.
-Fix a tuple of distinct variables ${\mr\bar x}=\<{\mr x_i}: i<\omega\>$.
+Fix a tuple of variables ${\mr\bar x}=\<{\mr x_i}: i<\omega\>$.
 We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$} and say that $p({\mr\bar x})$ is the \emph{Ehren\-feucht-Mostowski type\/} of ${\mr\bar a}$ over $A$ if
 
 \ceq{\hfill p({\mr\bar x})}{=}{\Big\{\phi({\mr\bar x})\in L(A)\ :\ \phi({\mr a_{\restriction I_0}})\ \textrm{ holds for every }\ I_0\in I^{(\omega)}\Big\}.}
 
-Where $I^{(\omega)}$ is the set of subsets of $I$ ordered as $\omega$.
+Where \emph{$I^{(\omega)}$\/} is the set of subsets of $I$ ordered as $\omega$.
 As ${\mr\bar x}$ is of order-type $\omega$, the expression $\phi({\mr a_{\restriction I_0}})$ is sound.
 
 Note that if ${\mr\bar a}$ is $A$-indiscernible then $\EMtp({\mr\bar a}/A)$ is a complete type,
 and vice versa.
 
 \begin{remark}
-  Let $I,<_I$ and $J,<_J$ be infinite linear orders.
+  Let $I,<_I$ and $J,<_J$ be infinite linear orders with no largest element.
   Let ${\mr\bar c}=\<{\mr c_i}:i\in I\>$ be a sequence of $A$-indiscernibles.
   By compactness, there is a sequence of $A$-indiscernibles ${\mr\bar a}=\<{\mr a_j}:j\in J\>$ such that $\EMtp({\mr\bar a}/A)=\EMtp({\mr\bar c}/A)$.
 \end{remark}
@@ -148,7 +148,7 @@ and vice versa.
 Finally, we can state the Ehrenfeucht-Mostowski theorem.
 
 \begin{void}[Ehrenfeucht-Mostowski Theorem]\label{thm_EM}
-  Let $I,<_I$ be an infinite linear order.
+  Let $I,<_I$ be an infinite linear order with no largest element.
   Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is an $A$-indiscernible sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ such that $\EMtp({\mr\bar a}/A)\subseteq\tp({\mr\bar c}/A)$.  
 \end{void}
 \begin{proof}
@@ -180,7 +180,7 @@ Hence
 {\Big\{\phi_i({\mr a_{\restriction I_0}})\iff\phi_i({\mr a_{\restriction J_0}})\ :\  I_0, J_0\in H^{(n)}\textrm{ and } i\in(k]\Big\}.}
 
 As $H$ has order type $\omega$,
-it is immediate that ${\mr a_{\restriction H}}$ realizes \ssf{\#}
+it is immediate that ${\mr a_{\restriction H}}$ reøalizes \ssf{\#}
 as required.
 \end{proof}
 
@@ -198,12 +198,12 @@ Hence ${\mr\bar a}$ is indiscernible over $h[M]$.
 \end{proof}
 
 \begin{exercise}
-  Let $I,<_I$ and $J,<_J$ be infinite linear orders.
-  Prove that for every sequence $\bar a=\<a_i:i\in I\>$ there is an $A$-indiscernible sequence $\bar c=\<c_i:i\in J\>$ such that $\mbox{EM-tp}(\bar a/A)\supseteq\mbox{EM-tp}(\bar c/A)$.
+  Let $I,<_I$ and $J,<_J$ be infinite linear orders with no largest element.
+  Prove that for every sequence $\bar a=\<a_i:i\in I\>$ there is an $A$-indiscernible sequence $\bar c=\<c_i:i\in J\>$ such that $\mbox{EM-tp}(\bar a/A)\subseteq\mbox{EM-tp}(\bar c/A)$.
 \end{exercise}
 
 \begin{exercise}
-  Let $\bar a=\<a_i:i\in I\>$ be an $A$-indiscernible sequence and let $J$ with $|J|\le \kappa$ be a linear order extending $I$.
+  Let $\bar a=\<a_i:i\in I\>$ be an $A$-indiscernible sequence with no largest element and let $J$ with $|J|\le \kappa$ be a linear order extending $I$.
   Prove that there is an $A$-indiscernible sequence that extends $\bar a$. I.e. some $\bar c=\<c_i:i\in J\>$ such that $c_{\restriction I}=\bar a$.
 \end{exercise}
 
@@ -327,13 +327,14 @@ But inclusion between orbits amounts to equality.
 
 Let $\mrA$ be a nonempty set.
 When $\mrA*\mrA\subseteq\mrA$, we say that $\mrA$ is \emph{idempotent.}
-Note that if  $\mrA$ is idempotent and $\mrB\subseteq\mrA$, then also $\mrA*\mrB$ is idempotent.
+We say that ${\mr a}\in\mrS$ is \emph{idempotent\/} if it has idempotent orbit.
+Note that if $\mrA$ is idempotent and $\mrB\subseteq\mrA$, then also $\mrA*\mrB$ is idempotent.
 
 \begin{lemma}\label{lem_Hindman}
 Assume $\cnonfork_S$ is stationary.
 If $\mrA$ is minimal among the
 idempotent sets that are
-type-definable over $S$, then $\mrA=({\mr b})_S$ for some (any) ${\mr b}\in\mrA$.
+type-definable over $S$, then $\mrA=({\mr b})_S$ for ${\mr b}\in\mrA$.
 \end{lemma}
 
 \begin{proof}
@@ -359,14 +360,14 @@ Hence, by minimality, ${\mr\Aa'}=\mrA$.
 %
 Then ${\mr b}\in{\mr\Aa'}$, which implies ${\mr b}*{\mr b}=({\mr b})_S$.
 %
-That is, ${\mr b}$ has idempotent orbit.
+That is, ${\mr b}$ is idempotent.
 %
 Finally, by minimality, $\mrA=({\mr b})_S$.
 \end{proof}
 
 \begin{corollary}\label{corol_idempotent}
 Under the same assumptions of the lemma above, every type-definable 
-idempotent set contains an element with an idempotent orbit.
+idempotent set contains an idempotent element.
 \end{corollary}
 
 % \begin{exercise}[ (van der Waerden's theorem)]
@@ -457,7 +458,7 @@ we must have that ${\mr a}\cpaw{\mr b}$.
 %
 Therefore, from the \cpawdot-closure of $\cpaw$ we infer ${\mr a}{\cdot}{\mr b}\in{\mr\S'}$.
 
-Let ${\mr g_0}$ be an element of ${\mr\S'}$ with idempotent orbit 
+Let ${\mr g_0}$ be an idempotent element of ${\mr\S'}$
 as given by Corollary~\ref{corol_idempotent}.
 Let ${\mr g_1}$ realize ${\mr g_0}\equiv_S{\mr x}\cnonfork_S{\mr g_0}$.
 %
@@ -475,6 +476,12 @@ Note that $\fp(a_{\restriction i},\,{\mr g_1}\,,{\mr g_0})$ has color $1$.
 In fact, ${\mr g_1}\equiv_S{\mr g_0}\equiv_S{\mr g_1}{\cdot}{\mr g_0}$.
 Now, ${\mr g_1}\cnonfork_S{\mr g_0}$ yields some $a_i\in S$ such that  $\fp(a_{\restriction i+1},\,{\mr g_0})$ has color 1.
 \end{proof}
+
+\begin{exercise}
+  The following claim is too strong to be true.
+  For every finite coloring of $\NN^{(2)}$ there is an infinite sequence $\bar a=\<a_i:i<\omega\>$ in $\NN$ such that $\fp(\bar a)^{(2)}$ is monochromatic.
+  Replace $\fp(\bar a)^{(2)}$ with a (slightly) smaller set that makes the claim true.
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -516,8 +523,8 @@ Moreover, when ${\mr b}$ is not in $\mrM$, we have the following.
 \begin{proof}
   Clearly, $\mrM*{\mr b}$ is a left ideal.
   Let ${\mr a}*{\mr b}$, for some ${\mr a}\in\mrM$, be an arbitrary element of $\mrM*{\mr b}$.
-  By Fact~\ref{fact_mli}, it sufficies to prove that $\mrM*{\mr b}*{\mr a}*{\mr b}\subseteq\mrM*{\mr b}$.
-  This follows because ${\mr b}*{\mr a}\in\mrM$, hence $\mrM*{\mr b}*{\mr a}\subseteq\mrM$, by Fact~\ref{fact_mli} and the minimality of $\mrM$.
+  By Fact~\ref{fact_mli}, it sufficies to prove that $\mrM*{\mr b}*{\mr a}*{\mr b}=\mrM*{\mr b}$.
+  This holds, in fact ${\mr b}*{\mr a}\in\mrM$, hence $\mrM*{\mr b}*{\mr a}=\mrM$ by the minimality of $\mrM$.
 \end{proof}
 
 Now we prove the existence of minimal left ideals.
@@ -561,7 +568,7 @@ Note that every left ideal is an idempotent set and therefore contains idempoten
   Let $\mrC$ be a type-definable idempotent set.
   Let $\mrM$ be a minimal left ideal of $\mrC$.
   Let ${\mr u},{\mr v}\in\mrM$ be two idempotents.
-  Then the followings hold
+  Then the followings hold (to avoid notation overload, we confuse the elements of $\mrC$ with their orbits)
   \begin{itemize}
     \item [1.] ${\mr a}*{\mr u}={\mr a}$ for every ${\mr a}\in\mrM$ 
     \item [2.] $*$ is a group operation on ${\mr u}*\mrM$ with identity ${\mr u}$
@@ -569,7 +576,7 @@ Note that every left ideal is an idempotent set and therefore contains idempoten
     \item [4.] if ${\mr u}$ and ${\mr v}$ are distinct (i.e.\@ have distict orbits), then ${\mr u}*\mrM$ and ${\mr v}*\mrM$ are disjoint
     \item [5.] $\mrM$ is covered by sets of the form ${\mr u}*\mrM$ as ${\mr u}\in\mrM$ ranges over the idempotents
     % \item [6.] if ${\mr b}\in\mrC$ is an idempotent, ${\mr u}*{\mr b}={\mr u}$ and ${\mr b}*{\mr u}$ is idempotent.
-    \item [6.] if ${\mr b}\in\mrC$ is an idempotent, then ${\mr b}*\mrM*{\mr b}$ icontains an idempotent.\smallskip
+    \item [6.] if ${\mr b}\in\mrC$ is an idempotent, then ${\mr b}*\mrM*{\mr b}$ contains an idempotent.\smallskip
   \end{itemize}
 \end{lemma}
 
@@ -612,7 +619,7 @@ Note that every left ideal is an idempotent set and therefore contains idempoten
 The following is a technical lemma that is required in the proof of the main theorem.
 
 \begin{proposition}\label{prop_HJ_tecnical}
-Let $\sigma:\U\to\U$ be a semigroup homomorphism definable over $M$.
+Let $\sigma:\mrS\to\mrS$ be a semigroup homomorphism definable over $M$.
 Then 
 \begin{itemize}
 \item[1.] $\sigma\big[({\mr a})_S\big]=(\sigma\,{\mr a})_S$
@@ -622,7 +629,7 @@ $\sigma\big[{\mr a}*{\mr b}\big]=\sigma\,{\mr a}*\sigma\,{\mr b}$.
 \end{itemize}
 \end{proposition}
 \begin{proof}\ \ssf{1.}  
-As ${\mr a}\equiv_M{\mr a'}$ implies $\sigma\,{\mr a}\equiv_S\sigma\,{\mr a'}$,
+As ${\mr a}\equiv_S{\mr a'}$ implies $\sigma\,{\mr a}\equiv_S\sigma\,{\mr a'}$,
 inclusion $\subseteq$ is clear.
 For the converse, note that the type 
 $\E{\mr y}\,\big[\sigma\,{\mr y}={\mr x}\,\wedge\,{\mr y}\equiv_S{\mr a}\big]$ 
@@ -651,7 +658,6 @@ which is in turn contained in the set on the r.h.s.
 \end{proof}
  
 The following theorem is an elegant rephrasing of the celebrated Hales-Jewett Theorem.
-
 Let $S$ be a semigroup.
 A subsemigroup $C$ is \emph{nice\/} if it has the property that if $a{\cdot}b\in C$ then $a,b\in C$.
 
@@ -678,7 +684,7 @@ By Proposition~\ref{prop_HJ_tecnical}, for every retraction $\sigma$, we have th
 Therefore they all coincide with $\mrN$.
 Let ${\mr u}\in{\mr v}*\mrM*{\mr v}$ be an idempotent.
 Then $\sigma({\mr u})$ is an idempotent of ${\mr v}*\mrN$.
-As ${\mr v}*\mrN$ contains only one idempotent, $\sigma({\mr u})={\mr v}$ for every $\sigma$.
+As ${\mr v}*\mrN$ contains only one idempotent orbit, $\sigma({\mr u})\equiv_S{\mr v}$ for every $\sigma$.
 In particular $\{\sigma({\mr u})\,:\,\sigma\in\Sigma\}$ is monochromatic.
 As $\Sigma$ is finite , the theorem follows by elementarity.
 \end{proof}
@@ -714,15 +720,15 @@ An \textit{arithmetical progression\/} of length $k$ is a sequence of natural nu
   Apply Theorem~\ref{thm_abstract_HJ} to obtain some $n,m\in\NN$ such that the set $\{n{+}m{\cdot}i\ :\ i<k\}$ is monochromatic.
 \end{proof}
 
-\begin{exercise}\label{thm_hom_HJ}
-  Let $\Sigma$ be a finite set of homomorphisms $\sigma:S\to C$ 
-  between infinite semigroups such that the following intersection is nonempty for all $c\in C$
+% \begin{exercise}\label{thm_hom_HJ}
+%   Let $\Sigma$ be a finite set of homomorphisms $\sigma:S\to C$ 
+%   between infinite semigroups such that the following intersection is nonempty for all $c\in C$
 
-  \ceq{\hfill\Sigma^{-1}[c]}{=}{\bigcap_{\sigma\in\Sigma}\sigma^{-1}[c]}
+%   \ceq{\hfill\Sigma^{-1}[c]}{=}{\bigcap_{\sigma\in\Sigma}\sigma^{-1}[c]}
 
-  Prove that, for every finite coloring of $C$, for some $g\in S$ the set 
-  $\{\sigma\,g\ :\ \sigma\in\Sigma\}$ is monochromatic.
-\end{exercise}
+%   Prove that, for every finite coloring of $C$, for some $g\in S$ the set 
+%   $\{\sigma\,g\ :\ \sigma\in\Sigma\}$ is monochromatic.
+% \end{exercise}
 
 % \begin{proof}
 % Let $G*C$ be free product of the two semigroups.
@@ -745,24 +751,35 @@ An \textit{arithmetical progression\/} of length $k$ is a sequence of natural nu
 % \end{proof}
 
 \begin{exercise}
-  Assume $\cnonfork_S$ is stationary.
   Let $\M$ be a type-definable minimal left ideal of $\C$.
   Let $u\in\M$ be an idempotent.
   Prove that $u*\M$ is a minimal right ideal of $\C$.
 \end{exercise}
 
 \begin{exercise}
-  Assume $\cnonfork_S$ is stationary.
   Let $\M$ and $\N$ be type-definable minimal left ideals of $\C$.
   Let $u\in\M$ and $v\in\N$ be idempotents.
   Prove that $u*\M$ and $v*\N$ are isomorphic groups.
 \end{exercise}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{exercise}
+  For every finite coloring of $\NN$ and every $k<\omega$, 
+  there is an infinite sequence $\bar a=\<a_i(x):i<\omega\>$ of nonconstant univariate polynomials with coefficients in $\NN$ such that $\big\{a(i): a(x)\in\fp(\bar a),\ i<k\big\}$ is monochromatic.
+  Can we require that the $a_i(x)$ have increasing degrees?
+\end{exercise}
+
+\begin{exercise}
+Prove that 
+
+ \hfil$\displaystyle\bigcup\big\{\M\ :\ \M\text{ a minimal left ideal of }\C\big\} =\bigcup\big\{\M\ :\ \M\text{ a minimal right ideal of }\C\big\}$.
+
+\end{exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Notes and references}
 
 The first application of the algebraic structure of $\beta S$ 
