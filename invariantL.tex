@@ -110,11 +110,12 @@ As $|L_{\gr z}(N)|=\lambda$ the bound follows from Proposition~\ref{prop_numberI
 \end{proof}
 
 \begin{theorem}\label{thm_Lascar_indiscernibles}
+  Let $\lambda=|L_{\gr z}(A)|$.
   For every $\grD$ and every $A\subseteq M$ the following are equivalent
   \begin{itemize}
     \item[1.] $\grD$ is Lascar invariant over $A$
     \item[2.] every set in $\oorbit(\grD/A)$ is $M\mbox{-}$invariant
-    \item[3.] $\oorbit(\grD/A)$ has cardinality $\le 2^{2^{|L(A)|}}$
+    \item[3.] $\oorbit(\grD/A)$ has cardinality $\le 2^{2^\lambda}$
     \item[4.] $\oorbit(\grD/A)$ has cardinality $<\kappa$
     \item[5.] ${\gr c_0}\in\grD\iff{\gr c_1}\in\grD$ for every $A\mbox{-}$indiscernible sequence $\<{\gr c_i}:i<\omega\>$.
   \end{itemize}
@@ -176,7 +177,7 @@ Clearly $\Ll({\gr a}/A)$ is Lascar invariant over $A$.
 The symbol $\Ll({\gr a}/A)$ is not standard.
 
 \begin{definition}\label{def_Lascar_type}\strut We write \emph{\strut${\gr a}\stackrel{\smash{\scalebox{.5}{\rm L}}}{\equiv}_A{\gr b}$\/} and say that ${\gr a}$ and ${\gr b}$ have the same \emph{Lascar strong type\/} over $A$ if the equivalence ${\gr a}\in\grD\iff{\gr b}\in\grD$ holds for every set $\grD$ that is Lascar invariant over $A$ or, in other words, if $\Ll({\gr a}/A)=\Ll({\gr b}/A)$.
-The notation $\mbox{L-stp}({\gr a}/A)=\mbox{L-stp}({\gr b}/A)$ and ${\gr a}E_{_{L/A}}{\gr b}$ are also common in the the literature.
+The notation $\mbox{L-stp}({\gr a}/A)=\mbox{L-stp}({\gr b}/A)$ and ${\gr a}\,E_{_{L/A}}{\gr b}$ are also common in the the literature.
 \end{definition}
 
 \begin{proposition}
@@ -245,7 +246,8 @@ In fact, in Example~\ref{ex_cyclic_order}, we present a theory that has no globa
 % We say that $\phi({\mr x})\in L(\U)$ is \emph{almost satisfiable\/} in $A$ if it is satisfiable in every model containing $A$.
 % A type $p({\mr x})\subseteq L(\U)$ is \emph{almost (finitely) satisfiable\/} in $A$ if every conjunction of formulas in $p({\mr x})$ is almost satisfiable in $A$. 
 
-A global type $p({\mr x})\in S(\U)$ that is finitely satisfiable in every model containing $A$, is called a \emph{global coheir\/} of $p_{\restriction A}({\mr x})$. 
+\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}%
+A global type $p({\mr x})\in S(\U)$ that is finitely satisfiable in every model containing $A$, is called a \emph{Lascar coheir\/} of $p_{\restriction A}({\mr x})$. 
 Note that when $A$ is a model we obtain the same notion defined in Section~\ref{coheirs}.
 
 \begin{proposition} 
@@ -256,21 +258,20 @@ Note that when $A$ is a model we obtain the same notion defined in Section~\ref{
 \begin{proof}
   Let $\<{\gr c_i}:i<\omega\>$ be an $A\mbox{-}$indiscernible sequence.
   Suppose for a contradiction that ${\gr c_0}\in\gr\D_{p,\phi}\niff{\gr c_1}\in\gr\D_{p,\phi}$
-  Then $\phi({\mr x}\,;{\gr c_0})\niff\phi({\mr x}\,;{\gr c_1})\ \in p$.
+  Then $p({\mr x})\proves\phi({\mr x}\,;{\gr c_0})\niff\phi({\mr x}\,;{\gr c_1})$.
   Let $M\supseteq A$ be such that $\<{\gr c_i}:i<\omega\>$ is indiscernible over $M$.
   As $p({\mr x})$ is finitely satisfiable in $M$, for some ${\mr a}\in M^{\mr x}$ we have $\phi({\mr a}\,;{\gr c_0})\niff\phi({\mr a}\,;{\gr c_1})$.
   This contradicts indiscernibility over $M$.
 \end{proof}
 
-\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}%
-We say that $A$ is a \emph{coheir extension base\/} if every type that is finitely satisfiable in every $M\supseteq A$ has an extension to a global type with the same property.
+We say that $A$ is a \emph{Lascar coheir extension base\/} if every type that is finitely satisfiable in every $M\supseteq A$ has an extension to a global type with the same property.
 The terminology is not standard.
 % It is inspired by the analogy with extensions bases for forking, see e.g.~\cite{Chernikov}, \cite{Simon}.
 
 \begin{proposition}\label{prop_exisntence_coheirs_over_sets}
   The following are equivalent
   \begin{itemize}
-    \item[1.] $A$ is a coheir extension base
+    \item[1.] $A$ is a Lascar coheir extension base
     \item[2.] for every $\psi({\mr x}),\phi({\mr x})\in L(\U)$, if $\psi({\mr x})\vee\phi({\mr x})$ is finitely satisfied in every $M\supseteq A$, then $\psi({\mr x})$ or $\phi({\mr x})$ is finitely satisfied in every $M\supseteq A$. 
   \end{itemize}  
 \end{proposition}
@@ -295,7 +296,7 @@ The following example shows that some theories may have no other extension bases
   The third case is symmetric.
 \end{example}
 
-In Chapter~\ref{stability} we will see that for some important class of theories, \textit{stable theories}, all sets are coheir extension bases.
+In Chapter~\ref{stability} we will see that for some important class of theories, \textit{stable theories}, all sets are Lascar coheir extension bases.
 
 \begin{example}\label{ex_cyclic_order}
   We present a theory without global types that are Lascar invariant over the empty set.
@@ -324,8 +325,13 @@ In Chapter~\ref{stability} we will see that for some important class of theories
 \end{example}
 
 \begin{exercise}
-  Let $A$ be a coheir extension base.
+  Let $A$ be a Lascar coheir extension base.
   Prove that for every $b\in\U^z$ there is a structure $\V\preceq\U$ isomorphic to $\U$ over $A$ such that $\V\cnonfork_Mb$ for every $A\subseteq M\preceq\V$.
+\end{exercise}
+
+\begin{exercise}
+  Let $A$ be a Lascar coheir extension base.
+  Prove that for every $a\in\U^x$ there is a structure $\V\preceq\U$ isomorphic to $\U$ over $A$ such that $a\cnonfork_M\V$ for every $A\subseteq M\preceq\V$.
 \end{exercise}
 
 % \begin{exercise}
@@ -361,7 +367,6 @@ We write \emph{$d_A({\mr a},{\mr b})<\infty$\/} if ${\mr a}$ and ${\mr b}$ are i
 
   \ceq{\hfill\Ll({\mr a}/A)}{=}{\big\{{\mr c}\ :\ d_A({\mr a},{\mr c})<\infty\big\}.}
 \end{proposition}
-
 
 \begin{proof}
 To prove inclusion $\supseteq$ it suffices to show that every Lascar $A$-invariant set containing ${\mr a}$ contains the set on the r.h.s.

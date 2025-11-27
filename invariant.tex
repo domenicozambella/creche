@@ -252,63 +252,78 @@ We will use the following easy lemma without explicit reference.
   Finally, substituting $c$ for $w$, we obtain that $\phi_i({\mr a},c)$ holds for some $i$, a contradiction
 \end{proof}
 
+When $A$ is a model, the above proposition has a dual version.
+
 \begin{proposition}\label{prop_saturate_coheir}
-  Let ${\mr a}\cnonfork_A{\gr b}$ then there is $\V\preceq\U$ that is isomorphic to $\U$ over $A,{\mr a}$ and such that $\V\cnonfork_A{\gr b}$.
-  Moreover, we can require that $\V$ realizes every type $p(y)\subseteq L(A,{\gr b})$, for any $A\subseteq\V$, that is finitely satisfied in $\V$.
+  Let ${\mr a}\cnonfork_M{\gr b}$ then there is $\V\preceq\U$ that is isomorphic to $\U$ over $M,{\mr a}$ and such that $\V\cnonfork_A{\gr b}$.
 \end{proposition}
 
 \begin{proof}
   Let $c$ be an enumeration of $\U$.
-  Let $p(w,{\mr x})=\tp(c,{\mr a}/A)$.
-  We can take $\V$ to be the structure enumerated by the tuple that realizes symultaneously $p(w,{\mr a}) $ and the type $w\cnonfork_A{\gr b}$, that is,
+  Let $p(w,{\mr x})=\tp(c,{\mr a}/M)$.
+  We can take $\V$ to be the structure enumerated by the tuple that realizes symultaneously $p(w,{\mr a}) $ and the type $w\cnonfork_M{\gr b}$, that is,
 
-  \ceq{\hfill\Big\{\neg\phi(w,{\gr b})}{:}{\phi(w,{\gr z})\in L(A),\ \ \phi(A^w,{\gr b})=\varnothing\Big\}.}
+  \ceq{\hfill\Big\{\neg\phi(w,{\gr b})}{:}{\phi(w,{\gr z})\in L(M),\ \ \phi(M^w,{\gr b})=\varnothing\Big\}.}
 
   We only need to prove finite consistency.
   If inconsistent, for some $\theta(w,{\mr x})\in p$ and some $\phi_i(w,{\gr b})$ in the above set
 
   \ceq{\hfill\theta(w,{\mr a})}{\imp}{\bigvee_{i=1}^n\phi_i(w, {\gr b}).}
   
-  As ${\mr a}\cnonfork_A{\gr b}$, we can replace ${\mr a}$ by some ${\mr a'}\in A^{\mr x}$.
+  As ${\mr a}\cnonfork_M{\gr b}$, we can replace ${\mr a}$ by some ${\mr a'}\in M^{\mr x}$.
   We can also require that $\E w\,\theta(w,{\mr a'})$.
-  Then, by elementarity, $\theta(c',{\mr a'})$ holds for some $c'\in A^w$.
+  Then, by elementarity, $\theta(c',{\mr a'})$ holds for some $c'\in M^w$.
   Therefore, $\phi_i(c',{\gr b})$ holds for some $i$, a contradiction.
 \end{proof}
 
+As a matter of fact, on the left-side of the  $\cnonfork_M$-relation we can require a stronger form of saturation.
+
 \begin{proposition}\label{prop_b_saturate_coheir}
-  Let $C\cnonfork_A{\gr b}$.
-  There is $\W\cnonfork_A{\gr b}$ such that $C\subseteq\W\preceq\U$, and $\W$ realizes every type $p(x)\subseteq L(B,{\gr b})$, for any $B\subseteq\W$, that is finitely satisfied in $\W$.
+  Let $C\cnonfork_M{\gr b}$.
+  There is $\W\cnonfork_M{\gr b}$ such that $C\cup M\subseteq\W\preceq\U$, and $\W$ realizes every type $p(x)\subseteq L(B,{\gr b})$, for any $B\subseteq\W$, that is finitely satisfied in $\W$.
 \end{proposition}
 
 \begin{proof}
-  Construct inductively a chain of sets $C_i\cnonfork_A{\gr b}$, for $i<\kappa$.
-  The chain starts with $C_0=C\cup A$, and is the union at limit stages.
+  Construct inductively a chain of sets $C_i\cnonfork_M{\gr b}$, for $i<\kappa$.
+  The chain starts with $C_0=C\cup M$, and is the union at limit stages.
   At successor stages we define $C_{i+1}=C_i\cup\{c_i\}$ for some suitable $c_i\cnonfork_{C_i}{\gr b}$.
-  By \ssf3 in Lemma~\ref{lem_coheir_independence}, this ensures $C_{i+1}\cnonfork_A{\gr b}$.
+  By \ssf3 in Lemma~\ref{lem_coheir_independence}, this ensures $C_{i+1}\cnonfork_M{\gr b}$.
   We choose the sequence $\<c_i:i<\kappa\>$ so that for every $n$ every complete type $p(x)\in S(C_n,{\gr b})$ that is finitely satisfiable in $C_n$ is eventually realized by some $c_i$.
   This ensure that $\W$, the union of the chain, realizes all the required types.
-  To check that $\W\preceq\U$ note that, by Proposition~\ref{prop_saturate_coheir}, every consistent formula in $L(\W)$ has a solution in some $\V\cnonfork_A{\gr b}$.
+  To check that $\W\preceq\U$ note that, by Proposition~\ref{prop_saturate_coheir}, every consistent formula in $L(\W)$ has a solution in some $\V\cnonfork_M{\gr b}$.
 \end{proof}
 
-\begin{definition}\label{def_coheir_stationary} We say that $\cnonfork_M$ is \emph{stationary\/} if ${\mr a}\equiv_M{\mr x}\cnonfork_M{\gr b}$ is a complete type over $A,{\gr b}$ for all finite tuples ${\gr b}$ and ${\mr a}$.
-We say \emph{$n$-stationary\/} if we limit the request to tuples ${\mr a}$ of length $n$.
+\begin{definition}\label{def_coheir_stationary} 
+  We say that the type ${\mr x}\cnonfork_A{\gr b}$ is \emph{stationary\/} if for every ${\mr a}\in\U^{\mr x}$ the type ${\mr a}\equiv_A{\mr x}\cnonfork_A{\gr b}$ is complete over $A,{\gr b}$.
+  We say that $\cnonfork_A$ is \emph{stationary\/} if ${\mr x}\cnonfork_A{\gr b}$ is stationary for every ${\gr b\in\U^{\gr z}}$ and any finite tuples of variables ${\mr x}$ and ${\gr z}$.
+  We say \emph{$n$-stationary\/} if we limit the request to a tuple ${\mr x}$ of length $n$.
 \end{definition}
 
-An application of stationarity is given in Section~\ref{semigroups}.
-Stationarity is often ensured by the following property, which will receive due attention in Section~\ref{stable_theories}.
+A first application of stationarity is given in Section~\ref{semigroups}.
+Stationarity is deeply conncted with definability as illustrated by the following proposition.
+This phenmenon will receive the due attention in Section~\ref{stable_theories}.
 
 \begin{proposition}\label{prop_stationarity}
-Let ${\mr x}$ be a tuple of variables of length $n$.
-If for every $\phi({\mr x})\in L(\U)$ there is a formula $\psi({\mr x})\in L(M)$ such that $\phi(M^{\mr x})=\psi(M^{\mr x})$ then $\cnonfork_M$ is $n$-stationary.
+  The following are equivalent 
+  \begin{itemize}
+    \item [1.] ${\mr x}\cnonfork_M{\gr b}$ is stationary 
+    \item [2.] for every $\phi({\mr x}\,;{\gr z})\in L(M)$ there is a $\psi({\mr x})\in L(M)$ such that $\phi(M^{\mr x}\,;{\gr b})=\psi(M^{\mr x})$.\smallskip
+  \end{itemize}
 \end{proposition}
 
 \begin{proof}
-Let ${\gr b}\in\U^{\gr z}$ and ${\mr a_1},{\mr a_2}\in\U^{\mr x}$ be such that ${\mr a_i}\cnonfork_M{\gr b}$ and ${\mr a_1}\equiv_M{\mr a_2}$.
-We claim that ${\mr a_1}\equiv_{M,\,{\gr b}}{\mr a_2}$.
-We need to prove that $\phi({\mr a_1}\,;{\gr b})\iff\phi({\mr a_2}\,;{\gr b})$ for every  $\phi({\mr x}\,;{\gr z})\in L(M)$.
-Let $\psi({\mr x})\in L(M)$ be such that $\phi(M^{\mr x};{\gr b})=\psi(M^{\mr x})$.
-From ${\mr a_i}\cnonfork_M{\gr b}$ we obtain that  $\phi({\mr a_i}\,;{\gr b})\iff\psi({\mr a_i})$.
-Finally, the claim follows because ${\mr a_1}\equiv_M{\mr a_2}$.
+  \ssf2$\IMP$\ssf1. 
+  Let ${\gr b}\in\U^{\gr z}$ and ${\mr a_1},{\mr a_2}\in\U^{\mr x}$ be such that ${\mr a_i}\cnonfork_M{\gr b}$ and ${\mr a_1}\equiv_M{\mr a_2}$.
+  We claim that ${\mr a_1}\equiv_{M,\,{\gr b}}{\mr a_2}$.
+  We need to prove that $\phi({\mr a_1}\,;{\gr b})\iff\phi({\mr a_2}\,;{\gr b})$ for every  $\phi({\mr x}\,;{\gr z})\in L(M)$.
+  Let $\psi({\mr x})\in L(M)$ be such that $\phi(M^{\mr x};{\gr b})=\psi(M^{\mr x})$.
+  From ${\mr a_i}\cnonfork_M{\gr b}$ we obtain that  $\phi({\mr a_i}\,;{\gr b})\iff\psi({\mr a_i})$.
+  Finally, the claim follows because ${\mr a_1}\equiv_M{\mr a_2}$.
+
+  \ssf1$\IMP$\ssf2. 
+  Let $\W$ be as in Proposition~\ref{prop_b_saturate_coheir}. 
+  Then the set $\phi(\W^{\mr x}\,;{\gr b})$ is invariant under $\Aut(\W/M)$.
+  As $\W$ is saturated in the language expanded with predicate for $\phi(\W^{\mr x}\,;{\gr b})$, invariance implies that $\phi(\W^{\mr x}\,;{\gr b})$ is definable over $M$.
 \end{proof}
 
 % \begin{lemma}\label{lem_coheirext}
@@ -330,8 +345,8 @@ Finally, the claim follows because ${\mr a_1}\equiv_M{\mr a_2}$.
 \begin{remark}\label{rk_coheir_stationary}
 %The stationarity of $\cnonfork_A$ over every set $A$, or just over every model, is equivalent to the stability of $T$, see Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}.
 There are theories where the stationarity of $\cnonfork_M$ holds for some particular $M$.
-For example, if every subset of $M^n$ is $M$-definable then $\cnonfork_M$ is $n$-stationary by Proposition~\ref{prop_stationarity}.
-This simple observation will help in the proof of Theorem~\ref{thm_Hindman}.
+Indeed, if every subset of $M^n$ is $M$-definable then $\cnonfork_M$ is $n$-stationary by Proposition~\ref{prop_stationarity}.
+This will help in the proof of Theorem~\ref{thm_Hindman}.
 For a natural example, let $T=T_{\rm dlo}$ and let $M\subseteq\U$ have the order type of $\RR$.
 By quantifier elimination every definable subset of $\U$ is a union of finitely many intervals.
 By Dedekind completeness, the trace on $M$ of any interval of $\U$ coincides with that of an $M$-definable interval.
