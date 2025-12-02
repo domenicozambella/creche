@@ -772,39 +772,6 @@ Note that, when all formulas in $L_{{\mr x}\,{\gr z}}(M)$ are stable, the theore
 
 We deduce a version of Harrington's mysterious Lemma cf.~\cite{TZ}*{Lemma 8.3.4}.
 
-\begin{corollary}\label{corol_harrington0}
-  Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
-  Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$. 
-  Suppose there exist $\mrA\subseteq\U^{\mr x}$ and $\grB\subseteq\U^{\gr z}$ that are boolean combinations of sets of the form $\phi(\U^{\mr x}\,;{\gr b'})$ for ${\gr b'}\in M^{\gr z}$, respectively of the form $\phi({\mr a'}\,;\U^{\gr z})$ for  ${\mr a'}\in M^{\mr x}$, such that\smallskip
-
-  \ceq{\ssf1.\hfill\phi({\mr a}\,;M^{\gr z})}{=}{\grB\cap M^{\gr z}}\smallskip
-
-  \ceq{\ssf2.\hfill\phi(M^{\mr x};{\gr b})}{=}{\mrA\cap M^{\mr x}}.\smallskip
-
-  Then ${\mr a}\in\mrA\ \iff\ {\gr b}\in\grB$.
-  %
-  % Let ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$.
-  % Finally, let $\theta({\mr x}),\psi({\gr z})\in L(M)$ be such that $\theta(M^{\mr x})=\phi(M^{\mr x};{\gr b})$ and $\psi(M^{\gr z})=\phi({\mr a}\,;M^{\gr z})$.
-  % Such formulas exist by stability.
-  % Then $\theta({\mr a})\iff\psi({\gr b})$.
-\end{corollary}
-
-\begin{proof}
-  Note that we can assume ${\mr a}\cnonfork_M{\gr b}$.
-  Then, from \ssf2 we obtain immediately
-
-  \ceq{\ssf2$'$.\hfill\phi({\mr a};{\gr b})}{\iff}{{\mr a}\in\mrA}.
-
-  The corollary follows if we can also show that
-
-  \ceq{\ssf1$'$.\hfill\phi({\mr a}\,;{\gr b})}{\iff}{{\gr b}\in\grB}
-
-  Negate \ssf1$'$.
-  As the formula $\phi({\mr x}\,;{\gr z})\niff{\gr z}\in\grB$ is stable, from $\neg\ssf1'$ and Theorem~\ref{thm_symmetry}, we obtain that $\phi({\mr a}\,;{\gr b'})\niff{\gr b'}\in\grB$ for some ${\gr b'}\in M^{\gr z}$.
-  But this contradicts \ssf1.
-\end{proof}
-
-The above corollary is usually applied in the following form. 
 
 \begin{corollary}\label{corol_harrington1}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
@@ -813,6 +780,22 @@ The above corollary is usually applied in the following form.
   
   \ceq{\hfill{\mr a}\in{\mr\D_{q,\phi^{\rm op}}}}{\iff}{{\gr b}\in{\gr\D_{p,\phi}}.}
 \end{corollary}
+
+\begin{proof}
+  Note that we can assume ${\mr a}\cnonfork_M{\gr b}$.
+  Then, from we obtain immediately
+
+  \ceq{\hfill\phi({\mr a};{\gr b})}{\iff}{{\mr a}\in{\mr\D_{q,\phi^{\rm op}}}.}
+
+  In fact, as ${\mr\D_{q,\phi^{\rm op}}}$ is definable over $M$, the contrary would contradict ${\gr b}\models q({\gr z}){\restriction}M$.
+  The corollary follows that we can prove 
+
+  \ceq{1.\hfill\phi({\mr a}\,;{\gr b})}{\iff}{{\gr b}\in{\gr\D_{p,\phi}}}
+
+  Note that \ssf1 is a stable formula. 
+  Hence from its negation and Theorem~\ref{thm_symmetry} we obtain that $\phi({\mr a}\,;{\gr b'})\niff{\gr b'}\in{\gr\D_{p,\phi}}$ holds for some ${\gr b'}\in M^{\gr z}$.
+  This would contradict ${\mr a}\models p({\mr x}){\restriction}M$.
+\end{proof}
 
 Now we show that under the assumption of stability Lascar invariance reduces to a tamer form of invariance.
 
@@ -844,8 +827,8 @@ Now we show that under the assumption of stability Lascar invariance reduces to 
   By symmetry $\phi(M^{\mr x};{\gr b})\neq\varnothing$.
 \end{proof}
 
-A type $q({\mr x})\subseteq L(\U)$ is \emph{stationary\/} if it has a unique global extension $p({\mr x})\in S_\Delta(\U)$ that is Lascar invariant over $A$.
-The sets $\Delta$ and $A$ are to be inferred from the context.
+A type $q({\mr x})\subseteq L(\U)$ is \emph{stationary\/} if there is a unique global type $p({\mr x})\in S_\phi(\U)$ that is Lascar invariant over $A$.
+The sets $\phi({\mr x}\,;{\gr z})$ and $A$ are to be inferred from the context.
 The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
 
 % Finally, define \emph{$\GDelta(A)$\/} to be the set of formulas $\phi({\mr x})\in\BDelta(\U)$ that are invariant over $A$.
@@ -854,28 +837,27 @@ The following proposition says that in a stable theory with elimination of imagi
 % Note that when $A$ is a model $\GDelta(A)$-formulas are equivalent to $\BDelta(A)$-formulas.
 
 \begin{theorem}[ (Stationarity)]\label{thm_stationarity}
-  Let $\Delta$ be stable.
+  Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
   Let $q({\mr x})\subseteq L(\U)$ be a type that is finitely satisfiable in every $M\supseteq A$.
-  Assume $q({\mr x})$ decides all Boolean combinations of formulas in $\Delta(\U^{\gr z})$ that are invariant over $\acl^\eq\!A$.
-  Then there is a unique type $p({\mr x})\in S_\Delta(\U^{\gr z})$ finitely consistent with $q({\mr x})$ that is invariant over $\acl^\eq\!A$.
+  Assume $q({\mr x})$ decides all Boolean combinations of formulas of the form $\phi({\mr x}\,;{\gr b})$ for any ${\gr b}\in\U^{\gr z}$ that are invariant over $\acl^\eq\!A$.
+  Then there is a unique type $p({\mr x})\in S_\phi(\U)$ finitely consistent with $q({\mr x})$ that is invariant over $\acl^\eq\!A$.
 \end{theorem}
 
 \begin{proof}
   Existence follows from Corollary~\ref{corol_stable_coheir_over_models} and Proposition~\ref{prop_type_over_acl2}.
-  To prove uniqueness, pick two types $p_i({\mr x})\in S_\Delta(\U^{\gr z})$, for $i=1,2$, that are finitely consistent with $q({\mr x})$ and invariant over $\acl^\eq\!A$.
+  To prove uniqueness, pick two types $p_i({\mr x})\in S_\Delta(\U)$, for $i=1,2$, that are finitely consistent with $q({\mr x})$ and invariant over $\acl^\eq\!A$.
   It suffices to prove that ${\gr\D_{p_1,\phi}}={\gr\D_{p_2,\phi}}$ for every $\phi({\mr x}\,;{\gr z})\in\Delta$.
   Let ${\gr b}\in\U^{\gr z}$ and $\phi({\mr x}\,;{\gr z})\in\Delta$ be fixed but arbitrary.
 
+  There exists a type $t({\gr z})\in S_\phi(\U^{\mr x})$ that is finitely satisfied in every model $M\supseteq A$ and is consistent with $\tp({\gr b}/\acl^\eq\!A)$.
+  By invariance ${\gr\D_{p_i,\phi}}$ and ${\mr\D_{t,\phi^{\rm op}}}$ are both in $\acl^\eq\!A$.
   Let $M\supseteq A$.
-  By stability there exists a type $t({\gr z})\in S_\phi(\U^{\mr x})$ that is invariant over $M$ and is finitely consistent with $\tp({\gr b}/M)$.
-  By stability and invariance ${\gr\D_{p_i,\phi}}$ and ${\mr\D_{t,\phi^{\rm op}}}$ are in definable over $M$.
-  % Let ${\gr b'}$ be such that ${\gr b}\equiv_M{\gr b'}\models t({\gr z}){\restriction}M$.
-  Let ${\mr a_i}\models p_i({\mr x}){\restriction}M$.
-  By Corollary~\ref{corol_harrington1}, ${\mr a_i}\in{\mr\D_{t,\phi^{\rm op}}}\iff{\gr b}\in{\gr\D_{p_i,\phi}}$.
+  Let ${\mr a_i}\models p_i({\mr x}){\restriction}M$ and ${\gr b'}\models t({\gr z}){\restriction}M$.
+  By Corollary~\ref{corol_harrington1}, ${\mr a_i}\in{\mr\D_{t,\phi^{\rm op}}}\iff{\gr b'}\in{\gr\D_{p_i,\phi}}$.
   Note that the formula ${\mr x}\in{\mr\D_{t,\phi^{\rm op}}}$ is among those decided by $q({\mr x})$.
   Then ${\mr a_1}\in{\mr\D_{t,\phi^{\rm op}}}\iff{\mr a_2}\in{\mr\D_{t,\phi^{\rm op}}}$.
-  Therefore ${\gr b}\in{\gr\D_{p_1,\phi}}\iff{\gr b}\in{\gr\D_{p_2,\phi}}$.
-  % Finally, the theorem follows because ${\gr b}\equiv_{\acl^\eq\!A}{\gr b'}$.
+  Therefore ${\gr b'}\in{\gr\D_{p_1,\phi}}\iff{\gr b'}\in{\gr\D_{p_2,\phi}}$.
+  As ${\gr\D_{p_i,\phi}}$ are both in $\acl^\eq\!A$, we also have  ${\gr b}\in{\gr\D_{p_1,\phi}}\iff{\gr b}\in{\gr\D_{p_2,\phi}}$.
 \end{proof}
 
 % If $p({\mr x})\in S(\U)$ is a global type, a \emph{canonical base\/} of $p({\mr x})$ is a definably closed set $\emph{$\Cb(p)$}\subseteq \U^\eq$ such that an automorphism $f\in\Aut(\U)$ fixes $p({\mr x})$ if and only if it fixes $\Cb(p)$ pointwise. When they exist, canonical bases are unique, see Exercise~\ref{ex_Cb}.
