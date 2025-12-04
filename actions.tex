@@ -65,7 +65,7 @@ In this chapter many proofs require some juggling with negations as epitomized b
 \begin{proof}
   Spelling out the definitions, \ssf1 and \ssf2 are, respectively, equivalent to
   \begin{itemize}
-    \item[1$'$.] there are no finite $C\subseteq G$ such that $\mrX\ \subseteq\ \cup\, C{\cdot}\mrD$.
+    \item[1$'$.] there is no finite $C\subseteq G$ such that $\mrX\ \subseteq\ \cup\, C{\cdot}\mrD$.
     \item[2$'$.] $\varnothing\ \neq\ \cap\, C{\cdot}\neg\mrD$ for every finite $C\subseteq G$.
   \end{itemize} 
   Then the equivalence is evident.
@@ -94,18 +94,10 @@ Define the following type
 
 \ceq{\hfill\emph{$\Sigma_G({\mr x})$}}{=}{\big\{\theta({\mr x})\in  L(\grZ)\ :\ \theta({\mr x})\textrm{ is }G\textrm{-syndetic }\big\}.}
 
-% We remark that the consistency of $\Sigma_G({\mr x})$ is far from guaranteed.
-
-\begin{corollary}\label{corol_q_pers}
-  Let $\mrD\in L(\grZ)$ and assume that $\Sigma_G({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent.
-  Then $\mrD$ is $G$-thick.
-\end{corollary}
-
-\begin{proof}
-  As $\Sigma_G({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent, it cannot be that $\neg\mrD$ is $G$-syndetic.
-  Then from Fact~\ref{fact_fip} we obtain that $\mrD$ is $G$-thick.
-\end{proof}
-
+It is important to note that the consistency of $\Sigma_G({\mr x})$ is far from guaranteed.
+Let $\mrD\in L(\grZ)$.
+Note that if $\Sigma_G({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent, then  $\neg\mrD$ is not $G$-syndetic.
+Then $\mrD$ is $G$-thick.
 The converse implication holds for complete types.
 
 \begin{theorem}\label{thm_syndetic_invariant}
@@ -128,7 +120,7 @@ The converse implication holds for complete types.
   Finally, by invariance, $p({\mr x})\proves{\mr x}\in\mrD$.
   
   \ssf2$\IMP$\ssf3.
-  By Corollary~\ref{corol_q_pers}.
+  If conjunctions of formulas in $p({\mr x})$ are consistent with $\Sigma_G({\mr x})$, thickness follows from the above remark.
 
   \ssf3$\IMP$\ssf1.
   % uppose $p({\mr x})$ is not $(n+2)$-thick and let $n$ be minimal.
@@ -190,14 +182,15 @@ Our use of the term \textit{wide\/} is consistent with~\cite{Hr}, though we appl
   For every $\mrD\in L(\grZ)$ the following are equivalent 
   \begin{itemize}
     \item[1.] $\Sigma_G({\mr x})\cup\{{\mr x}\in\mrD\}$ is finitely consistent
-    \item[2.] there is a $G$-thick type $p({\mr x})\in S(\grZ)$ that entails ${\mr x}\in\mrD$
+    \item[2.] $p({\mr x})\proves {\mr x}\in\mrD$ for some $G$-thick type $p({\mr x})\in S(\grZ)$
     \item[3.] $\mrD$ is $G$-wide.\smallskip
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
-  By Corollary~\ref{corol_q_pers}, it suffices to pick any $p({\mr x})\in S(\grZ)$ that entails $\Sigma_G({\mr x})\cup\{{\mr x}\in\mrD\}$.
+  Pick any $p({\mr x})\in S(\grZ)$ that extends $\Sigma_G({\mr x})\cup\{{\mr x}\in\mrD\}$.
+  Then $p({\mr x})$ is $G$-thick by Theorem~\ref{thm_syndetic_invariant}.
 
   \ssf2$\IMP$\ssf1.
   By Theorem~\ref{thm_syndetic_invariant}.
@@ -266,13 +259,13 @@ The following easy consequence of the theorem will be used below.
 % \end{proof}
 
 \begin{exercise}
-  Let $\X=\Z=\U$ and $\Delta=L_x$.
-  Prove that if $p(x)\in S(\U)$ is finitely satisfiable in every $M\supseteq A$ then it is thick under the action of $G=\Autf(\UDelta)$.
+  Let $\X=\Z=\U$.
+  Prove that if $p(x)\in S(\U)$ is finitely satisfiable in every $M\supseteq A$ then it is thick under the action of $G=\Autf(\U)$.
   Is the same true for incomplete types?
 \end{exercise}
 
 \begin{exercise}
-  Prove that the following are equivalent
+  Prove that the following are equivalent for every $\D\in L(\Z)$.
   \begin{itemize}
     \item[1.] $\D$ is $G$-thick
     \item[2.] there is a type $p(x)\in S(\Z)$ containing $\{x\in g{\cdot}\D\;:\;g\in G\}$.
@@ -290,7 +283,7 @@ The following easy consequence of the theorem will be used below.
 \end{exercise}
 
 \begin{exercise}
-  Let $\D$ be a $\BDelta(\Z)$-type-definable set.
+  Let $\D$ be a $L(\Z)$-type-definable set.
   Prove that the following are equivalent 
   \begin{itemize}
     \item[1.] there is a $G$-invariant type $p(x)\in S(\Z)$ such that $p(x)\proves x\in\D$.
@@ -304,10 +297,11 @@ The following easy consequence of the theorem will be used below.
 % \end{exercise}
 
 \begin{exercise}\label{ex_thick_types}
-  Prove that for every $p(x)\subseteq \BDelta(A)$ following are equivalent
+  Let $\D$ be a $L(\Z)$-type-definable set.
+  Prove that the following are equivalent
   \begin{itemize}
-    \item[1.] $p(x)$ is $G$-thick
-    \item[2.] $p(\U^x)$ is $G$-thick.
+    \item[1.] $\D$ is $G$-thick
+    \item[2.] $\D$ is definable by a $G$-thick type.
   \end{itemize}
 \end{exercise}
 
@@ -317,8 +311,8 @@ The following easy consequence of the theorem will be used below.
 \end{exercise}
 
 \begin{exercise}\label{ex_syndetic_type_vs_formulas}
-  Let $\D\subseteq\X$ be a $G$-syndetic $\BDelta(\Z)$-type-definable set.
-  Prove that $\D$ is definable by a $\BDelta(\Z)$-type containing only $G$-syndetic formulas.
+  Let $\D\subseteq\X$ be a $G$-syndetic $L(\Z)$-type-definable set.
+  Prove that $\D$ is definable by an $L(\Z)$-type containing only $G$-syndetic formulas.
 \end{exercise}
 
 % \begin{exercise}\label{ex_Hprime}
@@ -601,7 +595,7 @@ These are terminologies that defy my intuition.
   It suffices to prove that $\mrB=\cap\, C{\cdot}({\mr\C}\cap{\mr\D})$ is $G$-syndetic. 
   Clearly $\mrB={\mr\C'}\cap{\mr\D'}$, where ${\mr\C'}=\cap\, C{\cdot}{\mr\C}$ and ${\mr\D'}=\cap\, C{\cdot}{\mr\D}$.
   Note that ${\mr\C'}$ and ${\mr\D'}$ are both strongly $G$-syndetic.
-  In particular $\mrY\subseteq\cup\,F{\cdot}\mr\D'$ for some finite $F\subseteq G$.
+  In particular $\mrX\subseteq\cup\,F{\cdot}\mr\D'$ for some finite $F\subseteq G$.
   Note that
   
   \ceq{\hfill\cup\,F{\cdot}\mrB}{=}{\cup\,F{\cdot}\big[{\mr\C'}\ \cap\ {\mr\D'}\big]}

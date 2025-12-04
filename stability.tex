@@ -719,26 +719,19 @@ We use binary trees to prove the following fundamental lemma (attributed by Harn
 
 \def\ceq#1#2#3{\parbox[t]{20ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
 
-% We say that $T$ is a \emph{stable theory\/} if every formula is stable.
-% Most theorems in this section have a formulation that only requires the stability of some given formulas $\phi({\mr x}\,;{\gr z})\in L$.
-
-Let \emph{$\Delta$\/} $\subseteq L_{{\mr x}\,{\gr z}}(\U)$.
-We say that $\Delta$ is stable if all formulas in $\Delta$ are stable.
-% When $|{\mr x}|=|{\gr z}|=\omega$ and $\Delta=L_{{\mr x}\,{\gr z}}$ the stability of $\Delta$ is tantamount to the stability of $T$.
-
 The following corollary of Theorem~\ref{lem_ziegler} is of fundamental importance.
 It implies, in particular the existence of Lascar invariant types.
 
 \begin{corollary}\label{corol_stable_coheir_over_models}
-  Let  $\Delta$ be stable.
+  Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
   Let $q({\mr x})\subseteq L(\U)$ be finitely satisfiable in every $M\supseteq A$.
-  Then there is a type $p({\mr x})\in S_\Delta(\U^{\gr z})$ such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
+  Then there is a type $p({\mr x})\in S_\phi(\U)$ such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
 \end{corollary}
 
 \begin{proof}
-  Let $p({\mr x})\subseteq \pmDelta(\U^{\gr z})$ be maximal such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
+  Let $p({\mr x})\subseteq L_\phi(\U)$ be maximal such that $q({\mr x})\cup p({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
   We prove that $p({\mr x})$ is complete.
-  Suppose not than there are a conjunction $\alpha({\mr x})$ of formulas in $q({\mr x})$, a conjunction $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ of formulas in $p({\mr x})$, and a formula $\phi({\mr x}\,;{\gr b})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$ such that 
+  Suppose not than there are a conjunction $\alpha({\mr x})$ of formulas in $q({\mr x})$, a conjunction $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ of formulas in $p({\mr x})$, and a formula $\phi({\mr x}\,;{\gr b})$ such that 
 
   \hfil$\alpha({\mr x})\wedge\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})\wedge\phi({\mr x}\,;{\gr b})$ \ \ and\ \   $\alpha({\mr x})\wedge\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})\wedge\neg\phi({\mr x}\,;{\gr b})$ 
  
@@ -845,9 +838,9 @@ The following proposition says that in a stable theory with elimination of imagi
 
 \begin{proof}
   Existence follows from Corollary~\ref{corol_stable_coheir_over_models} and Proposition~\ref{prop_type_over_acl2}.
-  To prove uniqueness, pick two types $p_i({\mr x})\in S_\Delta(\U)$, for $i=1,2$, that are finitely consistent with $q({\mr x})$ and invariant over $\acl^\eq\!A$.
-  It suffices to prove that ${\gr\D_{p_1,\phi}}={\gr\D_{p_2,\phi}}$ for every $\phi({\mr x}\,;{\gr z})\in\Delta$.
-  Let ${\gr b}\in\U^{\gr z}$ and $\phi({\mr x}\,;{\gr z})\in\Delta$ be fixed but arbitrary.
+  To prove uniqueness, pick two types $p_i({\mr x})\in S_\phi(\U)$, for $i=1,2$, that are finitely consistent with $q({\mr x})$ and invariant over $\acl^\eq\!A$.
+  It suffices to prove that ${\gr\D_{p_1,\phi}}={\gr\D_{p_2,\phi}}$.
+  Let ${\gr b}\in\U^{\gr z}$ be given.
 
   There exists a type $t({\gr z})\in S_\phi(\U^{\mr x})$ that is finitely satisfied in every model $M\supseteq A$ and is consistent with $\tp({\gr b}/\acl^\eq\!A)$.
   By invariance ${\gr\D_{p_i,\phi}}$ and ${\mr\D_{t,\phi^{\rm op}}}$ are both in $\acl^\eq\!A$.
