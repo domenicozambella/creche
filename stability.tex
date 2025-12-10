@@ -24,7 +24,7 @@ Recall from Section~\ref{invariant_sets} that for every formula $\phi({\mr x}\,;
 
 \ceq{\hfill\emph{$\gr\D_{p,\phi}$}}{=}{\Big\{{\gr a}\in\U^{\gr z}\ :\ \phi({\mr x}\,;{\gr a})\in p\Big\}.}
 
-We say that $\grD$ is \emph{externally definable\/} if $\grD={\gr\D_{p,\phi}}$ for some type $p({\mr x})\in S_\phi(\U^{\gr z})$.
+We say that $\grD$ is \emph{externally definable\/} if $\grD={\gr\D_{p,\phi}}$ for some type $p({\mr x})\in S_\phi(\U)$.
 % We say that $\grD$ is externally definable \emph{by $p({\mr x})$ and $\phi({\mr x}\,;{\gr z})$}.
 
 Equivalently, a set $\grD$ is externally definable if it is the trace over $\U^{\gr z}$ of a set which is definable in some elementary extension of $\U$.
@@ -768,7 +768,7 @@ We deduce a version of Harrington's mysterious Lemma cf.~\cite{TZ}*{Lemma 8.3.4}
 
 \begin{corollary}\label{corol_harrington1}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
-  Let $p({\mr x})\in S_\phi(\U^{\gr z})$ and $q({\gr z})\in S_{\phi^{\rm op}}(\U^{\mr x})$ be invariant over $M$.
+  Let $p({\mr x})\in S_\phi(\U)$ and $q({\gr z})\in S_{\phi^{\rm op}}(\U^{\mr x})$ be invariant over $M$.
   Then for every ${\mr a}\models p({\mr x}){\restriction}M$ and ${\gr b}\models q({\gr z}){\restriction}M$\smallskip
   
   \ceq{\hfill{\mr a}\in{\mr\D_{q,\phi^{\rm op}}}}{\iff}{{\gr b}\in{\gr\D_{p,\phi}}.}
@@ -794,7 +794,7 @@ Now we show that under the assumption of stability Lascar invariance reduces to 
 
 \begin{proposition}\label{prop_type_over_acl2}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
-  Then for every $p({\mr x})\in S_\phi(\U^{\gr z})$ the following are equivalent
+  Then for every $p({\mr x})\in S_\phi(\U)$ the following are equivalent
   \begin{itemize}
   \item[1.] ${\gr\D_{p,\phi}}\in \acl^\eq\!A$
   \item[2.] $p({\mr x})$ is finitely satisfied in every $M\supseteq A$
@@ -821,7 +821,7 @@ Now we show that under the assumption of stability Lascar invariance reduces to 
 \end{proof}
 
 A type $q({\mr x})\subseteq L(\U)$ is \emph{stationary\/} if there is a unique global type $p({\mr x})\in S_\phi(\U)$ that is Lascar invariant over $A$.
-The sets $\phi({\mr x}\,;{\gr z})$ and $A$ are to be inferred from the context.
+The formula $\phi({\mr x}\,;{\gr z})$ and the set $A$ are to be inferred from the context.
 The following proposition says that in a stable theory with elimination of imaginaries types over algebraically closed sets are stationary.
 
 % Finally, define \emph{$\GDelta(A)$\/} to be the set of formulas $\phi({\mr x})\in\BDelta(\U)$ that are invariant over $A$.
@@ -831,18 +831,17 @@ The following proposition says that in a stable theory with elimination of imagi
 
 \begin{theorem}[ (Stationarity)]\label{thm_stationarity}
   Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
-  Let $q({\mr x})\subseteq L(\U)$ be a type that is finitely satisfiable in every $M\supseteq A$.
   Assume $q({\mr x})$ decides all Boolean combinations of formulas of the form $\phi({\mr x}\,;{\gr b})$ for any ${\gr b}\in\U^{\gr z}$ that are invariant over $\acl^\eq\!A$.
-  Then there is a unique type $p({\mr x})\in S_\phi(\U)$ finitely consistent with $q({\mr x})$ that is invariant over $\acl^\eq\!A$.
+  Then $q({\mr x})$ is stationary.
 \end{theorem}
 
 \begin{proof}
   Existence follows from Corollary~\ref{corol_stable_coheir_over_models} and Proposition~\ref{prop_type_over_acl2}.
-  To prove uniqueness, pick two types $p_i({\mr x})\in S_\phi(\U)$, for $i=1,2$, that are finitely consistent with $q({\mr x})$ and invariant over $\acl^\eq\!A$.
+  To prove uniqueness, pick two types $p_i({\mr x})\in S_\phi(\U)$, for $i=1,2$, that are finitely consistent with $q({\mr x})$ and invariant over $\acl^\eq\!A$ (equivalently, Lascar invariant over $A$).
   It suffices to prove that ${\gr\D_{p_1,\phi}}={\gr\D_{p_2,\phi}}$.
   Let ${\gr b}\in\U^{\gr z}$ be given.
 
-  There exists a type $t({\gr z})\in S_\phi(\U^{\mr x})$ that is finitely satisfied in every model $M\supseteq A$ and is consistent with $\tp({\gr b}/\acl^\eq\!A)$.
+  There exists a type $t({\gr z})\in S_{\phi^{\rm op}}(\U)$ that is finitely satisfied in every model $M\supseteq A$ and is consistent with $\tp({\gr b}/\acl^\eq\!A)$.
   By invariance ${\gr\D_{p_i,\phi}}$ and ${\mr\D_{t,\phi^{\rm op}}}$ are both in $\acl^\eq\!A$.
   Let $M\supseteq A$.
   Let ${\mr a_i}\models p_i({\mr x}){\restriction}M$ and ${\gr b'}\models t({\gr z}){\restriction}M$.
@@ -887,26 +886,26 @@ The following theorem presents a property of definability that seems to go in th
 It has an application in the proof of Theorem~\ref{thm_thick_finsat}.
 
 \begin{theorem}\label{thm_stability_definable_rovescio1}
-  Let $\phi({\mr x}\,;{\gr z})$ be stable.
-  Let $M$ and ${\gr b}\in\U^{\gr z}$ be arbitrary.
+  Let $\phi({\mr x}\,;{\gr z})\in L(M)$ be stable.
+  Let ${\gr b}\in\U^{\gr z}$ be arbitrary.
   Then, for some ${\gr b_i}\equiv_M{\gr b}$, where $i=1,\dots,n$, some positive Boolean combination of the sets $\phi(\U^{\mr x};{\gr b_i})$ is definable over $M$.
 \end{theorem}
 
 \begin{proof}
   Let $\V\preceq\U$ be isomorphic to $\U$ over $M$.
   By Theorem~\ref{thm_def_stable_formula} with $\V$ for $\U$ and the role of the two sorts reversed, there are  some  ${\gr b_i}\equiv_M{\gr b}$ in $\V$, such that $\phi(\V^{\mr x}\,;{\gr b})$ is a positive Boolean combination of the sets $\phi(\V^{\mr x}\,;{\gr b_i})$.
-  Let $\theta(\V^{\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be such a Boolean combination.
+  Let $\theta(\V^{\mr x}\,;{\gr\bar b})$, where ${\gr\bar b} = {\gr b_1}, \dots, {\gr b_n}$, be such a Boolean combination.
   Now, by Proposition~\ref{prop_saturate_heir}, we can choose $\V$ such that ${\gr b}\cnonfork_M\V$.
   By non-splitting, i.e.\@ reasoning as in Theorem~\ref{thm_symmetry}, there is a formula $\psi({\mr x})\in L(M)$ such that $\psi(\V^{\mr x})=\phi(\V^{\mr x}\,;{\gr b})$.
-  Finally, by elementarity, we obtain that $\psi(\U^{\mr x})=\theta(\U^{\mr x};{\gr b_1},\dots,{\gr b_n})$.
+  Finally, as ${\gr\bar b}$ is in $\V$, by elementarity we obtain that $\psi(\U^{\mr x})=\theta(\U^{\mr x};{\gr\bar b})$.
 \end{proof}
 
 A more general version of the theorem holds, but it requires a different proof.
 It is not necessary in the following.
 
 \begin{theorem}\label{thm_stability_definable_rovescio2}
-  Let $\phi({\mr x}\,;{\gr z})\in L(\U)$ be stable.
-  Let $A$ and ${\gr b}\in\U^{\gr z}$ be arbitrary.
+  Let $\phi({\mr x}\,;{\gr z})\in L(A)$ be stable.
+  Let ${\gr b}\in\U^{\gr z}$ be arbitrary.
   Then, for some ${\gr b_i}\equiv_{\acl^\eq\!A}{\gr b}$, where $i=1,\dots,n$, some positive Boolean combination of the sets $\phi(\U^{\mr x};{\gr b_i})$ is definable over $A$.
 \end{theorem}
 
@@ -938,221 +937,153 @@ It is not necessary in the following.
 
 \def\DLascar{L\kern-.6ex\raisebox{1.1ex}{\tiny$\Delta$}\kern-.1ex ascar}
 
-\noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
-Section under major revision.
+% \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
+% Section under major revision.
 
 We adopt the notation and terminology of Chapter~\ref{actions}.
-The set $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ is fixed and assumed to be stable.
-The set $\grZ\subseteq\U^{\gr z}$ is arbitrary, while $\mrX$ will be specified in the context.
-As in Chapter~\ref{actions}, \emph{$G$\/} is a subgroup of $\Aut(\UDelta)$.
-We write \emph{$H$\/} for $\Autf(\UDelta)$.
-Therefore $H$-invariance is Lascar invariance over $\varnothing$ in the language $\LDelta$.
-We stress that in this section $H$ is not required to be a subgroup of $G$.
+We are interested in the action of the groups $\Aut(\U/\!A)$ and $\Aut(\U/\acl^\eq\!A)$, which we abbreviate to \emph{$G$} and \emph{$H$,} respectively.
+Clearly $H\trianglelefteq G$.
+To any given formula $\phi({\mr x}\,;{\gr z})\in L(A)$ we associate the set $\Delta$ containing Boolean combinations of the formulas $\phi({\mr x}\,;{\gr z_i})$, where ${\gr z_i}$ are copies of ${\gr z}$.
+In this section $\grZ=\U^{\gr z}$, while $\mrX$ will be specified in the context.
 
-% \ceq{\hfill\Psi}{=}{\big\{\theta({\gr z})\in\BDelta(\mrX)\ : \textrm{ with finite $G$-orbit}\big\}}
+% \ceq{\hfill\Psi}{=}{\big\{\theta({\gr z})\in\BDelta(\mrX)\ : \textrm{ with finite $H$-orbit}\big\}}
 
 % Let $K=\Aut(\UDelta/\Psi)$, i.e.\@ the set of automorphisms that fix every $\Psi$-definable set.
 % Clearly, $H\le K$.
 
 % \begin{remark}\label{rem_type_over_acl2}
 %   Let $\Delta$ be stable.
-%   Reading Proposition~\ref{prop_type_over_acl2} in the language $\LDelta$, we obtain that $p({\mr x})$ is $H$-invariant if and only if for every $\phi({\mr x}\,;{\gr z})\in\Delta$ the sets ${\gr\D_{p,\phi}}$ have finite $G$-orbit.
+%   Reading Proposition~\ref{prop_type_over_acl2} in the language $\LDelta$, we obtain that $p({\mr x})$ is $H$-invariant if and only if for every $\phi({\mr x}\,;{\gr z})\in\Delta$ the sets ${\gr\D_{p,\phi}}$ have finite $H$-orbit.
 %   By stability, the sets ${\gr\D_{p,\phi}}$ are $\BDelta(\mrX)$-definable.
 %   Therefore if $p({\mr x})$ is $H$-invariant then it is also $K$-invariant (the converse is trivial).
 % \end{remark}
 
-The following theorem shows that when $\Delta$ is stable Theorem~\ref{thm_coalesce} applies (however, note the requirement on $\mrX$).
-% The second part is shows that in some cases $H$ can be replaced by $K$.
+The following theorem shows that when $\phi({\mr x}\,;{\gr z})$ is stable Theorem~\ref{thm_coalesce} applies for suitable set $\mrX$.
 
 \begin{theorem}\label{thm_thick_finsat}
-  Let $\Delta$ be stable.
-  Let $\mrX=q(\U^{\mr x})$, where $q({\mr x})\subseteq\LDelta(\mrX,\grZ)$ be a type that is finitely satisfiable in every $\LDelta$-model (in particular $\mrX$ is $H$-invariant).
-  Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent 
+  Let $\phi({\mr x}\,;{\gr z})\in L(A)$ be stable.
+  Let $\mrX=q(\U^{\mr x})$, where $q({\mr x})\subseteq L(\U)$ is a small type that is finitely satisfiable in every $M\supseteq A$.
+  Then for every $\Delta(\grZ)$-definable set $\mrD$ the following are equivalent 
   \begin{itemize}
     \item[1.] $\mrD$ is $H$-thick
     \item[2.] $\mrD$ is $H$-wide.
   \end{itemize}\smallskip
 \end{theorem}
 \begin{proof}
-  % Implications \ssf2$\IMP$\ssf1 and \ssf4$\IMP$\ssf3 are trivial.
-  % Implications \ssf3$\IMP$\ssf1 and \ssf4$\IMP$\ssf3 hold because  $H\le K$.
-  The implication \ssf2$\IMP$\ssf1 is trivial.
-  We prove the converse.
-  As Boolean combinations of stable formulas are stable, we can assume that $\mrD$ is defined by the formula $\phi({\mr x}\,;{\gr b})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$.
+  We only need to prove \ssf1$\IMP$\ssf2 because the converse is trivial.
+  As Boolean combinations of stable formulas are stable, for simplicity we assume that $\mrD$ is defined by the formula $\phi({\mr x}\,;{\gr b})$.
 
-  It suffices to prove that $q({\mr x})\cup\{\phi({\mr x}\,;{\gr b})\}$ is finitely satisfied in every $\LDelta$-model $M$.
-  Then from Corollary~\ref{corol_stable_coheir_over_models} we obtain a type $p({\mr x})\in S_\Delta(\grZ)$ containing $\phi({\mr x}\,;{\gr b})$ such that $q({\mr x})\cup p({\mr x})$ is finitely  satisfied in every $\LDelta$-model $M$. 
-  As $p({\mr x})$ is $H$-thick, $\mrD$ is $H$-wide by Theorem~\ref{thm_syndetic_invariant2}.
+  It suffices to prove that $q({\mr x})\cup\{\phi({\mr x}\,;{\gr b})\}$ is finitely satisfied in every $M\supseteq A$.
+  Then from Corollary~\ref{corol_stable_coheir_over_models} we obtain a type $p({\mr x})\in S_\phi(\U)$ containing $\phi({\mr x}\,;{\gr b})$ such that $q({\mr x})\cup p({\mr x})$ is finitely  satisfied in every model $M\supseteq A$. 
+  Then $p({\mr x})$ is $H$-invariant, and thertefore $\mrD$ is $H$-wide by Theorems~\ref{thm_syndetic_invariant} and~\ref{thm_syndetic_invariant2}.
   
-  Let $M$ be any  $\LDelta$-model.
-  By invariance we can assume that $q({\mr x})\subseteq\LDelta(M)$.
-  Let $\psi({\mr x})$ be a conjunction of formulas in $q({\mr x})$.
-  We can write $\phi({\mr x}\,;{\gr z})$ for $\psi({\mr x})\wedge\phi({\mr x}\,;{\gr z})$, which is also stable.
-  Let $\theta({\mr x}\,;{\gr b_1},\dots,{\gr b_n})$ be the formula in the proof of Theorem~\ref{thm_stability_definable_rovescio1}.
-  As it is equivalent to a formula in $\LDelta(M)$, by elementarity it is satisfiable in $M$.
-  Hence so is $\phi({\mr x}\,;{\gr b_i})$ for some $i$.
-  As ${\gr b_i}\equiv_M{\gr b}$, also $\phi({\mr x}\,;{\gr b})$ is satisfiable.
-  % \ssf2$\IMP$\ssf4.
-  % Assume \ssf2.
-  % Then some $H$-invariant type $p({\mr x})\in S_\Delta(\grZ)$ entails ${\mr x}\in\mrD$.
-  % By Remark~\ref{rem_type_over_acl2} $p({\mr x})$ is $K$-invariant.
-  % Then $\mrD$ is $K$-wide.
+  Let $M\supseteq A$ be given.
+  By invariance we can assume that $q({\mr x})\subseteq L(M)$.
+  Let $\sigma({\mr x})\in q$, we claim that $\sigma({\mr x})\wedge\phi({\mr x}\,;{\gr b})$ is satisfied in $M$.
+  Let $\theta({\mr x}\,;{\gr\bar b})$ be the formula in the proof of Theorem~\ref{thm_stability_definable_rovescio1} which is equivalent to a formula $\psi({\mr x})\in L(M)$.
+  As $\theta({\mr x}\,;{\gr\bar b})$ is a positive Boolean combination of translations of $\mrD$ and $\mrD$ is $H$-thick, $\theta({\mr x}\,;{\gr\bar b})$ is satisfied in $\mrX\subseteq\sigma(\U^{\mr x})$.
+
+  Then also $\psi({\mr x})$ is satisfied in $\sigma(\U^{\mr x})$ and, by elementarity in $\sigma(M^{\mr x})$.
+  Uning again the positivity of $\theta({\mr x}\,;{\gr\bar b})$ we conclude that $\sigma({\mr x})\wedge\phi({\mr x}\,;{\gr b_i})$ is satisfied in $M$ for some $i$.
+  The claim follows because ${\gr b_i}\equiv_M{\gr b}$.
 \end{proof}
 
-% \begin{proposition}\label{prop_stable_lanscape}
-%   Let $\Delta\subseteq L_{{\mr x}\,{\gr z}}$ be stable.
-%   Let $\mrX= q(\U^{\mr x})$ for some $q({\mr x})\subseteq L(\acl^\eq\!A)$.
-%   Then the equivalent conditions of Theorem~\ref{thm_coalesce} are satisfied.
-% \end{proposition}
+Now, putting together the above theorem, Theorems~\ref{thm_stationarity}, and Fact~\ref{fact_stationarity} we obtain the following 
 
-% \begin{proof}
-%   Let $\mrD$ be a $\BDelta(\U)$-definable set that is weakly $H$- thick.
-%   We prove that $\mrD$ is $H$- thick.
-%   Pick a finite $H\subseteq\Autf(\U/A)$ such that $\cup\,H\,\mrD$ is $H$- thick.
-%   By Theorem~\ref{thm_thick_finsat}, the type $\{{\mr x}\in\cup\,H\,\mrD\}\cup q({\mr x})$ is finitely satisfiable in every $M\supseteq A$.
-%   Then, by Corollary~\ref{corol_stable_coheir_over_models} there is a $H$- invariant type $p({\mr x})\in S_\Delta(\U)$ containing ${\mr x}\in\cup\,H\,\mrD$ and finitely consistent with $q({\mr x})$.
-%   By completeness and invariance ${\mr x}\in\mrD$ is in $p({\mr x})$.
-%   Then $\mrD$ is thick by Theorem~\ref{thm_syndetic_invariant}.
-% \end{proof}
-
-\begin{proposition}\label{prop_stable_syndeticiffthick}
-  Let $\Delta$ be stable.
-  Let $\mrX=q(\U^{\mr x})$, where $q({\mr x})\subseteq\LDelta(\mrX,\grZ)$ is a type that is finitely satisfiable in every $\LDelta$-model and decides all $H$-invariant $\BDelta(\grZ)$-formulas.
-  % Assume that $H$ acts transitively on $\mrX$.
-  Then for every $\mrD\in\BDelta(\grZ)$, the following are equivalent
+\begin{corollary}
+  With the same notation as Theorem~\ref{thm_thick_finsat}, assume also that $q({\mr x})$ decides all Boolean combinations of formulas of the form $\phi({\mr x}\,;{\gr b})$ for any ${\gr b}\in\U^{\gr z}$ that are invariant over $\acl^\eq\!A$.
+  Then for every $\mrD$, the following are equivalent
   \begin{itemize}
     \item[1.] $\mrD$ is $H$-syndetic
-    \item[2.] $\mrD$ is $H$-thick.
-  \end{itemize}\smallskip
-\end{proposition}
-
-\begin{proof}
-  \ssf1$\IMP$\ssf2.
-  By Theorems~\ref{thm_coalesce} and~\ref{thm_thick_finsat}.
-
-  \ssf2$\IMP$\ssf1.
-  Assume $\mrD$ is not $H$-syndetic.
-  Then $\neg\mrD$ is $H$-thick.
-  Assume for a contradiction that also $\mrD$ is $H$-thick.
-  By Theorem~\ref{thm_thick_finsat} both $\mrD$ and $\neg\mrD$ are $H$-wide.
-  Then by Theorem~\ref{thm_syndetic_invariant2} both ${\mr x}\in\mrD$ and ${\mr x}\notin\mrD$ extend to $H$-invariant global $\BDelta(\grZ)$-types.
-  This contradicts the stationarity $q({\mr x})$, see Proposition~\ref{prop_type_over_acl2} and Theorem~\ref{thm_stationarity}.
-\end{proof}
-
-\begin{corollary}\label{corol_stable_syndetic}
-  Let $\Delta$ be stable.
-  Let $\mrX=q(\U^{\mr x})$, where $q({\mr x})\subseteq\LDelta(\mrX,\grZ)$ is a type that is finitely satisfiable in every $\LDelta$-model and decides all $H$-invariant $\BDelta(\grZ)$-formulas.
-  Then for every $\mrD\in\BDelta(\grZ)$, either $\mrD$ or $\neg\mrD$ is $H$-syndetic.
+    \item[2.] $\mrD$ is $H$-thick.\smallskip
+  \end{itemize}
+  In other words, either $\mrD$ or $\neg\mrD$ is $H$-syndetic.
 \end{corollary}
 
-\begin{proof}
-  By Theorem~\ref{thm_stationarity} there is a type $p({\mr x})\in S_\Delta(\grZ)$ consistent with $q({\mr x})$ that is $H$-invariant and therefore thick.
-  Hence, by Corollary~\ref{corol_def_mu}, $\mrD$ and $\neg\mrD$ are not both $H$-syndetic.
-  If $\mrD$ is not $H$-syndetic then $\neg\mrD$ is $H$-thick and, by Proposition~\ref{prop_stable_syndeticiffthick}, $H$-syndetic.
-\end{proof}
+Stationarity and definability of stable types allows to strengthen Theorem~\ref{thm_Shelah_strong_types}.
+This is known as Shelah's \textit{finite equivalence relation theorem.}
+(A major difference is that below in \ssf4 we can use a single finite equivalence relation for the relation $\equivSh$.)
 
 \begin{theorem}\label{thm_FER}
-  Let $\Delta$ be stable.
-  Let $\mrX=t(\U^{\mr x})$, where $t({\mr x})\in\LDelta\mbox{-}S(\varnothing)$.
+  \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
+  \def\ceq#1#2#3{\parbox[t]{3ex}{$\displaystyle #1$}\medrel{#2}$\displaystyle  #3$}
+  Let $\phi({\mr x}\,;{\gr z})\in L(A)$ be stable.
+  Let $\mrX=\pi(\U^{\mr x})$, for some $\pi({\mr x})\in S(A)$.
   Define \smallskip
-  
-  \ceq{\hfill P}{=}{\big\{p({\mr x})\in S_\Delta(\grZ)\ :\ p({\mr x})\textrm{ is $H$-invariant}\big\}}. \smallskip
+
+  \ceq{\hfill P}{=}{\big\{p({\mr x})\in S_\phi(\U)\ :\ \textrm{ consistent with }\pi({\mr x})\textrm{ and }H\text{-invariant}\big\}}.\medskip
+
+  \ceq{\hfill Q}{=}{\big\{q({\mr x})\in S(\acl^\eq\!A)\ :\  q({\mr x})\supseteq \pi({\mr x})\big\}}.\medskip
   
   Then the following hold
   \begin{itemize}
-    \item [1.] $G$ acts transitively on $P$
-    \item [2.] if $\Delta$ is finite, then $P$ is finite
-    % \item [3.] there is a finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in\GDelta(A)$ such that for all $p_i,p_j\in P$ 
-    
-    % \ceq{\hfill p_i=p_j}{\IFF}{p_i({\mr x})\cup p_j({\mr y}) \textrm{ is consistent with }\epsilon({\mr x},{\mr y})}.
-    % 
-    \item [3.] let $E$ be as in Definition~\ref{def_G0}~--~then for every ${\mr a}\in\mrX$ there is a unique $p({\mr x})\in P$ that is consistent with $\big\{\epsilon({\mr x}\,;{\mr a})\ :\ \epsilon({\mr x}\,;{\mr y})\in E\big\}$.
+
+    \item [1.] concistency is a one-to-one correspondence between $P$ and $Q$
+    \item [2.] $G$ acts transitively on $P$
+    \item [3.] $P$ is finite
+    \item [4.] there is a finite equivalence relation $\epsilon({\mr x}\,;{\mr y})\in L(A)$ such that for every $c\in\U^{\mr x}$ there is a unique $p({\mr x})\in P$ consistent with $\epsilon({\mr x}\,;{\mr c})$.
+    \item[5.] the types in $P$ are $G$-syndetic.
   \end{itemize}
 \end{theorem}
 
 \begin{proof}
   \ssf1.
-  Let $p_i({\mr x})$, for $i=1,2$, be two elements of $P$.
-  Let $\Phi$ be as in Definition~\ref{def_G0}.
-  Note that the formulas in $\Phi$ are exactly those that are $H$-invariant.
-  Write $q_i({\mr x})$ for the set of $\Phi$-formulas that are consequence of $p_i({\mr x})$.
-  Note that $G$ acts transitively on $\mrX$.
-  Therefore, by the mentioned lemma, $f\,q_1({\mr x})=q_2({\mr x})$ for some $f\in G$.
-  Then $f\,p_1({\mr x})$ is consistent with $q_2({\mr x})$.
-  By stationarity $f\,p_1({\mr x})=p_2({\mr x})$.
-
+  Clear, as the types in $Q$ are stationary by Theorem~\ref{thm_stationarity}.
+  
   \ssf2.
-  We may identify a type $p({\mr x})\in S_\Delta(\U)$ with the tuple $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$.
-  The $G$-orbit of $p({\mr x})$ corresponds to the $G$-orbit of $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$.
-  As $p({\mr x})\in P$ is $H$-invariant the sets ${\gr\D_{p,\phi}}$ have a finite $G$-orbit.
-  If $\Delta$ is finite, also the orbit of $\<{\gr\D_{p,\phi}}:\phi({\mr x}\,;{\gr z})\in\Delta\>$ is finite, and so is the orbit of $p({\mr x})$.
-  Therefore by \ssf1, $P$ is finite.
+  By Proposition~\ref{prop_trans_action}, $\Aut(\U/\!A)$ acts transitively on $Q$.
+  Then by \ssf1 it also acts transitively on $P$.
 
   \ssf3.
-  Follows immediately from stationarity.
+  We may identify a type $p({\mr x})\in S_\phi(\U)$ with the set ${\gr\D_{p,\phi}}$.
+  The orbit over $A$ of $p({\mr x})\in P$ corresponds to the orbit over $A$ of ${\gr\D_{p,\phi}}$.
+  As $p({\mr x})\in P$ is invariant over $\acl^\eq\!A$, the sets ${\gr\D_{p,\phi}}$ have a finite orbit over $A$.
+  Therefore by \ssf2, $P$ is finite.
+
+  \ssf4.
+  By Theorem~\ref{thm_Shelah_strong_types} and \ssf3.
+
+  \ssf5.
+  By \ssf2 and \ssf3.
 \end{proof}
 
-\begin{theorem}\label{thm_Gsyndetic_thick}
-  Let $\Delta$ be stable.
-  Let $\mrX=t(\U^{\mr x})$, where $t({\mr x})\in\LDelta\mbox{-}S(\varnothing)$.
-  Assume $G$ acts transitively on $\mrX$.
-  Then for every $\mrD\in\BDelta(\grZ)$ the following are equivalent
+\begin{proposition}\label{prop_Gsyndetic_thick}
+  Let $\phi({\mr x}\,;{\gr z})\in L(A)$ be stable.
+  Let $\mrX=\pi(\U^{\mr x})$, where $\pi({\mr x})\in S(A)$.
+  Then for every $\mrD$ the following are equivalent
   \begin{itemize}
     \item [1.] $\mrD$ is $G$-syndetic
     \item [2.] $\mrD$ is $H$-wide.
   \end{itemize}\smallskip
-\end{theorem}
+\end{proposition}
 
 \begin{proof} 
   \ssf1$\IMP$\ssf2.
-  By stability, there exist a type $p({\mr x})\in S_\Delta(\grZ)$ that is $H$-invariant.
-  Then $\gamma_H({\mr x})$ is consistent and Proposition~\ref{prop_Gsyndetic_Hthick1} applies.
+  By stability, there exist a type $p({\mr x})\in S_\phi(\U)$ that is $H$-invariant.
+  Then $\Sigma_H({\mr x})$ is consistent and Proposition~\ref{prop_Gsyndetic_Hthick1} applies.
   
   \ssf2$\IMP$\ssf1.
-  % Negate \ssf1.
-  % Then $\neg\mrD$ is $G$-thick.
-  By \ssf2, there is an $H$-invariant type $p({\mr x})\in S_\Delta(\grZ)$ consistent with ${\mr x}\in\mrD$.
-  Let $q({\mr x})$ be the set of $\Phi$-formulas that are consequence of $p({\mr x})$, where $\Phi$ is as in Definition~\ref{def_G0}.
-  Then $\mrD$ is $H$-wide relative to $q(\U^{\mr x})$ and, by Proposition~\ref{prop_stable_syndeticiffthick}, $H$-syndetic relative to $q(\U^{\mr x})$.
-  For every $g\in G$ we also have that $g{\cdot}\mrD$ is $H$-syndetic relative to $g{\cdot}q(\U^{\mr x})$.
-  Therefore $\mrD$ is also $H$-syndetic relative to $g{\cdot}q(\U^{\mr x})$.
-  The $G$-orbit of $q(\U^{\mr x})$ has small cardinality and covers $\mrX$.
-  Therefore there is a set $C\subseteq G$ of small cardinality such that $\cup\,C{\cdot}\mrD$ covers $t(\U^{\mr x})$.
-  By compactness, we can take $C$ finite.
-  % \ssf1$\IMP$\ssf2.
-  % Let ${\gr g}$ be given.
-  % By stability, there is a type $p({\mr x})\in L'\mbox{-}S(\grZ)$ that is invariant, and therefore definable, over $L'\mbox{-}\acl^\eq\varnothing$.
-  % If $\phi({\mr x}\,;{\gr g})$ is $\grZ$-syndetic, $p({\mr x})\proves\phi({\mr x}\,;{\gr h}\,{\gr g})$ for some ${\gr h}\in\grZ$.
-  % Then $\phi({\mr x}\,;{\gr g})\in{\gr h^{-1}}p$.
-  % We claim that ${\gr h^{-1}}p({\mr x})$ is also definable over $L'\mbox{-}\acl^\eq\varnothing$.
-  % Indeed, it suffices to note that ${\gr\D_{{h^{-1}}p,\phi}}={\gr h^{-1}}\,{\gr\D_{p,\phi}}$ and that if ${\gr\D_{p,\phi}}\in L'\mbox{-}\acl^\eq\varnothing$ then also ${\gr h^{-1}}\,{\gr\D_{p,\phi}}\in L'\mbox{-}\acl^\eq\varnothing$.
-  % Now read ${\gr h^{-1}}p({\mr x})$ as a type $q({\mr x})\in S_\Delta(\grZ)$ in the natural way.
-  % Note that $\phi({\mr x}\,;{\gr g})\in q$ and that $q({\mr x})$ is definable over $\acl^\eq\varnothing$ since this is a superset of $L'\mbox{-}\acl^\eq\varnothing$.
-  % This shows that there is $H$-invariant type containing $\phi({\mr x}\,;{\gr g})$.
-  % As the finite satisfiability in $\mrX$ is evident, \ssf1 follows.
-  % \ssf3$\IMP$\ssf1.
-  % Let ${\gr g}$ be such that $\phi({\mr x}\,;{\gr g})$ is not $H$-thick.
-  % Then $\neg\phi({\mr x}\,;{\gr g})$ is $H$-syndetic.
-  % Then it is also  $\grZ$-syndetic.
-  % The $\grZ$-syndeticity of $\neg\phi({\mr x}\,;{\gr 1})$ follows.
+  By \ssf2, there is an $H$-invariant type $p({\mr x})\in S_\phi(\U)$ consistent with ${\mr x}\in\mrD$.
+  Then $p({\mr x})\in P$ of Theorem~\ref{thm_FER} and, therefore it is  $G$-syndetic.
 \end{proof}
 
-Finally we prove that $Q=P$, where $Q$ is as defined in Definition~\ref{def_Q} and $P$ is as in Theorem~\ref{thm_Gsyndetic_thick}.
-In particular $H=\Stab(P)=\Stab(Q)$.
-
 \begin{theorem}\label{thm_P=Q}
-  Let $\Delta$ be stable.
-  Let $\mrX=t(\U^{\mr x})$, where $t({\mr x})\in\LDelta\mbox{-}S(\varnothing)$.  
-  Then $Q=P$.%there is a one-to-one correspondence between $Q$ and $P$ given by the relation $q({\mr x})\cup p({\mr x})$ is consistent.
+  Let $\phi({\mr x}\,;{\gr z})\in L(A)$ be stable.
+  Let $Q_G$ be as in Definition~\ref{def_Q} and $P$ be as in Theorem~\ref{thm_FER}.
+  Let $\mrX=\pi(\U^{\mr x})$, for some $\pi({\mr x})\in S(A)$.
+  Then $Q_G=P$.
 \end{theorem}
 
 \begin{proof}
+  $\supseteq$. 
   Let $p({\mr x})\in P$.
   All formulas in $p({\mr x})$ are $H$-wide, and therefore $G$-syndetic.
-  As $p({\mr x})$ complete, $p({\mr x})\in Q$.
-  Let $q({\mr x})\in Q$ be given.
-  By Theorem~\ref{thm_FER}, every formula in $q({\mr x})$ is $H$-wide, then $q({\mr x})$ is consistent with some $p({\mr x})\in P$.
-  By completeness $q({\mr x})=p({\mr x})$.
+  As $p({\mr x})$ complete, $p({\mr x})\in Q_G$.
+
+  $\subseteq$. 
+  Let $q({\mr x})\in Q_G$.
+  By Theorem~\ref{prop_Gsyndetic_thick}, $q({\mr x})$ is $H$-wide, then $q({\mr x})$ is consistent with some $p({\mr x})\in P$.
+  Then, the first inclusion, $q({\mr x})=p({\mr x})$.
 \end{proof}
 
 
@@ -1166,7 +1097,7 @@ In particular $H=\Stab(P)=\Stab(Q)$.
 
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
-Section under major revision.
+Section to be overhauled
 
 We assume the hypotheses and the notation of Section~\ref{definablegroups}.
 Recall that $\Psi\subseteq L_{\mr x}(A)$ is some fixed set of formulas and \emph{$\Delta$\/} contains the formulas $\phi({\mr x}\,;{\gr z})$ of the form  $\psi({\gr z^{-1}}\!\cdot{\mr x})$ for $\psi({\mr x})\in\Psi$.
