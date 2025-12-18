@@ -888,14 +888,14 @@ It has an application in the proof of Theorem~\ref{thm_thick_finsat}.
 \begin{theorem}\label{thm_stability_definable_rovescio1}
   Let $\phi({\mr x}\,;{\gr z})\in L(M)$ be stable.
   Let ${\gr b}\in\U^{\gr z}$ be arbitrary.
-  Then, for some ${\gr b_i}\equiv_M{\gr b}$, where $i=1,\dots,n$, some positive Boolean combination of the sets $\phi(\U^{\mr x};{\gr b_i})$ is definable over $M$.
+  Then, for some ${\gr b_i}\equiv_M{\gr b}$, where $i=1,\dots,n$, there is a positive Boolean combination of the formulas $\phi({\mr x};{\gr b_i})$ which is equivalent to a formula in $L(M)$.
 \end{theorem}
 
 \begin{proof}
-  Let $\V\preceq\U$ be isomorphic to $\U$ over $M$.
+  Let $\V\preceq\U$ be isomorphic to $\U$ over $M$ and such that ${\gr b}\cnonfork_M\V$.
+  Such a $\V$ exists by Proposition~\ref{prop_saturate_heir}.
   By Theorem~\ref{thm_def_stable_formula} with $\V$ for $\U$ and the role of the two sorts reversed, there are  some  ${\gr b_i}\equiv_M{\gr b}$ in $\V$, such that $\phi(\V^{\mr x}\,;{\gr b})$ is a positive Boolean combination of the sets $\phi(\V^{\mr x}\,;{\gr b_i})$.
-  Let $\theta(\V^{\mr x}\,;{\gr\bar b})$, where ${\gr\bar b} = {\gr b_1}, \dots, {\gr b_n}$, be such a Boolean combination.
-  Now, by Proposition~\ref{prop_saturate_heir}, we can choose $\V$ such that ${\gr b}\cnonfork_M\V$.
+  Let $\theta({\mr x};{\gr\bar b})$, where ${\gr\bar b} = {\gr b_1}, \dots, {\gr b_n}$, be the formula that defines such a Boolean combination.
   By non-splitting, i.e.\@ reasoning as in Theorem~\ref{thm_symmetry}, there is a formula $\psi({\mr x})\in L(M)$ such that $\psi(\V^{\mr x})=\phi(\V^{\mr x}\,;{\gr b})$.
   Finally, as ${\gr\bar b}$ is in $\V$, by elementarity we obtain that $\psi(\U^{\mr x})=\theta(\U^{\mr x};{\gr\bar b})$.
 \end{proof}
@@ -906,14 +906,14 @@ It is not necessary in the following.
 \begin{theorem}\label{thm_stability_definable_rovescio2}
   Let $\phi({\mr x}\,;{\gr z})\in L(A)$ be stable.
   Let ${\gr b}\in\U^{\gr z}$ be arbitrary.
-  Then, for some ${\gr b_i}\equiv_{\acl^\eq\!A}{\gr b}$, where $i=1,\dots,n$, some positive Boolean combination of the sets $\phi(\U^{\mr x};{\gr b_i})$ is definable over $A$.
+  Then, for some ${\gr b_i}\equiv_{\acl^\eq\!A}{\gr b}$, where $i=1,\dots,n$, there is a positive Boolean combination of the formulas $\phi({\mr x};{\gr b_i})$ which is equivalent to a formula in $L(A)$.
 \end{theorem}
 
 \begin{proof}
   Let $q({\gr z})=\tp({\gr b}/\acl^\eq\!A)$.
   By Corollary~\ref{corol_stable_coheir_over_models} there is a type $p({\gr z})\in S_\phi(\U)$ that is finitely consistent with $q({\gr z})$ and invariant over $\acl^\eq\!A$.
   By Theorem~\ref{thm_def_stable_formula}, with the role of the two sorts reversed, there are some ${\gr b_1},\dots,{\gr b_n}\models q({\gr z})$ such that ${\mr\D_{p,\phi^{\rm op}}}$ is equivalent to a positive Boolean combination of the sets $\phi(\U^{\mr x};{\gr b_i})$.
-  Let $\theta(\U^{\mr x};{\gr b_1},\dots,{\gr b_n})$ be such a Boolean combination.
+  Let $\theta({\mr x};{\gr b_1},\dots,{\gr b_n})$ be the formula that defines such a Boolean combination.
   As ${\mr\D_{p,\phi^{\rm op}}}\in\acl^\eq\!A$ by Proposition~\ref{prop_type_over_acl2}, this proves the theorem when $A=\acl^\eq\!A$.
 
   For the general case, reason as follows.
@@ -1057,7 +1057,7 @@ This is known as Shelah's \textit{finite equivalence relation theorem.}
   \end{itemize}\smallskip
 \end{proposition}
 
-\begin{proof} 
+\begin{proof}
   \ssf1$\IMP$\ssf2.
   By stability, there exist a type $p({\mr x})\in S_\phi(\U)$ that is $H$-invariant.
   Then $\Sigma_H({\mr x})$ is consistent and Proposition~\ref{prop_Gsyndetic_Hthick1} applies.
@@ -1077,7 +1077,7 @@ This is known as Shelah's \textit{finite equivalence relation theorem.}
 \begin{proof}
   $\supseteq$. 
   Let $p({\mr x})\in P$.
-  All formulas in $p({\mr x})$ are $H$-wide, and therefore $G$-syndetic.
+  All formulas in $p({\mr x})$ are $H$-wide, and therefore $G$-syndetic by Proposition~\ref{prop_Gsyndetic_thick}.
   As $p({\mr x})$ complete, $p({\mr x})\in Q_G$.
 
   $\subseteq$. 
