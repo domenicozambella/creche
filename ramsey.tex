@@ -99,15 +99,10 @@ $a_{\restriction i},a_i,{\mr c_{\restriction n}}$ satisfies the induction hypoth
   for every $i<j<\omega$ and $h<k<\omega$.
 \end{exercise}
 
-% \begin{exercise}\label{ex_Ramsey_random}
-%     Let $M$ be a graph with the property that for every finite $A\subseteq M$ there is a $c\in M$ such that $A\subseteq r(c,\U)$. 
-%     (This holds in particular when $M$ is a random graph.)
-%     Prove that for every finite coloring of the edges of $M$, there is a subgraph that is complete and monochromatic.
-% \end{exercise}
-
-\begin{exercise} Let $M$ be a graph with the property that for every finite $A\subseteq M$ there is a $c\in M$ such that $A\subseteq r(c,\U)$. 
-    A star in $M$ is a subgraph whose edges all share a common vertex. We say that a coloring of the edges of $M$ is locally finite if there is a $k$ such that every star has at most $k$ colors.
-    Prove that for every locally finite coloring of the edges of $M$, there is an infinite monochromatic complete subgraph.
+\begin{exercise} 
+  Let $M$ be a graph with the property that for every finite $A\subseteq M$ there is a $c\in M$ such that $A\subseteq r(c,M)$.
+  The edges of $M$ are colored with infinitely many colors but every clique contains at most $k$ colors, for some fixed $k\in\omega$.
+  Prove that $M$ has an infinite monochromatic complete subgraph.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -243,7 +238,7 @@ For any two sets $\mrA,\mrB\subseteq\mrS$ we define
 {=}
 {\Big\{ {\mr a}{\cdot}{\mr b}
 \ :\ 
-{\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\cnonfork_S{\mr b}\Big\}}
+{\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\nonfork_S{\mr b}\Big\}}
 
 In this and the next section we abbreviate $\Orbit({\mr a}/S)$, 
 the orbit of ${\mr a}$ under $\Aut(\U/S)$, 
@@ -260,7 +255,7 @@ for any ${\mr b}$.
   Then the set $\mrA*{\mr b}$ is defined by the type $q({\mr y})=\E {\mr x},{\mr z}\ \big[ {\mr y}={\mr x}{\cdot}{\mr z}\ \wedge\ {\mr x}\in\mrA \ \wedge\ p({\mr x}\,;{\mr z})\big]$.
 \end{proof}
 
-From the invariance of $\cnonfork_S$ it follows immediately that $f[\mrA*\mrB]=f[\mrA]*f[\mrB]$ for every $f\in\Aut(\U/S)$.
+From the invariance of $\nonfork_S$ it follows immediately that $f[\mrA*\mrB]=f[\mrA]*f[\mrB]$ for every $f\in\Aut(\U/S)$.
 %
 Therefore, when $\mrA$ and $\mrB$ are invariant over $S$,
 also $\mrA*\mrB$ is invariant over $S$.
@@ -274,12 +269,12 @@ For every $S$-invariant sets $\mrA$, $\mrB$, and $\mrC$\smallskip
 {\big(\mrA*\mrB\big)*\mrC}
 \end{proposition}
 \begin{proof}
-Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ where ${\mr a}\cnonfork_S{\mr b}{\cdot}{\mr c}$ and ${\mr b}\cnonfork_S{\mr c}$.
+Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ where ${\mr a}\nonfork_S{\mr b}{\cdot}{\mr c}$ and ${\mr b}\nonfork_S{\mr c}$.
 By extension (Lemma~\ref{lem_coheir_independence}),
 there exists ${\mr a'}$ such that 
-${\mr a}\equiv_{S,\,{\mr b}{\cdot}{\mr c}}{\mr a'}\cnonfork_S{\mr b}{\cdot}{\mr c},\,{\mr b},\,{\mr c}$.
+${\mr a}\equiv_{S,\,{\mr b}{\cdot}{\mr c}}{\mr a'}\nonfork_S{\mr b}{\cdot}{\mr c},\,{\mr b},\,{\mr c}$.
 By transitivity (again Lemma~\ref{lem_coheir_independence}),
-${\mr a'}{\cdot}{\mr b}\cnonfork_S{\mr c}$.
+${\mr a'}{\cdot}{\mr b}\nonfork_S{\mr c}$.
 Therefore ${\mr a'}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.
 Finally, as ${\mr a'}\equiv_{S,\,{\mr b}{\cdot}{\mr c}}{\mr a}$,
 also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by $S$-invariance.
@@ -289,12 +284,12 @@ We show that, under the assumption of stationarity,
 $*$ is an operation on  $\U^{\mr x}/{\equiv_S}$.
 
 \begin{proposition}\label{prop_orbits_main}
-Assume $\cnonfork_S$ is stationary,
+Assume $\nonfork_S$ is stationary,
 see Definition~\ref{def_coheir_stationary}.
-Fix ${\mr a}\cnonfork_S{\mr b}$ arbitrarily.
+Fix ${\mr a}\nonfork_S{\mr b}$ arbitrarily.
 Then ${\mr a'}{\cdot}{\mr b'}\equiv_S{\mr a}{\cdot}{\mr b}$ for every 
 ${\mr a'}\equiv_S{\mr a}$ and  ${\mr b'}\equiv_S{\mr b}$ such that
-${\mr a'}\cnonfork_S{\mr b'}$.
+${\mr a'}\nonfork_S{\mr b'}$.
 Or, in other words, $({\mr a}{\cdot}{\mr b})_S={\mr a}*{\mr b}$.
 \end{proposition}
 %
@@ -305,7 +300,7 @@ Or, in other words, $({\mr a}{\cdot}{\mr b})_S={\mr a}*{\mr b}$.
 \end{proof}
 
 \begin{corollary}[ (associativity)]\label{corol_orbits_associative}
-Assume $\cnonfork_{\!S}$ is stationary.
+Assume $\nonfork_{\!S}$ is stationary.
 Then for every $S$-invariant sets $\mrA$,
 $\mrB$ and  $\mrC$.
 
@@ -318,7 +313,7 @@ $\mrB$ and  $\mrC$.
 We can assume that $\mrA$, $\mrB$ and $\mrC$ are $S$-orbits.
 Say of ${\mr a}$, ${\mr b}$, and ${\mr c}$ respectively.
 As we are working over a model,
-we can assume that ${\mr a}\cnonfork_S{\mr b}{\cdot}{\mr c}$ and ${\mr b}\cnonfork_S{\mr c}$.
+we can assume that ${\mr a}\nonfork_S{\mr b}{\cdot}{\mr c}$ and ${\mr b}\nonfork_S{\mr c}$.
 By Proposition~\ref{prop_orbits_main} the set on the l.h.s.\@ equals $({\mr a}{\cdot}{\mr b}{\cdot}{\mr c})_S$.
 By a similar argument the set on the r.h.s.\@ equals $({\mr a'}{\cdot}{\mr b'}{\cdot}{\mr c'})_S$ for some elements ${\mr a'}$, ${\mr b'}$, and ${\mr c'}$.
 Proposition~\ref{prop_semi_associative} proves that inclusion $\subseteq$ holds in general.
@@ -331,7 +326,7 @@ We say that ${\mr a}\in\mrS$ is \emph{idempotent\/} if it has idempotent orbit.
 Note that if $\mrA$ is idempotent and $\mrB\subseteq\mrA$, then also $\mrA*\mrB$ is idempotent.
 
 \begin{lemma}\label{lem_Hindman}
-Assume $\cnonfork_S$ is stationary.
+Assume $\nonfork_S$ is stationary.
 If $\mrA$ is minimal among the
 idempotent sets that are
 type-definable over $S$, then $\mrA=({\mr b})_S$ for ${\mr b}\in\mrA$.
@@ -445,7 +440,7 @@ with a symbol for $\cpaw$ and one for each subset of $S$.
 Let $\mrS$ be a saturated elementary superstructure of $S$.
 %
 As observed in Remark~\ref{rk_coheir_stationary}, 
-the language makes $\cnonfork_S$ trivially stationary.
+the language makes $\nonfork_S$ trivially stationary.
 
 We write ${\mr\S'}$ for the type-definable set $\{{\mr x} : S\cpaw{\mr x}\}$,
 which is nonempty because $S$ is $\cpaw$-covered.
@@ -453,14 +448,14 @@ which is nonempty because $S$ is $\cpaw$-covered.
 We claim that ${\mr\S'}$ is idempotent.
 %
 In fact, if ${\mr a},{\mr b}\in{\mr\S'}$ 
-then, as $S\cpaw{\mr a},{\mr b}$ and ${\mr a}\cnonfork_S{\mr b}$, 
+then, as $S\cpaw{\mr a},{\mr b}$ and ${\mr a}\nonfork_S{\mr b}$, 
 we must have that ${\mr a}\cpaw{\mr b}$.
 %
 Therefore, from the \cpawdot-closure of $\cpaw$ we infer ${\mr a}{\cdot}{\mr b}\in{\mr\S'}$.
 
 Let ${\mr g_0}$ be an idempotent element of ${\mr\S'}$
 as given by Corollary~\ref{corol_idempotent}.
-Let ${\mr g_1}$ realize ${\mr g_0}\equiv_S{\mr x}\cnonfork_S{\mr g_0}$.
+Let ${\mr g_1}$ realize ${\mr g_0}\equiv_S{\mr x}\nonfork_S{\mr g_0}$.
 %
 Assume for definiteness that ${\mr g_0}$ has color $1$.
 %
@@ -474,7 +469,7 @@ such that the same property holds for $\fp(a_{\restriction i+1},\,{\mr g_0})$.
 
 Note that $\fp(a_{\restriction i},\,{\mr g_1}\,,{\mr g_0})$ has color $1$.
 In fact, ${\mr g_1}\equiv_S{\mr g_0}\equiv_S{\mr g_1}{\cdot}{\mr g_0}$.
-Now, ${\mr g_1}\cnonfork_S{\mr g_0}$ yields some $a_i\in S$ such that  $\fp(a_{\restriction i+1},\,{\mr g_0})$ has color 1.
+Now, ${\mr g_1}\nonfork_S{\mr g_0}$ yields some $a_i\in S$ such that  $\fp(a_{\restriction i+1},\,{\mr g_0})$ has color 1.
 \end{proof}
 
 \begin{exercise}
@@ -493,7 +488,7 @@ Now, ${\mr g_1}\cnonfork_S{\mr g_0}$ yields some $a_i\in S$ such that  $\fp(a_{\
 The Hales-Jewett Theorem is a purely combinatorial statement 
 that implies the van der Waerden Theorem.
 
-Throughout this section we assume that $\cnonfork_{\!S}$ is stationary.
+Throughout this section we assume that $\nonfork_{\!S}$ is stationary.
 
 We work with the same notation as Section~\ref{semigroups}.
 We need a few definitions.
@@ -643,16 +638,16 @@ Hence all elements of $(\sigma\,{\mr a})_S$ are the image of some element in $({
 \ssf{2.} \  
 We have to prove the following equality\smallskip
 
-\ceq{\hfill\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ {\mr a}\equiv_S{\mr a'}\cnonfork_S{\mr b'}\equiv_S{\mr b} \Big\}}
+\ceq{\hfill\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ {\mr a}\equiv_S{\mr a'}\nonfork_S{\mr b'}\equiv_S{\mr b} \Big\}}
 {=}
-{\Big\{{\mr a'}{\cdot}{\mr b'}\ :\ \sigma\,{\mr a}\equiv_S{\mr a'}\cnonfork_S{\mr b'}\equiv_S\sigma\,{\mr b} \Big\}.}\smallskip
+{\Big\{{\mr a'}{\cdot}{\mr b'}\ :\ \sigma\,{\mr a}\equiv_S{\mr a'}\nonfork_S{\mr b'}\equiv_S\sigma\,{\mr b} \Big\}.}\smallskip
 
 It suffices to prove one inclusion because by Proposition~\ref{prop_orbits_main} both sides are orbits.
 We prove $\subseteq$.
-Note that ${\mr a'}\cnonfork_S{\mr b'}$ implies $\sigma\,{\mr a'}\cnonfork_S\sigma\,{\mr b'}$.
+Note that ${\mr a'}\nonfork_S{\mr b'}$ implies $\sigma\,{\mr a'}\nonfork_S\sigma\,{\mr b'}$.
 Hence the set on l.h.s.\@ is contained in the following\smallskip
 
-\hfil$\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ \sigma\,{\mr a'}\cnonfork_S\sigma\,{\mr b'},\ {\mr a'}\equiv_S{\mr a},\  {\mr b'}\equiv_S{\mr b} \Big\}$\smallskip
+\hfil$\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ \sigma\,{\mr a'}\nonfork_S\sigma\,{\mr b'},\ {\mr a'}\equiv_S{\mr a},\  {\mr b'}\equiv_S{\mr b} \Big\}$\smallskip
 
 which is in turn contained in the set on the r.h.s.
 \end{proof}
@@ -671,7 +666,7 @@ there is an $a\in S\sm C$ such that $\{\sigma\,a:\sigma\in\Sigma\}$ is monochrom
 
 \begin{proof}
 Let $\mrS$ be a saturated elementary extension of $S$ in a language that expands the language of semigroups with a symbol for all subsets of $S$.
-As observed in Remark~\ref{rk_coheir_stationary}, this makes $\cnonfork_S$ stationary.
+As observed in Remark~\ref{rk_coheir_stationary}, this makes $\nonfork_S$ stationary.
 The language contains also symbols for the retractions $\sigma:S\to C$.
 Let $\mrC$ be the interpretation of $C$ in $\mrS$.
 Then $\sigma:\mrS\to\mrC$.
