@@ -85,7 +85,6 @@ For every formula $\phi({\mr x}\,;{\gr z})\in L(\U)$ we define
 % We can read the notation in two ways: either the tuple ${\gr z}$ has length $\omega$ and is the same for all formulas, or it is finite and depends on $\phi$.
 % This is possible because adding or erasing dummy variables to the tuple of ${\gr z}$ does not change ${\gr\D_{p,\phi}}$ in any relevant way; in particular, invariance is preserved.
 
-
 A global $\phi$-type $p({\mr x})\in S_\phi(\U)$ can be identified with the set ${\gr\D_{p,\phi}}$.
 Therefore a global type $p({\mr x})\in S(\U)$ can be identified with the collection of the sets ${\gr\D_{p,\phi}}$, where $\phi({\mr x}\,;{\gr z})$ ranges over $L$.
 
@@ -108,6 +107,15 @@ for every ${\gr a},{\gr b}\in\U^{\gr z}$ and ${\mr c}\models p_{\restriction A,{
 When $p({\mr x})\in S(\U)$, this can be rephrased as
 
 \ceq{\ssf{it3$'$.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\equiv_{A,\,{\mr c}}{\gr b}}.
+
+\begin{exercise}\label{ex_invariant_uniqueness}
+  Let $\phi({\mr x}\,;{\gr z})\in L(A)$. 
+  Let $M\supseteq A$ be a sufficiently saturated model.
+  Let $p({\mr x})\in S_\phi(M)$ be invariant over $A$ in the following sense: $p({\mr x})\proves\phi({\mr x}\,;{\gr b})\iff\phi({\mr x}\,;{\gr b'})$ for every ${\gr b}\equiv_A{\gr b'}$ in $M^{\gr z}$.
+  Prove that there is the unique global $\phi$-type that extends $p({\mr x})$ and is invariant over $A$.
+  Prove that such a type do not depends on the choice of $M$.
+  Find a bound on the number of global types that are invariant over $A$.
+\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -500,6 +508,71 @@ which is equivalent to
 The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({\mr x})$ as formulated in \ssf{it3} of Section~\ref{invariant_sets}.
 \end{proof}
 
+\section{Product of types}
+
+We will often need to combine two global invariant types $p({\mr x})$ and $q({\gr z})$ into a single global invariant type $r({\mr x},{\gr z})$ that extends both $p({\mr x})$ and $q({\gr z})$.
+
+\begin{fact}
+  Let $p({\mr x}),q({\gr z})\in S(\U)$ be global types invariant over $A$.
+  Let $M$ be a sufficiently  saturated model containing $A$.
+  Then there is a unique $A$-invariant global type $r({\mr x},{\gr z})\in S(\U)$ containing $p({\mr x})\cup q({\gr z})$ and the formulas $\phi({\mr x}\,;{\gr z})\in L(M)$ such that $\phi({\mr x}\,;{\gr b})\in p$, for some (equivalently, for every) ${\gr b}\models q({\gr z}){\restriction} M$.
+  This type is independent of the choice of $M$.
+\end{fact}
+
+\begin{proof}
+  First, note that the following type is consistent and contains both $p({\mr x})$ and $q({\gr z})$  (this is straightforeward to check)
+
+ \ceq{\hfill s({\mr x},{\gr z})}{=}{\big\{\phi({\mr x}\,;{\gr z})\in L(M)\, :\, \phi({\mr x}\,;{\gr b})\in p \textrm{ for all }{\gr b}\models q({\gr z}){\restriction} M \big\}.}
+
+  We claim that $s({\mr x},{\gr z})$ is complete over $M$.
+  Suppose not. Then there is a formula $\phi({\mr x}\,;{\gr z})\in L(M)$ neither $\phi({\mr x}\,;{\gr z})$ nor $\neg\phi({\mr x}\,;{\gr z})$ belongs to $s({\mr x},{\gr z})$.
+  Then for some ${\gr b},{\gr b'}\models q({\gr z}){\restriction} M$ such that $\neg\phi({\mr x}\,;{\gr b})\in p$ and $\phi({\mr x}\,;{\gr b'})\in p$.
+  As $q({\gr z})$ is complete, ${\gr b}\equiv_M{\gr b'}$.
+  This contradicts the invariance of $p({\mr x})$ over $M$ and proves the claim.
+
+  Finally, we claim that $s({\mr x},{\gr z})$ is invariant in the sense of Exercise~\ref{ex_invariant_uniqueness}.
+  Suppose not.
+  Then $\psi({\mr x}\,;{\gr z}\,;c),\neg\psi({\mr x}\,;{\gr z}\,;c')\in s$ for some $\psi({\mr x}\,;{\gr z}\,;y)\in L$ and some $c,c'\in M^y$ such that $c\equiv_A c'$.
+  Then  $\psi({\mr x}\,;{\gr b}\,;c),\neg\psi({\mr x}\,;{\gr b}\,;c')\in p$ for some ${\gr b}\models q({\gr z}){\restriction} M$.
+  Let $f\in\Aut(\U/A)$ be such that $f[M]=M$ and $f\,c=c'$.
+  This exists by the saturation of $M$.
+  By the invariance of $p({\mr x})$ over $A$, it follows that $\psi({\mr x}\,;f\,{\gr b}\,;c')\in p$.
+  By the invariance of $q({\gr z})$ over $A$, we have $f\big(q({\gr z}){\restriction} M\big)=q({\gr z}){\restriction} M$, so $f\,{\gr b}\models q({\gr z}){\restriction} M$.
+  In particular ${\gr b}\equiv_M f\,{\gr b}$.
+  Then $\psi({\mr x}\,;f\,{\gr b}\,;c'),\neg\psi({\mr x}\,;{\gr b}\,;c')\in p$ contradicts the invariance of $p({\mr x})$ over $M$ and proves the claim.
+
+  Now, by Exercise~\ref{ex_invariant_uniqueness}, there is a unique global type $r({\mr x},{\gr z})$ that extends $s({\mr x},{\gr z})$ and is invariant over $A$.
+  Again by Exercise~\ref{ex_invariant_uniqueness}, $r({\mr x},{\gr z})$ extends both $p({\mr x})$ and $q({\gr z})$.
+\end{proof}
+
+\begin{definition}\label{def_tensor_product}
+  Let $p({\mr x})$ and $q({\gr z})$ be global types invariant over $A$. 
+  The type $r({\mr x},{\gr z})$ defined in the above fact is called the \emph{product\/} of $p({\mr x})$ and $q({\gr z})$ and is denoted by $p({\mr x})\otimes q({\gr z})$.
+\end{definition}
+
+\begin{fact}
+  Let $p_i({\mr x_i})$, for $i=1,2,3$, be global types invariant over $A$.
+  Then
+
+  \hfil$\Big(p_1({\mr x_1})\otimes p_2({\mr x_2})\Big)\otimes p_3({\mr x_3})\ \ =\ \ p_1({\mr x_1})\otimes \Big(p_2({\mr x_2})\otimes p_3({\mr x_3})\Big).$
+
+\end{fact}
+
+Let $p({\mr x})$ be a global type invariant over $A$.
+Let ${\mr \bar x}=\<{\mr x_i}:i<\omega\>$ be a tuple of copies of ${\mr x}$.
+Define $p^{(0)}({\mr x_0})=p({\mr x_0})$ and inductively\smallskip
+
+\hfil$\displaystyle p^{n}({\mr x_0},\dots,{\mr x_n})\ \ =\ \ p({\mr x_n})\otimes p^{(n-1)}({\mr x_0},\dots,{\mr x_{n-1}})$.
+
+Finally set 
+
+\hfil$\displaystyle p^{(\omega)}\big({\mr \bar x}\big)\ \ =\ \ \bigcup_{n<\omega}p^{(n)}({\mr x_0},\dots,{\mr x_{n-1}}).$
+
+\begin{exercise}
+  Let $p(x)$ be a global type invariant over $A$.
+  Prove that any $\bar a=\<a_i:i<\omega\>$ that realizes $p^{(\omega)}\big(\bar x\big)$ is a Morley sequence of $p(x)$ over $A$. 
+\end{exercise}
+
 %Let $I,<_I$ and $J,<_J$ be two infinite linear orders and let $a$ and $b$ be an $I$-sequence, respectively a $J$-sequence
 %Note that the expression $a\equiv_A b$ is meaningless unless there is a unique isomorphism between $I,<_I$ and $J,<_J$.However it always make sense, even for non isomorphic orders, when $a$ and $b$ are indiscernibles over $A$.In fact, we agree that \emph{$a\equiv_A b$\/} means $a_{\restriction I_0}\equiv_A b_{\restriction J_0}$ for every finite $I_0\subseteq I$ and $J_0\subseteq J$ of equal cardinality.% That being said, the following proposition is immediate.
 
@@ -508,7 +581,7 @@ The latter holds by induction hypothesis $\,\sharp\,$ and the invariance of $p({
 % Let $J,<_J$ be an infinite linear orders of cardinality $<\kappa$ and let $a$ be an $A$-in\-dis\-cern\-i\-ble $J$-sequence.
 
 % Let $I,<_I$ be another infinite linear order, and $b$ and  $A$-in\-dis\-cern\-i\-ble $I$-sequence such that $a\equiv_Ab$.Let $f:J\to I$ be an embedding of linear orders.Then $h(a_i)=b_{f(i)}$ for some $h\in\Aut(\U/A)$.
-% \end{proposition}
+% \end{proposition}1234567890
 
 
 % 

@@ -145,7 +145,7 @@ The following theorem is often paraphrased as follows: a formula is existential 
 \begin{theorem}\label{thm_embeddings_preservation_E}
 For every $\phi({\mr x})\in L$ the following are equivalent
 \begin{itemize}
-\item[1.] $\phi({\mr x})$ is equivalent over $T$ to a formula in $\{\E{\wedge}{\vee}\}\Delta$
+\item[1.] $\phi({\mr x})$ is equivalent over $T$ to a formula in $\{\E{\wedge}{\!\vee}\}\Delta$
 \item[2.] $\phi({\mr x})$ is preserved by total $\Delta$-morphisms between models of $T$.
 \end{itemize}
 \end{theorem}
@@ -195,7 +195,7 @@ Finally we obtain the following.
 \begin{theorem}
 The following are equivalent
 \begin{itemize}
-\item[1.] $\phi({\mr x})$ is equivalent to a formula in $\{\A{\wedge}{\vee}\}\Delta$
+\item[1.] $\phi({\mr x})$ is equivalent to a formula in $\{\A{\wedge}{\!\vee}\}\Delta$
 \item[2.] every surjective $\Delta$-morphism between models of $T$ preserves $\phi({\mr x})$.
 \end{itemize}
 \end{theorem}
@@ -299,16 +299,10 @@ $\qquad\displaystyle T\vdash\bigvee^n_{i=1}\sigma_i$,\qquad and  $\qquad\sigma_i
 For a counter example consider the empty theory in the language with a single unary predicate.
 \end{exercise}
 
-\begin{exercise}
-  Work in a monster model $\U$
-  Suppose that every formula $\phi(x)\in L$ is equivalent to a some quantifier-free formula $\psi(x)\in L(\U)$.
-  Prove that $T$ has positive $\Delta$-elimination of quantifiers for $\Delta$ the set of formulas of the form $\E y\,\A z\,\theta(x,y,z)$ with $\theta(x,y,z)\in\qfL$.
-\end{exercise}
-
 \begin{exercise}\label{prop_inv_def}
-  Work in a monster model $\U$
+  Work in a monster model $\U$.
   Let $\phi(x)\in L_{\rm qf}(\U)$.
-  Are the following are equivalent?
+  Are the following equivalent?
   \begin{itemize}
    \item[1.] $\phi(x)$ is equivalent to some formula $\psi(x)\in L_{\rm qf}(A)$
    \item[2.] $\phi(x)$ is invariant over $A$.
@@ -321,9 +315,11 @@ For a counter example consider the empty theory in the language with a single un
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Model-completeness}
 
-We say that $T$ is \emph{model-complete\/} if every embedding $h:M\hookrightarrow N$ between models of $T$ is an elementary embedding. The terminology, introduced by Abraham Robinson, is inspired by the fact that $T$ is model-complete if and only if $T\cup\Diag(M)$ is a complete theory, in the language $L(M)$, for every $M\models T$. 
+We say that $T$ is \emph{model-complete\/} if every embedding $h:M\hookrightarrow N$ between models of $T$ is an elementary embedding.
+The terminology, introduced by Abraham Robinson, is inspired by the fact that $T$ is model-complete if and only if $T\cup\Diag(M)$ is a complete theory, in the language $L(M)$, for every $M\models T$.
+See Proposition~\ref{prop_model_completeness_diag} below. 
 
-To stress positivity in the next proposition, we generalize the definition as follows. We say that $T$ is \emph{$\Delta$-model-complete\/} if every total $\Delta$-morphism $k:M\hookrightarrow N$ between models of $T$ is a $\{\A\E{\wedge}{\vee}\}\Delta$-morphism. 
+To stress positivity in the next proposition, we generalize the definition as follows. We say that $T$ is \emph{$\Delta$-model-complete\/} if every total $\Delta$-morphism $k:M\hookrightarrow N$ between models of $T$ is a $\{\A\E{\wedge}{\!\vee}\}\Delta$-morphism. 
 
 Model-completeness is equivalent to a property akin to quantifier elimination.
 
@@ -336,15 +332,15 @@ The following are equivalent
 \end{proposition}
 
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}. By \ssf{1}, every formula $\{\A\E\mathord\wedge\mathord\vee\}\Delta$ is preserved by total $\Delta$-morphism therefore, by Theorem~\ref{thm_embeddings_preservation_E}, it is equivalent to a formula in $\{\E\mathord\wedge\mathord\vee\}\Delta$.
+\ssf{1}$\IMP$\ssf{2}. By \ssf{1}, every formula $\{\A\E{\wedge}{\!\vee}\}\Delta$ is preserved by total $\Delta$-morphism therefore, by Theorem~\ref{thm_embeddings_preservation_E}, it is equivalent to a formula in $\{\E{\wedge}{\!\vee}\}\Delta$.
 
-\ssf{2}$\IMP$\ssf{1}. Clear, because total $\Delta$-morphism preserve formulas in $\{\E\mathord\wedge\mathord\vee\}\Delta$.
+\ssf{2}$\IMP$\ssf{1}. Clear, because total $\Delta$-morphism preserve formulas in $\{\E{\wedge}{\!\vee}\}\Delta$.
 \end{proof}
 
 The theory of discrete linear orders defined in Exercise~\ref{ex_discrete_lo} is an example of a model-complete theory without elimination of quantifiers.
 
 The difference between quantifier elimination and model-completeness subtle.
-It boils down to models of $T$ having or not the amalgamation property.
+It boils down to models of $T$ having or not the amalgamation property, see Section~\ref{amalgamation}.
 
 \begin{proposition}
 Assume $T$ is model-complete.
@@ -362,13 +358,43 @@ Then the following are equivalent
 \ssf{2}$\IMP$\ssf{1}. If all morphisms are elementary maps, amalgamations follows from Proposition~\ref{prop_elementary_amalg}.
 \end{proof}
 
-\begin{exercise}
-  Prove that the following are equivalent
+Recall that the $\Delta$-diagram of $M$, which we denote by $\Delta\mbox{-Diag}(M)$, is the set $\{\phi({\mr a}):\phi({\mr x})\in\Delta, \ {\mr a}\in M^{\mr x}, \ M\models\phi({\mr a})\}$.
+The following explains the terminology of model-completeness.
+
+\begin{proposition}\label{prop_model_completeness_diag}
+  The following are equivalent
   \begin{itemize}
     \item [1.] $T$ is $\Delta$-model-complete
-    \item [2.] for every $M\models T$, the theory $T\cup\Delta\mbox{-Diag}(M)$ is complete
+    \item [2.] if $M\models T$, then $T\cup\Delta\mbox{-Diag}(M)$ entails the $\{\A\E{\wedge}{\!\vee}\}\Delta$-diagram of $M$.
   \end{itemize}
-  where $\Delta\mbox{-Diag}(M)=\{\phi(a):\phi(x)\in\Delta, \ a\in M^x, \ M\models\phi(a)\}$.
+\end{proposition}
+
+Note that if $\Delta=\qfL$ then \ssf{2} says that $T\cup\Diag(M)$ is complete.\vskip-\baselineskip
+
+\begin{proof}
+\ssf{1}$\IMP$\ssf{2}. 
+Let $M\models T$ and let $\phi(x)\in L$ and $a\in M^x$ be such that $M\models\phi(a)$.
+We show that $\phi(a)$ holds in every model $N\models T\cup\Delta\mbox{-Diag}(M)$.
+Suppose not,  then the map $\id_M:M\to N$ is a total $\Delta$-morphism which is not a $\{\A\E{\wedge}{\!\vee}\}\Delta$-morphism.
+this contradicts \ssf{1}.
+
+\ssf{2}$\IMP$\ssf{1}. Let $h:M\hookrightarrow N$ be an embedding between models of $T$. We show that $h$ is a $\{\A\E{\wedge}{\!\vee}\}\Delta$-morphism.
+Let $\phi(x)$ be a formula in $\{\A\E{\wedge}{\!\vee}\}\Delta$ and let $a\in M^x$ be such that $M\models\phi(a)$.
+By \ssf{2}, $\phi(a)$ is entailed by $T\cup\Delta\mbox{-Diag}(M)$, hence $N\models\phi(h a)$.
+\end{proof}
+
+\begin{exercise}
+  Let $T$ be a consistent theory without finite models.
+  Suppose that, in every model $M\models T$, every formula $\phi(x)$ is equivalent to some quantifier-free formula $\psi(x)\in L(M)$.
+  Prove that $T$ is $\Delta$-model-complete for $\Delta$ the set of formulas of the form $\A y\,\E z\,\theta(x,y,z)$ with $\theta(x,y,z)\in\qfL$.
+\end{exercise}
+
+\begin{exercise}
+A countable structure $M$ is $\Delta$\textit{-set-homogeneous\/} if for every finite $\Delta$-mor\-phism $k:M\to M$ there is an $h\in\Aut(M)$ such that $h[\dom k]=\range k$.
+Prove that %if $L$ contains only a finite number of relational symbols, then 
+the theory of $\Delta$-set-homogeneous models is $\Delta$-model-complete.
+%have an $\omega$-categorical theory.
+Hint: prove that every prime $\{\E\}\Delta$-type is maximal.
 \end{exercise}
 
 \begin{comment}
@@ -404,8 +430,8 @@ Prove that $\M'$ satisfies finite character of morphisms, \ssf{c2} of Definition
 
 
 
+\end{comment}
 \begin{comment}
-
 %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -494,14 +520,7 @@ Questa, se vera in $\Z$, \`e un'istanza dello schema di assiomi \ssf{2}, quindi 
 
 In this section the language $L$ is that of additive groups with extra constant $1$. 
 
-For $\delta$
-
-For $n>1$ we write $\delta_{n}(x)$ for the formula $\E y\ ny=x$.
-
-
-
-
-\emph{$x\equiv_ny$\/} as an abbreviation of $\E z\ nz=x-y$. 
+In this section \emph{$x\equiv_ny$\/} is an abbreviation for $\E z\ n\,z=x-y$. 
 The theory \emph{$T_{0}$\/} contains $T_{\rm ag}$ and the following axioms for any pair of integers $0<r<n$
 
 
@@ -551,14 +570,14 @@ We call $T_{\rm zg}$ the theory of \emph{$\ZZ$-groups\/} after Marker.
 
 In this section \emph{$\Delta$\/} we denote the set containing all formulas of the form $t=s$, $t\neq s$ and $t\equiv_q s$ for some terms $t$ and $s$. We write $\Delta(A)$ for the set obtained substituting some of the variables in $\Delta$ with parameters in $A$.
 
-Note that all models $T_{\rm 0}$ have the same $\Delta\jj$characteristic.
+Note that all models $T_{\rm 0}$ have the same $\Delta$-characteristic.
 
 In this section, whenever we fix some $A\subseteq M\models T_{\rm zg}$, we imply that all logical notions are relative to $T_{\rm zg}\cup\Th_\Delta(M/\<A\>_M)$. In particular, \textit{models\/} are superstructures of $\Diag\<A\>_M$ that model $T_{\rm zg}$ and all sentences in $\Delta(\<A\>_M)$ that holds in $M$. Logical consequence and all derived notions (\textit{consistent}, \textit{complete}, \textit{equivalent}, etc.) are to be understood relative to the theory $T_{\rm zg}\cup\Th_\Delta(M/\<A\>_M)$.
 
 The following proposition explains why we are allowed  not include in $\Delta$ negations of congruences.
 
 \begin{proposition}\label{prop_congr_comp}
-Let $A\subseteq M\models T_{\rm zg}$. Then every prime $\Delta(A)\jj$type is complete. In particular, the inverse of a $\Delta\jj$morphism is a $\Delta\jj$morphism.
+Let $A\subseteq M\models T_{\rm zg}$. Then every prime $\Delta(A)$-type is complete. In particular, the inverse of a $\Delta$-morphism is a $\Delta$-morphism.
 \end{proposition}
 
 \begin{proof}
@@ -568,7 +587,7 @@ It saves notation to prove the claim for types in one variable and then extend. 
 
 By Proposition~\ref{lemmatipiprimiconsistenti} there is a model $N$ and some $c\in N$ such that $p(x)\imp\Deltatp(c/A)$. There are two possibilities, either $N\models c\equiv_qr$ and $p(x)\imp kx\equiv_qr$. Otherwise, by the equivalence above $N\models c\equiv_qs$ for some integer $s\neq r$, so $p(x)\imp kx\nequiv_qr$.
 
-What proved above suffices to prove the second claim. This is easily proved by induction of the cardinality of the morphism, which we may assume to be finite. As all models of $T_{\rm zg}$ have the same $\Delta\jj$characteristic, the claim is trivial for the empty map (so inductions starts). Finally note that the second claim imply the first.
+What proved above suffices to prove the second claim. This is easily proved by induction of the cardinality of the morphism, which we may assume to be finite. As all models of $T_{\rm zg}$ have the same $\Delta$-characteristic, the claim is trivial for the empty map (so inductions starts). Finally note that the second claim imply the first.
 \end{proof}
 
 Fix a single variable $x$ and an infinite tuple of variables $z$. It is convenient to name some subsets of $\Delta_{\restriction x,z}$. Hopefully the following naming are suggestive enough.
@@ -617,7 +636,7 @@ A finite number of congruences, if consistent, has infinitely many solutions. He
 
 
 \begin{proposition}\label{prop_oenebd}
-Let $A\subseteq M\models T_{\rm zg}$. Every $\GammaB(A)\jj$type is equivalent to a $\GammaB\jj$type.
+Let $A\subseteq M\models T_{\rm zg}$. Every $\GammaB(A)$-type is equivalent to a $\GammaB$-type.
 \end{proposition}
 
 \begin{proof}
@@ -626,25 +645,25 @@ Note that  $nx\equiv_qa$ is equivalent to $nx\equiv_qr$ for some integer $r\equi
 
 
 \begin{proposition}\label{prop_jfdbjh}
-A finite $\GammaB\jj$type realized in some model of $T_{\rm zg}$ is realized in $\ZZ$, hence in every  model of $T_{\rm zg}$.
+A finite $\GammaB$-type realized in some model of $T_{\rm zg}$ is realized in $\ZZ$, hence in every  model of $T_{\rm zg}$.
 \end{proposition}
 
 \begin{proof}
-Let $p(x)$ be a consistent finite $\GammaB\jj$type. We can assume the formulas in $p(x)$ are $n_ix\equiv_{q_i}r_i$ where $0\le r_i<q_i$. By consistency, $r_i$ is unique given $q_i$. Then, by the Chinese reminder theorem $p(x)$ has a solution in $\ZZ$ which is substructure of every model of $T_{\rm zg}$.
+Let $p(x)$ be a consistent finite $\GammaB$-type. We can assume the formulas in $p(x)$ are $n_ix\equiv_{q_i}r_i$ where $0\le r_i<q_i$. By consistency, $r_i$ is unique given $q_i$. Then, by the Chinese reminder theorem $p(x)$ has a solution in $\ZZ$ which is substructure of every model of $T_{\rm zg}$.
 \end{proof}
 
 
 \begin{proposition}
-The theory $T_{\rm zg}$ has $\Delta\jj$elimination of quantifiers.
+The theory $T_{\rm zg}$ has $\Delta$-elimination of quantifiers.
 \end{proposition}
 \begin{proof}
-Let $M$ and $N$ be two $\omega\jj$saturated models of  $T_{\rm zg}$, let $k:M\to N$ be a finite $\Delta\jj$morphism and let $b\in M$. We need to find a $c\in N$ such that $k\cup\{\<b,c\>\}:M\to N$ is a $\Delta\jj$morphism.
+Let $M$ and $N$ be two $\omega$-saturated models of  $T_{\rm zg}$, let $k:M\to N$ be a finite $\Delta$-morphism and let $b\in M$. We need to find a $c\in N$ such that $k\cup\{\<b,c\>\}:M\to N$ is a $\Delta$-morphism.
 
 Let $a$ be an enumeration of $\dom k$ and let $p(x,z)=\Deltatp(b,a)$. We to find a $c\in N$ that realizes $p(x,ka)$. Define also $p_*(x,z)=\Gamma\!_{*}\jj\tp(b,a)$.
 
 If $p_{\sf\scriptscriptstyle e}(x,a)$ is non trivial, then  $p(x,a)$ is isolated by some formula of the form $nx=t(a)$. As $nx=t(a)$ is consistent in $M$ then $M\models t(a)\equiv_n0$ hence $N\models t(ka)\equiv_n0$. Then in $N$ there is a $c$ such that $nx=t(ka)$, which therefore realizes $p(x,ka)$.
 
-Suppose instead that $p_{\sf\scriptscriptstyle e}(x,a)$ is trivial. By Proposition~\ref{prop_congr_comp} it suffices to realize $p_{\sf\scriptscriptstyle i}(x,ka)$ and $p_{\sf\scriptscriptstyle c}(x,ka)$. By Proposition~\ref{prop_poiuhfr} and $\omega\jj$saturation a realization exist if $p_{\sf\scriptscriptstyle c}(x,ka)$ is finitely consistent. By Proposition~\ref{prop_oenebd}, $p_{\sf\scriptscriptstyle c}(x,a)$ is equivalent its parameters-free part $p(x)$ and the same holds for $p_{\sf\scriptscriptstyle c}(x,ka)$. As $p(x)$ is finitely consistent in $M$, by Proposition~\ref{prop_jfdbjh} it is finitely consistent $\ZZ$ and a fortiori in $N$.
+Suppose instead that $p_{\sf\scriptscriptstyle e}(x,a)$ is trivial. By Proposition~\ref{prop_congr_comp} it suffices to realize $p_{\sf\scriptscriptstyle i}(x,ka)$ and $p_{\sf\scriptscriptstyle c}(x,ka)$. By Proposition~\ref{prop_poiuhfr} and $\omega$-saturation a realization exist if $p_{\sf\scriptscriptstyle c}(x,ka)$ is finitely consistent. By Proposition~\ref{prop_oenebd}, $p_{\sf\scriptscriptstyle c}(x,a)$ is equivalent its parameters-free part $p(x)$ and the same holds for $p_{\sf\scriptscriptstyle c}(x,ka)$. As $p(x)$ is finitely consistent in $M$, by Proposition~\ref{prop_jfdbjh} it is finitely consistent $\ZZ$ and a fortiori in $N$.
 \end{proof}
 
 \end{comment}

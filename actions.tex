@@ -91,7 +91,7 @@ The following dual pair of corollaries are linked to important properties discus
 
 We write \emph{$\Sigma_G$\/} for the collection of $G$-syndetic sets.
 
-We write \emph{$S_\pi(\Gamma)$\/} for the set of ultrafilters of $\Gamma$ finitely consistent with $\pi$.
+We write \emph{$S_\pi(\Gamma)$\/} for the set of ultrafilters of the Bolen algebra $\Gamma$ that are finitely consistent with $\pi$.
 Note that when $\Sigma_G\cup\{\mrD\}$ is finitely consistent with $\pi$, then $\neg\mrD$ is not $G$-syndetic.
 Then $\mrD$ is $G$-thick.
 We prove that the converse implication holds if we replace $\mrD$ with an ultrafilter.
@@ -127,7 +127,7 @@ We say that $p\in S_\pi(\Gamma)$ is \emph{$G$-invariant\/} if $g{\cdot}p=p$ for 
   Assume $g{\cdot}p\neq p$.
   If $\mrD\in p$ and $g{\cdot}\mrD\notin p$ for some $\mrD$ then, by maximality, $(\mrD\cap\neg g{\cdot}\mrD)\in p$.
   Clearly $\mrD\cap \neg g{\cdot}\mrD$ is not $2$-$G$-thick as it is infinitely consistent with its $g$-translate.
-  If instead $\mrD\notin p$ and $g{\cdot}\mrD\in p$ then, by the same argument, 99$(\neg\mrD\cap g{\cdot}\mrD)\in p$ is not $G$-thick.
+  If instead $\mrD\notin p$ and $g{\cdot}\mrD\in p$ then, by the same argument, $(\neg\mrD\cap g{\cdot}\mrD)\in p$ is not $G$-thick.
 \end{proof}
 
 % \begin{corollary}\label{corol_gammaG_invaqriancer}
@@ -155,7 +155,7 @@ We say that $p\in S_\pi(\Gamma)$ is \emph{$G$-invariant\/} if $g{\cdot}p=p$ for 
   If a $G$-thick $p\in S_\pi(\Gamma)$ exists then 
   \begin{itemize}
     \item[1.] $\Sigma_G$ is finitely consistent with $\pi$.
-    \item[2.] there are $G$-thick types in $S_\pi(\Gamma)$.\smallskip
+    \item[2.] there are $G$-thick $p\in S_\pi(\Gamma)$.\smallskip
   \end{itemize}
 \end{corollary}
 
@@ -170,7 +170,7 @@ A filter is $G$-wide if every formula in the filter is $G$-wide.
   For every set $\mrD\in\Gamma$ the following are equivalent 
   \begin{itemize}
     \item[1.] $\Sigma_G\cup\{\mrD\}$ is finitely consistent
-    \item[2.] $\mrD\in p$ for some $G$-thick type $p\in S_\pi(\Gamma)$
+    \item[2.] $\mrD\in p$ for some $G$-thick  $p\in S_\pi(\Gamma)$
     \item[3.] $\mrD$ is $G$-wide.\smallskip
   \end{itemize}
 \end{theorem}
@@ -366,7 +366,7 @@ It is easy to verify that $G^1\trianglelefteq G$.
 \begin{proof}
   $\subseteq$.
   Pick any $k\in G^1$ and $\mrD\in\Sigma_G$.
-  Let $q\in Q_G$ be a type containing $\mrD$.
+  Let $q\in Q_G$ be a filter containing $\mrD$.
   From the $G^1$-invariance of $q$ we obtain that $k{\cdot}\mrD\in q$.
   Then $\mrD\cap k{\cdot}\mrD\in q$, hence $\mrD\cap k{\cdot}\mrD$ is $G$-syndetic.
 
@@ -502,7 +502,7 @@ We will prove that this is the case under the assumption of stability.
 
 A set $\mrD$ is \emph{strongly $G$-syndetic\/} if for every finite $F\subseteq G$ the set $\cap\,F{\cdot}\mrD$ is $G$-syndetic (recall that $F{\cdot}\mrD$ stands for $\{h{\cdot}\mrD : h\in F\}$).
 Dually, we say that $\mrD$ is \emph{weakly $G$-thick\/} if for some finite $F\subseteq G$ the set $\cup\,F{\cdot}\mrD$ is thick.
-Again, the same properties is attributed to the corresponding formulas and to types if every conjunction of formulas in the type has the property.
+Again, the same properties is attributed to a collection of sets if every finite intersection has the property.
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 In topological dynamic, strong syndedic sets are called \textit{thickly syndetic\/} and weak thickness is called \textit{piecewise syndetic.}
@@ -532,7 +532,7 @@ These terminologies defy my intuition.
   The $G$-syndeticity of $\mrB$ follows.
 \end{proof}
 
-Define the following type
+Define the following collection of sets
 
 \ceq{\hfill\emph{${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G$}}{=}{\{\mrD :\ \mrD\textrm{ is strongly }G\textrm{-syndetic}\}.}\smallskip
 
@@ -540,7 +540,8 @@ Note that Theorem~\ref{thm_gammaK} shows that $\Sigma_{G^1}\subseteq{\mathstrut}
 
 \begin{corollary}\label{corol_str_gen}
   Then ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G$ is finitely consistent, strongly $G$-syndetic, and $G$-invariant.
-  Moreover, ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G$ is the maximal $G$-syndetic $G$-invariant type and\medskip
+  Moreover, ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G$ is the maximal collection of sets that is $G$-syndetic and $G$-invariant.
+  We also have\medskip
 
   \ceq{\hfill{\mathstrut}^{\rm s}\kern-.1ex\Sigma_G}{=}{\bigcap_{q\in Q_G}q}.
 \end{corollary}
@@ -807,6 +808,17 @@ The conditions in Theorem~\ref{thm_coalesce} together with stationarity, produce
   This contradicts $G$-stationarity.
 \end{proof}
 
+\section{Topology}
+
+Note that a topological space $\mrX$ is Hausdorff if and only if the diagonal of ${\mr\X^2}$ is closed in the product topology.
+Let $E$ be the intersection of all closed equivalence relations.
+Then $\mrX/E$ endowed with the quotioent topology (i.e. a set is open if its pull back is open) is Hausdorff.
+By the above observation every continuous map from $\mrX$ into a 
+Hausdorff space factor through the projection of $\mrX$ onto $\mrX/E$.
+
+  
+
+
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
@@ -820,7 +832,7 @@ Let \emph{$\Delta$\/}\ $\subseteq L_{{\mr x}\,{\gr z}}(\U)$ be a small set of fo
 By \emph{$\BDelta$\/} we denote the set of formulas $\theta({\mr x}\,;{\gr\bar z})$, where ${\gr\bar z}={\gr z_1},\dots,{\gr z_n}$ is a tuple of variables of the same sort as ${\gr z}$, that are Boolean combinations of formulas $\phi({\mr x}\,;{\gr z_i})$ for some $\phi({\mr x}\,;{\gr z})\in\Delta$.
 Let $\grZ\subseteq\U^{\gr z}$.
 We write $\BDelta(\grZ)$ for the set of formulas $\theta({\mr x}\,;{\gr\bar c})$ for some $\theta({\mr x}\,;{\gr\bar z})\in\BDelta$ and ${\gr\bar c}\in{\gr\Z^n}$.
-In this section $\mrX$ is a subset of $\U^{\mr x}$ and \emph{$\Gamma$\/} contains the subsets of $\mrX$ that are $\BDelta(\grZ)$-definable.
+In this section $\mrX\subseteq\U^{\mr x}$ and \emph{$\Gamma$\/} contains the subsets of $\mrX$ that are $\BDelta(\grZ)$-definable.
 % When $\mrD\in\Gamma$, we may write ${\mr x}\in\mrD$ for the formula defining $\mrD$.
 
 % To $\pi$ we associate a type $\pi({\mr x})\subseteq\BDelta(\grZ)$ containing all the formulas $\theta({\mr x}\,;{\gr\bar c})$ such that $\theta(\U^{\mr x};{\gr\bar c})\in\pi$.
@@ -829,7 +841,7 @@ In this section $\mrX$ is a subset of $\U^{\mr x}$ and \emph{$\Gamma$\/} contain
 
 Assume that $G$ acts on $\grZ$.
 Then $G$ acts on $\Gamma$ as follows.
-When $g\in G$ and $\mrD=\theta(\U^{\mr x};{\gr\bar c})$ then $g{\cdot}\mrD$ is the set $\theta(\U^{\mr x};g{\cdot}{\gr\bar c})$.
+When $g\in G$ and $\mrD=\theta(\mrX;{\gr\bar c})$ then $g{\cdot}\mrD$ is the set $\theta(\mrX;g{\cdot}{\gr\bar c})$.
 
 % We say that a set is \emph{$\Delta(\grZ)$-type-definable\/} if it is the intersection of a small family of $\Delta(\grZ)$-definable sets.
 % The group $G$ acts also on $\Delta(\grZ)$-type-definable sets in the obvious way.
@@ -864,7 +876,7 @@ When $g\in G$ and $\mrD=\theta(\U^{\mr x};{\gr\bar c})$ then $g{\cdot}\mrD$ is t
 
 \begin{example}[ (random graph)]\label{ex_random_graph}
  We present a simple example.
- Let $\U=\grZ=U^{\gr z}=\mrX=\U^{\mr x}$ be a saturated model of the of theory of the random graph.
+ Let $\U=\grZ=\U^{\gr z}=\mrX=\U^{\mr x}$ be a saturated model of the of theory of the random graph.
 
   Set $\pi=\{\mrX\}$.
   Let $G={\rm Aut}(\U)$ act naturally on $\grZ$.
@@ -875,14 +887,14 @@ When $g\in G$ and $\mrD=\theta(\U^{\mr x};{\gr\bar c})$ then $g{\cdot}\mrD$ is t
   The type on the r.h.s.\@ of (5) in Proposition~\ref{prop_coalese} is equivalent to the disjunction of $p_1({\mr x})$ and $p_2({\mr x})$.
   This is in turn equivalent to the type containing the formulas
 
-  \ceq{\hfill\varphi({\mr x},{\gr a})}{=}{r({\mr x},{\gr a_1})\leftrightarrow r({\mr x},{\gr a_2})\leftrightarrow\cdots\cdots\leftrightarrow r({\mr x},{\gr a_n})}
+  \ceq{\hfill\varphi_n({\mr x},{\gr a})}{=}{r({\mr x},{\gr a_1})\leftrightarrow r({\mr x},{\gr a_2})\leftrightarrow\cdots\cdots\leftrightarrow r({\mr x},{\gr a_n})}
 
   for every tuple of vertices ${\gr a}={\gr a_1},\dots,{\gr a_n}$.
   Therefore we only need to prove that these formulas are $G$-syndetic.
 \end{example}
 
 \begin{theorem}
-  The formula $\varphi_n({\mr x},{\gr a})$ is $G$-syndetic for all $n\ge 2$ and all ${\gr a}={\gr a_1},\dots,{\gr a_n}$.
+  The above formula $\varphi_n({\mr x},{\gr a})$ is $G$-syndetic for all $n\ge 2$ and all ${\gr a}\in\grZ^n$.%={\gr a_1},\dots,{\gr a_n}$.
 \end{theorem}
 
 \begin{proof}
@@ -912,30 +924,27 @@ When $g\in G$ and $\mrD=\theta(\U^{\mr x};{\gr\bar c})$ then $g{\cdot}\mrD$ is t
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 Section under major revision.
 
-In this section we assume that $G\subseteq\grZ$, moreover we require that every formula $\phi({\gr z})\in L(G)$ that is satisfied in $\grZ$ is satisfied in $G$.
-So, if we view $G$ and $\grZ$ as structures in their own right (and in the proper language), then $G\preceq\grZ$.
-We also require that the semigroup operation is among the function symbols of $L$.
-We require that $\Delta\subseteq L_{{\mr x}\,{\gr z}}(G)$ is such that $\phi({\mr x}\,;g{\cdot}{\gr z})\in\Delta$ for every $\phi({\mr x}\,;{\gr z})\in\Delta$ and $g\in G$.
-The set \emph{$\Gamma$\/} is defined as in Section~\ref{action_on_definable_sets}.
+In this section $\mrX$ is a type-definable subset of $\U^{\mr x}$.
+We assume that $G\subseteq\grZ\subseteq\U^{\gr z}$, and we require that the semigroup operation is among the function symbols of $L$.
+We also require that every formula $\phi({\gr z})\in L(G,\mrX)$ that is satisfied in $\grZ$ is satisfied in $G$.
+So, if we view $G$ and $\grZ$ as structures in their own right (in the proper language), then $G\preceq\grZ$.
+
+We pick some $\Delta\subseteq L_{{\mr x}\,{\gr z}}(\U)$ such that $\phi({\mr x}\,;g{\cdot}{\gr z})\in\Delta$ for every $\phi({\mr x}\,;{\gr z})\in\Delta$ and $g\in G$.
+The set \emph{$\Gamma$\/} contains the subsets of $\mrX$ that are $\BDelta(\grZ`')$-definable.
 The action of $G$ on $\grZ$, and by extension on $\Gamma$, is given by the semigroup operation.
 
-When $\mrD\subseteq\U^{\mr x}$ is arbitrary, we write \emph{${\rm cl}_\Gamma(\mrD)$\/} for the closure of $\mrD$ in the topology generated by sets in $\Gamma$.
-
-When ${\gr g}\in\grZ$ and ${\mr a}\in\mrX$ we write ${\gr g}\nonfork_G{\mr a}$ if for every $\varphi({\mr x})\in\Gamma$ such that $\varphi({\gr g}{\cdot}{\mr a})$ we have that $\varphi(G{\cdot}{\mr a})\neq\varnothing$.
-When $\grC\subseteq\grZ$ and $\mrD\subseteq\mrX$ we define
+When ${\gr g}\in\grZ$ and $\mrD\in\Gamma$ we write ${\gr g}\nonfork_G\mrD$ if for every ${\mr\D_1},\dots,{\mr\D_n}\in\Gamma$ there is an $h\in G$ such that $h{\cdot}\mrD$ and ${\gr g}{\cdot}\mrD$ generate the same Boolean algebra over ${\mr\D_1},\dots,{\mr\D_n}$.
 
 \ceq{\hfill\emph{$\grC\diamond\mrD$}}{=}{\Big\{{\gr g}{\cdot}{\mr a}\ :\ {\gr g}\in\grC,\ {\mr a}\in\mrD,\ {\gr g}\nonfork_G {\mr a}\Big\}}
 
-% If $G\le{\rm Aut}(\UDelta)$ and $a\in\mrX$, we write $G{\cdot}a$ for the orbit of $a$ under the action of $G$.
-When $\mrD$ is the orbit of ${\mr a}\in\mrX$ under the action of ${\rm Aut}(\U/M)\le\grZ$, we write $\grC\diamond {\mr a}$ for $\grC\diamond\mrD$.
+% \ceq{\ssf1.\hfill{\rm cl}_M(\mrD)}{=}{\bigcap\Big\{\varphi(\mrX)\ :\ \varphi({\mr x})\in L(M)\text{ such that }\mrD\subseteq\varphi(\mrX)\Big\}}
 
-Explicitely,
+% \ceq{\ssf2.}{=}{\Big\{{\mr b}\ :\ \varphi(\mrD)\neq\varnothing\text{ for every }\varphi({\mr x})\in L(M)\text{ that is satisfied by }{\mr b}\Big\}}
 
-\ceq{\ssf1.\hfill{\rm cl}_M(\mrD)}{=}{\bigcap\Big\{\varphi(\mrX)\ :\ \varphi({\mr x})\in L(M)\text{ such that }\mrD\subseteq\varphi(\mrX)\Big\}}
+We write $\grC\diamond{\mr a}$ for $\grC\diamond\{{\mr a}\}$.
 
-\ceq{\ssf2.}{=}{\Big\{{\mr b}\ :\ \varphi(\mrD)\neq\varnothing\text{ for every }\varphi({\mr x})\in L(M)\text{ that is satisfied by }{\mr b}\Big\}}
-
-
+When $P\subseteq S_\pi(\Gamma)$, we write \emph{${\rm cl}(P)$\/} for the closure of $P$ in the topology generated by sets $[\mrD]$ for $\mrD\in\Gamma$.
+That is ${\rm cl}(P) = \bigcap\big\{\mrC\in\Gamma\ :\ P\subseteq[\mrC]\big\}$.
 % \begin{fact}
 %   For every $\mrD\subseteq\mrX$\smallskip
 
@@ -960,25 +969,25 @@ Explicitely,
 % \end{proof}
 
 \begin{fact}
-  For every ${\mr a}\in\mrX$\smallskip
+  For every $p\in S_\pi(\Gamma)$\smallskip
 
-  \ceq{\hfill{\rm cl}_M(Z{\cdot}{\mr a})}{=}{\grZ\diamond {\mr a}}
+  \ceq{\hfill{\rm cl}_\Gamma(G{\cdot}p)}{=}{\grZ\diamond p}
 \end{fact}
 
 \begin{proof}
   $\supseteq$.
-  Let ${\mr b}\in\grZ\diamond {\mr a}$, say ${\mr b}={\gr g}{\cdot}{\mr a}$ for some ${\gr g}\nonfork_M {\mr a}$.
-  Let $\varphi({\mr x})\in L(M)$ be such that $Z{\cdot}{\mr a}\subseteq\varphi(\mrX)$.
-  Then ${\gr g}\nonfork_M {\mr a}$ implies $\varphi({\gr g}{\cdot}{\mr a})$.
-  This proves that ${\mr b}\in{\rm cl}_M(Z{\cdot}{\mr a})$.
+  Let $q\in\grZ\diamond p$, say $q={\gr g}{\cdot}p$ for some ${\gr g}\nonfork_G p$.
+  Pick some arbitrary $\mrD\in \cap\,G{\cdot}p$ and suppose for a contradiction that $\mrD\notin{\gr g}{\cdot}p$.
+  Then ${\gr g}\nonfork_G p$ implies ${\gr g}{\cdot}{\mr a}\in\mrD$.
+  This proves that ${\mr b}\in{\rm cl}_\Gamma(G{\cdot}{\mr a})$.
   
   $\subseteq$.
-  Let ${\mr b}\in{\rm cl}_M(Z{\cdot}{\mr a})$ be given and define $p({\mr x})=\tp({\mr b}/M)$.
-  It suffices to prove that ${\gr z}\nonfork_M{\mr a}$ is finitely consistent with $p({\gr z}{\cdot}{\mr a})$.
-  In fact, if ${\gr g}\nonfork_M{\mr a}$, then ${\gr g}{\cdot}{\mr a}\in\grZ\diamond {\mr a}$.
-  And, as $\grZ\diamond {\mr a}$ is $M$-invariant, if $p({\gr g}{\cdot}{\mr a})$ then ${\mr b}\in\grZ\diamond{\mr a}$.
-  Now, to prove concistency, assume for a contradiction that ${\gr z}\nonfork_M {\mr a}\rightarrow\neg\varphi({\gr z}{\cdot}{\mr a})$ for some $\varphi({\mr x})\in p$.
-  As any $c\in Z$ realizes ${\gr z}\nonfork_M {\mr a}$, no element of $Z{\cdot}{\mr a}$ satisfies $\varphi({\mr x})$.
+  Let ${\mr b}\in{\rm cl}_\Gamma(G{\cdot}{\mr a})$ be given and define $p({\mr x})=\tp({\mr b}/G)$.
+  It suffices to prove that ${\gr z}\nonfork_G{\mr a}$ is finitely consistent with $p({\gr z}{\cdot}{\mr a})$.
+  In fact, if ${\gr g}\nonfork_G{\mr a}$, then ${\gr g}{\cdot}{\mr a}\in\grZ\diamond {\mr a}$.
+  And, as $\grZ\diamond {\mr a}$ is $G$-invariant, if $p({\gr g}{\cdot}{\mr a})$ then ${\mr b}\in\grZ\diamond{\mr a}$.
+  Now, to prove concistency, assume for a contradiction that ${\gr z}\nonfork_G {\mr a}\rightarrow\neg\varphi({\gr z}{\cdot}{\mr a})$ for some $\varphi({\mr x})\in p$.
+  As any $c\in Z$ realizes ${\gr z}\nonfork_G {\mr a}$, no element of $Z{\cdot}{\mr a}$ satisfies $\varphi({\mr x})$.
   This is a contradiction by \ssf2 above.
 \end{proof}
 

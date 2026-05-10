@@ -428,7 +428,7 @@ Prove $M$ realizes every consistent $p(x)\subseteq L(\acl A)$, for $|x|<\omega$.
 \def\ceq#1#2#3{\parbox[t]{20ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 For the time being, we agree that \textit{imaginary\/} is just another word for definable set.
-Though this is not formally correct (cf.\@ Section~\ref{imaginaries_long}), it is morally true and helps to understand the terminology.
+Though this is not historically correct (cf.\@ Section~\ref{imaginaries_long}), it is morally true and helps to understand the terminology.
 The concept of elimination of imaginaries has been introduced by Poizat who also proved Theorem~\ref{elimimacf} below.
 A theory has elimination of imaginaries if for every $A\subseteq\U^\eq$, there is a $B\subseteq\U$ such that $L(B)$ and $L(A)$ have the same expressive power (i.e.\@ they are the same up to equivalence).
 
@@ -550,13 +550,13 @@ This will not  be applied in these notes, but see Exercises~\ref{ex_est} and~\re
   \end{itemize} 
 \end{exercise}
   
-\begin{exercise}
-  Prove that the following are equivalent
-  \begin{itemize}
-  \item[1.] $T$ has weak elimination of imaginaries
-  \item[2.] for every $\Aa\in \U^\eq$ there exists the least algebraically closed set $A\subseteq\U$ such that $\Aa$ is definable over $A$.
-  \end{itemize}
-\end{exercise}
+% \begin{exercise}
+%   Prove that the following are equivalent
+%   \begin{itemize}
+%   \item[1.] $T$ has weak elimination of imaginaries
+%   \item[2.] for every $\Aa\in \U^\eq$ there exists the least algebraically closed set $A\subseteq\U$ such that $\Aa$ is definable over $A$.
+%   \end{itemize}
+% \end{exercise}
 
 \begin{exercise}
   Prove that the following are equivalent
@@ -628,9 +628,8 @@ The rest of this section is dedicated to the proof that the theory of the random
 \begin{proof}
   Let $\mrD\subseteq\U^{\mr x}$ be a definable set, and pick a finite set $A\subseteq\U$ of minimal size over which $\mrD$ is definable. 
   Now, let $f$ be an automorphism that fixes $\mrD$. Then $\mrD$ is definable over $A\cap f[A]$, so by minimality of $|A|$ we have $A= f[A]$. 
-  Now let ${\gr a}$ be an enumeration of $A$.
-  By the above, ${\gr a}$ has a finite orbit under $\Aut(\U/\{\mrD\})$.
-  Hence ${\gr a}\in\acl\{\mrD\}$.
+  Therefore the orbit under $\Aut(\U/\{\mrD\})$ of the elements of $A$ is finite.
+  Hence $A\subseteq\acl\{\mrD\}$.
   Therefore $\mrD\in\dcl^\eq\big(\acl\{\mrD\}\big)$
   The lemma follows by applying Theorem~\ref{thm_elimimd}.
 \end{proof}
@@ -687,7 +686,18 @@ The rest of this section is dedicated to the proof that the theory of the random
   This contradicts the fact that $\D$ is definable both over $f[A]$ and over $g[B]$.
 \end{proof}
 
+\begin{exercise}
+  Prove that the theory of the random graph has not elimination of imaginaries.
+\end{exercise}
 
+% begin{exercise}
+%   Let $T$ be $\omega$-categorical.
+%   Prove that the following are equivalent
+%   \begin{itemize}
+%   \item[1.] $T$ has weak elimination of imaginaries
+%   \item[2.] $\Aut(\U/\{\D\})\le\Aut(\U/{\acl A})$ whenever $\D\in\dcl^\eq\!A$.
+%   \end{itemize}
+% \end{exercise}
 % \begin{exercise}
 % prove that a theory has weak elimination of imaginaries if for every $A\subseteq\U^\eq$, there is a $B\subseteq\U$ such that $L\big(\acl(B)\big)$ and $L\big(acl(A)\big)$ have the same expressive power.
 % \end{exercise}
