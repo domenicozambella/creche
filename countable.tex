@@ -6,23 +6,28 @@
 
 In this chapter $L$ is a fix signature, $T$ a complete theory without finite models, and $\U$ is a saturated model of inaccessible cardinality $\kappa$ larger than $|L|$.
 We make no blanket assumption on the cardinality of $L$, but the main theorems require $L$ to be countable.
-The notation and implicit assumptions are as in Section~\ref{monster}.
+The notation and implicit assumptions are as in Sectialwaysbon~\ref{monster}.
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The omitting types theorem}\label{omttingtype}
 
+Troughout the chapter we work over a set of parameters $A$ which, when necessary, we will assume to be countable.
 We say that the formula $\phi({\mr x})$ \emph{isolates\/} the type $p({\mr x})$ when $\phi({\mr x})$ is consistent and $\phi({\mr x})\imp p({\mr x})$.
 When $\Delta$ is a set of formulas, we say that \emph{$\Delta$ isolates $p({\mr x})$\/} if some formula in $\Delta$ does.
-When $\Delta=L_{{\mr x}}(A)$, we say that \emph{$A$ isolates $p({\mr x})$\/} or, when $A$ is clear, that \emph{$p({\mr x})$ is isolated.}
+When $\Delta=L_{{\mr x}}(A)$, the case we are mainly interested in, we say that \emph{$p({\mr x})$ is isolated over\/} $A$, 
+When $A$ is clear from the context (e.g.\@ when $p({\mr x})$ is presented as an type over $A$), we may omit reference to it.
 We say that a model \emph{$M$ omits $p({\mr x})$\/} if $p({\mr x})$ is not realized in $M$.
 
-Observe that if $p({\mr x})\subseteq L(M)$ then $M$ realizes $p({\mr x})$ if and only if $M$ isolates  $p({\mr x})$.
+All this has a topological interpretation.
+Work with the topology induced by on $\U^{\mr x}$ or, better, on $\U^{\mr x}/{\equiv_A}$ which we identify with $S_x(A)$.
+Then a complete type $p({\mr x})\in S(A)$ is isolated over $A$ if it is an isolated point of the topology.
+When $p({\mr x})\subseteq L(A)$, isolated over $A$ translates in beeing nowhere dense in the topology induced by $A$.
+
+Observe that if $p({\mr x})\subseteq L(M)$ then $M$ realizes $p({\mr x})$ if and only if $M$ isolates $p({\mr x})$.
 Therefore if $A$ isolates $p({\mr x})$, then every model containing $A$ realizes $p({\mr x})$.
 Below we prove that the converse holds when $L$ and $A$ are countable.
 This is a famous classical theorem that is called the \textit{omitting types theorem\/} because it is proved by constructing a model $M$ that omits a given non-isolated type $p({\mr x})$.
@@ -164,16 +169,18 @@ Hint: Use the base of the topology as predicates of a first-order language.
   % \ceq{\hfill\psi(x)}{\iff}{\bigvee^n_{i=1}\phi_i(x)}
   \end{exercise}
 
-\begin{exercise}(To be re-formulated)
+\begin{exercise}
   Let $x$ be a finite tuple.
-  A set $N\subseteq\U^x$ is nowhere dense in the $A$-topology if for every consistent $\phi(x)\in L(A)$ there is some consistent $\psi(x)\in L(A)$ such that $\psi(x)\imp\phi(x)$ and $\psi(N)=\varnothing$.
-  A set $M\subseteq\U^x$ is meager if it is union of countably many nowhere dense sets.
+  A set $B\subseteq\U^x$ is \textit{nowhere dense\/} in the topology induced by $A$ if for every consistent formula $\phi(x)\in L(A)$ there is some consistent $\psi(x)\in L(A)$ such that $\psi(x)\imp\phi(x)$ and $\psi(B)=\varnothing$.
+  A set $C\subseteq\U^x$ is \textit{meager\/} if it is union of countably many nowhere dense sets.
   
+  Assume $L(A)$ is countable.
   Prove that for every countable model $M$ the following are equivalent
   \begin{itemize}
-    \item [1.] $M$ is meager in the $M$-topology
-    \item [2.] $M\cap M=\varnothing$.
+    \item [1.] $C$ is meager in the topology topology induced by $A$
+    \item [2.] there is a model $M$ disjoint of $C$
   \end{itemize}
+  Hint: note that Lemma~\ref{lem_kuratowskiUlam} holds for a countable set of non-isolated types.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -184,12 +191,12 @@ Hint: Use the base of the topology as predicates of a first-order language.
 \section{Prime and atomic models}
 
 We say that $M$ is \emph{prime over $A$\/} if $A\subseteq M$ and for every $N$ containing $A$ there is an elementary embedding $h:M\to N$ that fixes $A$.
-When $A$ is empty we simply say that $M$ is \emph{prime}.
+When $A$ is empty we simply say that $M$ is \emph{prime.}
 
 There is no syntactic analogue of primeness.
 The closest notion, which works well for countable models in a countable language, is atomicity.
 For ${\mr a}\in\U^{\mr x}$ we say that ${\mr a}$ is  \emph{isolated\/} over $A$ if the type $p({\mr x})=\tp({\mr a}/A)$ is isolated.
-Note that this equivalent to claiming that ${\mr a}$ is an isolated point in $\U^{\mr x}$ with respect to the $A$-topology defined in Section~\ref{monster}.
+Note that this equivalent to claiming that ${\mr a}$ is an isolated point in $\U^{\mr x}$ with respect to the $A$-topology defined in Section~\ref{monster.}
 We say that $M$ is \emph{atomic\/} over $A$ if $A\subseteq M$ and every ${\mr a}\in M^{<\omega}$ is isolated over $A$.
 When $A$ is empty we say that $M$ is \emph{atomic.}
 
