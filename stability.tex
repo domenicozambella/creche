@@ -172,8 +172,10 @@ By the proposition above, they are closed under quantifiers.
 \section{Ladders and definability}\label{ladders}
 
 %Here we write \emph{$\phi({\mr x}\,;{\gr z})^*$\/} for the partitioned formula where the order of the two tuples is inverted (i.e.\@ it is the opposite of what displayed).
-Let $\pi\subseteq\U^{\mr x}\times\U^{\gr z}$ be a binary relation (which need not be definable in any sense).
-We denote by $\pi({\mr x}\,;{\gr z})$ the predicate associated to $\pi$.
+Let $\pi\subseteq\U^{\mr x}\times\U^{\gr z}$ be a binary relation.
+We denote by $\pi({\mr x}\,;{\gr z})$ the predicate associated to $\pi$. Though we will mainly deal with relations that are definable, it noteworthy that a few results in this section do not use saturation hence we can do without this assumption.
+Therefore, $\pi({\mr x}\,;{\gr z})$ is not assumed to be in be in $L$.
+
 We say that $\<{\mr a_i}\,;{\gr b_i} : i<\alpha\>$ is a \emph{ladder\/} of length $\alpha$ for $\pi({\mr x}\,;{\gr z})$ if for every $i<j<\alpha$
 
 \ceq{\hfill\pi({\mr a_i}\,;{\gr b_j})}{\wedge}{\neg\pi({\mr a_j}\,;{\gr b_i}).}
@@ -184,7 +186,7 @@ If $\pi({\mr x}\,;{\gr z})$  is unstable we may also sat that it has the \emph{o
 % In the following \emph{$\mrX$\/} $\subseteq\U^{\mr x}$ and \emph{$\grZ$\/} $\subseteq\U^{\gr z}$ are two given sets that are type-definable over $A$.
 % If the condition above holds when we require the ladder sequence to contain only elements of $\mrX\times\grZ$, we say that $\pi({\mr x}\,;{\gr z})$ is stable \emph{restricted to\/} $\mrX$ and $\grZ$.
 
-We will mainly deal with relations that are definable but it noteworthy that a few results in this section do not need this assumption.
+
 % The proof of the following easy fact is left to the reader.
 
 % \begin{fact}\label{}
@@ -265,7 +267,7 @@ Theorem~\ref{thm_def_stable_formula2} proves that the converse holds for formula
 \end{proof}
 
 \begin{lemma}
-If $\grD$ is approximated from below by a stable relation $\pi({\mr x}\,;{\gr z})$ then
+If $\grD$ is approximated from below by a stable formula $\pi({\mr x}\,;{\gr z})$ then
 
 \ceq{\hfill {\gr z}\in\grD}{\iff}{\bigvee^n_{i=0}\pi({\mr a_i}\,;{\gr z})}
 

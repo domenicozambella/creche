@@ -6,7 +6,7 @@
 
 In this chapter $L$ is a fix signature, $T$ a complete theory without finite models, and $\U$ is a saturated model of inaccessible cardinality $\kappa$ larger than $|L|$.
 We make no blanket assumption on the cardinality of $L$, but the main theorems require $L$ to be countable.
-The notation and implicit assumptions are as in Sectialwaysbon~\ref{monster}.
+The notation and implicit assumptions are as in Section~\ref{monster}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -23,7 +23,8 @@ When $A$ is clear from the context (e.g.\@ when $p({\mr x})$ is presented as an 
 We say that a model \emph{$M$ omits $p({\mr x})$\/} if $p({\mr x})$ is not realized in $M$.
 
 All this has a topological interpretation.
-Work with the topology induced by on $\U^{\mr x}$ or, better, on $\U^{\mr x}/{\equiv_A}$ which we identify with $S_x(A)$.
+Work with the topology induced by $A$ on $\U^{\mr x}$ or, better, on $\U^{\mr x}/{\equiv_A}$ which we identify with $S_x(A)$.
+This is defined in Section~\ref{monster}.
 Then a complete type $p({\mr x})\in S(A)$ is isolated over $A$ if it is an isolated point of the topology.
 When $p({\mr x})\subseteq L(A)$, isolated over $A$ translates in beeing nowhere dense in the topology induced by $A$.
 
@@ -32,13 +33,11 @@ Therefore if $A$ isolates $p({\mr x})$, then every model containing $A$ realizes
 Below we prove that the converse holds when $L$ and $A$ are countable.
 This is a famous classical theorem that is called the \textit{omitting types theorem\/} because it is proved by constructing a model $M$ that omits a given non-isolated type $p({\mr x})$.
 
-%In our proof $M$ is constructed in stages.
-%Along the construction {\em isolated\/}  since that of being {\em realized\/} is not well-behaved in sets which are not models.
-%In the limit, when a model is obtained, these two properties coincide.
+In our proof $M$ is constructed in stages.
+Along the construction we preserve the property of not being {\em isolated\/}  since that of not being {\em realized\/} is not well-behaved in sets which are not models.
+In the limit, when a model is obtained, these two properties coincide.
 
-%The omitting types theorem requires the following lemma which is an analogue of the Kura\-towski-Ulam theorem (i.e., the so-called Fubini theorem for Baire category).
-
-The core of the argument lies in the following lemma. 
+The core of the argument lies in the following lemma which is an analogue of the Kura\-towski-Ulam theorem (i.e., the so-called Fubini theorem for Baire category).
 
 \begin{lemma}\label{lem_kuratowskiUlam}
 Assume $L(A)$ is countable.
@@ -74,7 +73,7 @@ This contradicts our assumption and proves the lemma.
 Then for every consistent type $p({\mr x})\subseteq L(A)$ the following are equivalent
 \begin{itemize}   
 \item[1.] all models containing $A$ realize $p({\mr x})$
-\item[2.] $A$ isolates $p({\mr x})$.
+\item[2.] $p({\mr x})$ is isolated over $A$.
 \end{itemize}
 \end{void}
 
@@ -93,8 +92,7 @@ With the notation in the second proof of the L\"owenheim-Skolem Theorem~\ref{thm
 \end{proof}
 
 Gerald Sacks once famously remarked: \textit{Any fool can realize a type, but it takes a model theorist to omit one}.
-However, the diagonalization method in the proof of Lemma~\ref{lem_kuratowskiUlam} lean towards descriptive set theory.
-(We invite the interested reader to compare this lemma with the Kura\-towski-Ulam theorem.)
+However, as noted above, the diagonalization method in the proof of the main Lemma lean more towards descriptive set theory.
 
 \begin{example}\label{ex_AK}
 The following example shows that in the omitting types theorem we cannot drop the assumption that $L(A)$ is countable.
@@ -148,26 +146,7 @@ Hint: Use the base of the topology as predicates of a first-order language.
   Let $A\subseteq B$ and $p(x)\subseteq L(A)$. 
   Suppose that $\tp(a/B)$ is isolated over $B$ for every $a\models p(x)$.
   Prove that $p(x)$ is isolated over $A$.
-  % \def\ceq#1#2#3{\parbox[b]{15ex}{$\displaystyle #1$}\parbox[b]{6ex}{\hfil$#2$}$\displaystyle #3$}
-  % Hint. 
-  
-  % \ceq{\hfill p(x)}{\iff}{\bigvee\Big\{q(x)\in S(B)\ :\ q(x){\rm\ consistent\ with\ } p(x)\Big\}}
-  
-  % As all these types $q(x)$ are isolated, 
-  
-  
-  % \ceq{\hfill p(x)}{\iff}{\bigvee\Big\{\phi(x)\in L(B)\ :\ \phi(x){\rm\ complete\ formula\ consistent\ with\ } p(x)\Big\}}
-  
-  
-  % By compactness, for some $\phi_1(x)\dots,\phi_n(x)\in L(A)$ 
-  
-  % \ceq{\hfill p(x)}{\iff}{\bigvee^n_{i=1}\phi_i(x)}
-  
-  % (compactness yields $\imp$, while $\pmi$ is clear by the completeness of $\phi_i(x)$).
-  % Again by compactness, there is a formula $\psi(x)\in p$ such that
-  
-  % \ceq{\hfill\psi(x)}{\iff}{\bigvee^n_{i=1}\phi_i(x)}
-  \end{exercise}
+\end{exercise}
 
 \begin{exercise}
   Let $x$ be a finite tuple.
@@ -183,6 +162,15 @@ Hint: Use the base of the topology as predicates of a first-order language.
   Hint: note that Lemma~\ref{lem_kuratowskiUlam} holds for a countable set of non-isolated types.
 \end{exercise}
 
+\begin{exercise}
+   Let $\D\subseteq\U$ be invaliant over $A$.
+   We say that $\D$ is quasidefinable from below if for every $a\in\D$ end every $\phi(x)\in\tp(a/A)$ there is formula $\psi(x)\in L(A)$ such that $\psi(x)\imp\phi(x)$ and $\psi(\U^x)\subseteq\D$.
+   We say that $\D$ is quasidefinmable from above if $\neg\D$ is quasidefinable from below.
+   Finally $\D$ is quasidefinable if it is both quasidefinable from below and from above.
+
+   Let $L(A)$ be countable. 
+   Prove that if $\D$ is quasidefinable then there is a type-definable set $\C$ and a model $M\supseteq A$ such that $M\cap\C=M\cap\D$.
+\end{exercise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -196,7 +184,7 @@ When $A$ is empty we simply say that $M$ is \emph{prime.}
 There is no syntactic analogue of primeness.
 The closest notion, which works well for countable models in a countable language, is atomicity.
 For ${\mr a}\in\U^{\mr x}$ we say that ${\mr a}$ is  \emph{isolated\/} over $A$ if the type $p({\mr x})=\tp({\mr a}/A)$ is isolated.
-Note that this equivalent to claiming that ${\mr a}$ is an isolated point in $\U^{\mr x}$ with respect to the $A$-topology defined in Section~\ref{monster.}
+Recall that this equivalent to claiming that ${\mr a}$ is an isolated point in $\U^{\mr x}$ with respect to the topology induced by $A$.
 We say that $M$ is \emph{atomic\/} over $A$ if $A\subseteq M$ and every ${\mr a}\in M^{<\omega}$ is isolated over $A$.
 When $A$ is empty we say that $M$ is \emph{atomic.}
 

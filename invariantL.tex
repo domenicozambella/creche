@@ -23,10 +23,9 @@ The notation and implicit assumptions are as in Section~\ref{monster}.
 
 This section is only marginally required in the present chapter so it can be postponed with minor consequences.
 
-We will find it convenient to expand the language $L$ with a predicate for a given $\grD\subseteq\U^{\gr z}$.
+Occasionally, we find it convenient to expand the language $L$ with a predicate for a given $\grD\subseteq\U^{\gr z}$.
 We denote by $\<\U,\grD\>$ the corresponding expansion of $\U$.
-Generally, we write \emph{$L({\gr\X})$} for the expanded language but, when the intended interpretation of ${\gr\X}$ is only going to be $\grD$, we may write \emph{$L(\grD)$} and abbreviate $\<\U\,;\grD\>\models\phi({\gr\X})$ as $\phi(\grD)$. 
-
+If we denote by $\grZ$ the new predicate, we write \emph{$L(\grZ)$} for the expanded language but, when the intended interpretation of $\grZ$ is only going to be $\grD$, we may write \emph{$L(\grD)$} and abbreviate $\<\U\,;\grD\>\models\phi(\grZ)$ as $\phi(\grD)$. 
 
 %As usual, $L({\gr\X})$ and $L(\grD)$ denotes also the set of formulas in that language, and we write  $L(A\,;{\gr\X})$ and $L(A\,;\grD)$ for the set of formulas with parameters from $A$.
 
@@ -34,7 +33,7 @@ Generally, we write \emph{$L({\gr\X})$} for the expanded language but, when the 
 The definitions above are straightforward when ${\gr z}$ finite tuple.
 When ${\gr z}$ is an infinite tuple the intuition stays the same but a more involved definition is required.
 In fact, first-order logic does not allow predicates with infinite arity.
-We think of $L({\gr\X})$ for a two sorted language.
+We think of $L(\grZ)$ as a two sorted language.
 The \textit{home sort}, denoted by $0$, and the ${\gr z}$-\textit{sort}, denoted by ${\gr z}$.
 The expansion $\<\U,\grD\>$ has domain $\U$ for the home sort, and $\U^{\gr z}$ for the ${\gr z}$-sort.
 Besides the symbols of $L$, there is a function symbol $\pi_i$ for every $i<|{\gr z}|$ which is interpreted as the projection to the $i$-coordinate.
@@ -42,12 +41,12 @@ These functions have sort $\<{\gr z},0\>$ (see Section~\ref{many-sorted} for the
 There is also a predicate of sort $\<{\gr z}\>$ interpreted as $\grD$.
 \end{remark}
 
-What said above is adapted to define the expansion  \emph{$L({\gr\X_i}:i<\lambda)$,} where ${\gr\X_i}$ are predicates of sort ${\gr z_i}$.
-Again, when the sets ${\gr\D_i}\subseteq\U^{\gr z_i}$ are the only intended interpretation of  ${\gr\X_i}$, we write \emph{$L({\gr\D_i}:i<\lambda)$.}
+What said above is adapted to define the expansion  \emph{$L({\gr\Z_i}:i<\lambda)$,} where ${\gr\Z_i}$ are predicates of sort ${\gr z_i}$.
+Again, when the sets ${\gr\D_i}\subseteq\U^{\gr z_i}$ are the only intended interpretation of  ${\gr\Z_i}$, we write \emph{$L({\gr\D_i}:i<\lambda)$.}
 
 \begin{definition}\label{def_ins_sat}
   If $\grC,\grD\subseteq\U^{\gr z}$ we abbreviate $\<\U,\grC\>\equiv_A\<\U,\grD\>$ as $\grC\equiv_A\grD$.
-We also say that $\grD$ is \emph{saturated\/} if so is the model $\<\U\,;\grD\>$.
+We also say that $\grD$ is \emph{saturated\/} if so is the model $\<\U,\grD\>$.
 \end{definition}
 
 \begin{remark}\label{rem_el_sat}
@@ -58,7 +57,7 @@ Therefore $f[{\gr\D'}]$ is the required set $\grC$.
 \end{remark}
 
 \begin{proposition}\label{prop_indiscernible_L(A,D)}
-  If $\grD\subseteq\U^{\gr z}$ is invariant over $A$ then every $A$-indiscernible sequence is indiscernible in the language $L(A\,;\grD)$.
+  If $\grD\subseteq\U^{\gr z}$ is invariant over $A$ then every $A$-indiscernible sequence is $A$-indiscernible in the language $L(\grD)$.
 \end{proposition}
 
 \begin{proof}
@@ -75,8 +74,6 @@ Therefore $f[{\gr\D'}]$ is the required set $\grC$.
 \begin{exercise}
   Prove that if $\D\subseteq\U^z$ is saturated and invariant over $A$ than it is definable over $A$.
 \end{exercise} 
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -122,39 +119,39 @@ As $|L_{\gr z}(N)|=\lambda$ the bound follows from Proposition~\ref{prop_numberI
   \ssf{1}$\IMP$\ssf{2}. This implication is clear because all sets in $o(\grD/A)$ are Lascar invariant over $A$. 
   
   \ssf{2}$\IMP$\ssf{3}. When $|M|\le|L(A)|$ the implication follows from the bounds discussed in Section~\ref{invariant_sets}.
-We temporary add this assumption on $M$.
-Once the proof of the proposition is completed, is easily seen to be redundant (by \ssf{4} and Proposition~\ref{prop_numero_quasi_invarianti}). 
+  We temporary add this assumption on $M$.
+  Once the proof of the proposition is completed, is easily seen to be redundant (by \ssf{4} and Proposition~\ref{prop_numero_quasi_invarianti}). 
   
   \ssf{3}$\IMP$\ssf{4}. This implication holds because $\kappa$ is a strong limit cardinal.
 
   \ssf{4}$\IMP$\ssf{5}. Assume $\neg$\ssf{5}.
-Then we can find an $A\mbox{-}$indiscernible sequence $\<{\gr c_i}:i<\kappa\>$ such that ${\gr c_0}\in\grD\niff {\gr c_1}\in\grD$.
-Define
+  Then we can find an $A\mbox{-}$indiscernible sequence $\<{\gr c_i}:i<\kappa\>$ such that ${\gr c_0}\in\grD\niff {\gr c_1}\in\grD$.
+  Define
 
   \ceq{\hfill E({\gr u}\,;{\gr v})}{\IFF}{{\gr u}\in\grC\iff {\gr v}\in\grC}\ \ \ for every $\grC\in o(\grD/A)$.
 
   Then $E({\gr u}\,;{\gr v})$ is an $A\mbox{-}$invariant equivalence relation.
-As $\neg E({\gr c_0}\,;{\gr c_1})$, by Proposition~\ref{prop_indiscernible_L(A,D)}, indiscernibility over $A$ implies that $\neg E({\gr c_i\,},{\gr c_j})$ for every $i<j<\kappa$.
-Then $E({\gr u}\,;{\gr v})$ has $\kappa$ equivalence classes.
-As $\kappa$ is inaccessible, this implies $\neg$\ssf{4}.
+  As $\neg E({\gr c_0}\,;{\gr c_1})$, by Proposition~\ref{prop_indiscernible_L(A,D)}, indiscernibility over $A$ implies that $\neg E({\gr c_i\,},{\gr c_j})$ for every $i<j<\kappa$.
+  Then $E({\gr u}\,;{\gr v})$ has $\kappa$ equivalence classes.
+  As $\kappa$ is inaccessible, this implies $\neg$\ssf{4}.
 
   \ssf{5}$\IMP$\ssf{1}. Fix any ${\gr a}\equiv_N{\gr b}$ where $A\subseteq N$.
-It suffices to prove that ${\gr a}\in\grD\iff{\gr b}\in\grD$.
-Let $p({\gr z})\in S(\U)$ be a global coheir of $\tp({\gr a}/N)=\tp({\gr b}/N)$.
-Let ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ be a Morley sequence of $p({\gr z})$ over $N,{\gr a},{\gr b}$.
-Then both ${\gr a},{\gr\bar c}$ and ${\gr b},{\gr\bar c}$ are $A\mbox{-}$indiscernible sequences.
-Therefore, from \ssf{5} we obtain ${\gr a}\in\grD\iff{\gr c_0}\in\grD\iff{\gr b}\in\grD$. 
+  It suffices to prove that ${\gr a}\in\grD\iff{\gr b}\in\grD$.
+  Let $p({\gr z})\in S(\U)$ be a global coheir of $\tp({\gr a}/N)=\tp({\gr b}/N)$.
+  Let ${\gr\bar c}=\<{\gr c_i}:i<\omega\>$ be a Morley sequence of $p({\gr z})$ over $N,{\gr a},{\gr b}$.
+  Then both ${\gr a},{\gr\bar c}$ and ${\gr b},{\gr\bar c}$ are $A\mbox{-}$indiscernible sequences.
+  Therefore, from \ssf{5} we obtain ${\gr a}\in\grD\iff{\gr c_0}\in\grD\iff{\gr b}\in\grD$. 
 \end{proof}
 
 For definable sets Lascar invariance reduces to definablity over the algebraic closure.
 
 \begin{corollary}\label{coroll_defble_Lascar_inv}
 For every definable set $\grD$ the following are equivalent
-  \begin{itemize}
-    \item[1.] $\grD$ is Lascar invariant over $A$
-    \item[2.] $\grD$ is definable over every model containing $A$
-    \item[3.] $\grD\in\acl^\eq\!A$.
-  \end{itemize}\smallskip
+\begin{itemize}
+  \item[1.] $\grD$ is Lascar invariant over $A$
+  \item[2.] $\grD$ is definable over every model containing $A$
+  \item[3.] $\grD\in\acl^\eq\!A$.
+\end{itemize}\smallskip
 \end{corollary}
 
 The following corollary easily follows from Theorem~\ref{thm_Lascar_indiscernibles} and Proposition~\ref{prop_indiscernible_L(A,D)}.

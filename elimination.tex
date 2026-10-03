@@ -43,12 +43,12 @@ Below we use the following proposition without further reference.
 Fix $M\models T$ and ${\mr b}\in M^{\mr x}$. Let $q({\mr x})=\Deltatp_M({\mr b})$. Then for every $\phi({\mr x})\in L$ the following are equivalent
 \begin{itemize}
 \item[1.] $N\models\phi(k\.{\mr b})$ for every $\Delta$-morphism $k:M\imp N\models T$ that is defined in ${\mr b}$
-\item[1$'$.] $N\models\phi({\mr c})$ for every $N\models T$ such that $N,{\mr c}\Rrightarrow_\Delta  M,{\mr b}$
+% \item[1$'$.] $N\models\phi({\mr c})$ for every $N\models T$ such that $N,{\mr c}\Rrightarrow_\Delta  M,{\mr b}$
 \item[2.] $T\ \proves\  q({\mr x})\imp\phi({\mr x})$.
 \end{itemize}
 \end{proposition}
-\begin{proof} \ssf{1}$\IFF$\ssf{1$'$}. In fact, the difference is just in the notation.
-
+\begin{proof}% \ssf{1}$\IFF$\ssf{1$'$}. In fact, the difference is just in the notation.
+%
 \ssf{2}$\IMP$\ssf{1}. Immediate.  
 
 \ssf{1}$\IMP$\ssf{2}. Negate \ssf{2}, then there are $N\models T$ and ${\mr c}\in N^{\mr x}$ such that $N\models q({\mr c})\wedge\neg\phi({\mr c})$. Therefore the map $k:M\to N$, where $k=\{\<{\mr b},{\mr c}\>\}$, contradicts \ssf{1}.
@@ -80,18 +80,24 @@ Hence $q({\mr x})$ is one of the types that occur in the disjuction in $\#$ whic
 From $\#$ and compactness we obtain
 
 \ceq{\hfill T}{\proves}{\phi({\mr x})\ \ \iff\ \ \bigvee\big\{\,\psi({\mr x})\in\{\wedge\}\Delta\ :\ T\proves \psi({\mr x})\imp\phi({\mr x})\,\big\}.}
-
+9
 Applying compactness again allows us to replace the infinite disjunction above with a finite one and prove \ssf{2}.
 \end{proof}
 
 \begin{remark}\label{rem_prove_thm_EQ}
-  Note that Theorem~\ref{thm_tutteleimmersionisonoelementari_QE}, which we repeat for emphasis, follows immediately from the lemma.
+  Note that Theorem~\ref{thm_tutteleimmersionisonoelementari_QE}, which we repeat for emphasis, follows immediately from the lemma (with $\qfL$ for $\Delta$).\smallskip
+
   For every theory $T$ the following are equivalent
   \begin{itemize}
   \item[1.] $T$ has elimination of quantifiers
   \item[2.] every partial isomorphism between models of $T$ is an elementary map.
   \end{itemize}
 \end{remark}
+
+Condition \ssf2 in the Lyndon-Robinson Lemma is not a conveient condition to check directly. 
+In the next section we will find simpler conditions. 
+But first we need to characyterize the preservation of truth of quantified formulas with properties of morphisms.
+This we do in the rest of this section.
 
 % In the rest of these section we ... 
 
@@ -120,10 +126,10 @@ Then the following are equivalent
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2}. Let ${\gr a}$ enumerate $\dom k$. Define $p({\mr x}\,;{\gr z})=\{\E\wedge\}\Deltatp_M ({\mr b}\,;{\gr a})$. By \ssf{1}, $p({\mr x}\,;k{\gr a})$ is finitely consistent in $N$. By saturation there is a ${\mr c}\in N$ that realizes $p({\mr x}\,;k{\gr a})$. Therefore, $h:M\to N$ where $h=k\cup\{\<{\mr b},{\mr c}\>\}$, witnesses \ssf{2}.
 
-\ssf{2}$\IMP$\ssf{1}.
+\ssf{2}$\IMP$\ssf{3}.
 Iterate \ssf2.
 
-\ssf{2}$\IMP$\ssf{3}. Let ${\gr a}$ enumerate $\dom k$ and let $|{\gr z}|=|{\gr a}|$. Formulas in $\{\E\wedge\}\Delta$ with free variables among ${\gr z}$ are of the form  $\E {\mr\bar x}\, \phi ({\mr\bar x}\,;{\gr z})$ where $\phi({\mr\bar x}\,;{\gr z})$ is in $\{\wedge\}\Delta$ and ${\mr\bar x}$ is of finite length.
+\ssf{3}$\IMP$\ssf{1}. Let ${\gr a}$ enumerate $\dom k$ and let $|{\gr z}|=|{\gr a}|$. Formulas in $\{\E\wedge\}\Delta$ with free variables among ${\gr z}$ are of the form  $\E {\mr\bar x}\, \phi ({\mr\bar x}\,;{\gr z})$ where $\phi({\mr\bar x}\,;{\gr z})$ is in $\{\wedge\}\Delta$ and ${\mr\bar x}$ is of finite length.
 Assume $M\models\E{\mr\bar x}\,\phi({\mr\bar x}\,;{\gr a})$ and let ${\mr\bar b}$ be such that $M\models\phi({\mr\bar b}\,;{\gr a})$.
 By \ssf{2} we can extend $k$ to some $\Delta$-morphism $h:M\to N$ defined in ${\mr\bar b}$.
 Then $N\models\phi(h{\mr\bar b}\,;h{\gr a})$ and therefore $N\models\E {\mr\bar x}\,\phi({\mr\bar x}\,;k{\gr a})$.
@@ -135,8 +141,8 @@ Iterating the lemma above we obtain the following.
 Let $N$ be $\lambda$-saturated and let $|M|\le\lambda$. Let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
 \begin{itemize}
 \item[1.] $k:M\imp N$ is a $\{\E\wedge\}\Delta$-morphism
-\item[2.] $k:M\imp N$ extends to a total $\{\E\wedge\}\Delta$-morphism
-\item[3.] $k:M\imp N$ extends to a total $\Delta$-morphism.
+% \item[2.] $k:M\imp N$ extends to a total $\{\E\wedge\}\Delta$-morphism
+\item[2.] $k:M\imp N$ extends to a total $\Delta$-morphism.
 \end{itemize}
 \end{corollary}
 
@@ -185,8 +191,8 @@ Warning: do not confuse $\neg\Delta$ with $\{\neg\}\Delta$.
 Let $M$ be $\lambda$-saturated and let $|N|\le\lambda$. Let $k:M\imp N$ be a $\Delta$-morphism of cardinality $<\lambda$. Then the following are equivalent
 \begin{itemize}
 \item[1.] $k:M\imp N$ is a $\{\A\vee\}\Delta$-morphism
-\item[2.] $k:M\imp N$ extends to a sujective $\{\A\vee\}\Delta$-morphism
-\item[3.] $k:M\imp N$ extends to a surjective $\Delta$-morphism.
+% \item[2.] $k:M\imp N$ extends to a sujective $\{\A\vee\}\Delta$-morphism
+\item[2.] $k:M\imp N$ extends to a surjective $\Delta$-morphism.
 \end{itemize}
 \end{corollary}
 
@@ -242,7 +248,8 @@ The following are equivalent
 \ssf{2}$\IMP$\ssf{1}. We prove by induction of syntax that $\Delta$-morphism preserve the truth of all formulas in $\{\E\,\A\mathord\wedge\mathord\vee\}\Delta$, this suffices by Lemma~\ref{lem_qfdefinability}. Induction for the connectives $\vee$ and $\wedge$ is trivial.  So assume as induction hypothesis that the truth of  $\phi(x,y)$ is preserved.  By Lemma~\ref{lem_qfdefinability} $\phi({\mr x},{\mr y})$ is equivalent to a formula in $\{\mathord\wedge\mathord\vee\}\Delta$, hence by \ssf{2} the truth of $\E{\mr y}\, \phi ({\mr x},{\mr y})$ and $\A{\mr y} \,\phi ({\mr x},{\mr y})$ is preserved.
 \end{proof}
 
-Condition \ssf{2} of the corollary above may be difficult to verify directly. The following corollary of Proposition~\ref{prop_EDelta_estensione} and~\ref{prop_ADelta_estensione} gives a back-and-forth condition witch is easier to verify.
+Condition \ssf{2} of the corollary above may still be difficult to verify directly. 
+The following corollary of Proposition~\ref{prop_EDelta_estensione} and~\ref{prop_ADelta_estensione} gives a back-and-forth condition witch is easier to verify.
 
 \begin{corollary}\label{corol_QE_back_and_forth}
 Let $|L|\le\lambda$. The following are equivalent
@@ -365,7 +372,7 @@ The following explains the terminology of model-completeness.
   The following are equivalent
   \begin{itemize}
     \item [1.] $T$ is $\Delta$-model-complete
-    \item [2.] if $M\models T$, then $T\cup\Delta\mbox{-Diag}(M)$ entails the $\{\A\E{\wedge}{\!\vee}\}\Delta$-diagram of $M$.
+    \item [2.] if $M\models T$, then $T\cup\Delta\mbox{-Diag}(M)$ entails $\{\A\E{\wedge}{\!\vee}\}\Delta\mbox{-Diag}(M)$.
   \end{itemize}
 \end{proposition}
 
