@@ -96,29 +96,27 @@ It is important to note right away that this expansion of $\U$ is a mild one: th
 In particular, iterating the expansion would not yield anything new.
 
 \begin{proposition}\label{prop_eqmild}
-Let ${\vl\bar\X}={\vl\X_1},\dots,{\vl\X_n}$ be a tuple of second order variables of sort $\sigma_i({\mr x}\,;{\gr z})$.
-Then for every formula $\phi({\mr u}\,;{\vl\bar \X})\in L^\eq$ there is a formula $\phi'({\mr u}\,;{\gr\bar z})\in L$, where ${\gr\bar z}={\gr z_1},\dots,{\gr z_n}$ is a tuple variables of length $|{\gr z}|$, such that the following holds in $\U^\eq$
+Let ${\vl\X}$ be a variables of sort $\sigma({\mr x}\,;{\gr z})$.
+Then for every formula $\phi({\mr u}\,;{\vl\X})\in L^\eq$ there is a formula $\phi'({\mr u}\,;{\gr z})\in L$ such that the following holds in $\U^\eq$\smallskip
 
-\ceq{\hfill \phi({\mr u}\,;{\vl\bar\Aa})}{\iff}{\phi'({\mr u}\,;{\gr\bar b})}
+\ceq{\hfill \phi({\mr u}\,;{\vl\Aa})}{\iff}{\phi'({\mr u}\,;{\gr b})}\smallskip
 
-for every ${\vl\bar\Aa}={\vl\Aa_1},\dots,{\vl\Aa_n}$ and ${\gr\bar b}={\gr b_1},\dots,{\gr b_n}$ such that ${\vl\Aa_i}=\sigma(\U^{\mr x};{\gr b_i})$.
+for every ${\vl\Aa}=\sigma(\U^{\mr x};{\gr b})$.
 
-% For simplicity we are assuming that the tuples ${\gr z_i}$ do not have variables in common.
 \end{proposition}
 
-When $n=0$ the proposition asserts that $L_{{\mr x}}^\eq$ and $L_{{\mr x}}$ have the same expressive power.
+The lemma holds (and is proved) with ${\vl\X}$ replaced by any tuple of variables of differnt sorts. 
+For legibility, we leave the generalizatrion to the reader.
+Note that when ${\vl\X}$ is a tuple of length $0$, the proposition asserts that $L_{{\mr x}}^\eq$ and $L_{{\mr x}}$ have the same expressive power.
 
 \begin{proof}[Proof (sketch)]
 By induction on syntax.
-When $\phi$ is atomic, we set $\phi'=\phi$ unless $\phi$ is of the form ${\mr t}\in {\vl\X_i}$ for some tuple of terms ${\mr t}$ or it has the form ${\vl\X_i}={\vl\X_j}$.
-In the first case $\phi'$ is the formula $\sigma_i({\mr t}\,;{\gr z_i})$.
-In the second case it is the formula $\A {\mr x}\,\big[\sigma_i({\mr x}\,;{\gr z_i}) \iff\sigma_j({\mr x}\,;{\gr z_j})\big]$. 
+When $\phi$ is atomic, we set $\phi'=\phi$ unless $\phi$ is of the form ${\mr t}\in {\vl\X}$ for some tuple of terms ${\mr t}$ or it has the form ${\vl\X}={\vl\Y}$.
+In the first case $\phi'$ is the formula $\sigma({\mr t}\,;{\gr z})$, the second case the formula $\A {\mr x}\,\big[\sigma_i({\mr x}\,;{\gr z_1}) \iff\sigma_j({\mr x}\,;{\gr z_2})\big]$. 
 
 The connectives stay unchanged except for the quantifiers $\E {\vl\X}$, where ${\vl\X}$ is a second-order variable, say of sort $\sigma({\mr x}\,;{\gr z})$.
 These quantifiers are replaced by $\E{\gr z}$.
 \end{proof}
-
-Proposition~\ref{prop_eqmild} implies in particular that we can always replace $\E {\vl\X}$ by $\E {\gr z}$ if we substitute $\sigma({\mr t}\,;{\gr z})$ for ${\mr t}\in {\vl\X}$ in the quantified formula.
 
 %Exercise~\ref{ex_feqthm_senza_eq} below should convince the reader that some trivial moves may be highly convenient.
 
@@ -254,6 +252,7 @@ Then the following are equivalent
 \item[1.]  ${\vl\Aa}\in\dcl^\eq(M)$
 \item[2.]  ${\vl\Aa}=\sigma(\U^{\mr x};{\gr b})$ for some ${\gr b}\in M^{\gr z}$.
 \end{itemize}
+\smallskip
 In particular $M^\eq=\dcl^\eq(M)$.
 \end{proposition}
 
@@ -419,22 +418,29 @@ Prove $M$ realizes every consistent $p(x)\subseteq L(\acl A)$, for $|x|<\omega$.
 
 \begin{exercise}
   Let $\D\notin\acl^\eq\varnothing$ be a definable sets.
-  Prove that there is a $\V\preceq\U$ that is isomorphic to $\U$ and such that $\D\cap\V$ is not a definable subset of $\V$.
+  Prove that there is a $\V\preceq\U$ that is isomorphic to $\U$ and such that $\D\cap\V$ is not a definable subset of $\V$. (Cf.\@ Exercise~\ref{ex_isosub})
 \end{exercise}
 
 
 \begin{exercise}
   \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
   \def\ceq#1#2#3{\parbox[t]{10ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
-  Let $\D\neq\varnothing$ and $\D_0,\dots,\D_n$ be definable sets.
+  Let $\D,\D_0,\dots,\D_n$ be definable sets.
   Assume that for every automorphism $g\in\Aut(\U/\{\D\})$ either $g\D_i=\D_i$ or $\D_i\cap g\D_i=\varnothing$.
   Prove that if
 
-  \ceq{\sharp\hfill\D}{\subseteq}{\bigcup_{i\le n}\D_i}\hskip7ex  but for every $j\le n$  \ceq{\hfill\D}{\nsubseteq}{\bigcup_{j\neq i\le n} \D_i}
+  \ceq{\sharp\hfill\D}{=}{\bigcup_{i\le n}\D_i}\hskip7ex  but for every $j\le n$  \ceq{\hfill\D}{\neq}{\bigcup_{j\neq i\le n} \D_i}
 
   then every $\D_i\in\acl^\eq\{\D\}$.
 \end{exercise}
 
+\begin{proof}
+  By induction on $n$.
+  If $\D_n$ is algebraic over 
+  Then $\D_0,\dots,\D_{n-1}\in\acl^\eq\{\D\}$ but $\D_n\in\acl^\eq\{\D\}$.
+  Let $\phi(x,b)$ and $\phi_i(x,b_i)$ be the formulas defining $\D$ and $\D_0,\dots,\D_n$.
+  The formula 
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
