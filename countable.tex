@@ -23,14 +23,14 @@ When $A$ is clear from the context (e.g.\@ when $p({\mr x})$ is presented as an 
 We say that a model \emph{$M$ omits $p({\mr x})$\/} if $p({\mr x})$ is not realized in $M$.
 
 All this has a topological interpretation.
-Work with the topology induced by $A$ on $\U^{\mr x}$ or, better, on $\U^{\mr x}/{\equiv_A}$ which we identify with $S_x(A)$.
+Work with the topology induced by $A$ on $\U^{\mr x}$ or, better, on $\U^{\mr x}/{\equiv_A}$ which we identify with $S_{\mr x}(A)$.
 This is defined in Section~\ref{monster}.
 Then a complete type $p({\mr x})\in S(A)$ is isolated over $A$ if it is an isolated point of the topology.
-When $p({\mr x})\subseteq L(A)$, isolated over $A$ translates in beeing nowhere dense in the topology induced by $A$.
+% When $p({\mr x})\subseteq L(A)$, non isolated over $A$ translates in beeing nowhere dense in the topology induced by $A$.
 
 Observe that if $p({\mr x})\subseteq L(M)$ then $M$ realizes $p({\mr x})$ if and only if $M$ isolates $p({\mr x})$.
 Therefore if $A$ isolates $p({\mr x})$, then every model containing $A$ realizes $p({\mr x})$.
-Below we prove that the converse holds when $L$ and $A$ are countable.
+Below we prove that the converse holds when $L(A)$ is countable.
 This is a famous classical theorem that is called the \textit{omitting types theorem\/} because it is proved by constructing a model $M$ that omits a given non-isolated type $p({\mr x})$.
 
 In our proof $M$ is constructed in stages.
@@ -42,7 +42,7 @@ The core of the argument lies in the following lemma which is an analogue of the
 \begin{lemma}\label{lem_kuratowskiUlam}
 Assume $L(A)$ is countable.
 Let $p({\mr x})\subseteq L(A)$ and suppose that $A$ does not isolate $p({\mr x})$.
-Then, if $\psi({\gr z})\in L(A)$ is consistent, $\psi({\gr z})$ has a solution ${\gr a}$ such that $A,{\gr a}$ does not isolate $p({\mr x})$.
+Then, every consistent formula $\psi({\gr z})\in L(A)$ has a solution ${\gr a}$ such that $A,{\gr a}$ does not isolate $p({\mr x})$.
 \end{lemma}
 \begin{proof}
 We construct a sequence of formulas $\<\psi_i({\gr z}):i<\omega\>$ such that any realization~${\gr a}$ of the type $\big\{\psi_i({\gr z}):i<\omega\big\}$ is the required solution of $\psi({\gr z})$.
@@ -104,16 +104,18 @@ Then $\U$ is partitioned into three definable sets $\U_F$, $\U_X$ and $\U_Y$.
 Each element of $\U_F$ defines a bijection between $\U_X$ and $\U_Y$.
 
 Note that for any two elements $a,b\in\U_Y$, there is an automorphism of $\U$ that fixes $\U_X\cup\U_Y\sm\{a,b\}$ and swaps $a$ and $b$.
+Therefore any subset of $\U_Y$ defined by a formula $\phi(x)\in L(\U)$ is either a subset of the (finitely many) parameters that occur in $\phi(x)$ ot it is in the complement of this.
 
 Now, let $Y_0\subseteq\U_Y$ be countable.
 Let $c\in\U_Y\sm Y_0$ and let $p(y)=\tp(c/X,Y_0)$.
 We claim that $p(y)$ is realized in every model containing $X,Y_0$.
 In fact, by the remark above $p(\U)=\U_Y\sm Y_0$.
-But every model containing $X$ also contains uncountably many elements of $\U_Y$, hence it contains a conjugate of $c$ which therefore realizes $p(y)$.
+But every model containing $X$ also contains uncountably many elements of $\U_Y$, hence it contains a conjugate of $c$ over $X, Y_0$ which therefore realizes $p(y)$.
 We also claim that $p(y)$ is not isolated.
 Suppose for a contradiction there is a consistent formula $\phi(y)$ such that $\phi(y)\imp p(y)$.
 Then $\phi(y)$ has a solution in $\U_Y\sm Y_0$.
-By the remark above, this implies that $\phi(\U)$ is a cofinite subset of $\U_Y$ and this contradicts $\phi(\U)\subseteq p(\U)$.
+By the remark above, this implies that $\phi(\U)$ is a finite subset of $Y_0$ of the complement of this.
+In both cases it cannot be contained in $p(\U)$.
 \end{example}
 
 \begin{exercise}\label{ex_Baire}
@@ -150,26 +152,26 @@ Hint: Use the base of the topology as predicates of a first-order language.
 
 \begin{exercise}
   Let $x$ be a finite tuple.
-  A set $B\subseteq\U^x$ is \textit{nowhere dense\/} in the topology induced by $A$ if for every consistent formula $\phi(x)\in L(A)$ there is some consistent $\psi(x)\in L(A)$ such that $\psi(x)\imp\phi(x)$ and $\psi(B)=\varnothing$.
-  A set $C\subseteq\U^x$ is \textit{meager\/} if it is union of countably many nowhere dense sets.
+  A set $\B\subseteq\U^x$ is \textit{nowhere dense\/} in the topology induced by $A$ if for every consistent formula $\phi(x)\in L(A)$ there is some consistent $\psi(x)\in L(A)$ such that $\psi(x)\imp\phi(x)$ and $\psi(\B)=\varnothing$.
+  A set $\C\subseteq\U^x$ is \textit{meager\/} if it is union of countably many nowhere dense sets.
   
   Assume $L(A)$ is countable.
   Prove that for every countable model $M$ the following are equivalent
   \begin{itemize}
-    \item [1.] $C$ is meager in the topology topology induced by $A$
-    \item [2.] there is a model $M$ disjoint of $C$
+    \item [1.] $\C$ is meager in the topology topology induced by $A$
+    \item [2.] there is a model $M$ disjoint of $\C$
   \end{itemize}
   Hint: note that Lemma~\ref{lem_kuratowskiUlam} holds for a countable set of non-isolated types.
 \end{exercise}
 
 \begin{exercise}
-   Let $\D\subseteq\U$ be invaliant over $A$.
-   We say that $\D$ is quasidefinable from below if for every $a\in\D$ end every $\phi(x)\in\tp(a/A)$ there is formula $\psi(x)\in L(A)$ such that $\psi(x)\imp\phi(x)$ and $\psi(\U^x)\subseteq\D$.
-   We say that $\D$ is quasidefinmable from above if $\neg\D$ is quasidefinable from below.
-   Finally $\D$ is quasidefinable if it is both quasidefinable from below and from above.
+   Let $\D\subseteq\U$ be invariant over $A$.
+   We say that $\D$ is quasi-definable from below if for every $a\in\D$ and every $\phi(x)\in\tp(a/A)$ there is formula $\psi(x)\in L(A)$ such that $\psi(x)\imp\phi(x)$ and $\psi(\U^x)\subseteq\D$.
+   We say that $\D$ is quasi-definable from above if $\neg\D$ is quasi-definable from below.
+   Finally $\D$ is quasi-definable if it is both quasi-definable from below and from above. (The notion is adapted from that of quasi-continuous function.)
 
    Let $L(A)$ be countable. 
-   Prove that if $\D$ is quasidefinable then there is a type-definable set $\C$ and a model $M\supseteq A$ such that $M\cap\C=M\cap\D$.
+   Prove that if $\D$ is quasi-definable then there is a type-definable set $\C$ and a model $M\supseteq A$ such that $M\cap\C=M\cap\D$.
 \end{exercise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -309,14 +311,14 @@ Then we can set ${a_i}=f{b}$.
 
 Here we present some important characterizations of $\omega$-categoricity.
 The second property below can be stated in different equivalent ways; for convenience, these equivalents are considered in a separate proposition.
-For the time being we introduce the following generalization (which we will prove is completely unnecessary): we say hat $T$ is $\omega$-categorical over $A$ if any two countable models containing $A$ are isomorphic over $A$.
+For the time being we introduce the following generalization (which we will prove completely unnecessary): we say hat $T$ is $\omega$-categorical over $A$ if any two countable models containing $A$ are isomorphic over $A$.
 We say $\omega$-categorical for $\omega$-categorical over $\varnothing$.
 
 \begin{theorem}[ (Engeler, Ryll-Nardzewsky, and Svenonius)] Assume $L(A)$ is countable.
 The following are equivalent:
 \begin{itemize}   
 \item[1.] $T$ is $\omega$-categorical over $A$
-\item[2.] every type $p({\mr x})\subseteq L(A)$ with $|{\mr x}|<\omega$ is isolated.
+\item[2.] every consistent type $p({\mr x})\subseteq L(A)$ with $|{\mr x}|<\omega$ is isolated.
 
 \end{itemize}
 \end{theorem}
@@ -336,7 +338,7 @@ But, by Proposition~\ref{prop_atomic_unique}, countable atomic models are unique
 Fix a set $A$ and a finite tuple of variables ${\mr x}$.
 The following are equivalent\nobreak
 \begin{itemize}   
-\item[1.] every type $p({\mr x})\subseteq L(A)$ is isolated
+\item[1.] every consistent type $p({\mr x})\subseteq L(A)$ is isolated
 \item[2.] $S_{\mr x}(A)$ is finite
 \item[3.] $L_{\mr x}(A)$ is finite up to equivalence
 \item[4.] $\Aut(\U/A)$ induces finitely many orbits in $\U^{\mr x}$.
@@ -346,10 +348,10 @@ The following are equivalent\nobreak
 If these types are isolated then $\U^{\mr x}$ is the union of $A$-definable sets.
 By compactness this union has to be finite.
 To prove \ssf{2}$\IMP$\ssf{1} let $p\in S_{\mr x}(A)$.
-If $S_{\mr x}(A)$ is finite, $\neg p(\U)$ is the union of finitely many type definable sets.
-A finite union of type definable sets is type definable.
-So $\neg p(\U)$ is type definable.
-Hence $p(\U)$ is isolated.
+If $S_{\mr x}(A)$ is finite, $\neg p(\U^{\mr x})$ is the union of finitely many type definable sets.
+A finite union of type-definable sets is type-definable.
+So $\neg p(\U^{\mr x})$ is type definable.
+Hence $p(\U^{\mr x})$ is isolated.
 We prove implication \ssf{2}$\IMP$\ssf{3} observe that each formula in $L_{\mr x}(A)$ is equivalent to the disjunction of the types in $S_{\mr x}(A)$ that contain this formula.
 If $S_{\mr x}(A)$ is finite, $L_{\mr x}(A)$ is finite up to equivalence.
 Implication \ssf{3}$\IMP$\ssf{2} is clear and equivalence \ssf{2}$\IFF$\ssf{4} follows from the characterization of orbits as type-definable sets.
@@ -562,7 +564,6 @@ By the definition of $q({\mr x})$, there are countably many such types,
 so this contradicts the induction hypothesis.
 \end{proof}
 
-
 \begin{proposition}\label{prop_small_equivalents}
 Suppose $L(A)$ is countable.
 The following are equivalent\nobreak
@@ -580,15 +581,13 @@ Then it is saturated by Corollary~\ref{saturo=universaledebolmenteomogeneo}.
 For a direct argument: construct a countable chain of countable models $M_i$ such that $M_{i+1}$ realized all types in $S_{\mr x}(A,B)$ for every finite $B\subseteq M_i$ and ${\mr x}$.
 The union of the chain is the saturated model that proves \ssf2.
 
-
 \ssf{2}$\IMP$\ssf{3}. Clear.
 
 \ssf{3}$\IMP$\ssf{1}. By Lemma~\ref{lem_bin_tree}.
 \end{proof}
 
-
 \begin{proposition} 
-A small theory has atomic models over $A$ for any countable $A$.
+A small theory (over $\varnothing$) has atomic models over $A$ for any countable $A$.
 \end{proposition}
 \begin{proof}
 We prove that every formula in $L_{\mr x}(A)$, where ${\mr x}$ is finite, has a solution isolated over $A$.
@@ -620,6 +619,11 @@ Therefore, there is a countable saturated model $N$ and an atomic model $M\subse
 As $T$ is not $\omega$-categorical, $M\not\simeq N$ and there is finite tuple $a$ that is not isolated over $\varnothing$.
 Let $K$ be an atomic model over $a$.
 Clearly $K\not\simeq M$ and, by Exercises~\ref{ex_omega_cat_overA} and~\ref{ex_omega_cat_sat=atomic}, also $K\not\simeq N$.
+\end{exercise}
+
+\begin{exercise}
+   Let $L$ be the language that has binary relations $\epsilon_n$ for every $n < \omega$. The theory $T$ says that $\epsilon_0$ is trivial, and each $\epsilon_{n+1}$ is an equivalence relation that splits every $\epsilon_n$-class into exactly two $\epsilon_{n+1}$-classes. All classes are infinite.
+   Prove that $T$ is a complete small theory.
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%

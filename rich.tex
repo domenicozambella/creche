@@ -39,10 +39,9 @@ In the general case we need to make some assumptions on $\M$.
 \begin{itemize} 
 \item[c1.] the (partial) identity map $\id_A:M\to M$ is a morphism, for any $A\subseteq M$
 \item[c2.] if $k':M\to N$ is a morphism for all finite $k'\subseteq k$, then $k:M\to N$ is a morphism
-\item[c3.] morphisms are invertible maps and the inverse of a morphism is a morphism
-\item[c4.] morphisms preserve the truth of $\atL$\,-formulas
-\item[c5.] if $M$ is a model and $N\equiv M$, then also $N$ is a model
-\item[c6.] every elementary map between models is a morphism.
+\item[c3.] morphisms preserve the truth of $\atL$\,-formulas
+\item[c4.] if $M$ is a model and $N\equiv M$, then also $N$ is a model
+\item[c5.] every elementary map between models is a morphism.
 \end{itemize}
 \end{definition}
 
@@ -54,35 +53,48 @@ We call \ssf{c2} the \emph{finite character of morphisms}.
 Note that it implies the following
 
 \begin{itemize} 
-\item[c7.] if $k_i:M\to N$ is a chain of morphisms, then $\displaystyle\bigcup_{i<\lambda} k_i:M\to N$ is a morphism.
+\item[c6.] if $k_i:M\to N$ is a chain of morphisms, then $\displaystyle\bigcup_{i<\lambda} k_i:M\to N$ is a morphism.
 \end{itemize}
 
-The following two definitions require \ssf{c3}.
-The generalization to non-injective morphisms is not straightforward (in fact, there are two generalizations: \textit{projective\/} and \textit{inductive\/}).
-These generalizations are not very common and will not be considered here.
+The following definition introduce the main notions of this section \textit{rich\/} and \textit{corich.}
+When morphisms are invertible, the two notions coincide.
 
 \begin{definition}\label{def_rich}
-Assume that $\M$ satisfies \ssf{c1}-\ssf{c3} of Definition~\ref{def_com_c}.
-We say that a model $N$ is \emph{$\lambda$-rich\/} if for every model $M$, every ${\mr b}\in M$ and every morphism $k:M\imp N$ of cardinality $<\lambda$ there is a ${\mr c}\in N$ such that $k\cup\{\<{\mr b},{\mr c}\>\}:M\to N$ is a morphism.
-We say that $N$ is \emph{rich\/} if it is $\lambda$-rich for $\lambda=|N|$.
-When $\M_{\rm ob}=\Mod(T_0)$ for some theory $T_0$ and $\M_{\rm hom}$ is clear from the context, we say \emph{rich model of $T_0$.}
+We say that $N$ is \emph{$\lambda$-rich\/} if for every morphism $k:M\imp N$ of cardinality $<\lambda$ and every ${\mr b}\in M$ there is a ${\mr c}\in N$ such that $k\cup\{\<{\mr b},{\mr c}\>\}:M\to N$ is a morphism.\medskip
+
+Dually, we say that a model $N$ is \emph{$\lambda$-corich\/} if for every morphism $k:N\imp M$ of cardinality $<\lambda$ and every ${\mr b}\in M$ and there is a ${\mr c}\in N$ such that $k\cup\{\<{\mr c},{\mr b}\>\}:N\to M$ is a morphism.\medskip
+
+We say that $N$ is \emph{(co)rich,} if it is $\lambda$-(co)rich for $\lambda=|N|$.
+When $\M_{\rm ob}=\Mod(T_0)$ for some theory $T_0$ and $\M_{\rm hom}$ is clear from the context, we say \emph{(co)rich model of $T_0$.}
 \end{definition}
 
-Rich models are also called \textit{Fra\"iss\'e limits} or \textit{homogeneous-universal\/} for a reason that will soon be clear; they are also called \textit{syndetic}.
-Unfortunately these names are either too long or too syndetic, so we opt for the less common term \textit{rich\/} that was proposed by Poizat.
+% Rich models are also called \textit{Fra\"iss\'e limits} or \textit{homogeneous-universal\/} for a reason that will soon be clear, they are also called \textit{generic.}
+% Unfortunately these names are either too long or too generic, so we opt for the less common term \textit{rich\/} that was proposed by Poizat.
 
 The following two notions are closely connected with richness.
 
 \begin{definition}\label{def_omogenea_universale}
-Assume that $\M$ satisfies \ssf{c1}-\ssf{c3} of Definition~\ref{def_com_c}.
-We say that a model $N$ is \emph{$\lambda$-universal\/} if for every model $M$ of cardinality $\le\lambda$ in the same connected component as $N$ there is an embedding $k:M\hookrightarrow N$.
-We say that a model $N$ is \emph{$\lambda$-homogeneous\/} if every $k:N\to N$ of cardinality $<\lambda$ extends to a bijective morphism $h:N\isomap N$ (an automorphism when \ssf{c4} holds).
+We say that $N$ is \emph{$\lambda$-universal\/} if for every $M$ of cardinality $\le\lambda$ in the same connected component as $N$ there is an total morphism $k:M\to N$.\medskip
 
-Note that the larger $\M_{\rm hom}$, the stronger notion of homogeneity.
-When  $\M_{\rm hom}$ contains all partial embeddings between models (the largest class of morphisms considered here), it is common to say \emph{$\lambda$-ultra\-homo\-geneous\/} for $\lambda$-homogeneous.
-
-As above, when $\lambda=|N|$ we say \emph{universal}, \emph{homogeneous} and \emph{ultrahomogeneous}.
+We say that $N$ is \emph{$\lambda$-couniversal\/} if there is an surjective morphism $k:N\to M$.
 \end{definition}
+
+\begin{definition}
+We say that $N$ is \emph{weakly $\lambda$-homogeneous\/} if every $k:N\to N$ of cardinality $<\lambda$ and for every ${\mr b}\in N$ and there is a ${\mr c}\in N$ such that $k\cup\{\<{\mr b},{\mr c}\>\}:M\to N$ is a morphism.\medskip
+
+We say \emph{weakly $\lambda$-cohomogeneous\/} if $k\cup\{\<{\mr c},{\mr b}\>\}:M\to N$ is a morphism.
+\end{definition}
+
+% Note that the larger $\M_{\rm hom}$, the stronger notion of homogeneity.
+% When  $\M_{\rm hom}$ contains all partial embeddings between models, it is common to say \emph{$\lambda$-ultra\-homo\-geneous\/} for $\lambda$-homogeneous.
+
+As above, when $\lambda=|N|$ we say \emph{(co)universal} and \emph{weakly (co)homogeneous.}
+
+\begin{remark}
+  (Assume~\ref{ass_c1-5}) 
+  Then if $N$ is weakly homogeneous and weakly cohomogeneous then, by back and forth, every $k:N\to N$ of cardinality $<|N|$ extends to morphism that is both total and surjective.
+\end{remark}
+
 
 In Section~\ref{dlo} we implicitly used $\M_{\rm ob}=\Mod(T_{\rm lo})$ and partial embeddings as $\M_{\rm hom}$.
 In Section~\ref{randomgraph} we used $\M_{\rm ob}=\Mod(T_{\rm gph})$ and again partial embeddings as $\M_{\rm hom}$.
@@ -91,14 +103,14 @@ Corollary~\ref{coroll_graforicco} claims the analogous fact for $T_{\rm rg}$.
 
 In the following we frequently work under the following assumption (even when not all properties are strictly necessary).
  
-\begin{assumption}\label{ass_c1-6}
-Assume  $|L|\le\lambda$ and suppose that $\M$ satisfies \ssf{c1-c6} of Definition~\ref{def_com_c}
+\begin{assumption}\label{ass_c1-5}
+Assume  $|L|\le\lambda$ and suppose that $\M$ satisfies \ssf{c1-c5} of Definition~\ref{def_com_c}
 \end{assumption} 
  
 The assumption on the cardinality of $L$ is necessary to apply the downward L\"owen\-heim-Skolem Theorem when required.
 
 \begin{proposition}\label{prop_6.1}
-(Assume~\ref{ass_c1-6})  \  The following are equivalent
+(Assume~\ref{ass_c1-5})  \  The following are equivalent
 \begin{itemize}
 \item[1.] $N$ is a $\lambda$-rich model
 \item[2.] for every model $M$ of cardinality $\le\lambda$ and every morphism $k:M\imp N$ of cardinality, say $<\lambda$ there is a embedding $h:M\hookrightarrow N$ that extends $k$.
@@ -106,28 +118,28 @@ The assumption on the cardinality of $L$ is necessary to apply the downward L\"o
 \end{proposition}
 
 \begin{proof}
-Closure under union of chains of morphisms, which is ensured by \ssf{c7}, immediately yields \ssf{1}$\IMP$\ssf{2}.
+Closure under union of chains of morphisms, which is ensured by \ssf{c6}, immediately yields \ssf{1}$\IMP$\ssf{2}.
 For implication \ssf{2}$\IMP$\ssf{1} consider a morphism $k:M\imp N$ of cardinality $<\lambda$ and $b\in M$.
 By the downward L\"owenheim-Skolem theorem there is an  $M'\preceq M$ of cardinality $\lambda$ containing $\dom k \cup\{b\}$.
 Let $h:M'\hookrightarrow N$ be the embedding obtained from \ssf{2}.
-By \ssf{c4}, the map $h:M\to N$ is a composition of morphisms, hence a morphism.
+By \ssf{c3}, the map $h:M\to N$ is a composition of morphisms, hence a morphism.
 \end{proof}
 
 The following theorem subsumes both Theorem~\ref{thm_zigzagcantor} and Theorem~\ref{gaomegacat}.
 
 \begin{theorem}\label{thm_riccozigzag}
-(Assume~\ref{ass_c1-6})  \  Let $M$ and $N$ be two rich models of the same cardinality $\lambda$.
+(Assume~\ref{ass_c1-5})  \  Let $M$ and $N$ be two rich models of the same cardinality $\lambda$.
 Then every morphism $k:M\imp N$ of cardinality $<\lambda$ extends to an isomorphism.
 \end{theorem}
 
 \begin{proof}
 When $\lambda=\omega$, we can take the proof of Theorem~\ref{thm_zigzagcantor} and replace \textit{partial embedding\/} by \textit{morphism\/} and the references to Lemma~\ref{lem_ordinericco} by references to Definition~\ref{def_rich}.
 As for uncountable $\lambda$, we only need to extend the construction through limit stages.
-By \ssf{c7} we can simply take the union.
+By \ssf{c6} we can simply take the union.
 \end{proof}
 
 \begin{corollary}\label{coroll_riccozigzag}
-(Assume~\ref{ass_c1-6})  All rich models of cardinality $\lambda$ in the same connected component are isomorphic.
+(Assume~\ref{ass_c1-5})  All rich models of cardinality $\lambda$ in the same connected component are isomorphic.
 \end{corollary}
 
 It is obvious that rich models are universal.
@@ -138,7 +150,7 @@ On the other hand if we add to a countable random graph an isolated point we obt
 However, when taken together, these two properties are equivalent to richness.
 
 \begin{theorem}\label{ricco<->universaleomogeneo}
-(Assume~\ref{ass_c1-6}) \ The following are equivalent:
+(Assume~\ref{ass_c1-5}) \ The following are equivalent:
 \begin{itemize}
 \item[1.] $N$ is rich
 \item[2.] $N$ is homogeneous and universal.
@@ -181,7 +193,7 @@ The theorem below proves that $T_1$ is complete as soon as $\M$ is connected.
 Note that the following theorem generalizes Corollary~\ref{corol_DLO_QE} and~\ref{corol_RG_QE}.
 
 \begin{theorem}\label{thm_morphism_rich_elementary}
-(Assume~\ref{ass_c1-6})  \  Every morphism between $\lambda$-rich models is elementary.
+(Assume~\ref{ass_c1-5})  \  Every morphism between $\lambda$-rich models is elementary.
 In particular, $\lambda$-rich models in the same connected component are elementarily equivalent.
 \end{theorem}
 
@@ -190,8 +202,8 @@ Let $k:M\to N$ be a morphism between rich models.
 It suffices to prove that every finite restriction of $k$ is elementary.
 By \ssf{c2}, we may as well assume that $k$ itself is finite.
 It suffices to construct $M'\preceq M$ and  $N'\preceq N$ together with a morphism $h:M\to N$ that extends $k$ and maps $M'$ bijectively to $N'$.
-Then by \ssf{c6} the map $h:M'\isomap N'$ is the composition of morphisms, hence it is a morphism.
-Finally, by \ssf{c4}, it is an isomorphism, in particular an elementary map.
+Then by \ssf{c5} the map $h:M'\isomap N'$ is the composition of morphisms, hence it is a morphism.
+Finally, by \ssf{c3}, it is an isomorphism, in particular an elementary map.
 
 In general, richness is not preserved under elementary equivalence.
 Therefore $M'$ and $N'$ need to be constructed simultaneously with $h$.
@@ -216,7 +228,7 @@ This is achieved using the same dovetail enumeration as in our second proof the 
 \end{proof}
 
 \begin{corollary}
-  (Assume~\ref{ass_c1-6})  \  Assume $\M$ is connected.
+  (Assume~\ref{ass_c1-5})  \  Assume $\M$ is connected.
   Let $T_1$ be the theory of the rich models of $\M$.
   Then $T_1$ is complete.
 \end{corollary}
@@ -233,7 +245,7 @@ It is interesting to ask if the converse is true: if $T_1$ is the theory of the 
 % See Example~\ref{ex_infiniti_colori} for an easy to grasp counterexample, though any non $\lambda$-categorical theory is a counterexample.
 
 \begin{remark}
-    (Assume~\ref{ass_c1-6})  \  Assume $\M$ is connected.
+    (Assume~\ref{ass_c1-5})  \  Assume $\M$ is connected.
     Let $T_1$ be the theory of the rich models of $\M$.
     If every model of $T_1$ is $\lambda$-rich then $T_1$ is $\lambda$-categorical.
     (This is a consequence of Corollary~\ref{coroll_riccozigzag})
@@ -379,7 +391,7 @@ The term \emph{back-and-forth $\lambda$-homogeneous\/} is also used.
 % \end{definition}
 
 \begin{lemma}\label{debolmenteomogeneoandirivieni}
-(Assume~\ref{ass_c1-6})  \  Let $N$ be a weakly $\lambda$-ho\-mo\-ge\-ne\-ous model.
+(Assume~\ref{ass_c1-5})  \  Let $N$ be a weakly $\lambda$-ho\-mo\-ge\-ne\-ous model.
 Let $A\subseteq N$ have cardinality $\le\lambda$ and let $k:N\to N$ be a morphism of cardinality $<\lambda$.
 Then there is a model  $M\preceq N$ containing $A$ and an automorphism $h:M\isomap M$ that extends $k$.
 \end{lemma}
@@ -403,7 +415,7 @@ Define $A_{i+1}=A_i\cup\big\{{\gr a},\ h_{i+1}{\mr b},\  h_{i+1}^{-1}{\mr b}\big
 \end{proof}
 
 \begin{theorem}\label{ricco=universaledebolmenteomogeneo}
-(Assume~\ref{ass_c1-6})  \  For every model $N$ the following are equivalent
+(Assume~\ref{ass_c1-5})  \  For every model $N$ the following are equivalent
 \begin{itemize}
 \item[1.] $N$ is $\lambda$-rich
 \item[2.] $N$ is $\lambda$-universal and weakly $\lambda$-homogeneous.
@@ -421,7 +433,7 @@ Then $h\circ f:M\imp N$ extends $k$ and is defined on $b$.
 
 
 \begin{exercise}\label{omogeneo=debolmenteaomogeneo}
-  (Assume~\ref{ass_c1-6}) \ Prove that any weakly $\lambda$-ho\-mo\-ge\-ne\-ous structure of cardinality $\lambda$ is homogeneous.
+  (Assume~\ref{ass_c1-5}) \ Prove that any weakly $\lambda$-ho\-mo\-ge\-ne\-ous structure of cardinality $\lambda$ is homogeneous.
   \end{exercise}
   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -432,31 +444,35 @@ Then $h\circ f:M\imp N$ extends $k$ and is defined on $b$.
 
 In this section we discuss conditions that ensure the existence of rich models.
 
-We say that $\M$ has the \emph{amalgamation property\/} if for every pair of morphisms $f_1:M\to M_1$ and $f_2:M\to M_2$ there are two of embeddings $g_1:M_1\hookrightarrow N$ and $g_2:M_2\hookrightarrow N$ such that $g_1\circ f_1\, (a) = g_2\circ f_2\, (a)$ for every $a$ in the common domain of definition, $\dom (f_1)\; \cap\; \dom (f_2)$.
+We say that $\M$ has the \emph{amalgamation property\/} (AP) if for every pair of morphisms $f_1:M\to M_1$ and $f_2:M\to M_2$ there are two of embeddings $g_1:M_1\hookrightarrow N$ and $g_2:M_2\hookrightarrow N$ such that $g_1\circ f_1\, (a) = g_2\circ f_2\, (a)$ for every $a$ in the common domain of definition, $\dom (f_1)\; \cap\; \dom (f_2)$.
 
 
-\hfil\begin{tikzcd}[row sep=tiny]
+AP\hfil\begin{tikzcd}[row sep=tiny]
 & M_1  \arrow[dr, hook, "g_1\strut" above] & \\
 M \arrow[ur, "f_1" above] \arrow[dr, "f_1" below] &  & N \\
 & M_2  \arrow[ur, hook, "g_2\rule{0ex}{1ex}" below] & \\
 \end{tikzcd}
 
-As we assume that morphisms are invertible, we may express the amalgamation property in a more concise form.
 It is convenient to use the following notation.
 We write \emph{$M\le N$\/} if $M\subseteq N$ and $\id_M:M\hookrightarrow N$ is a morphism.
-We say that $k:M\to N$ \emph{extends to\/} $g:M\to N'$ if $k\subseteq h$ and  $N\le N'$ namely, if the following diagram commutes
+We say that $k:M\to N$ \emph{extends to\/} $g:M\to N'$ if $k\subseteq g$ and  $N\le N'$ namely, if the following diagram commutes
 
-\hfil\begin{tikzcd}[row sep=tiny]
+EP\hfil\begin{tikzcd}[row sep=tiny]
 & N  \arrow[dr, hook, "\kern2ex{\rm id}_N" above] & \\
 M \arrow[ur, "k\kern1ex" above] \arrow[rr, hook, "g" below] &  & N' \\
 \end{tikzcd}
 
+If we assume that morphisms are invertible, the following property, which we call the \emph{extension property\/} EP is a more concise form to express amalgamation.
+
+EP\hfil every morphism $k:M\to N$ extends to an embedding $g : M\hookrightarrow N'$.
+
 \begin{proposition}\label{prop_amalgamation_def}
-Assume \ssf{c3}, then the following are equivalent
+Implication \ssf1$\IMP$\ssf2 holds
 \begin{itemize}
 \item[1.] $\M$ has the amalgamation property
-\item[2.] every morphism $k:M\to N$ extends to an embedding $g : M\hookrightarrow N'$.
+\item[2.] $\M$ has the extension property.
 \end{itemize}
+Moreover if $\M$ satisfies \ssf{c3} the two properties are equivalent. 
 \end{proposition}
 
 \begin{proof}
@@ -494,7 +510,7 @@ For the next theorem to hold we need the following property
 \begin{definition}
 We say that $\M$ is \emph{closed under union of $\le$-chains\/} if
 \begin{itemize}
-\item[c8.] if $\<M_i:i<\lambda\>$ is a $\le$-chain,  then $\displaystyle M_i\le\bigcup_{j<\lambda}M_j$ \ for all $i<\lambda$.
+\item[c7.] if $\<M_i:i<\lambda\>$ is a $\le$-chain,  then $\displaystyle M_i\le\bigcup_{j<\lambda}M_j$ \ for all $i<\lambda$.
 \end{itemize}
 \end{definition}
 
@@ -502,16 +518,17 @@ The following is a general existence theorem for rich models.
 This general form requires large cardinalities.
 We leave to the reader to verify that if the number if finite morphisms is countable (up to isomorphism) then countable rich models exit.
 
-\begin{theorem}  Assume~\ref{ass_c1-6}.
-Assume further \ssf{c8} and that $\M$ has the amalgamation property.
-Let $\lambda$ be such that $|L|<\lambda=\lambda^{<\lambda}$.
-Then there is a rich model $N$ of cardinality $\lambda$.
+\begin{theorem}  Assume~\ref{ass_c1-5}.
+  Assume that $\M$ satisfies \ssf{c1, c2, c4, c5} of Definition~\ref{def_com_c}
+  Assume further \ssf{c7} and that $\M$ has the extension property.
+  Let $\lambda$ be such that $|L|<\lambda=\lambda^{<\lambda}$.
+  Then there is a rich model $N$ of cardinality $\lambda$.
 \end{theorem}
 
 \begin{proof} We construct $N$ as union of a $\le$-chain of models $\langle N_i:i < \lambda\rangle$ such that $|N_i| = \lambda$.
 Let $N_0$ be any model of cardinality $\lambda$.
 At stage $i+1$, let $f:M\imp N_i$ be the least morphism (in a well-ordering that we specify below) such that $|f|\le|M|<\lambda$ and $f$ has no extension to an embedding $f':M\hookrightarrow N_i$.
-Apply the amalgamation property to obtain a total morphism $f':M\hookrightarrow N'$ that extends $f:M\imp N_i$.
+Apply the extension property to obtain a total morphism $f':M\hookrightarrow N'$ that extends $f:M\imp N_i$.
 By the downward L\"owenheim-Skolem Theorem we may assume $|N'|=\lambda$.
 Let $N_{i+1}=N'$.
 At limit stages take the union.

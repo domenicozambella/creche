@@ -34,7 +34,9 @@ We may write $\pmDelta$ for $\{\neg\}\Delta$.%Note that $\ssf{C}_1\ssf{C}_2\Delt
 % 
 % Per esempio $\Delta$ pu\`o essere l'insieme delle formule senza quantificatori, l'insieme delle formule esistenziali, o delle combinazioni booleane di queste. Quando $\Delta$ \`e l'insieme delle formule senza quantificatori 
 
-Recall that a \emph{$\Delta$-morphism\/} is a map $k:M\imp N$ that preserves the truth of all formulas in $\Delta$. It is immediate that $\Delta$-morphism are automatically $\{\mathord\wedge\mathord\vee\}\Delta$-morphisms.
+Recall that a \emph{$\Delta$-morphism\/} is a map $k:M\imp N$ that preserves the truth of all formulas in $\Delta$. 
+We will say \emph{$\Delta$-embedding\/} for total $\Delta$-morphism and \emph{$\Delta$-epimorphism\/} for surjective $\Delta$-morphism.
+It is immediate that $\Delta$-morphism are automatically $\{\mathord\wedge\mathord\vee\}\Delta$-morphisms.
 Similarly, all $\{\E\wedge\}\Delta$-morphisms are $\{\E\mathord\wedge\mathord\vee\}\Delta$-morphisms and $\{\A\vee\}\Delta$-morphisms are $\{\A\mathord\wedge\mathord\vee\}\Delta$-morphisms.
 
 Below we use the following proposition without further reference.
@@ -142,7 +144,7 @@ Let $N$ be $\lambda$-saturated and let $|M|\le\lambda$. Let $k:M\imp N$ be a $\D
 \begin{itemize}
 \item[1.] $k:M\imp N$ is a $\{\E\wedge\}\Delta$-morphism
 % \item[2.] $k:M\imp N$ extends to a total $\{\E\wedge\}\Delta$-morphism
-\item[2.] $k:M\imp N$ extends to a total $\Delta$-morphism.
+\item[2.] $k:M\imp N$ extends to a $\Delta$-embedding.
 \end{itemize}
 \end{corollary}
 
@@ -152,7 +154,7 @@ The following theorem is often paraphrased as follows: a formula is existential 
 For every $\phi({\mr x})\in L$ the following are equivalent
 \begin{itemize}
 \item[1.] $\phi({\mr x})$ is equivalent over $T$ to a formula in $\{\E{\wedge}{\!\vee}\}\Delta$
-\item[2.] $\phi({\mr x})$ is preserved by total $\Delta$-morphisms between models of $T$.
+\item[2.] $\phi({\mr x})$ is preserved by $\Delta$-embeddings between models of $T$.
 \end{itemize}
 \end{theorem}
 \begin{proof}
@@ -161,10 +163,10 @@ For every $\phi({\mr x})\in L$ the following are equivalent
 \ssf{2}$\IMP$\ssf{1}. Negate \ssf{1}.
 By the Lyndon-Robinson Lemma~\ref{lem_qfdefinability} there is a $\{\E\wedge\}\Delta$-morphism $k:M\to N$ between models of $T$ that does not preserve $\phi({\mr x})$.
 We can assume that $N$ is $\lambda$-saturated for some sufficiently large $\lambda$.
-By Corollary~\ref{corol_EDelta_estensione} there is a total $\Delta$-morphism $h:M\hookrightarrow N$ that extends $k$ and contradicts \ssf{2}.
+By Corollary~\ref{corol_EDelta_estensione} there is a $\Delta$-embedding $h:M\hookrightarrow N$ that extends $k$ and contradicts \ssf{2}.
 \end{proof}
 
-A dual version of the results above is obtained replacing total morphisms by surjective morphisms and $\{\E\wedge\}$ by $\{\A\vee\}$.
+A dual version of the results above is obtained replacing embeddings by epimorphisms and $\{\E\wedge\}$ by $\{\A\vee\}$.
 If $\Delta$ is closed under negation, then $k:M\imp N$ is a $\Delta$-morphism if and only is $k^{-1}:N\imp M$ is a $\Delta$-morphism.
 In this case the dual version follows from what proved above.
 Without these assumptions the results need a similar but independent proof.
@@ -192,7 +194,7 @@ Let $M$ be $\lambda$-saturated and let $|N|\le\lambda$. Let $k:M\imp N$ be a $\D
 \begin{itemize}
 \item[1.] $k:M\imp N$ is a $\{\A\vee\}\Delta$-morphism
 % \item[2.] $k:M\imp N$ extends to a sujective $\{\A\vee\}\Delta$-morphism
-\item[2.] $k:M\imp N$ extends to a surjective $\Delta$-morphism.
+\item[2.] $k:M\imp N$ extends to a $\Delta$-epimorphism.
 \end{itemize}
 \end{corollary}
 
@@ -202,7 +204,7 @@ Finally we obtain the following.
 The following are equivalent
 \begin{itemize}
 \item[1.] $\phi({\mr x})$ is equivalent to a formula in $\{\A{\wedge}{\!\vee}\}\Delta$
-\item[2.] every surjective $\Delta$-morphism between models of $T$ preserves $\phi({\mr x})$.
+\item[2.] every $\Delta$-epimorphism between models of $T$ preserves $\phi({\mr x})$.
 \end{itemize}
 \end{theorem}
 
@@ -326,7 +328,7 @@ We say that $T$ is \emph{model-complete\/} if every embedding $h:M\hookrightarro
 The terminology, introduced by Abraham Robinson, is inspired by the fact that $T$ is model-complete if and only if $T\cup\Diag(M)$ is a complete theory, in the language $L(M)$, for every $M\models T$.
 See Proposition~\ref{prop_model_completeness_diag} below. 
 
-To stress positivity in the next proposition, we generalize the definition as follows. We say that $T$ is \emph{$\Delta$-model-complete\/} if every total $\Delta$-morphism $k:M\hookrightarrow N$ between models of $T$ is a $\{\A\E{\wedge}{\!\vee}\}\Delta$-morphism. 
+To stress positivity in the next proposition, we generalize the definition as follows. We say that $T$ is \emph{$\Delta$-model-complete\/} if every $\Delta$-embedding $k:M\hookrightarrow N$ between models of $T$ is a $\{\A\E{\wedge}{\!\vee}\}\Delta$-morphism. 
 
 Model-completeness is equivalent to a property akin to quantifier elimination.
 
@@ -339,9 +341,9 @@ The following are equivalent
 \end{proposition}
 
 \begin{proof}
-\ssf{1}$\IMP$\ssf{2}. By \ssf{1}, every formula $\{\A\E{\wedge}{\!\vee}\}\Delta$ is preserved by total $\Delta$-morphism therefore, by Theorem~\ref{thm_embeddings_preservation_E}, it is equivalent to a formula in $\{\E{\wedge}{\!\vee}\}\Delta$.
+\ssf{1}$\IMP$\ssf{2}. By \ssf{1}, every formula $\{\A\E{\wedge}{\!\vee}\}\Delta$ is preserved by $\Delta$-embedding therefore, by Theorem~\ref{thm_embeddings_preservation_E}, it is equivalent to a formula in $\{\E{\wedge}{\!\vee}\}\Delta$.
 
-\ssf{2}$\IMP$\ssf{1}. Clear, because total $\Delta$-morphism preserve formulas in $\{\E{\wedge}{\!\vee}\}\Delta$.
+\ssf{2}$\IMP$\ssf{1}. Clear, because $\Delta$-embeddings preserve formulas in $\{\E{\wedge}{\!\vee}\}\Delta$.
 \end{proof}
 
 The theory of discrete linear orders defined in Exercise~\ref{ex_discrete_lo} is an example of a model-complete theory without elimination of quantifiers.
@@ -380,10 +382,10 @@ Note that if $\Delta=\qfL$ then \ssf{2} says that $T\cup\Diag(M)$ is complete.\v
 
 \begin{proof}
 \ssf{1}$\IMP$\ssf{2}. 
-Let $M\models T$ and let $\phi(x)\in L$ and $a\in M^x$ be such that $M\models\phi(a)$.
+Let $M\models T$. Let $\phi(x)\in \{\A\E{\wedge}{\!\vee}\}\Delta$ and $a\in M^x$ be such that $M\models\phi(a)$.
 We show that $\phi(a)$ holds in every model $N\models T\cup\Delta\mbox{-Diag}(M)$.
-Suppose not,  then the map $\id_M:M\to N$ is a total $\Delta$-morphism which is not a $\{\A\E{\wedge}{\!\vee}\}\Delta$-morphism.
-this contradicts \ssf{1}.
+Suppose not,  then the map $\id_M:M\to N$ is a $\Delta$-embedding which is not a $\{\A\E{\wedge}{\!\vee}\}\Delta$-morphism.
+This contradicts \ssf{1}.
 
 \ssf{2}$\IMP$\ssf{1}. Let $h:M\hookrightarrow N$ be an embedding between models of $T$. We show that $h$ is a $\{\A\E{\wedge}{\!\vee}\}\Delta$-morphism.
 Let $\phi(x)$ be a formula in $\{\A\E{\wedge}{\!\vee}\}\Delta$ and let $a\in M^x$ be such that $M\models\phi(a)$.
