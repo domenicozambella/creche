@@ -46,11 +46,15 @@ Alternatively, one could require that the set defined by the type is invariant~-
 
 First we introduce some notation.
 Let $\phi({\mr x}\,;{\gr z})\in L(\U)$.
-A \emph{$\phi$-formula\/} is a Boolean combination of formulas of the form $\phi({\mr x}\,;{\gr b})$ for some ${\gr b}\in\U^{\gr z}$.
-A \emph{$\phi$-type\/} is a set of $\phi$-formulas.
-We denote by \emph{$S_\phi(\Aa)$\/} the set of complete $\phi$-types that contain $\phi$-formulas that are invariant over $\Aa$.
-Typically, $\Aa$ is either $\U$ or some small set $A\subseteq\U$.
+We write $L_{\phi}(\Aa)$ for the set of \emph{$\phi$-formulas\/} over $\Aa$.
+This is the of Boolean combination of formulas of the form $\phi({\mr x}\,;{\gr b})$ for some ${\gr b}\in\U^{\gr z}$ that are invariant over $\Aa$.
+Typically, $\Aa$ is either $\U^{\gr z}$ or $A^{\gr z}$ some small set $A\subseteq\U$ (then we may drop the superscript from $L_{\phi}(\U^{\gr z})$ and $L_{\phi}(A^{\gr z})$).
+In the first case the invariance requirement is trivial, in the second case it is the same as requiring equivalence to some formula in $L(A)$.
+
+A \emph{$\phi$-type\/} over $\Aa$ is a set of formulas in $L_{\phi}(\Aa)$.
+We denote by \emph{$S_\phi(\Aa)$\/} the set of complete $\phi$-types over $\Aa$.
 Types in \emph{$S_{\phi}(\U)$\/} are called \emph{global $\phi$-types.}
+Note that we may assume that global $\phi$-types only contain formulas of the form $\phi({\mr x}\,;{\gr b})$ or negation thereof.
 
 Let $p({\mr x})\subseteq L(\U)$.
 For $f\in\Aut(\U)$, we write $fp({\mr x})$ for the type containing the formulas $\phi({\mr x}\,;f{\gr a})$ for every $\phi({\mr x}\,;{\gr a})\in p$, where $\phi({\mr x}\,;{\gr z})\in L$.
@@ -60,7 +64,7 @@ We say that $p({\mr x})$ is \emph{invariant\/} over $A$, or \emph{$A$-invariant\
 
 Equivalently, if for every $\phi({\mr x}\,;{\gr z})\in L(A)$, every ${\gr a}\in\U^{\gr z}$, and every $f\in\Aut(\U/A)$
 
-\ceq{\ssf{it1$'$.}\hfill p({\mr x})\proves\phi({\mr x}\,;{\gr a})}{\IFF}{p({\mr x})\proves\phi({\mr x}\,;f{\gr a})}.
+\ceq{\ssf{it1$'$.}\hfill p({\mr x})\proves\phi({\mr x}\,;{\gr a})}{\IMP}{p({\mr x})\proves\phi({\mr x}\,;f{\gr a})}.
 
 % They may be identified with subsets of $\U^{\gr z}$.
 % Namely, $p({\mr x})\in S_\phi(\Aa)$ is identified with
@@ -77,7 +81,7 @@ Equivalently, if for every $\phi({\mr x}\,;{\gr z})\in L(A)$, every ${\gr a}\in\
 % The set $\grD$ is the union, for $p({\gr z})\in S(A)$, of the sets $p(\U)$ that intersect $D$.
 % \end{proof}
 
-Let $p({\mr x})\in S(\U)$ be a global type.
+Let $p({\mr x})\subseteq L(\U)$.
 For every formula $\phi({\mr x}\,;{\gr z})\in L(\U)$ we define
 
 \ceq{\hfill\emph{$\gr\D_{p,\phi}$}}{=}{\Big\{{\gr a}\in\U^{\gr z}\ :\ p({\mr x})\proves\phi({\mr x}\,;{\gr a})\Big\}.}
@@ -85,23 +89,23 @@ For every formula $\phi({\mr x}\,;{\gr z})\in L(\U)$ we define
 % We can read the notation in two ways: either the tuple ${\gr z}$ has length $\omega$ and is the same for all formulas, or it is finite and depends on $\phi$.
 % This is possible because adding or erasing dummy variables to the tuple of ${\gr z}$ does not change ${\gr\D_{p,\phi}}$ in any relevant way; in particular, invariance is preserved.
 
-A global $\phi$-type $p({\mr x})\in S_\phi(\U)$ can be identified with the set ${\gr\D_{p,\phi}}$.
+As remarked above, a global $\phi$-type $p({\mr x})\in S_\phi(\U)$ can be identified with the set ${\gr\D_{p,\phi}}$.
 Therefore a global type $p({\mr x})\in S(\U)$ can be identified with the collection of the sets ${\gr\D_{p,\phi}}$, where $\phi({\mr x}\,;{\gr z})$ ranges over $L$.
 
 Hence $p({\mr x})$ is invariant exactly when all the sets $\gr\D_{p,\phi}$ are.
 That is, $p({\mr x})$ is invariant over $A$ if for all $\phi({\mr x}\,;{\gr z})\in L(A)$ and ${\gr a},{\gr b}\in\U^{\gr z}$
 
-\ceq{\ssf{it2.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\Big(p({\mr x})\proves\phi({\mr x}\,;{\gr a})\,\IFF\,p({\mr x})\proves\phi({\mr x}\,;{\gr b})\Big)}
+\ceq{\ssf{it2.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{\Big(p({\mr x})\proves\phi({\mr x}\,;{\gr a})\,\IMP\,p({\mr x})\proves\phi({\mr x}\,;{\gr b})\Big)}
 
 % In words we say that $p({\mr x})\subseteq L(\U)$ \emph{does not split\/} over $A$.
 
 If $p({\mr x})\in S_\phi(\U)$ \ssf{it2} is equivalent to requiring that for every ${\gr a},{\gr b}\in\U^{\gr z}$
 
-\ceq{\ssf{it2$^\prime$.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{p({\mr x})\,\proves\,\phi({\mr x}\,;{\gr a})\iff\phi({\mr x}\,;{\gr b})}.
+\ceq{\ssf{it2$^\prime$.}\hfill  {\gr a}\equiv_A{\gr b}}{\IMP}{p({\mr x})\,\proves\,\phi({\mr x}\,;{\gr a})\imp\phi({\mr x}\,;{\gr b})}.
 
 Finally, note the following useful characterization of \ssf{it2$'$}
 
-\ceq{\ssf{it3.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{\phi({\mr c}\,;{\gr a})\iff\phi({\mr c}\,;{\gr b})}
+\ceq{\ssf{it3.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{\phi({\mr c}\,;{\gr a})\imp\phi({\mr c}\,;{\gr b})}
 
 for every ${\gr a},{\gr b}\in\U^{\gr z}$ and ${\mr c}\models p_{\restriction A,{\gr a},{\gr b}}$.
 When $p({\mr x})\in S(\U)$, this can be rephrased as
@@ -111,10 +115,10 @@ When $p({\mr x})\in S(\U)$, this can be rephrased as
 \begin{exercise}\label{ex_invariant_uniqueness}
   Let $\phi({\mr x}\,;{\gr z})\in L(A)$. 
   Let $M\supseteq A$ be a sufficiently saturated model.
-  Let $p({\mr x})\in S_\phi(M)$ be invariant over $A$ in the following sense: $p({\mr x})\proves\phi({\mr x}\,;{\gr b})\iff\phi({\mr x}\,;{\gr b'})$ for every ${\gr b}\equiv_A{\gr b'}$ in $M^{\gr z}$.
+  Let say that $p({\mr x})\in S_\phi(M)$ be invariant over $A$ if \ssf{it2$^\prime$.} holds for every ${\gr a},{\gr b}\in M^{\gr z}$.
   Prove that there is the unique global $\phi$-type that extends $p({\mr x})$ and is invariant over $A$.
-  Prove that such a type do not depends on the choice of $M$.
-  Find a bound on the number of global types that are invariant over $A$.
+  Prove that such a type does not depend on the choice of $M$.
+  What is the required degree of saturation?
 \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -161,115 +165,116 @@ The reason is in the following remark, which is clear by elementarity.
 \end{remark}
 
 \begin{definition}\label{def_choeir_uno}
-  A type $p({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $A$ is said to be a \emph{coheir\/} of $p_{\restriction A}({\mr x})$.
+  A type $p({\mr x})\subseteq L(\U)$ that is finitely satisfiable in $M$ is said to be a \emph{coheir\/} of $p_{\restriction M}({\mr x})$.
 \end{definition}
 
 In many cases it is convenient to work with elements instead of types.
-We introduce the following notation to express that $\tp({\mr a}/A,{\gr b})$ is finitely satisfied in $A$.
+We introduce the following notation to express that $\tp({\mr a}/M,{\gr b})$ is finitely satisfied in $M$.
 
 \begin{definition}\label{def_coheir_idepencence}
   For every ${\mr a}\in\U^{\mr x}$ and ${\gr b}\in\U^{\gr z}$ we define\smallskip
 
-  \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}
+  % \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}
   %
-  \ceq{\hfill\emph{${\mr a}\nonfork_A{\gr b}$}}
+  \ceq{\hfill\emph{${\mr a}\nonfork_M{\gr b}$}}
   {\IFF}
-  {\phi(A^{\mr x},{\gr b})\neq\varnothing
-  \textrm{ for all }\phi({\mr x}\,;{\gr z})\in L(A) 
+  {\phi(M^{\mr x},{\gr b})\neq\varnothing
+  \textrm{ for all }\phi({\mr x}\,;{\gr z})\in L(M) 
   \textrm{ such that }\phi({\mr a}\,;{\gr b})}.\smallskip
 
-  We say that $\tp({\mr a}/A,{\gr b})$ is a \emph{coheir} of $\tp({\mr a}/A)$ or, equivalently, that $\tp({\gr b}/A,{\mr a})$ is an \emph{heir} of $\tp({\gr b}/A)$.
+  We say that $\tp({\mr a}/M,{\gr b})$ is a \emph{coheir} of $\tp({\mr a}/M)$ or, equivalently, that $\tp({\gr b}/M,{\mr a})$ is an \emph{heir} of $\tp({\gr b}/M)$.
   We define the type\smallskip
 
-  \ceq{\hfill\emph{${\mr x}\nonfork_A{\gr b}$}}
+  \ceq{\hfill\emph{${\mr x}\nonfork_M{\gr b}$}}
   {=}
   {\Big\{\neg\phi({\mr x}\,;{\gr b})
   \ :\ 
-  \phi({\mr x}\,;{\gr z})\in L(A)
-  \textrm{ and } \phi(A^{\mr x};{\gr b})=\varnothing\Big\}.}\smallskip
+  \phi({\mr x}\,;{\gr z})\in L(M)
+  \textrm{ and } \phi(M^{\mr x};{\gr b})=\varnothing\Big\}.}\smallskip
 
-  We write \emph{${\mr a}\equiv_A{\mr x}\nonfork_A{\gr b}$} for the union of the types ${\mr x}\nonfork_A{\gr b}$ and $\tp({\mr a}/A)$.
-  By \ssf4 in Lemma~\ref{lem_coheir_independence} below, this is a consistent type over $A,{\gr b}$.
+  We write \emph{${\mr a}\equiv_M{\mr x}\nonfork_M{\gr b}$} for the union of the types ${\mr x}\nonfork_M{\gr b}$ and $\tp({\mr a}/M)$.
 \end{definition}
 
-The tuples ${\mr a}$ realizing ${\mr x}\nonfork_A{\gr b}$ are exactly those such that ${\mr a}\nonfork_A{\gr b}$.
-Note that $\tp({\mr a}/A,{\gr b})$ is a coheir of $\tp({\mr a}/A)$ according to Definition~\ref{def_choeir_uno}, so the terminology is consistent.
+The tuples ${\mr a}$ that realize ${\mr x}\nonfork_M{\gr b}$ are exactly those such that ${\mr a}\nonfork_M{\gr b}$.
+By {\sf4 }in Lemma~\ref{lem_coheir_independence} below, ${\mr a}\equiv_M{\mr x}\nonfork_M{\gr b}$ is a consistent type.
+This would not be true had we used an arbitrary set of parameters $A$ in place of the model $M$.
+Note that $\tp({\mr a}/M,{\gr b})$ is a coheir of $\tp({\mr a}/M)$ according to Definition~\ref{def_choeir_uno}, so the terminology is consistent.
 
-We may think of ${\mr a}\nonfork_A{\gr b}$ as saying that 
-${\mr a}$ is \emph{independent\/} from ${\gr b}$ over $A$.
+We may think of ${\mr a}\nonfork_M{\gr b}$ as saying that 
+${\mr a}$ is \emph{independent\/} from ${\gr b}$ over $M$.
 This is a strong notion of independence.
-In general it is not symmetric, that is, ${\mr b}\nonfork_A{\gr a}$ is not equivalent to ${\gr a}\nonfork_A{\mr b}$. In Chapter~\ref{stability} we will see that symmetry is equivalent to stability.
+In general it is not symmetric, that is, ${\mr b}\nonfork_M{\gr a}$ is not equivalent to ${\gr a}\nonfork_M{\mr b}$. In Chapter~\ref{stability} we will see that symmetry is equivalent to stability.
 
 \begin{remark}\label{rem_heir_type}
-  In general there is no type that says ${\mr x}\nonfork_A{\gr z}$, see Exercise~\ref{ex_heir_coheir_counterexample}.
-  However, for every ${\gr b}\in\U^{\gr z}$ there is a type that says ${\mr x}\nonfork_A{\gr z}\equiv_A{\gr b}$, namely\smallskip
+  In general there is no type that says ${\mr x}\nonfork_M{\gr z}$, see Exercise~\ref{ex_heir_coheir_counterexample}.
+  However, for every ${\gr b}\in\U^{\gr z}$ there is a type that says ${\mr x}\nonfork_M{\gr z}\equiv_M{\gr b}$, namely\smallskip
 
-  \ceq{\hfill p({\mr x}\,;{\mr z})}{\IFF}{ \big\{\neg\phi({\mr x}\,;{\gr z})\ :\ \phi(A^{\mr x}\,;{\gr b})=\varnothing, \ \ \phi({\mr x}\,;{\gr z})\in L(A)\big\}\ \cup\ q({\gr z})}\smallskip
+  \ceq{\hfill p({\mr x}\,;{\gr z})}{=}{ \big\{\neg\phi({\mr x}\,;{\gr z})\ :\ \phi(M^{\mr x}\,;{\gr b})=\varnothing, \ \ \phi({\mr x}\,;{\gr z})\in L(M)\big\}\ \cup\ q({\gr z})}\smallskip
 
-  where $q({\gr z})=\tp({\gr b}/A)$.
+  where $q({\gr z})=\tp({\gr b}/M)$.
 \end{remark}
 
 We will use the following easy lemma without explicit reference.
 
 \begin{lemma}\label{lem_coheir_independence}
-  The following properties hold for all $A,{\mr a},{\mr b}$, and $c$
+  The following properties hold for all $M,{\mr a},{\gr b}$, and $c$
   \begin{itemize}
-  \item[1.] ${\mr a}\nonfork_A{\gr b}\ \ \IMP\ \ f{\mr a}\nonfork_Af{\gr b}$ \ \ 
-            for every $f\in\Aut(\U/A)$\hfill \textit{invariance}
-  \item[2.] ${\mr a}\nonfork_A{\gr b}\ \ \IFF\ \ {\mr a_0}\nonfork_A{\gr b_0}$
+  \item[1.] ${\mr a}\nonfork_M{\gr b}\ \ \IMP\ \ f{\mr a}\nonfork_Mf{\gr b}$ \ \ 
+            for every $f\in\Aut(\U/M)$\hfill \textit{invariance}
+  \item[2.] ${\mr a}\nonfork_M{\gr b}\ \ \IFF\ \ {\mr a_0}\nonfork_M{\gr b_0}$
             \ for all finite ${\mr a_0}\subseteq{\mr a}$ and 
             ${\gr b_0}\subseteq{\gr b}$ \hfill\textit{finite character}
-  \item[3.] ${\mr a}\nonfork_{Ac},{\gr b}$ \ and \ 
-            $c\nonfork_A{\gr b}\ \ \IMP\ \ {\mr a},c\nonfork_A{\gr b}$
+  \item[3.] ${\mr a}\nonfork_{M}{\gr b},c$ \ and \ 
+            $c\nonfork_M{\gr b}\ \ \IMP\ \ {\mr a},c\nonfork_M{\gr b}$
             \hfill\hfill\hfill\textit{transitivity}
-  \item[4.] ${\mr a}\nonfork_A{\gr b}\ \ \IMP\ \ $ 
-            there exists ${\mr a'}\equiv_{A,\,{\gr b}}{\mr a}$ such that 
-            ${\mr a'}\nonfork_A{\gr b},c$
+  \item[4.] ${\mr a}\nonfork_M{\gr b}\ \ \IMP\ \ $ 
+            there exists ${\mr a'}\equiv_{M,\,{\gr b}}{\mr a}$ such that 
+            ${\mr a'}\nonfork_M{\gr b}$
             \hspace{\stretch{20}}\textit{coheir extension}
-  \item[5.] ${\mr a}\nonfork_A{\gr b_1},{\gr b_2}$ \ and \ 
-  ${\gr b_1}\equiv_A{\gr b_2}\ \ \IMP\ \ {\gr b_1}\equiv_{A,\,{\mr a}}{\gr b_2}$
+  \item[5.] ${\mr a}\nonfork_M{\gr b_1},{\gr b_2}$ \ and \ 
+  ${\gr b_1}\equiv_M{\gr b_2}\ \ \IMP\ \ {\gr b_1}\equiv_{M,\,{\mr a}}{\gr b_2}$
             \hspace{\stretch{20}}\textit{non-splitting}
   \end{itemize}
 \end{lemma}
 \begin{proof}
   Properties \ssf{1}-\ssf{3} follow immediately from Definition~\ref{def_coheir_idepencence}.
   We prove \ssf{4}.
-  Assume ${\mr a}\nonfork_A{\gr b}$, that is, $\tp({\mr a}/A,{\gr b})$ is finitely satisfiable in $A$.
-  By Proposition~\ref{prop_exisntence_coheirs} $\tp({\mr a}/A,{\gr b})$ extends to a global type $p({\mr x})$ that is finitely satisfiable in $A$.
-  Then any ${\mr a'}\models p_{\restriction A,\,{\gr b},\,c}({\mr x})$ proves the lemma.
+  Assume ${\mr a}\nonfork_M{\gr b}$, that is, $\tp({\mr a}/M,{\gr b})$ is finitely satisfiable in $M$.
+  By Proposition~\ref{prop_exisntence_coheirs} $\tp({\mr a}/M,{\gr b})$ extends to a global type $p({\mr x})$ that is finitely satisfiable in $M$.
+  Then any ${\mr a'}\models p_{\restriction M,\,{\gr b},\,c}({\mr x})$ proves the lemma.
   The proof of \ssf{5} is left to the reader.
 \end{proof}
 
 \begin{proposition}\label{prop_saturate_heir}
-  Let ${\mr a}\nonfork_A{\gr b}$ then there is $\V\preceq\U$ that is isomorphic to $\U$ over $A,{\gr b}$ and such that ${\mr a}\nonfork_A\V$.
+  Let ${\mr a}\nonfork_M{\gr b}$ then there is $\V\preceq\U$ that is isomorphic to $\U$ over $M,{\gr b}$ and such that ${\mr a}\nonfork_M\V$.
 \end{proposition}
 
 \begin{proof}
   Let $c$ be an enumeration of $\U$.
-  Let $p(w,{\gr z})=\tp(c,{\gr b}/A)$.
+  Let $p(w,{\gr z})=\tp(c,{\gr b}/M)$.
   We can take $\V$ to be the structure enumerated by the tuple that realizes symultaneously $p(w,{\gr b}) $ and the following type 
 
-  \ceq{\hfill\Big\{\neg\phi({\mr a},w)}{:}{\phi({\mr x},w)\in L(A),\ \ \phi(A^{\mr x},c)=\varnothing\Big\}.}
+  \ceq{\hfill\Big\{\neg\phi({\mr a},w)}{:}{\phi({\mr x},w)\in L(M),\ \ \phi(M^{\mr x},c)=\varnothing\Big\}.}
 
   We only need to prove finite consistency.
   If inconsistent, for some $\theta(w,{\gr z})\in p$ and some $\phi_i({\mr x},w)$ in the above set
 
   \ceq{\hfill\theta(w,{\gr b})}{\imp}{\bigvee_{i=1}^n\phi_i({\mr a},w).}
   
-  As ${\mr a}\nonfork_A{\gr b}$, we can replace ${\mr a}$ by some ${\mr a'}\in A^{\mr x}$.
+  As ${\mr a}\nonfork_M{\gr b}$, we can replace ${\mr a}$ by some ${\mr a'}\in M^{\mr x}$.
   Finally, substituting $c$ for $w$, we obtain that $\phi_i({\mr a},c)$ holds for some $i$, a contradiction
 \end{proof}
 
-When $A$ is a model, the above proposition has a dual version.
+The above proposition has a dual version.
 
 \begin{proposition}\label{prop_saturate_coheir}
-  Let ${\mr a}\nonfork_M{\gr b}$ then there is $\V\preceq\U$ that is isomorphic to $\U$ over $M,{\mr a}$ and such that $\V\nonfork_A{\gr b}$.
+  Let ${\mr a}\nonfork_M{\gr b}$ then there is $\V\preceq\U$ that is isomorphic to $\U$ over $M,{\mr a}$ and such that $\V\nonfork_M{\gr b}$.
 \end{proposition}
 
 \begin{proof}
   Let $c$ be an enumeration of $\U$.
   Let $p(w,{\mr x})=\tp(c,{\mr a}/M)$.
-  We can take $\V$ to be the structure enumerated by the tuple that realizes symultaneously $p(w,{\mr a}) $ and the type $w\nonfork_M{\gr b}$, that is,
+  We can take $\V$ to be the structure enumerated by the tuple that realizes simultaneously $p(w,{\mr a}) $ and the type $w\nonfork_M{\gr b}$, that is,
 
   \ceq{\hfill\Big\{\neg\phi(w,{\gr b})}{:}{\phi(w,{\gr z})\in L(M),\ \ \phi(M^w,{\gr b})=\varnothing\Big\}.}
 
@@ -284,32 +289,55 @@ When $A$ is a model, the above proposition has a dual version.
   Therefore, $\phi_i(c',{\gr b})$ holds for some $i$, a contradiction.
 \end{proof}
 
-As a matter of fact, on the left-side of the  $\nonfork_M$-relation we can require a stronger form of saturation.
+As a matter of fact, on the left-side of the $\nonfork_M$-relation we can require a stronger form of saturation.
 
 \begin{proposition}\label{prop_b_saturate_coheir}
   Let $C\nonfork_M{\gr b}$.
-  There is $\W\nonfork_M{\gr b}$ such that $C\cup M\subseteq\W\preceq\U$, and $\W$ realizes every type $p(x)\subseteq L(B,{\gr b})$, for any $B\subseteq\W$, that is finitely satisfied in $\W$.
+  There is a structure $\W\nonfork_M{\gr b}$ such that $C\cup M\subseteq\W\preceq\U$, and $\W$ realizes every type $p({\mr x}))\subseteq L(B,{\gr b})$, for any small $B\subseteq\W$, that is finitely satisfied in $\W$.
 \end{proposition}
 
 \begin{proof}
-  Construct inductively a chain of sets $C_i\nonfork_M{\gr b}$, for $i<\kappa$.
+  We construct inductively a chain of sets $C_i\nonfork_M{\gr b}$, for $i<\kappa$, and let $\W$ be the union of the chain.
   The chain starts with $C_0=C\cup M$, and is the union at limit stages.
-  At successor stages we define $C_{i+1}=C_i\cup\{c_i\}$ for some suitable $c_i\nonfork_{C_i}{\gr b}$.
+  At successor stages we define $C_{i+1}=C_i\cup\{c_i\}$ for some suitable ${\mr c_i}\nonfork_{M}{\gr b},C_i$.
   By \ssf3 in Lemma~\ref{lem_coheir_independence}, this ensures $C_{i+1}\nonfork_M{\gr b}$.
-  We choose the sequence $\<c_i:i<\kappa\>$ so that for every $n$ every complete type $p(x)\in S(C_n,{\gr b})$ that is finitely satisfiable in $C_n$ is eventually realized by some $c_i$.
-  This ensure that $\W$, the union of the chain, realizes all the required types.
-  To check that $\W\preceq\U$ note that, by Proposition~\ref{prop_saturate_coheir}, every consistent formula in $L(\W)$ has a solution in some $\V\nonfork_M{\gr b}$.
+  We choose the ${\mr c_i}$ so  that every complete type $p({\mr x})\subseteq L(C_i,{\gr b})$ that is finitely satisfiable in $C_i$ is eventually realized.
+  We also require that every consistent formula $\theta({\mr x})\in L(C_i,{\gr b})$ is eventually satisfied.
+
+  The proposition follows if we prove that we can meet these two requirements.
+
+  The first condition requires us to prove that $p({\mr x})$ is finitely consistent with ${\mr x})\nonfork_{M}{\gr b},C_i$.
+  Suppose not, then there are formulas $\psi({\mr x},z), \phi({\mr x},z)\in L(M,{\gr b})$ and a tuple $c\in{C_i}^z$ such that 
+
+  \begin{itemize}
+    \item[1.] $\psi({\mr x},c)$ is a conjunction of formulas in $p({\mr x})$ wich is satisfied by some ${\mr c'}\in C_i^{\mr x}$
+  
+    \item[2.]$\phi({\mr x}, c)$ is some formula that is not satisfiable in $M$
+
+    \item[3.]\noindent\kern-\leftmargin\ceq{\hfill\psi({\mr c'},c)}{\wedge}{\A{\mr x}\ [\psi({\mr x},c)\imp\phi({\mr x}, c)]}.
+  \end{itemize}
+
+  As ${\mr c'},c\nonfork_{M}{\gr b}$, from \ssf{2} we obtain that for some ${\mr a'}\in M^{\mr x}$ and $a\in M^z$
+
+  \ceq{\hfill\psi({\mr a'},a)}{\wedge}{\A{\mr x}\ [ \psi({\mr x},a)\imp\phi({\mr x}, a)]}
+  
+  Now, if we substitute ${\mr a'}$ for ${\mr x}$, we obtain a contradiction.
+  
+  For the second condition pick a formula $\theta({\mr x},z)\in L(M,{\gr b})$ and a tuple $c\in{C_i}^z$ such that $\theta({\mr x},c)$ is consistent.
+  we prove that $\theta({\mr x},c)$ is finitely consistent with ${\mr x}\nonfork_{M}{\gr b},C_i$.
+  Suppose not, then there is a formula $\phi({\mr x}, z)\in L(M,{\gr b})$ such that $\phi({\mr x}, c)$ is some formula that is not satisfiable in $M$ and $\theta({\mr x},c)\imp\phi({\mr x}, c)$. 
+  If we replace $c$ by some $a\in M^z$ we obtain a contradiction.
 \end{proof}
 
 \begin{definition}\label{def_coheir_stationary} 
-  We say that the type ${\mr x}\nonfork_A{\gr b}$ is \emph{stationary\/} if for every ${\mr a}\in\U^{\mr x}$ the type ${\mr a}\equiv_A{\mr x}\nonfork_A{\gr b}$ is complete over $A,{\gr b}$.
-  We say that $\nonfork_A$ is \emph{stationary\/} if ${\mr x}\nonfork_A{\gr b}$ is stationary for every ${\gr b\in\U^{\gr z}}$ and any finite tuples of variables ${\mr x}$ and ${\gr z}$.
+  We say that the type ${\mr x}\nonfork_M{\gr b}$ is \emph{stationary\/} if for every ${\mr a}\in\U^{\mr x}$ the type ${\mr a}\equiv_M{\mr x}\nonfork_M{\gr b}$ is complete over $M,{\gr b}$.
+  We say that $\nonfork_M$ is \emph{stationary\/} if ${\mr x}\nonfork_M{\gr b}$ is stationary for every ${\gr b}\in\U^{\gr z}$ and any finite tuples of variables ${\mr x}$ and ${\gr z}$.
   We say \emph{$n$-stationary\/} if we limit the request to a tuple ${\mr x}$ of length $n$.
 \end{definition}
 
 A first application of stationarity is given in Section~\ref{semigroups}.
-Stationarity is deeply conncted with definability as illustrated by the following proposition.
-This phenmenon will receive the due attention in Section~\ref{stable_theories}.
+Stationarity is deeply connected with definability as illustrated by the following proposition.
+This phenomenon will receive the due attention in Section~\ref{stable_theories}.
 
 \begin{proposition}\label{prop_stationarity}
   The following are equivalent 
@@ -351,7 +379,6 @@ This phenmenon will receive the due attention in Section~\ref{stable_theories}.
 %Unfortunately, this is not possible in general and the definition Section~\hyperref[coheirs_sets]{\ref*{invariantL}.\ref*{coheirs_sets}} is as good as it gets.
 
 \begin{remark}\label{rk_coheir_stationary}
-%The stationarity of $\nonfork_A$ over every set $A$, or just over every model, is equivalent to the stability of $T$, see Section~\hyperref[stable_teories]{\ref*{external}.\ref*{stable_teories}}.
 There are theories where the stationarity of $\nonfork_M$ holds for some particular $M$.
 Indeed, if every subset of $M^n$ is $M$-definable then $\nonfork_M$ is $n$-stationary by Proposition~\ref{prop_stationarity}.
 This will help in the proof of Theorem~\ref{thm_Hindman}.
@@ -407,7 +434,7 @@ In what follows $\alpha$ is some ordinal $\le\kappa$, typically $\omega$, and ${
 Let \mbox{$p({\mr x})\in S(\U)$} be a global type.
 We say that ${\mr\bar c}=\<{\mr c_i}:i<\alpha\>$ is a \emph{Morley sequence\/} of $p({\mr x})$ over $A$ if for every $i<\alpha$
 
-\ceq{\ssf{Ms.}\hfill {\mr c_i}}{\models}{p_{\restriction  A,\,{\mr c_{\restriction i}}}({\mr x})}.
+\ceq{\ssf{Ms.}\hfill {\mr c_i}}{\models}{p({\mr x})\restriction  A,\,{\mr c_{\restriction i}}}.
 
 When $p({\mr x})$ is finitely satisfiable in $A$, we say that ${\mr\bar c}$ is a \emph{coheir sequence\/} of $p({\mr x})$ over $A$.
 When we say that ${\mr\bar c}$ is a coheir sequence over $A$ (with no explicit reference to a global type), we mean that \textit{there is\/} a type $p({\mr x})\in S(\U)$ that is finitely satisfiable in $A$ such that ${\mr\bar c}$ is a coheir sequence of $p({\mr x})$.
