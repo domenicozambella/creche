@@ -206,7 +206,7 @@ This is a strong notion of independence.
 In general it is not symmetric, that is, ${\mr b}\nonfork_M{\gr a}$ is not equivalent to ${\gr a}\nonfork_M{\mr b}$. In Chapter~\ref{stability} we will see that symmetry is equivalent to stability.
 
 \begin{remark}\label{rem_heir_type}
-  In general there is no type that says ${\mr x}\nonfork_M{\gr z}$, see Exercise~\ref{ex_heir_coheir_counterexample}.
+  In general there is no type that says ${\mr a}\nonfork_M{\gr z}$, see Exercise~\ref{ex_heir_coheir_counterexample}.
   However, for every ${\gr b}\in\U^{\gr z}$ there is a type that says ${\mr x}\nonfork_M{\gr z}\equiv_M{\gr b}$, namely\smallskip
 
   \ceq{\hfill p({\mr x}\,;{\gr z})}{=}{ \big\{\neg\phi({\mr x}\,;{\gr z})\ :\ \phi(M^{\mr x}\,;{\gr b})=\varnothing, \ \ \phi({\mr x}\,;{\gr z})\in L(M)\big\}\ \cup\ q({\gr z})}\smallskip
@@ -228,8 +228,8 @@ We will use the following easy lemma without explicit reference.
             $c\nonfork_M{\gr b}\ \ \IMP\ \ {\mr a},c\nonfork_M{\gr b}$
             \hfill\hfill\hfill\textit{transitivity}
   \item[4.] ${\mr a}\nonfork_M{\gr b}\ \ \IMP\ \ $ 
-            there exists ${\mr a'}\equiv_{M,\,{\gr b}}{\mr a}$ such that 
-            ${\mr a'}\nonfork_M{\gr b}$
+            there is an ${\mr a'}\equiv_{M,\,{\gr b}}{\mr a}$ such that 
+            ${\mr a'}\nonfork_M{\gr b},c$
             \hspace{\stretch{20}}\textit{coheir extension}
   \item[5.] ${\mr a}\nonfork_M{\gr b_1},{\gr b_2}$ \ and \ 
   ${\gr b_1}\equiv_M{\gr b_2}\ \ \IMP\ \ {\gr b_1}\equiv_{M,\,{\mr a}}{\gr b_2}$
@@ -400,11 +400,6 @@ Therefore $\nonfork_M$ is $1$-stationary.
 \end{exercise}
 
 \begin{exercise}
-  Let $a\nonfork_M b$ then there is $\V\preceq\U$ that is isomorphic to $\U$ over $M,a$ and such that $\V\nonfork_Mb$.
-  Prove that we can also require that every type over $\V,b$ with $<\kappa$ parameters that is finitely satisfiable in $\V$ is realized in $\V$.
-\end{exercise}
-
-\begin{exercise}
   Let $a\nonfork_M b$. 
   Prove that for every $c$ there is $b'\equiv_{M,a} b$ such that $a,c\nonfork_M b'$. 
 \end{exercise}
@@ -416,9 +411,9 @@ Therefore $\nonfork_M$ is $1$-stationary.
 \end{exercise}
 
 \begin{exercise}\label{ex_heir_coheir_counterexample}
-  Show that in general there is no type $p(x\,;z)\subseteq L(M)$ such that 
+  Show that in general there is no type $p(z)\subseteq L(M,a)$ such that 
 
-   \ceq{\hfill a\nonfork_M b}{\IFF}{a\,;b\models p(x\,;z).}
+   \ceq{\hfill a\nonfork_M b}{\IFF}{b\models p(z).}
 
   Hint: consider the theory of dense linear orders without endpoints.
 \end{exercise}
