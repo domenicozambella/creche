@@ -113,10 +113,10 @@ When $p({\mr x})\in S(\U)$, this can be rephrased as
 \ceq{\ssf{it3$'$.}\hfill {\gr a}\equiv_A{\gr b}}{\IMP}{{\gr a}\equiv_{A,\,{\mr c}}{\gr b}}.
 
 \begin{exercise}\label{ex_invariant_uniqueness}
-  Let $\phi({\mr x}\,;{\gr z})\in L(A)$. 
+  Let $\phi(x\,;z)\in L(A)$. 
   Let $M\supseteq A$ be a sufficiently saturated model.
-  Let say that $p({\mr x})\in S_\phi(M)$ be invariant over $A$ if \ssf{it2$^\prime$.} holds for every ${\gr a},{\gr b}\in M^{\gr z}$.
-  Prove that there is the unique global $\phi$-type that extends $p({\mr x})$ and is invariant over $A$.
+  Let say that $p(x)\in S_\phi(M)$ be invariant over $A$ if \ssf{it2$^\prime$.} holds for every $a,b\in M^z$.
+  Prove that there is the unique global $\phi$-type that extends $p(x)$ and is invariant over $A$.
   Prove that such a type does not depend on the choice of $M$.
   What is the required degree of saturation?
 \end{exercise}
@@ -293,7 +293,7 @@ As a matter of fact, on the left-side of the $\nonfork_M$-relation we can requir
 
 \begin{proposition}\label{prop_b_saturate_coheir}
   Let $C\nonfork_M{\gr b}$.
-  There is a structure $\W\nonfork_M{\gr b}$ such that $C\cup M\subseteq\W\preceq\U$, and $\W$ realizes every type $p({\mr x}))\subseteq L(B,{\gr b})$, for any small $B\subseteq\W$, that is finitely satisfied in $\W$.
+  There is a structure $\W\nonfork_M{\gr b}$ such that $C\cup M\subseteq\W\preceq\U$, and $\W$ realizes every type $p({\mr x})\subseteq L(B,{\gr b})$, for any small $B\subseteq\W$, that is finitely satisfied in $\W$.
 \end{proposition}
 
 \begin{proof}
@@ -306,7 +306,7 @@ As a matter of fact, on the left-side of the $\nonfork_M$-relation we can requir
 
   The proposition follows if we prove that we can meet these two requirements.
 
-  The first condition requires us to prove that $p({\mr x})$ is finitely consistent with ${\mr x})\nonfork_{M}{\gr b},C_i$.
+  The first condition requires us to prove that $p({\mr x})$ is finitely consistent with the type ${\mr x}\nonfork_{M}{\gr b},C_i$.
   Suppose not, then there are formulas $\psi({\mr x},z), \phi({\mr x},z)\in L(M,{\gr b})$ and a tuple $c\in{C_i}^z$ such that 
 
   \begin{itemize}
@@ -348,7 +348,7 @@ This phenomenon will receive the due attention in Section~\ref{stable_theories}.
 \end{proposition}
 
 \begin{proof}
-  \ssf2$\IMP$\ssf1. 
+  \ssf2$\IMP$\ssf1.
   Let ${\gr b}\in\U^{\gr z}$ and ${\mr a_1},{\mr a_2}\in\U^{\mr x}$ be such that ${\mr a_i}\nonfork_M{\gr b}$ and ${\mr a_1}\equiv_M{\mr a_2}$.
   We claim that ${\mr a_1}\equiv_{M,\,{\gr b}}{\mr a_2}$.
   We need to prove that $\phi({\mr a_1}\,;{\gr b})\iff\phi({\mr a_2}\,;{\gr b})$ for every  $\phi({\mr x}\,;{\gr z})\in L(M)$.
@@ -356,7 +356,7 @@ This phenomenon will receive the due attention in Section~\ref{stable_theories}.
   From ${\mr a_i}\nonfork_M{\gr b}$ we obtain that  $\phi({\mr a_i}\,;{\gr b})\iff\psi({\mr a_i})$.
   Finally, the claim follows because ${\mr a_1}\equiv_M{\mr a_2}$.
 
-  \ssf1$\IMP$\ssf2. 
+  \ssf1$\IMP$\ssf2.
   Let $\W$ be as in Proposition~\ref{prop_b_saturate_coheir}. 
   Then the set $\phi(\W^{\mr x}\,;{\gr b})$ is invariant under $\Aut(\W/M)$.
   As $\W$ is saturated in the language expanded with predicate for $\phi(\W^{\mr x}\,;{\gr b})$, invariance implies that $\phi(\W^{\mr x}\,;{\gr b})$ is definable over $M$.

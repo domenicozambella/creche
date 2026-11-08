@@ -19,11 +19,33 @@ Our only purpose is to illustrate a concrete (relatively speaking) application o
 \section{Ramsey's theorem from coheir sequences}
 \label{Ramsey}
 
-In this chapter we are interested in finite partitions.
+\begin{lemma}
+  Assume there are only finitely many complete quantifier-free $n$-types over $\varnothing$.
+  (This holds in particular when $L$ contains finitely many symbols and no function of positive arity.)
+  Let $M$ be any model.
+  Then there is a sequence $\<a_i:i\in\omega\>$ of distinct elements of $M$ such that for every $I\subseteq\omega$ of cardinality $n$ the map $a_{\restriction n}\mapsto a_{\restriction I}$ is a partial isomorphism.
+\end{lemma}
+
+Note that when $M$ is a saturated structure we could pick any indiscernible sequence $\<a_i:i\in\omega\>$ and obtain that $a_{\restriction n}\mapsto a_{\restriction I}$ is an elementary map (for any $n$ and any $L$).
+
+\begin{proof}
+  Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be any coheir sequence over $M$, with ${\mr c_0}\notin M$.
+  We define by induction a sequence $\<a_i:i<\omega\>$ of elements of $M$ as follows.
+
+  Write ${\mr \cev{c}_{\restriction n}}$ for the tuple ${\mr c_{n-1}},\dots,{\mr c_0}$.
+  Assume as induction hypothesis that all $n$-subtuples of $a_{\restriction i},{\mr \cev{c}_{\restriction n}}$ have the same quantifier-free type as ${\mr \cev{c}_{\restriction n}}$.
+  Our goal is to find $a_i\in M$ such that the same property holds for $a_{\restriction i},a_i,{\mr \cev{c}_{\restriction n}}$.
+  By the $M$-indiscernibility of ${\mr\bar c}$,
+  the property holds for $a_{\restriction i},{\mr{c_n}},{\mr \cev{c}_{\restriction n}}$ and, as there are finitely many quantifier-free types, it can be written as a formula $\phi(a_{\restriction i},{\mr{c_n}},{\mr c_{\restriction n}})$.
+  As ${\mr\bar c}$ is a coheir sequence, we can find  $a_i\in M$ such that  $\phi(a_{\restriction i},a_i,{\mr c_{\restriction n}})$.
+  So, $a_{\restriction (i+1)},{\mr \vec{c}_{\restriction n}}$ satisfies the induction hypothesis.
+
+  We leave to the reader to verify that if $n>1$ the elements of $\<a_i:i\in\omega\>$ are distinct. For $n\le 1$ the lemma is trivial.
+\end{proof}
+
 We may represent the partition of a set $X$ into $k$ subsets with a map $f:X\to (k]$.
 The elements of $(k]=\{1,\dots,k\}$ are also called \emph{colors,}
-and the partition a \emph{coloring,}
-or \emph{$k$-coloring,} of $X$.
+and the partition a \emph{coloring,} or \emph{$k$-coloring,} of $X$.
 We say that $Y\subseteq X$ is \emph{monochromatic\/} if $f_{\restriction Y}$ is constant on $Y$.
 
 Let $M$ be an arbitrary infinite set.
@@ -42,45 +64,24 @@ In the latter the model theoretic overhead really pays off.
 \theoremstyle{mio}
 \newtheorem{Ramsey}[thm]{Ramsey Theorem}
 \begin{Ramsey}\label{thm_Ramsey}
-Let $M$ be an infinite set and fix some positive integers $n$ and $k$.
-Fix an arbitrary $k$-coloring of $M^{(n)}$.
-Then there is an infinite monochromatic set $H\subseteq M$.
+Let $X$ be an infinite set and fix some positive integers $n$ and $k$.
+Fix an arbitrary $k$-coloring of $X^{(n)}$.
+Then there is an infinite monochromatic set $H\subseteq X$.
 \end{Ramsey}
 \begin{proof}
-Let $L$ be a language that contains $k$ relation symbols $r_1,\dots,r_k$ of arity $n$.
-Given a $k$-coloring $f$ we define a structure with domain $M$.
+Let $L$ be a language that contains the relation symbols $r_1,\dots,r_k$ of arity $n$.
+Given a $k$-coloring $f$ we define a structure $M$ with domain $X$.
 The interpretation the relation symbol $r_i$ is
 
 %\ceq{\hfill r_i^M}{=}{\Big\{ ({\mr a_0},\dots,a_{n-1})\ :\ |\{{\mr a_0},\dots,a_{n-1}\}|=n \ \textrm { e \ }f\big(\{{\mr a_0},\dots,a_{n-1}\}\big)= i\Big\}}
 
 %\ceq{\hfill r_i^M}{=}{\Big\{ \<{\mr a_0},\dots,{\mr a_{n-1}}\>\ :\  \big|\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big|=n \ \textrm { and \ }f\big(\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big)= i\Big\}} 
 
-\ceq{\hfill r_i^M}{=}{\Big\{  a\in M^n \ : \ |\range(a)|=n \ \textrm{ and } \ f\big(\range(a)\big)= i\Big\}.} 
+\ceq{\hfill r_i^M}{=}{\Big\{  a\in X^n \ : \ |\range(a)|=n \ \textrm{ and } \ f\big(\range(a)\big)= i\Big\}.} 
 
-We may assume that $M$ is an elementary substructure of some large saturated model $\U$.
-Let $q({\mr x})$, where $|{\mr x}|=1$, be the type that says that ${\mr x}$ is not in $M$.
-Let $p({\mr x})\in S(\U^{\mr x})$ be an extension of $q({\mr x})$ that is finitely satisfied in $M$.
-Finally, let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be a coheir sequence of $p({\mr x})$ over $M$.
-
-There is a first-order sentence saying that the formulas $r_i({\mr x_1},\dots,{\mr x_n})$ are a coloring of $M^{(n)}$.
-Then by elementarity the same holds in $\U$.
-By indiscernibility,
-all tuples of $n$ distinct elements of ${\mr\bar c}$ have the same color, say $1$.
-
-%\ceq{\ssf{\#}\hfill M}{\models}{\A {\mr x_0},\dots,{\mr x_{n-1}}\ \left[\bigwedge_{0\le i<j<n} {\mr x_i}\neq {\mr x_j}\quad\imp\quad\bigvee_{i<k}r_i({\mr x_0},\dots,{\mr x_{n-1}})\right].}
-
-The theorem is proved if we can find in $M$ a sequence $\bar a=\<a_i:i<\omega\>$ with color $1$.
-We construct $a_{\restriction i}$ by induction on $i$ as follows.
-
-Assume as induction hypothesis that the subsequences of length $n$ of $a_{\restriction i},{\mr c_{\restriction n}}$ have all color $1$.
-Our goal is to find $a_i\in M$ such that the same property holds for $a_{\restriction i},a_i,{\mr c_{\restriction n}}$.
-By the indiscernibility of ${\mr\bar c}$,
-the property holds for  $a_{\restriction i},{\mr c_{\restriction n}},{\mr{c_n}}$, and this can be written by a formula $\phi(a_{\restriction i},{\mr c_{\restriction n}},{\mr{c_n}})$.
-As ${\mr\bar c}$ is a coheir sequence,
-by Lemma~\ref{lem_coheir_property} we can find  $a_i\in M$ such that  $\phi(a_{\restriction i},{\mr c_{\restriction n}},a_i)$.
-So,
-as the order is irrelevant,
-$a_{\restriction i},a_i,{\mr c_{\restriction n}}$ satisfies the induction hypothesis.
+Apply the lemma with $M\preceq\U$.
+We obtain a sequence $\<a_n:n\in\omega\>$ such that $f(\range a_{\restriction n})=f(\range a_{\restriction I})$ for every $I\subseteq\omega$ of cardinality $n$.
+As the ordering is irrelevant, the set $H=\{a_i:i\in\omega\}$ proves the theorem.
 \end{proof}
 
 % \begin{exercise}\label{ex_Ramsey_order}
@@ -112,23 +113,23 @@ $a_{\restriction i},a_i,{\mr c_{\restriction n}}$ satisfies the induction hypoth
 \section{The Ehrenfeucht-Mostowski theorem}\label{EM}
 
 Let $I,<_I$ be an infinite linear order.
-To minimize notation, we assume throughout the section that $I$ has no largest element.
-It is immediate how to tweak the definition below so that it makes sense without this assumption.
-
-Let ${\mr\bar a}$ be an $I$-sequence.
+Let ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ be an $I$-sequence.
 Fix a tuple of variables ${\mr\bar x}=\<{\mr x_i}: i<\omega\>$.
-We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$} and say that $p({\mr\bar x})$ is the \emph{Ehren\-feucht-Mostowski type\/} of ${\mr\bar a}$ over $A$ if
+Define 
 
-\ceq{\hfill p({\mr\bar x})}{=}{\Big\{\phi({\mr\bar x})\in L(A)\ :\ \phi({\mr a_{\restriction I_0}})\ \textrm{ holds for every }\ I_0\in I^{(\omega)}\Big\}.}
+\ceq{\hfill p_n({\mr x_{\restriction n}})}{=}{\Big\{\phi({\mr x_{\restriction n}})\in L(A)\ :\ \phi({\mr a_{\restriction I_0}})\textrm{ holds for every }I_0\in I^{(n)}\Big\}.}
 
-Where \emph{$I^{(\omega)}$\/} is the set of subsets of $I$ ordered as $\omega$.
-As ${\mr\bar x}$ is of order-type $\omega$, the expression $\phi({\mr a_{\restriction I_0}})$ is sound.
+We call the type
 
-Note that if ${\mr\bar a}$ is $A$-indiscernible then $\EMtp({\mr\bar a}/A)$ is a complete type,
-and vice versa.
+\ceq{\hfill p({\mr\bar x})}{=}{\bigcup_{n<\omega}p_n({\mr x_{\restriction n}})}
 
-\begin{remark}
-  Let $I,<_I$ and $J,<_J$ be infinite linear orders with no largest element.
+the \emph{Ehren\-feucht-Mostowski type\/} of ${\mr\bar a}$ over $A$.
+We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$.} 
+
+Note that ${\mr\bar a}$ is $A$-indiscernible if and only if $\EMtp({\mr\bar a}/A)$ is a complete type.
+
+\begin{remark}\label{rem_indiscernibili_ordine}
+  Let $I,<_I$ and $J,<_J$ be infinite linear orders.
   Let ${\mr\bar c}=\<{\mr c_i}:i\in I\>$ be a sequence of $A$-indiscernibles.
   By compactness, there is a sequence of $A$-indiscernibles ${\mr\bar a}=\<{\mr a_j}:j\in J\>$ such that $\EMtp({\mr\bar a}/A)=\EMtp({\mr\bar c}/A)$.
 \end{remark}
@@ -144,39 +145,33 @@ Finally, we can state the Ehrenfeucht-Mostowski theorem.
 
 \begin{void}[Ehrenfeucht-Mostowski Theorem]\label{thm_EM}
   Let $I,<_I$ be an infinite linear order with no largest element.
-  Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is an $A$-indiscernible sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ such that $\EMtp({\mr\bar a}/A)\subseteq\tp({\mr\bar c}/A)$.  
+  Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is an $A$-indiscernible sequence ${\mr\bar c}=\<{\mr c_i}:i\in J\>$ such that $\EMtp({\mr\bar a}/A)\subseteq\tp({\mr\bar c}/A)$.
 \end{void}
+
+In the proof below, it is convenient take $J,<_J$ to be $\omega$ with the referse order. 
+However, by Remark~\ref{rem_indiscernibili_ordine}, we obtain that the theorem holds also for any other infinite linear order.
+
 \begin{proof}
-Let $q({\mr\bar x})=\EMtp({\mr\bar a}/A)$.
-Any realization of the following type is a sequence of $A$-indiscernibles ${\mr\bar c}$ as required by the theorem.
+  Let 
 
-\ceq{\hfill q({\mr\bar x})}
-{\cup}
-{\Big\{\phi({\mr x_{\restriction I_0}})\iff\phi({\mr x_{\restriction J_0}})\ :\  \phi({\mr\bar x})\in L(A), \ I_0, J_0\in\omega^{(\omega)} \Big\}.}
+\ceq{\hfill q({\mr x})}{=}{\{\phi({\mr x})\in L(A,\ {\mr\bar a})\ :\ \phi({\mr a_i}) \textrm{ holds for cofinitely many }i\in I\}.}
 
-We will prove that any finite subset of the type above is realized by a subsequence of ${\mr\bar a}$.
-First note that $q({\mr\bar x})$ is realized by ${\mr a_{\restriction H}}$ for every $H\subseteq I^{(\omega)}$.
-Then we only need to pay attention to the set on the right.
+Let $p({\mr x})\supseteq q({\mr x})$ be a global type that is finitely satisfied in ${\mr\bar a}$.
+Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be a Morley sequence of $p({\mr x})$ over $A,{\mr\bar a}$.
+Clearly, ${\mr\bar c}$ is indiscernible over $A$ also if we reverse the order of $\omega$.
+Then it suffices to prove that for every $\phi({\mr x_{\restriction n}})\in L(A)$
+\begin{itemize}
+  \item[\#] if $\phi({\mr a_{\restriction I_0}})$ holds for cofinally many $I_0\in\omega^{(n)}$ then $\phi({\mr\cev{c}_{\restriction n}})$.
+\end{itemize}
 
-We prove that for $k$ and $n$ arbitrarily large and every $\phi_1({\mr\bar x}),\dots,\phi_k({\mr\bar x})\in L(A)$ there is an infinite $H\subseteq\omega$ such that ${\mr a_{\restriction H}}$ realizes
+Assume inductively that the claim holds for $n$ and prove the contrapositive of \# holds with $n{+}1$ for $n$.
+Suppose $\neg\phi({\mr c_n},{\mr\cev{c}_{\restriction n}})$ and pick an arbitrary $i\in\omega$.
+As ${\mr c_n}\models p({\mr x})\restriction A,{\mr\cev{c}_{\restriction n}}$ and
 
-\ceq{\ssf{\#}}
-{}
-{\Big\{\phi_i({\mr x_{\restriction I_0}})\iff\phi_i({\mr x_{\restriction J_0}})\ :\  I_0, J_0\in\omega^{(\omega)}\textrm{ and } i\in(k]\Big\}.}
+\ceq{\hfill p({\mr x})}{\proves}{\neg\phi({\mr x},{\mr   \cev{c}_{\restriction n}})\ \wedge\ \bigwedge_{j\le i} {\mr x}\neq {\mr a_j},}
 
-Let $n$ be larger than any $i$ such that ${\mr x_i}$ occurs in $\phi_1({\mr\bar x}),\dots,\phi_k({\mr\bar x})$.
-Consider the subsets of $(k]$ as colors and let $f$ be the coloring of $I^{(n)}$ that maps $I_0$ to the set $\big\{i\ :\ \phi_i({\mr a_{\restriction I_0}})\big\}$.
-By the Ramsey theorem,
-there is some infinite monochromatic set $H\subseteq I$ with the order type of $\omega$.
-Hence
-
-\ceq{}
-{}
-{\Big\{\phi_i({\mr a_{\restriction I_0}})\iff\phi_i({\mr a_{\restriction J_0}})\ :\  I_0, J_0\in H^{(n)}\textrm{ and } i\in(k]\Big\}.}
-
-As $H$ has order type $\omega$,
-it is immediate that ${\mr a_{\restriction H}}$ realizes \ssf{\#}
-as required.
+we can find some $i<i_1<I_1\in\omega^{(n)}$ such that $\neg\phi({\mr a_{i_1}},{\mr a_{\restriction I_1}})$.
+As $i$ is arbitrary, $\phi({\mr a_{\restriction I_0}})$ cannot hold for cofinitely many $I_0=I_1\cup\{i_1\}\in\omega^{(n+1)}$.
 \end{proof}
 
 \begin{proposition}\label{prop_indiscernibles_set_model}
@@ -191,16 +186,6 @@ As ${\mr\bar a}$ is an $A$-indiscernible sequence ${\mr\bar a}\equiv_A{\mr\bar c
 Therefore $h\,{\mr\bar c}={\mr\bar a}$ for some $h\in\Aut(\U/A)$.
 Hence ${\mr\bar a}$ is indiscernible over $h[M]$.
 \end{proof}
-
-\begin{exercise}
-  Let $I,<_I$ and $J,<_J$ be infinite linear orders with no largest element.
-  Prove that for every sequence $\bar a=\<a_i:i\in I\>$ there is an $A$-indiscernible sequence $\bar c=\<c_i:i\in J\>$ such that $\mbox{EM-tp}(\bar a/A)\subseteq\mbox{EM-tp}(\bar c/A)$.
-\end{exercise}
-
-\begin{exercise}
-  Let $\bar a=\<a_i:i\in I\>$ be an $A$-indiscernible sequence with no largest element and let $J$ with $|J|\le \kappa$ be a linear order extending $I$.
-  Prove that there is an $A$-indiscernible sequence that extends $\bar a$. I.e. some $\bar c=\<c_i:i\in J\>$ such that $c_{\restriction I}=\bar a$.
-\end{exercise}
 
 \begin{exercise}
   Let $p(x)\in S(\U)$ be a global type invariant over $A$.
