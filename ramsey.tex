@@ -18,12 +18,16 @@ Our only purpose is to illustrate a concrete (relatively speaking) application o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ramsey's theorem from coheir sequences}
 \label{Ramsey}
+Ramsey's theorem is a very famous theorem which here we prove in an unusual (and overly convoluted)  way.
+Our purpose is to illustrate the method of proof of Theorem~\ref{thm_Hindman}.
+In the latter the model theoretic overhead really pays off.
+We begin with a lemma.
 
 \begin{lemma}
   Assume there are only finitely many complete quantifier-free $n$-types over $\varnothing$.
   (This holds in particular when $L$ contains finitely many symbols and no function of positive arity.)
   Let $M$ be any model.
-  Then there is a sequence $\<a_i:i\in\omega\>$ of distinct elements of $M$ such that for every $I\subseteq\omega$ of cardinality $n$ the map $a_{\restriction n}\mapsto a_{\restriction I}$ is a partial isomorphism.
+  Then there is a sequence $\<a_i:i<\omega\>$ of distinct elements of $M$ such that for every $I\in\omega^{(n)}$ the tuples $a_{\restriction n}$ and $a_{\restriction I}$ have the same quantifier-free type.
 \end{lemma}
 
 Note that when $M$ is a saturated structure we could pick any indiscernible sequence $\<a_i:i\in\omega\>$ and obtain that $a_{\restriction n}\mapsto a_{\restriction I}$ is an elementary map (for any $n$ and any $L$).
@@ -38,36 +42,33 @@ Note that when $M$ is a saturated structure we could pick any indiscernible sequ
   By the $M$-indiscernibility of ${\mr\bar c}$,
   the property holds for $a_{\restriction i},{\mr{c_n}},{\mr \cev{c}_{\restriction n}}$ and, as there are finitely many quantifier-free types, it can be written as a formula $\phi(a_{\restriction i},{\mr{c_n}},{\mr c_{\restriction n}})$.
   As ${\mr\bar c}$ is a coheir sequence, we can find  $a_i\in M$ such that  $\phi(a_{\restriction i},a_i,{\mr c_{\restriction n}})$.
-  So, $a_{\restriction (i+1)},{\mr \vec{c}_{\restriction n}}$ satisfies the induction hypothesis.
+  So, $a_{\restriction (i+1)},{\mr \cev{c}_{\restriction n}}$ satisfies the induction hypothesis.
 
   We leave to the reader to verify that if $n>1$ the elements of $\<a_i:i\in\omega\>$ are distinct. For $n\le 1$ the lemma is trivial.
 \end{proof}
 
+Ramsey's theorem is an immediatre consequence of the lemma, it is usually formulated in its own vernacular.
 We may represent the partition of a set $X$ into $k$ subsets with a map $f:X\to (k]$.
 The elements of $(k]=\{1,\dots,k\}$ are also called \emph{colors,}
 and the partition a \emph{coloring,} or \emph{$k$-coloring,} of $X$.
-We say that $Y\subseteq X$ is \emph{monochromatic\/} if $f_{\restriction Y}$ is constant on $Y$.
 
-Let $M$ be an arbitrary infinite set.
-Fix $n,k<\omega$ and fix a coloring $f$ of the set of all \emph{$n$-subsets} of $M$,
-also known as the \emph{complete $n$-uniform hypergraph\/} with vertex set $M$,
+Pick $n<\omega$ and a $k$-coloring $f$ of $X^{(n)}$,the set of all \emph{$n$-subsets} of $X$,
+which also known as the \emph{complete $n$-uniform hypergraph\/} with vertex set $X$,9
 
-\ceq{\hfill f}{:}{ \binom{M}{n}=M^{(n)}\ \ \to\ \ (k]}.
+\ceq{\hfill f}{:}{ \binom{X}{n}=X^{(n)}\ \ \to\ \ (k]}.
 
-We say that $H\subseteq M$ is a \emph{monochromatic set\/} if $f$ is constant on $H^{(n)}$.
+We say that $H\subseteq X$ is a \emph{monochromatic set\/} if $f$ is constant on $H^{(n)}$.
 In combinatorics, monochromatic sets are also called \emph{homogeneous sets.}
 
 The following is a very famous theorem which we prove here in an unusual (and overly convoluted)  way.
 Our purpose is to illustrate the method of proof of Theorem~\ref{thm_Hindman}.
 In the latter the model theoretic overhead really pays off.
 
-\theoremstyle{mio}
-\newtheorem{Ramsey}[thm]{Ramsey Theorem}
-\begin{Ramsey}\label{thm_Ramsey}
+\begin{void}[Ramsey Theorem]
 Let $X$ be an infinite set and fix some positive integers $n$ and $k$.
 Fix an arbitrary $k$-coloring of $X^{(n)}$.
 Then there is an infinite monochromatic set $H\subseteq X$.
-\end{Ramsey}
+\end{void}
 \begin{proof}
 Let $L$ be a language that contains the relation symbols $r_1,\dots,r_k$ of arity $n$.
 Given a $k$-coloring $f$ we define a structure $M$ with domain $X$.
@@ -83,12 +84,6 @@ Apply the lemma with $M\preceq\U$.
 We obtain a sequence $\<a_n:n\in\omega\>$ such that $f(\range a_{\restriction n})=f(\range a_{\restriction I})$ for every $I\subseteq\omega$ of cardinality $n$.
 As the ordering is irrelevant, the set $H=\{a_i:i\in\omega\}$ proves the theorem.
 \end{proof}
-
-% \begin{exercise}\label{ex_Ramsey_order}
-%   Let $I,<_I$ be an linear order without largest element.
-%   Let $f$ be a coloring of $I^{(n)}$.
-%   Prove that there is a monochromatic subset $H\subseteq I$ that is ordered as $\omega$.
-% \end{exercise}
 
 \begin{exercise}
   Let $M$ be an arbitrary model.
@@ -126,7 +121,7 @@ We call the type
 the \emph{Ehren\-feucht-Mostowski type\/} of ${\mr\bar a}$ over $A$.
 We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$.} 
 
-Note that ${\mr\bar a}$ is $A$-indiscernible if and only if $\EMtp({\mr\bar a}/A)$ is a complete type.
+Note that ${\mr\bar a}$ is an $A$-indiscernible sequence if and only if $\EMtp({\mr\bar a}/A)$ is a complete type.
 
 \begin{remark}\label{rem_indiscernibili_ordine}
   Let $I,<_I$ and $J,<_J$ be infinite linear orders.
@@ -134,44 +129,87 @@ Note that ${\mr\bar a}$ is $A$-indiscernible if and only if $\EMtp({\mr\bar a}/A
   By compactness, there is a sequence of $A$-indiscernibles ${\mr\bar a}=\<{\mr a_j}:j\in J\>$ such that $\EMtp({\mr\bar a}/A)=\EMtp({\mr\bar c}/A)$.
 \end{remark}
 
-% \theoremstyle{mio}
-% \newtheorem{EhrenfeuchtMostowski}[thm]{Ehrenfeucht-Mostowski Theorem}
-% \begin{EhrenfeuchtMostowski}\label{thm_EM}
-% Let $I,<_I$ be an infinite linear order.
-% Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is a sequence ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ of $A$-indiscernibles such that $\EMtp({\mr\bar a}/A)\subseteq\tp({\mr\bar c}/A)$.
-% \end{EhrenfeuchtMostowski}
-
 Finally, we can state the Ehrenfeucht-Mostowski theorem.
 
 \begin{void}[Ehrenfeucht-Mostowski Theorem]\label{thm_EM}
-  Let $I,<_I$ be an infinite linear order with no largest element.
-  Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is an $A$-indiscernible sequence ${\mr\bar c}=\<{\mr c_i}:i\in J\>$ such that $\EMtp({\mr\bar a}/A)\subseteq\tp({\mr\bar c}/A)$.
+  Let $I,<_I$ be an infinite linear order.
+  Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is an $A$-indiscernible sequence ${\mr\bar c}=\<{\mr c_i}:i\in J\>$ such that $\EMtp({\mr\bar a}/A)\subseteq\EMtp({\mr\bar c}/A)$.
 \end{void}
 
-In the proof below, it is convenient take $J,<_J$ to be $\omega$ with the referse order. 
-However, by Remark~\ref{rem_indiscernibili_ordine}, we obtain that the theorem holds also for any other infinite linear order.
+In the proof below, we will take $J,<_J$ to be \emph{$\omega^*$,} that is $\omega$ with the referse order. 
+However, by Remark~\ref{rem_indiscernibili_ordine}, the theorem also holds for any other infinite linear order.
 
 \begin{proof}
-  Let 
+  Note that if ${\mr\bar a'}$ is a subsequence of ${\mr\bar a}$, then $\EMtp({\mr\bar a}/A)\subseteq\EMtp({\mr\bar a'}/A)$.
+  Therefore, without loss of generality, we can assume that $I,<_I$ is either $\omega$ or $\omega^*$ (see Exercise~\ref{ex_Ramsey_wfo}).
+  We assume the first and leave the second case to the reader as the proof is similar.
+  We can also assume that no element ${\mr a_i}$ in the sequence ${\mr\bar a}$ repeats infinitely many times.
+  Otherwise we could take ${\mr\bar c}$ to be the sequence that is constantly ${\mr a_i}$.
+  In particular, the range of ${\mr\bar a}$ is infinite.
+  
+  Define
 
-\ceq{\hfill q({\mr x})}{=}{\{\phi({\mr x})\in L(A,\ {\mr\bar a})\ :\ \phi({\mr a_i}) \textrm{ holds for cofinitely many }i\in I\}.}
+\ceq{\hfill q({\mr x})}{=}{\{\phi({\mr x})\in L(A,\ {\mr\bar a})\ :\ \phi({\mr a_i}) \textrm{ holds for cofinitely many }i\in\omega\}.}
 
-Let $p({\mr x})\supseteq q({\mr x})$ be a global type that is finitely satisfied in ${\mr\bar a}$.
+Then $q({\mr x})\cup \{{\mr x}\neq{\mr a_i} : i\in\omega\}$ is closed under conjunction and is finitely satisfiable in $\range {\mr\bar a}$. 
+Pick some global extension $p({\mr x})$ which is also finitely satisfied in $\range {\mr\bar a}$.
 Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be a Morley sequence of $p({\mr x})$ over $A,{\mr\bar a}$.
-Clearly, ${\mr\bar c}$ is indiscernible over $A$ also if we reverse the order of $\omega$.
-Then it suffices to prove that for every $\phi({\mr x_{\restriction n}})\in L(A)$
+Let ${\mr\cev{c}}$ be the sequence obtained from ${\mr\bar c}$ by reversing the order.
+Clearly, ${\mr\cev{c}}$ is also indiscernible over $A$.
+This is the sequence required by the theorem.
+
+We only need to prove $\EMtp({\mr\bar a}/A)\subseteq\EMtp({\mr\bar c}/A)$.
+This we do by showing that for any $\phi({\mr x_{\restriction n}})\in L(A,{\mr\bar a})$\nobreak
 \begin{itemize}
-  \item[\#] if $\phi({\mr a_{\restriction I_0}})$ holds for cofinally many $I_0\in\omega^{(n)}$ then $\phi({\mr\cev{c}_{\restriction n}})$.
+  \item[$\#_n$] if there is an $i\in\omega$ such that $\phi({\mr a_{\restriction I_0}})$ holds for every $i<I_0\in\omega^{(n)}$ then $\phi({\mr\cev{c}_{\restriction n}})$.
 \end{itemize}
-
-Assume inductively that the claim holds for $n$ and prove the contrapositive of \# holds with $n{+}1$ for $n$.
+Assume $\#_n$, we prove the contrapositive $\#_{n+1}$.
 Suppose $\neg\phi({\mr c_n},{\mr\cev{c}_{\restriction n}})$ and pick an arbitrary $i\in\omega$.
-As ${\mr c_n}\models p({\mr x})\restriction A,{\mr\cev{c}_{\restriction n}}$ and
+As ${\mr c_n}$ realizes $p({\mr x})\restriction A,{\mr\bar a},{\mr c_{\restriction n}}$ by definition, 
 
-\ceq{\hfill p({\mr x})}{\proves}{\neg\phi({\mr x},{\mr   \cev{c}_{\restriction n}})\ \wedge\ \bigwedge_{j\le i} {\mr x}\neq {\mr a_j},}
+\ceq{\hfill p({\mr x})}{\proves}{\bigwedge_{j\le i} {\mr x}\neq {\mr a_j},}
 
-we can find some $i<i_1<I_1\in\omega^{(n)}$ such that $\neg\phi({\mr a_{i_1}},{\mr a_{\restriction I_1}})$.
-As $i$ is arbitrary, $\phi({\mr a_{\restriction I_0}})$ cannot hold for cofinitely many $I_0=I_1\cup\{i_1\}\in\omega^{(n+1)}$.
+and $p({\mr x})$ is finitely satisfiable in ${\mr\bar a}$, we can find some $i_1>i$ such that $\neg\phi({\mr a_{i_1}},{\mr\cev{c}_{\restriction n}})$.
+Now, apply the induction hypothesis to obtain a set $i_1<I_1\in\omega^{(n)}$ such that $\neg\phi({\mr a_{i_1}},{\mr a_{\restriction I_1}})$.
+As $i$ is arbitrary, this shows that $\phi({\mr a_{\restriction I_0}})$ fails for arbitarily large $I_0=I_1\cup\{i_1\}\in\omega^{(n+1)}$.
+So the hypothesis in $\#_{n+1}$ fails.
+\end{proof}
+
+We give a second proof which applies Ramsey's theorem.
+
+\begin{proof}[Second proof of the Ehrenfeucht-Mostowski Theorem]
+  As in the above proof, we assume that $I=\omega$.
+  We write $\omega^{(\omega)}$ for the set of infinite subsetes of $\omega$.
+  Let $q({\mr\bar x})=\EMtp({\mr\bar a}/A)$.
+  Any realization of the following type is a sequence of $A$-indiscernibles ${\mr\bar c}$ as required by the theorem.
+
+  \ceq{\hfill q({\mr\bar x})}
+  {\cup}
+  {\Big\{\phi({\mr x_{\restriction I_0}})\iff\phi({\mr x_{\restriction J_0}})\ :\  \phi({\mr\bar x})\in L(A), \ I_0, J_0\in\omega^{(\omega)} \Big\}.}
+
+  We will prove that any finite subset of the type above is realized by a subsequence of ${\mr\bar a}$.
+  First note that $q({\mr\bar x})$ is realized by ${\mr a_{\restriction H}}$ for every $H\subseteq\omega^{(\omega)}$.
+  Then we only need to pay attention to the set on the right.
+
+  We prove that for $k$ and $n$ arbitrarily large and every $\phi_1({\mr\bar x}),\dots,\phi_k({\mr\bar x})\in L(A)$ there is an infinite $H\subseteq\omega$ such that ${\mr a_{\restriction H}}$ realizes
+
+  \ceq{\ssf{\#}}
+  {}
+  {\Big\{\phi_i({\mr x_{\restriction I_0}})\iff\phi_i({\mr x_{\restriction J_0}})\ :\  I_0, J_0\in\omega^{(\omega)}\textrm{ and } i\in(k]\Big\}.}
+
+  Let $n$ be larger than any $i$ such that ${\mr x_i}$ occurs in $\phi_1({\mr\bar x}),\dots,\phi_k({\mr\bar x})$.
+  Consider the subsets of $(k]$ as colors and let $f$ be the coloring of $I^{(n)}$ that maps $I_0$ to the set $\big\{i\ :\ \phi_i({\mr a_{\restriction I_0}})\big\}$.
+  By the Ramsey theorem,
+  there is some infinite monochromatic set $H\subseteq I$ with the order type of $\omega$.
+  Hence
+
+  \ceq{}
+  {}
+  {\Big\{\phi_i({\mr a_{\restriction I_0}})\iff\phi_i({\mr a_{\restriction J_0}})\ :\  I_0, J_0\in H^{(n)}\textrm{ and } i\in(k]\Big\}.}
+
+  As $H$ has order type $\omega$,
+  it is immediate that ${\mr a_{\restriction H}}$ realizes \ssf{\#}
+  as required.
 \end{proof}
 
 \begin{proposition}\label{prop_indiscernibles_set_model}
@@ -182,10 +220,14 @@ Then ${\mr\bar a}$ is indiscernible over some model $M$ containing $A$.
 \begin{proof}
 Fix a model $M$ containing $A$.
 By Theorem~\ref{thm_EM} and the remark there is an $I$-sequence of $M$-indiscernibles ${\mr\bar c}$ such that $\EMtp({\mr\bar a}/M)\subseteq\EMtp({\mr\bar c}/M)$.
-As ${\mr\bar a}$ is an $A$-indiscernible sequence ${\mr\bar a}\equiv_A{\mr\bar c}$.
+As ${\mr\bar a}$ is an $A$-indiscernible sequence, $\EMtp({\mr\bar a})$ is a complete type, then  $\EMtp({\mr\bar a})=\EMtp({\mr\bar c})$.
 Therefore $h\,{\mr\bar c}={\mr\bar a}$ for some $h\in\Aut(\U/A)$.
 Hence ${\mr\bar a}$ is indiscernible over $h[M]$.
 \end{proof}
+
+\begin{exercise}\label{ex_Ramsey_wfo}
+  Prove that every infinite linear order has a subset ordered as $\omega$ or as $\omega^*$. Hint: use Ramsey's Theorem.
+\end{exercise}
 
 \begin{exercise}
   Let $p(x)\in S(\U)$ be a global type invariant over $A$.
@@ -400,16 +442,14 @@ For example, on a free semigroup we can take the preorder relation given by the 
 %
 Or, on any semigroup $S$, we could take the trivial relation $S^2$ --the theorem below would remain nontrivial.
 
-\theoremstyle{mio}
-\newtheorem{Hindman}[thm]{Hindman's Theorem}
-\begin{Hindman}\label{thm_Hindman}
+\begin{void}[Hindman's Theorem]\label{thm_Hindman}
 Let $\cpaw$ be a relation on a semigroup $S$.
 %
 Assume that $S$ is  \cpawdot-closed and $\cpaw$-covered.
 %
 Then for every finite coloring of $S$ 
 there is an infinite $\cpaw$-chain $\bar a$ such that $\fp\,\bar a$ is monochromatic.
-\end{Hindman}
+\end{void}
 
 This implies that every commutative semigroup $S$ has an infinite monochromatic subset closed under finite sums of distinct elements (order $S$ arbitrarily).
 
