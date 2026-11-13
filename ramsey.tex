@@ -16,11 +16,11 @@ Our only purpose is to illustrate a concrete (relatively speaking) application o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Ramsey's theorem from coheir sequences}
+\section{Ramsey's theory from coheir sequences}
 \label{Ramsey}
-Ramsey's theorem is a very famous theorem which here we prove in an unusual (and overly convoluted)  way.
-Our purpose is to illustrate the method of proof of Theorem~\ref{thm_Hindman}.
-In the latter the model theoretic overhead really pays off.
+Ramsey's theorem is a very famous theorem which has an easy and direct combinatorial proof that requires only elementary tools.
+However, here we prove it in an unusual way.
+Our purpose is to illustrate a model theoretic method that will pay off in more complex contexts, see e.g.\@ Theorem~\ref{thm_Hindman}.
 We begin with a lemma.
 
 \begin{lemma}
@@ -30,7 +30,7 @@ We begin with a lemma.
   Then there is a sequence $\<a_i:i<\omega\>$ of distinct elements of $M$ such that for every $I\in\omega^{(n)}$ the tuples $a_{\restriction n}$ and $a_{\restriction I}$ have the same quantifier-free type.
 \end{lemma}
 
-Note that when $M$ is a saturated structure we could pick any indiscernible sequence $\<a_i:i\in\omega\>$ and obtain that $a_{\restriction n}\mapsto a_{\restriction I}$ is an elementary map (for any $n$ and any $L$).
+Note that when $M$ is a saturated structure we could pick any indiscernible sequence $\<a_i:i\in\omega\>$ and obtain that $a_{\restriction n}\equiv a_{\restriction I}$ for any $n$ and any $L$.
 
 \begin{proof}
   Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be any coheir sequence over $M$, with ${\mr c_0}\notin M$.
@@ -47,10 +47,12 @@ Note that when $M$ is a saturated structure we could pick any indiscernible sequ
   We leave to the reader to verify that if $n>1$ the elements of $\<a_i:i\in\omega\>$ are distinct. For $n\le 1$ the lemma is trivial.
 \end{proof}
 
-Ramsey's theorem is an immediatre consequence of the lemma, it is usually formulated in its own vernacular.
-We may represent the partition of a set $X$ into $k$ subsets with a map $f:X\to (k]$.
-The elements of $(k]=\{1,\dots,k\}$ are also called \emph{colors,}
-and the partition a \emph{coloring,} or \emph{$k$-coloring,} of $X$.
+Ramsey's theorem is a particular case of the lemma.
+% As a matter of fact, the lemma corresponds to a result of Ne\v set\v ril-R\"odl kown as \textit{structural Ramsey theorem.}
+Ramsey-like results are usually formulated in their own vernacular.
+A partition of a set $X$ into $k$ subsets is represented by a function $f:X\to (k]$.
+The elements of $(k]=\{1,\dots,k\}$ are called \emph{colors,} and the partition a \emph{coloring,}
+or \emph{$k$-coloring,} of $X$.
 
 Pick $n<\omega$ and a $k$-coloring $f$ of $X^{(n)}$,the set of all \emph{$n$-subsets} of $X$,
 which also known as the \emph{complete $n$-uniform hypergraph\/} with vertex set $X$.
@@ -59,10 +61,6 @@ which also known as the \emph{complete $n$-uniform hypergraph\/} with vertex set
 
 We say that $H\subseteq X$ is a \emph{monochromatic set\/} if $f$ is constant on $H^{(n)}$.
 In combinatorics, monochromatic sets are also called \emph{homogeneous sets.}
-
-The following is a very famous theorem which we prove here in an unusual (and overly convoluted)  way.
-Our purpose is to illustrate the method of proof of Theorem~\ref{thm_Hindman}.
-In the latter the model theoretic overhead really pays off.
 
 \begin{void}[Ramsey Theorem]
 Let $X$ be an infinite set and fix some positive integers $n$ and $k$.
@@ -120,7 +118,6 @@ We call the type
 
 the \emph{Ehren\-feucht-Mostowski type\/} of ${\mr\bar a}$ over $A$.
 We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$.} 
-
 Note that ${\mr\bar a}$ is an $A$-indiscernible sequence if and only if $\EMtp({\mr\bar a}/A)$ is a complete type.
 
 \begin{remark}\label{rem_indiscernibili_ordine}
