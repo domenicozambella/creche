@@ -8,11 +8,11 @@
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
 Chapter under revision.
 
-The notions intriduced in the first sections of this chapter are independent of model theory.
+The notions introduced in the first sections of this chapter are independent of model theory.
 In particular, the set $\mrX$ mentioned below does not live inside any first order structure.
-The instantiation of these notions to the context of the model theory is presented in Section~\ref{action_on_definable_sets}, and will be applied in Section~\ref{Lascar_action}.
+The instantiation of these notions to the context of model theory is presented in Section~\ref{action_on_definable_sets}, and will be applied in Section~\ref{Lascar_action}.
 
-From Section~\ref{action_on_definable_sets} we fall back to  usual setting: $L$ is a signature, $T$ is a complete theory without finite models, and $\U$ is a saturated model of inaccessible cardinality $\kappa$ strictly larger than $|L|$; we use the same notation and make the same implicit assumptions as in Section~\ref{monster}.
+From Section~\ref{action_on_definable_sets} we fall back to the usual setting: $L$ is a signature, $T$ is a complete theory without finite models, and $\U$ is a saturated model of inaccessible cardinality $\kappa$ strictly larger than $|L|$; we use the same notation and make the same implicit assumptions as in Section~\ref{monster}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -23,9 +23,9 @@ From Section~\ref{action_on_definable_sets} we fall back to  usual setting: $L$ 
 \section{The dual perspective on invariance}\label{dual_perspective}
 % \def\BDelta{\LDelta\kern-.4ex_{{\rm qf}}}
 
-We set the stage in great (admitedly, somewhat overblown) generality.
+We set the stage in great (admittedly, somewhat overblown) generality.
 
-Let \emph{$G$\/} be a semigroup that acts on $\Gamma$, a Boolean algebra of subsets of \emph{$\mrX$.}
+Let \emph{$G$\/} be a semigroup with identity (also known as a monoid) that acts on $\Gamma$, a Boolean algebra of subsets of \emph{$\mrX$.}
 We assume that the action of $G$ commutes with Boolean connectives.
 Such a Boolean algebra is called a \emph{$G$-algebra.}
 We write ${\cdot}$ both for the operation of $G$ and the action of $G$ on $\Gamma$.
@@ -39,10 +39,10 @@ In the following both $\Gamma$ and $\pi$ are mostly left implicit.
 If $\sigma\subseteq\Gamma$, we say that $\sigma$ is finitely consistent with $\pi$ to mean that $\pi\cup\sigma$ generates a proper filter of subsets of $\mrX$.
 We say that $\sigma$ covers $\pi$ to mean that $\cup\,\sigma$ is in $\pi$.
 
-We say that a set $\mrA$ is \emph{syndetic\/} under the action of $G$ , or \emph{$G$-syndetic\/} for short, if finitely many $G$-translates of $\mrA$ cover $\pi$; we say \emph{$n$-$G$-syndetic\/} if $\le n$ translates suffices.
-Dually, we say that $\mrA$ is \emph{thick\/} under the action of $G$, or \emph{$G$-thick\/} for short, if any finitely many $G$-translates of $\mrA$ is finitely consistent with $\pi$; we say \emph{$n$-$G$-thick\/} when the request is limited to $\le n$ translates.
+We say that a set $\mrA$ is \emph{syndetic\/} under the action of $G$, or \emph{$G$-syndetic\/} for short, if finitely many $G$-translates of $\mrA$ cover $\pi$; we say \emph{$n$-$G$-syndetic\/} if $\le n$ translates suffice.
+Dually, we say that $\mrA$ is \emph{thick\/} under the action of $G$, or \emph{$G$-thick\/} for short, if any finitely many $G$-translates of $\mrA$ are finitely consistent with $\pi$; we say \emph{$n$-$G$-thick\/} when the request is limited to $\le n$ translates.
 
-A set $\sigma\subseteq\Gamma$ is $G$-syndetic (respectively, $G$-thick) if every intersection of sets in $\sigma$ is such.
+A set $\sigma\subseteq\Gamma$ is $G$-syndetic (respectively, $G$-thick) if every finite intersection of sets in $\sigma$ is such.
 
 When more than one filter $\pi$ is at play, we say that $\mrA$ is $G$-syndetic (respectively, $G$-thick) \emph{relative\/} to $\pi$.
 
@@ -50,7 +50,19 @@ When more than one filter $\pi$ is at play, we say that $\mrA$ is $G$-syndetic (
   When $C\subseteq G$ we write \emph{$C{\cdot}\mrA$\/} for $\{h{\cdot}\mrA : h\in C\}$.
 \end{notation}
 
-Therefore, $\mrA$ is $G$-syndetic if there is a finite $C\subseteq G$ such that $\cup\,C{\cdot}\mrA$ is in $\pi$; and $\mrA$ is $G$-thick if for every finite $C\subseteq G$ the set $\cap\,C{\cdot}\mrA$ is finitely consistent with $\pi$.
+We rephrase the definition above with the new notation.
+The set, $\mrA$ is $G$-syndetic if there is a finite $C\subseteq G$ such that $\cup\,C{\cdot}\mrA$ is in $\pi$; and $\mrA$ is $G$-thick if for every finite $C\subseteq G$ the set $\cap\,C{\cdot}\mrA$ is finitely consistent with $\pi$.
+
+Whenever necessary we will assume that $\pi$ is $G$-invariant.
+
+\begin{fact}\label{fact_pi_invariant}
+  Assume $\pi$ is $G$-invariant.
+  Then $\mrA\cap\mrY$ is $G$-syndetic for every $G$-syndetic set $\mrA$ and every $\mrY\in\pi$.
+\end{fact}
+
+\begin{proof}
+  Note that $\cup\,C{\cdot}(\mrA\cap\mrY)\supseteq\big(\cup\,C{\cdot}\mrA\big)\cap\big(\cap\,C{\cdot}\mrY\big)$.
+\end{proof}
 
 In this chapter many proofs require some juggling with negations as epitomized by the following fact.
 
@@ -65,8 +77,8 @@ In this chapter many proofs require some juggling with negations as epitomized b
 \begin{proof}
   Spelling out the definitions, \ssf1 and \ssf2 are, respectively, equivalent to
   \begin{itemize}
-    \item[1$'$.] there is no finite $C\subseteq G$ such that $\cup\, C{\cdot}\mrA$ covers $\pi$.
-    \item[2$'$.] $\cap\, C{\cdot}\neg\mrA$ finitely consistent with $\pi$ for every finite $C\subseteq G$.
+    \item[1$'$.] there is no finite $C\subseteq G$ such that $C{\cdot}\mrA$ covers $\pi$.
+    \item[2$'$.] $\cap\, C{\cdot}\neg\mrA$ is finitely consistent with $\pi$ for every finite $C\subseteq G$.
   \end{itemize} 
   Then the equivalence is evident.
 \end{proof}
@@ -76,7 +88,7 @@ The following dual pair of corollaries are linked to important properties discus
 \begin{corollary}
   The following are equivalent
   \begin{itemize}
-    \item [1.] every $G$-syndedic set is $G$-thick
+    \item [1.] every $G$-syndetic set is $G$-thick
     \item [2.] $\mrA$ and $\neg\mrA$ are not both $G$-syndetic.
   \end{itemize}
 \end{corollary}
@@ -91,7 +103,7 @@ The following dual pair of corollaries are linked to important properties discus
 
 We write \emph{$\Sigma_G$\/} for the collection of $G$-syndetic sets.
 
-We write \emph{$S_\pi(\Gamma)$\/} for the set of ultrafilters of the Bolen algebra $\Gamma$ that are finitely consistent with $\pi$.
+We write \emph{$S_\pi(\Gamma)$\/} for the set of ultrafilters of the Boolean algebra $\Gamma$ that are finitely consistent with $\pi$.
 Note that when $\Sigma_G\cup\{\mrD\}$ is finitely consistent with $\pi$, then $\neg\mrD$ is not $G$-syndetic.
 Then $\mrD$ is $G$-thick.
 We prove that the converse implication holds if we replace $\mrD$ with an ultrafilter.
@@ -114,13 +126,13 @@ We say that $p\in S_\pi(\Gamma)$ is \emph{$G$-invariant\/} if $g{\cdot}p=p$ for 
 \begin{proof}
   \ssf1$\IMP$\ssf2.
   Let $\mrD$ be $G$-syndetic.
-  Pick $C\subseteq G$ be finite such that $C{\cdot}\mrD$ covers $\pi$.
+  Pick a finite $C\subseteq G$ such that $C{\cdot}\mrD$ covers $\pi$.
   Then $p$ is finitely consistent with $\cup\,C{\cdot}\mrD$.
   Therefore, by maximality, $h{\cdot}\mrD\in p$ for some $h\in C$.
   Finally, by invariance, $\mrD\in p$.
   
   \ssf2$\IMP$\ssf3.
-  From \ssf2 it follows that if conjunctions of formulas in $p$ are finitely consistent with $\Sigma_G$.
+  From \ssf2 it follows that conjunctions of formulas in $p$ are finitely consistent with $\Sigma_G$.
   Therefore thickness follows from the above remark.
 
   \ssf3$\IMP$\ssf1.
@@ -275,7 +287,7 @@ A filter is $G$-wide if every formula in the filter is $G$-wide.
   Prove that for every $\D$ the following are equivalent
   \begin{itemize}
     \item[1.] $\D$ is $G$-thick
-    \item[2.] some $p\in S_\pi(\Gamma)$ contains $\{x\in g{\cdot}\D\;:\;g\in G\}$.
+    \item[2.] some $p\in S_\pi(\Gamma)$ contains $G{\cdot}D$.
   \end{itemize}
 \end{exercise}
 
@@ -284,7 +296,7 @@ A filter is $G$-wide if every formula in the filter is $G$-wide.
   Prove that the following are equivalent
   \begin{itemize}
     \item[1.] $p$ is $G$-invariant
-    \item[2.] $\D\in p$ for every 2-$G$-syndetic definable set $\D$
+    \item[2.] $\D\in p$ for every 2-$G$-syndetic set $\D$
     \item[3.] $p$ is 2-$G$-thick.
   \end{itemize}
 \end{exercise}
@@ -326,7 +338,7 @@ A filter is $G$-wide if every formula in the filter is $G$-wide.
 %     \item [1.] $\mrD$ is $G$-wide;
 %     \item [2.] every finite cover of $\mrD$ by $\pmDelta({\grZ})$-definable sets contains a $G$-thick set.
 %   \end{itemize}
-% \end{exercize}M7FJT0RB61M
+% \end{exercize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -356,8 +368,6 @@ Finally we define
 
 \ceq{\hfill\emph{$G^1$}}{=}{\bigcap_{q\in Q_G}\Stab(q).}
 
-It is easy to verify that $G^1\trianglelefteq G$.
-
 \begin{proposition}\label{prop_StabQ}\ \smallskip
 
   \ceq{\hfill G^1}{=}{\big\{g\in G\ :\ \mrD\cap g{\cdot}\mrD\in\Sigma_G\textrm{ for every }\mrD\in\Sigma_G\big\}.}\smallskip
@@ -379,6 +389,7 @@ It is easy to verify that $G^1\trianglelefteq G$.
 \end{proof}
 
 \begin{theorem}\label{thm_gammaK}
+  Assume $\pi$ is $G$-invariant.
   Any finite conjunction of formulas in $\Sigma_{G^1}$ is $G$-syndetic.
   In particular $\Sigma_{G^1}$ is finitely consistent.
 \end{theorem}
@@ -390,15 +401,13 @@ It is easy to verify that $G^1\trianglelefteq G$.
    
   Let ${\mr\D_1},\dots,{\mr\D_n}\in\Sigma_{G^1}$.
   Assume inductively that ${\mr\D_1}\cap\dots\cap{\mr\D_{n-1}}$ is $G$-syndetic.
-  Let $F\subseteq G^1$ be such that $\cup\,F{\cdot}{\mr\D_n}$ covers $\pi$.
+  Let $F\subseteq G^1$ be such that $F{\cdot}{\mr\D_n}$ covers $\pi$.
   Then
   
   \ceq{\hfill\cup\,F{\cdot}[{\mr\D_1}\cap\dots\cap{\mr\D_n}]}
   {\supseteq}{\cap\, F{\cdot}[{\mr\D_1}\cap\dots\cap{\mr\D_{n-1}}]\ \cap\ \cup\,F{\cdot}{\mr\D_n}}
 
-  \ceq{}{=}{\cap\, F{\cdot}[{\mr\D_1}\cap\dots\cap{\mr\D_{n-1}}].}
-
-  This last set is $G$-syndetic by the inductive hypothesis and what remarked above.
+  The set on the r.h.s. is $G$-syndetic by Fact~\ref{fact_pi_invariant}, the inductive hypothesis, and what remarked above.
   The $G$-syndeticity of ${\mr\D_1}\cap\dots\cap{\mr\D_n}$ follows.
 \end{proof}
 
@@ -413,6 +422,8 @@ From Theorems~\ref{thm_syndetic_invariant2} and~\ref{thm_gammaK} it follows that
 But we can do better.
 % In particular, every $q({\mr x})\in Q_G$ has an extension to a $G^1$-invariant $p({\mr x})\in S_\pi(\Gamma)$.
 % If this extension is unique we say that $q({\mr x})$ is stationary.
+We say that $H\le G$ is a normal subsemigroup of $G$, and write $H\trianglelefteq G$, if $g{\cdot}H=H{\cdot}g$ for every $g\in G$.
+It is easy to verify that $G^1\trianglelefteq G$.
 First, we remark a useful consequence of normality.
 
 \begin{remark}\label{rem_invariance_normalsubg}
@@ -422,7 +433,7 @@ First, we remark a useful consequence of normality.
 % \def\ceq#1#2#3{\parbox[t]{\ceqlength}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 \def\medrel#1{\parbox[t]{5ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{20ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
-  Assume $H\trianglelefteq G$.
+  Assume $\pi$ is invariant and $H\trianglelefteq G$.
   For every $\mrD$ and every $g\in G$ \smallskip
   
   \ceq{\hfill\mrD\textrm{ is }H\textrm{-foo}}{\IFF}{g{\cdot}\mrD\textrm{ is }H\textrm{-foo},} \smallskip
@@ -439,6 +450,7 @@ Recall that when $\Sigma_H$ is finitely consistent with $\pi$ then $H$-syndetic 
 As it happens, under the assumption of normality, this can be strengthened as follows.
 
 \begin{proposition}\label{prop_Gsyndetic_Hthick1}
+  Assume $\pi$ is invariant.
   Assume $H\trianglelefteq G$ and that $\Sigma_H$ is finitely consistent with $\pi$.
   Then every $G$-syndetic $\mrD$ is $H$-wide.
   In particular every $q\in Q_G$ is $G^1$-wide.
@@ -501,15 +513,16 @@ We will prove that this is the case under the assumption of stability.
 \section{Strong syndeticity}\label{strong_syndeticity}
 
 A set $\mrD$ is \emph{strongly $G$-syndetic\/} if for every finite $F\subseteq G$ the set $\cap\,F{\cdot}\mrD$ is $G$-syndetic (recall that $F{\cdot}\mrD$ stands for $\{h{\cdot}\mrD : h\in F\}$).
-Dually, we say that $\mrD$ is \emph{weakly $G$-thick\/} if for some finite $F\subseteq G$ the set $\cup\,F{\cdot}\mrD$ is thick.
-Again, the same properties is attributed to a collection of sets if every finite intersection has the property.
+Dually, we say that $\mrD$ is \emph{weakly $G$-thick\/} if for some finite $F\subseteq G$ the set $\cup\,F{\cdot}\mrD$ is $G$-thick.
+Again, the same property is attributed to a collection of sets if every finite intersection has the property.
 
 \noindent\llap{\textcolor{red}{\Large\warning}\kern1.5ex}\ignorespaces
-In topological dynamic, strong syndedic sets are called \textit{thickly syndetic\/} and weak thickness is called \textit{piecewise syndetic.}
+In topological dynamics, strongly syndetic sets are called \textit{thickly syndetic\/} and weak thickness is called \textit{piecewise syndetic.}
 Newelski in~\cite{Newelski09} says \textit{weak generic\/} for weakly thick.
 These terminologies defy my intuition.
 
 \begin{lemma}\label{lem_strongly_syndetic}
+  Assume $\pi$ is invariant.
   The intersection of two strongly $G$-syndetic sets is strongly $G$-syndetic.
 \end{lemma}
 
@@ -518,17 +531,15 @@ These terminologies defy my intuition.
   It suffices to prove that $\mrB=\cap\, C{\cdot}({\mr\C}\cap{\mr\D})$ is $G$-syndetic. 
   Clearly $\mrB={\mr\C'}\cap{\mr\D'}$, where ${\mr\C'}=\cap\, C{\cdot}{\mr\C}$ and ${\mr\D'}=\cap\, C{\cdot}{\mr\D}$.
   Note that ${\mr\C'}$ and ${\mr\D'}$ are both strongly $G$-syndetic.
-  In particular $\cup\,F{\cdot}\mr\D'$ covers $\pi$ for some finite $F\subseteq G$.
+  In particular $F{\cdot}\mr\D'$ covers $\pi$ for some finite $F\subseteq G$.
   Note that
   
   \ceq{\hfill\cup\,F{\cdot}\mrB}{=}{\cup\,F{\cdot}\big[{\mr\C'}\ \cap\ {\mr\D'}\big]}
   
   \ceq{}{\supseteq}{ \big(\cap\, F{\cdot}{\mr\C'}\big)\ \cap\ \big(\cup\,F{\cdot}{\mr\D'}\big)}
   
-  \ceq{}{=}{\cap\, F{\cdot}{\mr\C'}}
-  
   As ${\mr\C'}$ is strongly $G$-syndetic, $\cap\, F{\cdot}{\mr\C'}$ is $G$-syndetic.
-  Therefore $\cup\,F{\cdot}\mrB$ is also $G$-syndetic.
+  Therefore, from Fact~\ref{fact_pi_invariant} we obtain that  $\cup\,F{\cdot}\mrB$ is also $G$-syndetic.
   The $G$-syndeticity of $\mrB$ follows.
 \end{proof}
 
@@ -539,6 +550,7 @@ Define the following collection of sets
 Note that Theorem~\ref{thm_gammaK} shows that $\Sigma_{G^1}\subseteq{\mathstrut}^{\rm s}\kern-.1ex\Sigma_G$.
 
 \begin{corollary}\label{corol_str_gen}
+  Assume $\pi$ is invariant.
   Then ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G$ is finitely consistent, strongly $G$-syndetic, and $G$-invariant.
   Moreover, ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G$ is the maximal collection of sets that is $G$-syndetic and $G$-invariant.
   We also have\medskip
@@ -579,8 +591,7 @@ The following theorem asserts that the property of weak thickness is partition r
 \end{theorem}
 
 \begin{proof}
-  As ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G$ is closed under conjunction.
-  If $\mrC\cup\mrB$ is finitely consistent with ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G$ then so is one of the two sets.
+  As ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G$ is closed under conjunction, if $\mrC\cup\mrB$ is finitely consistent with ${\mathstrut}^{\rm s}\kern-.1ex\Sigma_G$ then so is one of the two sets.
 \end{proof}
 
 % Assume that every $\mrD\in \Delta(\grZ)$ has a small $G$-orbit.
@@ -637,7 +648,7 @@ The following theorem asserts that the property of weak thickness is partition r
 
 As an application we prove an interesting property of the Lascar types.
 Recall that $\Ll({\mr a}/A)$, the Lascar strong type of ${\mr a}\in\U^{\mr x}$, is the union of a chain of type-definable sets of the form $\big\{{\mr x}\ :\ d_A({\mr a},{\mr x})\le n\big\}$.
-In this section we prove that $\Ll({\mr a}/A)$ is type-definable (if and) only this chain is finite.
+In this section we prove that $\Ll({\mr a}/A)$ is type-definable (if and) only if this chain is finite.
 In other words, only if the connected component of ${\mr a}$ in the Lascar graph has finite diameter.
 
 It is convenient to address the problem in more general terms.
@@ -666,7 +677,7 @@ The notions introduced in Section~\ref{strong_syndeticity} offer some hint.
   Let $F\subseteq H$ be finite.
   We claim that also $\cup\,F{\cdot}\mrC$ has finite diameter.
   In fact, pick any ${\mr a}\in\mrC$.
-  Then $\mrC$ is contained in a ball of radius $n$ centered in ${\mr a}$. Let $m$ be the maximum of $d_C(h{\mr a}, k{\mr a})$ for $h,k,\in F$.
+  Then $\mrC$ is contained in a ball of radius $n$ centered in ${\mr a}$. Let $m$ be the maximum of $d_C(h{\mr a}, k{\mr a})$ for $h,k\in F$.
   Clearly, the diameter of $\cup\,F{\cdot}\mrC$ is at most $2n+m$.
   This proves the claim.
 

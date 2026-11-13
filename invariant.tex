@@ -257,10 +257,7 @@ We will use the following easy lemma without explicit reference.
   \ceq{\hfill\Big\{\neg\phi({\mr a},w)}{:}{\phi({\mr x},w)\in L(M),\ \ \phi(M^{\mr x},c)=\varnothing\Big\}.}
 
   We only need to prove finite consistency.
-  If inconsistent, for some $\theta(w,{\gr z})\in p$ and some $\phi_i({\mr x},w)$ in the above set
-
-  \ceq{\hfill\theta(w,{\gr b})}{\imp}{\bigvee_{i=1}^n\phi_i({\mr a},w).}
-  
+  If inconsistent, for some $\theta(w,{\gr z})\in p$ and some $\phi({\mr x},w)$ as above $\theta(w,{\gr b})\imp\phi({\mr a},w)$. 
   As ${\mr a}\nonfork_M{\gr b}$, we can replace ${\mr a}$ by some ${\mr a'}\in M^{\mr x}$.
   Finally, substituting $c$ for $w$, we obtain that $\phi_i({\mr a},c)$ holds for some $i$, a contradiction
 \end{proof}
@@ -279,10 +276,7 @@ The above proposition has a dual version.
   \ceq{\hfill\Big\{\neg\phi(w,{\gr b})}{:}{\phi(w,{\gr z})\in L(M),\ \ \phi(M^w,{\gr b})=\varnothing\Big\}.}
 
   We only need to prove finite consistency.
-  If inconsistent, for some $\theta(w,{\mr x})\in p$ and some $\phi_i(w,{\gr b})$ in the above set
-
-  \ceq{\hfill\theta(w,{\mr a})}{\imp}{\bigvee_{i=1}^n\phi_i(w, {\gr b}).}
-  
+  If inconsistent, for some $\theta(w,{\mr x})\in p$ and some $\phi(w,{\gr b})$ as above $\theta(w,{\mr a})\imp\phi(w, {\gr b})$.
   As ${\mr a}\nonfork_M{\gr b}$, we can replace ${\mr a}$ by some ${\mr a'}\in M^{\mr x}$.
   We can also require that $\E w\,\theta(w,{\mr a'})$.
   Then, by elementarity, $\theta(c',{\mr a'})$ holds for some $c'\in M^w$.
@@ -293,47 +287,66 @@ As a matter of fact, on the left-side of the $\nonfork_M$-relation we can requir
 
 \begin{proposition}\label{prop_b_saturate_coheir}
   Let $C\nonfork_M{\gr b}$.
-  There is a structure $\W\nonfork_M{\gr b}$ such that $C\cup M\subseteq\W\preceq\U$, and $\W$ realizes every type $p({\mr x})\subseteq L(B,{\gr b})$, for any small $B\subseteq\W$, that is finitely satisfied in $\W$.
+  There is a structure $\W\nonfork_M{\gr b}$ such that $C\cup M\subseteq\W\preceq\U$, and $\W$ realizes every type $p({\mr x})\subseteq L(B,{\gr b})$, for any (small) $B\subseteq\W$, that is finitely satisfied in $\W$.
 \end{proposition}
 
 \begin{proof}
   We construct inductively a chain of sets $C_i\nonfork_M{\gr b}$, for $i<\kappa$, and let $\W$ be the union of the chain.
   The chain starts with $C_0=C\cup M$, and is the union at limit stages.
-  At successor stages we define $C_{i+1}=C_i\cup\{c_i\}$ for some suitable ${\mr c_i}\nonfork_{M}{\gr b},C_i$.
-  By \ssf3 in Lemma~\ref{lem_coheir_independence}, this ensures $C_{i+1}\nonfork_M{\gr b}$.
+  At successor stages we define $C_{i+1}=C_i\cup\{{\mr c_i}\}$ for some suitable $C_{i+1}\nonfork_{M}{\gr b}$.
   We choose the ${\mr c_i}$ so  that every complete type $p({\mr x})\subseteq L(C_i,{\gr b})$ that is finitely satisfiable in $C_i$ is eventually realized.
   We also require that every consistent formula $\theta({\mr x})\in L(C_i,{\gr b})$ is eventually satisfied.
+  The proposition follows if we prove that we can meet these two conditions.
 
-  The proposition follows if we prove that we can meet these two requirements.
+  The first condition requires us to prove that $p({\mr x})$ is finitely consistent with the type 
+  
+  \ceq{\hfill C_i,{\mr x}\nonfork_{M}{\gr b}}{=}{\big\{\neg\phi({\mr x},c)\ :\ \phi({\mr x},z)\in L(M,{\gr b}) \textrm{ and } \phi(M^{\mr x},M^z)=\varnothing\big\}}
 
-  The first condition requires us to prove that $p({\mr x})$ is finitely consistent with the type ${\mr x}\nonfork_{M}{\gr b},C_i$.
   Suppose not, then there are formulas $\psi({\mr x},z), \phi({\mr x},z)\in L(M,{\gr b})$ and a tuple $c\in{C_i}^z$ such that 
 
   \begin{itemize}
-    \item[1.] $\psi({\mr x},c)$ is a conjunction of formulas in $p({\mr x})$ wich is satisfied by some ${\mr c'}\in C_i^{\mr x}$
+    \item[1.] $\psi({\mr x},c)$ is a conjunction of formulas in $p({\mr x})$ which is satisfied by some ${\mr c'}\in C_i^{{\mr x}}$
   
-    \item[2.]$\phi({\mr x}, c)$ is some formula that is not satisfiable in $M$
+    \item[2.]$\phi({\mr x}, c)$ is some formula such that $\phi({\mr x}, z)$ is not satisfiable in $M$
 
     \item[3.]\noindent\kern-\leftmargin\ceq{\hfill\psi({\mr c'},c)}{\wedge}{\A{\mr x}\ [\psi({\mr x},c)\imp\phi({\mr x}, c)]}.
   \end{itemize}
 
-  As ${\mr c'},c\nonfork_{M}{\gr b}$, from \ssf{2} we obtain that for some ${\mr a'}\in M^{\mr x}$ and $a\in M^z$
-
-  \ceq{\hfill\psi({\mr a'},a)}{\wedge}{\A{\mr x}\ [ \psi({\mr x},a)\imp\phi({\mr x}, a)]}
-  
-  Now, if we substitute ${\mr a'}$ for ${\mr x}$, we obtain a contradiction.
+  As ${\mr c'},c\nonfork_{M}{\gr b}$, from \ssf{2} we obtain that $\phi({\mr a'},a)$ for some ${\mr a'}\in M^{\mr x}$ and $a\in M^z$, a contradiction.
   
   For the second condition pick a formula $\theta({\mr x},z)\in L(M,{\gr b})$ and a tuple $c\in{C_i}^z$ such that $\theta({\mr x},c)$ is consistent.
-  we prove that $\theta({\mr x},c)$ is finitely consistent with ${\mr x}\nonfork_{M}{\gr b},C_i$.
-  Suppose not, then there is a formula $\phi({\mr x}, z)\in L(M,{\gr b})$ such that $\phi({\mr x}, c)$ is some formula that is not satisfiable in $M$ and $\theta({\mr x},c)\imp\phi({\mr x}, c)$. 
+  We prove that $\theta({\mr x},c)$ is finitely consistent with $C_i,{\mr x}\nonfork_{M}{\gr b}$.
+  Suppose not, then there is a formula $\phi({\mr x}, z)\in L(M,{\gr b})$ that is not satisfiable in $M$ and $\theta({\mr x},c)\imp\phi({\mr x}, c)$. 
   If we replace $c$ by some $a\in M^z$ we obtain a contradiction.
 \end{proof}
 
+The following proposition, helps to clarify next definition.
+
+\begin{proposition}
+  The following are equivalent for any ${\gr b}\in\U^{\gr z}$
+  \begin{itemize}
+    \item [1.] for every ${\mr a}\in\U^{\mr x}$ the type ${\mr a}\equiv_M{\mr x}\nonfork_M{\gr b}$ is complete over $M,{\gr b}$
+    \item [2.] for every ${\mr a_1},{\mr a_2}\in\U^{\mr x}$ if ${\mr a_1}\equiv_M{\mr a_2}$ and ${\mr a_i}\nonfork_M{\gr b}$ then ${\mr a_1}\equiv_{M,{\gr b}}{\mr a_2}$  \item [3.] for every ${\mr a_1},{\mr a_2}\in\U^{\mr x}$ if ${\mr a_1}\equiv_M{\mr a_2}$ and ${\mr a_1},{\mr a_2}\nonfork_M{\gr b}$ then ${\mr a_1}\equiv_{M,{\gr b}}{\mr a_2}$.    
+  \end{itemize}
+\end{proposition}
+
+\begin{proof}
+  \ssf1$\IFF$\ssf2$\IMP$\ssf3 Clear.
+
+  \ssf3$\IMP$\ssf2 Assume ${\mr a_1}\equiv_M{\mr a_2}$ and ${\mr a_i}\nonfork_M{\gr b}$. 
+  By \ssf4 in Lemma~\ref{lem_coheir_independence}, there is some ${\mr a'_2}\equiv_{M,b}{\mr a_2}$ such that ${\mr a'_2}\nonfork_M{\gr b},{\mr a_1}$.
+  By \ssf3 in the same lemma,  ${\mr a_1},{\mr a'_2}\nonfork_M{\gr b}$.
+  Therefore, from \ssf3 we obtain ${\mr a_1}\equiv_{M,{\gr b}}{\mr a'_2}$, and ${\mr a_1}\equiv_{M,{\gr b}}{\mr a_2}$ follows.
+\end{proof}
+
 \begin{definition}\label{def_coheir_stationary} 
-  We say that the type ${\mr x}\nonfork_M{\gr b}$ is \emph{stationary\/} if for every ${\mr a}\in\U^{\mr x}$ the type ${\mr a}\equiv_M{\mr x}\nonfork_M{\gr b}$ is complete over $M,{\gr b}$.
+  We say that the type ${\mr x}\nonfork_M{\gr b}$ is \emph{stationary\/} if any of the equivalent conditions of the above proposition hold.
   We say that $\nonfork_M$ is \emph{stationary\/} if ${\mr x}\nonfork_M{\gr b}$ is stationary for every ${\gr b}\in\U^{\gr z}$ and any finite tuples of variables ${\mr x}$ and ${\gr z}$.
   We say \emph{$n$-stationary\/} if we limit the request to a tuple ${\mr x}$ of length $n$.
 \end{definition}
+
+Note that stationarity is the dual version of non-splitting (see Lemma~
+\ref{lem_coheir_independence}).
 
 A first application of stationarity is given in Section~\ref{semigroups}.
 Stationarity is deeply connected with definability as illustrated by the following proposition.
@@ -349,7 +362,7 @@ This phenomenon will receive the due attention in Section~\ref{stable_theories}.
 
 \begin{proof}
   \ssf2$\IMP$\ssf1.
-  Let ${\gr b}\in\U^{\gr z}$ and ${\mr a_1},{\mr a_2}\in\U^{\mr x}$ be such that ${\mr a_i}\nonfork_M{\gr b}$ and ${\mr a_1}\equiv_M{\mr a_2}$.
+  Let ${\mr a_1},{\mr a_2}\in\U^{\mr x}$ be such that ${\mr a_i}\nonfork_M{\gr b}$ and ${\mr a_1}\equiv_M{\mr a_2}$.
   We claim that ${\mr a_1}\equiv_{M,\,{\gr b}}{\mr a_2}$.
   We need to prove that $\phi({\mr a_1}\,;{\gr b})\iff\phi({\mr a_2}\,;{\gr b})$ for every  $\phi({\mr x}\,;{\gr z})\in L(M)$.
   Let $\psi({\mr x})\in L(M)$ be such that $\phi(M^{\mr x};{\gr b})=\psi(M^{\mr x})$.
@@ -358,8 +371,8 @@ This phenomenon will receive the due attention in Section~\ref{stable_theories}.
 
   \ssf1$\IMP$\ssf2.
   Let $\W$ be as in Proposition~\ref{prop_b_saturate_coheir}. 
-  Then the set $\phi(\W^{\mr x}\,;{\gr b})$ is invariant under $\Aut(\W/M)$.
-  As $\W$ is saturated in the language expanded with predicate for $\phi(\W^{\mr x}\,;{\gr b})$, invariance implies that $\phi(\W^{\mr x}\,;{\gr b})$ is definable over $M$.
+  Stationarity implies that the sets $\phi(\W^{\mr x}\,;{\gr b})$ are invariant under $\Aut(\W/M)$.
+  As $\W$ is saturated in the language expanded with predicate for $\phi(\W^{\mr x}\,;{\gr b})$, invariance implies that $\phi(\W^{\mr x}\,;{\gr b})$ is definable over $M$ (reason as in the proof of Proposition~\ref{prop_inv_def}).
 \end{proof}
 
 % \begin{lemma}\label{lem_coheirext}
@@ -379,9 +392,9 @@ This phenomenon will receive the due attention in Section~\ref{stable_theories}.
 %Unfortunately, this is not possible in general and the definition Section~\hyperref[coheirs_sets]{\ref*{invariantL}.\ref*{coheirs_sets}} is as good as it gets.
 
 \begin{remark}\label{rk_coheir_stationary}
-There are theories where the stationarity of $\nonfork_M$ holds for some particular $M$.
-Indeed, if every subset of $M^n$ is $M$-definable then $\nonfork_M$ is $n$-stationary by Proposition~\ref{prop_stationarity}.
-This will help in the proof of Theorem~\ref{thm_Hindman}.
+For some theories $\nonfork_M$ is stationary for some particular $M$, though not for arbitrary $M$.
+Indeed, it may happen that for some $M$, every subset of $M^n$ is $M$-definable.
+Then $\nonfork_M$ is $n$-stationary by Proposition~\ref{prop_stationarity}.
 For a natural example, let $T=T_{\rm dlo}$ and let $M\subseteq\U$ have the order type of $\RR$.
 By quantifier elimination every definable subset of $\U$ is a union of finitely many intervals.
 By Dedekind completeness, the trace on $M$ of any interval of $\U$ coincides with that of an $M$-definable interval.
