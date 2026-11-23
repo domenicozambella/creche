@@ -121,6 +121,11 @@ diagrams={>=latex}
 
 \def\nonfork{\mathop{\raise0.2ex\hbox{\ooalign{\hidewidth$\vert$\hidewidth\cr\raise-0.9ex\hbox{$\smile$}}}}}
 
+\def\notnonfork{\mathrel{\ooalign{%
+  $\nonfork$\cr
+  \hidewidth\raise-0.3ex\hbox{\large$/$}\hidewidth\cr
+}}}
+
 %\def\nonforkc{\mathbin{\raise1.2ex\rlap{\kern1.3ex$\cdot$}\rlap{\kern1.1ex\rule{0.1ex}{1.9ex}}\raise-0.3ex\hbox{$\smile$} } }
 %\def\cnonfork{\mathbin{\raise1.3ex\rlap{\kern0.4ex$\cdot$}\raise0.6ex\rlap{\kern0.85ex$\vert$}\raise-0.3ex\hbox{$\smile$}} }
 

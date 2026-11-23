@@ -2,10 +2,10 @@
 \chapter{Ramsey theory}
 \label{ramsey}
 
-In Section~\ref{Ramsey} we prove Ramsey's theorem and in Section~\ref{EM} we present its major application in model theory: 
-the Ehrenfeucht-Mostowski construction of indiscernibles.
+In Section~\ref{Ramsey} we prove Ramsey's theorem and in Section~\ref{EM} we present a major tool in model theory very much related to it: the Ehrenfeucht-Mostowski theorem .
+Both theorems are proved using coheir sequences.
 
-In the remaining sections we prove two important results of Ramsey theory.
+In the remaining sections we prove two important results of Ramsey theory: the Hindman Theorem and the Hales-Jewett Theorem.
 These results will not be used elsewhere in these notes.
 Our only purpose is to illustrate a concrete (relatively speaking) application of the notion of coheir.
 
@@ -21,44 +21,40 @@ Our only purpose is to illustrate a concrete (relatively speaking) application o
 Ramsey's theorem is a very famous theorem which has an easy and direct combinatorial proof that requires only elementary tools.
 However, here we prove it in an unusual way.
 Our purpose is to illustrate a model theoretic method that will pay off in more complex contexts, see e.g.\@ Theorem~\ref{thm_Hindman}.
-We begin with a lemma.
 
-\begin{lemma}
-  Assume there are only finitely many complete quantifier-free $n$-types over $\varnothing$.
-  (This holds in particular when $L$ contains finitely many symbols and no function of positive arity.)
+\begin{lemma}\label{lem_Ramsey}
   Let $M$ be any model.
-  Then there is a sequence $\<a_i:i<\omega\>$ of distinct elements of $M$ such that for every $I\in\omega^{(n)}$ the tuples $a_{\restriction n}$ and $a_{\restriction I}$ have the same quantifier-free type.
+  Let ${\mr\bar x}=\<{\mr x_i}:i<\omega\>$ be a tuple of copies of ${\mr x}$.
+  Let $\epsilon({\mr x_{\restriction n}},{\mr y_{\restriction n}})\in L(M)$ define a finite equivalence relation.
+  Then there is a sequence $\bar a=\<a_i:i<\omega\>$ of distinct elements of $M^{\mr x}$ such that $\epsilon({a_{\restriction n}},a_{\restriction I})$ for every $I\in\omega^{(n)}$.
 \end{lemma}
 
-Note that when $M$ is a saturated structure we could pick any indiscernible sequence $\<a_i:i\in\omega\>$ and obtain that $a_{\restriction n}\equiv a_{\restriction I}$ for any $n$ and any $L$.
+Note that when $M$ is a saturated structure we could pick any indiscernible sequence $\bar a$ and obtain that $\epsilon(a_{\restriction n},a_{\restriction I})$ for any finite equivalence relation and any $n$, see Exercise~\ref{ex_Sh_strongtypes_indiscernibles}
 
 \begin{proof}
   Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be any coheir sequence over $M$, with ${\mr c_0}\notin M$.
-  We define by induction a sequence $\<a_i:i<\omega\>$ of elements of $M$ as follows.
+  Write ${\mr \cev{c}}$ for the sequence ${\mr\bar c}$ ordered as \emph{$\omega^*$,} that is $\omega$ with the reverse order.
+  Then, $\epsilon({\mr \cev{c}_{\restriction n}},{\mr \cev{c}_{\restriction I}})$ for every $I\in\omega^{(n)}$.
 
-  Write ${\mr \cev{c}_{\restriction n}}$ for the tuple ${\mr c_{n-1}},\dots,{\mr c_0}$.
-  Assume as induction hypothesis that all $n$-subtuples of $a_{\restriction i},{\mr \cev{c}_{\restriction n}}$ have the same quantifier-free type as ${\mr \cev{c}_{\restriction n}}$.
-  Our goal is to find $a_i\in M$ such that the same property holds for $a_{\restriction i},a_i,{\mr \cev{c}_{\restriction n}}$.
-  By the $M$-indiscernibility of ${\mr\bar c}$,
-  the property holds for $a_{\restriction i},{\mr{c_n}},{\mr \cev{c}_{\restriction n}}$ and, as there are finitely many quantifier-free types, it can be written as a formula $\phi(a_{\restriction i},{\mr{c_n}},{\mr c_{\restriction n}})$.
-  As ${\mr\bar c}$ is a coheir sequence, we can find  $a_i\in M$ such that  $\phi(a_{\restriction i},a_i,{\mr c_{\restriction n}})$.
+  We define by induction a sequence $\<a_i:i<\omega\>$ of elements of $M^{\mr x}$ as follows.
+  Assume as induction hypothesis that all $n$-subtuples of $a_{\restriction i},{\mr \cev{c}_{\restriction n}}$ are $\epsilon$-equivalent.
+  Our goal is to find $a_i\in M^{\mr x}$ such that the same property holds for $a_{\restriction i},a_i,{\mr \cev{c}_{\restriction n}}$.
+  By the $M$-indiscernibility of ${\mr\bar c}$, the required property holds also for $a_{\restriction i},{\mr{c_n}},{\mr \cev{c}_{\restriction n}}$ and it can be written as a formula $\phi(a_{\restriction i},{\mr{c_n}},{\mr c_{\restriction n}})$.
+  As ${\mr\bar c}$ is a coheir sequence, we can find  $a_i\in M^{\mr x}$ such that  $\phi(a_{\restriction i},a_i,{\mr c_{\restriction n}})$.
   So, $a_{\restriction (i+1)},{\mr \cev{c}_{\restriction n}}$ satisfies the induction hypothesis.
-
-  We leave to the reader to verify that if $n>1$ the elements of $\<a_i:i\in\omega\>$ are distinct. For $n\le 1$ the lemma is trivial.
 \end{proof}
 
-Ramsey's theorem is a particular case of the lemma.
-% As a matter of fact, the lemma corresponds to a result of Ne\v set\v ril-R\"odl kown as \textit{structural Ramsey theorem.}
-Ramsey-like results are usually formulated in their own vernacular.
-A partition of a set $X$ into $k$ subsets is represented by a function $f:X\to (k]$.
-The elements of $(k]=\{1,\dots,k\}$ are called \emph{colors,} and the partition a \emph{coloring,}
-or \emph{$k$-coloring,} of $X$.
+Ramsey's theorem is essentially a rephrasing of the lemma.
+As a matter of fact, Ramsey-like results are usually formulated in their own vernacular.
+For $n<\omega$ we write 
 
-Pick $n<\omega$ and a $k$-coloring $f$ of $X^{(n)}$,the set of all \emph{$n$-subsets} of $X$,
-which also known as the \emph{complete $n$-uniform hypergraph\/} with vertex set $X$.
+\ceq{\hfill \binom{X}{n}}{\rm or}{X^{(n)}}
 
-\ceq{\hfill f}{:}{ \binom{X}{n}=X^{(n)}\ \ \to\ \ (k]}.
-
+for the set of all \emph{$n$-subsets} of $X$ that is, the subsets of $X$ of cardinality $n$.
+This is also known as the \emph{complete $n$-uniform hypergraph\/} with vertex set $X$.
+A $k$-partition of $X^{(n)}$ is represented by a function $f:X\to (k]=\{1,\dots,k\}$.
+The elements of $(k]$ are called \emph{colors,} and $f$ is called a \emph{coloring,}
+or \emph{$k$-coloring,} of $X^{(n)}$.
 We say that $H\subseteq X$ is a \emph{monochromatic set\/} if $f$ is constant on $H^{(n)}$.
 In combinatorics, monochromatic sets are also called \emph{homogeneous sets.}
 
@@ -68,15 +64,9 @@ Fix an arbitrary $k$-coloring of $X^{(n)}$.
 Then there is an infinite monochromatic set $H\subseteq X$.
 \end{void}
 \begin{proof}
-Let $L$ be a language that contains the relation symbols $r_1,\dots,r_k$ of arity $n$.
+Let $L$ be a language that contains a symbol for a $2n$-ary relation $\epsilon(x,y)$, where $|x|=|y|=n$.
 Given a $k$-coloring $f$ we define a structure $M$ with domain $X$.
-The interpretation the relation symbol $r_i$ is
-
-%\ceq{\hfill r_i^M}{=}{\Big\{ ({\mr a_0},\dots,a_{n-1})\ :\ |\{{\mr a_0},\dots,a_{n-1}\}|=n \ \textrm { e \ }f\big(\{{\mr a_0},\dots,a_{n-1}\}\big)= i\Big\}}
-
-%\ceq{\hfill r_i^M}{=}{\Big\{ \<{\mr a_0},\dots,{\mr a_{n-1}}\>\ :\  \big|\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big|=n \ \textrm { and \ }f\big(\big\{{\mr a_0},\dots,{\mr a_{n-1}}\big\}\big)= i\Big\}} 
-
-\ceq{\hfill r_i^M}{=}{\Big\{  a\in X^n \ : \ |\range(a)|=n \ \textrm{ and } \ f\big(\range(a)\big)= i\Big\}.} 
+For $a,b\in X^n$ we stipulate that $\epsilon(a,b)$ holds if $|\range a|=|\range b|=n$  and $f\big(\range a\big)= f\big(\range b\big)$.
 
 Apply the lemma with $M\preceq\U$.
 We obtain a sequence $\<a_n:n\in\omega\>$ such that $f(\range a_{\restriction n})=f(\range a_{\restriction I})$ for every $I\subseteq\omega$ of cardinality $n$.
@@ -84,20 +74,14 @@ As the ordering is irrelevant, the set $H=\{a_i:i\in\omega\}$ proves the theorem
 \end{proof}
 
 \begin{exercise}
-  Let $M$ be an arbitrary model.
-  Let $\phi(x,y)\in L(M)$, where $|x|=|y|=1$.
-  Prove that there is a sequence $\langle a_i:i<\omega\rangle$ in $M$ such that 
+  Derive Lemma~\ref{lem_Ramsey} from Ramsey's Theorem.
+\end{exercise} 
 
-  \hfil$\phi(a_i,a_j)\iff\phi(a_h,a_k)$
-
-  for every $i<j<\omega$ and $h<k<\omega$.
-\end{exercise}
-
-\begin{exercise} 
-  Let $M$ be a graph with the property that for every finite $A\subseteq M$ there is a $c\in M$ such that $A\subseteq r(c,M)$.
-  The edges of $M$ are colored with infinitely many colors but every clique contains at most $k$ colors, for some fixed $k\in\omega$.
-  Prove that $M$ has an infinite monochromatic complete subgraph.
-\end{exercise}
+% \begin{exercise} 
+%   Let $M$ be a graph with the property that for every finite $A\subseteq M$ there is a $c\in M$ such that $A\subseteq r(c,M)$.
+%   The edges of $M$ are colored with infinitely many colors but every clique contains at most $k$ colors, for some fixed $k\in\omega$.
+%   Prove that $M$ has an infinite monochromatic complete subgraph.
+% \end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -121,7 +105,7 @@ We write \emph{$p({\mr\bar x})\;=\;\textrm{{\small EM}-tp}({\mr\bar a}/A)$.}
 Note that ${\mr\bar a}$ is an $A$-indiscernible sequence if and only if $\EMtp({\mr\bar a}/A)$ is a complete type.
 
 \begin{remark}\label{rem_indiscernibili_ordine}
-  Let $I,<_I$ and $J,<_J$ be infinite linear orders.
+  Let $I,<_I$ and $J,<_J$ be two infinite linear orders.
   Let ${\mr\bar c}=\<{\mr c_i}:i\in I\>$ be a sequence of $A$-indiscernibles.
   By compactness, there is a sequence of $A$-indiscernibles ${\mr\bar a}=\<{\mr a_j}:j\in J\>$ such that $\EMtp({\mr\bar a}/A)=\EMtp({\mr\bar c}/A)$.
 \end{remark}
@@ -133,22 +117,20 @@ Finally, we can state the Ehrenfeucht-Mostowski theorem.
   Then for every sequence ${\mr\bar a}=\<{\mr a_i}:i\in I\>$ there is an $A$-indiscernible sequence ${\mr\bar c}=\<{\mr c_i}:i\in J\>$ such that $\EMtp({\mr\bar a}/A)\subseteq\EMtp({\mr\bar c}/A)$.
 \end{void}
 
-In the proof below, we will take $J,<_J$ to be \emph{$\omega^*$,} that is $\omega$ with the referse order. 
+In the proof below, we will take $J$ to be \emph{$\omega^*$,} that is $\omega$ with the reverse order. 
 However, by Remark~\ref{rem_indiscernibili_ordine}, the theorem also holds for any other infinite linear order.
 
 \begin{proof}
   Note that if ${\mr\bar a'}$ is a subsequence of ${\mr\bar a}$, then $\EMtp({\mr\bar a}/A)\subseteq\EMtp({\mr\bar a'}/A)$.
   Therefore, without loss of generality, we can assume that $I,<_I$ is either $\omega$ or $\omega^*$ (see Exercise~\ref{ex_Ramsey_wfo}).
   We assume the first and leave the second case to the reader as the proof is similar.
-  We can also assume that no element ${\mr a_i}$ in the sequence ${\mr\bar a}$ repeats infinitely many times.
-  Otherwise we could take ${\mr\bar c}$ to be the sequence that is constantly ${\mr a_i}$.
-  In particular, the range of ${\mr\bar a}$ is infinite.
-  
+  We can also assume that the range of the tuple ${\mr\bar a}$ is infinite.
+  Indeed, if some element ${\mr a_i}$ in the sequence ${\mr\bar a}$ repeats infinitely many times we could take ${\mr\bar c}$ to be the sequence that is constantly ${\mr a_i}$.
   Define
 
-\ceq{\hfill q({\mr x})}{=}{\{\phi({\mr x})\in L(A,\ {\mr\bar a})\ :\ \phi({\mr a_i}) \textrm{ holds for cofinitely many }i\in\omega\}.}
+\ceq{\hfill q({\mr x})}{=}{\big\{\phi({\mr x})\in L(A,\ {\mr\bar a})\ :\ \phi({\mr a_i}) \textrm{ holds for cofinitely many }i\in\omega\big\}.}
 
-Then $q({\mr x})\cup \{{\mr x}\neq{\mr a_i} : i\in\omega\}$ is closed under conjunction and is finitely satisfiable in $\range {\mr\bar a}$. 
+Then $q({\mr x})$ is closed under conjunction and is finitely satisfiable in $\range {\mr\bar a}$. 
 Pick some global extension $p({\mr x})$ which is also finitely satisfied in $\range {\mr\bar a}$.
 Let ${\mr\bar c}=\<{\mr c_i}:i<\omega\>$ be a Morley sequence of $p({\mr x})$ over $A,{\mr\bar a}$.
 Let ${\mr\cev{c}}$ be the sequence obtained from ${\mr\bar c}$ by reversing the order.
@@ -162,19 +144,20 @@ This we do by showing that for any $\phi({\mr x_{\restriction n}})\in L(A,{\mr\b
 \end{itemize}
 Assume $\#_n$, we prove the contrapositive of $\#_{n+1}$.
 Suppose $\neg\phi({\mr c_n},{\mr\cev{c}_{\restriction n}})$ and pick an arbitrary $i\in\omega$.
-As ${\mr c_n}$ realizes $p({\mr x})\restriction A,{\mr\bar a},{\mr c_{\restriction n}}$ by definition, 
+By definitions ${\mr c_n}$ realizes $p({\mr x})\restriction A,{\mr\bar a},{\mr c_{\restriction n}}$, and
 
-\ceq{\hfill p({\mr x})}{\proves}{\bigwedge_{j\le i} {\mr x}\neq {\mr a_j},}
+\ceq{\hfill q({\mr x})}{\proves}{\bigwedge_{j\le i} {\mr x}\neq {\mr a_j}}
 
-and $p({\mr x})$ is finitely satisfiable in ${\mr\bar a}$, we can find some $i_1>i$ such that $\neg\phi({\mr a_{i_1}},{\mr\cev{c}_{\restriction n}})$.
+Therefore, as $p({\mr x})\supseteq q({\mr x})$ is finitely satisfiable in ${\mr\bar a}$, we can find some $i_1>i$ such that $\neg\phi({\mr a_{i_1}},{\mr\cev{c}_{\restriction n}})$.
 Now, apply the induction hypothesis to obtain a set $i_1<I_1\in\omega^{(n)}$ such that $\neg\phi({\mr a_{i_1}},{\mr a_{\restriction I_1}})$.
 As $i$ is arbitrary, this shows that $\phi({\mr a_{\restriction I_0}})$ fails for arbitarily large $I_0=I_1\cup\{i_1\}\in\omega^{(n+1)}$.
 So the hypothesis in $\#_{n+1}$ fails.
 \end{proof}
 
-We give a second proof that uses Ramsey's theorem instead of coheir sequences.
+We give a second proof of the Ehrenfeucht-Mostowski Theorem that is closer to the original one.
+It uses Ramsey's theorem instead of coheir sequences.
 
-\begin{proof}[Second proof of the Ehrenfeucht-Mostowski Theorem]
+\begin{proof}[Second proof]
   As in the above proof, we assume that $I=\omega$.
   We write $\omega^{(\omega)}$ for the set of infinite subsetes of $\omega$.
   Let $q({\mr\bar x})=\EMtp({\mr\bar a}/A)$.
@@ -253,25 +236,25 @@ Hence ${\mr\bar a}$ is indiscernible over $h[M]$.
 \def\ceq#1#2#3{\parbox[t]{18ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 
 In this and the following sections we focus on semigroups definable in a first-order structure.
-For a lighter notation, we assume that the semigroup operation \emph{$\ \cdot\ $} is among the symbols of $L$ and that the whole monster model is a semigroup \emph{$\mrS$\/} = $\U$. 
+For a lighter notation, we assume that the semigroup operation \emph{$\ \cdot\ $} is among the symbols of $L$ and that the whole monster model is a semigroup. 
 
-In this section we work over a given model $S\preceq\mrS$.
-For any two sets $\mrA,\mrB\subseteq\mrS$ we define
+In this section we work over a given model $M\preceq\U$.
+For any two sets $\mrA,\mrB\subseteq\U$ we define
 
 \ceq{\hfill\emph{$\mrA*\mrB$}}
 {=}
 {\Big\{ {\mr a}{\cdot}{\mr b}
 \ :\ 
-{\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\nonfork_S{\mr b}\Big\}}
+{\mr a}\in\mrA, \ {\mr b}\in\mrB\textrm{ and }\ {\mr a}\nonfork_M{\mr b}\Big\}}
 
-In this and the next section we abbreviate $\Orbit({\mr a}/S)$, 
-the orbit of ${\mr a}$ under $\Aut(\U/S)$, 
-by \emph{$({\mr a})_S$}.
-When ajacent to $*$, we write ${\mr a}$ for $({\mr a})_S$.
-E.g.\@ we write \emph{$\mrA*{\mr b}$} for $\mrA*({\mr b})_S$ and \emph{${\mr a}*{\mr b}$} for $({\mr a})_S*{\mr b}$.
+In this and the next section we abbreviate $\Orbit({\mr a}/M)$, 
+the orbit of ${\mr a}$ under $\Aut(\U/M)$, 
+by \emph{$({\mr a})_M$}.
+When ajacent to $*$, we write ${\mr a}$ for $({\mr a})_M$.
+E.g.\@ we write \emph{$\mrA*{\mr b}$} for $\mrA*({\mr b})_M$ and \emph{${\mr a}*{\mr b}$} for $({\mr a})_M*{\mr b}$.
 
 \begin{proposition}\label{prop_typedef_Ab}
-If $\mrA$ is type definable over $S$ then so is $\mrA*{\mr b}$ 
+If $\mrA$ is type definable over $M$ then so is $\mrA*{\mr b}$ 
 for any ${\mr b}$.
 \end{proposition}
 \begin{proof}
@@ -279,53 +262,53 @@ for any ${\mr b}$.
   Then the set $\mrA*{\mr b}$ is defined by the type $q({\mr y})=\E {\mr x},{\mr z}\ \big[ {\mr y}={\mr x}{\cdot}{\mr z}\ \wedge\ {\mr x}\in\mrA \ \wedge\ p({\mr x}\,;{\mr z})\big]$.
 \end{proof}
 
-From the invariance of $\nonfork_S$ it follows immediately that $f[\mrA*\mrB]=f[\mrA]*f[\mrB]$ for every $f\in\Aut(\U/S)$.
+From the invariance of $\nonfork_M$ it follows immediately that $f[\mrA*\mrB]=f[\mrA]*f[\mrB]$ for every $f\in\Aut(\U/M)$.
 %
-Therefore, when $\mrA$ and $\mrB$ are invariant over $S$,
-also $\mrA*\mrB$ is invariant over $S$.
-Below we are mostly concerned with sets that are type-definable, therefore invariant, over $S$.
+Therefore, when $\mrA$ and $\mrB$ are invariant over $M$,
+also $\mrA*\mrB$ is invariant over $M$.
+Below we are mostly concerned with sets that are type-definable, therefore invariant, over $M$.
 
 \begin{proposition}\label{prop_semi_associative}
-For every $S$-invariant sets $\mrA$, $\mrB$, and $\mrC$\smallskip
+For every $M$-invariant sets $\mrA$, $\mrB$, and $\mrC$\smallskip
 
 \ceq{\hfill\mrA*\big(\mrB*\mrC\big)}
 {\subseteq}
 {\big(\mrA*\mrB\big)*\mrC}
 \end{proposition}
 \begin{proof}
-Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ where ${\mr a}\nonfork_S{\mr b}{\cdot}{\mr c}$ and ${\mr b}\nonfork_S{\mr c}$.
+Let ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ be an arbitrary element of the l.h.s.\@ where ${\mr a}\nonfork_M{\mr b}{\cdot}{\mr c}$ and ${\mr b}\nonfork_M{\mr c}$.
 By extension (Lemma~\ref{lem_coheir_independence}),
 there exists ${\mr a'}$ such that 
-${\mr a}\equiv_{S,\,{\mr b}{\cdot}{\mr c}}{\mr a'}\nonfork_S{\mr b}{\cdot}{\mr c},\,{\mr b},\,{\mr c}$.
+${\mr a}\equiv_{M,\,{\mr b}{\cdot}{\mr c}}{\mr a'}\nonfork_M{\mr b},\,{\mr c}$.
 By transitivity (again Lemma~\ref{lem_coheir_independence}),
-${\mr a'}{\cdot}{\mr b}\nonfork_S{\mr c}$.
+${\mr a'}{\cdot}{\mr b}\nonfork_M{\mr c}$.
 Therefore ${\mr a'}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.
-Finally, as ${\mr a'}\equiv_{S,\,{\mr b}{\cdot}{\mr c}}{\mr a}$,
-also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by $S$-invariance.
+Finally, as ${\mr a'}\equiv_{M,\,{\mr b}{\cdot}{\mr c}}{\mr a}$,
+also ${\mr a}{\cdot}{\mr b}{\cdot}{\mr c}$ belongs to the r.h.s.\@ by $M$-invariance.
 \end{proof}
 
 We show that, under the assumption of stationarity,
-$*$ is an operation on  $\U^{\mr x}/{\equiv_S}$.
+$*$ is an operation on  $\U^{\mr x}/{\equiv_M}$.
 
 \begin{proposition}\label{prop_orbits_main}
-Assume $\nonfork_S$ is stationary,
+Assume $\nonfork_M$ is stationary,
 see Definition~\ref{def_coheir_stationary}.
-Fix ${\mr a}\nonfork_S{\mr b}$ arbitrarily.
-Then ${\mr a'}{\cdot}{\mr b'}\equiv_S{\mr a}{\cdot}{\mr b}$ for every 
-${\mr a'}\equiv_S{\mr a}$ and  ${\mr b'}\equiv_S{\mr b}$ such that
-${\mr a'}\nonfork_S{\mr b'}$.
-Or, in other words, $({\mr a}{\cdot}{\mr b})_S={\mr a}*{\mr b}$.
+Fix ${\mr a}\nonfork_M{\mr b}$ arbitrarily.
+Then ${\mr a}*{\mr b}=({\mr a}{\cdot}{\mr b})_M$.
 \end{proposition}
 %
 \begin{proof}
-  By invariance we can assume ${\mr b}={\mr b'}$.
-  By stationarity, ${\mr a}\equiv_{S,\,{\mr b}}{\mr a'}$.
-  Hence ${\mr a}{\cdot}{\mr b}\equiv_S{\mr a'}{\cdot}{\mr b}$.
+  By invariance it suffices to prove ${\mr a}*{\mr b}\subseteq({\mr a}{\cdot}{\mr b})_M$.
+  Assume ${\mr a'}\equiv_M{\mr a}$, ${\mr b'}\equiv_M{\mr b}$, ${\mr a'}\nonfork_M{\mr b'}$.
+  We need to prove  that ${\mr a'}{\cdot}{\mr b'}\equiv_M{\mr a}{\cdot}{\mr b}$.
+  Nothe that by invariance we may assume ${\mr b'}={\mr b}$.
+    By stationarity, ${\mr a}\equiv_{M,\,{\mr b}}{\mr a'}$.
+  Hence ${\mr a}{\cdot}{\mr b}\equiv_M{\mr a'}{\cdot}{\mr b}$.
 \end{proof}
 
 \begin{corollary}[ (associativity)]\label{corol_orbits_associative}
-Assume $\nonfork_{\!S}$ is stationary.
-Then for every $S$-invariant sets $\mrA$,
+Assume $\nonfork_{\!M}$ is stationary.
+Then for every $M$-invariant sets $\mrA$,
 $\mrB$ and  $\mrC$.
 
 \ceq{\hfill\mrA*\big(\mrB*\mrC\big)}
@@ -334,54 +317,50 @@ $\mrB$ and  $\mrC$.
 \end{corollary}
 
 \begin{proof}
-We can assume that $\mrA$, $\mrB$ and $\mrC$ are $S$-orbits.
-Say of ${\mr a}$, ${\mr b}$, and ${\mr c}$ respectively.
-As we are working over a model,
-we can assume that ${\mr a}\nonfork_S{\mr b}{\cdot}{\mr c}$ and ${\mr b}\nonfork_S{\mr c}$.
-By Proposition~\ref{prop_orbits_main} the set on the l.h.s.\@ equals $({\mr a}{\cdot}{\mr b}{\cdot}{\mr c})_S$.
-By a similar argument the set on the r.h.s.\@ equals $({\mr a'}{\cdot}{\mr b'}{\cdot}{\mr c'})_S$ for some elements ${\mr a'}$, ${\mr b'}$, and ${\mr c'}$.
-Proposition~\ref{prop_semi_associative} proves that inclusion $\subseteq$ holds in general.
+We can assume that $\mrA$, $\mrB$ and $\mrC$ are $M$-orbits.
+By Proposition~\ref{prop_orbits_main} we have that $\mrA*\big(\mrB*\mrC\big)=({\mr a}{\cdot}{\mr b}{\cdot}{\mr c})_M$ and $\big(\mrA*\mrB\big)*\mrC=({\mr a'}{\cdot}{\mr b'}{\cdot}{\mr c'})_M$ for suitable elements of $\mrA$, $\mrB$ and $\mrC$.
+By Proposition~\ref{prop_semi_associative} $({\mr a}{\cdot}{\mr b}{\cdot}{\mr c})_M\subseteq({\mr a'}{\cdot}{\mr b'}{\cdot}{\mr c'})_M$.
 But inclusion between orbits amounts to equality.
 \end{proof}
 
 Let $\mrA$ be a nonempty set.
 When $\mrA*\mrA\subseteq\mrA$, we say that $\mrA$ is \emph{idempotent.}
-We say that ${\mr a}\in\mrS$ is \emph{idempotent\/} if it has idempotent orbit.
-Note that if $\mrA$ is idempotent and $\mrB\subseteq\mrA$, then also $\mrA*\mrB$ is idempotent.
+We say that ${\mr a}\in\U$ is \emph{idempotent\/} if it has idempotent orbit.
 
 \begin{lemma}\label{lem_Hindman}
-Assume $\nonfork_S$ is stationary.
+Assume $\nonfork_M$ is stationary.
 If $\mrA$ is minimal among the
 idempotent sets that are
-type-definable over $S$, then $\mrA=({\mr b})_S$ for ${\mr b}\in\mrA$.
+type-definable over $M$, then $\mrA=({\mr b})_M$ for ${\mr b}\in\mrA$.
 \end{lemma}
 
 \begin{proof}
 Pick arbitrarily some ${\mr b}\in\mrA$.
+Note that if $\mrA$ is idempotent and $\mrB\subseteq\mrA$, then also $\mrA*\mrB$ is idempotent.
 %
-The set $\mrA*{\mr b}$ is contained in $\mrA$, idempotent and 
-type-definable over $S$ by Proposition~\ref{prop_typedef_Ab}.
+Then set $\mrA*{\mr b}$ is contained in $\mrA$, idempotent and 
+type-definable over $M$ by Proposition~\ref{prop_typedef_Ab}.
 %
 Therefore by minimality $\mrA*{\mr b}=\mrA$.
 %
 Let ${\mr\Aa'}\subseteq\mrA$ contain those ${\mr a}$ such that 
-${\mr a}*{\mr b}=({\mr b})_S$.
+${\mr a}*{\mr b}=({\mr b})_M$.
 %
 This set is nonempty because ${\mr b}\in\mrA*{\mr b}$.
 %
-It is easy to verify that ${\mr\Aa'}$ is type-definable over $S,{\mr b}$.
+It is easy to verify that ${\mr\Aa'}$ is type-definable over $M,{\mr b}$.
 %
-As it is clearly invariant over $S$, it is type-definable over $S$.
+As it is clearly invariant over $M$, it is type-definable over $M$.
 %
 By associativity, it is idempotent.
 %
 Hence, by minimality, ${\mr\Aa'}=\mrA$.
 %
-Then ${\mr b}\in{\mr\Aa'}$, which implies ${\mr b}*{\mr b}=({\mr b})_S$.
+Then ${\mr b}\in{\mr\Aa'}$, which implies ${\mr b}*{\mr b}=({\mr b})_M$.
 %
 That is, ${\mr b}$ is idempotent.
 %
-Finally, by minimality, $\mrA=({\mr b})_S$.
+Finally, by minimality, $\mrA=({\mr b})_M$.
 \end{proof}
 
 \begin{corollary}\label{corol_idempotent}
@@ -423,75 +402,74 @@ Namely,
 % \ceq{\hfill\emph{$\fp_n\,{\mr\bar a}$}}{=}{\Big\{{\mr a_{i_0}}\kern-0.5ex\cdot\dots\cdot{\mr a_{i_k}}\ :\quad i_0<\dots<i_k<|{\mr\bar a}|,\ \ k< n\Big\}}.
 % 
 % When $n=|{\mr\bar a}|$ we write \emph{$\fp\,{\mr\bar a}$}. 
-\bigskip
-Let \emph{$\cpaw$\/} be a relation on $\U$.
-Let $\mrA,\mrC\subseteq\U$.
-We say that $\mrA$ is \emph{$\cpaw$-covered by $\mrC$\/} 
-if for every ${\mr a_1},\dots,{\mr a_n}\in\mrA$ there are infinitely many ${\mr c}\in\mrC$ such that ${\mr a_i}\cpaw{\mr c}$ for all $i$.
-When $\mrA=\mrC$ we simply sat that $\mrA$ is \emph{$\cpaw$-covered.}
+
+Let \emph{$\cpaw$\/} be an irreflexive relation on $\U$.
+Let $\mrA\subseteq\U$.
+We say that $\mrA$ is \emph{$\cpaw$-covered\/} 
+if for every ${\mr a_1},\dots,{\mr a_n}\in\mrA$ there is a ${\mr c}\in\mrA$ such that ${\mr a_i}\cpaw{\mr c}$ for all $i$.
 We say that $\mrA$ is \emph{\cpawdot-closed\/} 
 if ${\mr a}\cpaw{\mr b}\cpaw{\mr c}$ implies ${\mr a}\cpaw{\mr b}{\cdot}{\mr c}$ 
 for all ${\mr a},{\mr b},{\mr c}\in\mrA$.
-A \emph{$\cpaw$-chain\/} in $\U$ is a tuple ${\mr\bar a}\in\U^{\le\omega}$ such that ${\mr a_i}\cpaw{\mr a_{i+1}}$.
+A \emph{$\cpaw$-chain\/} in $\U$ is a tuple ${\mr\bar a}\in\U^{\le\omega}$ such that ${\mr a_i}\cpaw{\mr a_j}$ for every $i<j<\omega$.
 
 The requirements on  $\cpaw$ are hardly restrictive.
-For example, on a free semigroup we can take the preorder relation given by the length of the words.
+For example, on a free semigroup we can take the preorder relation given by the length of the words; on $\NN$ we can take the usual order.
 %
-Or, on any semigroup $S$, we could take the trivial relation $S^2$ --the theorem below would remain nontrivial.
+%Or, on any semigroup $M$, we could take the trivial relation $M^2$ --the theorem below would remain nontrivial.
 
 \begin{void}[Hindman's Theorem]\label{thm_Hindman}
-Let $\cpaw$ be a relation on a semigroup $S$.
+Let $\cpaw$ be an irreflexive relation on a semigroup $M$.
 %
-Assume that $S$ is  \cpawdot-closed and $\cpaw$-covered.
+Assume that $M$ is \cpawdot-closed and $\cpaw$-covered.
 %
-Then for every finite coloring of $S$ 
+Then for every finite coloring of $M$ 
 there is an infinite $\cpaw$-chain $\bar a$ such that $\fp\,\bar a$ is monochromatic.
 \end{void}
 
-This implies that every commutative semigroup $S$ has an infinite monochromatic subset closed under finite sums of distinct elements (order $S$ arbitrarily).
+This implies that every commutative semigroup $M$ has an infinite monochromatic subset closed under finite sums of distinct elements (order $M$ arbitrarily).
 
-Our proof follows closely the proof of Ramsey's theorem~\ref{thm_Ramsey}.
+Our proof follows closely the proof of Lemma~\ref{lem_Ramsey}.
 %
-The novelty is all in Lemma~\ref{lem_Hindman}.
+The novelty is all contained in the use of the idempotent given by Corollary~\ref{corol_idempotent}.
 
 \begin{proof}
-We interpret $S$ as a structure in a language 
+We interpret $M$ as a structure in a language 
 that extends the natural language of semigroups
-with a symbol for $\cpaw$ and one for each subset of $S$.
+with a symbol for $\cpaw$ and one for each subset of $M$.
 %
-Let $\mrS$ be a saturated elementary superstructure of $S$.
+Let $\U$ be a saturated elementary superstructure of $M$.
 %
 As observed in Remark~\ref{rk_coheir_stationary}, 
-the language makes $\nonfork_S$ trivially stationary.
+the language makes $\nonfork_M$ trivially stationary.
 
-We write ${\mr\S'}$ for the type-definable set $\{{\mr x} : S\cpaw{\mr x}\}$,
-which is nonempty because $S$ is $\cpaw$-covered.
+We write $\mrA$ for the type-definable set $\{{\mr x} : M\cpaw{\mr x}\}$,
+which is nonempty because $M$ is $\cpaw$-covered.
 %
-We claim that ${\mr\S'}$ is idempotent.
+We claim that $\mrA$ is idempotent.
 %
-In fact, if ${\mr a},{\mr b}\in{\mr\S'}$ 
-then, as $S\cpaw{\mr a},{\mr b}$ and ${\mr a}\nonfork_S{\mr b}$, 
+In fact, if ${\mr a},{\mr b}\in\mrA$ 
+then, as $M\cpaw{\mr a},{\mr b}$ and ${\mr a}\nonfork_M{\mr b}$, 
 we must have that ${\mr a}\cpaw{\mr b}$.
 %
-Therefore, from the \cpawdot-closure of $\cpaw$ we infer ${\mr a}{\cdot}{\mr b}\in{\mr\S'}$.
+Therefore, from the \cpawdot-closure of $\cpaw$ we infer ${\mr a}{\cdot}{\mr b}\in\mrA$.
 
-Let ${\mr g_0}$ be an idempotent element of ${\mr\S'}$
+Let ${\mr g_0}$ be an idempotent element of $\mrA$
 as given by Corollary~\ref{corol_idempotent}.
-Let ${\mr g_1}$ realize ${\mr g_0}\equiv_S{\mr x}\nonfork_S{\mr g_0}$.
+Let ${\mr g_1}$ realize ${\mr g_0}\equiv_M{\mr x}\nonfork_M{\mr g_0}$.
 %
 Assume for definiteness that ${\mr g_0}$ has color $1$.
 %
-Now, we define $\bar a\in S^\omega$ inductively such that all elements of $\fp\,\bar a$ have color $1$.
+Now, we define $\bar a=\<a_i:i<\omega\>$, a sequence of elements of $M$, inductively such that all elements of $\fp\,\bar a$ have color $1$.
 
-Assume inductively that we have $a_{\restriction i}\in S^i$ 
+Assume inductively that we have $a_{\restriction i}\in M^i$. 
 such that all elements of $\fp(a_{\restriction i},\,{\mr g_0})$ have color $1$.
 %
 Our goal is to find $a_i$ 
 such that the same property holds for $\fp(a_{\restriction i+1},\,{\mr g_0})$.
 
 Note that $\fp(a_{\restriction i},\,{\mr g_1}\,,{\mr g_0})$ has color $1$.
-In fact, ${\mr g_1}\equiv_S{\mr g_0}\equiv_S{\mr g_1}{\cdot}{\mr g_0}$.
-Now, ${\mr g_1}\nonfork_S{\mr g_0}$ yields some $a_i\in S$ such that  $\fp(a_{\restriction i+1},\,{\mr g_0})$ has color 1.
+In fact, ${\mr g_1}\equiv_M{\mr g_0}\equiv_M{\mr g_1}{\cdot}{\mr g_0}$.
+Now, ${\mr g_1}\nonfork_M{\mr g_0}$ yields some $a_i\in M$ such that  $\fp(a_{\restriction i+1},\,{\mr g_0})$ has color 1.
 \end{proof}
 
 \begin{exercise}
@@ -500,29 +478,40 @@ Now, ${\mr g_1}\nonfork_S{\mr g_0}$ yields some $a_i\in S$ such that  $\fp(a_{\r
   Replace $\fp(\bar a)^{(2)}$ with a (slightly) smaller set that makes the claim true.
 \end{exercise}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The Hales-Jewett Theorem}
-\label{HJ}
+\begin{exercise}
+  For every finite coloring of $\NN$ and every $k<\omega$, 
+  there is an infinite sequence $\bar a=\<a_i(x):i<\omega\>$ of nonconstant univariate polynomials with coefficients in $\NN$ such that $\big\{a(i): a(x)\in\fp(\bar a),\ i<k\big\}$ is monochromatic.
+  Can we require that the $a_i(x)$ have increasing degrees?
+\end{exercise}
 
-The Hales-Jewett Theorem is a purely combinatorial statement 
-that implies the van der Waerden Theorem.
+\begin{exercise}
+  Let $M$ be a semigroup $M$ with the property that $a\cdot M$ is infinite for every $a\in M$.
+  Prove that for every finite coloring of $M$ 
+  there is a sequence $\bar a=\langle a_i:i<\omega\rangle$ with an infinite range such that $\fp\,\bar a$ is monochromatic.
+\end{exercise}
 
-Throughout this section we assume that $\nonfork_{\!S}$ is stationary.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Minimal left ideals and the Ellis group}
+\label{Ellis_group}
+
+Throughout this section we assume that $\nonfork_{\!M}$ is stationary and all sets below are tacitly assumed to be $M$-invariant.
 
 We work with the same notation as Section~\ref{semigroups}.
 We need a few definitions.
-Let $\mrC\subseteq\mrS$ be an idempotent set.
+Let $\mrC\subseteq\U$ be an idempotent set.
 If $\varnothing\neq\mrA\subseteq\mrC$ is such that $\mrC*\mrA\subseteq\mrA$, we say that $\mrA$ is a \emph{left ideal\/} of $\mrC$.
 When $\mrC$ is clear we omit reference to it.
-% We arte interested in left ideal that are type-definable (over $S$).
+% We arte interested in left ideal that are type-definable (over $M$).
 A \emph{minimal\/} left ideal is one that does not properly contain any other left ideal.
 The following fact is immediate.
 
 \begin{fact}\label{fact_mli}
-  The following are equivalent for any $\mrM$ that is a left ideal of $\mrC$
+  The following are equivalent for any $\mrM$ that is a left ideal of $\mrC$:
   \begin{itemize}
     \item [1.] $\mrM$ is minimal
     \item [2.] $\mrM=\mrM*{\mr b}$ for every ${\mr b}\in\mrM$
@@ -530,7 +519,10 @@ The following fact is immediate.
   \end{itemize}
 \end{fact}
 
-Moreover, when ${\mr b}$ is not in $\mrM$, we have the following.
+Note that by \ssf3 of the above fact, minimal left ideals of a type-definable idempotent set $\mrC$ are the the form $\mrC*{\mr b}$.
+Therefore, by Proposition~\ref{prop_typedef_Ab} they are type-definable.
+
+Moreover, right multiplication by an arbitrary ${\mr b}\in\mrC$, yields the following.
 
 \begin{fact}\label{fact_mli2}
    Let $\mrM$ be a minimal left ideal of $\mrC$.
@@ -540,19 +532,21 @@ Moreover, when ${\mr b}$ is not in $\mrM$, we have the following.
 \begin{proof}
   Clearly, $\mrM*{\mr b}$ is a left ideal.
   Let ${\mr a}*{\mr b}$, for some ${\mr a}\in\mrM$, be an arbitrary element of $\mrM*{\mr b}$.
-  By Fact~\ref{fact_mli}, it sufficies to prove that $\mrM*{\mr b}*{\mr a}*{\mr b}=\mrM*{\mr b}$.
+  By Fact~\ref{fact_mli}, it suffices to prove that $\mrM*{\mr b}*{\mr a}*{\mr b}=\mrM*{\mr b}$.
   This holds, in fact ${\mr b}*{\mr a}\in\mrM$, hence $\mrM*{\mr b}*{\mr a}=\mrM$ by the minimality of $\mrM$.
 \end{proof}
 
 Now we prove the existence of minimal left ideals.
 
 \begin{fact}
-  Let $\mrC$ be a type-definable idempotent set. Then $\mrC$ contains a minimal left ideal which is type-definable.
+  Let $\mrC$ be a type-definable idempotent set.
+  Then $\mrC$ contains a minimal left ideal which is type-definable.
 \end{fact}
 
 \begin{proof}
-  Construct inductively a descending chain of type-definable left ideals ${\mr\M_i}$ where ${\mr\M_0}=\mrC$ and ${\mr\M_{i+1}}={\mr\M_i}*{\mr b_i}$ for some ${\mr b_i}\in{\mr\M_i}$.
-  By compactness the chain stabilizes at some ordinal yielding some type-definable left ideal ${\mr\M_\alpha}$ which is minimal as it satisfies \ssf2 in the above fact.
+  Construct inductively a descending chain of type-definable left ideals ${\mr\M_i}$ where ${\mr\M_0}=\mrC$ and ${\mr\M_{i+1}}={\mr\M_i}*{\mr b_i}$ for some ${\mr b_i}\in{\mr\M_i}$ such that ${\mr\M_i}*{\mr b_i}\subset{\mr\M_i}$.
+  At limit stages, take the intersection, which is nonempty by compactness.
+  The chain stabilizes at some ordinal $\le2^{|L(M)|}$ and yields some nonempty type-definable left ideal ${\mr\M_\alpha}$ which is minimal as it satisfies \ssf2 in Fact~\ref{fact_mli}.
 \end{proof}
 
 It is also interesting to note that we can define, in the obvious way, \textit{right ideals\/} and even \textit{two-sided ideals.}
@@ -574,134 +568,167 @@ However for two-sided ideals we have the following remarkable fact (which is not
 
   \ceq{\hfill\mrK*{\mr a}}{=}{\bigcup\big\{\mrM*{\mr a}\ :\ \mrM\text{ a minimal left ideal of }\mrC\big\}}\medrel{\subseteq}$\mrK$.\smallskip
 
-  As for minimality, it sufficies to prove that any two-sided ideal $\mrH$ contains any minimal left ideal $\mrM$.
-  Note that $\mrH\cap\mrM$ is not empty in fact, as $\mrH$ is in particular a right ideal $\mrH*\mrM\subseteq\mrH\cap\mrM$.
+  As for minimality, it suffices to prove that any two-sided ideal $\mrH$ contains any minimal left ideal $\mrM$.
+  In fact, as $\mrH$ is a right ideal and $\mrM$ is a left ideal, $\mrH*\mrM\subseteq\mrH\cap\mrM$.
+  Then $\mrH\cap\mrM$ is not empty.
   As $\mrH\cap\mrM$ is in particular a left ideal and it is contained in $\mrM$, by minimality, it coincides with $\mrM$.
 \end{proof}
 
-Note that every left ideal is an idempotent set and therefore contains idempotent elements.
+
+Note that left ideals are in particular idempotent sets, therefore minimal left ideals of a type-definable idempotent set contain idempotent elements by Corollary~\ref{corol_idempotent}.
 
 \begin{lemma}\label{lem_leftideal}
   Let $\mrC$ be a type-definable idempotent set.
   Let $\mrM$ be a minimal left ideal of $\mrC$.
   Let ${\mr u},{\mr v}\in\mrM$ be two idempotents.
-  Then the followings hold (to avoid notation overload, we confuse the elements of $\mrC$ with their orbits)
+  Then the following hold (to avoid notation overload, we confuse the elements of $\mrC$ with their orbits)
   \begin{itemize}
     \item [1.] ${\mr a}*{\mr u}={\mr a}$ for every ${\mr a}\in\mrM$ 
     \item [2.] $*$ is a group operation on ${\mr u}*\mrM$ with identity ${\mr u}$
-    \item [3.] ${\mr a}\mapsto{\mr v}*{\mr a}$ define a group isomorphism between ${\mr u}*\mrM$ and ${\mr v}*\mrM$
-    \item [4.] if ${\mr u}$ and ${\mr v}$ are distinct (i.e.\@ have distict orbits), then ${\mr u}*\mrM$ and ${\mr v}*\mrM$ are disjoint
-    \item [5.] $\mrM$ is covered by sets of the form ${\mr u}*\mrM$ as ${\mr u}\in\mrM$ ranges over the idempotents
+    \item [3.] ${\mr a}\mapsto{\mr v}*{\mr a}$ defines a group isomorphism between ${\mr u}*\mrM$ and ${\mr v}*\mrM$
+    \item [4.] if ${\mr u}$ and ${\mr v}$ are distinct (i.e.\@ have distinct orbits), then ${\mr u}*\mrM$ and ${\mr v}*\mrM$ are disjoint
+    \item [5.] $\mrM$ is covered by sets of the form ${\mr w}*\mrM$ as ${\mr w}\in\mrM$ ranges over the idempotents
     % \item [6.] if ${\mr b}\in\mrC$ is an idempotent, ${\mr u}*{\mr b}={\mr u}$ and ${\mr b}*{\mr u}$ is idempotent.
     \item [6.] if ${\mr b}\in\mrC$ is an idempotent, then ${\mr b}*\mrM*{\mr b}$ contains an idempotent.\smallskip
   \end{itemize}
 \end{lemma}
 
 \begin{proof}
-  \ssf1. 
+  \ssf1.
   By minimality $\mrM*{\mr u}=\mrM$.
   Therefore ${\mr a'}*{\mr u}={\mr a}$ for some ${\mr a'}\in\mrM$.
   Then ${\mr a}*{\mr u}={\mr a'}*{\mr u}*{\mr u}={\mr a}$.
 
   \ssf2. 
+  It is immediate to check that ${\mr u}*\mrM $ is closed under $*$.
   By \ssf1 and idempotency, ${\mr u}$ is an identity of ${\mr u}*\mrM$.
   It suffices to prove the existence of a left inverse (in fact, by algebra, this is also a right inverse).
   Pick any ${\mr a}\in{\mr u}*\mrM$.
   From $\mrM*{\mr a}=\mrM$ we obtain that ${\mr u}*\mrM*{\mr a}={\mr u}*\mrM$.
   Then ${\mr u}*{\mr a'}*{\mr a}={\mr u}$ for some ${\mr a'}\in\mrM$.
-  This proves that ${\mr u}*{\mr a'}$ is the left inverse of ${\mr a}$.
+  This proves that ${\mr u}*{\mr a'}$ is a left inverse of ${\mr a}$.
 
   \ssf3.
   By \ssf1, the map ${\mr a}\mapsto{\mr v}*{\mr a}$ is a semigroup homomorphism.
-   By \ssf1 and \ssf2, its inverse is ${\mr a}\mapsto{\mr u}*{\mr a}$.
-   So, ${\mr a}\mapsto{\mr v}*{\mr a}$ is a group isomomorphism.
+  By \ssf1 and \ssf2, its inverse is ${\mr a}\mapsto{\mr u}*{\mr a}$.
+  So, ${\mr a}\mapsto{\mr v}*{\mr a}$ is a group isomorphism.
 
-  \ssf4. 
+  \ssf4.
   Suppose there is an ${\mr a}\in{\mr u}*\mrM\cap{\mr v}*\mrM$.
   Let ${\mr a'}\in\mrM$ be such that ${\mr a}*{\mr a'}={\mr u}$.
   Then ${\mr u}\in{\mr v}*\mrM*{\mr a'}={\mr v}*\mrM$.
-  Then ${\mr u}$ is an identity in the group ${\mr v}*\mrM$.
+  Then ${\mr u}$ is an idempotent of the group ${\mr v}*\mrM$, hence ${\mr u}={\mr v}$.
 
   \ssf5.
   Let ${\mr a}\in\mrM$.
   As $\mrM*{\mr a}=\mrM$, the set $\{ {\mr c}\in\mrM\,:\, {\mr c}* {\mr a} =  {\mr a}\}$ is nonempty.
-  As this is a type-definable idempotent set, it contains an idempotent element ${\mr u}$.
-  Then ${\mr a}\in{\mr u}*\mrM$.
+  As this is a type-definable idempotent set, it contains an idempotent element ${\mr w}$.
+  Then ${\mr a}\in{\mr w}*\mrM$.
   
-  \ssf6. 
-  As $\mrM*{\mr b}$ is a minimal left ideal by Fact~\ref{fact_mli2}, it contains an idempotent element ${\mr u}\in\mrM*{\mr b}$.
-  It is immediate to verify that ${\mr b}*{\mr u}$ is the required idempotent.
+  \ssf6.
+  As $\mrM*{\mr b}$ is a minimal left ideal by Fact~\ref{fact_mli2}, it contains an idempotent element ${\mr w}\in\mrM*{\mr b}$.
+  It is immediate to verify that ${\mr b}*{\mr w}$ is the required idempotent.
 \end{proof}
 
-The following is a technical lemma that is required in the proof of the main theorem.
+The following is a technical lemma that is required in the proof of the main theorem in the next section, Theorem~\ref{thm_abstract_HJ}.
 
 \begin{proposition}\label{prop_HJ_tecnical}
-Let $\sigma:\mrS\to\mrS$ be a semigroup homomorphism definable over $M$.
+Let $\sigma:\U\to\U$ be a semigroup homomorphism definable over $M$.
 Then 
 \begin{itemize}
-\item[1.] $\sigma\big[({\mr a})_S\big]=(\sigma\,{\mr a})_S$
+\item[1.] $\sigma\big[({\mr a})_M\big]=(\sigma\,{\mr a})_M$
 
 \item[2.]
 $\sigma\big[{\mr a}*{\mr b}\big]=\sigma\,{\mr a}*\sigma\,{\mr b}$.
 \end{itemize}
 \end{proposition}
 \begin{proof}\ \ssf{1.}  
-As ${\mr a}\equiv_S{\mr a'}$ implies $\sigma\,{\mr a}\equiv_S\sigma\,{\mr a'}$,
+As ${\mr a}\equiv_M{\mr a'}$ implies $\sigma\,{\mr a}\equiv_M\sigma\,{\mr a'}$,
 inclusion $\subseteq$ is clear.
 For the converse, note that the type 
-$\E{\mr y}\,\big[\sigma\,{\mr y}={\mr x}\,\wedge\,{\mr y}\equiv_S{\mr a}\big]$ 
+$\E{\mr y}\,\big[\sigma\,{\mr y}={\mr x}\,\wedge\,{\mr y}\equiv_M{\mr a}\big]$ 
 is trivially realized by $\sigma\,{\mr a}$.
-By invariance it is equivalent to a type over $S$.
-Therefore it is realized by all elements of $(\sigma\,{\mr a})_S$.
-Hence all elements of $(\sigma\,{\mr a})_S$ are the image of some element in $({\mr a})_S$.
+By invariance it is equivalent to a type over $M$.
+Therefore it is realized by all elements of $(\sigma\,{\mr a})_M$.
+Hence all elements of $(\sigma\,{\mr a})_M$ are the image of some element in $({\mr a})_M$.
 
 \def\medrel#1{\parbox[t]{6ex}{$\displaystyle\hfil #1$}}
 \def\ceq#1#2#3{\parbox[t]{39ex}{$\displaystyle #1$}\medrel{#2}{$\displaystyle #3$}}
 \ssf{2.} \  
 We have to prove the following equality\smallskip
 
-\ceq{\hfill\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ {\mr a}\equiv_S{\mr a'}\nonfork_S{\mr b'}\equiv_S{\mr b} \Big\}}
+\ceq{\hfill\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ {\mr a}\equiv_M{\mr a'}\nonfork_M{\mr b'}\equiv_M{\mr b} \Big\}}
 {=}
-{\Big\{{\mr a'}{\cdot}{\mr b'}\ :\ \sigma\,{\mr a}\equiv_S{\mr a'}\nonfork_S{\mr b'}\equiv_S\sigma\,{\mr b} \Big\}.}\smallskip
+{\Big\{{\mr a'}{\cdot}{\mr b'}\ :\ \sigma\,{\mr a}\equiv_M{\mr a'}\nonfork_M{\mr b'}\equiv_M\sigma\,{\mr b} \Big\}.}\smallskip
 
 It suffices to prove one inclusion because by Proposition~\ref{prop_orbits_main} both sides are orbits.
 We prove $\subseteq$.
-Note that ${\mr a'}\nonfork_S{\mr b'}$ implies $\sigma\,{\mr a'}\nonfork_S\sigma\,{\mr b'}$.
+Note that ${\mr a'}\nonfork_M{\mr b'}$ implies $\sigma\,{\mr a'}\nonfork_M\sigma\,{\mr b'}$.
 Hence the set on l.h.s.\@ is contained in the following\smallskip
 
-\hfil$\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ \sigma\,{\mr a'}\nonfork_S\sigma\,{\mr b'},\ {\mr a'}\equiv_S{\mr a},\  {\mr b'}\equiv_S{\mr b} \Big\}$\smallskip
+\hfil$\Big\{\sigma({\mr a'}{\cdot}{\mr b'})\ :\ \sigma\,{\mr a'}\nonfork_M\sigma\,{\mr b'},\ {\mr a'}\equiv_M{\mr a},\  {\mr b'}\equiv_M{\mr b} \Big\}$\smallskip
 
 which is in turn contained in the set on the r.h.s.
 \end{proof}
  
+\begin{exercise}
+  Let $\M$ be a type-definable minimal left ideal of $\C$.
+  Let $u\in\M$ be an idempotent.
+  Prove that $u*\C$ is a minimal right ideal of $\C$.
+\end{exercise}
+
+\begin{exercise}
+  Let $\M$ and $\N$ be type-definable minimal left ideals of $\C$.
+  Let $u\in\M$ and $v\in\N$ be idempotents.
+  Prove that $u*\M$ and $v*\N$ are isomorphic groups.
+  The isomorphism is given by the map $a\mapsto v*a$ with inverse $a\mapsto u*a$ works if we can assume that $u$ and $v$ are such that $u*v=u$ and $v*u=v$.
+\end{exercise}
+
+\begin{exercise}
+Prove that 
+
+ \hfil$\displaystyle\bigcup\big\{\M\ :\ \M\text{ a minimal left ideal of }\C\big\} =\bigcup\big\{\M\ :\ \M\text{ a minimal right ideal of }\C\big\}$.
+
+\end{exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Hales-Jewett Theorem}
+\label{HJ}
+
+The Hales-Jewett Theorem is a purely combinatorial statement 
+that implies the van der Waerden Theorem.
+
 The following theorem is an elegant rephrasing of the celebrated Hales-Jewett Theorem.
-Let $S$ be a semigroup.
+Let $M$ be a semigroup.
 A subsemigroup $C$ is \emph{nice\/} if it has the property that if $a{\cdot}b\in C$ then $a,b\in C$.
 
 \begin{void}[Hales-Jewett Theorem (Koppelberg's formulation)]\label{thm_abstract_HJ}
-Let $S$ be a semigroup with an infinite nice subsemigroup $C$.
-Let $\Sigma$ be a finite set of retractions of $S$ onto $C$, that is, 
-homomorphisms $\sigma:S\to C$ such that $\sigma_{\restriction C}={\rm id}_C$.
+Let $M$ be an infinite semigroup with a nice subsemigroup $C\subset M$.
+Let $\Sigma$ be a finite set of retractions of $M$ onto $C$, that is, 
+homomorphisms $\sigma:M\to C$ such that $\sigma_{\restriction C}={\rm id}_C$.
 Then, for every finite coloring of $C$,
-there is an $a\in S\sm C$ such that $\{\sigma\,a:\sigma\in\Sigma\}$ is monochromatic.
+there is an $a\in M\sm C$ such that $\{\sigma\,a:\sigma\in\Sigma\}$ is monochromatic.
 \end{void}
 
 \begin{proof}
-Let $\mrS$ be a saturated elementary extension of $S$ in a language that expands the language of semigroups with a symbol for all subsets of $S$.
-As observed in Remark~\ref{rk_coheir_stationary}, this makes $\nonfork_S$ stationary.
-The language contains also symbols for the retractions $\sigma:S\to C$.
-Let $\mrC$ be the interpretation of $C$ in $\mrS$.
-Then $\sigma:\mrS\to\mrC$.
+Let $\U$ be a saturated elementary extension of $M$ in a language that expands the language of semigroups with a symbol for all subsets of $M$.
+As observed in Remark~\ref{rk_coheir_stationary}, this makes $\nonfork_M$ stationary.
+The language contains also symbols for the retractions $\sigma:M\to C$.
+Let $\mrC$ be the interpretation of $C$ in $\U$.
+Then $\sigma:\U\to\mrC$.
 
-By nicety, $\mrS\sm\mrC$ is a left ideal of $\mrS$ (as a matter of fact, a two-sided ideal).
-Let $\mrM\subseteq \mrS\sm\mrC$ be minimal a left ideal of $\mrS$.
+By nicety, $\U\sm\mrC$ is a left ideal of $\U$ (as a matter of fact, a two-sided ideal).
+Let $\mrM\subseteq \U\sm\mrC$ be a minimal left ideal of $\U$.
 Let $\mrN\subseteq\mrC$ be a minimal left ideal of $\mrC$.
 Let ${\mr v}\in\mrN$ be an idempotent.
 By Proposition~\ref{prop_HJ_tecnical}, for every retraction $\sigma$, we have that $\sigma(\mrM)*{\mr v}$ is a left ideal contained in $\mrN$.
 Therefore they all coincide with $\mrN$.
 Let ${\mr u}\in{\mr v}*\mrM*{\mr v}$ be an idempotent.
 Then $\sigma({\mr u})$ is an idempotent of ${\mr v}*\mrN$.
-As ${\mr v}*\mrN$ contains only one idempotent orbit, $\sigma({\mr u})\equiv_S{\mr v}$ for every $\sigma$.
+As ${\mr v}*\mrN$ contains only one idempotent orbit, $\sigma({\mr u})\equiv_M{\mr v}$ for every $\sigma$.
 In particular $\{\sigma({\mr u})\,:\,\sigma\in\Sigma\}$ is monochromatic.
 As $\Sigma$ is finite , the theorem follows by elementarity.
 \end{proof}
@@ -715,35 +742,35 @@ Finally we derive the classical Hales-Jewett Theorem from the above algebraic ve
 \end{void}
 
 \begin{proof}
-  Let $S$ be the set of the terms n the language of semigroups with parameters in $C$ where at most the variable $x$ occur.
-  Then $S$ is a semigroup under the natural operation and $C$ is a nice subgroup.
+  Let $M$ be the set of the terms n the language of semigroups with parameters in $C$ where at most the variable $x$ occur.
+  Then $M$ is a semigroup under the natural operation and $C$ is a nice subgroup.
   For every $a\in C$ the map $\sigma_a$ that takes $t(x)$ to $t(a)^C$.
-  These are a retraction of $S$ onto $C$.
+  These are a retraction of $M$ onto $C$.
   Hence we can apply Theorem~\ref{thm_abstract_HJ}.
 \end{proof}
 
 We also derive a famous consequence of the Hales-Jewett Theorem.
-An \textit{arithmetical progression\/} of length $k$ is a sequence of natural numbers $\langle n{+}m{\cdot}i : i<k\rangle$ for some $n,m\in\NN$.
+An \textit{arithmetical progression\/} of length $k$ is a sequence of natural numbers $\langle n{+}m{\cdot}i\, :\, i<k\rangle$ for some $n,m\in\NN$.
 
 \begin{void}[van der Waerden's Theorem]
   For every finite coloring of $\NN$ and for every $k<\omega$, there is a monochromatic arithmetical progression of length $k$.
 \end{void}
 
 \begin{proof}
-  Let $C=\NN$ and let $S$ be the semigroup of terms in the language of semigroups with parameters in $\NN$ where at most the variable $x$ occur.
+  Let $C=\NN$ and let $M$ be the semigroup of terms in the language of semigroups with parameters in $\NN$ where at most the variable $x$ occur.
   That is terms of the form $n{+}m{\cdot}x$ for some $n,m\in\NN$.
-  Then $\NN$ is a nice subsemigroup of $S$.
-  For $i<k$ let $\sigma_i$ be the retraction that takes $n{+}m{\cdot}x\in S$ to $n{+}m{\cdot}i\in\NN$.
+  Then $\NN$ is a nice subsemigroup of $M$.
+  For $i<k$ let $\sigma_i$ be the retraction that takes $n{+}m{\cdot}x\in M$ to $n{+}m{\cdot}i\in\NN$.
   Apply Theorem~\ref{thm_abstract_HJ} to obtain some $n,m\in\NN$ such that the set $\{n{+}m{\cdot}i\ :\ i<k\}$ is monochromatic.
 \end{proof}
 
 % \begin{exercise}\label{thm_hom_HJ}
-%   Let $\Sigma$ be a finite set of homomorphisms $\sigma:S\to C$ 
+%   Let $\Sigma$ be a finite set of homomorphisms $\sigma:M\to C$ 
 %   between infinite semigroups such that the following intersection is nonempty for all $c\in C$
 
 %   \ceq{\hfill\Sigma^{-1}[c]}{=}{\bigcap_{\sigma\in\Sigma}\sigma^{-1}[c]}
 
-%   Prove that, for every finite coloring of $C$, for some $g\in S$ the set 
+%   Prove that, for every finite coloring of $C$, for some $g\in M$ the set 
 %   $\{\sigma\,g\ :\ \sigma\in\Sigma\}$ is monochromatic.
 % \end{exercise}
 
@@ -767,31 +794,6 @@ An \textit{arithmetical progression\/} of length $k$ is a sequence of natural nu
 % Then $\{\sigma\,g:\sigma\in\Sigma\}$ is monochromatic as required to complete the proof.
 % \end{proof}
 
-\begin{exercise}
-  Let $\M$ be a type-definable minimal left ideal of $\C$.
-  Let $u\in\M$ be an idempotent.
-  Prove that $u*\C$ is a minimal right ideal of $\C$.
-\end{exercise}
-
-\begin{exercise}
-  Let $\M$ and $\N$ be type-definable minimal left ideals of $\C$.
-  Let $u\in\M$ and $v\in\N$ be idempotents.
-  Prove that $u*\M$ and $v*\N$ are isomorphic groups.
-  The isomorphism is given by the map $a\mapsto v*a$ with inverse $a\mapsto u*a$ works if we can assume that $u$ and $v$ are such that $u*v=u$ and $v*u=v$.
-\end{exercise}
-
-\begin{exercise}
-  For every finite coloring of $\NN$ and every $k<\omega$, 
-  there is an infinite sequence $\bar a=\<a_i(x):i<\omega\>$ of nonconstant univariate polynomials with coefficients in $\NN$ such that $\big\{a(i): a(x)\in\fp(\bar a),\ i<k\big\}$ is monochromatic.
-  Can we require that the $a_i(x)$ have increasing degrees?
-\end{exercise}
-
-\begin{exercise}
-Prove that 
-
- \hfil$\displaystyle\bigcup\big\{\M\ :\ \M\text{ a minimal left ideal of }\C\big\} =\bigcup\big\{\M\ :\ \M\text{ a minimal right ideal of }\C\big\}$.
-
-\end{exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
